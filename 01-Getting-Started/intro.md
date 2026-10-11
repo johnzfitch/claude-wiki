@@ -2,7 +2,7 @@
 title: "Intro to Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/intro"
 category: "01-Getting-Started"
-fetched_at: "2026-09-26T06:39:32Z"
+fetched_at: "2026-10-04T08:33:35Z"
 tags: ["getting-started"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["getting-started"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../20-Models/release-notes-overview.md)
 
@@ -127,7 +127,9 @@ Complex projectsAgentsCoding
 
 For long-running agentic coding and knowledge work
 
-### [Sonnet 5](../20-Models/models-sonnet-5-overview.md)
+### [Sonnet 5.5](../20-Models/models-sonnet-5-5-overview.md)
+
+New
 
 Everyday tasksWritingCost-efficient
 

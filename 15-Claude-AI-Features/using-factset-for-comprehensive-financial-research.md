@@ -2,7 +2,7 @@
 title: "Using FactSet for comprehensive financial research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:40:03Z"
+fetched_at: "2026-10-10T06:28:03Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai", "search"]
 
 Set up and use Claude's FactSet integration for institutional-grade financial analysis including pricing, fundamentals, estimates, M&A data, and ownership.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 

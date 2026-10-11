@@ -2,7 +2,7 @@
 title: "Tool use with prompt caching - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:27Z"
+fetched_at: "2026-10-04T08:32:11Z"
 tags: ["api", "prompting"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "prompting"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 

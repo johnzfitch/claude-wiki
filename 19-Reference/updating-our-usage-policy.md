@@ -34,7 +34,7 @@ Our products can be used to provide information and perform analysis to help org
 
 ### Expanding who can use our products
 
-Our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) prohibit the use of our services by individuals under the age of 18. At the same time, there are certain use cases where AI tools can offer significant benefits to younger users, such as test preparation or tutoring support. With this in mind, our updated policy allows organizations to incorporate our API into their products for minors if they agree to implement certain safety features and disclose to their users that their product is leveraging an AI system. See our [Help Center article](https://support.anthropic.com/en/articles/9307344-responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors) to learn more.
+Our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) prohibit the use of our services by individuals under the age of 18. At the same time, there are certain use cases where AI tools can offer significant benefits to younger users, such as test preparation or tutoring support. With this in mind, our updated policy allows organizations to incorporate our API into their products for minors if they agree to implement certain safety features and disclose to their users that their product is leveraging an AI system. See our [Help Center article](../13-Enterprise-Admin/responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors.md) to learn more.
 
 We have also expanded the number of countries whose law enforcement authorities may use our products for a carefully tailored set of use cases, such as call center support and document summarization.
 
@@ -66,10 +66,10 @@ You can view our updated policy in full [here](https://www.anthropic.com/legal/a
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -95,7 +95,7 @@ You can view our updated policy in full [here](https://www.anthropic.com/legal/a
 - [Coding](../18-Industry-UseCases/coding.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -115,7 +115,7 @@ You can view our updated policy in full [here](https://www.anthropic.com/legal/a
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

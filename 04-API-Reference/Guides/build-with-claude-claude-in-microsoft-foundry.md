@@ -2,7 +2,7 @@
 title: "Claude in Microsoft Foundry - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:28Z"
+fetched_at: "2026-10-04T08:32:32Z"
 tags: ["api", "authentication", "billing", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication", "billing", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -94,7 +94,7 @@ Access Claude models through Microsoft Foundry with Azure-native endpoints and a
 
 
 
-This guide shows you how to set up and make API calls to Claude in Microsoft Foundry using one of Anthropic's client SDKs or direct HTTP requests. When you access Claude in Microsoft Foundry, you are billed for Claude usage in the Azure Marketplace. You can use Claude models including Claude Fable 5.1, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, and Claude Sonnet 5, and features such as the [1M-token context window](build-with-claude-context-windows.md), while managing costs through your Azure subscription.
+This guide shows you how to set up and make API calls to Claude in Microsoft Foundry using one of Anthropic's client SDKs or direct HTTP requests. When you access Claude in Microsoft Foundry, you are billed for Claude usage in the Azure Marketplace. You can use Claude models including Claude Fable 5.1, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Sonnet 5, and features such as the [1M-token context window](build-with-claude-context-windows.md), while managing costs through your Azure subscription.
 
 Claude is available in Global Standard and US Data Zone Standard deployment types in Foundry resources, billed in Claude Consumption Units through the Azure Marketplace. Visit [Claude in Microsoft Foundry pricing](../../17-Billing-Plans/about-claude-pricing.md#claude-in-microsoft-foundry-pricing) for details.
 
@@ -108,6 +108,8 @@ Claude models in Microsoft Foundry are available in two hosting options. You cho
 | Model availability   | The latest models in the Opus, Sonnet, and Haiku families  | All Claude models available on Microsoft Foundry                                                                |
 | Deployment types     | Global Standard, US Data Zone Standard                     | Global Standard                                                                                                 |
 | Recommended for      | Most workloads                                             | [Access to features or models not yet hosted on Azure](#additional-features-not-supported-when-hosted-on-azure) |
+
+Claude Sonnet 5.5 supports only Global Standard deployments.
 
 
 
@@ -128,7 +130,7 @@ Anthropic's [client SDKs](../Other/cli-sdks-libraries-overview.md) support Found
 
 
 
-Foundry is supported by the C#, Java, PHP, Python, and TypeScript SDKs. Foundry is not currently available in the Go and Ruby SDKs.
+Foundry is supported by the C#, Go, Java, PHP, Python, and TypeScript SDKs. Foundry is not currently available in the Ruby SDK.
 
 Python
 
@@ -181,7 +183,7 @@ After creating your resource, deploy a Claude model to make it available for API
 4.  On your first Claude deployment, review the Azure Marketplace terms, select an industry, and select **Agree and Proceed** to accept the terms and subscribe to the Azure Marketplace offer.
 5.  Configure the deployment:
     - **Deployment name:** Defaults to the model ID, but you can customize it (for example, `my-claude-deployment`). The deployment name cannot be changed after creation.
-    - **Region scope:** Select Global, or for models hosted on Azure, Data Zone. Selecting Data Zone creates a US Data Zone Standard deployment, which keeps inference within the United States and is equivalent to setting [`inference_geo: "us"`](build-with-claude-data-residency.md#inference-geo) on the Claude API.
+    - **Region scope:** Select Global, or for models hosted on Azure, Data Zone. Selecting Data Zone creates a US Data Zone Standard deployment, which keeps inference within the United States and is equivalent to setting [`inference_geo: "us"`](../Other/manage-claude-data-residency.md#inference-geo) on the Claude API. For Claude Sonnet 5.5, select Global.
     - **Model version:** Expand **Model version settings** and select a version from the **Model version** dropdown menu. Each [hosting option](#hosting-options) is listed as a separate model version, labeled with its hosting option (for example, version 1 for Hosted on Anthropic, version 2 for Hosted on Azure).
 6.  Select **Deploy** and wait for provisioning to complete.
 7.  Once deployed, select **Build** in the upper-right navigation, then **Models** in the left pane, and open your deployment. The **Details** tab shows the **Target URI** (your endpoint URL) and **Key** (your API key).
@@ -205,7 +207,7 @@ After provisioning your Foundry Claude resource, you can obtain an API key from 
 3.  Copy the **Key** value (and note the **Target URI** for your endpoint).
 4.  Use either the `api-key` or `x-api-key` header in your requests, or provide it to the SDK.
 
-The Foundry SDKs require an API key and either a resource name or base URL. The C#, Java, PHP, Python, and TypeScript SDKs automatically read these from the following environment variables if they are defined:
+The SDK's Foundry client requires an API key and either a resource name or base URL, and automatically reads them from the following environment variables if they are defined:
 
 - `ANTHROPIC_FOUNDRY_API_KEY` - Your API key
 - `ANTHROPIC_FOUNDRY_RESOURCE` - Your resource name (for example, `example-resource`)
@@ -322,7 +324,7 @@ Claude in Microsoft Foundry supports most Claude features. You can find all the 
 
 ### Context window
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Microsoft Foundry. Other Claude models, including Claude Sonnet 4.5, have a 200k-token context window.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Microsoft Foundry. Other Claude models, including Claude Sonnet 4.5, have a 200k-token context window.
 
 ### Claude features not supported for Claude in Microsoft Foundry
 
@@ -371,9 +373,10 @@ The following Claude models are available through Foundry:
 | Claude Opus 4.7                                                                               | claude-opus-4-7         |                 |          ✓          |
 | Claude Opus 4.6                                                                               | claude-opus-4-6         |                 |          ✓          |
 | Claude Opus 4.5                                                                               | claude-opus-4-5         |                 |          ✓          |
+| Claude Sonnet 5.5                                                                             | claude-sonnet-5-5       |        ✓        |          ✓          |
 | Claude Sonnet 5                                                                               | claude-sonnet-5         |        ✓        |          ✓          |
 | Claude Sonnet 4.6                                                                             | claude-sonnet-4-6       |                 |          ✓          |
-| Claude Sonnet 4.5                                                                             | claude-sonnet-4-5       |                 |          ✓          |
+| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                    | claude-sonnet-4-5       |                 |          ✓          |
 | Claude Haiku 4.5                                                                              | claude-haiku-4-5        |        ✓        |          ✓          |
 
 By default, deployment names match the model IDs shown in the preceding table. However, you can create custom deployments with different names in the Foundry portal to manage different configurations, versions, or rate limits. Use the deployment name (not necessarily the model ID) in your API requests.

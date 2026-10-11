@@ -2,7 +2,7 @@
 title: "SDK middleware - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/middleware"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:29Z"
+fetched_at: "2026-10-04T08:32:40Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "cli", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api", "cli", "sdk"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,7 +48,7 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-[CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)Client SDKs
+[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
 # SDK middleware
 
@@ -56,19 +56,19 @@ Libraries and integrations
 
 
 
-Intercept and modify requests and responses in the Anthropic SDKs.
+Intercept and modify the SDK's requests and responses.
 
 Copy page
 
 
 
-The Anthropic SDKs provide a middleware (or interceptor) hook that lets you run code before a request is sent and after the response is received. Use middleware for cross-cutting concerns such as logging, custom retries, request annotation, and refusal fallback handling.
+The Claude SDK provides a middleware (or interceptor) hook that lets you run code before a request is sent and after the response is received. Use middleware for cross-cutting concerns such as logging, custom retries, request annotation, and refusal fallback handling.
 
 Each middleware can inspect or replace the request before calling `next()`, and the response after `next()` returns.
 
 ## Registering middleware
 
-Each middleware is a function that receives the outgoing request and a `next` callable. Call `next` to forward the request to the rest of the chain (or directly to the SDK core if this is the last middleware), and return its response. Anything before the `next` call runs on the way out; anything after runs on the way back.
+Each middleware is a function that receives the outgoing request and the next handler. Call `call_next(request)` to forward the request to the rest of the chain (or directly to the SDK core if this is the last middleware), and return its response. Anything before that call runs on the way out; anything after runs on the way back.
 
 Python
 
@@ -111,8 +111,8 @@ In the Go SDK, repeated `option.WithMiddleware` calls concatenate (client first,
 
 ## Replacing the HTTP client
 
-Each SDK also accepts a custom HTTP client (for proxy configuration, custom TLS, or connection pooling). Only one HTTP client is used per SDK client; setting it replaces the default. The custom HTTP client receives requests after all middleware has run.
+The SDK also accepts a custom HTTP client (for proxy configuration, custom TLS, or connection pooling). Only one HTTP client is used per SDK client; setting it replaces the default. The custom HTTP client receives requests after all middleware has run.
 
 ## Built-in middleware
 
-The SDKs ship a refusal-fallback middleware that automatically retries requests Claude Fable 5 declines on a fallback model. See [Detect and retry on a fallback model](../Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback) for setup and per-language examples.
+The SDK ships a refusal-fallback middleware that automatically retries requests Claude Fable 5 declines on a fallback model. See [Detect and retry on a fallback model](../Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback) for setup and per-language examples.

@@ -2,7 +2,7 @@
 title: "Build an orchestration mode - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-effort-example"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:31Z"
+fetched_at: "2026-10-04T08:32:35Z"
 tags: ["agents", "api", "subagents"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api", "subagents"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 

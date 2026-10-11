@@ -2,7 +2,7 @@
 title: "Using the Blackbaud connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-26T06:40:09Z"
+fetched_at: "2026-10-10T06:28:07Z"
 tags: ["connectors"]
 ---
 
@@ -10,13 +10,13 @@ tags: ["connectors"]
 
 Connect Claude to Raiser's Edge NXT to access donor records, gift history, events, and draft personalized communications.
 
-10 minClaude.ai
+10 minClaude
 
 [Open Claude](https://claude.ai/new)
 
 The Blackbaud connector gives Claude secure access to your Raiser's Edge NXT fundraising data. Look up donor profiles, review gift history, search events, and draft personalized communications through natural language.
 
-The Blackbaud integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
+The Blackbaud integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this connector provides[](#what-this-connector-provides)
 

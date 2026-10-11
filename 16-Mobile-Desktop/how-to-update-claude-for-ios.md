@@ -1,8 +1,8 @@
 ---
 title: "How to update Claude for iOS | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11825384-"
+source_url: "https://support.claude.com/en/articles/11825384-how-to-update-claude-for-ios"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-30T06:32:25Z"
+fetched_at: "2026-10-10T06:24:26Z"
 tags: ["desktop"]
 ---
 
@@ -18,3 +18,5 @@ If you aren’t seeing the latest features on Claude for iOS, you may need to up
 3.  Scroll down to see pending updates.
 
 4.  Tap "Update" next to Claude for iOS to update it to the newest version.
+
+**Note:** If you use Claude for Intune, the managed version of Claude for iOS for Enterprise plans, your IT team controls when it updates if your organization installed it through Intune. See **[Set up Claude for Intune](https://support.claude.com/en/articles/17203415)** for details.

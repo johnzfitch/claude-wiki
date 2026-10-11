@@ -1,8 +1,8 @@
 ---
 title: "Install Claude Desktop | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/10065433-install-claude-desktop"
+source_url: "https://support.claude.com/en/articles/10065433-installing-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-30T06:32:14Z"
+fetched_at: "2026-10-10T06:24:59Z"
 tags: ["desktop"]
 ---
 

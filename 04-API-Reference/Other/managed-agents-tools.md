@@ -2,7 +2,7 @@
 title: "Tools - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/tools"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:43Z"
+fetched_at: "2026-10-04T08:33:44Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -364,7 +364,7 @@ In addition to built-in tools, you can define custom tools. Custom tools are ana
 
 Each custom tool defines a contract: you specify what operations are available and what they return, and Claude determines when and how to call them. The model never executes anything on its own. It emits a structured request, your code runs the operation, and the result flows back into the conversation. See [Session event stream](managed-agents-events-and-streaming.md#handling-custom-tool-calls) for how to receive custom tool calls and return results during a session.
 
-If your sessions run in a self-hosted sandbox, the environment worker can [serve custom tools from your sandbox](managed-agents-self-hosted-sandboxes.md#serve-custom-tools-from-your-sandbox), including tools that wrap an MCP server inside your network.
+If your sessions run in a self-hosted sandbox, the environment worker can [serve custom tools from your sandbox](managed-agents-self-hosted-sandboxes-custom-tools.md), including tools that wrap an MCP server inside your network.
 
 cURL
 

@@ -2,7 +2,7 @@
 title: "Choose a sandbox environment - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/sandbox-environments"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:12Z"
+fetched_at: "2026-10-08T06:25:00Z"
 tags: ["claude-code"]
 ---
 
@@ -46,7 +46,7 @@ The first two approaches in the table below run on the host operating system wit
 
 | Approach                                    | What is isolated                                                            | Requires Docker | Setup effort                                                                                                 |
 |:--------------------------------------------|:----------------------------------------------------------------------------|:----------------|:-------------------------------------------------------------------------------------------------------------|
-| [Sandboxed Bash tool](#sandboxed-bash-tool) | Bash, PowerShell, and Monitor commands and their child processes            | No              | Minimal on macOS; low on Linux and WSL2                                                                      |
+| [Sandboxed Bash tool](#sandboxed-bash-tool) | Bash, PowerShell, and Monitor tool commands and their child processes       | No              | Minimal on macOS; low on Linux and WSL2                                                                      |
 | [Sandbox runtime](#sandbox-runtime)         | The whole Claude Code process, including file tools, MCP servers, and hooks | No              | Low                                                                                                          |
 | [Dev container](#dev-containers)            | Full development environment                                                | Yes             | Medium                                                                                                       |
 | [Custom container](#custom-container)       | Full development environment                                                | Yes             | Medium to high                                                                                               |
@@ -89,10 +89,10 @@ Sandboxed Bash tool
 
 This option does not support native Windows. On Windows hosts, use WSL2 or one of the container or VM approaches below.
 
-The sandboxed Bash tool is built into Claude Code. It uses operating system primitives to restrict the filesystem and network access of every Bash, PowerShell, or Monitor command Claude runs. Run the `/sandbox` command to open the sandbox panel and choose a mode. The [Sandboxing](sandboxing.md) guide covers the approval modes, the default boundary, and how to widen or narrow it. The per-command sandbox does not cover everything that runs in a session:
+The sandboxed Bash tool is built into Claude Code. It uses operating system primitives to restrict the filesystem and network access of Bash, PowerShell, and Monitor tool commands Claude runs. Run the `/sandbox` command to open the sandbox panel and choose a mode. The [Sandboxing](sandboxing.md) guide covers the approval modes, the default boundary, and how to widen or narrow it. The per-command sandbox does not cover everything that runs in a session:
 
 - Other [built-in tools](tools-reference.md) such as Read, Edit, and WebFetch run inside the Claude Code process and do not spawn arbitrary code. [Permission rules](permissions.md) for path or domain gate them instead.
-- [MCP](../06-MCP-Tools/General/mcp.md) servers and [command hooks](../07-Hooks/hooks.md#command-hook-fields) are separate processes that run unconstrained on the host.
+- [MCP](../06-MCP-Tools/General/mcp.md) servers, [command hooks](../07-Hooks/hooks.md#command-hook-fields), and [plugin monitors](../08-Plugins-Skills/plugins-components.md#monitors) are separate processes that run unconstrained on the host. For other processes that run this way, see [What runs outside the sandbox](sandboxing.md#what-runs-outside-the-sandbox).
 
 To put built-in tools, MCP servers, and hooks all behind one OS boundary, run the whole Claude Code process inside the [sandbox runtime](#sandbox-runtime), the [dev container](#dev-containers), or a [custom container](#custom-container).
 
@@ -101,18 +101,20 @@ To put built-in tools, MCP servers, and hooks all behind one OS boundary, run th
 
 Sandbox runtime
 
-The [`@anthropic-ai/sandbox-runtime`](https://github.com/anthropic-experimental/sandbox-runtime) package wraps an entire process in the same Seatbelt or bubblewrap isolation that the built-in Bash sandbox uses. Running Claude Code through the runtime constrains every tool, hook, and MCP server in the session, not only shell commands. The runtime is a beta research preview, and its configuration format may change as the package evolves. This section covers what you configure and what the runtime enforces on its own. For deploying the runtime in Agent SDK applications, see the [secure deployment guide](../05-Agent-SDK/agent-sdk-secure-deployment.md#sandbox-runtime).
+The [`@anthropic-ai/sandbox-runtime`](https://github.com/anthropics/sandbox-runtime) package wraps an entire process in the same Seatbelt or bubblewrap isolation that the built-in Bash sandbox uses. Running Claude Code through the runtime constrains the session’s tools, hooks, and MCP servers as well as shell commands. The runtime is a beta research preview, and its configuration format may change as the package evolves. This section covers what you configure and what the runtime enforces on its own. For deploying the runtime in Agent SDK applications, see the [secure deployment guide](../05-Agent-SDK/agent-sdk-secure-deployment.md#sandbox-runtime).
 
 
 [​](#set-up-and-launch-the-runtime)
 
 Set up and launch the runtime
 
-On Linux and WSL2, the runtime relies on the same `bubblewrap` and `socat` packages as the built-in sandbox, plus `ripgrep`, which Claude Code bundles but the standalone runtime resolves from your PATH. Install `bubblewrap` and `socat` as described in [Set up Linux and WSL2](sandboxing.md#set-up-linux-and-wsl2), and `ripgrep` from your distribution’s package manager. On macOS you need no additional packages. The runtime uses the built-in Seatbelt sandbox there. By default the runtime denies network access and confines writes to a small set of built-in runtime paths, so configure it before launching Claude Code through it. Put your configuration in `~/.srt-settings.json`, or in a file you pass with `--settings`. The package [README](https://github.com/anthropic-experimental/sandbox-runtime) documents the full configuration schema. Allow write access to at least:
+On Linux and WSL2, the runtime relies on the same `bubblewrap` and `socat` packages as the built-in sandbox, plus `ripgrep`, which Claude Code bundles but the standalone runtime resolves from your PATH. Install `bubblewrap` and `socat` as described in [Set up Linux and WSL2](sandboxing.md#set-up-linux-and-wsl2), and `ripgrep` from your distribution’s package manager. On macOS you need no additional packages. The runtime uses the built-in Seatbelt sandbox there. By default the runtime denies network access and confines writes to a small set of built-in runtime paths, so configure it before launching Claude Code through it. Put your configuration in `~/.srt-settings.json`, or in a file you pass with `--settings`. The package [README](https://github.com/anthropics/sandbox-runtime) documents the configuration schema. Allow write access to at least:
 
 - Your project directory.
 - Claude Code’s configuration paths `~/.claude` and `~/.claude.json`.
-- `/tmp`, where Claude Code writes runtime files.
+- The directory where Claude Code writes runtime files. Unless you set [`CLAUDE_CODE_TMPDIR`](env-vars.md), that directory is:
+  - **Linux and WSL2**: `/tmp`
+  - **macOS**: `/private/tmp`. `/tmp` is a symlink to that directory, and Seatbelt checks the resolved path.
 
 Allow the network domains your session needs:
 
@@ -144,8 +146,8 @@ The runtime blocks the highest-risk writes without any configuration from you:
 - At the project root, the runtime denies `.git/hooks`, denies `.git/config` unless you set `filesystem.allowGitConfig: true`, and denies `.mcp.json`, `.claude/commands`, `.claude/agents`, and shell startup files.
 - On macOS, these denies are checked when a write happens, so they also cover nested files and repositories created during the session.
 - On Linux and WSL2, the runtime builds the deny list once at launch. It reliably covers the project root, makes a best-effort shallow scan for nested copies that exist at that point, and does not cover anything the session creates later, such as `git init`, `git clone`, or scaffolding. The README’s `mandatoryDenySearchDepth` section describes the scan’s exact semantics.
-- Without a valid `~/.srt-settings.json`, the runtime starts anyway, blocks network access, and confines writes to built-in runtime paths such as `/tmp/claude`, `~/.npm/_logs`, and `~/.claude/debug`. Don’t take a clean start as proof your settings loaded.
-- When you pass `--settings`, the runtime refuses to start if the file fails to load.
+- If `~/.srt-settings.json` doesn’t exist and you don’t pass `--settings`, the runtime starts anyway. It blocks network access and confines writes to built-in runtime paths such as `/tmp/claude`, `~/.npm/_logs`, and `~/.claude/debug`. Don’t take a clean start as proof your settings loaded.
+- If the settings file exists but is empty, unreadable, or invalid, the runtime refuses to start, whether it’s `~/.srt-settings.json` or a file you pass with `--settings`. It also refuses to start if the `--settings` file doesn’t exist.
 
 Your write grants still include other paths Claude Code loads configuration from, so deny those with `denyWrite`. A sandboxed session that can write them can persist hooks, permission rules, or MCP servers that run unsandboxed the next time you launch Claude Code.
 
@@ -168,7 +170,7 @@ A dev container runs Claude Code inside a Docker container that VS Code or a com
 
 Custom container
 
-You can run Claude Code in any Docker or OCI container image with your own network policies, mounted volumes, and seccomp profiles. This is the most common path for organizations with existing container infrastructure or CI runners. Several managed sandbox and remote execution services can host the container for you. The same checklist applies as for any container you operate: review what is mounted writable, what credentials and tokens are reachable inside it, and what the network egress policy allows. You can layer the built-in Bash sandbox inside the container for per-command restrictions. Unprivileged containers need the nested-sandbox setting described in [Sandboxing troubleshooting](sandboxing.md#troubleshooting).
+You can run Claude Code in any Docker or OCI container image with your own network policies, mounted volumes, and seccomp profiles. This is the most common path for organizations with existing container infrastructure or CI runners. Several managed sandbox and remote execution services can host the container for you. The same checklist applies as for any container you operate: review what is mounted writable, what credentials and tokens are reachable inside it, and what the network egress policy allows. You can layer the built-in Bash sandbox inside the container for per-command restrictions. Unprivileged containers need `enableWeakerNestedSandbox`, described in [Bubblewrap fails to start inside a container](sandboxing.md#bubblewrap-fails-to-start-inside-a-container).
 
 
 [​](#virtual-machine)

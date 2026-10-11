@@ -2,7 +2,7 @@
 title: "Claude Code on Google Cloud's Agent Platform - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/google-vertex-ai"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:48Z"
+fetched_at: "2026-10-09T06:26:48Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -20,6 +20,8 @@ tags: ["agents", "claude-code"]
   - [5. Pin model versions](#5-pin-model-versions)
   - [6. Verify your configuration](#6-verify-your-configuration)
 - [Startup model checks](#startup-model-checks)
+  - [When your organization enforces a model allowlist](#when-your-organization-enforces-a-model-allowlist)
+  - [When a model is disabled mid-session](#when-a-model-is-disabled-mid-session)
 - [IAM configuration](#iam-configuration)
 - [1M token context window](#1m-token-context-window)
 - [Troubleshooting](#troubleshooting)
@@ -168,7 +170,7 @@ export VERTEX_REGION_CLAUDE_HAIKU_4_5=us-east5
 export VERTEX_REGION_CLAUDE_4_6_SONNET=europe-west1
 ```
 
-Most model versions have a corresponding `VERTEX_REGION_CLAUDE_*` variable. See the [Environment variables reference](env-vars.md) for the full list. Check [Google Cloud’s Agent Platform Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) to determine which models support global endpoints versus regional only. If a region value isn’t shaped like a region or location name, Claude Code treats it as unset. For example, Claude Code treats a value containing a slash, dot, or space as unset. Claude Code falls back to a different source for each variable:
+Most model versions have a corresponding `VERTEX_REGION_CLAUDE_*` variable. See the [Environment variables reference](env-vars.md#variables) for the full list. Check [Google Cloud’s Agent Platform Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) to determine which models support global endpoints versus regional only. If a region value isn’t shaped like a region or location name, Claude Code treats it as unset. For example, Claude Code treats a value containing a slash, dot, or space as unset. Claude Code falls back to a different source for each variable:
 
 - `VERTEX_REGION_CLAUDE_*`: Claude Code falls back to `CLOUD_ML_REGION`.
 - `CLOUD_ML_REGION`: Claude Code falls back to `us-east5`.
@@ -228,7 +230,30 @@ Start Claude Code and run `/status` to confirm the setup. The `API provider` lin
 
 Startup model checks
 
-When Claude Code starts with Google Cloud’s Agent Platform configured, it verifies that the models it intends to use are accessible in your project. If you have pinned a model version that is older than the current Claude Code default, and your project can invoke the newer version, Claude Code prompts you to update the pin. Accepting writes the new model ID to your [user settings file](settings.md) and restarts Claude Code. Declining is remembered until the next default version change. If you have not pinned a model and the current default is unavailable in your project, Claude Code falls back for the current session and shows a notice. It tries earlier versions of the default model first and, when the default is an Opus model and no Opus version is available, falls back to the default Sonnet model. The fallback is not persisted. Enable the newer model in [Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) or [pin a version](#5-pin-model-versions) to make the choice permanent. When you start the session on a specific Sonnet or Opus version, for example with `--model`, `ANTHROPIC_MODEL`, or the [`model` setting](settings-reference.md#model), that version acts as the session’s pinned default for the matching `sonnet` or `opus` alias. Claude Code skips the availability check for the built-in default your model replaces and starts on the model you configured, with no fallback notice. Model aliases such as `opus` don’t act as pins, and neither does a model ID Claude Code doesn’t recognize.
+When Claude Code starts with Google Cloud’s Agent Platform configured, it verifies that the models it intends to use are accessible in your project. If you have pinned a model version that is older than the current Claude Code default, and your project can invoke the newer version, Claude Code prompts you to update the pin. Accepting writes the new model ID to your [user settings file](settings.md) and restarts Claude Code. Declining is remembered until the next default version change. If you have not pinned a model and the current default is unavailable in your project, Claude Code falls back for the current session and shows a notice. It tries earlier versions of the default model first and, when the default is an Opus model and no Opus version is available, falls back to the default Sonnet model. The fallback is not persisted. Enable the newer model in [Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) or [pin a version](#5-pin-model-versions) to make the choice permanent. When you start the session on a specific Sonnet or Opus version, for example with `--model`, `ANTHROPIC_MODEL`, or the [`model` setting](settings-reference.md#model), that version acts as the session’s pinned default for the matching `sonnet` or `opus` alias. Claude Code skips the availability check for the built-in default your model replaces and starts on the model you configured, with no fallback notice. Model aliases such as `opus` don’t act as pins, and neither does a model ID Claude Code doesn’t recognize. When these checks find a model your project can’t invoke, Claude Code remembers the refusal on this machine for up to a day, and launches during that time skip the remembered model without asking Agent Platform again. Claude Code checks a remembered refusal of a current default model again at launch once ten minutes have passed since the last check, so a default your administrator re-enables comes back. To turn the memory off, set [`CLAUDE_CODE_SKIP_MODEL_ACCESS_MEMORY=1`](env-vars.md).
+
+
+[​](#when-your-organization-enforces-a-model-allowlist)
+
+When your organization enforces a model allowlist
+
+If you set [`enforceAvailableModels`](model-config.md#enforce-the-allowlist-for-the-default-model) in managed settings, the startup model checks use only models your `availableModels` list permits. This requires Claude Code v2.1.287 or later. A list without `enforceAvailableModels` doesn’t restrict these checks. The checks compare each entry with the model ID they would send to Agent Platform, so write the list in those IDs. This example permits Opus 4.8 and Sonnet 4.5:
+
+```python
+{
+  "availableModels": ["claude-opus-4-8", "claude-sonnet-4-5@20250929"],
+  "enforceAvailableModels": true
+}
+```
+
+For aliases, version prefixes, and `modelOverrides` entries, see [Pin models for third-party deployments](model-config.md#pin-models-for-third-party-deployments).
+
+
+[​](#when-a-model-is-disabled-mid-session)
+
+When a model is disabled mid-session
+
+If your project loses access to the model your session is running on, for example because an administrator disables it in [Model Garden](https://console.cloud.google.com/vertex-ai/model-garden), Claude Code switches the session to another model instead of failing each request, and shows `Switched to <fallback> because <model> is not available`. It tries the same models as the startup fallback: earlier versions of the same tier first and, for an Opus session with no Opus version available, the default Sonnet model. The switch applies only to a tier you haven’t pinned, the same condition as the startup fallback. A session on a specific version you picked keeps its model and, without a fallback model chain, the request fails instead. In [auto mode](permission-modes.md#enable-auto-mode-on-bedrock-agent-platform-or-foundry), Claude Code switches only to a model auto mode supports on Agent Platform. If none of those models is available either, the request fails. A [fallback model chain](model-config.md#fallback-model-chains) you configure replaces the tier switch: on these refusals Claude Code switches to your configured fallback instead. To have refused requests fail rather than switch, set [`CLAUDE_CODE_DISABLE_MODEL_ACCESS_FALLBACK=1`](env-vars.md). A fallback chain you configured still switches on these refusals; remove the chain as well if you want every refused request to fail.
 
 
 [​](#iam-configuration)
@@ -248,7 +273,7 @@ Create a dedicated GCP project for Claude Code to simplify cost tracking and acc
 
 1M token context window
 
-Claude Sonnet 5, Opus 4.6 and later, and Sonnet 4.6 support the [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md#context-window-sizes-by-model) on Google Cloud’s Agent Platform. Sonnet 5 always runs with the 1M window, with no `[1m]` variant to select. For the other models, Claude Code automatically enables the extended context window when you select a 1M model variant. The [setup wizard](#sign-in-with-agent-platform) offers a 1M context option when it pins models. To enable it for a manually pinned model instead, append `[1m]` to the model ID. See [Pin models for third-party deployments](model-config.md#pin-models-for-third-party-deployments) for details, including how to use the 1M window without changing the pin.
+Fable models, Sonnet 5 and later, and Opus 4.7 and later run with the [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md#context-window-sizes-by-model) by default on Google Cloud’s Agent Platform, with no `[1m]` suffix needed. To keep a 200K window instead, set [`CLAUDE_CODE_DISABLE_1M_CONTEXT=1`](model-config.md#turn-off-1m-context). Opus 4.6 and Sonnet 4.6 reach the 1M window when you select their `[1m]` variant. The [setup wizard](#sign-in-with-agent-platform) offers a 1M context option when it pins models. To enable it for a manually pinned model instead, append `[1m]` to the model ID. See [Pin models for third-party deployments](model-config.md#pin-models-for-third-party-deployments) for details, including how to use the 1M window without changing the pin. Before v2.1.287, the Fable models and Opus 4.7 and later ran with a 200K window by default on Google Cloud’s Agent Platform and reached the 1M window through a `[1m]` suffix.
 
 
 [​](#troubleshooting)
@@ -271,7 +296,7 @@ If you encounter “model not found” 404 errors:
 - Verify the model is available in the location you specified. Some models are offered only on `global` or multi-region locations such as `eu` and `us`, not in specific regions
 - If using `CLOUD_ML_REGION=global`, check that your models support global endpoints in [Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) under “Supported features”. For models that don’t support global endpoints, either:
   - Specify a supported model via `ANTHROPIC_MODEL` or `ANTHROPIC_DEFAULT_HAIKU_MODEL`, or
-  - Set a region or multi-region location using `VERTEX_REGION_<MODEL_NAME>` environment variables
+  - Set a region or multi-region location using the model’s `VERTEX_REGION_CLAUDE_*` variable, listed in the [environment variables reference](env-vars.md#variables)
 
 If you encounter 429 errors:
 

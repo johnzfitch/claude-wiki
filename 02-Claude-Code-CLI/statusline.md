@@ -2,7 +2,7 @@
 title: "Customize your status line - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/statusline"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:32:00Z"
+fetched_at: "2026-10-08T06:25:07Z"
 tags: ["claude-code"]
 ---
 
@@ -14,8 +14,12 @@ tags: ["claude-code"]
   - [Disable the status line](#disable-the-status-line)
 - [Build a status line step by step](#build-a-status-line-step-by-step)
 - [How status lines work](#how-status-lines-work)
+  - [When the status line updates](#when-the-status-line-updates)
+  - [What your script can output](#what-your-script-can-output)
+  - [Size output to the terminal](#size-output-to-the-terminal)
 - [Available data](#available-data)
   - [Context window fields](#context-window-fields)
+  - [Spend limit fields](#spend-limit-fields)
   - [Prompt cache fields](#prompt-cache-fields)
   - [Last miss cause](#last-miss-cause)
 - [Examples](#examples)
@@ -28,8 +32,17 @@ tags: ["claude-code"]
   - [Cache expensive operations](#cache-expensive-operations)
   - [Windows configuration](#windows-configuration)
 - [Subagent status lines](#subagent-status-lines)
+  - [Task fields](#task-fields)
 - [Tips](#tips)
 - [Troubleshooting](#troubleshooting)
+  - [Status line not appearing](#status-line-not-appearing)
+  - [Status line shows -- or empty values](#status-line-shows-or-empty-values)
+  - [Context percentage shows unexpected values](#context-percentage-shows-unexpected-values)
+  - [OSC 8 links not clickable](#osc-8-links-not-clickable)
+  - [Display glitches with escape sequences](#display-glitches-with-escape-sequences)
+  - [Workspace trust required](#workspace-trust-required)
+  - [Script errors or hangs](#script-errors-or-hangs)
+  - [Notifications share the status line row](#notifications-share-the-status-line-row)
 
 Interface
 
@@ -173,7 +186,16 @@ Your status line appears at the bottom of the interface. Claude Code reloads set
 
 How status lines work
 
-Claude Code runs your script with [JSON session data](#available-data) on stdin and displays whatever the script prints to stdout. **When it updates** Your script runs once when a session starts, including when you resume one. After that, it runs again when:
+Claude Code runs your script with [JSON session data](#available-data) on stdin and displays whatever the script prints to stdout.
+
+The status line runs locally and does not consume API tokens. It temporarily hides during certain UI interactions, including the help menu and permission prompts.
+
+
+[​](#when-the-status-line-updates)
+
+When the status line updates
+
+Your script runs once when a session starts, including when you resume one. After that, it runs again when:
 
 - A new assistant message arrives
 - `/compact` finishes
@@ -184,15 +206,25 @@ Claude Code runs your script with [JSON session data](#available-data) on stdin 
 - A [rate-limit window](#rate-limit-usage) in the data your script last received reaches its `resets_at` time
 - A warm [prompt cache](#prompt-cache-fields) in the data your script last received reaches its `expires_at` time
 
-Claude Code debounces updates at 300ms, so rapid changes batch together and your script runs once after the changes stop. A change to the `command` itself skips the debounce: Claude Code runs the new command right away. If a new update triggers while your script is still running, Claude Code cancels the in-flight script. If you edit your script, the changes appear the next time an update trigger re-runs it. The event-driven triggers can go quiet when the main session is idle, for example while a coordinator waits on background subagents. To keep time-based or externally-sourced segments current during idle periods, set [`refreshInterval`](#manually-configure-a-status-line) to also re-run the command on a fixed timer. **What your script can output**
+Claude Code debounces updates at 300ms, so rapid changes batch together and your script runs once after the changes stop. A change to the `command` itself skips the debounce: Claude Code runs the new command right away. If a new update triggers while your script is still running, Claude Code cancels the in-flight script. If you edit your script, the changes appear the next time an update trigger re-runs it. The event-driven triggers can go quiet when the main session is idle, for example while a coordinator waits on background subagents. To keep time-based or externally-sourced segments current during idle periods, set [`refreshInterval`](#manually-configure-a-status-line) to also re-run the command on a fixed timer.
+
+
+[​](#what-your-script-can-output)
+
+What your script can output
+
+Your script can print more than a single line of plain text:
 
 - **Multiple lines**: each `echo` or `print` statement displays as a separate row. See the [multi-line example](#display-multiple-lines).
 - **Colors**: use [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors) like `\033[32m` for green (terminal must support them). See the [git status example](#git-status-with-colors).
 - **Links**: use [OSC 8 escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code#OSC) to make text clickable (Cmd+click on macOS, Ctrl+click on Windows/Linux). Requires a terminal that supports hyperlinks like iTerm2, Kitty, or WezTerm. See the [clickable links example](#clickable-links).
 
-**Sizing output to the terminal** Claude Code captures your script’s output instead of connecting it directly to the terminal, so `tput cols` and language-level width detection cannot read the terminal size from inside the script. Read the `COLUMNS` and `LINES` environment variables instead. Claude Code sets these to the current terminal dimensions before running your script.
 
-The status line runs locally and does not consume API tokens. It temporarily hides during certain UI interactions, including the help menu and permission prompts.
+[​](#size-output-to-the-terminal)
+
+Size output to the terminal
+
+Claude Code captures your script’s output instead of connecting it directly to the terminal, so `tput cols` and language-level width detection cannot read the terminal size from inside the script. Read the `COLUMNS` and `LINES` environment variables instead. Claude Code sets these to the current terminal dimensions before running your script.
 
 
 [​](#available-data)
@@ -201,47 +233,48 @@ Available data
 
 Claude Code sends the following JSON fields to your script via stdin:
 
-| Field                                                                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `model.id`, `model.display_name`                                                 | Current model identifier and display name                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `cwd`, `workspace.current_dir`                                                   | Current working directory. Both fields contain the same value; `workspace.current_dir` is preferred for consistency with `workspace.project_dir`.                                                                                                                                                                                                                                                                                                                           |
-| `workspace.project_dir`                                                          | Directory where Claude Code was launched, which may differ from `cwd` if the working directory changes during a session                                                                                                                                                                                                                                                                                                                                                     |
-| `workspace.added_dirs`                                                           | Additional directories added via `/add-dir` or `--add-dir`. Empty array if none have been added                                                                                                                                                                                                                                                                                                                                                                             |
-| `workspace.git_worktree`                                                         | Git worktree name when the current directory is inside a linked worktree created with `git worktree add`. Absent in the main working tree. Populated for any git worktree, unlike `worktree.*`, which is present only while the session is in a [worktree session](worktrees.md)                                                                                                                                                                                      |
-| `workspace.repo.host`, `workspace.repo.owner`, `workspace.repo.name`             | Repository identity parsed from the `origin` remote, for example, `"github.com"`, `"anthropics"`, `"claude-code"`. Absent outside a git repository or when no `origin` remote is configured. For a gitlab.com project nested in subgroups, `owner` is the full namespace path with slashes, such as `"group/subgroup"`. Before v2.1.260, `workspace.repo` was absent for these projects                                                                                     |
-| `cost.total_cost_usd`                                                            | Estimated session cost in USD, computed client-side at list price unless a [`modelPricing`](settings-reference.md#modelpricing) table is in effect. May differ from your actual bill. Resets to \$0 when `/clear` starts a new session. Before v2.1.211, the total carried over after `/clear`                                                                                                                                                                        |
-| `cost.total_duration_ms`                                                         | Total wall-clock time the session has been running, in milliseconds. Accumulates across resumes and doesn’t include time while the session isn’t running                                                                                                                                                                                                                                                                                                                    |
-| `cost.total_api_duration_ms`                                                     | Total time spent waiting for API responses in milliseconds                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `cost.total_lines_added`, `cost.total_lines_removed`                             | Lines of code changed                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `context_window.total_input_tokens`, `context_window.total_output_tokens`        | Token counts currently in the context window, from the most recent API response. Input includes cache reads and writes                                                                                                                                                                                                                                                                                                                                                      |
-| `context_window.context_window_size`                                             | Maximum context window size in tokens. 200000 by default, or 1000000 for models with extended context.                                                                                                                                                                                                                                                                                                                                                                      |
-| `context_window.used_percentage`                                                 | Pre-calculated percentage of context window used                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `context_window.remaining_percentage`                                            | Pre-calculated percentage of context window remaining                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `context_window.current_usage`                                                   | Token counts from the last API call, described in [context window fields](#context-window-fields)                                                                                                                                                                                                                                                                                                                                                                           |
-| `exceeds_200k_tokens`                                                            | Whether the total token count (input, cache, and output tokens combined) from the most recent API response exceeds 200k. This is a fixed threshold regardless of actual context window size.                                                                                                                                                                                                                                                                                |
-| `fast_mode`                                                                      | Whether [fast mode](fast-mode.md) is enabled for the session                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `effort.level`                                                                   | Current reasoning effort (`low`, `medium`, `high`, `xhigh`, or `max`). Reflects the live session value, including mid-session `/effort` changes. Absent when the current model does not support the effort parameter                                                                                                                                                                                                                                                        |
-| `thinking.enabled`                                                               | Whether extended thinking is enabled for the session                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `rate_limits.five_hour.used_percentage`, `rate_limits.seven_day.used_percentage` | Percentage of the 5-hour or 7-day rate limit consumed, from 0 to 100                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `rate_limits.five_hour.resets_at`, `rate_limits.seven_day.resets_at`             | Unix epoch seconds when the 5-hour or 7-day rate limit window resets                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `rate_limits.spend_limit.used_percentage`, `rate_limits.spend_limit.resets_at`   | Behind a [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway-spend-limits.md#usage-warnings-in-claude-code), the percentage used of the spend limit that applies to you, and the Unix epoch seconds when its period resets. The percentage runs from 0 to 100, or above 100 once you exceed the limit. Requires Claude Code v2.1.251 or later                                                                                                                                   |
-| `prompt_cache`                                                                   | The session’s [prompt cache](prompt-caching.md) statistics for the main conversation: hit ratio, misses, and whether the cache is warm. See [prompt cache fields](#prompt-cache-fields) for every field. Absent until the main conversation’s first API response. Requires Claude Code v2.1.251 or later                                                                                                                                                              |
-| `session_id`                                                                     | Unique session identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `session_name`                                                                   | Session name. Uses the custom name set with the `--name` flag or `/rename` when one exists, otherwise the AI-generated session title. The [default display name](sessions.md#name-your-sessions), such as `my-app-3f`, doesn’t populate this field. Absent when the session has neither a custom name nor an AI-generated title                                                                                                                                       |
-| `prompt_id`                                                                      | UUID identifying the user prompt currently being processed. Matches the [`prompt.id` attribute on OpenTelemetry events](../13-Enterprise-Admin/monitoring-usage.md#event-correlation-attributes). Absent until the first user input. Requires Claude Code v2.1.196 or later                                                                                                                                                                                                                  |
-| `transcript_path`                                                                | Path to conversation transcript file                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `version`                                                                        | Claude Code version                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `output_style.name`                                                              | Name of the current output style                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `vim.mode`                                                                       | Current vim mode (`NORMAL`, `INSERT`, `VISUAL`, or `VISUAL LINE`) when [vim mode](interactive-mode.md#vim-editor-mode) is enabled                                                                                                                                                                                                                                                                                                                                     |
-| `agent.name`                                                                     | Agent name when running with the `--agent` flag or agent settings configured                                                                                                                                                                                                                                                                                                                                                                                                |
-| `pr.number`, `pr.url`                                                            | Open pull request for the current branch. Mirrors the PR badge in the footer. In a repository with a GitLab remote, Claude Code fills these fields from the branch’s open [merge request](interactive-mode.md#gitlab-merge-requests) instead, so `pr.number` is the merge request number. Merge request data requires Claude Code v2.1.234 or later. Absent when not in a git repository, until a pull request or merge request is found, or once it merges or closes |
-| `pr.review_state`                                                                | Review status of the open PR: `approved`, `pending`, `changes_requested`, or `draft`. May be independently absent even when `pr` is present                                                                                                                                                                                                                                                                                                                                 |
-| `pr.kind`                                                                        | `mr` when `pr` describes a [GitLab merge request](interactive-mode.md#gitlab-merge-requests). Absent for GitHub pull requests, so scripts written before this field keep working. For a merge request, Claude Code sets `review_state` to `approved` when GitLab reports it mergeable, `pending` for any other open state, and `draft` for a draft. Requires Claude Code v2.1.234 or later                                                                            |
-| `worktree.name`                                                                  | Name of the active worktree. Present only while the session is in a [worktree session](worktrees.md)                                                                                                                                                                                                                                                                                                                                                                  |
-| `worktree.path`                                                                  | Absolute path to the worktree directory                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `worktree.branch`                                                                | Git branch name for the worktree (for example, `"worktree-my-feature"`). Absent for hook-based worktrees                                                                                                                                                                                                                                                                                                                                                                    |
-| `worktree.original_cwd`                                                          | The directory Claude was in before entering the worktree                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `worktree.original_branch`                                                       | Git branch checked out before entering the worktree. Absent for hook-based worktrees                                                                                                                                                                                                                                                                                                                                                                                        |
+| Field                                                                                                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `model.id`, `model.display_name`                                                                          | Current model identifier and display name                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `cwd`, `workspace.current_dir`                                                                            | Current working directory. Both fields contain the same value; `workspace.current_dir` is preferred for consistency with `workspace.project_dir`.                                                                                                                                                                                                                                                                                                                           |
+| `workspace.project_dir`                                                                                   | Directory where Claude Code was launched, which may differ from `cwd` if the working directory changes during a session                                                                                                                                                                                                                                                                                                                                                     |
+| `workspace.added_dirs`                                                                                    | Additional directories added via `/add-dir` or `--add-dir`. Empty array if none have been added                                                                                                                                                                                                                                                                                                                                                                             |
+| `workspace.git_worktree`                                                                                  | Git worktree name when the current directory is inside a linked worktree created with `git worktree add`. Absent in the main working tree. Populated for any git worktree, unlike `worktree.*`, which is present only while the session is in a [worktree session](worktrees.md)                                                                                                                                                                                      |
+| `workspace.repo.host`, `workspace.repo.owner`, `workspace.repo.name`                                      | Repository identity parsed from the `origin` remote, for example, `"github.com"`, `"anthropics"`, `"claude-code"`. Absent outside a git repository or when no `origin` remote is configured. For a gitlab.com project nested in subgroups, `owner` is the full namespace path with slashes, such as `"group/subgroup"`. Before v2.1.260, `workspace.repo` was absent for these projects                                                                                     |
+| `cost.total_cost_usd`                                                                                     | Estimated session cost in USD, computed client-side at list price unless a [`modelPricing`](settings-reference.md#modelpricing) table is in effect. May differ from your actual bill. Resets to \$0 when `/clear` starts a new session. Before v2.1.211, the total carried over after `/clear`                                                                                                                                                                        |
+| `cost.total_duration_ms`                                                                                  | Total wall-clock time the session has been running, in milliseconds. Accumulates across resumes and doesn’t include time while the session isn’t running                                                                                                                                                                                                                                                                                                                    |
+| `cost.total_api_duration_ms`                                                                              | Total time spent waiting for API responses in milliseconds                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `cost.total_lines_added`, `cost.total_lines_removed`                                                      | Lines of code changed                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `context_window.total_input_tokens`, `context_window.total_output_tokens`                                 | Token counts currently in the context window, from the most recent API response. Input includes cache reads and writes                                                                                                                                                                                                                                                                                                                                                      |
+| `context_window.context_window_size`                                                                      | Maximum context window size in tokens. 200000 by default, or 1000000 for models with extended context.                                                                                                                                                                                                                                                                                                                                                                      |
+| `context_window.used_percentage`                                                                          | Pre-calculated percentage of context window used                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `context_window.remaining_percentage`                                                                     | Pre-calculated percentage of context window remaining                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `context_window.current_usage`                                                                            | Token counts from the last API call, described in [context window fields](#context-window-fields)                                                                                                                                                                                                                                                                                                                                                                           |
+| `exceeds_200k_tokens`                                                                                     | Whether the total token count (input, cache, and output tokens combined) from the most recent API response exceeds 200k. This is a fixed threshold regardless of actual context window size.                                                                                                                                                                                                                                                                                |
+| `fast_mode`                                                                                               | Whether [fast mode](fast-mode.md) is enabled for the session                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `effort.level`                                                                                            | Current reasoning effort (`low`, `medium`, `high`, `xhigh`, or `max`). Reflects the live session value, including mid-session `/effort` changes. Absent when the current model does not support the effort parameter                                                                                                                                                                                                                                                        |
+| `thinking.enabled`                                                                                        | Whether extended thinking is enabled for the session                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `rate_limits.five_hour.used_percentage`, `rate_limits.seven_day.used_percentage`                          | Percentage of the 5-hour or 7-day rate limit consumed, from 0 to 100                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `rate_limits.five_hour.resets_at`, `rate_limits.seven_day.resets_at`                                      | Unix epoch seconds when the 5-hour or 7-day rate limit window resets                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `rate_limits.spend_limit.used_percentage`, `rate_limits.spend_limit.resets_at`                            | Behind a Claude apps gateway, how much of your spend limit you have used and when its period resets. See [spend limit fields](#spend-limit-fields). Requires Claude Code v2.1.251 or later                                                                                                                                                                                                                                                                                  |
+| `rate_limits.spend_limit.used_usd`, `rate_limits.spend_limit.limit_usd`, `rate_limits.spend_limit.period` | Your estimated spend and your limit in US dollars, and the limit’s period. These fields can be absent. See [spend limit fields](#spend-limit-fields). Requires v2.1.284 or later on both Claude Code and the gateway                                                                                                                                                                                                                                                        |
+| `prompt_cache`                                                                                            | The session’s [prompt cache](prompt-caching.md) statistics for the main conversation: hit ratio, misses, and whether the cache is warm. See [prompt cache fields](#prompt-cache-fields) for every field. Absent until the main conversation’s first API response. Requires Claude Code v2.1.251 or later                                                                                                                                                              |
+| `session_id`                                                                                              | Unique session identifier                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `session_name`                                                                                            | Session name. Uses the custom name set with the `--name` flag or `/rename` when one exists, otherwise the AI-generated session title. The [default display name](sessions.md#name-your-sessions), such as `my-app-3f`, doesn’t populate this field. Absent when the session has neither a custom name nor an AI-generated title                                                                                                                                       |
+| `prompt_id`                                                                                               | UUID identifying the user prompt currently being processed. Matches the [`prompt.id` attribute on OpenTelemetry events](../13-Enterprise-Admin/monitoring-usage.md#event-correlation-attributes). Absent until the first user input                                                                                                                                                                                                                                                          |
+| `transcript_path`                                                                                         | Path to conversation transcript file                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `version`                                                                                                 | Claude Code version                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `output_style.name`                                                                                       | Name of the current output style                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `vim.mode`                                                                                                | Current vim mode (`NORMAL`, `INSERT`, `VISUAL`, or `VISUAL LINE`) when [vim mode](interactive-mode.md#vim-editor-mode) is enabled                                                                                                                                                                                                                                                                                                                                     |
+| `agent.name`                                                                                              | Agent name when running with the `--agent` flag or agent settings configured                                                                                                                                                                                                                                                                                                                                                                                                |
+| `pr.number`, `pr.url`                                                                                     | Open pull request for the current branch. Mirrors the PR badge in the footer. In a repository with a GitLab remote, Claude Code fills these fields from the branch’s open [merge request](interactive-mode.md#gitlab-merge-requests) instead, so `pr.number` is the merge request number. Merge request data requires Claude Code v2.1.234 or later. Absent when not in a git repository, until a pull request or merge request is found, or once it merges or closes |
+| `pr.review_state`                                                                                         | Review status of the open PR: `approved`, `pending`, `changes_requested`, or `draft`. May be independently absent even when `pr` is present                                                                                                                                                                                                                                                                                                                                 |
+| `pr.kind`                                                                                                 | `mr` when `pr` describes a [GitLab merge request](interactive-mode.md#gitlab-merge-requests). Absent for GitHub pull requests, so scripts written before this field keep working. For a merge request, Claude Code sets `review_state` to `approved` when GitLab reports it mergeable, `pending` for any other open state, and `draft` for a draft. Requires Claude Code v2.1.234 or later                                                                            |
+| `worktree.name`                                                                                           | Name of the active worktree. Present only while the session is in a [worktree session](worktrees.md)                                                                                                                                                                                                                                                                                                                                                                  |
+| `worktree.path`                                                                                           | Absolute path to the worktree directory                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `worktree.branch`                                                                                         | Git branch name for the worktree (for example, `"worktree-my-feature"`). Absent for hook-based worktrees                                                                                                                                                                                                                                                                                                                                                                    |
+| `worktree.original_cwd`                                                                                   | The directory Claude was in before entering the worktree                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `worktree.original_branch`                                                                                | Git branch checked out before entering the worktree. Absent for hook-based worktrees                                                                                                                                                                                                                                                                                                                                                                                        |
 
 Full JSON schema
 
@@ -334,7 +367,10 @@ Your status line command receives this JSON structure via stdin:
     },
     "spend_limit": {
       "used_percentage": 62.8,
-      "resets_at": 1740787200
+      "resets_at": 1740787200,
+      "used_usd": 314.12,
+      "limit_usd": 500,
+      "period": "monthly"
     }
   },
   "vim": {
@@ -397,6 +433,18 @@ The `current_usage` object contains:
 - `cache_read_input_tokens`: tokens read from cache
 
 For what the cache fields mean and how they’re billed, see [check cache performance](prompt-caching.md#check-cache-performance). The `used_percentage` field is calculated from input tokens only: `input_tokens + cache_creation_input_tokens + cache_read_input_tokens`. It does not include `output_tokens`. If you calculate context percentage manually from `current_usage`, use the same input-only formula to match `used_percentage`. The `current_usage` object is `null` before the first API call in a session, and again immediately after `/compact` until the next API call repopulates it.
+
+
+[​](#spend-limit-fields)
+
+Spend limit fields
+
+Behind a [Claude apps gateway with spend limits](../13-Enterprise-Admin/claude-apps-gateway-spend-limits.md#usage-warnings-in-claude-code), the `rate_limits.spend_limit` object describes the spend limit that applies to you. It appears after the session’s first API response and requires Claude Code v2.1.251 or later. Your script receives its fields on separate schedules:
+
+- `used_percentage` and `resets_at`: come with every response, so they are present whenever `spend_limit` is. `used_percentage` runs from 0 to 100, or above 100 once you exceed the limit, and `resets_at` is the Unix epoch seconds when the limit’s period resets.
+- `used_usd`, `limit_usd`, and `period`: your estimated spend so far and your limit in US dollars, and the period the limit covers, one of `daily`, `weekly`, or `monthly`. The gateway [computes `used_usd` from token counts](../13-Enterprise-Admin/claude-apps-gateway-spend-limits.md#how-requests-are-priced), so it’s an estimate and not a billed amount. Claude Code reads them from the gateway in a separate request, about every five minutes while you send requests. The dollar amounts can be about five minutes older than `used_percentage`, so the two may briefly disagree. Requires v2.1.284 or later on both Claude Code and the gateway.
+
+Treat `used_usd`, `limit_usd`, and `period` as optional even when `spend_limit` is present. Your script receives the percentage before them, and they stay absent if you set `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`, which turns that request off. Read each with a fallback in your script, such as `jq -r '.rate_limits.spend_limit.used_usd // empty'`.
 
 
 [​](#prompt-cache-fields)
@@ -874,7 +922,7 @@ process.stdin.on('end', () => {
 
 Rate limit usage
 
-Display claude.ai subscription rate limit usage in the status line. The `rate_limits` object contains a rolling `five_hour` window and a weekly `seven_day` window. Each window provides `used_percentage`, from 0 to 100, and `resets_at`, the Unix epoch seconds when the window resets. Behind a Claude apps gateway with spend limits, `rate_limits` carries `spend_limit` with the same two fields for the spend limit that applies to you, except that its `used_percentage` can go above 100 once you exceed the limit. Requires Claude Code v2.1.251 or later. The `rate_limits` object is only present for claude.ai Pro and Max subscribers, or behind a Claude apps gateway with spend limits, and only after the first API response. Each script handles the absent field gracefully:
+Display claude.ai subscription rate limit usage, or your spend against a Claude apps gateway spend limit, in the status line. For subscribers, the `rate_limits` object contains a rolling `five_hour` window and a weekly `seven_day` window. Each window provides `used_percentage`, from 0 to 100, and `resets_at`, the Unix epoch seconds when the window resets. Behind a gateway, read the `spend_limit` object, described under [spend limit fields](#spend-limit-fields). The `rate_limits` object is only present for claude.ai Pro and Max subscribers, or behind a Claude apps gateway with spend limits, and only after the first API response. Each script handles the absent fields gracefully, and behind a gateway prints `spend: $314.12 / $500`, or `spend: 63%` while the dollar fields are absent:
 
 Bash
 
@@ -894,6 +942,11 @@ WEEK=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
 LIMITS=""
 [ -n "$FIVE_H" ] && LIMITS="5h: $(printf '%.0f' "$FIVE_H")%"
 [ -n "$WEEK" ] && LIMITS="${LIMITS:+$LIMITS }7d: $(printf '%.0f' "$WEEK")%"
+
+# Behind a Claude apps gateway: dollars when the gateway reports them, else the percentage
+SPEND_PCT=$(echo "$input" | jq -r '.rate_limits.spend_limit.used_percentage // empty')
+SPEND_USD=$(echo "$input" | jq -r '.rate_limits.spend_limit | select(.used_usd != null) | "$\(.used_usd) / $\(.limit_usd)"')
+[ -n "$SPEND_PCT" ] && LIMITS="${LIMITS:+$LIMITS }spend: ${SPEND_USD:-$(printf '%.0f' "$SPEND_PCT")%}"
 
 [ -n "$LIMITS" ] && echo "[$MODEL] | $LIMITS" || echo "[$MODEL]"
 ```
@@ -915,6 +968,14 @@ if five_h is not None:
 if week is not None:
     parts.append(f"7d: {week:.0f}%")
 
+# Behind a Claude apps gateway: dollars when the gateway reports them, else the percentage
+spend = rate.get('spend_limit', {})
+if spend.get('used_percentage') is not None:
+    if spend.get('used_usd') is not None:
+        parts.append(f"spend: ${spend['used_usd']} / ${spend['limit_usd']}")
+    else:
+        parts.append(f"spend: {spend['used_percentage']:.0f}%")
+
 if parts:
     print(f"[{model}] | {' '.join(parts)}")
 else:
@@ -935,6 +996,14 @@ process.stdin.on('end', () => {
 
     if (fiveH != null) parts.push(`5h: ${Math.round(fiveH)}%`);
     if (week != null) parts.push(`7d: ${Math.round(week)}%`);
+
+    // Behind a Claude apps gateway: dollars when the gateway reports them, else the percentage
+    const spend = data.rate_limits?.spend_limit;
+    if (spend?.used_percentage != null) {
+        parts.push(spend.used_usd != null
+            ? `spend: $${spend.used_usd} / $${spend.limit_usd}`
+            : `spend: ${Math.round(spend.used_percentage)}%`);
+    }
 
     console.log(parts.length ? `[${model}] | ${parts.join(' ')}` : `[${model}]`);
 });
@@ -1151,7 +1220,31 @@ The `subagentStatusLine` setting renders a custom row body for each [subagent](.
 }
 ```
 
-The command runs once per refresh tick and receives all visible subagent rows as a single JSON object on stdin. The input includes the [base hook fields](../07-Hooks/hooks.md#common-input-fields), a `columns` field with the usable row width, and a `tasks` array. Each task has `id`, `name`, `type`, `status`, `description`, `label`, `startTime`, `model`, `effort`, `contextWindowSize`, `tokenCount`, `tokenSamples`, and `cwd`. The per-task `model` field is the resolved model ID the task runs on. `contextWindowSize` is that model’s context window in tokens, computed the same way as the main status line’s `context_window.context_window_size`, so you can render a per-row percentage from `tokenCount`. Both fields require Claude Code v2.1.205 or later and are omitted for a task whose model isn’t resolved yet. The per-task `effort` field is the reasoning effort set for that subagent, in its [definition frontmatter](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields) or on the individual invocation. The value is either one of the effort level strings `low`, `medium`, `high`, `xhigh`, or `max`, or a numeric token budget. The field reports the configured value as written: if the model doesn’t support that level, the effort Claude Code actually applies may differ. The field requires Claude Code v2.1.214 or later and is absent when the subagent inherits the session’s effort level. Write one JSON line to stdout per row you want to override, in the form `{"id": "<task id>", "content": "<row body>"}`. The `content` string is rendered as-is, including ANSI colors and OSC 8 hyperlinks. Omit a task’s `id` to keep the default rendering for that row; emit an empty `content` string to hide it. The same trust, `disableAllHooks`, and [`allowManagedHooksOnly`](settings-reference.md#allowmanagedhooksonly) gates that apply to `statusLine` apply here. Plugins can ship a default `subagentStatusLine` in their [`settings.json`](../08-Plugins-Skills/plugins-reference.md#standard-layout), but unlike hooks, plugin values don’t run under `allowManagedHooksOnly` even when the plugin is force-enabled in managed settings `enabledPlugins`.
+The command runs once per refresh tick and receives all visible subagent rows as a single JSON object on stdin. The input includes the [base hook fields](../07-Hooks/hooks.md#common-input-fields), a `columns` field with the usable row width, and a `tasks` array with one entry per row, described in [Task fields](#task-fields). Write one JSON line to stdout per row you want to override, in the form `{"id": "<task id>", "content": "<row body>"}`. The `content` string is rendered as-is, including ANSI colors and OSC 8 hyperlinks. Omit a task’s `id` to keep the default rendering for that row; emit an empty `content` string to hide it. The same trust, `disableAllHooks`, and [`allowManagedHooksOnly`](settings-reference.md#allowmanagedhooksonly) gates that apply to `statusLine` apply here. Plugins can ship a default `subagentStatusLine` in their [`settings.json`](../08-Plugins-Skills/plugins-reference.md#standard-layout), but unlike hooks, plugin values don’t run under `allowManagedHooksOnly` even when the plugin is force-enabled in managed settings `enabledPlugins`.
+
+
+[​](#task-fields)
+
+Task fields
+
+Each entry in the `tasks` array describes one subagent row with the fields below. Fields marked optional are omitted when they have no value, so guard for their absence in your script.
+
+| Field               | Type                       | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
+|:--------------------|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                | string                     | Identifier of the task. Echo it as `id` in the line you write back for this row                                                                                                                                                                                                                                                                                                                                           |
+| `name`              | string, optional           | Name the subagent is [addressed by](../09-Agents-Patterns/sub-agents.md#subagent-names), when it has one                                                                                                                                                                                                                                                                                                                                  |
+| `type`              | string                     | Kind of task: `local_agent`                                                                                                                                                                                                                                                                                                                                                                                               |
+| `agentType`         | string                     | Subagent type the task runs as, such as the built-in [`Explore`](../09-Agents-Patterns/sub-agents.md#built-in-subagents) or a custom `code-reviewer`. Holds the same value that hooks receive as [`agent_type`](../07-Hooks/hooks.md#subagentstart). Requires Claude Code v2.1.293 or later                                                                                                                                                     |
+| `status`            | string                     | State of the task, such as `running`, `completed`, `failed`, or `killed`                                                                                                                                                                                                                                                                                                                                                  |
+| `description`       | string                     | Short description of the task, such as the one Claude gave when it spawned the subagent                                                                                                                                                                                                                                                                                                                                   |
+| `label`             | string                     | Short progress summary of the task when Claude Code has one, otherwise the same text as `description`                                                                                                                                                                                                                                                                                                                     |
+| `startTime`         | number                     | When the task started, in milliseconds since the Unix epoch                                                                                                                                                                                                                                                                                                                                                               |
+| `model`             | string, optional           | ID of the resolved model the task runs on. Omitted until the model is resolved. Requires Claude Code v2.1.205 or later                                                                                                                                                                                                                                                                                                    |
+| `effort`            | string or number, optional | Reasoning effort set for the subagent in its [definition frontmatter](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields) or on the individual invocation: `low`, `medium`, `high`, `xhigh`, `max`, or a numeric token budget. This is the configured value, and the effort Claude Code applies can differ when the model doesn’t support that level. Omitted when no effort is set. Requires Claude Code v2.1.213 or later |
+| `contextWindowSize` | number, optional           | Context window of `model` in tokens, computed the same way as the main status line’s [`context_window.context_window_size`](#context-window-fields), so you can render a per-row percentage from `tokenCount`. Omitted when `model` is. Requires Claude Code v2.1.205 or later                                                                                                                                            |
+| `tokenCount`        | number                     | Running token count of the subagent, the figure the default row shows                                                                                                                                                                                                                                                                                                                                                     |
+| `tokenSamples`      | array of numbers           | Up to the last 16 `tokenCount` readings, one per refresh tick, oldest first and ending with the current one                                                                                                                                                                                                                                                                                                               |
+| `cwd`               | string                     | Working directory of the subagent: its own directory when it runs in one, such as an isolated worktree, otherwise the session’s working directory                                                                                                                                                                                                                                                                         |
 
 
 [​](#tips)
@@ -1169,7 +1262,14 @@ Community projects like [ccstatusline](https://github.com/sirmalloc/ccstatusline
 
 Troubleshooting
 
-**Status line not appearing**
+If the status line is blank, start with [Status line not appearing](#status-line-not-appearing). A folder you haven’t trusted and a script that fails also leave it blank, as [Workspace trust required](#workspace-trust-required) and [Script errors or hangs](#script-errors-or-hangs) describe.
+
+
+[​](#status-line-not-appearing)
+
+Status line not appearing
+
+If you configured a status line and nothing shows at the bottom of the interface, work through these checks:
 
 - Verify your script is executable: `chmod +x ~/.claude/statusline.sh`
 - Check that your script outputs to stdout, not stderr
@@ -1180,18 +1280,26 @@ Troubleshooting
 - Run `claude --debug` to log your script’s stderr on every status line invocation, and its exit code on the first invocation in a session
 - Ask Claude to read your settings file and execute the `statusLine` command directly to surface errors
 
-**Status line shows `--` or empty values**
 
-- Fields may be `null` before the first API response completes
-- Handle null values in your script with fallbacks such as `// 0` in jq
-- Restart Claude Code if values remain empty after multiple messages
+[​](#status-line-shows-or-empty-values)
 
-**Context percentage shows unexpected values**
+Status line shows `--` or empty values
 
-- Use `used_percentage` for the simplest accurate context state
-- The status line reports the counts from the last API response, while `/context` adds an estimate for messages added since that response, so `/context` can read higher until the next response
+Fields may be `null` before the first API response completes, so handle null values in your script with fallbacks such as `// 0` in jq. Restart Claude Code if values remain empty after multiple messages.
 
-**OSC 8 links not clickable**
+
+[​](#context-percentage-shows-unexpected-values)
+
+Context percentage shows unexpected values
+
+The status line reports the counts from the last API response, while `/context` adds an estimate for messages added since that response, so `/context` can read higher until the next response. Use `used_percentage` for the simplest accurate context state. For the formula behind `used_percentage`, see [Context window fields](#context-window-fields).
+
+
+[​](#osc-8-links-not-clickable)
+
+OSC 8 links not clickable
+
+Whether a link is clickable depends on your terminal, on whether Claude Code detects hyperlink support in it, on whether SSH or tmux strips the escape sequence, and on how your script prints it:
 
 - Verify your terminal supports OSC 8 hyperlinks (iTerm2, Kitty, WezTerm)
 - Terminal.app does not support clickable links
@@ -1209,25 +1317,38 @@ Troubleshooting
 - SSH and tmux sessions may strip OSC sequences depending on configuration
 - If escape sequences appear as literal text like `\e]8;;`, use `printf '%b'` instead of `echo -e` for more reliable escape handling
 
-**Display glitches with escape sequences**
 
-- Complex escape sequences (ANSI colors, OSC 8 links) can occasionally cause garbled output if they overlap with other UI updates
-- If you see corrupted text, try simplifying your script to plain text output
-- Multi-line status lines with escape codes are more prone to rendering issues than single-line plain text
+[​](#display-glitches-with-escape-sequences)
 
-**Workspace trust required**
+Display glitches with escape sequences
 
-- Because `statusLine` executes a shell command, Claude Code runs it under the same [workspace trust rule as hooks in settings files](permissions.md#what-runs-before-you-trust-a-folder). Accepting the dialog for the folder, or for a parent directory whose trust extends to it, is enough.
-- Until then, the status line stays blank, and `claude --debug` logs `Status line command skipped: workspace trust not accepted`. Restart Claude Code and accept the trust dialog to enable it.
+Complex escape sequences (ANSI colors, OSC 8 links) can occasionally cause garbled output if they overlap with other UI updates. Multi-line status lines with escape codes are more prone to rendering issues than single-line plain text. If you see corrupted text, try simplifying your script to plain text output.
 
-**Script errors or hangs**
+
+[​](#workspace-trust-required)
+
+Workspace trust required
+
+Until you accept the workspace trust dialog, the status line stays blank. Because `statusLine` executes a shell command, Claude Code runs it under the same [workspace trust rule as hooks in settings files](permissions.md#what-runs-before-you-trust-a-folder). Accepting the dialog for the folder, or for a parent directory whose trust extends to it, is enough. Until then, `claude --debug` logs `Status line command skipped: workspace trust not accepted`. Restart Claude Code and accept the trust dialog to enable it.
+
+
+[​](#script-errors-or-hangs)
+
+Script errors or hangs
+
+Claude Code displays your script’s output only after the script exits with code 0:
 
 - Scripts that exit with non-zero codes or produce no output cause the status line to go blank
 - Slow scripts block the status line from updating until they complete. Keep scripts fast to avoid stale output.
 - If a new update triggers while a slow script is running, the in-flight script is cancelled
 - Test your script independently with mock input before configuring it
 
-**Notifications share the status line row** Outside [fullscreen rendering](fullscreen.md), Claude Code shows notifications on the same row as your status line. In fullscreen rendering, Claude Code gives notifications a row of their own.
+
+[​](#notifications-share-the-status-line-row)
+
+Notifications share the status line row
+
+Outside [fullscreen rendering](fullscreen.md), Claude Code shows notifications on the same row as your status line. In fullscreen rendering, Claude Code gives notifications a row of their own.
 
 - System notifications like MCP server errors and auto-updates display on the right side of the row. Transient notifications such as the context-low warning also cycle through this area.
 - Enabling verbose mode adds a token counter to this area

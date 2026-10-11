@@ -2,7 +2,7 @@
 title: "Scan your codebase for vulnerabilities - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-security"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:41Z"
+fetched_at: "2026-10-06T06:23:15Z"
 tags: ["claude-code"]
 ---
 
@@ -63,7 +63,7 @@ On a third-party provider, the `sonnet` alias can resolve to a different version
 
 Install the plugin
 
-In a Claude Code session, install from the [official Anthropic marketplace](../08-Plugins-Skills/plugins-anthropic-marketplaces.md):
+In the VS Code extension or the desktop app, install it by following [Install a plugin](../08-Plugins-Skills/discover-plugins.md#install-a-plugin). In a terminal, start Claude Code by running `claude`, then enter this at its prompt to install from the [official Anthropic marketplace](../08-Plugins-Skills/plugins-anthropic-marketplaces.md):
 
 ```python
 /plugin install claude-security@claude-plugins-official
@@ -74,7 +74,7 @@ The command opens the plugin’s details, where you choose an [installation scop
 - If it reports `Marketplace "claude-plugins-official" not found`, add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 - If it reports that it [can’t find the plugin in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin), check the plugin name for a typo.
 
-Check the install summary. If it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to activate the plugin in your current session. Once the plugin is active, you’re ready to [scan and fix your codebase](#scan-and-fix-your-codebase).
+Check the install summary. If it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to activate the plugin in your current session. Once the plugin is active, you’re ready to [scan and fix your codebase](#scan-and-fix-your-codebase).
 
 
 [​](#uninstall-the-plugin)

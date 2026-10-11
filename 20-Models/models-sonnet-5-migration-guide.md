@@ -169,7 +169,7 @@ Items 4 and 5 in the following list are breaking changes. `max_tokens` remains a
 
 5.  **Sampling parameters removed:** Sampling parameters (`temperature`, `top_p`, `top_k`) set to a non-default value are not accepted and return a 400 error.
 
-6.  **Cybersecurity safeguards:** Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused. Refusals return as a successful HTTP 200 response with `stop_reason: "refusal"`, not an error. See [Real-time cyber safeguards on Claude Opus and Sonnet](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for what the safeguards block and how legitimate security work can apply to the Cyber Verification Program.
+6.  **Cybersecurity safeguards:** Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused. Refusals return as a successful HTTP 200 response with `stop_reason: "refusal"`, not an error. See [Real-time cyber safeguards on Claude Opus and Sonnet](https://platform.claude.com/docs/en/models/sonnet-5/real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) for what the safeguards block and how legitimate security work can apply to the Cyber Verification Program.
 
 ### Migration checklist
 
@@ -279,7 +279,7 @@ model = "claude-sonnet-5"  # After
 
 5.  **Pricing:** Claude Haiku 4.5 is priced at \$1/\$5 USD per million input/output tokens. Claude Sonnet 5 is priced at \$2/\$10 USD per million input/output tokens. See [Claude pricing](../17-Billing-Plans/about-claude-pricing.md).
 
-6.  **Cybersecurity safeguards:** Claude Sonnet 5 has real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused, returned as a successful HTTP 200 response with `stop_reason: "refusal"`. See [Real-time cyber safeguards on Claude Opus and Sonnet](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for what the safeguards block and how legitimate security work can apply to the Cyber Verification Program.
+6.  **Cybersecurity safeguards:** Claude Sonnet 5 has real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused, returned as a successful HTTP 200 response with `stop_reason: "refusal"`. See [Real-time cyber safeguards on Claude Opus and Sonnet](https://platform.claude.com/docs/en/models/sonnet-5/real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) for what the safeguards block and how legitimate security work can apply to the Cyber Verification Program.
 
 ### Migration checklist
 

@@ -16,7 +16,7 @@ Claude Opus 4.5 is state-of-the-art on tests of real-world software engineering:
 
 Opus 4.5 is available today on our apps, our API, and on all three major cloud platforms. If you’re a developer, simply use `claude-opus-4-5-20251101` via the [Claude API](../20-Models/about-claude-models-overview.md). Pricing is now \$5/\$25 per million tokens—making Opus-level capabilities accessible to even more users, teams, and enterprises.
 
-Alongside Opus, we’re releasing updates to the [Claude Developer Platform](https://www.claude.com/platform/api), [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md), and our [consumer apps](https://www.claude.com/download). There are new tools for longer-running agents and new ways to use Claude in Excel, Chrome, and on desktop. In the Claude apps, lengthy conversations no longer hit a wall. See our product-focused section below for details.
+Alongside Opus, we’re releasing updates to the [Claude Developer Platform](https://www.claude.com/platform/api), [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), and our [consumer apps](https://www.claude.com/download). There are new tools for longer-running agents and new ways to use Claude in Excel, Chrome, and on desktop. In the Claude apps, lengthy conversations no longer hit a wall. See our product-focused section below for details.
 
 ## First impressions
 
@@ -243,10 +243,10 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -273,7 +273,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -293,7 +293,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

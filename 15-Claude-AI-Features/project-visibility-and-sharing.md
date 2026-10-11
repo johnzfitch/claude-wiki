@@ -2,7 +2,7 @@
 title: "Manage project visibility and sharing | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519189-project-visibility-and-sharing"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:19Z"
+fetched_at: "2026-10-10T06:25:32Z"
 tags: ["claude-ai"]
 ---
 
@@ -77,7 +77,7 @@ Sharing a project with a group is currently in beta for Enterprise plans.
 
 On Enterprise plans, you can share a project with a group instead of adding each member individually. Access follows group membership, so members who join the group later get access automatically, and members who leave lose it.
 
-Before you can share with a group, an admin needs to turn on **Share resources with this group** in the group's visibility settings. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
+Before you can share with a group, an admin needs to turn on **Share resources with this group** in the group's visibility settings. See **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
 
 1.  Click the "Share" button to the right of the project name.
 

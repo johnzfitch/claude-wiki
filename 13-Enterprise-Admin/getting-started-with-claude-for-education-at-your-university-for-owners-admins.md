@@ -1,8 +1,8 @@
 ---
 title: "Get started with Claude for Education at your university (for Owners/Admins) | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11139094-get-started-with-claude-for-education-at-your-university-for-owners-admins"
+source_url: "https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:20Z"
+fetched_at: "2026-10-10T06:24:24Z"
 tags: ["enterprise"]
 ---
 
@@ -23,7 +23,7 @@ Before setting up your Claude for Education account, review these essential reso
 
 - **[Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning](https://support.claude.com/en/articles/10276682)**
 
-- **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**
+- **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**
 
 - **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**
 
@@ -58,15 +58,15 @@ After getting started with your plan, choose which Education features you’d li
 
 Familiarize yourself with audit logs, data retention controls, and other administrative features:
 
-- **[How to access audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**
+- **[How to access audit logs](how-to-access-audit-logs.md)**
 
-- **[Purchase and manage seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**
+- **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991)**
 
 - **[Configure custom data retention controls](https://support.claude.com/en/articles/10440198)**
 
 - **[Manage user feedback settings](https://support.claude.com/en/articles/10504844)**
 
-- **[How can I disable public projects?](../15-Claude-AI-Features/disable-public-projects-for-your-organization.md)**
+- **[How can I disable public projects?](https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects)**
 
 ## Set up support paths
 

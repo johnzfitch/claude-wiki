@@ -2,7 +2,7 @@
 title: "API usage primer for Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/claude_api_primer"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:29Z"
+fetched_at: "2026-10-04T08:33:24Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -56,7 +56,8 @@ This guide is designed to give Claude the basics of using the Claude API. It giv
 Recommended default for most work, including complex agentic coding: Claude Opus 5.5: claude-opus-5-5
 Step up for the hardest long-running agentic and research tasks, at 2.5x Claude Opus 5.5 pricing: Claude Fable 5.1: claude-fable-5-1
 Previous Opus model: Claude Opus 5: claude-opus-5
-Smart model: Claude Sonnet 5: claude-sonnet-5
+Smart model: Claude Sonnet 5.5: claude-sonnet-5-5
+Previous Sonnet model: Claude Sonnet 5: claude-sonnet-5
 For fast, cost-effective tasks: Claude Haiku 4.5: claude-haiku-4-5-20251001
 ```
 
@@ -238,6 +239,7 @@ Temperature must be set to 1 (or left unset) whenever thinking is enabled, on al
 Thinking is supported in the following models:
 
 - Claude Opus 5.5 (`claude-opus-5-5`, adaptive thinking only, always on)
+- Claude Sonnet 5.5 (`claude-sonnet-5-5`, adaptive thinking only, on by default)
 - Claude Opus 5 (
   claude-opus-5
   , adaptive thinking only, on by default)
@@ -534,35 +536,11 @@ When working with the `tool_choice` parameter, there are four possible options:
 - `tool` forces Claude to always use a particular tool.
 - `none` prevents Claude from using any tools.
 
-On Claude Opus 5.5, Claude Fable 5.1, and Claude Mythos 5.1, `any` and `tool` return a 400 error. Leave `tool_choice` at `auto` and set `"strict": true` on the tool definition to guarantee that any call Claude makes matches the tool's `input_schema`. See [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
+On Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, `any` and `tool` return a 400 error. Leave `tool_choice` at `auto` and set `"strict": true` on the tool definition to guarantee that any call Claude makes matches the tool's `input_schema`. See [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
 
 ### JSON output
 
 Tools do not necessarily need to be client functions. You can use tools anytime you want the model to return JSON output that follows a provided schema.
-
-### Chain of thought
-
-When using tools, Claude often shows its "chain of thought," that is, the step-by-step reasoning it uses to break down the problem and determine which tools to use.
-
-```python
-{
-  "role": "assistant",
-  "content": [
-    {
-      "type": "text",
-      "text": "<thinking>To answer this question, I will: 1. Use the get_weather tool to get the current weather in San Francisco. 2. Use the get_time tool to get the current time in the America/Los_Angeles timezone, which covers San Francisco, CA.</thinking>"
-    },
-    {
-      "type": "tool_use",
-      "id": "toolu_01A09q90qw90lq917835lq9",
-      "name": "get_weather",
-      "input": { "location": "San Francisco, CA" }
-    }
-  ]
-}
-```
-
-
 
 ### Parallel tool use
 
@@ -577,6 +555,22 @@ The response has a `stop_reason` of `tool_use` and one or more `tool_use` conten
 - `id`: A unique identifier for this particular tool use block.
 - `name`: The name of the tool being used.
 - `input`: An object containing the input being passed to the tool.
+
+```python
+{
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01A09q90qw90lq917835lq9",
+      "name": "get_weather",
+      "input": { "location": "San Francisco, CA" }
+    }
+  ]
+}
+```
+
+
 
 When you receive a tool use response, you should:
 

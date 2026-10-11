@@ -2,7 +2,7 @@
 title: "Getting started with Claude for nonprofits · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits"
 category: "01-Getting-Started"
-fetched_at: "2026-09-30T06:31:42Z"
+fetched_at: "2026-10-09T06:28:13Z"
 tags: ["connectors", "getting-started"]
 ---
 

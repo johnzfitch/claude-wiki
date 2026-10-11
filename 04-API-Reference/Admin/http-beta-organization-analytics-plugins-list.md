@@ -2,7 +2,7 @@
 title: "Get Plugin Usage - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/plugins/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:08Z"
+fetched_at: "2026-10-04T08:33:12Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -141,33 +124,57 @@ MCP Tunnels
 
 Analytics
 
-
-Get Activity Summaries
-
-Usage
-
-Cost
+Summaries
 
 Users
 
-Skills
+Apps
 
 Connectors
-
-Chat Projects
 
 Plugins
 
 
 Get Plugin Usage
 
+Skills
+
 Artifacts
+
+Usage Report
+
+User Usage Report
+
+Cost Report
+
+User Cost Report
 
 Spend Limits
 
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -371,11 +378,97 @@ formatdate
 
 
 
-BetaPluginUsage object{ data, next_page }
+data: array of [BetaAnalyticsPluginActivity](http-beta-organization-analytics.md#beta_analytics_plugin_activity) { claude_code_metrics, cowork_metrics, distinct_user_count, 8 more }
 
 
 
-Response for GET /v1/organizations/analytics/plugins.
+
+
+claude_code_metrics: [BetaAnalyticsPluginClaudeCodeMetrics](http-beta-organization-analytics.md#beta_analytics_plugin_claude_code_metrics) { distinct_session_plugin_used_count }
+
+
+
+Claude Code activity metrics for a single plugin on a given day.
+
+distinct_session_plugin_used_count: number or null
+
+
+
+Number of distinct Claude Code sessions in which the plugin was invoked. Null on aggregated rows where a distinct count cannot be computed.
+
+
+
+cowork_metrics: [BetaAnalyticsPluginCoworkMetrics](http-beta-organization-analytics.md#beta_analytics_plugin_cowork_metrics) { distinct_session_plugin_used_count }
+
+
+
+Cowork activity metrics for a single plugin on a given day.
+
+distinct_session_plugin_used_count: number or null
+
+
+
+Number of distinct Cowork sessions in which the plugin was invoked. Null on aggregated rows where a distinct count cannot be computed.
+
+distinct_user_count: number
+
+
+
+Number of distinct users with recorded install or invocation activity for the plugin on the requested day (install-only users count), or, in date-range mode, over the requested window — recomputed as an exact distinct count over the window's per-member daily rows, never a sum of per-day values.
+
+install_count: number or null
+
+
+
+Number of distinct users who installed the plugin on the requested day, or, in date-range mode, over the requested window — recomputed as an exact distinct count over the window's per-member daily rows, never a sum of per-day values.
+
+invocation_count: number
+
+
+
+Number of plugin invocations on the requested day
+
+plugin_name: string
+
+
+
+Name of the plugin
+
+plugin_id: optional string or null
+
+
+
+Stable plugin identifier when available (e.g. `serena@claude-plugins-official`). Null for third-party Claude Code plugins (redacted at the source) and Cowork slash commands that carry only a hashed id.
+
+product: optional string or null
+
+
+
+Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost & Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+
+rbac_group_id: optional string or null
+
+
+
+Tagged RBAC group identifier (`rbac_group_...`), matching the spend-limits API spelling. Present only when the request grouped by `rbac_group_id`.
+
+rbac_group_name: optional string or null
+
+
+
+Resolved RBAC group display name, alongside `rbac_group_id` when name resolution is available. Null if the group has been deleted or its name could not be resolved; `rbac_group_id` remains the stable key.
+
+user_id: optional string or null
+
+
+
+Tagged user identifier (e.g. `user_...`). Present only when the request grouped by `user_id`.
+
+next_page: string or null
+
+
+
+Opaque cursor for the next page, or null if no more results
 
 Get Plugin Usage
 

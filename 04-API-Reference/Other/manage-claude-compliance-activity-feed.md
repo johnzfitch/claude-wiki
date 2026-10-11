@@ -2,7 +2,7 @@
 title: "Query the Activity Feed - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-activity-feed"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:35Z"
+fetched_at: "2026-10-04T08:32:45Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -238,7 +240,7 @@ The `actor` field is a discriminated union. The `type` discriminator tells you w
 
 | `actor.type`                 | When it appears                                                                                                                                                                        | Key fields                                                                                                                                            |
 |:-----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `user_actor`                 | A signed-in claude.ai or Claude Console user took the action.                                                                                                                          | `email_address`, `user_id`, `ip_address`, `user_agent`                                                                                                |
+| `user_actor`                 | A signed-in claude.ai or Claude Console user took the action, or a process Anthropic runs on that user's behalf did (see the paragraph after this table).                              | `email_address`, `user_id`, `ip_address`, `user_agent`                                                                                                |
 | `api_actor`                  | A request called the Claude API or the Compliance API with a customer-issued API key. Compliance API calls produce this actor type for both Compliance Access Keys and Admin API keys. | `api_key_id`, `ip_address`, `user_agent`                                                                                                              |
 | `admin_api_key_actor`        | An organization admin used an Admin API key to manage users, invites, workspaces, or API keys.                                                                                         | `admin_api_key_id`, `ip_address`, `user_agent`                                                                                                        |
 | `unauthenticated_user_actor` | An action occurred before sign-in completed, for example `sso_login_initiated`.                                                                                                        | `unauthenticated_email_address`, `ip_address`, `user_agent`                                                                                           |
@@ -246,7 +248,7 @@ The `actor` field is a discriminated union. The `type` discriminator tells you w
 | `system_actor`               | Automated background processing performed by Anthropic systems, acting without a user or customer credential.                                                                          | `service` (nullable; the name of the automated process that performed the action, when known)                                                         |
 | `scim_directory_sync_actor`  | An identity provider (such as Okta, Microsoft Entra ID, or JumpCloud) pushed a change through SCIM directory sync.                                                                     | `workos_event_id`, `directory_id`, `idp_connection_type` (nullable; for example `OktaSCIMV2`, `AzureSCIMV2`)                                          |
 
-A `user_actor` activity does not always mean the user took the action. Processes that Anthropic runs on a user's behalf can currently appear as `user_actor` for the affected user rather than as `system_actor`, and this attribution may change. For example, memory activities from a migration, such as `platform_memory_store_created`, `platform_memory_created`, and `platform_memory_deleted`, are attributed this way. These migration activities currently show an `ip_address` of `0.0.0.0`.
+A `user_actor` activity does not always mean the user took the action. Processes that Anthropic runs on a user's behalf can currently appear as `user_actor` for the affected user rather than as `system_actor`, and this attribution may change. For example, memory activities from a migration, such as `platform_memory_store_created`, `platform_memory_created`, and `platform_memory_deleted`, are attributed this way. Memory activities can show an `ip_address` of `0.0.0.0` whoever performed them, so this value does not on its own identify activity from a platform process.
 
 A `claude_*_viewed` activity means a Claude app loaded content, not that a person viewed it. Types such as `claude_chat_viewed`, `claude_file_viewed`, and `claude_project_viewed` are recorded each time a Claude app loads the chat, file, or project from Anthropic's servers. Repeated loads are not deduplicated. The web, desktop, and mobile apps load content at different moments, sometimes in the background, and can display a cached copy without loading it. Counts of these activities vary by platform as a result, and they do not correspond to messages sent or screens viewed.
 

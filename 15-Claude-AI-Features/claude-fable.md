@@ -63,7 +63,7 @@ For developers interested in building AI solutions that demand frontier intellig
 
 Claude Fable 5.1 is priced at \$10 per million input tokens and \$50 per million output tokens. Cache reads now cost \$0.25 per million tokens, 75% less than Fable 5, which reduces the cost of typical workloads by an estimated 25% and highly agentic workloads by up to approximately 45%. To learn more, check out our pricing page. To get started, use claude-fable-5-1 via the Claude API.
 
-For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](../04-API-Reference/Guides/build-with-claude-data-residency.md).
+For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](../04-API-Reference/Other/manage-claude-data-residency.md).
 
 ### Use cases
 
@@ -172,10 +172,10 @@ Pricing depends on how you want to use Claude Fable 5.1. To learn more, check ou
 ### Products
 
 - [Claude](product-overview.md)
-- [Claude Code](claude-com-product-claude-code.md)
+- [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](product-claude-code-enterprise.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](product-tag.md)
 - [Claude Design](product-design.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
@@ -201,7 +201,7 @@ Pricing depends on how you want to use Claude Fable 5.1. To learn more, check ou
 - [Coding](../18-Industry-UseCases/coding.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -221,7 +221,7 @@ Pricing depends on how you want to use Claude Fable 5.1. To learn more, check ou
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

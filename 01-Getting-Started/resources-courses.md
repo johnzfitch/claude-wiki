@@ -2,13 +2,13 @@
 title: "Courses · Claude Academy"
 source_url: "https://www.claude.com/resources/courses"
 category: "01-Getting-Started"
-fetched_at: "2026-09-30T06:30:26Z"
+fetched_at: "2026-10-10T06:27:30Z"
 tags: ["api", "getting-started"]
 ---
 
 # Courses
 
-Structured learning paths with video lessons and assessments to help you master AI collaboration, Claude development, and MCP.
+Courses on working with AI, building with Claude, and the Model Context Protocol (MCP).
 
 ## Start your journey
 
@@ -60,14 +60,14 @@ Structured learning paths with video lessons and assessments to help you master 
 4 lessons·45 min
 
 
-### The AI-native SDLC playbook
-
-14 lessons·1 hr
-
-
 ### Introduction to agent skills
 
 6 lessons·1 hr
+
+
+### The AI-native SDLC playbook
+
+14 lessons·1 hr
 
 
 ### Deploying Claude Enterprise with confidence: The five decisions that shape your rollout

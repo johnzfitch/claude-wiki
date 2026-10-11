@@ -2,7 +2,7 @@
 title: "What's new in Claude Fable 5.1 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/fable-5-1/whats-new-fable-5-1"
 category: "20-Models"
-fetched_at: "2026-09-26T06:39:43Z"
+fetched_at: "2026-10-04T08:33:41Z"
 tags: ["billing", "models"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["billing", "models"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -40,7 +40,7 @@ Models
 
 [Claude Opus 5.5](models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -118,7 +118,7 @@ When a request carries a block the target model can't read (a router or fallback
 
 ### Editing earlier turns invalidates thinking blocks
 
-Modifying anything before a Claude Fable 5.1 thinking block (the `system` prompt, the `tools`, or an earlier message) results in an error on the next request, or in the block being dropped if you opt into that. Claude Mythos 5.1 doesn't run this check. Claude Code, claude.ai, [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), and the [Claude Agent SDK](https://platform.claude.com/docs/en/models/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md) keep that prefix intact for you. If your code builds the `messages` array itself, check it before you migrate: [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) walks through the check and each fix. The check is enforced for new accounts created on or after August 31, 2026. For accounts created earlier, the API records the mismatch but acts on it only when the request sets `thinking.block_binding.prefix_mismatch_behavior`.
+Modifying anything before a Claude Fable 5.1 thinking block (the `system` prompt, the `tools`, or an earlier message) results in an error on the next request, or in the block being dropped if you opt into that. Claude Mythos 5.1 doesn't run this check. Claude Code, claude.ai, [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), and the [Claude Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) keep that prefix intact for you. If your code builds the `messages` array itself, check it before you migrate: [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) walks through the check and each fix. The check is enforced for new accounts created on or after August 31, 2026. For accounts created earlier, the API records the mismatch but acts on it only when the request sets `thinking.block_binding.prefix_mismatch_behavior`.
 
 These patterns invalidate every later thinking block:
 
@@ -283,7 +283,7 @@ Claude Fable 5.1 is available on:
 
 Claude Mythos 5.1 is offered only to approved customers in [Project Glasswing](../22-Safety-Policy/glasswing.md). For access, contact your Anthropic, AWS, or Google Cloud account team.
 
-Claude Fable 5.1 and Claude Mythos 5.1 carry 30-day data retention and aren't available under zero data retention unless expressly authorized by Anthropic. Both are [Covered Models](../15-Claude-AI-Features/covered-models-claude-help-center.md), like Claude Fable 5 and Claude Mythos 5. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+Claude Fable 5.1 and Claude Mythos 5.1 carry 30-day data retention and aren't available under zero data retention unless expressly authorized by Anthropic. Both are [Covered Models](https://support.claude.com/en/articles/15425695), like Claude Fable 5 and Claude Mythos 5. See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 ## Migrate from Claude Fable 5
 

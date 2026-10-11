@@ -2,7 +2,7 @@
 title: "Get Skill Version - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/skills/versions/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-29T06:30:57Z"
+fetched_at: "2026-10-07T06:24:05Z"
 tags: ["api"]
 ---
 
@@ -93,39 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Create Skill Version
-
-
-List Skill Versions
-
-
-Download Skill Version Content
-
-
-Get Skill Version
-
-
-Delete Skill Version
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -161,6 +129,42 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Create Skill Version
+
+
+List Skill Versions
+
+
+Download Skill Version Content
+
+
+Get Skill Version
+
+
+Delete Skill Version
 
 
 Tunnels

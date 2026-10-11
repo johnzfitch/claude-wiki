@@ -2,7 +2,7 @@
 title: "Six skills for financial service professionals · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:39:58Z"
+fetched_at: "2026-10-10T06:28:06Z"
 tags: ["claude-ai", "rag", "search", "skills"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai", "rag", "search", "skills"]
 
 Introduction to six specialized AI skills for financial professionals including valuation modeling, competitive analysis, research reports, and due diligence.
 
-5 minClaude.ai
+5 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -32,7 +32,7 @@ A comps table, a DCF model, and an earnings update each follow a structure your 
 2.  Open [Customize \> Skills(opens in new tab)](https://claude.ai/customize/skills).
 3.  Toggle individual skills on or off as needed. You can also upload your own.
 
-Read more about [using Skills in Claude(opens in new tab)](https://support.claude.com/en/articles/using-skills-in-claude-a1bdb5a95a.md).
+Read more about [using Skills in Claude(opens in new tab)](https://support.claude.com/en/articles/12512180-using-skills-in-claude).
 
 ## Comps analysis with public/private peers[](#comps-analysis-with-publicprivate-peers)
 
@@ -165,7 +165,7 @@ One habit carries beyond these six Skills: whenever a deliverable has to fit an 
 ## Learn more about Skills[](#learn-more-about-skills)
 
 - [What are Skills?(opens in new tab)](../02-Claude-Code-CLI/what-are-skills.md)
-- [Using Skills in Claude(opens in new tab)](https://support.claude.com/en/articles/using-skills-in-claude-a1bdb5a95a.md)
+- [Using Skills in Claude(opens in new tab)](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
 - [How to create custom Skills(opens in new tab)](../02-Claude-Code-CLI/how-to-create-custom-skills.md)
 
 - [Prerequisites](#prerequisites)

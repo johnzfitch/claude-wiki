@@ -1,8 +1,8 @@
 ---
 title: "Access audit logs | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9970975-access-audit-logs"
+source_url: "https://support.claude.com/en/articles/9970975-how-to-access-audit-logs"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:33:20Z"
+fetched_at: "2026-10-10T06:25:33Z"
 tags: ["enterprise"]
 ---
 

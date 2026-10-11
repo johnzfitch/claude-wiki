@@ -2,7 +2,7 @@
 title: "Extended thinking - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/extended-thinking"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:21Z"
+fetched_at: "2026-10-04T08:33:15Z"
 tags: ["api", "prompting"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "prompting"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -98,7 +98,7 @@ Configure manual extended thinking with a fixed budget_tokens budget on Claude m
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 
 
@@ -261,7 +261,7 @@ If your model supports only extended thinking (Claude Sonnet 4.5, Claude Opus 4.
 You need to migrate off `type: "enabled"` if:
 
 - You use Claude Opus 4.6 or Claude Sonnet 4.6, where `budget_tokens` is deprecated.
-- You use Claude 4.7 or a later model, such as Claude Opus 5.5, Claude Sonnet 5, or Claude Fable 5.1, where `type: "enabled"` returns a 400 error.
+- You use Claude 4.7 or a later model, such as Claude Opus 5.5, Claude Sonnet 5, Claude Sonnet 5.5, or Claude Fable 5.1, where `type: "enabled"` returns a 400 error.
 
 The mapping is small: remove `budget_tokens`, set `thinking: {type: "adaptive"}`, and control reasoning depth with `output_config: {effort: ...}` instead of a token budget.
 

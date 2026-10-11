@@ -2,7 +2,7 @@
 title: "Browse skills, connectors, and plugins in one directory | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory"
 category: "14-Connectors"
-fetched_at: "2026-09-30T06:31:51Z"
+fetched_at: "2026-10-10T06:25:21Z"
 tags: ["connectors", "plugins", "skills"]
 ---
 

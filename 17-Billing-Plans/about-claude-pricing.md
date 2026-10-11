@@ -2,7 +2,7 @@
 title: "Pricing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/pricing"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-26T06:38:19Z"
+fetched_at: "2026-10-04T08:32:03Z"
 tags: ["agents", "billing"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "billing"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../20-Models/release-notes-overview.md)
 
@@ -38,7 +38,7 @@ Models
 
 [Claude Opus 5.5](../20-Models/models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](../20-Models/models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](../20-Models/models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](../20-Models/models-haiku-4-5-overview.md)
 
@@ -125,7 +125,7 @@ For implementation details and code examples:
 
 ### Inference geography
 
-For Claude 4.6 and later models, using `inference_geo: "us"` applies a 1.1x pricing multiplier. `inference_geo: "global"` (default) uses standard pricing. See [Data residency](../04-API-Reference/Guides/build-with-claude-data-residency.md) for details.
+For Claude 4.6 and later models, using `inference_geo: "us"` applies a 1.1x pricing multiplier. `inference_geo: "global"` (default) uses standard pricing. See [Data residency](../04-API-Reference/Other/manage-claude-data-residency.md) for details.
 
 ### Private offers
 
@@ -143,7 +143,7 @@ If you have an existing Amazon Bedrock private offer, contact your Anthropic or 
 
 ### Inference geography
 
-Deployments hosted on Azure can use the US Data Zone Standard deployment type, which keeps inference within the United States. This is equivalent to `inference_geo: "us"` on the Claude API and applies the same 1.1x pricing multiplier. See [Data residency](../04-API-Reference/Guides/build-with-claude-data-residency.md) for details.
+Deployments hosted on Azure can use the US Data Zone Standard deployment type, which keeps inference within the United States. This is equivalent to `inference_geo: "us"` on the Claude API and applies the same 1.1x pricing multiplier. See [Data residency](../04-API-Reference/Other/manage-claude-data-residency.md) for details.
 
 ## Feature-specific pricing
 
@@ -176,7 +176,7 @@ For Claude 4.6 and later models, specifying US-only inference through the `infer
 
 This applies to the Claude API (first-party) and Claude Platform on AWS. On Claude in Microsoft Foundry, the same 1.1x multiplier applies to deployments that use the US Data Zone Standard deployment type (see [Inference geography](#foundry-inference-geography)). Partner-operated platforms (Bedrock and Google Cloud) have independent regional pricing. See [Bedrock](https://aws.amazon.com/bedrock/pricing/) and [Google Cloud](https://cloud.google.com/vertex-ai/generative-ai/pricing#claude-models) for details. Earlier models do not support the `inference_geo` parameter and always use standard pricing; requests that include the parameter on these models return a 400 error.
 
-For more information, see [Data residency](../04-API-Reference/Guides/build-with-claude-data-residency.md).
+For more information, see [Data residency](../04-API-Reference/Other/manage-claude-data-residency.md).
 
 ### Fast mode pricing
 
@@ -192,7 +192,7 @@ Fast mode is not available on Claude Opus 4.7 (requests with `speed: "fast"` ret
 Fast mode pricing stacks with other pricing modifiers:
 
 - [Prompt caching multipliers](#prompt-caching) apply on top of fast mode pricing
-- [Data residency](../04-API-Reference/Guides/build-with-claude-data-residency.md) multipliers apply on top of fast mode pricing
+- [Data residency](../04-API-Reference/Other/manage-claude-data-residency.md) multipliers apply on top of fast mode pricing
 
 Fast mode is not available with the [Batch API](#batch-processing).
 
@@ -487,7 +487,7 @@ For enterprise customers with specific needs:
 - Dedicated support
 - Custom terms
 
-Contact the sales team at <sales@anthropic.com> or through the [Claude Console](../04-API-Reference/Other/usage-limits.md) to discuss enterprise pricing options.
+Contact the sales team at <sales@anthropic.com> or through the [Claude Console](../04-API-Reference/Other/playground.md) to discuss enterprise pricing options.
 
 ## Billing and payment
 

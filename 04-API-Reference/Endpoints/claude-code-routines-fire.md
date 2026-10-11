@@ -2,7 +2,7 @@
 title: "Trigger a routine through the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/claude-code/routines-fire"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:38:54Z"
+fetched_at: "2026-10-04T08:32:47Z"
 tags: ["api", "authentication", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -235,11 +239,11 @@ Start a Claude Code routine session on demand by sending an authenticated POST r
 
 This is an experimental API. Request and response shapes, rate limits, and token semantics might change.
 
-[Claude Code](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md) is Anthropic's agentic coding tool. [Claude Code on the web](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](../../02-Claude-Code-CLI/web-scheduled-tasks.md) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
+[Claude Code](../../02-Claude-Code-CLI/code-home.md) is Anthropic's agentic coding tool. [Claude Code on the web](../../02-Claude-Code-CLI/claude-code-on-the-web.md) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](../../02-Claude-Code-CLI/web-scheduled-tasks.md) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
 
 This endpoint is the HTTP entry point. POSTing to it starts a new run of an existing routine and returns the resulting session ID and URL. Typical callers are alerting systems, CI pipelines, and internal tools that need to start a Claude Code session programmatically.
 
-Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
+Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](../../02-Claude-Code-CLI/claude-code-on-the-web.md) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
 
 ## Differences from the Claude Platform
 

@@ -2,7 +2,7 @@
 title: "CLI scripting and automation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:29Z"
+fetched_at: "2026-10-04T08:33:24Z"
 tags: ["api", "claude-code", "cli"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "claude-code", "cli"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api", "claude-code", "cli"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,7 +48,7 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-[CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)ant CLI
+[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
 # CLI scripting and automation
 
@@ -181,7 +181,7 @@ Agent not found.
 
 ## Use the CLI from Claude Code
 
-[Claude Code](https://platform.claude.com/docs/en/01-Getting-Started/overview.md) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
+[Claude Code](../../02-Claude-Code-CLI/code-home.md) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
 
 - "List my recent agent sessions and summarize which ones errored."
 - "Upload every PDF in `./reports` to the Files API and print the resulting IDs."

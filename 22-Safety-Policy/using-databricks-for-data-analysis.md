@@ -2,7 +2,7 @@
 title: "Using Databricks for Data Analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12430928-using-databricks-for-data-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-25T06:30:11Z"
+fetched_at: "2026-10-08T06:25:11Z"
 tags: ["safety"]
 ---
 

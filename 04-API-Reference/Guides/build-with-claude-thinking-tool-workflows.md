@@ -2,7 +2,7 @@
 title: "Thinking in tool and multi-turn workflows - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/thinking-tool-workflows"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:37Z"
+fetched_at: "2026-10-04T08:33:59Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -98,7 +98,7 @@ Walk through a complete two-turn tool-use round trip that preserves thinking blo
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 This page walks through a complete two-turn tool-use round trip with thinking enabled: Claude thinks, requests a tool call, receives the result, and finishes its answer, with the thinking blocks handled correctly at every step. The full rules live on the [Thinking](build-with-claude-thinking.md) page, in [Thinking with tool use](build-with-claude-thinking.md#thinking-with-tool-use) and [Preserving thinking blocks](build-with-claude-thinking.md#preserving-thinking-blocks); this page shows those rules applied in runnable code.
 

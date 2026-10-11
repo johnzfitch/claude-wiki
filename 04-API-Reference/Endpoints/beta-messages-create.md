@@ -2,7 +2,7 @@
 title: "Create a Message - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-30T06:30:47Z"
+fetched_at: "2026-10-08T06:24:48Z"
 tags: ["api"]
 ---
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -205,7 +209,7 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
 
 Support & configuration
 
@@ -252,14 +256,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -450,6 +446,14 @@ One of the following:
 
 
 "mcp-client-2026-09-15"
+
+
+
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
 
 
 
@@ -932,35 +936,11 @@ Identifies one hop of a fallback transition.
 
 
 
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
-
-
-
 to: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
 Identifies one hop of a fallback transition.
-
-
-
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
 
 trigger: optional unknown
 
@@ -1059,6 +1039,142 @@ The model that will complete your prompt.
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 One of the following:
+
+"claude-haiku-5-5"
+
+
+
+Fastest model for high-volume, real-time tasks
+
+"claude-sonnet-5-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5-1"
+
+
+
+Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
+
+"claude-opus-5-5"
+
+
+
+Powerful intelligence for coding, knowledge work, and long-running agents
+
+"claude-mythos-5-1"
+
+
+
+Our most capable model for cybersecurity and biology research, available through trusted access programs
+
+"claude-sonnet-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5"
+
+
+
+Next generation of intelligence for the hardest knowledge work and coding problems
+
+"claude-mythos-5"
+
+
+
+Most capable model for cybersecurity and biology research
+
+"claude-opus-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-8"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-7"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-6"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-sonnet-4-6"
+
+
+
+Best combination of speed and intelligence
+
+"claude-haiku-4-5"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-haiku-4-5-20251001"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-opus-4-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-5-20251101"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+
+
+"claude-mythos-preview"⁠Deprecated
+
+
+
+New class of intelligence, strongest in coding and cybersecurity
+
+Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5-20250929"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+string
+
+
 
 
 
@@ -2559,6 +2675,142 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 One of the following:
 
+"claude-haiku-5-5"
+
+
+
+Fastest model for high-volume, real-time tasks
+
+"claude-sonnet-5-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5-1"
+
+
+
+Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
+
+"claude-opus-5-5"
+
+
+
+Powerful intelligence for coding, knowledge work, and long-running agents
+
+"claude-mythos-5-1"
+
+
+
+Our most capable model for cybersecurity and biology research, available through trusted access programs
+
+"claude-sonnet-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5"
+
+
+
+Next generation of intelligence for the hardest knowledge work and coding problems
+
+"claude-mythos-5"
+
+
+
+Most capable model for cybersecurity and biology research
+
+"claude-opus-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-8"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-7"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-6"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-sonnet-4-6"
+
+
+
+Best combination of speed and intelligence
+
+"claude-haiku-4-5"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-haiku-4-5-20251001"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-opus-4-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-5-20251101"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+
+
+"claude-mythos-preview"⁠Deprecated
+
+
+
+New class of intelligence, strongest in coding and cybersecurity
+
+Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5-20250929"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+string
+
+
+
 
 
 role: "assistant"
@@ -2915,7 +3167,7 @@ Response 200
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
         "input_tokens": 0,
-        "model": "claude-sonnet-5-5",
+        "model": "claude-haiku-5-5",
         "output_tokens": 0,
         "type": "message"
       }
@@ -3029,7 +3281,7 @@ Response 200
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
         "input_tokens": 0,
-        "model": "claude-sonnet-5-5",
+        "model": "claude-haiku-5-5",
         "output_tokens": 0,
         "type": "message"
       }

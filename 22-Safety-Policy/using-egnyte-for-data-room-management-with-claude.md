@@ -2,7 +2,7 @@
 title: "Using Egnyte for data room management with Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12651659-using-egnyte-for-data-room-management-with-claude"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-25T06:30:15Z"
+fetched_at: "2026-10-08T06:25:02Z"
 tags: ["safety"]
 ---
 

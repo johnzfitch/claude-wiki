@@ -2,7 +2,7 @@
 title: "Claude for nonprofits partnership guide for all users · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923901-claude-for-nonprofits-partnership-guide-for-all-users"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:40:09Z"
+fetched_at: "2026-10-10T06:28:07Z"
 tags: ["claude-ai"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 A self-paced guide to help nonprofit staff build confidence with Claude and discover practical applications for their role.
 
-2 minClaude.ai
+2 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -43,7 +43,6 @@ Welcome to the Claude for nonprofits community. This guide is a pathway to help 
 ### Key resources[](#key-resources-2)
 
 - [Use case library(opens in new tab)](https://support.claude.com/all?kind=use-case)
-- [Claude artifact inspiration gallery(opens in new tab)](https://claude.ai/artifacts?category=learn)
 - [MCP connector directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md)
 
 ### Recommended actions[](#recommended-actions-2)

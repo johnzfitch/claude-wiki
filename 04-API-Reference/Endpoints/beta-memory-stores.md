@@ -2,7 +2,7 @@
 title: "Memory Stores - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:38:38Z"
+fetched_at: "2026-10-04T08:32:21Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -115,24 +115,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -168,6 +151,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -296,7 +300,7 @@ ID of the deleted memory store (a `memstore_...` identifier). The store and all 
 
 
 
-BetaManagedAgentsMemoryStore object{ type: "memory_store", id, created_at, 5 more }
+BetaManagedAgentsMemoryStore object{ type: "memory_store", id, archived_at, 5 more }
 
 
 
@@ -314,6 +318,16 @@ Unique identifier for the memory store (a `memstore_...` tagged ID). Use this wh
 
 
 
+archived_at: string or null
+
+
+
+Timestamp when the store was archived, or `null` if active. Set once and never cleared; archiving is one-way. Archived stores are read-only and cannot be attached to new sessions.
+
+formatdate-time
+
+
+
 created_at: string
 
 
@@ -321,6 +335,18 @@ created_at: string
 Timestamp when the store was created.
 
 formatdate-time
+
+description: string
+
+
+
+Free-text description of what the store contains, up to 1024 characters. Included in the agent's system prompt when the store is attached, so word it to be useful to the agent. Empty string when unset.
+
+metadata: map\[string\]
+
+
+
+Arbitrary key-value tags for your own bookkeeping (such as the end user a store belongs to). Up to 16 pairs; keys 1–64 characters; values up to 512 characters. Returned on retrieve/list but not filterable.
 
 name: string
 
@@ -337,28 +363,6 @@ updated_at: string
 Timestamp when the store's `name`, `description`, or `metadata` was last modified. Memory writes inside the store do not advance this.
 
 formatdate-time
-
-
-
-archived_at: optional string or null
-
-
-
-Timestamp when the store was archived, or `null` if active. Set once and never cleared; archiving is one-way. Archived stores are read-only and cannot be attached to new sessions.
-
-formatdate-time
-
-description: optional string
-
-
-
-Free-text description of what the store contains, up to 1024 characters. Included in the agent's system prompt when the store is attached, so word it to be useful to the agent. Empty string when unset.
-
-metadata: optional map\[string\]
-
-
-
-Arbitrary key-value tags for your own bookkeeping (such as the end user a store belongs to). Up to 16 pairs; keys 1–64 characters; values up to 512 characters. Returned on retrieve/list but not filterable.
 
 #### Memory Stores[Memories](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories)
 

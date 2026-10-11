@@ -1,8 +1,8 @@
 ---
 title: "Okta SSO/SCIM email mismatch | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13917840"
+source_url: "https://support.claude.com/en/articles/13917840-okta-sso-scim-email-mismatch"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:54Z"
+fetched_at: "2026-10-10T06:25:15Z"
 tags: ["enterprise"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Prompt engineering overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
 category: "10-Prompting-Guides"
-fetched_at: "2026-09-26T06:39:25Z"
+fetched_at: "2026-10-04T08:33:55Z"
 tags: ["prompting"]
 ---
 
@@ -63,7 +63,7 @@ If you're an interactive learner, you can start with the interactive tutorials i
 
 
 
-An example-filled tutorial that covers the prompt engineering concepts found in the docs.
+An example-filled tutorial on prompt engineering fundamentals. It was written for Claude 3 models, so follow Prompting best practices where the two differ.
 
 
 

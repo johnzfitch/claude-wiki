@@ -2,7 +2,7 @@
 title: "Beta headers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/beta-headers"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:38:25Z"
+fetched_at: "2026-10-04T08:32:46Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -225,7 +229,7 @@ Claude Code
 
 
 
-Access experimental features before they become part of the standard API with the `anthropic-beta` header or the SDKs' `betas` parameter.
+Access experimental features before they become part of the standard API with the `anthropic-beta` header or the SDK's `betas` parameter.
 
 Copy page
 
@@ -235,7 +239,7 @@ Beta headers allow you to access experimental features and new model capabilitie
 
 
 
-Each [client SDK](../Other/cli-sdks-libraries-overview.md) exposes a `beta` namespace for calling the API with beta features enabled.
+The [client SDK](../Other/cli-sdks-libraries-overview.md) exposes a `client.beta` namespace for calling the API with beta features enabled.
 
 ## How to use beta headers
 
@@ -253,7 +257,7 @@ content-type: application/json
 
 Each feature's documentation states the exact beta name to send. The [API overview](overview.md) lists the APIs currently in beta.
 
-The following examples show the same request with cURL, the `ant` CLI, and the SDKs, using the [context editing](../Guides/build-with-claude-context-editing.md) beta as the example. The SDKs take beta names in the `betas` parameter and send the `anthropic-beta` header for you:
+The following examples show the same request with cURL, the `ant` CLI, and the SDK, using the [context editing](../Guides/build-with-claude-context-editing.md) beta as the example. The SDK takes beta names through `betas` and sends the `anthropic-beta` header for you:
 
 cURL
 
@@ -317,7 +321,7 @@ anthropic-beta: feature3
 
 
 
-When using an SDK, list each feature in the `betas` parameter (for example, `betas=["feature1", "feature2"]`). With the CLI, pass a single `--beta` flag with the feature names separated by commas (for example, `--beta feature1,feature2`). You can also repeat the flag (for example, `--beta feature1 --beta feature2`).
+With the SDK, list each feature (for example, `betas=["feature1", "feature2"]`). With the CLI, pass a single `--beta` flag with the feature names separated by commas (for example, `--beta feature1,feature2`). You can also repeat the flag (for example, `--beta feature1 --beta feature2`).
 
 ### Endpoint-specific headers
 
@@ -329,9 +333,9 @@ Some beta APIs are scoped to specific endpoints and require a feature-specific b
 | `/v1/tunnels`                                    | `mcp-tunnels-2026-06-22`    |
 | `/v1/memory_stores` and sub-resources            | `agent-memory-2026-07-22`   |
 
-The SDKs' `beta` namespaces add these headers automatically. Add them yourself only when making raw HTTP requests. See the [Managed Agents overview](../Other/managed-agents-overview.md), [Using agent memory](../Other/managed-agents-memory.md), and the [MCP tunnels reference](../Agents-Tools/agents-and-tools-mcp-tunnels-reference.md#tunnels-api) for details.
+The SDK's `client.beta` namespace adds these headers automatically. Add them yourself only when making raw HTTP requests. See the [Managed Agents overview](../Other/managed-agents-overview.md), [Using agent memory](../Other/managed-agents-memory.md), and the [MCP tunnels reference](../Agents-Tools/agents-and-tools-mcp-tunnels-reference.md#tunnels-api) for details.
 
-Endpoint-specific headers that apply to the same endpoint aren't always combinable. On memory store endpoints, `agent-memory-2026-07-22` replaces `managed-agents-2026-04-01`: sending both on the same request returns a `400` error. The client SDKs send the correct header for each endpoint automatically.
+Endpoint-specific headers that apply to the same endpoint aren't always combinable. On memory store endpoints, `agent-memory-2026-07-22` replaces `managed-agents-2026-04-01`: sending both on the same request returns a `400` error. The SDK sends the correct header for each endpoint automatically.
 
 ### Version naming conventions
 
@@ -366,7 +370,7 @@ For updates to beta features, see the [release notes](../../20-Models/release-no
 
 [Errors](errors.md)
 
-Understand the HTTP status codes, error response shape, and request IDs the Claude API returns, and handle errors with the SDKs' typed exceptions.
+Understand the HTTP status codes, error response shape, and request IDs the Claude API returns, and handle errors with the SDK's typed exceptions.
 
 [API overview](overview.md)
 

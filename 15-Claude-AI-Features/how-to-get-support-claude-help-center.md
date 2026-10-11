@@ -2,7 +2,7 @@
 title: "How to get support | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9015913"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:33:12Z"
+fetched_at: "2026-10-10T06:28:28Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -113,7 +113,7 @@ Free Claude users have access to:
 
 - Fin, our AI support bot
 
-- **[Account deletion](../21-Account-Support/how-can-i-delete-my-claude-account.md)** support in cases where self-serve is unavailable
+- **[Account deletion](https://support.claude.com/en/articles/9028421)** support in cases where self-serve is unavailable
 
 To get support:
 
@@ -194,3 +194,7 @@ No. Reply in your existing conversation, in the messenger or by email, and it mo
 ### I have a business-critical outage. Is there a faster path?
 
 Organization owners and admins on qualifying Enterprise plans have prioritized options in the messenger. Platform status is always available on **[our status page](https://status.claude.com)**.
+
+## Does chatting with Fin impact Claude usage or spend limits?
+
+No. Chatting with Fin will not impact Claude usage or spend limits.

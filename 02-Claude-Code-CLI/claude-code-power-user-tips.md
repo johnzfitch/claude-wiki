@@ -2,7 +2,7 @@
 title: "Claude Code power user tips | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:31:36Z"
+fetched_at: "2026-10-10T06:24:42Z"
 tags: ["agents", "claude-code", "hooks", "mcp", "mobile", "prompting", "sdk", "skills"]
 ---
 

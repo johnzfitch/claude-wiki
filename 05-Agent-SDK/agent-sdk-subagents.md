@@ -2,7 +2,7 @@
 title: "Subagents in the SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/subagents"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-23T06:26:48Z"
+fetched_at: "2026-10-09T06:26:40Z"
 tags: ["agents", "claude-code", "sdk", "subagents"]
 ---
 
@@ -230,7 +230,7 @@ Unless the subagent is a [fork](../09-Agents-Patterns/sub-agents.md#fork-the-cur
 | Project CLAUDE.md (loaded via [`settingSources`](agent-sdk-claude-code-features.md#control-filesystem-settings-with-settingsources)), unless the agent sets [`omitClaudeMd`](#agentdefinition-configuration) | Preloaded skill content, unless listed in `AgentDefinition.skills` |
 | Tool definitions (inherited from parent or the subset in `tools`, [filtered for background runs](../09-Agents-Patterns/sub-agents.md#available-tools))                                                                             | The parent’s system prompt                                         |
 
-The parent receives the subagent’s final message as the Agent tool result, but may summarize it in its own response. To preserve subagent output verbatim in the user-facing response, include an instruction to do so in the prompt or `systemPrompt` option you pass to the main `query()` call.In v2.1.210 and later, Claude Code [scans the final message for instruction-shaped patterns](../09-Agents-Patterns/sub-agents.md#subagent-output-scanning) before the parent reads it. The scan treats three kinds of pattern differently:
+The parent receives the subagent’s final report, but may summarize it in its own response. To preserve subagent output verbatim in the user-facing response, include an instruction to do so in the prompt or `systemPrompt` option you pass to the main `query()` call.In v2.1.210 and later, Claude Code [scans the final message for instruction-shaped patterns](../09-Agents-Patterns/sub-agents.md#subagent-output-scanning) before the parent reads it. The scan treats three kinds of pattern differently:
 
 - **Control-tag imitation**: Claude Code neutralizes a tag that only the harness emits, such as a `<system-reminder>` block, in place. It inserts a backslash after the opening angle bracket and deletes nothing.
 - **Permission-configuration mentions**: Claude Code keeps references to the permission configuration, such as `.claude/settings.json`, `bypassPermissions`, or `--dangerously-skip-permissions`, as written.
@@ -351,11 +351,11 @@ for await (const message of query({
 
 Detect subagent invocation
 
-Claude invokes subagents through the Agent tool. To detect when a subagent is invoked, check for `tool_use` blocks where `name` is `"Agent"`. Messages from within a subagent’s context include a `parent_tool_use_id` field.
+Claude invokes subagents through the Agent tool. To detect when a subagent is invoked, check for `tool_use` blocks where `name` is `"Agent"`. Messages from within a subagent’s context include a `parent_tool_use_id` field. In TypeScript, each assistant and user message a subagent produces also carries [`agent_id`](agent-sdk-typescript.md#sdkassistantmessage): the `task_id` of that subagent’s [task events](agent-sdk-typescript.md#sdktaskstartedmessage). `agent_id` requires TypeScript Agent SDK v0.3.292 or later.
 
 The tool appears as `"Agent"` in `tool_use` blocks but as `"Task"` in the `system:init` tools list. Before Claude Code v2.1.63, `tool_use` blocks also named it `"Task"`. To keep detection working across SDK versions, match both values in `block.name`.
 
-The message structure differs between SDKs. In Python, you access content blocks directly via `message.content`. In TypeScript, `SDKAssistantMessage` wraps the Claude API message, so you access content via `message.message.content`. This example iterates through streamed messages, logging when a subagent is invoked and when subsequent messages originate from within that subagent’s execution context.
+The message structure differs between SDKs. In Python, you access content blocks directly via `message.content`. In TypeScript, `SDKAssistantMessage` wraps the Claude API message, so you access content via `message.message.content`. This example iterates through streamed messages, logging when a subagent is invoked and when subsequent messages originate from within that subagent’s execution context. The TypeScript version also logs the `agent_id` of each subagent message that carries one.
 
 Python
 
@@ -430,6 +430,11 @@ for await (const message of query({
   // Check if this message is from within a subagent's context
   if (msg.parent_tool_use_id) {
     console.log("  (running inside subagent)");
+    // On assistant and user messages, agent_id matches the task_id
+    // on that subagent's task_started and other task events
+    if (msg.agent_id) {
+      console.log(`  agent_id: ${msg.agent_id}`);
+    }
   }
 
   if ("result" in message) {
@@ -796,6 +801,6 @@ For the file format, see [how to write subagent files](../09-Agents-Patterns/sub
 
 Related documentation
 
-- [Claude Code subagents](../09-Agents-Patterns/sub-agents.md): comprehensive subagent documentation including filesystem-based definitions
+- [Claude Code subagents](../09-Agents-Patterns/sub-agents.md): subagent documentation including filesystem-based definitions
 - [Dynamic workflows](../02-Claude-Code-CLI/workflows.md): orchestrate many subagents from a script for jobs too large for one conversation
 - [SDK overview](agent-sdk-overview.md): getting started with the Claude Agent SDK

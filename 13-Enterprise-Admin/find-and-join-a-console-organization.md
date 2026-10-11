@@ -2,7 +2,7 @@
 title: "Find and join a Console organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14793921-find-and-join-a-console-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:56Z"
+fetched_at: "2026-10-10T06:28:18Z"
 tags: ["enterprise"]
 ---
 
@@ -65,7 +65,7 @@ In addition to organization discovery, there are a few other ways to join a Cons
 
 - **Email invitation:** An Admin or existing member of the organization may send you an email invitation to join.
 
-- **Admin invitation:** An Admin can add you directly from **[Organization settings \> Members](../04-API-Reference/Other/usage-limits.md)**.
+- **Admin invitation:** An Admin can add you directly from **[Organization settings \> Members](../04-API-Reference/Other/playground.md)**.
 
 ------------------------------------------------------------------------
 

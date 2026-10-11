@@ -2,7 +2,7 @@
 title: "Migrating to Claude Fable 5.1 and Claude Mythos 5.1 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/fable-5-1/migration-guide"
 category: "20-Models"
-fetched_at: "2026-09-26T06:39:44Z"
+fetched_at: "2026-10-04T08:34:15Z"
 tags: ["models"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["models"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -40,7 +40,7 @@ Models
 
 [Claude Opus 5.5](models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -100,7 +100,7 @@ The baseline settings shared by `claude-fable-5-1` and `claude-mythos-5-1`:
 - **Preserved thinking across models:** Claude Fable 5.1 reads thinking blocks from Claude Opus 5, Claude Fable 5, Claude Mythos 5, and earlier Claude models. None of those models can read Claude Fable 5.1's blocks. See [Breaking changes](#fable-5-1-breaking-changes).
 - **Context window and output:** A [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) by default, and up to 128k output tokens per request.
 - **Pricing:** \$10 USD per million input tokens and \$50 USD per million output tokens, the same as Claude Fable 5. Prompt cache reads are \$0.25 USD per million tokens, a quarter of the Claude Fable 5 rate. See [Claude pricing](../17-Billing-Plans/about-claude-pricing.md).
-- **Data retention:** Both models require 30-day data retention, aren't available under zero data retention (ZDR) arrangements unless expressly authorized by Anthropic, and are designated Covered Models, the same as Claude Fable 5 and Claude Mythos 5. On the Claude API, a request from an organization or workspace without 30-day retention returns a 400 `invalid_request_error`. Organizations with a ZDR arrangement should contact their Anthropic account team, or configure retention per workspace. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements) for per-platform details.
+- **Data retention:** Both models require 30-day data retention, aren't available under zero data retention (ZDR) arrangements unless expressly authorized by Anthropic, and are designated Covered Models, the same as Claude Fable 5 and Claude Mythos 5. On the Claude API, a request from an organization or workspace without 30-day retention returns a 400 `invalid_request_error`. Organizations with a ZDR arrangement should contact their Anthropic account team, or configure retention per workspace. See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements) for per-platform details.
 
 Where the two models diverge:
 
@@ -217,7 +217,7 @@ model = "claude-mythos-5-1"  # After
     print(response.content)
     ```
 
-    See [Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) and [Forcing tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). If you forced a tool only to get schema-conformant JSON, use [JSON outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md#json-outputs) (`output_config.format`) instead.
+    See [Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) and [Forcing tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). If you forced a tool only to get schema-conformant JSON, use [JSON outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md#usage) (`output_config.format`) instead.
 
     If your application, rather than the user, requires a specific tool call on the current turn of a multi-turn conversation, append a [mid-conversation system message](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md) after the latest `user` turn. Name the tool, say the call is required for this turn, and tell Claude to open its response with it. Because the message is appended rather than written into the top-level `system` prompt, earlier turns stay byte-identical and keep their [prompt cache](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) hits:
 
@@ -281,7 +281,7 @@ model = "claude-mythos-5-1"  # After
 
     A conversation that ran on Claude Fable 5.1 can land on an older model through a router switch, a client-side retry, or a [classifier refusal fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md), including a [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback). The API removes the blocks that model can't read before it sees them, the request succeeds, and you aren't billed for the dropped input tokens. The target model re-plans without that reasoning, which can raise cost and latency on the first turn after the switch. To see what was dropped, send the `thinking-binding-controls-2026-08-01` [beta header](../04-API-Reference/Endpoints/beta-headers.md): responses then carry an `input_transformations` array naming each dropped block with `reason: "model_binding_mismatch"`. See [Switching models mid-conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#switching-models).
 
-3.  **Editing earlier turns invalidates thinking blocks:** Each `thinking` block from Claude Fable 5.1 is valid only against the `system` prompt, `tools`, and conversation history that preceded it. If Claude Code, claude.ai, [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), or the [Claude Agent SDK](https://platform.claude.com/docs/en/models/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md) manages your conversation history, it already keeps that prefix intact. If your code builds the `messages` array itself, this item applies to you, and [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) is the full integration guide. Where the check is enforced, a request that sends the block back after any of those changed is rejected with a 400 error:
+3.  **Editing earlier turns invalidates thinking blocks:** Each `thinking` block from Claude Fable 5.1 is valid only against the `system` prompt, `tools`, and conversation history that preceded it. If Claude Code, claude.ai, [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md), or the [Claude Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) manages your conversation history, it already keeps that prefix intact. If your code builds the `messages` array itself, this item applies to you, and [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) is the full integration guide. Where the check is enforced, a request that sends the block back after any of those changed is rejected with a 400 error:
 
     ``` shiki
     messages.5.content.0: Invalid `signature` in `thinking` block. The block is bound to a different conversation. Remove the block, or set `thinking.block_binding.prefix_mismatch_behavior` to "drop_block". That setting requires the `thinking-binding-controls-2026-08-01` value in the `anthropic-beta` header.
@@ -469,15 +469,15 @@ model = "claude-mythos-5-1"  # After
 
 4.  **Text between tool calls is returned in thinking blocks:** On Claude Opus 5, text the model writes between tool calls comes back as `text` blocks. On `claude-fable-5-1`, as on Claude Fable 5, that narration comes back as progress-update `thinking` blocks, one before each tool call. Under the default `thinking.display` of `"omitted"`, they carry no readable text. If your interface renders that narration, set `display: "updates"` (beta) to receive progress updates as text while reasoning stays hidden, or `"summarized"` to receive both. Then render the non-empty `thinking` blocks between `tool_use` blocks. See [Progress updates between tool calls](../04-API-Reference/Guides/build-with-claude-thinking.md#progress-updates).
 
-5.  **Safety classifiers and fallback routing:** Claude Fable 5.1 runs safety classifiers covering the same `stop_details` categories as Claude Fable 5, a broader set than Claude Opus 5's cybersecurity-only classifiers. Expect `stop_details.category` values beyond `"cyber"`, such as `"bio"` and `"reasoning_extraction"`; see the [refusal category table](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response) for the full set. For `fallbacks` configuration and permitted targets, see [Use `fallbacks: "default"` for refusals](#fable-5-1-recommended-changes).
+5.  **Safety classifiers and fallback routing:** Claude Fable 5.1 runs safety classifiers covering the same `stop_details` categories as Claude Fable 5, a broader set than Claude Opus 5's classifiers. Expect additional `stop_details.category` values, such as `"bio"`; see the [refusal category table](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response) for the full set. For `fallbacks` configuration and permitted targets, see [Use `fallbacks: "default"` for refusals](#fable-5-1-recommended-changes).
 
 6.  **Pricing:** \$10 USD per million input tokens and \$50 USD per million output tokens, compared with \$5 USD and \$25 USD for Claude Opus 5. Prompt cache reads are \$0.25 USD per million tokens, half the Claude Opus 5 rate. See [Claude pricing](../17-Billing-Plans/about-claude-pricing.md).
 
-7.  **Data retention:** Claude Fable 5.1 and Claude Mythos 5.1 require 30-day data retention, aren't available under zero data retention (ZDR) arrangements unless expressly authorized by Anthropic, and are designated Covered Models. Claude Opus 5 is available under ZDR. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+7.  **Data retention:** Claude Fable 5.1 and Claude Mythos 5.1 require 30-day data retention, aren't available under zero data retention (ZDR) arrangements unless expressly authorized by Anthropic, and are designated Covered Models. Claude Opus 5 is available under ZDR. See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 ### Migration checklist
 
-- If your organization has a zero data retention (ZDR) arrangement, confirm eligibility first: these models aren't available under ZDR unless expressly authorized by Anthropic. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+- If your organization has a zero data retention (ZDR) arrangement, confirm eligibility first: these models aren't available under ZDR unless expressly authorized by Anthropic. See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 - Update the model name from `claude-opus-5` to `claude-fable-5-1` (or `claude-mythos-5-1`).
 - Remove any `thinking: {type: "disabled"}` configuration: it returns a 400 error on `claude-fable-5-1`. Control token spend with lower [effort](../04-API-Reference/Guides/build-with-claude-effort.md) levels, and revisit `max_tokens`.
 - Replace forced `tool_choice` (`any` or `tool`) with `auto` plus an explicit instruction (`user` turn or mid-conversation system message) and `strict: true` tools, or with JSON outputs.

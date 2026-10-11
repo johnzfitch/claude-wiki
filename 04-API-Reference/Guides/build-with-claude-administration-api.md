@@ -54,7 +54,7 @@ There are five organization-level roles. See more details in the [API Console ro
 
 ### Organization Members
 
-You can list [organization members](../Admin/beta-organization-users-retrieve.md), update member roles, and remove members.
+You can list [organization members](../Endpoints/admin-api-users-get-user.md), update member roles, and remove members.
 
 <CodeGroup>
 ```bash cURL
@@ -79,7 +79,7 @@ curl --request DELETE "https://api.anthropic.com/v1/organizations/users/{user_id
 
 ### Organization Invites
 
-You can invite users to organizations and manage those [invites](../Admin/beta-organization-invites-retrieve.md).
+You can invite users to organizations and manage those [invites](../Endpoints/admin-api-invites-get-invite.md).
 
 <CodeGroup>
 
@@ -108,11 +108,11 @@ curl --request DELETE "https://api.anthropic.com/v1/organizations/invites/{invit
 
 ### Workspaces
 
-For a comprehensive guide to workspaces, including Console and API examples, see [Workspaces](../Other/manage-claude-workspaces.md).
+For a comprehensive guide to workspaces, including Console and API examples, see [Workspaces](build-with-claude-workspaces.md).
 
 ### Workspace Members
 
-Manage [user access to specific workspaces](../Admin/beta-organization-workspaces-members-retrieve.md):
+Manage [user access to specific workspaces](../Endpoints/admin-api-workspace-members-get-workspace-member.md):
 
 <CodeGroup>
 
@@ -193,7 +193,7 @@ curl "https://api.anthropic.com/v1/organizations/me" \
 
 This endpoint is useful for programmatically determining which organization an Admin API key belongs to.
 
-For complete parameter details and response schemas, see the [Organization Info API reference](../Admin/beta-organization-retrieve.md).
+For complete parameter details and response schemas, see the [Organization Info API reference](../Endpoints/admin-api-organization-get-me.md).
 
 ## Usage and cost reports
 
@@ -249,4 +249,4 @@ Organization invites expire after 21 days. There is currently no way to modify t
 
 </section>
 
-For workspace-specific questions, see the [Workspaces FAQ](../Other/manage-claude-workspaces.md#faq).
+For workspace-specific questions, see the [Workspaces FAQ](build-with-claude-workspaces.md#faq).

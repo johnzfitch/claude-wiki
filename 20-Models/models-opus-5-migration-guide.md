@@ -480,7 +480,7 @@ Claude Opus 4.7 introduced several behavioral differences from Claude Opus 4.6 t
 
     To increase tool usage, raise the effort setting. `high` or `xhigh` effort settings show substantially more tool usage in agentic search and coding. You can also adjust your prompt to explicitly instruct the model about when and how to properly use its tools.
 
-8.  **Real-time cybersecurity safeguards:** Newly added in Claude Opus 4.7, requests that involve prohibited or high-risk topics may lead to refusals. For legitimate security work such as penetration testing, vulnerability research, or red-teaming, apply to the [Cyber Verification Program](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) to request reduced restrictions. The application route depends on how you access Claude.
+8.  **Real-time cybersecurity safeguards:** Newly added in Claude Opus 4.7, requests that involve prohibited or high-risk topics may lead to refusals. For legitimate security work such as penetration testing, vulnerability research, or red-teaming, apply to the [Cyber Verification Program](https://platform.claude.com/docs/en/models/opus-5/real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) to request reduced restrictions. The application route depends on how you access Claude.
 
 9.  **High-resolution image support:** Claude Opus 4.7 is the first Claude model with high-resolution image support. Maximum image resolution is 2,576 pixels on the long edge, up from 1,568 pixels on prior models. This unlocks gains on vision-heavy workloads and is particularly valuable for computer use, screenshot understanding, and document analysis.
 
@@ -566,7 +566,7 @@ These are not required but will improve your experience:
 - If you use [web fetch](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md), plan an alternative: it is not available on Claude Opus 5.
 - If your organization has a [Priority Tier](../04-API-Reference/Endpoints/service-tiers.md#supported-models) commitment, note that Priority Tier is not supported on Claude Opus 5.
 - Remove verification and self-check instructions carried over from prompts tuned for earlier models; they cause over-verification on Claude Opus 5.
-- If your product does legitimate security work, apply to the [Cyber Verification Program](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for access to lower restrictions on cyber content.
+- If your product does legitimate security work, apply to the [Cyber Verification Program](https://platform.claude.com/docs/en/models/opus-5/real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) for access to lower restrictions on cyber content.
 
 ### Migrating from Claude Opus 4.5 or earlier
 

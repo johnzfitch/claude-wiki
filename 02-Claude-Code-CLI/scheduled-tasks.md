@@ -2,7 +2,7 @@
 title: "Run prompts on a schedule - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/scheduled-tasks"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-18T06:36:23Z"
+fetched_at: "2026-10-10T06:24:39Z"
 tags: ["claude-code", "prompting"]
 ---
 
@@ -19,6 +19,8 @@ tags: ["claude-code", "prompting"]
 - [Manage scheduled tasks](#manage-scheduled-tasks)
 - [How scheduled tasks run](#how-scheduled-tasks-run)
   - [Jitter](#jitter)
+  - [How late a recurring task runs](#how-late-a-recurring-task-runs)
+  - [When a one-shot task runs early](#when-a-one-shot-task-runs-early)
   - [Seven-day expiry](#seven-day-expiry)
 - [Cron expression reference](#cron-expression-reference)
 - [Disable scheduled tasks](#disable-scheduled-tasks)
@@ -34,7 +36,7 @@ Use /loop and the cron scheduling tools to run prompts repeatedly, poll for stat
 
 Copy pageCopy page
 
-Scheduled tasks let Claude re-run a prompt automatically on an interval. Use them to poll a deployment, babysit a PR, check back on a long-running build, or remind yourself to do something later in the session. To react to events as they happen instead of polling, see [Channels](channels.md): your CI can push the failure into the session directly. To keep the session working turn after turn toward a condition rather than on an interval, see [`/goal`](goal.md). Tasks are session-scoped: they live in the current conversation and stop when you start a new one. When you resume with `--resume` or `--continue`, Claude Code restores tasks that haven’t [expired](#seven-day-expiry), except those listed under [Limitations](#limitations). For scheduling that survives independently of any session, use [Routines](web-scheduled-tasks.md) to create a routine on the cloud, set up a [Desktop scheduled task](../16-Mobile-Desktop/desktop-scheduled-tasks.md), or use [GitHub Actions](github-actions.md).
+Scheduled tasks let Claude re-run a prompt automatically on an interval. Use them to poll a deployment, babysit a PR, check back on a long-running build, or remind yourself to do something later in the session. To react to events as they happen instead of polling, see [Channels](channels.md): your CI can push the failure into the session directly. To keep the session working turn after turn toward a condition rather than on an interval, see [`/goal`](goal.md). Tasks are session-scoped. When you resume with `--resume` or `--continue`, Claude Code restores tasks that haven’t [expired](#seven-day-expiry), except those listed under [Limitations](#limitations). For scheduling that survives independently of any session, use [Routines](web-scheduled-tasks.md) to create a routine on the cloud, set up a [Desktop scheduled task](../16-Mobile-Desktop/desktop-scheduled-tasks.md), or use [GitHub Actions](github-actions.md).
 
 
 [​](#compare-scheduling-options)
@@ -103,7 +105,7 @@ When you omit the interval, Claude chooses one dynamically instead of running on
 
 In a session where the [Monitor tool is available](tools-reference.md#monitor-tool), Claude may use it directly when you ask for a dynamic `/loop` schedule. Monitor runs a background script and streams each output line back, which avoids polling altogether and is often more token-efficient and responsive than re-running a prompt on an interval. A dynamically scheduled loop appears in your [scheduled task list](#manage-scheduled-tasks) like any other task, so you can list or cancel it the same way. The [jitter rules](#jitter) don’t apply to it, but the [seven-day expiry](#seven-day-expiry) does.
 
-Dynamically chosen intervals and the [built-in maintenance prompt](#run-the-built-in-maintenance-prompt) work on every provider, and with [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) turned off. On Amazon Bedrock, Claude Platform on AWS, Google Cloud’s Agent Platform, and Microsoft Foundry, or with fetching turned off, both require Claude Code v2.1.248 or later. In those cases, on earlier versions, a prompt with no interval runs on a fixed 10-minute schedule, and a `/loop` with no prompt prints the usage message.
+Dynamically chosen intervals and the [built-in maintenance prompt](#run-the-built-in-maintenance-prompt) work on every provider, and with [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) turned off. On Amazon Bedrock, Claude Platform on AWS, Google Cloud’s Agent Platform, and Microsoft Foundry, or with fetching turned off, both require Claude Code v2.1.248 or later.
 
 
 [​](#run-the-built-in-maintenance-prompt)
@@ -210,12 +212,29 @@ The scheduler checks every second for due tasks and enqueues them at low priorit
 
 Jitter
 
-To avoid every session hitting the API at the same wall-clock moment, the scheduler adds a deterministic offset to fire times:
+A scheduled task can run at a different time than its schedule says. If every session’s tasks ran exactly on schedule, many of them would call the API at the same moment, so Claude Code shifts each task’s run time. Recurring tasks run late, and one-shot tasks scheduled on the hour or half hour run a little early.
 
-- Recurring tasks fire up to 30 minutes after the scheduled time (or up to half the interval, for tasks that run more often than hourly). An hourly job scheduled for `:00` may fire anywhere up to `:30`.
-- One-shot tasks scheduled for the top or bottom of the hour fire up to 90 seconds early.
 
-The offset is derived from the task ID, so the same task always gets the same offset. If exact timing matters, pick a minute that is not `:00` or `:30`, for example `3 9 * * *` instead of `0 9 * * *`, and the one-shot jitter will not apply.
+[​](#how-late-a-recurring-task-runs)
+
+How late a recurring task runs
+
+When you create a recurring task, Claude Code gives it a fixed delay and adds that delay to every run. The delay is worked out from the task’s ID, so the same task runs the same number of minutes late each time, including when the session is idle and nothing else is running. Tasks that run more often get shorter delays, and 30 minutes is the longest delay a task can get. These are the delay ranges for some common schedules:
+
+| Task runs                               | Delay is between |
+|:----------------------------------------|:-----------------|
+| Every 10 minutes                        | 0 and 5 minutes  |
+| Every 30 minutes                        | 0 and 15 minutes |
+| Every hour, or less often such as daily | 0 and 30 minutes |
+
+For example, `7,37 * * * *` schedules a task for `:07` and `:37`, which are 30 minutes apart, so its delay is somewhere between 0 and 15 minutes. If this task’s delay is 14 minutes, it runs at `:21` and `:51` every hour. Changing the schedule to a different minute moves the run time, and a delay is still added on top.
+
+
+[​](#when-a-one-shot-task-runs-early)
+
+When a one-shot task runs early
+
+A one-shot task scheduled for `:00` or `:30` runs up to 90 seconds early. Claude Code doesn’t shift a one-shot task scheduled for any other minute, so when the timing matters, schedule it off the hour and half hour: `3 9 * * *` instead of `0 9 * * *`.
 
 
 [​](#seven-day-expiry)
@@ -258,7 +277,7 @@ Session-scoped scheduling has inherent constraints:
 
 - Tasks only fire while Claude Code is running and idle. Closing the terminal or letting the session exit stops them firing. [Backgrounding the session](../09-Agents-Patterns/agent-view.md#from-inside-a-session) carries `/loop` tasks over to a background session, which keeps running without a terminal.
 - No catch-up for missed fires. If a task’s scheduled time passes while Claude is busy on a long-running request, it fires once when Claude becomes idle, not once per missed interval.
-- Starting a fresh conversation clears all session-scoped tasks. When you resume a session with `claude --resume` or `claude --continue`, Claude Code restores the tasks scheduled with `CronCreate`, except recurring tasks that have [expired](#seven-day-expiry) and one-shot tasks whose scheduled time has passed. A [self-paced `/loop`](#let-claude-choose-the-interval) isn’t restored, so run `/loop` again to restart it. Background Bash and monitor tasks are never restored on resume.
+- When you resume a session with `claude --resume` or `claude --continue`, Claude Code restores the tasks scheduled with `CronCreate`, except recurring tasks that have [expired](#seven-day-expiry) and one-shot tasks whose scheduled time has passed. A [self-paced `/loop`](#let-claude-choose-the-interval) isn’t restored, so run `/loop` again to restart it. Background Bash and monitor tasks are never restored on resume.
 - With [feature-flag fetching off](env-vars.md#features-that-need-feature-flag-fetching), Claude Code stores a task you asked to keep across sessions in the project’s `.claude/scheduled_tasks.json` file. When the `.claude` directory or that file is a symlink, Claude Code returns an error instead of scheduling the task. A saved task runs only in the project folder where you created it. If you copy the file into another folder, such as a new worktree, sessions there list the copied tasks but don’t run them, so create the task again in that folder.
 
 For cron-driven automation that needs to run unattended:

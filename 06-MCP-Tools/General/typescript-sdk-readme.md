@@ -2,19 +2,26 @@
 title: "MCP TypeScript SDK"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-05-19T21:39:56Z"
+fetched_at: "2026-10-06T06:24:03Z"
 tags: ["mcp", "sdk", "typescript"]
 ---
 
 # MCP TypeScript SDK
 
-> [!IMPORTANT] **This is the `main` branch which contains v2 of the SDK (currently in development, pre-alpha).**
+<!-- prettier-ignore -->
+> [!IMPORTANT]
+> **This is the `main` branch: v2 of the SDK** (`@modelcontextprotocol/server`, `@modelcontextprotocol/client`), the stable release line, implementing the [2026-07-28 MCP spec](../Spec/draft.md). Start with the [v2 documentation](https://ts.sdk.modelcontextprotocol.io/v2/); coming from v1, see the [migration guide](https://ts.sdk.modelcontextprotocol.io/v2/migration/upgrade-to-v2).
 >
-> We anticipate a stable v2 release in Q1 2026. Until then, **v1.x remains the recommended version** for production use. v1.x will continue to receive bug fixes and security updates for at least 6 months after v2 ships to give people time to upgrade.
+> **v1.x** (`@modelcontextprotocol/sdk`) lives on the [`v1.x` branch](https://github.com/modelcontextprotocol/typescript-sdk/tree/v1.x) and continues to receive bug fixes and security updates for at least six months after the v2 release (2026-07-27). Its documentation is at [ts.sdk.modelcontextprotocol.io](https://ts.sdk.modelcontextprotocol.io/).
 >
-> For v1 documentation, see the [V1 API docs](https://ts.sdk.modelcontextprotocol.io/). For v2 API docs, see [`/v2/`](https://ts.sdk.modelcontextprotocol.io/v2/).
+> Found a problem in v2? [Open an issue](https://github.com/modelcontextprotocol/typescript-sdk/issues/new?template=v2-feedback.yml).
 
-![NPM Version](https://img.shields.io/npm/v/%40modelcontextprotocol%2Fserver) ![NPM Version](https://img.shields.io/npm/v/%40modelcontextprotocol%2Fclient) ![MIT licensed](https://img.shields.io/npm/l/%40modelcontextprotocol%2Fserver)
+<!-- prettier-ignore -->
+> [!NOTE]
+> **Contributors without write access can have one open pull request at a time.** Draft pull requests don't count toward the limit. For a feature or a larger change, please [open an issue](https://github.com/modelcontextprotocol/typescript-sdk/issues/new/choose) first; see [CONTRIBUTING.md](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/CONTRIBUTING.md).
+
+[![NPM Version - Server](https://img.shields.io/npm/v/%40modelcontextprotocol%2Fserver?label=%40modelcontextprotocol%2Fserver)](https://www.npmjs.com/package/@modelcontextprotocol/server)
+[![NPM Version - Client](https://img.shields.io/npm/v/%40modelcontextprotocol%2Fclient?label=%40modelcontextprotocol%2Fclient)](https://www.npmjs.com/package/@modelcontextprotocol/client) ![Apache-2.0 licensed](https://img.shields.io/npm/l/%40modelcontextprotocol%2Fserver)
 
 <details>
 <summary>Table of Contents</summary>
@@ -37,7 +44,7 @@ This repository contains the TypeScript SDK implementation of the MCP specificat
 
 - MCP **server** libraries (tools/resources/prompts, Streamable HTTP, stdio, auth helpers)
 - MCP **client** libraries (transports, high-level helpers, OAuth helpers)
-- Optional **middleware packages** for specific runtimes/frameworks (Express, Hono, Node.js HTTP)
+- Optional **middleware packages** for specific runtimes/frameworks (Express, Fastify, Hono, Node.js HTTP)
 - Runnable **examples** (under [`examples/`](https://github.com/modelcontextprotocol/typescript-sdk/tree/main/examples))
 
 ## Packages
@@ -57,6 +64,7 @@ They are intentionally thin adapters: they should not introduce new MCP function
 
 - **`@modelcontextprotocol/node`**: Node.js Streamable HTTP transport wrapper for `IncomingMessage` / `ServerResponse`
 - **`@modelcontextprotocol/express`**: Express helpers (app defaults + Host header validation)
+- **`@modelcontextprotocol/fastify`**: Fastify helpers (app defaults + Host header validation)
 - **`@modelcontextprotocol/hono`**: Hono helpers (app defaults + JSON body parsing hook + Host header validation)
 
 ## Installation
@@ -83,7 +91,7 @@ deno add npm:@modelcontextprotocol/client
 
 ### Optional middleware packages
 
-The SDK also publishes optional “middleware” packages that help you **wire MCP into a specific runtime or web framework** (for example Express, Hono, or Node.js `http`).
+The SDK also publishes optional “middleware” packages that help you **wire MCP into a specific runtime or web framework** (for example Express, Fastify, Hono, or Node.js `http`).
 
 These packages are intentionally thin adapters and should not introduce additional MCP features or business logic. See [`packages/middleware/README.md`](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/packages/middleware/README.md) for details.
 
@@ -93,6 +101,9 @@ npm install @modelcontextprotocol/node
 
 # Express integration:
 npm install @modelcontextprotocol/express express
+
+# Fastify integration:
+npm install @modelcontextprotocol/fastify fastify
 
 # Hono integration:
 npm install @modelcontextprotocol/hono hono
@@ -110,53 +121,55 @@ import * as z from 'zod/v4';
 const server = new McpServer({ name: 'greeting-server', version: '1.0.0' });
 
 server.registerTool(
-  'greet',
-  {
-    description: 'Greet someone by name',
-    inputSchema: z.object({ name: z.string() }),
-  },
-  async ({ name }) => ({
-    content: [{ type: 'text', text: `Hello, ${name}!` }],
-  }),
+    'greet',
+    {
+        description: 'Greet someone by name',
+        inputSchema: z.object({ name: z.string() })
+    },
+    async ({ name }) => ({
+        content: [{ type: 'text', text: `Hello, ${name}!` }]
+    })
 );
 
 async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
+    const transport = new StdioServerTransport();
+    await server.connect(transport);
 }
 
 main();
 ```
 
-Ready to build something real? Follow the step-by-step quickstart tutorials:
+Ready to build something real? Follow the step-by-step tutorials:
 
-- [Build a weather server](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/server-quickstart.md) — server quickstart
-- [Build an LLM-powered chatbot](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/client-quickstart.md) — client quickstart
+- [Build your first server](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/get-started/first-server.md) — a stdio weather-alert server, from `npm init` to a tool call
+- [Build your first client](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/get-started/first-client.md) — connect to that server, list its tools, and call them
 
-The complete code for each tutorial is in [`examples/server-quickstart/`](https://github.com/modelcontextprotocol/typescript-sdk/tree/main/examples/server-quickstart/) and [`examples/client-quickstart/`](https://github.com/modelcontextprotocol/typescript-sdk/tree/main/examples/client-quickstart/). For more advanced runnable examples, see:
+For runnable, end-to-end examples beyond the tutorials, see:
 
-- [`examples/server/README.md`](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/examples/server/README.md) — server examples index
-- [`examples/client/README.md`](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/examples/client/README.md) — client examples index
+- [`examples/README.md`](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/examples/README.md) — runnable, self-verifying client/server example pairs (one story per directory)
 
 ## Documentation
 
-- [Server Guide](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/server.md) — building MCP servers: transports, tools, resources, prompts, server-initiated requests, and deployment
-- [Client Guide](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/client.md) — building MCP clients: connecting, tools, resources, prompts, server-initiated requests, and error handling
-- [FAQ](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/faq.md) — frequently asked questions and troubleshooting
-- [API docs](https://modelcontextprotocol.github.io/typescript-sdk/)
+- [Build a server](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/get-started/first-server.md) — your first MCP server, step by step
+- [Build a client](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/get-started/first-client.md) — your first MCP client, step by step
+- [Documentation site](https://ts.sdk.modelcontextprotocol.io/v2/) — the full guides: tools, resources, prompts, serving over HTTP and stdio, clients, OAuth, and migration
+- [Troubleshooting](https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/docs/troubleshooting.md) — common errors and their fixes
+- [API reference](https://ts.sdk.modelcontextprotocol.io/v2/api/)
 - [MCP documentation](https://modelcontextprotocol.io/docs)
 - [MCP specification](https://modelcontextprotocol.io/specification/latest)
 
 ### Building docs locally
 
-To generate the API reference documentation locally:
+To work on the documentation site locally:
 
 ```bash
-pnpm docs          # Generate V2 docs only (output: tmp/docs/)
-pnpm docs:multi    # Generate combined V1 + V2 docs (output: tmp/docs-combined/)
+pnpm docs:api      # Generate the API reference markdown (output: docs/api/)
+pnpm docs:dev      # Start the VitePress dev server for the V2 site
+pnpm docs:build    # Build the V2 site (output: docs/.vitepress/dist/)
+pnpm docs:multi    # Build the combined V1 + V2 site (output: tmp/docs-combined/)
 ```
 
-The `docs:multi` script checks out both the `v1.x` and `main` branches via git worktrees, builds each, and produces a combined site with V1 docs at the root and V2 docs under `/v2/`.
+The `docs:multi` script builds the V2 site from the current checkout, checks out the `v1.x` branch via a git worktree to build the V1 site, and produces a combined site with V1 docs at the root and V2 docs under `/v2/`.
 
 ## v1 (legacy) documentation and fixes
 

@@ -1,8 +1,8 @@
 ---
 title: "Artifacts - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/artifacts"
+source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/artifacts"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:04Z"
+fetched_at: "2026-10-04T08:33:00Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fartifacts)
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fartifacts)
 
 
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -141,33 +124,57 @@ MCP Tunnels
 
 Analytics
 
-
-Get Activity Summaries
-
-Usage
-
-Cost
+Summaries
 
 Users
 
-Skills
+Apps
 
 Connectors
 
-Chat Projects
-
 Plugins
+
+Skills
 
 Artifacts
 
 
 Get Artifact Activity
 
+Usage Report
+
+User Usage Report
+
+Cost Report
+
+User Cost Report
+
 Spend Limits
 
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -257,15 +264,3 @@ cURL
 GET/v1/organizations/analytics/artifacts
 
 Get artifact-creation activity for a given day, broken out by MIME type.
-
-##### Models
-
-
-
-BetaArtifactUsage object{ data, next_page }
-
-
-
-Response for GET /v1/organizations/analytics/artifacts.
-
-`next_page` is null on ungrouped queries — the artifact-type cube is finite and returned in full. Grouped queries (`group_by[]` on `product` / `user_id` / `rbac_group_id`) multiply the cube and paginate like the other analytics list endpoints.

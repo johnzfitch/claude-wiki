@@ -2,7 +2,7 @@
 title: "Quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/quickstart"
 category: "01-Getting-Started"
-fetched_at: "2026-09-29T06:30:16Z"
+fetched_at: "2026-10-08T06:25:00Z"
 tags: ["claude-code", "getting-started"]
 ---
 
@@ -10,14 +10,15 @@ tags: ["claude-code", "getting-started"]
 
 - [Before you begin](#before-you-begin)
 - [Step 1: Install Claude Code](#step-1-install-claude-code)
-- [Step 2: Log in to your account](#step-2-log-in-to-your-account)
-- [Step 3: Start your first session](#step-3-start-your-first-session)
-- [Step 4: Ask your first question](#step-4-ask-your-first-question)
-- [Step 5: Make your first code change](#step-5-make-your-first-code-change)
-- [Step 6: Use Git with Claude Code](#step-6-use-git-with-claude-code)
-- [Step 7: Fix a bug or add a feature](#step-7-fix-a-bug-or-add-a-feature)
-- [Step 8: Test out other common workflows](#step-8-test-out-other-common-workflows)
+- [Step 2: Start your first session](#step-2-start-your-first-session)
+- [Step 3: Ask your first question](#step-3-ask-your-first-question)
+- [Step 4: Make your first code change](#step-4-make-your-first-code-change)
+- [Step 5: Use Git with Claude Code](#step-5-use-git-with-claude-code)
+- [Step 6: Fix a bug or add a feature](#step-6-fix-a-bug-or-add-a-feature)
+- [Step 7: Test out other common workflows](#step-7-test-out-other-common-workflows)
 - [Essential commands](#essential-commands)
+  - [Shell commands](#shell-commands)
+  - [Session commands](#session-commands)
 - [Pro tips for beginners](#pro-tips-for-beginners)
 - [What’s next?](#what%E2%80%99s-next)
 - [Getting help](#getting-help)
@@ -28,11 +29,11 @@ Getting started
 
 Copy pageCopy page
 
-Welcome to Claude Code!
+Install Claude Code in your terminal, sign in, and use the CLI to explore your codebase and make your first code change.
 
 Copy pageCopy page
 
-This quickstart guide will have you using AI-powered coding assistance in a few minutes. By the end, you’ll understand how to use Claude Code for common development tasks.
+This quickstart covers Claude Code in your terminal: installing the CLI, signing in from your first session, and using it for common development tasks in your own project.
 
 
 [​](#before-you-begin)
@@ -42,11 +43,13 @@ Before you begin
 Make sure you have:
 
 - A terminal or command prompt open
-  - If you’ve never used the terminal before, check out the [terminal guide](../02-Claude-Code-CLI/terminal-guide.md)
 - A code project to work with
 - A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/usage-limits.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
 
-This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/vs-code.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains.md), in [Slack](../14-Connectors/slack.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/github-actions.md) and [GitLab](../02-Claude-Code-CLI/gitlab-ci-cd.md). See [all interfaces](../02-Claude-Code-CLI/code-home.md#use-claude-code-everywhere).
+These cases are covered on other pages:
+
+- **Never used a terminal before**: start with the [terminal guide](../02-Claude-Code-CLI/terminal-guide.md)
+- **Want Claude Code somewhere other than the terminal**: Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/vs-code.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains.md), in [Slack](../14-Connectors/slack.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/github-actions.md) and [GitLab](../02-Claude-Code-CLI/gitlab-ci-cd.md). See [all interfaces](../02-Claude-Code-CLI/code-home.md#use-claude-code-everywhere).
 
 
 [​](#step-1-install-claude-code)
@@ -67,7 +70,7 @@ To install Claude Code, open a terminal and run the command for your system. If 
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-**Windows PowerShell:**
+On Windows, your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.**Windows PowerShell:**
 
 ```python
 irm https://claude.ai/install.ps1 | iex
@@ -79,7 +82,7 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-When the installer finishes, open a new terminal window and run `claude --version`. A working installation prints a version number. If your shell says `claude` isn’t found or isn’t recognized, the install directory isn’t on your PATH yet: see [Fix your PATH](../02-Claude-Code-CLI/troubleshoot-install.md#command-not-found-claude-after-installation).If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or another curl error, see [Troubleshoot installation](../02-Claude-Code-CLI/troubleshoot-install.md#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
+The install command shows no progress while it downloads Claude Code. When the installer finishes, open a new terminal window and run `claude --version`. A working installation prints a version number. If your shell says `claude` isn’t found or isn’t recognized, the install directory isn’t on your PATH yet: see [Fix your PATH](../02-Claude-Code-CLI/troubleshoot-install.md#command-not-found-claude-after-installation).If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or any other error, see [Troubleshoot installation](../02-Claude-Code-CLI/troubleshoot-install.md#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 
 Native installations automatically update in the background to keep you on the latest version.
 
@@ -106,35 +109,9 @@ claude --version
 The command prints a version number followed by `(Claude Code)`.
 
 
-[​](#step-2-log-in-to-your-account)
+[​](#step-2-start-your-first-session)
 
-Step 2: Log in to your account
-
-Claude Code requires an account to use. Start an interactive session with the `claude` command and you’ll be prompted to log in on first use:
-
-```python
-claude
-```
-
-For Claude subscription or Console accounts, follow the prompts to complete authentication in your browser. If you’ve set the `ANTHROPIC_API_KEY` environment variable, Claude Code skips the login prompt and asks you to approve the key instead. To switch accounts later or re-authenticate, type `/login` inside the running session:
-
-```python
-/login
-```
-
-You can log in using any of these account types:
-
-- [Claude Pro, Max, Team, or Enterprise](../17-Billing-Plans/pricing.md) (recommended)
-- [Claude Console](../04-API-Reference/Other/usage-limits.md) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
-- [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](../02-Claude-Code-CLI/third-party-integrations.md) (enterprise cloud providers)
-- A self-hosted [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
-
-Once logged in, your credentials are stored and you won’t need to log in again. Learn more in [Credential Management](../13-Enterprise-Admin/iam.md#credential-management).
-
-
-[​](#step-3-start-your-first-session)
-
-Step 3: Start your first session
+Step 2: Start your first session
 
 Open your terminal in any project directory and start Claude Code:
 
@@ -143,14 +120,21 @@ cd /path/to/your/project
 claude
 ```
 
-Replace `/path/to/your/project` with the path to the project you want to work on. You’ll see the Claude Code prompt with the version, current model, and working directory shown above it. Type `/help` for available commands or `/resume` to continue a previous conversation.
+Replace `/path/to/your/project` with the path to the project you want to work on. Claude Code prompts you to log in on first use. For Claude subscription or Console accounts, follow the prompts to complete authentication in your browser. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. You can log in using any of these account types:
+
+- [Claude Pro, Max, Team, or Enterprise](../17-Billing-Plans/pricing.md) (recommended)
+- [Claude Console](../04-API-Reference/Other/usage-limits.md) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
+- [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](../02-Claude-Code-CLI/third-party-integrations.md) (enterprise cloud providers)
+- A self-hosted [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
+
+Once logged in, your credentials are stored and you won’t need to log in again. Learn more in [Credential Management](../02-Claude-Code-CLI/authentication.md#credential-management). The Claude Code prompt appears with the version, current model, and working directory shown above it. Type `/help` for available commands or `/resume` to continue a previous conversation. To switch accounts later or re-authenticate, type `/login` inside the running session.
 
 
-[​](#step-4-ask-your-first-question)
+[​](#step-3-ask-your-first-question)
 
-Step 4: Ask your first question
+Step 3: Ask your first question
 
-Let’s start with understanding your codebase. Try one of these commands:
+Try one of these commands:
 
 ```python
 what does this project do?
@@ -187,24 +171,22 @@ can Claude Code work with Docker?
 Claude Code reads your project files as needed. You don’t have to manually add context.
 
 
-[​](#step-5-make-your-first-code-change)
+[​](#step-4-make-your-first-code-change)
 
-Step 5: Make your first code change
+Step 4: Make your first code change
 
-Now let’s make Claude Code do some actual coding. Try a simple task:
+Try a small task:
 
 ```python
 add a hello world function to the main file
 ```
 
-Claude Code finds the appropriate file and shows you the change. If it asks before making the change, select **Yes** to approve. With Claude Code v2.1.283 or later, auto mode is the [built-in starting permission mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode) for interactive terminal sessions: a classifier reviews actions instead of you, and Claude edits most files and runs most commands without asking you. On earlier versions, auto mode is the built-in starting permission mode only on Pro, Max, and Team plans. For the session you start right after installing, see [First session after an install or upgrade](../02-Claude-Code-CLI/env-vars.md#first-session-after-an-install-or-upgrade).
-
-Your settings or your organization can set a different starting permission mode. [Which permission mode a session starts in](../02-Claude-Code-CLI/permission-modes.md#which-mode-a-session-starts-in) lists what does. Press `Shift+Tab` at any time to switch the permission mode of the session you’re in.
+Claude Code finds the appropriate file and shows you the change. If it asks before making the change, select **Yes** to approve. The session’s [permission mode](../02-Claude-Code-CLI/permission-modes.md) sets which actions Claude can take without asking you first. Press `Shift+Tab` at any time to switch the permission mode of the session you’re in.
 
 
-[​](#step-6-use-git-with-claude-code)
+[​](#step-5-use-git-with-claude-code)
 
-Step 6: Use Git with Claude Code
+Step 5: Use Git with Claude Code
 
 Claude Code makes Git operations conversational:
 
@@ -231,11 +213,11 @@ help me resolve merge conflicts
 ```
 
 
-[​](#step-7-fix-a-bug-or-add-a-feature)
+[​](#step-6-fix-a-bug-or-add-a-feature)
 
-Step 7: Fix a bug or add a feature
+Step 6: Fix a bug or add a feature
 
-Claude is proficient at debugging and feature implementation. Describe what you want in natural language:
+Describe what you want in natural language:
 
 ```python
 add input validation to the user registration form
@@ -247,37 +229,24 @@ Or fix existing issues:
 there's a bug where users can submit empty forms - fix it
 ```
 
-Claude Code will:
 
-- Locate the relevant code
-- Understand the context
-- Implement a solution
-- Run tests if available
+[​](#step-7-test-out-other-common-workflows)
 
+Step 7: Test out other common workflows
 
-[​](#step-8-test-out-other-common-workflows)
-
-Step 8: Test out other common workflows
-
-There are a number of ways to work with Claude: **Refactor code**
+Try a few more prompts. You can ask Claude to refactor code, write tests, update documentation, or review your changes:
 
 ```python
 refactor the authentication module to use async/await instead of callbacks
 ```
 
-**Write tests**
-
 ```python
 write unit tests for the calculator functions
 ```
 
-**Update documentation**
-
 ```python
 update the README with installation instructions
 ```
-
-**Code review**
 
 ```python
 review my changes and suggest improvements
@@ -290,7 +259,14 @@ Talk to Claude like you would a helpful colleague. Describe what you want to ach
 
 Essential commands
 
-Here are the most important commands for daily use. Shell commands run from your terminal to start or resume Claude Code. Session commands run inside Claude Code after it starts. **Shell commands**
+Here are the most important commands for daily use, grouped by where you run them.
+
+
+[​](#shell-commands)
+
+Shell commands
+
+Run these from your terminal to start or resume Claude Code.
 
 | Command             | What it does                                           | Example                             |
 |---------------------|--------------------------------------------------------|-------------------------------------|
@@ -300,7 +276,14 @@ Here are the most important commands for daily use. Shell commands run from your
 | `claude -c`         | Continue most recent conversation in current directory | `claude -c`                         |
 | `claude -r`         | Resume a previous conversation                         | `claude -r`                         |
 
-**Session commands**
+See the [CLI reference](../02-Claude-Code-CLI/cli-reference.md) for the complete list of shell commands.
+
+
+[​](#session-commands)
+
+Session commands
+
+Run these inside Claude Code after it starts.
 
 | Command                 | What it does               | Example  |
 |-------------------------|----------------------------|----------|
@@ -308,7 +291,7 @@ Here are the most important commands for daily use. Shell commands run from your
 | `/help`                 | Show available commands    | `/help`  |
 | `/exit` or Ctrl+D twice | Exit Claude Code           | `/exit`  |
 
-See the [CLI reference](../02-Claude-Code-CLI/cli-reference.md) for the complete list of shell commands and the [commands reference](../02-Claude-Code-CLI/commands.md) for the complete list of session commands.
+See the [commands reference](../02-Claude-Code-CLI/commands.md) for the complete list of session commands.
 
 
 [​](#pro-tips-for-beginners)
@@ -357,28 +340,19 @@ What’s next?
 
 Now that you’ve learned the basics, explore more advanced features:
 
-## How Claude Code works
+- [How Claude Code works](../02-Claude-Code-CLI/how-claude-code-works.md): understand the agentic loop, built-in tools, and how Claude Code interacts with your project
+- [Best practices](../02-Claude-Code-CLI/best-practices.md): get better results with effective prompting and project setup
+- [Common workflows](../02-Claude-Code-CLI/common-workflows.md): step-by-step guides for common tasks
+- [Extend Claude Code](../02-Claude-Code-CLI/features-overview.md): customize with CLAUDE.md, skills, hooks, MCP, and more
 
-Understand the agentic loop, built-in tools, and how Claude Code interacts with your project
-
-## Best practices
-
-Get better results with effective prompting and project setup
-
-## Common workflows
-
-Step-by-step guides for common tasks
-
-## Extend Claude Code
-
-Customize with CLAUDE.md, skills, hooks, MCP, and more
+See [advanced setup](setup.md) for installation options, manual updates, or uninstallation instructions.
 
 
 [​](#getting-help)
 
 Getting help
 
-- **In Claude Code**: Type `/help` or ask a “how do I” question
-- **Documentation**: You’re here! Browse other guides
-- **Courses**: Take [Claude Code 101](https://academy.claude.com/courses/claude-code-101) and other free self-paced courses on [Claude Academy](https://academy.claude.com/)
-- **Community**: Join our [Discord](https://www.anthropic.com/discord) for tips and support
+- **In Claude Code**: type `/help` or ask a “how do I” question
+- **Documentation**: browse the other guides on this site
+- **Courses**: take [Claude Code 101](https://academy.claude.com/courses/claude-code-101) and other free self-paced courses on [Claude Academy](https://academy.claude.com/)
+- **Community**: join the [Discord server](https://www.anthropic.com/discord) for tips and support

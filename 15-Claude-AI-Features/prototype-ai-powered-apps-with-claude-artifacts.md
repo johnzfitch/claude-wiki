@@ -2,7 +2,7 @@
 title: "Prototype AI-Powered Apps with Claude artifacts · Claude Academy"
 source_url: "https://support.claude.com/en/articles/11649438-prototype-ai-powered-apps-with-claude-artifacts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:40:02Z"
+fetched_at: "2026-10-10T06:24:59Z"
 tags: ["api", "claude-ai"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["api", "claude-ai"]
 
 Learn how to rapidly build, test, and share AI-powered applications using Claude artifacts without API key management.
 
-8 minClaude.ai
+8 minClaude
 
 Watch
 

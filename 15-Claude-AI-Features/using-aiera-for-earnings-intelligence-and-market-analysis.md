@@ -2,7 +2,7 @@
 title: "Using Aiera for earnings intelligence and market analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12651818-using-aiera-for-earnings-intelligence-and-market-analysis"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:40:07Z"
+fetched_at: "2026-10-10T06:25:09Z"
 tags: ["claude-ai"]
 ---
 
@@ -10,13 +10,13 @@ tags: ["claude-ai"]
 
 Set up and use Aiera for access to earnings calls, SEC filings, and expert insights for real-time market analysis.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 
 The Aiera integration provides Claude with access to earnings calls, SEC filings, company publications, and expert insights for real-time financial intelligence. Additionally, the connector can pull information from Third Bridge events. This article explains how to set up and use Aiera to access corporate event data and analyst commentary for your market analysis.
 
-The Aiera integration relies upon Claude’s ability to use [remote connectors(opens in new tab)](../14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md).
+The Aiera integration relies upon Claude’s ability to use [remote connectors(opens in new tab)](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp).
 
 ## What This Integration Provides[](#what-this-integration-provides)
 

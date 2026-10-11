@@ -2,7 +2,7 @@
 title: "Adding files - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/files"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:39Z"
+fetched_at: "2026-10-04T08:32:50Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -250,7 +250,7 @@ resource = client.beta.sessions.resources.add(
 print(resource.id)  # "sesrsc_01ABC..."
 ```
 
-List all resources on a session with `resources.list`. To remove a file, call `resources.delete` with the resource ID:
+List all resources on a session with `client.beta.sessions.resources.list()`. To remove a file, call `client.beta.sessions.resources.delete()` with the resource ID:
 
 cURL
 
@@ -284,7 +284,7 @@ client.beta.sessions.resources.delete(resource.id, session_id=session.id)
 
 Use the [Files API](../Guides/build-with-claude-files.md) to list files scoped to a session and download them. Files the agent writes to `/mnt/session/outputs/` appear in the list shortly after the agent finishes writing them, sometimes a few seconds after the session goes idle. If an output file you expect is missing, list again after a short delay; once it appears in the list, its upload has finished.
 
-Filtering by `scope_id` requires the `managed-agents-2026-04-01` beta header, so the list examples use the `beta` files namespace and pass that header explicitly.
+Filtering by `scope_id` requires the `managed-agents-2026-04-01` beta header, so the list examples call `client.beta.files.list()` and pass that header explicitly.
 
 cURL
 

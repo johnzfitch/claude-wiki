@@ -2,7 +2,7 @@
 title: "Managing your active sessions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13124001-managing-your-active-sessions"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:31:19Z"
+fetched_at: "2026-10-10T06:24:35Z"
 tags: ["claude-ai"]
 ---
 

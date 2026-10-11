@@ -2,7 +2,7 @@
 title: "Securely deploying AI agents - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/secure-deployment"
 category: "05-Agent-SDK"
-fetched_at: "2026-08-29T06:27:35Z"
+fetched_at: "2026-10-06T06:23:30Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -126,7 +126,7 @@ In all of these configurations, Claude Code (or your Agent SDK application) runs
 
 Sandbox runtime
 
-For lightweight isolation without containers, [sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime) enforces filesystem and network restrictions at the OS level. The main advantage is simplicity: no Docker configuration, container images, or networking setup required. The proxy and filesystem restrictions are built in. **How it works:**
+For lightweight isolation without containers, [sandbox-runtime](https://github.com/anthropics/sandbox-runtime) enforces filesystem and network restrictions at the OS level. The main advantage is simplicity: no Docker configuration, container images, or networking setup required. The proxy and filesystem restrictions are built in. **How it works:**
 
 - **Filesystem**: Uses OS primitives (`bubblewrap` on Linux, `sandbox-exec` on macOS) to restrict read/write access to configured paths
 - **Network**: Removes network namespace (Linux) or uses Seatbelt profiles (macOS) to route network traffic through a built-in proxy
@@ -186,7 +186,7 @@ Here’s what each option does:
 | `-v ...:/workspace:ro`             | Mounts code read-only so the agent can analyze but not modify it. **Avoid mounting sensitive host directories like `~/.ssh`, `~/.aws`, or `~/.config`** |
 | `-v .../proxy.sock:...`            | Mounts a Unix socket connected to a proxy running outside the container (see below)                                                                     |
 
-**Unix socket architecture:** With `--network none`, the container has no network interfaces at all. The only way for the agent to reach the outside world is through the mounted Unix socket, which connects to a proxy running on the host. This proxy can enforce domain allowlists, inject credentials, and log all traffic. This is the same architecture used by [sandbox-runtime](https://github.com/anthropic-experimental/sandbox-runtime). Even if the agent is compromised via prompt injection, it cannot exfiltrate data to arbitrary servers. It can only communicate through the proxy, which controls what domains are reachable. For more details, see the [Claude Code sandboxing blog post](https://www.anthropic.com/engineering/claude-code-sandboxing). **Additional hardening options:**
+**Unix socket architecture:** With `--network none`, the container has no network interfaces at all. The only way for the agent to reach the outside world is through the mounted Unix socket, which connects to a proxy running on the host. This proxy can enforce domain allowlists, inject credentials, and log all traffic. This is the same architecture used by [sandbox-runtime](https://github.com/anthropics/sandbox-runtime). Even if the agent is compromised via prompt injection, it cannot exfiltrate data to arbitrary servers. It can only communicate through the proxy, which controls what domains are reachable. For more details, see the [Claude Code sandboxing blog post](https://www.anthropic.com/engineering/claude-code-sandboxing). **Additional hardening options:**
 
 | Option           | Purpose                                                                                                              |
 |------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -327,7 +327,7 @@ For Claude API calls, `ANTHROPIC_BASE_URL` lets you route requests to a proxy th
 2.  Installing the proxy’s CA certificate in the agent’s trust store (so the agent trusts the proxy’s certificates)
 3.  Configuring `HTTP_PROXY`/`HTTPS_PROXY` to route traffic through the proxy
 
-This approach handles any HTTP-based service without writing custom tools, but adds complexity around certificate management. Note that not all programs respect `HTTP_PROXY`/`HTTPS_PROXY`. Most tools (curl, pip, npm, git) do, but some may bypass these variables and connect directly. For example, Node.js `fetch()` ignores these variables by default; in Node 24+ you can set `NODE_USE_ENV_PROXY=1` to enable support. For comprehensive coverage, you can use [proxychains](https://github.com/haad/proxychains) to intercept network calls, or configure iptables to redirect outbound traffic to a transparent proxy.
+This approach handles any HTTP-based service without writing custom tools, but adds complexity around certificate management. Note that not all programs respect `HTTP_PROXY`/`HTTPS_PROXY`. Most tools (curl, pip, npm, git) do, but some may bypass these variables and connect directly. For example, Node.js `fetch()` ignores these variables by default; in Node 24+ you can set `NODE_USE_ENV_PROXY=1` to enable support. To cover tools that ignore these variables, you can use [proxychains](https://github.com/haad/proxychains) to intercept network calls, or configure iptables to redirect outbound traffic to a transparent proxy.
 
 A **transparent proxy** intercepts traffic at the network level, so the client doesn’t need to be configured to use it. Regular proxies require clients to explicitly connect and speak HTTP CONNECT or SOCKS. Transparent proxies (like Squid or mitmproxy in transparent mode) can handle raw redirected TCP connections.
 
@@ -393,7 +393,7 @@ Further reading
 - [Claude Code security documentation](../13-Enterprise-Admin/security.md)
 - [Hosting the Agent SDK](agent-sdk-hosting.md)
 - [Handling permissions](agent-sdk-permissions.md)
-- [Sandbox runtime](https://github.com/anthropic-experimental/sandbox-runtime)
+- [Sandbox runtime](https://github.com/anthropics/sandbox-runtime)
 - [The Lethal Trifecta for AI Agents](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)
 - [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 - [Docker Security Best Practices](https://docs.docker.com/engine/security/)

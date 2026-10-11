@@ -2,7 +2,7 @@
 title: "How to use the single-cell-rna-qc skill with Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12621831-how-to-use-the-single-cell-rna-qc-skill-with-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-25T06:30:14Z"
+fetched_at: "2026-10-08T06:25:02Z"
 tags: ["claude-ai", "claude-code"]
 ---
 

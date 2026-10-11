@@ -2,20 +2,20 @@
 title: "Use Claude Cowork safely | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:42Z"
+fetched_at: "2026-10-10T06:28:10Z"
 tags: ["claude-ai"]
 ---
 
 # Use Claude Cowork safely
 
 
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+Cowork sessions run in the cloud on Anthropic's servers (in beta on Team and Enterprise plans), and Claude reaches your files, browser, and apps through the Claude Desktop app. These capabilities come with risks worth understanding. This article covers what we've built to keep you safe, what you should watch for, and how to protect yourself when using Cowork.
 
-Cowork sessions run in the cloud on Anthropic's servers (in beta), and Claude reaches your files, browser, and apps through the Claude Desktop app. These capabilities come with risks worth understanding. This article covers what we've built to keep you safe, what you should watch for, and how to protect yourself when using Cowork.
-
-Claude Cowork is available for paid plans (Pro, Max, Team, Enterprise) on desktop, and in beta on web and mobile for Pro, Max, and Team plans, and Enterprise plans when enabled by an owner. For where to find it on each surface and what's available where, see **[Use Claude Cowork on web, desktop, and mobile](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md)**.
+Claude Cowork is available for paid plans (Pro, Max, Team, Enterprise) on desktop and, for Pro and Max plans, on web and mobile. On web and mobile it’s in beta for Team plans, and Enterprise plans when enabled by an owner. For where to find it on each surface and what's available where, see **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
 On Max and Team plans, on Pro plans as the rollout reaches you, and on Enterprise plans where your admin has enabled it, you can also run a Cowork session directly in the Claude in Chrome side panel.
+
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
 
 ------------------------------------------------------------------------
 
@@ -57,13 +57,13 @@ For prompt injection attacks to be successful, two things must be true at the sa
 
 - Ensure you’re using trusted MCPs (as always).
 
-- Be especially cautious with computer use—Claude clicks, types, and navigates your screen directly, without the permission checks that gate other Cowork tools. For details on how computer use works and how to manage permissions, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
+- Be especially cautious with computer use—Claude clicks, types, and navigates your screen directly, without the permission checks that gate other Cowork tools. For details on how computer use works and how to manage permissions, see **[Let Claude use your computer in Cowork](computer-use-safety.md)**.
 
-**Important:** Cowork can work in the browser built into the Claude Desktop app and in Claude in Chrome. Both run the same safeguards, and the same guidance applies to both: we strongly advise against using either to manage or take actions involving sensitive information. See **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely#h_044f6a88a7)** and **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)** for more information about the potential risks.
+**Important:** Cowork can work in the browser built into the Claude Desktop app and in Claude in Chrome. Both run the same safeguards, and the same guidance applies to both: we strongly advise against using either to manage or take actions involving sensitive information. See **[Use Claude in Chrome safely](using-claude-in-chrome-safely.md#h_044f6a88a7)** and **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)** for more information about the potential risks.
 
 Cowork via mobile and web is captured in Compliance API. Learn more about **[retrieving remote sessions in the Compliance API](../04-API-Reference/Other/manage-claude-compliance-content-data.md)**.
 
-Team and Enterprise owners can also stream Cowork events to your SIEM and observability tools through OpenTelemetry. For setup, supported events, and security considerations, see **[Monitor Cowork activity with OpenTelemetry](monitor-claude-cowork-activity-with-opentelemetry.md)**.
+Team and Enterprise owners can also stream Cowork events to your SIEM and observability tools through OpenTelemetry. For setup, supported events, and security considerations, see **[Monitor Cowork activity with OpenTelemetry](https://support.claude.com/en/articles/14477985-monitor-cowork-activity-with-opentelemetry)**.
 
 ------------------------------------------------------------------------
 
@@ -77,11 +77,11 @@ We've implemented multiple layers of protection:
 
 - **Content classifiers:** We scan all untrusted content entering Claude's context and flag potential injections before they can affect behavior.
 
-- **Action screening in auto mode:** In "Automatically approve" mode, Claude reviews each action for safety before it runs and blocks anything it determines to be unsafe. If an action is blocked, Claude looks for a safer approach or asks you directly. Learn more in **[Get started with Claude Cowork](getting-started-with-local-agent-mode.md#h_e1353133dd)**.
+- **Action screening in auto mode:** In "Automatically approve" mode, Claude reviews each action for safety before it runs and blocks anything it determines to be unsafe. If an action is blocked, Claude looks for a safer approach or asks you directly. Learn more in **[Get started with Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_e1353133dd)**.
 
 - **Deletion protection:** Cowork requires your explicit permission before permanently deleting any files. You'll see a permission prompt and must select "Allow" before Claude can perform deletion tasks.
 
-- **Computer use safeguards:** When Claude uses your computer, it asks for your permission before accessing each application. For full details, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
+- **Computer use safeguards:** When Claude uses your computer, it asks for your permission before accessing each application. For full details, see **[Let Claude use your computer in Cowork](computer-use-safety.md)**.
 
 **Important:** While we've enacted these safety measures to reduce risks, the chances of an attack are still non-zero. Always exercise caution when using Cowork.
 
@@ -109,7 +109,7 @@ Scheduled tasks run in the cloud, which means Claude can work when you're away f
 
 - **Pause tasks you're not actively using.** If you no longer need a scheduled task, pause or delete it rather than leaving it running in the background.
 
-Scheduled tasks run on their own even when your computer is off. Review past runs from the “Scheduled” page in the left sidebar on any surface. For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
+Scheduled tasks run on their own even when your computer is off. Review past runs from the “Scheduled” page in the left sidebar on any surface. For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](schedule-recurring-tasks-in-cowork.md)**.
 
 **4. Match your oversight to the stakes**
 
@@ -137,7 +137,7 @@ When Claude uses your computer, it interacts directly with your apps, browser, a
 
 - Monitor Claude's actions. Although it can only use apps that you’ve given it permission to use, if it clicks a link in one app that link will open, even if you haven’t given Claude permission to access that app.
 
-For more information, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
+For more information, see **[Let Claude use your computer in Cowork](computer-use-safety.md)**.
 
 **6. Limit browser and web access to trusted sources**
 
@@ -163,13 +163,13 @@ When using the Claude for Excel and Claude for PowerPoint add-ins with Cowork, C
 
 **9. Understand what sessions** **in the cloud** **can reach on your computer**
 
-On web and mobile, your tasks run in the cloud and work with the files and connectors saved to your Claude account, not the files on your computer. A session in the cloud reaches your computer only when the Claude Desktop app is open, only for the folders you've connected there, and with the permissions you've already set. Each local file or tool a session uses is checked against those permissions before it runs.
+On web and mobile, your tasks run in the cloud and work with the files and connectors saved to your Claude account, not the files on your computer. On Pro and Max plans, new tasks you start on desktop run in the cloud too, and tasks you started on your computer before October 6 keep running there. If some of your work has to stay on your computer, see **[What changed for Pro and Max plans on October 6](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md#h_f951c27c48)**. A session in the cloud reaches your computer only when the Claude Desktop app is open, only for the folders you've connected there, and with the permissions you've already set. Each local file or tool a session uses is checked against those permissions before it runs.
 
 If your organization manages your computer, note that connecting local folders makes them reachable from a session in the cloud. Review what access you've granted, and consider whether that level of access is appropriate.
 
 **10. Report suspicious behavior immediately**
 
-If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#235650465150424546575a63424d574b514c534a400d404c4e) or use the in-app feedback button. Your reports help us improve our defenses.
+If Claude suddenly starts discussing unrelated topics, attempts to access unexpected resources, or requests sensitive information unprompted, stop the task and report it to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#097c7a6c7b7a686f6c7d704968677d617b6679606a276a6664) or use the in-app feedback button. Your reports help us improve our defenses.
 
 ------------------------------------------------------------------------
 

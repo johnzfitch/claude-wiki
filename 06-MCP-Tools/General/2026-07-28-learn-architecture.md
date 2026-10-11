@@ -2,7 +2,7 @@
 title: "Architecture overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-09-29T06:30:50Z"
+fetched_at: "2026-10-09T06:27:28Z"
 tags: ["mcp"]
 ---
 

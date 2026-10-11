@@ -2,7 +2,7 @@
 title: "Choosing the right model - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model"
 category: "20-Models"
-fetched_at: "2026-09-26T06:38:13Z"
+fetched_at: "2026-10-04T08:32:33Z"
 tags: ["models"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["models"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -38,7 +38,7 @@ Models
 
 [Claude Opus 5.5](models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -135,7 +135,7 @@ Most workloads start with Claude Opus 5.5.
 |---------------------------------------------------------------------------|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | The highest available capability                                          | Claude Fable 5.1          | Agent sessions that run for hours, multistep deep research, analysis carried through to a finished document, spreadsheet, or deck |
 | Complex agentic coding and enterprise work                                | Claude Opus 5.5           | Multihour autonomous coding agents, large-scale refactoring, complex systems engineering, vision-heavy workflows, computer use    |
-| Speed and capability for everyday coding, agent, and enterprise workloads | Claude Sonnet 5           | Code generation, data analysis, content creation, visual understanding, agentic tool use                                          |
+| Speed and capability for everyday coding, agent, and enterprise workloads | Claude Sonnet 5.5         | Code generation, data analysis, content creation, visual understanding, agentic tool use                                          |
 | The lowest latency and price, with extended thinking                      | Claude Haiku 4.5          | Real-time applications, high-volume intelligent processing, cost-sensitive deployments needing strong reasoning, sub-agent tasks  |
 
 ------------------------------------------------------------------------
@@ -172,9 +172,9 @@ Built for demanding reasoning and long-horizon agentic work
 
 The latest Opus model: breaking changes, new features, and behavior differences
 
-[What's new in Claude Sonnet 5](models-sonnet-5-whats-new-sonnet-5.md)
+[What's new in Claude Sonnet 5.5](models-sonnet-5-5-whats-new-sonnet-5-5.md)
 
-For everyday workloads that balance speed and capability
+The latest Sonnet model: breaking changes, new features, and behavior differences
 
 
 

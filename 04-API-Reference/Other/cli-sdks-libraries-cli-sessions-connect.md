@@ -2,7 +2,7 @@
 title: "Connect to a Managed Agents session from your terminal - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-24T06:28:22Z"
+fetched_at: "2026-10-09T06:28:01Z"
 tags: ["agents", "api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["agents", "api"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,7 +48,7 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-[CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)ant CLI
+[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
 # Connect to a Managed Agents session from your terminal
 

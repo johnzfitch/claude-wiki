@@ -2,7 +2,7 @@
 title: "Retrieve a Message Batch - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:39:25Z"
+fetched_at: "2026-10-04T08:33:47Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -111,24 +111,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -164,6 +147,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -255,7 +259,7 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Path parameters
 

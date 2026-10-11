@@ -2,7 +2,7 @@
 title: "Claude Code on Console to Enterprise migration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14128775-claude-code-on-console-to-enterprise-migration"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:50Z"
+fetched_at: "2026-10-10T06:24:41Z"
 tags: ["authentication", "claude-code", "enterprise"]
 ---
 
@@ -29,7 +29,7 @@ Claude Enterprise adds rich analytics and audit logs (including contribution met
 
 [TABLE]
 
-**Docs: [Roles and permissions](roles-and-permissions.md)**, **[Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans), [How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**, **[Using Claude Code with your Enterprise plan](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)**
+**Docs: [Roles and permissions](roles-and-permissions.md)**, **[Purchasing and managing seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md), [How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**, **[Using Claude Code with your Enterprise plan](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)**
 
 ------------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ Here’s what your identity team needs to do:
 
 **Note:** Microsoft Entra SCIM changes sync every ~40 minutes. Use the “Sync” button to trigger on-demand after group changes.
 
-If your Enterprise organization's SSO is configured as login-only, signing in does not create accounts — users must be invited manually. Enable JIT or SCIM provisioning before directing developers to log in. See **[Set up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md).**
+If your Enterprise organization's SSO is configured as login-only, signing in does not create accounts — users must be invited manually. Enable JIT or SCIM provisioning before directing developers to log in. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning).**
 
 ------------------------------------------------------------------------
 
@@ -69,13 +69,13 @@ Claude Enterprise plans offer a hierarchical spend control system. Limits cascad
 
 3.  Set the Organization level limit — this is the global ceiling for all monthly spend.
 
-4.  Set Group level limits — under the "By group" tab. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
+4.  Set Group level limits — under the "By group" tab. See **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
 
 5.  Set Individual level limits — find specific users in the **Spending defaults** section under the “By member” tab.
 
 Owners can set limits to "unlimited," but all consumption is still billed. If a user on a consumption seat hits their limit, they cannot use Claude or Claude Code until the next billing period or until an admin increases their limit.
 
-**Docs: [Configuring spend limits](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**, **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**
+**Docs: [Configuring spend limits](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**, **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**
 
 ------------------------------------------------------------------------
 
@@ -129,7 +129,7 @@ Pipelines and scripts don't use `/login`. Either keep a Console org (and its API
 
 Remove migrated developers from the Console org (or rotate their keys). Removal revokes their Console login tokens and disables their Claude Code workspace key, stopping further Console billing from interactive use. API keys they created in other Console workspaces are not disabled by removal — review and disable those separately. Don't remove members until you've confirmed Enterprise access works; there is no automated rollback.
 
-**Docs: [Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**
+**Docs: [Purchasing and managing seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**
 
 ------------------------------------------------------------------------
 

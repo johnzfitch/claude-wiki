@@ -2,7 +2,7 @@
 title: "How up-to-date is Claude's training data? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:32:16Z"
+fetched_at: "2026-10-10T06:25:34Z"
 tags: ["safety"]
 ---
 
@@ -10,6 +10,8 @@ tags: ["safety"]
 
 
 While we're constantly updating Claude's data, each model has a knowledge cutoff:
+
+- Claude Haiku 5.5 was trained on data up until June 2026.
 
 - Claude Sonnet 5.5 was trained on data up until June 2026.
 

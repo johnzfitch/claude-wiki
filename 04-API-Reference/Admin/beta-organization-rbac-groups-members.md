@@ -2,7 +2,7 @@
 title: "Members - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_groups/members"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:02Z"
+fetched_at: "2026-10-04T08:31:55Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,13 +129,13 @@ Spend Limits
 RBAC Groups
 
 
+Create RBAC Group
+
+
 List RBAC Groups
 
 
 Get RBAC Group
-
-
-Create RBAC Group
 
 
 Update RBAC Group
@@ -172,6 +155,27 @@ Members
 Remove RBAC Group Member
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -262,13 +266,13 @@ cURL
 
 List members of an RBAC Group.
 
-##### [Add RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/create)
+##### [Add RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/add)
 
 POST/v1/organizations/rbac_groups/{rbac_group_id}/members
 
 Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
 
-##### [Remove RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/delete)
+##### [Remove RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/remove)
 
 DELETE/v1/organizations/rbac_groups/{rbac_group_id}/members/{user_id}
 
@@ -334,7 +338,7 @@ Use \`rbac_group_id\` instead; \`group_id\` always has the same value.
 
 
 
-BetaRBACGroupMemberDeleted object{ type: "rbac_group_member_deleted", group_id, rbac_group_id, user_id }
+MemberRemoveResponse object{ type: "rbac_group_member_deleted", group_id, rbac_group_id, user_id }
 
 
 

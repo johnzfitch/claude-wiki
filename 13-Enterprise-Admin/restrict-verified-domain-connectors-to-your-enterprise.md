@@ -2,7 +2,7 @@
 title: "Restrict verified-domain connectors to your Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15402193-restrict-verified-domain-connectors-to-your-enterprise"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:58Z"
+fetched_at: "2026-10-10T06:25:20Z"
 tags: ["connectors", "enterprise"]
 ---
 

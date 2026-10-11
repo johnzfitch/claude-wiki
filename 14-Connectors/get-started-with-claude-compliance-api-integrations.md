@@ -2,13 +2,11 @@
 title: "Get started with Claude Compliance API integrations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15167101-get-started-with-claude-compliance-api-integrations"
 category: "14-Connectors"
-fetched_at: "2026-09-30T06:31:38Z"
+fetched_at: "2026-10-10T06:25:19Z"
 tags: ["api", "connectors"]
 ---
 
 # Get started with Claude Compliance API integrations
-
-Updated today
 
 
 Security and compliance platforms have built integrations on top of the Claude Compliance API, so your team can monitor Claude activity within the tools you already use. Integrations are available from security and compliance providers across the categories enterprises rely on, spanning DLP, SASE, data security, SIEM and security operations, identity, eDiscovery, AI security posture management, and AI observability and telemetry infrastructure.
@@ -115,7 +113,7 @@ For Claude Platform, contact your Anthropic sales team. Review **[Compliance API
 
 - **Datadog:** Datadog’s Claude Compliance ingests audit logs from the Claude Platform into Datadog, giving security teams visibility into admin activity, API key lifecycle events, and authentication events across their Claude organization for SIEM and compliance use cases. To set up this integration, see the **[Datadog setup guide](https://docs.datadoghq.com/integrations/anthropic-compliance-logs/).**
 
-- **Daylight:** Monitor Claude usage in an organization for security investigations and compliance purposes. To set up this integration, see the **[Daylight setup guide](https://daylight.ai/claude-enterprise-detection)**.
+- **Daylight Security:** Monitor Claude usage in an organization for security investigations and compliance purposes. To set up this integration, see the **[Daylight Security setup guide](https://daylight.ai/claude-enterprise-detection)**.
 
 - **Elastic:** Collect Claude audit and usage activity to detect security risks, support compliance requirements, and investigate AI-related incidents. To set up this integration, see the **[Elastic setup guide](https://www.elastic.co/docs/reference/integrations/anthropic)**.
 

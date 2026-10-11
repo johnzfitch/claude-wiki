@@ -2,7 +2,7 @@
 title: "List Files - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/files/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-29T06:31:16Z"
+fetched_at: "2026-10-07T06:24:03Z"
 tags: ["api"]
 ---
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels

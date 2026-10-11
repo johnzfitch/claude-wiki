@@ -2,13 +2,11 @@
 title: "Get started with smart reports | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:05Z"
+fetched_at: "2026-10-10T06:24:48Z"
 tags: ["claude-ai"]
 ---
 
 # Get started with smart reports
-
-Updated today
 
 
 Smart reports analyze how a team uses Claude and report on the work getting done, what it costs, where sessions run into friction, and which repeated patterns are worth packaging as shared skills. This guide explains how smart reports work, what appears in a smart report, and how to create, share, and delete them.

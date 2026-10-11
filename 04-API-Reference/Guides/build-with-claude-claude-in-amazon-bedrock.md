@@ -2,7 +2,7 @@
 title: "Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:19Z"
+fetched_at: "2026-10-04T08:33:12Z"
 tags: ["api", "authentication", "bedrock", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication", "bedrock", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -231,7 +231,7 @@ print(next(block.text for block in message.content if block.type == "text"))
 
 
 
-You can also use the standard `Anthropic` client: set `base_url` to `https://bedrock-mantle.{region}.api.aws/anthropic` and pass your bearer token as `api_key`. This path supports bearer-token authentication only. SigV4 signing requires `AnthropicBedrockMantle`.
+You can also create the standard client with `Anthropic`: set `base_url` to `https://bedrock-mantle.{region}.api.aws/anthropic` and pass your bearer token as `api_key`. This path supports bearer-token authentication only. SigV4 signing requires `AnthropicBedrockMantle`.
 
 ## Supported models
 
@@ -248,6 +248,7 @@ Model IDs in Claude in Amazon Bedrock carry an `anthropic.` provider prefix. Mod
 | Claude Opus 5                                                                                     | anthropic.claude-opus-5         | [See Access](#access) |
 | Claude Opus 4.8                                                                                   | anthropic.claude-opus-4-8       | Open                  |
 | Claude Opus 4.7                                                                                   | anthropic.claude-opus-4-7       | Open                  |
+| Claude Sonnet 5.5                                                                                 | anthropic.claude-sonnet-5-5     | [See Access](#access) |
 | Claude Sonnet 5                                                                                   | anthropic.claude-sonnet-5       | Open                  |
 | Claude Haiku 4.5                                                                                  | anthropic.claude-haiku-4-5      | Open                  |
 
@@ -287,7 +288,7 @@ Claude in Amazon Bedrock is available in the following AWS regions. Amazon Bedro
 - **Global:** dynamic routing across all available regions for maximum availability. No pricing premium.
 - **Regional:** the endpoint resolves to the single AWS region you specify, for data-residency requirements. Regional endpoints carry a 10% pricing premium over global endpoints. To route across multiple regions within a geography, use an [inference profile](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html) (US, EU, JP, or AU). Regions marked **In-region only** in the table support direct single-region routing without an inference profile.
 
-The global endpoint is available for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5, and Claude Haiku 4.5. For Claude Fable 5.1, regional endpoints are currently available in `us-east-1` only. Claude Mythos Preview is regional only and is available in `us-east-1`.
+The global endpoint is available for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Haiku 4.5. For Claude Fable 5.1, regional endpoints are currently available in `us-east-1` only. Claude Mythos Preview is regional only and is available in `us-east-1`.
 
 | AWS region       | Location                  | Endpoint types             |
 |------------------|---------------------------|----------------------------|

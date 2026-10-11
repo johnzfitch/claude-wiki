@@ -2,7 +2,7 @@
 title: "Snowflake Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/snowflake"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:47Z"
+fetched_at: "2026-10-10T06:25:59Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -72,9 +72,12 @@ Composable customer data platform provider Simon Data has seen particularly comp
 
 Snowflake aims to transform how organizations interact with their data—moving from code-based queries to natural conversations that unlock insights for everyone. Harshal Pimpalkhute, Principal Product Manager for Cortex AI at Snowflake, said, "By combining Claude's reasoning, planning, and problem-solving with Snowflake's platform trusted by over 10,000 organizations worldwide, enterprises can unlock their data's potential with [Cortex Agents](https://www.snowflake.com/en/blog/ai-data-agents-snowflake-cortex/) and large-scale data processing."
 
-This partnership represents more than just technological advancement. By combining Claude's advanced capabilities with Snowflake's trusted platform, customers are creating a future where data insights aren't confined to technical specialists. Instead, every employee can engage with their organization's data naturally and confidently, unlocking new possibilities for innovation, decision-making, and growth. Together, Snowflake and Anthropic are democratizing data intelligence and, as AI technology advances, extending its benefits across [every level of the enterprise](enterprise.md).
+This partnership represents more than just technological advancement. By combining Claude's advanced capabilities with Snowflake's trusted platform, customers are creating a future where data insights aren't confined to technical specialists. Instead, every employee can engage with their organization's data naturally and confidently, unlocking new possibilities for innovation, decision-making, and growth. Together, Snowflake and Anthropic are democratizing data intelligence and, as AI technology advances, extending its benefits across [every level of the enterprise](../17-Billing-Plans/pricing-enterprise.md).
 
 ## Related stories
+
+
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
@@ -85,9 +88,6 @@ This partnership represents more than just technological advancement. By combini
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -95,9 +95,9 @@ This partnership represents more than just technological advancement. By combini
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -127,7 +127,7 @@ This partnership represents more than just technological advancement. By combini
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -139,6 +139,7 @@ This partnership represents more than just technological advancement. By combini
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -150,8 +151,10 @@ This partnership represents more than just technological advancement. By combini
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -171,7 +174,9 @@ This partnership represents more than just technological advancement. By combini
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -214,9 +219,9 @@ This partnership represents more than just technological advancement. By combini
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -246,7 +251,7 @@ This partnership represents more than just technological advancement. By combini
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -258,6 +263,7 @@ This partnership represents more than just technological advancement. By combini
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -269,8 +275,10 @@ This partnership represents more than just technological advancement. By combini
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -290,7 +298,9 @@ This partnership represents more than just technological advancement. By combini
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

@@ -2,8 +2,7 @@
 title: "Claude can now create and edit files | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/create-files"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:32:34Z"
-last_modified: "Wed, 30 Sep 2026 04:21:07 GMT"
+fetched_at: "2026-10-10T06:25:46Z"
 tags: ["news-research"]
 ---
 
@@ -11,36 +10,20 @@ tags: ["news-research"]
 
 Describe what you need and get back ready-to-use spreadsheets, documents, presentations, and PDFs instead of just text responses.
 
-
 - 
 
-
-  [Product announcements](https://claude.com/blog/category/announcements)
-
+  Category[Announcements](https://www.anthropic.com/resources/product-announcements)
 - 
 
-
-  Claude apps
-
-  [Claude Enterprise](../18-Industry-UseCases/enterprise.md)
-
+  ProductClaude apps, Claude Enterprise
 - 
 
-
-  September 9, 2025
-
+  DateSeptember 9, 2025
 - 
 
-
-  5
-
-  min
-
+  Reading time4 min
 - 
 
-
-  [Copy link](#)
-  https://claude.com/blog/create-files
 
 **Update:** Now generally available for paid plans with network and egress controls (October 21, 2025).
 
@@ -78,9 +61,39 @@ Start with straightforward tasks like data cleaning or simple reports, then work
 
 This feature gives Claude internet access to create and analyze files, which may put your data at risk. Monitor chats closely when using this feature. [Learn more](../15-Claude-AI-Features/create-and-edit-files-with-claude.md).
 
+## Related articles
 
-[Prev](#)
+Explore more product news and best practices for teams building with Claude.
 
-Prev
 
-0/5
+ArticleOct 8, 2026
+
+### Build live dashboards and animate explainers with Claude 
+
+Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
+
+Claude appsClaude Design
+
+2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+
+
+ArticleOct 7, 2026
+
+### Claude Haiku 5.5
+
+Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
+
+(opens in new tab)[](https://www.anthropic.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
+
+ArticleOct 6, 2026
+
+### Claude now works with Google Docs, Sheets, and Slides
+
+Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
+
+Claude Enterprise
+
+
+ArticleOct 6, 2026
+
+### We’re expanding the Claude Startups program to help founders build

@@ -2,7 +2,7 @@
 title: "Blank Metal Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/blank-metal-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:39Z"
+fetched_at: "2026-10-10T06:28:40Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -17,7 +17,7 @@ Company size:
 Small
 
 Product:  
-[Claude Cowork](../15-Claude-AI-Features/product-cowork.md)[Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)[Claude Enterprise](enterprise.md)
+[Claude Cowork](../15-Claude-AI-Features/product-cowork.md)[Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)[Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 
 Location:  
 North America
@@ -78,7 +78,7 @@ Claude Code
 
 Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
 
-[Read more](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+[Read more](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 
 ## How do you keep up with Claude updates as a small team?
 
@@ -93,6 +93,9 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 ## Related stories
 
 
+### How does a badge-maker shorten lead times but keep an old-world process alive?
+
+
 ### Caylent turns months of migration work into days with Claude Agent SDK
 
 
@@ -101,9 +104,6 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ### LG CNS modernizes 20-year-old enterprise systems with Claude
 
-
-### Quantium scales Claude across Australia's largest enterprises
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -111,9 +111,9 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -143,7 +143,7 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -155,6 +155,7 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -166,8 +167,10 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -187,7 +190,9 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -230,9 +235,9 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -262,7 +267,7 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -274,6 +279,7 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -285,8 +291,10 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -306,7 +314,9 @@ We pay particular attention to what comes off the shelf from Claude, and dig dee
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

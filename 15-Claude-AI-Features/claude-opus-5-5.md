@@ -2,7 +2,7 @@
 title: "Introducing Claude Opus 5.5 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-opus-5-5"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:31Z"
+fetched_at: "2026-10-10T06:25:34Z"
 tags: ["agents", "claude-ai"]
 ---
 
@@ -25,9 +25,9 @@ Here are some of the improvements you can expect from Opus 5.5:
 
 **Performance.** Opus 5.5 is a major step up from Opus 5. It’s the new leading model, and early testers saw large jumps in performance on their most complex work. One tester completed a 680,000-line code migration in less than a day—work that would have taken an engineering team weeks. It’s good at finding and fixing inefficiencies in software: when we asked it to cut load times across every page of a web app, Opus 5.5 succeeded 39 of 40 times, while Opus 5 made smaller improvements that also altered the app’s behavior. A different tester had several Claude models build a game from a single prompt; Opus 5.5 scored higher than any other model on the strength of its graphics and polish.
 
-**Safety.** Opus 5.5 achieves the best scores of any model to date on our automated behavioral audit, our alignment suite that tests Claude across thousands of simulated scenarios. It is much less likely than recent models to take hard-to-reverse actions or act outside the boundaries it’s been given, and it’s more resistant than Opus 5 to prompt injection. We’ve also broadened our alignment testing to cover longer tasks, impossible tasks, and scenarios modeled on real incidents, though it still has limits. Full details of our evaluation are available in the [Opus 5.5 System Card](claude-opus-5-5-system-card.md).
+**Safety.** Opus 5.5 achieves the best scores of any model to date on our automated behavioral audit, our alignment suite that tests Claude across thousands of simulated scenarios. It is much less likely than recent models to take hard-to-reverse actions or act outside the boundaries it’s been given, and it’s more resistant than Opus 5 to prompt injection. We’ve also broadened our alignment testing to cover longer tasks, impossible tasks, and scenarios modeled on real incidents, though it still has limits. Full details of our evaluation are available in the [Opus 5.5 System Card](../19-Reference/this-system-card-describes-claude-opus-5-5-the-latest-opus-class-large.md).
 
-Because Opus 5.5 is comparable to Claude Mythos 5.1 in biology and cybersecurity, we’re deploying it with safeguards similar to those on Claude Fable 5.1. Vetted organizations can apply today to our [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md) to use Opus 5.5 for biology research. In the coming weeks we will also be expanding access to our [Cyber Verification Program](../20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md), and verified cybersecurity practitioners will be able to use Opus 5.5 for their work.
+Because Opus 5.5 is comparable to Claude Mythos 5.1 in biology and cybersecurity, we’re deploying it with safeguards similar to those on Claude Fable 5.1. Vetted organizations can apply today to our [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md) to use Opus 5.5 for biology research. In the coming weeks we will also be expanding access to our [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet), and verified cybersecurity practitioners will be able to use Opus 5.5 for their work.
 
 **Cost and speed.** Opus 5.5 requires less compute to serve than Opus 5, and its pricing reflects that. Our tests show that at default settings it will cost 40% less than Opus 5 on typical workloads. Input and output tokens are \$4 and \$20 per million, 20% less than Opus 5. Cache reads (which make up the majority of agentic and coding work costs) are \$0.20 per million tokens, 60% less than Opus 5. Opus 5.5 also generates output more than 30% faster than Opus 5.
 
@@ -366,7 +366,7 @@ As our models grow more powerful, stricter safeguards are one way we prevent new
 
 **Cybersecurity.** Because Opus 5.5 has extremely strong cyber capabilities, we’re applying cybersecurity safeguards to Opus 5.5 that are similar to Fable 5.1’s. Users will be able to identify and fix bugs in their code as part of the routine software development lifecycle, but most cybersecurity tasks will be re-routed to Opus 4.8.
 
-For cyberdefenders, we’ll soon be expanding our [Cyber Verification Program](../20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) to include Opus 5.5. The new program will include three tiers for increasingly permissive trusted access, including access to Claude Mythos models. [Claude Security](../19-Reference/claude-code-security.md) is already available with access to Claude Mythos 5.1.
+For cyberdefenders, we’ll soon be expanding our [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) to include Opus 5.5. The new program will include three tiers for increasingly permissive trusted access, including access to Claude Mythos models. [Claude Security](../19-Reference/claude-code-security.md) is already available with access to Claude Mythos 5.1.
 
 **Biology.** Opus 5.5 is highly capable in biology, exceeding Opus 5 and matching or beating Claude Mythos 5.1 across many areas of work. For example, Opus 5.5 achieved improvements on a long-horizon molecular prediction and design evaluation conducted in collaboration with Dyno Therapeutics, and expert red-teamers rated its scientific novelty as comparable to the best model they had tested.
 
@@ -386,17 +386,17 @@ As with Fable 5.1, Opus 5.5 comes with our watermarking measures to comply with 
 
 ## Availability
 
-Claude Opus 5.5 is now available on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure. On the Claude Platform, developers can [get started](../20-Models/about-claude-models-overview.md) with `claude-opus-5-5`.
+Claude Opus 5.5 is now available on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure. On the Claude Platform, developers can [get started](../20-Models/about-claude-models-overview.md) with `claude-opus-5-5`. See our [migration guide for details.](../20-Models/models-opus-5-5-migration-guide.md)
 
 [](https://www.anthropic.com/)
 
 ### Products
 
 - [Claude](product-overview.md)
-- [Claude Code](claude-com-product-claude-code.md)
+- [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](product-claude-code-enterprise.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](product-tag.md)
 - [Claude Design](product-design.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
@@ -423,7 +423,8 @@ Claude Opus 5.5 is now available on all platforms, including Amazon Web Services
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -444,7 +445,7 @@ Claude Opus 5.5 is now available on all platforms, including Amazon Web Services
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -467,8 +468,10 @@ Claude Opus 5.5 is now available on all platforms, including Amazon Web Services
 
 ### Programs
 
-- [Startups](programs-startups.md)
+- [Campus](programs-campus.md)
+- [Frontier Academy](programs-frontier-academy.md)
 - [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Startups](programs-startups.md)
 
 ### Help and security
 

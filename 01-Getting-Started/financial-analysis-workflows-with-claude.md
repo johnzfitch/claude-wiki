@@ -2,7 +2,7 @@
 title: "Financial analysis workflows with Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude"
 category: "01-Getting-Started"
-fetched_at: "2026-09-30T06:32:30Z"
+fetched_at: "2026-10-10T06:24:29Z"
 tags: ["getting-started"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["getting-started"]
 
 Learn complete financial analysis workflows using a three-phase approach: retrieving data, analyzing information, and creating professional deliverables.
 
-20 minClaude.ai
+20 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -181,7 +181,7 @@ Create an interactive artifact showing: portfolio summary with weighted returns 
 
 Open in Claude
 
-[Artifacts can be shared(opens in new tab)](https://support.claude.com/en/articles/9547008-discovering-publishing-customizing-and-sharing-artifacts#h_264285dcf3) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
+[Artifacts can be shared(opens in new tab)](https://support.claude.com/en/articles/9547008-share-artifacts) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
 
 ## Next Steps[](#next-steps)
 

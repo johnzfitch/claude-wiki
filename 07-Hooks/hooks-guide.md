@@ -2,7 +2,7 @@
 title: "Automate actions with hooks - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/hooks-guide"
 category: "07-Hooks"
-fetched_at: "2026-09-30T06:30:35Z"
+fetched_at: "2026-10-10T06:27:44Z"
 tags: ["claude-code", "hooks"]
 ---
 
@@ -37,7 +37,7 @@ tags: ["claude-code", "hooks"]
   - [/hooks shows no hooks configured](#%2Fhooks-shows-no-hooks-configured)
   - [Stop hook hits the block cap](#stop-hook-hits-the-block-cap)
   - [Hook JSON has no effect](#hook-json-has-no-effect)
-  - [Debug techniques](#debug-techniques)
+  - [Check what a hook did](#check-what-a-hook-did)
 - [Learn more](#learn-more)
 
 Automation
@@ -112,15 +112,13 @@ You can also ask Claude to write the hook for you by describing what you want in
 
 Verify the configuration
 
-Type `/hooks` to open the hooks browser. You’ll see a list of all available hook events, with a count next to each event that has hooks configured. Select `Notification` to confirm your new hook appears in the list. Selecting the hook shows its details: the event, matcher, type, source file, and command.
+Type `/hooks` at the Claude Code prompt to open the hooks browser. Your new hook appears in the list under `Notification`.
 
 3
 
 Test the hook
 
 Press `Esc` to return to the CLI. Press `Shift+Tab` until the status bar shows `⏸ manual mode on`, ask Claude to do something that requires permission, then switch away from the terminal. You should receive a desktop notification.
-
-The `/hooks` menu is read-only. To add, modify, or remove hooks, edit your settings JSON directly or ask Claude to make the change.
 
 
 [​](#what-you-can-automate)
@@ -162,7 +160,7 @@ Get a desktop notification whenever Claude finishes working and needs your input
 
 If no notification appears
 
-`osascript` routes notifications through the built-in Script Editor app. If Script Editor doesn’t have notification permission, the command fails silently, and macOS won’t prompt you to grant it. Run this in Terminal once to make Script Editor appear in your notification settings:
+`osascript` routes notifications through the built-in Script Editor app. If Script Editor doesn’t have notification permission, the command fails silently, and macOS won’t prompt you to grant it.Run this in Terminal once to make Script Editor appear in your notification settings:
 
 ```python
 osascript -e 'display notification "test"'
@@ -218,7 +216,7 @@ If the command isn’t found, install the `libnotify-bin` package on Debian and 
 
 If no dialog appears
 
-This command opens a dialog box rather than a notification in the corner of your screen, so the dialog can open behind your terminal window. Test the command directly in PowerShell first. If you run Claude Code inside WSL, `powershell.exe` must be available on your `PATH` through Windows interop.
+This command opens a dialog box rather than a notification in the corner of your screen, so the dialog can open behind your terminal window. Test the command directly in PowerShell first.If you run Claude Code inside WSL, `powershell.exe` must be available on your `PATH` through Windows interop.
 
 The empty `matcher` fires on all notification types. To fire only on specific events, set it to one of these values:
 
@@ -237,7 +235,7 @@ The empty `matcher` fires on all notification types. To fire only on specific ev
 | `quota_auto_resume_stale`    | A claude.ai usage limit reset while your computer slept for more than about 30 minutes. Claude Code waits for you to press `Enter` instead of continuing. After a shorter sleep it continues and fires `quota_auto_resume_fired` instead                                                                                                                                                                                                                                   |
 | `quota_auto_resume_disabled` | Claude Code ends its wait for a claude.ai usage limit without continuing your task: [`autoContinueAtUsageLimit`](../02-Claude-Code-CLI/settings-reference.md#autocontinueatusagelimit) turned off or the reset moved more than 24 hours away during a wait Claude Code started on its own, the continued task kept hitting the limit, or the continuation was blocked before it reached the model. Doesn’t fire when you press `Esc` or `Ctrl+C`, or pick **Don’t continue automatically** |
 
-Claude Code times `permission_prompt` differently in a terminal and in Claude Desktop, the VS Code extension, and other hosts that answer permission requests through the Agent SDK. See [when each notification type fires](hooks.md#notification) for both timings. The `agent_needs_input` and `agent_completed` matchers require Claude Code v2.1.198 or later. The `quota_auto_resume_fired`, `quota_auto_resume_stale`, and `quota_auto_resume_disabled` matchers require Claude Code v2.1.234 or later. In terminal sessions, `permission_prompt` for a sandboxed command’s network request requires Claude Code v2.1.246 or later. `agent_needs_input` for a teammate’s terminal setup question requires Claude Code v2.1.248 or later. Type `/hooks` and select `Notification` to confirm the hook is registered. For the full event schema, see the [Notification reference](hooks.md#notification).
+Claude Code times `permission_prompt` differently in a terminal and in Claude Desktop, the VS Code extension, and other hosts that answer permission requests through the Agent SDK. See [when each notification type fires](hooks.md#notification) for both timings. The `quota_auto_resume_fired`, `quota_auto_resume_stale`, and `quota_auto_resume_disabled` matchers require Claude Code v2.1.234 or later. In terminal sessions, `permission_prompt` for a sandboxed command’s network request requires Claude Code v2.1.246 or later. `agent_needs_input` for a teammate’s terminal setup question requires Claude Code v2.1.248 or later. Type `/hooks` at the Claude Code prompt and confirm the hook appears under `Notification`.
 
 
 [​](#auto-format-code-after-edits)
@@ -264,7 +262,7 @@ Automatically run [Prettier](https://prettier.io/) on every file Claude edits, s
 }
 ```
 
-To test the hook, ask Claude to add a line with single-quoted strings to a JavaScript file, then open the file: with Prettier’s default settings, the hook rewrites them to double quotes. When the hook succeeds, Claude Code shows nothing in the conversation. To confirm the hook ran, check that the edited file is reformatted, or see [Debug techniques](#debug-techniques). To reformat a specific file however it changes, including when a `Bash` command rewrites it, use a [FileChanged](hooks.md#filechanged) hook instead.
+To test the hook, ask Claude to add a line with single-quoted strings to a JavaScript file, then open the file: with Prettier’s default settings, the hook rewrites them to double quotes. When the hook succeeds, Claude Code shows nothing in the conversation. To confirm the hook ran, check that the edited file is reformatted, or see [Check what a hook did](#check-what-a-hook-did). To reformat a specific file however it changes, including when a `Bash` command rewrites it, use a [FileChanged](hooks.md#filechanged) hook instead.
 
 The Bash examples on this page use `jq` for JSON parsing. Install it with `brew install jq` on macOS, `apt-get install jq` on Debian and Ubuntu, or see [`jq` downloads](https://jqlang.org/download/).
 
@@ -511,7 +509,7 @@ Claude Code fires hook events at specific points in its lifecycle. When an event
 |:----------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `SessionStart`        | When a session begins or resumes                                                                                                                                                                                                                      |
 | `Setup`               | When you start Claude Code with `--init-only`, or with `--init` or `--maintenance` in `-p` mode. For one-time preparation in CI or scripts                                                                                                            |
-| `UserPromptSubmit`    | When you submit a prompt, before Claude processes it                                                                                                                                                                                                  |
+| `UserPromptSubmit`    | When a prompt is submitted, before Claude processes it. Also fires on [turns Claude Code starts on its own](hooks.md#userpromptsubmit)                                                                                                          |
 | `UserPromptExpansion` | When a user-typed command expands into a prompt, before it reaches Claude. Can block the expansion                                                                                                                                                    |
 | `PreToolUse`          | Before a tool call executes. Can block it                                                                                                                                                                                                             |
 | `PermissionRequest`   | When a tool call needs a permission decision                                                                                                                                                                                                          |
@@ -534,7 +532,7 @@ Claude Code fires hook events at specific points in its lifecycle. When an event
 | `DirectoryAdded`      | When a working directory is added mid-session via `/add-dir` or the SDK `register_repo_root` control request                                                                                                                                          |
 | `FileChanged`         | When a watched file changes on disk. The `matcher` field specifies which filenames to watch                                                                                                                                                           |
 | `WorktreeCreate`      | When a worktree is being created via `--worktree`, `isolation: "worktree"`, or for a background session. Replaces default git behavior                                                                                                                |
-| `WorktreeRemove`      | When a worktree is being removed at session exit, when a subagent finishes, or when you delete a background session                                                                                                                                   |
+| `WorktreeRemove`      | When a worktree that a `WorktreeCreate` hook created is being removed                                                                                                                                                                                 |
 | `PreCompact`          | Before context compaction                                                                                                                                                                                                                             |
 | `PostCompact`         | After context compaction completes                                                                                                                                                                                                                    |
 | `PreModelSwitch`      | Before Claude Code applies a model switch that you or a client requested. Can block the switch                                                                                                                                                        |
@@ -952,7 +950,12 @@ Use `type: "http"` hooks to POST event data to an HTTP endpoint instead of runni
 }
 ```
 
-The endpoint should return a JSON response body using the same [output format](hooks.md#json-output) as command hooks. To block a tool call, return a 2xx response with the appropriate `hookSpecificOutput` fields. HTTP status codes alone can’t block actions. Header values support environment variable interpolation using `$VAR_NAME` or `${VAR_NAME}` syntax. Only variables listed in the `allowedEnvVars` array are resolved; all other `$VAR` references remain empty. For full configuration options and response handling, see [HTTP hooks](hooks.md#http-hook-fields) in the reference.
+Your endpoint responds with a JSON body in the same [output format](hooks.md#json-output) as command hooks, and Claude Code also checks the response status:
+
+- **2xx status**: to block a tool call, return the appropriate `hookSpecificOutput` fields in the body.
+- **Any other status, or the request fails**: Claude Code reports a [non-blocking error](hooks.md#exit-code-output) and lets the action continue. To make a failed endpoint block the action, set [`onFailure: "block"`](hooks.md#block-the-action-when-a-hook-fails) on the hook.
+
+Header values support environment variable interpolation using `$VAR_NAME` or `${VAR_NAME}` syntax. Only variables listed in the `allowedEnvVars` array are resolved; all other `$VAR` references remain empty. For full configuration options and response handling, see [HTTP hooks](hooks.md#http-hook-fields) in the reference.
 
 
 [​](#limitations-and-troubleshooting)
@@ -973,9 +976,7 @@ Keep these constraints in mind when designing hooks:
   - `agent`: 60 seconds.
   - [`SessionEnd`](hooks.md#sessionend) hooks of any type share a 1.5-second budget. If your settings set a longer per-hook `timeout`, Claude Code raises the budget to match, up to 60 seconds.
 - `PostToolUse` hooks can’t undo actions since the tool has already executed.
-- `PermissionRequest` hooks fire when Claude Code is about to ask you for permission.
-  - In [non-interactive mode](../02-Claude-Code-CLI/headless.md) with the `-p` flag, that prompt only exists when the Agent SDK’s [`canUseTool` callback](../05-Agent-SDK/agent-sdk-permissions.md) supplies it. In plain `-p` runs or with `--permission-prompt-tool`, use `PreToolUse` hooks for automated permission decisions instead.
-  - Background subagents can’t show a prompt in non-interactive mode. Claude Code still runs the hooks for their tool calls, and if no hook returns a decision, it denies the call. In an interactive session, background subagent prompts surface in your main session and the hooks fire as usual.
+- [`PermissionRequest`](hooks.md#permissionrequest) hooks fire when Claude Code is about to ask you for permission, or when it would otherwise auto-deny a call that can’t prompt. In [non-interactive mode](../02-Claude-Code-CLI/headless.md) with the `-p` flag, they still run outside [`dontAsk` mode](../02-Claude-Code-CLI/permission-modes.md#allow-only-pre-approved-tools-with-dontask-mode), and a call that no hook decides and nothing else can answer is denied.
 - `Stop` hooks fire whenever Claude finishes responding, not only at task completion. They don’t fire on user interrupts. API errors fire [StopFailure](hooks.md#stopfailure) instead.
 - When multiple `PreToolUse` hooks return [`updatedInput`](hooks.md#pretooluse) to rewrite a tool’s arguments, the last one to finish takes effect. Since hooks run in parallel, the order is non-deterministic. Avoid having more than one hook modify the same tool’s input.
 
@@ -984,7 +985,7 @@ Keep these constraints in mind when designing hooks:
 
 Hooks and permission modes
 
-`PreToolUse` hooks fire before any permission-mode check, in every [permission mode](../02-Claude-Code-CLI/permission-modes.md), including `dontAsk`. A hook that returns `permissionDecision: "deny"` blocks the tool even in `bypassPermissions` mode or with `--dangerously-skip-permissions`. This lets you enforce policy that users can’t bypass by changing their permission mode. The reverse is not true: a hook returning `"allow"` doesn’t bypass deny rules from settings, and it can’t suppress the prompt for MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool) or for connector tools [your organization set to `ask`](../06-MCP-Tools/General/mcp.md#organization-controls-on-connector-tools) in sessions where that setting reaches Claude Code. Hooks can tighten restrictions but not loosen them past what permission rules allow.
+`PreToolUse` hooks fire before any permission-mode check, in every [permission mode](../02-Claude-Code-CLI/permission-modes.md), including `dontAsk`. A hook that returns `permissionDecision: "deny"` blocks the tool even in `bypassPermissions` mode or with `--dangerously-skip-permissions`. This lets you enforce policy that users can’t bypass by changing their permission mode. The reverse is not true: a hook returning `"allow"` doesn’t bypass deny rules from settings, and it can’t suppress the prompt for MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool) or for connector tools [your organization set to `ask`](../06-MCP-Tools/General/mcp.md#organization-controls-on-connector-tools) in sessions where that setting reaches Claude Code. Hooks in settings files and in a plugin’s `hooks/hooks.json` can tighten restrictions but not loosen them past what permission rules allow. A [mod](../08-Plugins-Skills/plugins-mods-overview.md) you install that handles `tool.check` can approve a call that your `PreToolUse` hook blocked, unless the hook is in managed settings. [Extend permissions with hooks](../02-Claude-Code-CLI/permissions.md#extend-permissions-with-hooks) lists which rules hold over a mod.
 
 
 [​](#hook-not-firing)
@@ -1025,13 +1026,14 @@ You edited a settings file but the hooks don’t appear in the menu.
 - File edits are normally picked up automatically. If they haven’t appeared after a few seconds, the file watcher may have missed the change: restart your session to force a reload.
 - Verify your JSON is valid: trailing commas and comments aren’t allowed
 - Confirm the settings file is in the correct location: `.claude/settings.json` for project hooks, `~/.claude/settings.json` for global hooks
+- If the menu shows `Only hooks from managed settings run here`, your organization has set [`allowManagedHooksOnly`](../02-Claude-Code-CLI/settings-reference.md#allowmanagedhooksonly). Hooks in your user, project, and local settings files don’t run and aren’t listed
 
 
 [​](#stop-hook-hits-the-block-cap)
 
 Stop hook hits the block cap
 
-Claude keeps working instead of stopping, then ends the turn with a warning that the Stop hook blocked too many consecutive times. Claude Code overrides a Stop hook after it blocks eight times in a row without progress. Your hook script needs to check whether it already triggered a continuation. Parse the `stop_hook_active` field from the JSON input and exit early if it’s `true`:
+Claude keeps working instead of stopping, then ends the turn with a warning that the Stop hook blocked too many consecutive times. Claude Code overrides a Stop hook after it blocks eight times in a row with no tool call from Claude in between. Your hook script needs to check whether it already triggered a continuation. Parse the `stop_hook_active` field from the JSON input and exit early if it’s `true`:
 
 ```python
 #!/bin/bash
@@ -1073,18 +1075,18 @@ fi
 The `$-` variable contains shell flags, and `i` means interactive. Hooks run in non-interactive shells, so the echo is skipped. When your hook returns `permissionDecision` or `additionalContext` at the top level instead of inside `hookSpecificOutput`, the JSON still parses, and Claude Code ignores the misplaced fields without reporting an error. To see which fields it ignored, start Claude Code with `claude --debug` and search the [debug log](hooks.md#debug-hooks) for `Hook JSON output had unrecognized keys`.
 
 
-[​](#debug-techniques)
+[​](#check-what-a-hook-did)
 
-Debug techniques
+Check what a hook did
 
-Press `Ctrl+O` to open the transcript view to check the outcome of a hook run:
+Press `Ctrl+O` to open the transcript view and look for the hook’s outcome:
 
-- **Successful run**: you see nothing, unless the hook’s JSON surfaces something, such as `systemMessage` or Stop hook feedback.
-  - To confirm a hook ran, check for its effect, like a reformatted file, or turn on debug logging as described below and trigger the hook again
-- **Blocking error**: on most events you see the hook’s feedback. When the hook’s JSON made a blocking decision, the feedback is the reason from that decision; otherwise it is the hook’s stderr. On a few events, such as `ConfigChange` and `Elicitation`, a block surfaces no message.
-- **Non-blocking error**: the action proceeded, and you see a `<hook name> hook error` notice with a short explanation, such as the first line of stderr prefixed with `Failed with non-blocking status code:`, or a JSON validation or parse message.
+- **Success**: you see nothing, unless the hook’s JSON surfaces something, such as `systemMessage` or Stop hook feedback.
+  - To confirm the hook ran, check for its effect, like a reformatted file
+- **Blocking error**: on most events you see the message that came with the block, for example `Blocked: rm commands are not allowed`. On a few events, such as `ConfigChange` and `Elicitation`, you see no message. [Exit code 2](hooks.md#exit-code-2) covers where the message comes from.
+- **Non-blocking error**: you see a `<hook name> hook error` notice with a short explanation, such as the first line of stderr after `Failed with non-blocking status code:`, or a JSON validation or parse message. The action went ahead.
 
-Which exit-code and JSON combinations produce each outcome, including the per-event exceptions, is defined in the reference’s [Exit code output](hooks.md#exit-code-output) section. For full execution details including which hooks matched, their exit codes, stdout, and stderr, read the debug log. Start Claude Code with `claude --debug-file /tmp/claude.log` to write to a known path, then `tail -f /tmp/claude.log` in another terminal. If you started without that flag, run `/debug` mid-session to enable logging and find the log path.
+To look up the outcome for a specific exit code and stdout, including the per-event exceptions, see [Exit code output](hooks.md#exit-code-output) in the reference. For full execution details including hook exit codes, stdout, and stderr, read the debug log. Start Claude Code with `claude --debug-file /tmp/claude.log` to write to a known path, then `tail -f /tmp/claude.log` in another terminal. If you started without that flag, run `/debug` mid-session to enable logging and find the log path.
 
 
 [​](#learn-more)

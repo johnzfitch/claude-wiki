@@ -1,8 +1,8 @@
 ---
 title: "What are projects? | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9517075"
+source_url: "https://support.claude.com/en/articles/9517075-what-are-projects"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:27Z"
+fetched_at: "2026-10-10T06:24:56Z"
 tags: ["claude-ai", "enterprise", "rag"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Features overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/overview"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:23Z"
+fetched_at: "2026-10-04T08:33:17Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -122,7 +122,7 @@ Ways to steer Claude and Claude's direct outputs, including response format, rea
 
 You can discover which capabilities a model supports programmatically. The [Models API](../Endpoints/models-list.md) returns `max_input_tokens`, `max_tokens`, and a `capabilities` object for every available model.
 
-The ZDR column indicates whether a feature is available under a Zero Data Retention arrangement. For most features this depends only on what the feature mechanism retains; for features tied to specific models, model-level ZDR availability also applies. See [Model-specific data retention requirements](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+The ZDR column indicates whether a feature is available under a Zero Data Retention arrangement. For most features this depends only on what the feature mechanism retains; for features tied to specific models, model-level ZDR availability also applies. See [Model-specific data retention requirements](build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 [TABLE]
 
@@ -156,7 +156,7 @@ Manage files and assets for use with Claude.
 
 [TABLE]
 
-\* **Structured outputs:** Your prompts and Claude's outputs are not stored. Only JSON schemas are cached, for up to 24 hours since last use. **Web search and web fetch:** ZDR-eligible except when [dynamic filtering](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md#dynamic-filtering) is enabled. **Fallback credit and server-side fallback:** The features retain no message content, but they handle refusals from the Claude Fable models, which [are not available under ZDR](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements). See [ZDR details](../Other/manage-claude-api-and-data-retention.md#feature-eligibility).
+\* **Structured outputs:** Your prompts and Claude's outputs are not stored. Only JSON schemas are cached, for up to 24 hours since last use. **Web search and web fetch:** ZDR-eligible except when [dynamic filtering](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md#dynamic-filtering) is enabled. **Fallback credit and server-side fallback:** The features retain no message content, but they handle refusals from the Claude Fable models, which [are not available under ZDR](build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements). See [ZDR details](build-with-claude-api-and-data-retention.md#feature-eligibility).
 
 † On Microsoft Foundry, feature availability differs by [hosting option](build-with-claude-claude-in-microsoft-foundry.md#hosting-options). These features are available on Hosted on Anthropic deployments, and not on Hosted on Azure deployments.
 

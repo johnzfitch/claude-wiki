@@ -2,7 +2,7 @@
 title: "Cancel a Message Batch - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/batches/cancel"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:38:38Z"
+fetched_at: "2026-10-04T08:32:59Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -111,24 +111,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -164,6 +147,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -254,7 +258,7 @@ Batches may be canceled any time before processing ends. Once cancellation is in
 
 The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/beta/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Path parameters
 
@@ -279,14 +283,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -477,6 +473,14 @@ One of the following:
 
 
 "mcp-client-2026-09-15"
+
+
+
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
 
 
 

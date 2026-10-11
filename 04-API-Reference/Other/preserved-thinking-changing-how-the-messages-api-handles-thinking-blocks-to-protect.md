@@ -2,14 +2,14 @@
 title: "Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16761192"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:33:03Z"
+fetched_at: "2026-10-10T06:28:22Z"
 tags: ["api"]
 ---
 
 # Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation
 
 
-We're changing how the Messages API handles thinking blocks to protect against distillation. A thinking block is a record of the reasoning Claude may produce while working on a response. On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, new API accounts can no longer edit the context around a thinking block, such as the messages, tools, or system prompt, during a multi-turn conversation. We’ll expand the rollout to all users with upcoming model launches.
+We're changing how the Messages API handles thinking blocks to protect against distillation. A thinking block is a record of the reasoning Claude may produce while working on a response. On Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, new API accounts can no longer edit the context around a thinking block, such as the messages, tools, or system prompt, during a multi-turn conversation. We’ll expand the rollout to all users with upcoming model launches.
 
 Modifying this prior context has legitimate applications, which we continue to support using the adjustments outlined below. However, such modifications are also a common and **[publicly documented technique](https://arxiv.org/abs/2608.09867)** for industrial-scale illicit distillation, which is prohibited by our **[Usage Policy](https://www.anthropic.com/legal/aup)** and Terms of Service.
 

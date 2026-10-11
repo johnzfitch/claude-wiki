@@ -2,7 +2,7 @@
 title: "Playwright | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/playwright"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-30T06:30:25Z"
+fetched_at: "2026-10-10T06:27:30Z"
 tags: ["enterprise", "plugins", "security"]
 ---
 
@@ -69,9 +69,9 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -101,7 +101,7 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 
 ## Enterprise
 
-- [Overview](../18-Industry-UseCases/enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -113,6 +113,7 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 
 ## Industries
 
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -124,8 +125,10 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -145,7 +148,9 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](../18-Industry-UseCases/customers.md)
@@ -188,9 +193,9 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -220,7 +225,7 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 
 ## Enterprise
 
-- [Overview](../18-Industry-UseCases/enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -232,6 +237,7 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 
 ## Industries
 
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -243,8 +249,10 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -264,7 +272,9 @@ Official GitHub MCP server for repo management. Create issues, manage PRs, revie
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](../18-Industry-UseCases/customers.md)

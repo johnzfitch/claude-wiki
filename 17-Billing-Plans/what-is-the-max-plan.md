@@ -2,7 +2,7 @@
 title: "What is the Max plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:19Z"
+fetched_at: "2026-10-10T06:24:23Z"
 tags: ["billing"]
 ---
 
@@ -23,9 +23,11 @@ The Max plan is designed for users who collaborate with Claude frequently and ne
 
 - **Priority access**: Be among the first to experience new models, features, and products.
 
-- **Access to Claude Code: [Use Claude Code](using-claude-code-with-your-pro-or-max-plan.md)** for your terminal-based coding workflows with one unified subscription.
+- **Access to Claude Code: [Use Claude Code](https://support.claude.com/en/articles/11145838)** for your terminal-based coding workflows with one unified subscription.
 
 - **Longer, multi-step tasks:** Hand Claude work like reports, spreadsheets, and presentations, and it keeps going in the background. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**.
+
+- **Monthly API credits:** Claude Max and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 ------------------------------------------------------------------------
 
@@ -47,7 +49,7 @@ Price and plans are subject to change at Anthropic's discretion.
 
 - The Max plan is currently available as a monthly subscription only.
 
-- When upgrading from a lower to a higher tier, your account will be charged on a prorated basis for the remainder of your billing cycle.
+- When upgrading from a lower to a higher tier, your account will be charged on a prorated basis for the remainder of your billing cycle. If you’ve claimed monthly API credits, you receive prorated credits right away, then the higher amount each billing cycle after that.
 
 - When moving from an annual Pro plan to a Max plan, if the remaining balance on your annual Pro plan is greater than your Max plan price, you will receive a credit to your account for the remaining balance. This credit will be applied to future subscription costs.
 
@@ -77,6 +79,6 @@ Your session-based usage limit will reset every five hours. Max plans also have 
 
 In addition, to manage capacity and ensure fair access to all users, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion.
 
-For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Max capacity efficiently, we also have **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
+For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Max capacity efficiently, we also have **[Usage limit best practices](usage-limit-best-practices.md)**.
 
-**Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](../15-Claude-AI-Features/what-is-a-limit-reset.md)**.
+**Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](https://support.claude.com/en/articles/17007452)**.

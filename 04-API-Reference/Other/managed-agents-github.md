@@ -2,7 +2,7 @@
 title: "Accessing GitHub - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/github"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:40Z"
+fetched_at: "2026-10-04T08:34:11Z"
 tags: ["api", "git", "github", "mcp"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "git", "github", "mcp"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -160,7 +160,7 @@ tools:
 You are a code review assistant with access to GitHub.
 ```
 
-Then create a session that mounts the GitHub repository:
+Then create a session that mounts the GitHub repository. A `limited` [environment](managed-agents-environments.md#networking) blocks an agent's MCP servers unless its networking sets `allow_mcp_servers: true` or lists each server's host in `allowed_hosts`. With neither set, session creation fails with a 400 error.
 
 cURL
 
@@ -267,7 +267,7 @@ resources = [
 
 ## Managing repositories on a running session
 
-After a session is created, you can list its repository resources and rotate their authorization tokens. Each resource has an `id` returned at session creation time (or through `resources.list`) that you use for updates. Repositories are attached for the lifetime of the session; to change which repositories are mounted, create a new session.
+After a session is created, you can list its repository resources and rotate their authorization tokens. Each resource has an `id` returned at session creation time (or through `client.beta.sessions.resources.list()`) that you use for updates. Repositories are attached for the lifetime of the session; to change which repositories are mounted, create a new session.
 
 cURL
 

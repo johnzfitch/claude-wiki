@@ -2,7 +2,7 @@
 title: "Claude Code with GitHub Enterprise Server - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/github-enterprise-server"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:47Z"
+fetched_at: "2026-10-06T06:23:19Z"
 tags: ["claude-code", "enterprise", "git", "github"]
 ---
 
@@ -65,15 +65,15 @@ An Owner connects your GHES instance to Claude Code once. After that, developers
 
 1
 
-Open Claude Code admin settings
+Open Git providers settings
 
-Go to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and find the GitHub Enterprise Server section.
+Go to [**Organization settings \> Git providers**](https://claude.ai/admin-settings/source-control#github-enterprise) and find the GitHub Enterprise section.
 
 2
 
 Start the guided setup
 
-Click **Connect**. Enter a display name of up to 20 characters for the connection and your GHES hostname, for example `github.example.com`. If your GHES instance uses a self-signed or private certificate authority, paste the CA certificate in the optional field.
+Click **Connect**, or **Add instance** if an instance is already connected, then select **Set up automatically**. Enter a display name of up to 20 characters for the connection and your GHES hostname, for example `github.example.com`. If your GHES instance uses a self-signed or private certificate authority, paste the CA certificate in the optional field.
 
 3
 
@@ -91,7 +91,7 @@ From the GitHub App page on your GHES instance, install the app on the repositor
 
 Enable features
 
-Return to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enable [Code Review](code-review.md#set-up-code-review), Claude Security, and [contribution metrics](../13-Enterprise-Admin/analytics.md#enable-contribution-metrics) for your GHES repositories using the same configuration as github.com.
+Go to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enable [Code Review](code-review.md#set-up-code-review) and [contribution metrics](../13-Enterprise-Admin/analytics.md#enable-contribution-metrics) for your GHES repositories using the same configuration as github.com.
 
 
 [​](#github-app-permissions)
@@ -118,7 +118,7 @@ The app subscribes to `pull_request`, `issue_comment`, `pull_request_review_comm
 
 Manual setup
 
-If the guided redirect flow is blocked by your network configuration, click **Add manually** instead of Connect. Create a GitHub App on your GHES instance with the [permissions and events above](#github-app-permissions), then enter the connection details in the form: a display name, your GHES hostname and optional port, and the app’s ID, client ID, client secret, webhook secret, and private key. The form also accepts an optional custom CA certificate and read replica hostnames. Claude generates the app’s webhook URL when you save the connection. After you click **Add configuration**, open the connection’s **More options** menu, select **Copy webhook URL**, and paste the URL into the app’s webhook settings on your GHES instance. Use the same webhook secret you entered in the form.
+If the guided redirect flow is blocked by your network configuration, click **Connect** or **Add instance**, then select **Add manually** instead of **Set up automatically**. Create a GitHub App on your GHES instance with the [permissions and events above](#github-app-permissions), then enter the connection details in the form: a display name, your GHES hostname and optional port, and the app’s ID, client ID, client secret, webhook secret, and private key. The form also accepts an optional custom CA certificate and read replica hostnames. Claude generates the app’s webhook URL when you save the connection. After you click **Add configuration**, open the connection’s **More options** menu, select **Copy webhook URL**, and paste the URL into the app’s webhook settings on your GHES instance. Use the same webhook secret you entered in the form.
 
 
 [​](#network-requirements)
@@ -269,7 +269,12 @@ If `/plugin marketplace add` is blocked for your GHES URL, your organization has
 
 Marketplace add on claude.ai fails with a GitHub access error
 
-If adding a GHES marketplace from your user settings fails with a generic error like “Marketplace couldn’t be added”, check your GitHub Enterprise connection first. This is what appears when your own GitHub Enterprise account is not connected to Claude, even if your organization’s GHES instance is configured and other users are connected. The dialog does not point to the GitHub Enterprise connect flow, and the “Connect to GitHub” option on the Browse tab signs in to github.com, which does not grant access to GHES repositories. To connect your GitHub Enterprise account: the repository picker on [claude.ai/code](https://claude.ai/code) offers a connect option for each configured GHES instance, and Owners can also connect from the GitHub Enterprise section of the [Claude Code admin settings](https://claude.ai/admin-settings/claude-code). Then add the marketplace again. Alternatively, ask an Owner to add the marketplace in the organization plugin settings, which removes the per-user connection requirement. On other claude.ai surfaces, a “Repository not found. If it’s private, GitHub access is required” error on a GHES marketplace usually indicates the same missing connection. Connect your GitHub Enterprise account through one of the paths above, then try again.
+If adding a GHES marketplace from your user settings fails with a generic error like “Marketplace couldn’t be added”, check your GitHub Enterprise connection first. This is what appears when your own GitHub Enterprise account is not connected to Claude, even if your organization’s GHES instance is configured and other users are connected. The dialog does not point to the GitHub Enterprise connect flow, and the “Connect to GitHub” option on the Browse tab signs in to github.com, which does not grant access to GHES repositories. Connect your GitHub Enterprise account in one of these places, then add the marketplace again:
+
+- **Repository picker**: on [claude.ai/code](https://claude.ai/code), the repository picker offers a connect option for each configured GHES instance.
+- **Git providers page**: if you’re an Owner, go to the GitHub section of [**Organization settings \> Git providers**](https://claude.ai/admin-settings/source-control) and click **Connect**, or **Add organization** once an account is connected. Select the GHES hostname under **GitHub instance**, then click **Connect**.
+
+Alternatively, ask an Owner to add the marketplace in the organization plugin settings, which removes the per-user connection requirement. On other claude.ai surfaces, a “Repository not found. If it’s private, GitHub access is required” error on a GHES marketplace usually indicates the same missing connection. Connect your GitHub Enterprise account through one of the paths above, then try again.
 
 
 [​](#ghes-instance-not-reachable)

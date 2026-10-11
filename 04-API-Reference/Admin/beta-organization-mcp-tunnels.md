@@ -2,7 +2,7 @@
 title: "MCP Tunnels - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/mcp_tunnels"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:26:53Z"
+fetched_at: "2026-10-04T08:31:52Z"
 tags: ["api", "mcp"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "mcp"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -140,19 +123,19 @@ Cost Report
 MCP Tunnels
 
 
-List Tunnels
+List Tunnels Deprecated
 
 
-Get Tunnel
+Get Tunnel Deprecated
 
 
-Archive Tunnel
+Archive Tunnel Deprecated
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token Deprecated
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token Deprecated
 
 Tunnel Certificates
 
@@ -163,6 +146,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -346,7 +350,7 @@ workspace_id: string or null
 
 
 
-ID of the Workspace this Tunnel belongs to, or `null` for the default Workspace. Immutable after creation.
+ID of the Workspace this Tunnel belongs to. May be `null` for a Tunnel in the default Workspace. A Tunnel never moves to another Workspace.
 
 
 

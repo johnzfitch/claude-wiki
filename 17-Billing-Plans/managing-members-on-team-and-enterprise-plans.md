@@ -1,8 +1,8 @@
 ---
 title: "Manage members on Team and Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans"
+source_url: "https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:39Z"
+fetched_at: "2026-10-10T06:25:11Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -15,7 +15,7 @@ This guide covers how to add, remove, and manage the people on your Team or Ente
 
 **Permissions note:** Organization Admins can manage members in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**, but only Owners and Primary Owners can access **[Organization](https://claude.ai/admin-settings/organization) [settings \> Billing](https://claude.ai/admin-settings/billing)**. For more information, see our article about **[roles and permissions](../13-Enterprise-Admin/roles-and-permissions.md)**.
 
-For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**.
+For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md)**.
 
 ------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ Admins and above can add members by following these steps:
 
 4.  Set the role and permissions for the member.
 
-    1.  **Note:** On Enterprise plans, you can also select “Custom” as a member’s role. Members set to this role have their access controlled through group memberships and custom roles. To see exactly what a custom role member can access, open the “**⋮**” menu on the right side of their row and select "View effective role." For details, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
+    1.  **Note:** On Enterprise plans, you can also select “Custom” as a member’s role. Members set to this role have their access controlled through group memberships and custom roles. To see exactly what a custom role member can access, open the “**⋮**” menu on the right side of their row and select "View effective role." For details, see **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)**.
 
 5.  Click “Add members.”
 
@@ -43,11 +43,11 @@ This sends an email invitation to the person. The invitation expires after 21 da
 
 **Add multiple members at once:** You can invite multiple members by clicking "Bulk add" and typing or pasting email addresses separated by commas or new lines.
 
-**Note:** The seat type selector only shows seat types your plan already owns. If all seats of the selected type are assigned, you'll be prompted to purchase one. See our guides for **[Team plans](https://support.claude.com/en/articles/12004354)** and **[Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md)** for more information.
+**Note:** The seat type selector only shows seat types your plan already owns. If all seats of the selected type are assigned, you'll be prompted to purchase one. See our guides for **[Team plans](https://support.claude.com/en/articles/12004354)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991)** for more information.
 
 ### Add members via organization discovery
 
-Members can also join your organization on their own through organization discovery. When you enable discoverability, colleagues with a matching email domain can find your organization during signup and request to join—no invitation needed. You can configure whether they're added automatically or require your approval. See **[Find and join a Team or Enterprise organization](../13-Enterprise-Admin/find-and-join-a-team-or-enterprise-organization.md)** for details.
+Members can also join your organization on their own through organization discovery. When you enable discoverability, colleagues with a matching email domain can find your organization during signup and request to join—no invitation needed. You can configure whether they're added automatically or require your approval. See **[Find and join a Team or Enterprise organization](https://support.claude.com/en/articles/13566435-organization-discovery)** for details.
 
 ### Share an invite link
 
@@ -119,9 +119,9 @@ When a member is removed:
 
 - If you re-add the member later using the same email address, their account history will be maintained.
 
-Removing a member frees up their seat for reassignment, but does not automatically reduce your plan's total seat count. See our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)** for information on reducing seats.
+Removing a member frees up their seat for reassignment, but does not automatically reduce your plan's total seat count. See our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md)** for information on reducing seats.
 
-**Note:** If you're on a Team plan, the option to remove members from **[Organization settings \> Members](https://claude.ai/admin-settings/members)** will no longer be available after you cancel your plan. For more information, see **[Cancel your organization's Team plan subscription](how-do-i-cancel-my-organization-s-team-plan-subscription.md)**.
+**Note:** If you're on a Team plan, the option to remove members from **[Organization settings \> Members](https://claude.ai/admin-settings/members)** will no longer be available after you cancel your plan. For more information, see **[Cancel your organization's Team plan subscription](https://support.claude.com/en/articles/9267323)**.
 
 ------------------------------------------------------------------------
 

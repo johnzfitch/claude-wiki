@@ -2,7 +2,7 @@
 title: "PHP SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/php"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:40Z"
+fetched_at: "2026-10-04T08:34:02Z"
 tags: ["api", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api", "sdk"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,7 +48,7 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-[CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)Client SDKs
+[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
 # PHP SDK
 

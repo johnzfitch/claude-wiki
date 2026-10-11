@@ -2,7 +2,7 @@
 title: "Thomson Reuters Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/thomson-reuters-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:33Z"
+fetched_at: "2026-10-10T06:26:24Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -24,7 +24,7 @@ Give Claude access to your local files and let it complete tasks autonomously. A
 
 [**Thomson Reuters**](thomson-reuters.md) builds the software and research tools that legal, tax, accounting, and compliance professionals rely on. The company’s AI-powered platform, CoCounsel, recently crossed one million users, making it one of the most widely adopted AI tools in professional services.
 
-Internally, Thomson Reuters has added [Claude Enterprise](enterprise.md) as a core AI capability for its teams. More recently, the company began piloting Cowork to explore how agentic AI can support everyday enterprise workflows across documents, spreadsheets, and internal processes.
+Internally, Thomson Reuters has added [Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md) as a core AI capability for its teams. More recently, the company began piloting Cowork to explore how agentic AI can support everyday enterprise workflows across documents, spreadsheets, and internal processes.
 
 Joel Hron, CTO of Thomson Reuters, sat down with Anthropic to discuss how the company is approaching Claude Enterprise, what they are learning from piloting Cowork, and how large enterprises can roll out these systems responsibly. The following conversation has been edited for length and clarity.
 
@@ -119,9 +119,9 @@ And finally, measure value beyond time savings. Some of the most important gains
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -151,7 +151,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -163,6 +163,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -174,8 +175,10 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -195,7 +198,9 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -238,9 +243,9 @@ And finally, measure value beyond time savings. Some of the most important gains
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -270,7 +275,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -282,6 +287,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -293,8 +299,10 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -314,7 +322,9 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

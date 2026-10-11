@@ -2,7 +2,7 @@
 title: "Get started with skill and plugin scanning | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15927065"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:33:00Z"
+fetched_at: "2026-10-10T06:28:20Z"
 tags: ["claude-ai"]
 ---
 
@@ -47,7 +47,7 @@ Once it's on, every new skill and plugin upload or edit in your organization is 
 
 ## Control which roles scanning applies to
 
-Turning on skill and plugin scanning in organization settings applies it across your whole organization. If you use custom roles, you can further define who scanning applies to. When you create or edit a custom role, turn on the **Skill and plugin security scanning** capability for roles that should have access to skill scanning. Learn more about **[managing custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
+Turning on skill and plugin scanning in organization settings applies it across your whole organization. If you use custom roles, you can further define who scanning applies to. When you create or edit a custom role, turn on the **Skill and plugin security scanning** capability for roles that should have access to skill scanning. Learn more about **[managing custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
 
 ## What you'll see after an upload
 

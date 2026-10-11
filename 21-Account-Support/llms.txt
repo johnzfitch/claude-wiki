@@ -63,6 +63,90 @@ While the account creator must use a business email address, you can add public 
 
 ---
 
+## Assign a program to custom roles on Enterprise plans | Claude Help Center
+
+Source: https://support.claude.com/en/articles/17118092-assign-a-program-to-custom-roles-on-enterprise-plans
+Path: 21-Account-Support/assign-a-program-to-custom-roles-on-enterprise-plans.md
+
+# Assign a program to custom roles on Enterprise plans
+
+
+This article explains how to assign an Anthropic-issued program to users through custom roles on Enterprise plans.
+
+Anthropic offers several verification programs, such as the Cyber Verification Program (CVP), or access to models that might not be generally available. To gain access to these programs, go to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available to you, and apply.
+
+Once you’ve applied and been approved for a program, Anthropic issues a "program" or "grant" to your organization. To use the program or grant, you must assign it to a group of people within the organization. In Claude Enterprise, a program applies to members through a custom role: you add the grant to a role, and assign the role to groups of members.
+
+Available on Claude Enterprise plans.
+
+## Before you begin
+
+- Your organization must already have a grant. You’ll see grants only after Anthropic issues one to your organization. To apply to a specific program, go to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available.
+
+- You need to be an Owner or Primary Owner in a Claude Enterprise organization to assign grants.
+
+- Members who should get access need the role type "Custom" on the **Members** page. Owners, Primary Owners, and Admins who keep their built-in role are not covered by custom roles.
+
+- If your organization uses SCIM with group mappings, your identity provider (IdP) sets each user’s role type. To get the grant, a user needs to be in an IdP group that’s mapped to the custom role.
+
+## Give members access with a custom role
+
+In Claude Enterprise, Programs and Grants are issued to your organization and apply to members through roles. For some programs, Anthropic creates a role for you: you can’t change its grants, but you can assign groups to it. For others, you add the grant to a role of your own.
+
+To assign a program or grant to a custom role:
+
+1.  Navigate to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)** on claude.ai or in the Claude Desktop app.
+
+2.  Create a new role by selecting “Add role.” Edit an existing role by opening the three-dot menu at the end of its row and selecting “Edit role.”
+
+3.  Select the **Details** tab, then enter a **Role name**. Under **Groups**, choose the groups whose members should get access.
+
+4.  Select the **Models** tab and scroll to the **Grants** section.
+
+5.  Check the box for each grant this role should have, then select “Save.”
+
+To check that you’ve successfully given members access to your program:
+
+1.  Navigate to **[Organization settings \> Grants](https://claude.ai/admin-settings/grants)**. The section for your grant lists its requirements (for example, data retention or a member cap, depending on the grant).
+
+2.  Navigate to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**. The role shows **Grant role**.
+
+To remove access, clear the box in the **Grants** section in the custom role and save. To remove one person, take them out of the role's groups.
+
+## Where the model appears
+
+Users get access to the model through the grant. Once the role has the grant, users whose role type is "Custom" and who are in one of the role’s groups can use the model. A model that comes with a grant isn’t listed on the **Models** page or in a role’s **Add model** list, and you don’t add it there.
+
+Owners, Primary Owners, and Admins who keep their built-in role don’t get the model, even if they’re in one of the role’s groups.
+
+## Troubleshooting
+
+### The model doesn’t appear for an Owner, Primary Owner, or Admin
+
+Custom roles don’t apply to Owners, Primary Owners, and Admins who keep their built-in role, so a grant on a custom role doesn’t reach them. To check that the grant works, test with a user whose role type is "Custom" and who is in one of the role’s groups.
+
+### The Grants page, or the Grants section in the Models tab of the role, is missing
+
+Your organization doesn’t have a grant yet, or your role can’t view it. These pages are only available for Enterprise plans. Contact your Anthropic account team or an Owner of your organization.
+
+### The checkboxes are grey
+
+Hovering over a box shows "Only organization owners can change which grants this role has." Ask an Owner or Primary Owner.
+
+### The role says "Granted by Anthropic and managed centrally. These grants are read-only."
+
+Anthropic created this role. Assign your groups to it to give them access to your program.
+
+### The role shows "Grant withheld", or the Grants page shows "Action required."
+
+The grant isn’t in effect for a role, or is on hold. Open **Grants** and fix the requirements that aren’t met. If there’s nothing to fix, contact your Anthropic account team.
+
+### The grant is over its member cap
+
+Some grants have a member cap. The role editor shows a warning message: "This role will exceed the member cap of … for the … grant. Everyone in this role will lose access until the member cap is restored." Reduce the members in the groups of the roles that have this grant.
+
+---
+
 ## Assign a program to workspaces in Claude Console | Claude Help Center
 
 Source: https://support.claude.com/en/articles/16764810-assign-a-program-to-workspaces-in-claude-console
@@ -71,45 +155,87 @@ Path: 21-Account-Support/assign-a-program-to-workspaces-in-claude-console.md
 # Assign a program to workspaces in Claude Console
 
 
-Anthropic offers several verification programs, such as the Cyber Verification Program, or access to models that might not be generally available. In order to gain access to these programs, go to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available to you, and apply.
+This article explains how to apply grants and enable programs for the Anthropic Console and API.
 
-Once you’ve applied and been approved for a program, Anthropic issues a “program” to your organization. In order for it to be used, you must assign it to a group of people within the organization. In the Claude Console, a program applies to workspaces, either automatically (for programs like the Cyber Verification Program) or by assignment.
+Anthropic offers several verification programs, such as the Cyber Verification Program (CVP), or access to models that might not be generally available. In order to gain access to these programs, go to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available to you, and apply.
 
-This article covers how to enable programs for the Console.
+Once you’ve applied and been approved for a program, Anthropic issues a “program” or “grant” to your organization. To use the program or grant, you must assign it to a group of people within the organization. In the Claude Console, a program applies only to the workspaces you assign it to. This article shows you how to assign one.
 
 ## Before you start
 
-- Your organization must already have a grant. Grants appear only after Anthropic issues one to your organization. To apply to a specific program, go to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available.
+- Your organization must already have a grant. Grants appear only after Anthropic issues one to your organization. To apply to a specific program, your Organization Admin or Owner goes to our **[Verification Portal](https://portal.anthropic.com/)** to see what programs are available.
 
-- In the Console, you need to be an organization Admin. Other roles cannot view or manage grants.
+- In the Console, you need to be an organization Admin or Owner. Other roles cannot view or manage grants.
 
 ## Give a Console workspace access
 
 In the Console, programs are issued to your organization and apply to workspaces. Some programs, such as the Cyber Verification Program, apply automatically to every workspace that meets their requirements. Others need workspaces assigned. A program only applies to API traffic from workspaces that meet its requirements.
 
-**Follow these steps:**
+Follow these steps:
 
-1.  **[Sign in to the Console](../04-API-Reference/Other/usage-limits.md)** as an organization Admin. Go to **[Organization settings \> Programs](https://platform.claude.com/settings/organization/programs)**. The program card shows whether it applies automatically or needs workspaces assigned.
+1.  **[Sign in to the Console](../04-API-Reference/Other/usage-limits.md)** as an organization Admin.
 
+2.  Go to **[Organization settings \> Programs](https://platform.claude.com/settings/organization/programs)**.
 
-2.  Select the program to open its page. The **Workspaces** table shows each workspace's status. A workspace marked with an issue does not meet a requirement yet.
+3.  Select the program to open its page. The **Workspaces** table shows each workspace's status. A workspace marked with an issue does not meet a requirement yet.
 
+4.  Hover over the issue to see which requirement is not met.
 
-    Hover over the issue to see which requirement is not met.
+5.  Open the workspace, select "Manage," then "Programs," and check the **Qualifications** panel.
 
+Unmet requirements are flagged with remediation steps.
 
-3.  To give a workspace access, make it meet the requirements. Open the workspace, select "Manage," then "Programs," and check the **Qualifications** panel.
+## Assigning Programs to a workspace
 
+Programs apply only to the workspaces you assign them to.
 
-4.  Fix the requirement. For the Cyber Verification Program, turn on data retention under Manage, then Privacy controls. Then select "Rerun."
+### 1. Create a new Workspace and add users
 
+Some programs can’t be assigned to the default workspace. If your program is one of them, create a dedicated workspace first.
 
-5.  The program shows **Active** for the workspace.
+1.  **[Sign in to the Console](../04-API-Reference/Other/usage-limits.md)** as an organization Admin.
 
+2.  Go to **[Settings \> Workspaces](../04-API-Reference/Other/playground.md)**.
+
+3.  Click "Add Workspace" (you cannot use the default workspace for accessing the model).
+
+4.  Enter a name for your new Workspace, and select a color assignment. This color assignment will be used to help visually identify your workspace in the Claude Console.
+
+5.  Click "Create.”
+
+6.  Add the approved users to the new Workspace.
+
+**Important:** Some programs have a seat cap. If your organization goes over the cap, assigned workspaces lose access until it’s back under the limit.
+
+Learn more about **[creating and managing Workspaces in the Claude Console](../13-Enterprise-Admin/creating-and-managing-workspaces-in-the-claude-console.md)**.
+
+**Note:** If support asks for your workspace ID, go to **[Settings \> Workspaces](../04-API-Reference/Other/playground.md)** and select your workspace. Workspace IDs start with `wrkspc_`. Your organization ID is under **Settings \> Organization**.
+
+### 2. Enable access in your organization
+
+You add the grant to a workspace in your existing Anthropic organization. For API organizations, access is enabled on a workspace within your existing Anthropic organization. You don’t need a new organization or a separate organization.
+
+1.  **[Sign in to the Console](../04-API-Reference/Other/usage-limits.md)** as an organization Admin.
+
+2.  Go to **[Settings \> Programs](https://platform.claude.com/settings/programs)** or **Settings \> Grants**, and you’ll see the approved access Grants available for your organization and the model’s codename.
+
+3.  Navigate to the new workspace you set up in Step 1 above by going to **[Settings \> Workspaces and clicking](../04-API-Reference/Other/playground.md)** on the new workspace you created.
+
+4.  In the workspace, navigate to the **Programs** or **Grants** tab in the Manage section (the label will depend on whether you have existing grants in your provisioned org).
+
+5.  Click “Add grant.”
+
+6.  Select the program or grant to attach it to the workspace.
+
+7.  Make sure the grant is set to **Active**.
+
+After the grant is active, you can use the program through the API with that workspace. If Anthropic sent you setup instructions for your program, follow those next.
 
 ## Troubleshooting
 
 - **The Grants page is missing.** Your organization does not have a grant yet, or you are not an organization Admin. Contact your Anthropic account team or your admin.
+
+- **You don’t see your program, the Other grants section is empty, or the Programs tab is missing.** Your organization may not have a program yet, or you might not be an organization Admin. Contact your Anthropic account team or your organization Admin.
 
 - **The workspace shows as inactive.** Open the workspace, select "Manage," then "Programs," and check the **Qualifications** panel for an unmet requirement. Fix each unmet requirement and try again.
 
@@ -117,11 +243,17 @@ In the Console, programs are issued to your organization and apply to workspaces
 
 - **You are trying to use the default Console workspace.** Some programs don't allow the program to be assigned to the default workspace. If the default workspace isn’t working, assign a different workspace or create a new one.
 
+- **You can’t assign the program to a workspace.** Confirm that you’re an organization Admin and that you aren’t selecting the default workspace. Some programs can’t be assigned to the default workspace, so create a dedicated workspace if you need one.
+
+- **The API returns a 401 error.** Confirm your SSO session is active (interactive) or your federated token hasn't expired (workload), and that your credential is scoped to the workspace.
+
+- **The API returns a 404 error for the model.** Double-check the model string and confirm your request is scoped to the workspace, not the default workspace.
+
 ---
 
 ## Assign tasks from anywhere in Claude Cowork | Claude Help Center
 
-Source: https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork
+Source: https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork
 Path: 21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md
 
 # Assign tasks from anywhere in Claude Cowork
@@ -133,9 +265,9 @@ Claude Cowork gives you one continuous conversation with Claude that you can rea
 
 **Note:** Dispatch isn't available to new users. If you already use Dispatch, you can keep using it for now, and this article still applies.
 
-Dispatch runs your tasks on your desktop, so your computer needs to be awake and the Claude Desktop app open while Claude works. This is different from a cloud session, which runs on Anthropic's servers and keeps working even when your computer is off. For where Cowork runs on each surface, see **[Use Claude Cowork on web, desktop, and mobile](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md)**.
+Dispatch runs your tasks on your desktop, so your computer needs to be awake and the Claude Desktop app open while Claude works. This is different from a cloud session, which runs on Anthropic's servers and keeps working even when your computer is off. For where Cowork runs on each surface, see **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
-This capability is in limited beta for Pro and Max plans on Claude Cowork, and it requires both the Claude Desktop app and the Claude mobile app. Dispatch is only available for some Pro and Max plans, so if you don't see Dispatch in the Cowork side panel, you should **[use Cowork in the cloud](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md)** instead of the pairing flow described here.
+This capability is in limited beta for Pro and Max plans on Claude Cowork, and it requires both the Claude Desktop app and the Claude mobile app. Dispatch is only available for some Pro and Max plans, so if you don't see Dispatch in the Cowork side panel, you should **[use Cowork in the cloud](https://support.claude.com/en/articles/15520349)** instead of the pairing flow described here.
 
 ------------------------------------------------------------------------
 
@@ -219,13 +351,13 @@ You control what Claude remembers. You can view, edit, and delete your memory at
 
 You can set up tasks that Claude runs automatically on a schedule. Tell Claude once to check your email every morning, pull your metrics every week, or compile a Friday report, and it handles it from there without being asked again.
 
-For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
+For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](../15-Claude-AI-Features/schedule-recurring-tasks-in-cowork.md)**.
 
 ### Computer use
 
 Claude can use the apps on your computer to complete tasks you assign through Dispatch. If you ask Claude to update a spreadsheet in Excel, navigate an internal dashboard, or run your dev tools, Claude can work directly with those apps on your desktop.
 
-For details on how computer use works, permissions, and safety guidance, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
+For details on how computer use works, permissions, and safety guidance, see **[Let Claude use your computer in Cowork](../15-Claude-AI-Features/computer-use-safety.md)**.
 
 **Note:** Computer use isn't available in the Linux beta. On a Linux desktop, Dispatch still works with your files, connectors, and plugins, but it can't drive desktop apps through computer use.
 
@@ -255,9 +387,9 @@ For additional safety guidance, see **[Use Cowork safely](https://support.claude
 
 The following limitations apply:
 
-- **Your desktop must be active.** Dispatch works with the local files and apps on your desktop computer, so your computer needs to be awake and the Claude Desktop app open while Claude works. If you want Claude to keep working while your computer is off, start a cloud session instead. See **[Use Claude Cowork on web, desktop, and mobile](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md)**.
+- **Your desktop must be active.** Dispatch works with the local files and apps on your desktop computer, so your computer needs to be awake and the Claude Desktop app open while Claude works. If you want Claude to keep working while your computer is off, start a cloud session instead. See **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
-- **Computer use has different safety properties than other Cowork tools.** Claude clicks, types, and navigates your screen directly rather than going through connectors or permission-gated file access. For details, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
+- **Computer use has different safety properties than other Cowork tools.** Claude clicks, types, and navigates your screen directly rather than going through connectors or permission-gated file access. For details, see **[Let Claude use your computer in Cowork](../15-Claude-AI-Features/computer-use-safety.md)**.
 
 - **One continuous thread.** There's no way to start a new thread or manage multiple threads. All messages live in a single conversation.
 
@@ -272,10 +404,12 @@ Path: 21-Account-Support/can-i-have-a-claude-account-and-a-console-account.md
 
 # Can I have a Claude account and a Console account?
 
-March 16, 2026
-
 
 Yes. You can have a Claude account (free, Pro, Max, Team, or Enterprise) and a Console account (to access the Claude API) with the same email address. These two accounts will operate independently.
+
+Claude Max and Team plans include monthly credits for the Claude API. To claim your credits, you link a Claude Console organization to your plan. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
+
+**Tip:** Sign in to the Claude Console with the same email you use for your Claude account.
 
 ---
 
@@ -289,7 +423,7 @@ Path: 21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-t
 
 If you're using Claude with a personal account (Free, Pro, or Max) tied to your work email, you may be able to move that account into your organization's Team or Enterprise workspace. There are two paths: you can start a migration yourself (Team and Enterprise) or your admin can claim accounts on your domain (Enterprise only).
 
-**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you won't be offered the option to bring your data with you, and a domain claim won't offer to merge your account. You can export your data first if you want a copy. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you won't be offered the option to bring your data with you, and a domain claim won't offer to merge your account. You can export your data first if you want a copy. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ------------------------------------------------------------------------
 
@@ -377,6 +511,12 @@ What happens to your Pro or Max plan after migrating depends on where you bought
 
 - **Apple App Store:** Your Pro or Max subscription isn't canceled. Apple doesn't allow third-party cancellation, so you'll need to cancel it yourself through your Apple ID settings. If you don't, Apple keeps charging you after your personal account closes.
 
+If you’ve claimed monthly API credits on your Max plan:
+
+- **Moving to a Team organization:** Your Max link ends. A Team Owner or Primary Owner can claim the team’s credits once the Team plan has been active for seven days.
+
+- **Moving to an Enterprise organization:** New credits stop. Credits you already have stay usable until they expire. Enterprise plans aren’t eligible for monthly API credits.
+
 For cancellation instructions, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
 
 ### How to start a migration
@@ -437,6 +577,8 @@ Path: 21-Account-Support/claim-and-migrate-accounts-on-your-domain.md
 
 # Claim and migrate accounts on your domain
 
+September 2, 2026
+
 
 Domain claiming lets Enterprise admins discover, claim, and migrate existing personal Claude accounts (Free, Pro, and Max) on a verified company domain into their Enterprise workspace. This gives your organization a clean path to consolidate accounts on day one of an Enterprise deployment, and allows people using Claude on personal accounts to keep their work. Domain claiming is available for Enterprise plans, whether purchased directly through Anthropic or through the AWS Marketplace, and works the same in both cases.
 
@@ -454,9 +596,9 @@ Before you can enable domain claiming, your organization must have all of the fo
 
 2.  Complete domain verification (DNS).
 
-3.  Enforce SSO (not just configured—SSO must be actively enforced). See **[Set up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**.
+3.  Enforce SSO (not just configured—SSO must be actively enforced). See **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
 
-4.  Enable JIT provisioning or SCIM. See **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+4.  Enable JIT provisioning or SCIM. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 These prerequisites exist to prevent people from being locked out of Claude during the migration process. If SSO is enforced and provisioning is active, everyone on your domain will have a path to sign in after their accounts are migrated.
 
@@ -518,7 +660,7 @@ To migrate accounts on a domain you verified later:
 
 1.  Wait for the current claim's 30-day window to end. Only one claim can be in progress at a time.
 
-2.  Verify the new domain if you haven't already. See **[Set up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**.
+2.  Verify the new domain if you haven't already. See **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
 
 3.  Review the accounts on the new domain, then initiate a new claim. This claim has its own 30-day window, and the accounts on the new domain receive the same email and in-product notifications.
 
@@ -526,7 +668,7 @@ To migrate accounts on a domain you verified later:
 
 ## What’s not supported
 
-- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 - Claiming Team plan accounts. Only individual accounts (Free, Pro, Max) can be claimed.
 
@@ -566,9 +708,9 @@ Path: 21-Account-Support/claude-design-admin-guide-for-team-and-enterprise-plans
 
 Claude Design lets your team create on-brand designs, prototypes, and interactive microsites through conversation with Claude. Presentations now have their own tool, Claude Slides.
 
-Claude Design is available in beta on Pro, Max, Team, and Enterprise plans. It's on by default on Team plans. On Enterprise plans, it's off by default until an owner turns it on.
+Claude Design is available on Free, Pro, Max, Team, and Enterprise plans. It's on by default on Team plans. On Enterprise plans, it turns on by default on October 15, 2026, and owners can turn it on before then.
 
-**Note:** Settings for artifacts, templates (including **Design**), design systems, and sharing live in one place now. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md)**. This guide covers standalone Claude Design at **claude.ai/design** and how to roll out Claude Design with a design system in place.
+**Note:** Settings for artifacts, templates (including **Design**), design systems, and sharing live in one place now. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**. This guide covers how to roll out Claude Design with a design system in place, and what to do before standalone Claude Design at **claude.ai/design** closes.
 
 Claude Design works best when a **design system** is set up for your organization first. This ensures every project your team creates stays true to your brand, typography, color palette, and component patterns. This guide walks you through enabling Claude Design, setting up the right foundation, and rolling it out to your team.
 
@@ -582,7 +724,7 @@ Your team can use Claude Design in two places, and each has its own setting. Tur
 
 ### Claude Design in conversations and the Artifacts tab
 
-To turn on the **Design** template, see the instructions in **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md)**.
+To turn on the **Design** template, see the instructions in **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
 
 ### Standalone Claude Design at claude.ai/design
 
@@ -590,7 +732,9 @@ To turn on the **Design** template, see the instructions in **[Artifacts admin g
 
 2.  Find the **Enable for your organization** toggle under **Claude Design \[standalone\]** and switch it on.
 
-On Enterprise plans, you can control access to standalone Claude Design with **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
+On Enterprise plans, you can control access to standalone Claude Design with **[custom roles](https://support.claude.com/en/articles/13930452)**.
+
+**Important:** Standalone Claude Design closes on \[placeholder: close date for Team and Enterprise plans\]. Before then, check that **Artifacts** and **Design systems** are on in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**, so users can migrate their design systems. On Enterprise plans, **Design systems** is off by default. Learn more in **[Migrate from standalone Claude Design to Claude](../15-Claude-AI-Features/migrate-from-standalone-claude-design-to-claude-claude-help-center.md)**.
 
 Before you turn on broad access, read through the rollout approach below. Turning on Claude Design without a design system in place means your team gets functional but generic output.
 
@@ -622,7 +766,7 @@ Any member with Claude Design access can create and edit design systems. On the 
 
 ## Recommended rollout phases
 
-A phased rollout lets you validate your design system and build internal expertise before broad adoption. On Enterprise plans, you can phase access to standalone Claude Design using **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**. You can phase access to Claude Design in conversations and the Artifacts tab the same way, with the Design capability (under **Artifacts**).
+On Enterprise plans, you can phase access to standalone Claude Design using **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**, with the Design capability (under **Artifacts**).
 
 ### Phase 1: Design system setup
 
@@ -712,7 +856,7 @@ There are no strict limits, but we recommend the phased approach outlined above 
 
 ### Can we export or archive generated designs?
 
-Claude Design currently supports export to HTML bundles, PPTX, and PDF, hand-off to Claude Code, and sending designs to the partner tools listed in **[Get started with Claude Design](../15-Claude-AI-Features/get-started-with-claude-design-claude-help-center.md)**.
+Claude Design supports export to HTML bundles, PPTX, PDF, and Google Slides, hand-off to Claude Code, and sending designs to the partner tools listed in **[Get started with Claude Design](https://support.claude.com/en/articles/14604416)**.
 
 ---
 
@@ -732,102 +876,257 @@ If your previous account was disabled for [Usage Policy violations](https://www.
 
 ---
 
-## Designate support contacts for human support | Claude Help Center
+## Cyber Verification Program Security Requirements | Claude Help Center
 
-Source: https://support.claude.com/en/articles/15263885-designate-support-contacts-for-human-support
-Path: 21-Account-Support/designate-support-contacts-for-human-support.md
+Source: https://support.claude.com/en/articles/17202708-cyber-verification-program-security-requirements
+Path: 21-Account-Support/cyber-verification-program-security-requirements.md
 
-# Designate support contacts for human support
-
-August 6, 2026
+# Cyber Verification Program Security Requirements
 
 
-Choose which members of your organization can open tickets with Anthropic's human support team by designating support contacts. Users who aren't configured as support contacts get help from AI support, which can answer many common questions instantly.
+Customer must meet and maintain the following security requirements for each Cyber Verification Program access level that Customer holds (“**Access Level**”). These requirements apply to Approved Users and to Granted Workspaces.
 
-Available on the Enterprise plan, and configurable by Primary Owners and Owners.
+## 1. All Access Levels.
 
-## How support routing works
+1.  **Security Contact.** Customer must provide Anthropic with a named security contact who may receive security and misuse alerts and is able to act on them.
 
-When support contacts are turned on, members of designated groups can reach human support. Everyone else in your organization gets AI support, which handles most questions instantly.
+2.  **Incident Reporting.** Customer must report suspected breaches or misuse involving the grant to Anthropic within 72 hours, or within 24 hours for a security incident. Reporting can be done at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#0576606670776c717c45646b716d776a756c662b666a68) or your Account team contact.
 
-When support contacts are turned off, everyone in your organization gets AI support and no one is routed to a human.
+3.  **Cooperation.** Customer must investigate any abuse that Anthropic identifies within 48 hours, work with Anthropic to remediate it, and respond to misuse inquiries within seven (7) days.
 
-You can also extend human support to all Admins and Owners by checking **Always include Admins and Owners** when configuring support contacts.
+4.  **Personal Access.** Each Approved User must sign in as themselves. Shared sign-ins, seats, sessions, and workload identities, and browser extensions or proxy tools that expose a session to other people that are not explicitly an Approved User meeting all the requirements below, are not permitted.
 
-## Default settings at launch
+5.  **Usage Attribution.** User profiles must remain enabled on the Granted Workspace so that requests can be attributed to a named user or workload identity.
 
-When the support contacts setting becomes available, the feature is turned on and **Always include Admins and Owners** is checked. This preserves existing behavior: your Admins and Owners keep human support access without any configuration work, and other users get AI support unless you add them to a designated group.
+6.  **Notice of Changes.** Customer must notify Anthropic within thirty (30) days of a material change to its security posture, ownership, headquarters, or security contact.
 
-To grant human support access to additional users (such as a central IT team), designate them in a group through organization settings. To remove human support access for Admins and Owners, uncheck **Always include Admins and Owners**.
+7.  **Ongoing Review.** Anthropic may request that Customer provide evidence of compliance with these Cyber Verification Program Security Requirements.
 
-## Configure support contacts
+## 2. Defense Access.
 
-Before configuring support contacts, make sure the groups you want to designate already exist in organization settings. Groups can be synced from your identity provider through SCIM or created manually. For more information, see **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
+1.  **Multi-Factor Authentication.** At the time of Customer’s access to the CVP, all accounts that can sign in to the Granted Workspace, or hold credentials for it, must have multi-factor authentication enabled. By December 15, 2026 (the "Cutoff Date"), all such accounts must use phishing-resistant multi-factor authentication as defined in the CISA fact sheet "Implementing Phishing-Resistant MFA" and with NIST SP 800-63B-4, meaning (i) a FIDO2/WebAuthn security key, (ii) a passkey, on the device or in a password manager, or (iii) a smartcard/PIV, and email magic-link sign-in must be disabled. SMS, voice, emailed codes, authenticator-app codes, and push approvals do not qualify.
 
-To configure support contacts:
+2.  **Credential Management.** By the Cutoff Date, downloaded, exported, or otherwise long-lived static credentials, including API keys, must not be used to access the model. The following requirements apply to Customer based on the deployment platform(s) through which Customer accesses the model. For each applicable platform, all Approved Users and all workloads must authenticate using short-lived credentials issued and managed by that platform's native identity service.
 
-1.  Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
+    1.  **Anthropic (first-party API and Console).** Static or long-lived API keys are not permitted, including for interactive access to Claude Console, Claude for Enterprise, Claude Code, and other Anthropic application surfaces.
 
-2.  Find the **Support contacts** section and toggle the feature on.
+    2.  **Google Vertex.** Downloaded service account JSON key files are not permitted.
 
-3.  Select the groups whose members should receive human support.
+    3.  **Amazon Web Services (Amazon Bedrock).** IAM user access key pairs (access key ID and secret access key) are not permitted, with the exception of short-term Bedrock API keys that expire within 12 hours or the length of the Bedrock session, whichever is shorter.
 
-4.  Check or uncheck **Always include Admins and Owners** to control whether your organization’s Admins and Owners can reach human support.
+    4.  **Microsoft Azure (Azure AI Foundry).** API keys and exported service principal client secrets or certificates are not permitted.
 
-5.  Save your changes.
+3.  **Interim API Keys.** Until the Cutoff Date, API keys are permitted under a Defense Access grant only if each key is (i) stored in a secrets manager or password manager, (ii) assigned to a single person or workload, (iii) kept out of source code, and (iv) replaced at least every 7 days. Anthropic may limit the lifetime of API keys under a Defense Access grant to 7 days, and may disable API keys on the Granted Workspace from the Cutoff Date.
 
-To stop routing anyone to human support, turn the **Support contacts** toggle off. All users in your organization will receive AI support only.
+4.  **Approved Users.** There is no default limit on the number of Approved Users at this Access Level.
 
-## When changes take effect
+## 3. Defense Access for Individuals.
 
-The **Support contacts** setting will be available in organization settings starting on June 1, 2026. Settings configured between June 1 and June 8 don't affect support routing during this window. Organization settings will show a notice that changes are pending until the feature takes effect.
+1.  Individuals are eligible for Defense Access only. Where the grant is held by an individual this section applies
 
-On June 8, 2026, this setting will take effect for all Enterprise plan organizations. After this date, users who aren't designated as support contacts can only access AI support.
+    1.  **Multi-Factor Authentication.** The individual must sign in to the Anthropic account that holds the grant only through Google or an equivalent identity provider. From the date access is granted, that account must have multi-factor authentication enabled. By December 15, 2026 (the "Cutoff Date"), that account must use phishing-resistant multi-factor authentication, meaning a security key, a passkey, or a smartcard/PIV, and the individual must not use email magic-link sign-in. SMS, voice, emailed codes, authenticator-app codes, and push approvals do not qualify.
+
+    2.  **Credential Management.** By the Cutoff Date, static or long-lived credentials, including API keys, must not be used to access the model. Claude Code, Claude Console, and claude.ai authenticate through OAuth. Programmatic access for workloads, where offered, must use Workload Identity Federation. Until the Cutoff Date, one API key is permitted only if it is (i) stored in a password manager or local secrets store, (ii) never shared or placed in source code, and (iii) replaced at least every 7 days. Anthropic may limit the lifetime of API keys under the grant to 7 days, and may disable API keys from the Cutoff Date.
+
+    3.  **Personal Access.** The individual is the only person who may use the access. Shared sign-ins or sessions, and browser extensions or proxy tools that expose the session to others, are not permitted.
+
+    4.  **Monitoring.** All traffic under the grant is retained and monitored. Zero data retention is not available.
+
+    5.  Of the All Access Levels requirements, Incident Reporting, Cooperation, and Ongoing Review apply to an individual.
+
+## 4. Red Team Access.
+
+1.  **Credential Management.** The following requirements apply to Customer based on the deployment platform(s) through which Customer accesses the model. For each applicable platform, all Approved Users and all workloads must authenticate using short-lived credentials issued and managed by that platform's native identity service.
+
+    1.  **Anthropic (first-party API and Console).** Static or long-lived API keys are not permitted, including for interactive access to Claude Console, Claude for Enterprise, Claude Code, and other Anthropic application surfaces.
+
+    2.  **Google Vertex.** Downloaded service account JSON key files are not permitted.
+
+    3.  **Amazon Web Services (Amazon Bedrock).** IAM user access key pairs (access key ID and secret access key) are not permitted, with the exception of short-term Bedrock API keys that expire within 12 hours or the length of the Bedrock session, whichever is shorter.
+
+    4.  **Microsoft Azure (Azure AI Foundry).** API keys and exported service principal client secrets or certificates are not permitted.
+
+2.  **Multi-Factor Authentication.** At the time of Customer’s access to the CVP, phishing-resistant multi-factor authentication must protect (i) all accounts that can sign in to the Granted Workspace or hold credentials for it, (ii) Approved Users' accounts at Customer's identity provider, (iii) AWS, Google Cloud, or Azure identities that can call the model, (iv) administrative access to anything that issues or stores model credentials, and (v) any virtual desktop or enclave used to meet these requirements. Phishing-resistant multi-factor authentication means (i) a FIDO2/WebAuthn security key, (ii) a passkey, on the device or in a password manager, or (iii) a smartcard/PIV, consistent with the CISA fact sheet "Implementing Phishing-Resistant MFA" and NIST SP 800-63B-4. SMS, voice, emailed codes, authenticator-app codes, and push approvals do not qualify, and email magic-link sign-in must be disabled.
+
+3.  **Organization Accounts.** Approved Users must sign in with accounts on Customer's domain. Personal and webmail accounts are not permitted.
+
+4.  **Approved Users.** The Granted Workspace is limited to twenty-five (25) Approved Users who personally perform or directly supervise the work for which the grant was approved. Workload identities do not count toward that number. Customer may request additional Approved Users seats in writing (email sufficing). Only named administrators may add members, change roles, or create workload identities or credentials on the Granted Workspace.
+
+5.  **Gateways.** If Customer operates a gateway or proxy in front of the model, it must admit only Approved Users or their workload identities, use a short-lived credential of its own, and keep its logs and transcripts restricted to Approved Users and Customer's security, IT-administration, or trust-and-safety teams.
+
+6.  **Customer-Operated Credential Systems.** Credentials issued by Customer's own systems must expire within 12 hours, must be issued only after phishing-resistant multi-factor authentication (for people) or a verified workload identity (for services), and must leave no static credential on endpoints, in source code, or in shared stores. The keys and secrets that can issue model credentials must be kept in a secrets manager or key management service with access logging.
+
+7.  **Revocation.** Customer must be able to revoke any compromised credential or identity within 24 hours.
+
+8.  **Offboarding.** Customer must remove departed or reassigned Approved Users, and their workload identities, from the Granted Workspace within three (3) business days.
+
+9.  **Network Egress.** Wherever the model performs offensive or agentic work, outbound traffic must be limited to an allow-list enforced off the host, and must be logged. Workstations used only for interactive prompting may use an on-host allow-list if the agentic work itself runs in a sandbox that cannot change that list.
+
+10. **Managed Devices.** Approved Users must reach the Granted Workspace only from devices that Customer controls that receive automatic or regularly scheduled operating-system updates, not personal devices.
+
+11. **Background Checks.** Every Approved User, including contractors, must have passed an identity check and, where lawful, a criminal-history check. Where local law restricts criminal checks, identity, right-to-work, or employment verification is accepted. Government vetting or a clearance satisfies this requirement.
+
+12. **Incident Procedure.** Customer must maintain a documented procedure for suspected compromise or misuse of the grant that covers credential revocation and seat suspension.
+
+13. **Government Entities.** A FISMA Authority to Operate with an annual independent Inspector General assessment against NIST SP 800-53, or an equivalent national scheme, satisfies the Managed Devices, Background Checks, and Incident Procedure requirements. All other requirements continue to apply.
+
+## 5. Specialized Access.
+
+1.  **Multi-Factor Authentication.** At the time of Customer’s access to the CVP, phishing-resistant multi-factor authentication must protect (i) all accounts that can sign in to the Granted Workspace or hold credentials for it, (ii) Approved Users' accounts at Customer's identity provider, (iii) AWS, Google Cloud, or Azure identities that can call the model, (iv) administrative access to anything that issues or stores model credentials, and (v) any virtual desktop or enclave used to meet these requirements. Phishing-resistant multi-factor authentication means (i) a FIDO2/WebAuthn security key, (ii) a passkey, on the device or in a password manager, or (iii) a smartcard/PIV, consistent with the CISA fact sheet "Implementing Phishing-Resistant MFA" and NIST SP 800-63B-4. SMS, voice, emailed codes, authenticator-app codes, and push approvals do not qualify, and email magic-link sign-in must be disabled.
+
+2.  **Credential Management.** The following requirements apply to Customer based on the deployment platform(s) through which Customer accesses the model. For each applicable platform, all Approved Users and all workloads must authenticate using short-lived credentials issued and managed by that platform's native identity service.
+
+    1.  **Anthropic (first-party API and Console).** Static or long-lived API keys are not permitted, including for interactive access to Claude Console, Claude for Enterprise, Claude Code, and other Anthropic application surfaces.
+
+    2.  **Google Vertex.** Downloaded service account JSON key files are not permitted.
+
+    3.  **Amazon Web Services (Amazon Bedrock).** IAM user access key pairs (access key ID and secret access key) are not permitted, with the exception of short-term Bedrock API keys that expire within 12 hours or the length of the Bedrock session, whichever is shorter.
+
+    4.  **Microsoft Azure (Azure AI Foundry).** API keys and exported service principal client secrets or certificates are not permitted.
+
+3.  **Single Sign-On and Organization Accounts.** Approved Users must sign in with accounts on Customer's own domain. Approved Users must sign in with organization-domain identities federated through Customer's single sign-on. Personal, webmail, and non-federated accounts are not permitted.
+
+4.  **Approved Users.** The Granted Workspace is limited to 25 Approved Users who personally perform or directly supervise the work for which the grant was approved. Workload identities do not count toward that number. Customer may request additional Approved Users seats in writing (email sufficing). Only named administrators may add members, change roles, or create workload identities or credentials on the Granted Workspace.
+
+5.  **Gateways.** If Customer operates a gateway or proxy in front of the model, it must admit only Approved Users or their workload identities, use a short-lived credential of its own, and keep its logs and transcripts restricted to Approved Users and Customer's security, IT-administration, or trust-and-safety teams.
+
+6.  **Customer-Operated Credential Systems.** Credentials issued by Customer's own systems must expire within 12 hours, must be issued only after phishing-resistant multi-factor authentication (for people) or a verified workload identity (for services), and must leave no static credential on endpoints, in source code, or in shared stores. The keys and secrets that can issue model credentials must be kept in a secrets manager or key management service with access logging.
+
+7.  **Revocation.** Customer must be able to revoke any compromised credential or identity within 24 hours.
+
+8.  **Offboarding.** Customer must remove departed or reassigned Approved Users, and their workload identities, from the Granted Workspace within 3 business days.
+
+9.  **Network Egress.** Wherever the model performs offensive or agentic work, outbound traffic must be limited to an allow-list enforced off the host, and must be logged. Workstations used only for interactive prompting may use an on-host allow-list if the agentic work itself runs in a sandbox that cannot change that list.
+
+10. **Managed Devices and Malware Protection.** Approved Users must reach the Granted Workspace only from devices that Customer controls, not personal devices, and that receive automatic or regularly scheduled operating-system updates. Every device an Approved User uses to reach the Granted Workspace must be managed by Customer and must run application allow-listing or deny-listing in enforce mode, or an endpoint detection and response agent in block or prevent mode. A managed virtual desktop or enclave that meets this standard also qualifies.
+
+11. **Background Checks.** Every Approved User, including contractors, must have passed an identity check and, where lawful, a criminal-history check. Where local law restricts criminal checks, identity, right-to-work, or employment verification is accepted. Government vetting or a clearance satisfies this requirement.
+
+12. **Incident Procedure.** Customer must maintain a documented procedure for suspected compromise or misuse of the grant that covers credential revocation, seat suspension, and notifying Anthropic.
+
+13. **Government Entities.** A FISMA Authority to Operate with an annual independent Inspector General assessment against NIST SP 800-53, or an equivalent national scheme, satisfies the Managed Devices and Malware Protection, Background Checks, and Incident Procedure requirements. All other requirements continue to apply.
 
 ---
 
-## Designated point of contact for users in the EU | Claude Help Center
+## Cyber Verification Program | Claude Help Center
 
-Source: https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu
-Path: 21-Account-Support/designated-point-of-contact-for-users-in-the-eu.md
+Source: https://support.claude.com/en/articles/14604842-cyber-verification-program
+Path: 21-Account-Support/cyber-verification-program.md
 
-# Designated point of contact for users in the EU
-
-May 26, 2026
+# Cyber Verification Program
 
 
-Users in the EU can open a support inquiry from this page via the chat tool, which serves as our single point of contact for EU users under the DSA.
+**Updated October 2026.** The CVP previously covered Claude Opus and Sonnet with a single level of access. We are now offering three access tiers for Claude Opus 5.5, our most capable cyber model yet, Claude Sonnet 5.5, Claude Mythos 5.1, and new models moving forward.
 
-Follow these **[instructions](https://support.claude.com/en/articles/9015913-how-to-get-support)** to get support.
+For more details, register for our upcoming **[webinar on the Cyber Verification Program](https://claude.com/resources/webinars/inside-the-cyber-verification-program)** on October 14th at 9am PT.
 
-## European Union monthly active recipients
+## Overview
 
-In accordance with our obligations under Article 24(2) of the DSA, Anthropic publishes information on the average ‘monthly active recipients’ of our online services in the European Union, calculated over a six-month period.  
-​  
-Anthropic has calculated its average monthly active recipients in the EU for the six-month period ending 31 October 2025, and has concluded that it falls well below the 45 million threshold set out in Article 33(1) of the DSA.  
-​  
-Anthropic will continue to monitor the number of average monthly active recipients of its services in the EU and will publish updated information at least every 6 months.
+The Cyber Verification Program (CVP) makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals. Each tier includes access to our most capable models, including Claude Opus 5.5, Claude Sonnet 5.5, Claude Mythos 5.1, and new models moving forward.
 
----
+Our generally available models can still be used by all users for secure code review, threat modeling, patching known issues, finding vulnerabilities in your own source code, and triaging security alerts. However, other cyber security work like malware analysis or exploit validation may be interrupted by our safety classifiers. If you are a cybersecurity professional, and your work is being blocked, apply for the Cyber Verification Program using the instructions below in the “How to Apply” section.
 
-## How can I access the personal information that Anthropic has on my account? | Claude Help Center
-
-Source: https://support.claude.com/en/articles/9267387-how-can-i-access-the-personal-information-that-anthropic-has-on-my-account
-Path: 21-Account-Support/how-can-i-access-the-personal-information-that-anthropic-has-on-my-account.md
-
-# How can I access the personal information that Anthropic has on my account?
-
-March 16, 2026
+## Access tiers
 
 
-Please refer to our [Privacy Center](https://privacy.anthropic.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team) for more information about this.
+## How to apply
+
+Apply through the **[Verification Portal](https://portal.anthropic.com/programs)**. We aim to send an email notification with our review decision or request for more information within seven business days. Fill out a single application, and we will place you at the highest tier based on the information we receive.
+
+Apply once per organization. Individual users within organizations should not apply separately as organization admins can designate seats for the program. Independent researchers, maintainers, and bug bounty hunters apply as individuals. Please note that only Defense access is available for individual applicants at this time.
+
+What you'll need:
+
+- Details of your organization and the person applying, for verification. See **[identity verification on Claude](identity-verification-on-claude.md)**
+
+- A description of your security work
+
+- An attestation to the security controls applicable to your desired tier
+
+[TABLE]
+
+## Once you're approved
+
+- The **[Usage Policy](https://www.anthropic.com/legal/aup)** still applies in full.
+
+- You may leverage CVP enabled models for internal use such as running the model over your own code. See the **Building client-facing products** section for more information.
+
+- We may review, narrow, or withdraw a grant.
+
+## Building client-facing products
+
+Your CVP access covers security work on your organization's own code, products, and infrastructure. Your CVP grant may not be used to build or operate a client-facing product or service. For example, using CVP access to run the model against a customer's code or systems, letting a customer interact with the model through something you've built, or any other "productizing" of our models requires a separate application and approval. The productization application will become available in the Verification Portal to CVP users shortly.
+
+## Security controls and requirements
+
+Each access level has its own security requirements. The security requirements for each tier are outlined in detail in the **[CVP Security Requirements Help Center article](https://support.claude.com/en/articles/17202708)**. For existing CVP customers, your current access and corresponding security requirements are not impacted and stay under your current terms.
+
+**Defense Access will have until *December 15, 2026* to adopt phishing-resistant multi-factor authentication and to stop using API keys.** Until then, multi-factor authentication of some kind is required, and API keys will expire every seven days. We recommend migrating now to using **[Workload Identity Federation](../04-API-Reference/Other/manage-claude-workload-identity-federation.md)**.
+
+## Provisioning access using your Grants
+
+After your application has been approved, the steps to provision access to your Grants vary depending on how you access Claude.
+
+[TABLE]
+
+## **Existing members**
+
+If your organization was previously enrolled in Project Glasswing or CVP, you don't need to apply again to join the updated CVP program. Your existing access to the models you use today via Project Glasswing or CVP will keep working under your existing terms, and you'll be transitioned to the relevant new program tier for Claude Opus 5.5, Claude Sonnet 5.5, and Claude Mythos 5.1.
+
+The Cyber Verification Program requires data retention, which enables us to monitor for harmful cyber misuse in the program and detect bad actors. Once Enterprise Frontier Safeguards (EFS) is available, eligible organizations will be able to store data in cloud infrastructure they control. To register interest in EFS, fill out **[this form](https://claude.com/form/enterprise-frontier-safeguards)**.
+
+In the meantime, organizations with a data retention exemption for Claude Fable or Claude Mythos models can also use CVP with zero data retention (ZDR) on all supported models. Until EFS is available, if your organization has access to Claude Fable or Claude Mythos with ZDR, you can also use CVP with ZDR.
+
+## If you’re not approved for a tier
+
+The Cyber Verification Program is designed to get advanced cyber capabilities to defenders as widely as we responsibly can. Access depends on a number of factors, including the work an organization does, our ability to verify who it is, and the security controls it has in place.
+
+### Why might an organization not have access?
+
+Eligibility reflects a range of factors, including one or more of the following:
+
+1.  **The nature of the work.** The program is built for defense. Organizations whose main business falls outside that scope may not be eligible.
+
+2.  **Verification.** We need to be able to confirm who an organization is and what it does.
+
+3.  **The environment an organization operates in.** We consider the legal and regulatory environment, the risk that advanced capabilities could be diverted, and the risk that access could be compelled.
+
+4.  **Who the work is ultimately for.** The risk that capabilities are passed on or repurposed is higher where an organization primarily serves military, intelligence, or law enforcement customers. We take a more cautious approach in those cases.
+
+5.  **The tier applied for.** Requirements rise with the level of access. For Specialized Access, every organization is reviewed in depth in collaboration with the US government. Existing members of Project Glasswing will transition to this tier and don't require reapproval for current models. We continue to work with the US government to expand the number of eligible organizations, both in the US and internationally.
+
+## FAQ
+
+### Can I apply as an individual?
+
+Yes, for Defense Access, on a paid plan. Red Team Access and Specialized Access tiers are for organizations only.
+
+### My organization has a grant, but I'm still blocked
+
+Check that your admin has provisioned you access to the relevant CVP grant(s). If using a Claude Console account, ensure you're in the correct Workspace and that the activity falls inside your tier.
+
+### Why is CVP on Amazon Bedrock only available to customers with Enterprise Frontier Safeguards?
+
+Amazon Bedrock does not yet support human review of automated safety flags, which CVP requires by default. As a result, on Bedrock, CVP is only available to organizations that have a data retention exemption for Fable 5.1; those customers can also use CVP with ZDR and will be eligible to use CVP with Enterprise Frontier Safeguards once available. We're working to expand CVP to all customers on Bedrock.
+
+### I’m approved, why can’t I access Mythos on my preferred Cloud provider?
+
+Access to Mythos on third-party cloud providers will trail approval by approximately five business days.
+
+### How do usage limits for Mythos 5.1 work?
+
+On Pro and Max plans, Mythos 5.1 follows the same usage rules as Fable 5.1.
+
+- For Pro plans, Mythos 5.1 is available only with usage credits. It doesn’t draw on your plan’s included usage, so you’ll need usage credits turned on to use it.
+
+- For Max plans, Mythos 5.1 and Fable share a single allowance of up to 50% of your weekly usage limit, not a separate allowance for each model. This usage also counts toward your plan's regular usage limits. Once the shared allowance is used up, you can keep using Mythos 5.1 or Fable with usage credits (if you have them turned on), or switch to another model.
 
 ---
 
 ## Delete your Claude account | Claude Help Center
 
-Source: https://support.claude.com/en/articles/9028421
-Path: 21-Account-Support/how-can-i-delete-my-claude-account.md
+Source: https://support.claude.com/en/articles/9028421-delete-your-claude-account
+Path: 21-Account-Support/delete-your-claude-account.md
 
 # Delete your Claude account
 
@@ -896,6 +1195,98 @@ If you have multiple accounts associated with the same email address, you'll nee
 
 ---
 
+## Designate support contacts for human support | Claude Help Center
+
+Source: https://support.claude.com/en/articles/15263885-designate-support-contacts-for-human-support
+Path: 21-Account-Support/designate-support-contacts-for-human-support.md
+
+# Designate support contacts for human support
+
+August 6, 2026
+
+
+Choose which members of your organization can open tickets with Anthropic's human support team by designating support contacts. Users who aren't configured as support contacts get help from AI support, which can answer many common questions instantly.
+
+Available on the Enterprise plan, and configurable by Primary Owners and Owners.
+
+## How support routing works
+
+When support contacts are turned on, members of designated groups can reach human support. Everyone else in your organization gets AI support, which handles most questions instantly.
+
+When support contacts are turned off, everyone in your organization gets AI support and no one is routed to a human.
+
+You can also extend human support to all Admins and Owners by checking **Always include Admins and Owners** when configuring support contacts.
+
+## Default settings at launch
+
+When the support contacts setting becomes available, the feature is turned on and **Always include Admins and Owners** is checked. This preserves existing behavior: your Admins and Owners keep human support access without any configuration work, and other users get AI support unless you add them to a designated group.
+
+To grant human support access to additional users (such as a central IT team), designate them in a group through organization settings. To remove human support access for Admins and Owners, uncheck **Always include Admins and Owners**.
+
+## Configure support contacts
+
+Before configuring support contacts, make sure the groups you want to designate already exist in organization settings. Groups can be synced from your identity provider through SCIM or created manually. For more information, see **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
+
+To configure support contacts:
+
+1.  Navigate to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**.
+
+2.  Find the **Support contacts** section and toggle the feature on.
+
+3.  Select the groups whose members should receive human support.
+
+4.  Check or uncheck **Always include Admins and Owners** to control whether your organization’s Admins and Owners can reach human support.
+
+5.  Save your changes.
+
+To stop routing anyone to human support, turn the **Support contacts** toggle off. All users in your organization will receive AI support only.
+
+## When changes take effect
+
+The **Support contacts** setting will be available in organization settings starting on June 1, 2026. Settings configured between June 1 and June 8 don't affect support routing during this window. Organization settings will show a notice that changes are pending until the feature takes effect.
+
+On June 8, 2026, this setting will take effect for all Enterprise plan organizations. After this date, users who aren't designated as support contacts can only access AI support.
+
+---
+
+## Designated point of contact for users in the EU | Claude Help Center
+
+Source: https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu
+Path: 21-Account-Support/designated-point-of-contact-for-users-in-the-eu.md
+
+# Designated point of contact for users in the EU
+
+May 26, 2026
+
+
+Users in the EU can open a support inquiry from this page via the chat tool, which serves as our single point of contact for EU users under the DSA.
+
+Follow these **[instructions](https://support.claude.com/en/articles/9015913-how-to-get-support)** to get support.
+
+## European Union monthly active recipients
+
+In accordance with our obligations under Article 24(2) of the DSA, Anthropic publishes information on the average ‘monthly active recipients’ of our online services in the European Union, calculated over a six-month period.  
+​  
+Anthropic has calculated its average monthly active recipients in the EU for the six-month period ending 31 October 2025, and has concluded that it falls well below the 45 million threshold set out in Article 33(1) of the DSA.  
+​  
+Anthropic will continue to monitor the number of average monthly active recipients of its services in the EU and will publish updated information at least every 6 months.
+
+---
+
+## How can I access the personal information that Anthropic has on my account? | Claude Help Center
+
+Source: https://support.claude.com/en/articles/9267387-how-can-i-access-the-personal-information-that-anthropic-has-on-my-account
+Path: 21-Account-Support/how-can-i-access-the-personal-information-that-anthropic-has-on-my-account.md
+
+# How can I access the personal information that Anthropic has on my account?
+
+March 16, 2026
+
+
+Please refer to our [Privacy Center](https://privacy.anthropic.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team) for more information about this.
+
+---
+
 ## How can I delete my Claude Console account? | Claude Help Center
 
 Source: https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account
@@ -922,7 +1313,7 @@ This article explains how a Claude Console Admin can delete their organization v
 
 1.  Log in to your Console Admin account.
 
-2.  Navigate to [Settings \> Organization](../04-API-Reference/Other/usage-limits.md).
+2.  Navigate to [Settings \> Organization](../04-API-Reference/Other/playground.md).
 
 3.  Click the red “Delete organization” button.
 
@@ -940,7 +1331,7 @@ If you followed the steps above to delete your Console organization but want to 
 
 ### I have an outstanding balance; how can I delete my Console organization?
 
-If you have an outstanding balance, you will see a message during the deletion flow that prompts you to pay the balance first by routing you to [Settings \> Billing](../04-API-Reference/Other/usage-limits.md).
+If you have an outstanding balance, you will see a message during the deletion flow that prompts you to pay the balance first by routing you to [Settings \> Billing](../04-API-Reference/Other/playground.md).
 
 
 You must pay this outstanding balance before you’re able to move forward with the deletion process.
@@ -1111,7 +1502,7 @@ Path: 21-Account-Support/i-m-encountering-429-errors-and-i-m-worried-my-rate-lim
 June 26, 2026
 
 
-Your Claude API organization's rate limit depends on your usage tier. There are three usage tiers: Start, Build, and Scale. Accounts whose limits are managed with their account team are on a separate Custom tier. You can see your tier and current limits at **[Settings \> Limits](../04-API-Reference/Other/usage-limits.md)** in the Claude Console.
+Your Claude API organization's rate limit depends on your usage tier. There are three usage tiers: Start, Build, and Scale. Accounts whose limits are managed with their account team are on a separate Custom tier. You can see your tier and current limits at **[Settings \> Limits](../04-API-Reference/Other/playground.md)** in the Claude Console.
 
 If you're seeing 429 errors, you can request higher limits in the Console once you're using at least 50% of your current limits.
 
@@ -1255,7 +1646,7 @@ Our single sign-on feature uses the concept of a "parent organization." This is 
 
 You'll need to check the parent organization dynamic depending on your plan:
 
-- **If you have a Team or Enterprise plan:** You can proceed directly to the **[Setting up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)** guide. Your parent organization is already in place (or will be created when you enable SSO for Team plans).
+- **If you have a Team or Enterprise plan:** You can proceed directly to the **[Setting up single sign-on (SSO)](setting-up-single-sign-on-sso.md)** guide. Your parent organization is already in place (or will be created when you enable SSO for Team plans).
 
 - **If you have a Claude Console organization and an existing Team or Enterprise plan:** Your Console organization may already be linked to your Team or Enterprise parent organization. Check if you can access **[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**. If so, this indicates that the org is linked to the parent organization and SSO is already configured. If not, an Owner on your Team or Enterprise plan can initiate a merge to link your Console organization (see **[Merge organizations](#h_3bad8701c8)** below) to their parent organization and the existing SSO configuration.
 
@@ -1327,7 +1718,7 @@ Once SSO is configured, you can choose how users are provisioned to your organiz
 
 **\*Note:** Only Enterprise plan organizations can enable SCIM provisioning; if a Console organization is merged with a Team plan's parent organization, it won't have access to SCIM provisioning.
 
-For detailed information on how each provisioning method works, see **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+For detailed information on how each provisioning method works, see **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 ------------------------------------------------------------------------
 
@@ -1385,7 +1776,7 @@ Taking time to test, communicate, and plan before enabling domain verification a
 
 ## Next steps
 
-Once you've reviewed these considerations and completed any necessary prerequisite steps (such as merging organizations), proceed to **[Set up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** for detailed implementation instructions.
+Once you've reviewed these considerations and completed any necessary prerequisite steps (such as merging organizations), proceed to **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)** for detailed implementation instructions.
 
 ---
 
@@ -1407,7 +1798,7 @@ For more information on effective prompt design, refer to our **[Claude API Docs
 
 ## Log in to your Claude account | Claude Help Center
 
-Source: https://support.claude.com/en/articles/13189465-log-in-to-your-claude-account
+Source: https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account
 Path: 21-Account-Support/logging-in-to-your-claude-account.md
 
 # Log in to your Claude account
@@ -1438,7 +1829,7 @@ If you requested the login email and clicked the link using a different device (
 
 Claude offers subscription plans (Free, Pro, Max, Team, Enterprise) that let subscribers authenticate using OAuth tokens or other methods. Subscription plans can only be used by subscribers, and the usage included in these plans is designed to support ordinary use of native Anthropic applications, including the Claude web, desktop, and mobile applications and Claude Code.
 
-The preferred way to access Anthropic services using third-party software, tools, or services (“third-party tools”), including open-source projects, is through API key authentication through Claude Console or a supported cloud provider. Anthropic may at its discretion allow paid subscribers who have enabled **[usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)** to use certain third-party tools to access Anthropic services included in paid subscription plans, but reserves the right to draw use of such third-party tools from usage credits rather than subscription limits. Users are responsible for any usage credit charges incurred this way. Use of third-party tools that misrepresent their identity to Anthropic’s servers, attempt to route third-party traffic against subscription limits, or otherwise violate applicable terms or policies is prohibited and such use may be enforced against.
+The preferred way to access Anthropic services using third-party software, tools, or services (“third-party tools”), including open-source projects, is through API key authentication through Claude Console or a supported cloud provider. Anthropic may at its discretion allow paid subscribers who have enabled **[usage credits](https://support.claude.com/en/articles/12429409-)** to use certain third-party tools to access Anthropic services included in paid subscription plans, but reserves the right to draw use of such third-party tools from usage credits rather than subscription limits. Users are responsible for any usage credit charges incurred this way. Use of third-party tools that misrepresent their identity to Anthropic’s servers, attempt to route third-party traffic against subscription limits, or otherwise violate applicable terms or policies is prohibited and such use may be enforced against.
 
 ## Developers
 
@@ -1583,7 +1974,7 @@ It's not possible to create a dedicated password for your Console account at thi
 
 ### Does my organization use Single Sign-On (SSO)?
 
-If you're a member of an organization that has configured single sign-on for the Console, you'll be redirected to your SSO provider when you attempt to log in. For information about setting up SSO for your organization, see **[Set up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**.
+If you're a member of an organization that has configured single sign-on for the Console, you'll be redirected to your SSO provider when you attempt to log in. For information about setting up SSO for your organization, see **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
 
 ### I have multiple Console accounts – how can I switch between them?
 
@@ -1908,7 +2299,7 @@ Not yet; though it’s coming this year. Until then, customers can use Claude Co
 
 Yes. Claude API is available via Amazon Bedrock (in AWS GovCloud - FedRAMP High, and in IL5+) and Google Vertex with Assured Workloads (FedRAMP-High).
 
-For more information, see our **[Claude Code product page](../15-Claude-AI-Features/claude-com-product-claude-code.md)**.
+For more information, see our **[Claude Code product page](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)**.
 
 ### What models are available in Claude for Government?
 
@@ -2036,7 +2427,7 @@ You’ll receive an email and an in-product notification letting you know that y
 
 ## Your two options
 
-**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the merge and join option isn't available. Your only option is to join fresh. Export your data before the deadline if you want a copy. Your subscription is still canceled and refunded as described below. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the merge and join option isn't available. Your only option is to join fresh. Export your data before the deadline if you want a copy. Your subscription is still canceled and refunded as described below. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ### Merge and join
 
@@ -2156,7 +2547,17 @@ Each design system becomes an artifact Claude can use in any chat, including in 
 
 ## Manage your design systems
 
-Manage your design systems in **[Settings \> Design systems](https://claude.ai/settings/design-systems)**. On Enterprise plans, admins can reserve publishing, setting the organization default, and deleting design systems for specific users. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md)**.
+Manage your design systems in **[Settings \> Design systems](https://claude.ai/settings/design-systems)**. On Enterprise plans, admins can reserve publishing, setting the organization default, and deleting design systems for specific users. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
+
+------------------------------------------------------------------------
+
+## Use a design system with a keyboard
+
+To get into and out of the artifact panel, see **[Use artifacts with a keyboard or screen reader](https://support.claude.com/en/articles/17457950)**. That article also explains what focus means, what to do on a Mac laptop or in Safari, and how shortcuts are written.
+
+A design system opens as a list of sections beside the section you're reading. Return on a section in the list moves into it, Cmd+F6 (Ctrl+F6 on Windows) moves between the list and the section, and Cmd+Z (Ctrl+Z on Windows) undoes a change when you're not in a text box.
+
+**Note:** Live component previews in a design system can't be reached with Tab, so they can't be operated from the keyboard. Each component's name and notes can be read.
 
 ------------------------------------------------------------------------
 
@@ -2243,10 +2644,12 @@ Try searching for your answer or just send us a message.
 
 ## Set up single sign-on (SSO) | Claude Help Center
 
-Source: https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso
-Path: 21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md
+Source: https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso
+Path: 21-Account-Support/setting-up-single-sign-on-sso.md
 
 # Set up single sign-on (SSO)
+
+September 2, 2026
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
@@ -2373,7 +2776,7 @@ Before you decide, review **[What happens to existing users when SSO is enabled]
 
 Once SSO is enabled, you need to decide how users will be added to your organization by choosing an option within the **User provisioning** section of your **Organization and access** settings.
 
-**Invite only** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans)**.
+**Invite only** is the default. Users are added and removed directly in your Claude or Console settings. Please see **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**.
 
 **Just-in-Time (JIT) provisioning** can be enabled to automatically provision users when they first log in. By default, users assigned to your Anthropic IdP app first login, they will receive the User role. This is the simplest automated option and requires no additional configuration beyond selecting "Just-in-Time (JIT)" as your provisioning mode.
 
@@ -2399,7 +2802,7 @@ When your Identity Provider's X.509 signing certificate expires or is rotated, y
 
     - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**
 
-    - For Claude Console: **[platform.claude.com/settings/identity](../04-API-Reference/Other/usage-limits.md)**
+    - For Claude Console: **[platform.claude.com/settings/identity](../04-API-Reference/Other/playground.md)**
 
 2.  In the **Authentication** section, click “Manage SSO.”
 
@@ -2422,114 +2825,6 @@ To fully disconnect SSO, click “Manage SSO” then “Reset connection.” Thi
 ## Locked out of admin access?
 
 If none of your Owners or Admins can sign in (for example, after a certificate expiry, an Identity Provider change, or a group mapping that removed your administrators), contact Support from an Owner’s or Primary Owner’s email address. We’ll verify your ownership of the organization and help you regain access so you can correct the configuration.
-
----
-
-## SSO login | Claude Help Center
-
-Source: https://support.claude.com/en/articles/14503613-sso-login
-Path: 21-Account-Support/sso-login.md
-
-# SSO login
-
-April 10, 2026
-
-
-Claude for Government requires Single Sign-on (SSO) for user authentication. Unlike the commercial Claude Enterprise plan, email based (magic link) login is only available to the Primary Owner during account setup. All other users must authenticate through your organization's identity provider (IdP).
-
-Once SSO is configured, the Primary Owner can disable magic link login entirely so that all authentication flows through your IdP.
-
-For SSO setup on Claude Enterprise, see **[Set up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**.
-
-## How SSO differs for Claude for Government
-
-[TABLE]
-
-## Steps for setting up SSO
-
-### Prerequisites
-
-Before you begin, confirm that you have:
-
-- **Primary Owner access** — The email address registered as Primary Owner when the license was purchased.
-
-- **DNS access** — Ability to create TXT records for your organization's login domain(s).
-
-- **IdP admin access** — Permission to create a SAML application in your identity provider (e.g., Entra ID, Okta).
-
-### Step 1: Sign in as Primary Owner
-
-1.  Navigate to **[claude.fedstart.com](http://claude.fedstart.com)**
-
-2.  Enter the email address registered as Primary Owner.
-
-3.  Complete the email-based login using the magic link sent to the Primary Owner’s inbox.
-
-4.  After signing in, the Primary Owner will be redirected to the identity settings page at **[claude.fedstart.com/admin-settings/identity](https://claude.fedstart.com/admin-settings/identity)**
-
-**Tip**: It often makes sense to appoint someone from your IT team as the Primary Owner, since they will need DNS and IdP access for the remaining steps.
-
-### Step 2: Verify your domain
-
-Before configuring your Identity Provider (IdP), you must verify ownership of your login domain.
-
-1.  On the identity settings page, locate your domain and select the **"View instructions"** tab. There you’ll be able to see the required DNS challenge record that must be set.
-
-2.  Create the displayed TXT record in your domain’s DNS settings.
-
-3.  Wait for the DNS propagation. Once the platform detects the record, the domain status will update to “**Verified**.”
-
-
-**Important:** Each domain can only have one identity provider. If multiple organizations share a single login domain, IT administrators from both organizations will be able to modify login settings. Contact **[Anthropic Support](https://claude.fedstart.com/support)** for assistance with multi-organization setups. For more details about multi-organization setups, see our **[SCIM provisioning guide](../13-Enterprise-Admin/set-up-scim-in-claude-for-government.md)**.
-
-### Step 3: Configure your Identity Provider
-
-Anthropic acts as the **Service Provider (SP)** in the SAML SSO flow. Your organization’s IdP (e.g., Entra or Okta) acts as the **Identity Provider.**
-
-1.  On the identity settings page, locate the **SP Metadata** section. This contains the values your IdP needs:
-
-    1.  Entity ID (Audience URI)
-
-    2.  ACS URL (Reply URL)
-
-2.  In your IdP, create a new SAML application using these SP metadata values
-
-### Step 4: Configure Anthropic with your IdP details
-
-Once your SAML application is set up in your IdP, provide Anthropic with the details it needs to verify SAML assertions. On the identity settings page, enter:
-
-- Signing Certificate — The X.509 certificate from your IdP.
-
-- IdP Entity ID — Your IdP's entity identifier.
-
-- SSO URL — The IdP's SAML sign-on endpoint.
-
-- Claims Information — Attribute mappings for user name and email.
-
-
-**Tip:** Using a metadata XML file: Most IdPs let you download a metadata.xml file. Upload it on the identity settings page to auto-fill the Signing Certificate, IdP Entity ID, and SSO URL. Some IdPs (like Entra ID) also include claims information in the metadata file; if present, the system will suggest field mappings automatically.
-
-**Troubleshooting attribute mappings**
-
-Attribute mapping is where most configuration issues occur. If login fails after setup:
-
-1.  Install a SAML debugging extension such as SAML-tracer.
-
-2.  Attempt an SSO login and inspect the SAML response.
-
-3.  Confirm that the email claim returns an address under your verified domain. Email claims for unverified domains will be rejected.
-
-### Step 5: Test and finalize
-
-1.  Log out of Claude for Government.
-
-2.  Log back in using your SSO configuration to confirm it works.
-
-3.  (Optional) Once SSO login is verified, return to the identity settings page and disable magic link login.
-
-**Warning**: Only disable magic link login after you have confirmed that SSO login works. If SSO is misconfigured and the magic link is disabled, the Primary Owner will be unable to access the admin console. Contact Anthropic support if you are locked out.
-
-After SSO is configured, any user assigned to the SAML application in your IdP can log in and will be provisioned a seat automatically, provided your organization has available licenses. If no seats are available, users will see an error at login. Contact your Anthropic account representative to add licenses. For more controlled provisioning—including role assignment and multi-organization support—see **[SCIM provisioning](../13-Enterprise-Admin/set-up-scim-in-claude-for-government.md)**.
 
 ---
 

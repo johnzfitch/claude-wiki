@@ -2,7 +2,7 @@
 title: "List Organization Rate Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rate_limits/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-28T06:33:21Z"
+fetched_at: "2026-10-05T06:38:22Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api"]
 
 SearchCtrlK
 
-Include beta APIsThe API you’re viewing is only available in beta
+Include beta APIs
 
 Using the API
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -149,6 +132,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -237,7 +241,7 @@ cURL
 
 List Messages API rate limits for your organization.
 
-Each entry corresponds to one rate-limit group (either a model family or an API-surface category such as the Files API or Message Batches) and contains the set of limiter values that apply to it.
+Each entry corresponds to one rate-limit group (either a model family or an API-surface category such as the Message Batches API or the web search tool) and contains the set of limiter values that apply to it.
 
 When `limit` is omitted, every matching entry is returned in a single page; when `limit` truncates the result, follow `next_page` to fetch the remaining entries.
 

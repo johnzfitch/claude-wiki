@@ -2,7 +2,7 @@
 title: "Work across M365 apps - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/13892150-work-across-apps-with-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:46Z"
+fetched_at: "2026-10-10T06:28:13Z"
 tags: ["claude-ai"]
 ---
 

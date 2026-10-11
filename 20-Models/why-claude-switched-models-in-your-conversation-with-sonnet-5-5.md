@@ -2,7 +2,7 @@
 title: "Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17161993-why-claude-switched-models-in-your-conversation-with-sonnet-5-5"
 category: "20-Models"
-fetched_at: "2026-09-30T06:33:05Z"
+fetched_at: "2026-10-10T06:25:32Z"
 tags: ["billing", "models", "security"]
 ---
 

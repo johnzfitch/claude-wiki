@@ -2,16 +2,18 @@
 title: "Create surveys for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16764057-create-surveys-for-your-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:33:03Z"
+fetched_at: "2026-10-10T06:25:23Z"
 tags: ["enterprise"]
 ---
 
 # Create surveys for your organization
 
+September 2, 2026
+
 
 Surveys let admins ask users short, in-product questions about how they're using Claude and review the aggregated answers in the Admin console. This article explains how to create a survey, choose who sees it, and review the results.
 
-Surveys are available in beta for Enterprise plans. Primary Owners, Owners, and Admins can create and view surveys, along with users on **[custom roles that grant Analytics view access](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_536123d968)**. While the feature is in beta, organizations using **[customer-managed encryption keys (CMEK)](https://support.claude.com/en/articles/15505325)** can't use surveys.
+Surveys are available in beta for Enterprise plans. Primary Owners, Owners, and Admins can create and view surveys, along with users on **[custom roles that grant Analytics view access](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_536123d968)**. While the feature is in beta, organizations using **[customer-managed encryption keys (CMEK)](https://support.claude.com/en/articles/15505325)** can't use surveys.
 
 ## How surveys work
 

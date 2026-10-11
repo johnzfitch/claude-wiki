@@ -21,7 +21,7 @@ Anthropic’s posture with respect to Fable’s safeguards, as laid out in our l
 - These tests showed that Fable’s safeguards are substantially more effective than those of any previously deployed model.
 - No testers have yet been able to find a *universal jailbreak*—a jailbreak method that can very broadly bypass the model’s safeguards, unblocking a wide range of cyber capabilities.
 - We suspect that perfect jailbreak resistance is not currently possible for any model provider. Every safeguard used in the industry is vulnerable to *non-universal jailbreaks* (which can elicit *some* cyber information in specific circumstances), and it is likely that universal jailbreaks will eventually be found in the future. We stated this clearly when we [released](claude-fable-5-mythos-5.md) Fable 5.
-- Given that perfect jailbreak resistance does not appear to be possible today, Anthropic adopted a *defense in depth* strategy with Fable 5. We aimed to make jailbreaks either narrow (in the case of non-universal jailbreaks) or very expensive to produce (in the case of universal jailbreaks), and to combine this with thorough monitoring to quickly detect and shut down any successful attacks. This is also why Anthropic has required 30-day retention of customer data with Fable—a policy change that carries [real costs for us with customers](../20-Models/data-retention-practices-for-mythos-class-models.md), but that allows us to research and mitigate jailbreaks.
+- Given that perfect jailbreak resistance does not appear to be possible today, Anthropic adopted a *defense in depth* strategy with Fable 5. We aimed to make jailbreaks either narrow (in the case of non-universal jailbreaks) or very expensive to produce (in the case of universal jailbreaks), and to combine this with thorough monitoring to quickly detect and shut down any successful attacks. This is also why Anthropic has required 30-day retention of customer data with Fable—a policy change that carries [real costs for us with customers](../20-Models/data-retention-practices-for-covered-models-claude-help-center.md), but that allows us to research and mitigate jailbreaks.
 - We stand by this defense in depth strategy. It reduces the risks posed by Fable, making them comparable to the risks of existing models already deployed across the industry.
 - We have not even received a disclosure of a concerning non-universal potential jailbreak that led to a harmful result. The potential jailbreaks that have been disclosed to us are either entirely benign responses or are minor findings that provide no Mythos-specific uplift.
 
@@ -57,10 +57,10 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -87,7 +87,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -107,7 +107,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

@@ -2,7 +2,7 @@
 title: "Usage and Cost API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/usage-cost-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:36Z"
+fetched_at: "2026-10-04T08:32:46Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -76,7 +78,7 @@ Programmatically access your organization's API usage and cost data with the Usa
 
 **The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
 
-The Usage & Cost Admin API provides programmatic and granular access to historical API usage and cost data for your organization. This data is similar to the information available in the [Usage](usage-limits.md) and [Cost](usage-limits.md) pages of the Claude Console.
+The Usage & Cost Admin API provides programmatic and granular access to historical API usage and cost data for your organization. This data is similar to the information available in the [Usage](playground.md) and [Cost](playground.md) pages of the Claude Console.
 
 This API enables you to better monitor, analyze, and optimize your Claude implementations:
 
@@ -182,7 +184,7 @@ Track token consumption across your organization with detailed breakdowns by mod
 
 - **Time buckets:** Aggregate usage data in fixed intervals (`1m`, `1h`, or `1d`)
 - **Token tracking:** Measure uncached input, cached input, cache creation, and output tokens
-- **Filtering & grouping:** Filter by API key, workspace, model, service tier, context window, [data residency](../Guides/build-with-claude-data-residency.md), or speed (beta), and group results by these dimensions
+- **Filtering & grouping:** Filter by API key, workspace, model, service tier, context window, [data residency](manage-claude-data-residency.md), or speed (beta), and group results by these dimensions
 - **Server tool usage:** Track usage of server-side tools such as web search
 
 For complete parameter details and response schemas, see the [Usage API reference](../Admin/beta-organization-usage-report-retrieve-messages.md).
@@ -250,7 +252,7 @@ To retrieve your organization's workspace IDs, use the [List Workspaces](../Admi
 
 #### Data residency
 
-Track your [data residency controls](../Guides/build-with-claude-data-residency.md) by grouping and filtering usage with the `inference_geo` dimension. This is useful for verifying geographic routing across your organization.
+Track your [data residency controls](manage-claude-data-residency.md) by grouping and filtering usage with the `inference_geo` dimension. This is useful for verifying geographic routing across your organization.
 
 cURL
 
@@ -456,4 +458,4 @@ Use the Usage and Cost APIs to deliver a better experience for your users, manag
 - [Batch processing](../Guides/build-with-claude-batch-processing.md) - 50% discount on batch requests
 - [Rate limits](../Endpoints/rate-limits.md) - Understand usage tiers
 - [Rate Limits API](manage-claude-rate-limits-api.md) - Read your configured rate limits
-- [Data residency](../Guides/build-with-claude-data-residency.md) - Control inference geography
+- [Data residency](manage-claude-data-residency.md) - Control inference geography

@@ -2,7 +2,7 @@
 title: "Use analytics chat to ask Claude about usage | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14729354-use-analytics-chat-to-ask-claude-about-usage"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:32:55Z"
+fetched_at: "2026-10-10T06:25:24Z"
 tags: ["safety"]
 ---
 

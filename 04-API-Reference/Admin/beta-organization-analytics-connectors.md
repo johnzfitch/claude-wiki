@@ -1,8 +1,8 @@
 ---
 title: "Connectors - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/connectors"
+source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/connectors"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:05Z"
+fetched_at: "2026-10-04T08:33:40Z"
 tags: ["api", "connectors"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "connectors"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -22,7 +22,7 @@ tags: ["api", "connectors"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fconnectors)
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fconnectors)
 
 
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -141,33 +124,57 @@ MCP Tunnels
 
 Analytics
 
-
-Get Activity Summaries
-
-Usage
-
-Cost
+Summaries
 
 Users
 
-Skills
+Apps
 
 Connectors
 
 
 Get Connector Usage
 
-Chat Projects
-
 Plugins
 
+Skills
+
 Artifacts
+
+Usage Report
+
+User Usage Report
+
+Cost Report
+
+User Cost Report
 
 Spend Limits
 
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -257,13 +264,3 @@ cURL
 GET/v1/organizations/analytics/connectors
 
 Get per-connector usage for a given day, with cursor-based pagination.
-
-##### Models
-
-
-
-BetaConnectorUsage object{ data, next_page }
-
-
-
-Response for GET /v1/organizations/analytics/connectors.

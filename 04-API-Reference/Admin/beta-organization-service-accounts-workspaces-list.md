@@ -2,7 +2,7 @@
 title: "List Workspaces For Service Account - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/service_accounts/workspaces/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-28T06:32:33Z"
+fetched_at: "2026-10-05T06:38:00Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api"]
 
 SearchCtrlK
 
-Include beta APIsThe API you’re viewing is only available in beta
+Include beta APIs
 
 Using the API
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -172,6 +155,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -310,14 +314,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -508,6 +504,14 @@ One of the following:
 
 
 "mcp-client-2026-09-15"
+
+
+
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
 
 
 

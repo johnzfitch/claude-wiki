@@ -2,7 +2,7 @@
 title: "Claude API skill - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:20Z"
+fetched_at: "2026-10-04T08:32:05Z"
 tags: ["agents", "api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -57,7 +57,7 @@ The `claude-api` skill is an open-source [Agent Skill](agents-and-tools-agent-sk
 
 It covers eight programming languages for both the Messages API and Managed Agents: Python, TypeScript, C#, Go, Java, PHP, Ruby, and cURL.
 
-The skill comes bundled with [Claude Code](https://platform.claude.com/docs/en/agents-and-tools/01-Getting-Started/overview.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills), where you can install it in any environment that supports Agent Skills.
+The skill comes bundled with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills), where you can install it in any environment that supports Agent Skills.
 
 The skill uses [progressive disclosure](agents-and-tools-agent-skills-overview.md#how-skills-work) to keep context efficient: Claude loads only the documentation relevant to your project's language, surface (Messages API or Managed Agents), and the specific task at hand (tool use, streaming, batches, and so on), rather than loading everything at once.
 
@@ -72,7 +72,8 @@ When triggered, the skill equips Claude with:
 - **Streaming patterns:** Implementation details for building chat UIs and handling incremental display
 - **Batch processing:** Offline batch processing at 50% cost
 - **Prompt caching:** Prefix-stability design, breakpoint placement, and silent-invalidator audit
-- **Model migration:** Step-by-step guidance for migrating to newer Claude models (including the breaking changes and behavior shifts on [Claude Opus 5.5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5) and [Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md))
+- **Model migration:** Step-by-step guidance for migrating to newer Claude models (including the breaking changes and behavior shifts on [Claude Opus 5.5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), and [Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md))
+- **Preserved thinking migration:** Finding, measuring, and fixing the history edits that invalidate `thinking` blocks, available through the `/claude-api preserved-thinking-migration` subcommand
 - **Current model information:** Model IDs, context window sizes, and pricing
 - **Common pitfalls:** Detailed guidance on avoiding frequent mistakes when integrating with the API
 
@@ -118,7 +119,7 @@ If your project uses multiple languages, Claude asks which one applies. For unsu
 
 ### In Claude Code (bundled)
 
-The skill ships with [Claude Code](https://platform.claude.com/docs/en/agents-and-tools/01-Getting-Started/overview.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
+The skill ships with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
 
 You can also invoke it directly:
 
@@ -176,15 +177,37 @@ The skill handles:
 - **Cloud platform detection**, preserving platform-specific model ID formats (for example, the `anthropic.` prefix on Amazon Bedrock) and skipping changes for features that are unavailable on partner-operated platforms
 - **Breaking parameter changes**, such as removing `temperature`, `top_p`, and `top_k` for Claude Opus 4.8 and Claude Opus 4.7, and converting `thinking: {type: "enabled", budget_tokens: N}` to `thinking: {type: "adaptive"}`
 - **Prefill replacement**, converting assistant-message prefill patterns to [structured outputs](../Guides/build-with-claude-structured-outputs.md) where applicable
-- **Beta header cleanup**, removing beta headers that the target model doesn't require (for example, `effort-2025-11-24`, `fine-grained-tool-streaming-2025-05-14`, `interleaved-thinking-2025-05-14`) and switching back from `client.beta.messages.create` to `client.messages.create`
+- **Beta header cleanup**, removing beta headers that the target model doesn't require (for example, `effort-2025-11-24`, `fine-grained-tool-streaming-2025-05-14`, `interleaved-thinking-2025-05-14`) and switching back from `client.beta.messages.create()` to `client.messages.create()`
 - **Effort calibration**, recommending an `output_config.effort` starting point for the target model (for example, the default `high` on Claude Opus 5, and `xhigh` for coding and agentic use cases on Claude Opus 4.8 and Claude Opus 4.7)
 - **Prompt-behavior tuning**, flagging length-control, tool-triggering, subagent, and instruction-following prompts that may behave differently on the target model
 - **Silent default handling**, opting back into thinking summarization (`thinking.display: "summarized"`) when reasoning is surfaced to users on Claude Opus 4.8 and Claude Opus 4.7
-- **Refusal fallback configuration**, adding `stop_reason: "refusal"` handling before reading response content and setting up a [fallback retry path](../Guides/build-with-claude-refusals-and-fallback.md) when the target is Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, or Claude Opus 5 (the server-side `fallbacks` parameter, typically in its `"default"` mode, the SDK refusal-fallback middleware, or a fallback-credit retry), and updating fallback code written against earlier preview shapes
+- **Refusal fallback configuration**, adding `stop_reason: "refusal"` handling before reading response content and setting up a [fallback retry path](../Guides/build-with-claude-refusals-and-fallback.md) when the target is Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5 (the server-side `fallbacks` parameter, typically in its `"default"` mode, the SDK refusal-fallback middleware, or a fallback-credit retry), and updating fallback code written against earlier preview shapes
 
 As it edits, the skill explains each change and its motivation inline. On completion, it produces a checklist of items that require manual verification (typically integration tests, length-control prompt tuning, and cost/rate-limit re-baselining).
 
-For the full list of model-specific changes the skill applies, see [Migrating to Claude Opus 5.5 from Claude Opus 5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8), and [Migrating to Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md).
+For the full list of model-specific changes the skill applies, see [Migrating to Claude Opus 5.5 from Claude Opus 5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8), [Migrating to Claude Sonnet 5.5 from Claude Sonnet 5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), and [Migrating to Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md).
+
+## Checking an integration for preserved thinking
+
+[Preserved thinking](../Guides/build-with-claude-preserved-thinking.md) keeps a `thinking` block valid only while the `system` prompt, `tools`, and messages before it stay unchanged. To find and fix the places where your code edits that history, open the repository that builds your requests and invoke the `preserved-thinking-migration` subcommand:
+
+```python
+/claude-api preserved-thinking-migration
+```
+
+
+
+The skill works through five steps:
+
+1.  **Scope:** Checks whether your integration is affected, then sends three test requests to confirm that the API reports a deliberate edit.
+2.  **Find:** Captures a few of your own multi-turn sessions, diffs consecutive requests, and lists each place your code edits the prefix.
+3.  **Measure:** Replays the sessions with `"drop_block"` and reports which conversations lose `thinking` blocks, at which turn, and why.
+4.  **Fix:** Replaces one edit at a time with the matching pattern in [Make changes without editing the prefix](../Guides/build-with-claude-preserved-thinking.md#replace-prefix-edits), and measures again after each change.
+5.  **Report:** Summarizes each cause, the change made for it, and the counts before and after.
+
+If your project has an eval, the skill also compares scores and token usage with and without dropped `thinking` blocks.
+
+The test requests and replays are real Messages API requests, billed at the model's normal rates. Each replay requests only a few output tokens and sets `tool_choice` to `none`, so no tool runs. The skill states the cost and asks for your approval before it sends them.
 
 ## Setting up a Managed Agent
 

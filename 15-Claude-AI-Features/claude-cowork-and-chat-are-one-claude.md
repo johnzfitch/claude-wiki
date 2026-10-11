@@ -2,7 +2,7 @@
 title: "Claude Cowork and chat are one Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:04Z"
+fetched_at: "2026-10-10T06:25:23Z"
 tags: ["claude-ai"]
 ---
 
@@ -39,7 +39,7 @@ Claude can create documents, spreadsheets with working formulas, and presentatio
 
 ### Create designs, decks, and docs
 
-Claude can build charts, diagrams, and interactive visuals right in the conversation. Learn more in **[Custom visuals in chat and Cowork](https://support.claude.com/en/articles/13979539)**. On paid plans, you can also ask for a design, deck, or doc for work you'll put in front of others. Claude Design makes on-brand visuals and mockups, Claude Slides makes presentations, and Claude Docs makes living documents you write with Claude and your team (Claude Design, Claude Slides, and Claude Docs are in beta.) Edit the result yourself or tell Claude what to change, then share it by link or export it. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
+Claude can build charts, diagrams, and interactive visuals right in the conversation. Learn more in **[Custom visuals in chat and Cowork](custom-visuals-in-chat-and-cowork-claude-help-center.md)**. On paid plans, you can also ask for a design, deck, or doc for work you'll put in front of others. Claude Design makes on-brand visuals and mockups, Claude Slides makes presentations, and Claude Docs makes living documents you write with Claude and your team (Claude Design, Claude Slides, and Claude Docs are in beta.) Edit the result yourself or tell Claude what to change, then share it by link or export it. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
 
 *Try: "Make a one-page visual summary of this launch plan."*
 
@@ -63,7 +63,7 @@ Claude reaches your local files, the built-in browser, and computer use only whi
 
 ### Schedule recurring work
 
-Ask Claude to run a task on a schedule, like a summary of your inbox every Monday morning. Scheduled tasks can run in the cloud, so they keep going when your computer is off. Learn more in **[Schedule recurring tasks in Claude Cowork](schedule-recurring-tasks-in-claude-cowork.md)**.
+Ask Claude to run a task on a schedule, like a summary of your inbox every Monday morning. Scheduled tasks can run in the cloud, so they keep going when your computer is off. Learn more in **[Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387)**.
 
 *Try: "Every weekday at 8 AM, summarize new messages in my team's Slack channels."*
 
@@ -129,7 +129,7 @@ In the new experience, everything Claude Cowork does is available from any conve
 
 ## How usage works
 
-Everything you do with Claude counts toward your plan's usage limits. Longer agentic tasks that search the web, run code, or create files generally use more than a quick question. While the new experience rolls out, usage may be measured slightly differently for accounts that have it and accounts that don’t. Check your current usage in **[Settings \> Usage](https://claude.ai/settings/usage)**, and learn more in **[Usage limit best practices](../17-Billing-Plans/usage-limit-best-practices-claude-help-center.md)**.
+Everything you do with Claude counts toward your plan's usage limits. Longer agentic tasks that search the web, run code, or create files generally use more than a quick question. While the new experience rolls out, usage may be measured slightly differently for accounts that have it and accounts that don’t. Check your current usage in **[Settings \> Usage](https://claude.ai/settings/usage)**, and learn more in **[Usage limit best practices](https://support.claude.com/en/articles/9797557)**.
 
 ## Get started
 

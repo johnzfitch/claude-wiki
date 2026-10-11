@@ -2,7 +2,7 @@
 title: "Service tiers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/service-tiers"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:39:26Z"
+fetched_at: "2026-10-04T08:32:29Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -265,12 +269,12 @@ Anthropic counts usage against Priority Tier capacity as follows:
 - Cache reads as 0.1 tokens per token read from the cache
 - Cache writes as 1.25 tokens per token written to the cache with a 5 minute TTL
 - Cache writes as 2.00 tokens per token written to the cache with a 1 hour TTL
-- For [US-only inference](../Guides/build-with-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, input tokens are 1.1 tokens per token
+- For [US-only inference](../Other/manage-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, input tokens are 1.1 tokens per token
 - All other input tokens are 1 token per token
 
 **Output tokens**
 
-- For [US-only inference](../Guides/build-with-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, output tokens are 1.1 tokens per token
+- For [US-only inference](../Other/manage-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, output tokens are 1.1 tokens per token
 - All other output tokens are 1 token per token
 
 Otherwise, requests proceed at standard tier.
@@ -370,6 +374,6 @@ Priority Tier targets 99.5% uptime with prioritized computational resources. Req
 
 ### Supported models
 
-Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.
+Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Sonnet 5.
 
 Check the [Models overview](../../20-Models/about-claude-models-overview.md) for more details on available models.

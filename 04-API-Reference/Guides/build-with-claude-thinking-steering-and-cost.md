@@ -1,8 +1,8 @@
 ---
 title: "Steering thinking - Claude Platform Docs"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/thinking-steering-and-cost"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:27Z"
+fetched_at: "2026-10-04T08:33:49Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -98,7 +98,7 @@ Steer how often and how deeply Claude thinks with effort levels, system prompt g
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 Claude's thinking is adaptive: the model evaluates each request and decides for itself whether to think and how much. You set an intent, optionally specify the effort, and the model allocates reasoning where it judges reasoning will help.
 

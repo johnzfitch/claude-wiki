@@ -2,7 +2,7 @@
 title: "Batch processing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/batch-processing"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:18Z"
+fetched_at: "2026-10-04T08:33:11Z"
 tags: ["api", "rag"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "rag"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -105,7 +105,7 @@ The Message Batches API is Anthropic's first implementation of this pattern.
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 # Message Batches API
 
@@ -133,9 +133,9 @@ This is especially useful for bulk operations that don't require immediate resul
 - A Message Batch is limited to either 100,000 Message requests or 256 MB in size, whichever is reached first.
 - The system processes each batch as fast as possible, with most batches completing within 1 hour. You can access batch results when all messages have completed or after 24 hours, whichever comes first. Batches expire if processing does not complete within 24 hours.
 - Batch results are available for 29 days after creation. After that, you may still view the Batch, but its results will no longer be available for download.
-- Batches are scoped to a [Workspace](../Other/usage-limits.md). You may view all batches (and their results) that were created within the Workspace your request runs in.
+- Batches are scoped to a [Workspace](../Other/playground.md). You may view all batches (and their results) that were created within the Workspace your request runs in.
 - Rate limits apply to both Batches API HTTP requests and the number of requests within a batch waiting to be processed. See [Message Batches API rate limits](../Endpoints/rate-limits.md#message-batches-api). Additionally, processing may be slowed down based on current demand and your request volume. In that case, you may see more requests expiring after 24 hours.
-- Because of high throughput and concurrent processing, batches may go slightly over your Workspace's configured [spend limit](../Other/usage-limits.md).
+- Because of high throughput and concurrent processing, batches may go slightly over your Workspace's configured [spend limit](../Other/playground.md).
 - Each batched request must have `max_tokens` of at least `1`. `max_tokens: 0` ([cache pre-warming](build-with-claude-prompt-caching.md#pre-warming-the-cache)) is not supported inside a batch, because an ephemeral cache entry written during batch processing would likely expire before the follow-up request runs.
 
 ### Supported models
@@ -597,7 +597,7 @@ The batch worker additionally throttles `web_search` per organization so that hi
 
 ### Extended output (beta)
 
-The `output-300k-2026-03-24` beta header raises the `max_tokens` cap to 300,000 for batch requests using Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5, or Claude Sonnet 4.6. Include the header to generate outputs far longer than the standard 128k `max_tokens` limit in a single turn.
+The `output-300k-2026-03-24` beta header raises the `max_tokens` cap to 300,000 for batch requests using Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, or Claude Sonnet 4.6. Include the header to generate outputs far longer than the standard 128k `max_tokens` limit in a single turn.
 
 
 
@@ -686,7 +686,7 @@ Note that the failure of one request in a batch does not affect the processing o
 
 Batch processing stores request and response data for up to 29 days after batch creation. You can delete a message batch at any time after processing using the `DELETE /v1/messages/batches/{batch_id}` endpoint. To delete an in-progress batch, cancel it first. Asynchronous processing requires server-side storage of both inputs and outputs until batch completion and result retrieval.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 ## FAQ
 

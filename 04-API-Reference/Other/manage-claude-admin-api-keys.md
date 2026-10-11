@@ -2,7 +2,7 @@
 title: "Create an Admin API key - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/admin-api-keys"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:41Z"
+fetched_at: "2026-10-04T08:33:36Z"
 tags: ["api", "enterprise"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "enterprise"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api", "enterprise"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -80,7 +82,7 @@ Where you create the key depends on which Claude product your organization uses.
 
 | Your organization                                           | Create the key in                                                                           | Key prefix           | Who can create it                                                                                                                                                                          | Works with                                                                                                                                                                                                                                                                                                                                                                                           |
 |-------------------------------------------------------------|---------------------------------------------------------------------------------------------|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Claude Console** (Claude Platform, `platform.claude.com`) | [Claude Console \> Settings \> Admin keys](usage-limits.md) | `sk-ant-admin01-...` | Organization members with the **admin** role                                                                                                                                               | [Admin API](manage-claude-admin-api.md), [Usage and Cost API](manage-claude-usage-cost-api.md), [Rate Limits API](manage-claude-rate-limits-api.md), [Claude Code Analytics API](manage-claude-claude-code-analytics-api.md), and the Compliance API [Activity Feed](manage-claude-compliance-activity-feed.md)                                                        |
+| **Claude Console** (Claude Platform, `platform.claude.com`) | [Claude Console \> Settings \> Admin keys](playground.md) | `sk-ant-admin01-...` | Organization members with the **admin** role                                                                                                                                               | [Admin API](manage-claude-admin-api.md), [Usage and Cost API](manage-claude-usage-cost-api.md), [Rate Limits API](manage-claude-rate-limits-api.md), [Claude Code Analytics API](manage-claude-claude-code-analytics-api.md), and the Compliance API [Activity Feed](manage-claude-compliance-activity-feed.md)                                                        |
 | **Claude Enterprise** (`claude.ai`)                         | [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access)    | `sk-ant-api01-...`   | The parent organization's **primary owner** (all linked organizations). An **organization owner** can create one carrying Compliance API scopes only, restricted to their own organization | [User management](manage-claude-user-management.md) (the Admin API's member, invite, and group endpoints), [Compliance API](manage-claude-compliance-api.md), [Claude Enterprise Analytics API](manage-claude-analytics-api.md), and [Spend Limits API](manage-claude-spend-limits-api.md), according to the [scopes](#choose-scopes-for-a-claude-enterprise-key) you select |
 
 A key created in one organization cannot be used to manage a different organization. If your company uses both Claude Console and Claude Enterprise, create one key in each.
@@ -97,7 +99,7 @@ A key created in one organization cannot be used to manage a different organizat
 
     ### Open Admin keys settings
 
-    Go to [Claude Console \> Settings \> Admin keys](usage-limits.md).
+    Go to [Claude Console \> Settings \> Admin keys](playground.md).
 
 3.  3
 

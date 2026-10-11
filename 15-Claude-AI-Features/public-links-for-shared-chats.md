@@ -1,12 +1,14 @@
 ---
 title: "Public links for shared chats | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/16762437"
+source_url: "https://support.claude.com/en/articles/16762437-public-links-for-shared-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:33:03Z"
+fetched_at: "2026-10-10T06:28:22Z"
 tags: ["claude-ai", "search"]
 ---
 
 # Public links for shared chats
+
+September 4, 2026
 
 
 When you share a chat with a public link, anyone who has the link can view a snapshot of that chat. This article covers who can see it, what's included, and how public links interact with search engines like Google.

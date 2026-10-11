@@ -2,7 +2,7 @@
 title: "PwC Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/pwc-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:44Z"
+fetched_at: "2026-10-10T06:25:56Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -17,7 +17,7 @@ Company size:
 Large
 
 Product:  
-[Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)[Claude Enterprise](enterprise.md)
+[Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)[Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 
 Location:  
 North America
@@ -99,6 +99,9 @@ training rollout underway across PwC
 ## Related stories
 
 
+### How does a badge-maker shorten lead times but keep an old-world process alive?
+
+
 ### Caylent turns months of migration work into days with Claude Agent SDK
 
 
@@ -107,9 +110,6 @@ training rollout underway across PwC
 
 ### LG CNS modernizes 20-year-old enterprise systems with Claude
 
-
-### How Blank Metal, a lean professional services firm, runs on Claude Cowork
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -117,9 +117,9 @@ training rollout underway across PwC
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -149,7 +149,7 @@ training rollout underway across PwC
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -161,6 +161,7 @@ training rollout underway across PwC
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -172,8 +173,10 @@ training rollout underway across PwC
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -193,7 +196,9 @@ training rollout underway across PwC
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -236,9 +241,9 @@ training rollout underway across PwC
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -268,7 +273,7 @@ training rollout underway across PwC
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -280,6 +285,7 @@ training rollout underway across PwC
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -291,8 +297,10 @@ training rollout underway across PwC
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -312,7 +320,9 @@ training rollout underway across PwC
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

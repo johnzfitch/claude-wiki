@@ -2,7 +2,7 @@
 title: "Analytics APIs - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/analytics-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:32Z"
+fetched_at: "2026-10-04T08:33:28Z"
 tags: ["api", "claude-code", "enterprise"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "claude-code", "enterprise"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api", "claude-code", "enterprise"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -83,7 +85,7 @@ The two APIs use different key types, created in different places by different r
 
 | API                                 | Key type                             | Created in                                                                                  | Who can create it  | What it covers                                                                                                                                     |
 |-------------------------------------|--------------------------------------|---------------------------------------------------------------------------------------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Claude Code Analytics API**       | Admin API key (`sk-ant-admin01-...`) | [Claude Console \> Settings \> Admin keys](usage-limits.md) | Organization admin | Daily Claude Code metrics per user: sessions, lines of code, commits, pull requests, tool acceptance, and estimated cost by model                  |
+| **Claude Code Analytics API**       | Admin API key (`sk-ant-admin01-...`) | [Claude Console \> Settings \> Admin keys](playground.md) | Organization admin | Daily Claude Code metrics per user: sessions, lines of code, commits, pull requests, tool acceptance, and estimated cost by model                  |
 | **Claude Enterprise Analytics API** | Analytics API key                    | [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access)    | Primary owner      | Organization-wide engagement and adoption (user activity, active-user summaries, project, skill, and connector usage), plus cost and usage reports |
 
 The key types are not interchangeable: an Admin API key cannot call the Claude Enterprise Analytics API, and an Analytics API key cannot call the Admin API. Both APIs appear under the [Admin API reference](../Admin/http-beta-organization.md), but they are separate APIs with separate key types. If your organization uses both the Claude Platform and Claude Enterprise, you can provision both keys and use each API for its own data.

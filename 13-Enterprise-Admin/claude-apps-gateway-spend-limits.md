@@ -2,7 +2,7 @@
 title: "Claude apps gateway spend limits - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-apps-gateway-spend-limits"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-28T06:32:25Z"
+fetched_at: "2026-10-03T06:31:46Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -31,7 +31,7 @@ Cap each developer’s spend through the Claude apps gateway by day, week, or mo
 
 Copy pageCopy page
 
-Spend limits cap how much each developer can spend through your [Claude apps gateway](claude-apps-gateway.md) in a given day, week, or month. When a developer passes their cap, the gateway returns `429` on their next request and blocks them until the period resets or an admin raises the cap. Use spend limits to give each developer, group, or the whole organization a ceiling on a credential everyone shares. A Claude apps gateway forwards all inference through one shared upstream credential, so your provider’s bill attributes everything to that credential, not to individual developers. Without per-developer limits, one runaway agent fleet can spend the organization’s entire commitment. Spend limits are the gateway’s per-developer view and circuit breaker on top of that shared bill.
+Spend limits cap how much each developer can spend through your [Claude apps gateway](claude-apps-gateway.md) in a given day, week, or month. When a developer passes their cap, the gateway returns `429` on their next request and blocks them until the period resets or an admin raises the cap. Use spend limits to give each developer, group, or the whole organization a ceiling on a credential everyone shares. By default, a Claude apps gateway forwards all inference through one shared upstream credential, so your provider’s bill attributes everything to that credential, not to individual developers. On Amazon Bedrock, [per-developer AWS cost attribution](claude-apps-gateway-config.md#per-developer-aws-cost-attribution) changes this. Without per-developer limits, one runaway agent fleet can spend the organization’s entire commitment. Spend limits are the gateway’s per-developer view and circuit breaker on top of that shared bill.
 
 
 [​](#set-a-cap)
@@ -107,12 +107,15 @@ The pre-check queries Postgres with a two-second timeout. If the store is unreac
 
 Usage warnings in Claude Code
 
-Claude Code warns a developer as they approach their cap: once utilization passes 75%, and again past 95% of their most-consumed cap. When the gateway blocks a request, Claude Code shows the gateway’s `429` message as is, including your `admin.blocked_message`. The warning works off response headers:
+Claude Code warns a developer as they approach their cap: once utilization passes 75%, and again past 95% of their most-consumed cap. When the gateway blocks a request, Claude Code shows the gateway’s `429` message as is, including your `admin.blocked_message`. It also shows the cap in `/usage` and passes it to the developer’s [status line](../02-Claude-Code-CLI/statusline.md#spend-limit-fields) script. Each display needs a minimum Claude Code version on the developer’s machine and on the gateway server:
 
-- With v2.1.225 or later on the gateway server, each successful `/v1/messages` response for a developer who has a cap carries their own cap utilization and reset time in the `anthropic-ratelimit-unified-*` headers.
-- With v2.1.225 or later on the developer’s machine as well, Claude Code reads the headers and shows the warning.
+| What the developer sees                                                                                                                                                                         | Developer’s machine | Gateway server    |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|:------------------|
+| Usage warnings at 75% and 95%                                                                                                                                                                   | v2.1.225 or later   | v2.1.225 or later |
+| A **Spend limit** bar in `/usage` with the percentage of their cap used and when it resets, and a `rate_limits.spend_limit` object in the status line input                                     | v2.1.251 or later   | v2.1.225 or later |
+| Their estimated spend and the cap in US dollars in the **Spend limit** bar, such as “\$271.40 / \$500.00 spent this month”, and the same amounts plus the cap’s period in the status line input | v2.1.284 or later   | v2.1.284 or later |
 
-The headers always describe the developer’s own cap: the gateway strips the upstream provider’s rate-limit headers, which describe your shared quota, and never forwards them. With v2.1.251 or later on the developer’s machine, Claude Code also reads the same headers to show a **Spend limit** bar in `/usage`, with the percentage of their cap used and when it resets, and to add a `rate_limits.spend_limit` object to the [status line](../02-Claude-Code-CLI/statusline.md#rate-limit-usage) input. Claude Code shows both as a percentage rather than a dollar amount, and needs nothing newer than v2.1.225 on the gateway server.
+The warnings and the percentage come from the `anthropic-ratelimit-unified-*` headers, which the gateway adds to each successful `/v1/messages` response for a developer who has a cap. The headers always describe the developer’s own cap: the gateway strips the upstream provider’s rate-limit headers, which describe your shared quota, and never forwards them. The spend a developer sees is the gateway’s own [estimate](#how-requests-are-priced), the same figure it enforces the cap with, and not an amount from your provider’s bill. Claude Code reads the dollar amounts with a separate request to the gateway. If you set `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` on developers’ machines, as [Compliance posture](claude-apps-gateway-deploy.md#compliance-posture) suggests, Claude Code skips that request. With that variable set, or with a gateway server older than v2.1.284, the bar and the status line stay percentage-only.
 
 
 [​](#admin-api-reference)

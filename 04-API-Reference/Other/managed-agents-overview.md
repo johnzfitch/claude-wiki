@@ -2,7 +2,7 @@
 title: "Claude Managed Agents overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/overview"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:50Z"
+fetched_at: "2026-10-04T08:33:37Z"
 tags: ["agents", "api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -210,12 +210,12 @@ Claude Managed Agents is in beta. All Managed Agents endpoints require the `mana
 
 To get started, you need:
 
-1.  A [Claude API key](usage-limits.md)
+1.  A [Claude API key](playground.md)
 2.  The `managed-agents-2026-04-01` beta header on all requests
 3.  Access to Claude Managed Agents (enabled by default for all API accounts)
 
 Within the beta, [MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md) and [dreaming](managed-agents-dreams.md) are in a more limited research preview. [Request access](https://claude.com/form/claude-managed-agents) to enable them.
 
-Claude Managed Agents is stateful by design: sessions are long-running, resume cleanly after pauses, and store conversation history, sandbox state, and outputs server-side. Because of this, Managed Agents is not currently eligible for [Zero Data Retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) or HIPAA Business Associate Agreement (BAA) coverage. You retain control over this data: you can [delete sessions](managed-agents-session-operations.md#deleting-a-session), and separately delete any [files](../Guides/build-with-claude-files.md#delete-a-file) you uploaded, at any time through the API. For eligibility across all features, see [API and data retention](manage-claude-api-and-data-retention.md#feature-eligibility).
+Claude Managed Agents is stateful by design: sessions are long-running, resume cleanly after pauses, and store conversation history, sandbox state, and outputs server-side. Because of this, Managed Agents is not currently eligible for [Zero Data Retention](../Guides/build-with-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) or HIPAA Business Associate Agreement (BAA) coverage. You retain control over this data: you can [delete sessions](managed-agents-session-operations.md#deleting-a-session), and separately delete any [files](../Guides/build-with-claude-files.md#delete-a-file) you uploaded, at any time through the API. For eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md#feature-eligibility).
 
 See [Rate limits](managed-agents-reference.md#rate-limits) and [Branding guidelines](managed-agents-reference.md#branding-guidelines) in the reference.

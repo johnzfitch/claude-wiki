@@ -2,7 +2,7 @@
 title: "Spotify Claude Agent SDK case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/spotify"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:00Z"
+fetched_at: "2026-10-10T06:29:01Z"
 tags: ["agents", "case-studies", "enterprise", "sdk", "security"]
 ---
 
@@ -34,7 +34,7 @@ Building agents with the Claude Agent SDK
 
 The Claude Agent SDK is a collection of tools that helps developers build powerful agents on top of Claude Code.
 
-[Read more](https://claude.com/blog/building-agents-with-the-claude-agent-sdk)
+[Read more](https://claude.com/resources/articles/building-agents-with-the-claude-agent-sdk)
 
 Introducing Claude Code
 
@@ -90,6 +90,9 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 ## Related stories
 
 
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
+
+
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
 
@@ -98,9 +101,6 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -108,9 +108,9 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -140,7 +140,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -152,6 +152,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -163,8 +164,10 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -184,7 +187,9 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -227,9 +232,9 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -259,7 +264,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -271,6 +276,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -282,8 +288,10 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -303,7 +311,9 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

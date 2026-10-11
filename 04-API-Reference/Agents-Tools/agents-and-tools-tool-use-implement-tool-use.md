@@ -2,7 +2,7 @@
 title: "Define tools - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:20Z"
+fetched_at: "2026-10-04T08:32:40Z"
 tags: ["api", "cli"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "cli"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -175,6 +175,7 @@ To get the best performance out of Claude when using tools, follow these guideli
 - **Consolidate related operations into fewer tools.** Rather than creating a separate tool for every action (`create_pr`, `review_pr`, `merge_pr`), group them into a single tool with an `action` parameter. Fewer, more capable tools reduce selection ambiguity and make your tool surface easier for Claude to navigate.
 - **Use meaningful namespacing in tool names.** When your tools span multiple services or resources, prefix names with the service (for example, `github_list_prs`, `slack_send_message`). This makes tool selection unambiguous as your library grows, and is especially important when using [tool search](agents-and-tools-tool-use-tool-search-tool.md).
 - **Design tool responses to return only high-signal information.** Return semantic, stable identifiers (for example, slugs or UUIDs) rather than opaque internal references, and include only the fields Claude needs to reason about its next step. Bloated responses waste context and make it harder for Claude to extract what matters.
+- **Ask for an explanation, not reasoning.** If a parameter asks Claude why it is making the call, ask for a short explanation or the supporting evidence. A parameter that asks for the model's thinking or step-by-step reasoning may lead to a `reasoning_extraction` refusal. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 ### Example of a good tool description
 
@@ -311,10 +312,10 @@ In some cases, you may want Claude to use a specific tool to answer the user's q
 
 Not every model and setting supports forced tool use. Where it isn't supported, `tool_choice: {"type": "any"}` and `tool_choice: {"type": "tool", "name": "..."}` fail, while `tool_choice: {"type": "auto"}` (the default) and `tool_choice: {"type": "none"}` still work:
 
-| Model or setting                                                                                         | Restriction                                                                              | What to use instead                                                                                                                                                                                                                                                                                                          |
-|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Manual [extended thinking](../Guides/build-with-claude-extended-thinking.md) (`thinking: {type: "enabled"}`) | `any` and `tool` are not supported and result in an error                                | `auto` or `none`. [Adaptive thinking](../Guides/build-with-claude-thinking.md) itself doesn't block forced tool use (Claude Opus 5 supports it with thinking on); the models in the next row reject forced tool use regardless of thinking settings                                                                              |
-| Claude Opus 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md)              | `any` and `tool` return a [400 error](../Endpoints/errors.md#forced-tool-use-not-supported) | `auto` with [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) to guarantee schema-valid tool inputs, or [structured outputs](../Guides/build-with-claude-structured-outputs.md) when you need a response in a fixed JSON shape. Prompting still influences which tool `auto` picks. `none` is also supported |
+| Model or setting                                                                                               | Restriction                                                                              | What to use instead                                                                                                                                                                                                                                                                                                          |
+|----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Manual [extended thinking](../Guides/build-with-claude-extended-thinking.md) (`thinking: {type: "enabled"}`)       | `any` and `tool` are not supported and result in an error                                | `auto` or `none`. [Adaptive thinking](../Guides/build-with-claude-thinking.md) itself doesn't block forced tool use (Claude Opus 5 supports it with thinking on); the models in the next row reject forced tool use regardless of thinking settings                                                                              |
+| Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md) | `any` and `tool` return a [400 error](../Endpoints/errors.md#forced-tool-use-not-supported) | `auto` with [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) to guarantee schema-valid tool inputs, or [structured outputs](../Guides/build-with-claude-structured-outputs.md) when you need a response in a fixed JSON shape. Prompting still influences which tool `auto` picks. `none` is also supported |
 
 On models that support it, the highlighted lines are the only difference from a standard tool use request:
 

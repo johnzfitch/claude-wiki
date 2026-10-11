@@ -1,8 +1,8 @@
 ---
 title: "Use Claude app intents, shortcuts, and widgets on iOS | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/10263469-use-claude-app-intents-shortcuts-and-widgets-on-ios"
+source_url: "https://support.claude.com/en/articles/10263469-using-claude-app-intents-shortcuts-and-widgets-on-ios"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-30T06:32:15Z"
+fetched_at: "2026-10-10T06:24:22Z"
 tags: ["desktop"]
 ---
 

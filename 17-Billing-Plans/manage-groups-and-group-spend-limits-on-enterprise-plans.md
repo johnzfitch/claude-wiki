@@ -1,8 +1,8 @@
 ---
 title: "Manage groups and group spend limits on Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13799932"
+source_url: "https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:44Z"
+fetched_at: "2026-10-10T06:24:38Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -17,7 +17,7 @@ Groups let you organize members into logical collections—by team, department, 
 
 - **Set spend limits for groups**, so all members of a group share a per-user spend limit, and optionally give the group one shared monthly budget (beta).
 
-- **Control member access through group memberships and custom roles**, so their capabilities and permissions are determined entirely by the groups they belong to. For additional details, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
+- **Control member access through group memberships and custom roles**, so their capabilities and permissions are determined entirely by the groups they belong to. For additional details, see **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)**.
 
 - **Let members share resources with a group**, so a project, skill, or plugin shared with the group is available to everyone in it, and access follows membership as it changes. For details, see **[Manage project visibility and sharing](https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing)** and **[Provision and manage skills for your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization)**.
 
@@ -121,15 +121,15 @@ You can control individual members' feature access entirely through groups and c
 
 3.  Select "Custom."
 
-Owners, Primary Owners, and custom roles with the **User Management** permission set to "Can manage" can change member roles. You can also assign “Custom” at scale by mapping an IdP group using **[group mappings](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+Owners, Primary Owners, and custom roles with the **User Management** permission set to "Can manage" can change member roles. You can also assign “Custom” at scale by mapping an IdP group using **[group mappings](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 **Important:** If your provisioning mode is SCIM directory sync and group mappings are enabled, each member’s role is set by your IdP group-to-role mapping and managed by the sync, not by the **Members** page. A role that was set to “Custom” before you enabled group mappings (or set another way) is recalculated on the next full sync and reverts to the mapped role. It works until that sync runs, and the reversion isn’t recorded in the audit log, so it can look like custom role permissions stopped applying for no reason.
 
-To keep a member on “Custom,” add them to an IdP group that’s mapped to the “Custom” role in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**, then run a sync. See **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)** and **[How SCIM sync works for Enterprise organizations](../13-Enterprise-Admin/how-scim-sync-works-for-enterprise-organizations.md)**.
+To keep a member on “Custom,” add them to an IdP group that’s mapped to the “Custom” role in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**, then run a sync. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)** and **[How SCIM sync works for Enterprise organizations](https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations)**.
 
 ### Recommended setup
 
-1.  Create custom roles with the desired permissions in **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**. For details, see **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)**.
+1.  Create custom roles with the desired permissions in **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)**. For details, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)**.
 
 2.  Create groups in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** (or sync them from your identity provider).
 
@@ -145,7 +145,7 @@ To keep a member on “Custom,” add them to an IdP group that’s mapped to th
 
 The member's effective permissions are now determined by their group memberships and the custom roles assigned to those groups.
 
-**Important:** Always complete steps 1–5 before enabling features at the organization level (step 6). If you enable a feature before changing members' roles to Custom and assigning appropriate custom roles, there's a brief window where some members could access the feature through their previous role. For a detailed walkthrough, see **[Set up role-based permissions on Enterprise plans](set-up-role-based-entitlements-on-enterprise-plans.md)**.
+**Important:** Always complete steps 1–5 before enabling features at the organization level (step 6). If you enable a feature before changing members' roles to Custom and assigning appropriate custom roles, there's a brief window where some members could access the feature through their previous role. For a detailed walkthrough, see **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-entitlements-on-enterprise-plans)**.
 
 ### Invite new members
 

@@ -2,7 +2,7 @@
 title: "I'm getting an API connection error. How can I fix it? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10366432-i-m-getting-an-api-connection-error-how-can-i-fix-it"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:30:58Z"
+fetched_at: "2026-10-10T06:25:00Z"
 tags: ["api"]
 ---
 

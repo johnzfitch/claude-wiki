@@ -2,7 +2,7 @@
 title: "Create a Text Completion - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/http/completions/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:39:14Z"
+fetched_at: "2026-10-04T08:33:04Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -232,7 +236,7 @@ cURL
 
 \[Legacy\] Create a Text Completion.
 
-The Text Completions API is a legacy API. We recommend using the [Messages API](https://platform.claude.com/docs/en/api/http/completions/api-messages-2dd213ca95.md) going forward.
+The Text Completions API is a legacy API. We recommend using the [Messages API](messages.md) going forward.
 
 Future models and features will not be compatible with Text Completions. See our [migration guide](../Guides/build-with-claude-working-with-messages.md) for guidance in migrating from Text Completions to Messages.
 
@@ -263,14 +267,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -464,6 +460,14 @@ One of the following:
 
 
 
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
+
+
+
 ##### Body
 
 
@@ -490,6 +494,136 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 One of the following:
 
+"claude-sonnet-5-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5-1"
+
+
+
+Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
+
+"claude-opus-5-5"
+
+
+
+Powerful intelligence for coding, knowledge work, and long-running agents
+
+"claude-mythos-5-1"
+
+
+
+Our most capable model for cybersecurity and biology research, available through trusted access programs
+
+"claude-sonnet-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5"
+
+
+
+Next generation of intelligence for the hardest knowledge work and coding problems
+
+"claude-mythos-5"
+
+
+
+Most capable model for cybersecurity and biology research
+
+"claude-opus-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-8"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-7"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-6"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-sonnet-4-6"
+
+
+
+Best combination of speed and intelligence
+
+"claude-haiku-4-5"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-haiku-4-5-20251001"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-opus-4-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-5-20251101"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+
+
+"claude-mythos-preview"⁠Deprecated
+
+
+
+New class of intelligence, strongest in coding and cybersecurity
+
+Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5-20250929"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+string
+
+
+
 
 
 prompt: string
@@ -510,7 +644,7 @@ Assistant:\` conversational turns. For example:
 
     Assistant:"
 
-See [prompt validation](../Guides/build-with-claude-working-with-messages.md) and our guide to [prompt design](https://platform.claude.com/docs/en/api/10-Prompting-Guides/build-with-claude-prompt-engineering-overview-1ab62e934b.md) for more details.
+See [prompt validation](../Guides/build-with-claude-working-with-messages.md) and our guide to [prompt design](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) for more details.
 
 minLength1
 
@@ -615,59 +749,6 @@ maximum1
 Completion object{ type: "completion", id, completion, 2 more }
 
 
-
-
-
-type: "completion"
-
-
-
-Object type.
-
-For Text Completions, this is always `"completion"`.
-
-defaultcompletion
-
-
-
-id: string
-
-
-
-Unique object identifier.
-
-The format and length of IDs may change over time.
-
-completion: string
-
-
-
-The resulting completion up to and excluding the stop sequences.
-
-
-
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
-
-
-
-stop_reason: string or null
-
-
-
-The reason that we stopped.
-
-This may be one the following values:
-
-- `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model
-- `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum
 
 Create a Text Completion
 

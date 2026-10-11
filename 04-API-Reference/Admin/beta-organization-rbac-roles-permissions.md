@@ -2,7 +2,7 @@
 title: "Permissions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_roles/permissions"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:03Z"
+fetched_at: "2026-10-04T08:31:56Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -157,6 +140,27 @@ Permissions
 
 
 List RBAC Role Permissions
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -248,6 +252,130 @@ cURL
 List the permissions an RBAC Role grants.
 
 ##### Models
+
+
+
+BetaRBACAllConnectorsPermissionResource object{ type: "all_connectors" }
+
+
+
+
+
+type: "all_connectors"
+
+
+
+Kind of resource the permission applies to.
+
+defaultall_connectors
+
+
+
+BetaRBACConnectorPermissionResource object{ type: "connector", connector_id }
+
+
+
+
+
+type: "connector"
+
+
+
+Kind of resource the permission applies to.
+
+defaultconnector
+
+connector_id: string
+
+
+
+ID of the connector the permission applies to.
+
+
+
+BetaRBACConnectorScopePermissionResource object{ type: "connector_scope", connector_id, scope }
+
+
+
+
+
+type: "connector_scope"
+
+
+
+Kind of resource the permission applies to.
+
+defaultconnector_scope
+
+connector_id: string
+
+
+
+ID of the connector the permission applies to.
+
+
+
+scope: string
+
+
+
+OAuth scope the permission names — the role may receive this scope when tokens are minted for the connector.
+
+Subject to the same encoding rule as `tool_name`: a scope containing characters outside `[a-zA-Z0-9_-]` (or colliding with a reserved form) appears server-encoded in a stable `{prefix}_{32-hex}` form. OAuth scopes routinely contain `:` and `/`, so most appear encoded.
+
+
+
+BetaRBACConnectorToolPermissionResource object{ type: "connector_tool", connector_id, tool_name }
+
+
+
+
+
+type: "connector_tool"
+
+
+
+Kind of resource the permission applies to.
+
+defaultconnector_tool
+
+connector_id: string
+
+
+
+ID of the connector the permission applies to.
+
+
+
+tool_name: string
+
+
+
+Published name of the connector tool the permission applies to.
+
+When the published name contains characters outside `[a-zA-Z0-9_-]` (or collides with a reserved form), it is server-encoded into a stable `{prefix}_{32-hex}` form — a shortened readable prefix of the name plus a hash — from which the published name is not recoverable.
+
+
+
+BetaRBACOrganizationPermissionResource object{ type: "organization", organization_id }
+
+
+
+
+
+type: "organization"
+
+
+
+Kind of resource the permission applies to.
+
+defaultorganization
+
+organization_id: string
+
+
+
+UUID of the organization the permission applies to.
 
 
 

@@ -2,7 +2,7 @@
 title: "Move your personal Claude account to a Team or Enterprise organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267400-move-your-personal-claude-account-to-a-team-or-enterprise-organization"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:32:17Z"
+fetched_at: "2026-10-10T06:25:31Z"
 tags: ["account", "enterprise"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["account", "enterprise"]
 
 If you're using Claude with a personal account (Free, Pro, or Max) tied to your work email, you may be able to move that account into your organization's Team or Enterprise workspace. There are two paths: you can start a migration yourself (Team and Enterprise) or your admin can claim accounts on your domain (Enterprise only).
 
-**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you won't be offered the option to bring your data with you, and a domain claim won't offer to merge your account. You can export your data first if you want a copy. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you won't be offered the option to bring your data with you, and a domain claim won't offer to merge your account. You can export your data first if you want a copy. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ------------------------------------------------------------------------
 
@@ -98,6 +98,12 @@ What happens to your Pro or Max plan after migrating depends on where you bought
 - **Google Play Store:** Your Pro or Max subscription is canceled automatically as part of the move, and you receive a prorated refund for unused time. Refunds for Google Play purchases can take a few days to appear.
 
 - **Apple App Store:** Your Pro or Max subscription isn't canceled. Apple doesn't allow third-party cancellation, so you'll need to cancel it yourself through your Apple ID settings. If you don't, Apple keeps charging you after your personal account closes.
+
+If you’ve claimed monthly API credits on your Max plan:
+
+- **Moving to a Team organization:** Your Max link ends. A Team Owner or Primary Owner can claim the team’s credits once the Team plan has been active for seven days.
+
+- **Moving to an Enterprise organization:** New credits stop. Credits you already have stay usable until they expire. Enterprise plans aren’t eligible for monthly API credits.
 
 For cancellation instructions, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
 

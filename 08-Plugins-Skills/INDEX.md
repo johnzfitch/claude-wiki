@@ -1,6 +1,6 @@
 # Plugins & Skills
 
-86 pages. The full text of every page is in [llms.txt](llms.txt).
+97 pages. The full text of every page is in [llms.txt](llms.txt).
 
 - [Add components to a plugin - Claude Code Docs](plugins-components.md) — Add skills, hooks, MCP servers, and every other component type to a Claude Code plugin, with an example that validates for each.
 - [Advanced Plugin Example](claude-code-plugins-plugin-dev-skills-plugin-structure-examples-advanced-plugin.md) — A complex, enterprise-grade plugin with MCP integration and advanced organization.
@@ -31,7 +31,9 @@
 - [Conversation Analyzer](claude-code-plugins-hookify-agents-conversation-analyzer.md) — You are a conversation analysis specialist that identifies problematic behaviors in Claude Code sessions that could be prevented with hooks.
 - [Create a Claude Code plugin - Claude Code Docs](plugins-create.md) — Build your first Claude Code plugin from an empty directory, test it without a marketplace, and convert an existing .claude/ setup.
 - [Create a marketplace - Claude Code Docs](plugin-marketplaces.md) — Build a plugin marketplace from a marketplace.json file and test it locally before you host it.
+- [Create a mod - Claude Code Docs](plugins-mods-create.md) — Have Claude write a Claude Code mod from a description, or write one yourself that counts tool calls and adds a command. Learn the reload and validate loop.
 - [Create Plugin Settings](claude-code-plugins-plugin-dev-skills-plugin-settings-examples-create-settings-command.md) — This command helps users create a .claude/my-plugin.local.md settings file.
+- [Draw in the interface with a mod - Claude Code Docs](plugins-mods-interface.md) — Draw panes, a band above the prompt, buttons, and text fields from a Claude Code mod, handle presses and input, and keep state between redraws and sessions.
 - [Evaluating skill output quality - Agent Skills](skill-creation-evaluating-skills.md) — How to test whether your skill produces good outputs using eval-driven iteration.
 - [Explanatory Output Style Plugin](claude-code-plugins-explanatory-output-style-readme.md) — This plugin recreates the deprecated Explanatory output style as a SessionStart
 - [Extend Claude with skills - Claude Code Docs](skills.md) — Create, manage, and share skills to extend Claude’s capabilities in Claude Code. Includes custom commands and bundled skills.
@@ -43,17 +45,22 @@
 - [GitHub | Claude by Anthropic](plugins-github.md) — Official GitHub MCP server for repo management. Create issues, manage PRs, review code, search repos, and access GitHub's API from Claude Code.
 - [Host and maintain a marketplace - Claude Code Docs](plugins-host-marketplace.md) — Publish a plugin marketplace where users can reach it, grant access to a private one, and release updates and renames without breaking installs.
 - [How to add skills support to your agent - Agent Skills](client-implementation-adding-skills-support.md) — A guide for adding Agent Skills support to an AI agent or development tool.
+- [Improving frontend design through Skills | Claude by Anthropic](improving-frontend-design-through-skills.md) — Best practices for building richer, more customized frontend design with Claude and Skills.
 - [Install and manage plugins - Claude Code Docs](discover-plugins.md) — Install Claude Code plugins from a marketplace on any surface you use, choose an install scope, and update or remove them later.
+- [Interface gallery for mods - Claude Code Docs](plugins-mods-gallery.md) — See the interface elements a Claude Code mod can draw, such as text, buttons, fields, Markdown, code, and diffs, with sample code and terminal screenshots.
 - [Manage Claude Code plugins for your organization - Claude Code Docs](plugins-org.md) — Manage plugins for your organization
+- [Manage mods for your organization - Claude Code Docs](plugins-mods-admin.md) — Manage plugins for your organization
 - [Marketplace Considerations for Commands](claude-code-plugins-plugin-dev-skills-command-development-references-marketplace.md) — Guidelines for creating commands designed for distribution and marketplace success.
 - [Marketplace reference - Claude Code Docs](plugins-marketplace-reference.md) — Complete reference for marketplace.json fields, plugin entries, and the plugin and marketplace source objects, with where each is valid.
 - [Measure plugin cost and usage - Claude Code Docs](plugins-measure.md) — Measure a Claude Code plugin’s token cost, find out whether people still use it, and pick the telemetry events for organization-wide plugin questions.
 - [Minimal Plugin Example](claude-code-plugins-plugin-dev-skills-plugin-structure-examples-minimal-plugin.md) — A bare-bones plugin with a single command.
+- [Mods overview - Claude Code Docs](plugins-mods-overview.md) — Add panes, commands, and tool call rules to Claude Code with a mod. See what a mod can do, how to make or install one, and where mods run.
+- [Mods reference - Claude Code Docs](plugins-mods-reference.md) — Complete reference for Claude Code mods: hooks module layout, events, mods API methods, render sites, elements by surface, limits, and settings.
 - [New Sdk App](claude-code-plugins-agent-sdk-dev-commands-new-sdk-app.md) — You are tasked with helping the user create a new Claude Agent SDK application. Follow these steps carefully:
 - [Optimizing skill descriptions - Agent Skills](skill-creation-optimizing-descriptions.md) — How to improve your skill’s description so it triggers reliably on relevant prompts.
 - [Playwright | Claude by Anthropic](plugins-playwright.md) — Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, and automate…
 - [Plugin Command Examples](claude-code-plugins-plugin-dev-skills-command-development-examples-plugin-commands.md) — Practical examples of commands designed for Claude Code plugins, demonstrating plugin-specific patterns and features.
-- [Plugin commands reference - Claude Code Docs](plugins-cli-reference.md) — Complete reference for the claude plugin shell commands, /plugin and /reload-plugins in a session, and the flags that load a plugin for one session.
+- [Plugin commands reference - Claude Code Docs](plugins-cli-reference.md) — Reference for the claude plugin shell commands, /plugin and /reload-plugins in a session, and the flags that load a plugin for one session.
 - [Plugin Creation Workflow](claude-code-plugins-plugin-dev-commands-create-plugin.md) — Guide the user through creating a complete, high-quality Claude Code plugin from initial concept to tested implementation. Follow a systematic approach…
 - [Plugin dependencies - Claude Code Docs](plugins-dependencies.md) — Declare the plugins your plugin depends on, with version ranges such as ^1.2, and see how Claude Code installs, resolves, and prunes them.
 - [Plugin loading reference - Claude Code Docs](plugins-loading.md) — Trace where Claude Code loads each plugin from, which settings file decides whether it loads, and why an update changed nothing.
@@ -72,6 +79,7 @@
 - [Ralph Loop | Claude by Anthropic](plugins-ralph-loop.md) — Interactive AI loops for iterative development using the Ralph Wiggum technique: Claude works on tasks repeatedly, seeing prior work until completion.
 - [Ralph Wiggum Plugin](claude-code-plugins-ralph-wiggum-readme.md) — Implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.
 - [Ralph Wiggum Plugin Help](claude-code-plugins-ralph-wiggum-commands-help.md) — Please explain the following to the user:
+- [React to events with a mod - Claude Code Docs](plugins-mods-events.md) — Handle Claude Code events from a mod: observe, rewrite, or answer tool calls, prompts, and turns, filter which events a hook handles, and plan for other mods.
 - [Real-World Plugin Settings Examples](claude-code-plugins-plugin-dev-skills-plugin-settings-references-real-world-examples.md) — Detailed analysis of how production plugins use the .claude/plugin-name.local.md pattern.
 - [Recommend plugins for your org - Claude Code Docs](plugin-relevance.md) — Add a relevance block to marketplace plugin entries so Claude Code suggests them when a user’s work matches.
 - [Recommend plugins for your org - Claude Code Docs](plugins-relevance.md) — Add a relevance block to marketplace plugin entries so Claude Code suggests them when a user’s work matches, and allowlist the marketplace in managed settings.
@@ -84,7 +92,10 @@
 - [Specification - Agent Skills](specification.md) — The complete format specification for Agent Skills.
 - [Standard Plugin Example](claude-code-plugins-plugin-dev-skills-plugin-structure-examples-standard-plugin.md) — A well-structured plugin with commands, agents, and skills.
 - [Superpowers | Claude by Anthropic](plugins-superpowers.md) — Claude learns brainstorming, subagent development with code review, debugging, TDD, and skill authoring through Superpowers.
+- [Test a mod - Claude Code Docs](plugins-mods-test.md) — Write automated tests for a Claude Code mod that fire events, stub Claude Code’s answers, and press buttons, with no session, sign-in, or network.
 - [Test plugins with evals - Claude Code Docs](plugin-evals.md) — Write eval cases for your Claude Code plugin, run them with claude plugin eval, grade the results, compare against a no-plugin baseline, and gate CI on the…
+- [Troubleshoot a mod - Claude Code Docs](plugins-mods-troubleshoot.md) — Find out why a Claude Code mod does nothing: match the symptom or message to its cause, look up refusal messages, and read the debug log.
 - [Troubleshoot plugins - Claude Code Docs](plugins-troubleshooting.md) — Fix plugin errors in Claude Code. Find the exact message you saw, grouped by stage from where /plugin runs through install and org policy.
 - [Type Design Analyzer](claude-code-plugins-pr-review-toolkit-agents-type-design-analyzer.md) — You are a type design expert with extensive experience in large-scale software architecture. Your specialty is analyzing and improving type designs to ensure…
+- [Use the mods API - Claude Code Docs](plugins-mods-api.md) — Call the mods API from a Claude Code mod to add commands and tools, call a model, run work on a timer, message other sessions, and reach files and the network.
 - [Using scripts in skills - Agent Skills](skill-creation-using-scripts.md) — How to run commands and bundle executable scripts in your skills.

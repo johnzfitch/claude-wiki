@@ -2,7 +2,7 @@
 title: "Satispay Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/satispay"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:46Z"
+fetched_at: "2026-10-10T06:25:58Z"
 tags: ["agents", "case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -17,7 +17,7 @@ Company size:
 Medium
 
 Product:  
-[Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)[Claude Enterprise](enterprise.md)[Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+[Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)[Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md)[Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
 
 Location:  
 EMEA
@@ -54,7 +54,7 @@ Claude Code
 
 Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
 
-[Read more](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+[Read more](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 
 ## The solution
 
@@ -74,7 +74,7 @@ Claude Code on the web
 
 Delegate coding tasks directly from your browser. Kick off multiple sessions in parallel across repositories, with real-time progress tracking.
 
-[Read more](https://claude.com/blog/claude-code-on-the-web)
+[Read more](https://claude.com/resources/articles/claude-code-on-the-web)
 
 ## The outcome
 
@@ -111,9 +111,9 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -143,7 +143,7 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -155,6 +155,7 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -166,8 +167,10 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -187,7 +190,9 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -230,9 +235,9 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -262,7 +267,7 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -274,6 +279,7 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -285,8 +291,10 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -306,7 +314,9 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

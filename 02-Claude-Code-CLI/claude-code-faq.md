@@ -2,7 +2,7 @@
 title: "Claude Code FAQ | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12386420-claude-code-faq"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:31:12Z"
+fetched_at: "2026-10-10T06:25:07Z"
 tags: ["agents", "api", "bedrock", "claude-code", "enterprise", "git", "github", "mcp"]
 ---
 
@@ -15,7 +15,7 @@ This article is a compilation of commonly-asked questions about Claude Code rela
 
 ## How do I set up single sign-on (SSO) for Claude Code?
 
-We have detailed instructions for setting up single sign-on on a Team, Enterprise, or Console organization here: **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**.
+We have detailed instructions for setting up single sign-on on a Team, Enterprise, or Console organization here: **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
 
 ## Is there a way to disable Opus model access across our entire organization in Claude Code?
 
@@ -27,7 +27,7 @@ Dynamic workflows (available for Claude Enterprise plans) let Claude run large e
 
 You have three ways to control access:
 
-1.  **At the role level (Enterprise plans with custom roles):** Grant or restrict the Claude Code dynamic workflows capability per group. This only affects members whose role is set to "Custom." See **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
+1.  **At the role level (Enterprise plans with custom roles):** Grant or restrict the Claude Code dynamic workflows capability per group. This only affects members whose role is set to "Custom." See **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)**.
 
 2.  **Disable org-wide via `managed-settings.json`:** Add `"disableWorkflows": true` to your managed settings. This holds before and after June 8.
 

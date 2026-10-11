@@ -2,7 +2,7 @@
 title: "Speed up responses with fast mode - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/fast-mode"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:31:48Z"
+fetched_at: "2026-10-08T06:24:30Z"
 tags: ["claude-code"]
 ---
 
@@ -93,7 +93,7 @@ Fast mode has higher per-token pricing than standard Opus:
 | Opus 5   | \$10         | \$50          |
 | Opus 4.8 | \$10         | \$50          |
 
-Fast mode pricing is flat across the full 1M token context window. For the standard Opus rate to compare against, see the [Claude pricing reference](../17-Billing-Plans/about-claude-pricing.md). The first time you enable fast mode in a conversation, you pay the full fast mode uncached input token price for the entire conversation context. The deeper into a conversation you are, the more this costs, so enabling fast mode from the start is cheaper. The cost applies once per conversation, so toggling fast mode off and on again later does not repeat it. For the mechanism, see [how fast mode interacts with the prompt cache](prompt-caching.md#turning-on-fast-mode).
+Fast mode pricing is flat across the full 1M token context window. For the standard Opus rate to compare against, see the [Claude pricing reference](../17-Billing-Plans/about-claude-pricing.md). The first time you enable fast mode in a conversation, you pay the full fast mode uncached input token price for the entire conversation context. The deeper into a conversation you are, the more this costs, so the charge is smallest when you enable fast mode at the start. The cost applies once per conversation, so toggling fast mode off and on again later doesn’t repeat it. For the mechanism, see [how fast mode interacts with the prompt cache](prompt-caching.md#turning-on-fast-mode).
 
 
 [​](#see-where-fast-mode-spend-appears)
@@ -104,7 +104,7 @@ You see fast mode spend in a different place depending on how you signed in, so 
 
 - **Pro and Max**: you pay for fast mode from your usage credits. Go to [**Settings \> Usage**](https://claude.ai/settings/usage) on claude.ai, where the **Usage credits** section shows how much you’ve spent in usage credits this month. That figure includes fast mode but doesn’t break it out separately.
 - **Team and Enterprise**: your organization pays for your fast mode usage from its usage credits. To see your own usage-credits spend, run [`/usage`](../17-Billing-Plans/costs.md#check-your-usage-credits-spend). For where your organization sees that spend, see [Claude for Teams and Enterprise](../17-Billing-Plans/costs.md#claude-for-teams-and-enterprise).
-- **Claude Console**: your organization pays for fast mode with the rest of its API usage. On the Console [Usage](../04-API-Reference/Other/usage-limits.md) and [Cost](../04-API-Reference/Other/usage-limits.md) pages, select **Speed (Research Preview)** in the **Group by** menu to separate fast mode from standard-speed usage. You see that option only when the selected date range includes fast mode usage.
+- **Claude Console**: your organization pays for fast mode with the rest of its API usage. On the Console [Usage](../04-API-Reference/Other/playground.md) and [Cost](../04-API-Reference/Other/playground.md) pages, select **Speed (Research Preview)** in the **Group by** menu to separate fast mode from standard-speed usage. You see that option only when the selected date range includes fast mode usage.
 
 
 [​](#decide-when-to-use-fast-mode)
@@ -147,11 +147,11 @@ Fast mode requires all of the following:
 - **Anthropic API or subscription only**: fast mode is available through the Anthropic Console API and for Claude subscription plans using usage credits. It is not available on Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, or Claude Platform on AWS. Console organizations must also have [fast mode access provisioned](#enable-fast-mode-for-your-organization).
 - **Usage credits turned on for subscription plans**: on a Pro, Max, Team, or Enterprise plan, your account must have [usage credits](../17-Billing-Plans/costs.md#add-usage-credits-to-your-subscription) turned on, which allows billing beyond your plan’s included usage. Until they’re on, `/fast` reports “Fast mode requires usage credits”. How you turn them on depends on your plan:
   - On Pro and Max, turn them on in the **Usage credits** section of [**Settings \> Usage**](https://claude.ai/settings/usage) on claude.ai, or run `/usage-credits` to open that page.
-  - On Team and Enterprise, a member with billing access turns them on for the organization at [**Admin settings \> Usage**](https://claude.ai/admin-settings/usage), and a member without it runs `/usage-credits` to send the organization’s admins a request.
+  - On Team and Enterprise, a member with billing access turns them on for the organization at [**Organization settings \> Usage**](https://claude.ai/admin-settings/usage), and a member without it runs `/usage-credits` to send the organization’s admins a request.
 
 Fast mode usage draws directly from usage credits, even if you have remaining usage on your plan.
 
-- **Paid Console organization**: Claude Console accounts don’t use usage credits, and your organization pays for fast mode per token with the rest of its API usage. On the Console’s free Evaluation plan, `/fast` shows “Fast mode unavailable during evaluation. Please purchase credits.” To clear it, purchase credits in your [Console billing settings](../04-API-Reference/Other/usage-limits.md).
+- **Paid Console organization**: Claude Console accounts don’t use usage credits, and your organization pays for fast mode per token with the rest of its API usage. On the Console’s free Evaluation plan, `/fast` shows “Fast mode unavailable during evaluation. Please purchase credits.” To clear it, purchase credits in your [Console billing settings](../04-API-Reference/Other/playground.md).
 - **Owner enablement for Team and Enterprise**: fast mode is disabled by default for Team and Enterprise organizations. An Owner must explicitly [enable fast mode](#enable-fast-mode-for-your-organization) before users can access it.
 
 Four organization settings can block turning fast mode on with `/fast`:
@@ -169,7 +169,7 @@ Enable fast mode for your organization
 Where you enable fast mode depends on which product your organization uses:
 
 - **Console** (API customers): an admin enables it in [Claude Code preferences](https://platform.claude.com/claude-code/preferences). Fast mode is in [research preview](#research-preview), so your organization must also have fast mode access provisioned before fast mode requests succeed. To get access, contact your account manager or join the waitlist, as described in [fast mode on the Claude API](../04-API-Reference/Guides/build-with-claude-fast-mode.md). Without provisioned access, the API rejects each fast mode request with a 429, and Claude Code treats each rejection as a [fast mode rate limit](#handle-rate-limits). Unlike a rate limit’s cooldown, the rejections continue until access is provisioned.
-- **Claude AI** (Team and Enterprise): an Owner enables it at [Admin Settings \> Claude Code](https://claude.ai/admin-settings/claude-code)
+- **Claude AI** (Team and Enterprise): an Owner enables it at [**Organization settings \> Claude Code**](https://claude.ai/admin-settings/claude-code)
 
 Another option to disable fast mode entirely is to set `CLAUDE_CODE_DISABLE_FAST_MODE=1`. See [Environment variables](env-vars.md).
 

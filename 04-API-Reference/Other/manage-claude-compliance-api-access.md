@@ -2,7 +2,7 @@
 title: "Set up the Compliance API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-api-access"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:43Z"
+fetched_at: "2026-10-04T08:33:38Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -87,9 +89,9 @@ The Compliance API uses two key types, and which one you create depends on which
 | Key type                                       | Created in                                                                                  | Used for                                                                                                                                          | Works with the Compliance API? |
 |------------------------------------------------|---------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
 | **Compliance Access Key** (`sk-ant-api01-...`) | [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access)    | Activity Feed, chats, files, projects, sessions (in apps such as Cowork and Claude Code), users, organization metadata, and organization settings | Yes (all endpoints)            |
-| **Admin API key** (`sk-ant-admin01-...`)       | [Claude Console \> Settings \> Admin keys](usage-limits.md) | The [Admin API](manage-claude-admin-api.md) and the Compliance API Activity Feed                                                            | Activity Feed only             |
+| **Admin API key** (`sk-ant-admin01-...`)       | [Claude Console \> Settings \> Admin keys](playground.md) | The [Admin API](manage-claude-admin-api.md) and the Compliance API Activity Feed                                                            | Activity Feed only             |
 | **Analytics API key**                          | [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access)    | The Claude Enterprise Analytics API (see [Analytics APIs](manage-claude-analytics-api.md))                                                  | No                             |
-| **Claude API key** (`sk-ant-api03-...`)        | [Claude Console \> Settings \> API keys](usage-limits.md)         | Calling Claude models through the [Claude API](../Endpoints/overview.md)                                                                             | No                             |
+| **Claude API key** (`sk-ant-api03-...`)        | [Claude Console \> Settings \> API keys](playground.md)         | Calling Claude models through the [Claude API](../Endpoints/overview.md)                                                                             | No                             |
 
 A Claude Enterprise tenant has one **parent organization** that centralizes identity, SSO, and SCIM for every workload organization beneath it. These workload organizations are the parent's **linked organizations**.
 
@@ -112,7 +114,7 @@ A Compliance Access Key with `read:compliance_user_data` can read every chat, fi
     Where you enable the Compliance API depends on how your organization is set up:
 
     - **Claude Enterprise organizations:** The primary owner enables the Compliance API at [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access). Enablement happens at the parent organization level and cascades to every linked organization, both claude.ai and Claude Console.
-    - **Standalone Claude Console organizations:** An organization admin turns on the **Compliance API** toggle at [Claude Console \> Settings \> Security](usage-limits.md). Enablement is self-service for eligible organizations, and the change takes effect immediately. If the **Compliance API** section is not visible, you do not have the admin role, your organization is linked to a parent organization (the Compliance API is enabled from the parent organization instead), or your organization is not eligible for self-service enablement; contact your account team or [Anthropic support](https://support.claude.com) if you are not sure which applies.
+    - **Standalone Claude Console organizations:** An organization admin turns on the **Compliance API** toggle at [Claude Console \> Settings \> Security](playground.md). Enablement is self-service for eligible organizations, and the change takes effect immediately. If the **Compliance API** section is not visible, you do not have the admin role, your organization is linked to a parent organization (the Compliance API is enabled from the parent organization instead), or your organization is not eligible for self-service enablement; contact your account team or [Anthropic support](https://support.claude.com) if you are not sure which applies.
     - **Claude Console organizations linked to a parent organization:** There is nothing to turn on in Claude Console. Ask the primary owner of your parent organization to enable the Compliance API in claude.ai, or contact your account team.
 
     
@@ -155,6 +157,8 @@ A Compliance Access Key with `read:compliance_user_data` can read every chat, fi
     | `read:compliance_user_data`   | Read user chats, messages, files, projects, session metadata and transcripts, organization users, and group members                                                                                                       |
     | `delete:compliance_user_data` | Delete user chats, files, and projects                                                                                                                                                                                    |
     | `read:compliance_org_data`    | Read organization metadata (names, types, roles, and groups) and the effective settings in force for organizations under the parent organization. User listings and group membership require `read:compliance_user_data`. |
+
+    With the Plugins API, `read:compliance_org_data` also reads your organization's plugin and plugin marketplace inventory through the Admin API, including members' personal plugins and their files. That inventory identifies members: it carries the user ID of each member who owns or created a plugin, or with whom a plugin has been shared individually, and the email address of a plugin's creator while they are still a member; see [Read plugins and plugin marketplaces](manage-claude-compliance-org-data.md#read-plugins-and-plugin-marketplaces).
 
     Choose the smallest scope set that your integration needs:
 
@@ -207,7 +211,7 @@ For the same key's role in managing your Claude Console organization, see [Admin
 To inspect the scopes on a key you already have, use one of the following signals.
 
 - **Key prefix.** `sk-ant-admin01-` is an Admin API key (carries `read:compliance_activities` only, subject to the enablement timing in the preceding section). `sk-ant-api01-` is a Compliance Access Key; its scopes are the subset you selected at creation.
-- **Settings UI.** Open the **Keys** section in [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access), or the **Admin keys** section in [Claude Console \> Settings \> Admin keys](usage-limits.md), and read the **Scopes** column for the key.
+- **Settings UI.** Open the **Keys** section in [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access), or the **Admin keys** section in [Claude Console \> Settings \> Admin keys](playground.md), and read the **Scopes** column for the key.
 - **Error responses.** A call that exceeds the key's scopes returns a 403 with a message in the format `Missing required scopes. Got: [<scopes the key carries>] Needed one of: [<scopes the endpoint accepts>]` (`Needed: [...]` on the delete endpoints). See [Handle Compliance API errors](manage-claude-compliance-errors.md#403-forbidden) for the full error catalog.
 
 ```python
@@ -223,7 +227,7 @@ To inspect the scopes on a key you already have, use one of the following signal
 
 ## Manage and rotate keys
 
-Delete a Compliance Access Key from the same **Keys** table where you created it: go to [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access). Delete an Admin API key from [Claude Console \> Settings \> Admin keys](usage-limits.md).
+Delete a Compliance Access Key from the same **Keys** table where you created it: go to [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access). Delete an Admin API key from [Claude Console \> Settings \> Admin keys](playground.md).
 
 Deleting a key takes effect on the next request: there is no grace period. Compliance Access Keys do not expire on their own.
 

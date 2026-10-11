@@ -1,10 +1,9 @@
 ---
 title: "Claude for Microsoft 365 | Claude by Anthropic"
-source_url: "https://www.claude.com/claude-for-powerpoint"
+source_url: "https://www.claude.com/claude-for-excel"
 category: "14-Connectors"
-fetched_at: "2026-09-30T06:30:38Z"
-last_modified: "Tue, 29 Sep 2026 22:09:32 GMT"
-tags: ["connectors"]
+fetched_at: "2026-10-10T06:27:29Z"
+tags: ["connectors", "enterprise", "security"]
 ---
 
 # Claude for Microsoft 365
@@ -13,17 +12,7 @@ Work without the window shuffle
 
 Claude works inside Excel, PowerPoint, Word, and Outlook. Start in your inbox, end in the deck. It remembers everything in between.
 
-Install for Microsoft 365
-
-[Install for Microsoft 365](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)
-
-Install for Microsoft 365
-
-Install for Outlook
-
-[Install for Outlook](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)
-
-Install for Outlook
+[Install for Microsoft 365 (opens in new tab)](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)[Install for Outlook (opens in new tab)](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)
 
 ## Claude for Excel
 
@@ -44,10 +33,6 @@ Beta
 Triage your inbox in one prompt, draft replies that wait for you to send, and find time across calendars.
 
 ## How teams use Claude for Microsoft 365
-
-[Play video](#)
-
-Play video
 
 ### Turn an email into a deliverable
 
@@ -83,75 +68,75 @@ How can Claude help?
 
 Open the brief in Word and start the memo from our firm template.
 
-Copy prompt
-
-[Copy prompt](https://claude.ai/new?q=Open+the+brief+in+Word+and+start+the+memo+from+our+firm+template.)
-
-Copy prompt
+[Copy prompt (opens in new tab)](https://claude.ai/new?q=Open+the+brief+in+Word+and+start+the+memo+from+our+firm+template.)
 
 How can Claude help?
 
 Turn this updated analysis into the SteerCo deck in the Acme template.
 
-Copy prompt
-
-[Copy prompt](https://claude.ai/new?q=Turn+this+updated+analysis+into+the+SteerCo+deck+in+the+Acme+template)
-
-Copy prompt
+[Copy prompt (opens in new tab)](https://claude.ai/new?q=Turn+this+updated+analysis+into+the+SteerCo+deck+in+the+Acme+template.)
 
 How can Claude help?
 
 Find 30 minutes with everyone on this thread next week
 
-Copy prompt
+[Copy prompt (opens in new tab)](https://claude.ai/new?q=Find+30+minutes+with+everyone+on+this+thread+next+week)
 
-[Copy prompt](https://claude.ai/new?q=What+did+the+other+side+change+in+section+4%2C+and+are+any+of+these+dealbreakers%3F)
-
-Copy prompt
-
-[Prev](#)
-
-Prev
-
+1 of 3
 
 Blog post
 
 Claude for Excel, PowerPoint, and Word are now generally available on all paid plans, with Claude for Outlook joining in beta.
 
-Read blog
-
-[Read blog](https://www.claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook)
-
-Read blog
+[Read blog](https://www.claude.com/resources/articles/collaborate-with-claude-across-excel-powerpoint-word-and-outlook)
 
 ### What customers are saying
 
-“Claude enables a seamless transition from rough ideas to polished, branded deliverables across presentation, document and spreadsheet applications without disrupting the workflow. That end-to-end consistency has been a significant time-saver, especially when quality, formatting, and speed all matter.”
-
-Vivek Kulkarni, US AI Transformation Leader
-
-“Claude in Excel allows my teams to build an initial version of complex models faster, enabling them to focus on refining the model, pressure testing inputs and assumption, and exploring more scenarios and trade-offs. This helps us have richer and deeper discussions with our clients earlier.”
-
-Gene Rapoport, Head of Private Equity AI Practice
-
-“Claude for M365 is being rapidly adopted by ServiceNow. Claude does the work in Excel itself, instead of asking us to move content between tools, driving step change in productivity.”
+> “Claude for M365 is being rapidly adopted by ServiceNow. Claude does the work in Excel itself, instead of asking us to move content between tools, driving step change in productivity.”
 
 Rajeev Sethi, GVP Enterprise Technologies
 
-“We can instruct Claude to build a style guide from an executive's prior written communications so our EAs can draft their emails in their voice. That's high-leverage work the team would never have time to set up by hand.”
+> “We can instruct Claude to build a style guide from an executive's prior written communications so our EAs can draft their emails in their voice. That's high-leverage work the team would never have time to set up by hand.”
 
 Ben Letalik, Sr. Director, Digital Transformation & Innovation
 
-“Our investment professionals live in data and analytical models, and Claude for Excel meets them there. Analysts are using it to build and update coverage models, separate signal from noise, and pressure-test their work — all with a step-change in efficiency.”
+> “Our investment professionals live in data and analytical models, and Claude for Excel meets them there. Analysts are using it to build and update coverage models, separate signal from noise, and pressure-test their work — all with a step-change in efficiency.”
 
 Atte Lahtiranta, Head of Core Engineering
 
-[Prev](#)
+> “Claude enables a seamless transition from rough ideas to polished, branded deliverables across presentation, document and spreadsheet applications without disrupting the workflow. That end-to-end consistency has been a significant time-saver, especially when quality, formatting, and speed all matter.”
 
-Prev
+Vivek Kulkarni, US AI Transformation Leader
 
-0/5
+> “Claude in Excel allows my teams to build an initial version of complex models faster, enabling them to focus on refining the model, pressure testing inputs and assumption, and exploring more scenarios and trade-offs. This helps us have richer and deeper discussions with our clients earlier.”
 
+Gene Rapoport, Head of Private Equity AI Practice
+
+> “Claude for M365 is being rapidly adopted by ServiceNow. Claude does the work in Excel itself, instead of asking us to move content between tools, driving step change in productivity.”
+
+Rajeev Sethi, GVP Enterprise Technologies
+
+> “We can instruct Claude to build a style guide from an executive's prior written communications so our EAs can draft their emails in their voice. That's high-leverage work the team would never have time to set up by hand.”
+
+Ben Letalik, Sr. Director, Digital Transformation & Innovation
+
+> “Our investment professionals live in data and analytical models, and Claude for Excel meets them there. Analysts are using it to build and update coverage models, separate signal from noise, and pressure-test their work — all with a step-change in efficiency.”
+
+Atte Lahtiranta, Head of Core Engineering
+
+> “Claude enables a seamless transition from rough ideas to polished, branded deliverables across presentation, document and spreadsheet applications without disrupting the workflow. That end-to-end consistency has been a significant time-saver, especially when quality, formatting, and speed all matter.”
+
+Vivek Kulkarni, US AI Transformation Leader
+
+> “Claude in Excel allows my teams to build an initial version of complex models faster, enabling them to focus on refining the model, pressure testing inputs and assumption, and exploring more scenarios and trade-offs. This helps us have richer and deeper discussions with our clients earlier.”
+
+Gene Rapoport, Head of Private Equity AI Practice
+
+> “Claude for M365 is being rapidly adopted by ServiceNow. Claude does the work in Excel itself, instead of asking us to move content between tools, driving step change in productivity.”
+
+Rajeev Sethi, GVP Enterprise Technologies
+
+1/5
 
 ## Core capabilities across the apps you use every day
 
@@ -171,11 +156,7 @@ Drop a PDF or doc into any sidebar. Claude reads it alongside your open file and
 
 When a process is right, save it as a skill. The team can use it the same way in all four apps.
 
-Learn more
-
 [Learn more](https://www.claude.com/skills)
-
-Learn more
 
 ### Type or talk, whichever is faster
 
@@ -185,11 +166,7 @@ Use dictation to talk to Claude in a sidebar instead of typing.
 
 Pull context from outside sources directly from the sidebar.
 
-Learn more
-
 [Learn more](../04-API-Reference/Other/partners-mcp.md)
-
-Learn more
 
 ## FAQ
 
@@ -209,415 +186,233 @@ Yes. Claude inherits your heading styles, slide masters, formula conventions, an
 
 No. Drafts and calendar invites open in Outlook's native compose form and wait for you to click send.
 
-[Prev](#)
-
-Prev
-
-
 ## Get started with Claude for Microsoft 365
 
-Install for Microsoft 365
+[Install for Microsoft 365 (opens in new tab)](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)[Install for Outlook (opens in new tab)](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)
 
-[Install for Microsoft 365](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)
+[](https://www.claude.com/)
 
-Install for Microsoft 365
-
-Install for Outlook
-
-[Install for Outlook](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)
-
-Install for Outlook
-
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](../15-Claude-AI-Features/product-overview.md)
-  Claude
-
-- Claude Code
-
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
-  Claude Code
-
-- Claude Cowork
-
-  [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](claude-for-slack.md)
-  @Claude
-
-- Claude Science
-
-  [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-  Claude Security
-
-- Download app
-
-  [Download app](https://www.claude.com/download)
-  Download app
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Capabilities
-
-- Artifacts
-
-  [Artifacts](https://www.claude.com/features/artifacts)
-  Artifacts
-
-- Design
-
-  [Design](../15-Claude-AI-Features/product-design.md)
-  Design
-
-- Connectors
-
-  [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-  Connectors
-
-- Plugins
-
-  [Plugins](https://www.claude.com/marketplace/plugins)
-  Plugins
-
-- Skills
-
-  [Skills](https://www.claude.com/skills)
-  Skills
-
-Extensions
-
-- Claude in Chrome
-
-  [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-  Claude in Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-Models
-
-- Mythos
-
-  [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-  Mythos
-
-- Fable
-
-  [Fable](../15-Claude-AI-Features/claude-fable.md)
-  Fable
-
-- Opus
-
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-  Haiku
-
-Enterprise
-
-- Overview
-
-  [Overview](../18-Industry-UseCases/enterprise.md)
-  Overview
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-  Claude Code for Enterprise
-
-Use cases
-
-- AI agents
-
-  [AI agents](../18-Industry-UseCases/agents.md)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](../18-Industry-UseCases/code-modernization.md)
-  Code modernization
-
-- Coding
-
-  [Coding](../18-Industry-UseCases/coding.md)
-  Coding
-
-- Commerce
-
-  [Commerce](../18-Industry-UseCases/commerce.md)
-  Commerce
-
-Departments
-
-- Customer support
-
-  [Customer support](../18-Industry-UseCases/customer-support.md)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-  Cybersecurity
-
-- Legal
-
-  [Legal](../18-Industry-UseCases/legal.md)
-  Legal
-
-- Sales
-
-  [Sales](../18-Industry-UseCases/sales.md)
-  Sales
-
-Industries
-
-- Financial services
-
-  [Financial services](../18-Industry-UseCases/finance.md)
-  Financial services
-
-- Government
-
-  [Government](../18-Industry-UseCases/government.md)
-  Government
-
-- Healthcare
-
-  [Healthcare](../18-Industry-UseCases/healthcare.md)
-  Healthcare
-
-- Higher education
-
-  [Higher education](../18-Industry-UseCases/education.md)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](../18-Industry-UseCases/teachers.md)
-  K-12 teachers
-
-- Life sciences
-
-  [Life sciences](../18-Industry-UseCases/life-sciences.md)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-  Nonprofits
-
-- Small business
-
-  [Small business](../18-Industry-UseCases/small-business.md)
-  Small business
-
-Programs
-
-- Startups
-
-  [Startups](../15-Claude-AI-Features/programs-startups.md)
-  Startups
-
-- Scientists
-
-  [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-  Scientists
-
-Developers
-
-- Developer docs
-
-  [Developer docs](../02-Claude-Code-CLI/code-home.md)
-  Developer docs
-
-- Developer blog
-
-  [Developer blog](https://claude.dev/)
-  Developer blog
-
-- Community
-
-  [Community](https://www.claude.com/community)
-  Community
-
-- Console
-
-  [Console](../04-API-Reference/Other/home.md)
-  Console
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-Platform
-
-- Overview
-
-  [Overview](https://www.claude.com/platform/api)
-  Overview
-
-- Marketplace
-
-  [Marketplace](https://www.claude.com/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-  Microsoft Foundry
-
-Resources
-
-- Blog
-
-  [Blog](https://www.claude.com/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](../04-API-Reference/Other/partners.md)
-  Claude partner network
-
-- Claude Academy
-
-  [Claude Academy](https://academy.claude.com/)
-  Claude Academy
-
-- Customer stories
-
-  [Customer stories](../18-Industry-UseCases/customers.md)
-  Customer stories
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Powered by Claude
-
-  [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](https://www.claude.com/marketplace/service-partners)
-  Service partners
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Check files
-
-  [Check files](https://claude.com/check-files)
-  Check files
-
-- Regional compliance
-
-  [Regional compliance](https://www.claude.com/regional-compliance)
-  Regional compliance
-
-- Report abuse
-
-  [Report abuse](https://claude.com/form/anthropic-content-reporting)
-  Report abuse
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Research
-
-  [Research](../19-Reference/anthropic-com-research.md)
-  Research
-
-- Anthropic news
-
-  [Anthropic news](../19-Reference/news.md)
-  Anthropic news
-
-- Policy on the AI Exponential
+© 2026 Anthropic PBC
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](../18-Industry-UseCases/customer-support.md)
+- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
+- [Legal](../18-Industry-UseCases/legal.md)
+- [Sales](../18-Industry-UseCases/sales.md)
+
+## Industries
+
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
+- [Financial services](../18-Industry-UseCases/finance.md)
+- [Government](../18-Industry-UseCases/government.md)
+- [Healthcare](../18-Industry-UseCases/healthcare.md)
+- [Higher education](../18-Industry-UseCases/education.md)
+- [K-12 teachers](../18-Industry-UseCases/teachers.md)
+- [Life sciences](../18-Industry-UseCases/life-sciences.md)
+- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Small business](../18-Industry-UseCases/small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](../18-Industry-UseCases/customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](../18-Industry-UseCases/customer-support.md)
+- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
+- [Legal](../18-Industry-UseCases/legal.md)
+- [Sales](../18-Industry-UseCases/sales.md)
+
+## Industries
+
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
+- [Financial services](../18-Industry-UseCases/finance.md)
+- [Government](../18-Industry-UseCases/government.md)
+- [Healthcare](../18-Industry-UseCases/healthcare.md)
+- [Higher education](../18-Industry-UseCases/education.md)
+- [K-12 teachers](../18-Industry-UseCases/teachers.md)
+- [Life sciences](../18-Industry-UseCases/life-sciences.md)
+- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Small business](../18-Industry-UseCases/small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](../18-Industry-UseCases/customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

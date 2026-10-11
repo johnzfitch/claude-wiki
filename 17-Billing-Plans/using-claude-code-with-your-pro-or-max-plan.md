@@ -1,17 +1,15 @@
 ---
 title: "Use Claude Code with your Pro or Max plan | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/11145838"
+source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:31:27Z"
+fetched_at: "2026-10-10T06:27:59Z"
 tags: ["billing", "claude-code"]
 ---
 
 # Use Claude Code with your Pro or Max plan
 
-August 19, 2026
 
-
-This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Use Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131)**.
+This article applies to individual consumers using Pro or Max plan subscriptions to access Claude Code. If you’re a member of a Team or Enterprise plan organization, see **[Use Claude Code with your Team or Enterprise plan](use-claude-code-with-your-team-or-enterprise-plan-claude-help-center.md)**.
 
 ## What is Claude Code?
 
@@ -59,7 +57,7 @@ If you're not seeing the option to authenticate with your preferred account, fol
 
 4.  Run `claude` and select the correct account to use Claude Code.
 
-**Important:** If you have an ANTHROPIC_API_KEY environment variable set on your system, Claude Code will use this API key for authentication instead of your Claude subscription (Pro, Max, Team, or Enterprise plans), resulting in API usage charges rather than using your subscription's included usage. See this article for more information: **[Managing API key environment variables in Claude Code](../02-Claude-Code-CLI/managing-api-key-environment-variables-in-claude-code.md).**
+**Important:** If you have an ANTHROPIC_API_KEY environment variable set on your system, Claude Code will use this API key for authentication instead of your Claude subscription (Pro, Max, Team, or Enterprise plans), resulting in API usage charges rather than using your subscription's included usage. See this article for more information: **[Managing API key environment variables in Claude Code](https://support.claude.com/en/articles/12304248-managing-api-key-environment-variables-in-claude-code).**
 
 ## Use Claude Code in your IDE
 
@@ -71,7 +69,7 @@ To install and set up the extension for your IDE, see **[Platforms and integrati
 
 ## What happens when you hit usage limits
 
-Both Pro and Max plans offer usage limits that are shared across Claude and Claude Code, meaning all activity in both tools counts against the same usage limits. To help you monitor your usage, you will see warning messages about remaining capacity.
+Both Pro and Max plans have a five-hour session limit and a weekly limit. Max plans also have a separate weekly limit for Fable. These limits are shared across Claude and Claude Code, meaning all activity in both tools counts against the same limits. To help you monitor your usage, you’ll see warning messages as you approach any limit.
 
 When you reach your usage limits, you can select from a few options based on your needs:
 
@@ -79,7 +77,7 @@ When you reach your usage limits, you can select from a few options based on you
 
 - Consider upgrading to the Max 5x plan if you consistently hit limits and need more capacity for larger repositories.
 
-- **[Enable usage credits](manage-usage-credits-for-paid-claude-plans.md)** to continue using Claude with your Pro plan after hitting the included usage limit.
+- **[Enable usage credits](https://support.claude.com/en/articles/12429409-)** to keep using Claude with your Pro plan after you reach your five-hour session limit or your weekly limit.
 
 - Switch to a Claude Console account and **[purchase API usage credits](../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md)** for intensive coding sprints.
 
@@ -89,13 +87,15 @@ When you reach your usage limits, you can select from a few options based on you
 
 - If you're on the Max 5x plan, consider upgrading to the Max 20x plan if you consistently hit limits.
 
-- **[Enable usage credits](manage-usage-credits-for-paid-claude-plans.md)** to continue using Claude with your Max plan after hitting the included usage limit.
+- **[Enable usage credits](https://support.claude.com/en/articles/12429409-)** to keep using Claude with your Max plan after you reach your five-hour session limit, your general weekly limit, or your separate weekly limit for Fable.
 
 - Switch to a Claude Console account and **[purchase API usage credits](../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md)** for intensive coding sprints.
 
+- Monthly API credits included with Max plans can’t be used in Claude Code or the Claude apps, including for extra usage. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
+
 - Wait until your usage limits reset.
 
-For more details on efficient usage, refer to our **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
+For more details on efficient usage, refer to our **[Usage limit best practices](usage-limit-best-practices.md)**.
 
 ------------------------------------------------------------------------
 
@@ -143,7 +143,7 @@ This ensures Claude Code will only use your plan allocation and you won't be pro
 
 Auto-reload functionality is managed within your Claude Console account, not through Claude Code:
 
-- Review your **[Console Billing settings](../04-API-Reference/Other/usage-limits.md)** to check auto-reload status.
+- Review your **[Console Billing settings](../04-API-Reference/Other/playground.md)** to check auto-reload status.
 
 - Adjust these settings in the Console if you prefer to avoid automatic credit purchases.
 
@@ -152,8 +152,6 @@ Auto-reload functionality is managed within your Claude Console account, not thr
 ### Summary
 
 - Claude Code maintains strict user control over billing decisions.
-
-- All transitions to API credit usage require explicit user consent.
 
 - Auto-reload is an independent Claude Console feature.
 

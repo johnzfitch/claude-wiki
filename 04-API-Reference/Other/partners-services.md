@@ -2,8 +2,7 @@
 title: "Claude Partner Network Directory"
 source_url: "https://www.claude.com/partners/services"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:32:37Z"
-last_modified: "Wed, 30 Sep 2026 06:28:40 GMT"
+fetched_at: "2026-10-10T06:25:32Z"
 tags: ["api"]
 ---
 
@@ -137,17 +136,17 @@ Global Premier
 
 For 60+ years, DXC has designed, engineered and operated some of the world’s most complex technology estates for enterprises and governments. As a Claude Global Premier Partner, we embed Claude-certified engineers directly in our customers’ environments to bring agentic AI into their mission-critical systems. With our deep domain expertise in insurance, cybersecurity and application modernization,
 
-[Infosys](https://www.claude.com/directory/partner/1784259853001x655636911739725360)
+[Fujitsu](https://www.claude.com/directory/partner/1784259851254x887974829336712900)
 
 Global Premier
 
-Infosys is a global leader in next-generation digital services and consulting. With over four decades of experience in managing the systems and workings of global enterprises, we expertly steer clients in 59 countries, as they navigate their digital transformation powered by cloud and AI.
+Fujitsu is a global leader in technology and business solutions that transform organizations and the world around us. For over 90 years, we have brought innovation and expertise, continuously working to contribute to the growth of society and our customers.
 
-[KPMG](https://www.claude.com/directory/partner/1784259853473x554283735794331300)
+[Hitachi](https://www.claude.com/directory/partner/hitachi-ltd)
 
 Global Premier
 
-KPMG is one of the "Big Four" global professional services firms. As a network of independent member firms, KPMG operates across roughly 140 countries and territories with more than 276,000 partners and employees around the world. KPMG provides audit, tax, and advisory services to large corporations, governments, and institutions worldwide.
+Global group in digital systems, energy and mobility that solves customer and social challenges with data and technology.
 
 View more
 

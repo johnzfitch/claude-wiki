@@ -2,7 +2,7 @@
 title: "Get Spend Limit - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits/retrieve"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:26:58Z"
+fetched_at: "2026-10-04T08:31:57Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -153,13 +136,36 @@ Spend Limits
 Delete Spend Limit
 
 
-List Effective Spend Limits
+List Spend Limits
+
+Effective
 
 Increase Requests
 
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -260,7 +266,7 @@ ID of the Spend Limit.
 
 
 
-BetaSpendLimit object{ type: "spend_limit", id, amount, 5 more }
+BetaSpendLimit object{ type: "spend_limit", id, amount, 6 more }
 
 
 
@@ -288,7 +294,8 @@ Response 200
   "amount": "50000",
   "created_at": "2019-12-27T18:11:19.117Z",
   "currency": "USD",
-  "period": "monthly",
+  "is_enabled": true,
+  "period": "daily",
   "scope": {
     "type": "user",
     "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
@@ -310,7 +317,8 @@ Response 200
   "amount": "50000",
   "created_at": "2019-12-27T18:11:19.117Z",
   "currency": "USD",
-  "period": "monthly",
+  "is_enabled": true,
+  "period": "daily",
   "scope": {
     "type": "user",
     "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"

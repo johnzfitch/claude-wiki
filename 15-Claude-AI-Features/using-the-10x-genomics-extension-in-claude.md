@@ -2,7 +2,7 @@
 title: "Using the 10x Genomics Extension in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-25T06:30:14Z"
+fetched_at: "2026-10-08T06:25:02Z"
 tags: ["claude-ai"]
 ---
 

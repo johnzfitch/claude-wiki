@@ -1,9 +1,9 @@
 ---
 title: "Team plan billing FAQs | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12997503"
+source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:37Z"
-tags: ["billing"]
+fetched_at: "2026-10-10T06:24:34Z"
+tags: ["api", "billing"]
 ---
 
 # Team plan billing FAQs
@@ -17,7 +17,7 @@ Accepted payment methods are credit, debit, or prepaid cards. Other forms of pay
 
 An organization Owner can update your Team plan’s payment method by navigating to **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**.
 
-**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation)** for details on how to view or update your billing address.
+**Note:** Your billing address determines your tax jurisdiction. See **[Understanding your billing address and tax calculation](understanding-your-billing-address-and-tax-calculation.md)** for details on how to view or update your billing address.
 
 ## How can I change my billing email address?
 
@@ -33,6 +33,10 @@ If you want to use a name other than the one tied to your payment method, an org
 Your payment method on file will be charged at the beginning of your billing cycle. The amount is based on the number of members on your team at the beginning of the billing cycle. If you add members or upgrade seats during the billing cycle, you'll be charged the prorated amount immediately. Removing members doesn't generate a credit or refund. The seat becomes available to assign to someone else.
 
 See **[How is my Team plan bill calculated?](how-is-my-team-plan-bill-calculated.md)** for more information about Team plan pricing.
+
+## Where can I see my monthly API credits?
+
+In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 ## Where can I find the invoice or receipt for my Team plan payment?
 
@@ -64,6 +68,6 @@ An organization owner can resubscribe for Team plan access by navigating to **[O
 
 When you upgrade from Pro or Max to Team in place, your individual subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement. Google Play purchases don't have this wait, but the refund can take a few days to appear. Any prepaid usage credits on your individual account are refunded
 
-If you signed up for Pro or Max through the Apple App Store, in-place upgrades work differently. For more information, refer to **[Get started with the Team plan](how-do-i-get-started-with-the-team-plan.md#h_5d142d3f45)**.
+If you signed up for Pro or Max through the Apple App Store, in-place upgrades work differently. For more information, refer to **[Get started with the Team plan](https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan#h_5d142d3f45)**.
 
 If you'd rather keep your personal subscription active, check the opt-out box (**Keep your personal account separate**) in the team-creation flow when you upgrade.

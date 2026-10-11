@@ -2,7 +2,7 @@
 title: "Sentry Claude Managed Agents case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/sentry"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:46Z"
+fetched_at: "2026-10-10T06:25:59Z"
 tags: ["agents", "case-studies", "enterprise", "security"]
 ---
 
@@ -34,11 +34,11 @@ Claude Managed Agents: Get to production 10x faster
 
 We're launching Claude Managed Agents, a suite of composable APIs for building and deploying cloud-hosted agents at scale.
 
-[Read more](https://claude.com/blog/claude-managed-agents)
+[Read more](https://claude.com/resources/articles/claude-managed-agents)
 
 [Sentry](https://sentry.io/welcome/) is a software monitoring platform that ingests billions of events daily, giving development teams the context they need to debug production issues. Their AI debugging agent, Seer, already used Claude to identify root causes accurately. But telling developers what's wrong wasn't enough. They wanted Seer to fix it, too.
 
-With [Claude Managed Agents](https://claude.com/blog/claude-managed-agents), Sentry built the infrastructure to go from bug detection to merge-ready pull request, without building a custom agent runtime from scratch.
+With [Claude Managed Agents](https://claude.com/resources/articles/claude-managed-agents), Sentry built the infrastructure to go from bug detection to merge-ready pull request, without building a custom agent runtime from scratch.
 
 ## **With Claude, Sentry achieved:**
 
@@ -99,6 +99,9 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 ## Related stories
 
 
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
+
+
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
 
@@ -107,9 +110,6 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -117,9 +117,9 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -149,7 +149,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -161,6 +161,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -172,8 +173,10 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -193,7 +196,9 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -236,9 +241,9 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -268,7 +273,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -280,6 +285,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -291,8 +297,10 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -312,7 +320,9 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

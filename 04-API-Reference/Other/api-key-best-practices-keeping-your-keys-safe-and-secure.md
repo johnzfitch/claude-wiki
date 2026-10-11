@@ -2,7 +2,7 @@
 title: "API Key Best Practices: Keeping Your Keys Safe and Secure | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9767949-api-key-best-practices-keeping-your-keys-safe-and-secure"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:32:21Z"
+fetched_at: "2026-10-10T06:24:57Z"
 tags: ["api", "git", "github", "security"]
 ---
 
@@ -122,7 +122,7 @@ Anthropic has partnered directly with GitHub to provide an extra layer of protec
 
 ## What should I do if I suspect my API key has been compromised?
 
-If you suspect that your API key may be compromised, we recommend revoking the key immediately. You can do so by logging into your Claude Console account, going to the [API keys page](usage-limits.md) from your profile, clicking the meatball menu (i.e. the three horizontal dots) next to the key in question, and selecting ‘Delete API Key.’
+If you suspect that your API key may be compromised, we recommend revoking the key immediately. You can do so by logging into your Claude Console account, going to the [API keys page](playground.md) from your profile, clicking the meatball menu (i.e. the three horizontal dots) next to the key in question, and selecting ‘Delete API Key.’
 
 Refer to this article for more information: [What should I do if I suspect my API key has been compromised?](what-should-i-do-if-i-suspect-my-api-key-has-been-compromised.md)
 

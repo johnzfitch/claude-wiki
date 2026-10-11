@@ -2,7 +2,7 @@
 title: "Using the PubMed Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-30T06:31:34Z"
+fetched_at: "2026-10-10T06:24:31Z"
 tags: ["api", "connectors", "mcp"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["api", "connectors", "mcp"]
 
 Set up and use Claude's PubMed integration for access to millions of biomedical research articles and clinical studies.
 
-25 minClaude.ai
+25 minClaude
 
 [Open Claude](https://claude.ai/new)
 

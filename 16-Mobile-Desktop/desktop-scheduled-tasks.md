@@ -2,7 +2,7 @@
 title: "Schedule recurring tasks in Claude Code Desktop - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-scheduled-tasks"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-26T06:38:07Z"
+fetched_at: "2026-10-06T06:23:40Z"
 tags: ["claude-code", "desktop"]
 ---
 
@@ -88,14 +88,14 @@ For intervals the picker doesn’t offer, such as every 15 minutes, the first of
 
 How scheduled tasks run
 
-Scheduled tasks run on your machine. Desktop checks the schedule every minute while the app is open and starts a fresh session when a task is due, independent of any manual sessions you have open. Each task gets a small delay of a few minutes after the scheduled time to stagger API traffic. The delay is deterministic: the same task always starts at the same offset. When a task fires, you get a desktop notification and a new session appears under a **Scheduled** section in the sidebar. Open it to see what Claude did, review changes, or respond to permission prompts. Claude can edit files, run commands, create commits, and open pull requests, the same as in a session you start yourself, but can’t send or receive [messages between your desktop sessions](desktop.md#work-across-sessions) through the desktop app’s session surface. Tasks only run while the desktop app is running and your computer is awake. If your computer sleeps through a scheduled time, the run is skipped. To prevent idle-sleep, enable **Keep computer awake** in Settings under **Desktop app → General**. Closing the laptop lid still puts it to sleep. For tasks that need to run even when your computer is off, or that should trigger on an API call or GitHub event, create a remote [routine](../02-Claude-Code-CLI/web-scheduled-tasks.md) instead.
+Scheduled tasks run on your machine. Desktop checks the schedule every minute while the app is open and starts a fresh session when a task is due, independent of any manual sessions you have open. Each task gets a small delay of a few minutes after the scheduled time to stagger API traffic. The delay is deterministic: the same task always starts at the same offset. When a task fires, you get a desktop notification and a new session appears under a **Scheduled** section in the sidebar. Open it to see what Claude did, review changes, or respond to permission prompts. Claude can edit files, run commands, create commits, and open pull requests, the same as in a session you start yourself, but can’t send or receive [messages between your desktop sessions](desktop.md#work-across-sessions) through the desktop app’s session surface. Tasks only run while the desktop app is running and your computer is awake. If your computer sleeps through a scheduled time, the run is skipped. To prevent idle-sleep, turn on **Keep computer awake** in **Settings \> This computer \> System**. Closing the laptop lid still puts it to sleep. For tasks that need to run even when your computer is off, or that should trigger on an API call or GitHub event, create a remote [routine](../02-Claude-Code-CLI/web-scheduled-tasks.md) instead.
 
 
 [​](#missed-runs)
 
 Missed runs
 
-When the app starts or your computer wakes, Desktop checks whether each task missed any runs in the last seven days. If it did, Desktop starts exactly one catch-up run for the most recently missed time and discards anything older. A daily task that missed six days runs once on wake. Desktop shows a notification when a catch-up run starts. Keep this in mind when writing prompts. A task scheduled for 9am might run at 11pm if your computer was asleep all day. If timing matters, add guardrails to the prompt itself, for example: “Only review today’s commits. If it’s after 5pm, skip the review and just post a summary of what was missed.”
+When the app starts or your computer wakes, Desktop checks whether each task missed any runs in the last seven days. If it did, Desktop starts exactly one catch-up run for the most recently missed time and discards anything older. A daily task that missed six days runs once on wake. Desktop shows a notification when a catch-up run starts. Keep this in mind when writing prompts. A task scheduled for 9am might run at 11pm if your computer was asleep all day. If timing matters, add guardrails to the prompt itself, for example: “Only review today’s commits. If it’s after 5pm, skip the review and post a summary of what was missed.”
 
 
 [​](#permissions-for-scheduled-tasks)

@@ -2,7 +2,7 @@
 title: "Overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:45Z"
+fetched_at: "2026-10-10T06:24:42Z"
 tags: ["claude-code"]
 ---
 
@@ -56,7 +56,7 @@ The full-featured CLI for working with Claude Code directly in your terminal. Ed
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-**Windows PowerShell:**
+On Windows, your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.**Windows PowerShell:**
 
 ```python
 irm https://claude.ai/install.ps1 | iex
@@ -68,7 +68,7 @@ irm https://claude.ai/install.ps1 | iex
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-When the installer finishes, open a new terminal window and run `claude --version`. A working installation prints a version number. If your shell says `claude` isn’t found or isn’t recognized, the install directory isn’t on your PATH yet: see [Fix your PATH](troubleshoot-install.md#command-not-found-claude-after-installation).If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell. Your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or another curl error, see [Troubleshoot installation](troubleshoot-install.md#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
+The install command shows no progress while it downloads Claude Code. When the installer finishes, open a new terminal window and run `claude --version`. A working installation prints a version number. If your shell says `claude` isn’t found or isn’t recognized, the install directory isn’t on your PATH yet: see [Fix your PATH](troubleshoot-install.md#command-not-found-claude-after-installation).If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or any other error, see [Troubleshoot installation](troubleshoot-install.md#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
 
 Native installations automatically update in the background to keep you on the latest version.
 
@@ -93,7 +93,7 @@ cd your-project
 claude
 ```
 
-You’ll be prompted to log in on first use. If you’ve set the `ANTHROPIC_API_KEY` environment variable, Claude Code skips the login prompt and asks you to approve the key instead. That’s it! [Continue with the Quickstart →](../01-Getting-Started/quickstart.md)
+Claude Code prompts you to log in on first use. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. [Continue with the Quickstart →](../01-Getting-Started/quickstart.md)
 
 See [advanced setup](../01-Getting-Started/setup.md) for installation options, manual updates, or uninstallation instructions. Visit [installation troubleshooting](troubleshoot-install.md) if you hit issues.
 
@@ -152,7 +152,7 @@ The [Model Context Protocol (MCP)](../06-MCP-Tools/General/mcp.md) is an open st
 
 Customize with instructions, skills, and hooks
 
-[`CLAUDE.md`](memory.md) is a markdown file you add to your project root that Claude Code reads at the start of every session. Use it to set coding standards, architecture decisions, preferred libraries, and review checklists. If your repository already has an `AGENTS.md` for other coding agents, Claude Code [can read that](memory.md#agents-md) on its own or alongside `CLAUDE.md`. Claude also builds [auto memory](memory.md#auto-memory) as it works, saving learnings across sessions without you writing anything.Create [skills](../08-Plugins-Skills/skills.md) to package repeatable workflows your team can share, like `/review-pr` or `/deploy-staging`.[Hooks](../07-Hooks/hooks.md) let you run shell commands before or after Claude Code actions, like auto-formatting after every file edit or running lint before a commit.
+[`CLAUDE.md`](memory.md) is a markdown file you add to your project root that Claude Code reads at the start of every session. Use it to set coding standards, architecture decisions, preferred libraries, and review checklists. If your repository already has an `AGENTS.md` for other coding agents, Claude Code [can read that](memory.md#agents-md) in place of a `CLAUDE.md`. Claude also builds [auto memory](memory.md#auto-memory) as it works, saving learnings across sessions without you writing anything.Create [skills](../08-Plugins-Skills/skills.md) to package repeatable workflows your team can share, like `/review-pr` or `/deploy-staging`.[Hooks](../07-Hooks/hooks.md) let you run shell commands before or after Claude Code actions, like auto-formatting after every file edit or running lint before a commit.
 
 Run agents in parallel and build custom agents
 

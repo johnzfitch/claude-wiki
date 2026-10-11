@@ -2,7 +2,7 @@
 title: "List RBAC Role Permissions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_roles/permissions/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:05Z"
+fetched_at: "2026-10-04T08:33:09Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -157,6 +140,27 @@ Permissions
 
 
 List RBAC Role Permissions
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -312,7 +316,7 @@ The vocabulary follows the resource: an `organization` grant carries a product-f
 
 
 
-resource: Organization or ConnectorTool or ConnectorScope or 2 more
+resource: [BetaRBACOrganizationPermissionResource](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_roles/permissions#beta_rbac_organization_permission_resource) or [BetaRBACConnectorToolPermissionResource](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_roles/permissions#beta_rbac_connector_tool_permission_resource) or [BetaRBACConnectorScopePermissionResource](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_roles/permissions#beta_rbac_connector_scope_permission_resource) or 2 more
 
 
 
@@ -324,7 +328,7 @@ One of the following:
 
 
 
-Organization object{ type: "organization", organization_id }
+BetaRBACOrganizationPermissionResource object{ type: "organization", organization_id }
 
 
 
@@ -346,7 +350,7 @@ UUID of the organization the permission applies to.
 
 
 
-ConnectorTool object{ type: "connector_tool", connector_id, tool_name }
+BetaRBACConnectorToolPermissionResource object{ type: "connector_tool", connector_id, tool_name }
 
 
 
@@ -378,7 +382,7 @@ When the published name contains characters outside `[a-zA-Z0-9_-]` (or collides
 
 
 
-ConnectorScope object{ type: "connector_scope", connector_id, scope }
+BetaRBACConnectorScopePermissionResource object{ type: "connector_scope", connector_id, scope }
 
 
 
@@ -410,7 +414,7 @@ Subject to the same encoding rule as `tool_name`: a scope containing characters 
 
 
 
-Connector object{ type: "connector", connector_id }
+BetaRBACConnectorPermissionResource object{ type: "connector", connector_id }
 
 
 
@@ -432,7 +436,7 @@ ID of the connector the permission applies to.
 
 
 
-AllConnectors object{ type: "all_connectors" }
+BetaRBACAllConnectorsPermissionResource object{ type: "all_connectors" }
 
 
 

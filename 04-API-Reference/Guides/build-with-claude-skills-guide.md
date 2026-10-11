@@ -2,7 +2,7 @@
 title: "Using Agent Skills with the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/skills-guide"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:26Z"
+fetched_at: "2026-10-04T08:33:21Z"
 tags: ["agents", "api", "skills"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api", "skills"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -105,7 +105,7 @@ For complete API reference including request/response schemas and all parameters
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 ## Quick links
 
@@ -147,7 +147,7 @@ Both skill sources are returned by the [List Skills endpoint](../Endpoints/skill
 
 To use Skills, you need:
 
-1.  **Claude API key** from the [Claude Console](../Other/usage-limits.md)
+1.  **Claude API key** from the [Claude Console](../Other/playground.md)
 2.  **[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)** enabled in your requests
 
 Skills require the code execution tool, so use a model from its [model compatibility list](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md#compatibility).
@@ -1129,7 +1129,7 @@ Starting with Python SDK 1.2.0, TypeScript SDK 0.122.0, Go SDK 1.68.0, Java SDK 
 
 Agent Skills are not covered by ZDR arrangements. Skill definitions and execution data are retained according to Anthropic's standard data retention policy.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 ## Audit logging
 

@@ -2,7 +2,7 @@
 title: "Control MCP server access for your organization - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/managed-mcp"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-09-30T06:30:36Z"
+fetched_at: "2026-10-08T06:24:54Z"
 tags: ["claude-code", "mcp"]
 ---
 
@@ -26,8 +26,12 @@ tags: ["claude-code", "mcp"]
   - [When provided servers connect](#when-provided-servers-connect)
 - [Policy-based control with allowlists and denylists](#policy-based-control-with-allowlists-and-denylists)
   - [Match servers by URL, command, or name](#match-servers-by-url-command-or-name)
+  - [How serverName entries match](#how-servername-entries-match)
+  - [How serverCommand entries match](#how-servercommand-entries-match)
+  - [How serverUrl entries match](#how-serverurl-entries-match)
+  - [Environment variables in serverCommand and serverUrl entries](#how-policy-entries-expand)
   - [How a server is evaluated](#how-a-server-is-evaluated)
-  - [How policy entries expand](#how-policy-entries-expand)
+  - [Servers that skip the allowlist check](#servers-that-skip-the-allowlist-check)
   - [Example configuration](#example-configuration)
   - [Restrict the allowlist to managed settings only](#restrict-the-allowlist-to-managed-settings-only)
 - [How restrictions appear to users](#how-restrictions-appear-to-users)
@@ -202,7 +206,7 @@ By default, deploying `managed-mcp.json` suppresses the [claude.ai connectors](m
 
 Allow Claude in Chrome alongside the managed set
 
-By default, when you deploy `managed-mcp.json`, Claude Code blocks the built-in [Claude in Chrome](../../03-IDE-Integrations/chrome.md) server in terminal sessions. Users don’t get the [extension install prompt](../../03-IDE-Integrations/chrome.md#install-the-extension-when-claude-asks), and a session where the user [enabled Chrome by default](../../03-IDE-Integrations/chrome.md#enable-chrome-by-default) starts without Chrome and prints no warning. When a user who could otherwise run Claude in Chrome starts it with `claude --chrome` or `CLAUDE_CODE_ENABLE_CFC=1`, Claude Code exits at startup with an error that names the `allowClaudeInChromeWithManagedMcp` setting. To let users run Claude in Chrome alongside the servers in `managed-mcp.json`, set `"allowClaudeInChromeWithManagedMcp": true` in the device’s own managed settings. Put it in an MDM-deployed plist or HKLM registry key, or a system `managed-settings.json` file, whichever of those Claude Code [selects](../../13-Enterprise-Admin/managed-settings.md#precedence-within-the-managed-tier) on that device. Requires Claude Code v2.1.282 or later. Before v2.1.282, Claude Code ignores the setting, and the startup error reads `You cannot dynamically configure MCP servers when an enterprise MCP config is present` instead. Claude Code reads the setting from those device sources even when [server-managed settings](../../13-Enterprise-Admin/server-managed-settings.md) deliver the rest of your policy. It ignores the setting in server-managed settings themselves, in the user-writable HKCU registry, and in user or project settings. A [`deniedMcpServers`](#policy-based-control-with-allowlists-and-denylists) entry for `claude-in-chrome` still blocks the server with the setting on.
+By default, when you deploy `managed-mcp.json`, Claude Code blocks the built-in [Claude in Chrome](../../03-IDE-Integrations/chrome.md) server in terminal sessions. Users don’t get the [extension install prompt](../../03-IDE-Integrations/chrome.md#install-the-extension-when-claude-asks), and a session where the user [turned on Chrome by default](../../03-IDE-Integrations/chrome.md#enable-chrome-by-default) starts without it and prints no warning. If a user who could otherwise run Claude in Chrome starts `claude --chrome`, Claude Code exits at startup with an error that names the `allowClaudeInChromeWithManagedMcp` setting. To let users run Claude in Chrome alongside the managed set, set `"allowClaudeInChromeWithManagedMcp": true` in the device’s own managed settings. Put it in an MDM-deployed plist, an HKLM registry key, or a system `managed-settings.json` file, whichever of those Claude Code [selects](../../13-Enterprise-Admin/managed-settings.md#precedence-within-the-managed-tier) on that device. Requires Claude Code v2.1.282 or later. Claude Code reads the setting only from those device sources, even when [server-managed settings](../../13-Enterprise-Admin/server-managed-settings.md) deliver the rest of your policy. A [`deniedMcpServers`](#policy-based-control-with-allowlists-and-denylists) entry for `claude-in-chrome` still blocks the server with the setting on.
 
 
 [​](#provide-servers-through-managed-settings)
@@ -306,7 +310,7 @@ With [gateway sign-in](../../13-Enterprise-Admin/claude-apps-gateway-config.md#p
 
 Policy-based control with allowlists and denylists
 
-Allowlists and denylists filter which configured servers are allowed to load. They aren’t a registry: a server still has to be added by a user, a plugin, or your organization before either list applies to it. Servers your organization delivers through `managedMcpServers` load without an allowlist entry, and [How a server is evaluated](#how-a-server-is-evaluated) covers `managed-mcp.json` servers. The denylist applies to every server regardless of where it came from, other than in-process `type: "sdk"` entries. To deploy servers to users, use [`managed-mcp.json`](#exclusive-control-with-managed-mcp-json) or [`managedMcpServers`](#provide-servers-through-managed-settings). Both lists also filter servers a user passes with the [`--mcp-config` CLI flag](../../02-Claude-Code-CLI/cli-reference.md#cli-flags), other than in-process `type: "sdk"` entries; `--strict-mcp-config` limits which configuration files load and doesn’t bypass either list. To make the allowlist authoritative, set `allowedMcpServers` and `allowManagedMcpServersOnly: true` together in a [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices), such as server-managed settings or a deployed `managed-settings.json` file. The lock applies from every admin-controlled managed source, so a lockdown in a deployed file still applies when server-managed settings that don’t mention MCP are also in use. While the lock is on, the managed allowlist comes from the highest-ranked admin source that sets one. Reading the lock and the allowlist across sources requires Claude Code v2.1.273 or later. [Restrict the allowlist to managed settings only](#restrict-the-allowlist-to-managed-settings-only) shows the configuration. Without `allowManagedMcpServersOnly`, allowlists from every settings scope merge, including a user’s own `~/.claude/settings.json`, so a user can broaden what your allowlist permits. Denylists merge from every scope regardless.
+Allowlists and denylists filter which configured servers are allowed to load. They aren’t a registry: a server still has to be added by a user, a plugin, or your organization before either list applies to it. Servers your organization delivers through `managedMcpServers` load without an allowlist entry, and [Servers that skip the allowlist check](#servers-that-skip-the-allowlist-check) covers `managed-mcp.json` servers. The denylist applies to every server regardless of where it came from, other than in-process `type: "sdk"` entries. To deploy servers to users, use [`managed-mcp.json`](#exclusive-control-with-managed-mcp-json) or [`managedMcpServers`](#provide-servers-through-managed-settings). Both lists also filter servers a user passes with the [`--mcp-config` CLI flag](../../02-Claude-Code-CLI/cli-reference.md#cli-flags), other than in-process `type: "sdk"` entries; `--strict-mcp-config` limits which configuration files load and doesn’t bypass either list. To make the allowlist authoritative, set `allowedMcpServers` and `allowManagedMcpServersOnly: true` together in a [managed settings source](../../13-Enterprise-Admin/admin-setup.md#decide-how-settings-reach-devices), such as server-managed settings or a deployed `managed-settings.json` file. The lock applies from every admin-controlled managed source, so a lockdown in a deployed file still applies when server-managed settings that don’t mention MCP are also in use. While the lock is on, the managed allowlist comes from the highest-ranked admin source that sets one. Reading the lock and the allowlist across sources requires Claude Code v2.1.273 or later. [Restrict the allowlist to managed settings only](#restrict-the-allowlist-to-managed-settings-only) shows the configuration. Without `allowManagedMcpServersOnly`, allowlists from every settings scope merge, including a user’s own `~/.claude/settings.json`, so a user can broaden what your allowlist permits. Denylists merge from every scope regardless.
 
 `allowManagedMcpServersOnly` is separate from `allowManagedPermissionRulesOnly`, which locks down [permission rules](../../02-Claude-Code-CLI/permissions.md#managed-settings) only. Setting that flag does not enforce the MCP allowlist.
 
@@ -317,20 +321,27 @@ Match servers by URL, command, or name
 
 `allowedMcpServers` and `deniedMcpServers` are lists of entries. Each entry is an object with a single key that identifies servers by their URL, their command, or their name:
 
-| Key             | Matches                                                               | Use for                                |
-|:----------------|:----------------------------------------------------------------------|:---------------------------------------|
-| `serverUrl`     | A remote server URL, exact or with `*` wildcards                      | HTTP and SSE servers                   |
-| `serverCommand` | The exact command and arguments that start a stdio server             | Stdio servers                          |
-| `serverName`    | The user-assigned label. Exact match only; wildcards are not expanded | Either type, but see the Warning below |
+| Key             | Matches                                                               | Use for                                                                              |
+|:----------------|:----------------------------------------------------------------------|:-------------------------------------------------------------------------------------|
+| `serverUrl`     | A remote server URL, exact or with `*` wildcards                      | HTTP and SSE servers                                                                 |
+| `serverCommand` | The exact command and arguments that start a stdio server             | Stdio servers                                                                        |
+| `serverName`    | The user-assigned label. Exact match only; wildcards are not expanded | Either type, but see [How `serverName` entries match](#how-servername-entries-match) |
 
 Leaving `allowedMcpServers` unset is different from setting it to an empty array:
 
-| Setting             | Unset (default)     | Empty array `[]`                                                                                 | Populated                                                                                                   |
-|:--------------------|:--------------------|:-------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|
-| `allowedMcpServers` | All servers allowed | No servers allowed, apart from [those that skip the allowlist check](#how-a-server-is-evaluated) | Only matching servers allowed, apart from [those that skip the allowlist check](#how-a-server-is-evaluated) |
-| `deniedMcpServers`  | No servers blocked  | No servers blocked                                                                               | Matching servers blocked                                                                                    |
+| Setting             | Unset (default)     | Empty array `[]`                                                                                             | Populated                                                                                                               |
+|:--------------------|:--------------------|:-------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|
+| `allowedMcpServers` | All servers allowed | No servers allowed, apart from [those that skip the allowlist check](#servers-that-skip-the-allowlist-check) | Only matching servers allowed, apart from [those that skip the allowlist check](#servers-that-skip-the-allowlist-check) |
+| `deniedMcpServers`  | No servers blocked  | No servers blocked                                                                                           | Matching servers blocked                                                                                                |
 
 See [Invalid entries in managed settings](../../13-Enterprise-Admin/managed-settings.md#invalid-entries-in-managed-settings) for what happens when an entry fails schema validation.
+
+
+[​](#how-servername-entries-match)
+
+How `serverName` entries match
+
+A `serverName` entry matches the user-assigned label exactly, with no wildcards.
 
 A `serverName` entry, in either list, is not a security control. The name is the label a user assigns when running `claude mcp add` or editing a config file, not the underlying server, so a user can call any server `github`. For claude.ai connectors the name is the display name returned by claude.ai, which can change. To enforce which servers actually run, add `serverCommand` or `serverUrl` entries.
 
@@ -342,6 +353,63 @@ The `serverName` validation differs between the two lists:
 To turn off all the claude.ai connectors Claude Code fetches itself, see [`disableClaudeAiConnectors`](mcp.md#disable-claude-ai-connectors).
 
 
+[​](#how-servercommand-entries-match)
+
+How `serverCommand` entries match
+
+A `serverCommand` entry holds the command and its arguments as one array, as in `{ "serverCommand": ["npx", "-y", "server"] }`. Claude Code compares that array with the command and arguments in the server’s configuration:
+
+- **Commands match exactly.** Every argument, in order. `["npx", "-y", "server"]` does not match `["npx", "server"]` or `["npx", "-y", "server", "--flag"]`.
+- **The `env` block isn’t compared.** `["node", "server.js"]` matches a server that runs that command with any `env` values. Some environment variables change what `node` loads at startup. To set the `env` values yourself, define the server in [`managed-mcp.json`](#exclusive-control-with-managed-mcp-json).
+
+
+[​](#how-serverurl-entries-match)
+
+How `serverUrl` entries match
+
+URLs support `*` wildcards, including `*` as the whole scheme. Hostname matching is case-insensitive and ignores a trailing FQDN dot, so `https://Mcp.Example.com/*` matches `https://mcp.example.com/api`. Paths stay case-sensitive. If you give no port, how you write the hostname decides whether the pattern matches only the scheme’s default port or every port:
+
+- **Hostname written out in full**: the default port only, 443 for `https` and 80 for `http`
+- **Hostname with a `*` in it**: every port
+
+The table shows what common patterns allow:
+
+| Pattern                          | Allows                                                                                   |
+|:---------------------------------|:-----------------------------------------------------------------------------------------|
+| `https://mcp.example.com/*`      | All paths on a specific domain, on port 443 only                                         |
+| `https://mcp.example.com`        | Also all paths on that domain, on port 443 only. A pattern with no path matches any path |
+| `https://mcp.example.com:8443/*` | All paths on that domain, on port 8443 only                                              |
+| `https://mcp.example.com:*/*`    | All paths on that domain, on any port, 443 included                                      |
+| `https://*.example.com/*`        | Any subdomain of `example.com`, on any port                                              |
+| `http://localhost:*/*`           | Any port on localhost                                                                    |
+| `*://mcp.example.com/*`          | Any scheme to a specific domain, each scheme on its default port only                    |
+
+Entries in `deniedMcpServers` match ports the same way, so choose an entry for `staging.example.com` by the ports and schemes you need to block:
+
+- `https://staging.example.com/*`: blocks `https` servers on that host on port 443 only, so it doesn’t block a server at `https://staging.example.com:8443/api`
+- `https://staging.example.com:*/*`: blocks `https` servers on that host on every port
+- `*://staging.example.com:*/*`: blocks that host over any scheme and on any port
+
+
+[​](#how-policy-entries-expand)
+
+Environment variables in `serverCommand` and `serverUrl` entries
+
+`serverCommand` and `serverUrl` values expand before matching. Both the policy entry and the server’s configured value go through [`${VAR}` and `${VAR:-default}` expansion](mcp.md#environment-variable-expansion-in-mcp-json), so an entry written as `["${HOME}/bin/server"]` matches a server config that uses either the same reference or the expanded path. `serverName` values match literally and never expand. The two sides read different environments:
+
+- **The server’s configured value**: expands from the live process environment, like the rest of `.mcp.json`
+- **A policy entry**: expands from a pinned environment, so a variable set by a project or user settings file can’t change what an allowlist entry means
+
+Because a policy entry still depends on the launching shell’s value for any variable it references, use literal URLs and commands for entries you rely on for enforcement. On Windows, reference an environment variable that is set there, such as `${USERPROFILE}` instead of `${HOME}`. The two lists expand differently:
+
+| Entry list          | Expands from                                                                                                                                                                                        | Expansion that would change a URL entry’s scheme, host, or path scope |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
+| `allowedMcpServers` | The environment Claude Code started with, plus `env` values from managed settings                                                                                                                   | Claude Code ignores the entry                                         |
+| `deniedMcpServers`  | The same, and a variable with no startup value and no `:-default` fills from settings files outside the repository, such as user or managed settings, which only ever widens what the entry matches | The entry still matches                                               |
+
+The pinned environment and the rules in this table require Claude Code v2.1.219 or later.
+
+
 [​](#how-a-server-is-evaluated)
 
 How a server is evaluated
@@ -350,45 +418,25 @@ Before loading a server, including one from `managed-mcp.json`, Claude Code runs
 
 1.  **Merge the lists.** Allowlist and denylist entries from every settings scope combine into one allowlist and one denylist. When `allowManagedMcpServersOnly` is `true`, only the managed allowlist is kept; the denylist always merges from every scope. When more than one managed source is present, [Keys read from every admin source](../../13-Enterprise-Admin/managed-settings.md#keys-read-from-every-admin-source) says which of them supply the managed scope’s lists.
 2.  **Check the denylist.** A server that matches any denylist entry, by URL, command, or name, is blocked. Nothing overrides a denylist match.
-3.  **Check the allowlist.** If `allowedMcpServers` isn’t set anywhere, every server that passed the denylist loads. If it is set, what the server must match depends on its type, shown in the table below. Three groups of servers skip this check:
-    - The organization’s own servers: every `managedMcpServers` entry, and any `managed-mcp.json` entry whose values use no `${VAR}` expansion.
-    - Built-in servers, such as Claude in Chrome, the `ide` server Claude Code connects to in a running VS Code or JetBrains IDE, and servers the CLI itself configures.
-    - A [Claude Tag](../../02-Claude-Code-CLI/claude-tag.md) session’s Slack tools: the servers it uses to read the thread and post its replies load without an allowlist entry.
-
-    A `managed-mcp.json` server that uses `${VAR}` expansion in its command, arguments, `env`, URL, or headers is still checked. So is every server a user, a plugin, or claude.ai adds, and every server a user passes with `--mcp-config`.
+3.  **Check the allowlist.** [Some servers skip this check](#servers-that-skip-the-allowlist-check). If `allowedMcpServers` isn’t set anywhere, every server that passed the denylist loads. If it is set, what the server must match depends on its type, shown in the table below.
 
 | Server type          | Allowed when it matches                                                                                          |
 |:---------------------|:-----------------------------------------------------------------------------------------------------------------|
 | Remote (HTTP or SSE) | A `serverUrl` entry. A `serverName` match counts only when the allowlist contains no `serverUrl` entries         |
 | Stdio                | A `serverCommand` entry. A `serverName` match counts only when the allowlist contains no `serverCommand` entries |
 
-Three matching rules apply inside those checks:
 
-- **Commands match exactly.** Every argument, in order. `["npx", "-y", "server"]` does not match `["npx", "server"]` or `["npx", "-y", "server", "--flag"]`.
-- **`serverCommand` and `serverUrl` values expand before matching.** Both the policy entry and the server’s configured value go through [`${VAR}` and `${VAR:-default}` expansion](mcp.md#environment-variable-expansion-in-mcp-json), so an entry written as `["${HOME}/bin/server"]` matches a server config that uses either the same reference or the expanded path. On Windows, reference an environment variable that is set there, such as `${USERPROFILE}` instead of `${HOME}`. `serverName` values match literally and never expand. The two sides read different environments; [How policy entries expand](#how-policy-entries-expand) covers which, and how allowlist and denylist entries differ.
-- **URLs support `*` wildcards** anywhere in the pattern, including the scheme. Hostname matching is case-insensitive and ignores a trailing FQDN dot, so `https://Mcp.Example.com/*` matches `https://mcp.example.com/api`. Paths stay case-sensitive.
+[​](#servers-that-skip-the-allowlist-check)
 
-| Pattern                     | Allows                                                                 |
-|:----------------------------|:-----------------------------------------------------------------------|
-| `https://mcp.example.com/*` | All paths on a specific domain                                         |
-| `https://mcp.example.com`   | Also all paths on that domain. A pattern with no path matches any path |
-| `https://*.example.com/*`   | Any subdomain of `example.com`                                         |
-| `http://localhost:*/*`      | Any port on localhost                                                  |
-| `*://mcp.example.com/*`     | Any scheme to a specific domain                                        |
+Servers that skip the allowlist check
 
+Three groups of servers skip the allowlist check, in addition to the in-process `type: "sdk"` servers that skip [all three checks](#how-a-server-is-evaluated):
 
-[​](#how-policy-entries-expand)
+- The organization’s own servers: every `managedMcpServers` entry, and any `managed-mcp.json` entry whose values use no `${VAR}` expansion.
+- Built-in servers, such as Claude in Chrome, the `ide` server Claude Code connects to in a running VS Code or JetBrains IDE, and servers the CLI itself configures.
+- A [Claude Tag](../../02-Claude-Code-CLI/claude-tag.md) session’s Slack tools: the servers it uses to read the thread and post its replies load without an allowlist entry.
 
-How policy entries expand
-
-The server’s configured value expands from the live process environment, like the rest of `.mcp.json`. A policy entry expands from a pinned environment instead, so a variable set by a project or user settings file can’t change what an allowlist entry means. Because a policy entry still depends on the launching shell’s value for any variable it references, use literal URLs and commands for entries you rely on for enforcement.
-
-| Entry list          | Expands from                                                                                                                                                                                        | Expansion that would change a URL entry’s scheme, host, or path scope |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| `allowedMcpServers` | The environment Claude Code started with, plus `env` values from managed settings                                                                                                                   | Claude Code ignores the entry                                         |
-| `deniedMcpServers`  | The same, and a variable with no startup value and no `:-default` fills from settings files outside the repository, such as user or managed settings, which only ever widens what the entry matches | The entry still matches                                               |
-
-Requires Claude Code v2.1.219 or later.
+A `managed-mcp.json` server that uses `${VAR}` expansion in its command, arguments, `env`, URL, or headers is still checked. Claude Code also checks every server a user, a plugin, or claude.ai adds, and every server a user passes with `--mcp-config`.
 
 
 [​](#example-configuration)
@@ -505,11 +553,12 @@ Allowlist with denylist override
 }
 ```
 
-| Server                                           | Result                                                    |
-|:-------------------------------------------------|:----------------------------------------------------------|
-| HTTP server at `https://mcp.example.com/api`     | Allowed: matches allowlist URL pattern, no denylist match |
-| HTTP server at `https://staging.example.com/api` | Blocked: matches both, but the denylist takes precedence  |
-| HTTP server at `https://other.com/mcp`           | Blocked: doesn’t match the allowlist                      |
+| Server                                                | Result                                                                                                 |
+|:------------------------------------------------------|:-------------------------------------------------------------------------------------------------------|
+| HTTP server at `https://mcp.example.com/api`          | Allowed: matches allowlist URL pattern, no denylist match                                              |
+| HTTP server at `https://staging.example.com/api`      | Blocked: matches both, but the denylist takes precedence                                               |
+| HTTP server at `https://staging.example.com:8443/api` | Allowed: matches allowlist URL pattern, [no denylist match on this port](#how-serverurl-entries-match) |
+| HTTP server at `https://other.com/mcp`                | Blocked: doesn’t match the allowlist                                                                   |
 
 
 [​](#restrict-the-allowlist-to-managed-settings-only)
@@ -537,15 +586,16 @@ How restrictions appear to users
 
 For what users see at startup when `managed-mcp.json` is deployed and the session also has `--mcp-config` servers, see [Exclusive control with managed-mcp.json](#exclusive-control-with-managed-mcp-json). Use this table to recognize the other reports and to tell users what to expect before you roll out a change:
 
-| Restriction                                                                                                           | What the user sees                                                                                                                                                                                                          |
-|:----------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `managed-mcp.json` is present and the user runs `claude mcp add`                                                      | `Cannot add MCP server: enterprise MCP configuration is active and has exclusive control over MCP servers`                                                                                                                  |
-| `managed-mcp.json` is present and a user who could otherwise run Claude in Chrome runs `claude --chrome`              | Claude Code exits at startup with `Claude in Chrome is blocked by your organization's managed MCP configuration (managed-mcp.json). An administrator can allow it with allowClaudeInChromeWithManagedMcp in device policy.` |
-| The server is on a denylist and the user runs `claude mcp add`                                                        | `Cannot add MCP server "<name>": server is explicitly blocked by enterprise policy`                                                                                                                                         |
-| The server isn’t on the allowlist and the user runs `claude mcp add`                                                  | `Cannot add MCP server "<name>": not allowed by enterprise policy`                                                                                                                                                          |
-| The user runs `claude mcp remove` on a server from `managedMcpServers`                                                | `MCP server "<name>" is provided by your organization (managed settings) and cannot be removed locally.`                                                                                                                    |
-| A previously configured server is now blocked by policy                                                               | The server disappears from `/mcp` and `claude mcp list`                                                                                                                                                                     |
-| A server becomes blocked while a session is running, and the user selects **Reconnect** or turns it back on in `/mcp` | [`MCP server <name> is blocked by enterprise managed policy`](../../02-Claude-Code-CLI/errors.md#mcp-server-is-blocked-by-enterprise-managed-policy)                                                                                           |
+| Restriction                                                                                                                                                  | What the user sees                                                                                                                                                                                                          |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `managed-mcp.json` is present and the user runs `claude mcp add`                                                                                             | `Cannot add MCP server: enterprise MCP configuration is active and has exclusive control over MCP servers`                                                                                                                  |
+| `managed-mcp.json` is present and a user who could otherwise run Claude in Chrome runs `claude --chrome`                                                     | Claude Code exits at startup with `Claude in Chrome is blocked by your organization's managed MCP configuration (managed-mcp.json). An administrator can allow it with allowClaudeInChromeWithManagedMcp in device policy.` |
+| The server is on a denylist and the user runs `claude mcp add`                                                                                               | `Cannot add MCP server "<name>": server is explicitly blocked by enterprise policy`                                                                                                                                         |
+| The server isn’t on the allowlist and the user runs `claude mcp add`                                                                                         | `Cannot add MCP server "<name>": not allowed by enterprise policy`                                                                                                                                                          |
+| [`strictPluginOnlyCustomization`](../../02-Claude-Code-CLI/settings-reference.md#strictpluginonlycustomization) is `true` or includes `mcp`, and the user runs `claude mcp add` | [`Cannot add MCP server: your organization's managed settings allow only MCP servers that plugins provide`](../../02-Claude-Code-CLI/errors.md#cannot-add-mcp-server-when-managed-settings-allow-only-plugin-servers)                          |
+| The user runs `claude mcp remove` on a server from `managedMcpServers`                                                                                       | `MCP server "<name>" is provided by your organization (managed settings) and cannot be removed locally.`                                                                                                                    |
+| A previously configured server is now blocked by policy                                                                                                      | The server disappears from `/mcp` and `claude mcp list`                                                                                                                                                                     |
+| A server becomes blocked while a session is running, and the user selects **Reconnect** or turns it back on in `/mcp`                                        | [`MCP server <name> is blocked by enterprise managed policy`](../../02-Claude-Code-CLI/errors.md#mcp-server-is-blocked-by-enterprise-managed-policy)                                                                                           |
 
 When a server silently disappears, the user gets no signal that policy is the reason, so tell affected users which servers are blocked when you roll out a new restriction.
 

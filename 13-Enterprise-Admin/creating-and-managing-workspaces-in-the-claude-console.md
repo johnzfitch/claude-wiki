@@ -2,7 +2,7 @@
 title: "Creating and managing Workspaces in the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9796807-creating-and-managing-workspaces-in-the-claude-console"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:21Z"
+fetched_at: "2026-10-10T06:25:41Z"
 tags: ["api", "enterprise"]
 ---
 
@@ -25,7 +25,7 @@ If you need to create a fully separate organization with its own members, billin
 
 1.  Log in to your [Claude Console account](https://platform.claude.com/login).
 
-2.  Navigate to the **Workspaces** section by clicking on "Settings" in the top level menu and selecting “Workspaces” from the left side bar ([Settings \> Workspaces](../04-API-Reference/Other/usage-limits.md)).
+2.  Navigate to the **Workspaces** section by clicking on "Settings" in the top level menu and selecting “Workspaces” from the left side bar ([Settings \> Workspaces](../04-API-Reference/Other/playground.md)).
 
 3.  Click the "Add Workspace" button near the top right of the page.
 
@@ -158,7 +158,7 @@ Every organization has a default Workspace that cannot be renamed, archived, or 
 
 2.  Click on "Default" in the list.
 
-**Note:** You can view your default Workspace’s limits from the [Limits settings](../04-API-Reference/Other/usage-limits.md).
+**Note:** You can view your default Workspace’s limits from the [Limits settings](../04-API-Reference/Other/playground.md).
 
 ------------------------------------------------------------------------
 

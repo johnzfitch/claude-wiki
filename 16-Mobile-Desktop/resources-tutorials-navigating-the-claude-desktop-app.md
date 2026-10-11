@@ -2,7 +2,7 @@
 title: "Navigating the Claude desktop app · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/navigating-the-claude-desktop-app"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-30T06:30:26Z"
+fetched_at: "2026-10-09T06:26:39Z"
 tags: ["desktop"]
 ---
 
@@ -77,7 +77,7 @@ Once Claude can see a folder, you can ask Claude to:
 - *Sort a cluttered Downloads folder into clearly named subfolders.*
 - *Each month, add the new invoices to that same spreadsheet, building a running record.*
 
-A task like that can later [run on a schedule(opens in new tab)](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork).
+A task like that can later [run on a schedule(opens in new tab)](../15-Claude-AI-Features/schedule-recurring-tasks-in-cowork.md).
 
 ### Apps[](#apps)
 
@@ -154,11 +154,11 @@ Good to know
 Working in your folders, the built-in browser, computer use, and Record a skill need a paid plan:
 
 - Folders come with every paid plan.
-- The built-in browser is on Pro, Max, and Team, and on Enterprise where your admin allows it.
+- The built-in browser is on Pro, Max, Team, and Enterprise. On Team and Enterprise plans, your organization's owner controls whether it's available.
 - Computer use is in beta on Mac and Windows, for Pro and Max.
 - Record a skill is on Pro, Max, and Team, on Mac.
 
-On Team and Enterprise plans, your admin can limit which extensions are allowed. See [Install Claude Desktop(opens in new tab)](installing-claude-desktop.md).
+On Team and Enterprise plans, your admin can limit which extensions are allowed. See [Install Claude Desktop(opens in new tab)](https://support.claude.com/en/articles/10065433-install-claude-desktop).
 
 ### All of it together[](#all-of-it-together)
 

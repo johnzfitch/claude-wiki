@@ -2,7 +2,7 @@
 title: "Visuals that appear as you study with Claude · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/imagine-with-claude-student-guide"
 category: "01-Getting-Started"
-fetched_at: "2026-09-25T06:28:53Z"
+fetched_at: "2026-10-08T06:24:42Z"
 tags: ["getting-started"]
 ---
 

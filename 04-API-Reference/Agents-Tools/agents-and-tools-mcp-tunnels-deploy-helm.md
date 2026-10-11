@@ -2,7 +2,7 @@
 title: "Deploy MCP tunnels with Helm - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-helm"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:18Z"
+fetched_at: "2026-10-04T08:32:38Z"
 tags: ["api", "mcp"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "mcp"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -203,7 +203,7 @@ The setup component exchanges the cluster's projected ServiceAccount token throu
     
     The chart's default audience is `api.anthropic.com` with no scheme, but the Console's federation-rule form suggests `https://api.anthropic.com`. The two must match byte-for-byte or authentication fails. Either set the rule's audience to `api.anthropic.com`, or set `api.wif.audience` in `values.yaml` to `https://api.anthropic.com`.
 
-    If the tunnel is in a workspace other than the organization's default, also add the rule's service account as a member of that workspace under **Settings \> Workspaces** (the Tunnels API authorizes against the service account's workspace memberships).
+    If the tunnel is in a workspace other than the organization's default, also [add the rule's service account to that workspace](../Other/manage-claude-workspaces.md#role-inheritance) (the Tunnels API authorizes against the service account's workspace memberships).
 
     Note the rule's ID (`fdrl_...`); you'll set it as `api.wif.federationRuleId`.
 

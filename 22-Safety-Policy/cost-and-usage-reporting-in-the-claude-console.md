@@ -2,7 +2,7 @@
 title: "Cost and Usage Reporting in the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9534590-cost-and-usage-reporting-in-the-claude-console"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:32:19Z"
+fetched_at: "2026-10-10T06:25:32Z"
 tags: ["safety"]
 ---
 
@@ -24,7 +24,7 @@ Users with access to these reports can click into them on the left navigation me
 
 ## Usage Reporting
 
-The [Usage page](../04-API-Reference/Other/usage-limits.md) offers a detailed breakdown of your API usage across different models and API keys.
+The [Usage page](../04-API-Reference/Other/playground.md) offers a detailed breakdown of your API usage across different models and API keys.
 
 ### Key Features
 
@@ -69,7 +69,7 @@ The Usage page also includes a separate section displaying rate limit use per-mo
 
 ## Cost Reporting
 
-The [Cost page](../04-API-Reference/Other/usage-limits.md) helps you understand your spending across different models.
+The [Cost page](../04-API-Reference/Other/playground.md) helps you understand your spending across different models.
 
 ### Key Features
 

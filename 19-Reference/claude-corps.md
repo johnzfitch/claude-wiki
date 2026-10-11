@@ -2,7 +2,7 @@
 title: "Introducing Claude Corps \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-corps"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:28:38Z"
+fetched_at: "2026-10-10T06:25:00Z"
 tags: ["news-research"]
 ---
 
@@ -126,7 +126,7 @@ You can hear more from our hosts below:
 
 ## Applications and timeline
 
-[Fellowship applications](../15-Claude-AI-Features/claude-corps-fellow.md) are open today, and will close on July 17th for the first cohort of 100, which begins in October 2026. Applications are open on a rolling basis for the next two cohorts, which begin in February 2027 and August 2027. Anyone over 18 with under two years of full-time work experience is welcome to apply, regardless of educational background. The only requirements are that you’re authorized to work in the US, are comfortable working with Claude, and are willing to relocate if necessary. (Relocation support is available as needed.)
+[Fellowship applications](../15-Claude-AI-Features/claude-corps-fellow.md) are open today, and will close on July 17th for the first cohort of 100, which begins in October 2026. Applications are open on a rolling basis for the next two cohorts, which begin in March 2027 and August 2027. Anyone over 18 with under two years of full-time work experience is welcome to apply, regardless of educational background. The only requirements are that you’re authorized to work in the US, are comfortable working with Claude, and are willing to relocate if necessary. (Relocation support is available as needed.)
 
 [Host organization applications](../15-Claude-AI-Features/claude-corps-host.md) are also open today for all cohort start dates. For more information about criteria for hosting and what’s involved, see the [Claude Corps website](../15-Claude-AI-Features/claude-corps.md).
 
@@ -137,31 +137,33 @@ Our ambition is for this program to scale far beyond 1,000 fellows, as we’ve o
 
 ## Related content
 
-### Developing Enterprise Frontier Safeguards with our customers
+### 2026 Usage Policy update
 
-[Read more](enterprise-frontier-safeguards.md)
+We’re publishing a new version of our Usage Policy. In this post, we summarize the changes we’ve made.
 
-### Improving our alignment and security efforts
+[Read more](2026-usage-policy-update.md)
 
-On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
+### Building on our commitment to American scientific discovery
 
-[Read more](improving-alignment-security-efforts.md)
+Anthropic is committing \$150 million over three years to the Genesis Mission, a federal initiative to accelerate scientific and technological discovery through AI.
 
-### Previewing the Model Hardware Standard
+[Read more](genesis-mission-commitment.md)
 
-We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
+### Introducing the Anthropic Cyber Mission
 
-[Read more](model-hardware-standard-research-preview.md)
+We’re launching the Anthropic Cyber Mission, a long-term commitment to securing the systems everyone depends on.
+
+[Read more](anthropic-cyber-mission.md)
 
 [](https://www.anthropic.com/)
 
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -176,9 +178,9 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
 
 ### Solutions
 
@@ -188,7 +190,8 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -197,6 +200,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Legal](../18-Industry-UseCases/legal.md)
 - [Life sciences](../18-Industry-UseCases/life-sciences.md)
 - [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Sales](../18-Industry-UseCases/sales.md)
 - [Small business](../18-Industry-UseCases/small-business.md)
 
 ### Claude Platform
@@ -208,7 +212,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -220,6 +224,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Connectors](../04-API-Reference/Other/partners-mcp.md)
 - [Courses](https://academy.claude.com)
 - [Customer stories](../18-Industry-UseCases/customers.md)
+- [Developer blog](https://claude.dev)
 - [Engineering at Anthropic](https://www.anthropic.com/engineering)
 - [Events](https://www.anthropic.com/events)
 - [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
@@ -230,8 +235,10 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 
 ### Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ### Help and security
 

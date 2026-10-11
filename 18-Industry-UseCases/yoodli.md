@@ -2,7 +2,7 @@
 title: "Yoodli Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/yoodli"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:36Z"
+fetched_at: "2026-10-10T06:26:28Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -94,6 +94,9 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 ## Related stories
 
 
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
+
+
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
 
@@ -102,9 +105,6 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -112,9 +112,9 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -144,7 +144,7 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -156,6 +156,7 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -167,8 +168,10 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -188,7 +191,9 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -231,9 +236,9 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -263,7 +268,7 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -275,6 +280,7 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -286,8 +292,10 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -307,7 +315,9 @@ Yoodli's roadmap focuses on richer simulations, deeper personalization, and new 
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

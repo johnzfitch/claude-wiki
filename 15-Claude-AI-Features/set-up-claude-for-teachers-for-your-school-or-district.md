@@ -2,7 +2,7 @@
 title: "Set up Claude for Teachers for your school or district | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16559896"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:33:01Z"
+fetched_at: "2026-10-10T06:28:21Z"
 tags: ["claude-ai"]
 ---
 
@@ -39,7 +39,7 @@ You'll need your school or district email, a document showing your role (such as
 
 3.  **Verify your email domain**. Add your district's email domain, publish the DNS TXT record shown on the page, and click Verify. Seats open and the free first-year plan applies automatically.
 
-4.  **Set up SSO and automatic account creation.** Connect your identity provider, turn on Require SSO, turn on just-in-time or SCIM provisioning, and turn on Restrict organization creation so district emails can't create personal Claude accounts. Once automatic account creation is on, email invitations are disabled. See **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+4.  **Set up SSO and automatic account creation.** Connect your identity provider, turn on Require SSO, turn on just-in-time or SCIM provisioning, and turn on Restrict organization creation so district emails can't create personal Claude accounts. Once automatic account creation is on, email invitations are disabled. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 5.  **Bring your teachers in.** Click Migrate accounts to start a 30-day window. Every existing Claude account on your domain, including individual Claude for Teachers accounts, is notified and chooses to move everything, start over, or do nothing (the account closes at the deadline; data is kept so Support can recover it). Teachers who join later sign in with SSO and land in your organization directly. See Claim and migrate accounts on your domain.
 

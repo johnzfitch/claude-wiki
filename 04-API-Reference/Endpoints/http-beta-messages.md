@@ -2,7 +2,7 @@
 title: "Messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/http/beta/messages"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:39:09Z"
+fetched_at: "2026-10-04T08:33:38Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -3897,35 +3901,11 @@ Identifies one hop of a fallback transition.
 
 
 
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
-
-
-
 to: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
 Identifies one hop of a fallback transition.
-
-
-
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
 
 trigger: optional unknown
 
@@ -4051,35 +4031,11 @@ Identifies one hop of a fallback transition.
 
 
 
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
-
-
-
 BetaFallbackInfoParam object{ model }
 
 
 
 Identifies one hop of a fallback transition.
-
-
-
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
 
 
 
@@ -4149,7 +4105,7 @@ The request could assist the development of competing AI models, which is restri
 
 
 
-The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/api/http/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md).
+The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](../Guides/build-with-claude-thinking-steering-and-cost.md).
 
 "general_harms"
 
@@ -5971,6 +5927,16 @@ One of the following:
 
 
 
+BetaThinkingConfigBetweenTools object{ type: "between_tools" }
+
+
+
+type: "between_tools"
+
+
+
+
+
 BetaThinkingConfigDisabled object{ type: "disabled" }
 
 
@@ -5987,7 +5953,7 @@ BetaThinkingConfigEnabled object{ type: "enabled", budget_tokens, block_binding,
 
 
 
-BetaThinkingConfigParam = [BetaThinkingConfigEnabled](http-beta-messages.md#beta_thinking_config_enabled) or [BetaThinkingConfigDisabled](http-beta-messages.md#beta_thinking_config_disabled) or [BetaThinkingConfigAdaptive](http-beta-messages.md#beta_thinking_config_adaptive)
+BetaThinkingConfigParam = [BetaThinkingConfigEnabled](http-beta-messages.md#beta_thinking_config_enabled) or [BetaThinkingConfigDisabled](http-beta-messages.md#beta_thinking_config_disabled) or [BetaThinkingConfigBetweenTools](http-beta-messages.md#beta_thinking_config_between_tools) or [BetaThinkingConfigAdaptive](http-beta-messages.md#beta_thinking_config_adaptive)
 
 
 

@@ -2,7 +2,7 @@
 title: "How am I billed for my Enterprise plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11526368-how-am-i-billed-for-my-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:31:30Z"
+fetched_at: "2026-10-10T06:24:58Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
@@ -33,7 +33,7 @@ You're charged for the number of seats on your plan at the start of your annual 
 
 **Example:** Your annual plan starts January 1 with 50 seats. You are charged upfront for the seats. On April 1, you add 10 seats. You'll be charged immediately for the remaining months.
 
-**Note:** Seats cannot be removed mid-term on self-serve Enterprise plans. For step-by-step instructions on purchasing, adding, and managing seats, see **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**.
+**Note:** Seats cannot be removed mid-term on self-serve Enterprise plans. For step-by-step instructions on purchasing, adding, and managing seats, see **[Purchase and manage seats on Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md)**.
 
 ------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ You're charged for the number of seats on your plan at the start of your annual 
 
 On usage-based Enterprise plans, usage is charged separately from your seat fee and is based on actual token consumption at standard API rates. For current per-model pricing, see our **[API pricing page](https://www.anthropic.com/pricing#api)**.
 
-**Important:** If your organization has the US-only inference setting turned on, usage is billed at 1.1x standard API rates for Claude Opus 4.6, Claude Sonnet 4.6, and later models. This applies to both self-serve and sales-assisted plans. Learn more about **[enabling US-only inference for your organization](../13-Enterprise-Admin/enable-us-only-inference-for-your-organization.md)**.
+**Important:** If your organization has the US-only inference setting turned on, usage is billed at 1.1x standard API rates for Claude Opus 4.6, Claude Sonnet 4.6, and later models. This applies to both self-serve and sales-assisted plans. Learn more about **[enabling US-only inference for your organization](https://support.claude.com/en/articles/15422948)**.
 
 How and when you're billed for usage depends on your plan type:
 

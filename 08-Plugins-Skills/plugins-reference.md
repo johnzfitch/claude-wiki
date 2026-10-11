@@ -1,8 +1,8 @@
 ---
 title: "Plugin manifest reference - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/plugins-reference"
+source_url: "https://code.claude.com/docs/en/plugins/manifest-reference"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-30T06:30:54Z"
+fetched_at: "2026-10-10T06:24:14Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -16,6 +16,7 @@ tags: ["claude-code", "plugins"]
   - [displayName](#displayname)
   - [version](#version)
   - [metadata](#metadata)
+  - [Directory listing fields](#directory-listing-fields)
   - [defaultEnabled](#defaultenabled)
   - [dependencies](#dependencies)
   - [settings](#settings)
@@ -169,36 +170,42 @@ Fields
 
 The table lists the top-level keys in `plugin.json`. `name` is the only required key. Where a field name is a link, the linked section has its full rules. For component keys such as `commands` and `hooks`, [Component path forms](#component-path-forms) shows each accepted shape with an example, and every path follows the [path rules](#path-rules) for the `./` prefix, extensions, and containment.
 
-| Field                                | Type                             | Description                                                                                                                                                                                                                                                                                                      |
-|:-------------------------------------|:---------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$schema`                            | String                           | JSON Schema URL for editor autocomplete. Claude Code ignores it at load time                                                                                                                                                                                                                                     |
-| [`name`](#name)                      | String                           | Plugin identifier, required. Use kebab-case. Every component is namespaced under it                                                                                                                                                                                                                              |
-| [`displayName`](#displayname)        | String                           | Name shown in UI in place of `name`                                                                                                                                                                                                                                                                              |
-| [`version`](#version)                | String                           | Version string. Setting it keeps users on that version until you change it                                                                                                                                                                                                                                       |
-| `description`                        | String                           | Short explanation of what the plugin provides                                                                                                                                                                                                                                                                    |
-| `author`                             | Object                           | `name`, which is required, plus optional `email` and `url`                                                                                                                                                                                                                                                       |
-| `homepage`                           | String                           | Documentation URL. Must parse as a URL, or the plugin fails to load                                                                                                                                                                                                                                              |
-| `repository`                         | String                           | Source repository URL. Not validated                                                                                                                                                                                                                                                                             |
-| `license`                            | String                           | SPDX identifier such as `MIT` or `Apache-2.0`                                                                                                                                                                                                                                                                    |
-| `keywords`                           | Array of strings                 | Discovery tags                                                                                                                                                                                                                                                                                                   |
-| [`metadata`](#metadata)              | Object                           | Free-form object for your own data. Claude Code doesn’t read it                                                                                                                                                                                                                                                  |
-| [`defaultEnabled`](#defaultenabled)  | Boolean                          | Whether the plugin starts enabled when the user hasn’t set it. Defaults to `true`                                                                                                                                                                                                                                |
-| [`dependencies`](#dependencies)      | Array of strings or objects      | Plugins that must be enabled for this one to work                                                                                                                                                                                                                                                                |
-| [`settings`](#settings)              | Object                           | Settings Claude Code applies while the plugin is enabled. Only `agent` and `subagentStatusLine` take effect                                                                                                                                                                                                      |
-| [`userConfig`](#user-configuration)  | Object                           | Values Claude Code prompts the user for when the plugin is enabled                                                                                                                                                                                                                                               |
-| [`channels`](#channels)              | Array of objects                 | Message channels the plugin provides, each bound to one of its MCP servers                                                                                                                                                                                                                                       |
-| `skills`                             | Path, or array of paths          | Directories to scan for skills, each a directory of `<name>/SKILL.md` folders or one folder holding `SKILL.md` directly. `"."` names the plugin root. Adds to the default `skills/` scan                                                                                                                         |
-| [`commands`](#commands)              | Path, array of paths, or object  | Flat `.md` command files, directories of them, or an object map of command name to `source` or `content`. Replaces the default `commands/` scan                                                                                                                                                                  |
-| `agents`                             | Path, or array of paths          | Agent `.md` files. Directories aren’t accepted. Replaces the default `agents/` scan                                                                                                                                                                                                                              |
-| [`hooks`](#hooks)                    | Path, object, or array of either | `.json` hook files or inline hook config. Loaded together with `hooks/hooks.json`                                                                                                                                                                                                                                |
-| [`mcpServers`](#mcpservers)          | Path, object, or array of either | `.json` MCP config files, `.mcpb` or `.dxt` bundles, or inline server configs keyed by name. Loaded together with `.mcp.json`; a server name declared later replaces an earlier one                                                                                                                              |
-| [`lspServers`](#lspservers)          | Path, object, or array of either | `.json` LSP config files or inline server configs keyed by name. Loaded together with `.lsp.json`                                                                                                                                                                                                                |
-| `outputStyles`                       | Path, or array of paths          | Output style files or directories. Replaces the default `output-styles/` scan                                                                                                                                                                                                                                    |
-| `workflows`                          | Path, or array of paths          | [Workflow](../02-Claude-Code-CLI/workflows.md#distribute-a-workflow-in-a-plugin) `.js` files or directories. Replaces the default `workflows/` scan                                                                                                                                                                              |
-| `experimental`                       | Object                           | Container for `themes`, `monitors`, and `evals`, whose manifest shape may still change                                                                                                                                                                                                                           |
-| `experimental.themes`                | Path, or array of paths          | Theme files or directories. Replaces the default `themes/` scan. A top-level `themes` key still loads, with a `claude plugin validate` warning                                                                                                                                                                   |
-| [`experimental.monitors`](#monitors) | Path, or inline array            | A `.json` file holding the monitors array, or the array itself. Defaults to `monitors/monitors.json`. A top-level `monitors` key still loads, with a `claude plugin validate` warning. Monitors run only in interactive sessions, and not on Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry |
-| `experimental.evals`                 | Path, or array of paths          | Directory that holds the plugin’s [eval cases](plugin-evals.md#use-a-different-eval-directory) when it isn’t the default `evals/`. `claude plugin eval --eval-dir` overrides it                                                                                                                            |
+| Field                                            | Type                             | Description                                                                                                                                                                                                                                                                                                      |
+|:-------------------------------------------------|:---------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `$schema`                                        | String                           | JSON Schema URL for editor autocomplete. Claude Code ignores it at load time                                                                                                                                                                                                                                     |
+| [`name`](#name)                                  | String                           | Plugin identifier, required. Use kebab-case. Every component is namespaced under it                                                                                                                                                                                                                              |
+| [`displayName`](#displayname)                    | String                           | Name shown in UI in place of `name`                                                                                                                                                                                                                                                                              |
+| [`version`](#version)                            | String                           | Version string. Setting it keeps users on that version until you change it                                                                                                                                                                                                                                       |
+| `description`                                    | String                           | Short explanation of what the plugin provides                                                                                                                                                                                                                                                                    |
+| `author`                                         | Object                           | `name`, which is required, plus optional `email` and `url`                                                                                                                                                                                                                                                       |
+| `homepage`                                       | String                           | Documentation URL. Must parse as a URL, or the plugin fails to load                                                                                                                                                                                                                                              |
+| `repository`                                     | String                           | Source repository URL. Not validated                                                                                                                                                                                                                                                                             |
+| `license`                                        | String                           | SPDX identifier such as `MIT` or `Apache-2.0`                                                                                                                                                                                                                                                                    |
+| `keywords`                                       | Array of strings                 | Discovery tags                                                                                                                                                                                                                                                                                                   |
+| [`metadata`](#metadata)                          | Object                           | Free-form object for your own data. Claude Code doesn’t read it                                                                                                                                                                                                                                                  |
+| [`icon`](#directory-listing-fields)              | String                           | Icon for the plugin’s listing in Anthropic’s directory. Claude Code doesn’t read it                                                                                                                                                                                                                              |
+| [`documentationUrl`](#directory-listing-fields)  | String                           | Documentation link for the plugin’s listing in Anthropic’s directory. Claude Code doesn’t read it                                                                                                                                                                                                                |
+| [`supportUrl`](#directory-listing-fields)        | String                           | Support link for the plugin’s listing in Anthropic’s directory. Claude Code doesn’t read it                                                                                                                                                                                                                      |
+| [`privacyPolicyUrl`](#directory-listing-fields)  | String                           | Privacy policy link for the plugin’s listing in Anthropic’s directory. Claude Code doesn’t read it                                                                                                                                                                                                               |
+| [`termsOfServiceUrl`](#directory-listing-fields) | String                           | Terms of service link for the plugin’s listing in Anthropic’s directory. Claude Code doesn’t read it                                                                                                                                                                                                             |
+| [`defaultEnabled`](#defaultenabled)              | Boolean                          | Whether the plugin starts enabled when the user hasn’t set it. Defaults to `true`                                                                                                                                                                                                                                |
+| [`dependencies`](#dependencies)                  | Array of strings or objects      | Plugins that must be enabled for this one to work                                                                                                                                                                                                                                                                |
+| [`settings`](#settings)                          | Object                           | Settings Claude Code applies while the plugin is enabled. Only `agent` and `subagentStatusLine` take effect                                                                                                                                                                                                      |
+| [`userConfig`](#user-configuration)              | Object                           | Values Claude Code prompts the user for when the plugin is enabled                                                                                                                                                                                                                                               |
+| `types`                                          | Path                             | A `.d.ts` file that declares the `$.state` values and `$` nouns of a [mod](plugins-mods-reference.md#files)                                                                                                                                                                                                |
+| [`channels`](#channels)                          | Array of objects                 | Message channels the plugin provides, each bound to one of its MCP servers                                                                                                                                                                                                                                       |
+| `skills`                                         | Path, or array of paths          | Directories to scan for skills, each a directory of `<name>/SKILL.md` folders or one folder holding `SKILL.md` directly. `"."` names the plugin root. Adds to the default `skills/` scan                                                                                                                         |
+| [`commands`](#commands)                          | Path, array of paths, or object  | Flat `.md` command files, directories of them, or an object map of command name to `source` or `content`. Replaces the default `commands/` scan                                                                                                                                                                  |
+| `agents`                                         | Path, or array of paths          | Agent `.md` files. Directories aren’t accepted. Replaces the default `agents/` scan                                                                                                                                                                                                                              |
+| [`hooks`](#hooks)                                | Path, object, or array of either | `.json` hook files or inline hook config. Loaded together with `hooks/hooks.json`                                                                                                                                                                                                                                |
+| [`mcpServers`](#mcpservers)                      | Path, object, or array of either | `.json` MCP config files, `.mcpb` or `.dxt` bundles, or inline server configs keyed by name. Loaded together with `.mcp.json`; a server name declared later replaces an earlier one                                                                                                                              |
+| [`lspServers`](#lspservers)                      | Path, object, or array of either | `.json` LSP config files or inline server configs keyed by name. Loaded together with `.lsp.json`                                                                                                                                                                                                                |
+| `outputStyles`                                   | Path, or array of paths          | Output style files or directories. Replaces the default `output-styles/` scan                                                                                                                                                                                                                                    |
+| `workflows`                                      | Path, or array of paths          | [Workflow](../02-Claude-Code-CLI/workflows.md#distribute-a-workflow-in-a-plugin) `.js` files or directories. Replaces the default `workflows/` scan                                                                                                                                                                              |
+| `experimental`                                   | Object                           | Container for `themes`, `monitors`, and `evals`, whose manifest shape may still change                                                                                                                                                                                                                           |
+| `experimental.themes`                            | Path, or array of paths          | Theme files or directories. Replaces the default `themes/` scan. A top-level `themes` key still loads, with a `claude plugin validate` warning                                                                                                                                                                   |
+| [`experimental.monitors`](#monitors)             | Path, or inline array            | A `.json` file holding the monitors array, or the array itself. Defaults to `monitors/monitors.json`. A top-level `monitors` key still loads, with a `claude plugin validate` warning. Monitors run only in interactive sessions, and not on Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry |
+| `experimental.evals`                             | Path, or array of paths          | Directory that holds the plugin’s [eval cases](plugin-evals.md#use-a-different-eval-directory) when it isn’t the default `evals/`. `claude plugin eval --eval-dir` overrides it                                                                                                                            |
 
 In the Type column, a path is a string relative to the plugin root, such as `"./custom/commands"`.
 
@@ -207,7 +214,16 @@ In the Type column, a path is a string relative to the plugin root, such as `"./
 
 `name`
 
-The plugin identifier. It must be non-empty, with no spaces, `@`, `:`, path separators, control characters, or bidirectional-formatting characters; use kebab-case. Claude Code namespaces every component under it, so an agent `reviewer` in plugin `deploy-tools` appears as `deploy-tools:reviewer`.
+The plugin identifier. It must be non-empty, with no spaces, `@`, `:`, path separators, control characters, or bidirectional-formatting characters; use kebab-case. Claude Code namespaces every component under it, so an agent `reviewer` in plugin `deploy-tools` appears as `deploy-tools:reviewer`. `claude plugin validate` also checks that the name doesn’t pass as one of Anthropic’s own plugins. The check ignores case and treats any run of separators as one:
+
+| Name                                                                                               | Result  |
+|:---------------------------------------------------------------------------------------------------|:--------|
+| Starts with `claude-`, `anthropic-`, `anthropics-`, or `cc-plugin-`                                | Error   |
+| Is `claude`, `anthropic`, `anthropics`, `claude-code`, or `claude-mods`                            | Error   |
+| Puts `official` beside `claude` or `anthropic`, such as `official-claude-tools`                    | Error   |
+| Has `claude`, `anthropic`, or `anthropics` as a whole word anywhere else, such as `mcp-for-claude` | Warning |
+
+The error reads `Plugin name "<name>" is reserved: it passes as one of Anthropic's own`, and the warning reads `Plugin name "<name>" reads as one of Anthropic's own`. `claude plugin init` and `claude plugin tag` refuse a name that draws the error. Claude Code still installs and loads a plugin whose name they refuse.
 
 
 [​](#displayname)
@@ -221,7 +237,7 @@ The name shown in UI in place of `name`. It may contain spaces and any casing, a
 
 `version`
 
-A version string, not checked against semver. Setting it pins the plugin to that version until you change it; see [Versions and updates](plugins-loading.md#versions-and-updates). A plugin with a [`command` source](plugins-marketplace-reference.md), a plugin from a [marketplace hosted on claude.ai](discover-plugins.md#add-from-claude-ai), and a plugin [loaded in place](plugins-loading.md#find-plugins-on-disk) from a marketplace added as a local directory aren’t pinned by this field.
+A version string, not checked against semver. Setting it pins the plugin to that version until you change it; see [Versions and updates](plugins-loading.md#versions-and-updates). A plugin with a [`command` source](plugins-marketplace-reference.md), a plugin from a [marketplace hosted on claude.ai](discover-plugins.md#add-from-claude-ai), and a plugin [loaded in place](plugins-loading.md#find-plugins-on-disk) from a marketplace added from a local path aren’t pinned by this field.
 
 
 [​](#metadata)
@@ -229,6 +245,13 @@ A version string, not checked against semver. Setting it pins the plugin to that
 `metadata`
 
 A free-form object for your own data, such as catalog or entitlement fields. Claude Code doesn’t read it. Requires Claude Code v2.1.222 or later.
+
+
+[​](#directory-listing-fields)
+
+Directory listing fields
+
+Anthropic’s directory reads the `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl`, and `termsOfServiceUrl` fields from `plugin.json` for your plugin’s listing when you [submit the plugin](plugins-publish.md#submit-to-anthropics-directory). Claude Code ignores them at load time. Set them only in `plugin.json`. In a [marketplace entry](#marketplace-entries-and-the-manifest), `claude plugin validate` reports each one as an unknown field. Set `icon` to the path of an image file inside the plugin, such as `./logo.png`, and each of the four URL fields to an `https://` URL. `claude plugin validate` accepts these fields without a warning on Claude Code v2.1.281 or later. Earlier versions print an `Unknown field` warning for each one, so a `--strict` run fails on those versions.
 
 
 [​](#defaultenabled)
@@ -305,7 +328,7 @@ This map declares one command from a file and one from inline content:
 
 `hooks`
 
-`hooks` takes a `.json` file path, an inline hooks object in the same shape as [`hooks` in `settings.json`](../07-Hooks/hooks.md#configuration), or an array mixing both. For hook events and handler fields, see the [hooks reference](../07-Hooks/hooks.md#hook-events). Claude Code merges whatever you declare with `hooks/hooks.json` when that file exists.
+`hooks` takes a `.json` file path, an inline hooks object in the same shape as [`hooks` in `settings.json`](../07-Hooks/hooks.md#configuration), or an array mixing both. For hook events and handler fields, see the [hooks reference](../07-Hooks/hooks.md#hook-events). A hooks file wraps the event map in a top-level `"hooks"` key, the shape [`hooks/hooks.json`](plugins-components.md#hooks) uses. A file that contains only the event map, without that wrapper, fails to load. An inline object is the event map itself, with no wrapper. Claude Code merges whatever you declare with `hooks/hooks.json` when that file exists. This array loads one hooks file and declares one inline `PostToolUse` hook:
 
 ```python
 {
@@ -322,6 +345,25 @@ This map declares one command from a file and one from inline content:
       ]
     }
   ]
+}
+```
+
+The file that array names carries the `"hooks"` wrapper around its own event map:
+
+config/extra-hooks.json
+
+```python
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/check-command.sh" }
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -348,21 +390,22 @@ A bundle path or URL must end in `.mcpb` or `.dxt`. Any other extension fails va
 
 `lspServers` takes a `.json` file path, an inline map of server name to config, or an array of either. Claude Code loads `.lsp.json` at the plugin root first, then each declared config in order. A server name declared later replaces an earlier one. Each server config is a strict object with these fields. An unknown key fails validation.
 
-| Field                   | Required | Description                                                                                                                                                              |
-|:------------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `command`               | Yes      | Language server binary. No spaces unless the value starts with `/`; put arguments in `args`                                                                              |
-| `extensionToLanguage`   | Yes      | Map of file extension to LSP language ID, at least one entry. Keys start with a dot, such as `".go"`                                                                     |
-| `args`                  | No       | Arguments passed to the server                                                                                                                                           |
-| `transport`             | No       | Communication transport: `stdio` (default) or `socket`. Claude Code accepts `socket` but runs every server over stdio, so the stdout protocol rules apply to all servers |
-| `env`                   | No       | Environment variables for the server process                                                                                                                             |
-| `initializationOptions` | No       | Options sent in the initialize request                                                                                                                                   |
-| `settings`              | No       | Settings sent by `workspace/didChangeConfiguration`                                                                                                                      |
-| `workspaceFolder`       | No       | Workspace folder path for the server                                                                                                                                     |
-| `startupTimeout`        | No       | Milliseconds to wait for startup, a positive integer                                                                                                                     |
-| `shutdownTimeout`       | No       | Milliseconds to wait for a graceful shutdown, a positive integer. When the timeout elapses, Claude Code terminates the server process. When unset, no timeout applies    |
-| `restartOnCrash`        | No       | Whether to restart the server after it crashes. Defaults to `true`. Set to `false` to leave a crashed server stopped instead of restarting it                            |
-| `maxRestarts`           | No       | Restart attempts before giving up, zero or more                                                                                                                          |
-| `diagnostics`           | No       | Whether to push diagnostics into context after edits. Defaults to `true`                                                                                                 |
+| Field                   | Required | Description                                                                                                                                                                                |
+|:------------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `command`               | Yes      | Language server binary. No spaces unless the value starts with `/`; put arguments in `args`                                                                                                |
+| `extensionToLanguage`   | Yes      | Map of file extension to LSP language ID, at least one entry. Keys start with a dot, such as `".go"`                                                                                       |
+| `args`                  | No       | Arguments passed to the server                                                                                                                                                             |
+| `transport`             | No       | Communication transport: `stdio` (default) or `socket`. Claude Code accepts `socket` but runs every server over stdio, so the stdout protocol rules apply to all servers                   |
+| `env`                   | No       | Environment variables for the server process                                                                                                                                               |
+| `initializationOptions` | No       | Options sent in the initialize request                                                                                                                                                     |
+| `settings`              | No       | Settings sent by `workspace/didChangeConfiguration`                                                                                                                                        |
+| `workspaceFolder`       | No       | Workspace folder path for the server                                                                                                                                                       |
+| `startupTimeout`        | No       | Milliseconds to wait for startup, a positive integer                                                                                                                                       |
+| `shutdownTimeout`       | No       | Milliseconds to wait for a graceful shutdown, a positive integer. When the timeout elapses, Claude Code terminates the server process. When unset, no timeout applies                      |
+| `requestTimeout`        | No       | Milliseconds to wait for the server to answer a request, a positive integer. Defaults to `60000`, so a request the server never answers fails after 60 seconds. Requires v2.1.288 or later |
+| `restartOnCrash`        | No       | Whether to restart the server after it crashes. Defaults to `true`. Set to `false` to leave a crashed server stopped instead of restarting it                                              |
+| `maxRestarts`           | No       | Restart attempts before giving up, zero or more                                                                                                                                            |
+| `diagnostics`           | No       | Whether to push diagnostics into context after edits. Defaults to `true`                                                                                                                   |
 
 This inline config runs `gopls` for `.go` files:
 
@@ -422,6 +465,8 @@ Every component path in a manifest is relative to the plugin root and must start
 
 - **`skills`**: also accepts `"."`. Both `"."` and `"./"` denote the plugin root. Before v2.1.221, `"."` failed manifest validation, so use `"./"` when the plugin must load on earlier versions
 - **`mcpServers`**: also accepts an `https://` bundle URL
+
+`experimental.evals` isn’t a component path, so the rules in this section don’t cover it, and `claude plugin eval` checks the value when it runs instead. It names a directory below the plugin root, such as `"quality/evals"`, with or without the `./` prefix. With an array, only the first entry is used. For what the value accepts and what happens with an unusable one, see [Use a different eval directory](plugin-evals.md#use-a-different-eval-directory).
 
 
 [​](#containment-and-existence)
@@ -707,7 +752,7 @@ To click through this layout and read what each file does, open the [plugin expl
 
 Marketplace entries and the manifest
 
-A [marketplace entry](plugins-marketplace-reference.md) accepts every field on this page alongside [its own fields](plugins-marketplace-reference.md#plugin-entries), including `strict`. The `strict` field decides whether the entry may add components to a plugin that has its own `plugin.json`. It defaults to `true`.
+A [marketplace entry](plugins-marketplace-reference.md) accepts [its own fields](plugins-marketplace-reference.md#plugin-entries), including `strict`, and every field on this page except the [directory listing fields](#directory-listing-fields). The `strict` field decides whether the entry may add components to a plugin that has its own `plugin.json`. It defaults to `true`.
 
 
 [​](#how-entry-fields-combine-with-plugin-json)

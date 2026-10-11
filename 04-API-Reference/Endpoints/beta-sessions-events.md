@@ -2,7 +2,7 @@
 title: "Events - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/events"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:38:47Z"
+fetched_at: "2026-10-04T08:32:38Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -126,24 +126,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -179,6 +162,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -393,8 +397,6 @@ When set, this event was cross-posted from a subagent's thread to surface its cu
 BetaManagedAgentsAgentEvaluatedPermission = "allow" or "ask" or "deny"
 
 
-
-AgentEvaluatedPermission enum
 
 One of the following:
 
@@ -846,6 +848,46 @@ type: "redacted"
 
 
 
+BetaManagedAgentsRepositoryAuthenticationError object{ type: "repository_authentication_error", message, repository_url, retry_status }
+
+
+
+The repository host rejected the credentials, or required credentials and received none.
+
+
+
+BetaManagedAgentsRepositoryCheckoutError object{ type: "repository_checkout_error", message, repository_url, retry_status }
+
+
+
+The requested branch or commit does not exist in the repository.
+
+
+
+BetaManagedAgentsRepositoryCloneError object{ type: "repository_clone_error", message, repository_url, retry_status }
+
+
+
+The repository could not be cloned.
+
+
+
+BetaManagedAgentsRepositoryForbiddenError object{ type: "repository_forbidden_error", message, repository_url, retry_status }
+
+
+
+The repository host refused access to the repository.
+
+
+
+BetaManagedAgentsRepositoryNotFoundError object{ type: "repository_not_found_error", message, repository_url, retry_status }
+
+
+
+The repository host reported the repository as not found.
+
+
+
 BetaManagedAgentsRetryStatusExhausted object{ type: "exhausted" }
 
 
@@ -1064,6 +1106,76 @@ One of the following:
 
 
 
+BetaManagedAgentsSessionEventType = "user.message" or "user.interrupt" or "user.tool_confirmation" or 31 more
+
+
+
+The `type` of a session event.
+
+One of the following:
+
+
+
+BetaManagedAgentsSessionRefusal object{ type: "refusal" }
+
+
+
+The turn ended because the model's response was refused, for example by a safety classifier.
+
+type: "refusal"
+
+
+
+
+
+BetaManagedAgentsSessionRefusalStopDetails object{ type: "refusal", category, explanation }
+
+
+
+Structured information about a refusal.
+
+type: "refusal"
+
+
+
+
+
+category: "cyber" or "bio" or "frontier_llm" or 2 more or null
+
+
+
+The policy category that triggered the refusal, or `null` when there is no named category. New values can be added over time.
+
+One of the following:
+
+"cyber"
+
+
+
+"bio"
+
+
+
+"frontier_llm"
+
+
+
+"reasoning_extraction"
+
+
+
+"general_harms"
+
+
+
+explanation: string or null
+
+
+
+Human-readable explanation of the refusal, or `null` when none is available. The wording can change, so do not parse it.
+
+
+
 BetaManagedAgentsSessionRequiresAction object{ type: "requires_action", event_ids }
 
 
@@ -1094,7 +1206,7 @@ type: "retries_exhausted"
 
 
 
-BetaManagedAgentsSessionStatusIdleEvent object{ type: "session.status_idle", id, processed_at, stop_reason }
+BetaManagedAgentsSessionStatusIdleEvent object{ type: "session.status_idle", id, processed_at, 2 more }
 
 
 
@@ -1226,7 +1338,7 @@ Public `sthr_` ID of the newly created thread.
 
 
 
-BetaManagedAgentsSessionThreadStatusIdleEvent object{ type: "session.thread_status_idle", id, agent_name, 3 more }
+BetaManagedAgentsSessionThreadStatusIdleEvent object{ type: "session.thread_status_idle", id, agent_name, 4 more }
 
 
 

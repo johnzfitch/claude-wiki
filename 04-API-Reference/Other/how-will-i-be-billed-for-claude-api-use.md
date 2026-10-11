@@ -17,4 +17,4 @@ Once you’re on a paid API contract, we aggregate your usage across API calls, 
 
 Regardless of what interface you use, we apply our [standard pay-as-you-go pricing](../../17-Billing-Plans/pricing.md#api). At the end of every calendar month, you will receive an invoice from Stripe. You can then enter your payment details directly into Stripe to pay the invoice.
 
-You can view your charges for the current billing period by checking the [Billing page within your Claude Console settings](usage-limits.md).
+You can view your charges for the current billing period by checking the [Billing page within your Claude Console settings](playground.md).

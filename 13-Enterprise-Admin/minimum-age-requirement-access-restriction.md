@@ -2,7 +2,7 @@
 title: "Minimum age requirement access restriction | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13117299-minimum-age-requirement-access-restriction"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:44Z"
+fetched_at: "2026-10-10T06:25:12Z"
 tags: ["enterprise"]
 ---
 

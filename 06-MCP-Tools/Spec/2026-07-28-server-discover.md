@@ -2,7 +2,7 @@
 title: "Discovery - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/discover"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-09-29T06:30:46Z"
+fetched_at: "2026-10-09T06:27:45Z"
 tags: ["mcp", "mcp-spec"]
 ---
 

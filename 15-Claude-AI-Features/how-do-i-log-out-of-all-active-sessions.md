@@ -2,7 +2,7 @@
 title: "How do I log out of all active sessions? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10310342-how-do-i-log-out-of-all-active-sessions"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:31:22Z"
+fetched_at: "2026-10-10T06:24:22Z"
 tags: ["claude-ai", "claude-code"]
 ---
 

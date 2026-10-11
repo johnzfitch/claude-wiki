@@ -2,7 +2,7 @@
 title: "Claude Opus 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-5-5/overview"
 category: "20-Models"
-fetched_at: "2026-09-30T06:32:06Z"
+fetched_at: "2026-10-08T06:24:52Z"
 tags: ["models"]
 ---
 
@@ -42,7 +42,7 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -54,7 +54,7 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
@@ -72,7 +72,7 @@ For long-running agentic coding and knowledge work
 
 claude-opus-5-5
 
-[Try in playground](../04-API-Reference/Other/usage-limits.md)
+[Try in playground](../04-API-Reference/Other/playground.md)
 
 Copy page
 
@@ -229,7 +229,7 @@ The system prompt Claude Opus 5.5 uses on claude.ai and the Claude apps.
 
 
 
-[System card](../15-Claude-AI-Features/claude-opus-5-5-system-card.md)
+[System card](../19-Reference/this-system-card-describes-claude-opus-5-5-the-latest-opus-class-large.md)
 
 Safety evaluations and deployment decisions for Claude Opus 5.5.
 

@@ -2,7 +2,7 @@
 title: "Common workflows - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/common-workflows"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:31Z"
+fetched_at: "2026-10-09T06:27:15Z"
 tags: ["claude-code", "git"]
 ---
 
@@ -282,7 +282,7 @@ Run and verify tests
 run the new tests and fix any failures
 ```
 
-Claude can generate tests that follow your project’s existing patterns and conventions. When asking for tests, be specific about what behavior you want to verify. Claude examines your existing test files to match the style, frameworks, and assertion patterns already in use. For comprehensive coverage, ask Claude to identify edge cases you might have missed. Claude can analyze your code paths and suggest tests for error conditions, boundary values, and unexpected inputs that are easy to overlook.
+Claude can generate tests that follow your project’s existing patterns and conventions. When asking for tests, be specific about what behavior you want to verify. Claude examines your existing test files to match the style, frameworks, and assertion patterns already in use. To improve coverage, ask Claude to identify edge cases you might have missed. Claude can analyze your code paths and suggest tests for error conditions, boundary values, and unexpected inputs that are often overlooked.
 
 ------------------------------------------------------------------------
 
@@ -459,7 +459,7 @@ Reference a single file
 Explain the logic in @src/utils/auth.js
 ```
 
-This includes the full content of the file in the conversation.
+This includes the content of the file in the conversation when it fits the [Read tool](tools-reference.md#read-tool-behavior)’s token limit, 25,000 tokens by default. A text file larger than 256KB isn’t included.
 
 2
 
@@ -512,7 +512,7 @@ When writing prompts for scheduled tasks, be explicit about what success looks l
 
 Ask Claude about its capabilities
 
-Claude has built-in access to its documentation and can answer questions about its own features and limitations.
+Claude can answer questions about its own features and limitations. It looks up the answers in the current Claude Code documentation, so they aren’t limited to the version you’re running.
 
 
 [​](#example-questions)
@@ -547,7 +547,6 @@ Claude provides documentation-based answers to these questions. For hands-on dem
 
 Tips:
 
-- Claude always has access to the latest Claude Code documentation, regardless of the version you’re using
 - Ask specific questions to get detailed answers
 - Claude can explain complex features like MCP integration, enterprise configurations, and advanced workflows
 

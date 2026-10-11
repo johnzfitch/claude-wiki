@@ -1,8 +1,8 @@
 ---
 title: "Ping Identity SSO/SCIM email mismatch | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13917875"
+source_url: "https://support.claude.com/en/articles/13917875-ping-identity-sso-scim-email-mismatch"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:55Z"
+fetched_at: "2026-10-10T06:25:18Z"
 tags: ["enterprise"]
 ---
 

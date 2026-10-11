@@ -2,7 +2,7 @@
 title: "Agent SDK reference - Python - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/python"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-29T06:29:29Z"
+fetched_at: "2026-10-10T06:24:45Z"
 tags: ["agents", "claude-code", "python", "sdk"]
 ---
 
@@ -85,6 +85,7 @@ tags: ["agents", "claude-code", "python", "sdk"]
   - [McpServerStatusConfig](#mcpserverstatusconfig)
   - [McpStatusResponse](#mcpstatusresponse)
   - [McpServerStatus](#mcpserverstatus)
+  - [ContextUsageResponse](#contextusageresponse)
   - [SdkPluginConfig](#sdkpluginconfig)
 - [Message Types](#message-types)
   - [Message](#message)
@@ -329,6 +330,27 @@ Input schema options
         "required": ["text"],
     }
     ```
+3.  **TypedDict class**: a typed schema whose `NotRequired` keys are left out of `required`.
+    - **Python 3.11 and later**: import `TypedDict` and `NotRequired` from `typing`.
+    - **Python 3.10**: `typing` has no `NotRequired`. Import `TypedDict` and `NotRequired` from `typing_extensions`, which the SDK installs on Python 3.10.
+
+    ``` shiki
+    from typing import Annotated, Any, NotRequired, TypedDict
+    from claude_agent_sdk import tool
+
+
+    class ForecastArgs(TypedDict):
+        latitude: Annotated[float, "Latitude coordinate"]
+        hours: NotRequired[Annotated[int, "How many hours of forecast to return"]]
+
+
+    @tool("get_forecast", "Get the hourly forecast for a location", ForecastArgs)
+    async def get_forecast(args: dict[str, Any]) -> dict[str, Any]:
+        hours = args.get("hours", 12)
+        return {"content": [{"type": "text", "text": f"{hours}-hour forecast for {args['latitude']}"}]}
+    ```
+
+In the simple mapping and TypedDict forms, wrap a type in `Annotated[type, "description"]` to set the field’s description.
 
 
 [​](#returns-2)
@@ -357,7 +379,7 @@ async def greet(args: dict[str, Any]) -> dict[str, Any]:
 
 `ToolAnnotations`
 
-Behavioral hints for a tool, passed as the `annotations` argument of [`tool()`](#tool). `ToolAnnotations` extends the MCP SDK’s `mcp.types.ToolAnnotations` with a `maxResultSizeChars` field, and you can write each hint in camelCase or snake_case: `ToolAnnotations(readOnlyHint=True)` and `ToolAnnotations(read_only_hint=True)` are equivalent. You can also pass a plain `mcp.types.ToolAnnotations` wherever the SDK accepts annotations. The snake_case names and the typed `maxResultSizeChars` field require Python Agent SDK 0.2.140 or later. Versions 0.1.31 through 0.2.139 re-export `mcp.types.ToolAnnotations` unchanged. On versions 0.1.55 through 0.2.139 you can still pass `maxResultSizeChars` as a keyword argument: the MCP class accepts extra fields, and the SDK forwards the value to Claude Code. All fields are optional. Clients shouldn’t rely on the hints for security decisions.
+Behavioral hints for a tool, passed as the `annotations` argument of [`tool()`](#tool). `ToolAnnotations` extends the MCP SDK’s `mcp.types.ToolAnnotations` with a `maxResultSizeChars` field, and you can write each hint in camelCase or snake_case: `ToolAnnotations(readOnlyHint=True)` and `ToolAnnotations(read_only_hint=True)` are equivalent. To read a hint back from the object, use the spelling your installed `mcp` package declares: `.readOnlyHint` on `mcp` 1.x and `.read_only_hint` on 2.x, while `.maxResultSizeChars` works on both. You can also pass a plain `mcp.types.ToolAnnotations` wherever the SDK accepts annotations. The snake_case names and the typed `maxResultSizeChars` field require Python Agent SDK 0.2.140 or later. Versions 0.1.31 through 0.2.139 re-export `mcp.types.ToolAnnotations` unchanged. On versions 0.1.55 through 0.2.139 you can still pass `maxResultSizeChars` as a keyword argument: the MCP class accepts extra fields, and the SDK forwards the value to Claude Code. All fields are optional. Clients shouldn’t rely on the hints for security decisions.
 
 | Field                | Type          | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                            |
 |:---------------------|:--------------|:--------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -722,6 +744,7 @@ class ClaudeSDKClient:
     async def set_model(self, model: str | None = None) -> None
     async def rewind_files(self, user_message_id: str) -> None
     async def get_mcp_status(self) -> McpStatusResponse
+    async def get_context_usage(self) -> ContextUsageResponse
     async def reconnect_mcp_server(self, server_name: str) -> None
     async def toggle_mcp_server(self, server_name: str, enabled: bool) -> None
     async def stop_task(self, task_id: str) -> None
@@ -734,23 +757,24 @@ class ClaudeSDKClient:
 
 Methods
 
-| Method                                    | Description                                                                                                                                                            |
-|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `__init__(options)`                       | Initialize the client with optional configuration                                                                                                                      |
-| `connect(prompt)`                         | Connect to Claude with an optional initial prompt or message stream                                                                                                    |
-| `query(prompt, session_id)`               | Send a new request in streaming mode                                                                                                                                   |
-| `receive_messages()`                      | Receive all messages from Claude as an async iterator                                                                                                                  |
-| `receive_response()`                      | Receive messages until and including a ResultMessage                                                                                                                   |
-| `interrupt()`                             | Send interrupt signal (only works in streaming mode)                                                                                                                   |
-| `set_permission_mode(mode)`               | Change the permission mode for the current session                                                                                                                     |
-| `set_model(model)`                        | Change the model for the current session. Pass `None` to reset to [Claude Code’s default model](../02-Claude-Code-CLI/model-config.md)                                                 |
-| `rewind_files(user_message_id)`           | Restore files to their state at the specified user message. Requires `enable_file_checkpointing=True`. See [File checkpointing](agent-sdk-file-checkpointing.md) |
-| `get_mcp_status()`                        | Get the status of all configured MCP servers. Returns [`McpStatusResponse`](#mcpstatusresponse)                                                                        |
-| `reconnect_mcp_server(server_name)`       | Retry connecting to an MCP server that failed or was disconnected                                                                                                      |
-| `toggle_mcp_server(server_name, enabled)` | Enable or disable an MCP server mid-session. Disabling removes its tools                                                                                               |
-| `stop_task(task_id)`                      | Stop a running background task. A [`TaskNotificationMessage`](#tasknotificationmessage) with status `"stopped"` follows in the message stream                          |
-| `get_server_info()`                       | Get the server’s initialization info, including available commands and output styles                                                                                   |
-| `disconnect()`                            | Disconnect from Claude                                                                                                                                                 |
+| Method                                    | Description                                                                                                                                                                                                                                                                                                                                                                   |
+|:------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `__init__(options)`                       | Initialize the client with optional configuration                                                                                                                                                                                                                                                                                                                             |
+| `connect(prompt)`                         | Connect to Claude with an optional initial prompt or message stream                                                                                                                                                                                                                                                                                                           |
+| `query(prompt, session_id)`               | Send a new request in streaming mode                                                                                                                                                                                                                                                                                                                                          |
+| `receive_messages()`                      | Receive all messages from Claude as an async iterator                                                                                                                                                                                                                                                                                                                         |
+| `receive_response()`                      | Receive messages until and including a ResultMessage                                                                                                                                                                                                                                                                                                                          |
+| `interrupt()`                             | Send interrupt signal (only works in streaming mode)                                                                                                                                                                                                                                                                                                                          |
+| `set_permission_mode(mode)`               | Change the permission mode for the current session                                                                                                                                                                                                                                                                                                                            |
+| `set_model(model)`                        | Change the model for the current session. Pass `None` to reset to [Claude Code’s default model](../02-Claude-Code-CLI/model-config.md)                                                                                                                                                                                                                                                        |
+| `rewind_files(user_message_id)`           | Restore files to their state at the specified user message. Requires `enable_file_checkpointing=True`. See [File checkpointing](agent-sdk-file-checkpointing.md)                                                                                                                                                                                                        |
+| `get_mcp_status()`                        | Get the status of all configured MCP servers. Returns [`McpStatusResponse`](#mcpstatusresponse)                                                                                                                                                                                                                                                                               |
+| `get_context_usage()`                     | Get a breakdown of context window usage by category, skill, and tool. The same data `/context` shows in an interactive session. Returns [`ContextUsageResponse`](#contextusageresponse). To compute the breakdown, Claude Code makes several token-counting API requests that don’t appear in the message stream; see [how these requests are handled](#contextusageresponse) |
+| `reconnect_mcp_server(server_name)`       | Retry connecting to an MCP server that failed or was disconnected                                                                                                                                                                                                                                                                                                             |
+| `toggle_mcp_server(server_name, enabled)` | Enable or disable an MCP server mid-session. Disabling a stdio, SSE, or HTTP server removes its tools                                                                                                                                                                                                                                                                         |
+| `stop_task(task_id)`                      | Stop a running background task. A [`TaskNotificationMessage`](#tasknotificationmessage) with status `"stopped"` follows in the message stream                                                                                                                                                                                                                                 |
+| `get_server_info()`                       | Get the server’s initialization info, including available commands and output styles                                                                                                                                                                                                                                                                                          |
+| `disconnect()`                            | Disconnect from Claude                                                                                                                                                                                                                                                                                                                                                        |
 
 
 [​](#context-manager-support)
@@ -825,26 +849,23 @@ asyncio.run(main())
 
 Example - Streaming input with ClaudeSDKClient
 
+`query()` also accepts an async iterable of user message dicts, so you can assemble the prompt at send time or include content blocks such as images. Claude Code starts responding to the first yielded message as soon as it arrives, without waiting for the iterable to finish, and `receive_response()` stops at the `ResultMessage` that ends that response. Put everything Claude should read before answering into one message, as this generator does, and pair each `query()` call with its own `receive_response()` loop.
+
 ```python
 import asyncio
 from claude_agent_sdk import ClaudeSDKClient
 
 
 async def message_stream():
-    """Generate messages dynamically."""
+    """Assemble the prompt at send time and yield it as one user message."""
+    readings = {"Temperature": "25°C", "Humidity": "60%"}
+    data = ", ".join(f"{name}: {value}" for name, value in readings.items())
     yield {
         "type": "user",
-        "message": {"role": "user", "content": "Analyze the following data:"},
-    }
-    await asyncio.sleep(0.5)
-    yield {
-        "type": "user",
-        "message": {"role": "user", "content": "Temperature: 25°C, Humidity: 60%"},
-    }
-    await asyncio.sleep(0.5)
-    yield {
-        "type": "user",
-        "message": {"role": "user", "content": "What patterns do you see?"},
+        "message": {
+            "role": "user",
+            "content": f"Analyze the following sensor data and describe any patterns you see: {data}",
+        },
     }
 
 
@@ -1115,7 +1136,7 @@ class ClaudeAgentOptions:
 | `resume`                      | `str | None`                                                                              | `None`                             | Session ID to resume                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `session_id`                  | `str | None`                                                                              | `None`                             | Use a specific session ID instead of an auto-generated one. Must be a valid UUID. Can’t be combined with `continue_conversation` or `resume` unless `fork_session` is also set                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `max_turns`                   | `int | None`                                                                              | `None`                             | Maximum agentic turns (tool-use round trips)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `max_budget_usd`              | `float | None`                                                                            | `None`                             | Stop the query when the client-side cost estimate reaches this USD value. Counts only the call’s own spend; totals restored from a resumed session don’t count. For accuracy caveats and reset behavior, see [Track cost and usage](agent-sdk-cost-tracking.md)                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `max_budget_usd`              | `float | None`                                                                            | `None`                             | Stop the query when the client-side cost estimate reaches this USD value. The estimate can pass this value, so [leave headroom](agent-sdk-agent-loop.md#budget-headroom). Counts only the call’s own spend; totals restored from a resumed session don’t count. For accuracy caveats and reset behavior, see [Track cost and usage](agent-sdk-cost-tracking.md)                                                                                                                                                                                                                                                                                           |
 | `disallowed_tools`            | `list[str]`                                                                               | `[]`                               | Tools to deny. A bare name such as `"Bash"` removes the tool from Claude’s context. A scoped rule such as `"Bash(rm *)"` leaves the tool available and denies matching calls in every permission mode, including `bypassPermissions`, for the command [as written](../02-Claude-Code-CLI/permissions.md#bash-rule-limits). See [Permissions](agent-sdk-permissions.md#allow-and-deny-rules)                                                                                                                                                                                                                                                                                     |
 | `enable_file_checkpointing`   | `bool`                                                                                    | `False`                            | Enable file change tracking for rewinding. See [File checkpointing](agent-sdk-file-checkpointing.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `model`                       | `str | None`                                                                              | `None`                             | Claude model alias or full model name. See [accepted values and provider-specific IDs](../02-Claude-Code-CLI/model-config.md#available-models)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -1137,7 +1158,7 @@ class ClaudeAgentOptions:
 | `user`                        | `str | None`                                                                              | `None`                             | On POSIX platforms, the OS user account the Claude Code subprocess runs as. Claude Code keeps the parent process’s environment, including `HOME`, and runs in `cwd`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `include_partial_messages`    | `bool`                                                                                    | `False`                            | Include partial message streaming events. When enabled, [`StreamEvent`](#streamevent) messages are yielded                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `include_hook_events`         | `bool`                                                                                    | `False`                            | Include hook lifecycle events in the message stream as `HookEventMessage` objects                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `forward_subagent_text`       | `bool`                                                                                    | `False`                            | Forward subagent text and thinking blocks in the message stream. Without this option, Claude Code emits subagent `tool_use` and `tool_result` blocks but not text or thinking. Requires Python Agent SDK 0.2.140 or later                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `forward_subagent_text`       | `bool`                                                                                    | `False`                            | Forward subagent text and thinking blocks in the message stream. Without this option, Claude Code omits the text and thinking blocks of a subagent that runs in the [foreground](../09-Agents-Patterns/sub-agents.md#run-subagents-in-foreground-or-background). For nested subagents, skills with `context: fork`, and the Claude Code version each needs, see [Follow subagent messages](../02-Claude-Code-CLI/headless.md#follow-subagent-messages). Requires Python Agent SDK 0.2.140 or later                                                                                                                                                                                                    |
 | `verbatim_prompts`            | `bool`                                                                                    | `False`                            | Deliver every prompt as written. The SDK sends each user message with `client_composed` set to `True`. See [`client_composed`](agent-sdk-typescript.md#sdkusermessage) for what Claude Code skips on those messages. Use this option when your prompt text includes content the end user didn’t type. For per-turn control, leave it off and set `"client_composed": True` on individual streamed messages instead. While the option is on, the SDK overwrites any `client_composed` value you set. Requires Python Agent SDK 0.2.158 or later and Claude Code v2.1.248 or later; the CLI bundled with those SDK versions satisfies the Claude Code requirement |
 | `fork_session`                | `bool`                                                                                    | `False`                            | When resuming with `resume`, fork to a new session ID instead of continuing the original session                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `resume_session_at`           | `str | None`                                                                              | `None`                             | When resuming, load the conversation only up to and including the message with this UUID. Use with `resume`, and usually `fork_session`, to branch from an earlier point. Requires Python Agent SDK 0.2.137 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -1175,7 +1196,7 @@ options = ClaudeAgentOptions(
 ```
 
 - `API_TIMEOUT_MS`: per-request timeout on the Anthropic client, in milliseconds. Default `600000`. Applies to the main loop and all subagents.
-- `CLAUDE_CODE_MAX_RETRIES`: maximum API retries. Default `10`, capped at `15`. Each retry gets its own `API_TIMEOUT_MS` window, so worst-case wall time is roughly `API_TIMEOUT_MS × (CLAUDE_CODE_MAX_RETRIES + 1)` plus backoff. For unattended runs that need to wait through longer outages, set [`CLAUDE_CODE_RETRY_WATCHDOG=1`](../02-Claude-Code-CLI/errors.md#tune-retry-behavior): it retries transient capacity errors indefinitely and, on Claude Code v2.1.199 or later, raises the default for other transient errors to `300` and removes the cap on this variable.
+- `CLAUDE_CODE_MAX_RETRIES`: maximum API retries. Default `10`, capped at `15`. Each retry gets its own `API_TIMEOUT_MS` window. For unattended runs that need to wait through longer outages, set [`CLAUDE_CODE_RETRY_WATCHDOG=1`](../02-Claude-Code-CLI/errors.md#tune-retry-behavior): it retries transient capacity errors indefinitely and, on Claude Code v2.1.199 or later, raises the default for other transient errors to `300` and removes the cap on this variable.
 - `CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS`: stall watchdog for subagents. While the stream watchdog is on, the default is `CLAUDE_STREAM_IDLE_TIMEOUT_MS` plus 5 minutes, which comes to `600000` unless you raise that variable. With the stream watchdog off, the default is `600000`. Before v2.1.257, the default was always `600000`. The timer resets on each stream event. On a stall, Claude Code aborts the subagent and reports the stall to the parent. For a background subagent, it also marks the task failed and attaches any partial result.
 - `CLAUDE_ENABLE_STREAM_WATCHDOG` with `CLAUDE_STREAM_IDLE_TIMEOUT_MS`: stream watchdog that aborts the request when headers have arrived but the response body stops streaming. The watchdog is on by default for all providers; set `CLAUDE_ENABLE_STREAM_WATCHDOG=0` to disable it. `CLAUDE_STREAM_IDLE_TIMEOUT_MS` defaults to `300000` and is clamped to that minimum. After the abort, [Automatic retries](../02-Claude-Code-CLI/errors.md#automatic-retries) covers what Claude Code does, based on how far the response had progressed. While the watchdog waits out a response that a gateway behind `ANTHROPIC_BASE_URL` holds open with keep-alive pings, a host that sets `include_partial_messages` keeps receiving `ping` [`StreamEvent`](#streamevent) messages. Read those frames as liveness rather than timing the session out on silence. Before v2.1.257, the frames stopped 5 minutes after the last real stream event.
 
@@ -1661,7 +1682,7 @@ ThinkingConfig = ThinkingConfigAdaptive | ThinkingConfigEnabled | ThinkingConfig
 | `enabled`  | `type`, `budget_tokens`, `display` | Enable thinking with a specific token budget |
 | `disabled` | `type`                             | Disable thinking                             |
 
-The optional `display` field controls whether thinking text is returned `"summarized"` or `"omitted"`. On Claude Opus 4.7 and later, the API default is `"omitted"`, so set `"summarized"` to receive thinking content in [`ThinkingBlock`](#thinkingblock) outputs. Claude Code doesn’t send `display` to Amazon Bedrock or Google Cloud’s Agent Platform, so on those providers Opus 4.7 and later return empty `ThinkingBlock` outputs even when you set `display` to `"summarized"`. Because these are `TypedDict` classes, they’re plain dicts at runtime. Either construct them as dict literals or call the class like a constructor; both produce a `dict`. Access fields with `config["budget_tokens"]`, not `config.budget_tokens`:
+The optional `display` field controls whether thinking text is returned `"summarized"` or `"omitted"`. On Claude Opus 4.7 and later, the API default is `"omitted"`, so set `"summarized"` to receive thinking content in [`ThinkingBlock`](#thinkingblock) outputs. Claude Code doesn’t pass your `display` value to some providers, such as Amazon Bedrock and Google Cloud’s Agent Platform. On those providers, Opus 4.7 and later return empty `ThinkingBlock` outputs even when you set `display` to `"summarized"`. Because these are `TypedDict` classes, they’re plain dicts at runtime. Either construct them as dict literals or call the class like a constructor; both produce a `dict`. Access fields with `config["budget_tokens"]`, not `config.budget_tokens`:
 
 ```python
 from claude_agent_sdk import ClaudeAgentOptions, ThinkingConfigEnabled
@@ -1706,7 +1727,7 @@ SdkBeta = Literal["context-1m-2025-08-07"]
 
 Use with the `betas` field in `ClaudeAgentOptions` to enable beta features.
 
-The `context-1m-2025-08-07` beta is retired as of April 30, 2026. Passing this header with Claude Sonnet 4.5 or Sonnet 4 has no effect, and requests that exceed the standard 200k-token context window return an error. To use a 1M-token context window, migrate to [Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5, Claude Sonnet 4.6, Claude Opus 4.6, Claude Opus 4.7, or Claude Opus 4.8](../20-Models/about-claude-models-overview.md), which include 1M context at standard pricing with no beta header required.
+On the Claude API, the `context-1m-2025-08-07` beta is retired for Claude Sonnet 4.5 and Claude Sonnet 4. If you still pass it with either model, requests that exceed the standard 200K-token context window return an error, so remove it from `betas`. To run a session with a 1M-token context window, set `model` to a model that [runs with the 1M window by default](../02-Claude-Code-CLI/model-config.md#extended-context), such as `claude-sonnet-5-5` or `claude-opus-5-5`. For a model that reaches 1M only through its `[1m]` variant, append the suffix to the model ID, as in `claude-opus-4-6[1m]`.
 
 
 [​](#mcpsdkserverconfig)
@@ -1830,6 +1851,38 @@ class McpServerStatus(TypedDict):
 | `config`     | [`McpServerStatusConfig`](#mcpserverstatusconfig) (optional) | Server configuration. Same shape as [`McpServerConfig`](#mcpserverconfig) (stdio, SSE, HTTP, or SDK), plus a `claudeai-proxy` variant for servers connected through claude.ai |
 | `scope`      | `str` (optional)                                             | Configuration scope                                                                                                                                                           |
 | `tools`      | `list` (optional)                                            | Tools provided by this server, each with `name`, `description`, and `annotations` fields                                                                                      |
+
+
+[​](#contextusageresponse)
+
+`ContextUsageResponse`
+
+Response from [`ClaudeSDKClient.get_context_usage()`](#methods). This is the same payload Claude Code renders for the `/context` command in an interactive session, so alongside the token counts it carries display fields such as `color` and `gridRows` that Claude Code uses to draw the `/context` usage grid. Claude Code builds this payload by sending several requests to the [token-counting](../04-API-Reference/Guides/build-with-claude-token-counting.md) API. These requests don’t appear in the message stream, so cost tracking that reads the stream won’t see them. On the Anthropic API, token counting isn’t billed.
+
+```python
+class ContextUsageResponse(TypedDict):
+    categories: list[ContextUsageCategory]
+    totalTokens: int
+    maxTokens: int
+    rawMaxTokens: int
+    percentage: float
+    model: str
+    isAutoCompactEnabled: bool
+    memoryFiles: list[dict[str, Any]]
+    mcpTools: list[dict[str, Any]]
+    agents: list[dict[str, Any]]
+    gridRows: list[list[dict[str, Any]]]
+    autoCompactThreshold: NotRequired[int]
+    deferredBuiltinTools: NotRequired[list[dict[str, Any]]]
+    systemTools: NotRequired[list[dict[str, Any]]]
+    systemPromptSections: NotRequired[list[dict[str, Any]]]
+    slashCommands: NotRequired[dict[str, Any]]
+    skills: NotRequired[dict[str, Any]]  # skill usage with frontmatter breakdown
+    messageBreakdown: NotRequired[dict[str, Any]]  # message tokens by type
+    apiUsage: NotRequired[dict[str, Any] | None]
+```
+
+Each `ContextUsageCategory` entry carries `name`, `tokens`, `color`, and an optional `isDeferred` flag. `totalTokens` is the session’s current context usage, and `maxTokens` is the window that usage is measured against. That window is the model’s context window, or the lower auto-compaction window when one applies, and `rawMaxTokens` carries the same value as `maxTokens`. `apiUsage` holds the usage from the latest API response, not a running total for the session. Claude Code leaves the optional `deferredBuiltinTools`, `systemTools`, and `systemPromptSections` keys unset, so expect them to be absent even though the type declares them.
 
 
 [​](#sdkpluginconfig)
@@ -1978,6 +2031,8 @@ class SystemMessage:
     data: dict[str, Any]
 ```
 
+Subtypes that have no dataclass of their own arrive as `SystemMessage`. To follow the session between turns, set [`CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS=1`](../02-Claude-Code-CLI/env-vars.md#variables) and read `message.data["state"]` on each message whose `subtype` is `session_state_changed`. [`SDKSessionStateChangedMessage`](agent-sdk-typescript.md#sdksessionstatechangedmessage) lists the states it can carry. Iterate with `receive_messages()` to read them: `receive_response()` stops at the `ResultMessage`, and a `session_state_changed` message can follow that result.
+
 
 [​](#resultmessage)
 
@@ -2029,19 +2084,20 @@ The `usage` dict covers the main agent loop only and excludes subagent and other
 
 The `model_usage` dict maps model names to per-model usage. It covers every model call made through the query pipeline: the main loop, subagents, and internal calls such as compaction and Workflow agents. Helper calls outside that pipeline, such as the permission classifier and token-counting requests, are excluded from `model_usage`. Treat `model_usage` as an estimate, not a billing statement. In [streaming input mode](agent-sdk-streaming-vs-single-mode.md), `model_usage` and `total_cost_usd` are cumulative across turns, so read the latest result rather than summing across results. A call that resumes a session also counts the [totals restored from the session’s earlier calls](agent-sdk-cost-tracking.md#accumulate-costs-across-multiple-calls). See [Track costs in streaming input mode](agent-sdk-cost-tracking.md#track-costs-in-streaming-input-mode) for resets and [Recover totals after a session crash](agent-sdk-cost-tracking.md#recover-totals-after-a-session-crash) for zeroed results. Each value in `model_usage` is a `ModelUsage` TypedDict, imported via `from claude_agent_sdk.types import ModelUsage`. Its keys use camelCase because the SDK passes the value through unmodified from the underlying CLI process, matching the TypeScript [`ModelUsage`](agent-sdk-typescript.md#modelusage) type:
 
-| Key                        | Type    | Description                                                                                                                                                                                                                                                                           |
-|----------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `inputTokens`              | `int`   | Input tokens for this model.                                                                                                                                                                                                                                                          |
-| `outputTokens`             | `int`   | Output tokens for this model.                                                                                                                                                                                                                                                         |
-| `cacheReadInputTokens`     | `int`   | Cache read tokens for this model.                                                                                                                                                                                                                                                     |
-| `cacheCreationInputTokens` | `int`   | Cache creation tokens for this model.                                                                                                                                                                                                                                                 |
-| `webSearchRequests`        | `int`   | Web search requests made by this model.                                                                                                                                                                                                                                               |
-| `thinkingTokens`           | `int`   | Thinking tokens generated by this model, already counted in `outputTokens`. Absent until a turn runs on a Claude Code version that records it, and not declared on the TypedDict, so read it with `.get()`. Requires Python Agent SDK 0.2.150 or later, whose bundled CLI records it. |
-| `costUSD`                  | `float` | Estimated cost in USD for this model, computed client-side. See [Track cost and usage](agent-sdk-cost-tracking.md) for billing caveats.                                                                                                                                         |
-| `contextWindow`            | `int`   | Context window size for this model.                                                                                                                                                                                                                                                   |
-| `maxOutputTokens`          | `int`   | Maximum output token limit for this model.                                                                                                                                                                                                                                            |
-| `canonicalModel`           | `str`   | Canonical model ID used for the pricing lookup. May differ from the raw model string the entry is keyed by, such as a provider-specific ID or alias. Not always present.                                                                                                              |
-| `provider`                 | `str`   | API provider that served this model, such as `firstParty`, `bedrock`, `vertex`, `foundry`, `anthropicAws`, `mantle`, or `gateway`. Not always present.                                                                                                                                |
+| Key                        | Type    | Description                                                                                                                                                                                                                                                                                                                            |
+|----------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `inputTokens`              | `int`   | Input tokens for this model.                                                                                                                                                                                                                                                                                                           |
+| `outputTokens`             | `int`   | Output tokens for this model.                                                                                                                                                                                                                                                                                                          |
+| `cacheReadInputTokens`     | `int`   | Cache read tokens for this model.                                                                                                                                                                                                                                                                                                      |
+| `cacheCreationInputTokens` | `int`   | Cache creation tokens for this model.                                                                                                                                                                                                                                                                                                  |
+| `webSearchRequests`        | `int`   | Web search requests made by this model.                                                                                                                                                                                                                                                                                                |
+| `thinkingTokens`           | `int`   | Thinking tokens generated by this model, already counted in `outputTokens`. Absent until a turn runs on a Claude Code version that records it, and not declared on the TypedDict, so read it with `.get()`. Requires Python Agent SDK 0.2.150 or later, whose bundled CLI records it.                                                  |
+| `costUSD`                  | `float` | Estimated cost in USD for this model, computed client-side. See [Track cost and usage](agent-sdk-cost-tracking.md) for billing caveats.                                                                                                                                                                                          |
+| `contextWindow`            | `int`   | Context window size for this model.                                                                                                                                                                                                                                                                                                    |
+| `maxOutputTokens`          | `int`   | Maximum output token limit for this model.                                                                                                                                                                                                                                                                                             |
+| `canonicalModel`           | `str`   | Canonical model ID used for the pricing lookup. May differ from the raw model string the entry is keyed by, such as a provider-specific ID or alias. Not always present.                                                                                                                                                               |
+| `provider`                 | `str`   | API provider that served this model, such as `firstParty`, `bedrock`, `vertex`, `foundry`, `anthropicAws`, `mantle`, or `gateway`. Not always present.                                                                                                                                                                                 |
+| `costBasis`                | `str`   | Price table that priced this model’s latest request: `list` for list price, `managed` for a [`modelPricing`](../02-Claude-Code-CLI/settings-reference.md#modelpricing) table, or `unknown` when neither matched the model ID. Not always present, and not declared on the TypedDict, so read it with `.get()`. Requires Claude Code v2.1.246 or later. |
 
 
 [​](#streamevent)
@@ -2347,7 +2403,7 @@ class ClaudeSDKError(Exception):
     """Base error for Claude SDK."""
 ```
 
-When a single-shot `query()` ends with an error result, for example a turn-limit error, the SDK raises a [`ResultError`](#resulterror) after yielding the final result message. Python Agent SDK versions before 0.2.140 raised a plain `Exception` that wasn’t a `ClaudeSDKError` subclass.
+When a single-shot `query()` ends with an error result, for example a turn-limit error, the SDK raises a [`ResultError`](#resulterror).
 
 
 [​](#clinotfounderror)
@@ -2401,7 +2457,7 @@ class ProcessError(ClaudeSDKError):
 
 `ResultError`
 
-Raised after the final [`ResultMessage`](#resultmessage) when the Claude Code process exits because the run ended with an error result, such as a turn-limit error or an API error. `ResultError` subclasses `ProcessError`, so an existing `except ProcessError` handler also catches it. Its attributes carry the fields of that result message, so you can branch on why the run failed without parsing the message text. Requires Python Agent SDK 0.2.140 or later.
+Raised when the Claude Code process exits because the run ended with an error [result message](#resultmessage), such as a turn-limit error or an API error. `ResultError` subclasses `ProcessError`, so an existing `except ProcessError` handler also catches it. Its attributes carry the fields of that result message, so you can branch on why the run failed without parsing the message text. Requires Python Agent SDK 0.2.140 or later.
 
 ```python
 class ResultError(ProcessError):
@@ -2454,7 +2510,7 @@ HookEvent = Literal[
     "PreToolUse",  # Called before tool execution
     "PostToolUse",  # Called after tool execution
     "PostToolUseFailure",  # Called when a tool execution fails
-    "UserPromptSubmit",  # Called when user submits a prompt
+    "UserPromptSubmit",  # Called when a prompt is submitted
     "Stop",  # Called when stopping execution
     "SubagentStop",  # Called when a subagent stops
     "PreCompact",  # Called before message compaction
@@ -2479,7 +2535,7 @@ HookCallback = Callable[[HookInput, str | None, HookContext], Awaitable[HookJSON
 
 Parameters:
 
-- `input`: Strongly-typed hook input with discriminated unions based on `hook_event_name` (see [`HookInput`](#hookinput))
+- `input`: Strongly typed hook input with discriminated unions based on `hook_event_name` (see [`HookInput`](#hookinput))
 - `tool_use_id`: Optional tool use identifier (for tool-related hooks)
 - `context`: Hook context with additional information
 
@@ -2660,10 +2716,10 @@ class UserPromptSubmitHookInput(BaseHookInput):
     prompt: str
 ```
 
-| Field             | Type                          | Description                 |
-|:------------------|:------------------------------|:----------------------------|
-| `hook_event_name` | `Literal["UserPromptSubmit"]` | Always “UserPromptSubmit”   |
-| `prompt`          | `str`                         | The user’s submitted prompt |
+| Field             | Type                          | Description               |
+|:------------------|:------------------------------|:--------------------------|
+| `hook_event_name` | `Literal["UserPromptSubmit"]` | Always “UserPromptSubmit” |
+| `prompt`          | `str`                         | The submitted prompt      |
 
 
 [​](#stophookinput)
@@ -2851,7 +2907,7 @@ class PostToolUseHookSpecificOutput(TypedDict):
     hookEventName: Literal["PostToolUse"]
     additionalContext: NotRequired[str]
     updatedToolOutput: NotRequired[Any]
-    updatedMCPToolOutput: NotRequired[Any]  # Deprecated: use updatedToolOutput, which works for all tools
+    updatedMCPToolOutput: NotRequired[Any]  # MCP tools only. Prefer updatedToolOutput, which works for all tools
 
 
 class PostToolUseFailureHookSpecificOutput(TypedDict):
@@ -2970,7 +3026,7 @@ asyncio.run(main())
 
 Tool Input/Output Types
 
-Documentation of input/output schemas for all built-in Claude Code tools. While the Python SDK doesn’t export these as types, they represent the structure of tool inputs and outputs in messages.
+Documentation of input/output schemas for built-in Claude Code tools. While the Python SDK doesn’t export these as types, they represent the structure of tool inputs and outputs in messages. Each output shown is the value you read from [`UserMessage.tool_use_result`](#usermessage) for that tool. Key names appear exactly as Claude Code emits them. A key annotated `| None` with a “present when” or “optional” comment is omitted when it doesn’t apply.
 
 
 [​](#agent)
@@ -2985,6 +3041,7 @@ Agent
     "prompt": str,  # The task for the agent to perform
     "subagent_type": str | None,  # The type of specialized agent to use
     "model": "sonnet" | "opus" | "haiku" | "fable" | None,  # Model override for this agent
+    "effort": "low" | "medium" | "high" | "xhigh" | "max" | None,  # Reasoning effort for this agent
     "run_in_background": bool | None,  # Agents run in the background by default; set to False to run synchronously
     "name": str | None,  # Name for the spawned agent
     "team_name": str | None,  # Deprecated; ignored
@@ -3024,6 +3081,7 @@ Launches a new agent to handle complex, multi-step tasks autonomously. **Output 
         "speed": str | None,
         "iterations": Any | None,
         "output_tokens_details": {"thinking_tokens": int | None} | None,
+        "fallback_credit": Any | None,
     },
     "toolStats": {  # Aggregate tool activity for the run
         "readCount": int,
@@ -3070,7 +3128,7 @@ Launches a new agent to handle complex, multi-step tasks autonomously. **Output 
 }
 ```
 
-Returns the result from the subagent. The output is discriminated on the `status` field: `"completed"` for finished tasks, `"async_launched"` for background tasks, and `"remote_launched"` for tasks Claude Code dispatched to a cloud session, where `sessionUrl` links to that session and `taskId` identifies it. If Claude Code [kept the subagent’s isolated worktree](../02-Claude-Code-CLI/worktrees.md#isolate-subagents-with-worktrees), `worktreePath` on the `completed` variant is where to find it, and `worktreeBranch` is its branch when Claude Code created the worktree with git. On the `completed` variant, `resolvedModel` names the model the subagent started on, which can differ from the requested `model` input when [`availableModels`](../02-Claude-Code-CLI/model-config.md#restrict-model-selection) or another override applies. This field requires Claude Code v2.1.174 or later. On the `async_launched` variant, `resolvedModel` names the model in use when the agent moved to the background, so a swap that happened before backgrounding is reflected there. The `modelsUsed` field on both variants lists the models used in order, with consecutive repeats collapsed; it’s set only when the model was swapped mid-run. `modelsUsed` and the backgrounding-time `resolvedModel` behavior require Claude Code v2.1.212 or later. Claude Code fills `usage` and `totalTokens` from the subagent’s final API request, not from the whole run. When present, `thinking_tokens` under `output_tokens_details` in `usage` is the number of that request’s output tokens that were thinking tokens. The `output_tokens_details` key requires Python SDK v0.2.136 or later, which bundles Claude Code v2.1.228.
+Returns the result from the subagent. The output is discriminated on the `status` field: `"completed"` for finished tasks, `"async_launched"` for background tasks, and `"remote_launched"` for tasks Claude Code dispatched to a cloud session, where `sessionUrl` links to that session and `taskId` identifies it. If Claude Code [kept the subagent’s isolated worktree](../02-Claude-Code-CLI/worktrees.md#isolate-subagents-with-worktrees), `worktreePath` on the `completed` variant is where to find it, and `worktreeBranch` is its branch when Claude Code created the worktree with git. On the `completed` variant, `resolvedModel` names the model the subagent started on, which can differ from the requested `model` input when [`availableModels`](../02-Claude-Code-CLI/model-config.md#restrict-model-selection) or another override applies. This field requires Claude Code v2.1.174 or later. On the `async_launched` variant, `resolvedModel` names the model in use when the agent moved to the background, so a swap that happened before backgrounding is reflected there. The `modelsUsed` field on both variants lists the models used in order, with consecutive repeats collapsed; it’s set only when the model was swapped mid-run. `modelsUsed` and the backgrounding-time `resolvedModel` behavior require Claude Code v2.1.212 or later. Claude Code fills `usage` and `totalTokens` from the subagent’s final API request, not from the whole run. When present, `thinking_tokens` under `output_tokens_details` in `usage` is the number of that request’s output tokens that were thinking tokens. The `output_tokens_details` key requires Python SDK v0.2.136 or later, which bundles Claude Code v2.1.228. The `fallback_credit` key requires Python SDK v0.2.162 or later, which bundles Claude Code v2.1.285.
 
 
 [​](#askuserquestion)
@@ -3134,12 +3192,12 @@ AskUserQuestion
 
 Bash
 
-**Tool name:** `Bash` **Input:**
+**Tool name:** `Bash` For what sets the foreground ceiling, see [Timeout and output limits](../02-Claude-Code-CLI/tools-reference.md#timeout-and-output-limits). For the background time limit, see [Time limit for background commands](../02-Claude-Code-CLI/tools-reference.md#time-limit-for-background-commands). **Input:**
 
 ```python
 {
     "command": str,  # The command to execute
-    "timeout": int | None,  # Optional timeout in milliseconds (max 600000; higher values are clamped to the max)
+    "timeout": int | None,  # Milliseconds. Foreground: capped at 600000 by default, higher values are clamped. With run_in_background (Claude Code v2.1.285 or later): the background time limit, 1800000 when omitted, capped at 7200000 unless raised
     "description": str | None,  # Clear, concise description (5-10 words)
     "run_in_background": bool | None,  # Set to true to run in background
 }
@@ -3203,9 +3261,30 @@ Edit
 
 ```python
 {
-    "message": str,  # Confirmation message
-    "replacements": int,  # Number of replacements made
-    "file_path": str,  # File path that was edited
+    "filePath": str,  # The file that was edited
+    "oldString": str,  # The text that was replaced
+    "newString": str,  # The text that replaced it
+    "originalFile": str | None,  # File contents before the edit
+    "structuredPatch": [  # Diff hunks for the change
+        {
+            "oldStart": int,
+            "oldLines": int,
+            "newStart": int,
+            "newLines": int,
+            "lines": list[str],
+        }
+    ],
+    "userModified": bool,  # Whether the user changed the proposed edit before accepting it
+    "replaceAll": bool,  # Whether all occurrences were replaced
+    "gitDiff": {  # Optional git diff summary for the file
+        "filename": str,
+        "status": "modified" | "added",
+        "additions": int,
+        "deletions": int,
+        "changes": int,
+        "patch": str,
+        "repository": str | None,  # GitHub owner/repo when available
+    } | None,
 }
 ```
 
@@ -3224,23 +3303,90 @@ Read
 }
 ```
 
-**Output (Text files):**
+The output takes one of the following shapes depending on what Claude read. Check the `type` key to tell them apart. **Output (type: `"text"`):**
 
 ```python
 {
-    "content": str,  # File contents with line numbers
-    "total_lines": int,  # Total number of lines in file
-    "lines_returned": int,  # Lines actually returned
+    "type": "text",
+    "file": {
+        "filePath": str,  # The file that was read
+        "content": str,  # The returned content
+        "numLines": int,  # Number of lines in the returned content
+        "startLine": int,  # Line number the content starts at
+        "totalLines": int,  # Total number of lines in the file
+        "truncatedByTokenCap": bool | None,  # Present and True when a whole-file read exceeded the token cap and content is the first page
+    },
 }
 ```
 
-**Output (Images):**
+**Output (type: `"image"`):**
 
 ```python
 {
-    "image": str,  # Base64 encoded image data
-    "mime_type": str,  # Image MIME type
-    "file_size": int,  # File size in bytes
+    "type": "image",
+    "file": {
+        "base64": str,  # Base64-encoded image data
+        "type": "image/jpeg" | "image/png" | "image/gif" | "image/webp",  # Image MIME type
+        "originalSize": int,  # Original file size in bytes
+        "dimensions": {  # Optional sizing info for coordinate mapping
+            "originalWidth": int | None,  # Optional; original width in pixels
+            "originalHeight": int | None,  # Optional; original height in pixels
+            "displayWidth": int | None,  # Optional; width after resizing
+            "displayHeight": int | None,  # Optional; height after resizing
+        } | None,
+    },
+}
+```
+
+**Output (type: `"notebook"`):**
+
+```python
+{
+    "type": "notebook",
+    "file": {
+        "filePath": str,  # The notebook that was read
+        "cells": list,  # Notebook cells
+    },
+}
+```
+
+**Output (type: `"pdf"`):**
+
+```python
+{
+    "type": "pdf",
+    "file": {
+        "filePath": str,  # The PDF that was read
+        "base64": str,  # Base64-encoded PDF data
+        "originalSize": int,  # File size in bytes
+    },
+}
+```
+
+**Output (type: `"parts"`):**
+
+```python
+{
+    "type": "parts",
+    "file": {
+        "filePath": str,  # The PDF that was read
+        "originalSize": int,  # File size in bytes
+        "count": int,  # Number of pages extracted as images
+        "outputDir": str,  # Directory containing the extracted page images
+    },
+    "firstPage": int | None,  # Optional document page number of the first extracted page
+}
+```
+
+**Output (type: `"file_unchanged"`):**
+
+```python
+{
+    "type": "file_unchanged",  # The file is unchanged since Claude last read it in this session, so the content isn't repeated
+    "file": {
+        "filePath": str,
+    },
+    "source": "seeded" | None,  # Present when the earlier copy came from a CLAUDE.md or memory file loaded at startup rather than a Read call
 }
 ```
 
@@ -3262,9 +3408,29 @@ Write
 
 ```python
 {
-    "message": str,  # Success message
-    "bytes_written": int,  # Number of bytes written
-    "file_path": str,  # File path that was written
+    "type": "create" | "update",  # Whether the write created a new file or overwrote an existing one
+    "filePath": str,  # The file that was written
+    "content": str,  # The content that was written
+    "structuredPatch": [  # Diff hunks; empty for a new file, when nothing changed, or when Claude Code skipped the diff
+        {
+            "oldStart": int,
+            "oldLines": int,
+            "newStart": int,
+            "newLines": int,
+            "lines": list[str],
+        }
+    ],
+    "originalFile": str | None,  # Previous content; None for a new file or when the previous content was too large to include
+    "gitDiff": {  # Optional git diff summary for the file
+        "filename": str,
+        "status": "modified" | "added",
+        "additions": int,
+        "deletions": int,
+        "changes": int,
+        "patch": str,
+        "repository": str | None,  # GitHub owner/repo when available
+    } | None,
+    "userModified": bool | None,  # Optional; whether the user edited the proposed content before accepting it
 }
 ```
 
@@ -3286,11 +3452,16 @@ Glob
 
 ```python
 {
-    "matches": list[str],  # Array of matching file paths
-    "count": int,  # Number of matches found
-    "search_path": str,  # Search directory used
+    "durationMs": int,  # Time taken to run the search, in milliseconds
+    "numFiles": int,  # Number of paths returned, after any truncation
+    "filenames": list[str],  # Matching file paths
+    "truncated": bool,  # Whether the results were truncated at the 100-file limit
+    "totalMatches": int | None,  # Optional total number of matching files before truncation; a lower bound when countIsComplete is False
+    "countIsComplete": bool | None,  # Optional; whether totalMatches is exact
 }
 ```
+
+`totalMatches` and `countIsComplete` require Claude Code v2.1.191 or later.
 
 
 [​](#grep)
@@ -3311,36 +3482,32 @@ Grep
     "-B": int | None,  # Lines to show before each match
     "-A": int | None,  # Lines to show after each match
     "-C": int | None,  # Lines to show before and after
+    "context": int | None,  # Lines to show before and after; -C is an alias
+    "-o": bool | None,  # Print only the matched parts of each line
     "head_limit": int | None,  # Limit output to first N lines/entries
+    "offset": int | None,  # Skip first N lines/entries before applying head_limit
     "multiline": bool | None,  # Enable multiline mode
 }
 ```
 
-**Output (content mode):**
+**Output:**
 
 ```python
 {
-    "matches": [
-        {
-            "file": str,
-            "line_number": int | None,
-            "line": str,
-            "before_context": list[str] | None,
-            "after_context": list[str] | None,
-        }
-    ],
-    "total_matches": int,
+    "mode": "content" | "files_with_matches" | "count" | None,  # The output mode that was used
+    "numFiles": int,  # Number of files in the result; always 0 in content mode
+    "filenames": list[str],  # Matching files in files_with_matches mode; empty in the other modes
+    "content": str | None,  # Matching lines in content mode, or per-file counts in count mode
+    "numLines": int | None,  # Number of lines in content, present in content mode
+    "numMatches": int | None,  # Total match count, present in count mode
+    "totalFiles": int | None,  # Optional total before head_limit and offset, in files_with_matches mode
+    "totalLines": int | None,  # Optional total before head_limit and offset, in content mode
+    "appliedLimit": int | None,  # Present when head_limit truncated the result
+    "appliedOffset": int | None,  # Present when an offset was applied
 }
 ```
 
-**Output (files_with_matches mode):**
-
-```python
-{
-    "files": list[str],  # Files containing matches
-    "count": int,  # Number of files with matches
-}
-```
+Grep returns this dict shape in each output mode. Which optional keys are present depends on `output_mode`. `totalFiles` requires Claude Code v2.1.208 or later. `totalLines` requires Claude Code v2.1.210 or later.
 
 
 [​](#notebookedit)
@@ -3363,10 +3530,16 @@ NotebookEdit
 
 ```python
 {
-    "message": str,  # Success message
-    "edit_type": "replaced" | "inserted" | "deleted",  # Type of edit performed
-    "cell_id": str | None,  # Cell ID that was affected
-    "total_cells": int,  # Total cells in notebook after edit
+    "new_source": str,  # The source written to the cell
+    "old_source": str | None,  # Previous cell source, present for replace and delete
+    "cell_id": str | None,  # ID of the edited cell, when available
+    "cell_type": "code" | "markdown",  # The cell type
+    "language": str,  # The notebook's programming language
+    "edit_mode": str,  # The edit mode that was used
+    "error": str | None,  # Error message when the operation failed
+    "notebook_path": str,  # The notebook file
+    "original_file": str,  # Notebook content before the edit
+    "updated_file": str,  # Notebook content after the edit
 }
 ```
 
@@ -3381,6 +3554,7 @@ WebFetch
 {
     "url": str,  # The URL to fetch content from
     "prompt": str,  # The prompt to run on the fetched content
+    "offset": int | None,  # Number of characters to skip from the start of the page. Requires Python Agent SDK 0.2.164 or later
 }
 ```
 
@@ -3457,8 +3631,20 @@ Wherever the tools are available, Claude Code provides the four Task tools, or `
 
 ```python
 {
-    "message": str,  # Success message
-    "stats": {"total": int, "pending": int, "in_progress": int, "completed": int},
+    "oldTodos": [  # The todo list before the update
+        {
+            "content": str,
+            "status": "pending" | "in_progress" | "completed",
+            "activeForm": str,
+        }
+    ],
+    "newTodos": [  # The todo list after the update
+        {
+            "content": str,
+            "status": "pending" | "in_progress" | "completed",
+            "activeForm": str,
+        }
+    ],
 }
 ```
 
@@ -3623,8 +3809,13 @@ ExitPlanMode
 
 ```python
 {
-    "message": str,  # Confirmation message
-    "approved": bool | None,  # Whether user approved the plan
+    "plan": str | None,  # The plan that was presented to the user
+    "isAgent": bool,  # True when a subagent called the tool
+    "filePath": str | None,  # Present when the plan was saved to a file
+    "hasTaskTool": bool | None,  # Optional; whether the Agent tool is available in the current context
+    "planWasEdited": bool | None,  # Present and True when the user edited the plan before approving
+    "awaitingLeaderApproval": bool | None,  # Present and True when a teammate sent the plan to the team lead for approval
+    "requestId": str | None,  # Optional ID of that approval request
 }
 ```
 
@@ -3641,21 +3832,18 @@ ListMcpResources
 }
 ```
 
-**Output:**
+The result is a list rather than a dict, so `tool_use_result` holds a `list` for this tool. **Output:**
 
 ```python
-{
-    "resources": [
-        {
-            "uri": str,
-            "name": str,
-            "description": str | None,
-            "mimeType": str | None,
-            "server": str,
-        }
-    ],
-    "total": int,
-}
+[  # One entry per resource
+    {
+        "uri": str,  # Resource URI
+        "name": str,  # Resource name
+        "mimeType": str | None,  # Optional MIME type
+        "description": str | None,  # Optional description
+        "server": str,  # Server that provides this resource
+    }
+]
 ```
 
 
@@ -3677,9 +3865,14 @@ ReadMcpResource
 ```python
 {
     "contents": [
-        {"uri": str, "mimeType": str | None, "text": str | None, "blob": str | None}
+        {
+            "uri": str,  # Resource URI
+            "mimeType": str | None,  # Optional MIME type
+            "text": str | None,  # Text content, or a note about the binary content
+            "blobSavedTo": str | None,  # Present when Claude Code saved binary content to disk; path of the saved file
+        }
     ],
-    "server": str,
+    "error": str | None,  # Present when the server couldn't read the resource
 }
 ```
 

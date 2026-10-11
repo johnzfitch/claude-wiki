@@ -2,7 +2,7 @@
 title: "OpusClip Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/opusclip"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:43Z"
+fetched_at: "2026-10-10T06:25:21Z"
 tags: ["case-studies", "claude-code", "cli", "enterprise", "security"]
 ---
 
@@ -17,7 +17,7 @@ Company size:
 Startup
 
 Product:  
-[Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)[Claude Platform](https://claude.com/platform/api)
+[Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)[Claude Platform](https://claude.com/platform/api)
 
 Location:  
 North America
@@ -54,7 +54,7 @@ Claude Code
 
 Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
 
-[Read more](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+[Read more](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 
 ## The solution
 
@@ -84,7 +84,7 @@ Introducing Agent Skills
 
 Claude can now use Skills—folders with instructions, scripts, and resources—to become a specialist at specific tasks when you need it.
 
-[Read more](https://claude.com/blog/skills)
+[Read more](https://claude.com/resources/articles/skills)
 
 ## The outcome
 
@@ -101,6 +101,9 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 ## Related stories
 
 
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
+
+
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
 
@@ -109,9 +112,6 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -119,9 +119,9 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -151,7 +151,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -163,6 +163,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -174,8 +175,10 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -195,7 +198,9 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -238,9 +243,9 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -270,7 +275,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -282,6 +287,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -293,8 +299,10 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -314,7 +322,9 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

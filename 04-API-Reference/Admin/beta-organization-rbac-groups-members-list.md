@@ -2,7 +2,7 @@
 title: "List RBAC Group Members - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_groups/members/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:26:56Z"
+fetched_at: "2026-10-04T08:32:33Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,13 +129,13 @@ Spend Limits
 RBAC Groups
 
 
+Create RBAC Group
+
+
 List RBAC Groups
 
 
 Get RBAC Group
-
-
-Create RBAC Group
 
 
 Update RBAC Group
@@ -172,6 +155,27 @@ Members
 Remove RBAC Group Member
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels

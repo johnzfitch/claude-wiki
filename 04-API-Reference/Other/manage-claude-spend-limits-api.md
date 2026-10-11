@@ -2,7 +2,7 @@
 title: "Spend Limits API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/spend-limits-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:44Z"
+fetched_at: "2026-10-04T08:33:32Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -185,7 +187,7 @@ Error responses follow the standard shape documented in [Errors](../Endpoints/er
 
 `GET /v1/organizations/spend_limits/effective` returns one row per current member, reflecting each member's effective spend limit, its `source` in the scope hierarchy, and their `period_to_date_spend`. Requires the `read:spend_limits` scope.
 
-For complete parameter details and response schemas, see [List effective spend limits](../Admin/beta-organization-spend-limits-list-effective.md) in the API reference.
+For complete parameter details and response schemas, see [List effective spend limits](../Admin/beta-organization-spend-limits-effective-list.md) in the API reference.
 
 cURL
 
@@ -243,7 +245,7 @@ curl "https://api.anthropic.com/v1/organizations/spend_limits/spl_01AbCdEfGhIjKl
 
 `POST /v1/organizations/spend_limits` sets a per-user spend limit override. This is an upsert keyed on `(scope, period)`: setting a limit for a user and period that already has one overwrites it in place. This endpoint accepts only `scope.type: "user"`; seat-tier, group, and organization-level defaults are configured in claude.ai settings. Requires the `write:spend_limits` scope.
 
-For complete parameter details and response schemas, see [Create a spend limit](../Admin/beta-organization-spend-limits-create.md) in the API reference.
+For complete parameter details and response schemas, see [Create a spend limit](../Admin/beta-organization-spend-limits-set.md) in the API reference.
 
 cURL
 

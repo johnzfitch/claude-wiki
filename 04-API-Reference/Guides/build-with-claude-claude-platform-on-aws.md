@@ -2,7 +2,7 @@
 title: "Claude Platform on AWS - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:20Z"
+fetched_at: "2026-10-04T08:33:13Z"
 tags: ["api", "authentication", "bedrock", "billing", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication", "bedrock", "billing", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -277,7 +277,7 @@ export ANTHROPIC_AWS_WORKSPACE_ID='wrkspc_01AbCdEf23GhIj'
 export AWS_REGION='us-west-2'  # Your workspace's AWS region
 ```
 
-The region is required. The SDK client raises an error if no region is set. Pass `aws_region`/`awsRegion` to the constructor, or set `AWS_REGION` (or `AWS_DEFAULT_REGION`). All AWS commercial regions are supported.
+The region is required. The SDK client raises an error if no region is set. Pass `aws_region` when you create the client, or set `AWS_REGION` (or `AWS_DEFAULT_REGION`). All AWS commercial regions are supported.
 
 ## Authentication
 
@@ -306,7 +306,7 @@ aws sts get-caller-identity
 
 ### API key authentication
 
-For simpler integration paths (local development and scripts), you can authenticate with an API key instead of SigV4. Set the `ANTHROPIC_AWS_API_KEY` environment variable or pass `apiKey` to the SDK constructor.
+For simpler integration paths (local development and scripts), you can authenticate with an API key instead of SigV4. Set the `ANTHROPIC_AWS_API_KEY` environment variable or pass `api_key` when you create the client.
 
 Generate API keys in the **AWS Console** under **Claude Platform on AWS → API keys**. Choose **Generate a key**, then copy the key value. Grant the `aws-external-anthropic:CallWithBearerToken` IAM action to the principals that should be allowed to use API key authentication.
 
@@ -345,17 +345,17 @@ The SDK does not refresh short-term keys automatically. When a token expires, ge
 
 ### Credential precedence
 
-The platform-specific client resolves authentication in the following order. Argument names vary by language convention: TypeScript and PHP use camelCase as shown, Python and Ruby use snake_case, Go uses PascalCase with capitalized acronyms, and C# and Java use the language's property or builder idioms.
+The platform-specific client resolves authentication in the following order, starting with what you pass when you create it:
 
-1.  `apiKey` constructor argument → `x-api-key` header
-2.  `awsAccessKey` + `awsSecretAccessKey` constructor arguments → AWS SigV4
-3.  `awsProfile` constructor argument → AWS SigV4 with named profile
+1.  `api_key` → `x-api-key` header
+2.  `aws_access_key` + `aws_secret_key` → AWS SigV4
+3.  `aws_profile` → AWS SigV4 with named profile
 4.  `ANTHROPIC_AWS_API_KEY` environment variable → `x-api-key` header
 5.  Default AWS credential provider chain → AWS SigV4
 
 ### Region resolution
 
-The client reads `AWS_REGION` from the environment if `aws_region`/`awsRegion` is not passed to the constructor, falling back to `AWS_DEFAULT_REGION` for compatibility with the standard AWS SDKs. Region is required and there is no default: the `AnthropicAWS`/`AnthropicAws` client raises an error if neither the constructor argument nor an environment variable is set.
+The client reads `AWS_REGION` from the environment if you don't set `aws_region`, falling back to `AWS_DEFAULT_REGION` for compatibility with the standard AWS SDKs. Region is required and there is no default: `AnthropicAWS` raises an error if neither the constructor argument nor an environment variable is set.
 
 ## Install an SDK
 
@@ -393,20 +393,21 @@ SDK clients for Claude Platform on AWS are in beta.
 
 The following models are available on Claude Platform on AWS:
 
-| Model             | Model ID          |
-|-------------------|-------------------|
-| Claude Fable 5.1  | claude-fable-5-1  |
-| Claude Fable 5    | claude-fable-5    |
-| Claude Opus 5.5   | claude-opus-5-5   |
-| Claude Opus 5     | claude-opus-5     |
-| Claude Opus 4.8   | claude-opus-4-8   |
-| Claude Opus 4.7   | claude-opus-4-7   |
-| Claude Opus 4.6   | claude-opus-4-6   |
-| Claude Opus 4.5   | claude-opus-4-5   |
-| Claude Sonnet 5   | claude-sonnet-5   |
-| Claude Sonnet 4.6 | claude-sonnet-4-6 |
-| Claude Sonnet 4.5 | claude-sonnet-4-5 |
-| Claude Haiku 4.5  | claude-haiku-4-5  |
+| Model                                                                      | Model ID          |
+|----------------------------------------------------------------------------|-------------------|
+| Claude Fable 5.1                                                           | claude-fable-5-1  |
+| Claude Fable 5                                                             | claude-fable-5    |
+| Claude Opus 5.5                                                            | claude-opus-5-5   |
+| Claude Opus 5                                                              | claude-opus-5     |
+| Claude Opus 4.8                                                            | claude-opus-4-8   |
+| Claude Opus 4.7                                                            | claude-opus-4-7   |
+| Claude Opus 4.6                                                            | claude-opus-4-6   |
+| Claude Opus 4.5                                                            | claude-opus-4-5   |
+| Claude Sonnet 5.5                                                          | claude-sonnet-5-5 |
+| Claude Sonnet 5                                                            | claude-sonnet-5   |
+| Claude Sonnet 4.6                                                          | claude-sonnet-4-6 |
+| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | claude-sonnet-4-5 |
+| Claude Haiku 4.5                                                           | claude-haiku-4-5  |
 
 Model IDs are identical to the first-party Claude API. There are no Bedrock-style ARNs or `anthropic.` prefixes.
 
@@ -455,7 +456,7 @@ message = client.messages.create(
 print(message)
 ```
 
-The client reads `AWS_REGION` (or `AWS_DEFAULT_REGION`) and `ANTHROPIC_AWS_WORKSPACE_ID` from the environment. You can override either by passing `aws_region` / `awsRegion` or `workspace_id` / `workspaceId` to the constructor. Both region and workspace ID are required. The constructor raises an error if either cannot be resolved.
+The client reads `AWS_REGION` (or `AWS_DEFAULT_REGION`) and `ANTHROPIC_AWS_WORKSPACE_ID` from the environment. You can override either by passing `aws_region` or `workspace_id` when you create the client. Both region and workspace ID are required. The constructor raises an error if either cannot be resolved.
 
 
 
@@ -493,13 +494,13 @@ See the [comparison table](#claude-platform-on-aws-vs-amazon-bedrock) for featur
 Session behavior on Claude Platform on AWS differs from first-party Claude Managed Agents in two ways:
 
 - **Autonomous-session reauthentication:** A session can run autonomously, without any [user events](../Other/managed-agents-reference.md#event-types), for up to 6 hours. After 6 hours, the session requires reauthentication before it continues. To reauthenticate, send any user-role event to the session (see [Events and streaming](../Other/managed-agents-events-and-streaming.md)). First-party Claude Managed Agents has no autonomous-session runtime limit.
-- **[Memory stores on self-hosted environments](../Other/managed-agents-self-hosted-sandboxes.md#use-memory-stores):** A session that runs on a self-hosted environment cannot attach memory stores; a session that includes one is rejected at creation. Sessions on cloud environments attach memory stores as usual. On first-party Claude Managed Agents, sessions on both cloud and self-hosted environments can attach memory stores.
+- **[Memory stores on self-hosted environments](../Other/managed-agents-self-hosted-sandboxes-memory.md):** A session that runs on a self-hosted environment cannot attach memory stores; a session that includes one is rejected at creation. Sessions on cloud environments attach memory stores as usual. On first-party Claude Managed Agents, sessions on both cloud and self-hosted environments can attach memory stores.
 
 ### Features not supported
 
 The following capabilities are not currently available on Claude Platform on AWS:
 
-- **HIPAA readiness:** Anthropic's HIPAA-ready program is not available. See [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+- **HIPAA readiness:** Anthropic's HIPAA-ready program is not available. See [API and data retention](build-with-claude-api-and-data-retention.md).
 - **Computer use and browser use toolsets:** `computer_toolset_20260801` and `browser_toolset_20260801` are not currently available on Claude Platform on AWS. The beta [computer use](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#earlier-tool-versions) tool versions remain available.
 
 
@@ -526,7 +527,7 @@ Set the inference geography per request with the `inference_geo` parameter:
 
 
 
-The `inference_geo` parameter is supported on Claude 4.6 and later models. Requests with `inference_geo` on Claude Opus 4.5, Claude Sonnet 4.5, or Claude Haiku 4.5 return a 400 error. See [Data residency](build-with-claude-data-residency.md) for model availability details.
+The `inference_geo` parameter is supported on Claude 4.6 and later models. Requests with `inference_geo` on Claude Opus 4.5, Claude Sonnet 4.5, or Claude Haiku 4.5 return a 400 error. See [Data residency](../Other/manage-claude-data-residency.md) for model availability details.
 
 cURL
 
@@ -563,7 +564,7 @@ print(message)
 
 If you omit `inference_geo`, the request uses the workspace's `default_inference_geo` if one is configured, otherwise `global`.
 
-Workspace-level inference geography controls (`allowed_inference_geos` and `default_inference_geo`) are also available on Claude Platform on AWS. See [Workspace-level restrictions](build-with-claude-data-residency.md#workspace-level-restrictions).
+Workspace-level inference geography controls (`allowed_inference_geos` and `default_inference_geo`) are also available on Claude Platform on AWS. See [Workspace-level restrictions](../Other/manage-claude-data-residency.md#workspace-level-restrictions).
 
 ## Workspaces
 
@@ -665,8 +666,8 @@ The Start, Build, and Scale usage tiers each carry a monthly spend cap; see the 
 
 You can also set your own monthly spend limits below the cap, after adding at least one recipient under **Email recipients** on the Billing page:
 
-- **Organization spend limit:** Go to [Settings \> Billing](../Other/usage-limits.md) in the [Claude Console](#using-the-claude-console) to set a monthly spend limit.
-- **Workspace spend limits:** Select a workspace under [Settings \> Workspaces](../Other/usage-limits.md) and open its **Spend limits** page.
+- **Organization spend limit:** Go to [Settings \> Billing](../Other/playground.md) in the [Claude Console](#using-the-claude-console) to set a monthly spend limit.
+- **Workspace spend limits:** Select a workspace under [Settings \> Workspaces](../Other/playground.md) and open its **Spend limits** page.
 
 When usage reaches a limit you set, requests fail with HTTP 400 (see the [spend limit error](../Endpoints/rate-limits.md#setting-your-own-spend-limit)) until 00:00 UTC on the first day of the next month, or until you raise or remove the limit.
 

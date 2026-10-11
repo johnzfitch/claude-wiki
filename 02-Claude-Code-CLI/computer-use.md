@@ -2,7 +2,7 @@
 title: "Let Claude use your computer from the CLI - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/computer-use"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-14T06:26:19Z"
+fetched_at: "2026-10-04T08:31:53Z"
 tags: ["claude-code", "cli"]
 ---
 
@@ -173,7 +173,7 @@ The first time Claude uses your computer in each turn, a macOS notification appe
 
 Safety and the trust boundary
 
-Unlike the [sandboxed Bash tool](sandboxing.md), computer use runs on your actual desktop with access to the apps you approve. Claude checks each action and flags potential prompt injection from on-screen content, but the trust boundary is different. See the [computer use safety guide](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md) for best practices.
+Unlike the [sandboxed Bash tool](sandboxing.md), computer use runs on your actual desktop with access to the apps you approve. Claude checks each action and flags potential prompt injection from on-screen content, but the trust boundary is different. See the [computer use safety guide](https://support.claude.com/en/articles/14128542) for best practices.
 
 The built-in guardrails reduce risk without requiring configuration:
 
@@ -241,13 +241,13 @@ Differences from the Desktop app
 
 The CLI and Desktop surfaces share the same computer use engine, with a few differences:
 
-| Feature              | Desktop                                                   | CLI                             |
-|:---------------------|:----------------------------------------------------------|:--------------------------------|
-| Platforms            | macOS and Windows                                         | macOS only                      |
-| Enable               | Toggle in **Settings \> General** (under **Desktop app**) | Enable `computer-use` in `/mcp` |
-| Denied apps list     | Configurable in Settings                                  | Not yet available               |
-| Auto-unhide toggle   | Optional                                                  | Always on                       |
-| Dispatch integration | Dispatch-spawned sessions can use computer use            | Not applicable                  |
+| Feature              | Desktop                                           | CLI                             |
+|:---------------------|:--------------------------------------------------|:--------------------------------|
+| Platforms            | macOS and Windows                                 | macOS only                      |
+| Enable               | Toggle in **Settings \> This computer \> System** | Enable `computer-use` in `/mcp` |
+| Denied apps list     | Configurable in Settings                          | Not yet available               |
+| Auto-unhide toggle   | Optional                                          | Always on                       |
+| Dispatch integration | Dispatch-spawned sessions can use computer use    | Not applicable                  |
 
 
 [​](#troubleshooting)
@@ -289,4 +289,4 @@ See also
 - [Claude in Chrome](../03-IDE-Integrations/chrome.md): browser automation for web-based tasks
 - [MCP](../06-MCP-Tools/General/mcp.md): connect Claude to structured tools and APIs
 - [Sandboxing](sandboxing.md): how Claude’s Bash tool isolates filesystem and network access
-- [Computer use safety guide](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md): best practices for safe computer use
+- [Computer use safety guide](https://support.claude.com/en/articles/14128542): best practices for safe computer use

@@ -1,17 +1,15 @@
 ---
 title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
-source_url: "https://www.claude.com/product/claude-code"
+source_url: "https://www.anthropic.com/claude-code"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:33:06Z"
-last_modified: "Wed, 30 Sep 2026 06:29:29 GMT"
+fetched_at: "2026-10-05T06:39:37Z"
+last_modified: "Mon, 05 Oct 2026 06:32:44 GMT"
 tags: ["agents", "claude-ai", "claude-code", "slack"]
 ---
 
 # Claude Code
 
 Hand Claude a bug fix, test, or multi-day migration. Steer and review from your terminal, IDE, Slack, or web.
-
-Claude Code is included in Claude Pro and Max plans. [See plans](#pricing)
 
 [Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](../02-Claude-Code-CLI/code-home.md)
 
@@ -274,9 +272,9 @@ Per month
 
 [Try Claude (opens in new tab)](https://claude.ai/login?plan=max)
 
-[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](../17-Billing-Plans/usage-limit-best-practices.md). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](../17-Billing-Plans/usage-limit-best-practices.md). Price and plans are subject to change at Anthropic's discretion.
 
 ## Latest feature announcements
 
@@ -310,7 +308,7 @@ Claude Code builds the plan, asks clarifying questions, and handles work that ru
 
 Get Claude Code
 
-- [Desktop](https://www.claude.com/download)
+- [Desktop](https://www.anthropic.com/download)
 - [VS Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
 - [JetBrains](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
 - [On the web](https://claude.ai/code)
@@ -427,11 +425,11 @@ Native extensions for VS Code (+ Cursor, Devin Desktop) and JetBrains IDEs.
 
 Quick access from browser, mobile app, or Claude on desktop. Great for parallel work or on-the-go coding.
 
-[Open in browser (opens in new tab)](https://claude.ai/code)[Download app](https://www.claude.com/download)
+[Open in browser (opens in new tab)](https://claude.ai/code)[Download app](https://www.anthropic.com/download)
 
 ## Kick off coding tasks in Slack
 
-[Add to Slack (opens in new tab)](https://slack.com/oauth/v2/authorize?client_id=1601185624273.8899143856786&scope=app_mentions:read,assistant:write,channels:history,channels:read,chat:write,files:read,files:write,groups:history,groups:read,im:history,im:read,im:write,mpim:history,reactions:write,users:read,users:read.email,commands,search:read.public&user_scope=bookmarks:read,channels:history,channels:read,chat:write,emoji:read,files:read,groups:history,groups:read,groups:write,im:history,im:read,im:write,links:read,mpim:history,mpim:read,mpim:write,mpim:write.topic,pins:read,reactions:read,reactions:write,remote_files:read,team:read,users:read,users:read.email,search:read.public,search:read.private,search:read.im,search:read.mpim,search:read.files,search:read.users,canvases:read,canvases:write)[Learn more](../14-Connectors/claude-for-slack.md)
+[Add to Slack (opens in new tab)](https://slack.com/oauth/v2/authorize?client_id=1601185624273.8899143856786&scope=app_mentions:read,assistant:write,channels:history,channels:read,chat:write,files:read,files:write,groups:history,groups:read,im:history,im:read,im:write,mpim:history,reactions:write,users:read,users:read.email,commands,search:read.public&user_scope=bookmarks:read,channels:history,channels:read,chat:write,emoji:read,files:read,groups:history,groups:read,groups:write,im:history,im:read,im:write,links:read,mpim:history,mpim:read,mpim:write,mpim:write.topic,pins:read,reactions:read,reactions:write,remote_files:read,team:read,users:read,users:read.email,search:read.public,search:read.private,search:read.im,search:read.mpim,search:read.files,search:read.users,canvases:read,canvases:write)[Learn more](https://www.anthropic.com/claude-for-slack)
 
 ## What developers are saying
 
@@ -441,7 +439,7 @@ Quick access from browser, mobile app, or Claude on desktop. Great for parallel 
 
   Anton Biryukov, Staff Software Engineer
 
-  [Read story](../18-Industry-UseCases/ramp.md)
+  [Read story](https://www.anthropic.com/customers/ramp)
 
 - 
 
@@ -571,7 +569,7 @@ Use Claude Code where you work
 
 Get Claude Code
 
-- [Desktop](https://www.claude.com/download)
+- [Desktop](https://www.anthropic.com/download)
 - [VS Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
 - [JetBrains](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
 - [On the web](https://claude.ai/code)

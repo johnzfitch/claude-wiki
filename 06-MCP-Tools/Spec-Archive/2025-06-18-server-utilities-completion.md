@@ -2,7 +2,7 @@
 title: "Completion - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/completion"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-09-29T06:30:41Z"
+fetched_at: "2026-10-09T06:27:40Z"
 tags: ["mcp", "mcp-spec"]
 ---
 

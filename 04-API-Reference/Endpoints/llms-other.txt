@@ -4,10 +4,10 @@
 
 ---
 
-## Trigger a routine through the API - Claude Platform Docs
+## Get Invite - Claude API Reference
 
-Source: https://platform.claude.com/docs/en/api/claude-code/routines-fire
-Path: 04-API-Reference/Endpoints/claude-code-routines-fire.md
+Source: https://platform.claude.com/docs/en/api/admin-api/invites/get-invite
+Path: 04-API-Reference/Endpoints/admin-api-invites-get-invite.md
 
 - [Managed Agents](../Other/managed-agents-overview.md)
 
@@ -25,7 +25,316 @@ Path: 04-API-Reference/Endpoints/claude-code-routines-fire.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fclaude-code%2Froutines-fire)
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Finvites%2Fretrieve)
+
+
+
+
+
+SearchCtrlK
+
+Include beta APIsThe API you’re viewing is only available in beta
+
+Using the API
+
+[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
+
+
+Messages
+
+
+Create a Message
+
+
+Count tokens in a Message
+
+Batches
+
+Managed Agents
+
+Agents
+
+Environments
+
+Sessions
+
+Deployments
+
+Deployment Runs
+
+Vaults
+
+Memory Stores
+
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
+
+Models
+
+
+List Models
+
+
+Get a Model
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+
+Create Invite
+
+
+List Invites
+
+
+Get Invite
+
+
+Delete Invite
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
+
+
+Tunnels
+
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
+
+
+Compliance API
+
+Activities
+
+Organizations
+
+Groups
+
+Apps
+
+Code
+
+
+Completions
+
+
+Create a Text Completion
+
+Support & configuration
+
+[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
+
+Claude Code
+
+[Trigger a routine](claude-code-routines-fire.md)
+
+[Console](../Other/usage-limits.md)
+
+Copy page
+
+
+
+cURL
+
+1.  [API reference](http.md)
+2.  [Beta](http-beta.md)
+3.  [Organization](../Admin/http-beta-organization.md)
+4.  [Invites](https://platform.claude.com/docs/en/api/http/beta/organization/invites)
+
+# Get Invite
+
+GET/v1/organizations/invites/{invite_id}
+
+Retrieve an invite by ID.
+
+##### Path parameters
+
+invite_id: string
+
+
+
+ID of the Invite.
+
+##### Returns
+
+
+
+BetaOrganizationInvite object{ type: "invite", id, accepted_at, 6 more }
+
+
+
+Get Invite
+
+cURL
+
+
+
+```python
+curl https://api.anthropic.com/v1/organizations/invites/$INVITE_ID \
+    -H 'anthropic-version: 2023-06-01' \
+    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+```
+
+Response 200
+
+
+
+```python
+{
+  "id": "invite_015gWxCN9Hfg2QhZwTK7Mdeu",
+  "accepted_at": "2019-12-27T18:11:19.117Z",
+  "email": "user@emaildomain.com",
+  "expires_at": "2024-11-20T23:58:27.427722Z",
+  "invited_at": "2024-10-30T23:58:27.427722Z",
+  "rbac_group_ids": [
+    "string"
+  ],
+  "role": "admin",
+  "status": "pending",
+  "type": "invite"
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+
+
+```python
+{
+  "id": "invite_015gWxCN9Hfg2QhZwTK7Mdeu",
+  "accepted_at": "2019-12-27T18:11:19.117Z",
+  "email": "user@emaildomain.com",
+  "expires_at": "2024-11-20T23:58:27.427722Z",
+  "invited_at": "2024-10-30T23:58:27.427722Z",
+
+---
+
+## Get Current Organization - Claude API Reference
+
+Source: https://platform.claude.com/docs/en/api/admin-api/organization/get-me
+Path: 04-API-Reference/Endpoints/admin-api-organization-get-me.md
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fretrieve)
 
 
 
@@ -220,6 +529,1088 @@ Claude Code
 
 [Console](../Other/usage-limits.md)
 
+Copy page
+
+
+
+cURL
+
+1.  [API reference](http.md)
+2.  [Beta](http-beta.md)
+3.  [Organization](../Admin/http-beta-organization.md)
+
+# Get Current Organization
+
+GET/v1/organizations/me
+
+Retrieve information about the organization associated with the authenticated API key.
+
+##### Returns
+
+
+
+BetaOrganization object{ type: "organization", id, name }
+
+
+
+
+
+type: "organization"
+
+
+
+Object type.
+
+For Organizations, this is always `"organization"`.
+
+defaultorganization
+
+
+
+id: string
+
+
+
+ID of the Organization.
+
+formatuuid
+
+name: string
+
+
+
+Name of the Organization.
+
+Get Current Organization
+
+cURL
+
+
+
+```python
+curl https://api.anthropic.com/v1/organizations/me \
+    -H 'anthropic-version: 2023-06-01' \
+    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+```
+
+Response 200
+
+
+
+```python
+{
+  "id": "12345678-1234-5678-1234-567812345678",
+  "name": "Organization Name",
+  "type": "organization"
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+
+
+```python
+{
+  "id": "12345678-1234-5678-1234-567812345678",
+
+---
+
+## Get User - Claude API Reference
+
+Source: https://platform.claude.com/docs/en/api/admin-api/users/get-user
+Path: 04-API-Reference/Endpoints/admin-api-users-get-user.md
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fusers%2Fretrieve)
+
+
+
+
+
+SearchCtrlK
+
+Include beta APIsThe API you’re viewing is only available in beta
+
+Using the API
+
+[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
+
+
+Messages
+
+
+Create a Message
+
+
+Count tokens in a Message
+
+Batches
+
+Managed Agents
+
+Agents
+
+Environments
+
+Sessions
+
+Deployments
+
+Deployment Runs
+
+Vaults
+
+Memory Stores
+
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
+
+Models
+
+
+List Models
+
+
+Get a Model
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+
+List Users
+
+
+Get User
+
+
+Update User
+
+
+Remove User
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
+
+
+Tunnels
+
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
+
+
+Compliance API
+
+Activities
+
+Organizations
+
+Groups
+
+Apps
+
+Code
+
+
+Completions
+
+
+Create a Text Completion
+
+Support & configuration
+
+[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
+
+Claude Code
+
+[Trigger a routine](claude-code-routines-fire.md)
+
+[Console](../Other/usage-limits.md)
+
+Copy page
+
+
+
+cURL
+
+1.  [API reference](http.md)
+2.  [Beta](http-beta.md)
+3.  [Organization](../Admin/http-beta-organization.md)
+4.  [Users](https://platform.claude.com/docs/en/api/http/beta/organization/users)
+
+# Get User
+
+GET/v1/organizations/users/{user_id}
+
+Retrieve a member of the organization by user ID.
+
+##### Path parameters
+
+user_id: string
+
+
+
+ID of the User.
+
+##### Returns
+
+
+
+BetaOrganizationUser object{ type: "user", id, added_at, 3 more }
+
+
+
+
+
+type: "user"
+
+
+
+Object type.
+
+For Users, this is always `"user"`.
+
+defaultuser
+
+id: string
+
+
+
+ID of the User.
+
+
+
+added_at: string
+
+
+
+RFC 3339 datetime string indicating when the User joined the Organization.
+
+formatdate-time
+
+email: string
+
+
+
+Email of the User.
+
+name: string
+
+
+
+Name of the User.
+
+
+
+role: [BetaOrganizationRole](../Admin/http-beta-organization.md#beta_organization_role)
+
+
+
+Organization role of the User.
+
+One of the following:
+
+"admin"
+
+
+
+"billing"
+
+
+
+"claude_code_user"
+
+
+
+"developer"
+
+
+
+"managed"
+
+
+
+"membership_admin"
+
+
+
+"owner"
+
+
+
+"primary_owner"
+
+
+
+"user"
+
+
+
+Get User
+
+cURL
+
+
+
+```python
+curl https://api.anthropic.com/v1/organizations/users/$USER_ID \
+    -H 'anthropic-version: 2023-06-01' \
+    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+```
+
+Response 200
+
+
+
+```python
+{
+  "id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
+  "added_at": "2024-10-30T23:58:27.427722Z",
+  "email": "user@emaildomain.com",
+  "name": "Jane Doe",
+  "role": "admin",
+  "type": "user"
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+
+
+```python
+{
+  "id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
+  "added_at": "2024-10-30T23:58:27.427722Z",
+  "email": "user@emaildomain.com",
+
+---
+
+## Get Workspace Member - Claude API Reference
+
+Source: https://platform.claude.com/docs/en/api/admin-api/workspace_members/get-workspace-member
+Path: 04-API-Reference/Endpoints/admin-api-workspace-members-get-workspace-member.md
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fworkspaces%2Fmembers%2Fretrieve)
+
+
+
+
+
+SearchCtrlK
+
+Include beta APIsThe API you’re viewing is only available in beta
+
+Using the API
+
+[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
+
+
+Messages
+
+
+Create a Message
+
+
+Count tokens in a Message
+
+Batches
+
+Managed Agents
+
+Agents
+
+Environments
+
+Sessions
+
+Deployments
+
+Deployment Runs
+
+Vaults
+
+Memory Stores
+
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
+
+Models
+
+
+List Models
+
+
+Get a Model
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+
+List Workspaces
+
+
+Create Workspace
+
+
+Get Workspace
+
+
+Update Workspace
+
+
+Archive Workspace
+
+Rate Limits
+
+Members
+
+
+List Workspace Members
+
+
+Create Workspace Member
+
+
+Get Workspace Member
+
+
+Update Workspace Member
+
+
+Delete Workspace Member
+
+Service Accounts
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
+
+
+Tunnels
+
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
+
+
+Compliance API
+
+Activities
+
+Organizations
+
+Groups
+
+Apps
+
+Code
+
+
+Completions
+
+
+Create a Text Completion
+
+Support & configuration
+
+[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
+
+Claude Code
+
+[Trigger a routine](claude-code-routines-fire.md)
+
+[Console](../Other/usage-limits.md)
+
+Copy page
+
+
+
+cURL
+
+1.  [API reference](http.md)
+2.  [Beta](http-beta.md)
+3.  [Organization](../Admin/http-beta-organization.md)
+4.  [Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces)
+5.  [Members](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/members)
+
+# Get Workspace Member
+
+GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
+
+Get Workspace Member
+
+##### Path parameters
+
+workspace_id: string
+
+
+
+ID of the Workspace.
+
+user_id: string
+
+
+
+ID of the User.
+
+##### Returns
+
+
+
+BetaWorkspaceMember object{ type: "workspace_member", user_id, workspace_id, workspace_role }
+
+
+
+
+
+type: "workspace_member"
+
+
+
+Object type.
+
+For Workspace Members, this is always `"workspace_member"`.
+
+defaultworkspace_member
+
+user_id: string
+
+
+
+ID of the User.
+
+workspace_id: string
+
+
+
+ID of the Workspace.
+
+
+
+workspace_role: [BetaWorkspaceRole](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces#beta_workspace_role)
+
+
+
+Role of the Workspace Member.
+
+One of the following:
+
+"workspace_admin"
+
+
+
+"workspace_billing"
+
+
+
+"workspace_developer"
+
+
+
+"workspace_restricted_developer"
+
+
+
+"workspace_user"
+
+
+
+Get Workspace Member
+
+cURL
+
+
+
+```python
+curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/members/$USER_ID \
+    -H 'anthropic-version: 2023-06-01' \
+    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+```
+
+Response 200
+
+
+
+```python
+{
+  "type": "workspace_member",
+  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
+  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
+  "workspace_role": "workspace_admin"
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+
+
+```python
+{
+  "type": "workspace_member",
+  "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
+  "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
+  "workspace_role": "workspace_admin"
+
+---
+
+## Trigger a routine through the API - Claude Platform Docs
+
+Source: https://platform.claude.com/docs/en/api/claude-code/routines-fire
+Path: 04-API-Reference/Endpoints/claude-code-routines-fire.md
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fclaude-code%2Froutines-fire)
+
+
+
+
+
+SearchCtrlK
+
+Include beta APIsThe API you’re viewing is only available in beta
+
+Using the API
+
+[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
+
+
+Messages
+
+
+Create a Message
+
+
+Count tokens in a Message
+
+Batches
+
+Managed Agents
+
+Agents
+
+Environments
+
+Sessions
+
+Deployments
+
+Deployment Runs
+
+Vaults
+
+Memory Stores
+
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
+
+Models
+
+
+List Models
+
+
+Get a Model
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Tunnels
+
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
+
+
+Compliance API
+
+Activities
+
+Organizations
+
+Groups
+
+Apps
+
+Code
+
+
+Completions
+
+
+Create a Text Completion
+
+Support & configuration
+
+[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
+
+Claude Code
+
+[Trigger a routine](claude-code-routines-fire.md)
+
+[Console](../Other/usage-limits.md)
+
 [API reference](overview.md)Claude Code
 
 # Trigger a routine through the API
@@ -238,11 +1629,11 @@ Start a Claude Code routine session on demand by sending an authenticated POST r
 
 This is an experimental API. Request and response shapes, rate limits, and token semantics might change.
 
-[Claude Code](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md) is Anthropic's agentic coding tool. [Claude Code on the web](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](../../02-Claude-Code-CLI/web-scheduled-tasks.md) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
+[Claude Code](../../02-Claude-Code-CLI/code-home.md) is Anthropic's agentic coding tool. [Claude Code on the web](../../02-Claude-Code-CLI/claude-code-on-the-web.md) runs Claude Code sessions on Anthropic-managed cloud infrastructure at claude.ai/code, and a [routine](../../02-Claude-Code-CLI/web-scheduled-tasks.md) is a saved configuration there: a prompt, one or more repositories, and connectors, packaged so it can run unattended on a schedule, in response to GitHub events, or when called over HTTP.
 
 This endpoint is the HTTP entry point. POSTing to it starts a new run of an existing routine and returns the resulting session ID and URL. Typical callers are alerting systems, CI pipelines, and internal tools that need to start a Claude Code session programmatically.
 
-Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](https://platform.claude.com/docs/en/api/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
+Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enterprise plan with [Claude Code on the web](../../02-Claude-Code-CLI/claude-code-on-the-web.md) enabled. Authenticate with a per-routine bearer token created in the Claude Code web UI rather than a Claude API key.
 
 ## Differences from the Claude Platform
 
@@ -415,7 +1806,7 @@ Path: 04-API-Reference/Endpoints/claude-platform-on-aws-iam-actions.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -495,24 +1886,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -548,6 +1922,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -654,7 +2049,7 @@ The ARN region is always populated and matches the region the workspace is bound
 
 ## Actions
 
-The service defines 71 actions. Actions follow the AWS `VerbNoun` convention and use verb discipline so that `Get*` and `List*` wildcards produce a clean read-only boundary.
+The service defines 72 actions. Actions follow the AWS `VerbNoun` convention and use verb discipline so that `Get*` and `List*` wildcards produce a clean read-only boundary.
 
 ### Inference
 
@@ -771,12 +2166,17 @@ Webhook signing secrets are write-only. `GetWebhook` returns webhook metadata on
 
 ### User profiles
 
-| Action              | Routes authorized             |
-|:--------------------|:------------------------------|
-| `CreateUserProfile` | `POST /v1/user_profiles`      |
-| `GetUserProfile`    | `GET /v1/user_profiles/{id}`  |
-| `ListUserProfiles`  | `GET /v1/user_profiles`       |
-| `UpdateUserProfile` | `POST /v1/user_profiles/{id}` |
+| Action                           | Routes authorized                            |
+|:---------------------------------|:---------------------------------------------|
+| `CreateUserProfile`              | `POST /v1/user_profiles`                     |
+| `GetUserProfile`                 | `GET /v1/user_profiles/{id}`                 |
+| `ListUserProfiles`               | `GET /v1/user_profiles`                      |
+| `UpdateUserProfile`              | `POST /v1/user_profiles/{id}`                |
+| `CreateUserProfileEnrollmentUrl` | `POST /v1/user_profiles/{id}/enrollment_url` |
+
+
+
+The user profile actions are account-scoped, like `ListWorkspaces`. A statement whose `Resource` is a workspace ARN does not grant them; use `Resource: "*"`.
 
 
 
@@ -844,113 +2244,114 @@ These actions manage your organization's [customer-managed encryption key (CMEK)
 
 The following table lists every route on Claude Platform on AWS and the IAM action required to call it. Each IAM action also authorizes requests that use the `anthropic-beta` header; beta variants of a route do not require a separate IAM action. CloudTrail classifies each action as either a Data event (high-volume, data-plane operations) or a Management event (control-plane operations). Vault and webhook actions are classified as Management events because they hold secrets (vault credentials and webhook signing secrets) and benefit from default-on audit logging. Workspace, external key, and compliance actions are also classified as Management events because they are organization-scoped control-plane operations. All other actions, including inference, batch, model, file, skill, user profile, and the remaining Claude Managed Agents actions, are classified as Data events.
 
-| Method   | Route                                                | IAM action                 | CloudTrail event type |
-|:---------|:-----------------------------------------------------|:---------------------------|:----------------------|
-| `POST`   | `/v1/messages`                                       | `CreateInference`          | Data                  |
-| `POST`   | `/v1/messages/count_tokens`                          | `CountTokens`              | Data                  |
-| `POST`   | `/v1/messages/batches`                               | `CreateBatchInference`     | Data                  |
-| `GET`    | `/v1/messages/batches`                               | `ListBatchInferences`      | Data                  |
-| `GET`    | `/v1/messages/batches/{id}`                          | `GetBatchInference`        | Data                  |
-| `GET`    | `/v1/messages/batches/{id}/results`                  | `GetBatchInference`        | Data                  |
-| `POST`   | `/v1/messages/batches/{id}/cancel`                   | `CancelBatchInference`     | Data                  |
-| `DELETE` | `/v1/messages/batches/{id}`                          | `DeleteBatchInference`     | Data                  |
-| `GET`    | `/v1/models`                                         | `ListModels`               | Data                  |
-| `GET`    | `/v1/models/{id}`                                    | `GetModel`                 | Data                  |
-| `POST`   | `/v1/files`                                          | `CreateFile`               | Data                  |
-| `GET`    | `/v1/files`                                          | `ListFiles`                | Data                  |
-| `GET`    | `/v1/files/{id}`                                     | `GetFile`                  | Data                  |
-| `GET`    | `/v1/files/{id}/content`                             | `GetFile`                  | Data                  |
-| `DELETE` | `/v1/files/{id}`                                     | `DeleteFile`               | Data                  |
-| `POST`   | `/v1/skills`                                         | `CreateSkill`              | Data                  |
-| `GET`    | `/v1/skills`                                         | `ListSkills`               | Data                  |
-| `GET`    | `/v1/skills/{id}`                                    | `GetSkill`                 | Data                  |
-| `DELETE` | `/v1/skills/{id}`                                    | `DeleteSkill`              | Data                  |
-| `POST`   | `/v1/skills/{id}/versions`                           | `UpdateSkill`              | Data                  |
-| `GET`    | `/v1/skills/{id}/versions`                           | `GetSkill`                 | Data                  |
-| `GET`    | `/v1/skills/{id}/versions/{version}`                 | `GetSkill`                 | Data                  |
-| `GET`    | `/v1/skills/{id}/versions/{version}/content`         | `GetSkill`                 | Data                  |
-| `DELETE` | `/v1/skills/{id}/versions/{version}`                 | `UpdateSkill`              | Data                  |
-| `POST`   | `/v1/user_profiles`                                  | `CreateUserProfile`        | Data                  |
-| `GET`    | `/v1/user_profiles`                                  | `ListUserProfiles`         | Data                  |
-| `GET`    | `/v1/user_profiles/{id}`                             | `GetUserProfile`           | Data                  |
-| `POST`   | `/v1/user_profiles/{id}`                             | `UpdateUserProfile`        | Data                  |
-| `POST`   | `/v1/organizations/workspaces`                       | `CreateWorkspace`          | Management            |
-| `GET`    | `/v1/organizations/workspaces`                       | `ListWorkspaces`           | Management            |
-| `GET`    | `/v1/organizations/workspaces/{id}`                  | `GetWorkspace`             | Management            |
-| `POST`   | `/v1/organizations/workspaces/{id}`                  | `UpdateWorkspace`          | Management            |
-| `POST`   | `/v1/organizations/workspaces/{id}/archive`          | `ArchiveWorkspace`         | Management            |
-| `POST`   | `/v1/organizations/external_keys`                    | `RegisterKey`              | Management            |
-| `GET`    | `/v1/organizations/external_keys`                    | `ListKeys`                 | Management            |
-| `GET`    | `/v1/organizations/external_keys/{id}`               | `GetKey`                   | Management            |
-| `POST`   | `/v1/organizations/external_keys/{id}`               | `UpdateKey`                | Management            |
-| `DELETE` | `/v1/organizations/external_keys/{id}`               | `DisableKey`               | Management            |
-| `GET`    | `/v1/compliance/activities`                          | `ListComplianceActivities` | Management            |
-| `POST`   | `/v1/agents`                                         | `CreateAgent`              | Data                  |
-| `GET`    | `/v1/agents`                                         | `ListAgents`               | Data                  |
-| `GET`    | `/v1/agents/{id}`                                    | `GetAgent`                 | Data                  |
-| `POST`   | `/v1/agents/{id}`                                    | `UpdateAgent`              | Data                  |
-| `POST`   | `/v1/agents/{id}/archive`                            | `ArchiveAgent`             | Data                  |
-| `GET`    | `/v1/agents/{id}/versions`                           | `GetAgent`                 | Data                  |
-| `POST`   | `/v1/sessions`                                       | `CreateSession`            | Data                  |
-| `GET`    | `/v1/sessions`                                       | `ListSessions`             | Data                  |
-| `GET`    | `/v1/sessions/{id}`                                  | `GetSession`               | Data                  |
-| `POST`   | `/v1/sessions/{id}`                                  | `UpdateSession`            | Data                  |
-| `POST`   | `/v1/sessions/{id}/archive`                          | `ArchiveSession`           | Data                  |
-| `DELETE` | `/v1/sessions/{id}`                                  | `DeleteSession`            | Data                  |
-| `GET`    | `/v1/sessions/{id}/events`                           | `GetSession`               | Data                  |
-| `POST`   | `/v1/sessions/{id}/events`                           | `UpdateSession`            | Data                  |
-| `GET`    | `/v1/sessions/{id}/events/stream`                    | `GetSession`               | Data                  |
-| `GET`    | `/v1/sessions/{id}/resources`                        | `GetSession`               | Data                  |
-| `GET`    | `/v1/sessions/{id}/resources/{id}`                   | `GetSession`               | Data                  |
-| `POST`   | `/v1/sessions/{id}/resources`                        | `UpdateSession`            | Data                  |
-| `POST`   | `/v1/sessions/{id}/resources/{id}`                   | `UpdateSession`            | Data                  |
-| `DELETE` | `/v1/sessions/{id}/resources/{id}`                   | `UpdateSession`            | Data                  |
-| `POST`   | `/v1/environments`                                   | `CreateEnvironment`        | Data                  |
-| `GET`    | `/v1/environments`                                   | `ListEnvironments`         | Data                  |
-| `GET`    | `/v1/environments/{id}`                              | `GetEnvironment`           | Data                  |
-| `POST`   | `/v1/environments/{id}`                              | `UpdateEnvironment`        | Data                  |
-| `POST`   | `/v1/environments/{id}/archive`                      | `ArchiveEnvironment`       | Data                  |
-| `DELETE` | `/v1/environments/{id}`                              | `DeleteEnvironment`        | Data                  |
-| `GET`    | `/v1/environments/{id}/work`                         | `GetEnvironment`           | Data                  |
-| `GET`    | `/v1/environments/{id}/work/poll`                    | `ProcessEnvironmentWork`   | Data                  |
-| `GET`    | `/v1/environments/{id}/work/{work_id}`               | `GetEnvironment`           | Data                  |
-| `GET`    | `/v1/environments/{id}/work/stats`                   | `GetEnvironment`           | Data                  |
-| `POST`   | `/v1/environments/{id}/work/{work_id}`               | `ProcessEnvironmentWork`   | Data                  |
-| `POST`   | `/v1/environments/{id}/work/{work_id}/ack`           | `ProcessEnvironmentWork`   | Data                  |
-| `POST`   | `/v1/environments/{id}/work/{work_id}/heartbeat`     | `ProcessEnvironmentWork`   | Data                  |
-| `POST`   | `/v1/environments/{id}/work/{work_id}/stop`          | `ProcessEnvironmentWork`   | Data                  |
-| `POST`   | `/v1/vaults`                                         | `CreateVault`              | Management            |
-| `GET`    | `/v1/vaults`                                         | `ListVaults`               | Management            |
-| `GET`    | `/v1/vaults/{id}`                                    | `GetVault`                 | Management            |
-| `POST`   | `/v1/vaults/{id}`                                    | `UpdateVault`              | Management            |
-| `POST`   | `/v1/vaults/{id}/archive`                            | `ArchiveVault`             | Management            |
-| `DELETE` | `/v1/vaults/{id}`                                    | `DeleteVault`              | Management            |
-| `GET`    | `/v1/vaults/{id}/credentials`                        | `GetVault`                 | Management            |
-| `POST`   | `/v1/vaults/{id}/credentials`                        | `UpdateVault`              | Management            |
-| `GET`    | `/v1/vaults/{id}/credentials/{id}`                   | `GetVault`                 | Management            |
-| `POST`   | `/v1/vaults/{id}/credentials/{id}`                   | `UpdateVault`              | Management            |
-| `POST`   | `/v1/vaults/{id}/credentials/{id}/archive`           | `UpdateVault`              | Management            |
-| `DELETE` | `/v1/vaults/{id}/credentials/{id}`                   | `UpdateVault`              | Management            |
-| `POST`   | `/v1/memory_stores`                                  | `CreateMemoryStore`        | Data                  |
-| `GET`    | `/v1/memory_stores`                                  | `ListMemoryStores`         | Data                  |
-| `GET`    | `/v1/memory_stores/{id}`                             | `GetMemoryStore`           | Data                  |
-| `POST`   | `/v1/memory_stores/{id}`                             | `UpdateMemoryStore`        | Data                  |
-| `POST`   | `/v1/memory_stores/{id}/archive`                     | `ArchiveMemoryStore`       | Data                  |
-| `DELETE` | `/v1/memory_stores/{id}`                             | `DeleteMemoryStore`        | Data                  |
-| `POST`   | `/v1/memory_stores/{id}/memories`                    | `UpdateMemoryStore`        | Data                  |
-| `GET`    | `/v1/memory_stores/{id}/memories`                    | `GetMemoryStore`           | Data                  |
-| `GET`    | `/v1/memory_stores/{id}/memories/{id}`               | `GetMemoryStore`           | Data                  |
-| `POST`   | `/v1/memory_stores/{id}/memories/{id}`               | `UpdateMemoryStore`        | Data                  |
-| `DELETE` | `/v1/memory_stores/{id}/memories/{id}`               | `UpdateMemoryStore`        | Data                  |
-| `GET`    | `/v1/memory_stores/{id}/memory_versions`             | `GetMemoryStore`           | Data                  |
-| `GET`    | `/v1/memory_stores/{id}/memory_versions/{id}`        | `GetMemoryStore`           | Data                  |
-| `POST`   | `/v1/memory_stores/{id}/memory_versions/{id}/redact` | `UpdateMemoryStore`        | Data                  |
-| `GET`    | `/v1/webhooks`                                       | `ListWebhooks`             | Management            |
-| `GET`    | `/v1/webhooks/{id}`                                  | `GetWebhook`               | Management            |
-| `POST`   | `/v1/webhooks`                                       | `CreateWebhook`            | Management            |
-| `POST`   | `/v1/webhooks/{id}`                                  | `UpdateWebhook`            | Management            |
-| `DELETE` | `/v1/webhooks/{id}`                                  | `DeleteWebhook`            | Management            |
-| `POST`   | `/v1/webhooks/{id}/regenerate_signing_secret`        | `RotateWebhookSecret`      | Management            |
+| Method   | Route                                                | IAM action                       | CloudTrail event type |
+|:---------|:-----------------------------------------------------|:---------------------------------|:----------------------|
+| `POST`   | `/v1/messages`                                       | `CreateInference`                | Data                  |
+| `POST`   | `/v1/messages/count_tokens`                          | `CountTokens`                    | Data                  |
+| `POST`   | `/v1/messages/batches`                               | `CreateBatchInference`           | Data                  |
+| `GET`    | `/v1/messages/batches`                               | `ListBatchInferences`            | Data                  |
+| `GET`    | `/v1/messages/batches/{id}`                          | `GetBatchInference`              | Data                  |
+| `GET`    | `/v1/messages/batches/{id}/results`                  | `GetBatchInference`              | Data                  |
+| `POST`   | `/v1/messages/batches/{id}/cancel`                   | `CancelBatchInference`           | Data                  |
+| `DELETE` | `/v1/messages/batches/{id}`                          | `DeleteBatchInference`           | Data                  |
+| `GET`    | `/v1/models`                                         | `ListModels`                     | Data                  |
+| `GET`    | `/v1/models/{id}`                                    | `GetModel`                       | Data                  |
+| `POST`   | `/v1/files`                                          | `CreateFile`                     | Data                  |
+| `GET`    | `/v1/files`                                          | `ListFiles`                      | Data                  |
+| `GET`    | `/v1/files/{id}`                                     | `GetFile`                        | Data                  |
+| `GET`    | `/v1/files/{id}/content`                             | `GetFile`                        | Data                  |
+| `DELETE` | `/v1/files/{id}`                                     | `DeleteFile`                     | Data                  |
+| `POST`   | `/v1/skills`                                         | `CreateSkill`                    | Data                  |
+| `GET`    | `/v1/skills`                                         | `ListSkills`                     | Data                  |
+| `GET`    | `/v1/skills/{id}`                                    | `GetSkill`                       | Data                  |
+| `DELETE` | `/v1/skills/{id}`                                    | `DeleteSkill`                    | Data                  |
+| `POST`   | `/v1/skills/{id}/versions`                           | `UpdateSkill`                    | Data                  |
+| `GET`    | `/v1/skills/{id}/versions`                           | `GetSkill`                       | Data                  |
+| `GET`    | `/v1/skills/{id}/versions/{version}`                 | `GetSkill`                       | Data                  |
+| `GET`    | `/v1/skills/{id}/versions/{version}/content`         | `GetSkill`                       | Data                  |
+| `DELETE` | `/v1/skills/{id}/versions/{version}`                 | `UpdateSkill`                    | Data                  |
+| `POST`   | `/v1/user_profiles`                                  | `CreateUserProfile`              | Data                  |
+| `GET`    | `/v1/user_profiles`                                  | `ListUserProfiles`               | Data                  |
+| `GET`    | `/v1/user_profiles/{id}`                             | `GetUserProfile`                 | Data                  |
+| `POST`   | `/v1/user_profiles/{id}`                             | `UpdateUserProfile`              | Data                  |
+| `POST`   | `/v1/user_profiles/{id}/enrollment_url`              | `CreateUserProfileEnrollmentUrl` | Data                  |
+| `POST`   | `/v1/organizations/workspaces`                       | `CreateWorkspace`                | Management            |
+| `GET`    | `/v1/organizations/workspaces`                       | `ListWorkspaces`                 | Management            |
+| `GET`    | `/v1/organizations/workspaces/{id}`                  | `GetWorkspace`                   | Management            |
+| `POST`   | `/v1/organizations/workspaces/{id}`                  | `UpdateWorkspace`                | Management            |
+| `POST`   | `/v1/organizations/workspaces/{id}/archive`          | `ArchiveWorkspace`               | Management            |
+| `POST`   | `/v1/organizations/external_keys`                    | `RegisterKey`                    | Management            |
+| `GET`    | `/v1/organizations/external_keys`                    | `ListKeys`                       | Management            |
+| `GET`    | `/v1/organizations/external_keys/{id}`               | `GetKey`                         | Management            |
+| `POST`   | `/v1/organizations/external_keys/{id}`               | `UpdateKey`                      | Management            |
+| `DELETE` | `/v1/organizations/external_keys/{id}`               | `DisableKey`                     | Management            |
+| `GET`    | `/v1/compliance/activities`                          | `ListComplianceActivities`       | Management            |
+| `POST`   | `/v1/agents`                                         | `CreateAgent`                    | Data                  |
+| `GET`    | `/v1/agents`                                         | `ListAgents`                     | Data                  |
+| `GET`    | `/v1/agents/{id}`                                    | `GetAgent`                       | Data                  |
+| `POST`   | `/v1/agents/{id}`                                    | `UpdateAgent`                    | Data                  |
+| `POST`   | `/v1/agents/{id}/archive`                            | `ArchiveAgent`                   | Data                  |
+| `GET`    | `/v1/agents/{id}/versions`                           | `GetAgent`                       | Data                  |
+| `POST`   | `/v1/sessions`                                       | `CreateSession`                  | Data                  |
+| `GET`    | `/v1/sessions`                                       | `ListSessions`                   | Data                  |
+| `GET`    | `/v1/sessions/{id}`                                  | `GetSession`                     | Data                  |
+| `POST`   | `/v1/sessions/{id}`                                  | `UpdateSession`                  | Data                  |
+| `POST`   | `/v1/sessions/{id}/archive`                          | `ArchiveSession`                 | Data                  |
+| `DELETE` | `/v1/sessions/{id}`                                  | `DeleteSession`                  | Data                  |
+| `GET`    | `/v1/sessions/{id}/events`                           | `GetSession`                     | Data                  |
+| `POST`   | `/v1/sessions/{id}/events`                           | `UpdateSession`                  | Data                  |
+| `GET`    | `/v1/sessions/{id}/events/stream`                    | `GetSession`                     | Data                  |
+| `GET`    | `/v1/sessions/{id}/resources`                        | `GetSession`                     | Data                  |
+| `GET`    | `/v1/sessions/{id}/resources/{id}`                   | `GetSession`                     | Data                  |
+| `POST`   | `/v1/sessions/{id}/resources`                        | `UpdateSession`                  | Data                  |
+| `POST`   | `/v1/sessions/{id}/resources/{id}`                   | `UpdateSession`                  | Data                  |
+| `DELETE` | `/v1/sessions/{id}/resources/{id}`                   | `UpdateSession`                  | Data                  |
+| `POST`   | `/v1/environments`                                   | `CreateEnvironment`              | Data                  |
+| `GET`    | `/v1/environments`                                   | `ListEnvironments`               | Data                  |
+| `GET`    | `/v1/environments/{id}`                              | `GetEnvironment`                 | Data                  |
+| `POST`   | `/v1/environments/{id}`                              | `UpdateEnvironment`              | Data                  |
+| `POST`   | `/v1/environments/{id}/archive`                      | `ArchiveEnvironment`             | Data                  |
+| `DELETE` | `/v1/environments/{id}`                              | `DeleteEnvironment`              | Data                  |
+| `GET`    | `/v1/environments/{id}/work`                         | `GetEnvironment`                 | Data                  |
+| `GET`    | `/v1/environments/{id}/work/poll`                    | `ProcessEnvironmentWork`         | Data                  |
+| `GET`    | `/v1/environments/{id}/work/{work_id}`               | `GetEnvironment`                 | Data                  |
+| `GET`    | `/v1/environments/{id}/work/stats`                   | `GetEnvironment`                 | Data                  |
+| `POST`   | `/v1/environments/{id}/work/{work_id}`               | `ProcessEnvironmentWork`         | Data                  |
+| `POST`   | `/v1/environments/{id}/work/{work_id}/ack`           | `ProcessEnvironmentWork`         | Data                  |
+| `POST`   | `/v1/environments/{id}/work/{work_id}/heartbeat`     | `ProcessEnvironmentWork`         | Data                  |
+| `POST`   | `/v1/environments/{id}/work/{work_id}/stop`          | `ProcessEnvironmentWork`         | Data                  |
+| `POST`   | `/v1/vaults`                                         | `CreateVault`                    | Management            |
+| `GET`    | `/v1/vaults`                                         | `ListVaults`                     | Management            |
+| `GET`    | `/v1/vaults/{id}`                                    | `GetVault`                       | Management            |
+| `POST`   | `/v1/vaults/{id}`                                    | `UpdateVault`                    | Management            |
+| `POST`   | `/v1/vaults/{id}/archive`                            | `ArchiveVault`                   | Management            |
+| `DELETE` | `/v1/vaults/{id}`                                    | `DeleteVault`                    | Management            |
+| `GET`    | `/v1/vaults/{id}/credentials`                        | `GetVault`                       | Management            |
+| `POST`   | `/v1/vaults/{id}/credentials`                        | `UpdateVault`                    | Management            |
+| `GET`    | `/v1/vaults/{id}/credentials/{id}`                   | `GetVault`                       | Management            |
+| `POST`   | `/v1/vaults/{id}/credentials/{id}`                   | `UpdateVault`                    | Management            |
+| `POST`   | `/v1/vaults/{id}/credentials/{id}/archive`           | `UpdateVault`                    | Management            |
+| `DELETE` | `/v1/vaults/{id}/credentials/{id}`                   | `UpdateVault`                    | Management            |
+| `POST`   | `/v1/memory_stores`                                  | `CreateMemoryStore`              | Data                  |
+| `GET`    | `/v1/memory_stores`                                  | `ListMemoryStores`               | Data                  |
+| `GET`    | `/v1/memory_stores/{id}`                             | `GetMemoryStore`                 | Data                  |
+| `POST`   | `/v1/memory_stores/{id}`                             | `UpdateMemoryStore`              | Data                  |
+| `POST`   | `/v1/memory_stores/{id}/archive`                     | `ArchiveMemoryStore`             | Data                  |
+| `DELETE` | `/v1/memory_stores/{id}`                             | `DeleteMemoryStore`              | Data                  |
+| `POST`   | `/v1/memory_stores/{id}/memories`                    | `UpdateMemoryStore`              | Data                  |
+| `GET`    | `/v1/memory_stores/{id}/memories`                    | `GetMemoryStore`                 | Data                  |
+| `GET`    | `/v1/memory_stores/{id}/memories/{id}`               | `GetMemoryStore`                 | Data                  |
+| `POST`   | `/v1/memory_stores/{id}/memories/{id}`               | `UpdateMemoryStore`              | Data                  |
+| `DELETE` | `/v1/memory_stores/{id}/memories/{id}`               | `UpdateMemoryStore`              | Data                  |
+| `GET`    | `/v1/memory_stores/{id}/memory_versions`             | `GetMemoryStore`                 | Data                  |
+| `GET`    | `/v1/memory_stores/{id}/memory_versions/{id}`        | `GetMemoryStore`                 | Data                  |
+| `POST`   | `/v1/memory_stores/{id}/memory_versions/{id}/redact` | `UpdateMemoryStore`              | Data                  |
+| `GET`    | `/v1/webhooks`                                       | `ListWebhooks`                   | Management            |
+| `GET`    | `/v1/webhooks/{id}`                                  | `GetWebhook`                     | Management            |
+| `POST`   | `/v1/webhooks`                                       | `CreateWebhook`                  | Management            |
+| `POST`   | `/v1/webhooks/{id}`                                  | `UpdateWebhook`                  | Management            |
+| `DELETE` | `/v1/webhooks/{id}`                                  | `DeleteWebhook`                  | Management            |
+| `POST`   | `/v1/webhooks/{id}/regenerate_signing_secret`        | `RotateWebhookSecret`            | Management            |
 
 Routes not in this table are not available on Claude Platform on AWS. The gateway denies any route not listed here by default.
 
@@ -974,7 +2375,7 @@ AWS provides five managed policies for Claude Platform on AWS. All managed polic
 
 
 
-`AnthropicReadOnlyAccess`, `AnthropicInferenceAccess`, and `AnthropicLimitedAccess` all carry the `Get*` and `List*` wildcards, which grant read access to all content in the workspace: file bytes, skill content, batch results, session conversation history, and memory contents. The wildcards also grant `GetKey` and `ListKeys`, which read the organization's registered encryption key configurations (key ARNs and metadata, never key material). The `List*` wildcard also grants `ListComplianceActivities`, which reads the organization's compliance [Activity Feed](../Other/manage-claude-compliance-activity-feed.md) once the Compliance API is enabled for the organization (see [Compliance](#compliance)). Vault credential secrets and webhook signing secrets are not exposed; those fields are write-only and are never returned by `GetVault` or `GetWebhook`. If your principal should not read existing content, use a custom policy that enumerates only the actions you need.
+`AnthropicReadOnlyAccess`, `AnthropicInferenceAccess`, and `AnthropicLimitedAccess` all carry the `Get*` and `List*` wildcards, which grant read access to all content in the workspace: file bytes, skill content, batch results, session conversation history, and memory contents. The wildcards also grant `GetKey` and `ListKeys`, which read the organization's registered encryption key configurations (key ARNs and metadata, never key material). They also grant the account-scoped `GetUserProfile` and `ListUserProfiles`, which read user profiles. The `List*` wildcard also grants `ListComplianceActivities`, which reads the organization's compliance [Activity Feed](../Other/manage-claude-compliance-activity-feed.md) once the Compliance API is enabled for the organization (see [Compliance](#compliance)). Vault credential secrets and webhook signing secrets are not exposed; those fields are write-only and are never returned by `GetVault` or `GetWebhook`. If your principal should not read existing content, use a custom policy that enumerates only the actions you need.
 
 `AnthropicLimitedAccess` includes all Claude Managed Agents actions in addition to inference actions.
 
@@ -1048,13 +2449,13 @@ Restricts a role to a single workspace:
 
 
 
-The `aws-external-anthropic:*` wildcard in the first statement includes account-scoped actions (`CreateWorkspace`, `ListWorkspaces`, `ListComplianceActivities`, and the external key actions) that the workspace ARN constraint silently filters out. This is consistent with the "isolation" intent (the role cannot create workspaces, enumerate workspaces, manage encryption key registrations, or read the compliance Activity Feed; it can still attach an already-registered key to its own workspace through `UpdateWorkspace`), but the policy contains permissions that have no effect. See [Provisioning automation](#provisioning-automation) for the account-scoped pattern.
+The `aws-external-anthropic:*` wildcard in the first statement includes account-scoped actions (`CreateWorkspace`, `ListWorkspaces`, `ListComplianceActivities`, the external key actions, and the user profile actions) that the workspace ARN constraint silently filters out. This is consistent with the "isolation" intent (the role cannot create workspaces, enumerate workspaces, manage encryption key registrations, read the compliance Activity Feed, or read or manage user profiles; it can still attach an already-registered key to its own workspace through `UpdateWorkspace`), but the policy contains permissions that have no effect. If the role needs user profiles, add a separate `Allow` statement for the user profile actions with `Resource: "*"`. See [Provisioning automation](#provisioning-automation) for the account-scoped pattern.
 
 `CallWithBearerToken` and `AssumeConsole` are route-less actions that do not bind to a workspace ARN. The second statement grants them on `Resource: "*"` so the role can authenticate with an API key and open the Claude Console. Omit this statement if the role uses SigV4 only and does not need Claude Console access.
 
 ### Feature lockdown for a ZDR-sensitive workspace
 
-Blocks batch processing and file upload on a specific workspace while leaving synchronous inference available. Useful when a workspace handles [Zero Data Retention (ZDR)](../Other/manage-claude-api-and-data-retention.md) data that must not persist server-side. Attach this policy alongside an Allow policy such as `AnthropicInferenceAccess` or the [single-workspace example](#synchronous-inference-on-a-single-workspace); on its own, a Deny-only policy grants no permissions:
+Blocks batch processing and file upload on a specific workspace while leaving synchronous inference available. Useful when a workspace handles [Zero Data Retention (ZDR)](../Guides/build-with-claude-api-and-data-retention.md) data that must not persist server-side. Attach this policy alongside an Allow policy such as `AnthropicInferenceAccess` or the [single-workspace example](#synchronous-inference-on-a-single-workspace); on its own, a Deny-only policy grants no permissions:
 
 ```python
 {
@@ -1483,7 +2884,7 @@ Path: 04-API-Reference/Endpoints/errors.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -1563,24 +2964,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -1616,6 +3000,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -1695,7 +3100,7 @@ Claude Code
 
 
 
-Understand the HTTP status codes, error response shape, and request IDs the Claude API returns, and handle errors with the SDKs' typed exceptions.
+Understand the HTTP status codes, error response shape, and request IDs the Claude API returns, and handle errors with the SDK's typed exceptions.
 
 Copy page
 
@@ -1733,7 +3138,7 @@ The API follows a predictable HTTP error code format:
 
   In rare cases, if your organization has a sharp increase in usage, you might see 429 errors because of acceleration limits on the API. To avoid hitting acceleration limits, ramp up your traffic gradually and maintain consistent usage patterns.
 
-The official SDKs automatically retry transient failures (such as connection errors, rate limits, and 5xx server errors) with exponential backoff, twice by default, honoring the `retry-after` header when present. The SDK client accepts `max_retries` to configure or disable this behavior.
+The official SDK automatically retries transient failures (such as connection errors, rate limits, and 5xx server errors) with exponential backoff, twice by default, honoring the `retry-after` header when present. The SDK client accepts `max_retries` to configure or disable this behavior.
 
 When receiving a [streaming](../Guides/build-with-claude-streaming.md) response over server-sent events (SSE), an error can occur after the API returns a 200 response. In that case, error handling doesn't follow these standard mechanisms. See [Error events](../Guides/build-with-claude-streaming.md#error-events) for the shape of mid-stream errors.
 
@@ -1773,7 +3178,7 @@ In accordance with the [versioning](versioning.md) policy, the values within the
 
 ## SDK error types
 
-The official SDKs raise typed exceptions for these errors instead of returning raw JSON, and the class names and namespaces differ by language. For example, a 404 surfaces as `anthropic.NotFoundError`. The Go SDK has one error type for every status, `*anthropic.Error`: branch on `StatusCode`. Catch the SDK's typed classes rather than string-matching error messages, handling the most specific classes first. Each SDK page documents its full exception hierarchy:
+The official SDK raises typed exceptions for these errors instead of returning raw JSON. For example, a 404 surfaces as `anthropic.NotFoundError`. The Go SDK has one error type for every status, `*anthropic.Error`: branch on `StatusCode`. Catch the SDK's typed classes rather than string-matching error messages, handling the most specific classes first. Your SDK's page documents the full exception hierarchy:
 
 - [Python](../Other/cli-sdks-libraries-sdks-python.md#handling-errors) · [TypeScript](../Other/cli-sdks-libraries-sdks-typescript.md#handling-errors) · [C#](../Other/cli-sdks-libraries-sdks-csharp.md#error-handling) · [Go](../Other/cli-sdks-libraries-sdks-go.md#error-handling) · [Java](../Other/cli-sdks-libraries-sdks-java.md#error-handling) · [PHP](../Other/cli-sdks-libraries-sdks-php.md#error-handling) · [Ruby](../Other/cli-sdks-libraries-sdks-ruby.md#handling-errors)
 
@@ -1837,7 +3242,7 @@ If you are building a direct API integration, setting a [TCP socket keep-alive](
 
 The [SDKs](../Other/cli-sdks-libraries-overview.md) validate that your non-streaming Messages API requests are not expected to exceed a 10-minute timeout. They also set a socket option for TCP keep-alive.
 
-If you don't need to process events incrementally, the SDKs can consume the stream for you and return the complete `Message` object, identical to what a non-streaming call returns:
+If you don't need to process events incrementally, the SDK can consume the stream for you and return the complete `Message` object, identical to what a non-streaming call returns:
 
 cURL
 
@@ -1892,7 +3297,7 @@ Claude 4.6 and later models and [Claude Mythos Preview](../../22-Safety-Policy/g
 
 
 
-Use [structured outputs](../Guides/build-with-claude-structured-outputs.md) on models that support it, system prompt instructions, or [`output_config.format`](../Guides/build-with-claude-structured-outputs.md#json-outputs) instead.
+Use [structured outputs](../Guides/build-with-claude-structured-outputs.md) on models that support it, system prompt instructions, or [`output_config.format`](../Guides/build-with-claude-structured-outputs.md#usage) instead.
 
 ### Thinking blocks cannot be modified
 
@@ -1948,11 +3353,47 @@ On Claude Mythos Preview, the only one of these models that accepts extended thi
 
 
 
+On Claude Sonnet 5.5, thinking can't be set to `disabled`. Use `thinking: {"type": "between_tools"}` for the lowest thinking setting, which turns off up-front thinking. Sending `thinking: {"type": "disabled"}` returns a 400 `invalid_request_error` with this message:
+
+``` block
+To turn thinking off on this model, send "thinking": {"type": "between_tools"} instead of {"type": "disabled"}. The model does not think before responding. The short updates it writes between tool calls come back as thinking blocks.
+```
+
+
+
+At `xhigh` or `max` [effort](../Guides/build-with-claude-effort.md), a request with `between_tools` also returns a 400 `invalid_request_error`. The message says thinking is disabled because `between_tools` has no up-front thinking:
+
+``` block
+output_config.effort 'xhigh' is not supported when thinking is disabled on this model. Use effort 'high' or below, or enable thinking.
+```
+
+
+
+With `between_tools`, effort can't change mid-conversation: a per-message `output_config.effort` that differs from the level in effect returns a 400 error. The error names the position of the message that set the new level:
+
+``` block
+messages.N: output_config.effort 'low' differs from the 'high' in effect before it; effort cannot change when thinking is disabled on this model. Use effort 'high', or enable thinking.
+```
+
+
+
+In both messages, "enable thinking" means adaptive thinking: omit the `thinking` field or send `thinking: {"type": "adaptive"}`. Claude Sonnet 5.5 rejects `"enabled"` with a 400 error. To vary effort per turn, use adaptive thinking.
+
+Sending `thinking: {"type": "between_tools"}` to any model other than Claude Sonnet 5.5 returns a 400 `invalid_request_error`:
+
+``` block
+"thinking.type.between_tools" is not supported for this model.
+```
+
+
+
+For the fixes, see [Troubleshooting thinking](../Guides/build-with-claude-thinking-troubleshooting.md#error-thinking-type-between-tools), which covers the `between_tools` and effort errors.
+
 Omit the `thinking` parameter and the request runs with adaptive thinking. To keep thinking content out of responses without turning thinking off, set `display: "omitted"` on the thinking configuration. See [Troubleshooting thinking](../Guides/build-with-claude-thinking-troubleshooting.md#error-thinking-type-disabled).
 
 ### Forced tool use not supported
 
-Claude Opus 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md) don't support forced tool use. Sending `tool_choice: {"type": "any"}` or `tool_choice: {"type": "tool", "name": "..."}` to any of these models, including on the [token counting endpoint](../Guides/build-with-claude-token-counting.md), returns a 400 `invalid_request_error`:
+Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md) don't support forced tool use. Sending `tool_choice: {"type": "any"}` or `tool_choice: {"type": "tool", "name": "..."}` to any of these models, including on the [token counting endpoint](../Guides/build-with-claude-token-counting.md), returns a 400 `invalid_request_error`:
 
 ``` block
 tool_choice: type "tool" and "any" are not supported for this model.
@@ -1964,7 +3405,7 @@ tool_choice: type "tool" and "any" are not supported for this model.
 
 ### Computer use tool version not supported
 
-On the Claude API and Google Cloud, Claude Opus 5.5 supports [computer use](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) only as the `computer_toolset_20260801` toolset. On those platforms, sending it a `tools` entry of the earlier `computer_20251124` type (with that tool's beta header) returns a 400 `invalid_request_error`. The message names the rejected type, then lists the tool types the model does accept after `Did you mean one of`; it begins:
+On the Claude API and Google Cloud, Claude Opus 5.5 and Claude Sonnet 5.5 support [computer use](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) only as the `computer_toolset_20260801` toolset. On those platforms, sending either model a `tools` entry of the earlier `computer_20251124` type (with that tool's beta header) returns a 400 `invalid_request_error`. The message names the rejected type, then lists the tool types the model does accept after `Did you mean one of`. For Claude Opus 5.5, it begins:
 
 ```python
 'claude-opus-5-5' does not support tool types: computer_20251124.
@@ -1972,11 +3413,11 @@ On the Claude API and Google Cloud, Claude Opus 5.5 supports [computer use](../A
 
 
 
-The API returns the same message for any Anthropic-defined tool type that the requested model doesn't support. Declare `{"type": "computer_toolset_20260801"}` without the beta header and update your agent loop as described in [Migrate from `computer_20251124`](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#migrate-from-computer-20251124). Earlier models that support the toolset keep accepting `computer_20251124`, as does Claude Opus 5.5 on Amazon Bedrock.
+The API returns the same message for any Anthropic-defined tool type that the requested model doesn't support. Declare `{"type": "computer_toolset_20260801"}` without the beta header and update your agent loop as described in [Migrate from `computer_20251124`](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#migrate-from-computer-20251124). Earlier models that support the toolset keep accepting `computer_20251124`, as do Claude Opus 5.5 and Claude Sonnet 5.5 on Amazon Bedrock.
 
 ### Thinking block no longer matches the conversation
 
-On Claude Fable 5.1 and Claude Opus 5.5, the API accepts a replayed thinking block only while the `system` prompt, `tools`, and messages that preceded it are unchanged. For new accounts created on or after August 31, 2026, and for any request that sets `thinking.block_binding.prefix_mismatch_behavior` to `"error"`, a replayed block whose earlier history changed is rejected with a 400 `invalid_request_error` (with `"drop_block"`, the API drops the block and the request succeeds). The message starts with the position of the first failing block:
+On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, the API accepts a replayed thinking block only while the `system` prompt, `tools`, and messages that preceded it are unchanged. For new accounts created on or after August 31, 2026, and for any request that sets `thinking.block_binding.prefix_mismatch_behavior` to `"error"`, a replayed block whose earlier history changed is rejected with a 400 `invalid_request_error` (with `"drop_block"`, the API drops the block and the request succeeds). The message starts with the position of the first failing block:
 
 ``` block
 messages.{i}.content.{j}: Invalid `signature` in `thinking` block. The block is bound to a different conversation. Remove the block, or set `thinking.block_binding.prefix_mismatch_behavior` to "drop_block".
@@ -1984,7 +3425,7 @@ messages.{i}.content.{j}: Invalid `signature` in `thinking` block. The block is 
 
 
 
-Without the `thinking-binding-controls-2026-08-01` beta header the message also names that header. Keep the conversation history append-only, or send the beta header with `prefix_mismatch_behavior: "drop_block"` to drop the block and continue. A block from a model the target model can't read is dropped rather than rejected. See [Keeping the prefix unchanged](../Guides/build-with-claude-preserved-thinking.md#prefix-check) and [Troubleshooting thinking](../Guides/build-with-claude-thinking-troubleshooting.md#error-thinking-block-signature).
+Without the `thinking-binding-controls-2026-08-01` beta header the message also names that header. Keep the conversation history append-only, or send the beta header with `prefix_mismatch_behavior: "drop_block"` to drop the block and continue. On Claude Sonnet 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools`, keep the history append-only, or strip the thinking blocks from the edited turn on. A block from a model the target model can't read is dropped rather than rejected. See [Keeping the prefix unchanged](../Guides/build-with-claude-preserved-thinking.md#prefix-check) and [Troubleshooting thinking](../Guides/build-with-claude-thinking-troubleshooting.md#error-thinking-block-signature).
 
 Sending `thinking.block_binding` without the `thinking-binding-controls-2026-08-01` [beta header](beta-headers.md) returns a 400 `invalid_request_error` whose message ends in:
 
@@ -2034,7 +3475,7 @@ Path: 04-API-Reference/Endpoints/files-delete.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -2114,24 +3555,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -2167,6 +3591,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -2351,7 +3796,7 @@ Path: 04-API-Reference/Endpoints/files-download.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -2431,24 +3876,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -2484,6 +3912,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -2699,24 +4148,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -2752,6 +4184,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -3131,24 +4584,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -3184,6 +4620,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -3446,7 +4903,7 @@ Path: 04-API-Reference/Endpoints/files-upload.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -3526,24 +4983,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -3579,6 +5019,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -3939,24 +5400,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -3992,6 +5436,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -4225,7 +5690,7 @@ Path: 04-API-Reference/Endpoints/ip-addresses.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -4305,24 +5770,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -4358,6 +5806,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -4549,7 +6018,7 @@ Path: 04-API-Reference/Endpoints/messages-batches-cancel.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -4647,24 +6116,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -4700,6 +6152,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -4793,7 +6266,7 @@ Batches may be canceled any time before processing ends. Once cancellation is in
 
 The number of canceled requests is specified in `request_counts`. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Path parameters
 
@@ -4899,7 +6372,7 @@ Path: 04-API-Reference/Endpoints/messages-batches-create.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -4997,24 +6470,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -5050,6 +6506,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -5143,7 +6620,7 @@ Send a batch of Message creation requests.
 
 The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Headers
 
@@ -5201,7 +6678,7 @@ params: object{ max_tokens, messages, model, 16 more }
 
 Messages API creation parameters for the individual request.
 
-See the [Messages API reference](https://platform.claude.com/docs/en/api/messages/batches/api-messages-2dd213ca95.md) for full documentation on available parameters.
+See the [Messages API reference](messages.md) for full documentation on available parameters.
 
 
 
@@ -5280,7 +6757,7 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/api/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
 
 There is a limit of 100,000 messages in a single request.
 
@@ -5566,6 +7043,136 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 One of the following:
 
+"claude-sonnet-5-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5-1"
+
+
+
+Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
+
+"claude-opus-5-5"
+
+
+
+Powerful intelligence for coding, knowledge work, and long-running agents
+
+"claude-mythos-5-1"
+
+
+
+Our most capable model for cybersecurity and biology research, available through trusted access programs
+
+"claude-sonnet-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5"
+
+
+
+Next generation of intelligence for the hardest knowledge work and coding problems
+
+"claude-mythos-5"
+
+
+
+Most capable model for cybersecurity and biology research
+
+"claude-opus-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-8"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-7"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-6"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-sonnet-4-6"
+
+
+
+Best combination of speed and intelligence
+
+"claude-haiku-4-5"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-haiku-4-5-20251001"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-opus-4-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-5-20251101"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+
+
+"claude-mythos-preview"⁠Deprecated
+
+
+
+New class of intelligence, strongest in coding and cybersecurity
+
+Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5-20250929"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+string
+
+
+
 
 
 cache_control: optional [CacheControlEphemeral](https://platform.claude.com/docs/en/api/http/messages#cache_control_ephemeral) { type: "ephemeral", ttl } or null
@@ -5793,7 +7400,7 @@ service_tier: optional "auto" or "standard_only"
 
 Determines whether to use priority capacity (if available) or standard capacity for this request.
 
-Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/messages/batches/api-service-tiers-165fc24251.md) for details.
+Anthropic offers different levels of service for your API requests. See [service-tiers](service-tiers.md) for details.
 
 One of the following:
 
@@ -5823,9 +7430,9 @@ stream: optional boolean
 
 
 
-Whether to incrementally stream the response using server-sent events.
+Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.
 
-See [streaming](../Guides/build-with-claude-streaming.md) for details.
+In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](../Guides/build-with-claude-streaming.md#streaming-with-sdks) for an example in each language.
 
 
 
@@ -5835,7 +7442,7 @@ system: optional string or array of [TextBlockParam](https://platform.claude.com
 
 System prompt.
 
-A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/api/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role).
+A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
 
 One of the following:
 
@@ -6182,7 +7789,7 @@ Definitions of tools that the model may use.
 
 If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
 
-There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/api/messages/api-web-search.md)).
+There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)).
 
 Each tool definition includes:
 
@@ -6244,7 +7851,7 @@ You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an 
 
 Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
 
-See our [guide](https://platform.claude.com/docs/en/api/messages/tool-use-overview.md) for more details.
+See our [guide](../Agents-Tools/agents-and-tools-tool-use-overview.md) for more details.
 
 One of the following:
 
@@ -6537,7 +8144,7 @@ Path: 04-API-Reference/Endpoints/messages-batches-delete.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -6635,24 +8242,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -6688,6 +8278,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -6781,7 +8392,7 @@ Delete a Message Batch.
 
 Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Path parameters
 
@@ -6878,7 +8489,7 @@ Path: 04-API-Reference/Endpoints/messages-batches-list.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -6976,24 +8587,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -7029,6 +8623,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -7120,7 +8735,7 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 List all Message Batches within a Workspace. Most recently created batches are returned first.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Query parameters
 
@@ -7448,7 +9063,7 @@ Path: 04-API-Reference/Endpoints/messages-batches-results.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -7546,24 +9161,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -7599,6 +9197,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -7692,7 +9311,7 @@ Streams the results of a Message Batch as a `.jsonl` file.
 
 Each line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Path parameters
 
@@ -7771,7 +9390,7 @@ Path: 04-API-Reference/Endpoints/messages-batches-retrieve.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -7869,24 +9488,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -7922,6 +9524,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -8013,7 +9636,7 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Path parameters
 
@@ -8118,7 +9741,7 @@ Path: 04-API-Reference/Endpoints/messages-batches.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -8216,24 +9839,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -8269,6 +9875,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -9922,7 +11549,7 @@ Path: 04-API-Reference/Endpoints/messages-create.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -10002,24 +11629,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -10055,6 +11665,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -10246,7 +11877,7 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
 
 There is a limit of 100,000 messages in a single request.
 
@@ -10532,6 +12163,136 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 One of the following:
 
+"claude-sonnet-5-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5-1"
+
+
+
+Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
+
+"claude-opus-5-5"
+
+
+
+Powerful intelligence for coding, knowledge work, and long-running agents
+
+"claude-mythos-5-1"
+
+
+
+Our most capable model for cybersecurity and biology research, available through trusted access programs
+
+"claude-sonnet-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5"
+
+
+
+Next generation of intelligence for the hardest knowledge work and coding problems
+
+"claude-mythos-5"
+
+
+
+Most capable model for cybersecurity and biology research
+
+"claude-opus-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-8"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-7"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-6"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-sonnet-4-6"
+
+
+
+Best combination of speed and intelligence
+
+"claude-haiku-4-5"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-haiku-4-5-20251001"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-opus-4-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-5-20251101"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+
+
+"claude-mythos-preview"⁠Deprecated
+
+
+
+New class of intelligence, strongest in coding and cybersecurity
+
+Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5-20250929"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+string
+
+
+
 
 
 cache_control: optional [CacheControlEphemeral](https://platform.claude.com/docs/en/api/http/messages#cache_control_ephemeral) { type: "ephemeral", ttl } or null
@@ -10759,7 +12520,7 @@ service_tier: optional "auto" or "standard_only"
 
 Determines whether to use priority capacity (if available) or standard capacity for this request.
 
-Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/messages/api-service-tiers-165fc24251.md) for details.
+Anthropic offers different levels of service for your API requests. See [service-tiers](service-tiers.md) for details.
 
 One of the following:
 
@@ -10789,9 +12550,9 @@ stream: optional boolean
 
 
 
-Whether to incrementally stream the response using server-sent events.
+Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.
 
-See [streaming](../Guides/build-with-claude-streaming.md) for details.
+In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](../Guides/build-with-claude-streaming.md#streaming-with-sdks) for an example in each language.
 
 
 
@@ -10801,7 +12562,7 @@ system: optional string or array of [TextBlockParam](https://platform.claude.com
 
 System prompt.
 
-A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role).
+A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
 
 One of the following:
 
@@ -11148,7 +12909,7 @@ Definitions of tools that the model may use.
 
 If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
 
-There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/api/api-web-search.md)).
+There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)).
 
 Each tool definition includes:
 
@@ -11210,7 +12971,7 @@ You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an 
 
 Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
 
-See our [guide](https://platform.claude.com/docs/en/api/tool-use-overview.md) for more details.
+See our [guide](../Agents-Tools/agents-and-tools-tool-use-overview.md) for more details.
 
 One of the following:
 
@@ -11735,6 +13496,136 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 One of the following:
 
+"claude-sonnet-5-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5-1"
+
+
+
+Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
+
+"claude-opus-5-5"
+
+
+
+Powerful intelligence for coding, knowledge work, and long-running agents
+
+"claude-mythos-5-1"
+
+
+
+Our most capable model for cybersecurity and biology research, available through trusted access programs
+
+"claude-sonnet-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5"
+
+
+
+Next generation of intelligence for the hardest knowledge work and coding problems
+
+"claude-mythos-5"
+
+
+
+Most capable model for cybersecurity and biology research
+
+"claude-opus-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-8"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-7"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-6"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-sonnet-4-6"
+
+
+
+Best combination of speed and intelligence
+
+"claude-haiku-4-5"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-haiku-4-5-20251001"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-opus-4-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-5-20251101"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+
+
+"claude-mythos-preview"⁠Deprecated
+
+
+
+New class of intelligence, strongest in coding and cybersecurity
+
+Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5-20250929"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+string
+
+
+
 
 
 role: "assistant"
@@ -11799,7 +13690,7 @@ The request could assist the development of competing AI models, which is restri
 
 
 
-The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/api/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md).
+The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](../Guides/build-with-claude-thinking-steering-and-cost.md).
 
 "general_harms"
 
@@ -12101,7 +13992,7 @@ Path: 04-API-Reference/Endpoints/messages.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -12181,24 +14072,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -12234,6 +14108,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -15640,7 +17535,7 @@ maxLength512
 
 
 
-Model = string or "claude-fable-5-1" or "claude-opus-5-5" or "claude-mythos-5-1" or 15 more
+Model = "claude-sonnet-5-5" or "claude-fable-5-1" or "claude-opus-5-5" or 16 more or string
 
 
 
@@ -15942,7 +17837,7 @@ The request could assist the development of competing AI models, which is restri
 
 
 
-The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](https://platform.claude.com/docs/en/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md).
+The request asks the model to reproduce its internal reasoning in the response text. To get reasoning in a structured form instead, use [adaptive thinking](../Guides/build-with-claude-thinking-steering-and-cost.md).
 
 "general_harms"
 
@@ -16606,6 +18501,16 @@ One of the following:
 
 
 
+ThinkingConfigBetweenTools object{ type: "between_tools" }
+
+
+
+type: "between_tools"
+
+
+
+
+
 ThinkingConfigDisabled object{ type: "disabled" }
 
 
@@ -16658,7 +18563,7 @@ One of the following:
 
 
 
-ThinkingConfigParam = [ThinkingConfigEnabled](https://platform.claude.com/docs/en/api/http/messages#thinking_config_enabled) or [ThinkingConfigDisabled](https://platform.claude.com/docs/en/api/http/messages#thinking_config_disabled) or [ThinkingConfigAdaptive](https://platform.claude.com/docs/en/api/http/messages#thinking_config_adaptive)
+ThinkingConfigParam = [ThinkingConfigEnabled](https://platform.claude.com/docs/en/api/http/messages#thinking_config_enabled) or [ThinkingConfigDisabled](https://platform.claude.com/docs/en/api/http/messages#thinking_config_disabled) or [ThinkingConfigBetweenTools](https://platform.claude.com/docs/en/api/http/messages#thinking_config_between_tools) or [ThinkingConfigAdaptive](https://platform.claude.com/docs/en/api/http/messages#thinking_config_adaptive)
 
 
 
@@ -17833,7 +19738,7 @@ Path: 04-API-Reference/Endpoints/models-list.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -17913,24 +19818,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -17966,6 +19854,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -18115,14 +20024,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -18313,6 +20214,14 @@ One of the following:
 
 
 "mcp-client-2026-09-15"
+
+
+
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
 
 
 
@@ -18580,7 +20489,7 @@ Path: 04-API-Reference/Endpoints/models-retrieve.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -18660,24 +20569,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -18713,6 +20605,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -18840,14 +20753,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -19038,6 +20943,14 @@ One of the following:
 
 
 "mcp-client-2026-09-15"
+
+
+
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
 
 
 
@@ -19278,7 +21191,7 @@ Path: 04-API-Reference/Endpoints/models.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -19358,24 +21271,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -19411,6 +21307,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -19774,7 +21691,7 @@ To use the OpenAI SDK compatibility feature, you'll need to:
 1. Use an official OpenAI SDK
 2. Change the following
    * Update your base URL to point to the Claude API
-   * Replace your API key with a [Claude API key](../Other/usage-limits.md)
+   * Replace your API key with a [Claude API key](../Other/playground.md)
    * Update your model name to use a [Claude model](../../20-Models/about-claude-models-overview.md)
 3. Review the documentation below for what features are supported
 
@@ -20086,7 +22003,7 @@ Path: 04-API-Reference/Endpoints/overview.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -20166,24 +22083,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -20219,6 +22119,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -20315,7 +22236,7 @@ The Claude API is a RESTful API at `https://api.anthropic.com` that provides pro
 To use the Claude API, you'll need:
 
 - A [Claude Console account](../Other/usage-limits.md)
-- An [API key](../Other/usage-limits.md), or a configured [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md) rule
+- An [API key](../Other/playground.md), or a configured [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md) rule
 
 For step-by-step setup instructions, see [Get started](../../01-Getting-Started/get-started.md).
 
@@ -20342,13 +22263,13 @@ For the complete API reference with all endpoints, parameters, and response sche
 
 For details on each authentication method and when to use it, see [Authentication](../Other/manage-claude-authentication.md). Requests to the Claude API include these headers:
 
-| Header                   | Value                                                                                                                                                                                                              | Required                                                                                                                                                             |
-|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Authorization`          | `Bearer <token>`, where `<token>` is your API key or a short-lived access token obtained from `POST /v1/oauth/token` through [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md)   | Yes, unless `x-api-key` is set                                                                                                                                       |
-| `x-api-key`              | Your API key from Console. Legacy fallback for `Authorization`, still supported                                                                                                                                    | No                                                                                                                                                                   |
-| `anthropic-workspace-id` | ID of the [workspace](../Other/manage-claude-workspaces.md) the request runs in (for example, `wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ`). See [Select a workspace](../Other/manage-claude-authentication.md#select-a-workspace). | Required with a multi-workspace API key. Optional for other API keys. Not used with Workload Identity Federation tokens, which select a workspace at token exchange. |
-| `anthropic-version`      | API version (for example, `2023-06-01`)                                                                                                                                                                            | Yes                                                                                                                                                                  |
-| `content-type`           | `application/json`                                                                                                                                                                                                 | Yes                                                                                                                                                                  |
+| Header                   | Value                                                                                                                                                                                                              | Required                                                                                                                                                                                                                                                   |
+|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Authorization`          | `Bearer <token>`, where `<token>` is your API key or a short-lived access token obtained from `POST /v1/oauth/token` through [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md)   | Yes, unless `x-api-key` is set                                                                                                                                                                                                                             |
+| `x-api-key`              | Your API key from Console. Legacy fallback for `Authorization`, still supported                                                                                                                                    | No                                                                                                                                                                                                                                                         |
+| `anthropic-workspace-id` | ID of the [workspace](../Other/manage-claude-workspaces.md) the request runs in (for example, `wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ`). See [Select a workspace](../Other/manage-claude-authentication.md#select-a-workspace). | Required with a multi-workspace API key. Optional for other API keys. A key created for a single workspace runs in that workspace when you omit the header. Not used with Workload Identity Federation tokens, which select a workspace at token exchange. |
+| `anthropic-version`      | API version (for example, `2023-06-01`)                                                                                                                                                                            | Yes                                                                                                                                                                                                                                                        |
+| `content-type`           | `application/json`                                                                                                                                                                                                 | Yes                                                                                                                                                                                                                                                        |
 
 If you are using the [Client SDKs](#client-sdks), the SDK sends the authentication, version, and content-type headers automatically; you pass `anthropic-workspace-id` yourself when your key needs it. For API versioning details, see [API versions](versioning.md).
 
@@ -20356,7 +22277,7 @@ When accessing Claude through a [cloud platform](#claude-api-vs-cloud-platforms)
 
 ### Getting API keys
 
-The API is made available through the web [Console](../Other/usage-limits.md). You can use [playground](../Other/usage-limits.md) to try out the API in the browser and then generate API keys in [Account Settings](../Other/usage-limits.md) (see [Get your Claude API key](../Other/get-api-key.md)). You choose each key's type (see [Key types](../Other/manage-claude-authentication.md#key-types)) and its [expiration](../Other/manage-claude-authentication.md#key-expiration) when you create it. Use [workspaces](../Other/usage-limits.md) to separate environments and [control spend](rate-limits.md) by use case.
+The API is made available through the web [Console](../Other/usage-limits.md). You can use [playground](../Other/playground.md) to try out the API in the browser and then generate API keys in [Account Settings](../Other/playground.md) (see [Get your Claude API key](../Other/get-api-key.md)). You choose each key's type (see [Key types](../Other/manage-claude-authentication.md#key-types)) and its [expiration](../Other/manage-claude-authentication.md#key-expiration) when you create it. Use [workspaces](../Other/playground.md) to separate environments and [control spend](rate-limits.md) by use case.
 
 ## Client SDKs
 
@@ -20448,7 +22369,7 @@ List endpoints return results in pages. Most newer list endpoints use the `page`
 
 To go back a page, pass `prev_page` as the `page` parameter. `prev_page` is `null` when you're on the first page. Not all list endpoints support `prev_page`. Only `GET /v1/sessions` returns `prev_page`; on list endpoints that do not support backward pagination, the field is absent from the response rather than `null`. For a request walkthrough, see [Listing sessions](../Other/managed-agents-session-operations.md#listing-sessions).
 
-Every SDK provides an auto-paginating iterator that follows `next_page` for you. In Python and TypeScript, you get it by iterating the list result directly. The other SDKs provide the iterator through a separate method. SDK auto-pagination is forward-only; to go back a page, read `prev_page` from the response and pass it back as the `page` parameter yourself. See [client SDKs](../Other/cli-sdks-libraries-overview.md) for language-specific details.
+The SDK provides an auto-paginating iterator that follows `next_page` for you. For example, `for session in client.beta.sessions.list()` walks through every session. SDK auto-pagination is forward-only; to go back a page, read `prev_page` from the response and pass it back as the `page` parameter yourself. See [client SDKs](../Other/cli-sdks-libraries-overview.md) for details.
 
 
 
@@ -20463,7 +22384,7 @@ The API enforces rate limits and spend limits to prevent misuse and manage capac
 - **Spend limits**: Maximum monthly cost for API usage
 - **Rate limits**: Maximum number of requests per minute (RPM) and tokens per minute (TPM)
 
-You can view your rate limits on the [Rate limits](../Other/usage-limits.md) page and your spend limits on the [Billing](../Other/usage-limits.md) page in the Console. For higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the Rate limits page.
+You can view your rate limits on the [Rate limits](../Other/playground.md) page and your spend limits on the [Billing](../Other/playground.md) page in the Console. For higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the Rate limits page.
 
 For detailed information about limits, tiers, and the token bucket algorithm used for rate limiting, see [Rate limits](rate-limits.md).
 
@@ -20511,7 +22432,7 @@ Path: 04-API-Reference/Endpoints/platform-claude-com-messages-count-tokens.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -20591,24 +22512,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -20644,6 +22548,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -20819,7 +22744,7 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
 
 There is a limit of 100,000 messages in a single request.
 
@@ -21105,6 +23030,136 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 One of the following:
 
+"claude-sonnet-5-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5-1"
+
+
+
+Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
+
+"claude-opus-5-5"
+
+
+
+Powerful intelligence for coding, knowledge work, and long-running agents
+
+"claude-mythos-5-1"
+
+
+
+Our most capable model for cybersecurity and biology research, available through trusted access programs
+
+"claude-sonnet-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5"
+
+
+
+Next generation of intelligence for the hardest knowledge work and coding problems
+
+"claude-mythos-5"
+
+
+
+Most capable model for cybersecurity and biology research
+
+"claude-opus-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-8"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-7"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-6"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-sonnet-4-6"
+
+
+
+Best combination of speed and intelligence
+
+"claude-haiku-4-5"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-haiku-4-5-20251001"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-opus-4-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-5-20251101"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+
+
+"claude-mythos-preview"⁠Deprecated
+
+
+
+New class of intelligence, strongest in coding and cybersecurity
+
+Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5-20250929"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+string
+
+
+
 
 
 cache_control: optional [CacheControlEphemeral](https://platform.claude.com/docs/en/api/http/messages#cache_control_ephemeral) { type: "ephemeral", ttl } or null
@@ -21208,7 +23263,7 @@ system: optional string or array of [TextBlockParam](https://platform.claude.com
 
 System prompt.
 
-A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role).
+A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
 
 One of the following:
 
@@ -21555,7 +23610,7 @@ Definitions of tools that the model may use.
 
 If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
 
-There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/api/api-web-search.md)).
+There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)).
 
 Each tool definition includes:
 
@@ -21617,7 +23672,7 @@ You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an 
 
 Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
 
-See our [guide](https://platform.claude.com/docs/en/api/tool-use-overview.md) for more details.
+See our [guide](../Agents-Tools/agents-and-tools-tool-use-overview.md) for more details.
 
 One of the following:
 
@@ -21808,7 +23863,7 @@ Path: 04-API-Reference/Endpoints/rate-limits.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -21888,24 +23943,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -21941,6 +23979,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -22042,7 +24101,7 @@ The API enforces service-configured limits at the organization level, but you ma
 - Limits are designed to prevent API abuse, while minimizing impact on common customer usage patterns.
 - Limits are defined by **usage tier**. Organizations are placed on a tier automatically based on usage history and account standing and can move to a higher tier over time as they use the API.
 - New organizations and organizations with limited usage history may start in the Evaluation tier, with limits below the standard limits shown on this page while account history is established. These starting limits are part of how Anthropic prevents fraud and abuse, and they increase automatically as your organization builds usage history.
-- Limits are set at the organization level. You can see your organization's tier and current limits on the [Rate limits](../Other/usage-limits.md) page in the [Claude Console](../Other/usage-limits.md).
+- Limits are set at the organization level. You can see your organization's tier and current limits on the [Rate limits](../Other/playground.md) page in the [Claude Console](../Other/usage-limits.md).
 - You might hit rate limits over shorter time intervals. For instance, a rate of 60 requests per minute (RPM) might be enforced as 1 request per second. Short bursts of requests can exceed the limit and trigger rate limit errors.
 - The following limits are the standard limits for each tier. If you need higher limits, see [Requesting higher limits](#requesting-higher-limits).
 - The API uses the [token bucket algorithm](https://en.wikipedia.org/wiki/Token_bucket) to do rate limiting. This means that your capacity is continuously replenished up to your maximum limit, rather than being reset at fixed intervals.
@@ -22054,7 +24113,7 @@ The API enforces service-configured limits at the organization level, but you ma
 
 **[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md):** The same monthly spend caps apply, and requests stop at the cap in the same way. Billing and tier increases work differently; see [Spend limits on Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md#spend-limits).
 
-Each of the Start, Build, and Scale tiers carries a monthly spend cap, which is the maximum your organization can spend on the API each calendar month. You can view your organization's monthly spend cap and set your own limit on the [Billing](../Other/usage-limits.md) page.
+Each of the Start, Build, and Scale tiers carries a monthly spend cap, which is the maximum your organization can spend on the API each calendar month. You can view your organization's monthly spend cap and set your own limit on the [Billing](../Other/playground.md) page.
 
 | Usage tier | Monthly spend cap |
 |------------|-------------------|
@@ -22082,7 +24141,7 @@ Once you reach your tier's spend cap, API usage pauses until 00:00 UTC on the fi
 
 
 
-- The error type is `rate_limit_error`, the same as for a rate limit, but the response has no `retry-after` header. Retrying, including the SDKs' automatic retries, fails until access resumes.
+- The error type is `rate_limit_error`, the same as for a rate limit, but the response has no `retry-after` header. Retrying, including the SDK's automatic retries, fails until access resumes.
 - On the Messages API, `error.details.error_code` is `enforced_spend_limit_reached`. Use it to tell this response apart from a rate limit.
 - Moving to a higher tier restores access; see [Requesting higher limits](#requesting-higher-limits).
 
@@ -22094,7 +24153,7 @@ You can also set your own spend limit below your tier's cap to control costs:
 
     ### Navigate to the Billing page
 
-    Go to [Settings \> Billing](../Other/usage-limits.md) in the Claude Console.
+    Go to [Settings \> Billing](../Other/playground.md) in the Claude Console.
 
 2.  2
 
@@ -22154,11 +24213,11 @@ Claude Haiku 3.5 (marked with footnote 4 in the following rate limit tables) als
 
 For all other models, cached input tokens do not count toward rate limits and are billed at the [cache read rate](../Guides/build-with-claude-prompt-caching.md#pricing), a fraction of the base input price. This means you can achieve significantly higher effective throughput by using [prompt caching](../Guides/build-with-claude-prompt-caching.md).
 
-To make the most of your rate limits, cache repeated content such as system instructions and prompts, large context documents, tool definitions, and conversation history; see [prompt caching](../Guides/build-with-claude-prompt-caching.md) for guidance. With effective caching, you can substantially increase your actual throughput without raising your rate limits. Monitor your cache hit rate on the [Usage page](../Other/usage-limits.md) to tune your caching strategy.
+To make the most of your rate limits, cache repeated content such as system instructions and prompts, large context documents, tool definitions, and conversation history; see [prompt caching](../Guides/build-with-claude-prompt-caching.md) for guidance. With effective caching, you can substantially increase your actual throughput without raising your rate limits. Monitor your cache hit rate on the [Usage page](../Other/playground.md) to tune your caching strategy.
 
 OTPM rate limits are evaluated in real time as output tokens are produced, counting only the actual tokens generated. The `max_tokens` parameter does not factor into OTPM rate limit calculations, so there is no rate limit downside to setting a higher `max_tokens` value.
 
-Rate limits are applied separately for each model; therefore you can use different models up to their respective limits simultaneously. You can check your current rate limits and behavior on the [Rate limits](../Other/usage-limits.md) page in the Claude Console, or read the configured limits programmatically with the [Rate Limits API](../Other/manage-claude-rate-limits-api.md).
+Rate limits are applied separately for each model; therefore you can use different models up to their respective limits simultaneously. You can check your current rate limits and behavior on the [Rate limits](../Other/playground.md) page in the Claude Console, or read the configured limits programmatically with the [Rate Limits API](../Other/manage-claude-rate-limits-api.md).
 
 
 
@@ -22178,6 +24237,7 @@ Custom tier
 | Claude Opus 5.5                                                                                            | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Opus 5                                                                                              | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Opus 4.x²                                                                                           | 1,000                             | 2,000,000                              | 400,000                                 |
+| Claude Sonnet 5.5                                                                                          | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Sonnet 5                                                                                            | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Sonnet 4.x³                                                                                         | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Haiku 4.5                                                                                           | 1,000                             | 2,000,000                              | 400,000                                 |
@@ -22187,7 +24247,7 @@ Custom tier
 
 *^(2 Opus rate limit is a total limit that applies to combined traffic across Claude Opus 4.8, Opus 4.7, Opus 4.6, and Opus 4.5. Claude Opus 5.5 and Claude Opus 5 each have a separate rate limit and are not part of this combined bucket.)*
 
-*^(3 Sonnet 4.x rate limit is a total limit that applies to combined traffic across Sonnet 4.6 and Sonnet 4.5. Claude Sonnet 5 has a separate rate limit and is not part of this combined bucket.)*
+*^(3 Sonnet 4.x rate limit is a total limit that applies to combined traffic across Sonnet 4.6 and Sonnet 4.5. Claude Sonnet 5.5 and Claude Sonnet 5 each have a separate rate limit and are not part of this combined bucket.)*
 
 *^(4 Limit counts `cache_read_input_tokens` toward ITPM usage.)*
 
@@ -22228,7 +24288,7 @@ The response includes `anthropic-fast-*` headers that indicate your fast mode ra
 
 ### Monitoring your rate limits in the Console
 
-You can monitor your rate limit usage on the [Usage](../Other/usage-limits.md) page of the [Claude Console](../Other/usage-limits.md).
+You can monitor your rate limit usage on the [Usage](../Other/playground.md) page of the [Claude Console](../Other/usage-limits.md).
 
 In addition to providing token and request charts, the Usage page provides two separate rate limit charts. Use these charts to see what headroom you have to grow, identify when you may be hitting peak use, understand what rate limits to request, and learn how to improve your caching rates. The charts visualize a number of metrics for a given rate limit (for example, per model):
 
@@ -22242,7 +24302,7 @@ In addition to providing token and request charts, the Usage page provides two s
 
 ## Requesting higher limits
 
-To request higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the [Rate limits](../Other/usage-limits.md) page. Anthropic support can also raise limits; for urgent needs, contact [Anthropic support](https://support.claude.com).
+To request higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the [Rate limits](../Other/playground.md) page. Anthropic support can also raise limits; for urgent needs, contact [Anthropic support](https://support.claude.com).
 
 
 
@@ -22396,7 +24456,7 @@ Open a new terminal for the change to take effect.
 </Tab>
 </Tabs>
 
-Get a key from the [Claude Console](../Other/usage-limits.md). To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url` on any command.
+Get a key from the [Claude Console](../Other/playground.md). To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url` on any command.
 
 ## Send your first request
 
@@ -27935,7 +29995,7 @@ Path: 04-API-Reference/Endpoints/service-tiers.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -28015,24 +30075,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -28068,6 +30111,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -28187,12 +30251,12 @@ Anthropic counts usage against Priority Tier capacity as follows:
 - Cache reads as 0.1 tokens per token read from the cache
 - Cache writes as 1.25 tokens per token written to the cache with a 5 minute TTL
 - Cache writes as 2.00 tokens per token written to the cache with a 1 hour TTL
-- For [US-only inference](../Guides/build-with-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, input tokens are 1.1 tokens per token
+- For [US-only inference](../Other/manage-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, input tokens are 1.1 tokens per token
 - All other input tokens are 1 token per token
 
 **Output tokens**
 
-- For [US-only inference](../Guides/build-with-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, output tokens are 1.1 tokens per token
+- For [US-only inference](../Other/manage-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, output tokens are 1.1 tokens per token
 - All other output tokens are 1 token per token
 
 Otherwise, requests proceed at standard tier.
@@ -28292,7 +30356,7 @@ Priority Tier targets 99.5% uptime with prioritized computational resources. Req
 
 ### Supported models
 
-Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.
+Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Sonnet 5.
 
 Check the [Models overview](../../20-Models/about-claude-models-overview.md) for more details on available models.
 
@@ -29006,24 +31070,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -29059,6 +31106,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -29251,7 +31319,7 @@ Path: 04-API-Reference/Endpoints/skills-delete.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -29331,24 +31399,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -29384,6 +31435,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -29576,7 +31648,7 @@ Path: 04-API-Reference/Endpoints/skills-list.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -29656,24 +31728,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -29709,6 +31764,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -30043,7 +32119,7 @@ Path: 04-API-Reference/Endpoints/skills-retrieve.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30123,24 +32199,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -30176,6 +32235,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -30360,7 +32440,7 @@ Path: 04-API-Reference/Endpoints/skills-versions-create.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30440,39 +32520,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Create Skill Version
-
-
-List Skill Versions
-
-
-Download Skill Version Content
-
-
-Get Skill Version
-
-
-Delete Skill Version
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -30508,6 +32556,42 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Create Skill Version
+
+
+List Skill Versions
+
+
+Download Skill Version Content
+
+
+Get Skill Version
+
+
+Delete Skill Version
 
 
 Tunnels
@@ -30754,7 +32838,7 @@ Path: 04-API-Reference/Endpoints/skills-versions-delete.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30834,39 +32918,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Create Skill Version
-
-
-List Skill Versions
-
-
-Download Skill Version Content
-
-
-Get Skill Version
-
-
-Delete Skill Version
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -30902,6 +32954,42 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Create Skill Version
+
+
+List Skill Versions
+
+
+Download Skill Version Content
+
+
+Get Skill Version
+
+
+Delete Skill Version
 
 
 Tunnels
@@ -31102,7 +33190,7 @@ Path: 04-API-Reference/Endpoints/skills-versions-list.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -31182,39 +33270,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Create Skill Version
-
-
-List Skill Versions
-
-
-Download Skill Version Content
-
-
-Get Skill Version
-
-
-Delete Skill Version
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -31250,6 +33306,42 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Create Skill Version
+
+
+List Skill Versions
+
+
+Download Skill Version Content
+
+
+Get Skill Version
+
+
+Delete Skill Version
 
 
 Tunnels
@@ -31605,39 +33697,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Create Skill Version
-
-
-List Skill Versions
-
-
-Download Skill Version Content
-
-
-Get Skill Version
-
-
-Delete Skill Version
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -31673,6 +33733,42 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Create Skill Version
+
+
+List Skill Versions
+
+
+Download Skill Version Content
+
+
+Get Skill Version
+
+
+Delete Skill Version
 
 
 Tunnels
@@ -31995,39 +34091,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Create Skill Version
-
-
-List Skill Versions
-
-
-Download Skill Version Content
-
-
-Get Skill Version
-
-
-Delete Skill Version
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -32063,6 +34127,42 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Create Skill Version
+
+
+List Skill Versions
+
+
+Download Skill Version Content
+
+
+Get Skill Version
+
+
+Delete Skill Version
 
 
 Tunnels
@@ -32265,7 +34365,7 @@ Path: 04-API-Reference/Endpoints/skills.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32345,24 +34445,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -32398,6 +34481,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -32606,7 +34710,7 @@ Path: 04-API-Reference/Endpoints/supported-regions.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32686,24 +34790,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -32739,6 +34826,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -33014,7 +35122,7 @@ Path: 04-API-Reference/Endpoints/versioning.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -33094,24 +35202,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -33147,6 +35238,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels

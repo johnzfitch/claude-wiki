@@ -2,7 +2,7 @@
 title: "Prompting Claude Fable 5.1 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1"
 category: "10-Prompting-Guides"
-fetched_at: "2026-09-26T06:39:25Z"
+fetched_at: "2026-10-04T08:33:18Z"
 tags: ["agents", "prompting", "search", "subagents"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "prompting", "search", "subagents"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../20-Models/release-notes-overview.md)
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -90,6 +90,8 @@ Your existing Claude Fable 5 prompts should perform well on Claude Fable 5.1 wit
 
 
 Claude Fable 5.1 runs safety classifiers and can return `stop_reason: "refusal"`. See [Refusals, fallback, and billing](../20-Models/models-fable-5-1-whats-new-fable-5-1.md#refusals-fallback-and-billing) and [Reduce safeguard false positives](#reduce-safeguard-false-positives).
+
+Prompts, skills, and tool descriptions that ask the model to write out its thinking or reasoning may be declined with the `reasoning_extraction` category. Ask for a short explanation or a summary of the actions taken instead, or read the reasoning from [summarized thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#summarized-thinking) blocks (`display: "summarized"`). See [Keep reasoning in thinking blocks](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 ## Consider all effort levels
 

@@ -2,7 +2,7 @@
 title: "Why was my card declined? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9402418-why-was-my-card-declined"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:32:17Z"
+fetched_at: "2026-10-10T06:25:31Z"
 tags: ["billing", "claude-code", "cli"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Rakuten Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/rakuten"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:45Z"
+fetched_at: "2026-10-10T06:25:57Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -43,7 +43,7 @@ Key results with Claude Code:
 - Achieved 7 hours of sustained autonomous coding on a complex open-source refactoring project
 - Reduced time to market for new features by 79% (from 24 days to 5 days)
 - Delivered 99.9% accuracy on complex code modifications
-- Deployed [Claude Managed Agents](https://claude.com/blog/claude-managed-agents) across product, sales, marketing, finance within one week
+- Deployed [Claude Managed Agents](https://claude.com/resources/articles/claude-managed-agents) across product, sales, marketing, finance within one week
 
 ## Empowering every team to innovate at speed
 
@@ -100,7 +100,7 @@ Claude Code
 
 Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
 
-[Read more](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+[Read more](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 
 ## Related stories
 
@@ -123,9 +123,9 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -155,7 +155,7 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -167,6 +167,7 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -178,8 +179,10 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -199,7 +202,9 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -242,9 +247,9 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -274,7 +279,7 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -286,6 +291,7 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -297,8 +303,10 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -318,7 +326,9 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

@@ -2,7 +2,7 @@
 title: "List Code Artifacts - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/code/artifacts/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-26T06:39:05Z"
+fetched_at: "2026-10-04T08:32:16Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -349,7 +353,7 @@ maxItems200
 
 
 
-data: array of object{ id, organization_uuid, owner_user_id, 5 more }
+data: array of object{ id, artifact_type, organization_uuid, 6 more }
 
 
 
@@ -360,6 +364,40 @@ id: string
 
 
 Artifact identifier (tagged ID)
+
+
+
+artifact_type: "claude_design" or "claude_design_systems" or "claude_docs" or 3 more
+
+
+
+Which kind of Artifact this is: `code` for a site published from Claude Code, or the built-in Artifact type it was made from — `claude_docs` (Claude Docs), `claude_slides` (Slides), `claude_design` (Design) or `claude_design_systems` (a design system). `other` is an Artifact made from a built-in type this list does not name yet.
+
+One of the following:
+
+"claude_design"
+
+
+
+"claude_design_systems"
+
+
+
+"claude_docs"
+
+
+
+"claude_slides"
+
+
+
+"code"
+
+
+
+"other"
+
+
 
 organization_uuid: string
 
@@ -498,6 +536,7 @@ Response 200
   "data": [
     {
       "id": "cart_01Tu9VwXyZaBcDeFgHiJkLmN",
+      "artifact_type": "claude_docs",
       "organization_uuid": "a1b2c3d4-e5f6-4789-a012-3456789abcde",
       "owner_user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
       "published_version_id": "1741803761-9f3a",
@@ -532,6 +571,7 @@ Response 200
   "data": [
     {
       "id": "cart_01Tu9VwXyZaBcDeFgHiJkLmN",
+      "artifact_type": "claude_docs",
       "organization_uuid": "a1b2c3d4-e5f6-4789-a012-3456789abcde",
       "owner_user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q",
       "published_version_id": "1741803761-9f3a",

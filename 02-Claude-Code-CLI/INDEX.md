@@ -1,8 +1,9 @@
 # Claude Code CLI
 
-130 pages. The full text of every page is in [llms.txt](llms.txt).
+133 pages. The full text of every page is in [llms.txt](llms.txt).
 
 - [All settings - Claude Code Docs](settings-reference.md) — Complete reference for every Claude Code settings.json key: where each one goes, its type and default, and a paste-ready example, with an index of every key.
+- [Authentication - Claude Code Docs](authentication.md) — Log in to Claude Code and configure authentication for individuals, teams, and organizations.
 - [Automate work with routines - Claude Code Docs](web-scheduled-tasks.md) — Put Claude Code on autopilot. Define routines that run on a schedule, trigger on API calls, or react to GitHub events from cloud infrastructure.
 - [Automated Security Reviews in Claude Code | Claude Help Center](automated-security-reviews-in-claude-code.md) — Claude Code now includes automated security review features to help you identify and fix vulnerabilities in your code. This guide explains how to use the…
 - [Automatic Context Compaction](claude-cookbooks-tool-use-automatic-context-compaction.md) — Long-running agentic tasks can often exceed context limits. Tool heavy
@@ -24,6 +25,7 @@
 - [Claude Code on Claude Platform on AWS - Claude Code Docs](claude-platform-on-aws.md) — Configure Claude Code to use the Anthropic-operated Claude API with AWS authentication, IAM access control, and AWS Marketplace billing.
 - [Claude Code on Google Cloud's Agent Platform - Claude Code Docs](google-vertex-ai.md) — Learn about configuring Claude Code through Google Cloud’s Agent Platform, formerly Vertex AI, including setup, IAM configuration, and troubleshooting.
 - [Claude Code on Microsoft Foundry - Claude Code Docs](microsoft-foundry.md) — Learn about configuring Claude Code through Microsoft Foundry, including setup, configuration, and troubleshooting.
+- [Claude Code on the web | Claude by Anthropic](blog-claude-code-on-the-web.md) — Today, we're introducing Claude Code on the web, a new way to delegate coding tasks directly from your browser.
 - [Claude Code on the web | Claude Help Center](12618689-claude-code-on-the-web.md) — Claude Code on the web runs Claude Code tasks remotely, working with code from your GitHub repositories. This article explains how it works, when to use it…
 - [Claude Code power user tips | Claude Help Center](claude-code-power-user-tips.md) — This article collects workflow tips from the Claude Code team at Anthropic. These practices cover parallel execution, planning, automation, verification, and…
 - [Claude Code user FAQ | Claude Help Center](claude-code-user-faq.md) — Short answers to the questions that come up most at office hours, with a link to go deeper. Organized by where you are in your first few weeks.
@@ -68,7 +70,7 @@
 - [Launch sessions from links - Claude Code Docs](deep-links.md) — Open a Claude Code terminal session from a URL. Embed claude-cli:// links in runbooks, alerts, and dashboards so a click opens Claude Code in the right repo…
 - [Let Claude coordinate ongoing work with Projects - Claude Code Docs](claude-projects.md) — Platforms and integrations
 - [Let Claude use your computer from the CLI - Claude Code Docs](computer-use.md) — Platforms and integrations
-- [Manage API key environment variables in Claude Code | Claude Help Center](managing-api-key-environment-variables-in-claude-code.md) — When using Claude Code, it's important to understand how authentication methods are prioritized to avoid unexpected API charges and ensure you're using your…
+- [Manage API key environment variables in Claude Code | Claude Help Center](manage-api-key-environment-variables-in-claude-code.md) — When using Claude Code, it's important to understand how authentication methods are prioritized to avoid unexpected API charges and ensure you're using your…
 - [Manage sessions - Claude Code Docs](sessions.md) — Name, resume, branch, and switch between Claude Code conversations. Covers --continue, --resume, --from-pr, the /resume picker, session naming, exporting…
 - [Message your other Claude Code sessions - Claude Code Docs](cross-session-messaging.md) — Let Claude list and message your other Claude Code sessions on this machine, and reach your sessions on other machines or in the cloud.
 - [Model configuration - Claude Code Docs](model-config.md) — Configure which model Claude Code uses, effort levels, extended context, and the auto-compact window
@@ -84,6 +86,7 @@
 - [Run prompts on a schedule - Claude Code Docs](scheduled-tasks.md) — Use /loop and the cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Claude Code session.
 - [Scan your codebase for vulnerabilities - Claude Code Docs](claude-security.md) — Install the Claude Security plugin to scan your codebase for vulnerabilities in a Claude Code session and turn findings into patches you review and apply.
 - [Session Memory Compaction](claude-cookbooks-misc-session-memory-compaction.md) — Long-running conversations with Claude can exceed context limits,
+- [Set up Claude Code (local mode) for a HIPAA-ready organization - Claude Code Docs](hipaa-setup.md) — Prepare developers’ computers to run Claude Code (local mode) under the HIPAA configuration. Covers versions, network access, managed settings, and local data.
 - [Set up Claude Code in a monorepo or large codebase - Claude Code Docs](large-codebases.md) — Configure Claude Code for monorepos and large single-tree codebases with nested CLAUDE.md files, sparse worktrees, code intelligence, and per-package skills so…
 - [Set up Code Review for Claude Code | Claude Help Center](set-up-code-review-for-claude-code.md) — Code Review analyzes your GitHub pull requests and posts findings as inline comments on the lines of code where it found issues. A fleet of specialized agents…
 - [Settings files and precedence - Claude Code Docs](settings.md) — Change Claude Code settings, pick the scope a key belongs in, verify the change, and learn which value Claude Code uses when a key is set in several places.

@@ -2,7 +2,7 @@
 title: "Create and edit files with Claude to eliminate hours of busy work · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-25T06:30:09Z"
+fetched_at: "2026-10-08T06:25:06Z"
 tags: ["claude-ai"]
 ---
 

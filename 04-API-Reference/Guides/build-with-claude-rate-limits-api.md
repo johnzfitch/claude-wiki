@@ -16,7 +16,7 @@ Programmatically query your organization's API rate limits with the Rate Limits 
 **The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
 </Tip>
 
-The Rate Limits API provides programmatic access to the rate limits configured for your organization and its workspaces. This is the same information shown on the [Limits](../Other/usage-limits.md) page in the Claude Console.
+The Rate Limits API provides programmatic access to the rate limits configured for your organization and its workspaces. This is the same information shown on the [Limits](../Other/playground.md) page in the Claude Console.
 
 Use this API to:
 
@@ -27,7 +27,7 @@ Use this API to:
 <Check>
   **Admin API key required**
 
-  This API is part of the [Admin API](build-with-claude-administration-api.md). These endpoints require an Admin API key (starting with `sk-ant-admin...`) that differs from standard API keys. Only organization members with the admin role can provision Admin API keys through the [Claude Console](../Other/usage-limits.md).
+  This API is part of the [Admin API](build-with-claude-administration-api.md). These endpoints require an Admin API key (starting with `sk-ant-admin...`) that differs from standard API keys. Only organization members with the admin role can provision Admin API keys through the [Claude Console](../Other/playground.md).
 </Check>
 
 ## Quick start
@@ -115,7 +115,7 @@ The response only includes overrides, so anything missing from it is inherited f
 For complete parameter details and response schemas, see the [Workspace Rate Limits API reference](../Admin/admin-workspaces-rate-limits-list.md).
 
 <Tip>
-To retrieve your organization's workspace IDs, use the [List Workspaces](../Admin/admin-workspaces-list.md) endpoint, or find them in the [Claude Console](../Other/usage-limits.md). The default workspace cannot have rate limit overrides, so it has no entry on this endpoint; use the organization endpoint to read its limits.
+To retrieve your organization's workspace IDs, use the [List Workspaces](../Admin/admin-workspaces-list.md) endpoint, or find them in the [Claude Console](../Other/playground.md). The default workspace cannot have rate limit overrides, so it has no entry on this endpoint; use the organization endpoint to read its limits.
 </Tip>
 
 ```bash cURL
@@ -174,12 +174,12 @@ The workspace has no override for that group and inherits the organization-level
 
 ### Can I update rate limits with this API?
 
-No. To set workspace rate limits, open the workspace in the [Claude Console](../Other/usage-limits.md) and use the **Limits** tab.
+No. To set workspace rate limits, open the workspace in the [Claude Console](../Other/playground.md) and use the **Limits** tab.
 
 ## See also
 
 - [Rate limits](../Endpoints/rate-limits.md)
 - [Admin API overview](build-with-claude-administration-api.md)
 - [Admin API reference](../Admin/admin.md)
-- [Workspaces](../Other/manage-claude-workspaces.md)
+- [Workspaces](build-with-claude-workspaces.md)
 - [Usage and Cost API](build-with-claude-usage-cost-api.md)

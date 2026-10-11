@@ -2,7 +2,7 @@
 title: "Fast mode (research preview) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:22Z"
+fetched_at: "2026-10-04T08:33:52Z"
 tags: ["api", "search"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "search"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -102,7 +102,7 @@ Fast mode is in research preview. Contact your account manager to request access
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 ## Supported models
 
@@ -191,7 +191,7 @@ Fast mode is priced at a multiplier on standard rates across the full context wi
 Fast mode pricing stacks with other pricing modifiers:
 
 - [Prompt caching multipliers](../../17-Billing-Plans/about-claude-pricing.md#prompt-caching) apply on top of fast mode pricing
-- [Data residency](build-with-claude-data-residency.md) multipliers apply on top of fast mode pricing
+- [Data residency](../Other/manage-claude-data-residency.md) multipliers apply on top of fast mode pricing
 
 For complete pricing details, see the [Pricing](../../17-Billing-Plans/about-claude-pricing.md#fast-mode-pricing) page.
 
@@ -274,7 +274,7 @@ To track fast mode usage and costs across your organization, see the [Usage and 
 
 ### Automatic retries
 
-When fast mode rate limits are exceeded, the API returns a `429` error with a `retry-after` header. The Anthropic SDKs automatically retry these requests up to 2 times by default (configurable with `max_retries`), waiting for the server-specified delay before each retry. Because fast mode uses continuous token replenishment, the `retry-after` delay is typically short and requests succeed once capacity is available.
+When fast mode rate limits are exceeded, the API returns a `429` error with a `retry-after` header. The SDK automatically retries these requests up to 2 times by default (configurable with `max_retries`), waiting for the server-specified delay before each retry. Because fast mode uses continuous token replenishment, the `retry-after` delay is typically short and requests succeed once capacity is available.
 
 ### Falling back to standard speed
 

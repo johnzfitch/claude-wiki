@@ -2,7 +2,7 @@
 title: "Bash tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:23Z"
+fetched_at: "2026-10-04T08:31:29Z"
 tags: ["api", "security"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "security"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,7 +96,7 @@ Let Claude request shell commands that your application runs in a persistent bas
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 The bash tool is a [client tool](agents-and-tools-tool-use-how-tool-use-works.md): Claude doesn't run commands itself. When you include the tool in a request, Claude replies with a `tool_use` block that names the command to run. Your application runs that command in a bash session it owns and returns the output in a `tool_result` block.
 
@@ -231,7 +231,7 @@ Restart the session:
 
 `bash_20250124` is the current version of the tool, and it requires no beta header. Every model from Claude Sonnet 3.7 ([retired](../../20-Models/about-claude-model-deprecations.md)) onward accepts it, including all current Claude models.
 
-The original `bash_20241022` version works only with the October 2024 Claude Sonnet 3.5 model ([retired](../../20-Models/about-claude-model-deprecations.md)). Requests that use it need the `anthropic-beta: computer-use-2024-10-22` header, and the SDKs expose it only in their beta namespaces. New integrations should use `bash_20250124`.
+The original `bash_20241022` version works only with the October 2024 Claude Sonnet 3.5 model ([retired](../../20-Models/about-claude-model-deprecations.md)). Requests that use it need the `anthropic-beta: computer-use-2024-10-22` header, and the SDK exposes it only in its beta namespace. New integrations should use `bash_20250124`.
 
 ## Example: Multistep automation
 

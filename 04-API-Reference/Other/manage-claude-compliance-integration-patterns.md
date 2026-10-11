@@ -2,7 +2,7 @@
 title: "Design your compliance integration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-integration-patterns"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:43Z"
+fetched_at: "2026-10-04T08:33:38Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -190,15 +192,15 @@ Calls to the Compliance API itself emit `compliance_api_accessed` activities. In
 
 Five retention horizons govern what you can retrieve later:
 
-| Data                                                    | Retained for                                                                                             | Controlled by                                                        |
-|:--------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|
-| Activity Feed records                                   | 6 years                                                                                                  | Anthropic                                                            |
-| Chat, file, and project content                         | Your organization's claude.ai retention policy, unless a user deletes it sooner                          | Your organization                                                    |
-| Local session transcripts (sessions on users' machines) | 6 years by default, or your organization's custom conversation retention period when a finite one is set | Anthropic by default; your organization when it sets a custom period |
-| Remote session transcripts (sessions in the cloud)      | 6 years, unless a user deletes the session sooner                                                        | Anthropic                                                            |
-| Content hard-deleted through the Compliance API         | Not retained; deletion is immediate and permanent                                                        | The caller of the `DELETE` endpoint                                  |
+| Data                                                    | Retained for                                                                                                                                                    | Controlled by                                                        |
+|:--------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|
+| Activity Feed records                                   | 6 years                                                                                                                                                         | Anthropic                                                            |
+| Chat, file, and project content                         | Your organization's claude.ai retention policy, unless a user deletes it sooner                                                                                 | Your organization                                                    |
+| Local session transcripts (sessions on users' machines) | 6 years by default, or your organization's custom conversation retention period when a finite one is set; 30 days in organizations with HIPAA readiness enabled | Anthropic by default; your organization when it sets a custom period |
+| Remote session transcripts (sessions in the cloud)      | 6 years, unless a user deletes the session sooner                                                                                                               | Anthropic                                                            |
+| Content hard-deleted through the Compliance API         | Not retained; deletion is immediate and permanent                                                                                                               | The caller of the `DELETE` endpoint                                  |
 
-To learn how the rest of the Claude Platform handles retention, see [API and data retention](manage-claude-api-and-data-retention.md).
+To learn how the rest of the Claude Platform handles retention, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 Decide between export-and-archive and on-demand API retrieval as follows:
 
@@ -225,8 +227,8 @@ The content endpoints (chats, files, projects, project attachments, and local an
 
 - Prompt text or model responses from Claude Console, or from Claude API workloads authenticated with an API key.
 - On-device activity in local sessions that is never sent to Anthropic, such as local files that Claude did not read.
-- Claude Code usage authenticated with a Claude Console API key, run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), or run in a [Claude Code cloud session](https://platform.claude.com/docs/02-Claude-Code-CLI/claude-code-on-the-web-69d53821d4.md), which runs on cloud infrastructure instead of the user's machine.
-- Local sessions from organizations with [HIPAA readiness](manage-claude-api-and-data-retention.md#hipaa-readiness) enabled, and local sessions for which [zero data retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect.
+- Claude Code usage authenticated with a Claude Console API key, run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), or run in a [Claude Code cloud session](../../02-Claude-Code-CLI/claude-code-on-the-web.md), which runs on cloud infrastructure instead of the user's machine.
+- Local sessions from products other than Cowork and Claude Code in organizations with [HIPAA readiness](../Guides/build-with-claude-api-and-data-retention.md#hipaa-readiness) enabled, and local sessions for which [zero data retention](../Guides/build-with-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect.
 - Thinking blocks, and images or other binary content, inside session transcripts (transcripts carry user prompts, assistant responses, and tool activity only; local session transcripts show a placeholder `text` block where binary content was omitted).
 - The original file for a chat attachment that claude.ai stored as extracted text, such as some Word, PowerPoint, and PDF uploads (the file content endpoint returns the extracted text; see [Retrieve files and artifacts](manage-claude-compliance-content-data.md#retrieve-files-and-artifacts)).
 - The system prompt of local sessions (a marker message stands in for it).

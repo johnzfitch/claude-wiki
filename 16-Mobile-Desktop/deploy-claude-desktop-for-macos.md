@@ -2,7 +2,7 @@
 title: "Deploy Claude Desktop for macOS | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-30T06:31:33Z"
+fetched_at: "2026-10-10T06:24:31Z"
 tags: ["desktop"]
 ---
 

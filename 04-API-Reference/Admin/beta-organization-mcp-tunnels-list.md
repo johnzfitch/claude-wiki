@@ -2,7 +2,7 @@
 title: "List Tunnels - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/mcp_tunnels/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:01Z"
+fetched_at: "2026-10-04T08:32:30Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -140,19 +123,19 @@ Cost Report
 MCP Tunnels
 
 
-List Tunnels
+List Tunnels Deprecated
 
 
-Get Tunnel
+Get Tunnel Deprecated
 
 
-Archive Tunnel
+Archive Tunnel Deprecated
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token Deprecated
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token Deprecated
 
 Tunnel Certificates
 
@@ -163,6 +146,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -310,14 +314,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -511,6 +507,14 @@ One of the following:
 
 
 
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
+
+
+
 ##### Returns
 
 
@@ -571,7 +575,7 @@ workspace_id: string or null
 
 
 
-ID of the Workspace this Tunnel belongs to, or `null` for the default Workspace. Immutable after creation.
+ID of the Workspace this Tunnel belongs to. May be `null` for a Tunnel in the default Workspace. A Tunnel never moves to another Workspace.
 
 next_page: string or null
 

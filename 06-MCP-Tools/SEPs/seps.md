@@ -2,7 +2,7 @@
 title: "Specification Enhancement Proposals (SEPs) - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps"
 category: "06-MCP-Tools/SEPs"
-fetched_at: "2026-09-29T06:30:52Z"
+fetched_at: "2026-10-07T06:23:23Z"
 tags: ["mcp", "mcp-seps"]
 ---
 
@@ -57,6 +57,7 @@ All SEPs
 | [SEP-2149](seps-2149-working-group-charter-template.md)                                | MCP Group Governance and Charter Template                                     | Final  | Process          | 2025-01-15 |
 | [SEP-2148](seps-2148-contributor-ladder.md)                                            | MCP Contributor Ladder                                                        | Final  | Process          | 2026-01-15 |
 | [SEP-2133](seps-2133-extensions.md)                                                    | Extensions                                                                    | Final  | Standards Track  | 2025-01-21 |
+| [SEP-2127](seps-2127-mcp-server-cards.md)                                              | MCP Server Cards - HTTP Server Discovery                                      | Final  | Extensions Track | 2026-01-21 |
 | [SEP-2106](seps-2106-json-schema-2020-12.md)                                           | Tools `inputSchema` & `outputSchema` Conform to JSON Schema 2020-12           | Final  | Standards Track  | 2026-01-06 |
 | [SEP-2085](seps-2085-governance-succession-and-amendment.md)                           | Governance Succession and Amendment Procedures                                | Final  | Process          | 2025-12-05 |
 | [SEP-1865](seps-1865-mcp-apps-interactive-user-interfaces-for-mcp.md)                  | MCP Apps - Interactive User Interfaces for MCP                                | Final  | Extensions Track | 2025-11-21 |

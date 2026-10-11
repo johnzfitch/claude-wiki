@@ -2,7 +2,7 @@
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-30T06:31:18Z"
+fetched_at: "2026-10-10T06:24:55Z"
 tags: ["desktop", "enterprise", "mcp"]
 ---
 

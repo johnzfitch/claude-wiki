@@ -2,7 +2,7 @@
 title: "JAKALA Claude case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/jakala"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:37Z"
+fetched_at: "2026-10-10T06:25:50Z"
 tags: ["agents", "case-studies", "enterprise", "security"]
 ---
 
@@ -69,7 +69,7 @@ Three factors tipped the decision toward Claude. First, Claude reasoned well ove
 
 For Guffanti, the moment of conviction was more concrete. JAKALA had set several frontier models the same assignment: handle a full week's media-performance analysis for a luxury cruise client, end-to-end, including tool calls into JAKALA's geo-intelligence engine. Only Claude's output cleared the senior strategy directors without revisions. "That was the signal," Guffanti recalled. "We were no longer talking about a generative tool. We were talking about a colleague."
 
-Today Claude runs across the company on two tracks. The productivity layer is [Claude Enterprise](enterprise.md), deployed to more than 3,000 employees including data scientists, AI consultants, planners, platform engineers, and corporate functions. The production layer is a network of agents built on the Claude Agent SDK, with Claude Opus 4.6 for the most demanding analytical work, Claude Sonnet 4.6 as the default for agentic workflows, and Claude Haiku 4.5 for high-volume, latency-sensitive steps.
+Today Claude runs across the company on two tracks. The productivity layer is [Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md), deployed to more than 3,000 employees including data scientists, AI consultants, planners, platform engineers, and corporate functions. The production layer is a network of agents built on the Claude Agent SDK, with Claude Opus 4.6 for the most demanding analytical work, Claude Sonnet 4.6 as the default for agentic workflows, and Claude Haiku 4.5 for high-volume, latency-sensitive steps.
 
 Each major client account runs a network of specialized Performance Agents covering search and shopping, programmatic, social platforms, creative-asset diagnostics, and incrementality reads. Each agent connects via MCP to the client's ad accounts and to JAKALA's geo-intelligence engine, reasons across the combined data, flags anomalies, and proposes specific actions. A human pod handles review, approval, and execution. "The agents do not replace planners," Guffanti explained. "They turn every planner into a senior planner."
 
@@ -100,6 +100,9 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 ## Related stories
 
 
+### How does a badge-maker shorten lead times but keep an old-world process alive?
+
+
 ### Caylent turns months of migration work into days with Claude Agent SDK
 
 
@@ -108,9 +111,6 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ### LG CNS modernizes 20-year-old enterprise systems with Claude
 
-
-### How Blank Metal, a lean professional services firm, runs on Claude Cowork
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -118,9 +118,9 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -150,7 +150,7 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -162,6 +162,7 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -173,8 +174,10 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -194,7 +197,9 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -237,9 +242,9 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -269,7 +274,7 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -281,6 +286,7 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -292,8 +298,10 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -313,7 +321,9 @@ Beyond marketing activation, JAKALA has begun extending the AI Factory model int
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

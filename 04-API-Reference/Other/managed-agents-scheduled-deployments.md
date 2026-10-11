@@ -2,7 +2,7 @@
 title: "Scheduled deployments - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:50Z"
+fetched_at: "2026-10-04T08:33:38Z"
 tags: ["api"]
 ---
 
@@ -34,7 +34,7 @@ For the launch context and examples of what teams run on schedules, see [schedul
 
 When creating a deployment, you pass the [session configurations](managed-agents-sessions.md) required for execution, in addition to a `schedule`.
 
-- Deployments require [agent configuration](managed-agents-agent-setup.md) and [environment configuration](managed-agents-environments.md), and optionally accept [files](managed-agents-files.md), [GitHub](managed-agents-github.md), [memory stores](managed-agents-memory.md), and [vaults](managed-agents-vaults.md). A deployment that targets a [self-hosted environment](managed-agents-self-hosted-sandboxes.md#use-memory-stores) can attach memory stores; `file` and `github_repository` resources require a cloud environment. The Claude Console deployment form does not currently offer memory stores for self-hosted environments; attach them through the API or an SDK instead.
+- Deployments require [agent configuration](managed-agents-agent-setup.md) and [environment configuration](managed-agents-environments.md), and optionally accept [files](managed-agents-files.md), [GitHub](managed-agents-github.md), [memory stores](managed-agents-memory.md), and [vaults](managed-agents-vaults.md). A deployment that targets a [self-hosted environment](managed-agents-self-hosted-sandboxes-memory.md) can attach memory stores; `file` and `github_repository` resources require a cloud environment. The Claude Console deployment form does not currently offer memory stores for self-hosted environments; attach them through the API or an SDK instead.
 - Deployments also require at least one initial event, a `user.message` or `user.define_outcome`, that starts each session's work. In a deployment file for `ant apply`, the text below the frontmatter becomes that `user.message`.
 - In the `schedule`, you define a cron `expression` and a `timezone`. Maximum granularity supported is at the minute level.
 

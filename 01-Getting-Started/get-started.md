@@ -2,7 +2,7 @@
 title: "Get started with Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/get-started"
 category: "01-Getting-Started"
-fetched_at: "2026-09-26T06:39:31Z"
+fetched_at: "2026-10-04T08:32:43Z"
 tags: ["api", "getting-started"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "getting-started"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../20-Models/release-notes-overview.md)
 

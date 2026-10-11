@@ -2,7 +2,7 @@
 title: "Build in Console - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/onboarding"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:40Z"
+fetched_at: "2026-10-04T08:33:43Z"
 tags: ["agents", "api", "testing"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api", "testing"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 

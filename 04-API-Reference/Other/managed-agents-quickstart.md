@@ -2,7 +2,7 @@
 title: "Get started with Claude Managed Agents - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/quickstart"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:42Z"
+fetched_at: "2026-10-04T08:34:13Z"
 tags: ["agents", "api", "cli", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api", "cli", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -110,7 +110,7 @@ This guide walks you through creating an agent, setting up an environment, start
 
 
 
-**Prefer an interactive walkthrough?** Run `/claude-api managed-agents-onboard` in the latest version of [Claude Code](../../15-Claude-AI-Features/claude-com-product-claude-code.md) for a guided setup and interactive question-answering.
+**Prefer an interactive walkthrough?** Run `/claude-api managed-agents-onboard` in the latest version of [Claude Code](../../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) for a guided setup and interactive question-answering.
 
 ## Core concepts
 
@@ -124,7 +124,7 @@ This guide walks you through creating an agent, setting up an environment, start
 ## Prerequisites
 
 - A [Claude Console account](usage-limits.md)
-- An [API key](usage-limits.md)
+- An [API key](playground.md)
 
 ## Install the CLI
 
@@ -225,7 +225,7 @@ export ANTHROPIC_API_KEY="your-api-key-here"
 
     ### Create an environment
 
-    An environment defines the sandbox where your agent runs.
+    An environment defines the sandbox where your agent runs. This one uses `limited` [networking](managed-agents-environments.md#networking) with package managers allowed, so code running in the sandbox can reach public [package registries and code hosts](managed-agents-environments.md#package-manager-hosts) and no other sites. Web search and web fetch run outside the sandbox and are not affected.
 
     cURL
     CLI
@@ -253,7 +253,8 @@ export ANTHROPIC_API_KEY="your-api-key-here"
     config:
       type: cloud
       networking:
-        type: unrestricted
+        type: limited
+        allow_package_managers: true
     ```
 
     [`ant apply`](cli-sdks-libraries-cli-apply.md) records the environment's ID in `claude-lock.json` too. To create the agent and the environment with one command, pass both files: `ant apply coding-assistant.md environment.yaml`.

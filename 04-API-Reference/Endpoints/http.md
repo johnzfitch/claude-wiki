@@ -2,7 +2,7 @@
 title: "HTTP API reference - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/http"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:39:03Z"
+fetched_at: "2026-10-04T08:33:33Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -274,3 +278,37 @@ Get a specific model.
 ##### [Download File](https://platform.claude.com/docs/en/api/http/files/download)
 
 GET/v1/files/{file_id}/content
+
+##### [Get File Metadata](https://platform.claude.com/docs/en/api/http/files/retrieve_metadata)
+
+GET/v1/files/{file_id}
+
+##### [Delete File](https://platform.claude.com/docs/en/api/http/files/delete)
+
+DELETE/v1/files/{file_id}
+
+#### [Skills](https://platform.claude.com/docs/en/api/http/skills)
+
+##### [Create Skill](https://platform.claude.com/docs/en/api/http/skills/create)
+
+POST/v1/skills
+
+##### [List Skills](https://platform.claude.com/docs/en/api/http/skills/list)
+
+GET/v1/skills
+
+##### [Get Skill](https://platform.claude.com/docs/en/api/http/skills/retrieve)
+
+GET/v1/skills/{skill_id}
+
+##### [Delete Skill](https://platform.claude.com/docs/en/api/http/skills/delete)
+
+DELETE/v1/skills/{skill_id}
+
+#### [Organization](https://platform.claude.com/docs/en/api/http/organization)
+
+##### [Get Current Organization](https://platform.claude.com/docs/en/api/http/organization/retrieve)
+
+GET/v1/organizations/me
+
+Retrieve information about the organization associated with the authenticated API key.

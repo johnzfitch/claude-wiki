@@ -2,7 +2,7 @@
 title: "Manage plugins for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:32:45Z"
+fetched_at: "2026-10-10T06:28:12Z"
 tags: ["plugins", "safety"]
 ---
 
@@ -213,7 +213,7 @@ To add the marketplace:
 
 2.  Click "Add," then select "Sync from GitLab."
 
-3.  In **GitLab repository URL**, enter the project's HTTPS URL, for example [https://gitlab.example.com/platform/claude-plugins](https://gitlab.example.com/platform/claude-plugins). Projects in nested subgroups work.
+3.  In **GitLab repository URL**, enter the project's HTTPS URL, for example `https://gitlab.example.com/platform/claude-plugins`. Projects in nested subgroups work.
 
 4.  Leave **Sync automatically** on if you want pushes to trigger a sync (see **Step 3**).
 
@@ -320,6 +320,38 @@ If a group is removed (for example, deleted from your identity provider), the ov
 ### Do group settings persist across marketplace re-syncs?
 
 Yes. Group-level overrides persist when you re-sync a GitHub- or GitLab-connected marketplace. They're only removed if the plugin itself is deleted from the marketplace.
+
+------------------------------------------------------------------------
+
+## Restrict which marketplaces users can add
+
+An Owner or Primary Owner can limit which plugin marketplaces people in your organization can add, using an allow list, a block list, or both. You set these lists in Claude Code managed settings, but they also apply in Claude and Claude Cowork.
+
+To set an allow list or block list:
+
+1.  Go to **[Organization settings \> Claude Code](https://claude.ai/admin-settings/claude-code)**.
+
+2.  Find **Managed settings**.
+
+3.  Click “Manage.”
+
+4.  Add strictKnownMarketplaces (an allow list), blockedMarketplaces (a block list), or both to the JSON.
+
+5.  Click “Add settings” or “Update settings.”
+
+Enter your GitHub organization name exactly as GitHub shows it, because allow list matching is case-sensitive. If a source is on both lists, it’s blocked.
+
+Once the lists are set, Claude checks them whenever someone in your organization adds a marketplace from a Git repository in Claude, Claude Desktop, or Cowork. This covers marketplaces users add for themselves in Customize and marketplaces added for the whole organization in **Organization settings \> Plugins & skills**. Claude refuses any repository the lists don’t permit, except Anthropic-built marketplaces.
+
+Keep in mind:
+
+- Set the lists in Organization settings. A managed-settings.json file or MDM policy deployed to computers applies only to Claude Code on those computers.
+
+- Existing marketplaces aren’t re-checked. Marketplaces added before you set the lists stay until someone removes them.
+
+- Uploaded plugins aren’t checked. To stop users from uploading plugin files, turn off **User-created skills** in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** on the “Policy” tab.
+
+For every source type the lists accept, see **[Restrict what users can install](../08-Plugins-Skills/plugins-org.md#restrict-what-users-can-install)** in the Claude Code docs.
 
 ------------------------------------------------------------------------
 

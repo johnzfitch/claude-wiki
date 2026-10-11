@@ -2,7 +2,7 @@
 title: "Citations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/citations"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:19Z"
+fetched_at: "2026-10-04T08:33:50Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,11 +96,11 @@ Ground Claude's responses in your source documents. Citations return the exact p
 
 Citations
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](build-with-claude-api-and-data-retention.md)
 
 Eligible
 
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+excludes [Covered Models](build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 Claude can provide detailed citations when answering questions about documents, helping you track and verify the sources behind each response.
 

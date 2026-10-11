@@ -1,6 +1,6 @@
 # Agent Patterns
 
-30 pages. The full text of every page is in [llms.txt](llms.txt).
+32 pages. The full text of every page is in [llms.txt](llms.txt).
 
 - [02 - The Observability Agent](claude-cookbooks-claude-agent-sdk-02-the-observability-agent.md) — the-observability-agent}"
 - [Advanced Workflow Patterns](claude-code-plugins-plugin-dev-skills-command-development-references-advanced-workflows.md) — Multi-step command sequences and composition patterns for complex workflows.
@@ -9,6 +9,7 @@
 - [Agent Triggering Examples: Best Practices](claude-code-plugins-plugin-dev-skills-agent-development-references-triggering-examples.md) — Complete guide to writing effective <example> blocks in agent descriptions for reliable triggering.
 - [AI-Assisted Agent Generation Template](claude-code-plugins-plugin-dev-skills-agent-development-examples-agent-creation-prompt.md) — Use this template to generate agents using Claude with the agent creation system prompt.
 - [Building a One-Liner Research Agent](claude-cookbooks-claude-agent-sdk-00-the-one-liner-research-agent.md) — Research tasks consume hours of expert time: market analysts manually
+- [Building AI agents for financial services | Claude by Anthropic](building-ai-agents-in-financial-services.md) — Financial institutions are deploying autonomous AI systems to improve operations while navigating regulatory complexity and risk. Here's how.
 - [Chief of Staff Agent Architecture](claude-cookbooks-claude-agent-sdk-chief-of-staff-agent-flow-diagram.md)
 - [Citations Agent](claude-cookbooks-patterns-agents-prompts-citations-agent.md) — You are an agent for adding correct citations to a research report. You are given a report within <synthesizedtext> tags, which was generated based on the…
 - [Claude 3 RAG Agents with LangChain v1](claude-cookbooks-third-party-pinecone-claude-3-rag-agent.md) — :::: {.cell .code colab="{\"baseuri\":\"https://localhost:8080/\"}" id="1eOnr6zzLoc" outputId="53f4214a-c00b-4dea-d1fa-38d0d6693fe9"}
@@ -20,6 +21,7 @@
 - [Creating a Customer Service Agent with Client-Side Tools](claude-cookbooks-tool-use-customer-service-agent.md) — In this recipe, we\'ll demonstrate how to create a customer service
 - [Define the model to use throughout this notebook](claude-cookbooks-claude-agent-sdk-01-the-chief-of-staff-agent.md) — MODEL = "claude-opus-4-5"
 - [Example 1: Chain workflow for structured data extraction and formatting](claude-cookbooks-patterns-agents-basic-workflows.md) — This notebook demonstrates three simple multi-LLM workflows. They trade
+- [How enterprises are building AI agents in 2026 | Claude by Anthropic](how-enterprises-are-building-ai-agents-in-2026.md) — How are organizations deploying AI agents today—and what's in store for tomorrow? We surveyed over 500 technical leaders across industries to find out.
 - [Interactive Command Patterns](claude-code-plugins-plugin-dev-skills-command-development-references-interactive-commands.md) — Comprehensive guide to creating commands that gather user feedback and make decisions through the AskUserQuestion tool.
 - [Manage multiple agents with agent view - Claude Code Docs](agent-view.md) — Dispatch and manage many Claude Code sessions from one screen. Agent view shows what every session is doing and which ones need your input.
 - [Multi-Document Agents](claude-cookbooks-third-party-llamaindex-multi-document-agents.md) — In this notebook we will look into Building RAG when you have a large

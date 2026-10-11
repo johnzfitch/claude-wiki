@@ -17,7 +17,7 @@ Follow these steps to view your Console invoices:
 
 1.  Log in to the Console with an Admin or Billing role.
 
-2.  Navigate to **[Console Settings \> Billing](usage-limits.md)**.
+2.  Navigate to **[Console Settings \> Billing](playground.md)**.
 
 3.  Find the **Invoice history** section.
 

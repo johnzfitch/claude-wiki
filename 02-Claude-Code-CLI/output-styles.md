@@ -2,7 +2,7 @@
 title: "Output styles - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/output-styles"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:06Z"
+fetched_at: "2026-10-08T06:24:40Z"
 tags: ["claude-code"]
 ---
 
@@ -193,7 +193,7 @@ Configure an output style with YAML [frontmatter](glossary.md#frontmatter) betwe
 |:---------------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                     | No       | Name of the output style, shown in the `/config` picker. Default: the file name                                                                                                                                                                                                            |
 | `description`              | No       | Description of the output style, shown in the `/config` picker                                                                                                                                                                                                                             |
-| `keep-coding-instructions` | No       | Set to `true` to keep Claude Code’s built-in software engineering instructions alongside your style. Default: `false`                                                                                                                                                                      |
+| `keep-coding-instructions` | No       | Set to `true` to keep Claude Code’s section of built-in software engineering instructions, which only the full system prompt includes, alongside your style. See [How output styles work](#how-output-styles-work). Default: `false`                                                       |
 | `force-for-plugin`         | No       | Plugin output styles only. Set to `true` to apply this style automatically whenever the plugin is enabled, without requiring users to select it. Overrides the user’s `outputStyle` setting. If multiple enabled plugins set this, Claude Code uses the first one loaded. Default: `false` |
 
 
@@ -222,9 +222,9 @@ How output styles work
 An output style changes the instructions Claude Code gives Claude.
 
 - Claude Code sends the active style’s instructions with every request.
-- Custom output styles leave out Claude Code’s built-in software engineering instructions, such as how to scope changes, write comments, and verify work, unless `keep-coding-instructions` is set to `true`.
+- On the full system prompt, custom output styles leave out Claude Code’s section of built-in software engineering instructions, such as how to scope changes, write comments, and verify work, unless `keep-coding-instructions` is set to `true`. The shorter system prompt doesn’t include that section, so the field has no effect there. To rely on the field, set [`CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT`](env-vars.md#variables) to `0`, which selects the full prompt on any model.
 
-Output styles apply to the main conversation and to a [fork](../09-Agents-Patterns/sub-agents.md#fork-the-current-conversation), which inherits the parent’s full conversation and system prompt. Other [subagents run their own system prompt](../09-Agents-Patterns/sub-agents.md#what-loads-at-startup), so styles don’t change how they respond. Token usage depends on the style. A style’s instructions add input tokens, though prompt caching reduces this cost after the first request in a session. The built-in Explanatory and Learning styles produce longer responses than Default by design, which increases output tokens. The Concise style does the opposite by instructing Claude to keep responses short by default. For custom styles, output token usage depends on what your instructions tell Claude to produce.
+Output styles apply to the main conversation and to a [fork](../09-Agents-Patterns/sub-agents.md#fork-the-current-conversation), which inherits the parent’s whole conversation and system prompt. Other [subagents run their own system prompt](../09-Agents-Patterns/sub-agents.md#what-loads-at-startup), so styles don’t change how they respond. Token usage depends on the style. A style’s instructions add input tokens, though prompt caching reduces this cost after the first request in a session. The built-in Explanatory and Learning styles produce longer responses than Default by design, which increases output tokens. The Concise style does the opposite by instructing Claude to keep responses short by default. For custom styles, output token usage depends on what your instructions tell Claude to produce.
 
 
 [​](#related-resources)

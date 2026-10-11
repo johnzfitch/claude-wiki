@@ -2,7 +2,7 @@
 title: "Understanding Claude's personalization features | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:15Z"
+fetched_at: "2026-10-10T06:24:21Z"
 tags: ["claude-ai", "skills"]
 ---
 

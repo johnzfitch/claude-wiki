@@ -2,7 +2,7 @@
 title: "Completions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/http/completions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:39:11Z"
+fetched_at: "2026-10-04T08:33:16Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -238,58 +242,3 @@ cURL
 
 
 Completion object{ type: "completion", id, completion, 2 more }
-
-
-
-
-
-type: "completion"
-
-
-
-Object type.
-
-For Text Completions, this is always `"completion"`.
-
-defaultcompletion
-
-
-
-id: string
-
-
-
-Unique object identifier.
-
-The format and length of IDs may change over time.
-
-completion: string
-
-
-
-The resulting completion up to and excluding the stop sequences.
-
-
-
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
-
-
-
-stop_reason: string or null
-
-
-
-The reason that we stopped.
-
-This may be one the following values:
-
-- `"stop_sequence"`: we reached a stop sequence — either provided by you via the `stop_sequences` parameter, or a stop sequence built into the model
-- `"max_tokens"`: we exceeded `max_tokens_to_sample` or the model's maximum

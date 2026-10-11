@@ -2,7 +2,7 @@
 title: "WIF reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/wif-reference"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:38Z"
+fetched_at: "2026-10-04T08:33:41Z"
 tags: ["api", "oauth"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "oauth"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api", "oauth"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -76,16 +78,16 @@ This page collects the configuration surfaces, validation constraints, and error
 
 ## Token exchange request
 
-`POST /v1/oauth/token` accepts a JSON body using the [RFC 7523](https://www.rfc-editor.org/rfc/rfc7523) `jwt-bearer` grant. The SDKs build this request for you from the [environment variables](#environment-variables); the cURL examples on each provider guide show the raw body.
+`POST /v1/oauth/token` accepts a JSON body using the [RFC 7523](https://www.rfc-editor.org/rfc/rfc7523) `jwt-bearer` grant. The SDK builds this request for you from the [environment variables](#environment-variables); the cURL examples on each provider guide show the raw body.
 
-| Field                | Required    | Description                                                                                                                                                                                                                                                                   |
-|:---------------------|:------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `grant_type`         | Yes         | Always `urn:ietf:params:oauth:grant-type:jwt-bearer`.                                                                                                                                                                                                                         |
-| `assertion`          | Yes         | The OIDC JWT issued by your identity provider.                                                                                                                                                                                                                                |
-| `federation_rule_id` | Yes         | Tagged ID (`fdrl_...`) of the federation rule to evaluate.                                                                                                                                                                                                                    |
-| `organization_id`    | Yes         | UUID of your Anthropic organization.                                                                                                                                                                                                                                          |
-| `service_account_id` | Yes         | Tagged ID (`svac_...`) of the target service account.                                                                                                                                                                                                                         |
-| `workspace_id`       | Conditional | Tagged ID (`wrkspc_...`) of the workspace to scope the minted token to, or the literal `default` for the organization's default workspace. Required when the rule is enabled for more than one workspace. When omitted, the server selects the rule's sole enabled workspace. |
+| Field                | Required    | Description                                                                                                                                                                                                                                                                                                                                   |
+|:---------------------|:------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `grant_type`         | Yes         | Always `urn:ietf:params:oauth:grant-type:jwt-bearer`.                                                                                                                                                                                                                                                                                         |
+| `assertion`          | Yes         | The OIDC JWT issued by your identity provider.                                                                                                                                                                                                                                                                                                |
+| `federation_rule_id` | Yes         | Tagged ID (`fdrl_...`) of the federation rule to evaluate.                                                                                                                                                                                                                                                                                    |
+| `organization_id`    | Yes         | UUID of your Anthropic organization.                                                                                                                                                                                                                                                                                                          |
+| `service_account_id` | Yes         | Tagged ID (`svac_...`) of the target service account.                                                                                                                                                                                                                                                                                         |
+| `workspace_id`       | Conditional | Tagged ID (`wrkspc_...`) of the workspace to scope the minted token to. Required when the rule is enabled for more than one workspace. When omitted, the server selects the rule's sole enabled workspace. The literal `default` also works for the organization's Default Workspace but is deprecated; use that workspace's `wrkspc_...` ID. |
 
 ## Token exchange response
 
@@ -102,15 +104,15 @@ This page collects the configuration surfaces, validation constraints, and error
 
 The SDK reads these variables to perform a federated token exchange with no constructor arguments.
 
-| Variable                        | Required                         | Description                                                                                                                                                                                                                                                                                                                         | Example                                |
-|:--------------------------------|:---------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------|
-| `ANTHROPIC_FEDERATION_RULE_ID`  | Yes                              | Tagged ID of the federation rule to evaluate.                                                                                                                                                                                                                                                                                       | `fdrl_...`                             |
-| `ANTHROPIC_ORGANIZATION_ID`     | Yes                              | UUID of your Anthropic organization. Find it in the Claude Console under **Settings \> Organization**.                                                                                                                                                                                                                              | `00000000-0000-0000-0000-000000000000` |
-| `ANTHROPIC_IDENTITY_TOKEN_FILE` | One of `_TOKEN_FILE` or `_TOKEN` | Filesystem path to the JWT issued by your identity provider (IdP). The SDK re-reads this file on every exchange so that projected tokens that rotate on disk are always current.                                                                                                                                                    | `/var/run/secrets/anthropic.com/token` |
-| `ANTHROPIC_IDENTITY_TOKEN`      | One of `_TOKEN_FILE` or `_TOKEN` | The literal JWT as a string. Use when your platform injects the token as an environment variable rather than a file.                                                                                                                                                                                                                | `eyJhbGciOiJSUzI1NiIs...`              |
-| `ANTHROPIC_SERVICE_ACCOUNT_ID`  | Yes                              | Tagged ID of the target Anthropic service account that the issued access token acts as.                                                                                                                                                                                                                                             | `svac_...`                             |
-| `ANTHROPIC_WORKSPACE_ID`        | Conditional                      | Tagged ID of the workspace to scope the minted token to, or the literal `default`. Required when the federation rule is enabled for more than one workspace; optional when the rule is bound to a single workspace. The minted token is scoped to this workspace at exchange time, so switching workspaces requires a new exchange. | `wrkspc_...`                           |
-| `ANTHROPIC_PROFILE`             | No                               | Name of a [configuration profile](#profile-configuration-file) to load. Takes precedence over the federation environment variables in this table.                                                                                                                                                                                   | `staging-profile`                      |
+| Variable                        | Required                         | Description                                                                                                                                                                                                                                                                                                                                                                                                      | Example                                |
+|:--------------------------------|:---------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------|
+| `ANTHROPIC_FEDERATION_RULE_ID`  | Yes                              | Tagged ID of the federation rule to evaluate.                                                                                                                                                                                                                                                                                                                                                                    | `fdrl_...`                             |
+| `ANTHROPIC_ORGANIZATION_ID`     | Yes                              | UUID of your Anthropic organization. Find it in the Claude Console under **Settings \> Organization**.                                                                                                                                                                                                                                                                                                           | `00000000-0000-0000-0000-000000000000` |
+| `ANTHROPIC_IDENTITY_TOKEN_FILE` | One of `_TOKEN_FILE` or `_TOKEN` | Filesystem path to the JWT issued by your identity provider (IdP). The SDK re-reads this file on every exchange so that projected tokens that rotate on disk are always current.                                                                                                                                                                                                                                 | `/var/run/secrets/anthropic.com/token` |
+| `ANTHROPIC_IDENTITY_TOKEN`      | One of `_TOKEN_FILE` or `_TOKEN` | The literal JWT as a string. Use when your platform injects the token as an environment variable rather than a file.                                                                                                                                                                                                                                                                                             | `eyJhbGciOiJSUzI1NiIs...`              |
+| `ANTHROPIC_SERVICE_ACCOUNT_ID`  | Yes                              | Tagged ID of the target Anthropic service account that the issued access token acts as.                                                                                                                                                                                                                                                                                                                          | `svac_...`                             |
+| `ANTHROPIC_WORKSPACE_ID`        | Conditional                      | Tagged ID of the workspace to scope the minted token to. Required when the federation rule is enabled for more than one workspace; optional when the rule is bound to a single workspace. The minted token is scoped to this workspace at exchange time, so switching workspaces requires a new exchange. The literal `default` also works for the Default Workspace but is deprecated; use its `wrkspc_...` ID. | `wrkspc_...`                           |
+| `ANTHROPIC_PROFILE`             | No                               | Name of a [configuration profile](#profile-configuration-file) to load. Takes precedence over the federation environment variables in this table.                                                                                                                                                                                                                                                                | `staging-profile`                      |
 
 The direct environment-variable federation path activates only when `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`, and one of `ANTHROPIC_IDENTITY_TOKEN_FILE` or `ANTHROPIC_IDENTITY_TOKEN` are all set. `ANTHROPIC_WORKSPACE_ID` is read alongside but does not gate activation.
 
@@ -289,7 +291,7 @@ CEL conditions are security boundaries. An expression that evaluates to `true` f
 
 ### Token exchange errors
 
-`POST /v1/oauth/token` returns errors in the standard [API error shape](../Endpoints/errors.md). The SDK wraps exchange failures in a typed `FederationExchangeError` (or language equivalent) that exposes the HTTP status, the response body, and the `request_id`.
+`POST /v1/oauth/token` returns errors in the standard [API error shape](../Endpoints/errors.md). The SDK wraps exchange failures in a typed `WorkloadIdentityError` that exposes the HTTP status, the response body, and the `request_id`.
 
 | Status | Error                   | Cause                                                                                                                                                                   | Resolution                                                                                                                                                                                                                                                     |
 |:-------|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

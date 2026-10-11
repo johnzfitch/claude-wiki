@@ -2,7 +2,7 @@
 title: "Keep Claude working toward a goal - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/goal"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:08Z"
+fetched_at: "2026-10-10T06:24:48Z"
 tags: ["claude-code"]
 ---
 
@@ -35,7 +35,7 @@ Set a completion condition with /goal and Claude keeps working until it’s met,
 
 Copy pageCopy page
 
-The `/goal` command sets a completion condition and Claude keeps working toward it without you prompting each step. After each turn, a small fast model checks whether the condition holds. If the model judges it not yet met, Claude starts another turn instead of returning control to you. The goal clears automatically once the condition is met, if the model judges the condition impossible to satisfy, or if a turn fails on [an error you have to fix](#errors-you-have-to-fix-clear-the-goal). Use a goal for substantial work with a verifiable end state:
+The `/goal` command sets a completion condition and Claude keeps working toward it without you prompting each step. After each turn, a model checks whether the condition holds. If the model judges it not yet met, Claude starts another turn instead of returning control to you. The goal clears automatically once the condition is met, if the model judges the condition impossible to satisfy, or if a turn fails on [an error you have to fix](#errors-you-have-to-fix-clear-the-goal). Use a goal for substantial work with a verifiable end state:
 
 - Migrating a module to a new API until every call site compiles and tests pass
 - Implementing a design doc until all acceptance criteria hold
@@ -144,14 +144,14 @@ Run non-interactively
 claude -p "/goal CHANGELOG.md has an entry for every PR merged this week"
 ```
 
-With the default text output, nothing prints until the run ends, so a goal that runs many turns can look stuck. Add `--output-format stream-json --verbose` to emit each message as the loop runs. Interrupt the process with Ctrl+C to stop a non-interactive goal before it resolves.
+With the default text output, Claude’s final response prints when the loop ends, so a goal that runs many turns can look stuck. Add `--output-format stream-json --verbose` to emit each message as the loop runs. Interrupt the process with Ctrl+C to stop a non-interactive goal before it resolves.
 
 
 [​](#how-evaluation-works)
 
 How evaluation works
 
-`/goal` is a wrapper around a session-scoped [prompt-based Stop hook](../07-Hooks/hooks.md#prompt-based-hooks). Each time Claude finishes a turn, Claude Code sends the condition and the conversation so far to your configured [small fast model](model-config.md), which defaults to Haiku on the Claude API; on a third-party provider, check your [provider page](third-party-integrations.md) for the platform’s default. The model returns one of three verdicts, each with a short reason:
+`/goal` is a wrapper around a session-scoped [prompt-based Stop hook](../07-Hooks/hooks.md#prompt-based-hooks). Each time Claude finishes a turn, Claude Code sends the condition and the conversation so far to your configured [small fast model](model-config.md). The model returns one of three verdicts, each with a short reason:
 
 - **Not yet met**: Claude keeps working and takes the reason as guidance for the next turn.
 - **Met**: Claude Code clears the goal and records an achieved entry in the transcript.

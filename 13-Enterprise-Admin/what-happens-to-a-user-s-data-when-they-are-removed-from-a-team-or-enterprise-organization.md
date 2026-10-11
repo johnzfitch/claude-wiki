@@ -2,7 +2,7 @@
 title: "What happens to a user's data when they are removed from a Team or Enterprise organization? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:28Z"
+fetched_at: "2026-10-10T06:24:28Z"
 tags: ["enterprise", "skills"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Get started with Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 category: "01-Getting-Started"
-fetched_at: "2026-09-30T06:33:07Z"
+fetched_at: "2026-10-10T06:28:25Z"
 tags: ["getting-started"]
 ---
 
@@ -54,13 +54,13 @@ Type your prompt into the chat interface and click the submit button to start a 
 
 The model you're currently chatting with is displayed either below your text input (on web and desktop) or at the top of your screen (on mobile). You can click on the model you're using to open the model selector and switch to another available model.
 
-You can also choose how much effort Claude puts into each response and whether it uses extended thinking. Learn more about **[changing the model, effort, and thinking settings](../15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md)**.
+You can also choose how much effort Claude puts into each response and whether it uses extended thinking. Learn more about **[changing the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
 
 ### Can I chat with Claude in different languages?
 
 Claude has extensive training in English and performs well in many other common languages. It also has some ability to communicate in less common languages and has extensive knowledge of programming languages.
 
-For instructions to select a language in your settings, see **[How to use Claude in your preferred language](https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language).**
+For instructions to select a language in your settings, see **[How to use Claude in your preferred language](../15-Claude-AI-Features/how-to-use-claude-in-your-preferred-language.md).**
 
 ### Are there any usage limits or limits on chat length?
 
@@ -74,7 +74,7 @@ We also have several paid subscriptions that offer additional usage. For more in
 
 ### Can I import my conversation history from another AI provider?
 
-No, it's not possible to import conversation history from another AI provider into Claude at this time. However, Free, Pro, and Max users can use the memory import feature to transfer memory from other AI providers into Claude. For more information, see **[Import and export your memory from Claude](../15-Claude-AI-Features/importing-and-exporting-your-memory-from-claude.md)**.
+No, it's not possible to import conversation history from another AI provider into Claude at this time. However, Free, Pro, and Max users can use the memory import feature to transfer memory from other AI providers into Claude. For more information, see **[Import and export your memory from Claude](https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude)**.
 
 ------------------------------------------------------------------------
 

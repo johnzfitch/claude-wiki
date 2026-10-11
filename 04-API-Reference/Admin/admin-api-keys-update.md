@@ -264,7 +264,7 @@ Claude Code
 
 
 
-Looking for your API keys? You can view and create them in [Settings → API keys](../Other/usage-limits.md) in the Claude Console.
+Looking for your API keys? You can view and create them in [Settings → API keys](../Other/playground.md) in the Claude Console.
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Admin](http-admin.md)

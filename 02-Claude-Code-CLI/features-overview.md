@@ -2,7 +2,7 @@
 title: "Extend Claude Code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/features-overview"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:28:58Z"
+fetched_at: "2026-10-04T08:31:56Z"
 tags: ["agents", "claude-code", "hooks", "mcp", "plugins", "skills", "subagents"]
 ---
 
@@ -243,7 +243,7 @@ Each feature has a different loading strategy and context cost:
 | **Subagents**         | When spawned                                    | Fresh context with specified skills, or the parent conversation for a [fork](../09-Agents-Patterns/sub-agents.md#fork-the-current-conversation) | Isolated from main session                   |
 | **Hooks**             | On trigger                                      | Nothing (runs externally)                                                                                                       | Zero, unless hook returns additional context |
 
-\*By default, skill descriptions load at session start so Claude can decide when to use them. Set `disable-model-invocation: true` in a skill’s frontmatter to hide it from Claude entirely until you invoke it manually. For a skill you didn’t write, set [`skillOverrides`](../08-Plugins-Skills/skills.md#override-skill-visibility-from-settings) in settings to do the same without editing its file.
+\*Set [`disable-model-invocation: true`](../08-Plugins-Skills/skills.md#control-who-invokes-a-skill) in a skill’s frontmatter to keep its description out of Claude’s context. For a skill you didn’t write, set [`skillOverrides`](../08-Plugins-Skills/skills.md#override-skill-visibility-from-settings) in settings to do the same without editing its file.
 
 
 [​](#understand-how-features-load)
@@ -268,9 +268,9 @@ Each feature loads at different points in your session. The tabs below explain w
 
 Keep CLAUDE.md under 200 lines. Move reference material to skills, which load on demand. To get [trim proposals for a checked-in CLAUDE.md](memory.md#my-claude-md-is-too-large), run `/doctor`.
 
-Skills are extra capabilities in Claude’s toolkit. They can be reference material (like an API style guide) or invocable workflows you trigger with `/<name>` (like `/deploy`). Claude Code includes [bundled skills](commands.md) like `/code-review`, `/batch`, and `/debug` that work without setup. You can also create your own.**When:** Depends on the skill’s configuration. By default, descriptions load at session start and full content loads when used. For user-only skills (`disable-model-invocation: true`), nothing loads until you invoke them.**What loads:** For model-invocable skills, Claude sees names and descriptions in every request. When you invoke a skill with `/<name>` or Claude loads it automatically, the full content loads into your conversation.**How Claude chooses skills:** Claude matches your task against skill descriptions to decide which are relevant. If descriptions are vague or overlap, Claude may load the wrong skill or miss one that would help. To tell Claude to use a specific skill, invoke it with `/<name>`. Skills with `disable-model-invocation: true` are invisible to Claude until you invoke them.**Context cost:** Low until used. User-only skills have zero cost until invoked.**In subagents:** Skills work differently in subagents. Instead of on-demand loading, skills listed in the subagent’s `skills` field are fully preloaded into its context at launch. Subagents can still discover and invoke unlisted project, user, and plugin skills through the Skill tool.
+Skills are extra capabilities in Claude’s toolkit. They can be reference material (like an API style guide) or invocable workflows you trigger with `/<name>` (like `/deploy`). Claude Code includes [bundled skills](commands.md) like `/code-review`, `/batch`, and `/debug` that work without setup. You can also create your own.**When:** Depends on the skill’s configuration. By default, descriptions load at session start and full content loads when used. For user-only skills (`disable-model-invocation: true`), nothing loads until you invoke them.**What loads:** For model-invocable skills, Claude sees names and descriptions in every request. When you invoke a skill with `/<name>` or Claude loads it automatically, the full content loads into your conversation.**How Claude chooses skills:** Claude matches your task against skill descriptions to decide which are relevant. If descriptions are vague or overlap, Claude may load the wrong skill or miss one that would help. To tell Claude to use a specific skill, invoke it with `/<name>`.**Context cost:** Low until used. User-only skills have zero cost until invoked.**In subagents:** Skills work differently in subagents. Instead of on-demand loading, skills listed in the subagent’s `skills` field are fully preloaded into its context at launch. Subagents can still discover and invoke unlisted project, user, and plugin skills through the Skill tool.
 
-Use `disable-model-invocation: true` for skills with side effects. This saves context and ensures only you trigger them.
+Use `disable-model-invocation: true` for skills with side effects. This saves context and ensures they run only when you name them.
 
 **When:** Session start.**What loads:** Tool names and server instructions from connected servers. Full JSON schemas stay deferred until Claude needs a specific tool.**Context cost:** [Tool search](../06-MCP-Tools/General/mcp.md#scale-with-mcp-tool-search) is on by default, so idle MCP tools consume minimal context.
 

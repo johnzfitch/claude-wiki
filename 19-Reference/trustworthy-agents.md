@@ -10,7 +10,7 @@ tags: ["agents", "news-research"]
 
 Apr 9, 2026
 
-AI “agents” represent the latest major shift in how people and organizations are using AI. A couple of years ago, AI models were only broadly available as chatbots—simple question-and-answer machines. Now, through products like [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md) and [Claude Cowork](../15-Claude-AI-Features/product-cowork.md), AI models can do much more: they can write and execute code, manage files, and complete tasks that span multiple applications. This represents a new frontier for governance.
+AI “agents” represent the latest major shift in how people and organizations are using AI. A couple of years ago, AI models were only broadly available as chatbots—simple question-and-answer machines. Now, through products like [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) and [Claude Cowork](../15-Claude-AI-Features/product-cowork.md), AI models can do much more: they can write and execute code, manage files, and complete tasks that span multiple applications. This represents a new frontier for governance.
 
 Agents are already making real productivity gains [for](../18-Industry-UseCases/freedom-forever.md) [our](../18-Industry-UseCases/binti.md) [customers](../18-Industry-UseCases/spotify.md) and [inside Anthropic](how-ai-is-transforming-work-at-anthropic.md). But the autonomy that makes agents useful also introduces a range of new risks. Agents act with less human oversight, so there is more room for them to misread users’ intent and take actions with unintended consequences. Agents are also targets for “prompt injection” cyberattacks, which try to trick models into taking costly actions that they otherwise wouldn’t. As agents become more capable and as businesses trust them with more consequential actions, we expect both of these risks to intensify.
 
@@ -99,10 +99,10 @@ We had Claude autonomously train models to improve their performance on several 
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -129,7 +129,7 @@ We had Claude autonomously train models to improve their performance on several 
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -149,7 +149,7 @@ We had Claude autonomously train models to improve their performance on several 
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

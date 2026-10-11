@@ -2,7 +2,7 @@
 title: "Claude Sonnet 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/sonnet-5-5/overview"
 category: "20-Models"
-fetched_at: "2026-09-29T06:30:39Z"
+fetched_at: "2026-10-07T06:24:07Z"
 tags: ["models"]
 ---
 
@@ -72,7 +72,7 @@ The best combination of speed and intelligence
 
 claude-sonnet-5-5
 
-[Try in playground](../04-API-Reference/Other/usage-limits.md)
+[Try in playground](../04-API-Reference/Other/playground.md)
 
 Copy page
 

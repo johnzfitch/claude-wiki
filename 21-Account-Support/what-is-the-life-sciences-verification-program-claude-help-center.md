@@ -2,7 +2,7 @@
 title: "What is the Life Sciences Verification Program? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16975617"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:33:04Z"
+fetched_at: "2026-10-05T06:38:28Z"
 tags: ["account"]
 ---
 

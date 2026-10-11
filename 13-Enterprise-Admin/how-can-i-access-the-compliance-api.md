@@ -2,7 +2,7 @@
 title: "Access the Compliance API | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13015708-how-can-i-access-the-compliance-api"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:38Z"
+fetched_at: "2026-10-10T06:28:08Z"
 tags: ["api", "enterprise", "security"]
 ---
 
@@ -29,4 +29,4 @@ Security and compliance platforms have built integrations on top of the Claude C
 
 ## Audit log events in the Compliance API
 
-The Compliance API now includes audit log events, giving you a full view across all your Claude deployments. To see which events are recorded via audit logs, see **[How to access audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs#h_41cdad187a)**.
+The Compliance API now includes audit log events, giving you a full view across all your Claude deployments. To see which events are recorded via audit logs, see **[How to access audit logs](how-to-access-audit-logs.md#h_41cdad187a)**.

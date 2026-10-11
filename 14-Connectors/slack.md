@@ -2,7 +2,7 @@
 title: "Claude Code in Slack - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/slack"
 category: "14-Connectors"
-fetched_at: "2026-09-23T06:27:05Z"
+fetched_at: "2026-10-06T06:23:45Z"
 tags: ["claude-code", "connectors", "slack"]
 ---
 
@@ -27,6 +27,8 @@ tags: ["claude-code", "connectors", "slack"]
   - [Writing effective requests](#writing-effective-requests)
   - [When to use Slack vs. web](#when-to-use-slack-vs-web)
 - [Troubleshooting](#troubleshooting)
+  - [“This workspace isn’t set up for Claude Tag yet”](#this-workspace-isnt-set-up-for-claude-tag-yet)
+  - [“The legacy Claude in Slack bot is retired”](#the-legacy-claude-in-slack-bot-is-retired)
   - [”Claude Code is not enabled for your account”](#%E2%80%9Dclaude-code-is-not-enabled-for-your-account%E2%80%9D)
   - [Sessions not starting](#sessions-not-starting)
   - [Sessions from a Claude Tag channel fail to start](#sessions-from-a-claude-tag-channel-fail-to-start)
@@ -42,14 +44,15 @@ Platforms and integrations
 
 Copy pageCopy page
 
-Delegate coding tasks directly from your Slack workspace. Anthropic is retiring this earlier version for Team and Enterprise workspaces in favor of Claude Tag; it remains the setup path on Pro and Max plans.
+Delegate coding tasks from Slack. This earlier version answers channel mentions only from Pro and Max accounts in workspaces not connected to Claude Tag.
 
 Copy pageCopy page
 
-This page documents the earlier Claude Code in Slack, which runs each session under an individual user’s account.
+This page documents the earlier Claude Code in Slack, which runs each session under an individual user’s account. It answers channel @mentions only from Pro and Max accounts, and only in a Slack workspace that no organization has connected to [Claude Tag](../15-Claude-AI-Features/product-tag.md). Claude Tag runs @Claude as your organization’s shared identity with admin-configured access.
 
-- **Team and Enterprise plans:** Anthropic is retiring this version in favor of [Claude Tag](claude-for-slack.md), which runs @Claude as your organization’s shared identity with admin-configured access. Your existing Slack app and @Claude handle stay, and your Anthropic account team can tell you the cutover date. [Set up Claude Tag](https://claude.com/docs/claude-tag/overview) for a new workspace; to move one that already uses this version, see [Migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier).
-- **Pro and Max plans:** Claude Tag isn’t available on individual plans, so this page remains the setup path.
+- **Pro and Max plans:** Claude Tag isn’t available on individual plans, so this page remains the setup path in a workspace that isn’t connected to Claude Tag.
+- **Team and Enterprise plans:** your existing Slack app and @Claude handle stay. [Set up Claude Tag](https://claude.com/docs/claude-tag/overview) for a new workspace; to move one that already uses this version, see [Migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier).
+- **Notice instead of an answer:** look up the [setup notice](#this-workspace-isnt-set-up-for-claude-tag-yet) or the [retirement notice](#the-legacy-claude-in-slack-bot-is-retired) that @Claude replied with.
 
 Claude Code in Slack brings the power of Claude Code directly into your Slack workspace. When you mention `@Claude` with a coding task, Claude automatically detects the intent and creates a Claude Code cloud session, allowing you to delegate development work without leaving your team conversations. This integration is built on the existing Claude for Slack app but adds intelligent routing to Claude Code cloud sessions for coding-related requests. Each session runs under your own Claude account, using your connected repositories and your plan limits.
 
@@ -70,12 +73,13 @@ Prerequisites
 
 Before using Claude Code in Slack, ensure you have the following:
 
-| Requirement          | Details                                                                                           |
-|:---------------------|:--------------------------------------------------------------------------------------------------|
-| Claude Plan          | Pro, Max, Team, or Enterprise with Claude Code access (premium seats or Chat + Claude Code seats) |
-| Cloud sessions       | [Cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) are enabled for your account                    |
-| GitHub Account       | Connected at [claude.ai/code](https://claude.ai/code) with at least one repository authenticated  |
-| Slack Authentication | Your Slack account linked to your Claude account via the Claude app                               |
+| Requirement          | Details                                                                                                                                                                                                                 |
+|:---------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Claude Plan          | Pro or Max                                                                                                                                                                                                              |
+| Slack workspace      | Not connected to [Claude Tag](https://claude.com/docs/claude-tag/overview) by any organization. If @Claude replies with the [retirement notice](#the-legacy-claude-in-slack-bot-is-retired), the workspace is connected |
+| Cloud sessions       | [Cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) are enabled for your account                                                                                                                                          |
+| GitHub Account       | Connected at [claude.ai/code](https://claude.ai/code) with at least one repository authenticated                                                                                                                        |
+| Slack Authentication | Your Slack account linked to your Claude account via the Claude app                                                                                                                                                     |
 
 
 [​](#setting-up-claude-code-in-slack)
@@ -257,6 +261,25 @@ When to use Slack vs. web
 Troubleshooting
 
 
+[​](#this-workspace-isnt-set-up-for-claude-tag-yet)
+
+“This workspace isn’t set up for Claude Tag yet”
+
+@Claude replies in the thread with this notice instead of an answer when both of these are true:
+
+- No organization has connected your Slack workspace to [Claude Tag](https://claude.com/docs/claude-tag/overview).
+- The Claude account you linked in Slack isn’t on a Pro or Max plan.
+
+Claude Tag is available on Team and Enterprise plans. To connect the workspace, start with the `@Claude connect` command the notice names, then follow [Set up Claude Tag](https://claude.com/docs/claude-tag/overview).
+
+
+[​](#the-legacy-claude-in-slack-bot-is-retired)
+
+“The legacy Claude in Slack bot is retired”
+
+The notice opens with `The legacy Claude in Slack bot is retired effective October 5, 2026 and no longer responds in channels.` Your Slack workspace is connected to a Claude organization, and the earlier version is still selected for the channel, the workspace, or the organization default in that organization’s Claude Tag settings. The notice doesn’t depend on your own plan, so Pro and Max accounts get it too. If you’re an Owner of that organization, open [Claude admin settings](https://claude.ai/admin-settings/claude-tag) and turn on Claude Tag for the channel. To fix every channel that inherits the setting, change it on the workspace or the organization default instead. For the full move, see [Migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier). If you’re not an Owner, send this entry to one.
+
+
 [​](#”claude-code-is-not-enabled-for-your-account”)
 
 ”Claude Code is not enabled for your account”
@@ -308,7 +331,6 @@ Authentication errors
 
 1.  Disconnect and reconnect your Claude account in the App Home
 2.  Ensure you’re signed into the correct Claude account in your browser
-3.  Check that your Claude plan includes Claude Code access
 
 
 [​](#current-limitations)
@@ -317,7 +339,7 @@ Current limitations
 
 - **GitHub only**: repositories must be on GitHub.
 - **One PR at a time**: each session can create one pull request.
-- **Cloud session access required**: users need access to [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md); without it, Claude replies with standard chat responses.
+- **Cloud session access required**: users need access to [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md).
 
 
 [​](#related-resources)

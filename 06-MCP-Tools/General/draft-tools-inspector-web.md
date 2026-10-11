@@ -2,7 +2,7 @@
 title: "Web client - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector/web"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-08-03T07:17:26Z"
+fetched_at: "2026-10-09T06:27:34Z"
 tags: ["cli", "mcp"]
 ---
 
@@ -51,7 +51,7 @@ The Node server behind the web client guards every `/api/*` route with a per-lau
 2.  A `?MCP_INSPECTOR_API_TOKEN=...` query string, the form used in that printed URL.
 3.  `sessionStorage`, as a backstop.
 
-Set the `MCP_INSPECTOR_API_TOKEN` environment variable to pin a known token (useful for scripted launches), or set `DANGEROUSLY_OMIT_AUTH=true` to disable the check entirely, but only on a machine where nothing else can reach the port. Both are described under [Web backend environment variables](draft-tools-inspector-configuration.md#web-backend-environment-variables).
+Set the `MCP_INSPECTOR_API_TOKEN` environment variable to pin a known token (useful for scripted launches), or set `DANGEROUSLY_OMIT_AUTH=true` to disable the check entirely, but only on a machine where nothing else can reach the port. Both are described under [Web backend environment variables](draft-tools-inspector-configuration.md#web-backend-environment-variables). What the token does and does not protect is described under [Security](2026-07-28-tools-inspector-security.md#the-web-backend-and-its-api-token).
 
 
 [​](#dev-mode)
@@ -78,6 +78,7 @@ The tab bar
 | **Tools**     | `tools` capability                                                    | Browse schemas, fill arguments, call, inspect results.                         |
 | **Prompts**   | `prompts` capability                                                  | List prompts, supply arguments, preview generated messages.                    |
 | **Resources** | `resources` capability                                                | Browse, read, and subscribe to resources.                                      |
+| **Skills**    | The server declares the Skills extension (SEP-2640), in either era    | Browse and fetch the server’s skills.                                          |
 | **Tasks**     | `capabilities.tasks` (legacy era) or the tasks extension (modern era) | Track long-running tool calls.                                                 |
 | **Logs**      | `logging` capability                                                  | Server `notifications/message` output, plus the era-appropriate level control. |
 | **Protocol**  | Always                                                                | The JSON-RPC transcript: requests, responses, notifications.                   |
@@ -91,7 +92,7 @@ The tab bar
 
 The monitoring sidebar
 
-**Tasks**, **Logs**, **Protocol**, **Network**, and **Console** form a *monitor group*. Pin the group and they leave the tab bar and move into a resizable right-hand column, so you can watch traffic while working in Tools or Resources. The column width and the selected monitor tab persist across reloads.
+**Tasks**, **Logs**, **Protocol**, **Network**, and **Console** form a *monitor group*. Pin the group and they leave the tab bar and move into a resizable right-hand column, so you can watch traffic while working in Tools or Resources. Drag the column’s edge to resize it, from 320 to 720 pixels wide. The column width and the selected monitor tab persist across reloads.
 
 
 [​](#servers)
@@ -107,7 +108,7 @@ The Servers screen is the entry point. A server row carries its transport, its c
 | `--config <path>`                            | That file, read-only (never written or seeded)                          | No        |
 | `--server-url <url>` or a positional command | One ad-hoc server, held in memory                                       | No        |
 
-On a first launch the web client seeds the catalog with two sample servers: a filesystem server scoped to `/tmp` and the canonical “everything” reference server. See [Configuration and flags](draft-tools-inspector-configuration.md) for the full rules, including why the CLI and TUI seed an empty catalog instead.
+On a first launch the web client seeds the catalog with three sample servers: a filesystem server scoped to `/tmp`, the canonical “everything” reference server, and the MCP org’s hosted example server (Streamable HTTP, with OAuth via dynamic client registration). See [Configuration and flags](draft-tools-inspector-configuration.md) for the full rules, including why the CLI and TUI seed an empty catalog instead.
 
 
 [​](#server-settings)
@@ -115,11 +116,14 @@ On a first launch the web client seeds the catalog with two sample servers: a fi
 Server Settings
 
 - **Protocol Era**: `legacy` / `auto` / `modern`. See [Protocol eras](2026-07-28-tools-inspector-protocol-eras.md).
-- **Log level per request**: the level a modern-era connection stamps on each outgoing request by default, or `off` to opt out (see [Logging](2026-07-28-tools-inspector-protocol-eras.md#logging)).
+- **Log Level per Request**: the level a modern-era connection stamps on each outgoing request by default, or `off` to opt out (see [Logging](2026-07-28-tools-inspector-protocol-eras.md#logging)).
 - **Advertised Extensions**: which extensions the Inspector declares in `capabilities.extensions`. A debugging knob: a server may legitimately change what it registers based on what you advertise. Uncheck the Tasks extension and reconnect against the `test-servers/configs/advertised-extensions-http.json` fixture (setup in [Reproducing each era locally](2026-07-28-tools-inspector-protocol-eras.md#reproducing-each-era-locally)) to watch a tool disappear.
 - **Roots**: the roots advertised via the `roots` client capability. `@modelcontextprotocol/server-filesystem`, for instance, calls `roots/list` to learn its allowed directories.
-- **Headers**, **timeouts**, and **OAuth** fields.
-- **Fetch lists one page at a time**: when off, list results are auto-aggregated across pages on connect; when on, each list loads page 1 only with a **Load next page** control and an *N pages loaded* status. Reproduce with `test-servers/configs/pagination-http.json`, which paginates 12 tools, resources, and prompts into three pages each.
+- **Headers**, **timeouts**, and **OAuth** fields. Headers are saved in the catalog as written; OAuth client secrets and stdio `env:` values go to the [secret store](draft-tools-inspector-configuration.md#where-secrets-are-stored).
+- **OAuth Settings**: client ID and secret, a read-only **Redirect URI** to copy into a pre-registered client (it follows the origin you opened the Inspector at), **Scopes** (space-separated), **Request refresh token**, **Revoke tokens on clear**, additional authorization parameters, authorization and token URL overrides, and **Insufficient-scope response**, which decides whether a `403 insufficient_scope` triggers [step-up](draft-tools-inspector-authorization.md#mid-session-re-authorization) or surfaces the error.
+- **Fetch Lists One Page at a Time**: when off, list results are auto-aggregated across pages on connect; when on, each list loads page 1 only with a **Load next page** control and an *N pages loaded* status. Reproduce with `test-servers/configs/pagination-http.json`, which paginates 12 tools, resources, and prompts into three pages each.
+
+A footer at the bottom of **Server Settings**, **Client Settings** and the **Add / Edit / Clone server** dialogs names the secret store in use, so you see it where you type a secret. It turns into a warning when secrets are memory-only (lost on restart), in an unencrypted file, in a file with loose permissions, or in a file that can’t be read.
 
 
 [​](#tools)
@@ -147,11 +151,11 @@ Lists prompt templates with their arguments, and renders the generated messages 
 
 Apps
 
-[MCP Apps](../Extensions/extensions-apps-overview.md) are tools that carry UI. The Apps tab renders one in a sandboxed iframe served from a **separate port**, exercises the `ui/*` bridge, and shows the view’s `ui/message` submissions and its `notifications/message` logs in side panels.
+[MCP Apps](../Extensions/extensions-apps-overview.md) are tools that carry UI. The Apps tab renders one in a sandboxed iframe served from a **separate port**, exercises the `ui/*` bridge, and shows the view’s `ui/message` submissions and its `notifications/message` logs in panels below the frame.
 
-- The sandbox port is dynamic by default; pin it with `MCP_SANDBOX_PORT` if you need to expose or forward it.
+- The sandbox listens on its own port, `6275` by default (set it with `MCP_SANDBOX_PORT`). An app whose UI resource declares `_meta.ui.domain` has its document served from a third listener, the app origin, on `6278` by default (`MCP_APP_ORIGIN_PORT`). Expose or forward both along with the web port.
 - The sandbox is gated by a `frame-ancestors` CSP, and a bracketed IPv6 literal is not a valid CSP host-source, so browse the Inspector at `localhost`, `127.0.0.1`, a hostname, or a LAN IPv4, **not** at a bare `http://[::1]:...`.
-- The sandbox URL is always plain `http`, so an `https://` Inspector page blocks the frame as mixed content. MCP Apps need a plain-`http` origin today.
+- By default the sandbox URL is plain `http` on the bind address, so an `https://` Inspector page blocks the frame as mixed content. Behind a TLS reverse proxy, set `MCP_SANDBOX_FULL_ADDRESS` (and `MCP_APP_ORIGIN_FULL_ADDRESS`) to the public `https://` address the browser reaches each listener at. Neither may share an origin with the Inspector UI; a value that does is ignored with a warning.
 
 See [Recipes](2026-07-28-tools-inspector-recipes.md#reviewing-an-mcp-app) for the CLI-first automated review flow.
 
@@ -166,7 +170,7 @@ The three tabs show the same traffic at different levels of detail:
 - **Network**: the HTTP layer, for SSE and Streamable HTTP servers. Status codes, request and response headers, and bodies. On modern connections the standardized `Mcp-*` headers are highlighted and sentinel values decoded.
 - **Console**: the connected stdio server process’s `stderr`, which is where most stdio servers put their own diagnostics.
 
-Secrets are masked in these views, and entries can be cleared or exported.
+Secrets in Network headers and bodies are masked, with a control to reveal them; Protocol and Console show traffic as sent. Entries can be cleared or exported.
 
 
 [​](#deep-links)
@@ -192,4 +196,4 @@ Three further parameters land you on a *rendered app*: `openApp=<toolName>` name
 
 Host binding and origins
 
-By default the Inspector binds `localhost` and accepts requests only from the loopback origins for its port. Treat both defaults as security boundaries, since the backend spawns processes on your machine. Binding all interfaces (`HOST=0.0.0.0`) is **refused** unless you set `DANGEROUSLY_BIND_ALL_INTERFACES=true`. Binding a *specific* non-loopback address is allowed with no opt-in, since that’s a single deliberate exposure rather than every interface at once. See the [Hosting on a network](2026-07-28-tools-inspector-recipes.md#hosting-on-a-network) recipe for the full matrix, and [Configuration](draft-tools-inspector-configuration.md#web-backend-environment-variables) for the variables.
+By default the Inspector binds `127.0.0.1` and accepts requests only from the loopback origins for its port. Treat both defaults as security boundaries, since the backend spawns processes on your machine. Binding all interfaces (`HOST=0.0.0.0`) is **refused** unless you set `DANGEROUSLY_BIND_ALL_INTERFACES=true`. Binding a *specific* non-loopback address is allowed with no opt-in, since that’s a single deliberate exposure rather than every interface at once. See the [Hosting on a network](2026-07-28-tools-inspector-recipes.md#hosting-on-a-network) recipe for the full matrix, and [Configuration](draft-tools-inspector-configuration.md#web-backend-environment-variables) for the variables.

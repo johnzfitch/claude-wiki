@@ -2,7 +2,7 @@
 title: "Using S&P global data for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-26T06:39:58Z"
+fetched_at: "2026-10-10T06:25:06Z"
 tags: ["safety"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["safety"]
 
 Use Claude's Kensho integration to access S&P Global's financial data for comprehensive market and fundamental analysis of public companies.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 

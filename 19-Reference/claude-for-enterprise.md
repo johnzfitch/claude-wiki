@@ -20,7 +20,7 @@ The Claude for Enterprise plan helps organizations drive cross-functional collab
 - 
 
 
-  [Claude Enterprise](../18-Industry-UseCases/enterprise.md)
+  [Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 
 - 
 
@@ -40,7 +40,7 @@ The Claude for Enterprise plan helps organizations drive cross-functional collab
   [Copy link](#)
   https://claude.com/blog/claude-for-enterprise
 
-Today, we’re announcing the [Claude Enterprise plan](../18-Industry-UseCases/enterprise.md) to help organizations securely collaborate with Claude using internal knowledge.
+Today, we’re announcing the [Claude Enterprise plan](../17-Billing-Plans/pricing-enterprise.md) to help organizations securely collaborate with Claude using internal knowledge.
 
 Teams with more context do better work. The Claude Enterprise plan offers an expanded 500K context window, more usage capacity, and a native GitHub integration so you can work on entire codebases with Claude. It also includes enterprise-grade security features—like SSO, role-based permissions, and admin tooling—that help protect your data and team.
 

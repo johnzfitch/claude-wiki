@@ -2,7 +2,7 @@
 title: "Claude Design admin guide for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:32:54Z"
+fetched_at: "2026-10-10T06:28:17Z"
 tags: ["account", "enterprise"]
 ---
 
@@ -11,9 +11,9 @@ tags: ["account", "enterprise"]
 
 Claude Design lets your team create on-brand designs, prototypes, and interactive microsites through conversation with Claude. Presentations now have their own tool, Claude Slides.
 
-Claude Design is available in beta on Pro, Max, Team, and Enterprise plans. It's on by default on Team plans. On Enterprise plans, it's off by default until an owner turns it on.
+Claude Design is available on Free, Pro, Max, Team, and Enterprise plans. It's on by default on Team plans. On Enterprise plans, it turns on by default on October 15, 2026, and owners can turn it on before then.
 
-**Note:** Settings for artifacts, templates (including **Design**), design systems, and sharing live in one place now. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md)**. This guide covers standalone Claude Design at **claude.ai/design** and how to roll out Claude Design with a design system in place.
+**Note:** Settings for artifacts, templates (including **Design**), design systems, and sharing live in one place now. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**. This guide covers how to roll out Claude Design with a design system in place, and what to do before standalone Claude Design at **claude.ai/design** closes.
 
 Claude Design works best when a **design system** is set up for your organization first. This ensures every project your team creates stays true to your brand, typography, color palette, and component patterns. This guide walks you through enabling Claude Design, setting up the right foundation, and rolling it out to your team.
 
@@ -27,7 +27,7 @@ Your team can use Claude Design in two places, and each has its own setting. Tur
 
 ### Claude Design in conversations and the Artifacts tab
 
-To turn on the **Design** template, see the instructions in **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md)**.
+To turn on the **Design** template, see the instructions in **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
 
 ### Standalone Claude Design at claude.ai/design
 
@@ -35,7 +35,9 @@ To turn on the **Design** template, see the instructions in **[Artifacts admin g
 
 2.  Find the **Enable for your organization** toggle under **Claude Design \[standalone\]** and switch it on.
 
-On Enterprise plans, you can control access to standalone Claude Design with **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
+On Enterprise plans, you can control access to standalone Claude Design with **[custom roles](https://support.claude.com/en/articles/13930452)**.
+
+**Important:** Standalone Claude Design closes on \[placeholder: close date for Team and Enterprise plans\]. Before then, check that **Artifacts** and **Design systems** are on in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**, so users can migrate their design systems. On Enterprise plans, **Design systems** is off by default. Learn more in **[Migrate from standalone Claude Design to Claude](../15-Claude-AI-Features/migrate-from-standalone-claude-design-to-claude-claude-help-center.md)**.
 
 Before you turn on broad access, read through the rollout approach below. Turning on Claude Design without a design system in place means your team gets functional but generic output.
 
@@ -67,7 +69,7 @@ Any member with Claude Design access can create and edit design systems. On the 
 
 ## Recommended rollout phases
 
-A phased rollout lets you validate your design system and build internal expertise before broad adoption. On Enterprise plans, you can phase access to standalone Claude Design using **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**. You can phase access to Claude Design in conversations and the Artifacts tab the same way, with the Design capability (under **Artifacts**).
+On Enterprise plans, you can phase access to standalone Claude Design using **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**, with the Design capability (under **Artifacts**).
 
 ### Phase 1: Design system setup
 
@@ -157,4 +159,4 @@ There are no strict limits, but we recommend the phased approach outlined above 
 
 ### Can we export or archive generated designs?
 
-Claude Design currently supports export to HTML bundles, PPTX, and PDF, hand-off to Claude Code, and sending designs to the partner tools listed in **[Get started with Claude Design](../15-Claude-AI-Features/get-started-with-claude-design-claude-help-center.md)**.
+Claude Design supports export to HTML bundles, PPTX, PDF, and Google Slides, hand-off to Claude Code, and sending designs to the partner tools listed in **[Get started with Claude Design](https://support.claude.com/en/articles/14604416)**.

@@ -2,7 +2,7 @@
 title: "User management - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/user-management"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:36Z"
+fetched_at: "2026-10-04T08:34:07Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -221,7 +223,7 @@ curl "https://api.anthropic.com/v1/organizations/users/user_01AbCdEfGhIjKlMnOpQr
 
 `POST /v1/organizations/users/{user_id}` sets the member's role to `user` or `managed`. Members holding an administrative role (`owner`, `membership_admin`, or `primary_owner`) cannot be changed through this endpoint, and administrative roles cannot be assigned; both return 400 and are managed in claude.ai organization settings. If your organization's identity provider manages roles (advanced SSO or advanced SCIM provisioning), role updates return 400. Requires the `write:members` scope.
 
-For complete parameter details and response schemas, see [Update user](../Admin/beta-organization-users-update.md) in the API reference.
+For complete parameter details and response schemas, see [Update user](../Admin/platform-claude-com-beta-organization-users-update.md) in the API reference.
 
 cURL
 
@@ -239,7 +241,7 @@ curl -X POST "https://api.anthropic.com/v1/organizations/users/user_01AbCdEfGhIj
 
 `DELETE /v1/organizations/users/{user_id}` removes the member from the organization, returning any purchased seat they occupied to the organization's pool. Members holding an administrative role cannot be removed through this endpoint, and if your identity provider manages membership (SCIM), removals return 400. Requires the `write:members` scope.
 
-For complete parameter details and response schemas, see [Remove user](../Admin/beta-organization-users-remove.md) in the API reference.
+For complete parameter details and response schemas, see [Remove user](../Admin/platform-claude-com-beta-organization-users-remove.md) in the API reference.
 
 cURL
 
@@ -270,7 +272,7 @@ On plans that draw members from a finite seat pool, the invite automatically tak
 
 The optional `rbac_group_ids` field lists groups (by `rbac_group_`-prefixed ID) to assign to the member when they accept. Passing a non-empty `rbac_group_ids` additionally requires the key to carry the `write:rbac_groups` scope, because group assignment can grant the permissions attached to the group's roles.
 
-For complete parameter details and response schemas, see [Create invite](../Admin/beta-organization-invites-create.md) in the API reference.
+For complete parameter details and response schemas, see [Create invite](../Admin/platform-claude-com-beta-organization-invites-create.md) in the API reference.
 
 cURL
 
@@ -340,7 +342,7 @@ curl "https://api.anthropic.com/v1/organizations/invites/invite_01QrStUvWxYzAbCd
 
 `DELETE /v1/organizations/invites/{invite_id}` withdraws a `pending` invite, deactivating the link in the invitation email. Withdrawing an `accepted` invite returns 400 (remove the member instead); withdrawing an `expired` invite returns 400. Requires the `write:members` scope.
 
-For complete parameter details and response schemas, see [Delete invite](../Admin/beta-organization-invites-delete.md) in the API reference.
+For complete parameter details and response schemas, see [Delete invite](../Admin/platform-claude-com-beta-organization-invites-delete.md) in the API reference.
 
 cURL
 
@@ -524,7 +526,7 @@ curl "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_group_01UvWxYz
 
 `POST /v1/organizations/rbac_groups/{rbac_group_id}/members` adds an organization member to the group by `user_id`. The user must already be a member of one of your enterprise's organizations (the request returns 404 otherwise), and adding someone who is already in the group returns 400. For `scim` groups, membership is managed in your identity provider and this request returns 400. To assign groups to a person who has not joined yet, use `rbac_group_ids` on [invite creation](#create-an-invite) instead. Requires the `write:rbac_groups` scope.
 
-For complete parameter details and response schemas, see [Add group member](../Admin/beta-organization-rbac-groups-members-create.md) in the API reference.
+For complete parameter details and response schemas, see [Add group member](../Admin/beta-organization-rbac-groups-members-add.md) in the API reference.
 
 cURL
 
@@ -555,7 +557,7 @@ curl -X POST "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_group_
 
 `DELETE /v1/organizations/rbac_groups/{rbac_group_id}/members/{user_id}` removes the member from the group; they remain a member of their organization. The request returns 404 if the user is not a member of the group, and 400 for `scim` groups, whose membership is managed in your identity provider. Requires the `write:rbac_groups` scope.
 
-For complete parameter details and response schemas, see [Remove group member](../Admin/beta-organization-rbac-groups-members-delete.md) in the API reference.
+For complete parameter details and response schemas, see [Remove group member](../Admin/beta-organization-rbac-groups-members-remove.md) in the API reference.
 
 cURL
 

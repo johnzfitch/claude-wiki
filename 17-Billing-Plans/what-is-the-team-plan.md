@@ -2,7 +2,7 @@
 title: "What is the Team plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:16Z"
+fetched_at: "2026-10-10T06:24:55Z"
 tags: ["billing"]
 ---
 
@@ -44,6 +44,8 @@ Users with Standard seats on the Team plan can access the following:
   - For more details, see **[Use enterprise search](https://support.claude.com/en/articles/12489464)**
 
 - **Connectors for your workplace tools:** Connect Claude to Google Drive, Gmail, Google Calendar, GitHub, Microsoft 365, and Slack to search and retrieve context from your existing documents, emails, calendars, and team communications—without manual uploads.
+
+- **Monthly API credits:** Claude Max and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 - **Everything in Pro, including:**
 
@@ -107,7 +109,7 @@ Usage limits differ between Standard and Premium seats in the following ways:
 
 **Premium seats:** Team plan Premium seats include 6.25x the Pro plan's per-session usage allowance and have a weekly usage limit that applies across all models.
 
-**Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](../15-Claude-AI-Features/what-is-a-limit-reset.md)**.
+**Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](https://support.claude.com/en/articles/17007452)**.
 
 ### Do usage limits apply across the team or to individual members?
 

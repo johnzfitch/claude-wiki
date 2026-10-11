@@ -2,7 +2,7 @@
 title: "Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:20Z"
+fetched_at: "2026-10-04T08:33:51Z"
 tags: ["api", "bedrock", "cli", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "bedrock", "cli", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -152,7 +152,7 @@ Go to the [AWS Console \> Bedrock \> Model Access](https://console.aws.amazon.co
 
 
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5, Claude Opus 4.8, and Claude Opus 4.7 are reachable through `InvokeModel` on `bedrock-runtime`. These requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. For the native Messages API request shape and full feature parity, use that page. These models are omitted from the model table on this page because they do not have ARN-versioned model IDs.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Opus 4.8, and Claude Opus 4.7 are reachable through `InvokeModel` on `bedrock-runtime`. These requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. For the native Messages API request shape and full feature parity, use that page. These models are omitted from the model table on this page because they do not have ARN-versioned model IDs.
 
 Lifecycle terms (Deprecated, Retired) are defined in [Model deprecations](../../20-Models/about-claude-model-deprecations.md). Lifecycle dates on partner-operated platforms are set by the partner and can differ from the Claude API schedule. For the current retirement date of any model on Amazon Bedrock, see [Amazon Bedrock's model lifecycle page](https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html).
 
@@ -166,16 +166,16 @@ Invocation of model ID anthropic.claude-sonnet-4-5-20250929-v1:0 with on-demand 
 
 To invoke these models, pass an inference profile instead of the base model ID. The inference profile ID is the base model ID with a prefix from a column marked "Yes" in the following table, for example us.anthropic.claude-sonnet-4-5-20250929-v1:0. You can also pass the full inference profile ARN, in the form `arn:aws:bedrock:{region}:{account-id}:inference-profile/{inference-profile-id}`. For AWS's authoritative list of available inference profiles, see [Supported Regions and models for inference profiles](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html). To learn how the prefixes affect routing and pricing, see the [Global versus regional endpoints](#global-vs-regional-endpoints) section.
 
-| Model                                                                     | Base Bedrock model ID                     | `global` | `us` | `eu` | `jp` | `apac` |
-|---------------------------------------------------------------------------|-------------------------------------------|:---------|:-----|:-----|:-----|:-------|
-| Claude Opus 4.6                                                           | anthropic.claude-opus-4-6-v1              | Yes      | Yes  | Yes  | Yes  | Yes    |
-| Claude Opus 4.5                                                           | anthropic.claude-opus-4-5-20251101-v1:0   | Yes      | Yes  | Yes  | No   | No     |
-| Claude Opus 4.1 ([deprecated](../../20-Models/about-claude-model-deprecations.md))  | anthropic.claude-opus-4-1-20250805-v1:0   | No       | Yes  | No   | No   | No     |
-| Claude Sonnet 4.6                                                         | anthropic.claude-sonnet-4-6               | Yes      | Yes  | Yes  | Yes  | No     |
-| Claude Sonnet 4.5                                                         | anthropic.claude-sonnet-4-5-20250929-v1:0 | Yes      | Yes  | Yes  | Yes  | No     |
-| Claude Sonnet 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))  | anthropic.claude-sonnet-4-20250514-v1:0   | Yes      | Yes  | Yes  | No   | Yes    |
-| Claude Haiku 4.5                                                          | anthropic.claude-haiku-4-5-20251001-v1:0  | Yes      | Yes  | Yes  | No   | No     |
-| Claude Haiku 3.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | anthropic.claude-3-5-haiku-20241022-v1:0  | No       | Yes  | No   | No   | No     |
+| Model                                                                      | Base Bedrock model ID                     | `global` | `us` | `eu` | `jp` | `apac` |
+|----------------------------------------------------------------------------|-------------------------------------------|:---------|:-----|:-----|:-----|:-------|
+| Claude Opus 4.6                                                            | anthropic.claude-opus-4-6-v1              | Yes      | Yes  | Yes  | Yes  | Yes    |
+| Claude Opus 4.5                                                            | anthropic.claude-opus-4-5-20251101-v1:0   | Yes      | Yes  | Yes  | No   | No     |
+| Claude Opus 4.1 ([deprecated](../../20-Models/about-claude-model-deprecations.md))   | anthropic.claude-opus-4-1-20250805-v1:0   | No       | Yes  | No   | No   | No     |
+| Claude Sonnet 4.6                                                          | anthropic.claude-sonnet-4-6               | Yes      | Yes  | Yes  | Yes  | No     |
+| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | anthropic.claude-sonnet-4-5-20250929-v1:0 | Yes      | Yes  | Yes  | Yes  | No     |
+| Claude Sonnet 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))   | anthropic.claude-sonnet-4-20250514-v1:0   | Yes      | Yes  | Yes  | No   | Yes    |
+| Claude Haiku 4.5                                                           | anthropic.claude-haiku-4-5-20251001-v1:0  | Yes      | Yes  | Yes  | No   | No     |
+| Claude Haiku 3.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))  | anthropic.claude-3-5-haiku-20241022-v1:0  | No       | Yes  | No   | No   | No     |
 
 ### List available models
 
@@ -266,7 +266,7 @@ See the [client SDKs](../Other/cli-sdks-libraries-overview.md) for more details,
 
 You can authenticate with Bedrock using bearer tokens instead of AWS credentials. This is useful in corporate environments where teams need access to Bedrock without managing AWS credentials, IAM roles, or account-level permissions.
 
-The simplest approach is to set the `AWS_BEARER_TOKEN_BEDROCK` environment variable, which each SDK detects automatically when resolving credentials from the environment.
+The simplest approach is to set the `AWS_BEARER_TOKEN_BEDROCK` environment variable, which the SDK detects automatically when resolving credentials from the environment.
 
 To provide a token programmatically:
 
@@ -327,7 +327,7 @@ For the full feature list with Amazon Bedrock availability, see [Features overvi
 - [Thinking](build-with-claude-thinking.md)
 - [Tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md), including the [Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md), [Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md), [Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md), and [Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)
 - [Citations](build-with-claude-citations.md)
-- [Structured outputs](build-with-claude-structured-outputs.md)
+- [Structured outputs](build-with-claude-structured-outputs.md), for the models in the Amazon Bedrock note under its [Compatibility](build-with-claude-structured-outputs.md#compatibility) section
 
 ### Features not supported
 
@@ -352,13 +352,13 @@ PDF support is available on Bedrock through both the Converse API and InvokeMode
 
 ### Mid-conversation system messages on Bedrock
 
-[Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md) are available through the InvokeModel API for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Opus 4.8. As described in the note under [API model IDs](#api-model-ids), these requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. No beta header is required. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. It is not available for the ARN-versioned models in the model table on this page.
+[Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md) are available through the InvokeModel API for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, and Claude Sonnet 5.5. As described in the note under [API model IDs](#api-model-ids), these requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. No beta header is required. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. It is not available for the ARN-versioned models in the model table on this page.
 
 **For Converse API users:** the Converse API accepts system instructions through its top-level [`system` parameter](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html). To add system instructions mid-conversation, use the InvokeModel API.
 
 ### Context window
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Amazon Bedrock. Other Claude models, including Sonnet 4.5 and Sonnet 4 (deprecated), have a 200k-token context window.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Amazon Bedrock. Other Claude models, including Sonnet 4.5 and Sonnet 4 (deprecated), have a 200k-token context window.
 
 Bedrock limits request payloads to 20 MB. When sending large documents or many images, you may reach this limit before the token limit.
 

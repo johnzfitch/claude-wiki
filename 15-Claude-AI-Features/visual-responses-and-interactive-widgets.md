@@ -2,7 +2,7 @@
 title: "Visual and interactive content | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13641943-visual-and-interactive-content"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:44Z"
+fetched_at: "2026-10-10T06:25:13Z"
 tags: ["claude-ai"]
 ---
 

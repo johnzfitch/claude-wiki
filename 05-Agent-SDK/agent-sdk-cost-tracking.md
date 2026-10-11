@@ -2,7 +2,7 @@
 title: "Track cost and usage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/cost-tracking"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-22T06:29:58Z"
+fetched_at: "2026-10-06T06:23:39Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -41,7 +41,7 @@ The `total_cost_usd` and `costUSD` fields are client-side estimates, not authori
 - the installed SDK version does not recognize a model
 - billing rules apply that the client cannot model
 
-One billing rule the SDK does model is [data residency pricing](../17-Billing-Plans/about-claude-pricing.md#data-residency-pricing). When a response’s `usage` reports `inference_geo: "us"`, the SDK multiplies the list price of that response’s tokens by 1.1. Per-request fees such as web search aren’t multiplied. Requires TypeScript Agent SDK v0.3.239 or later, or Python Agent SDK v0.2.144 or later.Use these fields for development insight and approximate budgeting. For authoritative billing, use the [Usage and Cost API](../04-API-Reference/Guides/build-with-claude-usage-cost-api.md) or the Usage page in the [Claude Console](../04-API-Reference/Other/usage-limits.md). Do not bill end users or trigger financial decisions from these fields.
+One billing rule the SDK does model is [data residency pricing](../17-Billing-Plans/about-claude-pricing.md#data-residency-pricing). When a response’s `usage` reports `inference_geo: "us"`, the SDK multiplies the list price of that response’s tokens by 1.1. Per-request fees such as web search aren’t multiplied. Requires TypeScript Agent SDK v0.3.239 or later, or Python Agent SDK v0.2.144 or later.Use these fields for development insight and approximate budgeting. For authoritative billing, use the [Usage and Cost API](../04-API-Reference/Guides/build-with-claude-usage-cost-api.md) or the Usage page in the [Claude Console](../04-API-Reference/Other/playground.md). Do not bill end users or trigger financial decisions from these fields.
 
 
 [​](#understand-token-usage)
@@ -65,7 +65,7 @@ The following diagram shows the message stream from a single `query()` call, wit
 
 Each step produces assistant messages
 
-When Claude responds, it sends one or more assistant messages. In TypeScript, each assistant message contains a nested `BetaMessage` (accessed via `message.message`) with an `id` and a [`usage`](https://code.claude.com/docs/en/04-API-Reference/Other/api-messages-2dd213ca95.md) object with token counts (`input_tokens`, `output_tokens`). In Python, the `AssistantMessage` dataclass exposes the same data directly via `message.usage` and `message.message_id`. When Claude uses multiple tools in one turn, all messages in that turn share the same ID, so deduplicate by ID to avoid double-counting.
+When Claude responds, it sends one or more assistant messages. In TypeScript, each assistant message contains a nested `BetaMessage` (accessed via `message.message`) with an `id` and a [`usage`](../04-API-Reference/Endpoints/messages.md) object with token counts (`input_tokens`, `output_tokens`). In Python, the `AssistantMessage` dataclass exposes the same data directly via `message.usage` and `message.message_id`. When Claude uses multiple tools in one turn, all messages in that turn share the same ID, so deduplicate by ID to avoid double-counting.
 
 2
 
@@ -248,7 +248,7 @@ Each `query()` call returns `total_cost_usd` on its results. How you combine the
 - **Independent calls, with no `resume` or `continue` option**: each result covers only its own call, so add the totals yourself, as the examples below do.
 - **Calls that resume the same session**: Claude Code saves the session’s totals to its [transcript](../02-Claude-Code-CLI/sessions.md#where-transcripts-are-stored) when the process exits normally and restores them when a later call resumes or forks the session. Each result already includes the session’s earlier spend. Read the latest result for the session total; summing results double-counts the restored spend. Before v2.1.277, a session that you resumed through the SDK or `claude -p` started its totals at zero, so each call’s results covered only that call.
 
-In streaming input mode, read each call’s total as described in [Track costs in streaming input mode](#track-costs-in-streaming-input-mode). For a call that ended in a crash, see [Recover totals after a session crash](#recover-totals-after-a-session-crash). The following examples run two `query()` calls sequentially, add each call’s `total_cost_usd` to a running total, and print both the per-call and combined cost:
+Either way, the combined figure is still a [client-side estimate](#estimates-not-billing). In streaming input mode, read each call’s total as described in [Track costs in streaming input mode](#track-costs-in-streaming-input-mode). For a call that ended in a crash, see [Recover totals after a session crash](#recover-totals-after-a-session-crash). The following examples run two `query()` calls sequentially, add each call’s `total_cost_usd` to a running total, and print both the per-call and combined cost:
 
 TypeScript
 
@@ -417,7 +417,7 @@ for await (const message of query({ prompt: "Summarize this project", options })
 }
 ```
 
-Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) for details. On a Claude subscription within your plan’s included usage, you get the 1-hour TTL on your own turns, and on some of the helper requests Claude Code makes beside them, without setting this variable, and Claude Code drops those turns to the 5-minute TTL once you’re drawing on [usage credits](https://code.claude.com/docs/en/17-Billing-Plans/extra-usage-for-paid-claude-plans-32418755be.md). `ENABLE_PROMPT_CACHING_1H` asks for the 1-hour TTL on every request in both buckets. To choose a TTL for each bucket separately, use these controls instead. Each takes `5m` or `1h` and takes precedence over `ENABLE_PROMPT_CACHING_1H`:
+Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) for details. On a Claude subscription within your plan’s included usage, you get the 1-hour TTL on your own turns, and on some of the helper requests Claude Code makes beside them, without setting this variable, and Claude Code drops those turns to the 5-minute TTL once you’re drawing on [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans). `ENABLE_PROMPT_CACHING_1H` asks for the 1-hour TTL on every request in both buckets. To choose a TTL for each bucket separately, use these controls instead. Each takes `5m` or `1h` and takes precedence over `ENABLE_PROMPT_CACHING_1H`:
 
 - Main conversation: the `CLAUDE_CODE_PROMPT_CACHE_TTL` [environment variable](../02-Claude-Code-CLI/env-vars.md), or the [`promptCacheTtl`](../02-Claude-Code-CLI/settings-reference.md#promptcachettl) setting
 - Everything else: the `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL` environment variable, or the [`subagentPromptCacheTtl`](../02-Claude-Code-CLI/settings-reference.md#subagentpromptcachettl) setting

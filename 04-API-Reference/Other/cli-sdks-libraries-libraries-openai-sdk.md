@@ -2,7 +2,7 @@
 title: "OpenAI SDK compatibility - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/openai-sdk"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:30Z"
+fetched_at: "2026-10-04T08:33:25Z"
 tags: ["api", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api", "sdk"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,7 +48,7 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-[CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)Libraries and integrations
+[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Libraries and integrations
 
 # OpenAI SDK compatibility
 
@@ -81,7 +81,7 @@ To use the OpenAI SDK compatibility feature, you'll need to:
 1.  Use an official OpenAI SDK
 2.  Change the following
     - Update your base URL to point to the Claude API
-    - Replace your API key with a [Claude API key](usage-limits.md)
+    - Replace your API key with a [Claude API key](playground.md)
     - If your key is a [personal or service account key](manage-claude-authentication.md#key-types) with access to multiple workspaces, also send the `anthropic-workspace-id` header on every request (for example, `default_headers` in the Python SDK or `defaultHeaders` in TypeScript); see [Select a workspace](manage-claude-authentication.md#select-a-workspace)
     - Update your model name to use a [Claude model](../../20-Models/about-claude-models-overview.md)
 3.  Review the following sections for what features are supported
@@ -148,7 +148,7 @@ Most of the inputs to the OpenAI SDK clearly map directly to Anthropic’s API p
 
 ### Thinking support
 
-You can enable [thinking](../Guides/build-with-claude-thinking.md) by adding the `thinking` parameter. On current models thinking is adaptive, with Claude deciding when and how deeply to think, and on Claude 5 models it is on by default; manually configured extended thinking is a legacy mode. Although thinking improves Claude's reasoning for complex tasks, the OpenAI SDK doesn't return Claude's detailed thought process. For full thinking features, including access to Claude's step-by-step reasoning output, use the native Claude API.
+You can enable [thinking](../Guides/build-with-claude-thinking.md) by adding the `thinking` parameter. On current models thinking is adaptive, with Claude deciding when and how deeply to think, and on Claude 5 models it is on by default; manually configured extended thinking is a legacy mode. Although thinking improves Claude's reasoning for complex tasks, the OpenAI SDK doesn't return Claude's thinking. For full thinking features, including [summarized thinking](../Guides/build-with-claude-thinking.md#summarized-thinking), use the native Claude API.
 
 Python
 

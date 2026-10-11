@@ -2,7 +2,7 @@
 title: "MCP connector - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-connector"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:17Z"
+fetched_at: "2026-10-04T08:32:38Z"
 tags: ["api", "authentication", "cli", "mcp"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication", "cli", "mcp"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -102,7 +102,7 @@ MCP connector
 
 mcp-client-2025-11-20
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Not eligible
 
@@ -667,7 +667,7 @@ For detailed explanations of the OAuth flow, refer to the [Authorization section
 
 ## Client-side MCP helpers
 
-If you manage your own MCP client connection (for example, with local stdio servers, MCP prompts, or MCP resources), the SDKs provide helper functions that convert between MCP types and Claude API types. This eliminates manual conversion code when using an MCP SDK for your language (for example, the [TypeScript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk)) alongside the Anthropic SDK.
+If you manage your own MCP client connection (for example, with local stdio servers, MCP prompts, or MCP resources), the SDK provides helper functions that convert between MCP types and Claude API types. This eliminates manual conversion code when using an MCP SDK for your language (for example, the [TypeScript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk)) alongside the Anthropic SDK.
 
 
 
@@ -728,14 +728,12 @@ from anthropic.lib.tools.mcp import (
 )
 ```
 
-Helper names and exact signatures follow each language's conventions; this table shows the TypeScript forms:
-
-| Helper                           | Description                                                                             |
-|----------------------------------|-----------------------------------------------------------------------------------------|
-| `mcpTools(tools, mcpClient)`     | Converts MCP tools to Claude API tools for use with `client.beta.messages.toolRunner()` |
-| `mcpMessages(messages)`          | Converts MCP prompt messages to Claude API message format                               |
-| `mcpResourceToContent(resource)` | Converts an MCP resource to a Claude API content block                                  |
-| `mcpResourceToFile(resource)`    | Converts an MCP resource to a file object for upload                                    |
+| Helper                              | Description                                                                              |
+|-------------------------------------|------------------------------------------------------------------------------------------|
+| `async_mcp_tool(tool, mcp_client)`  | Converts MCP tools to Claude API tools for use with `client.beta.messages.tool_runner()` |
+| `mcp_message(message)`              | Converts MCP prompt messages to Claude API message format                                |
+| `mcp_resource_to_content(resource)` | Converts an MCP resource to a Claude API content block                                   |
+| `mcp_resource_to_file(resource)`    | Converts an MCP resource to a file object for upload                                     |
 
 ### Use MCP tools
 
@@ -888,7 +886,7 @@ You can include `mcp_servers` in [Message Batches API](../Guides/build-with-clau
 
 The MCP connector is not covered by ZDR arrangements. Data exchanged with MCP servers, including tool definitions and execution results, is retained according to Anthropic's standard data retention policy.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Migration guide
 
@@ -977,7 +975,7 @@ If you're using the deprecated `mcp-client-2025-04-04` beta header, follow this 
 
 ## Deprecated version: mcp-client-2025-04-04
 
-
+
 
 This version is deprecated. Migrate to `mcp-client-2025-11-20` using the preceding [migration guide](#migration-guide).
 

@@ -2,7 +2,7 @@
 title: "What is the External Researcher Access Program? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:33:13Z"
+fetched_at: "2026-10-10T06:25:30Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -41,7 +41,7 @@ Please complete the following application form with details about your team and 
 
 3.  **Please note that given the substantial number of applications we receive (sometimes thousands in a single week), we regret that we cannot provide individual responses to unapproved submissions.** In addition, we reserve the right to reject submissions for any reason and will not be able to provide explanations for each individual applicant. However, we appreciate the time and effort put into each submission and will carefully review all entries. Thank you for your understanding.
 
-If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#b8caddcbddd9cadbd0ddcad9dbdbddcbcbf8d9d6ccd0cad7c8d1db96dbd7d5). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
+If you are having an issue that requires a response urgently (e.g., you’ve suddenly run out of your credits before a major conference), please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#89fbecfaece8fbeae1ecfbe8eaeaecfafac9e8e7fde1fbe6f9e0eaa7eae6e4). However, please note that we will not be able to respond if your question is already addressed by the following FAQ.
 
 ------------------------------------------------------------------------
 

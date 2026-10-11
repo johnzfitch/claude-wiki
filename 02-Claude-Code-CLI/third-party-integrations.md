@@ -2,7 +2,7 @@
 title: "Enterprise deployment overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/third-party-integrations"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:32:00Z"
+fetched_at: "2026-10-06T06:23:55Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -42,8 +42,8 @@ For most organizations, Claude for Teams or Claude for Enterprise provides the b
 
 For a feature-by-feature breakdown of what’s available on each option, see [Feature availability](feature-availability.md). Select a deployment option to view setup instructions:
 
-- [Claude for Teams or Enterprise](../13-Enterprise-Admin/iam.md#claude-for-teams-or-enterprise)
-- [Anthropic Console](../13-Enterprise-Admin/iam.md#claude-console-authentication)
+- [Claude for Teams or Enterprise](authentication.md#claude-for-teams-or-enterprise)
+- [Anthropic Console](authentication.md#claude-console-authentication)
 - [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), a self-hosted gateway that adds IdP sign-in in front of Amazon Bedrock, Claude Platform on AWS, Google Cloud’s Agent Platform, Microsoft Foundry, or the Anthropic API
 - [Amazon Bedrock](amazon-bedrock.md)
 - [Claude Platform on AWS](claude-platform-on-aws.md)
@@ -74,14 +74,14 @@ Best practices for organizations
 
 Invest in documentation and memory
 
-We strongly recommend investing in documentation so that Claude Code understands your codebase. Organizations can deploy CLAUDE.md files at multiple levels. See [where CLAUDE.md files can live](memory.md#choose-where-to-put-claude-md-files) and [how to deploy an organization-wide CLAUDE.md](memory.md#deploy-organization-wide-claude-md).
+Invest in documentation so that Claude Code understands your codebase. Organizations can deploy CLAUDE.md files at multiple levels. See [where CLAUDE.md files can live](memory.md#choose-where-to-put-claude-md-files) and [how to deploy an organization-wide CLAUDE.md](memory.md#deploy-organization-wide-claude-md).
 
 
 [​](#simplify-deployment)
 
 Simplify deployment
 
-If you have a custom development environment, we find that creating a “one click” way to install Claude Code is key to growing adoption across an organization.
+If you have a custom development environment, creating a “one click” way to install Claude Code is key to growing adoption across an organization.
 
 
 [​](#start-with-guided-usage)
@@ -102,14 +102,14 @@ If you deploy through [Amazon Bedrock](amazon-bedrock.md), [Google Cloud’s Age
 
 Configure security policies
 
-Security teams can configure managed permissions for what Claude Code is and is not allowed to do, which cannot be overwritten by local configuration. [Learn more](../13-Enterprise-Admin/security.md).
+Security teams can configure managed permissions for what Claude Code is and is not allowed to do, which cannot be overwritten by local configuration. [Learn more](../13-Enterprise-Admin/security.md). To limit which of these deployment options a managed machine may use, set [`allowedProviders`](settings-reference.md#allowedproviders) in managed settings. For example, `["bedrock"]` allows Amazon Bedrock and nothing else; a Bedrock fleet that also enables the Mantle endpoint lists `"mantle"` too. The entry says which endpoint variables also need a managed `env` pin. Requires Claude Code v2.1.285 or later.
 
 
 [​](#leverage-mcp-for-integrations)
 
 Use MCP for integrations
 
-MCP is a great way to give Claude Code more information, such as connecting to ticket management systems or error logs. We recommend that one central team configures MCP servers and checks a `.mcp.json` configuration into the codebase so that all users benefit. [Learn more](../06-MCP-Tools/General/mcp.md).
+MCP is a great way to give Claude Code more information, such as connecting to ticket management systems or error logs. Have one central team configure MCP servers and check a `.mcp.json` configuration into the codebase so that all users benefit. [Learn more](../06-MCP-Tools/General/mcp.md).
 
 
 [​](#next-steps)

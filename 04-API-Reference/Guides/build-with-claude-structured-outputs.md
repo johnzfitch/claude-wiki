@@ -2,8 +2,8 @@
 title: "Structured outputs - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:36Z"
-tags: ["api"]
+fetched_at: "2026-10-04T08:33:58Z"
+tags: ["api", "sdk"]
 ---
 
 - [Managed Agents](../Other/managed-agents-overview.md)
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,22 +96,18 @@ Get validated JSON results from agent workflows
 
 Structured outputs
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](build-with-claude-api-and-data-retention.md)
 
 Eligible
 
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+excludes [Covered Models](build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 Structured outputs constrain Claude's responses to follow a specific schema, ensuring valid, parseable output for downstream processing. Structured outputs provide two complementary features:
 
-- **JSON outputs** (`output_config.format`): Get Claude's response in a specific JSON format
-- **Strict tool use** (`strict: true`): Guarantee schema validation on tool names and inputs
+- **JSON outputs** (`output_config.format`): Get Claude's response in a specific JSON format, for example to extract data from images or text, generate structured reports, or format API responses. This page covers JSON outputs.
+- **Strict tool use** (`strict: true`): Guarantee schema validation on tool names and inputs. See [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
 
-You can use these features independently or together in the same request.
-
-
-
-**Migrating from beta?** The `output_format` parameter has moved to `output_config.format`, and beta headers are no longer required. The `output_format` parameter is deprecated and will be removed in the future. To use it anyway, add the `structured-outputs-2025-11-13` beta header. Without it, the API returns a 400 error. The Python SDK (v1.0 and later) does not accept `output_format={...}` on `client.beta.messages.create()` or `count_tokens()` and raises a `TypeError`; use `output_config` instead. See the following code examples for the updated API shape.
+You can use these features independently or [together in the same request](#using-both-features-together).
 
 ## Why use structured outputs
 
@@ -128,16 +124,27 @@ Structured outputs guarantee schema-compliant responses through constrained deco
 - **Type safe:** Guaranteed field types and required fields
 - **Reliable:** No retries needed for schema violations
 
-## JSON outputs
+## How it works
 
-JSON outputs control Claude's response format, ensuring Claude returns valid JSON matching your schema. Use JSON outputs when you need to:
+1.  1
 
-- Control Claude's response format
-- Extract data from images or text
-- Generate structured reports
-- Format API responses
+    ### Define your schema
 
-### Quick start
+    Describe the structure you want as a JSON schema or as a type in your language. The schema follows JSON Schema, with some [limitations](#json-schema-limitations).
+
+2.  2
+
+    ### Send it in output_config.format
+
+    The request carries the schema in `output_config.format` with `type: "json_schema"`. SDK helpers set this for you.
+
+3.  3
+
+    ### Read the response
+
+    Claude returns valid JSON that matches your schema in the response's text content block. SDK helpers parse it into your type.
+
+## Usage
 
 cURL
 
@@ -157,7 +164,88 @@ PHP
 
 Ruby
 
+```python
+from pydantic import BaseModel
+# ...
+
+
+class ContactInfo(BaseModel):
+    name: str
+    email: str
+    plan_interest: str
+    demo_requested: bool
+
+
+client = Anthropic()
+
+response = client.messages.parse(
+    model="claude-opus-5-5",
+    max_tokens=1024,
+    messages=[
+        {
+            "role": "user",
+            "content": (
+                "Extract the key information from this email: "
+                "John Smith (john@example.com) is interested in our Enterprise plan "
+                "and wants to schedule a demo for next Tuesday at 2pm."
+            ),
+        }
+    ],
+    output_format=ContactInfo,
+)
+
+print(response.parsed_output)
+```
+
 
+
+Pass a [Pydantic](https://docs.pydantic.dev/) model to `client.messages.parse()`, the recommended method, as `output_format`. The SDK transforms the model's schema, sends it as `output_config.format`, validates the response, and returns the parsed model in `parsed_output`.
+
+The example above outputs:
+
+Output
+
+
+
+``` block
+name='John Smith' email='john@example.com' plan_interest='Enterprise' demo_requested=True
+```
+
+## How SDK transformation works
+
+Most SDK helpers transform schemas that use unsupported features. The transformation steps:
+
+1.  **Remove unsupported constraints** (for example, `minimum`, `maximum`, `minLength`, `maxLength`)
+2.  **Update descriptions** by adding each unsupported constraint to the field's description (for example, `{minimum: 100}`)
+3.  **Add `additionalProperties: false`** to all objects
+4.  **Filter string formats** to supported list only
+5.  **Validate responses** against your original schema and all its constraints, if the helper validates responses
+
+Claude receives a simplified schema, but a helper that validates responses still enforces every constraint in your code.
+
+**Example:** A field with `minimum: 100` becomes a plain integer in the sent schema, and the SDK adds `{minimum: 100}` to the field's description. A helper that validates responses still checks the response against `minimum: 100`.
+
+## Using a raw JSON schema
+
+To use a JSON schema from a file, an OpenAPI spec, or code that builds it at runtime, pass it in `output_config.format`.
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
 
 ```python
 client = anthropic.Anthropic()
@@ -168,7 +256,11 @@ response = client.messages.create(
     messages=[
         {
             "role": "user",
-            "content": "Extract the key information from this email: John Smith (john@example.com) is interested in our Enterprise plan and wants to schedule a demo for next Tuesday at 2pm.",
+            "content": (
+                "Extract the key information from this email: "
+                "John Smith (john@example.com) is interested in our Enterprise plan "
+                "and wants to schedule a demo for next Tuesday at 2pm."
+            ),
         }
     ],
     output_config={
@@ -188,205 +280,26 @@ response = client.messages.create(
         }
     },
 )
-print(next(block.text for block in response.content if block.type == "text"))
+text = next(block.text for block in response.content if block.type == "text")
+contact = json.loads(text)
+print(contact)
 ```
 
-**Response format:** Valid JSON matching your schema in the response's text content block
+
+
+The example above outputs:
 
 Output
 
 
 
-```python
-{
-  "name": "John Smith",
-  "email": "john@example.com",
-  "plan_interest": "Enterprise",
-  "demo_requested": true
-}
+``` block
+{'name': 'John Smith', 'email': 'john@example.com', 'plan_interest': 'Enterprise', 'demo_requested': True}
 ```
 
-### How it works
+To move [constraints not supported by the API](#json-schema-limitations) into field descriptions, pass the schema through `transform_schema()` from the `anthropic` package before sending it, and edit the result if you need to. `transform_schema()` also accepts a Pydantic model. Unlike `client.messages.parse()`, it returns the transformed schema rather than sending it.
 
-1.  1
-
-    ### Define your JSON schema
-
-    Create a JSON schema that describes the structure you want Claude to follow. The schema uses standard JSON Schema format with some limitations (see [JSON Schema limitations](#json-schema-limitations)).
-
-2.  2
-
-    ### Add the output_config.format parameter
-
-    Include the `output_config.format` parameter in your API request with `type: "json_schema"` and your schema definition.
-
-3.  3
-
-    ### Parse the response
-
-    Claude's response is valid JSON matching your schema, returned in the response's text content block.
-
-### Working with JSON outputs in SDKs
-
-The SDKs provide helpers that make it easier to work with JSON outputs, including schema transformation, automatic validation, and integration with popular schema libraries.
-
-
-
-The Python SDK's `client.messages.parse()` still accepts `output_format` as a convenience parameter and translates it to `output_config.format` internally. Other SDKs require `output_config` directly. The following examples show the SDK helper syntax.
-
-#### Using native schema definitions
-
-Instead of writing raw JSON schemas, you can use familiar schema definition tools in your language:
-
-- **Python:** [Pydantic](https://docs.pydantic.dev/) models with `client.messages.parse()`
-- **TypeScript:** [Zod](https://zod.dev/) schemas with `zodOutputFormat()` or typed JSON Schema literals with `jsonSchemaOutputFormat()`
-- **Java:** Plain Java classes with automatic schema derivation through `outputConfig(Class<T>)`
-- **Ruby:** `Anthropic::BaseModel` classes with `output_config: {format: Model}`
-- **PHP:** Classes implementing `StructuredOutputModel` with `outputConfig: ['format' => MyClass::class]`
-- **C#:** Plain C# classes with the generic `Create<T>()` overload, which derives the schema automatically
-- **Go:** Go structs reflected into JSON schemas automatically on the beta API, or raw JSON schemas through `output_config`
-- **CLI:** Raw JSON schemas passed through `output_config`
-
-CLI
-
-Python
-
-TypeScript
-
-C#
-
-Go
-
-Java
-
-PHP
-
-Ruby
-
-
-
-```python
-from pydantic import BaseModel
-from anthropic import Anthropic
-
-
-class ContactInfo(BaseModel):
-    name: str
-    email: str
-    plan_interest: str
-    demo_requested: bool
-
-
-client = Anthropic()
-
-response = client.messages.parse(
-    model="claude-opus-5-5",
-    max_tokens=1024,
-    messages=[
-        {
-            "role": "user",
-            "content": "Extract the key information from this email: John Smith (john@example.com) is interested in our Enterprise plan and wants to schedule a demo for next Tuesday at 2pm.",
-        }
-    ],
-    output_format=ContactInfo,
-)
-
-print(response.parsed_output)
-```
-
-#### SDK-specific methods
-
-Each SDK provides helpers that make working with structured outputs easier. See individual SDK pages for full details.
-
-CLI
-
-Python
-
-TypeScript
-
-C#
-
-Go
-
-Java
-
-PHP
-
-Ruby
-
-**`client.messages.parse()` (Recommended)**
-
-The `parse()` method automatically transforms your Pydantic model, validates the response, and returns a `parsed_output` attribute.
-
-```python
-from pydantic import BaseModel
-# ...
-class ContactInfo(BaseModel):
-    name: str
-    email: str
-    plan_interest: str
-# ...
-response = client.messages.parse(
-    model="claude-opus-5-5",
-    max_tokens=1024,
-    messages=[
-        {
-            "role": "user",
-            "content": "Extract contact info: John Smith, john@example.com, interested in the Pro plan",
-        }
-    ],
-    output_format=ContactInfo,
-)
-
-# Access the parsed output directly
-contact = response.parsed_output
-print(contact.name, contact.email)
-```
-
-
-
-**`transform_schema()` helper**
-
-For when you need to manually transform schemas before sending, or when you want to modify a Pydantic-generated schema. Unlike `client.messages.parse()`, which transforms provided schemas automatically, this gives you the transformed schema so you can further customize it.
-
-```python
-from anthropic import transform_schema
-from pydantic import TypeAdapter
-# ...
-
-# First convert Pydantic model to JSON schema, then transform
-schema = TypeAdapter(ContactInfo).json_schema()
-schema = transform_schema(schema)
-# Modify schema if needed
-schema["properties"]["custom_field"] = {"type": "string"}
-
-response = client.messages.create(
-    model="claude-opus-5-5",
-    max_tokens=1024,
-    messages=[{"role": "user", "content": "..."}],
-    output_config={
-        "format": {"type": "json_schema", "schema": schema},
-    },
-)
-```
-
-
-
-#### How SDK transformation works
-
-The Python, TypeScript, Ruby, and PHP SDKs automatically transform schemas with unsupported features. The C# and Go SDKs apply the same transformations when the schema is derived from a native type (`Create<T>()` in C#; struct reflection or `BetaJSONSchemaOutputFormat()` on the Go beta API). The transformation steps:
-
-1.  **Remove unsupported constraints** (for example, `minimum`, `maximum`, `minLength`, `maxLength`)
-2.  **Update descriptions** with constraint info (for example, "Must be at least 100"), when the constraint is not directly supported with structured outputs
-3.  **Add `additionalProperties: false`** to all objects
-4.  **Filter string formats** to supported list only
-5.  **Validate responses** against your original schema (with all constraints)
-
-This means Claude receives a simplified schema, but your code still enforces all constraints through validation.
-
-**Example:** A Pydantic field with `minimum: 100` becomes a plain integer in the sent schema, but the SDK updates the description to "Must be at least 100" and validates the response against the original constraint.
-
-### Common use cases
+## Common use cases
 
 ### Data extraction
 
@@ -538,7 +451,7 @@ print(response.parsed_output)
 
 To enforce JSON Schema compliance on tool inputs with grammar-constrained sampling, see [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
 
-## Using both features together
+### Using both features together
 
 JSON outputs and strict tool use solve different problems and work together:
 
@@ -641,7 +554,7 @@ Structured outputs support standard JSON Schema with some limitations. Both JSON
 ### Supported features
 
 - All basic types: object, array, string, integer, number, boolean, null
-- `enum` (strings, numbers, bools, or nulls only - no complex types; see [Invalid outputs](#invalid-outputs) for a capitalization caveat)
+- `enum` (strings, numbers, bools, or nulls only - no complex types). For a capitalization caveat, see [Invalid outputs](#invalid-outputs).
 - `const`
 - `anyOf` and `allOf` (with limitations - `allOf` with `$ref` not supported)
 - `$ref`, `$def`, and `definitions` (external `$ref` not supported)
@@ -682,7 +595,7 @@ Simple regex patterns work well. Complex patterns may result in 400 errors.
 
 
 
-The Python, TypeScript, Ruby, and PHP SDKs can automatically transform schemas with unsupported features by removing them and adding constraints to field descriptions. The C# and Go SDKs do the same when the schema is derived from a native type. See [SDK-specific methods](#sdk-specific-methods) for details.
+SDK helpers can transform schemas with [constraints not supported by the API](#json-schema-limitations). See [How SDK transformation works](#how-sdk-transformation-works).
 
 ### Property ordering
 
@@ -740,6 +653,8 @@ Claude maintains its safety and helpfulness properties even when using structure
 - You'll receive a 200 status code
 - You'll be billed for the tokens generated
 - The output may not match your schema because the refusal message takes precedence over schema constraints
+
+A property that asks for the model's thinking or step-by-step reasoning may lead to a `reasoning_extraction` refusal. Ask for a short explanation instead. See [Keep reasoning in thinking blocks](build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 **Token limit reached** (`stop_reason: "max_tokens"`)
 
@@ -800,7 +715,13 @@ If you're hitting complexity limits, try these strategies in order:
 
 4.  **Split into multiple requests.** If you have many strict tools, consider splitting them across separate requests or sub-agents.
 
-For persistent issues with valid schemas, [contact support](https://platform.claude.com/docs/21-Account-Support/how-to-get-support-57c428239c.md) with your schema definition.
+For persistent issues with valid schemas, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support) with your schema definition.
+
+## Migrating from the beta
+
+The `output_format` parameter has moved to `output_config.format`, and beta headers are no longer required. The `output_format` parameter is deprecated and will be removed in the future. To use it anyway, add the `structured-outputs-2025-11-13` beta header. Without it, the API returns a 400 error.
+
+The Python SDK (v1.0 and later) does not accept `output_format={...}` on `client.beta.messages.create()` or `count_tokens()` and raises a `TypeError`. Use `output_config` instead. See [Using a raw JSON schema](#using-a-raw-json-schema) for the updated API shape.
 
 ## Data retention
 
@@ -808,7 +729,7 @@ Prompts and responses are processed with ZDR when using structured outputs. Howe
 
 Structured outputs are HIPAA eligible, but **PHI must not be included in JSON schema definitions**. The API compiles JSON schemas into grammars that are cached separately from message content, and these cached schemas do not receive the same PHI protections as prompts and responses. Do not include PHI in schema property names, `enum` values, `const` values, or `pattern` regular expressions. PHI should only appear in message content (prompts and responses), where it is protected under HIPAA safeguards.
 
-For ZDR and HIPAA eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR and HIPAA eligibility across all features, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 ## Feature compatibility
 
@@ -817,7 +738,7 @@ For ZDR and HIPAA eligibility across all features, see [API and data retention](
 - **[Batch processing](build-with-claude-batch-processing.md):** Process structured outputs at scale with 50% discount
 - **[Token counting](build-with-claude-token-counting.md):** Count tokens without compilation
 - **[Streaming](build-with-claude-streaming.md):** Stream structured outputs like normal responses
-- **Combined usage:** Use JSON outputs (`output_config.format`) and strict tool use (`strict: true`) together in the same request
+- **[Combined usage](#using-both-features-together):** Use JSON outputs (`output_config.format`) and strict tool use (`strict: true`) together in the same request
 
 **Incompatible with:**
 
@@ -856,7 +777,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5, 5.1, and Preview
 - Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
-- Sonnet 4.5, 4.6, and 5
+- Sonnet 4.5, 4.6, 5, and 5.5
 - Haiku 4.5
 
 Supported platforms  
@@ -866,4 +787,4 @@ Supported platforms
 - Google Cloud
 - Microsoft Foundry
 
-1.  On Amazon Bedrock, structured outputs are available for Claude Opus 4.6, Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Opus 4.5, and Claude Haiku 4.5. [↩](#compat-fnref-1)
+1.  On Amazon Bedrock, structured outputs are available on the legacy [Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md) integration for Claude Opus 4.6, Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Opus 4.5, and Claude Haiku 4.5, and not on [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md). [↩](#compat-fnref-1)

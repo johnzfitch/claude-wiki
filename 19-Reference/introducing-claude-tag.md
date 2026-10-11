@@ -16,7 +16,7 @@ We’re starting on Slack, which Claude can join as a team member. Grant Claude 
 
 We see Claude Tag as the beginning of an evolution of Claude Code: it makes the model even more proactive, and it works better with a full team. Tagging **@Claude** is now one of the main ways we get things done at Anthropic. Today, 65% of our product team’s code is created by our internal version of Claude Tag. The same pattern is now spreading well beyond engineering—we’re tagging Claude to chase down product metrics and data, work through support tickets, or even help find the root cause of tricky bugs.
 
-We’re launching [Claude Tag on Slack](../14-Connectors/claude-for-slack.md), since it’s a natural home for collaborative work between teams and AI, and where much of Anthropic’s day-to-day work already happens. It’s available today in beta for Claude Enterprise and Team customers. Our goal is to expand where it’s available more widely, so that teams can tag @Claude in the many other places they work.
+We’re launching [Claude Tag on Slack](../15-Claude-AI-Features/product-tag.md), since it’s a natural home for collaborative work between teams and AI, and where much of Anthropic’s day-to-day work already happens. It’s available today in beta for Claude Enterprise and Team customers. Our goal is to expand where it’s available more widely, so that teams can tag @Claude in the many other places they work.
 
 ## Working with @Claude
 
@@ -51,7 +51,7 @@ If you’re a Claude Enterprise or Team customer, you have access to Claude Tag 
 
 Claude Tag replaces the existing [Claude in Slack](https://www.anthropic.com/14-Connectors/get-started-with-claude-in-slack-ad4d7e43e7.md) app. To migrate, administrators can opt in within 30 days. We’re issuing an introductory [launch credit](../13-Enterprise-Admin/claude-tag-launch-promo-for-claude-team-and-enterprise.md) to eligible Enterprise and Team organizations so that the whole company can try it out.
 
-Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/docs/claude-tag/overview) and [product page](../14-Connectors/claude-for-slack.md).
+Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/docs/claude-tag/overview) and [product page](../15-Claude-AI-Features/product-tag.md).
 
 
 ## Related content
@@ -73,10 +73,10 @@ Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/d
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -102,7 +102,7 @@ Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/d
 - [Coding](../18-Industry-UseCases/coding.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -122,7 +122,7 @@ Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/d
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

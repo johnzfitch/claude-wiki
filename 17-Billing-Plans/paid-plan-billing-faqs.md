@@ -2,13 +2,11 @@
 title: "Paid plan billing FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325618"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:19Z"
-tags: ["billing"]
+fetched_at: "2026-10-10T06:28:27Z"
+tags: ["api", "billing"]
 ---
 
 # Paid plan billing FAQs
-
-July 13, 2026
 
 
 This article covers Pro and Max subscriptions purchased on the web. If you subscribed through Claude for iOS or Claude for Android, your payment is handled by the Apple App Store or Google Play, and you'll manage your payment method and receipts through your app store account. To cancel or manage an app store subscription, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
@@ -81,3 +79,7 @@ If you've paid for a Pro or Max plan but are not seeing this reflected in your a
 1.  You've logged in with a different email. We recommend trying to sign in with any alternative emails you may have used to create your paid account.
 
 2.  Your payment method failed and your account was downgraded. To check this, navigate to **[Settings \> Billing](https://claude.ai/settings/billing)** to confirm your recent payment status and update your payment method or billing details if needed.
+
+## Where can I see my monthly API credits?
+
+In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.

@@ -2,7 +2,7 @@
 title: "Get started with Agent Skills in the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:16Z"
+fetched_at: "2026-10-04T08:32:36Z"
 tags: ["agents", "api", "skills"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api", "skills"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -98,7 +98,7 @@ This tutorial shows you how to use Agent Skills to create a PowerPoint presentat
 
 ## Prerequisites
 
-- A [Claude API key](../Other/usage-limits.md) or a logged-in [ant CLI](../Other/cli-sdks-libraries-cli-authentication.md)
+- A [Claude API key](../Other/playground.md) or a logged-in [ant CLI](../Other/cli-sdks-libraries-cli-authentication.md)
 - A [client SDK](../Other/cli-sdks-libraries-overview.md) for your language, or `curl` and `jq`
 - Basic familiarity with making API requests
 

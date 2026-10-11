@@ -2,7 +2,7 @@
 title: "Orchestrate subagents at scale with dynamic workflows - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/workflows"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:46Z"
+fetched_at: "2026-10-09T06:27:25Z"
 tags: ["agents", "claude-code", "subagents"]
 ---
 
@@ -36,6 +36,7 @@ tags: ["agents", "claude-code", "subagents"]
 - [Manage runs](#manage-runs)
   - [Resume after a pause](#resume-after-a-pause)
   - [When a run hits your usage limit](#when-a-run-hits-your-usage-limit)
+  - [When an agent stalls and restarts](#when-an-agent-stalls-and-restarts)
   - [Cost](#cost)
   - [Set a size guideline](#set-a-size-guideline)
   - [Turn workflows off](#turn-workflows-off)
@@ -100,13 +101,13 @@ Claude Code asks whether to allow the workflow. Select **Yes** to continue. The 
 
 Watch progress
 
-The run starts in the background. Run `/workflows`, use the arrow keys to select the run, and press Enter to open its progress view:
+The run starts in the background. Run `/workflows` to open its progress view:
 
 ```python
 /workflows
 ```
 
-The view shows each phase with its agent count, token total, and elapsed time. Drill into any phase to see its agents and what each one found. See [Watch the run](#watch-the-run) for the full set of controls.You can also watch from the task panel below the input box: a one-line progress summary appears there while the run is going. Press the down arrow to focus it, then Enter to expand.
+If `/workflows` shows a list of runs instead, select the run you just started and press Enter. The view shows each phase with its agent count. Drill into any phase to see its agents and what each one found. See [Watch the run](#watch-the-run) for the full set of controls.You can also watch from the task panel below the input box: a one-line progress summary appears there while the run is going. Press the down arrow to focus it, then Enter to expand.
 
 4
 
@@ -134,7 +135,7 @@ Claude Code includes `/deep-research` as a built-in workflow:
 
 Watch the run
 
-Workflows run in the background, so the session stays responsive while agents work. Run `/workflows` at any time to list running and completed workflows, then select one to open its progress view. To stop a running workflow without opening it, select it in the list and press `x`. The progress view shows each phase with its agent counts, token totals, and elapsed time. The footer lists the key for each action:
+Workflows run in the background, so the session stays responsive while agents work. Run `/workflows` at any time to list running and completed workflows, then select one to open its progress view. When the session has only one run, `/workflows` skips the list and opens that run. To stop a running workflow from the list without opening it, select it and press `x`. The progress view shows each phase with its agent counts. The footer lists the key for each action:
 
 | Key            | Action                                                                                                                      |
 |:---------------|:----------------------------------------------------------------------------------------------------------------------------|
@@ -227,7 +228,7 @@ In the CLI, the per-run prompt shows the planned phases and these options:
 - **View raw script**: read the script before deciding
 - **No**: cancel
 
-`Ctrl+G` opens the script in your editor. `Tab` lets you adjust the prompt before the run starts. Whether you see this prompt depends on your [permission mode](permission-modes.md):
+`Ctrl+G` opens the script in your editor. With **Yes, run it** or **No** selected, press `Tab` to [add a comment](permissions.md#add-a-comment-when-you-answer-a-permission-prompt) to your answer. Whether you see this prompt depends on your [permission mode](permission-modes.md):
 
 | Permission mode        | When you’re prompted                                                                                                                                    |
 |:-----------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -241,8 +242,8 @@ In `claude -p` and the Agent SDK, Claude Code never shows this prompt. It runs t
 - **Permission rule**: `Workflow` in your allow rules approves every workflow, and `Workflow(<name>)` approves one saved workflow by name.
 - **Auto permission mode**: the [classifier](permission-modes.md#eliminate-prompts-with-auto-mode) reviews the call and can approve it.
 - **Bypass permissions mode**: Claude Code approves the call.
-- **A `PreToolUse` hook**: a [hook](../07-Hooks/hooks.md#pretooluse) that returns `allow` for the call approves it.
-- **Your host**: a [`--permission-prompt-tool`](cli-reference.md#cli-flags) approves it, or, with the Agent SDK, a [`canUseTool`](../05-Agent-SDK/agent-sdk-permissions.md) callback or a [`PermissionRequest` hook](../07-Hooks/hooks.md#permissionrequest) approves it.
+- **A hook**: a [`PreToolUse`](../07-Hooks/hooks.md#pretooluse) hook that allows the call approves it.
+- **Your host**: a [`--permission-prompt-tool`](cli-reference.md#cli-flags) or, with the Agent SDK, a [`canUseTool`](../05-Agent-SDK/agent-sdk-permissions.md) callback approves it.
 
 In the Desktop app, an approval card shows the workflow name, the phase list, and a token-usage caution, with **Once**, **Always**, and **Deny** actions. The progress view appears in the Background tasks side pane. The subagents the workflow spawns use your [permission rules](settings-reference.md#permission-settings), and Claude Code picks their permission mode by the rules under [which permission mode a subagent runs in](../09-Agents-Patterns/sub-agents.md#permission-modes). To avoid prompts on a long run, add the tools the agents need to your allow rules before starting.
 
@@ -380,7 +381,7 @@ const audits = await pipeline(found.files, file =>
 return audits.filter(Boolean)
 ```
 
-The body is plain JavaScript with top-level `await`. `agent()` spawns one subagent, `pipeline()` runs one per item in a list, and `parallel()` runs a set of agent tasks at the same time and waits for all of them. An `agent()` call resolves to `null` if you stop it mid-run or it hits an unrecoverable API error. `pipeline()` keeps each `null` in the results array, which is why the example ends with `.filter(Boolean)` to drop those entries. In [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode), the prompt your script passes to `agent()` doesn’t count as a request from you when the classifier reviews that subagent’s actions, because Claude Code marks it as text the script computed. If you pass a `schema` on an `agent()` call, that subagent returns JSON matching the shape instead of prose. Claude Code checks the schema before starting the subagent: when it can prove the schema contradicts itself, the call fails with an error naming the contradiction, and the subagent never starts. One contradiction it can prove is a `required` key that `additionalProperties: false` rules out. If the subagent’s output still fails validation after five attempts, the call fails with an error that includes the last validation failure. To change the attempt count, set [`MAX_STRUCTURED_OUTPUT_RETRIES`](env-vars.md).
+The body is plain JavaScript with top-level `await`. `agent()` spawns one subagent, `pipeline()` runs one per item in a list, and `parallel()` runs a set of agent tasks at the same time and waits for all of them. An `agent()` call resolves to `null` if you stop it mid-run or it hits an unrecoverable API error. `pipeline()` keeps each `null` in the results array, which is why the example ends with `.filter(Boolean)` to drop those entries, including the slot of [an agent that stalled on every attempt](#when-an-agent-stalls-and-restarts). In [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode), the prompt your script passes to `agent()` doesn’t count as a request from you when the classifier reviews that subagent’s actions, because Claude Code marks it as text the script computed. If you pass a `schema` on an `agent()` call, that subagent returns JSON matching the shape instead of prose. Claude Code checks the schema before starting the subagent: when it can prove the schema contradicts itself, the call fails with an error naming the contradiction, and the subagent never starts. One contradiction it can prove is a `required` key that `additionalProperties: false` rules out. If the subagent’s output still fails validation after five attempts, the call fails with an error that includes the last validation failure. To change the attempt count, set [`MAX_STRUCTURED_OUTPUT_RETRIES`](env-vars.md).
 
 
 [​](#edit-a-saved-script)
@@ -465,6 +466,29 @@ When an agent hits your claude.ai [usage limit](interactive-mode.md#wait-for-a-u
 - The run hasn’t already waited twice. When it hits the limit a third time, the agent fails.
 
 
+[​](#when-an-agent-stalls-and-restarts)
+
+When an agent stalls and restarts
+
+An agent whose output stops arriving for long enough starts over from the same prompt. In [`/workflows`](#watch-the-run), its name gains a `(retry 1)` suffix and its detail shows `attempt 2 (stalled)`. The restart is automatic, so you don’t need to do anything. The new attempt starts without the stalled attempt’s transcript. Files the stalled attempt already changed stay changed, and the tokens it spent stay in the run’s total. The stall window is how long Claude Code waits for output from an agent before it ends the attempt. Time the agent spends waiting on its own tool calls or on a [usage-limit reset](#when-a-run-hits-your-usage-limit) doesn’t count toward the stall window. An agent restarts at most five times, counting any restart you ask for with `r`. If the sixth attempt stalls as well, the `agent()` call fails, and the start of the error says why:
+
+- `agent stalled on all 6 attempts`: every attempt went the whole window without output. If the agent’s work keeps it silent that long, lengthen the window
+- `agent lost its reply on all 6 attempts`: every attempt’s response stream went silent and Claude Code gave up waiting on it. Lengthening the stall window doesn’t help, since a [streaming idle watchdog](../13-Enterprise-Admin/network-config.md#streaming-idle-watchdogs) ended the response first and `CLAUDE_STREAM_IDLE_TIMEOUT_MS` sets that watchdog’s timeout
+- `agent abandoned after 6 attempts`: the attempts ended in different ways, which the error lists in order
+
+To give an agent more time to produce output before the window ends:
+
+- **One agent**: pass `stallMs` in milliseconds on its `agent()` call, such as `agent(prompt, { stallMs: 1800000 })` for 30 minutes
+- **Every agent**: set [`CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS`](env-vars.md#variables), which also applies to subagents outside workflows
+
+Whether the run continues after the failure depends on how your script called the agent:
+
+- **Inside [`parallel()` or `pipeline()`](#what-the-saved-script-looks-like)**: the run carries on with `null` in place of the agent’s result
+- **Awaited directly**: the run ends with the error
+
+To try again, ask Claude to relaunch the workflow. [Resume after a pause](#resume-after-a-pause) covers what runs again.
+
+
 [​](#cost)
 
 Cost
@@ -508,7 +532,12 @@ Workflows are available in the CLI, the Desktop app, the IDE extensions, [non-in
 - Set `"disableWorkflows": true` in `~/.claude/settings.json`. Persists across sessions.
 - Set `CLAUDE_CODE_DISABLE_WORKFLOWS=1`. Read at startup, so it applies wherever you set it.
 
-To turn workflows off for your whole organization, set `"disableWorkflows": true` in [managed settings](../13-Enterprise-Admin/server-managed-settings.md), or use the toggle on the [Claude Code admin settings](https://claude.ai/admin-settings/claude-code) page. When workflows are disabled, the bundled workflow commands and the `/workflow-authoring` skill are unavailable, the `ultracode` keyword no longer triggers a run, and the **Ultracode** toggle is removed from `/effort`. A run that was already in progress keeps going. Turning workflows off also makes [ultracode](#let-claude-decide-with-ultracode) unavailable. No managed setting rules out ultracode alone: wherever it’s [available](model-config.md#when-ultracode-is-available), users can turn it on with `/effort ultracode`. An [effort cap](model-config.md#organization-effort-limits) lowers the effort level a session with ultracode on runs at, but doesn’t turn ultracode off.
+To turn workflows off for your whole organization, set `"disableWorkflows": true` in [managed settings](../13-Enterprise-Admin/server-managed-settings.md), or use the toggle on the [Claude Code admin settings](https://claude.ai/admin-settings/claude-code) page. When workflows are disabled:
+
+- `/workflows`, the workflow commands, and the `/workflow-authoring` skill are unavailable
+- The `ultracode` keyword no longer triggers a run, and the **Ultracode** toggle is removed from `/effort`
+
+A run that was already in progress keeps going. Turning workflows off also makes [ultracode](#let-claude-decide-with-ultracode) unavailable. No managed setting rules out ultracode alone: wherever it’s [available](model-config.md#when-ultracode-is-available), users can turn it on with `/effort ultracode`. An [effort cap](model-config.md#organization-effort-limits) lowers the effort level a session with ultracode on runs at, but doesn’t turn ultracode off.
 
 
 [​](#related-resources)

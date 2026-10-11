@@ -2,7 +2,7 @@
 title: "Anthropic Education Report: How University Students Use Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-education-report-how-university-students-use-claude"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:32:07Z"
+fetched_at: "2026-10-10T06:28:37Z"
 tags: ["news-research"]
 ---
 
@@ -152,31 +152,33 @@ Additionally, we appreciate helpful discussion and comments from Rose E. Wang, L
 
 ## Related content
 
-### Claude discovers a novel enzyme system with CRISPR-like repeats
+### 2026 Usage Policy update
 
-We’re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR, with only high-level direction from our scientists.
+We’re publishing a new version of our Usage Policy. In this post, we summarize the changes we’ve made.
 
-[Read more](claude-discovers-novel-enzyme-system.md)
+[Read more](2026-usage-policy-update.md)
 
-### Partnering with Accenture on embedded evaluation
+### Building on our commitment to American scientific discovery
 
-[Read more](accenture-embedded-evaluation.md)
+Anthropic is committing \$150 million over three years to the Genesis Mission, a federal initiative to accelerate scientific and technological discovery through AI.
 
-### Introducing the Life Sciences Verification Program
+[Read more](genesis-mission-commitment.md)
 
-The Life Sciences Verification Program (LSVP) gives life science professionals access to Claude Mythos, Opus, and Sonnet models with a refined set of safeguards more permissive for biology-related work.
+### Introducing the Anthropic Cyber Mission
 
-[Read more](life-sciences-verification-program.md)
+We’re launching the Anthropic Cyber Mission, a long-term commitment to securing the systems everyone depends on.
+
+[Read more](anthropic-cyber-mission.md)
 
 [](https://www.anthropic.com/)
 
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -203,7 +205,8 @@ The Life Sciences Verification Program (LSVP) gives life science professionals a
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -224,7 +227,7 @@ The Life Sciences Verification Program (LSVP) gives life science professionals a
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -247,8 +250,10 @@ The Life Sciences Verification Program (LSVP) gives life science professionals a
 
 ### Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ### Help and security
 

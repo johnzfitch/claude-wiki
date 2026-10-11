@@ -2,7 +2,7 @@
 title: "Create a Claude Code plugin - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/create"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-28T06:33:10Z"
+fetched_at: "2026-10-10T06:27:46Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -14,10 +14,10 @@ tags: ["claude-code", "plugins"]
   - [Plugin layout](#plugin-layout)
 - [Develop without a marketplace](#develop-without-a-marketplace)
   - [Load a plugin for one session](#load-a-directory-or-archive-for-one-session)
-  - [From a directory or .zip](#from-a-directory-or-zip)
-  - [From a folder of plugins](#load-a-folder-of-plugins)
-  - [From a URL](#fetch-an-archive-from-a-url-for-one-session)
-  - [From an environment variable](#from-an-environment-variable)
+  - [Load a plugin from a directory or .zip](#load-a-plugin-from-a-directory-or-zip)
+  - [Load a folder of plugins](#load-a-folder-of-plugins)
+  - [Load a plugin from a URL](#load-a-plugin-from-a-url)
+  - [Load plugins from an environment variable](#load-plugins-from-an-environment-variable)
   - [Make a plugin load in every session](#scaffold-a-plugin-that-loads-every-session)
   - [Scaffold the plugin with claude plugin init](#scaffold-the-plugin-with-claude-plugin-init)
   - [Name the plugin’s skills](#skill-names-in-a-scaffolded-plugin)
@@ -136,7 +136,7 @@ disable-model-invocation: true
 Greet the user warmly and ask how you can help them today.
 ```
 
-The `disable-model-invocation: true` line means Claude doesn’t run the skill on its own, so only you trigger it. Remove that line from a skill you want Claude to run on its own. The skill’s command combines the plugin name and the skill’s name, so you run this one as `/my-first-plugin:hello`. For the other frontmatter fields, see the [skill frontmatter reference](skills.md#frontmatter-reference).
+The `disable-model-invocation: true` line means Claude doesn’t run the skill on its own. Remove that line from a skill you want Claude to run on its own. The skill’s command combines the plugin name and the skill’s name, so you run this one as `/my-first-plugin:hello`. For the other frontmatter fields, see the [skill frontmatter reference](skills.md#frontmatter-reference).
 
 4
 
@@ -220,9 +220,9 @@ Load a plugin for one session
 You can load a plugin for a single session in three ways: from a directory or `.zip` archive on disk with `--plugin-dir`, from a URL with `--plugin-url`, or from an environment variable when you can’t add a flag. Each plugin loads for that session only, and nothing is written to your settings for it. When you edit the plugin’s files during the session, run `/reload-plugins` to load the changes.
 
 
-[​](#from-a-directory-or-zip)
+[​](#load-a-plugin-from-a-directory-or-zip)
 
-From a directory or `.zip`
+Load a plugin from a directory or `.zip`
 
 When you start `claude` from your shell, pass `--plugin-dir` with the plugin’s root directory or a `.zip` archive of it. Repeat the flag to load several plugins:
 
@@ -233,7 +233,7 @@ claude --plugin-dir ./my-first-plugin --plugin-dir ./other-plugin.zip
 
 [​](#load-a-folder-of-plugins)
 
-From a folder of plugins
+Load a folder of plugins
 
 To load several plugins from one place, pass a folder that holds them, such as `--plugin-dir ./plugins`. Loading a folder of plugins requires Claude Code v2.1.265 or later. If the folder has no `.claude-plugin/` directory and no plugin components at its top level, Claude Code treats it as a folder of plugins. Each immediate subfolder that has a `.claude-plugin/plugin.json` manifest then loads as a separate plugin. Everything else in the folder is skipped without an error, including a subfolder that has no manifest. If a plugin in the folder doesn’t load, check that its subfolder has a `.claude-plugin/plugin.json`. You can also pass a folder that keeps a `.claude-plugin/marketplace.json` beside its plugin folders. As long as that `.claude-plugin/` directory holds no `plugin.json`, the plugin folders still load. Nothing is installed or enabled from the marketplace file, because Claude Code doesn’t read it. Loading plugins from such a folder requires Claude Code v2.1.281 or later. In an interactive session, you can also add and remove plugins in the folder after startup:
 
@@ -243,9 +243,9 @@ To load several plugins from one place, pass a folder that holds them, such as `
 A message appears in the session for each of these changes. If loading or unloading a plugin mid-conversation would [invalidate the prompt cache](../02-Claude-Code-CLI/prompt-caching.md#enabling-or-disabling-a-plugin), the change is held instead, and the message tells you to run `/reload-plugins` to apply it.
 
 
-[​](#fetch-an-archive-from-a-url-for-one-session)
+[​](#load-a-plugin-from-a-url)
 
-From a URL
+Load a plugin from a URL
 
 When you start `claude` from your shell, pass `--plugin-url` with the address of a `.zip` archive, such as a build artifact your CI publishes:
 
@@ -256,9 +256,9 @@ claude --plugin-url https://example.com/my-first-plugin.zip
 Claude Code downloads the archive at startup. To load several, repeat the flag or pass the URLs space-separated in one quoted argument. Point the flag only at archives you control or trust. If Claude Code can’t fetch the archive, or the archive is invalid, it starts without the plugin and records a plugin load error that you can review in the `/plugin` manager’s **Errors** tab.
 
 
-[​](#from-an-environment-variable)
+[​](#load-plugins-from-an-environment-variable)
 
-From an environment variable
+Load plugins from an environment variable
 
 To load plugins in a session where you can’t add the `--plugin-dir` flag, list their absolute paths in the [`CLAUDE_CODE_PLUGIN_DIRS`](../02-Claude-Code-CLI/env-vars.md#variables) environment variable instead. Claude Code loads each path as it loads a `--plugin-dir` path. These plugins load in addition to any you pass with `--plugin-dir`. [Project and local settings can’t set this variable](../02-Claude-Code-CLI/settings-reference.md#variables-claude-code-ignores-in-env). `CLAUDE_CODE_PLUGIN_DIRS` requires Claude Code v2.1.280 or later. Managed settings can turn off `--plugin-dir` and `CLAUDE_CODE_PLUGIN_DIRS`. See [Flags that load a plugin for one session](plugins-cli-reference.md#flags-that-load-a-plugin-for-one-session). To test a plugin together with a plugin it depends on, see [Test a plugin and its dependency locally](plugins-dependencies.md#test-a-plugin-and-its-dependency-locally).
 
@@ -274,7 +274,7 @@ Your personal skills directory is `~/.claude/skills/`. Claude Code loads any fol
 
 Scaffold the plugin with `claude plugin init`
 
-`claude plugin init` writes a starter plugin under `~/.claude/skills/`. Requires Claude Code v2.1.157 or later. Scaffold one from your shell:
+`claude plugin init` writes a starter plugin under `~/.claude/skills/`. Scaffold one from your shell:
 
 ```python
 claude plugin init my-tool

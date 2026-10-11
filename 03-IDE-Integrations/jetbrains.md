@@ -2,7 +2,7 @@
 title: "JetBrains IDEs - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/jetbrains"
 category: "03-IDE-Integrations"
-fetched_at: "2026-09-26T06:38:08Z"
+fetched_at: "2026-10-10T06:24:51Z"
 tags: ["claude-code", "ide"]
 ---
 
@@ -12,8 +12,8 @@ tags: ["claude-code", "ide"]
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [From your IDE](#from-your-ide)
-  - [From external terminals](#from-external-terminals)
+  - [Run Claude Code from your IDE](#run-claude-code-from-your-ide)
+  - [Connect from an external terminal](#connect-from-an-external-terminal)
 - [Configuration](#configuration)
   - [Claude Code settings](#claude-code-settings)
   - [Plugin settings](#plugin-settings)
@@ -87,7 +87,7 @@ Install the JetBrains plugin
 
 Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains Marketplace and restart your IDE.
 
-If `claude` is installed somewhere your IDE can’t find, set the full path in the plugin’s [Claude command setting](#general-settings). Claude Code works with any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account, and no API key is required. You’ll be prompted to [log in](../13-Enterprise-Admin/iam.md#log-in-to-claude-code) the first time you run `claude`.
+If `claude` is installed somewhere your IDE can’t find, set the full path in the plugin’s [Claude command setting](#general-settings). Claude Code works with any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account, and no API key is required. You’ll be prompted to [log in](../02-Claude-Code-CLI/authentication.md#log-in-to-claude-code) the first time you run `claude`.
 
 
 [​](#usage)
@@ -95,16 +95,16 @@ If `claude` is installed somewhere your IDE can’t find, set the full path in t
 Usage
 
 
-[​](#from-your-ide)
+[​](#run-claude-code-from-your-ide)
 
-From your IDE
+Run Claude Code from your IDE
 
 Run `claude` from your IDE’s integrated terminal, and all integration features will be active.
 
 
-[​](#from-external-terminals)
+[​](#connect-from-an-external-terminal)
 
-From external terminals
+Connect from an external terminal
 
 Use the `/ide` command in any external terminal to connect Claude Code to your JetBrains IDE and activate all features:
 

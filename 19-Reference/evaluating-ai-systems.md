@@ -2,7 +2,7 @@
 title: "Challenges in evaluating AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/evaluating-ai-systems"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:32:26Z"
+fetched_at: "2026-10-10T06:28:36Z"
 tags: ["news-research"]
 ---
 
@@ -170,33 +170,33 @@ url = {[https://www.anthropic.com/index/evaluating-ai-systems](research-evaluati
 
 ## Related content
 
-### What do you want from AI?
+### Investigating unintended model actions in our evaluations and internal use
 
-We’re launching a new study using Anthropic Interviewer to learn from your experiences with AI, and we invite you to participate.
+This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude.
 
-[Read more](your-thoughts-on-ai.md)
+[Read more](investigating-unintended-model-actions.md)
 
-### GLM-5.3 and the spread of advanced cyber capabilities
+### The missing map of the sky
 
-Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse.
+Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light.
 
-[Read more](glm-5-3-and-the-spread-of-advanced-cyber-capabilities.md)
+[Read more](the-missing-map-of-the-sky.md)
 
-### Yes, Claude can do Nine Loops
+### Launching an opt-in vulnerability-finding service for open-source software
 
-Guest writer and physicist Matt von Hippel shares what happened when he issued a challenge to AI companies to solve a problem in his former subfield of theoretical physics.
+We’re making available OSS Scanner, an opt-in vulnerability scanner for the open-source ecosystem that’s informed by our experience using Claude to find vulnerabilities during Project Glasswing.
 
-[Read more](yes-claude-can-do-nine-loops.md)
+[Read more](launching-opt-in-vuln-finding-service-for-open-source.md)
 
 [](https://www.anthropic.com/)
 
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -223,7 +223,8 @@ Guest writer and physicist Matt von Hippel shares what happened when he issued a
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -244,7 +245,7 @@ Guest writer and physicist Matt von Hippel shares what happened when he issued a
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -267,8 +268,10 @@ Guest writer and physicist Matt von Hippel shares what happened when he issued a
 
 ### Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ### Help and security
 

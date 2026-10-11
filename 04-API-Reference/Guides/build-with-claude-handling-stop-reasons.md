@@ -2,7 +2,7 @@
 title: "Stop reasons and fallback - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:23Z"
+fetched_at: "2026-10-04T08:33:16Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -633,7 +633,7 @@ If you encounter `refusal` stop reasons frequently while using Claude Sonnet 4.5
 
 On a refusal, the `stop_details` object identifies the policy category that triggered it. The categories and the full refusal response shape are covered on [Refusals and fallback](build-with-claude-refusals-and-fallback.md#refusal-response). `stop_details` is `null` for all stop reasons other than `refusal`.
 
-A refused request on Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, or Claude Opus 5 can usually be served by retrying on another Claude model. [Refusals and fallback](build-with-claude-refusals-and-fallback.md) shows how to set up that retry, server-side or in your client. If you build the retry yourself from Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, or Claude Opus 5, [fallback credit](build-with-claude-fallback-credit.md) covers how to avoid paying the prompt-cache cost twice.
+A refused request on Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5 can usually be served by retrying on another Claude model. [Refusals and fallback](build-with-claude-refusals-and-fallback.md) shows how to set up that retry, server-side or in your client. If you build the retry yourself from Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5, [fallback credit](build-with-claude-fallback-credit.md) covers how to avoid paying the prompt-cache cost twice.
 
 ### model_context_window_exceeded
 
@@ -641,7 +641,7 @@ Claude stopped because it reached the model's context window limit. This lets yo
 
 
 
-This stop reason is currently typed only in the SDKs' `beta` namespace, so the following examples call `client.beta.messages` and use the `Beta`-prefixed types. On Sonnet 4.5 and newer models the API returns this value without a beta header. For earlier models, add the `model-context-window-exceeded-2025-08-26` beta header to enable it.
+This stop reason is currently typed only in the SDK's `beta` namespace, so the following examples call `client.beta.messages` and use the `Beta`-prefixed types. On Sonnet 4.5 and newer models the API returns this value without a beta header. For earlier models, add the `model-context-window-exceeded-2025-08-26` beta header to enable it.
 
 cURL
 

@@ -2,7 +2,7 @@
 title: "Slack Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/slack"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:31Z"
+fetched_at: "2026-10-10T06:26:21Z"
 tags: ["api", "case-studies", "enterprise", "security", "slack"]
 ---
 
@@ -34,13 +34,13 @@ Claude Code
 
 Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
 
-[Read more](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+[Read more](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 
 Introducing Agent Skills
 
 Claude can now use Skills—folders with instructions, scripts, and resources—to become a specialist at specific tasks when you need it.
 
-[Read more](https://claude.com/blog/skills)
+[Read more](https://claude.com/resources/articles/skills)
 
 [**Slack**](https://slack.com/), the agentic work operating system, has teamed up with Anthropic as a key AI collaborator to fundamentally change how teams communicate and access knowledge. By leveraging the advanced capabilities of the Claude models, Slack is delivering a powerful suite of AI features that unlock organizational knowledge, accelerate workflows, and provide measurable impact for enterprise customers.
 
@@ -80,6 +80,9 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 ## Related stories
 
 
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
+
+
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
 
@@ -88,9 +91,6 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -98,9 +98,9 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -130,7 +130,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -142,6 +142,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -153,8 +154,10 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -174,7 +177,9 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -217,9 +222,9 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -249,7 +254,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -261,6 +266,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -272,8 +278,10 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -293,7 +301,9 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

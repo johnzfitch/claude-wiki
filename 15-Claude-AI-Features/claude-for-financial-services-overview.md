@@ -2,7 +2,7 @@
 title: "Claude for financial services overview · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:40:03Z"
+fetched_at: "2026-10-10T06:28:03Z"
 tags: ["claude-ai"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 Overview of how Claude serves financial professionals with AI assistance for research, analysis, and document creation tasks.
 
-4 minClaude.ai
+4 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -36,7 +36,7 @@ Claude connects directly to financial data providers through integrations called
 - **Daloopa:** Provides financial data from 3,500+ public companies, including SEC filings, financial statements, and operational KPIs.
 - **Morningstar:** Offers investment research, fair value estimates, economic moat ratings, and proprietary analytical metrics.
 
-These integrations allow you to pull financial data directly into your analysis without switching between platforms. For setup instructions and detailed capabilities, see [Using Daloopa for Financial Analysis(opens in new tab)](https://support.claude.com/en/15-Claude-AI-Features/using-daloopa-for-financial-analysis.md) and [Using Morningstar for Investment Research(opens in new tab)](using-morningstar-for-investment-research.md).
+These integrations allow you to pull financial data directly into your analysis without switching between platforms. For setup instructions and detailed capabilities, see [Using Daloopa for Financial Analysis(opens in new tab)](using-daloopa-for-financial-analysis.md) and [Using Morningstar for Investment Research(opens in new tab)](using-morningstar-for-investment-research.md).
 
 ### Document creation and analysis[](#document-creation-and-analysis)
 
@@ -102,7 +102,7 @@ When working on complex analyses, consider using Claude's projects feature to or
 - Keep different analysis phases organized in dedicated project spaces
 - Maintain clear naming conventions for easy reference
 
-Projects allow you to build a knowledge base that Claude can reference across multiple conversations, maintaining context throughout your analysis. For more information about projects, see [What are projects?(opens in new tab)](https://support.claude.com/en/15-Claude-AI-Features/what-are-projects-91a78d2090.md)
+Projects allow you to build a knowledge base that Claude can reference across multiple conversations, maintaining context throughout your analysis. For more information about projects, see [What are projects?(opens in new tab)](what-are-projects.md)
 
 ## Current limitations[](#current-limitations)
 

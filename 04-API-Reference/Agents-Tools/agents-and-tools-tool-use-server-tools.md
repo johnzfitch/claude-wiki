@@ -2,7 +2,7 @@
 title: "Server tools - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/server-tools"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:17Z"
+fetched_at: "2026-10-04T08:32:04Z"
 tags: ["api", "cli"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "cli"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -383,7 +383,7 @@ This code is also correct when Claude does not mix the two kinds of call. A turn
 
 ## ZDR and allowed_callers
 
-The basic versions of web search (`web_search_20250305`) and web fetch (`web_fetch_20250910`) are eligible for [Zero Data Retention (ZDR)](../Other/manage-claude-api-and-data-retention.md).
+The basic versions of web search (`web_search_20250305`) and web fetch (`web_fetch_20250910`) are eligible for [Zero Data Retention (ZDR)](../Guides/build-with-claude-api-and-data-retention.md).
 
 The `_20260209` and later versions with dynamic filtering are **not** ZDR-eligible by default because dynamic filtering relies on code execution internally.
 

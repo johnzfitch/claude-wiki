@@ -2,45 +2,30 @@
 title: "How Anthropic teams use Claude Code | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/how-anthropic-teams-use-claude-code"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:32:34Z"
-last_modified: "Wed, 30 Sep 2026 04:21:10 GMT"
-tags: ["claude-code", "enterprise", "news-research"]
+fetched_at: "2026-10-10T06:25:36Z"
+tags: ["claude-code", "news-research"]
 ---
 
 # How Anthropic teams use Claude Code
 
 Teams across Anthropic use Claude Code for everything from debugging production issues and navigating unfamiliar codebases to building custom automation tools. Here's how.
 
+- 
 
+  Category[Best practices](https://www.anthropic.com/resources/best-practices)
+- 
+
+  ProductClaude Code
+- 
+
+  DateJuly 24, 2025
+- 
+
+  Reading time9 min
 - 
 
 
-  [Enterprise AI](https://claude.com/blog/category/enterprise-ai)
-
-- 
-
-
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
-
-- 
-
-
-  July 24, 2025
-
-- 
-
-
-  5
-
-  min
-
-- 
-
-
-  [Copy link](#)
-  https://claude.com/blog/how-anthropic-teams-use-claude-code
-
-Agentic coding tools like [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md) help developers accelerate workflows, automate repetitive tasks, and tackle complex programming projects. As the field evolves, we're learning about new applications everyday from users, including our own employees.
+Agentic coding tools like [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) help developers accelerate workflows, automate repetitive tasks, and tackle complex programming projects. As the field evolves, we're learning about new applications everyday from users, including our own employees.
 
 To learn more, we sat down with employees across Anthropic to understand how they use Claude Code at work.
 
@@ -113,28 +98,55 @@ These stories reveal a pattern: Claude Code works best when you focus on the hum
 They explore possibilities, prototype rapidly, and share discoveries across technical and non-technical users. This collaborative approach between humans and AI creates opportunities we're only beginning to understand.
 
 
-[Prev](#)
-
-Prev
-
-0/5
-
-
-## Building trusted AI in the enterprise
+### Building trusted AI in the enterprise
 
 Anthropic’s guide to starting, scaling, and succeeding based on real-world examples and best practices
 
-Download now
-
 [Download now](https://assets.anthropic.com/m/66daaa23018ab0fd/original/Anthropic-enterprise-ebook-digital.pdf)
-
-Download now
-
 
 Get started with Claude Code.
 
-Learn more.
+[Learn more.](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 
-[Learn more.](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+## Related articles
 
-Learn more.
+Explore more product news and best practices for teams building with Claude.
+
+
+ArticleOct 8, 2026
+
+### Building effective agent automations
+
+A reference implementation walkthrough for a scheduled Claude Managed Agents automation, with the config files and six rules for avoiding common failure modes.
+
+Claude Platform
+
+(opens in new tab)[](https://claude.dev/blog/automating-eval-design-and-hillclimbing/)
+
+ArticleOct 7, 2026
+
+### Automating eval design and hillclimbing with Claude
+
+Principles for designing evals and hillclimbing against them without fooling yourself, and how the claude-api skill's build-eval and hillclimb commands put them to work.
+
+Claude Platform
+
+(opens in new tab)[](https://claude.dev/blog/claude-code-in-the-cloud/)
+
+ArticleOct 6, 2026
+
+### Claude Code in the cloud: a field guide to cloud sessions
+
+What changes when Claude Code runs on its own machine, the workflows where that pays off, and how to connect GitHub on the first try.
+
+Claude Code
+
+(opens in new tab)[](https://www.anthropic.com/resources/articles/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk)
+
+ArticleOct 5, 2026
+
+### How Cresta turned CX expertise into an agent builder on the Claude Agent SDK
+
+See how Cresta built Conductor, an agent that builds other agents, on the Claude Agent SDK, and how the team evaluates it with every new Claude model.
+
+Claude Platform

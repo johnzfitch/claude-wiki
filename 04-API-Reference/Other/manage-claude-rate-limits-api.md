@@ -2,7 +2,7 @@
 title: "Rate Limits API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/rate-limits-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:36Z"
+fetched_at: "2026-10-04T08:33:39Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -76,7 +78,7 @@ Programmatically query your organization's API rate limits with the Rate Limits 
 
 **The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
 
-The Rate Limits API provides programmatic access to the rate limits configured for your organization and its workspaces. This is the same information shown on the [Rate limits](usage-limits.md) page in the Claude Console.
+The Rate Limits API provides programmatic access to the rate limits configured for your organization and its workspaces. This is the same information shown on the [Rate limits](playground.md) page in the Claude Console.
 
 Use this API to:
 
@@ -119,10 +121,10 @@ client = anthropic.Anthropic()
 
 rate_limits = client.beta.organization.rate_limits.list()
 
-for group in rate_limits:
-    models = f" ({', '.join(group.models)})" if group.models else ""
-    print(f"{group.group_type}{models}")
-    for limit in group.limits:
+for entry in rate_limits:
+    models = f" ({', '.join(entry.models)})" if entry.models else ""
+    print(f"{entry.group.type}{models}")
+    for limit in entry.limits:
         print(f"  {limit.type}: {limit.value}")
 ```
 
@@ -133,7 +135,9 @@ The `/v1/organizations/rate_limits` endpoint returns the rate limits applied at 
 ### Key concepts
 
 - **Rate limit groups:** Each entry in the response represents one rate limit group. Model rate limits are grouped so that several model versions share a single set of limits, and other groups cover resources such as the Message Batches API, the Files API, the Token Counting API, agent skills, and the web search tool.
-- **`group_type`:** Identifies which category of limits the entry covers. See [Filtering by group type](#filtering-by-group-type) for the list of values.
+- **`group` object:** Present on every entry, it identifies the rate limit group the entry applies to. It always has `type`, which is one of the `group_type` values, and `id`, an opaque identifier with the `rlg_` prefix. On `model_group` entries it also has `display_name`, Anthropic's current label for the group, such as `Claude Sonnet 4.x`. The label is for display only and may change. Other group types have no `display_name`.
+- **The `id` inside `group`:** A group has the same `id` in every organization and on every workspace override, and it never changes. Use it to match entries across organizations or against your own catalog. The entry's own `id` differs per organization, and `models` changes when Anthropic moves a model between groups. Neither is a stable key for the group.
+- **`group_type`:** Deprecated in favor of the `type` inside `group`. It's still returned, always equals that value, and has no removal date. The `group_type` query parameter isn't deprecated. See [Filtering by group type](#filtering-by-group-type) for the list of values.
 - **`models` list:** For `model_group` entries, the `models` field lists every model ID and alias that counts against that group's limits. Use this list to look up which group any model string falls under. For other group types, `models` is `null`.
 - **`limits` list:** Each group carries a list of `{type, value}` pairs. The `type` field identifies the limiter (such as `requests_per_minute`, `input_tokens_per_minute`, or `output_tokens_per_minute`) and `value` is the configured limit. See [Rate limits](../Endpoints/rate-limits.md) for how each limiter is measured and enforced.
 
@@ -166,10 +170,10 @@ client = anthropic.Anthropic()
 
 rate_limits = client.beta.organization.rate_limits.list()
 
-for group in rate_limits:
-    models = f" ({', '.join(group.models)})" if group.models else ""
-    print(f"{group.group_type}{models}")
-    for limit in group.limits:
+for entry in rate_limits:
+    models = f" ({', '.join(entry.models)})" if entry.models else ""
+    print(f"{entry.group.type}{models}")
+    for limit in entry.limits:
         print(f"  {limit.type}: {limit.value}")
 ```
 
@@ -179,6 +183,11 @@ for group in rate_limits:
     {
       "type": "rate_limit",
       "group_type": "model_group",
+      "group": {
+        "type": "model_group",
+        "id": "rlg_01Hq7YkP3mZ9dTwRx4cVbN2s",
+        "display_name": "Claude Opus 5.5"
+      },
       "models": ["claude-opus-5-5"],
       "limits": [
         { "type": "requests_per_minute", "value": 4000 },
@@ -189,6 +198,11 @@ for group in rate_limits:
     {
       "type": "rate_limit",
       "group_type": "model_group",
+      "group": {
+        "type": "model_group",
+        "id": "rlg_01Kd5wMv8nSq2LcXy6tRfJ4b",
+        "display_name": "Claude Opus 4.x"
+      },
       "models": [
         "claude-opus-4-5",
         "claude-opus-4-5-20251101",
@@ -205,6 +219,7 @@ for group in rate_limits:
     {
       "type": "rate_limit",
       "group_type": "batch",
+      "group": { "type": "batch", "id": "rlg_01Wn3pBz6kCg9vHtQ7mLxD5a" },
       "models": null,
       "limits": [{ "type": "enqueued_batch_requests", "value": 500000 }]
     }
@@ -244,10 +259,10 @@ client = anthropic.Anthropic()
 
 rate_limits = client.beta.organization.rate_limits.list(model="claude-opus-5")
 
-for group in rate_limits:
-    models = f" ({', '.join(group.models)})" if group.models else ""
-    print(f"{group.group_type}{models}")
-    for limit in group.limits:
+for entry in rate_limits:
+    models = f" ({', '.join(entry.models)})" if entry.models else ""
+    print(f"{entry.group.type}{models}")
+    for limit in entry.limits:
         print(f"  {limit.type}: {limit.value}")
 ```
 
@@ -267,7 +282,7 @@ For complete parameter details and response schemas, see the [Workspace Rate Lim
 
 
 
-To retrieve your organization's workspace IDs, use the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint, or find them in the [Claude Console](usage-limits.md). The default workspace cannot have rate limit overrides, so it has no entry on this endpoint; use the organization endpoint to read its limits.
+To retrieve your organization's workspace IDs, use the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint, or find them in the [Claude Console](playground.md). The default workspace cannot have rate limit overrides, so it has no entry on this endpoint; use the organization endpoint to read its limits.
 
 cURL
 
@@ -296,10 +311,10 @@ rate_limits = client.beta.organization.workspaces.rate_limits.list(
     "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
 )
 
-for group in rate_limits:
-    models = f" ({', '.join(group.models)})" if group.models else ""
-    print(f"{group.group_type}{models}")
-    for limit in group.limits:
+for entry in rate_limits:
+    models = f" ({', '.join(entry.models)})" if entry.models else ""
+    print(f"{entry.group.type}{models}")
+    for limit in entry.limits:
         print(f"  {limit.type}: {limit.value}")
 ```
 
@@ -309,6 +324,11 @@ for group in rate_limits:
     {
       "type": "workspace_rate_limit",
       "group_type": "model_group",
+      "group": {
+        "type": "model_group",
+        "id": "rlg_01Hq7YkP3mZ9dTwRx4cVbN2s",
+        "display_name": "Claude Opus 5.5"
+      },
       "models": ["claude-opus-5-5"],
       "limits": [
         { "type": "requests_per_minute", "value": 1000, "org_limit": 4000 },
@@ -318,6 +338,11 @@ for group in rate_limits:
     {
       "type": "workspace_rate_limit",
       "group_type": "model_group",
+      "group": {
+        "type": "model_group",
+        "id": "rlg_01Kd5wMv8nSq2LcXy6tRfJ4b",
+        "display_name": "Claude Opus 4.x"
+      },
       "models": [
         "claude-opus-4-5",
         "claude-opus-4-5-20251101",
@@ -366,10 +391,10 @@ client = anthropic.Anthropic()
 
 rate_limits = client.beta.organization.rate_limits.list(group_type="batch")
 
-for group in rate_limits:
-    models = f" ({', '.join(group.models)})" if group.models else ""
-    print(f"{group.group_type}{models}")
-    for limit in group.limits:
+for entry in rate_limits:
+    models = f" ({', '.join(entry.models)})" if entry.models else ""
+    print(f"{entry.group.type}{models}")
+    for limit in entry.limits:
         print(f"  {limit.type}: {limit.value}")
 ```
 
@@ -391,7 +416,7 @@ The workspace has no override for that group and inherits the organization-level
 
 ### Can I update rate limits with this API?
 
-No. To set workspace rate limits, open the workspace in the [Claude Console](usage-limits.md) and use the **Rate limits** tab.
+No. To set workspace rate limits, open the workspace in the [Claude Console](playground.md) and use the **Rate limits** tab.
 
 ## See also
 

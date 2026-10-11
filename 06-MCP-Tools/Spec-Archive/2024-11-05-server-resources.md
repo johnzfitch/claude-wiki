@@ -2,7 +2,7 @@
 title: "Resources - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/server/resources"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-09-29T06:30:53Z"
+fetched_at: "2026-10-09T06:26:59Z"
 tags: ["mcp", "mcp-spec"]
 ---
 

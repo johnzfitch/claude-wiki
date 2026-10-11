@@ -2,8 +2,7 @@
 title: "Introducing the Message Batches API | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/message-batches-api"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:32:06Z"
-last_modified: "Wed, 30 Sep 2026 04:21:10 GMT"
+fetched_at: "2026-10-10T06:28:36Z"
 tags: ["api", "news-research"]
 ---
 
@@ -11,39 +10,25 @@ tags: ["api", "news-research"]
 
 Claude now offers a Message Batches API that processes up to large volumes of queries asynchronously at lower cost.
 
+- 
 
+  Category[Announcements](https://www.anthropic.com/resources/product-announcements)
+- 
+
+  ProductClaude Platform
+- 
+
+  DateOctober 8, 2024
+- 
+
+  Reading time4 min
 - 
 
 
-  [Product announcements](https://claude.com/blog/category/announcements)
-
-- 
-
-
-  [Claude Platform](https://claude.com/platform/api)
-
-- 
-
-
-  October 8, 2024
-
-- 
-
-
-  5
-
-  min
-
-- 
-
-
-  [Copy link](#)
-  https://claude.com/blog/message-batches-api
-
-***Update:*** *The Message Batches API is Generally Available on the Anthropic API. Customers using Claude in Amazon Bedrock can use batch inference. Batch predictions is also available in preview on Google Cloud’s Vertex AI. (December 17, 2024)  
+***Update:** The Message Batches API is Generally Available on the Anthropic API. Customers using Claude in Amazon Bedrock can use batch inference. Batch predictions is also available in preview on Google Cloud’s Vertex AI. (December 17, 2024)*  
   
   
-*We’re introducing a new [Message Batches API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches)—a powerful, cost-effective way to process large volumes of queries asynchronously.
+We’re introducing a new [Message Batches API](https://docs.anthropic.com/en/docs/build-with-claude/message-batches)—a powerful, cost-effective way to process large volumes of queries asynchronously.
 
 Developers can send batches of up to 10,000 queries per batch. Each batch is processed in less than 24 hours and costs 50% less than standard API calls. This makes processing non-time-sensitive tasks more efficient and cost-effective.
 
@@ -64,6 +49,8 @@ The Batches API unlocks new possibilities for large-scale data processing that w
 
 The Batches API allows you to take advantage of infrastructure cost savings and is offered at a 50% discount for both input and output tokens.
 
+[TABLE]
+
 ## Customer Spotlight: Quora
 
 [Quora](https://cloud.google.com/customers/quora?hl=en), a user-based question-and-answer platform, leverages Anthropic's Batches API for summarization and highlight extraction to create new end-user features.
@@ -74,9 +61,39 @@ The Batches API allows you to take advantage of infrastructure cost savings and 
 
 To start using the Batches API in public beta on the Anthropic API, explore our [documentation](https://docs.anthropic.com/en/docs/build-with-claude/message-batches) and [pricing page](https://docs.anthropic.com/en/docs/build-with-claude/message-batches).
 
+## Related articles
 
-[Prev](#)
+Explore more product news and best practices for teams building with Claude.
 
-Prev
 
-0/5
+ArticleOct 8, 2026
+
+### Build live dashboards and animate explainers with Claude 
+
+Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
+
+Claude appsClaude Design
+
+2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+
+
+ArticleOct 7, 2026
+
+### Claude Haiku 5.5
+
+Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
+
+(opens in new tab)[](https://www.anthropic.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
+
+ArticleOct 6, 2026
+
+### Claude now works with Google Docs, Sheets, and Slides
+
+Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
+
+Claude Enterprise
+
+
+ArticleOct 6, 2026
+
+### We’re expanding the Claude Startups program to help founders build

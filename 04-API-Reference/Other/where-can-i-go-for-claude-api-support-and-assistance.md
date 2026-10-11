@@ -2,7 +2,7 @@
 title: "Where can I go for Claude API support and assistance? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114535-where-can-i-go-for-claude-api-support-and-assistance"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:32:09Z"
+fetched_at: "2026-10-10T06:24:51Z"
 tags: ["api"]
 ---
 

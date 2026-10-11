@@ -2,7 +2,7 @@
 title: "Browser use tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-28T06:33:12Z"
+fetched_at: "2026-10-05T06:37:44Z"
 tags: ["api", "security"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "security"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,11 +96,11 @@ Let Claude navigate, read, and interact with webpages in your own browser enviro
 
 Browser use tool
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Eligible
 
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+excludes [Covered Models](../Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 The browser use tool lets Claude navigate, read, and interact with webpages in a browser that your application runs. Claude works with the page both through its structure (the accessibility tree, elements, forms, and tabs) and through screenshots and viewport coordinates.
 
@@ -943,7 +943,7 @@ Browser use follows the standard [tool use pricing](agents-and-tools-tool-use-ov
 
 If you also use the computer use tool, bash tool, text editor tool, or your own tools alongside browser use, those tools have their own token costs as documented on their respective pages.
 
-The browser session, downloads, and uploaded files stay in your environment; the screenshots, page text, and tab state you return are part of your API request content and follow the standard retention policy, or your ZDR arrangement if you have one. The browser use tool is ZDR eligible; see [API and data retention](../Other/manage-claude-api-and-data-retention.md) for retention periods and eligibility across features.
+The browser session, downloads, and uploaded files stay in your environment; the screenshots, page text, and tab state you return are part of your API request content and follow the standard retention policy, or your ZDR arrangement if you have one. The browser use tool is ZDR eligible; see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md) for retention periods and eligibility across features.
 
 ## Next steps
 
@@ -971,7 +971,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5 and 5.1
 - Opus 4.8, 5, and 5.5
-- Sonnet 5
+- Sonnet 5 and 5.5
 
 Supported platforms  
 - Claude API

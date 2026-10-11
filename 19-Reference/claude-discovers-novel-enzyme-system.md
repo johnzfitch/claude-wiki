@@ -2,7 +2,7 @@
 title: "Claude discovers a novel enzyme system \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
 category: "19-Reference"
-fetched_at: "2026-09-25T06:30:23Z"
+fetched_at: "2026-10-08T06:26:04Z"
 tags: ["news-research"]
 ---
 
@@ -38,7 +38,7 @@ Our lab, located in the Bay Area, looks like a typical molecular biology lab. We
 
 Many of our workflows involve having Claude search through the vast collection of DNA sequences associated with proteins without a known function. One typical pattern begins with a survey of a given protein family. Claude reads the relevant literature and reproduces the established results from public data to check its methods. It then searches for family members or genomic neighbors that fit no described system, and writes a short, human-readable report for each candidate that proposes a function and describes the evidence supporting its claims. In follow-up analyses, Claude critically evaluates the evidence—typically most candidates are eliminated at this stage. A survey may end with a single candidate worth testing, or with none.
 
-When a candidate survives our review, we test it in the laboratory, expressing the protein in standard laboratory strains and characterizing it biochemically and structurally, with Claude helping to interpret the data. We do our work in [Claude Science](../15-Claude-AI-Features/product-claude-science.md) and [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md), the same tools available to any scientist, and sometimes with a harness of our own that coordinates many Claude sessions running in parallel.
+When a candidate survives our review, we test it in the laboratory, expressing the protein in standard laboratory strains and characterizing it biochemically and structurally, with Claude helping to interpret the data. We do our work in [Claude Science](../15-Claude-AI-Features/product-claude-science.md) and [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), the same tools available to any scientist, and sometimes with a harness of our own that coordinates many Claude sessions running in parallel.
 
 Because Claude produces hypotheses so prolifically, the hypotheses themselves have become an object of study for us. With hundreds to thousands of candidate reports from a single campaign, we have been asking what distinguishes the proposals we judge worth testing from those we set aside. What we learn goes back into the instructions we give Claude and teaches it to mimic our own scientific taste.
 
@@ -66,19 +66,23 @@ We hope this work demonstrates the value of AI-driven hypothesis generation to t
 
 ## Related content
 
-### Partnering with Accenture on embedded evaluation
+### Expanding the Cyber Verification Program
 
-[Read more](accenture-embedded-evaluation.md)
+We’re launching a new, expanded version of our Cyber Verification Program, which makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals.
 
-### Introducing the Life Sciences Verification Program
+[Read more](cyber-verification-program.md)
 
-The Life Sciences Verification Program (LSVP) gives life science professionals access to Claude Mythos, Opus, and Sonnet models with a refined set of safeguards more permissive for biology-related work.
+### Anthropic invests \$100 million to train 10,000 engineers and tackle the enterprise AI talent gap
 
-[Read more](life-sciences-verification-program.md)
+Anthropic is investing \$100 million in Claude Frontier Academy to train 10,000 Frontier Deployed Engineers by the end of 2027, with cohorts from Accenture, Bain, CBA, Deloitte, McKinsey, Morgan Stanley and Novo Nordisk already underway.
 
-### Developing Enterprise Frontier Safeguards with our customers
+[Read more](claude-frontier-academy.md)
 
-[Read more](enterprise-frontier-safeguards.md)
+### Barclays scales Claude to upgrade operations and improve client experience
+
+Barclays, the British universal bank, is expanding its strategic collaboration with Anthropic to integrate secure, enterprise-grade AI systems across its global operations.
+
+[Read more](barclays-scales-claude.md)
 
 ## Subscribe to Anthropic Science
 
@@ -89,10 +93,10 @@ Features on AI-assisted discoveries, practical workflows, and field notes across
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -107,9 +111,9 @@ Features on AI-assisted discoveries, practical workflows, and field notes across
 
 - [Mythos](../15-Claude-AI-Features/claude-mythos.md)
 - [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
 
 ### Solutions
 
@@ -119,7 +123,7 @@ Features on AI-assisted discoveries, practical workflows, and field notes across
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -140,7 +144,7 @@ Features on AI-assisted discoveries, practical workflows, and field notes across
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -163,8 +167,10 @@ Features on AI-assisted discoveries, practical workflows, and field notes across
 
 ### Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ### Help and security
 

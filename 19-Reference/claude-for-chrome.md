@@ -2,8 +2,7 @@
 title: "Piloting Claude in Chrome | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/claude-for-chrome"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:32:24Z"
-last_modified: "Wed, 30 Sep 2026 04:21:07 GMT"
+fetched_at: "2026-10-10T06:28:35Z"
 tags: ["news-research"]
 ---
 
@@ -14,42 +13,29 @@ We're piloting Claude in Chrome to test browser-based AI capabilities while addr
 
 - 
 
+  Category[Announcements](https://www.anthropic.com/resources/product-announcements)
+- 
 
-  [Product announcements](https://claude.com/blog/category/announcements)
+  ProductClaude apps
+- 
 
+  DateAugust 25, 2025
+- 
+
+  Reading time9 min
 - 
 
 
-  Claude apps
+***Update: Now available to Pro, Team, and Enterprise plans** (Dec 18, 2025)*
 
-- 
-
-
-  August 25, 2025
-
-- 
-
-
-  5
-
-  min
-
-- 
-
-
-  [Copy link](#)
-  https://claude.com/blog/claude-for-chrome
-
-***Update: Now available to Pro, Team, and Enterprise plans*** *(Dec 18, 2025)*
-
-After months of real-world testing, we're ready to expand to all paid plans. We've also shipped our most requested feature: an integration for **Claude Code**. Build in your terminal, verify in your browser, and debug with Claude reading console errors and DOM state directly. 
+After months of real-world testing, we're ready to expand to all paid plans. We've also shipped our most requested feature: an integration for **Claude Code**. Build in your terminal, verify in your browser, and debug with Claude reading console errors and DOM state directly.
 
 **For Teams and Enterprise:** Admins can enable or disable the extension org-wide and configure site allowlists and blocklists.
 
 
-***Update: Now available to all Max plan subscribers*** *(Nov 24, 2025)*
+***Update: Now available to all Max plan subscribers** (Nov 24, 2025)*
 
-*After three months of testing,* [*Claude in Chrome*](https://claude.ai/chrome) *is now available in beta to all Max plan subscribers. Since the research preview, we've shipped major updates including scheduled tasks, multi-tab workflows, and smarter navigation on sites you use every day. Read our* [*release notes*](../15-Claude-AI-Features/claude-for-chrome-release-notes.md) *for the full list of updates, and our* [*safety blog*](prompt-injection-defenses.md) *for details on prompt injection defenses and learnings from the pilot.*
+*After three months of testing, [Claude in Chrome](https://claude.ai/chrome) is now available in beta to all Max plan subscribers. Since the research preview, we've shipped major updates including scheduled tasks, multi-tab workflows, and smarter navigation on sites you use every day. Read our [release notes](../15-Claude-AI-Features/claude-for-chrome-release-notes.md) for the full list of updates, and our [safety blog](prompt-injection-defenses.md) for details on prompt injection defenses and learnings from the pilot.*
 
 
 We've spent recent months connecting Claude to your calendar, documents, and many other pieces of software. The next logical step is letting Claude work directly in your browser.
@@ -101,15 +87,45 @@ We'll use insights from the pilot to refine our prompt injection classifiers and
 
 For the pilot, we’re looking for trusted testers who are comfortable with Claude taking actions in Chrome on their behalf, and who don’t have setups that are safety-critical or otherwise sensitive.
 
-**If you’d like to take part, you can join the Claude in Chrome research preview waitlist at** [**claude.ai/chrome**](http://claude.ai/chrome)**.** Once you have access, you can install the extension from the Chrome Web Store and authenticate with your Claude credentials.
+**If you’d like to take part, you can join the Claude in Chrome research preview waitlist at [claude.ai/chrome](http://claude.ai/chrome).** Once you have access, you can install the extension from the Chrome Web Store and authenticate with your Claude credentials.
 
-We recommend starting with trusted sites—always be mindful of the data that’s visible to Claude—and avoiding use of Claude in Chrome for sites that involve financial, legal, medical, or other types of sensitive information. You can find a detailed safety guide [in our Help Center](https://support.anthropic.com/en/articles/12012173-getting-started-with-claude-for-chrome).
+We recommend starting with trusted sites—always be mindful of the data that’s visible to Claude—and avoiding use of Claude in Chrome for sites that involve financial, legal, medical, or other types of sensitive information. You can find a detailed safety guide [in our Help Center](../15-Claude-AI-Features/getting-started-with-claude-for-chrome.md).
 
 We hope that you’ll share your feedback to help us continue to improve both the capabilities and safeguards for Claude in Chrome—and help us take an important step towards a fundamentally new way to integrate AI into our lives.
 
+## Related articles
 
-[Prev](#)
+Explore more product news and best practices for teams building with Claude.
 
-Prev
 
-0/5
+ArticleOct 8, 2026
+
+### Build live dashboards and animate explainers with Claude 
+
+Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
+
+Claude appsClaude Design
+
+2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+
+
+ArticleOct 7, 2026
+
+### Claude Haiku 5.5
+
+Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
+
+(opens in new tab)[](https://www.anthropic.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
+
+ArticleOct 6, 2026
+
+### Claude now works with Google Docs, Sheets, and Slides
+
+Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
+
+Claude Enterprise
+
+
+ArticleOct 6, 2026
+
+### We’re expanding the Claude Startups program to help founders build

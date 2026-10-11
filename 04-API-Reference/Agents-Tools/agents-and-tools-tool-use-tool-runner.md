@@ -2,7 +2,7 @@
 title: "Tool runner (SDK) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-runner"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:28Z"
+fetched_at: "2026-10-04T08:31:33Z"
 tags: ["api", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -298,7 +298,7 @@ for message in runner:
 
 ### Automatic context management
 
-For long-running agentic tasks, the TypeScript and Ruby tool runners support automatic [compaction](../Guides/build-with-claude-context-editing.md#client-side-compaction-sdk), which generates summaries when token usage exceeds a threshold so the conversation can continue beyond context window limits. Both SDKs have deprecated this client-side option in favor of [server-side compaction](../Guides/build-with-claude-compaction-threshold.md), which works with every SDK's tool runner through the `context_management` request parameter. The Python SDK (v1.0 and later) and the Go, Java, C#, and PHP tool runners don't include client-side compaction. The Python, TypeScript, C#, Go, Java, PHP, and Ruby tool runners have a `compact_before_next_turn()` helper for on-demand compaction. See [Compact in a loop](../Guides/build-with-claude-compaction-on-demand.md#compact-in-a-loop). Use it or a `context_management` compaction edit on a runner, not both.
+For long-running agentic tasks, the TypeScript and Ruby tool runners support automatic [compaction](../Guides/build-with-claude-context-editing.md#client-side-compaction-sdk), which generates summaries when token usage exceeds a threshold so the conversation can continue beyond context window limits. Both SDKs have deprecated this client-side option in favor of [server-side compaction](../Guides/build-with-claude-compaction-threshold.md), which works with every SDK's tool runner through the `context_management` request parameter. The Python SDK (v1.0 and later) and the Go, Java, C#, and PHP tool runners don't include client-side compaction. The tool runner has a `compact_before_next_turn()` helper for on-demand compaction. See [Compact in a loop](../Guides/build-with-claude-compaction-on-demand.md#compact-in-a-loop). Use it or a `context_management` compaction edit on a runner, not both.
 
 ### Debugging tool execution
 
@@ -321,8 +321,6 @@ The Go, Ruby, C#, and PHP SDKs don't read `ANTHROPIC_LOG`. Outside Python, no SD
 ### Intercepting tool errors
 
 By default, tool errors are passed back to Claude, which can then respond appropriately. However, you might want to detect errors and handle them differently, for example, to stop execution early or implement custom error handling.
-
-In the Python and TypeScript SDKs, use the tool response method (`generate_tool_call_response()` in Python, `generateToolResponse()` in TypeScript) to intercept tool results and check for errors before they're sent to Claude. The other SDKs don't expose that hook. Their tabs describe the closest alternative:
 
 Python
 
@@ -368,11 +366,13 @@ for message in runner:
 
 
 
+
+
+Call `runner.generate_tool_call_response()` in the loop to get the tool results and check them for errors before the runner sends them to Claude.
+
 ### Modifying tool results
 
 You can modify tool results before they're sent back to Claude. This is useful for adding metadata such as `cache_control` to enable [prompt caching](../Guides/build-with-claude-prompt-caching.md) on tool results, or for transforming the tool output.
-
-In the Python and TypeScript SDKs, use the tool response method to get the tool result, then modify it before the runner proceeds. Whether you explicitly append the modified result or mutate it in place depends on the SDK. See the code comments in each tab.
 
 Python
 
@@ -421,6 +421,10 @@ for message in runner:
 ```
 
 
+
+
+
+Call `runner.generate_tool_call_response()` to get the tool result, modify it, and pass it to `runner.append_messages()` so the runner does not append the original.
 
 
 

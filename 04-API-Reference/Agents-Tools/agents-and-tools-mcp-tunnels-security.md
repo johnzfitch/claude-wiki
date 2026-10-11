@@ -2,7 +2,7 @@
 title: "MCP tunnels security - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/security"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:18Z"
+fetched_at: "2026-10-04T08:32:39Z"
 tags: ["api", "mcp", "security"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "mcp", "security"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 

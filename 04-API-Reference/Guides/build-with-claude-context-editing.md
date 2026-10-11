@@ -2,7 +2,7 @@
 title: "Context editing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/context-editing"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:20Z"
+fetched_at: "2026-10-04T08:33:25Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "cli", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,7 +96,7 @@ Automatically manage conversation context as it grows with context editing.
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 ## Overview
 
@@ -149,7 +149,7 @@ An assistant conversation turn may include multiple content blocks (for example,
 
 Context editing is applied server-side before the prompt reaches Claude. Your client application maintains the full, unmodified conversation history. You do not need to sync your client state with the edited version. Continue managing your full conversation history locally as you normally would.
 
-On Claude Fable 5.1 and Claude Opus 5.5, server-side context management never invalidates thinking blocks. Client-side edits to earlier turns can invalidate the thinking blocks in every later assistant turn. For new accounts created on or after August 31, 2026, a request that replays an invalidated block is rejected unless you opt into dropping it. See [Keeping the prefix unchanged](build-with-claude-preserved-thinking.md#prefix-check).
+On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, server-side context management never invalidates thinking blocks. Client-side edits to earlier turns can invalidate the thinking blocks in every later assistant turn. For new accounts created on or after August 31, 2026, a request that replays an invalidated block is rejected unless you opt into dropping it. See [Keeping the prefix unchanged](build-with-claude-preserved-thinking.md#prefix-check).
 
 ### Context editing and prompt caching
 

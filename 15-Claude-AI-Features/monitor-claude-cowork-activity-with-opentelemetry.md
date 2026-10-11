@@ -1,8 +1,8 @@
 ---
 title: "Monitor Claude Cowork activity with OpenTelemetry | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/14477985-monitor-cowork-activity-with-opentelemetry"
+source_url: "https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:51Z"
+fetched_at: "2026-10-10T06:28:15Z"
 tags: ["api", "claude-ai", "security"]
 ---
 

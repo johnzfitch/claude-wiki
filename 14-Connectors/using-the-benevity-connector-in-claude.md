@@ -2,7 +2,7 @@
 title: "Using the Benevity connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-26T06:40:19Z"
+fetched_at: "2026-10-10T06:25:11Z"
 tags: ["connectors"]
 ---
 
@@ -10,13 +10,13 @@ tags: ["connectors"]
 
 Connect Claude to Benevity's database of 2.5M+ nonprofits to discover and research charitable organizations.
 
-9 minClaude.ai
+9 minClaude
 
 [Open Claude](https://claude.ai/new)
 
 The Benevity connector gives Claude access to a database of 2.5M+ nonprofit organizations. Search by cause, location, or keyword, and get detailed profiles including mission statements, program descriptions, and geographic focus.
 
-The Benevity integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
+The Benevity integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this connector provides[](#what-this-connector-provides)
 

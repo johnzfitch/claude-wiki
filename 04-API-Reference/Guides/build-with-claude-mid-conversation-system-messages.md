@@ -2,7 +2,7 @@
 title: "Mid-conversation system messages and tool changes - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:23Z"
+fetched_at: "2026-10-04T08:33:53Z"
 tags: ["api", "prompting"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "prompting"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,7 +96,7 @@ Change system instructions or tool availability partway through a conversation w
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 System instructions normally live in the top-level `system` field, ahead of every message in the conversation. That position is great for [prompt caching](build-with-claude-prompt-caching.md): the system prompt is part of the stable prefix, so subsequent turns hit the cache. It is a poor position for instructions you only discover you need partway through a session, because editing the top-level `system` field changes the very beginning of the prompt and invalidates the cache for everything that follows.
 
@@ -106,7 +106,7 @@ Mid-conversation system messages close that gap. You append a `{"role": "system"
 
 Mid-conversation system messages are available on the Claude API, [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md), and [Google Cloud](build-with-claude-claude-on-vertex-ai.md).
 
-This feature is available on Claude Fable 5.1, [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md), Claude Fable 5, [Claude Mythos 5](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 4.8, and Claude Opus 5. No beta header is required for mid-conversation system messages. This feature is not available on Claude Sonnet 5. Use the top-level `system` field there instead.
+This feature is available on Claude Fable 5.1, [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md), Claude Fable 5, [Claude Mythos 5](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 4.8, Claude Opus 5, and Claude Sonnet 5.5. No beta header is required for mid-conversation system messages. This feature is not available on Claude Sonnet 5. Use the top-level `system` field there instead.
 
 [Mid-conversation tool changes](#mid-conversation-tool-changes) are in beta on the same models. On the Claude API, send the `inline-tools-2026-09-15` beta header, which also covers [defining a tool inside a `tool_addition` block](#define-tools-in-a-message-beta). [Adding an MCP server that way](#add-an-mcp-server-mid-conversation-beta) needs a second beta header, `mcp-client-2026-09-15`, which is available on the Claude API. The `mid-conversation-tool-changes-2026-07-01` header works for changes that name a tool by reference, on the Claude API, Amazon Bedrock, and Google Cloud.
 
@@ -463,7 +463,7 @@ Add a message with `"role": "system"` to the `messages` array. Use a plain strin
 
 You can still set the top-level `system` field for instructions that should apply to the entire conversation. Reserve mid-conversation system messages for instructions that only become relevant later, or that you want to add without invalidating the cached prefix.
 
-A `role: "system"` message can also carry `output_config.effort` to change the [effort](build-with-claude-effort.md) level from the next `user` turn on. This is in beta on Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, and Claude Opus 5 on the Claude API and Google Cloud, and requires the `mid-conversation-output-config-2026-07-01` beta header. See [Per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta).
+A `role: "system"` message can also carry `output_config.effort` to change the [effort](build-with-claude-effort.md) level from the next `user` turn on. This is in beta on Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5 on the Claude API and Google Cloud, and requires the `mid-conversation-output-config-2026-07-01` beta header. See [Per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta).
 
 cURL
 
@@ -577,7 +577,7 @@ Turn-scoped system messages are in beta. Include the [beta header](../Endpoints/
 
 
 
-The main use is a per-turn reminder in a tool loop. Append the reminder after the `tool_result` message each time you want the model to see it, and leave every earlier copy where it is. The model sees only the copies that come after the last user message, so the reminder never piles up. Nothing earlier in `messages` changes, so the [prompt cache](build-with-claude-prompt-caching.md) keeps matching. On Claude Fable 5.1 and Claude Opus 5.5 this also keeps later [thinking blocks valid](build-with-claude-thinking.md#preserved-in-conversation): deleting an earlier reminder would change the conversation before those blocks and fail the conversation check, while a cleared message stays in the array and leaves that conversation unchanged.
+The main use is a per-turn reminder in a tool loop. Append the reminder after the `tool_result` message each time you want the model to see it, and leave every earlier copy where it is. The model sees only the copies that come after the last user message, so the reminder never piles up. Nothing earlier in `messages` changes, so the [prompt cache](build-with-claude-prompt-caching.md) keeps matching. On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5 this also keeps later [thinking blocks valid](build-with-claude-thinking.md#preserved-in-conversation): deleting an earlier reminder would change the conversation before those blocks and fail the conversation check, while a cleared message stays in the array and leaves that conversation unchanged.
 
 The following request is a later step of an agent loop. `messages[3]` rendered on the earlier request, when it was the last message in the array. Once `messages[5]` (a later user message) exists, `messages[3]` is cleared: the cleared message stays in the array, so the conversation before the thinking block in `messages[4]` is unchanged, but the model no longer sees its text. `messages[6]` and `messages[7]` both render, in order.
 
@@ -656,7 +656,7 @@ The following request is a later step of an agent loop. `messages[3]` rendered o
 
 Rules for turn-scoped messages:
 
-- **Re-send cleared messages verbatim.** A cleared message is still part of the conversation history. Rebuilding it from current state (a fresh token count, a timestamp), dropping it as redundant, or changing its `clear_at` value is an edit to an earlier message. The prompt cache misses from that point, and on Claude Fable 5.1 and Claude Opus 5.5 every thinking block produced after it fails the [conversation check](build-with-claude-thinking.md#preserved-in-conversation).
+- **Re-send cleared messages verbatim.** A cleared message is still part of the conversation history. Rebuilding it from current state (a fresh token count, a timestamp), dropping it as redundant, or changing its `clear_at` value is an edit to an earlier message. The prompt cache misses from that point, and on Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5 every thinking block produced after it fails the [conversation check](build-with-claude-thinking.md#preserved-in-conversation).
 - **Text only.** `content` is one or more `text` blocks (or a string). `tool_addition` and `tool_removal` blocks return a 400 error on a turn-scoped message, and so does `output_config`. Use a separate `role: "system"` message without `clear_at` for those.
 - **No `cache_control` on its blocks.** A cleared message is never part of a cache key, so a breakpoint on it could never match. Put the breakpoint on the last block of the preceding user turn instead, as the example does. The top-level [automatic caching](build-with-claude-prompt-caching.md#automatic-caching) field skips turn-scoped messages when it picks a breakpoint. On the request that clears a message, the reusable cached prefix ends at the user turn before it, so only the one assistant turn between that message and the new user message is reprocessed.
 - **Placement rules still apply**, cleared or not. A turn-scoped message must follow a `user` turn (or an `assistant` turn ending in a server tool result) and precede an `assistant` turn or end the array, like any mid-conversation system message. One that ends the array always renders. One followed directly by another `user` message is a 400 error, not a cleared message: put all of a tool round's results in one user message and the reminders after it.
@@ -679,7 +679,7 @@ messages.3.content.0: cache_control is not permitted on a turn-scoped system mes
 
 The first is the error returned without the beta header. On Amazon Bedrock and Google Cloud, pass the beta value as described in [Beta headers](../Endpoints/beta-headers.md).
 
-Through the SDKs, set `clear_at` on the `role: "system"` entry in `messages` and send the beta header. The following example appends a turn-scoped reminder after the user turn; on the next request, once a later user message exists, the reminder stays in the array but no longer renders:
+Through the SDK, set `clear_at` on the `role: "system"` entry in `messages` and send the beta header. The following example appends a turn-scoped reminder after the user turn; on the next request, once a later user message exists, the reminder stays in the array but no longer renders:
 
 cURL
 
@@ -736,7 +736,7 @@ Mid-conversation system messages and [prompt caching](build-with-claude-prompt-c
 - **Append the system message after the breakpoint.** Because it comes after the cached prefix, it does not change the prefix hash and the cache still hits.
 - **A mid-conversation system message is itself cacheable.** Once it is in the conversation, it becomes part of the stable history. On the next turn you can move your cache breakpoint past it (or rely on [automatic caching](build-with-claude-prompt-caching.md#automatic-caching) to do so) and the system message is read from cache like any other turn.
 
-Avoid editing or removing a mid-conversation system message that has already been sent. Like any other change to earlier messages, that invalidates the cache from that point forward. On Claude Fable 5.1 and Claude Opus 5.5 it also invalidates the [thinking blocks](build-with-claude-thinking.md#preserved-in-conversation) in every later assistant turn. For guidance that should apply to one turn only, use a [turn-scoped system message](#turn-scoped-system-messages) and leave it in place. If the instruction needs to evolve, append a new system message rather than rewriting the old one. Consecutive system messages are accepted and treated as a single system section, which follows the same placement rule as a whole.
+Avoid editing or removing a mid-conversation system message that has already been sent. Like any other change to earlier messages, that invalidates the cache from that point forward. On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5 it also invalidates the [thinking blocks](build-with-claude-thinking.md#preserved-in-conversation) in every later assistant turn. For guidance that should apply to one turn only, use a [turn-scoped system message](#turn-scoped-system-messages) and leave it in place. If the instruction needs to evolve, append a new system message rather than rewriting the old one. Consecutive system messages are accepted and treated as a single system section, which follows the same placement rule as a whole.
 
 ## Limitations
 

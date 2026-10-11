@@ -2,7 +2,7 @@
 title: "Use plugins in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13837440-use-plugins-in-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:45Z"
+fetched_at: "2026-10-10T06:28:12Z"
 tags: ["claude-ai", "plugins", "skills"]
 ---
 
@@ -21,7 +21,7 @@ You can add and use plugins in chat on the web, the Chat tab in Claude Desktop, 
 
 Plugins can also bundle connectors, so the right services are set up for a workflow without you connecting each one. Claude connects to services like Google Drive, Gmail, Slack, DocuSign, and many more.
 
-**Note:** In Cowork, connectors reach external services through Anthropic's cloud, not through your local network. A custom connector must point to a server that's reachable over the public internet from Anthropic's IP ranges. If your organization's servers are behind a firewall or on a private network, see **[Network requirements for custom connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp#h_b66e88c454)**.
+**Note:** In Cowork, connectors reach external services through Anthropic's cloud, not through your local network. A custom connector must point to a server that's reachable over the public internet from Anthropic's IP ranges. If your organization's servers are behind a firewall or on a private network, see **[Network requirements for custom connectors](../14-Connectors/get-started-with-custom-connectors-using-remote-mcp.md#h_b66e88c454)**.
 
 ### Use plugins in Claude Code
 
@@ -192,6 +192,8 @@ To add a marketplace:
     - **Browse Anthropic sources:** Pick from marketplaces curated by Anthropic, such as Knowledge Work, Life Sciences, Financial Services, and Legal. Click "Add" next to the one you want, then click "Done."
 
     - **Add from a repository:** Enter a repository URL, or owner/repo for GitHub. Repositories on github.com work, and so do public repositories on gitlab.com and bitbucket.org.
+
+If your organization limits which marketplaces can be added, Claude refuses a repository your organization doesn’t allow. Ask an Owner which sources are permitted.
 
 To remove a marketplace, including the default Knowledge Work marketplace:
 

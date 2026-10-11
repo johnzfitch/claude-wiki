@@ -1,8 +1,8 @@
 ---
 title: "Create Invite - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/beta/organization/invites/create"
+source_url: "https://platform.claude.com/docs/en/api/admin/invites/create"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-28T06:33:20Z"
+fetched_at: "2026-09-18T06:36:37Z"
 tags: ["api"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Tunnel Certificates - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/mcp_tunnels/tunnel_certificates"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:02Z"
+fetched_at: "2026-10-04T08:32:31Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -140,33 +123,33 @@ Cost Report
 MCP Tunnels
 
 
-List Tunnels
+List Tunnels Deprecated
 
 
-Get Tunnel
+Get Tunnel Deprecated
 
 
-Archive Tunnel
+Archive Tunnel Deprecated
 
 
-Reveal Tunnel Token
+Reveal Tunnel Token Deprecated
 
 
-Rotate Tunnel Token
+Rotate Tunnel Token Deprecated
 
 Tunnel Certificates
 
 
-Create Tunnel Certificate
+Create Tunnel Certificate Deprecated
 
 
-List Tunnel Certificates
+List Tunnel Certificates Deprecated
 
 
-Get Tunnel Certificate
+Get Tunnel Certificate Deprecated
 
 
-Archive Tunnel Certificate
+Archive Tunnel Certificate Deprecated
 
 Analytics
 
@@ -175,6 +158,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels

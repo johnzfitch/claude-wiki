@@ -30,5 +30,5 @@ tags: ["api"]
 
 The requested page could not be found. These pages are close:
 
-- [API and data retention](manage-claude-api-and-data-retention.md)Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
+- [API and data retention](../Guides/build-with-claude-api-and-data-retention.md)Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
 - [Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)Get up to 2.5x higher output tokens per second from supported Claude Opus models.

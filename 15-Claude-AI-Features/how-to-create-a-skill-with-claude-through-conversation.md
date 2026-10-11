@@ -2,7 +2,7 @@
 title: "How to create a skill with Claude through conversation · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:40:06Z"
+fetched_at: "2026-10-10T06:25:07Z"
 tags: ["claude-ai", "skills"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai", "skills"]
 
 Learn how to create Claude Skills through natural conversation by describing workflows and having Claude structure them into reusable formats.
 
-6 minClaude.ai
+6 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -18,7 +18,7 @@ Loading
 
 With Skills, you are able to teach Claude specific workflows, tools, and processes. By creating a skill, you're giving Claude a playbook it can reference whenever you need a particular type of help—whether that's generating reports in your company's format, cleaning and using data the way you normally do, or pulling and analyzing CRM data your way.
 
-There are two paths for creating skills. You can create skills by writing the files yourself for full control over structure and implementation. See [*How to create custom skills*(opens in new tab)](https://support.claude.com/en/02-Claude-Code-CLI/creating-custom-skills-eb687e04e2.md) *and* [*Skills authoring best practices*(opens in new tab)](https://support.claude.com/en/04-API-Reference/Other/skill-authoring-best-practices.md) for that approach.
+There are two paths for creating skills. You can create skills by writing the files yourself for full control over structure and implementation. See [*How to create custom skills*(opens in new tab)](https://support.claude.com/en/articles/12512198-creating-custom-skills) *and* [*Skills authoring best practices*(opens in new tab)](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md) for that approach.
 
 This guide focuses on the other path: creating skills through conversation with Claude. You describe your process naturally, and Claude handles the formatting and structure. This approach makes Skills accessible to anyone, regardless of technical background.
 
@@ -100,10 +100,10 @@ These are executable code files that Claude can run to handle complex operations
 
 ### Going deeper[](#going-deeper)
 
-- [Help Center: How to create custom skills(opens in new tab)](https://support.claude.com/en/02-Claude-Code-CLI/creating-custom-skills-eb687e04e2.md)
-- [Skill authoring best practices(opens in new tab)](https://support.claude.com/en/04-API-Reference/Other/skill-authoring-best-practices.md)
+- [Help Center: How to create custom skills(opens in new tab)](https://support.claude.com/en/articles/12512198-creating-custom-skills)
+- [Skill authoring best practices(opens in new tab)](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md)
 - [Skill cookbooks(opens in new tab)](https://platform.claude.com/cookbook)
-- [Agent skills overview(opens in new tab)](https://support.claude.com/en/04-API-Reference/Other/agent-skills.md)
+- [Agent skills overview(opens in new tab)](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md)
 
 - [Creating a skill through conversation](#creating-a-skill-through-conversation)
 - [Skills you can build](#skills-you-can-build)

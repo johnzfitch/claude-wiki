@@ -2,7 +2,7 @@
 title: "Introducing Claude Sonnet 5.5 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-sonnet-5-5"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:04Z"
+fetched_at: "2026-10-10T06:28:34Z"
 tags: ["claude-ai"]
 ---
 
@@ -265,7 +265,7 @@ As we described in our [recent alignment assessment](../19-Reference/alignment-a
 
 ### Safeguards
 
-**Cybersecurity.** Sonnet 5.5’s cyber capabilities are a large improvement over Sonnet 5’s, so we’re deploying it with safeguards similar to those on Opus 5.5. Users can still find and fix bugs in their code as part of routine software development, but higher-risk cybersecurity tasks will visibly fall back to Sonnet 5. Soon, cyberdefenders will be able to apply to our expanded [Cyber Verification Program](../20-Models/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for tiered access to more advanced capabilities on Sonnet 5.5, Opus 5.5, and Claude Mythos models.
+**Cybersecurity.** Sonnet 5.5’s cyber capabilities are a large improvement over Sonnet 5’s, so we’re deploying it with safeguards similar to those on Opus 5.5. Users can still find and fix bugs in their code as part of routine software development, but higher-risk cybersecurity tasks will visibly fall back to Sonnet 5. Soon, cyberdefenders will be able to apply to our expanded [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) for tiered access to more advanced capabilities on Sonnet 5.5, Opus 5.5, and Claude Mythos models.
 
 **Biology.** Sonnet 5.5 uses the same set of biology safeguards as Sonnet 5. These target harmful requests; most research, education, and clinical work is unaffected, though some microbiology and virology requests may be flagged in error. Organizations can apply to our [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md) for access to safeguards designed for the full breadth of biology-related work.
 
@@ -292,10 +292,10 @@ Claude Sonnet 5.5 is now available on all platforms, including Amazon Web Servic
 ### Products
 
 - [Claude](product-overview.md)
-- [Claude Code](claude-com-product-claude-code.md)
+- [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](product-claude-code-enterprise.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](product-tag.md)
 - [Claude Design](product-design.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
@@ -322,7 +322,8 @@ Claude Sonnet 5.5 is now available on all platforms, including Amazon Web Servic
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -343,7 +344,7 @@ Claude Sonnet 5.5 is now available on all platforms, including Amazon Web Servic
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -366,8 +367,10 @@ Claude Sonnet 5.5 is now available on all platforms, including Amazon Web Servic
 
 ### Programs
 
-- [Startups](programs-startups.md)
+- [Campus](programs-campus.md)
+- [Frontier Academy](programs-frontier-academy.md)
 - [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Startups](programs-startups.md)
 
 ### Help and security
 

@@ -4,6 +4,382 @@
 
 ---
 
+## Set up the Microsoft 365 connector | Claude Help Center
+
+Source: https://support.claude.com/en/articles/12542951-
+Path: 14-Connectors/12542951.md
+
+# Set up the Microsoft 365 connector
+
+
+This article walks admins through enabling the Microsoft 365 connector for their organization in Claude—including granting Microsoft Entra consent, restricting access, and managing permissions. Once setup is complete, people in your tenant can connect Microsoft 365 to their own Claude accounts to search across SharePoint, OneDrive, Outlook, and Teams from Claude. You can also enable write tools, which let Claude send email, manage calendar events, create and update files, and send Teams messages on a member's behalf.
+
+The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Team, and Enterprise.
+
+For end-user instructions on connecting and using Microsoft 365 once setup is complete, see **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774)**.
+
+**Important:** The Microsoft 365 connector requires a Microsoft Entra tenant tied to a Microsoft Business plan. Personal Microsoft accounts (such as @outlook.com or @hotmail.com addresses) can't be used to connect.
+
+------------------------------------------------------------------------
+
+## Setup overview
+
+Two things need to happen before anyone in your organization can connect Microsoft 365, plus an optional third step if you want to enable write tools:
+
+1.  **On Team and Enterprise plans:** A Claude organization owner enables the Microsoft 365 connector for the organization.
+
+2.  **In every tenant:** A Microsoft Entra Global Administrator grants a one-time consent that authorizes the integration for your tenant.
+
+3.  **To enable write tools:** A Microsoft Entra administrator consents to the updated permission set, and you enable write tools for your organization. See **[Enable write tools](#h_a51d877afd)** below.
+
+After completing these steps, members can connect Microsoft 365 to their own Claude accounts following the steps in **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774)**.
+
+## Enable the connector for your organization
+
+This step applies to Team and Enterprise plans only. On Free, Pro, and Max plans, skip to the next section.
+
+1.  Sign in to Claude.
+
+2.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
+
+3.  Click “+ Add” at the top of the page, then “All available.”
+
+4.  Find **Microsoft 365** and click “Add to your team.”
+
+## Grant Microsoft Entra admin consent
+
+A Microsoft Entra Global Administrator in your tenant needs to authorize the integration before anyone can connect. There are two ways to do this.
+
+### Option 1: Consent through Claude
+
+If your Microsoft Entra Global Administrator has a Claude account, they can grant consent during the standard connection flow:
+
+1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
+
+2.  Find **Microsoft 365** and click “Connect.”
+
+3.  Authenticate with Microsoft 365 credentials.
+
+4.  Review and accept the requested permissions, checking the box to grant access on behalf of the whole organization.
+
+After this, other people in the same Entra tenant can connect by following the standard end-user steps. They won't see the consent prompt—they'll just authenticate and start using the integration.
+
+### Option 2: Manual setup in Microsoft Entra ID
+
+Use this path if your Microsoft Entra Global Administrator doesn't have a Claude account, or if you need to troubleshoot the app install and permissions setup. You can add the connector apps and grant admin consent directly in Microsoft Entra ID.
+
+This process adds two service principals to your tenant. Each principal establishes a service-level identity for one of the two M365 MCP for Claude app registrations, allowing them to access and interact with your organization's data and resources via the Microsoft Graph API.
+
+**1. Add the service principals**
+
+Using Microsoft Graph Explorer, add both required service principals:
+
+M365 MCP Client for Claude:
+
+    POST https://graph.microsoft.com/v1.0/servicePrincipals
+    {"appId":"08ad6f98-a4f8-4635-bb8d-f1a3044760f0"}
+
+M365 MCP Server for Claude:
+
+    POST https://graph.microsoft.com/v1.0/servicePrincipals
+    {"appId":"07c030f6-5743-41b7-ba00-0a6e85f37c17"}
+
+**2. Grant admin consent**
+
+Construct and visit the following URLs in your browser, replacing {your-tenant-id} with your organization's tenant ID.
+
+M365 MCP Client for Claude:
+
+    https://login.microsoftonline.com/{your-tenant-id}/adminconsent?client_id=08ad6f98-a4f8-4635-bb8d-f1a3044760f0
+
+M365 MCP Server for Claude:
+
+    https://login.microsoftonline.com/{your-tenant-id}/adminconsent?client_id=07c030f6-5743-41b7-ba00-0a6e85f37c17
+
+When you visit each URL, you'll be prompted to consent to the delegated permissions required by the integration on behalf of your organization.
+
+**3. Finish setup**
+
+- **Team and Enterprise plans:** A Claude organization Owner needs to enable the connector in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. Then members can connect individually.
+
+- **Free, Pro, and Max plans:** Members can connect by navigating to **[Customize \> Connectors](https://claude.ai/customize/connectors)**, finding **Microsoft 365**, and clicking “Connect.”
+
+### Restrict who can use the connector
+
+To limit which people in your tenant can authenticate to Microsoft 365 through Claude:
+
+1.  Go to the Microsoft Entra admin center at entra.microsoft.com.
+
+2.  Navigate to the **M365 MCP Server for Claude** enterprise application.
+
+3.  Go to **Properties** and set **Assignment required?** to “Yes.”
+
+4.  Under **Users and groups**, add the specific users or groups who should have access.
+
+5.  Repeat the same steps for the **M365 MCP Client for Claude** enterprise application.
+
+Both components need to be restricted to the same set of authorized people.
+
+### Restrict which permissions the connector can use
+
+To limit which types of resources the integration can access, selectively revoke permissions from the default set of authorized scopes. This requires Microsoft Entra admin access.
+
+1.  As a Microsoft Entra admin, go to entra.microsoft.com.
+
+2.  Select “Enterprise Applications.”
+
+3.  Next to the search box, remove the application type filter.
+
+4.  Search for and click “M365 MCP Server for Claude.”
+
+5.  Go to **Permissions**.
+
+6.  Under the **Admin consent** tab and in the Microsoft Graph list of permissions, select the permission you would like to revoke and click the “**…**” button.
+
+7.  Select “Revoke permission” and confirm with “Yes, revoke.”
+
+Once revoked, attempts to access a resource with that permission will return a "Failed to call tool" error.
+
+Members can also individually turn off specific tools in their own Microsoft 365 settings to prevent Claude from trying to access a tool for which the permission has been revoked.
+
+To restore a revoked permission, follow the steps to grant admin consent described in **Option 2: Manual setup in Microsoft Entra ID**. This will revert the permissions to the default state.
+
+------------------------------------------------------------------------
+
+## Enable write tools
+
+Write tools let Claude send email, manage drafts and calendar events, update mailbox settings, and create and update files in OneDrive and SharePoint, and send messages in Microsoft Teams. Read and search tools work the same whether or not write tools are enabled.
+
+**1. Re-consent to the updated permissions**
+
+The connector's permission set now includes additional Microsoft Graph scopes to support write tools. If your tenant consented before write tools or the Teams write tools launched, a Microsoft Entra Global Administrator needs to review and approve the updated permission set before write tools activate. Review and approve the updated permissions for the connector in your tenant's **Enterprise Applications** consent flow.
+
+**2. Enable write tools for your organization**
+
+If your organization was using the connector before write tools launched, they will be blocked by default. Enable them for everyone by going to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, finding “Microsoft 365,” and setting the appropriate permissions. Enterprise plans can enable them for a subset of users through **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_979e558d00)**. For Microsoft Teams specifically, set each Teams write tool individually: the send, post, and reply tools can be set to Ask or Blocked (members confirm each send), and starting a new chat can also be set to Allow. The connector-wide "all tools" permission on its own doesn't turn these on.
+
+**3. Verify**
+
+Once enabled, ask Claude to perform a low-risk write action, such as "Draft an email to myself, but don't send it," to confirm write tools are active.
+
+**Note:** Emails Claude sends include an attribution header identifying them as agent-initiated. File writes, calendar writes, and Teams messages aren't currently tagged. When Claude creates or updates a calendar event, Microsoft 365 automatically sends attendees an invitation or update notice. Attachments aren’t supported in write tools, so sending, forwarding, and drafting all reject messages with attachments. Write tools are also subject to per-user limits on writes, sends, and recipients.
+
+------------------------------------------------------------------------
+
+## Permissions reference
+
+The Microsoft 365 connector uses **delegated permissions**, meaning Claude acts on behalf of each individual user and can only access data that user already has permission to view in Microsoft 365. Permissions are read-only by default. Claude can only send, create, or update content if you enable write tools.
+
+During authentication, the integration requests the following permissions:
+
+**Basic access**
+
+- `User.Read`: Sign in and read user profile
+
+- `openid`: Sign in with organizational account
+
+- `offline_access`: Maintain access to data
+
+- `email`: View email address
+
+- `profile`: View basic profile information
+
+**Email (Outlook)**
+
+- `Mail.Read`: Read email messages
+
+- `Mail.ReadBasic`: Read email metadata (sender, subject, date)
+
+- `Mail.Read.Shared`: Read emails in mailboxes the user has access to
+
+  - **Note:** Shared mailbox access is included through the `Mail.Read.Shared` permission. Users can search shared mailboxes they have delegate access to in Microsoft 365, including full access and folder-level delegation. No setup is needed beyond standard admin consent and the delegate permissions already configured in Microsoft 365.
+
+- `MailboxFolder.Read`: Read mailbox folder structure
+
+- `MailboxItem.Read`: Read items in mailbox
+
+- `MailboxSettings.Read`: Read mailbox settings, like the user's timezone
+
+**Note:** Email search covers each user's primary mailbox, including its Archive folder, and any shared mailboxes they can access. It doesn't cover the separate Online Archive mailbox (also called the In-Place Archive), so messages that a retention policy has moved there won't appear in results.
+
+**Calendar**
+
+- `Calendars.Read`: Read calendar events
+
+- `Calendars.Read.Shared`: Read calendars shared with the user
+
+**Teams chat**
+
+- `Chat.Read`: Read Teams chat messages
+
+- `Chat.ReadBasic`: Read Teams chat metadata
+
+- `ChatMember.Read`: Read information about chat participants
+
+- `ChatMessage.Read`: Read Teams chat messages
+
+**Teams channels**
+
+- `Channel.ReadBasic.All`: Read channel names and descriptions
+
+- `ChannelMessage.Read.All`: Read channel messages
+
+**Meetings**
+
+- `OnlineMeetings.Read`: Read online meetings
+
+- `OnlineMeetingTranscript.Read.All`: Read meeting transcripts
+
+- `OnlineMeetingAiInsight.Read`: Read AI-generated meeting insights
+
+- `OnlineMeetingArtifact.Read.All`: Read meeting recordings and artifacts
+
+- `OnlineMeetingRecording.Read.All`: Read meeting recordings
+
+**Files (OneDrive and SharePoint)**
+
+- `Files.Read`: Read user files
+
+- `Files.Read.All`: Read all files the user can access
+
+- `Sites.Read.All`: Read items in SharePoint sites
+
+**Write permissions**
+
+The following permissions support write tools and are included in the updated consent set:
+
+- `Mail.Send`: Send and forward email
+
+- `Mail.ReadWrite`: Create, update, and delete drafts; move and label messages
+
+- `Calendars.ReadWrite`: Create, update, delete, and respond to calendar events
+
+- `Files.ReadWrite.All`: Create and update files in OneDrive and SharePoint
+
+- `MailboxSettings.ReadWrite`: Manage categories, inbox rules, and automatic replies
+
+- `ChatMessage.Send`: Send a Teams chat message on the user's behalf
+
+- `ChannelMessage.Send`**:** Post or reply in a Teams channel
+
+- `Chat.Create`: Start a new chat on the user’s behalf
+
+- `People.Read`: Find people in the organization to start a chat with
+
+**User directory**
+
+- `User.ReadBasic.All`: Read basic profile information for all users in the organization (used for finding meeting availability)
+
+The Microsoft 365 connector searches SharePoint across the entire tenant using the permissions of the user. Site-specific search restriction isn't supported.
+
+## Privacy and security
+
+- **Permission inheritance:** Claude mirrors each user's existing Microsoft 365 permissions. Members can't access anything through Claude that they couldn't already see directly in Microsoft 365.
+
+- **On-demand access:** Claude only accesses data when a user explicitly asks a question that requires it.
+
+- **Revocable access:** Members can disconnect their own integration through **[Customize \> Connectors](https://claude.ai/customize/connectors)**. Team and Enterprise plan Owners can also remove the connector for the entire organization in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
+
+For more detail, see the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-)**.
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+### A member can't authenticate
+
+1.  Confirm their account is tied to a Microsoft Entra tenant, not a personal Microsoft account.
+
+2.  Confirm their Microsoft 365 license is active.
+
+3.  Confirm admin consent has been granted using Option 1 or Option 2 above.
+
+4.  Check whether a Conditional Access policy in your tenant is blocking the connection. See below: **[Conditional Access is blocking the connection](#h_c7635fb6e2)**.
+
+### Members are seeing "Failed to call tool" errors
+
+A permission may have been selectively revoked in Microsoft Entra. Members can turn off the corresponding tool in their Microsoft 365 settings to suppress the error, or you can restore the permission by repeating the admin consent steps in **[Option 2: Manual setup in Microsoft Entra ID](#h_c5f095c9cf)**.
+
+### Write tools aren't appearing for members
+
+1.  Confirm a Microsoft Entra administrator has consented to the updated permission set that includes write scopes.
+
+2.  Confirm write tools are enabled in the Microsoft 365 connector configuration, or that the member is covered by a role-based access policy that grants them.
+
+3.  Have the member disconnect and reconnect Microsoft 365 in **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
+
+### Conditional Access is blocking the connection
+
+A Conditional Access block shows up in one of three ways:
+
+- A user sees "Authorization with the MCP server failed" and a reference code starting with `ofid_` when they try to connect. Our Support team can look up that code.
+
+- A member who is already connected gets an error when Claude uses a Microsoft 365 tool. The error includes an `AADSTS` code, a note that the request was blocked by a Conditional Access policy, and the Trace ID and Correlation ID you can search for in Entra.
+
+- Members are asked to reconnect Microsoft 365 on a regular cycle, much more often than the normal 90-day expiry. This usually means a sign-in frequency policy.
+
+Connecting Microsoft 365 involves more than the sign-in the member sees. After the member signs in to Microsoft in their browser, Claude's servers exchange that sign-in for access tokens, and later exchange those tokens for Microsoft 365 access on the member's behalf. In our testing, Entra evaluates your Conditional Access policies against these server-side requests as coming from Anthropic's IP range, `160.79.104.0/21`. They identify the member and carry the device recorded when the member connected, not the member's current device or network. So a policy can pass the member's own sign-in and still block the connection a moment later, or block it days later. Learn more about **[Anthropic's IP addresses](../04-API-Reference/Endpoints/ip-addresses.md)**.
+
+**Find the policy that's blocking the connection**
+
+1.  In the Microsoft Entra admin center, go to **Sign-in logs** and open the **User sign-ins (non-interactive)** tab. The member's own sign-in appears on the interactive tab and usually shows as successful, so the block is rarely there.
+
+2.  Filter by the affected member. The blocked requests can appear under either **M365 MCP Server for Claude** or **M365 MCP Client for Claude**, so filtering by member is more reliable than filtering by application. Don't filter by resource, which hides some of the rows.
+
+3.  Open the failed entry and select the **Conditional Access** tab. It names the policy that blocked the request.
+
+The error code tells you what kind of policy it is:
+
+- `AADSTS70043`: a sign-in frequency policy. See the next section.
+
+- `AADSTS53003`: a policy set to block access. The Conditional Access tab tells you which one. If it's based on location, see the next section.
+
+- `AADSTS50076`: a policy required multi-factor authentication on a server-side request. Disconnecting and reconnecting Microsoft 365 clears it. If it keeps happening, see the **[Microsoft 365 connector security guide](microsoft-365-connector-security-guide.md)**.
+
+- `AADSTS53000`: a policy requires a compliant device. The similar code `AADSTS530003` means a policy requires a managed device. In both cases the member needs to reconnect from a device that meets the policy. Learn more in the **[Microsoft 365 connector security guide](microsoft-365-connector-security-guide.md)**.
+
+**Exclude Anthropic's IP range from sign-in frequency and location policies**
+
+Because the server-side requests come from Anthropic's IP range, a policy that limits sign-ins to your own network, or that enforces a sign-in frequency, blocks them for every member. Excluding the two Claude applications from the policy isn't enough on its own. We recommend excluding Anthropic's IP range from the policy as well.
+
+**Note:** Don't use this exclusion for a device compliance policy. The server-side requests carry the device recorded when the member connected, so a device policy still applies to them, and excluding Anthropic's IP range would turn the device check off for the connector. Members blocked by a device policy need to reconnect from a device that meets it. Learn more in the **[Microsoft 365 connector security guide](microsoft-365-connector-security-guide.md)**.
+
+If the policy that blocked the request is a sign-in frequency or location policy:
+
+1.  In the Microsoft Entra admin center, go to **Conditional Access \> Named locations** and create an IP range location containing `160.79.104.0/21`. Leave **Mark as trusted location** unchecked so the exclusion doesn't affect other policies that use trusted locations.
+
+2.  Open the policy that blocked the request and go to **Conditions \> Locations \> Exclude**.
+
+3.  Add the named location you created. Keep any existing exclusions for the Claude applications in place.
+
+4.  Save the policy and wait a few minutes for the change to apply.
+
+5.  Have an affected member disconnect and reconnect Microsoft 365 in **Customize \> Connectors**.
+
+**Note:** Excluding the range lifts the policy for every request that comes from Anthropic's addresses, which means all Microsoft 365 connector activity for all of your members. For a sign-in frequency policy, this also means the connector's background requests are no longer subject to it, so a connection stays signed in until it expires after 90 days of inactivity. If you'd rather keep the periodic reconnects, leave the policy as it is. Members who are asked to reconnect can sign out of Microsoft in their browser, or use a private browsing window, before reconnecting. If you want to check the effect of a change before making it, clone the policy in report-only mode first.
+
+------------------------------------------------------------------------
+
+## Frequently asked questions
+
+### What happens if a member tries to connect before consent is granted?
+
+They'll see an error message indicating that an administrator must grant app permissions before they can use the integration. The connection will fail until a Microsoft Entra Global Administrator approves the necessary permissions.
+
+### Can the Microsoft 365 connector be used with enterprise search?
+
+Yes. When enterprise search is enabled, it can query Microsoft 365 alongside other connected services for unified search across Slack, Google Workspace, Microsoft 365, and more.
+
+### What file types can the connector read?
+
+Claude reads Word, Excel, PowerPoint (including older .doc, .xls, and .ppt files), PDF, and plain-text formats such as .txt, .md, and .csv from SharePoint and OneDrive. Other formats, including OneNote, can't be read. For the full list, see **[Connect to Microsoft 365](connect-to-microsoft-365.md#h_ddeb82923f)**.
+
+### Can the integration modify Microsoft 365 data?
+
+Only after an Entra admin grants write scopes. With write tools on, Claude can send email, manage drafts and calendar events, update mailbox settings, create and update files in OneDrive and SharePoint, and send messages in Microsoft Teams (post/reply in a channel, send a chat message, or start a new chat on the user's behalf), always within each member's existing Microsoft 365 permissions. Without them, the integration is read-only. Claude still can't change Teams settings or permissions, only send messages.
+
+---
+
 ## Using the GitHub integration | Claude by Anthropic
 
 Source: https://support.claude.com/en/articles/9945670-using-the-github-integration
@@ -591,7 +967,7 @@ You decide which connectors are enabled, which groups or roles get them, and at 
 
 - Auth connectors once for your organization, and access is given to your team automatically.
 
-- Use **[role-based permissions](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)** to choose exactly which roles get each connector, so different teams get the access that fits their work. See **Choose which roles get managed auth** below.
+- Use **[role-based permissions](../17-Billing-Plans/set-up-role-based-permissions-on-enterprise-plans.md)** to choose exactly which roles get each connector, so different teams get the access that fits their work. See **Choose which roles get managed auth** below.
 
 - Choose which permissions Claude can request when members connect through your identity provider, and narrow that further for individual roles.
 
@@ -745,9 +1121,253 @@ The guide to building custom connectors has moved to the Claude developer docs.
 
 ---
 
+## Claude for Government administrator guide - Claude.ai Documentation
+
+Source: https://support.claude.com/en/articles/14503804-classification-banner-in-claude-for-government
+Path: 14-Connectors/classification-banner-in-claude-for-government.md
+
+## On this page
+
+- [How your deployment is organized](#how-your-deployment-is-organized)
+  - [Tenant](#tenant)
+  - [Organizations](#organizations)
+  - [Users](#users)
+- [Billing accounts](#billing-accounts)
+- [The three views](#the-three-views)
+  - [A note on tenant administrators](#a-note-on-tenant-administrators)
+- [How people get access](#how-people-get-access)
+- [Where to go next](#where-to-go-next)
+
+# Claude for Government administrator guide
+
+Copy pageCopy page
+
+Set up and manage Claude for Government for your agency: how tenants, organizations, users, seats, and credits fit together.
+
+Copy pageCopy page
+
+> **Who this guide is for:** Administrators who set up and manage Claude for Government for their agency.
+
+> **Find your section:**
+>
+> | If you are…                 | Start with                                                         |
+> |-----------------------------|--------------------------------------------------------------------|
+> | A tenant administrator      | [Tenant administration](https://support.claude.com/docs/government/tenant-admin/overview)    |
+> | An organization owner       | [Organization administration](https://support.claude.com/docs/government/org-admin/overview) |
+> | Any user                    | [Your account](https://support.claude.com/docs/government/account/overview)                  |
+> | Anyone using Claude Desktop | [Use Claude Desktop](https://support.claude.com/docs/government/desktop/plugins)             |
+
+This guide covers the portals used to manage Claude for Government: how access, seats, and usage are organized, and who is responsible for each part. If you just want to use Claude for Government, you don’t need this guide. You can simply sign in and start a conversation, and come back here when you need to manage other people’s access or understand why something is configured the way it is.
+
+
+[​](#how-your-deployment-is-organized)
+
+How your deployment is organized
+
+Claude for Government is organized as a three-level hierarchy: **Tenant** → **Organizations** → **Users**
+
+
+[​](#tenant)
+
+Tenant
+
+The tenant is the top level, and it represents your agency’s overall deployment. There is exactly one tenant per agency, and it holds the things that are shared across everyone: your connection to your identity provider for single sign-on, automatic user provisioning (where your directory system creates and updates accounts for you), the list of verified email domains, and the pool of credits and seats issued to you by Anthropic. The tenant is managed by a short list of **tenant administrators**. They create organizations, decide how seats are divided among them and what spend caps are set, and set policies that apply across the whole agency.
+
+
+[​](#organizations)
+
+Organizations
+
+An organization is a group of users who share a pool of seats and a set of policies, with its own spend caps. You might create one organization for each bureau, office, or program, or you might run the whole agency as a single organization. Most agencies start with a single organization. You would create more when you need any of the following:
+
+- Separate billing accounts so one group’s usage never draws down another group’s balance.
+- Separate usage reporting for each bureau or program.
+- Different product settings, seat tiers, or access rules for different parts of your agency.
+
+Each organization has its own owners, its own members, its own seat assignments, and its own configuration. The organizations all share the tenant’s single sign-on connection, so you configure identity once and every organization uses it.
+
+
+[​](#users)
+
+Users
+
+A user is a single person. Every user belongs to exactly one organization, and two properties control what they can do:
+
+- A user’s **role** determines what they can manage. Most people have the **User** role, which means they use Claude but don’t administer anything. **Owners** and **Primary Owners** manage the organization: they manage members’ roles and seats, and adjust organization-level settings.
+- A user’s **seat tier** determines how much they can use Claude. A seat tier is a named bundle of usage limits (for example, how much Claude usage a person gets in a given period). A user with no seat assigned can sign in and see their account, but they can’t send messages until an owner assigns them a seat.
+
+A user never belongs to more than one organization at a time. Moving a person between organizations keeps the same account; their role and seat assignment are managed separately in the new organization.
+
+
+[​](#billing-accounts)
+
+Billing accounts
+
+A **billing account** is where your agency’s credits and seats live. Anthropic sets up one or more billing accounts with your agency, and each one holds a prepaid credit balance (a dollar amount that is drawn down as people use Claude) and a pool of seats (a fixed number of seats in each tier). Every organization is linked to exactly one billing account, and usage by that organization draws directly from the account’s balance. Several organizations can share the same billing account, or each organization can have its own. Tenant administrators divide each billing account’s seat pool among the organizations it funds, and can set per-organization spend caps to control how much any one organization draws from a shared balance.
+
+
+[​](#the-three-views)
+
+The three views
+
+The portal has three views. Which ones you can reach depends on your role, and you switch between them using the link in the page footer.
+
+| View                                                          | Who has it                                    | What it’s for                                                                                                                                                                                       |
+|---------------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [**Tenant**](https://support.claude.com/docs/government/tenant-admin/overview)          | Tenant administrators                         | Creating organizations, configuring identity and access (single sign-on, provisioning, and routing rules), distributing seats, setting spend caps, and managing who else is a tenant administrator. |
+| [**Organization admin**](https://support.claude.com/docs/government/org-admin/overview) | Organization owners and tenant administrators | Managing users and seats, setting usage tiers, viewing analytics, and configuring organization-level settings.                                                                                      |
+| [**Account**](https://support.claude.com/docs/government/account/overview)              | Everyone                                      | Viewing your own profile, checking your usage limits, and managing where you’re signed in.                                                                                                          |
+
+When you sign in, you land on the most relevant view for you. Organization owners land on the organization admin view, and everyone else lands on their account view. This includes tenant administrators who are not also an organization owner; they start on their account view and can use the **Switch to admin view** link in the page footer, and from there switch to the tenant view.
+
+
+[​](#a-note-on-tenant-administrators)
+
+A note on tenant administrators
+
+Being a tenant administrator is separate from the role you hold inside an organization. Roles (User, Owner, and Primary Owner) control what you can do within a single organization, while tenant administrator status is granted by adding someone to the tenant’s **Admins** list and controls access to the settings that sit above every organization. The two are independent: an organization owner is not automatically a tenant administrator, and a tenant administrator does not automatically hold any particular role inside any organization.
+
+> **For tenant administrators:** Because the tenant sits above every organization, you can also open the organization admin view and act on behalf of any organization in the tenant, even ones you don’t belong to. When the tenant has more than one organization, an organization switcher appears at the top of the admin view so you can choose which one you’re managing.
+
+
+[​](#how-people-get-access)
+
+How people get access
+
+Users reach your deployment in one of two ways, both of which are configured by a tenant administrator on the [Identity and access](https://support.claude.com/docs/government/tenant-admin/identity-and-access) page:
+
+- **Single sign-on.** The user enters their agency email address and is redirected to your identity provider (for example, Microsoft Entra, Okta, or ADFS). When they return authenticated, Claude for Government evaluates your tenant’s routing rules to decide which organization they belong in.
+- **Directory provisioning.** If your identity provider supports SCIM, which is a standard way for directory systems to keep accounts in sync with other applications, you can connect it so that your directory pushes users and group memberships to Claude for Government automatically. Routing rules then place each provisioned user in an organization based on their group membership.
+
+Routing rules are the only way in. A new person who does not match any rule cannot sign in until a rule is added that covers them. Routing rules are also re-evaluated each time an existing member signs in, so a rule change can move someone to a different organization the next time they sign in.
+
+
+[​](#where-to-go-next)
+
+Where to go next
+
+- Read [**Tenant administration**](https://support.claude.com/docs/government/tenant-admin/overview) if you’re a tenant administrator managing the overall deployment.
+- Read [**Organization administration**](https://support.claude.com/docs/government/org-admin/overview) if you’re an owner managing a single organization.
+- Read [**Your account**](https://support.claude.com/docs/government/account/overview) if you want to understand your own profile, usage, and sessions.
+
+---
+
+## Claude and Slack | Claude by Anthropic
+
+Source: https://www.claude.com/blog/claude-and-slack
+Path: 14-Connectors/claude-and-slack.md
+
+# Claude and Slack
+
+Access Claude directly into Slack so you can get help in channels and threads, or connect your Slack workspace to Claude for searching conversations and pulling context when you need it.
+
+- 
+
+  Category[Announcements](https://www.claude.com/resources/product-announcements)
+- 
+
+  ProductClaude Enterprise
+- 
+
+  DateOctober 1, 2025
+- 
+
+  Reading time5 min
+- 
+
+
+***Update:** The Slack connector is now available for Claude Pro and Max subscribers. (January 26, 2026)*
+
+We're introducing two ways to use Claude with Slack. Add Claude directly to your Slack workspace, or connect Slack to the Claude apps so Claude can search and reference relevant Slack messages during conversations.
+
+With Claude and Slack deeply integrated, you can work wherever you’d like. Get Claude's help directly in Slack conversations, or have Claude search your Slack workspace when you need context for deeper research projects. Draft responses to critical messages, prep for meetings by pulling in relevant discussions, or analyze shared documents—all where you are already working.
+
+### Bringing Claude to Slack
+
+When you work with Claude in Slack, you get all the capabilities you already use—web search, document analysis, and your existing connections. That means Claude can pull context from your docs, emails, and any other tools you've connected, right in Slack.
+
+Claude only searches public and private Slack channels you have access to. When you ask Claude to help in a public thread, it drafts responses privately first. You can review, edit, or regenerate before sharing with your team, staying in control throughout the process.
+
+There are three ways to use Claude in Slack:
+
+- **Direct messages**: Start a private conversation with @Claude for one-on-one assistance with research, writing, or analysis.
+- **AI assistant panel**: Click the Claude icon in Slack's AI assistant header from any channel to access Claude without interrupting ongoing conversations.
+- **Thread participation**: Add Claude to any thread by mentioning @Claude. Claude will draft a response based on the conversation context, which you can review before sharing.
+
+### Connecting Slack to Claude
+
+When you connect Slack to Claude, Claude searches your workspace's channels, direct messages, and shared files to find the context you need for better responses and research.
+
+Claude helps you prepare for meetings by pulling relevant Slack discussions, gathering project updates from multiple channels, or finding action items buried in team conversations. Use it for:
+
+- **Meeting preparation:** Review Slack discussions, pull relevant documents, and create briefings with recent updates and key decisions
+- **Project coordination:** Search across channels to gather status updates, identify blockers, and summarize progress
+- **Onboarding support:** Help new team members understand ongoing projects by reviewing channel history, shared documents, and related email threads
+- **Create documentation:** Formalize team discussions into documentation, pulling context from conversations and relevant background materials
+
+This integration represents a significant step toward more intelligent, AI-powered workflows:
+
+"Every company is on its way to becoming an agentic enterprise, where AI agents work hand-in-hand with humans. Partnering with Anthropic to integrate Claude into Slack and Slack context into Claude accelerates that journey — bringing best-in-class AI directly into the flow of work,” shares Rob Seaman, Chief Product Officer of Slack at Salesforce. “By bridging the gap between Claude and Slack users, we're creating a seamless AI experience that makes work more productive, more enjoyable, and more intelligent than ever.”
+
+### Security and controls
+
+Claude in Slack maintains the same security standards and privacy settings as the user’s Claude account. Workspace administrators control organization-wide app approval, and individual users authenticate with their existing Claude accounts.
+
+In Slack, Claude only accesses channels and conversations you have permission to view—respecting all existing Slack permissions. Slack conversations follow your organization's retention policies and security settings.
+
+### Getting started
+
+Claude in Slack is available today through the Slack Marketplace for teams on paid Slack plans. Workspace administrators must first approve the Claude app before individual users can authenticate with their Claude account.
+
+The Slack connector is available for Claude Team and Enterprise plan customers who have installed Claude in the Slack app. Admins must first enable the [connector](https://claude.ai/directory/597f662f-36de-437e-836e-5a81013cbfbe) for their organization before users can set it up in the “Connectors” tab of their Claude settings.
+
+Get started with Claude and Slack.
+
+
+[Learn more](using-claude-in-slack.md)
+
+## Related articles
+
+Explore more product news and best practices for teams building with Claude.
+
+
+ArticleOct 8, 2026
+
+### Build live dashboards and animate explainers with Claude 
+
+Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
+
+Claude appsClaude Design
+
+2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+
+
+ArticleOct 7, 2026
+
+### Claude Haiku 5.5
+
+Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
+
+(opens in new tab)[](https://www.claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
+
+ArticleOct 6, 2026
+
+### Claude now works with Google Docs, Sheets, and Slides
+
+Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
+
+Claude Enterprise
+
+
+ArticleOct 6, 2026
+
+### We’re expanding the Claude Startups program to help founders build
+
+---
+
 ## Claude for Microsoft 365 | Claude by Anthropic
 
-Source: https://www.claude.com/claude-for-powerpoint
+Source: https://www.claude.com/claude-for-excel
 Path: 14-Connectors/claude-for-excel.md
 
 # Claude for Microsoft 365
@@ -756,17 +1376,7 @@ Work without the window shuffle
 
 Claude works inside Excel, PowerPoint, Word, and Outlook. Start in your inbox, end in the deck. It remembers everything in between.
 
-Install for Microsoft 365
-
-[Install for Microsoft 365](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)
-
-Install for Microsoft 365
-
-Install for Outlook
-
-[Install for Outlook](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)
-
-Install for Outlook
+[Install for Microsoft 365 (opens in new tab)](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)[Install for Outlook (opens in new tab)](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)
 
 ## Claude for Excel
 
@@ -787,10 +1397,6 @@ Beta
 Triage your inbox in one prompt, draft replies that wait for you to send, and find time across calendars.
 
 ## How teams use Claude for Microsoft 365
-
-[Play video](#)
-
-Play video
 
 ### Turn an email into a deliverable
 
@@ -826,75 +1432,75 @@ How can Claude help?
 
 Open the brief in Word and start the memo from our firm template.
 
-Copy prompt
-
-[Copy prompt](https://claude.ai/new?q=Open+the+brief+in+Word+and+start+the+memo+from+our+firm+template.)
-
-Copy prompt
+[Copy prompt (opens in new tab)](https://claude.ai/new?q=Open+the+brief+in+Word+and+start+the+memo+from+our+firm+template.)
 
 How can Claude help?
 
 Turn this updated analysis into the SteerCo deck in the Acme template.
 
-Copy prompt
-
-[Copy prompt](https://claude.ai/new?q=Turn+this+updated+analysis+into+the+SteerCo+deck+in+the+Acme+template)
-
-Copy prompt
+[Copy prompt (opens in new tab)](https://claude.ai/new?q=Turn+this+updated+analysis+into+the+SteerCo+deck+in+the+Acme+template.)
 
 How can Claude help?
 
 Find 30 minutes with everyone on this thread next week
 
-Copy prompt
+[Copy prompt (opens in new tab)](https://claude.ai/new?q=Find+30+minutes+with+everyone+on+this+thread+next+week)
 
-[Copy prompt](https://claude.ai/new?q=What+did+the+other+side+change+in+section+4%2C+and+are+any+of+these+dealbreakers%3F)
-
-Copy prompt
-
-[Prev](#)
-
-Prev
-
+1 of 3
 
 Blog post
 
 Claude for Excel, PowerPoint, and Word are now generally available on all paid plans, with Claude for Outlook joining in beta.
 
-Read blog
-
-[Read blog](https://www.claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook)
-
-Read blog
+[Read blog](https://www.claude.com/resources/articles/collaborate-with-claude-across-excel-powerpoint-word-and-outlook)
 
 ### What customers are saying
 
-“Claude enables a seamless transition from rough ideas to polished, branded deliverables across presentation, document and spreadsheet applications without disrupting the workflow. That end-to-end consistency has been a significant time-saver, especially when quality, formatting, and speed all matter.”
-
-Vivek Kulkarni, US AI Transformation Leader
-
-“Claude in Excel allows my teams to build an initial version of complex models faster, enabling them to focus on refining the model, pressure testing inputs and assumption, and exploring more scenarios and trade-offs. This helps us have richer and deeper discussions with our clients earlier.”
-
-Gene Rapoport, Head of Private Equity AI Practice
-
-“Claude for M365 is being rapidly adopted by ServiceNow. Claude does the work in Excel itself, instead of asking us to move content between tools, driving step change in productivity.”
+> “Claude for M365 is being rapidly adopted by ServiceNow. Claude does the work in Excel itself, instead of asking us to move content between tools, driving step change in productivity.”
 
 Rajeev Sethi, GVP Enterprise Technologies
 
-“We can instruct Claude to build a style guide from an executive's prior written communications so our EAs can draft their emails in their voice. That's high-leverage work the team would never have time to set up by hand.”
+> “We can instruct Claude to build a style guide from an executive's prior written communications so our EAs can draft their emails in their voice. That's high-leverage work the team would never have time to set up by hand.”
 
 Ben Letalik, Sr. Director, Digital Transformation & Innovation
 
-“Our investment professionals live in data and analytical models, and Claude for Excel meets them there. Analysts are using it to build and update coverage models, separate signal from noise, and pressure-test their work — all with a step-change in efficiency.”
+> “Our investment professionals live in data and analytical models, and Claude for Excel meets them there. Analysts are using it to build and update coverage models, separate signal from noise, and pressure-test their work — all with a step-change in efficiency.”
 
 Atte Lahtiranta, Head of Core Engineering
 
-[Prev](#)
+> “Claude enables a seamless transition from rough ideas to polished, branded deliverables across presentation, document and spreadsheet applications without disrupting the workflow. That end-to-end consistency has been a significant time-saver, especially when quality, formatting, and speed all matter.”
 
-Prev
+Vivek Kulkarni, US AI Transformation Leader
 
-0/5
+> “Claude in Excel allows my teams to build an initial version of complex models faster, enabling them to focus on refining the model, pressure testing inputs and assumption, and exploring more scenarios and trade-offs. This helps us have richer and deeper discussions with our clients earlier.”
 
+Gene Rapoport, Head of Private Equity AI Practice
+
+> “Claude for M365 is being rapidly adopted by ServiceNow. Claude does the work in Excel itself, instead of asking us to move content between tools, driving step change in productivity.”
+
+Rajeev Sethi, GVP Enterprise Technologies
+
+> “We can instruct Claude to build a style guide from an executive's prior written communications so our EAs can draft their emails in their voice. That's high-leverage work the team would never have time to set up by hand.”
+
+Ben Letalik, Sr. Director, Digital Transformation & Innovation
+
+> “Our investment professionals live in data and analytical models, and Claude for Excel meets them there. Analysts are using it to build and update coverage models, separate signal from noise, and pressure-test their work — all with a step-change in efficiency.”
+
+Atte Lahtiranta, Head of Core Engineering
+
+> “Claude enables a seamless transition from rough ideas to polished, branded deliverables across presentation, document and spreadsheet applications without disrupting the workflow. That end-to-end consistency has been a significant time-saver, especially when quality, formatting, and speed all matter.”
+
+Vivek Kulkarni, US AI Transformation Leader
+
+> “Claude in Excel allows my teams to build an initial version of complex models faster, enabling them to focus on refining the model, pressure testing inputs and assumption, and exploring more scenarios and trade-offs. This helps us have richer and deeper discussions with our clients earlier.”
+
+Gene Rapoport, Head of Private Equity AI Practice
+
+> “Claude for M365 is being rapidly adopted by ServiceNow. Claude does the work in Excel itself, instead of asking us to move content between tools, driving step change in productivity.”
+
+Rajeev Sethi, GVP Enterprise Technologies
+
+1/5
 
 ## Core capabilities across the apps you use every day
 
@@ -914,11 +1520,7 @@ Drop a PDF or doc into any sidebar. Claude reads it alongside your open file and
 
 When a process is right, save it as a skill. The team can use it the same way in all four apps.
 
-Learn more
-
 [Learn more](https://www.claude.com/skills)
-
-Learn more
 
 ### Type or talk, whichever is faster
 
@@ -928,11 +1530,7 @@ Use dictation to talk to Claude in a sidebar instead of typing.
 
 Pull context from outside sources directly from the sidebar.
 
-Learn more
-
 [Learn more](../04-API-Reference/Other/partners-mcp.md)
-
-Learn more
 
 ## FAQ
 
@@ -952,1430 +1550,247 @@ Yes. Claude inherits your heading styles, slide masters, formula conventions, an
 
 No. Drafts and calendar invites open in Outlook's native compose form and wait for you to click send.
 
-[Prev](#)
-
-Prev
-
-
 ## Get started with Claude for Microsoft 365
 
-Install for Microsoft 365
+[Install for Microsoft 365 (opens in new tab)](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)[Install for Outlook (opens in new tab)](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)
 
-[Install for Microsoft 365](https://marketplace.microsoft.com/en-us/product/office/WA200010725?tab=Overview)
+[](https://www.claude.com/)
 
-Install for Microsoft 365
-
-Install for Outlook
-
-[Install for Outlook](https://marketplace.microsoft.com/en-us/product/office/WA200010724?tab=Overview)
-
-Install for Outlook
-
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](../15-Claude-AI-Features/product-overview.md)
-  Claude
-
-- Claude Code
-
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
-  Claude Code
-
-- Claude Cowork
-
-  [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](claude-for-slack.md)
-  @Claude
-
-- Claude Science
-
-  [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-  Claude Security
-
-- Download app
-
-  [Download app](https://www.claude.com/download)
-  Download app
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Capabilities
-
-- Artifacts
-
-  [Artifacts](https://www.claude.com/features/artifacts)
-  Artifacts
-
-- Design
-
-  [Design](../15-Claude-AI-Features/product-design.md)
-  Design
-
-- Connectors
-
-  [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-  Connectors
-
-- Plugins
-
-  [Plugins](https://www.claude.com/marketplace/plugins)
-  Plugins
-
-- Skills
-
-  [Skills](https://www.claude.com/skills)
-  Skills
-
-Extensions
-
-- Claude in Chrome
-
-  [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-  Claude in Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-Models
-
-- Mythos
-
-  [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-  Mythos
-
-- Fable
-
-  [Fable](../15-Claude-AI-Features/claude-fable.md)
-  Fable
-
-- Opus
-
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-  Haiku
-
-Enterprise
-
-- Overview
-
-  [Overview](../18-Industry-UseCases/enterprise.md)
-  Overview
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-  Claude Code for Enterprise
-
-Use cases
-
-- AI agents
-
-  [AI agents](../18-Industry-UseCases/agents.md)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](../18-Industry-UseCases/code-modernization.md)
-  Code modernization
-
-- Coding
-
-  [Coding](../18-Industry-UseCases/coding.md)
-  Coding
-
-- Commerce
-
-  [Commerce](../18-Industry-UseCases/commerce.md)
-  Commerce
-
-Departments
-
-- Customer support
-
-  [Customer support](../18-Industry-UseCases/customer-support.md)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-  Cybersecurity
-
-- Legal
-
-  [Legal](../18-Industry-UseCases/legal.md)
-  Legal
-
-- Sales
-
-  [Sales](../18-Industry-UseCases/sales.md)
-  Sales
-
-Industries
-
-- Financial services
-
-  [Financial services](../18-Industry-UseCases/finance.md)
-  Financial services
-
-- Government
-
-  [Government](../18-Industry-UseCases/government.md)
-  Government
-
-- Healthcare
-
-  [Healthcare](../18-Industry-UseCases/healthcare.md)
-  Healthcare
-
-- Higher education
-
-  [Higher education](../18-Industry-UseCases/education.md)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](../18-Industry-UseCases/teachers.md)
-  K-12 teachers
-
-- Life sciences
-
-  [Life sciences](../18-Industry-UseCases/life-sciences.md)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-  Nonprofits
-
-- Small business
-
-  [Small business](../18-Industry-UseCases/small-business.md)
-  Small business
-
-Programs
-
-- Startups
-
-  [Startups](../15-Claude-AI-Features/programs-startups.md)
-  Startups
-
-- Scientists
-
-  [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-  Scientists
-
-Developers
-
-- Developer docs
-
-  [Developer docs](../02-Claude-Code-CLI/code-home.md)
-  Developer docs
-
-- Developer blog
-
-  [Developer blog](https://claude.dev/)
-  Developer blog
-
-- Community
-
-  [Community](https://www.claude.com/community)
-  Community
-
-- Console
-
-  [Console](../04-API-Reference/Other/home.md)
-  Console
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-Platform
-
-- Overview
-
-  [Overview](https://www.claude.com/platform/api)
-  Overview
-
-- Marketplace
-
-  [Marketplace](https://www.claude.com/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-  Microsoft Foundry
-
-Resources
-
-- Blog
-
-  [Blog](https://www.claude.com/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](../04-API-Reference/Other/partners.md)
-  Claude partner network
-
-- Claude Academy
-
-  [Claude Academy](https://academy.claude.com/)
-  Claude Academy
-
-- Customer stories
-
-  [Customer stories](../18-Industry-UseCases/customers.md)
-  Customer stories
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Powered by Claude
-
-  [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](https://www.claude.com/marketplace/service-partners)
-  Service partners
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Check files
-
-  [Check files](https://claude.com/check-files)
-  Check files
-
-- Regional compliance
-
-  [Regional compliance](https://www.claude.com/regional-compliance)
-  Regional compliance
-
-- Report abuse
-
-  [Report abuse](https://claude.com/form/anthropic-content-reporting)
-  Report abuse
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Research
-
-  [Research](../19-Reference/anthropic-com-research.md)
-  Research
-
-- Anthropic news
-
-  [Anthropic news](../19-Reference/news.md)
-  Anthropic news
-
-- Policy on the AI Exponential
-
----
-
-## Claude in Slack: Tag @Claude in any thread | Claude by Anthropic
-
-Source: https://www.claude.com/claude-for-slack
-Path: 14-Connectors/claude-for-slack.md
-
-# Tag Claude in Slack
-
-@Claude reads threads, understands full context, and reacts in real time so your team moves forward together. Bring Claude into your channel.
-
-Add to Slack
-
-[Add to Slack](https://api.anthropic.com/integrations/v1/slack/install)
-
-Add to Slack
-
-Read documentation
-
-[Read documentation](https://claude.com/docs/claude-tag/overview)
-
-Read documentation
-
-Available in beta for Claude Enterprise and Team customers in Slack.
-
-[Play video](#)
-
-Play video
-
-“Rather than using AI on my computer or in my own IDE, I can now do work out in the open in a public Slack channel with my teammates, and we can actually more effectively collaborate on tasks together.”
-
-Micah Stairs, Head of Support Engineering
-
-“Claude Tag solved two problems at once: the interface and the data access piece. My whole team now has Claude as a teammate to ask about our code, docs and support conversations right in Slack, where they already work, and we manage what it can access in one place.”
-
-George Dilthey, Head of Support
-
-“Claude Tag is our first responder for internal bugs. It reads incoming reports, looks at screenshots of failures, and uses access to Datadog, Linear, and GitHub to weed out user errors, trace root cause, and often draft a fix PR. Our engineers’ first reaction was ‘this is amazing.’”
-
-Aabhas Sharma, CTO
-
-“Claude Tag turned a summer of conference logistics — the follow-ups and chasing that always fell through the cracks — into an events program that runs itself while I stay on strategy.”
-
-Matthew Scott, Product Marketing
-
-“Claude Tag doesn’t just do the work — it challenges our thinking, provokes better questions, and elevates our judgement rather than replacing it. And we still feel very much in control throughout.”
-
-Simon Mansfield, Director, Enterprise AI
-
-“There were no skeptics on our team. Everyone leaned in from day one — it felt like Claude Tag in Slack was something they’d been waiting for.”
-
-Darian Bailey, AI Engineer & Tag Admin
-
-“Claude Tag meets our teams where they already work. Slack is the entry point for everything at Gusto, and the fact that Claude Tag is native there is huge for us. We see a lot of potential here.”
-
-Chad Kunsman, AI Developer
-
-[Prev](#)
-
-Prev
-
-0/5
-
-
-Coming soon to Microsoft Teams
-
-Tag [@Claude](https://anthropic.enterprise.slack.com/team/U08SSLN6TTL) in Teams, where it will read the conversation, understand context, and respond in real time.
-
-Join the waitlist
-
-[Join the waitlist](https://www.claude.com/form/claude-tag-teams-waitlist)
-
-Join the waitlist
-
-## How it works
-
-Tag Claude into any thread in Slack, no matter how long or messy. It reacts to context, decisions, or open questions to help busy teams get more done.
-
-### Tag it in
-
-@Claude in any thread or channel and it picks up the context everyone already shares. Ask it to run the numbers, file a ticket, or organize a chaotic chat into action items. It reads the room and does the work.
-
-Thread \#checkout-incidents
-
-×
-
-Marcus Nguyen 2:14 PM
-
-@Claude checkout error rate jumped from 0.3% to 6% right after the 14:00 deploy — can you dig in and figure out what broke?
-
-1 reply
-
-ClaudeAGENT 2:14 PM
-
-On it — tracing the checkout error spike since the 14:00 deploy.
-
-✓Pulled the 14:00 deploy diff from GitHub (`#4821`)
-
-✓Queried Datadog — 502s isolated to the `cart-service`
-
-✓Correlated with a 5× spike in DB connection-pool timeouts
-
-✓Compared error rates by region against rollback candidates
-
-✱Writing root-cause summary + rollback recommendation…
-
-To-dos as of 2:18 PM (Now)
-
-[Open session in Claude](#)
-
-[](#send)
-
-### Set a schedule or let it run long tasks
-
-Give @Claude standing instructions and it works without a mention now or in the future. Ask it to watch a channel, run a weekly digest, flag anything urgent, or page the right person.
-
-\#revenue ⋮
-
-Marcus Nguyen Thursday 8:55 AM
-
-@Claude Every Monday at 9, post a pipeline update for the team — pull the latest from Salesforce.
-
-ClaudeAGENT Thursday 8:55 AM
-
-Got it — I'll pull the pipeline from Salesforce and post a digest every Monday at 9 AM.
-
-Monday ▾
-
-ClaudeAGENT 9:00 AM
-
-**Weekly pipeline — Jun 8–14**
-
-\$3.6M open pipeline · +\$610K WoW · 5 deals advanced.
-
-pipeline-trend.png▾
-
-- Beacon Corp expansion advanced to **Negotiation** — \$240K
-- 2 new logos entered Discovery; 5 deals moved a stage
-- Acme renewal flagged at risk — pricing pushback, exec synced Thu
-
-[Open session in Claude](#)
-
-[](#threads)
-
-### It jumps in, and can tag you back
-
-@Claude doesn't wait to be asked. It surfaces the thread that went quiet, posts when the deploy is live, and flags the decision that needs your call.
-
-Thread \#eng-triage
-
-×
-
-SentryAPP 10:02 AM
-
-**New issue** · `NullPointerException` in `CheckoutService.applyPromo()`
-
-142 events in the last 30m · first seen 10:02 AM · 38 users affected
-
-[View in Sentry](#)
-
-2 replies
-
-ClaudeAGENT 10:03 AM
-
-Reproduced — a null promo code slips past validation and hits `applyPromo()`. Fix is a one-line guard plus a regression test.
-
-ClaudeAGENT 10:05 AM
-
-Opened PR [\#1247](#) with the fix. cc @Marcus Nguyen — you own `checkout`, mind reviewing?
-
-[Open session in Claude](#)
-
-[](#get-help)
-
-## How teams use @Claude
-
-Claude in Slack can share work in the format your team needs, right in the thread.
-
-New
-
-On-call
-
-Catch up
-
-Pull numbers
-
-Draft PRs
-
-Call prep
-
-Active
-
-Prompt
-
-Can you tell me ...
-
-Attachments
-
-Document
-
-84kb
-
-TXT
-
-Document
-
-105 lines
-
-TXT
-
-Search Workspace
-
-\#prod-alerts
-
-Message \#prod-alerts
-
-@Claude Watch this channel, triage what comes in, and work through the backlog. Tag me only when something needs my call.
-
-On it — watching **\#prod-alerts** now. I’ll triage what comes in and work the backlog, and only tag you when something needs your call.
-
-🚨 `checkout-api` — p99 latency **4,812ms** (threshold 2,000ms)
-
-env: `prod` · 3/12 hosts · started 02:06 UTC · [monitor](#) · [APM trace](#)
-
-On it. Spike lines up with deploy `c4f1a09` (02:04) — new inventory check in `CartService.validate()` is calling `inventory-svc` per line item instead of batched. Only the 3 canary hosts have it.
-
-✓ Paused rollout at 25%  
-✓ Opened revert [\#48231](#) — merging once CI is green (~6m)  
-✱ Watching p99, should recover as canaries drain
-
-Not paging anyone. @Nathan — only flagging because the real fix (batch the inventory call) touches the pricing path you own; revert ships regardless.
-
-[Open session in Claude](#)
-
-### Watch what matters
-
-@Claude can manage work in the channels your team never had bandwidth for: monitoring backlogs, triaging alerts, and surfacing what needs a human to review, so work that keeps getting pushed out can finally be completed.
-
-## Prompt
-
-@Claude Watch this channel, triage what comes in, and work through the backlog. Tag me only when something needs my call.
-
-Prompt
-
-Can you tell me ...
-
-Attachments
-
-Document
-
-84kb
-
-TXT
-
-Document
-
-105 lines
-
-TXT
-
-Search Workspace
-
-\#launch-q3
-
-Message \#launch-q3
-
-Pushing feature freeze to Thursday. Legal needs another pass on the data handling docs.
-
-Agreed. Also — pricing page copy is approved. Design can proceed.
-
-Can someone loop in Compliance on the pricing copy too, or is Legal's sign-off enough?
-
-@claude What got decided here and what's still open?
-
-✓ Read through the channel from the top.  
-✓ Sort out what's settled vs. still pending.  
-✓ Write the summary.
-
-todos as of 1:22 PM
-
-[Open session in Claude](#)
-
-**Decided:**
-
-- Feature freeze moves to Thursday — Legal needs another pass on the data handling docs first.
-- Pricing page copy is approved — design can proceed.
-
-**Still open:**
-
-- No timeline yet on when Legal's pass will be done — Thursday freeze could slip again if it runs long.
-- Unclear who owns following up with Legal for status (Elena didn't assign it).
-
-[Open session in Claude](#)
-
-### Catch up fast
-
-Get everything you need from a long thread in seconds. @Claude can surface decisions, open questions, and stakeholders, and you see exactly what's waiting on you.
-
-## Prompt
-
-@Claude What got decided here and what's still open?
-
-Prompt
-
-Can you tell me ...
-
-Attachments
-
-Document
-
-84kb
-
-TXT
-
-Document
-
-105 lines
-
-TXT
-
-Search Workspace
-
-Thread \#revenue-ops
-
-×
-
-Reply…
-
-@Claude What are the top 20 enterprise accounts by spend, last 7 and 28 days?
-
-✓ Pulled enterprise account spend from BigQuery for the trailing 7 and 28 days.  
-✓ Ranked the top 20 by 28-day spend and charted the 7-day alongside.
-
-todos as of 10:42 AM
-
-[Open session in Claude](#)
-
-Here are the top 20 enterprise accounts by spend, ranked by the trailing 28 days with the last 7 alongside.
-
-| Rank | Account               | 7-day  | 28-day |
-|------|-----------------------|--------|--------|
-| 1    | Northwind Trading     | \$151K | \$512K |
-| 2    | Vertex Logistics      | \$118K | \$438K |
-| 3    | Helios Energy         | \$96K  | \$391K |
-| 4    | Meridian Bank         | \$88K  | \$356K |
-| 5    | Atlas Robotics        | \$101K | \$312K |
-| 6    | Sunbeam Health        | \$64K  | \$287K |
-| 7    | Cobalt Systems        | \$71K  | \$264K |
-| 8    | Orion Media           | \$52K  | \$241K |
-| 9    | Ironclad Security     | \$70K  | \$223K |
-| 10   | Pinnacle Foods        | \$41K  | \$205K |
-| 11   | Lumen Analytics       | \$63K  | \$188K |
-| 12   | Cascade Retail        | \$38K  | \$171K |
-| 13   | Granite Capital       | \$44K  | \$156K |
-| 14   | Beacon Aerospace      | \$33K  | \$142K |
-| 15   | Tideline Shipping     | \$41K  | \$129K |
-| 16   | Summit Pharma         | \$24K  | \$117K |
-| 17   | Verdant Agriculture   | \$33K  | \$104K |
-| 18   | Quartz Semiconductor  | \$21K  | \$92K  |
-| 19   | Halcyon Games         | \$29K  | \$71K  |
-| 20   | Driftwood Hospitality | \$14K  | \$53K  |
-
-top-20-enterprise-accounts-by-spend.png▾
-
-The top 5 accounts are ~45% of enterprise spend (**\$2.0M** of **\$4.45M**). Worth watching **Atlas Robotics** and **Halcyon Games** — their last 7 days are 32% and 41% of the 28-day figure (a flat week would be ~25%), so both are accelerating.
-
-### Pull the numbers
-
-Ask @Claude to query your data and it posts results like metrics, benchmarks, and charts in the channel, so the whole team sees the answer and can keep asking questions right there.
-
-## Prompt
-
-@Claude Top 20 enterprise accounts by spend, last 7 and 28 days.
-
-Prompt
-
-Can you tell me ...
-
-Attachments
-
-Document
-
-84kb
-
-TXT
-
-Document
-
-105 lines
-
-TXT
-
-Search Workspace
-
-\#eng-tickets
-
-Message \#eng-tickets
-
-Auth is throwing 502s on token refresh since the deploy. Looks like a race condition in `services/auth`.
-
-@Claude fix the bug in this thread and open a draft PR.
-
-Found it — race in `services/auth/token_cache.go`. Concurrent refreshes for the same subject both miss cache and the slower one overwrites the fresh token with a stale one → next request gets a 502. Deploy `a3f9c1e` exposed it by dropping the per-request mutex.
-
-Draft PR: [\#48217](#) · CI green · +71 −12
-
-[Open session in Claude](#)
-
-### Build from the thread
-
-Turn a bug report into a draft PR from the context is in the thread without ever leaving Slack. Get more done without switching tabs.
-
-## Prompt
-
-@Claude Fix the bug in this thread and open a draft PR.
-
-Prompt
-
-Can you tell me ...
-
-Attachments
-
-Document
-
-84kb
-
-TXT
-
-Document
-
-105 lines
-
-TXT
-
-Search Workspace
-
-Thread \#acme-renewal
-
-×
-
-Reply…
-
-@Claude I’m meeting Acme at 2 — what do I need to know?
-
-**Acme · 2pm** — Sarah Chen (CTO, decision), Marcus Webb (VP Eng, champion)
-
-- **Deal:** \$1.4M renewal + expansion, close Jun 30. Redlined MSA with their legal since Fri.
-- **Sticking points:** EU data residency · 99.95% SLA ask · flat price on 62 overage seats
-- **Usage:** +38% MoM, 312/250 seats, 2 P1s last 30d (both \<4h)
-- **Watch:** “evaluating Cursor” thread in their \#eng-leads Tue — leverage, not real
-- **Play:** lead with usage + support SLAs → trade EU commit (Q3) for them dropping 99.95%. Let them raise the overage.
-
-[Deal room](#) · [last Gong recap](#)
-
-[Open session in Claude](#)
-
-### Prep before calls
-
-Walk into every meeting with a full briefing. CRM notes, recent threads, and call history pulled together before you think to ask.
-
-## Prompt
-
-@Claude I'm meeting Acme at 2 — what do I need to know?
-
-## Core capabilities
-
-See what @Claude can do for your team.
-
-### **Customizable  identities for granular governance**
-
-The longer Claude works with your team, the more it understands how your organization thinks, how decisions get made, and who owns what.
-
-### Memory across threads and days
-
-Context can draw on previous conversations and memory. What happened in Monday's standup is still there on Thursday, without anyone repeating it.
-
-### A shared resource in your channel
-
-Claude surfaces what matters to the whole channel, not just the person who asked. Everyone sees the work, and anyone can build on it
-
-### Proactive action instead of asking
-
-Set a standing instruction once. Claude watches the channel, runs routines, flags what's urgent, and tags you back when something needs a decision.
-
-### In the work and tools with you
-
-Shape how Claude works in each channel with skills and instructions. Give it access to tools and data to take action on your behalf and post results.
-
-### Runs tasks that take days
-
-Hand Claude a complex task and it works while you move on to other projects. It follows up, asks for input, or comes back when it's done.
-
-56%
-
-fewer alerts after Claude Tag began resolving the root causes behind them
-
-Read story
-
-[Read story](../18-Industry-UseCases/carvana.md)
-
-Read story
-
-Claude on call:  
-How Claude Tag serves as Anthropic’s first responder for CI/CD failures
-
-An engineer on our Continuous Integration team walks through the agent he built that powers CI incident response at Anthropic.
-
-Read more
-
-[Read more](https://www.claude.com/blog/ai-ci-cd-on-call)
-
-Read more
-
-How Anthropic deploys Claude Tag for ad-hoc questions
-
-Two data scientists at Anthropic walk through how Claude Tag turns Slack threads into self-service analytics, with the same governed definitions analysts use.
-
-Read more
-
-[Read more](https://www.claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions)
-
-Read more
-
-Learn more about how Anthropic employees are using Claude Tag
-
-Producing customer-ready collateral, compiling weekly issue reports, and running legal review, all where the work already happens.
-
-Read more
-
-[Read more](https://www.claude.com/blog/how-anthropic-employees-use-claude-tag)
-
-Read more
-
-[Prev](#)
-
-Prev
-
-
-## @Claude connects to your tools
-
-Configure any tool with an API using Agent Identity. Claude can query, act, and report back in the thread where the work is happening.
-
-Read more
-
-[Read more](https://www.claude.com/blog/agent-identity-access-model)
-
-Read more
-
-## Admins stay in control
-
-Claude acts under its own identity in your systems. Admins configure access once; everyone else just types @Claude.
-
-### **Customizable  identities for granular governance**
-
-Claude has its own account in your systems, not a borrowed login. Every credential’s use is logged, so "what did Claude do, and who asked for it?" always has an answer.
-
-### Add it per channel
-
-Decide which tools Claude can reach and read. Confine sensitive connectors to a single private channel or enable broader access for specific tools and resources. Adjust any time from the admin console.
-
-What is Claude Tag?
-
-Learn more about [**@Claude**](https://anthropic.enterprise.slack.com/team/U08SSLN6TTL) and what happens to the former Claude for Slack experience.
-
-Read more
-
-[Read more](https://support.claude.com/en/articles/15594475)
-
-Read more
-
-Agent identity: a new security model for autonomous, team-wide AI
-
-Explore our new security model built for agents, not retrofitted from chatbots.
-
-Read more
-
-[Read more](https://www.claude.com/blog/agent-identity-access-model)
-
-Read more
-
-Tutorial: Working with @Claude in your workspace
-
-Claude now works alongside your team, under its own account, in the places you already work together. You tag it in the way you'd tag anyone, or have it speak up on its own when there's something it can help with.
-
-Read more
-
-[Read more](https://www.claude.com/resources/tutorials/best-practices-using-claude-tag)
-
-Read more
-
-[Prev](#)
-
-Prev
-
-
-## Ready for a new way of working?
-
-Add to Slack
-
-[Add to Slack](https://api.anthropic.com/integrations/v1/slack/install)
-
-Add to Slack
-
-Join Teams waitlist
-
-[Join Teams waitlist](https://www.claude.com/form/claude-tag-teams-waitlist)
-
-Join Teams waitlist
-
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](../15-Claude-AI-Features/product-overview.md)
-  Claude
-
-- Claude Code
-
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
-  Claude Code
-
-- Claude Cowork
-
-  [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](claude-for-slack.md)
-  @Claude
-
-- Claude Science
-
-  [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-  Claude Security
-
-- Download app
-
-  [Download app](https://www.claude.com/download)
-  Download app
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Capabilities
-
-- Artifacts
-
-  [Artifacts](https://www.claude.com/features/artifacts)
-  Artifacts
-
-- Design
-
-  [Design](../15-Claude-AI-Features/product-design.md)
-  Design
-
-- Connectors
-
-  [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-  Connectors
-
-- Plugins
-
-  [Plugins](https://www.claude.com/marketplace/plugins)
-  Plugins
-
-- Skills
-
-  [Skills](https://www.claude.com/skills)
-  Skills
-
-Extensions
-
-- Claude in Chrome
-
-  [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-  Claude in Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-Models
-
-- Mythos
-
-  [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-  Mythos
-
-- Fable
-
-  [Fable](../15-Claude-AI-Features/claude-fable.md)
-  Fable
-
-- Opus
-
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-  Haiku
-
-Enterprise
-
-- Overview
-
-  [Overview](../18-Industry-UseCases/enterprise.md)
-  Overview
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-  Claude Code for Enterprise
-
-Use cases
-
-- AI agents
-
-  [AI agents](../18-Industry-UseCases/agents.md)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](../18-Industry-UseCases/code-modernization.md)
-  Code modernization
-
-- Coding
-
-  [Coding](../18-Industry-UseCases/coding.md)
-  Coding
-
-- Commerce
-
-  [Commerce](../18-Industry-UseCases/commerce.md)
-  Commerce
-
-Departments
-
-- Customer support
-
-  [Customer support](../18-Industry-UseCases/customer-support.md)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-  Cybersecurity
-
-- Legal
-
-  [Legal](../18-Industry-UseCases/legal.md)
-  Legal
-
-- Sales
-
-  [Sales](../18-Industry-UseCases/sales.md)
-  Sales
-
-Industries
-
-- Financial services
-
-  [Financial services](../18-Industry-UseCases/finance.md)
-  Financial services
-
-- Government
-
-  [Government](../18-Industry-UseCases/government.md)
-  Government
-
-- Healthcare
-
-  [Healthcare](../18-Industry-UseCases/healthcare.md)
-  Healthcare
-
-- Higher education
-
-  [Higher education](../18-Industry-UseCases/education.md)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](../18-Industry-UseCases/teachers.md)
-  K-12 teachers
-
-- Life sciences
-
-  [Life sciences](../18-Industry-UseCases/life-sciences.md)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-  Nonprofits
-
-- Small business
-
-  [Small business](../18-Industry-UseCases/small-business.md)
-  Small business
-
-Programs
-
-- Startups
-
-  [Startups](../15-Claude-AI-Features/programs-startups.md)
-  Startups
-
-- Scientists
-
-  [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-  Scientists
-
-Developers
-
-- Developer docs
-
-  [Developer docs](../02-Claude-Code-CLI/code-home.md)
-  Developer docs
-
-- Developer blog
-
-  [Developer blog](https://claude.dev/)
-  Developer blog
-
-- Community
-
-  [Community](https://www.claude.com/community)
-  Community
-
-- Console
-
-  [Console](../04-API-Reference/Other/home.md)
-  Console
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-Platform
-
-- Overview
-
-  [Overview](https://www.claude.com/platform/api)
-  Overview
-
-- Marketplace
-
-  [Marketplace](https://www.claude.com/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-  Microsoft Foundry
-
-Resources
-
-- Blog
-
-  [Blog](https://www.claude.com/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](../04-API-Reference/Other/partners.md)
-  Claude partner network
-
-- Claude Academy
-
-  [Claude Academy](https://academy.claude.com/)
-  Claude Academy
-
-- Customer stories
-
-  [Customer stories](../18-Industry-UseCases/customers.md)
-  Customer stories
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Powered by Claude
-
-  [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](https://www.claude.com/marketplace/service-partners)
-  Service partners
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Check files
-
-  [Check files](https://claude.com/check-files)
-  Check files
-
-- Regional compliance
-
-  [Regional compliance](https://www.claude.com/regional-compliance)
-  Regional compliance
-
-- Report abuse
-
-  [Report abuse](https://claude.com/form/anthropic-content-reporting)
-  Report abuse
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Research
-
-  [Research](../19-Reference/anthropic-com-research.md)
-  Research
-
-- Anthropic news
-
-  [Anthropic news](../19-Reference/news.md)
-  Anthropic news
-
-- Policy on the AI Exponential
+© 2026 Anthropic PBC
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](../18-Industry-UseCases/customer-support.md)
+- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
+- [Legal](../18-Industry-UseCases/legal.md)
+- [Sales](../18-Industry-UseCases/sales.md)
+
+## Industries
+
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
+- [Financial services](../18-Industry-UseCases/finance.md)
+- [Government](../18-Industry-UseCases/government.md)
+- [Healthcare](../18-Industry-UseCases/healthcare.md)
+- [Higher education](../18-Industry-UseCases/education.md)
+- [K-12 teachers](../18-Industry-UseCases/teachers.md)
+- [Life sciences](../18-Industry-UseCases/life-sciences.md)
+- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Small business](../18-Industry-UseCases/small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](../18-Industry-UseCases/customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](../18-Industry-UseCases/customer-support.md)
+- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
+- [Legal](../18-Industry-UseCases/legal.md)
+- [Sales](../18-Industry-UseCases/sales.md)
+
+## Industries
+
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
+- [Financial services](../18-Industry-UseCases/finance.md)
+- [Government](../18-Industry-UseCases/government.md)
+- [Healthcare](../18-Industry-UseCases/healthcare.md)
+- [Higher education](../18-Industry-UseCases/education.md)
+- [K-12 teachers](../18-Industry-UseCases/teachers.md)
+- [Life sciences](../18-Industry-UseCases/life-sciences.md)
+- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Small business](../18-Industry-UseCases/small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](../18-Industry-UseCases/customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
 
 ---
 
 ## Connect to Microsoft 365 | Claude Help Center
 
-Source: https://support.claude.com/en/articles/15183774
+Source: https://support.claude.com/en/articles/15183774-connect-to-microsoft-365
 Path: 14-Connectors/connect-to-microsoft-365.md
 
 # Connect to Microsoft 365
+
+September 8, 2026
 
 
 Connecting Microsoft 365 lets Claude search and analyze content across SharePoint, OneDrive, Outlook, and Teams in your work account. If your admin has enabled write tools, Claude can also draft and send emails, manage calendar events, create and update files, and send Teams messages. Ask Claude for what you need, and it pulls the right information or takes the action.
@@ -2386,7 +1801,7 @@ The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Te
 
 You'll need a work Microsoft 365 account tied to a Microsoft Entra tenant. Personal Microsoft accounts (such as @outlook.com, @hotmail.com, or @live.com) can't be used. If you're not sure whether your account qualifies, check with your IT administrator.
 
-**Important:** Before anyone in your organization can connect Microsoft 365, an admin needs to set it up. On Team and Enterprise plans, your Claude organization Owner enables Microsoft 365 for the organization. In every tenant, a Microsoft Entra Global Administrator also needs to grant a one-time consent. For details on the admin side, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**.
+**Important:** Before anyone in your organization can connect Microsoft 365, an admin needs to set it up. On Team and Enterprise plans, your Claude organization Owner enables Microsoft 365 for the organization. In every tenant, a Microsoft Entra Global Administrator also needs to grant a one-time consent. For details on the admin side, see **[Set up the Microsoft 365 connector](12542951.md)**.
 
 ## Connect Microsoft 365
 
@@ -2526,7 +1941,7 @@ Microsoft 365 stays under your control once connected. A few things to keep in m
 
 - **You can disconnect any time.** Use the steps above to remove Claude's access.
 
-For the full list of permissions the integration requests, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)** or the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-)**.
+For the full list of permissions the integration requests, see **[Set up the Microsoft 365 connector](12542951.md)** or the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-)**.
 
 ------------------------------------------------------------------------
 
@@ -2616,7 +2031,7 @@ Yes. Try a prompt like *"Summarize the email thread about the vendor selection p
 
 ### Why don't I see write tools?
 
-Write tools require extra setup on the admin side: a Microsoft Entra administrator needs to consent to updated permissions, and your organization needs to enable write tools for your account. If you connected before write tools launched, ask your admin to complete both steps. For details, see **[Set up the Microsoft 365 connector](enabling-and-using-the-microsoft-365-connector.md)**.
+Write tools require extra setup on the admin side: a Microsoft Entra administrator needs to consent to updated permissions, and your organization needs to enable write tools for your account. If you connected before write tools launched, ask your admin to complete both steps. For details, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951)**.
 
 ### Why does Claude ask me to confirm before sending a Teams message?
 
@@ -2632,390 +2047,12 @@ You'll see an error indicating that an administrator must grant app permissions 
 
 ---
 
-## Set up the Microsoft 365 connector | Claude Help Center
-
-Source: https://support.claude.com/en/articles/12542951
-Path: 14-Connectors/enabling-and-using-the-microsoft-365-connector.md
-
-# Set up the Microsoft 365 connector
-
-
-This article walks admins through enabling the Microsoft 365 connector for their organization in Claude—including granting Microsoft Entra consent, restricting access, and managing permissions. Once setup is complete, people in your tenant can connect Microsoft 365 to their own Claude accounts to search across SharePoint, OneDrive, Outlook, and Teams from Claude. You can also enable write tools, which let Claude send email, manage calendar events, create and update files, and send Teams messages on a member's behalf.
-
-The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Team, and Enterprise.
-
-For end-user instructions on connecting and using Microsoft 365 once setup is complete, see **[Connect Claude to Microsoft 365](connect-to-microsoft-365.md)**.
-
-**Important:** The Microsoft 365 connector requires a Microsoft Entra tenant tied to a Microsoft Business plan. Personal Microsoft accounts (such as @outlook.com or @hotmail.com addresses) can't be used to connect.
-
-------------------------------------------------------------------------
-
-## Setup overview
-
-Two things need to happen before anyone in your organization can connect Microsoft 365, plus an optional third step if you want to enable write tools:
-
-1.  **On Team and Enterprise plans:** A Claude organization owner enables the Microsoft 365 connector for the organization.
-
-2.  **In every tenant:** A Microsoft Entra Global Administrator grants a one-time consent that authorizes the integration for your tenant.
-
-3.  **To enable write tools:** A Microsoft Entra administrator consents to the updated permission set, and you enable write tools for your organization. See **[Enable write tools](#h_a51d877afd)** below.
-
-After completing these steps, members can connect Microsoft 365 to their own Claude accounts following the steps in **[Connect Claude to Microsoft 365](connect-to-microsoft-365.md)**.
-
-## Enable the connector for your organization
-
-This step applies to Team and Enterprise plans only. On Free, Pro, and Max plans, skip to the next section.
-
-1.  Sign in to Claude.
-
-2.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
-
-3.  Click “+ Add” at the top of the page, then “All available.”
-
-4.  Find **Microsoft 365** and click “Add to your team.”
-
-## Grant Microsoft Entra admin consent
-
-A Microsoft Entra Global Administrator in your tenant needs to authorize the integration before anyone can connect. There are two ways to do this.
-
-### Option 1: Consent through Claude
-
-If your Microsoft Entra Global Administrator has a Claude account, they can grant consent during the standard connection flow:
-
-1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
-
-2.  Find **Microsoft 365** and click “Connect.”
-
-3.  Authenticate with Microsoft 365 credentials.
-
-4.  Review and accept the requested permissions, checking the box to grant access on behalf of the whole organization.
-
-After this, other people in the same Entra tenant can connect by following the standard end-user steps. They won't see the consent prompt—they'll just authenticate and start using the integration.
-
-### Option 2: Manual setup in Microsoft Entra ID
-
-Use this path if your Microsoft Entra Global Administrator doesn't have a Claude account, or if you need to troubleshoot the app install and permissions setup. You can add the connector apps and grant admin consent directly in Microsoft Entra ID.
-
-This process adds two service principals to your tenant. Each principal establishes a service-level identity for one of the two M365 MCP for Claude app registrations, allowing them to access and interact with your organization's data and resources via the Microsoft Graph API.
-
-**1. Add the service principals**
-
-Using Microsoft Graph Explorer, add both required service principals:
-
-M365 MCP Client for Claude:
-
-    POST https://graph.microsoft.com/v1.0/servicePrincipals
-    {"appId":"08ad6f98-a4f8-4635-bb8d-f1a3044760f0"}
-
-M365 MCP Server for Claude:
-
-    POST https://graph.microsoft.com/v1.0/servicePrincipals
-    {"appId":"07c030f6-5743-41b7-ba00-0a6e85f37c17"}
-
-**2. Grant admin consent**
-
-Construct and visit the following URLs in your browser, replacing {your-tenant-id} with your organization's tenant ID.
-
-M365 MCP Client for Claude:
-
-    https://login.microsoftonline.com/{your-tenant-id}/adminconsent?client_id=08ad6f98-a4f8-4635-bb8d-f1a3044760f0
-
-M365 MCP Server for Claude:
-
-    https://login.microsoftonline.com/{your-tenant-id}/adminconsent?client_id=07c030f6-5743-41b7-ba00-0a6e85f37c17
-
-When you visit each URL, you'll be prompted to consent to the delegated permissions required by the integration on behalf of your organization.
-
-**3. Finish setup**
-
-- **Team and Enterprise plans:** A Claude organization Owner needs to enable the connector in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. Then members can connect individually.
-
-- **Free, Pro, and Max plans:** Members can connect by navigating to **[Customize \> Connectors](https://claude.ai/customize/connectors)**, finding **Microsoft 365**, and clicking “Connect.”
-
-### Restrict who can use the connector
-
-To limit which people in your tenant can authenticate to Microsoft 365 through Claude:
-
-1.  Go to the Microsoft Entra admin center at entra.microsoft.com.
-
-2.  Navigate to the **M365 MCP Server for Claude** enterprise application.
-
-3.  Go to **Properties** and set **Assignment required?** to “Yes.”
-
-4.  Under **Users and groups**, add the specific users or groups who should have access.
-
-5.  Repeat the same steps for the **M365 MCP Client for Claude** enterprise application.
-
-Both components need to be restricted to the same set of authorized people.
-
-### Restrict which permissions the connector can use
-
-To limit which types of resources the integration can access, selectively revoke permissions from the default set of authorized scopes. This requires Microsoft Entra admin access.
-
-1.  As a Microsoft Entra admin, go to entra.microsoft.com.
-
-2.  Select “Enterprise Applications.”
-
-3.  Next to the search box, remove the application type filter.
-
-4.  Search for and click “M365 MCP Server for Claude.”
-
-5.  Go to **Permissions**.
-
-6.  Under the **Admin consent** tab and in the Microsoft Graph list of permissions, select the permission you would like to revoke and click the “**…**” button.
-
-7.  Select “Revoke permission” and confirm with “Yes, revoke.”
-
-Once revoked, attempts to access a resource with that permission will return a "Failed to call tool" error.
-
-Members can also individually turn off specific tools in their own Microsoft 365 settings to prevent Claude from trying to access a tool for which the permission has been revoked.
-
-To restore a revoked permission, follow the steps to grant admin consent described in **Option 2: Manual setup in Microsoft Entra ID**. This will revert the permissions to the default state.
-
-------------------------------------------------------------------------
-
-## Enable write tools
-
-Write tools let Claude send email, manage drafts and calendar events, update mailbox settings, and create and update files in OneDrive and SharePoint, and send messages in Microsoft Teams. Read and search tools work the same whether or not write tools are enabled.
-
-**1. Re-consent to the updated permissions**
-
-The connector's permission set now includes additional Microsoft Graph scopes to support write tools. If your tenant consented before write tools or the Teams write tools launched, a Microsoft Entra Global Administrator needs to review and approve the updated permission set before write tools activate. Review and approve the updated permissions for the connector in your tenant's **Enterprise Applications** consent flow.
-
-**2. Enable write tools for your organization**
-
-If your organization was using the connector before write tools launched, they will be blocked by default. Enable them for everyone by going to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, finding “Microsoft 365,” and setting the appropriate permissions. Enterprise plans can enable them for a subset of users through **[custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_979e558d00)**. For Microsoft Teams specifically, set each Teams write tool individually: the send, post, and reply tools can be set to Ask or Blocked (members confirm each send), and starting a new chat can also be set to Allow. The connector-wide "all tools" permission on its own doesn't turn these on.
-
-**3. Verify**
-
-Once enabled, ask Claude to perform a low-risk write action, such as "Draft an email to myself, but don't send it," to confirm write tools are active.
-
-**Note:** Emails Claude sends include an attribution header identifying them as agent-initiated. File writes, calendar writes, and Teams messages aren't currently tagged. Attachments aren’t supported in write tools, so sending, forwarding, and drafting all reject messages with attachments. Write tools are also subject to per-user limits on writes, sends, and recipients.
-
-------------------------------------------------------------------------
-
-## Permissions reference
-
-The Microsoft 365 connector uses **delegated permissions**, meaning Claude acts on behalf of each individual user and can only access data that user already has permission to view in Microsoft 365. Permissions are read-only by default. Claude can only send, create, or update content if you enable write tools.
-
-During authentication, the integration requests the following permissions:
-
-**Basic access**
-
-- `User.Read`: Sign in and read user profile
-
-- `openid`: Sign in with organizational account
-
-- `offline_access`: Maintain access to data
-
-- `email`: View email address
-
-- `profile`: View basic profile information
-
-**Email (Outlook)**
-
-- `Mail.Read`: Read email messages
-
-- `Mail.ReadBasic`: Read email metadata (sender, subject, date)
-
-- `Mail.Read.Shared`: Read emails in mailboxes the user has access to
-
-  - **Note:** Shared mailbox access is included through the `Mail.Read.Shared` permission. Users can search shared mailboxes they have delegate access to in Microsoft 365, including full access and folder-level delegation. No setup is needed beyond standard admin consent and the delegate permissions already configured in Microsoft 365.
-
-- `MailboxFolder.Read`: Read mailbox folder structure
-
-- `MailboxItem.Read`: Read items in mailbox
-
-- `MailboxSettings.Read`: Read mailbox settings, like the user's timezone
-
-**Note:** Email search covers each user's primary mailbox, including its Archive folder, and any shared mailboxes they can access. It doesn't cover the separate Online Archive mailbox (also called the In-Place Archive), so messages that a retention policy has moved there won't appear in results.
-
-**Calendar**
-
-- `Calendars.Read`: Read calendar events
-
-- `Calendars.Read.Shared`: Read calendars shared with the user
-
-**Teams chat**
-
-- `Chat.Read`: Read Teams chat messages
-
-- `Chat.ReadBasic`: Read Teams chat metadata
-
-- `ChatMember.Read`: Read information about chat participants
-
-- `ChatMessage.Read`: Read Teams chat messages
-
-**Teams channels**
-
-- `Channel.ReadBasic.All`: Read channel names and descriptions
-
-- `ChannelMessage.Read.All`: Read channel messages
-
-**Meetings**
-
-- `OnlineMeetings.Read`: Read online meetings
-
-- `OnlineMeetingTranscript.Read.All`: Read meeting transcripts
-
-- `OnlineMeetingAiInsight.Read`: Read AI-generated meeting insights
-
-- `OnlineMeetingArtifact.Read.All`: Read meeting recordings and artifacts
-
-- `OnlineMeetingRecording.Read.All`: Read meeting recordings
-
-**Files (OneDrive and SharePoint)**
-
-- `Files.Read`: Read user files
-
-- `Files.Read.All`: Read all files the user can access
-
-- `Sites.Read.All`: Read items in SharePoint sites
-
-**Write permissions**
-
-The following permissions support write tools and are included in the updated consent set:
-
-- `Mail.Send`: Send and forward email
-
-- `Mail.ReadWrite`: Create, update, and delete drafts; move and label messages
-
-- `Calendars.ReadWrite`: Create, update, delete, and respond to calendar events
-
-- `Files.ReadWrite.All`: Create and update files in OneDrive and SharePoint
-
-- `MailboxSettings.ReadWrite`: Manage categories, inbox rules, and automatic replies
-
-- `ChatMessage.Send`: Send a Teams chat message on the user's behalf
-
-- `ChannelMessage.Send`**:** Post or reply in a Teams channel
-
-- `Chat.Create`: Start a new chat on the user’s behalf
-
-- `People.Read`: Find people in the organization to start a chat with
-
-**User directory**
-
-- `User.ReadBasic.All`: Read basic profile information for all users in the organization (used for finding meeting availability)
-
-The Microsoft 365 connector searches SharePoint across the entire tenant using the permissions of the user. Site-specific search restriction isn't supported.
-
-## Privacy and security
-
-- **Permission inheritance:** Claude mirrors each user's existing Microsoft 365 permissions. Members can't access anything through Claude that they couldn't already see directly in Microsoft 365.
-
-- **On-demand access:** Claude only accesses data when a user explicitly asks a question that requires it.
-
-- **Revocable access:** Members can disconnect their own integration through **[Customize \> Connectors](https://claude.ai/customize/connectors)**. Team and Enterprise plan Owners can also remove the connector for the entire organization in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
-
-For more detail, see the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-)**.
-
-------------------------------------------------------------------------
-
-## Troubleshooting
-
-### A member can't authenticate
-
-1.  Confirm their account is tied to a Microsoft Entra tenant, not a personal Microsoft account.
-
-2.  Confirm their Microsoft 365 license is active.
-
-3.  Confirm admin consent has been granted using Option 1 or Option 2 above.
-
-4.  Check whether a Conditional Access policy in your tenant is blocking the connection. See below: **[Conditional Access is blocking the connection](#h_c7635fb6e2)**.
-
-### Members are seeing "Failed to call tool" errors
-
-A permission may have been selectively revoked in Microsoft Entra. Members can turn off the corresponding tool in their Microsoft 365 settings to suppress the error, or you can restore the permission by repeating the admin consent steps in **[Option 2: Manual setup in Microsoft Entra ID](#h_c5f095c9cf)**.
-
-### Write tools aren't appearing for members
-
-1.  Confirm a Microsoft Entra administrator has consented to the updated permission set that includes write scopes.
-
-2.  Confirm write tools are enabled in the Microsoft 365 connector configuration, or that the member is covered by a role-based access policy that grants them.
-
-3.  Have the member disconnect and reconnect Microsoft 365 in **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
-
-### Conditional Access is blocking the connection
-
-A Conditional Access block shows up in one of three ways:
-
-- A user sees "Authorization with the MCP server failed" and a reference code starting with `ofid_` when they try to connect. Our Support team can look up that code.
-
-- A member who is already connected gets an error when Claude uses a Microsoft 365 tool. The error includes an `AADSTS` code, a note that the request was blocked by a Conditional Access policy, and the Trace ID and Correlation ID you can search for in Entra.
-
-- Members are asked to reconnect Microsoft 365 on a regular cycle, much more often than the normal 90-day expiry. This usually means a sign-in frequency policy.
-
-Connecting Microsoft 365 involves more than the sign-in the member sees. After the member signs in to Microsoft in their browser, Claude's servers exchange that sign-in for access tokens, and later exchange those tokens for Microsoft 365 access on the member's behalf. In our testing, Entra evaluates your Conditional Access policies against these server-side requests as coming from Anthropic's IP range, `160.79.104.0/21`. They identify the member and carry the device recorded when the member connected, not the member's current device or network. So a policy can pass the member's own sign-in and still block the connection a moment later, or block it days later. Learn more about **[Anthropic's IP addresses](../04-API-Reference/Endpoints/ip-addresses.md)**.
-
-**Find the policy that's blocking the connection**
-
-1.  In the Microsoft Entra admin center, go to **Sign-in logs** and open the **User sign-ins (non-interactive)** tab. The member's own sign-in appears on the interactive tab and usually shows as successful, so the block is rarely there.
-
-2.  Filter by the affected member. The blocked requests can appear under either **M365 MCP Server for Claude** or **M365 MCP Client for Claude**, so filtering by member is more reliable than filtering by application. Don't filter by resource, which hides some of the rows.
-
-3.  Open the failed entry and select the **Conditional Access** tab. It names the policy that blocked the request.
-
-The error code tells you what kind of policy it is:
-
-- `AADSTS70043`: a sign-in frequency policy. See the next section.
-
-- `AADSTS53003`: a policy set to block access. The Conditional Access tab tells you which one. If it's based on location, see the next section.
-
-- `AADSTS50076`: a policy required multi-factor authentication on a server-side request. Disconnecting and reconnecting Microsoft 365 clears it. If it keeps happening, see the **[Microsoft 365 connector security guide](microsoft-365-connector-security-guide.md)**.
-
-- `AADSTS53000`: a policy requires a compliant device. The similar code `AADSTS530003` means a policy requires a managed device. In both cases the member needs to reconnect from a device that meets the policy. Learn more in the **[Microsoft 365 connector security guide](microsoft-365-connector-security-guide.md)**.
-
-**Exclude Anthropic's IP range from sign-in frequency and location policies**
-
-Because the server-side requests come from Anthropic's IP range, a policy that limits sign-ins to your own network, or that enforces a sign-in frequency, blocks them for every member. Excluding the two Claude applications from the policy isn't enough on its own. We recommend excluding Anthropic's IP range from the policy as well.
-
-**Note:** Don't use this exclusion for a device compliance policy. The server-side requests carry the device recorded when the member connected, so a device policy still applies to them, and excluding Anthropic's IP range would turn the device check off for the connector. Members blocked by a device policy need to reconnect from a device that meets it. Learn more in the **[Microsoft 365 connector security guide](microsoft-365-connector-security-guide.md)**.
-
-If the policy that blocked the request is a sign-in frequency or location policy:
-
-1.  In the Microsoft Entra admin center, go to **Conditional Access \> Named locations** and create an IP range location containing `160.79.104.0/21`. Leave **Mark as trusted location** unchecked so the exclusion doesn't affect other policies that use trusted locations.
-
-2.  Open the policy that blocked the request and go to **Conditions \> Locations \> Exclude**.
-
-3.  Add the named location you created. Keep any existing exclusions for the Claude applications in place.
-
-4.  Save the policy and wait a few minutes for the change to apply.
-
-5.  Have an affected member disconnect and reconnect Microsoft 365 in **Customize \> Connectors**.
-
-**Note:** Excluding the range lifts the policy for every request that comes from Anthropic's addresses, which means all Microsoft 365 connector activity for all of your members. For a sign-in frequency policy, this also means the connector's background requests are no longer subject to it, so a connection stays signed in until it expires after 90 days of inactivity. If you'd rather keep the periodic reconnects, leave the policy as it is. Members who are asked to reconnect can sign out of Microsoft in their browser, or use a private browsing window, before reconnecting. If you want to check the effect of a change before making it, clone the policy in report-only mode first.
-
-------------------------------------------------------------------------
-
-## Frequently asked questions
-
-### What happens if a member tries to connect before consent is granted?
-
-They'll see an error message indicating that an administrator must grant app permissions before they can use the integration. The connection will fail until a Microsoft Entra Global Administrator approves the necessary permissions.
-
-### Can the Microsoft 365 connector be used with enterprise search?
-
-Yes. When enterprise search is enabled, it can query Microsoft 365 alongside other connected services for unified search across Slack, Google Workspace, Microsoft 365, and more.
-
-### What file types can the connector read?
-
-Claude reads Word, Excel, PowerPoint (including older .doc, .xls, and .ppt files), PDF, and plain-text formats such as .txt, .md, and .csv from SharePoint and OneDrive. Other formats, including OneNote, can't be read. For the full list, see **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365#h_ddeb82923f)**.
-
-### Can the integration modify Microsoft 365 data?
-
-Only after an Entra admin grants write scopes. With write tools on, Claude can send email, manage drafts and calendar events, update mailbox settings, create and update files in OneDrive and SharePoint, and send messages in Microsoft Teams (post/reply in a channel, send a chat message, or start a new chat on the user's behalf), always within each member's existing Microsoft 365 permissions. Without them, the integration is read-only. Claude still can't change Teams settings or permissions, only send messages.
-
----
-
 ## Get started with Claude Compliance API integrations | Claude Help Center
 
 Source: https://support.claude.com/en/articles/15167101-get-started-with-claude-compliance-api-integrations
 Path: 14-Connectors/get-started-with-claude-compliance-api-integrations.md
 
 # Get started with Claude Compliance API integrations
-
-Updated today
 
 
 Security and compliance platforms have built integrations on top of the Claude Compliance API, so your team can monitor Claude activity within the tools you already use. Integrations are available from security and compliance providers across the categories enterprises rely on, spanning DLP, SASE, data security, SIEM and security operations, identity, eDiscovery, AI security posture management, and AI observability and telemetry infrastructure.
@@ -3122,7 +2159,7 @@ For Claude Platform, contact your Anthropic sales team. Review **[Compliance API
 
 - **Datadog:** Datadog’s Claude Compliance ingests audit logs from the Claude Platform into Datadog, giving security teams visibility into admin activity, API key lifecycle events, and authentication events across their Claude organization for SIEM and compliance use cases. To set up this integration, see the **[Datadog setup guide](https://docs.datadoghq.com/integrations/anthropic-compliance-logs/).**
 
-- **Daylight:** Monitor Claude usage in an organization for security investigations and compliance purposes. To set up this integration, see the **[Daylight setup guide](https://daylight.ai/claude-enterprise-detection)**.
+- **Daylight Security:** Monitor Claude usage in an organization for security investigations and compliance purposes. To set up this integration, see the **[Daylight Security setup guide](https://daylight.ai/claude-enterprise-detection)**.
 
 - **Elastic:** Collect Claude audit and usage activity to detect security risks, support compliance requirements, and investigate AI-related incidents. To set up this integration, see the **[Elastic setup guide](https://www.elastic.co/docs/reference/integrations/anthropic)**.
 
@@ -3280,12 +2317,10 @@ For Claude Platform, contact your Anthropic sales team. Review **[Compliance API
 
 ## Get started with custom connectors using remote MCP | Claude Help Center
 
-Source: https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp
-Path: 14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md
+Source: https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp
+Path: 14-Connectors/get-started-with-custom-connectors-using-remote-mcp.md
 
 # Get started with custom connectors using remote MCP
-
-August 11, 2026
 
 
 Custom connectors using remote MCP are available on Claude, Cowork, and Claude Desktop for users on Free, Pro, Max, Team, and Enterprise plans. Free users are limited to one custom connector.
@@ -3332,7 +2367,7 @@ Even though Cowork and Claude Desktop run on your computer, remote connectors ar
 
 ## Add a custom connector
 
-**Note:** While anyone can build and host connectors using remote MCP, only Owners can add them to Team and Enterprise plans. Once a connector has been added to a Team or Enterprise organization, users individually connect to and enable that connector. This ensures that Claude can only access tools and data that the individual user has access to.
+**Note:** While anyone can build and host connectors using remote MCP, only Owners and Primary Owners can add them to Team plans, and only Owners, Primary Owners, and people with a custom role that includes Manage access to Libraries can add them to Enterprise plans. Once a connector has been added to a Team or Enterprise organization, users individually connect to and enable that connector. This ensures that Claude can only access tools and data that the individual user has access to, unless the connector uses a shared credential such as an API key, which gives everyone who uses it that credential's access.
 
 ### For Team and Enterprise plans
 
@@ -3342,15 +2377,23 @@ Before members of Team and Enterprise plans can configure custom connectors, an 
 
 1.  Navigate to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
-2.  Click the "Add" button.
+2.  Click “Add.”
 
 3.  Hover over “Custom,” then select “Web.”
 
-4.  Add your connector's remote MCP server URL.
+4.  Enter a name for the connector. This is the name users see in the connectors list.
 
-5.  Optionally, click “Advanced settings” to specify an OAuth Client ID and OAuth Client Secret for your server.
+5.  Add your connector's remote MCP server URL. Click “Continue.”
 
-6.  Finish configuring your connector by clicking "Add."
+6.  Review the authentication settings Claude detected, and change them if your server needs something different. Click “Continue.”
+
+7.  Under **Authentication**, choose how people connect to the server: “Sign in now,” “Sign in when needed,” or “No sign in.”
+
+8.  Under **OAuth client**, choose how Claude identifies itself to the server’s authorization server: “Use Claude’s published identity (Recommended),” “Register automatically,” or “Use your own OAuth client.” **Note:** You won’t see the **OAuth client** setting if you selected "No sign in" under **Authentication**.
+
+9.  Under **Request headers**, add fixed credentials such as API keys that Claude sends on every request if your MCP server authenticates with an API key, bearer token, or other fixed credential instead of OAuth. Learn how to **[authenticate with request headers](https://claude.com/docs/connectors/custom/add-unlisted#authenticate-with-request-headers).**
+
+10. Finish configuring your connector by clicking "Add."
 
 **Steps for members after connector is configured:**
 
@@ -3368,13 +2411,21 @@ If you are using an individual Pro or Max plan, follow these steps to add a cust
 
 1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
-2.  Click "+" then “Add custom connector.”
+2.  Click "+ Add" then “Add custom connector.”
 
-3.  Add your connector's remote MCP server URL.
+3.  Enter a name for the connector. This is the name users see in the connectors list.
 
-4.  Optionally, click “Advanced settings” to specify an OAuth Client ID and OAuth Client Secret for your server.
+4.  Add your connector's remote MCP server URL. Click “Continue.”
 
-5.  Finish configuring your connector by clicking "Add."
+5.  Review the authentication settings Claude detected, and change them if your server needs something different. Click “Continue.”
+
+6.  Under **Authentication**, choose how people connect to the server: “Sign in now,” “Sign in when needed,” or “No sign in.”
+
+7.  Under **OAuth client**, choose how Claude identifies itself to the server’s authorization server: “Use Claude’s published identity (Recommended),” “Register automatically,” or “Use your own OAuth client.” **Note:** You won’t see the **OAuth client** setting if you selected "No sign in" under **Authentication**.
+
+8.  Under **Request headers**, add fixed credentials such as API keys that Claude sends on every request if your MCP server authenticates with an API key, bearer token, or other fixed credential instead of OAuth. Learn how to **[authenticate with request headers](https://claude.com/docs/connectors/custom/add-unlisted#authenticate-with-request-headers)**.
+
+9.  Finish configuring your connector by clicking "Add."
 
 ### Enabling connectors after configuration
 
@@ -3412,7 +2463,11 @@ Custom connectors allow you to connect Claude to arbitrary services that have no
 
 ### Security and permissions
 
-When you add a custom connector to Claude, you'll typically go through an OAuth authentication process to securely sign in to the application and grant specific permissions. This allows Claude to interact with the application on your behalf, without Claude ever seeing your actual password. You can revoke these permissions at any time by disconnecting the connector in Claude's settings or the third-party service's security settings.
+When you add a custom connector to Claude, you'll typically go through an OAuth authentication process to securely sign in to the application and grant specific permissions. This allows Claude to interact with the application on your behalf, without Claude ever seeing your actual password.
+
+Some connectors use an API key or other fixed credential instead of or in addition to an OAuth authentication process. The values are stored encrypted, like other connector credentials. On Team and Enterprise plans, everyone who uses the connector reaches the service with that same credential, so use one limited to what members should access.
+
+You can revoke these permissions at any time by disconnecting the connector in Claude's settings or the third-party service's security settings.
 
 Remote MCP servers act as intermediaries between Claude and external applications. You should:
 
@@ -3462,7 +2517,7 @@ You can interact with these connectors directly—filtering data, checking off t
 
 ### Using Claude with Research
 
-**Note: [Advanced research](https://claude.com/blog/integrations)** is not currently able to invoke tools from local MCP servers.
+**Note: [Advanced research](integrations.md)** is not currently able to invoke tools from local MCP servers.
 
 Research allows Claude to deeply investigate queries by searching through hundreds of internal and external sources. During the research process, Claude can invoke tools from your connectors automatically without further approval.
 
@@ -3474,7 +2529,7 @@ When using research with custom connectors:
 
 - Be mindful of the impact of Claude sending a large number of requests to your connectors.
 
-See **[Use research on Claude](../15-Claude-AI-Features/using-research-on-claude-ai.md)** for more information about this feature.
+See **[Use research on Claude](https://support.claude.com/en/articles/11088861-using-research-on-claude)** for more information about this feature.
 
 ---
 
@@ -3643,6 +2698,104 @@ For more information regarding this extension, see the [Claude for Sheets Google
 
 ---
 
+## Claude can now connect to your world | Claude by Anthropic
+
+Source: https://www.claude.com/blog/integrations
+Path: 14-Connectors/integrations.md
+
+# Claude can now connect to your world
+
+Claude can now connect to your apps and tools through Integrations, while advanced Research searches across the web, Google Workspace, and connected services to quickly deliver comprehensive reports.
+
+- 
+
+  Category[Announcements](https://www.claude.com/resources/product-announcements)
+- 
+
+  ProductClaude apps
+- 
+
+  DateMay 1, 2025
+- 
+
+  Reading time5 min
+- 
+
+
+Today we're announcing Integrations, a new way to connect your apps and tools to Claude. We're also expanding Claude's [Research](../19-Reference/research.md) capabilities with an advanced mode that searches the web, your Google Workspace, and now your Integrations too. Claude can research for up to 45 minutes before delivering a comprehensive report, complete with citations. In addition to these updates, we're making web search available globally for all Claude users on paid plans.
+
+### Integrations
+
+Last November, we launched the [Model Context Protocol](../19-Reference/model-context-protocol.md) (MCP)—an open standard connecting AI apps to tools and data. Until now, support for MCP was limited to Claude Desktop through local servers. Today, we're introducing Integrations, allowing Claude to work seamlessly with remote MCP servers across the web and desktop apps. Developers can build and host servers that enhance Claude’s capabilities, while users can discover and connect any number of these to Claude.
+
+When you connect your tools to Claude, it gains deep context about your work—understanding project histories, task statuses, and organizational knowledge—and can take actions across every surface. Claude becomes a more informed collaborator, helping you execute complex projects in one place with expert assistance at every step.
+
+To start, you can choose from Integrations for 10 popular services, including [Atlassian’s Jira and Confluence](https://www.atlassian.com/platform/remote-mcp-server), [Zapier](https://zapier.com/mcp), [Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare/tree/main), [Intercom](https://www.intercom.com/blog/introducing-model-context-protocol-fin), [Asana](https://developers.asana.com/docs/using-asanas-model-control-protocol-mcp-server), [Square](https://developer.squareup.com/docs/mcp), [Sentry](https://docs.sentry.io/product/sentry-mcp/), [PayPal](https://www.paypal.ai/), [Linear](https://linear.app/changelog/2025-05-01-mcp), and [Plaid](https://api.dashboard.plaid.com/mcp/sse)—with more to follow from companies like Stripe, GitLab and Box. Developers can also create their own Integrations in as little as 30 minutes using our documentation or solutions like [Cloudflare](https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/) that provide built-in OAuth authentication, transport handling, and integrated deployment.
+
+Each integration drastically expands what Claude can do. Zapier, for example, connects thousands of apps through pre-built workflows, automating processes across your software stack. With the [Zapier Integration](https://zapier.com/mcp), Claude can access these apps and your custom workflows through conversation—even automatically pulling sales data from [HubSpot](https://developers.hubspot.com/mcp) and preparing meeting briefs based on your calendar.
+
+With access to Atlassian’s Jira and Confluence, Claude can collaborate with you on building new products, managing tasks more effectively, and scaling your work by summarizing and creating multiple Confluence pages and Jira work items at once.
+
+Connect Intercom to respond faster to user feedback. Intercom's AI agent Fin, now an MCP client, can take actions like filing bugs in Linear when users report issues. Chat with Claude to identify patterns and debug using Intercom's conversation history and user attributes—managing the entire workflow from user feedback to bug resolution in one conversation.
+
+### Advanced Research
+
+We're introducing several new updates to build on our recently-released [Research](../19-Reference/research.md) capability. Claude can now conduct deeper investigations across hundreds of internal and external sources, delivering more comprehensive reports in anywhere from five to 45 minutes.
+
+With its new ability to do more complex research, available when you toggle on the Research button, Claude breaks down your request into smaller parts, investigating each deeply before compiling a comprehensive report. While most reports complete in five to 15 minutes, Claude may take up to 45 minutes for more complex investigations—work that would typically take hours of manual research.
+
+We've also expanded Claude's data access. We launched Research with support for web search and Google Workspace, but now with Integrations, Claude can also search any application you connect.
+
+When Claude incorporates information from sources, it provides clear citations that link directly to the original material. This transparency ensures you can confidently use Claude's research findings, knowing exactly where each insight originated.
+
+### Getting started
+
+Integrations and advanced Research are now available in beta on the Max, Team, and Enterprise plans, and will soon be available on Pro. Web search is now globally available to all [Claude.ai](http://claude.ai) paid plans. For more information on getting started with Integrations, MCP servers, and security and privacy practices when connecting data sources to Claude, visit our [Help Center](https://support.anthropic.com/en/articles/11175166-about-integrations-using-remote-mcp). ***‍***
+
+***Update:** Expanded availability. (June 3, 2025)*
+
+Integrations and Research are now available on the Pro, Max, Team, and Enterprise plans. Web search is available globally on all Claude plans.
+
+
+## Related articles
+
+Explore more product news and best practices for teams building with Claude.
+
+
+ArticleOct 8, 2026
+
+### Build live dashboards and animate explainers with Claude 
+
+Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
+
+Claude appsClaude Design
+
+2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+
+
+ArticleOct 7, 2026
+
+### Claude Haiku 5.5
+
+Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
+
+(opens in new tab)[](https://www.claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
+
+ArticleOct 6, 2026
+
+### Claude now works with Google Docs, Sheets, and Slides
+
+Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
+
+Claude Enterprise
+
+
+ArticleOct 6, 2026
+
+### We’re expanding the Claude Startups program to help founders build
+
+---
+
 ## Getting started with connectors · Claude Academy
 
 Source: https://support.claude.com/en/articles/13123742-intro-to-connectors
@@ -3653,150 +2806,6 @@ Path: 14-Connectors/intro-to-connectors.md
 Learn how to supercharge Claude by connecting the tools you already use. This tutorial shows you how to set up connectors that give Claude access to your files, apps, and workflows.
 
 4 minClaude.ai
-
----
-
-## MCP connectors | Claude Help Center
-
-Source: https://support.claude.com/en/articles/14503689-mcp-connectors
-Path: 14-Connectors/mcp-connectors.md
-
-# MCP connectors
-
-April 10, 2026
-
-
-MCP connectors let Claude connect to your organization’s tools, data sources, and services. Claude can search your documents, read your email, or call external APIs on your behalf, all without leaving the chat.
-
-For general questions about connectors in Claude, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
-
-## How MCP connectors differ in Claude for Government
-
-**Claude for Government runs the first FedRAMP High authorized MCP implementation.** The MCP framework, the infrastructure that registers, authenticates, and executes Anthropic-provided connectors, operates entirely within the Claude for Government authorized boundary. Because the authorization covers MCP as a feature, new Anthropic-provided and customer-provided connectors can be added without additional FedRAMP audits of Claude for Government itself, as long as the connectors meet your agency's data-handling requirements.
-
-**The connector catalog is curated.** Only connectors approved for the government environment appear in the Admin Settings directory, so some commercial Claude connectors are not available.
-
-**Important:** Some connectors call external APIs that transmit data outside the FedRAMP boundary. Each connector's catalog description states what data flows where. Your organization is responsible for evaluating whether that data flow is appropriate for your workloads, data classification levels, and applicable regulatory requirements.
-
-## Browse available connectors
-
-[TABLE]
-
-Organizations can also register their own MCP servers for internal systems, custom tools, or approved third-party services. See **[Custom Connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)**.
-
-## Enable a connector for your organization
-
-Connectors are enabled org-wide from Admin Settings. Once enabled, individual users in your organization can connect their own accounts.
-
-**Note**: You must be an Owner or Primary Owner to enable connectors. Members can connect their accounts to connectors that are already enabled but cannot add new ones to the catalog.
-
-1.  Navigate to **claude.fedstart.com/admin-settings/connectors** (or use your organization’s custom Claude for Government domain).
-
-2.  Click "Browse connectors" to view the catalog.
-
-3.  Select a connector and review its description, paying particular attention to what data leaves the boundary, if any.
-
-4.  Click "Add to your organization."
-
-5.  Some connectors require an organization-level authentication step (for example, the Microsoft 365 connector requires tenant-admin consent in Microsoft Entra). Follow the on-screen instructions.
-
-## Connect your account to a connector
-
-After your org admin enables a connector, it appears in your personal settings.
-
-1.  Navigate to **claude.fedstart.com/settings/connectors**
-
-2.  Click "Connect" next to the connector.
-
-3.  Complete the authentication flow—typically a one-time OAuth consent screen.
-
-4.  The connector is now active in your chats. Claude will use it automatically when relevant, or you can reference it directly ("search my SharePoint for…").
-
-------------------------------------------------------------------------
-
-## Security and privacy
-
-### How authentication works
-
-Connectors use delegated, per-user OAuth wherever possible. When you connect a tool, Claude inherits your permissions in that tool and can only see and do what you can already see and do. There are no service accounts with elevated access.
-
-### Where your credentials are stored
-
-OAuth tokens are encrypted at rest and stored entirely within the Claude for Government FedRAMP High boundary. Tokens are scoped to the individual user who authenticated and are never shared between users. Anthropic does not receive standing access to your connected tenants.
-
-### What stays inside the boundary
-
-The MCPservice, token storage, and all connector-execution audit logging stay inside the FedRAMP High authorized environment. Each tool invocation follows the path:
-
-User → Claude (in boundary) → MCP service(in boundary) → connected service
-
-Whether the **connected service** sits inside or outside the boundary depends on the connector. The catalog description for each connector states this explicitly. For example, the Microsoft 365 connector calls Microsoft Graph within your tenant; the Web Search connector calls a third-party search API outside the boundary under a zero-data-retention agreement.
-
-**Important:** Adding a connector does not change Claude for Government's FedRAMP authorization, but your agency's own ATO process may require you to evaluate the specific data-handling characteristics of each connector before enabling it.
-
-------------------------------------------------------------------------
-
-## Frequently asked questions
-
-### Does enabling a connector give Anthropic access to our data?
-
-No. Connectors use per-user delegated OAuth. Data flows between the in-boundary MCP proxy and the connected service using the individual user's credentials. Anthropic does not receive standing access to your tenant.
-
-### If we add a new connector, do we need to update our ATO?
-
-Adding a connector does not change Claude for Government's FedRAMP authorization—MCP was authorized as a feature. Whether your agency's own ATO requires an update depends on the data the connector handles and your internal authorization process.
-
-### Can we restrict which users in our org can use a connector?
-
-Connectors are enabled at the organization level. Once enabled, any user in the org can connect their individual account. Per-user or per-group connector gating is not currently available.
-
-### Can Claude take write actions—send emails, create files—through connectors?
-
-It depends on the connector: admins should review all connector permissions before adding them. Custom connectors can expose write tools if your MCP server implements them; see the security guidance in Custom Connectors before enabling write scopes.
-
----
-
-## MCP: Individual connectors | Claude Help Center
-
-Source: https://support.claude.com/en/articles/14503703-mcp-individual-connectors
-Path: 14-Connectors/mcp-individual-connectors.md
-
-# MCP: Individual connectors
-
-April 9, 2026
-
-
-Your organization can register its own MCP servers in Claude for Government, letting Claude connect to internal systems, custom tools, or third-party services you've approved for your environment.
-
-**Custom connectors work the same way in Claude for Government as in Claude Enterprise.** The prerequisites, the registration flow, and the behavior once enabled are identical. For full setup instructions, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**. This page covers only what's different.
-
-For general guidance on building and deploying MCP servers, see **[modelcontextprotocol.io](https://modelcontextprotocol.io/)** and the **[commercial connector guide](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
-
-## How custom connectors differ for Claude for Government
-
-**Adding a connector does not trigger a new FedRAMP review**
-
-MCP was authorized as a **feature** in Claude for Government's FedRAMP High package. The infrastructure that registers, authenticates, and executes your connector—including encrypted token storage, per-user OAuth, and audit logging—is already covered. You can add new custom connectors without re-engaging Anthropic's FedRAMP audit process.
-
-**Important:** This applies to Claude for Government's authorization only. Your agency's own ATO process may still require you to evaluate the MCP server and any backing services it reaches before enabling them. Anthropic does not review, authorize, or assume responsibility for customer-registered MCP servers or the external systems they call.
-
-## Register custom connectors
-
-Navigate to **claude.fedstart.com/admin-settings/connectors** as an **Owner** or **Primary Owner**. The rest of the flow matches the **[commercial guide](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
-
-Once added, the connector appears in your users' settings exactly as Anthropic-provided connectors do.
-
-## Know where the FedRAMP boundary sits
-
-When a user invokes a tool from your custom connector:
-
-User → Claude → MCP proxy → Your MCP server →  Your backing service
-
-└────     inside FedRAMP High      ────┘   └─your responsibility─┘
-
-Claude, the MCP proxy, and all OAuth token storage stay inside the FedRAMP High authorized environment. Whether your MCP server and its backing service sit inside or outside that boundary is under your control and yours to evaluate against the data classifications your users will handle.
-
-**Prefer FedRAMP-authorized backing services.** If your connector talks to a SaaS product, check whether that product has a government-cloud offering—Atlassian Government Cloud, Salesforce Government Cloud, ServiceNow GCC—and point the connector there rather than at the commercial endpoint.
 
 ---
 
@@ -3818,7 +2827,7 @@ The connector operates as a **secure proxy**, and your Microsoft 365 documents, 
 
 ### Access can be fully restricted
 
-The connector provides **multiple layers of access control** to address your security requirements. For detailed information on administration of the Microsoft 365 connector, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**.
+The connector provides **multiple layers of access control** to address your security requirements. For detailed information on administration of the Microsoft 365 connector, see **[Set up the Microsoft 365 connector](12542951.md)**.
 
 **1. Microsoft Entra tenant requirement**
 
@@ -4110,9 +3119,9 @@ Anthropic has the following certifications:
 
 ## Additional resources
 
-- **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**
+- **[Set up the Microsoft 365 connector](12542951.md)**
 
-- **[Connect Claude to Microsoft 365](connect-to-microsoft-365.md)**
+- **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774)**
 
 - **[Overview of Microsoft Graph permissions: Delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions)**
 
@@ -4144,6 +3153,8 @@ Path: 14-Connectors/slack.md
   - [Writing effective requests](#writing-effective-requests)
   - [When to use Slack vs. web](#when-to-use-slack-vs-web)
 - [Troubleshooting](#troubleshooting)
+  - [“This workspace isn’t set up for Claude Tag yet”](#this-workspace-isnt-set-up-for-claude-tag-yet)
+  - [“The legacy Claude in Slack bot is retired”](#the-legacy-claude-in-slack-bot-is-retired)
   - [”Claude Code is not enabled for your account”](#%E2%80%9Dclaude-code-is-not-enabled-for-your-account%E2%80%9D)
   - [Sessions not starting](#sessions-not-starting)
   - [Sessions from a Claude Tag channel fail to start](#sessions-from-a-claude-tag-channel-fail-to-start)
@@ -4159,14 +3170,15 @@ Platforms and integrations
 
 Copy pageCopy page
 
-Delegate coding tasks directly from your Slack workspace. Anthropic is retiring this earlier version for Team and Enterprise workspaces in favor of Claude Tag; it remains the setup path on Pro and Max plans.
+Delegate coding tasks from Slack. This earlier version answers channel mentions only from Pro and Max accounts in workspaces not connected to Claude Tag.
 
 Copy pageCopy page
 
-This page documents the earlier Claude Code in Slack, which runs each session under an individual user’s account.
+This page documents the earlier Claude Code in Slack, which runs each session under an individual user’s account. It answers channel @mentions only from Pro and Max accounts, and only in a Slack workspace that no organization has connected to [Claude Tag](../15-Claude-AI-Features/product-tag.md). Claude Tag runs @Claude as your organization’s shared identity with admin-configured access.
 
-- **Team and Enterprise plans:** Anthropic is retiring this version in favor of [Claude Tag](claude-for-slack.md), which runs @Claude as your organization’s shared identity with admin-configured access. Your existing Slack app and @Claude handle stay, and your Anthropic account team can tell you the cutover date. [Set up Claude Tag](https://claude.com/docs/claude-tag/overview) for a new workspace; to move one that already uses this version, see [Migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier).
-- **Pro and Max plans:** Claude Tag isn’t available on individual plans, so this page remains the setup path.
+- **Pro and Max plans:** Claude Tag isn’t available on individual plans, so this page remains the setup path in a workspace that isn’t connected to Claude Tag.
+- **Team and Enterprise plans:** your existing Slack app and @Claude handle stay. [Set up Claude Tag](https://claude.com/docs/claude-tag/overview) for a new workspace; to move one that already uses this version, see [Migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier).
+- **Notice instead of an answer:** look up the [setup notice](#this-workspace-isnt-set-up-for-claude-tag-yet) or the [retirement notice](#the-legacy-claude-in-slack-bot-is-retired) that @Claude replied with.
 
 Claude Code in Slack brings the power of Claude Code directly into your Slack workspace. When you mention `@Claude` with a coding task, Claude automatically detects the intent and creates a Claude Code cloud session, allowing you to delegate development work without leaving your team conversations. This integration is built on the existing Claude for Slack app but adds intelligent routing to Claude Code cloud sessions for coding-related requests. Each session runs under your own Claude account, using your connected repositories and your plan limits.
 
@@ -4187,12 +3199,13 @@ Prerequisites
 
 Before using Claude Code in Slack, ensure you have the following:
 
-| Requirement          | Details                                                                                           |
-|:---------------------|:--------------------------------------------------------------------------------------------------|
-| Claude Plan          | Pro, Max, Team, or Enterprise with Claude Code access (premium seats or Chat + Claude Code seats) |
-| Cloud sessions       | [Cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) are enabled for your account                    |
-| GitHub Account       | Connected at [claude.ai/code](https://claude.ai/code) with at least one repository authenticated  |
-| Slack Authentication | Your Slack account linked to your Claude account via the Claude app                               |
+| Requirement          | Details                                                                                                                                                                                                                 |
+|:---------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Claude Plan          | Pro or Max                                                                                                                                                                                                              |
+| Slack workspace      | Not connected to [Claude Tag](https://claude.com/docs/claude-tag/overview) by any organization. If @Claude replies with the [retirement notice](#the-legacy-claude-in-slack-bot-is-retired), the workspace is connected |
+| Cloud sessions       | [Cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) are enabled for your account                                                                                                                                          |
+| GitHub Account       | Connected at [claude.ai/code](https://claude.ai/code) with at least one repository authenticated                                                                                                                        |
+| Slack Authentication | Your Slack account linked to your Claude account via the Claude app                                                                                                                                                     |
 
 
 [​](#setting-up-claude-code-in-slack)
@@ -4374,6 +3387,25 @@ When to use Slack vs. web
 Troubleshooting
 
 
+[​](#this-workspace-isnt-set-up-for-claude-tag-yet)
+
+“This workspace isn’t set up for Claude Tag yet”
+
+@Claude replies in the thread with this notice instead of an answer when both of these are true:
+
+- No organization has connected your Slack workspace to [Claude Tag](https://claude.com/docs/claude-tag/overview).
+- The Claude account you linked in Slack isn’t on a Pro or Max plan.
+
+Claude Tag is available on Team and Enterprise plans. To connect the workspace, start with the `@Claude connect` command the notice names, then follow [Set up Claude Tag](https://claude.com/docs/claude-tag/overview).
+
+
+[​](#the-legacy-claude-in-slack-bot-is-retired)
+
+“The legacy Claude in Slack bot is retired”
+
+The notice opens with `The legacy Claude in Slack bot is retired effective October 5, 2026 and no longer responds in channels.` Your Slack workspace is connected to a Claude organization, and the earlier version is still selected for the channel, the workspace, or the organization default in that organization’s Claude Tag settings. The notice doesn’t depend on your own plan, so Pro and Max accounts get it too. If you’re an Owner of that organization, open [Claude admin settings](https://claude.ai/admin-settings/claude-tag) and turn on Claude Tag for the channel. To fix every channel that inherits the setting, change it on the workspace or the organization default instead. For the full move, see [Migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier). If you’re not an Owner, send this entry to one.
+
+
 [​](#”claude-code-is-not-enabled-for-your-account”)
 
 ”Claude Code is not enabled for your account”
@@ -4425,7 +3457,6 @@ Authentication errors
 
 1.  Disconnect and reconnect your Claude account in the App Home
 2.  Ensure you’re signed into the correct Claude account in your browser
-3.  Check that your Claude plan includes Claude Code access
 
 
 [​](#current-limitations)
@@ -4434,7 +3465,7 @@ Current limitations
 
 - **GitHub only**: repositories must be on GitHub.
 - **One PR at a time**: each session can create one pull request.
-- **Cloud session access required**: users need access to [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md); without it, Claude replies with standard chat responses.
+- **Cloud session access required**: users need access to [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md).
 
 
 [​](#related-resources)
@@ -4878,14 +3909,346 @@ To use Claude for Outlook safely and effectively:
 
 ---
 
+## Use Claude in Google Docs, Sheets, and Slides | Claude Help Center
+
+Source: https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides
+Path: 14-Connectors/use-claude-in-google-docs-sheets-and-slides.md
+
+# Use Claude in Google Docs, Sheets, and Slides
+
+
+Claude for Google Workspace adds a Claude sidebar to Google Docs, Google Sheets, and Google Slides. Claude reads the file you have open and edits it directly, so you can draft, analyze, restructure, and restyle without copying content back and forth.
+
+Claude for Google Workspace is available in beta for Pro, Max, Team, and Enterprise plans. You also need a Google account that is allowed to install Google Workspace Marketplace apps.
+
+With Claude for Google Workspace, you can:
+
+- Ask questions about the document, spreadsheet, or deck you have open and get answers that cite where they came from.
+
+- Have Claude make the edits for you, in place, with every change visible in version history.
+
+- Build spreadsheet models, write and fix formulas, and clean up data in Sheets.
+
+- Draft, rewrite, and restructure long documents in Docs.
+
+- Create new slides or tighten and restyle existing ones in Slides.
+
+- Use the connectors your organization has already set up in Claude, from inside the sidebar.
+
+This is different from the **[Google Workspace connectors](https://support.claude.com/en/articles/10166901)** in Claude, which let Claude search and reference your Drive, Gmail, and Calendar while you chat at claude.ai. The extension works the other way around: Claude comes to the file you’re already in.
+
+## Quick start
+
+If your organization already allows Marketplace apps, this takes about two minutes.
+
+1.  Install Claude from the **[Google Workspace Marketplace listing](https://workspace.google.com/marketplace/app/claude/12459801340)** and click "Install.” If an admin has already installed it for you, skip this step.
+
+2.  Open any file in Google Docs, Sheets, or Slides and go to Extensions \> Claude \> “Open Claude":
+
+
+3.  The first time, Google asks you to allow two permissions. Review them and click "Allow":
+
+
+4.  Sign in with your Claude account in the sidebar, and optionally enable your connectors.
+
+5.  Then ask Claude something about the file. Try "Summarize this document in five bullets" or "What does column F calculate?"
+
+If the install button is greyed out or you see "This application is not allowed by your administrator,” your Google Workspace admin needs to allow or install Claude first. See **[Install for your organization](#h_2118c53c4b)** below.
+
+## Install Claude for Google Workspace
+
+There are two ways to install: for yourself, or for your whole organization. Which one you can use depends on your Google Workspace admin's Marketplace settings, not on your Claude plan.
+
+### Install for yourself
+
+1.  Open the **[Claude listing](https://workspace.google.com/marketplace/app/claude/12459801340)** in the Google Workspace Marketplace.
+
+2.  Click "Install,” choose the Google account you use for Docs, Sheets, and Slides, and click "Continue.”
+
+3.  Review the permissions and click "Allow.”
+
+4.  Reload any Docs, Sheets, or Slides files you already have open. Claude now appears under the Extensions menu in all three.
+
+One install covers Docs, Sheets, and Slides. You do not install three separate extensions.
+
+### Install for your organization
+
+Google Workspace super administrators can install Claude for everyone, or for specific groups or organizational units, so users don't have to install it themselves.
+
+1.  Open the **[Claude listing](https://workspace.google.com/marketplace/app/claude/12459801340)** while signed in as a super admin.
+
+2.  Click "Admin install,” then "Continue.”
+
+3.  Choose "Everyone at your organization,” or "Certain groups or organizational units," and pick who should get Claude.
+
+4.  Review the data access and terms, tick the agreement box, and click "Finish.”
+
+5.  Ask users to reload any open files. Claude appears under **Extensions** without any action on their part.
+
+To remove Claude later, go to the Google Admin console, Apps, Google Workspace Marketplace apps, Apps list, select “Claude,” and click "Uninstall app.” Removal takes effect for all users the next time they reload a file.
+
+### If your organization blocks Marketplace apps
+
+Many organizations block Marketplace installs by default. An admin has two options in the Google Admin console under Apps, Google Workspace Marketplace apps, Settings:
+
+- **Allowlist Claude** so users can install it themselves: set Marketplace access to "Allow users to install and run only allowlisted apps,” then add Claude to the allowlist under Apps list, Allowlist app.
+
+- **Admin install it** using the steps above. Admin install works even while user installs are blocked.
+
+Users who try to install a blocked app see “This application is not allowed by your administrator.” That message comes from Google, not Claude, and only a Workspace admin can clear it.
+
+## What you can ask Claude to do
+
+Claude works best when you tell it the outcome you want and let it figure out the steps. You can select text, cells, or a slide first to point Claude at a specific part of the file.
+
+### In Google Docs
+
+- "Rewrite the executive summary so it leads with the recommendation and fits in one paragraph."
+
+- "This brief is 14 pages. Cut it to 6 without losing any of the numbered requirements."
+
+- "Turn the notes under 'Next steps' into a table with owner, action, and due date."
+
+- "Check this contract for defined terms that are used but never defined."
+
+- "Make every heading sentence case and fix the numbering in section 4."
+
+### In Google Sheets
+
+- "Walk me through how the total in H42 is calculated and flag anything hardcoded."
+
+- "Build a three-statement model on a new tab from the assumptions in 'Inputs'."
+
+- "Column D has dates in three different formats. Normalize them to YYYY-MM-DD."
+
+- "Find why the VLOOKUP in the Summary tab returns \#N/A for some rows and fix it."
+
+- "Add a sensitivity table for price and volume, plus a chart of revenue by quarter."
+
+### In Google Slides
+
+- "Draft a five-slide project update from the bullet points in the speaker notes on slide 1."
+
+- "Slide 7 is a wall of text. Split it into two slides and keep the deck's styling."
+
+- "Make the titles across the deck parallel and under eight words each."
+
+- "Add a bar chart of the regional numbers on slide 4, matching the deck's colors."
+
+- "Restyle this deck to use the fonts and colors from the title slide."
+
+Claude can also answer questions without editing anything: "What changed between the Q2 and Q3 tabs?" or "Which slides mention pricing?"
+
+## How Claude works in your file
+
+### Claude reads the file you have open, and only that file
+
+When you send a message, Claude reads the relevant parts of the open file, plus whatever you have selected. Apart from content from any connectors you turn on, it cannot see other files in your Drive, your email, or your calendar. If you need Claude to use content from somewhere else, paste it into the chat or attach a file.
+
+### Edits happen in place, as you
+
+Claude makes changes directly in the document, spreadsheet, or deck. Google records them under your name, so they appear in File, Version history like any edit you make yourself. To undo something Claude did, use Undo for the last change or restore an earlier version from version history.
+
+## You choose how much Claude asks first
+
+The mode selector at the bottom of the sidebar has two settings:
+
+[TABLE]
+
+In Google Docs, you also prompt Claude to propose text changes as cards you accept or reject one at a time, similar to suggestions.
+
+### Some actions always need your approval, and some are never allowed
+
+Regardless of mode, Claude stops and asks before it inserts an image from a web address, adds a link, or removes anyone's access. These show a "Security review" label and there is no "always allow" option for them.
+
+Claude cannot share the file, give anyone access, or change who owns it. It also cannot create menus or scheduled automations, or load arbitrary web pages into your file. These requests are refused even if you ask.
+
+### What else is in the sidebar
+
+- **Model picker.** Choose the Claude model for the conversation.
+
+- **Connectors.** Connectors your organization has enabled in Claude appear in the + menu. Add new ones at claude.ai, not in the sidebar.
+
+- **Files and images.** Attach reference files (up to 20 per message, 30 MB per document, 10 MB per image) for Claude to read alongside the open file.
+
+- **Web search.** Toggle “Search the web” when you want Claude to look things up. Off by default.
+
+- **Chat history.** Conversations are saved per file in your browser and come back when you reopen Claude in that file. They do not sync across devices or browsers, and a copy of the file starts fresh.
+
+------------------------------------------------------------------------
+
+## Current limitations
+
+Claude for Google Workspace is in beta. These are the limits people ask about most. Several are deliberate, because the permissions that would lift them would also widen what the extension can access.
+
+### All three apps
+
+- Works only on the file it’s opened in. Claude can’t open, create, or copy other files in Drive, and can’t export the file as a PDF or download.
+
+- Keep the sidebar open while Claude is working. Closing it stops the current task.
+
+- Use Chrome, Edge, or Safari. Firefox is not supported in this beta; the sidebar loads but actions do not complete.
+
+- Voice dictation is not available in the sidebar.
+
+- A single long operation can run for up to six minutes before Google stops it. For very large jobs, ask Claude to work in stages.
+
+- "Work across apps" (handing a task between Excel, Word, and PowerPoint) is a Microsoft 365 feature and is not available in Google Workspace.
+
+### Google Docs
+
+- Claude cannot read, reply to, or resolve comments. Paste a comment into the chat if you want Claude to act on it.
+
+- Claude cannot accept or reject existing suggestions, and its own edits land as direct edits, not suggestions. Use "Ask before edits" if you want to review each change first.
+
+- Claude cannot create, rename, or reorder document tabs. It can read and edit the content of every tab.
+
+### Google Sheets
+
+- Connected Sheets tabs (live BigQuery data) cannot be read or edited. Use Data, Data connectors, Extract to pull the rows into a regular tab first.
+
+- Claude cannot create triggers, custom menus, or scheduled refreshes.
+
+### Google Slides
+
+- Charts Claude creates are inserted as images, not linked Sheets charts, so they do not update when numbers change. Ask Claude to regenerate the chart instead.
+
+- Claude cannot refresh an existing linked chart. Click “Update” on the chart yourself after changing the source sheet.
+
+- Claude cannot insert images from a web address without your approval each time.
+
+------------------------------------------------------------------------
+
+## Security, privacy, and admin controls
+
+Claude sees only the file you have open, plus any connectors you turn on, your content is handled under your existing Claude terms and is not used for training, and Google Workspace admins control who has the extension.
+
+### Permissions Claude asks Google for
+
+Claude requests two Google permissions, the minimum needed to show a sidebar and edit the file it is opened in. It does not request access to Drive, Gmail, Calendar, your contacts, or the ability to make network requests from your file.
+
+[TABLE]
+
+### How your data is handled
+
+- Content from the open file, your messages, and any files you attach are sent to Claude to generate a response. For Team and Enterprise plans, this is governed by your organization's Commercial Terms and Data Processing Addendum. For Pro and Max it is governed by the Consumer Terms and Privacy Policy.
+
+- Anthropic does not use this content to train its models. Use of data received from Google Workspace APIs adheres to the **[Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy)**, including the Limited Use requirements.
+
+- Inputs and outputs are deleted from Anthropic's systems within 30 days, except as described in **[How long do you store my organization's data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data) The extension does not inherit custom data retention settings your organization may have set.**
+
+- Chat history is stored locally in your browser, per file and is not synced across devices. Clear it from Settings in the sidebar.
+
+- On Enterprise plans, sessions from the Google extension are available through the Compliance API, including prompts, responses, tool calls, and the edits Claude made.
+
+### Enterprise security controls
+
+How the standard Claude Enterprise controls apply to the Google Workspace extension today:
+
+- **Compliance API:** Supported on Enterprise plans. Sessions are captured and returned through the same endpoints and Compliance Access Keys as Claude for Microsoft 365, with prompts, responses, tool calls, and edits.
+
+- **Customer-managed encryption keys (CMEK):** Supported for Enterprise. Conversation data that Anthropic stores is encrypted under the customer’s key with no extra configuration.
+
+- **OpenTelemetry audit export:** Supported. If a Claude admin has configured a custom OpenTelemetry collector for Office agents in Organization settings, sessions from Docs, Sheets, and Slides send the full audit trail to it, including prompts and tool inputs and outputs.
+
+- **Third-party inference (Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway):** Not supported in this beta. The extension requires a Claude account sign-in. Claude for Microsoft 365 supports these platforms; the Google Workspace extension does not yet.
+
+- **Zero Data Retention (ZDR):** Not available. Standard retention applies as described above. Because third-party inference is not supported, there is no zero-retention deployment path for the extension today.
+
+- **HIPAA-ready organizations:** Not covered. Do not use the extension with protected health information.
+
+### Admin controls
+
+- **Google Workspace admins** decide who can install or use Claude through Marketplace allowlisting and admin install, scoped to the whole domain, groups, or organizational units. Uninstalling from the Admin console removes it for everyone.
+
+- **Claude admins** control which connectors, skills, and models are available to members. The sidebar inherits those settings from your Claude organization.
+
+- **Users sign in with their Claude account**, including SSO if your organization uses it. API keys and cloud-provider sign-in are not supported in the Google extension.
+
+### Prompt injection
+
+Files can contain instructions written by someone else, sometimes hidden in white text or tiny fonts. Claude treats document content as data rather than commands, labels hidden text it finds, and is designed not to follow a document's instruction to share the file, fetch a link, or contact anyone. You should still review Claude's proposed actions before approving them, especially in files you received from outside your organization.
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+### Claude doesn't appear in the Extensions menu
+
+Extensions only appear in files opened after the install, so if Claude isn’t appearing in the menu, reload the file. If it’s still missing, check that you are signed in to Google with the account Claude was installed for, then ask your Google Workspace admin to confirm Claude is installed or allowlisted for you. Tip: press Alt+/ (Option+/ on Mac) and type "Claude" to find the menu item quickly.
+
+### "This application is not allowed by your administrator"
+
+Your Google Workspace organization blocks Marketplace apps that are not allowlisted. This is a Google setting. Ask your Workspace admin to allowlist Claude or admin-install it. See If your organization blocks Marketplace apps.
+
+### "Claude for Google Workspace needs a Claude account"
+
+You previously signed in to a Claude add-in with an API key, Amazon Bedrock, Google Vertex AI, or a gateway. The Google extension supports Claude account sign-in only.
+
+### The sidebar opens but nothing happens when I send a message
+
+This can be caused by using Firefox or a browser with strict tracking protection that blocks the sidebar from talking to the document. Switch to Chrome, Edge, or Safari. If you are already on one of those, reload the file and reopen Claude.
+
+### "This document's Claude add-in script is out of date"
+
+Google is still serving an older version of the extension to this file. Reload the file and reopen Claude. If it persists for more than a few minutes, try again later.
+
+### "Exceeded maximum execution time" or a task stops partway
+
+Google limits a single extension operation to six minutes. Ask Claude to continue, or break the request into smaller steps, for example one tab or ten slides at a time.
+
+### Claude says it can't read a tab in Sheets
+
+The tab is a Connected Sheet backed by BigQuery. Use Data, Data connectors, Extract to copy the rows into a regular tab, then ask again.
+
+### My conversation disappeared
+
+Chat history is saved in your browser per file. It will not be there in a different browser, in a private window, after clearing site data, or in a copy of the file made with File, Make a copy.
+
+------------------------------------------------------------------------
+
+## Frequently asked questions
+
+### Do I need to install Claude separately for Docs, Sheets, and Slides?
+
+No. One install from the Marketplace adds Claude to all three.
+
+### Can Claude see my other files in Google Drive
+
+Not by default. Google restricts the extension to the single file it is opened in. However, if you have the Google Drive MCP connected, Claude can use that to see other files. This is off by default.
+
+### Can other people in the file see my conversation with Claude?
+
+No. The conversation lives in your browser. Collaborators see Claude's edits in the file and in version history, attributed to you, but not your chat.
+
+### Does Claude keep working if I close the sidebar or the tab?
+
+No. Keep the sidebar open until Claude finishes. You can switch to other browser tabs while it works.
+
+### How do I undo something Claude did?
+
+Use Undo for the most recent change, or File, Version history, See version history to restore an earlier version. Every Claude edit is a normal edit in the file's history.
+
+### Which Claude models can I use?
+
+The same models available to your plan in Claude. Pick one from the model selector at the bottom of the sidebar.
+
+### Is this the same as Claude in Chrome or the Google Drive connector?
+
+No. Claude in Chrome works across web pages in your browser; the Google Workspace connectors let Claude search your Drive, Gmail, and Calendar from claude.ai. This extension puts Claude inside a specific Docs, Sheets, or Slides file and lets it edit that file.
+
+### I use Microsoft 365 as well. Is there an equivalent?
+
+Yes. See **[Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)**.
+
+---
+
 ## Use connectors to extend Claude's capabilities | Claude Help Center
 
 Source: https://support.claude.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp
 Path: 14-Connectors/use-connectors-to-extend-claude-s-capabilities.md
 
 # Use connectors to extend Claude's capabilities
-
-August 20, 2026
 
 
 This guide explains how to enable and use connectors with Claude to enhance its capabilities.
@@ -4894,7 +4257,7 @@ Web connectors are available for all users on Claude, Cowork, Claude Desktop, an
 
 ## What are connectors?
 
-Connectors let Claude access your apps and services, retrieve your data, and take actions within connected services. Claude inherits each person's permissions from the connected service. If someone can't access a specific file, channel, or record in the source system, the connector can't reach it from Claude either.
+Connectors let Claude access your apps and services, retrieve your data, and take actions within connected services. Claude inherits each person's permissions from the connected service. If someone can't access a specific file, channel, or record in the source system, the connector can't reach it from Claude either. Custom connectors that use a shared credential reach whatever that credential can access.
 
 For example, you can connect Claude to Linear to create issues, to Slack to send messages, or to Google Drive to search your files. Connectors work across Claude, Claude Desktop, Claude Code, and the API (via the **[MCP Connector](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-connector.md)**). Setup details for individual pre-built connectors are in **[Claude Docs: Connectors](https://claude.com/docs/connectors/overview)**.
 
@@ -5042,15 +4405,23 @@ In addition to directory connectors, you can add custom connectors:
 
 1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
-2.  Click the “+” button next to **Connectors**.
+2.  Click “Add.”
 
-3.  Select “Add custom connector.”
+3.  Hover over “Custom,” then select “Web.”
 
-4.  Enter the connector's name and URL.
+4.  Enter a name for the connector. This is the name users see in the connectors list.
 
-5.  Enter advanced settings (OAuth Client ID and secret) if desired.
+5.  Add your connector's remote MCP server URL. Click “Continue.”
 
-6.  Click “Add,” then follow the same connection process as directory connectors.
+6.  Review the authentication settings Claude detected, and change them if your server needs something different. Click “Continue.”
+
+7.  Under **Authentication**, choose how people connect to the server: “Sign in now,” “Sign in when needed,” or “No sign in.”
+
+8.  Under **OAuth client**, choose how Claude identifies itself to the server’s authorization server: “Use Claude’s published identity (Recommended),” “Register automatically,” or “Use your own OAuth client.” **Note:** You won’t see the **OAuth client** setting if you selected "No sign" in under **Authentication**.
+
+9.  Under **Request headers**, add fixed credentials such as API keys that Claude sends on every request if your MCP server authenticates with an API key, bearer token, or other fixed credential instead of OAuth. Learn how to **[authenticate with request headers](https://claude.com/docs/connectors/custom/add-unlisted#authenticate-with-request-headers).**
+
+10. Click “Add,” then follow the same connection process as directory connectors.
 
 Custom connectors connect to your MCP server from Anthropic's cloud, not from your local device. Your server must be reachable over the public internet. If it's behind a firewall or on a private network, see **[Get started with custom connectors using remote MCP](https://support.claude.com/en/articles/11175166)** for network requirements and private network options.
 
@@ -5068,7 +4439,7 @@ When connecting to services from the directory, review what access the service i
 
 **For Team and Enterprise plans:**
 
-- Access permissions are enforced at the user level. Users need to authenticate with the third-party service when first using the connector, even after an Owner or Primary Owner enables it.
+- Access permissions are enforced at the user level. Users need to authenticate with the third-party service when first using the connector, even after an Owner or Primary Owner enables it, unless the connector uses a shared credential.
 
 - Connectors are only available in private projects.
 
@@ -5160,18 +4531,19 @@ Who needs a Claude seat
 Slack users don’t each need a Claude seat to work with Claude in channels.
 
 - **In channels**: by default, anyone in the paired Slack workspace can tag `@Claude` in a channel, and an Owner can [restrict who can use Claude](https://support.claude.com/docs/claude-tag/admins/restrict-access#restrict-who-can-use-claude) to people in your Claude organization or, on Enterprise, to specific roles. Channel work bills by usage to your organization’s usage balance, under a [spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) an Owner sets.
-- **In DMs**: a DM from a member who has connected a Claude account runs on that account and bills to that person’s seat. The seat must include Claude Code, or, on the Enterprise plan, be a **Standard** or **Usage-Based Chat** seat held by someone who also has Cowork. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can bill to your organization for a limited time.
+- **In group DMs**: the same restriction on who can use Claude applies, and the work bills to your organization’s usage balance. See [Group DMs](https://support.claude.com/docs/claude-tag/admins/restrict-access#group-dms).
+- **In one-to-one DMs**: a DM from a member who has connected a Claude account runs on that account and bills to that person’s seat. The seat must include Claude Code, or, on the Enterprise plan, be a **Standard** or **Usage-Based Chat** seat held by someone who also has Cowork. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can bill to your organization for a limited time.
 
 
 [​](#where-claude-tag-runs)
 
 Where Claude Tag runs
 
-Claude Tag works in Slack. You interact with it by writing in a Slack channel, thread, or direct message, and it replies there. Mention `@Claude` in a channel to guarantee it picks the message up. When Claude works on a task, it runs in an ephemeral sandbox, not on your computer. The sandbox is created when a conversation starts, holds any code or files Claude is working with, and is discarded when the conversation goes idle. See [how Claude Tag works](https://support.claude.com/docs/claude-tag/concepts/how-it-works) for the full lifecycle. You extend what Claude can reach, like your repositories, ticketing systems, data warehouses, and custom tools, through [connections](https://support.claude.com/docs/claude-tag/admins/add-connections), [plugins, and skills](https://support.claude.com/docs/claude-tag/admins/customize). An Owner configures these per scope (a channel, a workspace, or the whole organization). Members’ own claude.ai connectors are separate from that configuration; Claude can use them in a channel for the member’s own requests, as [personal connectors in channels](https://support.claude.com/docs/claude-tag/concepts/personal-connectors) describes.
+Claude Tag works in Slack. You interact with it by writing in a Slack channel, thread, or direct message, and it replies there. Mention `@Claude` in a channel to guarantee it picks the message up. When Claude works on a task, it runs in an ephemeral sandbox, not on your computer. The sandbox is created when a conversation starts, holds any code or files Claude is working with, and is discarded when the conversation goes idle. See [how Claude Tag works](https://support.claude.com/docs/claude-tag/concepts/how-it-works) for the full lifecycle. You extend what Claude can reach, like your repositories, ticketing systems, data warehouses, and custom tools, through [Claude Tag connectors](https://support.claude.com/docs/claude-tag/admins/add-connections), [plugins, and skills](https://support.claude.com/docs/claude-tag/admins/customize). An Owner or a [Claude Tag admin](https://support.claude.com/docs/claude-tag/admins/restrict-access#delegate-claude-tag-administration) configures these for all of Slack, for one workspace, or for one channel. Members’ own claude.ai connectors are separate from that configuration; Claude can use them in a channel for the member’s own requests, as [personal connectors in channels](https://support.claude.com/docs/claude-tag/concepts/personal-connectors) describes.
 
 [For administratorsSet up Claude Tag](https://support.claude.com/docs/claude-tag/admins/setup-overview)
 
-[Where do I start?Pair your Slack workspace, connect the services Claude will work in, launch, and test that it works](https://support.claude.com/docs/claude-tag/admins/setup-overview)[What can Claude Tag access?How admins set access per channel, and where credentials are stored](https://support.claude.com/docs/claude-tag/concepts/agent-identity)[How do I connect each service?Credential types, allowed hosts, and what each connection lets Claude reach](https://support.claude.com/docs/claude-tag/admins/add-connections)
+[Where do I start?Pair your Slack workspace, launch, and test that it works](https://support.claude.com/docs/claude-tag/admins/setup-overview)[What can Claude Tag access?How admins set access per channel, and where credentials are stored](https://support.claude.com/docs/claude-tag/concepts/agent-identity)[How do I connect each service?Credential types, allowed hosts, and what each connection lets Claude reach](https://support.claude.com/docs/claude-tag/admins/add-connections)
 
 [For end usersPut Claude Tag to work](#put-claude-tag-to-work)
 
@@ -5182,7 +4554,7 @@ Claude Tag works in Slack. You interact with it by writing in a Slack channel, t
 
 Billing and spend limits
 
-Adding Claude to Slack doesn’t add a per-seat charge. Channel and thread work is billed by usage instead: it draws from a **usage balance**, an amount in your organization’s billing currency that an Owner funds. A [spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) caps how much of that balance Claude Tag can use each billing period. Direct messages from members who have connected a Claude account don’t draw from this balance. Such a DM runs on the sender’s own claude.ai account and follows that seat’s usual usage limits, so the organization spend limit doesn’t apply to it. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can draw from this balance. To learn what your team’s usage costs, run a pilot with a spend limit set and watch the per-channel breakdown on the [usage page in your admin settings](https://claude.ai/admin-settings/usage/claude-tag). Your organization may already have a [launch usage credit](https://support.claude.com/en/articles/15575654-claude-tag-launch-promo-for-claude-team-and-enterprise) to run that pilot against before it funds the balance itself. The usage page doesn’t count usage that a credit covers, so that usage shows as \$0.00 there. While the credit covers your pilot, watch the **List price** column of the **Spend by channel** table at [`claude.ai/analytics/claude-tag`](https://claude.ai/analytics/claude-tag) instead. That column shows each channel’s list-price spend for the current month, including covered usage. [Set a spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) covers how to fund the balance on each plan, set the limit, and what happens when usage reaches it.
+Adding Claude to Slack doesn’t add a per-seat charge. Channel, thread, and group DM work is billed by usage instead: it draws from a **usage balance**, an amount in your organization’s billing currency that an Owner funds. A [spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) caps how much of that balance Claude Tag can use each billing period. One-to-one direct messages from members who have connected a Claude account don’t draw from this balance. Such a DM runs on the sender’s own claude.ai account and follows that seat’s usual usage limits, so the organization spend limit doesn’t apply to it. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can draw from this balance. To learn what your team’s usage costs, run a pilot with a spend limit set and watch the per-channel breakdown on the [usage page in your admin settings](https://claude.ai/admin-settings/usage/claude-tag). [Set a spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) covers how to fund the balance on each plan, set the limit, and what happens when usage reaches it.
 
 For end users
 
@@ -5191,14 +4563,14 @@ For end users
 
 Put Claude Tag to work
 
-If Claude Tag is in your channel, you can use it now. (If it isn’t there yet, an Owner in your Claude organization runs setup: see [Set up Claude Tag](https://support.claude.com/docs/claude-tag/admins/setup-overview).) Anyone in the channel can hand it work, and channel work bills to the organization, not to you. What it can reach starts with the channel you’re in. The fastest way to find out is to ask it: `@Claude what can you access from this channel?` Or, if you’re signed in to your Claude organization, click **Configure** in the footer of a Claude reply in the channel to see its [connections](https://support.claude.com/docs/claude-tag/concepts/glossary#connection), the external services an admin has connected for that channel. Replies in org-shared channels have no Configure link. For your own requests, Claude can also [use the connectors on your claude.ai account](https://support.claude.com/docs/claude-tag/concepts/personal-connectors), after you allow it. The one exception is a DM, where it runs on your own claude.ai account instead of the channel’s setup. Owners can disable DMs organization-wide; see [Allow or disable direct messages](https://support.claude.com/docs/claude-tag/admins/restrict-access#allow-or-disable-direct-messages).
+If Claude Tag is in your channel, you can use it now. (If it isn’t there yet, an Owner in your Claude organization runs setup: see [Set up Claude Tag](https://support.claude.com/docs/claude-tag/admins/setup-overview).) Anyone in the channel can hand it work, and channel work bills to the organization, not to you. What it can reach starts with the channel you’re in. The fastest way to find out is to ask it: `@Claude what can you access from this channel?` Or, if you’re signed in to your Claude organization, click **Configure** in the footer of a Claude reply in the channel to see its [connections](https://support.claude.com/docs/claude-tag/concepts/glossary#connection), the external services an admin has connected for that channel. Replies in org-shared channels have no Configure link. For your own requests, Claude can also [use the connectors on your claude.ai account](https://support.claude.com/docs/claude-tag/concepts/personal-connectors), after you allow it. In a one-to-one DM, Claude runs on your own claude.ai account instead of a channel’s setup. An Owner can turn off DMs for the whole organization; see [Allow or disable direct messages](https://support.claude.com/docs/claude-tag/admins/restrict-access#allow-or-disable-direct-messages).
 
 
 [​](#common-uses)
 
 Common uses
 
-The list below covers common ways teams use Claude Tag. Each link opens a guide with the prompts to paste and the connections the task needs.
+Each link opens a guide with the prompts to paste and the connections the task needs.
 
 - [Watch monitors and alerts](https://support.claude.com/docs/claude-tag/users/use-cases/watch-monitors): scheduled dashboard checks, and alerts investigated as they arrive. Needs a monitoring connection like Datadog, Sentry, or PagerDuty.
 - [Triage requests](https://support.claude.com/docs/claude-tag/users/use-cases/triage-requests): an intake channel where Claude answers what it can, flags duplicates, and routes the rest. Works on Slack content alone.
@@ -5221,11 +4593,9 @@ Set Claude Tag up once for everyone
 You set up Claude Tag once, at [`claude.ai/admin-settings/claude-tag`](https://claude.ai/admin-settings/claude-tag), and you must be an Owner in your Claude organization to do it. The setup page at that URL walks you through it:
 
 - **Pair your Slack workspace**: send `@Claude connect` in Slack to get a pairing code, then enter it on the setup page.
-- **Connect the services Claude will work in**: for each one, such as your issue tracker or data warehouse, create an account for Claude and enter its credential.
-- **Grant repositories**: choose which repositories the Claude GitHub App can reach.
-- **Set a monthly spend limit and launch**.
+- **Set a monthly spend limit, add Claude to channels, and launch**.
 
-Claude Tag starts with no access to your external systems. The services you connect during setup form an [Access bundle](https://support.claude.com/docs/claude-tag/concepts/glossary#access-bundle), the set of tools Claude can reach, attached to the workspace or channels you paired. Once you launch, everyone in a channel Claude is in can use Claude Tag immediately, with no per-user setup. [Set up Claude Tag](https://support.claude.com/docs/claude-tag/admins/setup-overview) walks through those steps with what to have ready, what each choice means, and how to verify Claude Tag works once you launch.
+Once you launch, everyone in a channel Claude is in can use Claude Tag immediately, with no per-user setup. Claude Tag starts with no access of its own to your external systems. After you launch, you connect the services Claude will work in, such as your issue tracker or data warehouse, and grant repositories to the Claude GitHub App. Members can also let Claude use their own [personal connectors](https://support.claude.com/docs/claude-tag/concepts/personal-connectors) for their requests. [Set up Claude Tag](https://support.claude.com/docs/claude-tag/admins/setup-overview) walks through setup and connecting tools, with what to have ready, what each choice means, and how to verify Claude Tag works once you launch.
 
 Security review
 
@@ -5240,7 +4610,7 @@ Where to start with Claude Tag
 
 ## Set up Claude Tag
 
-Admins: pair your Slack workspace, connect the services Claude will work in, and launch
+Admins: pair your Slack workspace and launch
 
 ## Hand Claude Tag your first task
 
@@ -5955,13 +5325,13 @@ Path: 14-Connectors/using-the-benevity-connector-in-claude.md
 
 Connect Claude to Benevity's database of 2.5M+ nonprofits to discover and research charitable organizations.
 
-9 minClaude.ai
+9 minClaude
 
 [Open Claude](https://claude.ai/new)
 
 The Benevity connector gives Claude access to a database of 2.5M+ nonprofit organizations. Search by cause, location, or keyword, and get detailed profiles including mission statements, program descriptions, and geographic focus.
 
-The Benevity integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
+The Benevity integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this connector provides[](#what-this-connector-provides)
 
@@ -6157,13 +5527,13 @@ Path: 14-Connectors/using-the-blackbaud-connector-in-claude.md
 
 Connect Claude to Raiser's Edge NXT to access donor records, gift history, events, and draft personalized communications.
 
-10 minClaude.ai
+10 minClaude
 
 [Open Claude](https://claude.ai/new)
 
 The Blackbaud connector gives Claude secure access to your Raiser's Edge NXT fundraising data. Look up donor profiles, review gift history, search events, and draft personalized communications through natural language.
 
-The Blackbaud integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
+The Blackbaud integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this connector provides[](#what-this-connector-provides)
 
@@ -6282,7 +5652,7 @@ Connect Claude to Candid's database of 1.9M+ nonprofits and foundations for orga
 
 The Candid connector gives Claude access to comprehensive nonprofit and philanthropic data, including 1.9M+ nonprofits and foundations, expert knowledge resources, and the Philanthropy Classification System taxonomy.
 
-The Candid integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
+The Candid integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 *Note: This connector is currently in beta with core functionality available.*
 
@@ -6428,6 +5798,8 @@ Source: https://support.claude.com/en/articles/10167454-using-the-github-integra
 Path: 14-Connectors/using-the-github-integration.md
 
 # Use the GitHub integration
+
+September 2, 2026
 
 
 For more information on enabling GitHub within your account, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.
@@ -7080,7 +6452,7 @@ Path: 14-Connectors/using-the-pubmed-connector-in-claude.md
 
 Set up and use Claude's PubMed integration for access to millions of biomedical research articles and clinical studies.
 
-25 minClaude.ai
+25 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -7367,13 +6739,13 @@ Path: 14-Connectors/using-the-scholar-gateway-connector-in-claude.md
 
 Set up and use the Scholar Gateway integration by Wiley with Claude for access to over 3 million peer-reviewed scientific articles.
 
-2 minClaude.ai
+2 minClaude
 
 [Open Claude](https://claude.ai/new)
 
 The Scholar Gateway by Wiley integration provides authenticated access to the most relevant snippets of scientific research papers to utilize within Claude. This article explains how to set up and use the Scholar Gateway integration with Claude to accelerate your research workflows.
 
-The Scholar Gateway integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
+The Scholar Gateway integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this integration provides[](#what-this-integration-provides)
 
@@ -7443,13 +6815,13 @@ Path: 14-Connectors/using-the-synapse-org-connector-in-claude.md
 
 Set up and use the Synapse.org integration with Claude to discover biomedical data and explore project structures across the Synapse platform.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 
 The Synapse.org integration by Sage Bionetworks allows researchers to discover biomedical data across all of Synapse, see the structure of projects, and retrieve information on their data assets for authorized users. This article explains how to set up and use the Synapse.org integration with Claude to advance your research and analysis workflows.
 
-The Synapse.org integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
+The Synapse.org integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this integration provides[](#what-this-integration-provides)
 

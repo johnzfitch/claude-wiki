@@ -2,7 +2,7 @@
 title: "RBAC Groups - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_groups"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:01Z"
+fetched_at: "2026-10-04T08:31:54Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,13 +129,13 @@ Spend Limits
 RBAC Groups
 
 
+Create RBAC Group
+
+
 List RBAC Groups
 
 
 Get RBAC Group
-
-
-Create RBAC Group
 
 
 Update RBAC Group
@@ -163,6 +146,27 @@ RBAC Groups
 Members
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -246,6 +250,12 @@ cURL
 
 # RBAC Groups
 
+##### [Create RBAC Group](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/create)
+
+POST/v1/organizations/rbac_groups
+
+Create an RBAC Group in the Claude Enterprise tenant. Groups created via the API have source type `"direct"`.
+
 ##### [List RBAC Groups](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/list)
 
 GET/v1/organizations/rbac_groups
@@ -257,12 +267,6 @@ List RBAC Groups in the Claude Enterprise tenant.
 GET/v1/organizations/rbac_groups/{rbac_group_id}
 
 Retrieve an RBAC Group by ID.
-
-##### [Create RBAC Group](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/create)
-
-POST/v1/organizations/rbac_groups
-
-Create an RBAC Group in the Claude Enterprise tenant. Groups created via the API have source type `"direct"`.
 
 ##### [Update RBAC Group](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/update)
 
@@ -286,7 +290,7 @@ BetaRBACGroup object{ type: "rbac_group", id, created_at, 5 more }
 
 
 
-BetaRBACGroupDeleted object{ type: "rbac_group_deleted", id }
+RBACGroupDeleteResponse object{ type: "rbac_group_deleted", id }
 
 
 
@@ -316,13 +320,13 @@ ID of the RBAC Group.
 
 List members of an RBAC Group.
 
-##### [Add RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/create)
+##### [Add RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/add)
 
 POST/v1/organizations/rbac_groups/{rbac_group_id}/members
 
 Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
 
-##### [Remove RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/delete)
+##### [Remove RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/remove)
 
 DELETE/v1/organizations/rbac_groups/{rbac_group_id}/members/{user_id}
 

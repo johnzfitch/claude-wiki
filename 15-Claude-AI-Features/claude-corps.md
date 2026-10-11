@@ -2,13 +2,13 @@
 title: "Claude Corps \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-corps"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:04Z"
+fetched_at: "2026-10-10T06:24:58Z"
 tags: ["claude-ai"]
 ---
 
 Program overview[For fellows](#how-it-works)[For hosts](#host-info)[FAQ](#faq)
 
-[Apply to be a fellow](https://job-boards.greenhouse.io/claudecorps/jobs/4250200009)[Apply to be a host](https://form.typeform.com/to/X0apETWF)
+[Apply to be a fellow](https://job-boards.greenhouse.io/claudecorps/jobs/4402649009)[Apply to be a host](https://form.typeform.com/to/X0apETWF)
 
 Code the DreamNC
 
@@ -181,10 +181,10 @@ Our partners
 ### Products
 
 - [Claude](product-overview.md)
-- [Claude Code](claude-com-product-claude-code.md)
+- [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](product-claude-code-enterprise.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](product-tag.md)
 - [Claude Design](product-design.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
@@ -211,7 +211,8 @@ Our partners
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -232,7 +233,7 @@ Our partners
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -255,8 +256,10 @@ Our partners
 
 ### Programs
 
-- [Startups](programs-startups.md)
+- [Campus](programs-campus.md)
+- [Frontier Academy](programs-frontier-academy.md)
 - [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Startups](programs-startups.md)
 
 ### Help and security
 

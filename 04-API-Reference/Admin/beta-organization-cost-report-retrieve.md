@@ -2,7 +2,7 @@
 title: "Get Cost Report - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/cost_report/retrieve"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:01Z"
+fetched_at: "2026-10-04T08:32:29Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -149,6 +132,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -322,14 +326,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -523,6 +519,14 @@ One of the following:
 
 
 
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
+
+
+
 ##### Returns
 
 
@@ -562,7 +566,7 @@ Response 200
           "inference_geo": "global",
           "model": "claude-opus-5",
           "service_tier": "standard",
-          "token_type": "uncached_input_tokens",
+          "token_type": "cache_creation.ephemeral_1h_input_tokens",
           "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
         }
       ],
@@ -595,7 +599,7 @@ Response 200
           "inference_geo": "global",
           "model": "claude-opus-5",
           "service_tier": "standard",
-          "token_type": "uncached_input_tokens",
+          "token_type": "cache_creation.ephemeral_1h_input_tokens",
           "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
         }
       ],

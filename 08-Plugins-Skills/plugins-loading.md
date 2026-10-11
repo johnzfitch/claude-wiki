@@ -2,7 +2,7 @@
 title: "Plugin loading reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/loading"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-30T06:31:54Z"
+fetched_at: "2026-10-04T08:31:21Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -236,7 +236,7 @@ In-place and copied plugins
 Claude Code loads some plugins in place from where you keep them and copies the rest into the cache, according to their origin:
 
 - **`--plugin-dir` and skills-directory plugins**: the directory loads in place and is never copied. A `--plugin-url` archive or a `--plugin-dir` `.zip` is extracted into a session temp directory first
-- **Relative-path plugins in a marketplace you added from a local directory**: the plugin loads in place from its path inside the marketplace folder. Your edits to the source directory take effect at the next session start or `/reload-plugins`, and you don’t need to increase the version. The plugin’s hook processes and MCP and LSP servers receive a `CLAUDE_PLUGIN_ROOT` that points at the source directory. For its Node.js package dependencies, see [When the dependency install runs](#when-the-dependency-install-runs)
+- **Relative-path plugins in a marketplace you added from a local path**: the plugin loads in place from its path inside the marketplace folder. Your edits to the source directory take effect at the next session start or `/reload-plugins`, and you don’t need to increase the version. The plugin’s hook processes and MCP and LSP servers receive a `CLAUDE_PLUGIN_ROOT` that points at the source directory. For its Node.js package dependencies, see [When the dependency install runs](#when-the-dependency-install-runs)
 - **`command`-source plugins in [link mode](plugins-marketplace-reference.md#command-plugin-source)**: the directory the command printed loads in place, through links in the cache entry
 - **Every other marketplace plugin**: Claude Code copies the plugin into `cache/<marketplace>/<plugin>/<version>/` at install and loads that copy. Files outside the plugin directory aren’t copied, so when a script inside a copied plugin reads a path above the plugin root, such as `../shared`, it doesn’t find them
 
@@ -272,23 +272,24 @@ When Claude Code copies a plugin into the cache, it also installs the plugin’s
 
 When the dependency install runs
 
-Claude Code runs the install inside the copied version directory each time it creates one:
+Claude Code installs the dependencies into the copied version directory each time it creates one:
 
 - When you install a plugin
 - When Claude Code updates a plugin to a new version
 - At session start when an enabled plugin isn’t cached yet, such as on a new machine
 
-For a relative-path plugin [loaded in place](#in-place-and-copied-plugins) from a local-directory marketplace, Claude Code doesn’t install the dependencies into the source directory. Install them there yourself, or from a hook into [`${CLAUDE_PLUGIN_DATA}`](plugins-components.md#path-variables-and-persistent-data). The install runs only when the plugin’s root directory contains both a `package.json` and a supported lockfile. The lockfile decides which command Claude Code runs:
+For a relative-path plugin [loaded in place](#in-place-and-copied-plugins) from a marketplace you added from a local path, Claude Code doesn’t install the dependencies into the source directory. Install them there yourself, or from a hook into [`${CLAUDE_PLUGIN_DATA}`](plugins-components.md#path-variables-and-persistent-data). The install runs only when the plugin’s root directory contains both a `package.json` and a supported lockfile. The lockfile decides which package manager Claude Code runs:
 
-| Lockfile                                     | Command                                          |
-|:---------------------------------------------|:-------------------------------------------------|
-| `bun.lock` or `bun.lockb`                    | `bun install --frozen-lockfile --ignore-scripts` |
-| `npm-shrinkwrap.json` or `package-lock.json` | `npm ci --ignore-scripts`                        |
+| Lockfile                                     | Package manager |
+|:---------------------------------------------|:----------------|
+| `bun.lock`                                   | Bun             |
+| `npm-shrinkwrap.json` or `package-lock.json` | npm             |
 
-If a plugin contains more than one of these lockfiles, Claude Code uses the first match, checking in order: `bun.lock`, `bun.lockb`, `npm-shrinkwrap.json`, `package-lock.json`. Claude Code skips the install for Yarn and pnpm lockfiles and for a `bunfig.toml` beside the Bun lockfile:
+If a plugin contains more than one of these lockfiles, Claude Code uses the first match, checking in order: `bun.lock`, `npm-shrinkwrap.json`, `package-lock.json`. Claude Code skips the install in these lockfile cases:
 
-- If your plugin has only a `yarn.lock` or `pnpm-lock.yaml`, replace it with an npm lockfile
-- If a `bunfig.toml` is in the same directory as the Bun lockfile, remove the `bunfig.toml`, or replace the Bun lockfile with an npm lockfile
+- **`bun.lockb`**: Bun’s binary lockfile can’t be checked. Ship a text `bun.lock` or an npm lockfile instead
+- **`yarn.lock` or `pnpm-lock.yaml`**: replace it with an npm lockfile
+- **A lockfile in a format Claude Code doesn’t read**: an npm lockfile needs a `lockfileVersion` of `2` or `3`, which npm 7 or later writes, and a `bun.lock` needs a `lockfileVersion` no higher than `2`
 
 Include an npm lockfile to reach the most users. Claude Code runs the matched lockfile’s package manager from the user’s PATH and doesn’t try the other lockfile instead if that package manager is missing. For a plugin distributed through an npm source, use `npm-shrinkwrap.json`, because npm excludes `package-lock.json` from published packages.
 
@@ -299,8 +300,12 @@ Limits on the dependency install
 
 Claude Code constrains this dependency install so that no code from the plugin or its packages executes during it, and bounds how long it can run:
 
-- **Frozen resolution**: Bun and npm install exactly what the lockfile pins, and fail rather than re-resolve versions when `package.json` and the lockfile disagree
+- **Registry packages only**: every dependency must be a registry package pinned in the lockfile to an exact version. A plugin with a git, GitHub, folder, workspace, or linked dependency gets no install.
+- **`https` downloads**: a download link in the lockfile must use `https`, unless it points at the installing user’s own default npm registry.
+- **A separate install folder**: the package manager runs in a folder of its own that holds only a copy of the checked dependency list, so npm and Bun don’t read the plugin’s `.npmrc`, `.env`, or `bunfig.toml`. When the install succeeds, Claude Code moves the resulting `node_modules` into the plugin.
+- **Frozen resolution**: the install uses exactly the versions the lockfile pins, and Claude Code skips it when `package.json` and the lockfile don’t list the same dependencies
 - **No lifecycle scripts**: `--ignore-scripts` keeps `preinstall`, `install`, and `postinstall` scripts from running, so dependencies that build native modules in those scripts download but don’t compile during this install
+- **No overrides or patches**: a plugin whose `package.json` sets npm `overrides` gets no install from an npm lockfile, and a plugin that sets Bun `patchedDependencies` gets no install from `bun.lock`
 - **60-second timeout**: Claude Code stops an install that runs longer and treats it as failed
 
 Claude Code fetches an npm-source plugin before this dependency install, and none of the package’s own install scripts run during the fetch. See [npm plugin source](plugins-marketplace-reference.md#npm-plugin-source). You can’t turn the automatic install off. No setting or environment variable disables it. In restricted networks, see the [network access requirements](../13-Enterprise-Admin/network-config.md#network-access-requirements) for the hosts to allow.
@@ -310,20 +315,14 @@ Claude Code fetches an npm-source plugin before this dependency install, and non
 
 When the dependency install fails or is skipped
 
-A failed or skipped install never blocks the plugin, and each case leaves a different sign:
-
-- A failed install, or one skipped because of a Yarn or pnpm lockfile or a `bunfig.toml`, appears as a warning in the `claude --debug` output
-- A plugin with a `package.json` and no lockfile is skipped without a log entry
-- A timed-out install can leave a partial `node_modules` tree in the cached copy
-
-When the automatic install can’t provide a dependency, install it from a hook into the [persistent data directory](plugins-components.md#path-variables-and-persistent-data). That includes packages that need their lifecycle scripts to build, Python dependencies, and plugins locked with Yarn or pnpm.
+If the install fails or is skipped, the plugin still loads, but the parts of it that need the missing packages may not work. `/plugin` and `claude plugin list` show a note on an enabled plugin whose cached copy has a lockfile and a `package.json` that lists runtime dependencies, but no `node_modules` directory. The note says whether the install didn’t finish or can’t run for this plugin. See [the troubleshooting entry](plugins-troubleshooting.md#the-packages-it-lists-are-not-installed) for what to do about each. When the automatic install can’t provide a dependency, install it from a hook into the [persistent data directory](plugins-components.md#path-variables-and-persistent-data). That includes packages that need their lifecycle scripts to build, Python dependencies, plugins locked with Yarn or pnpm, and dependencies that aren’t registry packages, such as git dependencies.
 
 
 [​](#versions-and-updates)
 
 Versions and updates
 
-If a plugin’s author pushed new commits and `claude plugin update` prints `<name> is already at the latest version (<version>).`, the version Claude Code computes for the plugin is unchanged, so nothing changes on disk. Claude Code computes a version for every plugin it installs, and that version is how it detects an update. `claude plugin update` and background auto-update compute the version again and skip the plugin when it matches what `installed_plugins.json` records. The version also names the plugin’s cache directory. A manifest that pins `"version"` is one way the computed version stays the same across commits. See [How Claude Code computes the version](#how-claude-code-computes-the-version) for the resolution order. A plugin [loaded in place](#in-place-and-copied-plugins) from a local-directory marketplace loads its current source files at every session start, whatever its version string says. For a plugin from a [marketplace hosted on claude.ai](discover-plugins.md#add-from-claude-ai), the version claude.ai records for the plugin is its version, and the manifest’s `version` isn’t read.
+If a plugin’s author pushed new commits and `claude plugin update` prints `<name> is already at the latest version (<version>).`, the version Claude Code computes for the plugin is unchanged, so the plugin’s files on disk don’t change. Claude Code computes a version for every plugin it installs, and that version is how it detects an update. `claude plugin update` and background auto-update compute the version again and don’t replace the cached copy when it matches what `installed_plugins.json` records. An update that you start can still [retry an unfinished dependency install](plugins-troubleshooting.md#the-packages-it-lists-are-not-installed) in that copy. The version also names the plugin’s cache directory. A manifest that pins `"version"` is one way the computed version stays the same across commits. See [How Claude Code computes the version](#how-claude-code-computes-the-version) for the resolution order. A plugin [loaded in place](#in-place-and-copied-plugins) from a marketplace you added from a local path loads its current source files at every session start, whatever its version string says. For a plugin from a [marketplace hosted on claude.ai](discover-plugins.md#add-from-claude-ai), the version claude.ai records for the plugin is its version, and the manifest’s `version` isn’t read.
 
 
 [​](#how-claude-code-computes-the-version)

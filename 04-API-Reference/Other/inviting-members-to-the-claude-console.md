@@ -2,7 +2,7 @@
 title: "Inviting members to the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13443764-inviting-members-to-the-claude-console"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:31:24Z"
+fetched_at: "2026-10-10T06:24:37Z"
 tags: ["api"]
 ---
 
@@ -19,7 +19,7 @@ The instructions in this article apply to your overall Console organization. If 
 
 1.  Log in as a Admin.
 
-2.  Navigate to [Settings \> Members](usage-limits.md).
+2.  Navigate to [Settings \> Members](playground.md).
 
 3.  Click the "+ Invite" button in the upper right corner of the page.
 
@@ -37,7 +37,7 @@ Yes, newly-invited members have three weeks to accept the invitation via email.
 
 ## Revoking invitations to your Console organization
 
-1.  Locate the "Pending" member in [Settings \> Members](usage-limits.md).
+1.  Locate the "Pending" member in [Settings \> Members](playground.md).
 
 2.  Click the trash can icon to the right of the listed user to revoke their invitation.
 

@@ -2,7 +2,7 @@
 title: "Prompt library - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/prompt-library"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:06Z"
+fetched_at: "2026-10-08T06:24:42Z"
 tags: ["claude-code", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ Copy-paste prompts for Claude Code, tagged by task and role.
 
 Copy pageCopy page
 
-This is a library of prompts to copy into Claude Code. Use it to explore ways of working you haven’t tried, or when you’re not sure where to start. The prompts are collected from various Anthropic guides, including [Common workflows](common-workflows.md), [Best practices](best-practices.md), and [How Anthropic teams use Claude Code](https://claude.com/blog/how-anthropic-teams-use-claude-code). They’re starting points rather than scripts. Open **Why this works** under any prompt to see the pattern behind it so you can write your own.
+This is a library of prompts to copy into Claude Code. Use it to explore ways of working you haven’t tried, or when you’re not sure where to start. The prompts are collected from various Anthropic guides, including [Common workflows](common-workflows.md), [Best practices](best-practices.md), and [How Anthropic teams use Claude Code](../19-Reference/how-anthropic-teams-use-claude-code.md). They’re starting points rather than scripts. Open **Why this works** under any prompt to see the pattern behind it so you can write your own.
 
 
 [​](#what-makes-these-prompts-work)
@@ -76,7 +76,7 @@ These prompts are based on patterns from published Anthropic resources. Each car
 
 - [Common workflows](common-workflows.md): step-by-step guides for the core tasks
 - [Best practices](best-practices.md): prompting patterns and project setup
-- [How Anthropic teams use Claude Code](https://claude.com/blog/how-anthropic-teams-use-claude-code): real workflows from engineering, product, design, and data teams, with deep dives on [legal](https://claude.com/blog/how-anthropic-uses-claude-legal), [marketing](https://claude.com/blog/how-anthropic-uses-claude-marketing), and [cybersecurity](https://claude.com/blog/how-anthropic-uses-claude-cybersecurity)
+- [How Anthropic teams use Claude Code](../19-Reference/how-anthropic-teams-use-claude-code.md): real workflows from engineering, product, design, and data teams, with deep dives on [legal](https://claude.com/blog/how-anthropic-uses-claude-legal), [marketing](https://claude.com/blog/how-anthropic-uses-claude-marketing), and [cybersecurity](https://claude.com/blog/how-anthropic-uses-claude-cybersecurity)
 - [Scaling agentic coding guide](https://resources.anthropic.com/hubfs/Scaling%20agentic%20coding%20across%20your%20organization.pdf): the enterprise adoption guide
 
 For video walkthroughs of these patterns, see the free [Claude Code in Action](https://academy.claude.com/courses/claude-code-in-action) course on [Claude Academy](https://academy.claude.com/).

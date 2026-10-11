@@ -2,7 +2,7 @@
 title: "Use the built-in browser in Claude Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607400-use-the-built-in-browser-in-claude-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:33:02Z"
+fetched_at: "2026-10-10T06:28:21Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -43,7 +43,7 @@ Cowork can use the web in two ways:
 
 - **Built-in browser.** Claude works in its own browser in the side panel. Nothing to install, and it doesn't touch your tabs or logins. Use it when you want to hand off the web part of a task and keep working.
 
-- **Claude in Chrome.** Claude works in your own Chrome browser through the Claude in Chrome extension, on the page you're already on, with the accounts you're already signed in to. Use it when the work is on a page in front of you. Learn more in **[Get started with Claude in Chrome](getting-started-with-claude-for-chrome.md)**.
+- **Claude in Chrome.** Claude works in your own Chrome browser through the Claude in Chrome extension, on the page you're already on, with the accounts you're already signed in to. Use it when the work is on a page in front of you. Learn more in **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173)**.
 
 If you already use Claude in Chrome, it stays your default for web tasks in Cowork. If you don't have the extension, or you're new to browser use in Cowork, Claude uses the built-in browser once it's available to you.
 

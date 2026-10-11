@@ -2,8 +2,8 @@
 title: "Build commerce agents with Claude | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/commerce"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-25T06:30:59Z"
-tags: ["agents", "case-studies"]
+fetched_at: "2026-10-10T06:26:35Z"
+tags: ["agents", "case-studies", "enterprise", "security"]
 ---
 
 # Claude for commerce
@@ -12,23 +12,125 @@ tags: ["agents", "case-studies"]
 
 Claude helps retail, travel, telecom, and entertainment companies build and deploy consumer and merchant AI agents in your app, connected to your systems, in weeks.
 
-Get started
-
-[Get started](https://github.com/anthropics/commerce-agents)
-
-Get started
-
-
-[Contact sales](https://www.claude.com/contact-sales)
-
+[Get started (opens in new tab)](https://github.com/anthropics/commerce-agents)[Contact sales](https://www.claude.com/contact-sales)
 
 ### How commerce companies use Claude in agents
 
 8 live demos
 
-Close
+Consumer agent01 / 08
+
+### Budget to basket in one conversation
+
+Expand
+
+#### Retail and marketplace
+
+A shopper asks for a home office setup for under \$800. Your agent searches the catalog, weighs the trade-offs, and builds the cart. It remembers details like a small apartment with no storage for next time.
+
+01consumerRetail and marketplace
+
+Consumer agent02 / 08
+
+### Wish list to booking
+
+Expand
+
+#### Travel
+
+Travelers answer a few prompts about their destination while your agent finds hotels and flights. It can check a booking status on request and hold a room once the traveler is ready to commit.
+
+02consumerTravel
+
+Consumer agent03 / 08
+
+### Questions to the right plan
+
+Expand
+
+#### Telecom
+
+Customers ask if they’re due for an upgrade, what the early termination fee is, or whether bundling home internet would save money. Your agent compares plans and phones against actual usage, checks what the account qualifies for, and quotes the terms as written.
+
+03consumerTelecom
+
+Consumer agent04 / 08
+
+### Work with Claude to decide what tickets to buy
+
+Expand
+
+#### Entertainment
+
+Fans can ask who’s playing this summer, what a Lower Bowl seat includes, or what to do when a show says it’s sold out. Your agent compares tiers with every price all in, shows where the seats are, and holds them while the fan decides.
+
+04consumerEntertainment
+
+Merchant agent05 / 08
+
+### Get a morning briefing that flags what needs you
+
+Expand
+
+#### Retail and marketplace
+
+Merchant agents watch sales, stock, and pricing across the storefront, flag the listings running low and the ones due for a markdown, and draft a restock plan or a promotion on request. Changes are ready for approval before they reach the storefront.
+
+05merchantRetail and marketplace
+
+Merchant agent06 / 08
+
+### Find gaps in occupancy
+
+Expand
+
+#### Travel
+
+Supplier agents track bookings and occupancy by property, flag what’s pacing behind like Lisbon stays in October, and draft a rate change or a campaign on request. You sign off on changes and updates before they’re applied.
+
+06merchantTravel
+
+Merchant agent07 / 08
+
+### Flag rising churn or falling margins in a snapshot
+
+Expand
+
+#### Telecom
+
+Operations agents track plans, promotions, and the subscriber base, flag rising churn or falling margin, and draft a retention promotion or a plan change on request. You approve the suggestions.
+
+07merchantTelecom
+
+Merchant agent08 / 08
+
+### Catch slow sales before the event date arrives
+
+Expand
+
+#### Entertainment
+
+Box office agents track sales against your baseline for every event on sale, flag what’s pacing behind, and draft a discount or a hold policy on request. You approve the changes.
+
+08merchantEntertainment
 
 ## Trusted by
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
 
 ## Built to bring the best of Claude to commerce agents
 
@@ -52,84 +154,91 @@ Building Claude Commerce Agents
 
 AI is rapidly changing commerce, and consumer brands and platforms are on the move to respond.
 
-Watch webinar
-
-[Watch webinar](https://www.anthropic.com/webinars/building-claude-commerce-agents)
-
-Watch webinar
+[Watch webinar (opens in new tab)](https://claude.com/resources/webinars/building-claude-commerce-agents)
 
 Building commerce agents with Claude
 
 Retailers running shopping agents on Claude have seen carts up to 35% larger and shoppers 60% more likely to complete a purchase.
 
-Read blog
-
-[Read blog](https://claude.com/blog/claude-for-commerce-agents)
-
-Read blog
+[Read blog (opens in new tab)](https://www.claude.com/resources/articles/claude-for-commerce-agents)
 
 An open blueprint for commerce agents on Claude
 
 Our best practices from commerce teams in one forkable repo: two agents, four vertical implementations, and a Claude Code plugin to wire it to your own catalog.
 
-Read blog
-
-[Read blog](https://claude.com/blog/the-anatomy-of-effective-commerce-agents)
-
-Read blog
+[Read blog](https://www.claude.com/resources/articles/the-anatomy-of-effective-commerce-agents)
 
 ## What businesses are saying
 
-“AI will fundamentally reshape commerce, but trust must remain at the center of every transaction. Merchants are telling us they want more control over how AI engages their customers. Our collaboration with Anthropic on their commerce blueprint helps bring together the intelligence of Claude with the trust, security, and global reach of the Visa network, empowering merchants to deliver better customer experiences while maintaining the relationships that drive their businesses forward.”
-
-Jack Forestell, Chief Product and Strategy Officer
-
-“Trust is the currency of commerce, and it is even more critical in the agentic era. With Anthropic's commerce blueprint, we're helping merchants build their own agents with Claude to drive their growth. By combining AI innovation with trusted payments and commerce infrastructure, we're helping connect consumers, merchants and AI agents securely, seamlessly and at scale.”
-
-Sherri Haymond, Executive Vice President, Global Head of Digital Commercialization
-
-“Commerce agents are quickly becoming a critical capability for organizations seeking to deliver the personalized, intelligent customer experiences that today’s consumers expect. Our latest research revealed that 85% are now open to collaboration with an AI agent and nearly three in four would trust a personal AI agent more than their best friend to make a purchase on their behalf. This is more than a shift in how people shop. Agentic commerce is rewriting the rules of brand value – fundamentally shaping what gets purchased, when, where and by whom. Anthropic’s commerce agent blueprint provides a proven starting point that can help organizations accelerate deployment and build differentiated experiences that increase customer satisfaction, loyalty, and growth. Combined with Accenture's deep retail and consumer goods expertise, we can help clients move from concept to production and realize value from agentic AI faster.”
-
-Kath Gramling, Global Consumer Goods, Retail and Travel lead
-
-“Commerce and stunning customer experiences require personalization, and every brand on Klaviyo sits on more customer data and decisions than any team could act on by hand. Claude closes that gap, turning consumer preferences and performance data into the insights, campaigns and personalization that drive revenue. That's why we keep building with Anthropic: agents do complex analysis, design and decision making, and businesses can focus on delighting customers.”
-
-Andrew Bialecki, Founder and Co-CEO
-
-“We want our merchants to be everywhere customers are shopping, and increasingly that means a conversation with an agent. We're building on Anthropic's blueprints with a reference storefront implementation that connects them to a merchant's store through Catalog, UCP and Shop Sign-in. Merchants can use Claude to build agents that help customers find products, check out, and answer questions about their orders.”
-
-Vanessa Lee, VP Product
-
-“A trip is one of the most complex things a person buys: flights, hotels, cars, and dozens of options to weigh against each other. Penny, our AI assistant, navigates all of that in one conversation and surfaces the best options and best value. We built the latest generation of Penny on Claude because that kind of reasoning is exactly what Claude models are good at.”
-
-Cobus Kok, Vice President, AI Experiences
-
-“Wix’s mission has always been to make complex technology simple and accessible for our users. For merchants, that means providing powerful commerce capabilities without adding operational complexity, and agents are a natural next step. Our engineers had a working commerce agent taking prompts within fifteen minutes, and the pilot showed the potential of combining Anthropic’s AI capabilities with Wix’s commerce platform and deep expertise in commerce for SMB.”
-
-Dror Zalika, Head of Commerce at Wix
-
-“Millions of consumers, businesses and accountants run their finances on Intuit. Working with partners like Anthropic, we're building highly personalized experiences that provide customers with a clear understanding of what's shifting in their business and why, so they can take action with complete confidence. We are creating a financial system of intelligence by combining frontier AI reasoning, including Claude, with our proprietary data, capabilities, intelligence, and human expertise that powers the next level of prosperity for our customers.”
-
-Chris Kasten, Intuit’s Chief Architect and SVP of Engineering, Platform and Development Xceleration Group
-
-“Our engineers had the blueprint running with no blockers; the setup worked exactly as documented. The practices it bakes in, from tool iteration limits to prompt caching, are the ones we recognized from building Zomato's own agent. Teams standing up their first agent on Claude will skip weeks of trial and error.”
+> “Our engineers had the blueprint running with no blockers; the setup worked exactly as documented. The practices it bakes in, from tool iteration limits to prompt caching, are the ones we recognized from building Zomato's own agent. Teams standing up their first agent on Claude will skip weeks of trial and error.”
 
 Akhil Bansal, Senior Engineering Manager
 
-“Our engineers had both commerce agents from Anthropic's blueprint running locally in well under an hour, with live conversations working on the first attempt. We ran the Claude Code workflow twice and got two different architectures back, each designed to what we'd asked for. For a team starting from scratch, that turns days of agent scaffolding into hours.”
+> “Our engineers had both commerce agents from Anthropic's blueprint running locally in well under an hour, with live conversations working on the first attempt. We ran the Claude Code workflow twice and got two different architectures back, each designed to what we'd asked for. For a team starting from scratch, that turns days of agent scaffolding into hours.”
 
 Ashley Nader, Staff Product Manager
 
-“Much of what we build at Square is about giving sellers time back, and agents are a big leap in our ability to do that. We're building agentic tools that watch sales, labor, and inventory and come back with real next steps, not just an answer, while keeping sellers in control. Trust is the hardest part of that work, and Claude helps us meet a high standard.”
+> “Much of what we build at Square is about giving sellers time back, and agents are a big leap in our ability to do that. We're building agentic tools that watch sales, labor, and inventory and come back with real next steps, not just an answer, while keeping sellers in control. Trust is the hardest part of that work, and Claude helps us meet a high standard.”
 
 Willem Avé, Head of Product
 
-[Prev](#)
+> “AI will fundamentally reshape commerce, but trust must remain at the center of every transaction. Merchants are telling us they want more control over how AI engages their customers. Our collaboration with Anthropic on their commerce blueprint helps bring together the intelligence of Claude with the trust, security, and global reach of the Visa network, empowering merchants to deliver better customer experiences while maintaining the relationships that drive their businesses forward.”
 
-Prev
+Jack Forestell, Chief Product and Strategy Officer
 
-0/5
+> “Trust is the currency of commerce, and it is even more critical in the agentic era. With Anthropic's commerce blueprint, we're helping merchants build their own agents with Claude to drive their growth. By combining AI innovation with trusted payments and commerce infrastructure, we're helping connect consumers, merchants and AI agents securely, seamlessly and at scale.”
 
+Sherri Haymond, Executive Vice President, Global Head of Digital Commercialization
+
+> “Commerce agents are quickly becoming a critical capability for organizations seeking to deliver the personalized, intelligent customer experiences that today’s consumers expect. Our latest research revealed that 85% are now open to collaboration with an AI agent and nearly three in four would trust a personal AI agent more than their best friend to make a purchase on their behalf. This is more than a shift in how people shop. Agentic commerce is rewriting the rules of brand value – fundamentally shaping what gets purchased, when, where and by whom. Anthropic’s commerce agent blueprint provides a proven starting point that can help organizations accelerate deployment and build differentiated experiences that increase customer satisfaction, loyalty, and growth. Combined with Accenture's deep retail and consumer goods expertise, we can help clients move from concept to production and realize value from agentic AI faster.”
+
+Kath Gramling, Global Consumer Goods, Retail and Travel lead
+
+> “Commerce and stunning customer experiences require personalization, and every brand on Klaviyo sits on more customer data and decisions than any team could act on by hand. Claude closes that gap, turning consumer preferences and performance data into the insights, campaigns and personalization that drive revenue. That's why we keep building with Anthropic: agents do complex analysis, design and decision making, and businesses can focus on delighting customers.”
+
+Andrew Bialecki, Founder and Co-CEO
+
+> “We want our merchants to be everywhere customers are shopping, and increasingly that means a conversation with an agent. We're building on Anthropic's blueprints with a reference storefront implementation that connects them to a merchant's store through Catalog, UCP and Shop Sign-in. Merchants can use Claude to build agents that help customers find products, check out, and answer questions about their orders.”
+
+Vanessa Lee, VP Product
+
+> “A trip is one of the most complex things a person buys: flights, hotels, cars, and dozens of options to weigh against each other. Penny, our AI assistant, navigates all of that in one conversation and surfaces the best options and best value. We built the latest generation of Penny on Claude because that kind of reasoning is exactly what Claude models are good at.”
+
+Cobus Kok, Vice President, AI Experiences
+
+> “Wix’s mission has always been to make complex technology simple and accessible for our users. For merchants, that means providing powerful commerce capabilities without adding operational complexity, and agents are a natural next step. Our engineers had a working commerce agent taking prompts within fifteen minutes, and the pilot showed the potential of combining Anthropic’s AI capabilities with Wix’s commerce platform and deep expertise in commerce for SMB.”
+
+Dror Zalika, Head of Commerce at Wix
+
+> “Millions of consumers, businesses and accountants run their finances on Intuit. Working with partners like Anthropic, we're building highly personalized experiences that provide customers with a clear understanding of what's shifting in their business and why, so they can take action with complete confidence. We are creating a financial system of intelligence by combining frontier AI reasoning, including Claude, with our proprietary data, capabilities, intelligence, and human expertise that powers the next level of prosperity for our customers.”
+
+Chris Kasten, Intuit’s Chief Architect and SVP of Engineering, Platform and Development Xceleration Group
+
+> “Our engineers had the blueprint running with no blockers; the setup worked exactly as documented. The practices it bakes in, from tool iteration limits to prompt caching, are the ones we recognized from building Zomato's own agent. Teams standing up their first agent on Claude will skip weeks of trial and error.”
+
+Akhil Bansal, Senior Engineering Manager
+
+> “Our engineers had both commerce agents from Anthropic's blueprint running locally in well under an hour, with live conversations working on the first attempt. We ran the Claude Code workflow twice and got two different architectures back, each designed to what we'd asked for. For a team starting from scratch, that turns days of agent scaffolding into hours.”
+
+Ashley Nader, Staff Product Manager
+
+> “Much of what we build at Square is about giving sellers time back, and agents are a big leap in our ability to do that. We're building agentic tools that watch sales, labor, and inventory and come back with real next steps, not just an answer, while keeping sellers in control. Trust is the hardest part of that work, and Claude helps us meet a high standard.”
+
+Willem Avé, Head of Product
+
+> “AI will fundamentally reshape commerce, but trust must remain at the center of every transaction. Merchants are telling us they want more control over how AI engages their customers. Our collaboration with Anthropic on their commerce blueprint helps bring together the intelligence of Claude with the trust, security, and global reach of the Visa network, empowering merchants to deliver better customer experiences while maintaining the relationships that drive their businesses forward.”
+
+Jack Forestell, Chief Product and Strategy Officer
+
+> “Trust is the currency of commerce, and it is even more critical in the agentic era. With Anthropic's commerce blueprint, we're helping merchants build their own agents with Claude to drive their growth. By combining AI innovation with trusted payments and commerce infrastructure, we're helping connect consumers, merchants and AI agents securely, seamlessly and at scale.”
+
+Sherri Haymond, Executive Vice President, Global Head of Digital Commercialization
+
+> “Commerce agents are quickly becoming a critical capability for organizations seeking to deliver the personalized, intelligent customer experiences that today’s consumers expect. Our latest research revealed that 85% are now open to collaboration with an AI agent and nearly three in four would trust a personal AI agent more than their best friend to make a purchase on their behalf. This is more than a shift in how people shop. Agentic commerce is rewriting the rules of brand value – fundamentally shaping what gets purchased, when, where and by whom. Anthropic’s commerce agent blueprint provides a proven starting point that can help organizations accelerate deployment and build differentiated experiences that increase customer satisfaction, loyalty, and growth. Combined with Accenture's deep retail and consumer goods expertise, we can help clients move from concept to production and realize value from agentic AI faster.”
+
+Kath Gramling, Global Consumer Goods, Retail and Travel lead
+
+1/11
 
 ## Build quickly for customers and merchants
 
@@ -139,25 +248,57 @@ The same architecture, tools, and setup with an intuitive presentation layer for
 
 Embed a conversational layer in your app to help customers move from intent to your cart.
 
-**Skills**
+------------------------------------------------------------------------
 
-- Catalog search and discovery
-- Planning and shopping lists
-- Cart actions and checkout
-- Customer care
-- Personalization and memory
+Skills
+
+- 
+
+  Catalog search and discovery
+
+- 
+
+  Planning and shopping lists
+
+- 
+
+  Cart actions and checkout
+
+- 
+
+  Customer care
+
+- 
+
+  Personalization and memory
 
 ### Merchant agents
 
 Run store operations through internal agents so merchants can question performance.
 
-**Skills**
+------------------------------------------------------------------------
 
-- Sales analytics and insights
-- Catalog and inventory management
-- Promotions
-- Campaign management
-- Personalization and memory
+Skills
+
+- 
+
+  Sales analytics and insights
+
+- 
+
+  Catalog and inventory management
+
+- 
+
+  Promotions
+
+- 
+
+  Campaign management
+
+- 
+
+  Personalization and memory
 
 ## Choose how you build on Claude
 
@@ -167,41 +308,25 @@ Flexible ways to build your commerce agent, fitted to the way you work. The repo
 
 Direct model access for full control over your agent loop.
 
-Learn more
-
-[Learn more](../04-API-Reference/Guides/build-with-claude-working-with-messages.md)
-
-Learn more
+[Learn more (opens in new tab)](../04-API-Reference/Guides/build-with-claude-working-with-messages.md)
 
 ### Claude Agent SDK
 
 The same agent loop and tools that power Claude Code, in Python or TypeScript, for teams that want to build the harness themselves.
 
-Read documentation
-
-[Read documentation](https://www.claude.com/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md)
-
-Read documentation
+[Read documentation (opens in new tab)](../05-Agent-SDK/agent-sdk-overview.md)
 
 ### Claude Managed Agents
 
 Build production agents with a composable suite of APIs, without managing infrastructure.
 
-Read documentation
-
-[Read documentation](https://www.claude.com/04-API-Reference/Other/managed-agents-overview-b12cd03916.md)
-
-Read documentation
+[Read documentation (opens in new tab)](../04-API-Reference/Other/managed-agents-overview.md)
 
 ### Claude Code plugin
 
 Use the plugin to take the blueprint and your chosen reference implementation and start building in Claude Code. Available in the repo.
 
-Learn more
-
-[Learn more](https://github.com/anthropics/commerce-agents)
-
-Learn more
+[Learn more (opens in new tab)](https://github.com/anthropics/commerce-agents)
 
 40%
 
@@ -209,75 +334,33 @@ higher conversion for small businesses selling through sales agents
 
 Commerce resources
 
-[Announcing Claude Commerce agents](https://claude.com/blog/claude-for-commerce-agents)
-
-Announcing Claude Commerce agents
 
 Announcing Claude Commerce agents
 
 Blog
 
-[Blog](https://claude.com/blog/claude-for-commerce-agents)
-
-Blog
-
-[Fork the repository to get started](https://github.com/anthropics/commerce-agents)
-
-Fork the repository to get started
 
 Fork the repository to get started
 
 Repo
 
-[Repo](https://github.com/anthropics/commerce-agents)
-
-Repo
-
-[Building Claude Commerce Agents](https://www.anthropic.com/webinars/building-claude-commerce-agents)
-
-Building Claude Commerce Agents
 
 Building Claude Commerce Agents
 
 Webinar
 
-[Webinar](https://www.anthropic.com/webinars/building-claude-commerce-agents)
-
-Webinar
-
-[The anatomy of effective commerce agents](https://claude.com/blog/the-anatomy-of-effective-commerce-agents)
-
-The anatomy of effective commerce agents
 
 The anatomy of effective commerce agents
 
 Blog
 
-[Blog](https://claude.com/blog/the-anatomy-of-effective-commerce-agents)
-
-Blog
-
-[Explore Claude Managed Agents](https://claude.com/blog/claude-managed-agents)
-
-Explore Claude Managed Agents
 
 Explore Claude Managed Agents
 
 Blog
 
-[Blog](https://claude.com/blog/claude-managed-agents)
-
-Blog
-
-[The Enterprise AI Transformation Guide for Retail](https://resources.anthropic.com/hubfs/The-Enterprise-AI-Transformation-Guide-for-Retail.pdf)
 
 The Enterprise AI Transformation Guide for Retail
-
-The Enterprise AI Transformation Guide for Retail
-
-Guide
-
-[Guide](https://resources.anthropic.com/hubfs/The-Enterprise-AI-Transformation-Guide-for-Retail.pdf)
 
 Guide
 
@@ -286,8 +369,6 @@ Guide
 About the offering
 
 Trust and safety
-
-Active
 
 ### About the offering
 
@@ -307,11 +388,6 @@ The four reference implementations are starting points. Retail, travel, telecom,
 
 No. The setup flow walks through where the agents run, which systems they connect to, and which workflows you want to change. Start with the skills that match your surface and leave the rest.
 
-[Prev](#)
-
-Prev
-
-
 ### Trust and safety
 
 ### What stops the agent from quoting a price that doesn't exist?
@@ -330,415 +406,235 @@ The Claude Code plugin writes the tests for you. It builds a suite that runs aga
 
 Through GitHub private vulnerability reporting. The repository documents its threat model, its defense in depth layers, guidance for adversarial evaluation, and what adopters are responsible for. Demo backends are not production hardened.
 
-[Prev](#)
-
-Prev
-
-
 ## Bring Claude to your commerce agent
 
 Fork it, run it, and ask Claude Code to make it yours.
 
-Get started
+[Get started (opens in new tab)](https://github.com/anthropics/commerce-agents)[Contact sales](https://www.claude.com/contact-sales)
 
-[Get started](https://github.com/anthropics/commerce-agents)
+[](https://www.claude.com/)
 
-Get started
-
-
-[Contact sales](https://www.claude.com/contact-sales)
-
-
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](../15-Claude-AI-Features/product-overview.md)
-  Claude
-
-- Claude Code
-
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
-  Claude Code
-
-- Claude Cowork
-
-  [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](../14-Connectors/claude-for-slack.md)
-  @Claude
-
-- Claude Science
-
-  [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-  Claude Security
-
-- Download app
-
-  [Download app](https://www.claude.com/download)
-  Download app
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Capabilities
-
-- Artifacts
-
-  [Artifacts](https://www.claude.com/features/artifacts)
-  Artifacts
-
-- Design
-
-  [Design](../15-Claude-AI-Features/product-design.md)
-  Design
-
-- Connectors
-
-  [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-  Connectors
-
-- Plugins
-
-  [Plugins](https://www.claude.com/marketplace/plugins)
-  Plugins
-
-- Skills
-
-  [Skills](https://www.claude.com/skills)
-  Skills
-
-Extensions
-
-- Claude in Chrome
-
-  [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-  Claude in Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-Models
-
-- Mythos
-
-  [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-  Mythos
-
-- Fable
-
-  [Fable](../15-Claude-AI-Features/claude-fable.md)
-  Fable
-
-- Opus
-
-  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-  Haiku
-
-Enterprise
-
-- Overview
-
-  [Overview](enterprise.md)
-  Overview
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-  Claude Code for Enterprise
-
-Use cases
-
-- AI agents
-
-  [AI agents](agents.md)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](code-modernization.md)
-  Code modernization
-
-- Coding
-
-  [Coding](coding.md)
-  Coding
-
-- Commerce
-
-  [Commerce](commerce.md)
-  Commerce
-
-Departments
-
-- Customer support
-
-  [Customer support](customer-support.md)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](cybersecurity.md)
-  Cybersecurity
-
-- Legal
-
-  [Legal](legal.md)
-  Legal
-
-- Sales
-
-  [Sales](sales.md)
-  Sales
-
-Industries
-
-- Financial services
-
-  [Financial services](finance.md)
-  Financial services
-
-- Government
-
-  [Government](government.md)
-  Government
-
-- Healthcare
-
-  [Healthcare](healthcare.md)
-  Healthcare
-
-- Higher education
-
-  [Higher education](education.md)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](teachers.md)
-  K-12 teachers
-
-- Life sciences
-
-  [Life sciences](life-sciences.md)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](nonprofits.md)
-  Nonprofits
-
-- Small business
-
-  [Small business](small-business.md)
-  Small business
-
-Programs
-
-- Startups
-
-  [Startups](../15-Claude-AI-Features/programs-startups.md)
-  Startups
-
-- Scientists
-
-  [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-  Scientists
-
-Developers
-
-- Developer docs
-
-  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
-  Developer docs
-
-- Developer blog
-
-  [Developer blog](https://claude.dev/)
-  Developer blog
-
-- Community
-
-  [Community](https://www.claude.com/community)
-  Community
-
-- Console
-
-  [Console](../04-API-Reference/Other/home.md)
-  Console
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-Platform
-
-- Overview
-
-  [Overview](https://www.claude.com/platform/api)
-  Overview
-
-- Marketplace
-
-  [Marketplace](https://www.claude.com/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-  Microsoft Foundry
-
-Resources
-
-- Blog
-
-  [Blog](https://www.claude.com/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](../04-API-Reference/Other/partners.md)
-  Claude partner network
-
-- Claude Academy
-
-  [Claude Academy](https://academy.claude.com/)
-  Claude Academy
-
-- Customer stories
-
-  [Customer stories](customers.md)
-  Customer stories
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Powered by Claude
-
-  [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](https://www.claude.com/marketplace/service-partners)
-  Service partners
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Check files
-
-  [Check files](https://claude.com/check-files)
-  Check files
-
-- Regional compliance
-
-  [Regional compliance](https://www.claude.com/regional-compliance)
-  Regional compliance
-
-- Report abuse
-
-  [Report abuse](https://claude.com/form/anthropic-content-reporting)
-  Report abuse
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Research
-
-  [Research](../19-Reference/anthropic-com-research.md)
-  Research
-
-- Anthropic news
-
-  [Anthropic news](../19-Reference/news.md)
-  Anthropic news
-
-- Policy on the AI Exponential
+© 2026 Anthropic PBC
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

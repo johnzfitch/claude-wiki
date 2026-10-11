@@ -1,8 +1,8 @@
 ---
 title: "What is a limit reset? | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/17007452"
+source_url: "https://support.claude.com/en/articles/17007452-what-is-a-limit-reset"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:33:05Z"
+fetched_at: "2026-10-10T06:24:49Z"
 tags: ["claude-ai"]
 ---
 

@@ -2,7 +2,7 @@
 title: "API Safeguards Tools | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9199617-api-safeguards-tools"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:31:57Z"
+fetched_at: "2026-10-10T06:25:38Z"
 tags: ["api"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Tool use with Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:26Z"
+fetched_at: "2026-10-04T08:31:31Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -223,7 +223,7 @@ Claude called get_weather with {"location": "San Francisco, CA"}
 The current weather in San Francisco is 15 degrees Celsius with partly cloudy skies.
 ```
 
-[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md) covers each step in detail, including result formatting and error signaling; [Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md) covers responses that call several tools at once. To skip writing this round trip yourself, use [Tool Runner](agents-and-tools-tool-use-tool-runner.md): the SDKs execute your tools and send the results back automatically.
+[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md) covers each step in detail, including result formatting and error signaling; [Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md) covers responses that call several tools at once. To skip writing this round trip yourself, use [Tool Runner](agents-and-tools-tool-use-tool-runner.md): the SDK executes your tools and sends the results back automatically.
 
 For the full conceptual model including the agentic loop and when to choose each approach, see [How tool use works](agents-and-tools-tool-use-how-tool-use-works.md).
 

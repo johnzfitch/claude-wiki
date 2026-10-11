@@ -2,7 +2,7 @@
 title: "Admin API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/admin-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:32Z"
+fetched_at: "2026-10-04T08:34:03Z"
 tags: ["api", "authentication", "claude-code"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication", "claude-code"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api", "authentication", "claude-code"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -201,12 +203,12 @@ Common uses include automating onboarding and offboarding, managing workspace ac
 
 ## Organization roles and permissions
 
-There are five organization-level roles. For details, see [API Console roles and permissions](https://platform.claude.com/docs/en/api-console-roles-and-permissions-4c21777af6.md).
+There are five organization-level roles. For details, see [API Console roles and permissions](https://support.claude.com/en/articles/10186004-api-console-roles-and-permissions).
 
 | Role             | Permissions                                                                    |
 |------------------|--------------------------------------------------------------------------------|
 | user             | Can use playground                                                             |
-| claude_code_user | Can use playground and [Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md) |
+| claude_code_user | Can use playground and [Claude Code](../../02-Claude-Code-CLI/code-home.md) |
 | developer        | Can use playground and manage API keys                                         |
 | billing          | Can use playground and manage billing details                                  |
 | admin            | Can do all of the preceding, plus manage users                                 |

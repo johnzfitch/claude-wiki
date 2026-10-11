@@ -12,7 +12,7 @@ Jan 13, 2026
 
 Our models are evolving at a rapid clip, and each new release brings another leap in capabilities. Building product experiences around these emerging capabilities requires different motions working in partnership: tinkering and experimenting at the edge of what Claude can do, testing unpolished versions with early users to find what works, and taking what lands and scaling it into products our customers can rely on.
 
-This approach has produced Claude Code, which grew from a research preview to a [billion-dollar product](anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone.md) in six months; the Model Context Protocol (MCP) which, at [100M monthly downloads](donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation.md), has become the industry standard for connecting AI to tools and data; [Skills](https://claude.com/blog/skills), [Claude in Chrome](https://www.claude.com/blog/claude-for-chrome), and [Cowork](https://claude.com/blog/cowork-research-preview), which launched as a research preview yesterday to bring Claude’s agentic capabilities to desktop.
+This approach has produced Claude Code, which grew from a research preview to a [billion-dollar product](anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone.md) in six months; the Model Context Protocol (MCP) which, at [100M monthly downloads](donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation.md), has become the industry standard for connecting AI to tools and data; [Skills](https://claude.com/blog/skills), [Claude in Chrome](claude-for-chrome.md), and [Cowork](https://claude.com/blog/cowork-research-preview), which launched as a research preview yesterday to bring Claude’s agentic capabilities to desktop.
 
 Today we’re building on this approach with the expansion of Labs, a team focused on incubating experimental products at the frontier of Claude’s capabilities. Mike Krieger—who co-founded Instagram and has spent the past two years as Anthropic’s Chief Product Officer—is joining Labs to build alongside Ben Mann. Ami Vora—who joined Anthropic at the end of 2025—will lead the Product organization, partnering closely with Rahul Patil, our CTO, to scale the Claude experiences that millions of users rely on every day.
 
@@ -44,10 +44,10 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -74,7 +74,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -94,7 +94,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

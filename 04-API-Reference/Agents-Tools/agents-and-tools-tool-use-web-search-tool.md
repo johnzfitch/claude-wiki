@@ -2,7 +2,7 @@
 title: "Web search tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:24Z"
+fetched_at: "2026-10-04T08:32:44Z"
 tags: ["api", "prompting", "search"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "prompting", "search"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,7 +96,7 @@ Give Claude access to current web content with cited sources, optional dynamic f
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 The web search tool gives Claude direct access to real-time web content, allowing it to answer questions with up-to-date information beyond its knowledge cutoff. The response includes citations for sources drawn from search results.
 
@@ -199,7 +199,7 @@ print(response)
 
 
 
-Web search is enabled for your organization unless an administrator has disabled it in the [Claude Console](../Other/usage-limits.md), where they can also restrict which domains it searches. If it's disabled, a request that includes the tool fails with a 400 `invalid_request_error` that says web search is not enabled, rather than an [error code](#errors) inside a search result.
+Web search is enabled for your organization unless an administrator has disabled it in the [Claude Console](../Other/playground.md), where they can also restrict which domains it searches. If it's disabled, a request that includes the tool fails with a 400 `invalid_request_error` that says web search is not enabled, rather than an [error code](#errors) inside a search result.
 
 These organization-level settings in the Claude Console apply to Messages API requests only. [Claude Managed Agents](../Other/managed-agents-overview.md) sessions use only the per-tool `allowed_domains` and `blocked_domains` lists on the agent toolset; see [Restrict web search and web fetch domains](../Other/managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
 
@@ -501,7 +501,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "web
 
 You can include the web search tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md). Web search tool calls through the Messages Batches API are priced the same as those in regular Messages API requests.
 
-To protect shared capacity, the Batches API throttles web search requests per organization, so large batches with many searches might take longer to complete. You can see your organization's web search rate limit on the [Rate limits](../Other/usage-limits.md) page in the Claude Console. To request a higher limit, contact sales from that page.
+To protect shared capacity, the Batches API throttles web search requests per organization, so large batches with many searches might take longer to complete. You can see your organization's web search rate limit on the [Rate limits](../Other/playground.md) page in the Claude Console. To request a higher limit, contact sales from that page.
 
 ## Usage and pricing
 

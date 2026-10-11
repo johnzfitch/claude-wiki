@@ -2,7 +2,7 @@
 title: "OneLogin SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917899-onelogin-sso-setup"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:31:29Z"
+fetched_at: "2026-10-10T06:25:19Z"
 tags: ["account"]
 ---
 

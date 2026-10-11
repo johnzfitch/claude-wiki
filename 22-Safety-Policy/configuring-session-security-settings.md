@@ -2,7 +2,7 @@
 title: "Configuring session security settings | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13163631-configuring-session-security-settings"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:31:47Z"
+fetched_at: "2026-10-10T06:25:11Z"
 tags: ["safety", "security"]
 ---
 
@@ -34,7 +34,7 @@ Session duration controls allow Enterprise and Console Admins to set a maximum s
 
 1.  Log in to your Console account as an Admin.
 
-2.  Navigate to **[Settings \> Organization and access](../04-API-Reference/Other/usage-limits.md)**.
+2.  Navigate to **[Settings \> Organization and access](../04-API-Reference/Other/playground.md)**.
 
 3.  Locate the **Session security** section.
 

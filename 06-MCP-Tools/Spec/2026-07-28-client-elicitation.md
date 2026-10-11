@@ -1,8 +1,8 @@
 ---
 title: "Elicitation - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation"
+source_url: "https://modelcontextprotocol.io/specification/draft/client/elicitation"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-09-29T06:31:01Z"
+fetched_at: "2026-10-09T06:27:26Z"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -111,7 +111,7 @@ Protocol Messages
 
 Elicitation Requests
 
-Servers **MAY** request information from a user during the processing of a client request, by sending an [`InputRequiredResult`](2026-07-28-basic-patterns-mrtr.md#inputrequiredresult) containing an `elicitation/create` request. All elicitation requests **MUST** include the following parameters:
+Servers **MAY** request information from a user during the processing of a client request, by sending an [`InputRequiredResult`](draft-basic-patterns-mrtr.md#inputrequiredresult) containing an `elicitation/create` request. All elicitation requests **MUST** include the following parameters:
 
 | Name      | Type   | Options       | Description                                                                            |
 |-----------|--------|---------------|----------------------------------------------------------------------------------------|
@@ -258,7 +258,7 @@ All primitive types support optional default values to provide sensible starting
 
 Example: Simple Text Request
 
-**Input request (delivered inside [`InputRequiredResult.inputRequests`](2026-07-28-basic-patterns-mrtr.md#inputrequests)):**
+**Input request (delivered inside [`InputRequiredResult.inputRequests`](draft-basic-patterns-mrtr.md#inputrequests)):**
 
 ```python
 {
@@ -446,7 +446,7 @@ Implementation Considerations
 
 Statefulness
 
-Elicitations do not require that the server maintain state about users with the [multi round-trip requests](2026-07-28-basic-patterns-mrtr.md#multi-round-trip-requests) mechanism. However, if state is stored, servers implementing elicitation **MUST** securely associate this state with individual users following the guidelines in the [security best practices](../General/draft-tutorials-security-security-best-practices.md) document. Specifically:
+Elicitations do not require that the server maintain state about users with the [multi round-trip requests](draft-basic-patterns-mrtr.md#multi-round-trip-requests) mechanism. However, if state is stored, servers implementing elicitation **MUST** securely associate this state with individual users following the guidelines in the [security best practices](../General/draft-tutorials-security-security-best-practices.md) document. Specifically:
 
 - State storage **MUST** be protected against unauthorized access
 - For remote MCP servers, user identification **MUST** be derived from credentials acquired via [MCP authorization](2026-07-28-basic-authorization.md) when possible (e.g. `sub` claim)

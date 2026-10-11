@@ -2,7 +2,7 @@
 title: "Migration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/migration"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:40Z"
+fetched_at: "2026-10-04T08:32:51Z"
 tags: ["agents", "api", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -106,11 +106,11 @@ Move an existing agent built on the Messages API or the Claude Agent SDK to Clau
 
 managed-agents-2026-04-01
 
-Claude Managed Agents replaces your hand-written agent loop with managed infrastructure. This page covers what changes when you migrate from a custom loop built on the [Messages API](../Guides/build-with-claude-working-with-messages.md) or from the [Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md).
+Claude Managed Agents replaces your hand-written agent loop with managed infrastructure. This page covers what changes when you migrate from a custom loop built on the [Messages API](../Guides/build-with-claude-working-with-messages.md) or from the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md).
 
 ## From a Messages API agent loop
 
-If you built an agent by calling `messages.create` in a `while` loop, running tool calls yourself, and appending results to the conversation history, most of that code goes away.
+If you built an agent by calling `client.messages.create()` in a loop, running tool calls yourself, and appending results to the conversation history, most of that code goes away.
 
 ### What you stop managing
 
@@ -223,7 +223,7 @@ with client.beta.sessions.events.stream(session.id) as stream:
 
 ## From the Claude Agent SDK
 
-If you built with the [Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md), you're already working with agents, tools, and sessions as concepts. The difference is where they run: the SDK runs in a process you operate, while Managed Agents runs in Anthropic's infrastructure. Most of the migration is mapping SDK configuration objects to their API-side equivalents.
+If you built with the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), you're already working with agents, tools, and sessions as concepts. The difference is where they run: the SDK runs in a process you operate, while Managed Agents runs in Anthropic's infrastructure. Most of the migration is mapping SDK configuration objects to their API-side equivalents.
 
 ### What changes
 
@@ -318,7 +318,10 @@ agent = client.beta.agents.create(
 )
 environment = client.beta.environments.create(
     name="weather-env",
-    config={"type": "cloud", "networking": {"type": "unrestricted"}},
+    config={
+        "type": "cloud",
+        "networking": {"type": "limited", "allow_package_managers": True},
+    },
 )
 
 session = client.beta.sessions.create(
@@ -383,7 +386,7 @@ The tradeoff for Anthropic running the agent loop is that a few things the SDK h
 
 1.  [Create an environment](managed-agents-environments.md) with the networking and runtimes your agent needs.
 2.  Port your system prompt and tool selection to an [agent definition](managed-agents-agent-setup.md).
-3.  Replace your loop with [`sessions.create`](managed-agents-sessions.md) and [`sessions.events.stream`](managed-agents-events-and-streaming.md).
+3.  Replace your loop: [create a session](managed-agents-sessions.md) with `client.beta.sessions.create()` and [stream its events](managed-agents-events-and-streaming.md) with `client.beta.sessions.events.stream()`.
 4.  For any local files the agent reads, upload them through the [Files API](managed-agents-files.md) and mount them as `resources`.
 5.  For any custom tool handlers, move execution into your event loop as responses to `agent.custom_tool_use` events.
 6.  Verify with a test session before pointing production traffic at the new flow.

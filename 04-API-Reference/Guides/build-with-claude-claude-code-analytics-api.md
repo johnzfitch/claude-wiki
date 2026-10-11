@@ -46,7 +46,7 @@ Monitoring
 
 Data & compliance
 
-[Data residency](build-with-claude-data-residency.md)[API and data retention](../Other/manage-claude-api-and-data-retention.md)
+[Data residency](../Other/manage-claude-data-residency.md)[API and data retention](build-with-claude-api-and-data-retention.md)
 
 [Access Transparency](../Other/manage-claude-access-transparency.md)
 
@@ -78,7 +78,7 @@ Programmatically access your organization's Claude Code usage analytics and prod
 
 **The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
 
-The Claude Code Analytics Admin API provides programmatic access to daily aggregated usage metrics for Claude Code users, enabling organizations to analyze developer productivity and build custom dashboards. This API provides more detail than the basic [Analytics dashboard](../Other/usage-limits.md) without the complexity of the OpenTelemetry integration.
+The Claude Code Analytics Admin API provides programmatic access to daily aggregated usage metrics for Claude Code users, enabling organizations to analyze developer productivity and build custom dashboards. This API provides more detail than the basic [Analytics dashboard](../Other/playground.md) without the complexity of the OpenTelemetry integration.
 
 This API enables you to better monitor, analyze, and optimize your Claude Code adoption:
 
@@ -358,7 +358,7 @@ The Claude Code Analytics API helps you understand and optimize your team's deve
 
 - [Admin API](../Other/manage-claude-admin-api.md)
 - [Admin API reference](../Admin/http-beta-organization.md)
-- [Claude Code Analytics dashboard](../Other/usage-limits.md)
+- [Claude Code Analytics dashboard](../Other/playground.md)
 - [Usage and Cost API](../Other/manage-claude-usage-cost-api.md) - Track API usage across all Anthropic services
 - [Compliance API](../Other/manage-claude-compliance-api.md) - Retrieve audit and activity data
 - [Identity and access management](../../13-Enterprise-Admin/iam.md)

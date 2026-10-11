@@ -2,7 +2,7 @@
 title: "Migrating to Claude Sonnet 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/sonnet-5-5/migration-guide"
 category: "20-Models"
-fetched_at: "2026-09-29T06:31:19Z"
+fetched_at: "2026-10-07T06:23:57Z"
 tags: ["models"]
 ---
 
@@ -165,7 +165,7 @@ Thinking text is omitted by default. `thinking` blocks arrive with an empty `thi
 To turn off up-front thinking on Claude Sonnet 5.5, send `thinking: {"type": "between_tools"}`. It's the lowest thinking setting. Its progress updates between tool calls still come back as `thinking` blocks with their summary text. Without tools, the response contains only text. Claude Sonnet 5 turns thinking off with `thinking: {"type": "disabled"}` instead, and earlier models run without thinking by default. On Claude Sonnet 5.5, `disabled` returns a 400 `invalid_request_error`:
 
 ``` block
-"thinking.type.disabled" is not supported for this model. Use "thinking.type.between_tools" for the lowest thinking setting, or "thinking.type.adaptive" and "output_config.effort" to control thinking behavior.
+To turn thinking off on this model, send "thinking": {"type": "between_tools"} instead of {"type": "disabled"}. The model does not think before responding. The short updates it writes between tool calls come back as thinking blocks.
 ```
 
 
@@ -416,7 +416,7 @@ Claude Sonnet 5.5 declines in more categories than Claude Sonnet 5. A decline re
 
 [Server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (`fallbacks: "default"`, beta, Claude API only) retries `"cyber"` and `"frontier_llm"` declines on Claude Sonnet 5. It doesn't retry `"bio"`, `"reasoning_extraction"`, or `"general_harms"` declines. See [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md) and [How refusals are billed](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#how-refusals-are-billed).
 
-Real-time cyber safeguards are new for code from Claude Sonnet 4.6, Claude Sonnet 4.5, and Claude Haiku 4.5. For legitimate security work, apply to the [Cyber Verification Program](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md).
+Real-time cyber safeguards are new for code from Claude Sonnet 4.6, Claude Sonnet 4.5, and Claude Haiku 4.5. For legitimate security work, apply to the [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet).
 
 ### Other changes
 
@@ -532,7 +532,7 @@ This model does not support assistant message prefill. The conversation must end
 
 Replace each prefill according to what it was for:
 
-- **Output format:** use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md), or tools with enum fields for classification.
+- **Output format:** use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md), or tools with enum fields for classification. On Amazon Bedrock, structured outputs aren't available for Claude Sonnet 5.5. There, describe the format in the prompt or use a tool without `strict`, and validate the output in your code.
 - **Preambles:** ask in the system prompt for a direct answer.
 - **Unwanted refusals:** clear instructions in the user message are usually enough.
 - **Continuations:** move them to the user message, for example "Your previous response was interrupted and ended with `[previous_response]`. Continue from where you left off."

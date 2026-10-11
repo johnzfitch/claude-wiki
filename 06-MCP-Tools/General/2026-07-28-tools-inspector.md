@@ -1,9 +1,9 @@
 ---
 title: "MCP Inspector - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector"
+source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-08-03T07:17:10Z"
-tags: ["authorization", "cli", "mcp"]
+fetched_at: "2026-10-09T06:27:29Z"
+tags: ["authorization", "cli", "mcp", "security"]
 ---
 
 ## On this page
@@ -31,7 +31,7 @@ The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is the re
 | **CLI** | `npx @modelcontextprotocol/inspector --cli` | A scriptable, machine-readable client for CI, shell pipelines, and coding agents. |
 | **TUI** | `npx @modelcontextprotocol/inspector --tui` | An interactive terminal UI, for when a browser isn’t available or wanted.         |
 
-All three are built on the same shared core, so a connection behaves identically across them: the same transports, the same configuration files, the same OAuth state on disk, and the same [protocol-era](2026-07-28-tools-inspector-protocol-eras.md) negotiation (legacy vs. modern 2026-07-28).
+All three are built on the same shared core, so a connection behaves identically across them: the same transports, the same configuration files, the same OAuth state on disk, and the same [protocol-era](2026-07-28-tools-inspector-protocol-eras.md) negotiation (legacy vs. modern 2026-07-28). The package also installs **`mcpdo`**, an experimental [connection client](draft-tools-inspector-mcpdo.md) that connects to a server once and keeps it open across many commands, on the same core.
 
 
 [​](#quickstart)
@@ -54,7 +54,7 @@ npx @modelcontextprotocol/inspector node path/to/server/index.js
 npx @modelcontextprotocol/inspector
 ```
 
-The command prints a URL containing a one-time session token; open it in your browser. See [Web client](draft-tools-inspector-web.md).
+The command prints a URL carrying a per-launch API token and opens it in your browser (set `MCP_AUTO_OPEN_ENABLED=false` to stop it opening). See [Web client](draft-tools-inspector-web.md).
 
 ```python
 # List a server's tools and exit
@@ -100,6 +100,8 @@ npx @modelcontextprotocol/inspector --server-url https://api.example.com/mcp --t
 
 Always read a server’s own README first, since every server requires different commands and arguments.
 
+**The Inspector stores secrets (OAuth tokens, OAuth client secrets, and stdio `env:` values) in the OS keychain when one is available.** On a machine with no keychain (Linux without libsecret or a Secret Service, headless and SSH sessions, Termux, and containers with a mounted volume) they are saved to `~/.mcp-inspector/secrets.json` instead, **unencrypted unless you supply a key**. See [Where secrets are stored](draft-tools-inspector-configuration.md#where-secrets-are-stored) for how to get a keychain back, encrypt the file, or keep secrets in memory only.
+
 
 [​](#launcher-flags-vs-client-flags)
 
@@ -110,7 +112,7 @@ Launcher flags vs. client flags
 1.  **The mode flag:** `--web` (default), `--cli`, or `--tui`. At most one; passing two errors with `Specify at most one of --web, --cli, or --tui.`
 2.  **`-h` / `--help`.**
 
-Everything else (`--catalog`, `--config`, `--server-url`, `--transport`, `--method`, the OAuth flags) is defined by the *client*, not the launcher, and the clients do not all define the same set. The [Configuration and flags](2026-07-28-tools-inspector-configuration.md) page is organized that way, by owner.
+Everything else (`--catalog`, `--config`, `--server-url`, `--transport`, `--method`, the OAuth flags) is defined by the *client*, not the launcher, and the clients do not all define the same set. The [Configuration and flags](draft-tools-inspector-configuration.md) page is organized that way, by owner.
 
 Mode flags are recognized only at the front of the command line: the first token that isn’t `--web` / `--cli` / `--tui` ends launcher parsing, and everything after it is forwarded to the client unchanged. That’s what lets a literal `--cli` appear later as one of your server’s own arguments:
 
@@ -118,7 +120,7 @@ Mode flags are recognized only at the front of the command line: the first token
 mcp-inspector --cli node server.js --cli   # mode is CLI; the trailing --cli goes to server.js
 ```
 
-`--help` behaves differently with and without a mode flag. Bare `mcp-inspector --help` prints the launcher’s help and exits. With a mode flag it is forwarded, so `mcp-inspector --cli --help` prints the CLI’s full flag reference instead.
+`--help` behaves differently with and without a mode flag. Without one, `-h`/`--help` anywhere on the command line (even after a server command) prints the launcher’s help and exits. With a mode flag it is forwarded, so `mcp-inspector --cli --help` prints the CLI’s full flag reference instead.
 
 
 [​](#where-to-go-next)
@@ -148,6 +150,14 @@ The OAuth flow end to end, mid-session re-authorization, and loopback callbacks.
 ## Protocol eras
 
 Legacy vs. modern (2026-07-28) operation, and how every tab changes between protocol eras.
+
+## mcpdo connection client
+
+Connect once, then run many commands against a named connection.
+
+## Security
+
+The threat model: the web backend’s token, Docker, secret storage, stdio servers, and the mcpdo daemon.
 
 ## Recipes
 

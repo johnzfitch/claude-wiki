@@ -2,7 +2,7 @@
 title: "Claude Code GitHub Actions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/github-actions"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:50Z"
+fetched_at: "2026-10-08T06:24:38Z"
 tags: ["claude-code", "git", "github"]
 ---
 
@@ -110,7 +110,7 @@ Add an authentication secret
 Add one of the following secrets to your repository, depending on how you authenticate. See GitHub’s guide to [using secrets in GitHub Actions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 - `ANTHROPIC_API_KEY`: a Claude API key from the [Claude Console](../04-API-Reference/Other/usage-limits.md)
-- `CLAUDE_CODE_OAUTH_TOKEN`: an OAuth token that authenticates with your Claude subscription, available on Pro, Max, Team, and Enterprise plans. Generate one by running `claude setup-token` locally. See [Generate a long-lived token](../13-Enterprise-Admin/iam.md#generate-a-long-lived-token)
+- `CLAUDE_CODE_OAUTH_TOKEN`: an OAuth token that authenticates with your Claude subscription, available on Pro, Max, Team, and Enterprise plans. Generate one by running `claude setup-token` locally. See [Generate a long-lived token](authentication.md#generate-a-long-lived-token)
 
 In workflow files, pass the secret to the matching input: `anthropic_api_key` for an API key, or `claude_code_oauth_token` for an OAuth token.
 
@@ -164,11 +164,13 @@ The [Claude GitHub App](https://github.com/apps/claude) is shared by every Claud
 | Permission       | Access         |
 |------------------|----------------|
 | Actions          | Read and write |
+| Administration   | Read           |
 | Checks           | Read and write |
 | Contents         | Read and write |
 | Discussions      | Read and write |
 | Issues           | Read and write |
 | Members          | Read           |
+| Merge queues     | Read           |
 | Metadata         | Read           |
 | Pull requests    | Read and write |
 | Repository hooks | Read and write |
@@ -347,7 +349,7 @@ Protect your credentials
 
 Never commit API keys or OAuth tokens directly to your repository. Always store them as GitHub Secrets and reference them in workflows, for example `anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}`.
 
-Grant the workflow only the permissions it needs, and review Claude’s changes before merging. For comprehensive security guidance including permissions and authentication, see the [Claude Code Action security documentation](https://github.com/anthropics/claude-code-action/blob/main/docs/security.md).
+Grant the workflow only the permissions it needs, and review Claude’s changes before merging. For security guidance including permissions and authentication, see the [Claude Code Action security documentation](https://github.com/anthropics/claude-code-action/blob/main/docs/security.md).
 
 
 [​](#manage-costs)

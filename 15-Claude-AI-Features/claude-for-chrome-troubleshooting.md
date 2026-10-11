@@ -2,7 +2,7 @@
 title: "Claude in Chrome troubleshooting | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:31:17Z"
+fetched_at: "2026-10-10T06:28:07Z"
 tags: ["claude-ai", "claude-code", "desktop"]
 ---
 
@@ -19,7 +19,7 @@ Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise
 
 On Max and Team plans, on Pro plans as the rollout reaches you, and on Enterprise plans where an admin has enabled it, the side panel now runs as a Claude Cowork session, so it uses the same interface as Cowork on the web and desktop. Your conversations are saved to your history and can be reopened on your other devices. The Cowork side panel also defaults to "Automatically approve" mode, so Claude works continuously and pauses only when an action needs your approval.
 
-If you'd rather use the previous side panel, click the three dots in the upper right corner and select "Switch back to classic." For details, see **[Get started with Claude in Chrome](getting-started-with-claude-for-chrome.md)**.
+If you'd rather use the previous side panel, click the three dots in the upper right corner and select "Switch back to classic." For details, see **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173)**.
 
 ## I don't see the Cowork side panel
 
@@ -61,7 +61,7 @@ If you'd rather use the previous side panel, click the three dots in the upper r
 
 ## Claude can't access a website
 
-- Check that you've granted permission for the site (see **[Claude in Chrome permissions guide](claude-for-chrome-permissions-guide.md)**).
+- Check that you've granted permission for the site (see **[Claude in Chrome permissions guide](https://support.claude.com/en/articles/12902446-claude-for-chrome-permissions-guide)**).
 
 - The site may be in Claude's default blocked categories (financial services, banking, investment platforms, cryptocurrency exchanges, adult content, pirated content).
 
@@ -93,7 +93,7 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 - **Report suspected prompt injection** if Claude behaves unexpectedly.
 
-  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#99eceafcebeaf8fffcede0d9f8f7edf1ebf6e9f0fab7faf6f4)** to report any safety issues or unexpected behaviors.
+  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#067375637475676063727f466768726e7469766f652865696b)** to report any safety issues or unexpected behaviors.
 
 - **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for technical issues or account problems.
 

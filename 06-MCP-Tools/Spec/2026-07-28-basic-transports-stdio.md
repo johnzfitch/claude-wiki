@@ -1,8 +1,8 @@
 ---
 title: "stdio - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio"
+source_url: "https://modelcontextprotocol.io/specification/draft/basic/transports/stdio"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-09-29T06:31:00Z"
+fetched_at: "2026-10-09T06:27:26Z"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -54,14 +54,14 @@ The client reads server messages from `stdout`, one message per line. All messag
 2.  *Notifications* that relate to an in-flight request, such as `notifications/progress` and `notifications/message`.
 3.  *Notifications* delivered for an active [`subscriptions/listen`](2026-07-28-basic-patterns-subscriptions.md) request. Clients **MUST** correlate these using the `io.modelcontextprotocol/subscriptionId` field in `_meta`; see [`SubscriptionsListenRequest`](2026-07-28-schema.md#subscriptionslistenrequest).
 
-The server **MUST NOT** write JSON-RPC *requests* to `stdout`. Server-to-client interactions are carried in [`InputRequiredResult`](2026-07-28-basic-patterns-mrtr.md#inputrequiredresult) replies; see [Multi Round-Trip Requests](2026-07-28-basic-patterns-mrtr.md).
+The server **MUST NOT** write JSON-RPC *requests* to `stdout`. Server-to-client interactions are carried in [`InputRequiredResult`](draft-basic-patterns-mrtr.md#inputrequiredresult) replies; see [Multi Round-Trip Requests](draft-basic-patterns-mrtr.md).
 
 
 [​](#request-metadata)
 
 Request Metadata
 
-All request metadata for the stdio transport is carried inline in the JSON-RPC message body. The protocol version, per-request capabilities, and optional client identity live in [`_meta.io.modelcontextprotocol/*`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta); the method name and arguments live where JSON-RPC puts them. There is no header layer.
+All request metadata for the stdio transport is carried inline in the JSON-RPC message body. The protocol version, per-request capabilities, and optional client identity live in [`_meta.io.modelcontextprotocol/*`](https://modelcontextprotocol.io/specification/draft/basic/index#meta); the method name and arguments live where JSON-RPC puts them. There is no header layer.
 
 
 [​](#cancellation)
@@ -101,4 +101,4 @@ A client that supports both modern (per-request-metadata) MCP versions and a leg
 - The server returns a recognized modern JSON-RPC error such as [`UnsupportedProtocolVersionError`](2026-07-28-schema.md#unsupportedprotocolversionerror): the server is modern but does not support the requested version. Use one of the versions in its advertised `supported` list. Do **not** fall back to `initialize`.
 - The server returns any other error, or does not respond within a reasonable timeout: the server is legacy. Fall back to the `initialize` handshake.
 
-The fallback **MUST NOT** be keyed to one specific error code: legacy servers respond to unknown pre-`initialize` requests with implementation-defined errors (commonly `-32601` or `-32602`) or not at all. A client that only supports modern versions does not need to probe, but probing is still **RECOMMENDED**: some legacy servers do not validate that a request arrives after `initialize` and would process an era-ambiguous method (such as `tools/call`) under legacy semantics. Probing yields a deterministic failure instead. See [Versioning: Backward Compatibility](2026-07-28-basic-versioning.md#backward-compatibility-with-initialization-based-versions) for the era model and a compatibility matrix for implementors.
+The fallback **MUST NOT** be keyed to one specific error code: legacy servers respond to unknown pre-`initialize` requests with implementation-defined errors (commonly `-32601` or `-32602`) or not at all. A client that only supports modern versions does not need to probe, but probing is still **RECOMMENDED**: some legacy servers do not validate that a request arrives after `initialize` and would process an era-ambiguous method (such as `tools/call`) under legacy semantics. Probing yields a deterministic failure instead. See [Versioning: Backward Compatibility](draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions) for the era model and a compatibility matrix for implementors.

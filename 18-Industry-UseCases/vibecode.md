@@ -2,7 +2,7 @@
 title: "Vibecode Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/vibecode"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:50Z"
+fetched_at: "2026-10-10T06:26:03Z"
 tags: ["api", "case-studies", "enterprise", "mobile", "security"]
 ---
 
@@ -72,7 +72,7 @@ Users have built wellness apps, internal business tools, AI-powered applications
 
 The platform has also cultivated a community where users share their creations, learn from each other, and push the boundaries of what's possible with mobile-native development.
 
-Looking ahead, [Claude Managed Agents](https://claude.com/blog/claude-managed-agents) further accelerates Vibecode’s accessibility. "Before Claude Managed Agents, users would have to manually run LLMs in sandboxes, manage their lifecycle, equip them with appropriate tools, and oversee their execution — a process that could take weeks or months to set up," Nanda said. "Now, with a few lines of code, users can spin up that same infrastructure at least 10x quicker than before." He expects the shift to drive a new wave of AI-native applications built by developers and vibe coders alike.
+Looking ahead, [Claude Managed Agents](https://claude.com/resources/articles/claude-managed-agents) further accelerates Vibecode’s accessibility. "Before Claude Managed Agents, users would have to manually run LLMs in sandboxes, manage their lifecycle, equip them with appropriate tools, and oversee their execution — a process that could take weeks or months to set up," Nanda said. "Now, with a few lines of code, users can spin up that same infrastructure at least 10x quicker than before." He expects the shift to drive a new wave of AI-native applications built by developers and vibe coders alike.
 
 Vibecode is also enabling users to create agentic apps with Claude Agent SDK — applications with AI capabilities built directly into them. "We don't want people to just be able to build apps with AI," Nanda said. "We want people to push the edges of possibility and actually create agentic apps. We believe vibe coders will be pushing the boundary with what is possible, not just creating simple applications."
 
@@ -80,6 +80,9 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 
 ## Related stories
+
+
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
@@ -90,9 +93,6 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -100,9 +100,9 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -132,7 +132,7 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -144,6 +144,7 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -155,8 +156,10 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -176,7 +179,9 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -219,9 +224,9 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -251,7 +256,7 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -263,6 +268,7 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -274,8 +280,10 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -295,7 +303,9 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

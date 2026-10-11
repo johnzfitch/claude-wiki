@@ -2,7 +2,7 @@
 title: "Reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/reference"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:41Z"
+fetched_at: "2026-10-04T08:33:44Z"
 tags: ["api", "mcp"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "mcp"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -135,19 +135,7 @@ Event deltas
 
 ## Self-hosted worker
 
-These are the `ant beta:worker` CLI flags for the pre-built worker that drives a `self_hosted` environment. See [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md) for setting up the environment, running a worker, and the SDK helper options.
-
-| Flag                   | Description                                                                                                                                                              |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--environment-id`     | The environment to poll for work. Also reads from `ANTHROPIC_ENVIRONMENT_ID`.                                                                                            |
-| `--environment-key`    | Authenticates the worker with this environment. Also reads from `ANTHROPIC_ENVIRONMENT_KEY`.                                                                             |
-| `--workdir`            | Directory where skills are downloaded and tools read and write files. Defaults to `.` (the current directory); the system default working directory is `/workspace`.     |
-| `--on-work`            | Script to call for each claimed work item instead of running tools in-process. Receives session details as environment variables.                                        |
-| `--unrestricted-paths` | Allow the file tools to read and write paths outside `--workdir`. The workdir check is a guardrail for the file tools only, not a sandbox; it does not constrain bash.   |
-| `--max-idle`           | How long to wait after the session goes idle with an `end_turn` [stop reason](../Guides/build-with-claude-handling-stop-reasons.md) before shutting down. Defaults to `60s`. |
-| `--log-format`         | Log output format. Use `json` for structured log ingestion. Defaults to `text`.                                                                                          |
-
-The CLI worker does not mount [memory stores](managed-agents-memory.md): a session that attaches one still runs, but the agent finds nothing at the store's `mount_path` and no changes sync back to the store. To use memory stores in sessions on a self-hosted environment, run the SDK worker instead; see [Use memory stores](managed-agents-self-hosted-sandboxes.md#use-memory-stores).
+See [Self-hosted worker reference](managed-agents-self-hosted-sandboxes-reference.md) for the `ant beta:worker` CLI flags, environment variables, filesystem paths, and SDK helper options of the pre-built workers that drive a `self_hosted` environment.
 
 ## Supported MCP server types
 

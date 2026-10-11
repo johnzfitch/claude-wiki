@@ -2,11 +2,13 @@
 title: "Use the GitHub integration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10167454-using-the-github-integration"
 category: "14-Connectors"
-fetched_at: "2026-09-30T06:32:15Z"
+fetched_at: "2026-10-10T06:24:21Z"
 tags: ["connectors", "git", "github"]
 ---
 
 # Use the GitHub integration
+
+September 2, 2026
 
 
 For more information on enabling GitHub within your account, see **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)**.

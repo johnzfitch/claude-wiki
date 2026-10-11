@@ -2,7 +2,7 @@
 title: "Threads - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/threads"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:38:50Z"
+fetched_at: "2026-10-04T08:32:41Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -128,24 +128,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -181,6 +164,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -329,8 +333,6 @@ formatdouble
 BetaManagedAgentsSessionThreadStatus = "running" or "idle" or "rescheduling" or "terminated"
 
 
-
-SessionThreadStatus enum
 
 One of the following:
 

@@ -2,7 +2,7 @@
 title: "Prompting strategies for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220277-prompting-strategies-for-financial-analysis"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:31:29Z"
+fetched_at: "2026-10-10T06:25:04Z"
 tags: ["claude-ai", "prompting"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai", "prompting"]
 
 Learn how to write effective prompts for Claude's financial analysis capabilities focusing on clarity, specificity, and data management.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 

@@ -1,8 +1,8 @@
 ---
 title: "Request a refund for a paid Claude plan | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan"
+source_url: "https://support.claude.com/en/articles/12386328-requesting-a-refund-for-a-paid-claude-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:31Z"
+fetched_at: "2026-10-10T06:24:29Z"
 tags: ["billing"]
 ---
 
@@ -26,6 +26,8 @@ To request a refund for a payment defined as refundable in our Terms of Service,
 6.  Follow the prompts to check your refund eligibility.
 
 7.  If eligible, continue in the support messenger to cancel and refund your plan.
+
+**Note:** If you’ve claimed monthly API credits on a Max or Team plan, new credits stop when your plan is refunded. Credits you already have stay usable until they expire and can’t be refunded.
 
 ------------------------------------------------------------------------
 
@@ -70,9 +72,11 @@ If you're requesting a refund for an inactive subscription, you'll need to **[co
 
 When you upgrade to a Team plan from a Pro or Max plan, your individual subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. You don't need to request it manually. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement. Google Play purchases don't have this wait, but the refund can take a few days to appear. Any prepaid usage credits on your individual account are refunded.
 
+If you claimed monthly API credits on your Max plan, your Max link ends. A Team Owner or Primary Owner can claim the team’s credits once the Team plan has been active for seven days.
+
 If you signed up for Pro or Max through the Apple App Store, you can't upgrade to Team in place. **[Cancel your iOS subscription](https://support.claude.com/en/articles/8325617-cancel-your-pro-or-max-subscription#h_54384c9962)** through your Apple ID settings first, then start the Team upgrade. App Store subscription refunds need to be requested through Apple directly, as described above.
 
-For full upgrade details, see **[Get started with the Team plan](how-do-i-get-started-with-the-team-plan.md#h_830eec632d)**.
+For full upgrade details, see **[Get started with the Team plan](https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan#h_830eec632d)**.
 
 ## How do I request a refund when I'm disputing the payment?
 

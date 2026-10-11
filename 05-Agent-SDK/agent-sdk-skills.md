@@ -2,7 +2,7 @@
 title: "Extend agents with skills - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/skills"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-18T06:36:16Z"
+fetched_at: "2026-10-06T06:23:10Z"
 tags: ["agents", "claude-code", "sdk", "skills"]
 ---
 
@@ -40,7 +40,7 @@ Control which skills Claude can invoke in Claude Agent SDK sessions, dispatch co
 
 Copy pageCopy page
 
-Agent Skills extend Claude with specialized capabilities that Claude invokes when relevant. Skills are packaged as `SKILL.md` files containing instructions, descriptions, and optional supporting resources. This page also covers [commands in Agent SDK sessions](#commands-in-agent-sdk-sessions). For comprehensive information about skills, including benefits, architecture, and authoring guidelines, see the [Agent Skills overview](https://code.claude.com/docs/en/04-API-Reference/Other/agent-skills.md).
+Agent Skills extend Claude with specialized capabilities that Claude invokes when relevant. Skills are packaged as `SKILL.md` files containing instructions, descriptions, and optional supporting resources. This page also covers [commands in Agent SDK sessions](#commands-in-agent-sdk-sessions). For more information about skills, including benefits, architecture, and authoring guidelines, see the [Agent Skills overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md).
 
 
 [​](#how-skills-work-with-the-agent-sdk)
@@ -297,7 +297,7 @@ async def main():
 asyncio.run(main())
 ```
 
-A `compact_boundary` message only arrives when compaction ran. With nothing to summarize, `/compact` reports the reason instead of raising. The run still ends with a `success` result and no `compact_boundary` message, and the result text carries the reason, for example `Not enough messages to compact.` after a single short exchange. A fresh one-shot `query()` call starts with empty context, so use this pattern in a session with prior turns, for example in [streaming input mode](agent-sdk-streaming-vs-single-mode.md) or when resuming a session.
+A `compact_boundary` message only arrives when compaction ran. When a continued session has messages but nothing `/compact` can summarize, the run still ends with a `success` result rather than an error, and no `compact_boundary` message arrives. The result text then carries the reason, for example `Not enough messages to compact.` when the session holds a prompt but no reply from Claude yet. A fresh one-shot `query()` call starts with empty context, so use this pattern in a session with prior turns, for example in [streaming input mode](agent-sdk-streaming-vs-single-mode.md) or when resuming a session.
 
 
 [​](#reset-context-with-/clear)
@@ -403,7 +403,7 @@ Claude Code includes bundled `code-review` and `verify` skills. If you name a `.
 
 Pre-approve tools for skills
 
-For project and personal skills, Claude Code applies the [`allowed-tools`](../08-Plugins-Skills/skills.md#pre-approve-tools-for-a-skill) frontmatter field in SDK sessions. You can also pre-approve tools for these skills through the `allowedTools` option (`allowed_tools` in Python) in your query configuration. Skills [synced from claude.ai](../08-Plugins-Skills/skills.md#how-claude-code-handles-the-frontmatter-of-a-synced-skill) follow their own frontmatter rules.
+In SDK sessions, you can pre-approve tools for a project or personal skill with the skill’s [`allowed-tools`](../08-Plugins-Skills/skills.md#pre-approve-tools-for-a-skill) frontmatter or with the `allowedTools` option (`allowed_tools` in Python) in your query configuration. If your organization sets [`allowManagedPermissionRulesOnly`](../02-Claude-Code-CLI/settings-reference.md#allowmanagedpermissionrulesonly) in managed settings, Claude Code ignores both. Skills [synced from claude.ai](../08-Plugins-Skills/skills.md#how-claude-code-handles-the-frontmatter-of-a-synced-skill) follow their own frontmatter rules.
 
 Skills run with the session’s tools. The example below pre-approves `Read`, `Grep`, and `Glob` with `allowedTools` (`allowed_tools` in Python), so Claude can inspect files while running the [security-check skill](#create-and-dispatch-your-first-skill) without stopping for approval:
 
@@ -528,7 +528,7 @@ ls ~/.claude/skills/*/SKILL.md
 
 Skill not being used
 
-**Check the `skills` option**: if you passed a `skills` list, confirm the skill’s name is included. When Claude tries to invoke an unlisted skill, the Skill tool returns `Skill <name> is not in this session's skills allowlist`. Add the name to your list, or dispatch the skill directly by sending `/<name>` in a prompt, which works without listing. **Check the description**: ensure it’s specific and includes relevant keywords. See [Agent Skills best practices](https://code.claude.com/docs/en/04-API-Reference/Other/skill-authoring-best-practices.md#writing-effective-descriptions) for guidance on writing effective descriptions.
+**Check the `skills` option**: if you passed a `skills` list, confirm the skill’s name is included. When Claude tries to invoke an unlisted skill, the Skill tool returns `Skill <name> is not in this session's skills allowlist`. Add the name to your list, or dispatch the skill directly by sending `/<name>` in a prompt, which works without listing. **Check the description**: ensure it’s specific and includes relevant keywords. See [Agent Skills best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md#writing-effective-descriptions) for guidance on writing effective descriptions.
 
 
 [​](#invalid-skill-name-error)
@@ -589,8 +589,8 @@ The [Claude Code skills guide](../08-Plugins-Skills/skills.md) covers authoring 
 Related resources
 
 - [Commands in Claude Code](../02-Claude-Code-CLI/commands.md): the full command surface, including every built-in
-- [Agent Skills overview](https://code.claude.com/docs/en/04-API-Reference/Other/agent-skills.md): conceptual overview, benefits, and architecture
-- [Agent Skills best practices](https://code.claude.com/docs/en/04-API-Reference/Other/skill-authoring-best-practices.md): authoring guidelines for effective skills
+- [Agent Skills overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md): conceptual overview, benefits, and architecture
+- [Agent Skills best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md): authoring guidelines for effective skills
 - [Agent Skills cookbook](https://platform.claude.com/cookbook/skills-notebooks-01-skills-introduction): example skills and templates
 - [Subagents in the SDK](agent-sdk-subagents.md): similar filesystem-based agents with programmatic options
 - [SDK overview](agent-sdk-overview.md): general SDK concepts

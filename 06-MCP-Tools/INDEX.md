@@ -1,6 +1,6 @@
 # Model Context Protocol (MCP)
 
-315 pages. The full text of every page is in [llms.txt](llms.txt).
+319 pages. The full text of every page is in [llms.txt](llms.txt).
 
 ## Community
 
@@ -91,6 +91,7 @@
 - [Extended Thinking with Tool Use](General/claude-cookbooks-extended-thinking-extended-thinking-with-tool-use.md) — This notebook demonstrates how to use Claude 3.7 Sonnet\'s extended
 - [Giving Claude a Crop Tool for Better Image Analysis](General/claude-cookbooks-multimodal-crop-tool.md) — When Claude analyzes images, it sees the entire image at once. For
 - [Local MCP Server Submission Guide | Claude Help Center](General/local-mcp-server-submission-guide.md) — The local MCP server submission guide has moved to the Claude developer docs.
+- [Local Server Security - Model Context Protocol](General/2026-07-28-tutorials-security-local-server-security.md) — Practical defaults for running MCP servers safely on your own machine.
 - [MCP Apps](General/extensions-apps.md) — Build interactive UI applications that render inside MCP hosts like Claude Desktop
 - [MCP Authentication Patterns](General/claude-code-plugins-plugin-dev-skills-mcp-integration-references-authentication.md) — Complete guide to authentication methods for MCP servers in Claude Code plugins.
 - [MCP Everything Server (Test)](General/servers-src-everything-readme.md) — This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of…
@@ -100,18 +101,20 @@
 - [MCP Inspector - Model Context Protocol](General/2025-11-25-tools-inspector.md) — In-depth guide to using the MCP Inspector for testing and debugging Model Context Protocol servers
 - [MCP Inspector - Model Context Protocol](General/2026-07-28-tools-inspector.md) — Interactive developer tooling for testing and debugging MCP servers, in the browser, on the command line, and in the terminal
 - [MCP Memory Server](General/servers-src-memory-readme.md) — A basic implementation of persistent memory using a local knowledge graph. This lets Claude remember information about the user across chats.
-- [MCP Python SDK](General/python-sdk-readme.md) — This is v2 of the MCP Python SDK, the current stable release line. It is a major rework of the SDK, both to support the 2026-07-28 MCP specification (and every…
+- [MCP Python SDK](General/python-sdk-readme.md) — The documentation lives at <https://py.sdk.modelcontextprotocol.io/>.
 - [MCP Reference Servers](General/servers-readme.md) — This repository is a collection of reference implementations for the Model Context Protocol (MCP), as well as references to community-built servers and…
 - [MCP Server Types: Deep Dive](General/claude-code-plugins-plugin-dev-skills-mcp-integration-references-server-types.md) — Complete reference for all MCP server types supported in Claude Code plugins.
-- [MCP TypeScript SDK](General/typescript-sdk-readme.md) — [!IMPORTANT] This is the main branch which contains v2 of the SDK (currently in development, pre-alpha).
+- [MCP TypeScript SDK](General/typescript-sdk-readme.md) — This is the main branch: v2 of the SDK (@modelcontextprotocol/server, @modelcontextprotocol/client), the stable release line, implementing the 2026-07-28 MCP…
+- [mcpdo connection client - Model Context Protocol](General/draft-tools-inspector-mcpdo.md) — Connect to an MCP server once, then run many commands against that named connection
 - [Note-Saving Tool with Pydantic and Anthropic Tool Use](General/claude-cookbooks-tool-use-tool-use-with-pydantic.md) — In this example, we\'ll create a tool that saves a note with the author
 - [Protocol eras - Model Context Protocol](General/2026-07-28-tools-inspector-protocol-eras.md) — How the Inspector negotiates legacy vs. modern MCP, and how every feature is handled between protocol eras
-- [Recipes - Model Context Protocol](General/2026-07-28-tools-inspector-recipes.md) — Practical guides for transports, importing configs, reviewing MCP Apps, Docker, and network hosting
+- [Recipes - Model Context Protocol](General/2026-07-28-tools-inspector-recipes.md) — Practical guides for transports, importing configs, reviewing MCP Apps, Docker, network hosting, and persistent connections with mcpdo
 - [Remote MCP server submission guide | Claude Help Center](General/remote-mcp-server-submission-guide.md) — The remote MCP server submission guide has moved to the Claude developer docs.
 - [Roadmap - Model Context Protocol](General/development-roadmap.md) — The Model Context Protocol roadmap, covering the priority areas Core Maintainers and Working Groups are driving for the next specification release and how they…
 - [SDKs](General/sdk.md) — Official SDKs for building with Model Context Protocol
 - [SDKs - Model Context Protocol](General/2025-11-25-sdk.md) — Official SDKs for building with Model Context Protocol
 - [SDKs - Model Context Protocol](General/2026-07-28-sdk.md) — Official SDKs for building with Model Context Protocol
+- [Security - Model Context Protocol](General/2026-07-28-tools-inspector-security.md) — The Inspector’s threat model in one place, covering the web backend, Docker, secret storage, stdio servers, and the mcpdo daemon
 - [Security Best Practices - Model Context Protocol](General/2024-11-05-tutorials-security-security-best-practices.md) — Security considerations, attack vectors, and best practices for MCP implementations
 - [Security Best Practices - Model Context Protocol](General/2025-11-25-tutorials-security-security-best-practices.md) — Security considerations, attack vectors, and best practices for MCP implementations
 - [Security Best Practices - Model Context Protocol](General/draft-tutorials-security-security-best-practices.md) — Security considerations, attack vectors, and best practices for MCP implementations
@@ -180,6 +183,7 @@
 - [SEP-2085: Governance Succession and Amendment Procedures](SEPs/community-seps-2085-governance-succession-and-amendment.md) — Governance Succession and Amendment Procedures
 - [SEP-2085: Governance Succession and Amendment Procedures - Model Context Protocol](SEPs/seps-2085-governance-succession-and-amendment.md) — Governance Succession and Amendment Procedures
 - [SEP-2106: Tools `inputSchema` & `outputSchema` Conform to JSON Schema 2020-12 - Model Context Protocol](SEPs/seps-2106-json-schema-2020-12.md) — Tools inputSchema & outputSchema Conform to JSON Schema 2020-12
+- [SEP-2127: MCP Server Cards - HTTP Server Discovery - Model Context Protocol](SEPs/seps-2127-mcp-server-cards.md) — MCP Server Cards - HTTP Server Discovery
 - [SEP-2133: Extensions](SEPs/community-seps-2133-extensions.md) — export const Badge = ({children, color = "gray"}) => {
 - [SEP-2133: Extensions - Model Context Protocol](SEPs/seps-2133-extensions.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…
 - [SEP-2148: MCP Contributor Ladder - Model Context Protocol](SEPs/seps-2148-contributor-ladder.md) — This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not…

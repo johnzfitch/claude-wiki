@@ -2,7 +2,7 @@
 title: "Get started with 1Password for Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15936181-get-started-with-1password-for-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:02Z"
+fetched_at: "2026-10-10T06:25:22Z"
 tags: ["agents", "claude-ai"]
 ---
 
@@ -31,7 +31,7 @@ To use 1Password for Claude, you'll need:
 
 - **[Claude Desktop](https://support.claude.com/en/articles/10065433)**
 
-- **[Claude in Chrome](getting-started-with-claude-for-chrome.md)**
+- **[Claude in Chrome](https://support.claude.com/en/articles/12012173)**
 
 - A 1Password account (individual, family, or business plan)
 

@@ -2,13 +2,11 @@
 title: "Claude for Teachers: your data and our terms | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15926041-claude-for-teachers-your-data-and-our-terms"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:32:01Z"
+fetched_at: "2026-10-10T06:25:22Z"
 tags: ["safety"]
 ---
 
 # Claude for Teachers: your data and our terms
-
-August 28, 2026
 
 
 ## Overview
@@ -41,7 +39,7 @@ Claude for Teachers includes Pro-level features, with Claude Code and Claude Cow
 
 **Important:** Claude for Teachers is not for students. It's an educator-only offering. If you're a student over 18 or using Claude outside your work as an educator, Claude is governed by our Consumer Terms of Service instead.
 
-**Important:** If your district has set up a Claude for Teachers organization, the K-12 terms your district accepted govern your use of Claude within that organization.
+If your district has set up a Claude for Teachers organization, the K-12 terms your district accepted govern your use of Claude within that organization.
 
 ## K-12 privacy and terms
 
@@ -69,7 +67,7 @@ AES-256 encryption at rest. TLS 1.2 or better in transit. Multi-factor authentic
 
 ### Delete your data
 
-You control your conversations and can delete your chats anytime from your dashboard. More information on data deletion can be found here: **[Can you delete data that I sent via Team and Enterprise plans?](https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans)**
+You control your conversations and can delete your chats anytime from your dashboard. More information on data deletion can be found here: **[Can you delete data that I sent via Team and Enterprise plans?](../17-Billing-Plans/can-you-delete-data-that-i-sent-via-team-and-enterprise-plans.md)**
 
 Your district's admins can also delete any member's data through the Compliance API when district policy requires it. If your district leaves Claude, Anthropic returns your district's data on request and deletes its copies within 30 days, except where the law requires retention.
 
@@ -79,7 +77,7 @@ Your district's admins can also delete any member's data through the Compliance 
 
 When you verify, your account moves onto a Claude for Teachers plan—a free Claude for Teams plan for verified educators. It comes with educator-specific terms and a data processing agreement, your chats and files aren't used to train our models, and student-data protections are built in. Your usage limits are higher than a standard free account—enough for everyday classroom work like lesson planning, quizzes, and parent communication.
 
-Some Team plan features are turned off for Claude for Teachers. You won't see billing and seat purchasing, **[member invitations and management](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**, roles and permissions, SSO and domain capture, spend controls, usage credits, or premium seats. For questions, **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+Some Team plan features are turned off for Claude for Teachers. You won't see billing and seat purchasing, **[member invitations and management](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)**, roles and permissions, SSO and domain capture, spend controls, usage credits, or premium seats. For questions, **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ### School and district organizations
 

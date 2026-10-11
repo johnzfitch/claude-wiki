@@ -2,7 +2,7 @@
 title: "GitLab Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/gitlab-enterprise"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:36Z"
+fetched_at: "2026-10-10T06:25:14Z"
 tags: ["case-studies", "enterprise", "git", "security"]
 ---
 
@@ -40,7 +40,7 @@ GitLab, the leading AI-powered DevSecOps platform, adopted Claude for Work to em
 
 ## Empowering teams across GitLab with Claude
 
-GitLab saw AI's potential to transform their product offerings through the Anthropic API and their internal processes with the [Claude Enterprise plan](enterprise.md).
+GitLab saw AI's potential to transform their product offerings through the Anthropic API and their internal processes with the [Claude Enterprise plan](../17-Billing-Plans/pricing-enterprise.md).
 
 Taylor McCaslin, product lead for AI and ML tech at GitLab, is focused on putting Claude’s AI capabilities in the hands of team members across departments, from engineering to marketing. McCaslin says, "By using the same Claude models internally that we offer externally, we're better able to build AI solutions that we trust and use ourselves."
 
@@ -81,6 +81,9 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 ## Related stories
 
 
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
+
+
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
 
@@ -89,9 +92,6 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -99,9 +99,9 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -131,7 +131,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -143,6 +143,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -154,8 +155,10 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -175,7 +178,9 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -218,9 +223,9 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -250,7 +255,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -262,6 +267,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -273,8 +279,10 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -294,7 +302,9 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

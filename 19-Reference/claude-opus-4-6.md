@@ -28,7 +28,7 @@ Coding
 
 Reasoning
 
-In [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md), you can now assemble [*agent teams*](https://www.anthropic.com/09-Agents-Patterns/agent-teams-e29da6ed1b.md) to work on tasks together. On the API, Claude can use [*compaction*](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-compaction-47672e5bbf.md) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](https://www.anthropic.com/04-API-Reference/effort.md) controls to give developers more control over intelligence, speed, and cost.
+In [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), you can now assemble [*agent teams*](https://www.anthropic.com/09-Agents-Patterns/agent-teams-e29da6ed1b.md) to work on tasks together. On the API, Claude can use [*compaction*](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-compaction-47672e5bbf.md) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](https://www.anthropic.com/04-API-Reference/effort.md) controls to give developers more control over intelligence, speed, and cost.
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 
@@ -251,10 +251,10 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -281,7 +281,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -301,7 +301,7 @@ We’re opening a research preview of the Model Hardware Standard (MHS), a share
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

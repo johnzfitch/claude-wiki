@@ -1,8 +1,8 @@
 ---
 title: "Roots - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/draft/client/roots"
+source_url: "https://modelcontextprotocol.io/specification/2026-07-28/client/roots"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-09-29T06:31:06Z"
+fetched_at: "2026-10-09T06:27:40Z"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -29,7 +29,7 @@ Copy pageCopy page
 
 Copy pageCopy page
 
-**Deprecated**: The Roots feature is deprecated as of protocol version `2026-07-28` ([SEP-2577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577)). Under the [feature lifecycle policy](../Community/community-feature-lifecycle.md), it remains in the specification for at least twelve months after this revision’s release before it becomes eligible for removal. New implementations **SHOULD NOT** adopt it; existing implementations **SHOULD** migrate to passing directories or files via tool parameters, resource URIs, or server configuration. See the [deprecated features registry](draft-deprecated.md).
+**Deprecated**: The Roots feature is deprecated as of protocol version `2026-07-28` ([SEP-2577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577)). Under the [feature lifecycle policy](../Community/community-feature-lifecycle.md), it remains in the specification for at least twelve months after this revision’s release before it becomes eligible for removal. New implementations **SHOULD NOT** adopt it; existing implementations **SHOULD** migrate to passing directories or files via tool parameters, resource URIs, or server configuration. See the [deprecated features registry](2026-07-28-deprecated.md).
 
 The Model Context Protocol (MCP) provides a standardized way for clients to expose filesystem “roots” to servers. Roots inform servers about the directories and files the client considers relevant, so that servers can focus their operations accordingly. They are informational guidance rather than an access-control mechanism. The protocol does not enforce that servers stay within roots. Servers can request the list of roots from supporting clients.
 
@@ -67,7 +67,7 @@ Protocol Messages
 
 Listing Roots
 
-To retrieve roots during the processing of a client request, servers send an `InputRequiredResult` containing a `roots/list` request: **Input request (delivered inside [`InputRequiredResult.inputRequests`](draft-basic-patterns-mrtr.md#inputrequests)):**
+To retrieve roots during the processing of a client request, servers send an `InputRequiredResult` containing a `roots/list` request: **Input request (delivered inside [`InputRequiredResult.inputRequests`](2026-07-28-basic-patterns-mrtr.md#inputrequests)):**
 
 ```python
 {

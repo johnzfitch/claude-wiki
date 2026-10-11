@@ -2,7 +2,7 @@
 title: "Legal and compliance - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/legal-and-compliance"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-22T06:27:46Z"
+fetched_at: "2026-10-06T06:23:43Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -75,7 +75,12 @@ Compliance
 
 Healthcare compliance (BAA)
 
-If a customer has executed a Business Associate Agreement (BAA) with Anthropic and has [Zero Data Retention (ZDR)](../02-Claude-Code-CLI/zero-data-retention.md) enabled for the relevant organization, that BAA extends to the customer’s API traffic through Claude Code.
+If a customer has executed a Business Associate Agreement (BAA) with Anthropic, that BAA extends to Claude Code in two configurations, depending on what is available for your organization:
+
+- **HIPAA configuration**: the Claude Code CLI or the Code tab in Claude Desktop, used with a Claude for Enterprise account. The organization must have HIPAA enabled and the HIPAA configuration applied to Claude Code (local mode) and Cowork (local mode). See [Set up Claude Code (local mode) for a HIPAA-ready organization](../02-Claude-Code-CLI/hipaa-setup.md).
+- **Zero Data Retention**: Claude Code with [Zero Data Retention (ZDR)](../02-Claude-Code-CLI/zero-data-retention.md) enabled for the relevant organization. ZDR isn’t available for all organizations.
+
+Under the HIPAA configuration, cloud sessions, Remote Control, Claude Code in the Claude mobile app, and Claude Code routed through a third-party cloud provider or a gateway aren’t covered. Review the [Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide) for a full list of Eligible Services.
 
 
 [​](#usage-policy)
@@ -96,7 +101,7 @@ Authentication and credential use
 
 Claude Code authenticates with Anthropic’s servers using OAuth tokens or API keys. These authentication methods serve different purposes:
 
-- **OAuth authentication** is intended exclusively for purchasers of Claude Free, Pro, Max, Team, and Enterprise subscription plans and is designed to support ordinary use of Claude Code and other native Anthropic applications. For the sign-in steps, see [Logging in to your Claude account](https://code.claude.com/docs/21-Account-Support/logging-in-to-your-claude-account-2c1d42f1ab.md); for how Claude Code performs OAuth authentication, see [Authentication](iam.md).
+- **OAuth authentication** is intended exclusively for purchasers of Claude Free, Pro, Max, Team, and Enterprise subscription plans and is designed to support ordinary use of Claude Code and other native Anthropic applications. For the sign-in steps, see [Logging in to your Claude account](../21-Account-Support/logging-in-to-your-claude-account.md); for how Claude Code performs OAuth authentication, see [Authentication](../02-Claude-Code-CLI/authentication.md).
 - **Developers** building products or services that interact with Claude’s capabilities, including those using the [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md), should use API key authentication through [Claude Console](../04-API-Reference/Other/usage-limits.md) or a supported cloud provider. Anthropic does not permit third-party developers to offer Claude.ai login into their own applications, or to route requests through Free, Pro, or Max plan credentials on behalf of their users. Moreover, developers may not collect, store, or intermediate Claude.ai credentials or session tokens — sign-in to a Claude account must complete through Anthropic’s own flow.
 
 This does not restrict how customers provision and manage their own API keys or third-party inference provider credentials — for example, configuring an API key in a development environment, secrets manager, or machine image for use by the customer’s own authorized users — provided the resulting usage is billed to the key owner under their agreement with Anthropic (or the applicable provider) and is not resold or intermediated as described above. Nor does it prevent an end user from signing in to the unmodified Claude Code binary with their own Claude subscription, including where a platform hosts Claude Code as described under *Can customers offer Claude Code in their products?* above. Anthropic reserves the right to take measures to enforce these restrictions and may do so without prior notice. For questions about permitted authentication methods for your use case, please [contact sales](https://www.anthropic.com/contact-sales?utm_source=claude_code&utm_medium=docs&utm_content=legal_compliance_contact_sales).

@@ -2,7 +2,7 @@
 title: "Multiagent orchestration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:41Z"
+fetched_at: "2026-10-04T08:34:12Z"
 tags: ["agents", "api", "mcp"]
 ---
 
@@ -141,7 +141,7 @@ The coordinator's configuration, including its `multiagent.agents` roster, is sn
 
 The coordinator can only delegate to one level of agents; referencing an agent that has its own `multiagent.agents` roster fails the create or update request with a validation error. A maximum of 20 unique agents can be listed in `multiagent.agents`, but the coordinator can call multiple copies of each agent.
 
-When agents pin an [inference geography](../Guides/build-with-claude-data-residency.md) (`model.inference_geo` in the [agent definition](managed-agents-agent-setup.md)), the coordinator's pin and every roster member's pin must either all be set to the same value or all be unset. A mismatched roster is rejected with a 400 validation error, both when the agent is saved and when a [session-create override](managed-agents-sessions.md#override-agent-configuration-for-a-session) changes any of the pins.
+When agents pin an [inference geography](manage-claude-data-residency.md) (`model.inference_geo` in the [agent definition](managed-agents-agent-setup.md)), the coordinator's pin and every roster member's pin must either all be set to the same value or all be unset. A mismatched roster is rejected with a 400 validation error, both when the agent is saved and when a [session-create override](managed-agents-sessions.md#override-agent-configuration-for-a-session) changes any of the pins.
 
 ### Give the session an advisor
 
@@ -243,6 +243,8 @@ MCP servers are agent-scoped (each agent definition declares its own servers and
 - To limit an agent's access, declare only the servers it needs in its agent definition.
 
 [Agent configuration overrides](managed-agents-sessions.md#override-agent-configuration-for-a-session) at session creation can replace the coordinator's MCP servers and those of its `self` copies.
+
+A `limited` [environment](managed-agents-environments.md#networking) blocks an agent's MCP servers unless its networking sets `allow_mcp_servers: true` or lists each server's host in `allowed_hosts`. With neither set, session creation fails with a 400 error. The check covers every agent the coordinator can delegate to.
 
 Create the researcher, which declares the GitHub MCP server, and the coordinator that delegates to the researcher:
 

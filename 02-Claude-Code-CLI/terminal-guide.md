@@ -2,14 +2,14 @@
 title: "Terminal guide for new users - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/terminal-guide"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:54Z"
+fetched_at: "2026-10-10T06:24:16Z"
 tags: ["claude-code"]
 ---
 
 ## On this page
 
-- [macOS and Linux](#macos-and-linux)
-- [Windows](#windows)
+- [Install Claude Code on macOS or Linux](#install-claude-code-on-macos-or-linux)
+- [Install Claude Code on Windows](#install-claude-code-on-windows)
 - [What’s next?](#what%E2%80%99s-next)
   - [Build something](#build-something)
   - [Work with files on your computer](#work-with-files-on-your-computer)
@@ -36,9 +36,9 @@ You can use Claude Code even if you’ve never used a terminal before. This guid
 Don’t want to use the terminal? The Claude Code desktop app lets you skip the terminal entirely. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code&utm_medium=docs) or [Windows](https://claude.com/download?utm_source=claude_code&utm_medium=docs), then see the [Desktop quickstart](../16-Mobile-Desktop/desktop-quickstart.md) to get started. On Linux, install the app with apt by following the [Linux install instructions](../16-Mobile-Desktop/desktop-linux.md).
 
 
-[​](#macos-and-linux)
+[​](#install-claude-code-on-macos-or-linux)
 
-macOS and Linux
+Install Claude Code on macOS or Linux
 
 Follow these steps to install and start Claude Code from a macOS or Linux terminal. Claude Code requires macOS 13.0 or later. See the [system requirements](../01-Getting-Started/setup.md#system-requirements) for supported Linux distributions.
 
@@ -58,7 +58,7 @@ Copy this line, paste it into your terminal (`Cmd + V` on macOS, `Ctrl + Shift +
 curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-This downloads and runs the Claude Code installer from claude.ai. You’ll see text scrolling as it works. When it’s done, you’ll see “Claude Code successfully installed!” If you see an error instead, check the [troubleshooting section](#macos-and-linux-troubleshooting) below.
+This downloads and runs the Claude Code installer from claude.ai. The command shows no progress while Claude Code downloads, so leave the window open and wait. When the installer finishes, you’ll see “Claude Code successfully installed!” If you see an error instead, check the [troubleshooting section](#macos-and-linux-troubleshooting) below.
 
 3
 
@@ -70,7 +70,7 @@ Type `claude` and press `Enter`:
 claude
 ```
 
-If you see `command not found: claude`, the install directory isn’t on your PATH yet. Follow the [‘command not found: claude’](#macos-and-linux-troubleshooting) fix below, then open a new terminal window and try again.You’ll be prompted to [log in](../13-Enterprise-Admin/iam.md) with your Claude account. Follow the on-screen instructions. A browser window will open for you to sign in.
+If you see `command not found: claude`, the install directory isn’t on your PATH yet. Follow the [‘command not found: claude’](#macos-and-linux-troubleshooting) fix below, then open a new terminal window and try again.You’ll be prompted to [log in](authentication.md) with your Claude account. Follow the on-screen instructions. A browser window will open for you to sign in.
 
 4
 
@@ -86,9 +86,9 @@ Once logged in, you can start asking Claude questions about your code or anythin
 ------------------------------------------------------------------------
 
 
-[​](#windows)
+[​](#install-claude-code-on-windows)
 
-Windows
+Install Claude Code on Windows
 
 Follow these steps to optionally install Git for Windows, set up PowerShell, and start Claude Code on Windows. Claude Code requires Windows 10 version 1809 or later. See the [system requirements](../01-Getting-Started/setup.md#system-requirements) for full details.
 
@@ -126,7 +126,7 @@ Copy this line, paste it into PowerShell with `Ctrl + V` or right-click, and pre
 irm https://claude.ai/install.ps1 | iex
 ```
 
-This downloads and runs the Claude Code installer. `irm` fetches the file and `iex` runs it. You’ll see text scrolling as it works. When it’s done, you’ll see “Claude Code successfully installed!” If you see an error instead, check the [troubleshooting section](#windows-troubleshooting) below.
+This downloads and runs the Claude Code installer. `irm` fetches the file and `iex` runs it. The command shows no progress while Claude Code downloads, so leave the window open and wait. When the installer finishes, you’ll see “Claude Code successfully installed!” If you see an error instead, check the [troubleshooting section](#windows-troubleshooting) below.
 
 If you’re in CMD instead of PowerShell, use this command:
 
@@ -144,7 +144,7 @@ Run `claude`. If PowerShell says `'claude' is not recognized`, the install direc
 claude
 ```
 
-You’ll be prompted to [log in](../13-Enterprise-Admin/iam.md) with your Claude account. Follow the on-screen instructions. A browser window will open for you to sign in.
+You’ll be prompted to [log in](authentication.md) with your Claude account. Follow the on-screen instructions. A browser window will open for you to sign in.
 
 5
 
@@ -177,7 +177,7 @@ Claude can create projects from a description:
 make me a simple webpage that says hello world
 ```
 
-Before creating or changing files, Claude asks for your permission. Press `Enter` to choose **Yes** and approve. Once Claude creates the files, double-click the HTML file to open it in your browser.
+If Claude asks for your permission before creating or changing files, press `Enter` to choose **Yes** and approve. Once Claude creates the files, double-click the HTML file to open it in your browser.
 
 
 [​](#work-with-files-on-your-computer)
@@ -322,7 +322,7 @@ To make this permanent so you don’t have to set it every time, see [configure 
 
 'claude is not recognized'
 
-This error means the install directory isn’t in your PATH. Run these commands in PowerShell to add it:
+If the error started right after Claude Code updated, see [restore `claude.exe` from its backup](troubleshoot-install.md#claude-exe-missing-after-an-update-on-windows) first.If the install directory isn’t in your PATH, add it by running these commands in PowerShell:
 
 ```python
 $currentPath = [Environment]::GetEnvironmentVariable('PATH', 'User')

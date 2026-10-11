@@ -2,7 +2,7 @@
 title: "Claude Haiku 4.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/haiku-4-5/overview"
 category: "20-Models"
-fetched_at: "2026-09-26T06:39:53Z"
+fetched_at: "2026-10-04T08:32:55Z"
 tags: ["models"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["models"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -38,7 +38,7 @@ Models
 
 [Claude Opus 5.5](models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -72,7 +72,7 @@ The fastest model with near-frontier intelligence
 
 claude-haiku-4-5-20251001
 
-[Try in playground](../04-API-Reference/Other/usage-limits.md)
+[Try in playground](../04-API-Reference/Other/playground.md)
 
 Copy page
 

@@ -2,7 +2,7 @@
 title: "Define your agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/agent-setup"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:38Z"
+fetched_at: "2026-10-04T08:34:09Z"
 tags: ["agents", "api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -222,7 +222,7 @@ To set the model's effort level, pass `model` as an object, for example: `{"id":
 
 ### Pin the inference geo
 
-Like `speed` and `effort`, `inference_geo` is set through the object form of `model`: pass `model` as an object and set `inference_geo` alongside `id`. The field accepts `"us"` or `"global"`. When it's unset, each model request follows the workspace's default inference geo at the time it's served. See [Data residency](../Guides/build-with-claude-data-residency.md) for the workspace-level geo controls and pricing.
+Like `speed` and `effort`, `inference_geo` is set through the object form of `model`: pass `model` as an object and set `inference_geo` alongside `id`. The field accepts `"us"` or `"global"`. When it's unset, each model request follows the workspace's default inference geo at the time it's served. See [Data residency](manage-claude-data-residency.md) for the workspace-level geo controls and pricing.
 
 The following example pins an agent to US inference and prints the `inference_geo` value from the agent's `model` object:
 
@@ -267,9 +267,9 @@ model:
 You are a helpful assistant.
 ```
 
-An `inference_geo` pin is validated against the workspace's [`allowed_inference_geos`](../Guides/build-with-claude-data-residency.md#workspace-level-restrictions) when the agent is saved, when a session is created from it, and on every turn the session serves. If the workspace allowlist narrows so a pin is no longer allowed, new sessions can't be created from the agent and running sessions refuse further turns; pins are never exempted, because workspaces rely on them for compliance and data residency.
+An `inference_geo` pin is validated against the workspace's [`allowed_inference_geos`](manage-claude-data-residency.md#workspace-level-restrictions) when the agent is saved, when a session is created from it, and on every turn the session serves. If the workspace allowlist narrows so a pin is no longer allowed, new sessions can't be created from the agent and running sessions refuse further turns; pins are never exempted, because workspaces rely on them for compliance and data residency.
 
-Setting `inference_geo` on a model that doesn't support geographic inference pinning returns a 400 error; see [Model availability](../Guides/build-with-claude-data-residency.md#model-availability) for the models that do. In a `multiagent` configuration, the coordinator's pin and every roster member's must all be set to the same value or all be unset; see [Multiagent orchestration](managed-agents-multiagent-orchestration.md). To change or clear the pin later, update the agent's `model` object; supplying `model` without `inference_geo` clears it, as described under [Update semantics](#update-semantics).
+Setting `inference_geo` on a model that doesn't support geographic inference pinning returns a 400 error; see [Model availability](manage-claude-data-residency.md#model-availability) for the models that do. In a `multiagent` configuration, the coordinator's pin and every roster member's must all be set to the same value or all be unset; see [Multiagent orchestration](managed-agents-multiagent-orchestration.md). To change or clear the pin later, update the agent's `model` object; supplying `model` without `inference_geo` clears it, as described under [Update semantics](#update-semantics).
 
 ## Update an agent
 

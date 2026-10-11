@@ -2,7 +2,7 @@
 title: "Introducing Claude Fable 5.1 and Claude Mythos 5.1 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-fable-and-mythos-5-1"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:23Z"
+fetched_at: "2026-10-10T06:25:34Z"
 tags: ["claude-ai", "search", "security"]
 ---
 
@@ -384,10 +384,10 @@ As discussed above, Claude Mythos 5.1 is available to vetted cyberdefenders and 
 ### Products
 
 - [Claude](product-overview.md)
-- [Claude Code](claude-com-product-claude-code.md)
+- [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](product-claude-code-enterprise.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](product-tag.md)
 - [Claude Design](product-design.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
@@ -414,7 +414,8 @@ As discussed above, Claude Mythos 5.1 is available to vetted cyberdefenders and 
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -435,7 +436,7 @@ As discussed above, Claude Mythos 5.1 is available to vetted cyberdefenders and 
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -458,8 +459,10 @@ As discussed above, Claude Mythos 5.1 is available to vetted cyberdefenders and 
 
 ### Programs
 
-- [Startups](programs-startups.md)
+- [Campus](programs-campus.md)
+- [Frontier Academy](programs-frontier-academy.md)
 - [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Startups](programs-startups.md)
 
 ### Help and security
 

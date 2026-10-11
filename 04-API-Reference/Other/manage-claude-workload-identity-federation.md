@@ -2,7 +2,7 @@
 title: "Workload Identity Federation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/workload-identity-federation"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:46Z"
+fetched_at: "2026-10-04T08:33:34Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -117,7 +119,7 @@ A single issuer can have many rules: one per team, namespace, or permission leve
 
 1.  **Your IdP issues a JWT to the workload.** On most platforms this is ambient: a Kubernetes projected service-account token, the Google Cloud metadata server, Azure IMDS, or the GitHub Actions OIDC endpoint. The JWT's `iss` claim identifies the provider, and its `sub` and other claims identify the specific workload.
 2.  **The SDK exchanges the JWT for an Anthropic access token.** The SDK posts the JWT to `POST /v1/oauth/token` using the [RFC 7523](https://www.rfc-editor.org/rfc/rfc7523) `jwt-bearer` grant. Anthropic verifies the JWT against the issuer's JWKS and the federation rule's match conditions, then returns a short-lived `sk-ant-oat01-...` token that acts on behalf of the rule's target service account.
-3.  **The SDK sends the token on every request and refreshes it before it expires.** Your application code constructs the client with no `api_key` and calls the API as usual. The SDK re-runs the exchange before the token expires.
+3.  **The SDK sends the token on every request and refreshes it before it expires.** Your application code constructs the client with no API key and calls the API as usual. The SDK re-runs the exchange before the token expires.
 
 ## Set up federation
 
@@ -159,7 +161,7 @@ To manage these resources programmatically, see [Manage WIF with the Admin API](
 
 ## Authenticate from your workload
 
-With federation configured, your workload exchanges its IdP-issued JWT for an Anthropic token at runtime. The SDKs handle the exchange and refresh loop for you. The cURL tab shows the underlying HTTP exchange for shell scripts, debugging, or languages without SDK support.
+With federation configured, your workload exchanges its IdP-issued JWT for an Anthropic token at runtime. The SDK handles the exchange and refresh loop for you. The cURL tab shows the underlying HTTP exchange for shell scripts, debugging, or languages without SDK support.
 
 ### Construct the SDK client
 
@@ -231,7 +233,7 @@ To switch an existing workload from a static API key to federation without downt
 
 The minted Anthropic token's lifetime is the lesser of (a) the rule's `token_lifetime_seconds` (default 3,600 seconds) and (b) twice the remaining lifetime of the IdP JWT you presented. The result is never less than 60 seconds. The second bound prevents an Anthropic token from outliving the upstream identity it was derived from by more than a small margin.
 
-The SDKs cache the token and refresh it on a two-tier schedule modeled on `botocore`:
+The SDK caches the token and refreshes it on a two-tier schedule modeled on `botocore`:
 
 - **Advisory refresh** at expiry minus 120 seconds. The SDK attempts a new exchange. If the token endpoint is unreachable, the SDK continues serving the cached token, which is still valid for roughly 90 more seconds.
 - **Mandatory refresh** at expiry minus 30 seconds. A failed exchange at this point raises an error. The cached token is too close to expiry to be safe.
@@ -285,5 +287,5 @@ Okta service applications using client-credentials flow.
 
 - [Manage WIF with the Admin API](manage-claude-wif-admin-api.md): create issuers, service accounts, and rules from infrastructure as code
 - [WIF reference](manage-claude-wif-reference.md): environment variables, profile file schema, validation rules, and error codes
-- [Authentication](manage-claude-authentication.md): all authentication options across the Anthropic SDKs
+- [Authentication](manage-claude-authentication.md): all the SDK's authentication options
 - [Admin API reference](../Admin/http-beta-organization.md): generated request and response schemas for every Admin API endpoint

@@ -2,7 +2,7 @@
 title: "Troubleshoot installation and login - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/troubleshoot-install"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:43Z"
+fetched_at: "2026-10-10T06:24:44Z"
 tags: ["claude-code"]
 ---
 
@@ -18,15 +18,19 @@ tags: ["claude-code"]
 - [Common installation issues](#common-installation-issues)
   - [Install script returns HTML instead of a shell script](#install-script-returns-html-instead-of-a-shell-script)
   - [command not found: claude after installation](#command-not-found-claude-after-installation)
+  - [permission denied when adding to your PATH](#permission-denied-when-adding-to-your-path)
   - [curl: (56) Failure writing output to destination](#curl-56-failure-writing-output-to-destination)
   - [Homebrew cask unavailable or outdated](#homebrew-cask-unavailable-or-outdated)
+  - [Cask 'claude-code@latest' is not installed](#cask-is-not-installed)
   - [TLS or SSL connection errors](#tls-or-ssl-connection-errors)
   - [Failed to fetch version from downloads.claude.ai](#failed-to-fetch-version-from-downloads-claude-ai)
+  - [The connection dropped while downloading the update](#the-connection-dropped-while-downloading-the-update)
   - [Wrong install command on Windows](#wrong-install-command-on-windows)
   - [running scripts is disabled on this system](#running-scripts-is-disabled-on-this-system)
   - [The process cannot access the file during Windows install](#the-process-cannot-access-the-file-during-windows-install)
   - [claude.exe missing after an update on Windows](#claude-exe-missing-after-an-update-on-windows)
   - [Install killed on low-memory Linux servers](#install-killed-on-low-memory-linux-servers)
+  - [Installation was killed before it could finish](#installation-was-killed-before-it-could-finish)
   - [Install hangs in Docker](#install-hangs-in-docker)
   - [Raw mode is not supported during install](#raw-mode-is-not-supported-during-install)
   - [claude update or claude doctor hangs](#claude-update-or-claude-doctor-hangs)
@@ -36,6 +40,7 @@ tags: ["claude-code"]
   - [Linux musl or glibc binary mismatch](#linux-musl-or-glibc-binary-mismatch)
   - [Illegal instruction](#illegal-instruction)
   - [dyld: cannot load on macOS](#dyld-cannot-load-on-macos)
+  - [Bus error while a session is running](#bus-error-while-a-session-is-running)
   - [Exec format error on WSL1](#exec-format-error-on-wsl1)
   - [npm install errors in WSL](#npm-install-errors-in-wsl)
   - [Permission errors during installation](#permission-errors-during-installation)
@@ -74,15 +79,25 @@ Match the error message or symptom you’re seeing to a fix:
 | What you see                                                                                               | Solution                                                                                                                                      |
 |:-----------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
 | `command not found: claude` or `'claude' is not recognized`                                                | [Fix your PATH](#command-not-found-claude-after-installation)                                                                                 |
+| `Native installation exists but ... is not in your PATH`                                                   | [Add the install directory to your PATH](#verify-your-path)                                                                                   |
+| `INFO: Could not find files for the given pattern(s).` from `where.exe claude`                             | [Check whether Claude Code is installed](#check-for-conflicting-installations)                                                                |
+| `zsh: permission denied: /Users/you/.zshrc` or `bash: /home/you/.bashrc: Permission denied`                | [Make your shell config file writable](#permission-denied-when-adding-to-your-path)                                                           |
 | `syntax error near unexpected token '<'`                                                                   | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script)                                                         |
+| `< was unexpected at this time` in CMD                                                                     | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script)                                                         |
+| `The term 'System.Xml.XmlDocument' is not recognized`                                                      | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script)                                                         |
 | `curl: (22) The requested URL returned error: 403`                                                         | [Install script returned 403](#install-script-returns-html-instead-of-a-shell-script)                                                         |
 | `curl: (23)` or `curl: (56) Failure writing output to destination`                                         | [Check connectivity or use an alternative installer](#curl-56-failure-writing-output-to-destination)                                          |
-| `Killed` during install on Linux, or `Installation was killed before it could finish (exit code 137)`      | [Free memory or add swap space](#install-killed-on-low-memory-linux-servers)                                                                  |
+| `Killed` during install on Linux                                                                           | [Free memory or add swap space](#install-killed-on-low-memory-linux-servers)                                                                  |
+| `Installation was killed before it could finish`                                                           | [Free memory, then rerun the installer](#installation-was-killed-before-it-could-finish)                                                      |
 | `Raw mode is not supported` during install                                                                 | [Rerun the installer](#raw-mode-is-not-supported-during-install)                                                                              |
+| `EACCES: permission denied` during install                                                                 | [Fix the install directory’s permissions](#permission-errors-during-installation)                                                             |
 | `TLS connect error` or `SSL/TLS secure channel`                                                            | [Update CA certificates](#tls-or-ssl-connection-errors)                                                                                       |
+| `CRYPT_E_NO_REVOCATION_CHECK` or `CRYPT_E_REVOCATION_OFFLINE`                                              | [Work around blocked revocation checks](#tls-or-ssl-connection-errors)                                                                        |
 | `Failed to fetch version` or can’t reach download server                                                   | [Check network and proxy settings](#check-network-connectivity)                                                                               |
+| `The connection dropped while downloading the update` or `Download timed out: exceeded the total deadline` | [Run the update again or set your proxy](#the-connection-dropped-while-downloading-the-update)                                                |
 | `irm is not recognized` or `The token '&&' is not a valid statement separator`                             | [Use the right command for your shell](#wrong-install-command-on-windows)                                                                     |
 | `Cask 'claude-code' is unavailable: No Cask with this name exists`                                         | [Update Homebrew](#homebrew-cask-unavailable-or-outdated)                                                                                     |
+| `Cask 'claude-code@latest' is not installed`                                                               | [Upgrade the cask you installed](#cask-is-not-installed)                                                                                      |
 | `'bash' is not recognized as the name of a cmdlet`                                                         | [Use the Windows installer command](#wrong-install-command-on-windows)                                                                        |
 | `A parameter cannot be found that matches parameter name 'fsSL'`                                           | [Use the Windows installer command](#wrong-install-command-on-windows)                                                                        |
 | `Claude Code on Windows requires either Git for Windows (for bash) or PowerShell`                          | [Install a shell](#claude-code-on-windows-requires-either-git-for-windows-for-bash-or-powershell)                                             |
@@ -91,6 +106,7 @@ Match the error message or symptom you’re seeing to a fix:
 | `Error loading shared library`                                                                             | [Wrong binary variant for your system](#linux-musl-or-glibc-binary-mismatch)                                                                  |
 | `Illegal instruction`                                                                                      | [Architecture or CPU instruction set mismatch](#illegal-instruction)                                                                          |
 | `cannot execute binary file: Exec format error` in WSL                                                     | [WSL1 native-binary regression](#exec-format-error-on-wsl1)                                                                                   |
+| `Bus error` or `oh no: Bun has crashed` while a session is running                                         | [Keep the executable readable](#bus-error-while-a-session-is-running)                                                                         |
 | PowerShell installer completes but `claude` is not found or shows an old version                           | [Add the install directory to your PATH](#verify-your-path), then open a new terminal                                                         |
 | `dyld: Symbol not found`, `dyld: cannot load`, or `Abort trap` on macOS                                    | [Binary incompatibility](#dyld-cannot-load-on-macos)                                                                                          |
 | `claude update` hangs after `Checking for updates`, or `claude doctor` hangs with no output                | [Move the directory at a shell config path](#claude-update-or-claude-doctor-hangs)                                                            |
@@ -173,11 +189,11 @@ irm https://claude.ai/install.ps1 | iex
 
 Verify your PATH
 
-If installation succeeded but you get a `command not found` or `not recognized` error when running `claude`, the install directory isn’t in your PATH. Your shell searches for programs in directories listed in PATH, and the installer places `claude` at `~/.local/bin/claude` on macOS/Linux or `%USERPROFILE%\.local\bin\claude.exe` on Windows.
+If installation succeeded but you get a `command not found` or `not recognized` error when running `claude`, the install directory isn’t in your PATH. Your shell searches for programs in directories listed in PATH, and the installer places `claude` at `~/.local/bin/claude` on macOS/Linux or `%USERPROFILE%\.local\bin\claude.exe` on Windows. The installer detects this case and reports it under `Setup notes:` in its output: `Native installation exists but ~/.local/bin is not in your PATH.` on macOS and Linux, or `Native installation exists but C:\Users\you\.local\bin is not in your PATH.` on Windows. It prints the fix with that note but doesn’t change PATH itself.
 
 The [VS Code extension](../03-IDE-Integrations/vs-code.md) does not place `claude` at this location. It bundles a private copy of the CLI inside the extension directory for its own chat panel and does not add it to PATH. If you have only installed the extension, `~/.local/bin/claude` will not exist. Run the [standalone install](../01-Getting-Started/setup.md) to use `claude` from a terminal, then continue below.
 
-Check if the install directory is in your PATH by listing your PATH entries and filtering for `local/bin`:
+First check that the program is there at all, then check whether its folder is in your PATH. The PATH fix is permanent, so you apply it once. Pick your platform’s tab and run its commands there: in your terminal on macOS and Linux, or in PowerShell or Command Prompt on Windows.
 
 - macOS/Linux
 
@@ -185,11 +201,22 @@ Check if the install directory is in your PATH by listing your PATH entries and 
 
 - Windows CMD
 
+Check that the installer put the program in place:
+
+```python
+ls -la ~/.local/bin/claude
+```
+
+- **`No such file or directory`**: there’s no native install. If you haven’t installed Claude Code another way, such as with npm, Homebrew, or a Linux package manager, [install Claude Code](../01-Getting-Started/setup.md#install-claude-code). If you installed it another way, see [Check for conflicting installations](#check-for-conflicting-installations).
+- **A listing for the file**: the program is there. Check your PATH next.
+
+List your PATH entries and filter for the install folder:
+
 ```python
 echo $PATH | tr ':' '\n' | grep -Fx "$HOME/.local/bin"
 ```
 
-If this prints `/Users/you/.local/bin` or `/home/you/.local/bin`, the directory is in your PATH and you can skip to [Check for conflicting installations](#check-for-conflicting-installations). If there’s no output, add it to your shell configuration.For Zsh, the default on macOS:
+If this prints `/Users/you/.local/bin` or `/home/you/.local/bin`, the directory is in your PATH and you can skip to [Check for conflicting installations](#check-for-conflicting-installations). If there’s no output, add it to your shell configuration with the two commands for your shell. The `echo` command saves the setting for every new terminal, and `source` applies it to the window you’re in. The `echo` command prints nothing when it succeeds.For Zsh, the default on macOS:
 
 ```python
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
@@ -210,17 +237,34 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 
-Alternatively, close and reopen your terminal.For other shells such as fish or Nushell, add `~/.local/bin` to your PATH using your shell’s own configuration syntax, then restart your terminal.Verify the fix worked:
+Alternatively, close and reopen your terminal.If the `echo` command prints `permission denied`, see [`permission denied` when adding to your PATH](#permission-denied-when-adding-to-your-path).For other shells such as fish or Nushell, add `~/.local/bin` to your PATH using your shell’s own configuration syntax, then restart your terminal.Verify the fix worked:
 
 ```python
 claude --version
 ```
 
+If `claude` is still not found, check these causes:
+
+- **The terminal predates the change**: a window that was already open keeps its old PATH, and a terminal inside an editor takes its PATH from the editor. Open a new window, or quit and reopen the editor.
+- **The line wasn’t saved**: run `grep -n '.local/bin' ~/.zshrc`, using your shell’s file name. It prints the line with its line number when the line is there. If it prints nothing, run the two PATH commands again.
+- **The line went to another shell’s file**: run `echo $0` to see your shell, then run the two PATH commands for that shell.
+
+Check that the installer put the program in place:
+
+```python
+Test-Path "$env:USERPROFILE\.local\bin\claude.exe"
+```
+
+- **`False`**: there’s no native install. If you haven’t installed Claude Code another way, such as with npm or WinGet, [install Claude Code](../01-Getting-Started/setup.md#install-claude-code). If you installed it another way, see [Check for conflicting installations](#check-for-conflicting-installations).
+- **`True`**: the program is there. Check your PATH next.
+
+List your PATH entries and filter for the install folder:
+
 ```python
 $env:PATH -split ';' | Select-String '\.local\\bin'
 ```
 
-If there’s no output, add the install directory to your User PATH:
+If this prints `C:\Users\you\.local\bin`, the directory is in your PATH and you can skip to [Check for conflicting installations](#check-for-conflicting-installations). If there’s no output, add the install directory to your User PATH:
 
 ```python
 $currentPath = [Environment]::GetEnvironmentVariable('PATH', 'User')
@@ -233,6 +277,22 @@ Restart your terminal for the change to take effect.Verify the fix worked:
 claude --version
 ```
 
+If `claude` is still not found in a new terminal, check these causes:
+
+- **The terminal runs inside an editor**: it takes its PATH from the editor, so quit and reopen the editor.
+- **The change wasn’t saved**: run `[Environment]::GetEnvironmentVariable('PATH', 'User')` and look for `.local\bin` in the PATH it prints. If it’s missing, run the two commands again.
+
+Check that the installer put the program in place:
+
+```python
+dir "%USERPROFILE%\.local\bin\claude.exe"
+```
+
+- **`File Not Found` or `The system cannot find the path specified.`**: there’s no native install. If you haven’t installed Claude Code another way, such as with npm or WinGet, [install Claude Code](../01-Getting-Started/setup.md#install-claude-code). If you installed it another way, see [Check for conflicting installations](#check-for-conflicting-installations).
+- **A listing for `claude.exe`**: the program is there. Check your PATH next.
+
+List your PATH entries and filter for the install folder:
+
 ```python
 echo %PATH% | findstr /i "local\bin"
 ```
@@ -242,6 +302,8 @@ If there’s no output, open System Settings, go to Environment Variables, and a
 ```python
 claude --version
 ```
+
+If `claude` is still not found in a new terminal, a terminal inside an editor takes its PATH from the editor, so quit and reopen the editor too.
 
 
 [​](#check-for-conflicting-installations)
@@ -260,7 +322,7 @@ List all `claude` binaries found in your PATH:
 which -a claude
 ```
 
-If this prints nothing, no `claude` is on your PATH yet. Go back to [Verify your PATH](#verify-your-path).Check the three locations a `claude` binary can come from. `~/.local/bin/claude` is the native installer, `~/.claude/local/` is a legacy local npm install created by older versions of Claude Code, and the npm global list shows a `-g` install:
+If this prints `claude not found`, a `no claude in` line, or nothing, no `claude` is on your PATH. The next checks show whether one is installed at all.Check the three locations a `claude` binary can come from. `~/.local/bin/claude` is the native installer, `~/.claude/local/` is a legacy local npm install created by older versions of Claude Code, and the npm global list shows a `-g` install:
 
 ```python
 ls -la ~/.local/bin/claude
@@ -276,17 +338,22 @@ ls -la ~/.claude/local/
 npm -g ls @anthropic-ai/claude-code 2>/dev/null
 ```
 
+If `ls -la ~/.local/bin/claude` printed `No such file or directory`, there’s no native install. If you haven’t installed Claude Code another way, such as with npm, Homebrew, or a Linux package manager, [install Claude Code](../01-Getting-Started/setup.md#install-claude-code). If `~/.local/bin/claude` exists but `which -a claude` didn’t list it, the folder isn’t in your PATH: see [Verify your PATH](#verify-your-path).
+
 List all `claude` binaries found in your PATH:
 
 ```python
 where.exe claude
 ```
 
-Check whether the native installer placed a binary:
+If this prints `INFO: Could not find files for the given pattern(s).`, no `claude` is on your PATH.Check whether the native installer placed a binary:
 
 ```python
 Test-Path "$env:USERPROFILE\.local\bin\claude.exe"
 ```
+
+- **`True`**: the native install is there. If `where.exe` found nothing, its folder isn’t in your PATH: see [Verify your PATH](#verify-your-path).
+- **`False`**: there’s no native install. If you haven’t installed Claude Code another way, such as with npm or WinGet, [install Claude Code](../01-Getting-Started/setup.md#install-claude-code).
 
 If you find multiple installations, keep only one. The native install at `~/.local/bin/claude` on macOS/Linux or `%USERPROFILE%\.local\bin\claude.exe` on Windows is recommended. Remove the extras: Uninstall an npm global install:
 
@@ -325,7 +392,16 @@ winget uninstall Anthropic.ClaudeCode
 
 Check directory permissions
 
-The installer needs write access to `~/.local/bin/` and `~/.claude/` on macOS and Linux. On Windows the install location is under `%USERPROFILE%`, which is writable by your user by default, so this section rarely applies there. Check whether the directories are writable:
+An install that fails on permissions names the path it couldn’t create or write. On Windows the install writes under `%USERPROFILE%`, which is writable by your user by default, so this section rarely applies there. On macOS and Linux the install writes to these locations:
+
+- `~/.claude/downloads/`: where the install command puts the downloaded binary
+- `~/.local/bin/`: the `claude` launcher
+- `~/.local/share/claude/`: each version it downloads
+- `~/.local/state/claude/`: its lock files
+- `~/.cache/claude/`: staged downloads
+- [`~/.claude.json`](claude-directory.md): your global config file, where the installer records the install method
+
+If you set `XDG_DATA_HOME`, `XDG_STATE_HOME`, or `XDG_CACHE_HOME`, the install uses those in place of `~/.local/share`, `~/.local/state`, and `~/.cache`. If you set [`CLAUDE_CONFIG_DIR`](env-vars.md), the global config file lives under that directory instead of your home directory. Check whether the directories are writable:
 
 ```python
 test -w ~/.local/bin && echo "writable" || echo "not writable"
@@ -382,14 +458,14 @@ These are the most frequently encountered installation problems and their soluti
 
 Install script returns HTML instead of a shell script
 
-When running the install command, you may see one of these errors:
+The install command fails with one of these errors when what it downloaded isn’t the install script. **Bash or Zsh**: the error quotes the first line of the returned page.
 
 ```python
 bash: line 1: syntax error near unexpected token `<'
 bash: line 1: `<!DOCTYPE html>'
 ```
 
-On PowerShell, the same problem appears as parse errors pointing into the returned page, with `iex` trying to run HTML and CSS as PowerShell:
+**PowerShell, parse errors**: the errors point into the returned page, with `iex` trying to run HTML and CSS as PowerShell.
 
 ```python
 iex : At line:1 char:2310
@@ -398,15 +474,31 @@ Missing argument in parameter list.
 ...
 ```
 
-The wording varies with the PowerShell version and system language: you may see `Missing expression after unary operator '--'` or a `ParserError` with `ParseException` instead. HTML tags or CSS in the quoted text identify this failure. If you download with `-OutFile install.ps1` instead, the saved file is the same web page, so that doesn’t help either. Depending on how the request was routed, you may instead see a 403 with no HTML body:
+The wording varies with the PowerShell version and system language: you may see `Missing expression after unary operator '--'` or a `ParserError` with `ParseException` instead. HTML tags or CSS in the quoted text identify this failure. If you download with `-OutFile install.ps1` instead, the saved file is the same web page, so that doesn’t help either. **PowerShell, `System.Xml.XmlDocument`**: the error names this type instead of quoting the page.
+
+```python
+System.Xml.XmlDocument : The term 'System.Xml.XmlDocument' is not recognized as the name of a cmdlet, function, script
+file, or operable program.
+```
+
+When `irm` can parse the response as XML, it returns an XML object instead of text, and `iex` then tries to run that object’s type name as a command. The install script is PowerShell code and doesn’t parse as XML, so this error also means the response was something other than the script. The wording around the type name varies with the PowerShell version and system language, but `System.Xml.XmlDocument` itself stays the same, so match on the type name. **CMD**: you see this error, followed by the HTML of the returned page.
+
+```python
+< was unexpected at this time.
+
+C:\Users\you><!DOCTYPE html>...
+```
+
+The first line appears in your system language, so look for the HTML that follows it. **A 403 with no page**: depending on how the request was routed, curl reports a 403 status with no HTML body.
 
 ```python
 curl: (22) The requested URL returned error: 403
 ```
 
-These all mean the install URL returned an HTML page or an error status instead of the install script. If the HTML page says “App unavailable in region,” Claude Code is not available in your country. See [supported countries](https://www.anthropic.com/supported-countries). A bare 403 with no body often has the same cause, but it can also come from a corporate proxy or firewall blocking the download. If you are in a supported country and still see the 403, work through [Check network connectivity](#check-network-connectivity) before trying the alternative installers below, since those reach the same hosts. Otherwise, this can happen due to network issues, regional routing, or a temporary service disruption. **Solutions:**
+These all mean the install URL returned a web page, an XML document, or an error status instead of the install script. If the error output quotes “App unavailable in region,” Claude Code isn’t available in your country. See [supported countries](https://www.anthropic.com/supported-countries). A bare 403 with no body often has the same cause, but it can also come from a corporate proxy or firewall blocking the download. If you are in a supported country and still see the 403, work through [Check network connectivity](#check-network-connectivity) before trying the alternative installers below, since those reach the same hosts. Otherwise, this can happen due to network issues, regional routing, or a temporary service disruption. **Solutions:**
 
-1.  **Use an alternative install method**: On macOS, install via Homebrew:
+1.  **Retry after a few minutes**: the issue is often temporary. Wait and try the original command again.
+2.  **Use an alternative install method**: unlike a native install, a Homebrew or WinGet install [doesn’t update itself by default](../01-Getting-Started/setup.md#auto-updates). On macOS, install via Homebrew:
 
     ``` shiki
     brew install --cask claude-code
@@ -419,7 +511,6 @@ These all mean the install URL returned an HTML page or an error status instead 
     ```
 
     Then run `claude --version` to confirm: the command prints a version number such as `2.1.211 (Claude Code)`. If the shell reports `claude` isn’t found, open a new terminal window and retry: the session you installed from keeps its old `PATH`.
-2.  **Retry after a few minutes**: the issue is often temporary. Wait and try the original command again.
 
 
 [​](#command-not-found-claude-after-installation)
@@ -435,7 +526,25 @@ The install finished but `claude` doesn’t work. The exact error varies by plat
 | Windows CMD | `'claude' is not recognized as an internal or external command`        |
 | PowerShell  | `claude : The term 'claude' is not recognized as the name of a cmdlet` |
 
-This means the install directory isn’t in your shell’s search path. See [Verify your PATH](#verify-your-path) for the fix on each platform.
+On Windows, if the error started right after Claude Code updated, see [restore `claude.exe` from its backup](#claude-exe-missing-after-an-update-on-windows). Otherwise, see [Verify your PATH](#verify-your-path) for the fix on each platform.
+
+
+[​](#permission-denied-when-adding-to-your-path)
+
+`permission denied` when adding to your PATH
+
+If the `echo` command that adds `~/.local/bin` to your PATH prints `zsh: permission denied: /Users/you/.zshrc` or `bash: /home/you/.bashrc: Permission denied`, your user can’t write to that file and nothing was saved. In your terminal, check who owns the file, using your shell’s file name in place of `~/.zshrc`:
+
+```python
+ls -l ~/.zshrc
+```
+
+The third field of the output is the owner.
+
+- **The owner is another user, such as `root`**: take ownership with `sudo chown $(whoami) ~/.zshrc`, which requires administrator rights.
+- **The owner is you**: the file is read-only. Make it writable with `chmod u+w ~/.zshrc`.
+
+Then run the two PATH commands for your shell in [Verify your PATH](#verify-your-path) again.
 
 
 [​](#curl-56-failure-writing-output-to-destination)
@@ -459,6 +568,19 @@ brew install --cask claude-code
 If Homebrew installs an older Claude Code version than you expect, the same stale index is usually the cause. The `claude-code` cask tracks the stable channel and is typically about one week behind the latest release; for the newest version run `brew install --cask claude-code@latest` instead. See [Configure release channel](../01-Getting-Started/setup.md#configure-release-channel) for the difference between the two casks.
 
 
+[​](#cask-is-not-installed)
+
+`Cask 'claude-code@latest' is not installed`
+
+Homebrew offers two casks, `claude-code` and `claude-code@latest`. Running `brew upgrade --cask claude-code@latest` when that cask isn’t the one installed prints `Error: Cask 'claude-code@latest' is not installed.` To see which cask you have, run this in your terminal:
+
+```python
+brew list --cask | grep claude-code
+```
+
+Upgrade the cask it prints. If it prints nothing, neither cask is installed.
+
+
 [​](#tls-or-ssl-connection-errors)
 
 TLS or SSL connection errors
@@ -470,7 +592,7 @@ Errors such as these mean the TLS handshake failed:
 - PowerShell’s `Could not create SSL/TLS secure channel`
 - PowerShell’s `Could not establish trust relationship for the SSL/TLS secure channel`
 
-**Solutions:**
+For `CRYPT_E_NO_REVOCATION_CHECK` or `CRYPT_E_REVOCATION_OFFLINE`, go to step 4. **Solutions:**
 
 1.  **Update your system CA certificates**: On Ubuntu/Debian:
 
@@ -479,10 +601,15 @@ Errors such as these mean the TLS handshake failed:
     ```
 
     On macOS, the system curl uses the Keychain trust store; updating macOS itself updates the root certificates.
-2.  **On Windows, enable TLS 1.2** in PowerShell before running the installer:
+2.  **In Windows PowerShell 5.1, enable TLS 1.2**:
 
     ``` shiki
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    ```
+
+    Then run the installer in the same window:
+
+    ``` shiki
     irm https://claude.ai/install.ps1 | iex
     ```
 3.  **Check for proxy or firewall interference**: corporate proxies that perform TLS inspection can cause these errors, including `unable to get local issuer certificate` and `SELF_SIGNED_CERT_IN_CHAIN`. For the install step, make the install download trust your corporate proxy’s CA:
@@ -534,6 +661,24 @@ Errors such as these mean the TLS handshake failed:
 `Failed to fetch version from downloads.claude.ai`
 
 The installer couldn’t reach the download server. This typically means `downloads.claude.ai` is blocked on your network. See [Check network connectivity](#check-network-connectivity).
+
+
+[​](#the-connection-dropped-while-downloading-the-update)
+
+The connection dropped while downloading the update
+
+The connection to the download server closed while `claude install` or `claude update` was fetching the Claude Code binary, and the retries didn’t recover. Claude Code retries the download when the connection drops, the transfer stalls, or the downloaded file fails its checksum, up to three attempts in total. A completed HTTP error, such as a 404, isn’t retried because the server already answered. Before v2.1.202, a single dropped connection failed the download immediately with the bare error `aborted` instead of retrying.
+
+```python
+The connection dropped while downloading the update (attempt 3/3: aborted). Check your network — proxies sometimes cut off large downloads.
+```
+
+The text in parentheses names which attempt failed and the underlying network error. `claude update` precedes the message with `Error: Failed to install native update` on stderr. A download that stays connected but doesn’t finish within 10 minutes fails with `Download timed out: exceeded the total deadline` instead. Claude Code doesn’t retry a timed-out download, because a connection too slow to finish inside the deadline won’t finish on an immediate retry either. The steps below apply to both messages. A proxy or gateway can close a long transfer before it finishes, and the Claude Code binary is a large download. **What to do:**
+
+- Run `claude update` again. On an otherwise healthy network, the download usually succeeds on the next run. For the timed-out message, run it again from a faster or less throttled network.
+- If your network requires a proxy, set `HTTPS_PROXY` before running the installer or `claude update`. See [Check network connectivity](#check-network-connectivity).
+- If a corporate proxy keeps closing the transfer, ask your network team to allow the full download from `downloads.claude.ai`. See [Network access requirements](../13-Enterprise-Admin/network-config.md#network-access-requirements).
+- Run `claude doctor` from your shell for installation diagnostics
 
 
 [​](#wrong-install-command-on-windows)
@@ -622,7 +767,7 @@ irm https://claude.ai/install.ps1 | iex
 
 `claude.exe` missing after an update on Windows
 
-If your terminal reports `'claude' is not recognized` right after Claude Code updated on Windows, check whether `%USERPROFILE%\.local\bin` still contains `claude.exe`. If that directory isn’t on your PATH at all, see [Fix your PATH](#command-not-found-claude-after-installation) instead. To update on Windows, Claude Code renames the existing `claude.exe` aside to a backup and moves the new version into its place. If moving the new version into place fails and Claude Code can’t rename the backup back either, the directory keeps the backup but has no `claude.exe`. The backup is a file in the same directory whose name begins with `claude.exe.old.` followed by a numeric timestamp. Run the following in PowerShell to rename the newest backup back to `claude.exe`:
+If your terminal reports `'claude' is not recognized` right after Claude Code updated on Windows, check whether `%USERPROFILE%\.local\bin` still contains `claude.exe`. If that directory isn’t on your PATH at all, see [Verify your PATH](#verify-your-path) instead. To update on Windows, Claude Code renames the existing `claude.exe` aside to a backup and moves the new version into its place. If moving the new version into place fails and Claude Code can’t rename the backup back either, the directory keeps the backup but has no `claude.exe`. The backup is a file in the same directory whose name begins with `claude.exe.old.` followed by a numeric timestamp. Run the following in PowerShell to rename the newest backup back to `claude.exe`:
 
 ```python
 Get-ChildItem "$env:USERPROFILE\.local\bin\claude.exe.old.*" | Sort-Object Name | Select-Object -Last 1 | Rename-Item -NewName claude.exe
@@ -668,6 +813,23 @@ Installing needs roughly 512 MB of free memory, and running Claude Code needs mo
     ```
 2.  **Close other processes** to free memory before installing.
 3.  **Use a larger instance** if possible. Claude Code requires at least 4 GB of RAM.
+
+
+[​](#installation-was-killed-before-it-could-finish)
+
+Installation was killed before it could finish
+
+The install script reports when the `claude install` step is terminated by a signal. On Linux, exit code 137 means the process received SIGKILL, and on a low-memory host that’s usually the kernel out-of-memory (OOM) killer. The script prints this explanation and exits with code 137:
+
+```python
+Installation was killed before it could finish (exit code 137). This usually means the system ran out of memory.
+Claude Code needs roughly 512MB of free memory to install. Free up memory, then run this script again.
+```
+
+For any other fatal signal, and for exit code 137 on macOS, the script prints `Installation was killed before it could finish (exit code <N>)` with the actual exit code and omits the out-of-memory explanation. The message comes from the install script macOS and Linux use, which also covers installs inside WSL; the native Windows install scripts never print it. Before v2.1.200, the script exited with only the shell’s bare `Killed` line. **What to do:**
+
+- Stop other processes to free memory, then rerun the installer
+- Add swap space or move to a larger instance. See [Install killed on low-memory Linux servers](#install-killed-on-low-memory-linux-servers) for the swap-file commands.
 
 
 [​](#install-hangs-in-docker)
@@ -822,6 +984,13 @@ Abort trap: 6
 2.  **Update macOS** if you’re on an older version. The binary uses load commands and system libraries that older macOS versions don’t support. Alternative install methods like Homebrew download the same binary and won’t resolve this error.
 
 
+[​](#bus-error-while-a-session-is-running)
+
+`Bus error` while a session is running
+
+If a running session exits and your shell prints `Bus error`, one cause is that Claude Code could no longer read its own executable file from disk. For example, the file was truncated, or deleted on network storage, while the session ran. Before the shell’s message, Claude Code’s runtime can print a crash report that includes `panic(main thread): Bus error at address` and `oh no: Bun has crashed. This indicates a bug in Bun, not your code.` When the executable became unreadable, the crash comes from the unreadable file, not from a bug in Bun. The report can also be missing, if the runtime couldn’t read the code that prints it either. Start a new session to continue. If Claude Code is installed on network storage, follow [Install on network storage](../01-Getting-Started/setup.md#install-on-network-storage) so upgrades don’t remove a binary that running sessions still need.
+
+
 [​](#exec-format-error-on-wsl1)
 
 `Exec format error` on WSL1
@@ -963,7 +1132,7 @@ These sections address login failures, OAuth errors, and token issues.
 
 Reset your login
 
-When login fails and the cause isn’t obvious, a clean re-authentication resolves most cases:
+When login fails and the cause isn’t clear, a clean re-authentication resolves most cases:
 
 1.  Run `/logout` to sign out completely
 2.  Close Claude Code
@@ -987,7 +1156,7 @@ If you see `OAuth error: Invalid code. Please make sure the full code was copied
 
 403 Forbidden after login
 
-If you see `API Error: 403 {"error":{"type":"forbidden","message":"Request not allowed"}}` after logging in:
+If you see `API Error: 403 Request not allowed` after logging in:
 
 - **Claude Pro/Max users**: verify your subscription is active at [claude.ai/settings](https://claude.ai/settings)
 - **Anthropic Console users**: confirm your account has the “Claude Code” or “Developer” role. Admins assign this in the Anthropic Console under Settings → Members.
@@ -998,7 +1167,7 @@ If you see `API Error: 403 {"error":{"type":"forbidden","message":"Request not a
 
 Claude Code access has not been granted for this account
 
-If the sign-in page shows `Authorization failed` with the message `Claude Code access has not been granted for this account. Contact your administrator.` after you log in from Claude Code, your Claude Enterprise organization has set your role to Custom and none of the [custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md) assigned to your groups grants Claude Code. On the Custom role, you get access only from those custom roles, so nothing you change in Claude Code resolves this error. To get access:
+If the sign-in page shows `Authorization failed` with the message `Claude Code access has not been granted for this account. Contact your administrator.` after you log in from Claude Code, your Claude Enterprise organization has set your role to Custom and none of the [custom roles](https://support.claude.com/en/articles/13930452) assigned to your groups grants Claude Code. On the Custom role, you get access only from those custom roles, so nothing you change in Claude Code resolves this error. To get access:
 
 1.  Ask an Owner of your Claude organization to assign a custom role that grants Claude Code access to one of your groups, or to change your role from Custom to a standard role such as User. Owners manage roles in the organization’s [role settings](https://claude.ai/admin-settings/roles).
 2.  After the Owner makes the change, run `claude` and log in again.
@@ -1008,7 +1177,7 @@ If the sign-in page shows `Authorization failed` with the message `Claude Code a
 
 This organization has been disabled with an active subscription
 
-If you see `API Error: 400 ... "This organization has been disabled"` despite having an active Claude subscription, an `ANTHROPIC_API_KEY` environment variable is overriding your subscription. This commonly happens when an old API key from a previous employer or project is still set in your shell profile. When `ANTHROPIC_API_KEY` is present and you have approved it, Claude Code uses that key instead of your subscription’s OAuth credentials. In non-interactive mode with the `-p` flag, the key is always used when present. See [authentication precedence](../13-Enterprise-Admin/iam.md#authentication-precedence) for the full resolution order. To use your subscription instead, unset the environment variable and remove it from your shell profile:
+If you see `API Error: 400 ... "This organization has been disabled"` despite having an active Claude subscription, an `ANTHROPIC_API_KEY` environment variable is overriding your subscription. This commonly happens when an old API key from a previous employer or project is still set in your shell profile. When `ANTHROPIC_API_KEY` is present and you have approved it, Claude Code uses that key instead of your subscription’s OAuth credentials. In non-interactive mode with the `-p` flag, the key is always used when present. See [authentication precedence](authentication.md#authentication-precedence) for the full resolution order. To use your subscription instead, unset the environment variable and remove it from your shell profile:
 
 - macOS/Linux
 
@@ -1051,7 +1220,7 @@ This fallback also applies on native Windows or any terminal where pasting into 
 
 Not logged in or token expired
 
-If Claude Code prompts you to log in again after a session, your OAuth token may have expired. Run `/login` to re-authenticate. If this happens frequently, check that your system clock is accurate, as token validation depends on correct timestamps. Parallel sessions on one machine share a saved login and coordinate its renewal so that only one process refreshes the token at a time. Before v2.1.211, waking the machine from sleep could cause two sessions to renew with the same token, which revoked the saved login and prompted every open session to log in again at once. On macOS, Claude Code saves credentials to the login Keychain. When the Keychain rejects the write, such as when it’s locked in an SSH session or its password is out of sync with your account password, Claude Code saves your login to the plaintext `~/.claude/.credentials.json` file instead. A Console login that creates an API key fails until the Keychain is writable again. To make the Keychain writable again and move your login back into the encrypted Keychain:
+If Claude Code prompts you to log in again after a session, your OAuth token may have expired. Run `/login` to re-authenticate. If this happens frequently, check that your system clock is accurate, as token validation depends on correct timestamps. Parallel sessions on one machine share a saved login and coordinate its renewal so that only one process refreshes the token at a time. For what the other sessions do after you sign in again in one of them, see [Not logged in](errors.md#not-logged-in). Before v2.1.211, waking the machine from sleep could cause two sessions to renew with the same token, which revoked the saved login and prompted every open session to log in again at once. On macOS, Claude Code saves credentials to the login Keychain. When the Keychain rejects the write, such as when it’s locked in an SSH session or its password is out of sync with your account password, Claude Code saves your login to the plaintext `~/.claude/.credentials.json` file instead. A Console login that creates an API key fails until the Keychain is writable again. To make the Keychain writable again and move your login back into the encrypted Keychain:
 
 1
 

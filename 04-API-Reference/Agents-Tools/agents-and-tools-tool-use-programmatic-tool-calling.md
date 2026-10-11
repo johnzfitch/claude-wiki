@@ -2,7 +2,7 @@
 title: "Programmatic tool calling - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:26Z"
+fetched_at: "2026-10-04T08:32:10Z"
 tags: ["api"]
 ---
 
@@ -20,7 +20,7 @@ Let Claude call your tools from code in the code execution container, cutting mo
 
 Programmatic tool calling
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Not eligible
 
@@ -785,7 +785,7 @@ Consider using Anthropic's managed solution if you're using the Claude API, [Cla
 
 Programmatic tool calling is built on the code execution infrastructure and uses the same sandbox containers. Container data, including execution artifacts and outputs, is retained for up to 30 days.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Next steps
 
@@ -819,7 +819,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5 and 5.1
 - Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
-- Sonnet 4.5, 4.6, and 5
+- Sonnet 4.5, 4.6, 5, and 5.5
 
 Supported platforms  
 - Claude API

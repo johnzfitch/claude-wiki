@@ -2,7 +2,7 @@
 title: "Go SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/go"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:31Z"
+fetched_at: "2026-10-04T08:33:26Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "cli", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api", "cli", "sdk"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,7 +48,7 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-[CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)Client SDKs
+[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
 # Go SDK
 
@@ -747,13 +747,14 @@ For detailed platform setup guides with code examples, see:
 - [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 - [Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)
+- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
 The Go SDK supports the following platforms:
 
 - **Agent Platform:** `import "github.com/anthropics/anthropic-sdk-go/vertex"`. Use `vertex.WithGoogleAuth(ctx, region, projectID)` or `vertex.WithCredentials(ctx, region, projectID, creds)`.
 - **Bedrock:** `import "github.com/anthropics/anthropic-sdk-go/bedrock"`. Use `bedrock.NewMantleClient` for the Messages-API Bedrock endpoint (streams over SSE), or `bedrock.WithLoadDefaultConfig(ctx)` / `bedrock.WithConfig(cfg)` (`bedrock-runtime` path). Importing the `bedrock` package globally registers a decoder for `application/vnd.amazon.eventstream` with the SDK's streaming layer (through package `init()`). This applies whether you use the `bedrock-runtime` `WithConfig`/`WithLoadDefaultConfig` path or `NewMantleClient`.
 - **Claude Platform on AWS:** `import anthropicaws "github.com/anthropics/anthropic-sdk-go/aws"`. Use `anthropicaws.NewClient(ctx, cfg)` with an `anthropicaws.ClientConfig` value to construct a client; set `WorkspaceID` on the config or the `ANTHROPIC_AWS_WORKSPACE_ID` environment variable. The `anthropicaws` import alias avoids a name collision with `github.com/aws/aws-sdk-go-v2/aws` when both are imported. Available in beta.
-- **Foundry:** Not currently supported in the Go SDK. See [Claude in Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md) for supported SDKs.
+- **Foundry:** `import "github.com/anthropics/anthropic-sdk-go/foundry"`. Use `foundry.NewClient(cfg)` with a `foundry.ClientConfig` value to construct a client; set `APIKey` (or `AzureADTokenProvider` for Microsoft Entra ID) and `Resource` on the config, or the `ANTHROPIC_FOUNDRY_API_KEY` and `ANTHROPIC_FOUNDRY_RESOURCE` environment variables.
 
 Use `bedrock.NewMantleClient` for new projects; `bedrock.WithLoadDefaultConfig`/`WithConfig` remain for existing applications using the Bedrock `InvokeModel` API.
 

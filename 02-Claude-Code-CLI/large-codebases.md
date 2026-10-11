@@ -2,7 +2,7 @@
 title: "Set up Claude Code in a monorepo or large codebase - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/large-codebases"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:34Z"
+fetched_at: "2026-10-06T06:23:39Z"
 tags: ["claude-code"]
 ---
 
@@ -99,10 +99,10 @@ Choose where to start Claude
 
 Where you launch `claude` determines which files Claude can read and edit without an additional permission grant, which CLAUDE.md files load into context at startup, and which project settings apply.
 
-| Start from      | File access                             | CLAUDE.md loaded at launch                                           | Use when                                   |
-|:----------------|:----------------------------------------|:---------------------------------------------------------------------|:-------------------------------------------|
-| Repository root | Every file                              | Root only; subdirectory files load on demand when Claude reads there | Tasks span multiple packages or subsystems |
-| A subdirectory  | That subtree only, until you grant more | That directory’s plus every ancestor’s                               | Work is scoped to one package or subsystem |
+| Start from      | File access                             | CLAUDE.md loaded at launch                   | Use when                                   |
+|:----------------|:----------------------------------------|:---------------------------------------------|:-------------------------------------------|
+| Repository root | Every file                              | Root only; subdirectory files load on demand | Tasks span multiple packages or subsystems |
+| A subdirectory  | That subtree only, until you grant more | That directory’s plus every ancestor’s       | Work is scoped to one package or subsystem |
 
 Project settings in `.claude/settings.json` aren’t inherited from parent directories the way CLAUDE.md files are. For which directory’s `.claude/settings.json` a session reads, see [where Claude Code looks for each file](settings.md#where-claude-code-looks-for-each-file). Each section below states whether its settings file belongs at the repository root or in the subdirectory you start from, and whether it is committed or kept local.
 
@@ -111,7 +111,7 @@ Project settings in `.claude/settings.json` aren’t inherited from parent direc
 
 Layer CLAUDE.md files by directory
 
-In a large codebase, a single CLAUDE.md at the repository root tends to either grow to cover every subsystem’s conventions, costing context on instructions unrelated to the current task, or stay too generic to be useful. Splitting instructions across per-directory files means Claude loads repository-wide rules plus only the conventions for the code you’re working in. Claude Code loads every [CLAUDE.md](memory.md) file from your working directory and every parent directory at launch, then loads each subdirectory’s file on demand when it reads files there. A root file sets repository-wide rules and each subdirectory adds its own. A common split is two levels:
+In a large codebase, a single CLAUDE.md at the repository root tends to either grow to cover every subsystem’s conventions, costing context on instructions unrelated to the current task, or stay too generic to be useful. Splitting instructions across per-directory files means Claude loads repository-wide rules plus only the conventions for the code you’re working in. Claude Code loads every [CLAUDE.md](memory.md) file from your working directory and every parent directory at launch, then loads each subdirectory’s file [on demand](memory.md#how-claude-md-files-load). A root file sets repository-wide rules and each subdirectory adds its own. A common split is two levels:
 
 - **Root `CLAUDE.md`**: instructions that apply everywhere, such as coding standards and commit conventions
 - **Per-subdirectory `CLAUDE.md`**: conventions specific to that area’s stack. In a monorepo that’s one per package. In a large single tree it’s one per subsystem such as `src/db/` or `src/api/`
@@ -151,10 +151,10 @@ Choose between per-directory CLAUDE.md and path-scoped rules
 
 Per-directory `CLAUDE.md` files and [path-scoped rules](memory.md#path-specific-rules) under `.claude/rules/` both let you target instructions to part of the tree. They differ in where the file lives and when it loads.
 
-| Approach                             | File location                            | Loads when                                                                              | Use when                                                                                  |
-|:-------------------------------------|:-----------------------------------------|:----------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|
-| Per-directory `CLAUDE.md`            | Inside the directory, alongside its code | At launch when started from that directory, or on demand when Claude reads a file there | Directory owners maintain their own conventions; instructions are versioned with the code |
-| Path-scoped rule in `.claude/rules/` | Central `.claude/` at the repo root      | When Claude works with a file matching the rule’s `paths:` glob                         | You want all conventions in one place, or the same rule applies to many scattered paths   |
+| Approach                             | File location                            | Loads when                                                      | Use when                                                                                  |
+|:-------------------------------------|:-----------------------------------------|:----------------------------------------------------------------|:------------------------------------------------------------------------------------------|
+| Per-directory `CLAUDE.md`            | Inside the directory, alongside its code | At launch when started from that directory, or on demand        | Directory owners maintain their own conventions; instructions are versioned with the code |
+| Path-scoped rule in `.claude/rules/` | Central `.claude/` at the repo root      | When Claude works with a file matching the rule’s `paths:` glob | You want all conventions in one place, or the same rule applies to many scattered paths   |
 
 For a comparison that also covers skills, see [Compare similar features](features-overview.md#compare-similar-features).
 
@@ -163,7 +163,7 @@ For a comparison that also covers skills, see [Compare similar features](feature
 
 Exclude irrelevant CLAUDE.md files
 
-When you start Claude from the repository root, each subdirectory’s CLAUDE.md loads as soon as Claude reads a file in that directory. The `claudeMdExcludes` setting skips specific files by path or glob pattern so they never load. Use this for directories you never work in, such as other teams’ packages, legacy code, or vendored subtrees. The exclusion list is static, not a per-task switch. To focus on one package today and another tomorrow, [start Claude from that package’s directory](#choose-where-to-start-claude) instead of editing exclusions. If you only want these exclusions for yourself, put the setting in `.claude/settings.local.json`. Claude Code adds that file to your global gitignore when it saves a setting there. Since you are creating it by hand here, add it to your gitignore yourself. Patterns use glob syntax matched against absolute file paths, so start relative-style patterns with `**/` to match anywhere in the tree. The example below excludes a package owned by another team:
+When you start Claude from the repository root, each subdirectory’s CLAUDE.md can [load on demand](memory.md#how-claude-md-files-load) during the session. The `claudeMdExcludes` setting skips specific files by path or glob pattern so they never load. Use this for directories you never work in, such as other teams’ packages, legacy code, or vendored subtrees. The exclusion list is static, not a per-task switch. To focus on one package today and another tomorrow, [start Claude from that package’s directory](#choose-where-to-start-claude) instead of editing exclusions. If you only want these exclusions for yourself, put the setting in `.claude/settings.local.json`. Claude Code adds that file to your global gitignore when it saves a setting there. Since you are creating it by hand here, add it to your gitignore yourself. Patterns use glob syntax matched against absolute file paths, so start relative-style patterns with `**/` to match anywhere in the tree. The example below excludes a package owned by another team:
 
 .claude/settings.local.json
 
@@ -225,7 +225,7 @@ Deny rules cover Claude’s built-in file tools. In Bash, they cover the file co
 
 Reduce file reads with code intelligence
 
-In a large codebase, finding where a symbol is defined or used can cost many file reads and grep calls. [Code intelligence plugins](../08-Plugins-Skills/plugins-code-intelligence.md) connect Claude to a language server so it can jump to definitions, find references, and surface type errors directly instead of scanning the tree. The official marketplace has plugins for TypeScript, Python, Go, Rust, and other common languages. Run the command below inside a Claude Code session to install the TypeScript plugin:
+In a large codebase, finding where a symbol is defined or used can cost many file reads and grep calls. [Code intelligence plugins](../08-Plugins-Skills/plugins-code-intelligence.md) connect Claude to a language server so it can jump to definitions, find references, and surface type errors directly instead of scanning the tree. The official marketplace has plugins for TypeScript, Python, Go, Rust, and other common languages. In the VS Code extension or the desktop app, install one by following [Install a plugin](../08-Plugins-Skills/discover-plugins.md#install-a-plugin). In a terminal, start Claude Code by running `claude`, then enter this at its prompt to install the TypeScript plugin:
 
 ```python
 /plugin install typescript-lsp@claude-plugins-official
@@ -296,7 +296,7 @@ For the full worktree settings reference, see [Worktree settings](settings-refer
 
 Grant access across packages or repositories
 
-This section applies when you start Claude from a subdirectory, or when a task spans multiple checkouts. If you start from the repository root in a single large tree, Claude already has access to every file and you can skip this. When you start Claude from `packages/api/`, it can read and write files within that directory. If a task requires changes across packages, such as updating a shared type that both `api` and `web` import, you need to grant access to the sibling directory. The same mechanism grants access to a separately-checked-out repository. The `additionalDirectories` setting in `.claude/settings.json` gives Claude access to directories outside the working directory. The example below grants access to two sibling packages:
+This section applies when you start Claude from a subdirectory, or when a task spans multiple checkouts. If you start from the repository root in a single large tree, Claude already has access to every file and you can skip this. When you start Claude from `packages/api/`, it can read and write files within that directory. If a task requires changes across packages, such as updating a shared type that both `api` and `web` import, you need to grant access to the sibling directory. The same mechanism grants access to a separately checked-out repository. The `additionalDirectories` setting in `.claude/settings.json` gives Claude access to directories outside the working directory. The example below grants access to two sibling packages:
 
 packages/api/.claude/settings.json
 

@@ -2,7 +2,7 @@
 title: "Export your Claude data | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9450526"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:33:15Z"
+fetched_at: "2026-10-10T06:28:30Z"
 tags: ["safety"]
 ---
 
@@ -13,7 +13,7 @@ July 8, 2026
 
 Data exports are available to individual Claude users on Free, Pro, and Max plans. Data exports include conversation data and the user data for your account.
 
-If you're a member of a Team or Enterprise plan, only your organization's Primary Owner can access data exports. For more information, see **[Export your organization's data](../13-Enterprise-Admin/how-can-i-export-my-organization-s-data.md)**.
+If you're a member of a Team or Enterprise plan, only your organization's Primary Owner can access data exports. For more information, see **[Export your organization's data](https://support.claude.com/en/articles/13346720)**.
 
 Individual Claude users can export user information and chat history from **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)** on the web app or Claude Desktop (it's not possible to run an export from Claude for iOS or Android).
 

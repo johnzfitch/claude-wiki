@@ -56,7 +56,7 @@ We’ve also outlined steps our customers should take to [safeguard their data](
 
 Agent systems should be designed to safeguard sensitive data and prevent misuse when interacting with other systems or agents. Since agents are tasked with achieving specific goals, attackers could trick an agent into ignoring its original instructions, revealing unauthorized information, or performing unintended actions by making it seem necessary to do so for the agent’s objectives (also referred to as "prompt injection"). Or attackers could exploit vulnerabilities in the tools or sub-agents that agents use.
 
-Claude already uses a system of [classifiers](research-constitutional-classifiers.md) to detect and guard against misuses such as prompt injections, in addition to several [other layers of security](https://docs.anthropic.com/en/docs/claude-code/security). Our Threat Intelligence team conducts ongoing monitoring to assess and mitigate new or emerging forms of malicious behaviour. In addition, we [provide guidance](../04-API-Reference/Test-Evaluate/platform-claude-com-test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) on how organizations using Claude can further decrease these risks. Tools added to our [Anthropic-reviewed MCP directory](connectors-directory.md) must adhere to our security, safety, and compatibility [standards](../22-Safety-Policy/anthropic-mcp-directory-policy.md).
+Claude already uses a system of [classifiers](research-constitutional-classifiers.md) to detect and guard against misuses such as prompt injections, in addition to several [other layers of security](https://docs.anthropic.com/en/docs/claude-code/security). Our Threat Intelligence team conducts ongoing monitoring to assess and mitigate new or emerging forms of malicious behaviour. In addition, we [provide guidance](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) on how organizations using Claude can further decrease these risks. Tools added to our [Anthropic-reviewed MCP directory](connectors-directory.md) must adhere to our security, safety, and compatibility [standards](../22-Safety-Policy/anthropic-mcp-directory-policy.md).
 
 When we discover new malicious behaviors or vulnerabilities through our monitoring and research, we strive to address them quickly and continuously improve our security measures to stay ahead of evolving threats.
 
@@ -86,10 +86,10 @@ These principles will guide our current and future work on agent development, an
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -115,7 +115,7 @@ These principles will guide our current and future work on agent development, an
 - [Coding](../18-Industry-UseCases/coding.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -135,7 +135,7 @@ These principles will guide our current and future work on agent development, an
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 

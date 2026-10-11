@@ -2,7 +2,7 @@
 title: "Rate limits - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/rate-limits"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:39:16Z"
+fetched_at: "2026-10-04T08:33:09Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -247,7 +251,7 @@ The API enforces service-configured limits at the organization level, but you ma
 - Limits are designed to prevent API abuse, while minimizing impact on common customer usage patterns.
 - Limits are defined by **usage tier**. Organizations are placed on a tier automatically based on usage history and account standing and can move to a higher tier over time as they use the API.
 - New organizations and organizations with limited usage history may start in the Evaluation tier, with limits below the standard limits shown on this page while account history is established. These starting limits are part of how Anthropic prevents fraud and abuse, and they increase automatically as your organization builds usage history.
-- Limits are set at the organization level. You can see your organization's tier and current limits on the [Rate limits](../Other/usage-limits.md) page in the [Claude Console](../Other/usage-limits.md).
+- Limits are set at the organization level. You can see your organization's tier and current limits on the [Rate limits](../Other/playground.md) page in the [Claude Console](../Other/usage-limits.md).
 - You might hit rate limits over shorter time intervals. For instance, a rate of 60 requests per minute (RPM) might be enforced as 1 request per second. Short bursts of requests can exceed the limit and trigger rate limit errors.
 - The following limits are the standard limits for each tier. If you need higher limits, see [Requesting higher limits](#requesting-higher-limits).
 - The API uses the [token bucket algorithm](https://en.wikipedia.org/wiki/Token_bucket) to do rate limiting. This means that your capacity is continuously replenished up to your maximum limit, rather than being reset at fixed intervals.
@@ -259,7 +263,7 @@ The API enforces service-configured limits at the organization level, but you ma
 
 **[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md):** The same monthly spend caps apply, and requests stop at the cap in the same way. Billing and tier increases work differently; see [Spend limits on Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md#spend-limits).
 
-Each of the Start, Build, and Scale tiers carries a monthly spend cap, which is the maximum your organization can spend on the API each calendar month. You can view your organization's monthly spend cap and set your own limit on the [Billing](../Other/usage-limits.md) page.
+Each of the Start, Build, and Scale tiers carries a monthly spend cap, which is the maximum your organization can spend on the API each calendar month. You can view your organization's monthly spend cap and set your own limit on the [Billing](../Other/playground.md) page.
 
 | Usage tier | Monthly spend cap |
 |------------|-------------------|
@@ -287,7 +291,7 @@ Once you reach your tier's spend cap, API usage pauses until 00:00 UTC on the fi
 
 
 
-- The error type is `rate_limit_error`, the same as for a rate limit, but the response has no `retry-after` header. Retrying, including the SDKs' automatic retries, fails until access resumes.
+- The error type is `rate_limit_error`, the same as for a rate limit, but the response has no `retry-after` header. Retrying, including the SDK's automatic retries, fails until access resumes.
 - On the Messages API, `error.details.error_code` is `enforced_spend_limit_reached`. Use it to tell this response apart from a rate limit.
 - Moving to a higher tier restores access; see [Requesting higher limits](#requesting-higher-limits).
 
@@ -299,7 +303,7 @@ You can also set your own spend limit below your tier's cap to control costs:
 
     ### Navigate to the Billing page
 
-    Go to [Settings \> Billing](../Other/usage-limits.md) in the Claude Console.
+    Go to [Settings \> Billing](../Other/playground.md) in the Claude Console.
 
 2.  2
 
@@ -359,11 +363,11 @@ Claude Haiku 3.5 (marked with footnote 4 in the following rate limit tables) als
 
 For all other models, cached input tokens do not count toward rate limits and are billed at the [cache read rate](../Guides/build-with-claude-prompt-caching.md#pricing), a fraction of the base input price. This means you can achieve significantly higher effective throughput by using [prompt caching](../Guides/build-with-claude-prompt-caching.md).
 
-To make the most of your rate limits, cache repeated content such as system instructions and prompts, large context documents, tool definitions, and conversation history; see [prompt caching](../Guides/build-with-claude-prompt-caching.md) for guidance. With effective caching, you can substantially increase your actual throughput without raising your rate limits. Monitor your cache hit rate on the [Usage page](../Other/usage-limits.md) to tune your caching strategy.
+To make the most of your rate limits, cache repeated content such as system instructions and prompts, large context documents, tool definitions, and conversation history; see [prompt caching](../Guides/build-with-claude-prompt-caching.md) for guidance. With effective caching, you can substantially increase your actual throughput without raising your rate limits. Monitor your cache hit rate on the [Usage page](../Other/playground.md) to tune your caching strategy.
 
 OTPM rate limits are evaluated in real time as output tokens are produced, counting only the actual tokens generated. The `max_tokens` parameter does not factor into OTPM rate limit calculations, so there is no rate limit downside to setting a higher `max_tokens` value.
 
-Rate limits are applied separately for each model; therefore you can use different models up to their respective limits simultaneously. You can check your current rate limits and behavior on the [Rate limits](../Other/usage-limits.md) page in the Claude Console, or read the configured limits programmatically with the [Rate Limits API](../Other/manage-claude-rate-limits-api.md).
+Rate limits are applied separately for each model; therefore you can use different models up to their respective limits simultaneously. You can check your current rate limits and behavior on the [Rate limits](../Other/playground.md) page in the Claude Console, or read the configured limits programmatically with the [Rate Limits API](../Other/manage-claude-rate-limits-api.md).
 
 
 
@@ -383,6 +387,7 @@ Custom tier
 | Claude Opus 5.5                                                                                            | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Opus 5                                                                                              | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Opus 4.x²                                                                                           | 1,000                             | 2,000,000                              | 400,000                                 |
+| Claude Sonnet 5.5                                                                                          | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Sonnet 5                                                                                            | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Sonnet 4.x³                                                                                         | 1,000                             | 2,000,000                              | 400,000                                 |
 | Claude Haiku 4.5                                                                                           | 1,000                             | 2,000,000                              | 400,000                                 |
@@ -392,7 +397,7 @@ Custom tier
 
 *^(2 Opus rate limit is a total limit that applies to combined traffic across Claude Opus 4.8, Opus 4.7, Opus 4.6, and Opus 4.5. Claude Opus 5.5 and Claude Opus 5 each have a separate rate limit and are not part of this combined bucket.)*
 
-*^(3 Sonnet 4.x rate limit is a total limit that applies to combined traffic across Sonnet 4.6 and Sonnet 4.5. Claude Sonnet 5 has a separate rate limit and is not part of this combined bucket.)*
+*^(3 Sonnet 4.x rate limit is a total limit that applies to combined traffic across Sonnet 4.6 and Sonnet 4.5. Claude Sonnet 5.5 and Claude Sonnet 5 each have a separate rate limit and are not part of this combined bucket.)*
 
 *^(4 Limit counts `cache_read_input_tokens` toward ITPM usage.)*
 
@@ -433,7 +438,7 @@ The response includes `anthropic-fast-*` headers that indicate your fast mode ra
 
 ### Monitoring your rate limits in the Console
 
-You can monitor your rate limit usage on the [Usage](../Other/usage-limits.md) page of the [Claude Console](../Other/usage-limits.md).
+You can monitor your rate limit usage on the [Usage](../Other/playground.md) page of the [Claude Console](../Other/usage-limits.md).
 
 In addition to providing token and request charts, the Usage page provides two separate rate limit charts. Use these charts to see what headroom you have to grow, identify when you may be hitting peak use, understand what rate limits to request, and learn how to improve your caching rates. The charts visualize a number of metrics for a given rate limit (for example, per model):
 
@@ -447,7 +452,7 @@ In addition to providing token and request charts, the Usage page provides two s
 
 ## Requesting higher limits
 
-To request higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the [Rate limits](../Other/usage-limits.md) page. Anthropic support can also raise limits; for urgent needs, contact [Anthropic support](https://support.claude.com).
+To request higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the [Rate limits](../Other/playground.md) page. Anthropic support can also raise limits; for urgent needs, contact [Anthropic support](https://support.claude.com).
 
 
 

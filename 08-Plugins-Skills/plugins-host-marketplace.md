@@ -2,7 +2,7 @@
 title: "Host and maintain a marketplace - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/host-marketplace"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-30T06:30:38Z"
+fetched_at: "2026-10-10T06:24:51Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -248,7 +248,7 @@ Without auto-update, users receive your changes when they run `/plugin marketpla
 
 Release a new version
 
-To release a new version to users, change the plugin’s `version`. Users get a new copy only when the plugin’s computed version differs from the one they have. That version comes from `plugin.json` first, then from the marketplace entry, per [Versions and updates](plugins-loading.md#versions-and-updates). A plugin that users [load in place](plugins-loading.md#find-plugins-on-disk) from a marketplace they added as a local directory isn’t controlled by `version`. It loads your current files at every session start, whatever its version string says. For every install other than an in-place load or one from a `command` source, either increase `version` on each release or omit it:
+To release a new version to users, change the plugin’s `version`. Users get a new copy only when the plugin’s computed version differs from the one they have. That version comes from `plugin.json` first, then from the marketplace entry, per [Versions and updates](plugins-loading.md#versions-and-updates). A plugin that users [load in place](plugins-loading.md#find-plugins-on-disk) from a marketplace they added from a local path isn’t controlled by `version`. It loads your current files at every session start, whatever its version string says. For every install other than an in-place load or one from a `command` source, either increase `version` on each release or omit it:
 
 - **Bump `version` on each release**: users stay on their cached copy until the string changes. If you set `"version": "1.0.0"` and push new commits without changing it, users don’t receive them.
 - **Omit `version`**: users track your commits instead. Leave `version` out of both `plugin.json` and the marketplace entry.
@@ -321,7 +321,7 @@ A plugin’s `name` is its identifier. Users reference it in the `enabledPlugins
 
 Migrate users with a renames map
 
-When you must change a `name`, add a top-level `renames` map to `marketplace.json` so Claude Code migrates existing users instead of reporting [`Plugin "<name>" not found in marketplace`](plugins-troubleshooting.md#plugin-not-found-in-marketplace). Do the same when you remove an entry from `plugins`. Automatic migration requires Claude Code v2.1.193 or later. Map each former name to its current name, or to `null` when the plugin is gone. This marketplace renames `formatter` to `code-formatter` and records that `legacy-linter` was removed:
+When you must change a `name`, add a top-level `renames` map to `marketplace.json` so Claude Code migrates existing users instead of reporting [`Plugin "<name>" not found in marketplace`](plugins-troubleshooting.md#plugin-not-found-in-marketplace). Do the same when you remove an entry from `plugins`. Map each former name to its current name, or to `null` when the plugin is gone. This marketplace renames `formatter` to `code-formatter` and records that `legacy-linter` was removed:
 
 ```python
 {
@@ -435,7 +435,13 @@ A `headersHelper` command doesn’t run, or headers from `headers` or from the c
 
 How users accept a headersHelper command
 
-A user accepts a plugin entry’s command each time they install or update that one plugin by itself. They do that from the plugin’s own view in `/plugin`, or with `claude plugin install` or `claude plugin update`. Claude Code shows the command and the archive URL, and runs the command only after the user accepts. In a non-interactive shell, pass [`--yes`](plugins-cli-reference.md#plugin-install) to accept the command. To accept only the command that a previous `--json` run displayed, pass [`--accept-command`](plugins-cli-reference.md#plugin-install) with the `sha256` the run reported. Claude Code runs only the command it showed, for the archive URL it showed. If the entry’s command or archive URL changed in between, Claude Code refuses the install or update. A change in the query string alone doesn’t count.
+A user accepts a plugin entry’s command each time they install or update that one plugin by itself. Claude Code shows the command and the archive URL, and runs the command only after the user accepts. Users can install or update the plugin inside a Claude Code session in a terminal, in their shell with no session running, or in the VS Code extension:
+
+- **Terminal session**: from the plugin’s own view in `/plugin`.
+- **Shell**: with `claude plugin install` or `claude plugin update`.
+- **VS Code extension**: from the [**Manage plugins** dialog](../03-IDE-Integrations/vs-code.md#manage-plugins), with version 2.1.290 or later of the extension.
+
+In a non-interactive shell, pass [`--yes`](plugins-cli-reference.md#plugin-install) to accept the command. To accept only the command that a previous `--json` run displayed, pass [`--accept-command`](plugins-cli-reference.md#plugin-install) with the `sha256` the run reported. Claude Code runs only the command it showed, for the archive URL it showed. If the entry’s command or archive URL changed in between, Claude Code refuses the install or update. A change in the query string alone doesn’t count, except in the VS Code extension or with `--accept-command`.
 
 
 [​](#installs-and-updates-that-refuse-the-command-instead-of-asking)

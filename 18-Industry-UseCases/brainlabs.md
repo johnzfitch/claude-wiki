@@ -2,7 +2,7 @@
 title: "Brainlabs Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/brainlabs"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:29Z"
+fetched_at: "2026-10-10T06:25:06Z"
 tags: ["agents", "case-studies", "enterprise", "security", "skills"]
 ---
 
@@ -17,7 +17,7 @@ Company size:
 Large
 
 Product:  
-[Claude Cowork](../15-Claude-AI-Features/product-cowork.md)[Claude Enterprise](enterprise.md)
+[Claude Cowork](../15-Claude-AI-Features/product-cowork.md)[Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 
 Location:  
 North America
@@ -53,7 +53,7 @@ How to create Skills
 
 Follow our step-by-step guide to write custom skills that extend Claude's capabilities with real examples and practical patterns.
 
-[Read more](https://claude.com/blog/how-to-create-skills-key-steps-limitations-and-examples)
+[Read more](https://claude.com/resources/articles/how-to-create-skills-key-steps-limitations-and-examples)
 
 ## The solution
 
@@ -79,7 +79,7 @@ Skills explained
 
 Where do Skills fit in the Claude stack alongside prompts, Projects, MCP, and subagents? Learn what tool to use when—and how they work together.
 
-[Read more](https://claude.com/blog/skills-explained)
+[Read more](https://claude.com/resources/articles/skills-explained)
 
 ## The outcome
 
@@ -98,6 +98,9 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 ## Related stories
 
 
+### How does a badge-maker shorten lead times but keep an old-world process alive?
+
+
 ### Caylent turns months of migration work into days with Claude Agent SDK
 
 
@@ -106,9 +109,6 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ### LG CNS modernizes 20-year-old enterprise systems with Claude
 
-
-### How Blank Metal, a lean professional services firm, runs on Claude Cowork
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -116,9 +116,9 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -148,7 +148,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -160,6 +160,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -171,8 +172,10 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -192,7 +195,9 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -235,9 +240,9 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -267,7 +272,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -279,6 +284,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -290,8 +296,10 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -311,7 +319,9 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

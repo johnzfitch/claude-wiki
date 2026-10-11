@@ -2,7 +2,7 @@
 title: "Enable and use web search | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10684626"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:31:24Z"
+fetched_at: "2026-10-10T06:27:57Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -10,6 +10,8 @@ tags: ["claude-ai", "search"]
 
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
+
+- Haiku 5.5
 
 - Sonnet 5.5
 
@@ -153,4 +155,4 @@ You can re-enable it anytime you need current information.
 
 - For web search questions or support, please visit our **[Online Safety Contacts](../22-Safety-Policy/online-safety-contacts.md)** page.
 
-- For content removal requests, please visit our **[Report, block, and remove content from Claude](../22-Safety-Policy/reporting-blocking-and-removing-content-from-claude.md)** page.
+- For content removal requests, please visit our **[Report, block, and remove content from Claude](https://support.claude.com/en/articles/10684638)** page.

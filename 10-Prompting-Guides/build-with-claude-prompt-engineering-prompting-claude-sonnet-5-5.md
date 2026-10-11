@@ -2,7 +2,7 @@
 title: "Prompting Claude Sonnet 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-09-29T06:31:17Z"
+fetched_at: "2026-10-07T06:24:05Z"
 tags: ["prompting"]
 ---
 
@@ -147,7 +147,7 @@ To run Claude Sonnet 5.5 without up-front thinking, send `thinking: {"type": "be
 
 ## Reasoning tasks with JSON output
 
-This section applies when you ask Claude Sonnet 5.5 for a JSON answer to a task that needs a few steps of working out. Examples include totaling figures from a document, applying a rule, or ranking items. On tasks like these, the model often answers without thinking first, particularly at `low` and `medium` effort. What helps depends on how you request JSON. Use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md#json-outputs) where they're available. The response text is then JSON that matches your schema, so there's nothing to parse.
+This section applies when you ask Claude Sonnet 5.5 for a JSON answer to a task that needs a few steps of working out. Examples include totaling figures from a document, applying a rule, or ranking items. On tasks like these, the model often answers without thinking first, particularly at `low` and `medium` effort. What helps depends on how you request JSON. Use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md) where they're available. The response text is then JSON that matches your schema, so there's nothing to parse.
 
 With structured outputs, the response text holds only the JSON, so the model can work the problem out only in its thinking. When it skips thinking, it can be less accurate on these tasks. These changes help keep accuracy high.
 
@@ -252,4 +252,4 @@ If the `bio` classifier blocks your organization's life sciences work, you can a
 
 If you turn on [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (beta), it retries `cyber` and `frontier_llm` declines on Claude Sonnet 5. It doesn't retry `bio`, `reasoning_extraction`, or `general_harms` declines. See [Refusals, fallback, and billing](../20-Models/models-sonnet-5-5-whats-new-sonnet-5-5.md#refusals-fallback-and-billing).
 
-If your prompts ask the model to include its reasoning in the response, remove those instructions, because they invite `reasoning_extraction` declines. With adaptive thinking, read the reasoning from [summarized thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#summarized-thinking) blocks instead (`display: "summarized"`).
+If your prompts ask the model to include its reasoning in the response, remove those instructions, because they invite `reasoning_extraction` declines. With adaptive thinking, read the reasoning from [summarized thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#summarized-thinking) blocks instead (`display: "summarized"`). You can still ask for a short explanation of the answer or a summary of the actions taken; see [Keep reasoning in thinking blocks](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).

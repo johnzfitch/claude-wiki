@@ -2,7 +2,7 @@
 title: "Documentation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/home"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:41Z"
+fetched_at: "2026-10-04T08:34:02Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -36,7 +36,7 @@ Everything you need to integrate Claude into your applications. From first API c
 
 SearchCtrlK
 
-[Quickstart](../../01-Getting-Started/get-started.md)[Get API key](usage-limits.md)[API reference](../Endpoints/overview.md)
+[Quickstart](../../01-Getting-Started/get-started.md)[Get API key](playground.md)[API reference](../Endpoints/overview.md)
 
 Python
 
@@ -118,13 +118,13 @@ Managed Agents
 
     [Quickstart](../../01-Getting-Started/get-started.md)
 
-    [Get API key](usage-limits.md)
+    [Get API key](playground.md)
 
     [Choose a model](../../20-Models/about-claude-models-overview.md)
 
     [Install an SDK](cli-sdks-libraries-overview.md)
 
-    [Try the API in playground](usage-limits.md)
+    [Try the API in playground](playground.md)
 
 2.  2
 
@@ -170,7 +170,7 @@ Managed Agents
 
     [Workspaces and admin](manage-claude-workspaces.md)
 
-    [API key management](usage-limits.md)
+    [API key management](playground.md)
 
     [Usage monitoring](manage-claude-usage-cost-api.md)
 
@@ -198,7 +198,9 @@ Complex projectsAgentsCoding
 
 For long-running agentic coding and knowledge work
 
-### [Sonnet 5](../../20-Models/models-sonnet-5-overview.md)
+### [Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
+
+New
 
 Everyday tasksWritingCost-efficient
 
@@ -240,6 +242,6 @@ Latest features and updates.
 
 
 
-[Claude Code](https://platform.claude.com/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md)
+[Claude Code](../../02-Claude-Code-CLI/code-home.md)
 
 An agentic coding assistant in your terminal.

@@ -2,7 +2,7 @@
 title: "Rakuten Claude Managed Agents case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/rakuten-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:57Z"
+fetched_at: "2026-10-10T06:28:58Z"
 tags: ["agents", "case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -34,7 +34,7 @@ Claude Managed Agents: Get to production 10x faster
 
 We're launching Claude Managed Agents, a suite of composable APIs for building and deploying cloud-hosted agents at scale.
 
-[Read more](https://claude.com/blog/claude-managed-agents)
+[Read more](https://claude.com/resources/articles/claude-managed-agents)
 
 [Rakuten](https://www.rakuten.com/) is a global technology company with over 70 businesses spanning e-commerce, travel, fintech, digital content, and communications. As part of its company-wide "AI-nization" strategy, the company moved from using Claude Code to accelerate software development to building AI agents that work alongside employees in every business function. Yusuke Kaji, General Manager of AI for Business at Rakuten, spoke with Anthropic about why the team adopted Claude Managed Agents, what it took to go from experiment to production, and what changes when employees start delegating outcomes to agents instead of tasks. The following conversation has been edited for length and clarity.
 
@@ -113,9 +113,9 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -145,7 +145,7 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -157,6 +157,7 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -168,8 +169,10 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -189,7 +192,9 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -232,9 +237,9 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -264,7 +269,7 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -276,6 +281,7 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -287,8 +293,10 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -308,7 +316,9 @@ Rakuten uses Claude Code to accelerate software development, achieving 7 hours o
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

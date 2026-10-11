@@ -570,9 +570,9 @@ Chat with buying specialist
 
 Chat with buying specialist
 
-[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](../17-Billing-Plans/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## Build on the Claude Platform
 
@@ -740,7 +740,7 @@ Yes. Sales-assisted Claude Enterprise plans include invoice billing. Self-serve 
 
 ### Where do I get an API key for Claude Platform and how does billing work?
 
-Create an API key in the [Claude Console](../04-API-Reference/Other/usage-limits.md). For production workloads, you can use [Workload Identity Federation](../04-API-Reference/Other/manage-claude-workload-identity-federation.md) to exchange your cloud provider's identity for short-lived tokens instead of managing static keys. Self-serve accounts are prepaid: add a payment method, purchase credits, and optionally enable auto-reload. Credits cover API usage, the Workbench, and Claude Code (when authenticated with an API key). Enterprise customers can use monthly invoicing instead, [contact sales](https://claude.com/contact-sales) to set this up.
+Create an API key in the [Claude Console](../04-API-Reference/Other/playground.md). For production workloads, you can use [Workload Identity Federation](../04-API-Reference/Other/manage-claude-workload-identity-federation.md) to exchange your cloud provider's identity for short-lived tokens instead of managing static keys. Self-serve accounts are prepaid: add a payment method, purchase credits, and optionally enable auto-reload. Credits cover API usage, the Workbench, and Claude Code (when authenticated with an API key). Enterprise customers can use monthly invoicing instead, [contact sales](https://claude.com/contact-sales) to set this up.
 
 [Prev](#)
 

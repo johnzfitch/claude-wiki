@@ -1,8 +1,8 @@
 ---
 title: "Update User - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/beta/organization/users/update"
+source_url: "https://platform.claude.com/docs/en/api/admin/users/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-28T06:33:24Z"
+fetched_at: "2026-09-18T06:35:17Z"
 tags: ["api"]
 ---
 

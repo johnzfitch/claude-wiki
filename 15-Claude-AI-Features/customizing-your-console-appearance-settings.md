@@ -2,7 +2,7 @@
 title: "Customizing your Console appearance settings | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13346458-customizing-your-console-appearance-settings"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:31:42Z"
+fetched_at: "2026-10-10T06:28:10Z"
 tags: ["claude-ai"]
 ---
 

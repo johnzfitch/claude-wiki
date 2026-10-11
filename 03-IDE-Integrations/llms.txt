@@ -17,6 +17,7 @@ Path: 03-IDE-Integrations/chrome.md
   - [Install the extension when Claude asks](#install-the-extension-when-claude-asks)
   - [Enable Chrome by default](#enable-chrome-by-default)
   - [Manage site permissions](#manage-site-permissions)
+  - [Permission prompts in VS Code sessions](#permission-prompts-in-vs-code-sessions)
   - [Browser tools in plan mode](#browser-tools-in-plan-mode)
 - [Example workflows](#example-workflows)
   - [Test a local web application](#test-a-local-web-application)
@@ -30,8 +31,10 @@ Path: 03-IDE-Integrations/chrome.md
   - [Save screenshots to disk](#save-screenshots-to-disk)
 - [Troubleshooting](#troubleshooting)
   - [Extension not detected](#extension-not-detected)
+  - [Project settings can’t turn on Chrome](#project-settings-can%E2%80%99t-turn-on-chrome)
   - [Browser not responding](#browser-not-responding)
   - [Connection drops during long sessions](#connection-drops-during-long-sessions)
+  - [Extension signed in to a different organization](#extension-signed-in-to-a-different-organization)
   - [Windows-specific issues](#windows-specific-issues)
   - [Common error messages](#common-error-messages)
 - [See also](#see-also)
@@ -81,7 +84,7 @@ Before using Claude Code with Chrome, you need:
 - [Claude Code](../01-Getting-Started/quickstart.md#step-1-install-claude-code)
 - A direct Anthropic plan (Pro, Max, Team, or Enterprise)
 
-Chrome integration also requires signing in with `/login`. If you authenticate with an API key or a long-lived token from [`claude setup-token`](../13-Enterprise-Admin/iam.md#generate-a-long-lived-token), Claude Code keeps Chrome integration off, even when you pass `--chrome`, because the browser extension can’t authenticate with those credentials. Before v2.1.216, these sessions could enable Chrome integration, but every attempt to connect to the browser extension failed with a 403 error.
+In Enterprise organizations that have HIPAA enabled, Claude in Chrome is off by default, and an [Owner](../13-Enterprise-Admin/server-managed-settings.md#access-control) can turn it on in [**Organization settings \> Claude in Chrome**](https://claude.ai/admin-settings/browser-extension). Your Business Associate Agreement (BAA) with Anthropic doesn’t cover data sent to third-party sites through Claude in Chrome. See the [Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide) for a list of Eligible Services. Chrome integration also requires signing in with `/login`. If you authenticate with an API key or a long-lived token from [`claude setup-token`](../02-Claude-Code-CLI/authentication.md#generate-a-long-lived-token), Claude Code keeps Chrome integration off, even when you pass `--chrome`, because the browser extension can’t authenticate with those credentials. Before v2.1.216, these sessions could enable Chrome integration, but every attempt to connect to the browser extension failed with a 403 error.
 
 Chrome integration is not available through third-party providers like Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. If you access Claude exclusively through a third-party provider, you need a separate claude.ai account to use this feature.
 
@@ -138,9 +141,9 @@ Two managed MCP policies turn the prompt off:
 
 Enable Chrome by default
 
-To avoid passing `--chrome` each session, run `/chrome` and select “Enabled by default”. Claude Code starts normally when Chrome isn’t running. Before v2.1.211, startup could hang when Chrome integration was enabled but Chrome wasn’t running. In the [VS Code extension](vs-code.md#automate-browser-tasks-with-chrome), Chrome is available whenever the Chrome extension is installed. No additional flag is needed.
+To connect Chrome without passing `--chrome` each time, run `/chrome` in a CLI session and select **Enabled by default**. In the [VS Code extension](vs-code.md#automate-browser-tasks-with-chrome), type `/chrome` in the prompt box and turn on the **Enabled by default** switch. The two share one setting, so turning it on in either place turns it on for both the CLI and VS Code. With the setting on and Claude Code v2.1.287 or later, each VS Code session connects to your browser as it starts, so Claude can use it before you type `@browser`. On earlier versions, or with the setting off, a VS Code session connects when you type `@browser`. Claude Code starts normally when Chrome isn’t running. Before v2.1.211, startup could hang when Chrome integration was enabled but Chrome wasn’t running.
 
-Enabling Chrome by default in the CLI increases context usage since browser tools are always loaded. If you notice increased context consumption, disable this setting and use `--chrome` only when needed.
+Enabling Chrome by default increases context usage since the browser tools and their instructions are always loaded. If you notice increased context consumption, turn the setting off and connect only when needed, with `--chrome` in the CLI or by typing [`@browser`](vs-code.md#automate-browser-tasks-with-chrome) in the VS Code prompt box.
 
 
 [​](#manage-site-permissions)
@@ -150,11 +153,18 @@ Manage site permissions
 Site-level permissions are inherited from the Chrome extension. Manage permissions in the Chrome extension settings to control which sites Claude can browse, click, and type on. In [auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode), when the auto mode classifier itself approves a browser call to a site, the extension skips its own per-site check for that call, unless your permission rules deny any site to Claude in Chrome.
 
 
+[​](#permission-prompts-in-vs-code-sessions)
+
+Permission prompts in VS Code sessions
+
+In a VS Code session, when Claude Code asks before a browser action, the prompt appears as a card in the chat panel. When the action targets a site you haven’t allowed, the card also offers to allow that site. In a session that connected to your browser at start because [Enabled by default](#enable-chrome-by-default) is on, Claude Code asks you before browser actions on a site you haven’t allowed, in Manual, Edit automatically, Auto, and Bypass permissions modes. In Auto and Bypass permissions modes, this applies until you type `@browser` in that session.
+
+
 [​](#browser-tools-in-plan-mode)
 
 Browser tools in plan mode
 
-In [plan mode](../02-Claude-Code-CLI/permission-modes.md#analyze-before-you-edit-with-plan-mode), a permission prompt appears before Claude records a GIF, opens a new tab, or runs a shortcut. If [bypass permissions mode is available](../02-Claude-Code-CLI/permission-modes.md#skip-all-checks-with-bypasspermissions-mode) in your session and [feature-flag fetching](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching) is off, these calls run without a prompt. A `tabs_context_mcp` call also prompts when it sets `createIfEmpty`, and so does a `browser_batch` call that includes any of these actions.
+In [plan mode](../02-Claude-Code-CLI/permission-modes.md#analyze-before-you-edit-with-plan-mode), a permission prompt appears before Claude records a GIF, opens a new tab, or runs a shortcut. In an interactive CLI session, if [bypass permissions mode is available](../02-Claude-Code-CLI/permission-modes.md#skip-all-checks-with-bypasspermissions-mode) and [feature-flag fetching](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching) is off, these calls run without a prompt. A `tabs_context_mcp` call also prompts when it sets `createIfEmpty`, and so does a `browser_batch` call that includes any of these actions.
 
 
 [​](#example-workflows)
@@ -219,11 +229,12 @@ Open the bug tracker at bugs.example.com, create a new issue,
 and attach logs/session.log to it
 ```
 
-Three restrictions apply to uploads:
+If Claude refuses to attach a file or an upload fails, check for these causes:
 
 - **Permissions**: Claude can upload a file only when the session is allowed to read it, so [permission rules](../02-Claude-Code-CLI/settings-reference.md#permission-settings) that deny `Read` access to a file also block uploading it.
 - **Size**: a single upload can include up to 10 MB of files in total.
 - **Hard links**: Claude refuses files that have multiple hard links, which is common inside package-manager stores like `node_modules`. Copy the file and upload the copy.
+- **Credential names**: Claude refuses a file whose name or folder is one that credentials are kept under, such as `.env`, a `.pem` or `.key` file, or anything under `.ssh`. Requires Claude Code v2.1.293 or later.
 
 
 [​](#draft-content-in-google-docs)
@@ -328,6 +339,23 @@ For Edge:
 Other Chromium-based browsers read the same file from their own configuration directory, named after the browser. For example, Brave on macOS uses `~/Library/Application Support/BraveSoftware/Brave-Browser/NativeMessagingHosts/`, and on Windows each browser has its own registry key, such as `HKCU\Software\BraveSoftware\Brave-Browser\NativeMessagingHosts\`.
 
 
+[​](#project-settings-can’t-turn-on-chrome)
+
+Project settings can’t turn on Chrome
+
+This warning in your terminal means the project you’re working in tried to turn on Chrome integration, and Claude Code didn’t allow it:
+
+```python
+Claude Code ignored CLAUDE_CODE_ENABLE_CFC in this project's settings: a project can't turn on Claude in Chrome. To turn it on yourself, run /chrome or start with --chrome.
+```
+
+The project’s `.claude/settings.json` or `.claude/settings.local.json` sets [`CLAUDE_CODE_ENABLE_CFC`](../02-Claude-Code-CLI/env-vars.md#variables) to `1` in its `env` block to turn Chrome integration on. Claude Code didn’t apply that setting, so Chrome integration is off in this session and Claude has no browser tools. Claude Code skips the setting because those files are stored in the project directory, and a repository you check out must not be able to connect Claude to your browser. You can keep working as you are. If you want browser tools, or want the warning gone, do one of these:
+
+- **To get browser tools now**: exit and start again with `claude --chrome` in your shell.
+- **To get browser tools in later sessions**: run `/chrome` at the Claude Code prompt and select [**Enabled by default**](#enable-chrome-by-default). This applies to sessions you start afterward, not the one that’s running.
+- **To stop the warning without browser tools**: remove the `CLAUDE_CODE_ENABLE_CFC` line from the project’s settings file.
+
+
 [​](#browser-not-responding)
 
 Browser not responding
@@ -343,7 +371,18 @@ If Claude’s browser commands stop working:
 
 Connection drops during long sessions
 
-The Chrome extension’s service worker can go idle during extended sessions, which breaks the connection. If browser tools stop working after a period of inactivity, run `/chrome` and select “Reconnect extension”.
+The Chrome extension’s service worker can go idle during extended sessions, which breaks the connection. If browser tools stop working after a period of inactivity, run `/chrome` and select “Reconnect extension”. When you run `/chrome`, check its `Status` line. If it reads “Not connected”, the running session’s own connection to Chrome has failed. Select “Reconnect extension” to restart that connection. After the connection succeeds, the extension’s reconnect page opens in Chrome. Before v2.1.290, “Reconnect extension” only opened that page and didn’t restart a failed connection, so if browser tools don’t return on an earlier version, update Claude Code.
+
+
+[​](#extension-signed-in-to-a-different-organization)
+
+Extension signed in to a different organization
+
+If you belong to more than one claude.ai organization, the extension must be signed in to the same organization as Claude Code. If the two differ, Claude’s browser tools return “Browser extension is not connected”, even when both use the same claude.ai account. To see which organization Claude Code is signed in to, run [`/status`](../02-Claude-Code-CLI/commands.md) at the Claude Code prompt and read the `Organization` row.
+
+If you log out of the extension, you lose the shortcuts and scheduled tasks saved in it. Try the other fixes under [Common error messages](#common-error-messages) first.
+
+To change the extension’s organization, log out in the extension’s settings, then log in and select the organization that `/status` shows.
 
 
 [​](#windows-specific-issues)
@@ -363,12 +402,12 @@ Common error messages
 
 These are the most frequently encountered errors and how to resolve them:
 
-| Error                                       | Cause                                                                                                                                          | Fix                                                                                                                                                                                                                                                       |
-|---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ”Browser extension is not connected”        | Native messaging host cannot reach the extension, or your organization’s IP allowlist rejects the connection to `bridge.claudeusercontent.com` | Restart Chrome and Claude Code, then run `/chrome` to reconnect. If your organization uses IP allowlisting and the error persists, see [Organization IP allowlists and proxy egress](../13-Enterprise-Admin/network-config.md#organization-ip-allowlists-and-proxy-egress) |
-| Extension shows “Not detected” in `/chrome` | Chrome extension is not installed or is disabled                                                                                               | Install or enable the extension in `chrome://extensions`                                                                                                                                                                                                  |
-| ”No tab available”                          | Claude tried to act before a tab was ready                                                                                                     | Ask Claude to create a new tab and retry                                                                                                                                                                                                                  |
-| ”Receiving end does not exist”              | Extension service worker went idle                                                                                                             | Run `/chrome` and select “Reconnect extension”                                                                                                                                                                                                            |
+| Error                                       | Cause                                                                                                                                                                                                                                           | Fix                                                                                                                                                                                                                                                                                                                                                                                                                |
+|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ”Browser extension is not connected”        | The extension isn’t installed and running in Chrome, the extension is signed in to a different claude.ai account or organization than Claude Code, or your organization’s IP allowlist rejects the connection to `bridge.claudeusercontent.com` | Check that the extension is signed in to the same claude.ai account and [organization](#extension-signed-in-to-a-different-organization) as Claude Code, restart Chrome and Claude Code, then run `/chrome` to reconnect. If your organization uses IP allowlisting and the error persists, see [Organization IP allowlists and proxy egress](../13-Enterprise-Admin/network-config.md#organization-ip-allowlists-and-proxy-egress) |
+| Extension shows “Not detected” in `/chrome` | Chrome extension is not installed or is disabled                                                                                                                                                                                                | Install or enable the extension in `chrome://extensions`                                                                                                                                                                                                                                                                                                                                                           |
+| ”No tab available”                          | Claude tried to act before a tab was ready                                                                                                                                                                                                      | Ask Claude to create a new tab and retry                                                                                                                                                                                                                                                                                                                                                                           |
+| ”Receiving end does not exist”              | Extension service worker went idle                                                                                                                                                                                                              | Run `/chrome` and select “Reconnect extension”                                                                                                                                                                                                                                                                                                                                                                     |
 
 
 [​](#see-also)
@@ -395,17 +434,9 @@ Path: 03-IDE-Integrations/claude-for-chrome.md
 
 Claude in Chrome reads the page you’re signed in to, then clicks, types, and fills forms while you decide what happens next.
 
-Add to Chrome
-
-[Add to Chrome](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn)
-
-Add to Chrome
+[Add to Chrome (opens in new tab)](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn)
 
 Available on all paid plans. Not on a paid plan? [Upgrade now](../17-Billing-Plans/pricing.md)
-
-[Play video](#)
-
-Play video
 
 ## A refreshing way to work on the web
 
@@ -419,36 +450,9 @@ Everyday tools
 
 Background tasks
 
-Active
-
-[Play video](#)
-
-Play video
-
 ### From browser research to finished deliverables
 
 Pair Claude in Chrome with Claude Cowork to turn web research into polished content. Chrome navigates and gathers information, Claude Cowork produces Excel models, comparison decks, and reports without having to copy and paste.
-
-## ✶ Welcome to Claude Code
-
-\> Think harder...
-
-``` welcome-terminal__ui-code
-            while(curious) {
-              question everything();
-              dig_deeper();
-              connect_dots(unexpected);
-
-              if (stuck) {         
-                keep_thinking();
-              }
-            }
-          
-```
-
-\*
-
-Brewing…
 
 ### Works with Claude Code
 
@@ -456,7 +460,7 @@ Connect development workflows to Chrome for a partner that tests and iterates wi
 
 ### Uses your everyday tools
 
-Bring Claude into your workflow to make apps work better, without leaving the browser.  
+Bring Claude into your workflow to make apps work better, without leaving the browser.
 
 ### Runs tasks in the background
 
@@ -468,61 +472,37 @@ Start a workflow and move on. Claude completes tasks while you focus elsewhere.
 
 Claude can navigate your analytics dashboard, extract the numbers you need, and compile them into a summary. No exports, no tab-switching, no manual copying.
 
-Learn more
-
-[Learn more](https://claude.com/resources/use-cases/pull-metrics-from-analytics-dashboards)
-
-Learn more
+[Learn more (opens in new tab)](https://academy.claude.com/use-cases/pull-metrics-from-analytics-dashboards)
 
 ### Organize files in Google Drive
 
 Claude can sort through your Drive, create a folder structure, move files where they belong, and flag duplicates and old files for you to review. You approve the changes instead of doing the sorting yourself.
 
-Learn more
-
-[Learn more](https://claude.com/resources/use-cases/organize-files-in-google-drive)
-
-Learn more
+[Learn more (opens in new tab)](https://academy.claude.com/use-cases/organize-files-in-google-drive)
 
 ### Prepare and plan from your calendar
 
 Claude can read your calendar, pull context from email threads, flag which meetings you need to prepare for, and book rooms if they’re missing. Run it every evening and start each day knowing what's coming.
 
-Learn more
-
-[Learn more](https://claude.com/resources/use-cases/prepare-and-plan-from-your-calendar)
-
-Learn more
+[Learn more (opens in new tab)](https://academy.claude.com/use-cases/prepare-and-plan-from-your-calendar)
 
 ### Research competitors, get a comparison deck
 
 Claude in Chrome visits competitor sites and pulls pricing, features, and positioning. Claude Cowork compiles everything into a formatted PowerPoint ready for your next strategy meeting.
 
-Learn more
-
-[Learn more](https://claude.com/resources/use-cases/size-a-market-using-your-research)
-
-Learn more
+[Learn more (opens in new tab)](https://academy.claude.com/use-cases/size-a-market-using-your-research)
 
 ### Log sales calls to your CRM
 
 Claude can read your calendar, match attendees to Salesforce contacts, and draft activity logs for each call. You add notes and approve before anything gets created.
 
-Learn more
-
-[Learn more](https://claude.com/resources/use-cases/log-sales-calls-to-your-crm)
-
-Learn more
+[Learn more (opens in new tab)](https://academy.claude.com/use-cases/log-sales-calls-to-your-crm)
 
 ### Clean up promotional emails
 
 Claude can scan through your inbox, identify marketing emails, newsletters, and automated notifications, then present them as a list for you to review before deleting in bulk.
 
-Learn more
-
-[Learn more](https://claude.com/resources/use-cases/clean-up-promotional-emails)
-
-Learn more
+[Learn more (opens in new tab)](https://academy.claude.com/use-cases/clean-up-promotional-emails)
 
 ## Core capabilities
 
@@ -530,35 +510,23 @@ Reach the web that has no API
 
 Access internal tools, legacy portals, admin consoles, and invoice systems. Claude works with the logins you have, on the tab in front of you. Drag more tabs into Claude’s tab group and Claude works across all of them.
 
-[](#send)
-
 Your whole setup, in the side panel
 
 The side panel now runs a full [Claude Cowork](../15-Claude-AI-Features/product-cowork.md) session. The [skills](https://claude.com/skills), [plugins](../08-Plugins-Skills/claude-com-plugins.md), and [connectors](../04-API-Reference/Other/partners-mcp.md) you've already built are there, with nothing to set up in the browser.
-
-[](#threads)
 
 ### Your session follows you
 
 Every conversation saves to your history. Sessions live with your account, not the machine, so you can start in Chrome and pick it up on desktop or mobile without needing to re-explain. A skill you save in the panel runs from any surface too.
 
-[](#get-help)
-
 ### Three ways to access the extension
 
 Access Claude in Chrome through the side panel when the work is on the page in front of you and nothing else needs to be open, in Claude Cowork when the browser is one step in a longer job, or in Claude Code when you’re building the site you’re testing.
-
-[](#collaborate)
 
 ## Stay in control
 
 Hidden instructions on a page can try to redirect Claude’s actions. Though Claude in Chrome has built-in defenses that have been tested against real attacks, we recommend the habits below as a best practice.
 
-Read the safety blog
-
-[Read the safety blog](https://www.anthropic.com/news/prompt-injection-defenses)
-
-Read the safety blog
+[Read the safety blog (opens in new tab)](https://www.anthropic.com/news/prompt-injection-defenses)
 
 ### What we built
 
@@ -578,6 +546,26 @@ Purchases, financial actions, and other one-way doors wait for you.
 
 On Team and Enterprise, admins turn the extension on or off org-wide and set site allowlists and blocklists.
 
+Guide
+
+Mitigating the risk of prompt injections in browser use
+
+[Read more (opens in new tab)](../19-Reference/prompt-injection-defenses.md)
+
+Guide
+
+Using Claude in Chrome Safely
+
+[Read more (opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)
+
+Guide
+
+Claude in Chrome Permissions Guide
+
+[Read more (opens in new tab)](https://support.claude.com/en/articles/12902446-claude-for-chrome-permissions-guide)
+
+1 of 3
+
 ### What we recommend
 
 #### Don’t use on sensitive workflows
@@ -596,41 +584,6 @@ Some sites hide instructions that override yours. Our classifiers provide a defe
 
 Report issues through the feedback options. It’s how we catch attacks we haven’t seen.
 
-Guide
-
-Mitigating the risk of prompt injections in browser use
-
-Read more
-
-[Read more](../19-Reference/prompt-injection-defenses.md)
-
-Read more
-
-Guide
-
-Using Claude in Chrome Safely
-
-Read more
-
-[Read more](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)
-
-Read more
-
-Guide
-
-Claude in Chrome Permissions Guide
-
-Read more
-
-[Read more](../15-Claude-AI-Features/claude-for-chrome-permissions-guide.md)
-
-Read more
-
-[Prev](#)
-
-Prev
-
-
 ## FAQ
 
 ### How does Claude Cowork work with the Chrome extension?
@@ -647,7 +600,7 @@ Avoid financial transactions, password management, or anything involving sensiti
 
 ### What are the security risks?
 
-Browser AI faces unique security risks, like prompt injection attacks, where malicious actors might try to trick Claude into unintended actions, such as sharing your bank information or deleting important files. While we’ve implemented protections, they aren’t foolproof. Attack vectors are constantly evolving and Claude may hallucinate, leading to actions that you did not intend. We’ve shared our testing results, including possible attack scenarios, so you can make informed decisions, and strongly encourage you to [read about the risks](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) before using this product. [Read blog post.](../19-Reference/prompt-injection-defenses.md)
+Browser AI faces unique security risks, like prompt injection attacks, where malicious actors might try to trick Claude into unintended actions, such as sharing your bank information or deleting important files. While we’ve implemented protections, they aren’t foolproof. Attack vectors are constantly evolving and Claude may hallucinate, leading to actions that you did not intend. We’ve shared our testing results, including possible attack scenarios, so you can make informed decisions, and strongly encourage you to [read about the risks (opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) before using this product. [Read blog post. (opens in new tab)](../19-Reference/prompt-injection-defenses.md)
 
 ### What’s the difference between using Claude in Chrome alone vs. with Claude Cowork?
 
@@ -657,420 +610,246 @@ Claude in Chrome Troubleshooting
 
 This article helps you resolve common issues with Claude for Chrome and explains how to provide feedback.
 
-Read more
+[Read more (opens in new tab)](https://support.claude.com/en/articles/12902405-claude-for-chrome-troubleshooting)
 
-[Read more](https://support.claude.com/en/articles/12902405-claude-for-chrome-troubleshooting)
+Claude in Chrome Troubleshooting
 
-Read more
+This article helps you resolve common issues with Claude for Chrome and explains how to provide feedback.
 
-[Prev](#)
-
-Prev
-
+[Read more (opens in new tab)](https://support.claude.com/en/articles/12902405-claude-for-chrome-troubleshooting)
 
 Start on the page you’re already on
 
-Add to Chrome
-
-[Add to Chrome](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn)
-
-Add to Chrome
+[Add to Chrome (opens in new tab)](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn)
 
 This is a Google extension. The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.
 
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](../15-Claude-AI-Features/product-overview.md)
-  Claude
-
-- Claude Code
-
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
-  Claude Code
-
-- Claude Cowork
-
-  [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](../14-Connectors/claude-for-slack.md)
-  @Claude
-
-- Claude Science
-
-  [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-  Claude Security
-
-- Download app
-
-  [Download app](https://www.claude.com/download)
-  Download app
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Capabilities
-
-- Artifacts
-
-  [Artifacts](https://www.claude.com/features/artifacts)
-  Artifacts
-
-- Design
-
-  [Design](../15-Claude-AI-Features/product-design.md)
-  Design
-
-- Connectors
-
-  [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-  Connectors
-
-- Plugins
-
-  [Plugins](https://www.claude.com/marketplace/plugins)
-  Plugins
-
-- Skills
-
-  [Skills](https://www.claude.com/skills)
-  Skills
-
-Extensions
-
-- Claude in Chrome
-
-  [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-  Claude in Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-Models
-
-- Mythos
-
-  [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-  Mythos
-
-- Fable
-
-  [Fable](../15-Claude-AI-Features/claude-fable.md)
-  Fable
-
-- Opus
-
-  [Opus](../15-Claude-AI-Features/claude-opus.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-  Haiku
-
-Enterprise
-
-- Overview
-
-  [Overview](../18-Industry-UseCases/enterprise.md)
-  Overview
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-  Claude Code for Enterprise
-
-Use cases
-
-- AI agents
-
-  [AI agents](../18-Industry-UseCases/agents.md)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](../18-Industry-UseCases/code-modernization.md)
-  Code modernization
-
-- Coding
-
-  [Coding](../18-Industry-UseCases/coding.md)
-  Coding
-
-- Commerce
-
-  [Commerce](../18-Industry-UseCases/commerce.md)
-  Commerce
-
-Departments
-
-- Customer support
-
-  [Customer support](../18-Industry-UseCases/customer-support.md)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-  Cybersecurity
-
-- Legal
-
-  [Legal](../18-Industry-UseCases/legal.md)
-  Legal
-
-- Sales
-
-  [Sales](../18-Industry-UseCases/sales.md)
-  Sales
-
-Industries
-
-- Financial services
-
-  [Financial services](../18-Industry-UseCases/finance.md)
-  Financial services
-
-- Government
-
-  [Government](../18-Industry-UseCases/government.md)
-  Government
-
-- Healthcare
-
-  [Healthcare](../18-Industry-UseCases/healthcare.md)
-  Healthcare
-
-- Higher education
-
-  [Higher education](../18-Industry-UseCases/education.md)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](../18-Industry-UseCases/teachers.md)
-  K-12 teachers
-
-- Life sciences
-
-  [Life sciences](../18-Industry-UseCases/life-sciences.md)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-  Nonprofits
-
-- Small business
-
-  [Small business](../18-Industry-UseCases/small-business.md)
-  Small business
-
-Programs
-
-- Startups
-
-  [Startups](../15-Claude-AI-Features/programs-startups.md)
-  Startups
-
-- Scientists
-
-  [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-  Scientists
-
-Developers
-
-- Developer docs
-
-  [Developer docs](../02-Claude-Code-CLI/code-home.md)
-  Developer docs
-
-- Developer blog
-
-  [Developer blog](https://claude.dev/)
-  Developer blog
-
-- Community
-
-  [Community](https://www.claude.com/community)
-  Community
-
-- Console
-
-  [Console](../04-API-Reference/Other/home.md)
-  Console
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-Platform
-
-- Overview
-
-  [Overview](https://www.claude.com/platform/api)
-  Overview
-
-- Marketplace
-
-  [Marketplace](https://www.claude.com/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-  Microsoft Foundry
-
-Resources
-
-- Blog
-
-  [Blog](https://www.claude.com/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](../04-API-Reference/Other/partners.md)
-  Claude partner network
-
-- Claude Academy
-
-  [Claude Academy](https://academy.claude.com/)
-  Claude Academy
-
-- Customer stories
-
-  [Customer stories](../18-Industry-UseCases/customers.md)
-  Customer stories
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Powered by Claude
-
-  [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](https://www.claude.com/marketplace/service-partners)
-  Service partners
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Check files
-
-  [Check files](https://claude.com/check-files)
-  Check files
-
-- Regional compliance
-
-  [Regional compliance](https://www.claude.com/regional-compliance)
-  Regional compliance
-
-- Report abuse
-
-  [Report abuse](https://claude.com/form/anthropic-content-reporting)
-  Report abuse
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Research
-
-  [Research](../19-Reference/anthropic-com-research.md)
-  Research
-
-- Anthropic news
-
-  [Anthropic news](../19-Reference/news.md)
-  Anthropic news
-
-- Policy on the AI Exponential
+[](https://www.claude.com/)
+
+© 2026 Anthropic PBC
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](../18-Industry-UseCases/customer-support.md)
+- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
+- [Legal](../18-Industry-UseCases/legal.md)
+- [Sales](../18-Industry-UseCases/sales.md)
+
+## Industries
+
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
+- [Financial services](../18-Industry-UseCases/finance.md)
+- [Government](../18-Industry-UseCases/government.md)
+- [Healthcare](../18-Industry-UseCases/healthcare.md)
+- [Higher education](../18-Industry-UseCases/education.md)
+- [K-12 teachers](../18-Industry-UseCases/teachers.md)
+- [Life sciences](../18-Industry-UseCases/life-sciences.md)
+- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Small business](../18-Industry-UseCases/small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](../18-Industry-UseCases/customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](../18-Industry-UseCases/customer-support.md)
+- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
+- [Legal](../18-Industry-UseCases/legal.md)
+- [Sales](../18-Industry-UseCases/sales.md)
+
+## Industries
+
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
+- [Financial services](../18-Industry-UseCases/finance.md)
+- [Government](../18-Industry-UseCases/government.md)
+- [Healthcare](../18-Industry-UseCases/healthcare.md)
+- [Higher education](../18-Industry-UseCases/education.md)
+- [K-12 teachers](../18-Industry-UseCases/teachers.md)
+- [Life sciences](../18-Industry-UseCases/life-sciences.md)
+- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Small business](../18-Industry-UseCases/small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](../18-Industry-UseCases/customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
 
 ---
 
@@ -1085,8 +864,8 @@ Path: 03-IDE-Integrations/jetbrains.md
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [From your IDE](#from-your-ide)
-  - [From external terminals](#from-external-terminals)
+  - [Run Claude Code from your IDE](#run-claude-code-from-your-ide)
+  - [Connect from an external terminal](#connect-from-an-external-terminal)
 - [Configuration](#configuration)
   - [Claude Code settings](#claude-code-settings)
   - [Plugin settings](#plugin-settings)
@@ -1160,7 +939,7 @@ Install the JetBrains plugin
 
 Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains Marketplace and restart your IDE.
 
-If `claude` is installed somewhere your IDE can’t find, set the full path in the plugin’s [Claude command setting](#general-settings). Claude Code works with any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account, and no API key is required. You’ll be prompted to [log in](../13-Enterprise-Admin/iam.md#log-in-to-claude-code) the first time you run `claude`.
+If `claude` is installed somewhere your IDE can’t find, set the full path in the plugin’s [Claude command setting](#general-settings). Claude Code works with any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account, and no API key is required. You’ll be prompted to [log in](../02-Claude-Code-CLI/authentication.md#log-in-to-claude-code) the first time you run `claude`.
 
 
 [​](#usage)
@@ -1168,16 +947,16 @@ If `claude` is installed somewhere your IDE can’t find, set the full path in t
 Usage
 
 
-[​](#from-your-ide)
+[​](#run-claude-code-from-your-ide)
 
-From your IDE
+Run Claude Code from your IDE
 
 Run `claude` from your IDE’s integrated terminal, and all integration features will be active.
 
 
-[​](#from-external-terminals)
+[​](#connect-from-an-external-terminal)
 
-From external terminals
+Connect from an external terminal
 
 Use the `/ide` command in any external terminal to connect Claude Code to your JetBrains IDE and activate all features:
 
@@ -1399,12 +1178,14 @@ Path: 03-IDE-Integrations/vs-code.md
   - [Check account and usage](#check-account-and-usage)
 - [Customize your workflow](#customize-your-workflow)
   - [Choose where Claude lives](#choose-where-claude-lives)
+  - [Continue conversations after a reload](#continue-conversations-after-a-reload)
   - [Run multiple conversations](#run-multiple-conversations)
   - [Organize sessions into groups](#organize-sessions-into-groups)
   - [Filter the sessions list](#filter-the-sessions-list)
   - [Switch to terminal mode](#switch-to-terminal-mode)
 - [Manage plugins](#manage-plugins)
   - [Install plugins](#install-plugins)
+  - [Uninstall plugins](#uninstall-plugins)
   - [Share a plugin install link](#share-a-plugin-install-link)
   - [Manage marketplaces](#manage-marketplaces)
 - [Automate browser tasks with Chrome](#automate-browser-tasks-with-chrome)
@@ -1419,6 +1200,7 @@ Path: 03-IDE-Integrations/vs-code.md
   - [Run CLI in VS Code](#run-cli-in-vs-code)
   - [Switch between extension and CLI](#switch-between-extension-and-cli)
   - [Include terminal output in prompts](#include-terminal-output-in-prompts)
+  - [Move a running command or subagent to the background](#move-a-running-command-or-subagent-to-the-background)
   - [Monitor background processes](#monitor-background-processes)
   - [Connect to external tools with MCP](#connect-to-external-tools-with-mcp)
 - [Work with git](#work-with-git)
@@ -1454,7 +1236,7 @@ Prerequisites
 Before installing, make sure you have:
 
 - VS Code 1.94.0 or later
-- An Anthropic account: any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account works, and no API key is required. You’ll [sign in](../13-Enterprise-Admin/iam.md#log-in-to-claude-code) with this account when you first open the extension. If you access Claude through a third-party provider like Amazon Bedrock or Google Cloud’s Agent Platform, see [Use third-party providers](#use-third-party-providers) for setup instructions.
+- An Anthropic account: any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account works, and no API key is required. You’ll [sign in](../02-Claude-Code-CLI/authentication.md#log-in-to-claude-code) with this account when you first open the extension. If you access Claude through a third-party provider like Amazon Bedrock or Google Cloud’s Agent Platform, see [Use third-party providers](#use-third-party-providers) for setup instructions.
 
 The extension bundles its own copy of the CLI (command-line interface) for the chat panel. To run `claude` in VS Code’s integrated terminal, you also need the [standalone CLI install](../01-Getting-Started/setup.md). See [VS Code extension vs. Claude Code CLI](#vs-code-extension-vs-claude-code-cli) for details.
 
@@ -1468,7 +1250,7 @@ Click the link for your IDE to install directly:
 - [Install for VS Code](vscode:extension/anthropic.claude-code)
 - [Install for Cursor](cursor:extension/anthropic.claude-code)
 
-Or in VS Code, press `Cmd+Shift+X` (Mac) or `Ctrl+Shift+X` (Windows/Linux) to open the Extensions view, search for “Claude Code”, and click **Install**. The extension also installs in other VS Code forks like Devin Desktop or Kiro. Search for “Claude Code” in the editor’s Extensions view, or install from the [Open VSX registry](https://open-vsx.org/extension/Anthropic/claude-code). If your editor can’t install the extension, [install the CLI](../01-Getting-Started/quickstart.md) and run `claude` in its integrated terminal instead. The CLI works in any terminal.
+Or in VS Code, press `Cmd+Shift+X` (Mac) or `Ctrl+Shift+X` (Windows/Linux) to open the Extensions view, search for “Claude Code”, and click **Install**. The extension’s version number is the Claude Code version it bundles. For example, a feature that requires Claude Code v2.1.286 or later needs version 2.1.286 or later of the extension, which the Extensions view shows. The extension also installs in other VS Code forks like Devin Desktop or Kiro. Search for “Claude Code” in the editor’s Extensions view, or install from the [Open VSX registry](https://open-vsx.org/extension/Anthropic/claude-code). If your editor can’t install the extension, [install the CLI](../01-Getting-Started/quickstart.md) and run `claude` in its integrated terminal instead. The CLI works in any terminal. To run Claude Code inside a dev container, see [Development containers](../02-Claude-Code-CLI/devcontainer.md).
 
 If the extension doesn’t appear after installation, restart VS Code or run “Developer: Reload Window” from the Command Palette.
 
@@ -1483,13 +1265,15 @@ Once installed, you can start using Claude Code through the VS Code interface:
 
 Open the Claude Code panel
 
-Throughout VS Code, the Spark icon indicates Claude Code: The quickest way to open Claude is to click the Spark icon in the **Editor Toolbar** (top-right corner of the editor). The icon only appears when you have a file open.
+Throughout VS Code, the Spark icon indicates Claude Code:
+
+The quickest way to open Claude is to click the Spark icon in the **Editor Toolbar** (top-right corner of the editor). The icon only appears when you have a file open.
 
 Other ways to open Claude Code:
 
 - **Activity Bar**: click the Spark icon in the left sidebar to open the sessions list. Click any session to open it in your [preferred location](#extension-settings), or start a new one. This icon is always visible in the Activity Bar.
 - **Command Palette**: `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux), type “Claude Code”, and select an option like “Open in New Tab”
-- **Status Bar**: if you’ve set [`preferredLocation`](#extension-settings) to `sidebar`, or opened Claude with **Claude Code: Open in Side Bar**, click **✻ Claude Code** in the bottom-right corner of the window. This works even when no file is open.
+- **Status Bar**: click **✻ Claude Code** in the bottom-right corner of the window. This works even when no file is open.
 
 You can drag the Claude panel to reposition it anywhere in VS Code. See [Customize your workflow](#customize-your-workflow) for details.
 
@@ -1539,7 +1323,7 @@ The prompt box supports several features:
     - `/plan` with a task, such as `/plan fix the auth bug`: switches to plan mode and starts planning that task.
     - `/plan open`: when you’re already in plan mode, opens the plan file in the editor.
   - **Edit automatically**: Claude makes edits without asking.
-- **Model**: select **Switch model…** from the command menu to change the model mid-session. You can also click the model name at the bottom of the prompt box to open the same picker. When the current model supports [effort levels](../02-Claude-Code-CLI/model-config.md#adjust-effort-level), the picker also shows an **Effort** row and the model name button shows the selected level. When you pick a level other than `max`, Claude Code saves it for the current model as your default, under [`modelSettings`](../02-Claude-Code-CLI/settings-reference.md#modelsettings) in your user settings; `max` applies to the current session only. The model name button and the **Effort** row require Claude Code v2.1.257 or later. When [dynamic workflows](../02-Claude-Code-CLI/workflows.md) are enabled and the current model supports it, an **Ultracode** switch appears under the **Effort** row. Turn it on to have Claude plan a [workflow](../02-Claude-Code-CLI/workflows.md#let-claude-decide-with-ultracode) for each substantive task in this session, at the selected effort level. While it’s on, the model name button shows `· Ultracode` after the level. The switch requires Claude Code v2.1.284 or later.
+- **Model**: select **Switch model…** from the command menu to change the model mid-session. You can also click the model name at the bottom of the prompt box to open the same picker. With Claude Code v2.1.284 or later, typing `/model` on its own in the prompt box opens the picker too. When the current model supports [effort levels](../02-Claude-Code-CLI/model-config.md#adjust-effort-level), the picker also shows an **Effort** row and the model name button shows the selected level. When you pick a level other than `max`, Claude Code saves it for the current model as your default, under [`modelSettings`](../02-Claude-Code-CLI/settings-reference.md#modelsettings) in your user settings; `max` applies to the current session only. The model name button and the **Effort** row require Claude Code v2.1.257 or later. When [dynamic workflows](../02-Claude-Code-CLI/workflows.md) are enabled and the current model supports it, an **Ultracode** switch appears under the **Effort** row. Turn it on to have Claude plan a [workflow](../02-Claude-Code-CLI/workflows.md#let-claude-decide-with-ultracode) for each substantive task in this session, at the selected effort level. While it’s on, the model name button shows `· Ultracode` after the level. The switch requires Claude Code v2.1.284 or later.
 - **Command menu**: click `/` or type `/` to open the command menu. Options include attaching files, switching models, and toggling extended thinking. The Customize section includes entries such as MCP servers, commands, output styles, hooks, memory, instructions, permissions, and plugins. Items with a terminal icon open in the integrated terminal.
   - To browse commands such as `/usage` or [`/remote-control`](../02-Claude-Code-CLI/remote-control.md), select **Slash commands** in the Customize section. A dialog lists them with a filter box. Pick one to run it. Typing `/` in the prompt box still suggests commands inline. Requires Claude Code v2.1.257 or later. Typing `/skills` also opens this dialog. Each [skill](../08-Plugins-Skills/skills.md) row shows its [visibility](../08-Plugins-Skills/skills.md#override-skill-visibility-from-settings), such as **On** or **Name only**. Click the visibility to change it, except on rows marked **locked**, such as plugin skills. The `/skills` shortcut and the visibility controls require Claude Code v2.1.280 or later.
   - Select **Output styles** in the Customize section to pick an [output style](../02-Claude-Code-CLI/output-styles.md), including your custom styles. Requires Claude Code v2.1.257 or later. To create a custom style instead, select **Build a custom style** from the **Output styles** menu. Claude Code writes the [style file](../02-Claude-Code-CLI/output-styles.md#create-a-custom-output-style) for you at the project or user level. Requires Claude Code v2.1.261 or later.
@@ -1557,12 +1341,14 @@ The prompt box supports several features:
   - To report a bug, click **Report a problem** at the bottom of the menu, or type `/bug` or `/feedback` with an optional description that prefills the report. When you submit the report and you’re signed in to Anthropic on a first-party connection, Claude Code sends it to Anthropic. Requires Claude Code v2.1.229 or later. On a third-party provider, or without Anthropic credentials, nothing is sent. The dialog says so before you write. Submitting saves the report as a [local archive under `~/.claude/feedback-bundles/`](../13-Enterprise-Admin/data-usage.md#telemetry-services) with known API key and token patterns redacted. Send that file to your Anthropic account representative or attach it to a support request. The confirmation names the file and includes a **Show folder** button. Saving the report on your computer requires Claude Code v2.1.284 or later. If your organization’s policy turns product feedback off, **Report a problem** doesn’t appear in the menu, and `/bug` and `/feedback` show a `Feedback is turned off by your organization's policy or this environment's settings.` notice instead of opening the report. With Claude Code v2.1.284 or later, if you set the `DISABLE_FEEDBACK_COMMAND` or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` environment variable, feedback is also turned off and opening the report shows that notice instead.
 - **Side questions**: type `/btw` followed by a question to ask about your session [without adding to the conversation](../02-Claude-Code-CLI/interactive-mode.md#side-questions-with-%2Fbtw). The answer opens in a panel beside the chat, where you can ask follow-up questions. The thread survives window reloads. Claude Code keeps the newest 20 exchanges and expires stored threads on the [`cleanupPeriodDays`](../02-Claude-Code-CLI/settings-reference.md#cleanupperioddays) schedule, as long as Claude Code can [safely determine the retention period](../02-Claude-Code-CLI/claude-directory.md#cleaned-up-automatically). To clear a thread, click the trash icon in the panel. Requires Claude Code v2.1.227 or later.
 - **Copy a response**: hover over a response and click **Copy response** to copy it to your clipboard, or type `/copy` to copy the latest response. `/copy 2` copies the second-to-last. Requires Claude Code v2.1.277 or later.
+- **Bookmarks**: hover over a response and click **Bookmark response** to save it, or click **Remove bookmark** on a saved response to remove it. To review saved responses, open the Bookmarks panel: click the bookmark icon at the top of the Claude Code panel, select **Bookmarks** in the Context section of the command menu, or type `/bookmarks`. Requires Claude Code v2.1.286 or later.
+- **Files Claude sends you**: when the session is connected to [Remote Control](../02-Claude-Code-CLI/remote-control.md#start-a-remote-control-session) and Claude sends you files with the [`SendUserFile` tool](../02-Claude-Code-CLI/tools-reference.md), the conversation shows a row such as **Sent report.md, chart.png**. Click a file’s name to open it in the editor.
 - **Context indicator**: the prompt box shows how much of Claude’s context window you’re using. Claude automatically compacts when needed, or you can run `/compact` manually.
 - **Prompt cache clock**: a clock icon next to the context indicator estimates how much time the conversation’s [prompt cache](../02-Claude-Code-CLI/prompt-caching.md) has left before it expires. It counts down from the cache’s five-minute or one-hour [lifetime](../02-Claude-Code-CLI/prompt-caching.md#cache-lifetime), and each response that uses the cache restarts the countdown. Apart from compaction, the [actions that invalidate the cache](../02-Claude-Code-CLI/prompt-caching.md#actions-that-invalidate-the-cache) don’t reset the clock, so it can still show minutes left after you switch models.
   - Until the countdown runs out, the icon shows the minutes left, such as **12m**.
   - When the countdown runs out, the minutes disappear and the icon turns red, or your theme’s error color, until the next response. The cache has likely expired, so expect a slower, more expensive response to your next message while the cache rebuilds. If the five-minute lifetime keeps running out between your messages, see [Choose the TTL yourself](../02-Claude-Code-CLI/prompt-caching.md#choose-the-ttl-yourself).
   - Right after the conversation is [compacted](../02-Claude-Code-CLI/prompt-caching.md#compacting-the-conversation), the icon also turns red without minutes until the next response, because the cache doesn’t cover the compacted conversation yet.
-- **Agent map**: when the conversation includes [subagents](../09-Agents-Patterns/sub-agents.md), an agent count such as **2 agents** appears at the bottom of the prompt box. Its dot shows whether any subagent is working or waiting for your permission. Click the agent count to open the agent map, which draws the conversation’s subagents as a tree under the main agent, each with its status, elapsed time, and token count. Click a subagent to see its prompt and tool calls, open its read-only transcript, or stop it while it runs. Requires Claude Code v2.1.269 or later. The map also lists the session’s other [background tasks](../02-Claude-Code-CLI/tools-reference.md#background-commands), such as background shell commands and [monitors](../02-Claude-Code-CLI/tools-reference.md#monitor-tool), below the agents. Click a row to open the task’s card and stop it there. To open the map when no agent count is showing, such as when Claude has started a background shell but no subagents, type `/tasks` in the prompt box. Background tasks in the map and the typed `/tasks` require Claude Code v2.1.277 or later.
+- **Agent map**: when the conversation includes [subagents](../09-Agents-Patterns/sub-agents.md), an agent count such as **2 agents** appears at the bottom of the prompt box. Its dot shows whether any subagent is working or waiting for your permission. Click the agent count to open the agent map, which draws the conversation’s subagents as a tree under the main agent, each with its status, elapsed time, and token count. Click a subagent to see its prompt and tool calls, open its read-only transcript, or stop it while it runs. Requires Claude Code v2.1.269 or later. The map also lists the session’s other [background tasks](../02-Claude-Code-CLI/tools-reference.md#background-commands), such as background shell commands and [monitors](../02-Claude-Code-CLI/tools-reference.md#monitor-tool), below the agents. Click a row to open the task’s card and stop it there. To open the map when no agent count is showing, such as when Claude has started a background shell but no subagents, type `/tasks` in the prompt box. Background tasks in the map and the typed `/tasks` require Claude Code v2.1.277 or later. With Claude Code v2.1.286 or later, when you click **Stop** or press `Esc`, the current turn ends. Background agents keep running until they finish or you stop them from the map.
 - **Extended thinking**: lets Claude spend more time reasoning through complex problems. Toggle it on via the command menu (`/`). Claude’s reasoning appears in the conversation as collapsed blocks: click a block to read it, or press `Ctrl+O` to expand or collapse every thinking block in the session. See [Extended thinking](../02-Claude-Code-CLI/model-config.md#extended-thinking) for details.
 - **Multi-line input**: press `Shift+Enter` to add a new line without sending. This also works in the “Other” free-text input of question dialogs.
 
@@ -1604,7 +1390,7 @@ Click the **Session history** button at the top of the Claude Code panel to acce
 - **Session titles**: new sessions receive AI-generated titles based on your first message.
 - **Rename and archive**: hover over a session to reveal these actions. Rename to give it a descriptive title, or archive to move it to the **Archived sessions** group at the bottom of the list.
 
-By default, a session with no activity for 14 days moves to **Archived sessions** automatically, unless it is open, unread, or in a [group](#organize-sessions-into-groups). Automatic archiving requires Claude Code v2.1.265 or later. To change the period or turn it off, open the [Archive Inactive Sessions setting](vscode://settings/claudeCode.archiveInactiveSessions) and select a number of days or **Never**. To restore an archived session, expand **Archived sessions** and click **Unarchive session**. To restore every archived session at once, hover over the **Archived sessions** header in the sessions list in the Activity Bar and click its unarchive icon, which requires Claude Code v2.1.277 or later. Before v2.1.257, the action was **Delete session**, which hid a session with no way to restore it. Sessions you deleted then appear under **Archived sessions** after you upgrade. When the conversation you resume ended in plan mode, Claude Code restores plan mode. Requires Claude Code v2.1.246 or later. Claude Code doesn’t restore it in two cases:
+If the conversation is open in another Claude Code process, such as `claude` in a terminal or another VS Code window, a notice appears in place of the prompt box: `This conversation is still open somewhere else. Using it in two places at once can mix up its messages.` To continue here, close the conversation in the other place and then click **Open here anyway**. If you click without closing it, the conversation is open in both places. With [`claudeProcessWrapper`](#extension-settings) set, the extension skips this check and opens the conversation directly. By default, a session with no activity for 14 days moves to **Archived sessions** automatically, unless it is open, unread, or in a [group](#organize-sessions-into-groups). Automatic archiving requires Claude Code v2.1.265 or later. To change the period or turn it off, open the [Archive Inactive Sessions setting](vscode://settings/claudeCode.archiveInactiveSessions) and select a number of days or **Never**. To restore an archived session, expand **Archived sessions** and click **Unarchive session**. To restore every archived session at once, hover over the **Archived sessions** header in the sessions list in the Activity Bar and click its unarchive icon, which requires Claude Code v2.1.277 or later. Before v2.1.257, the action was **Delete session**, which hid a session with no way to restore it. Sessions you deleted then appear under **Archived sessions** after you upgrade. When the conversation you resume ended in plan mode, Claude Code restores plan mode. Requires Claude Code v2.1.246 or later. Claude Code doesn’t restore it in two cases:
 
 - The extension [chooses the starting permission mode](../02-Claude-Code-CLI/permission-modes.md#switch-permission-modes) from `claudeCode.initialPermissionMode` or a pick that carries over from an earlier conversation
 - You have `claudeCode.claudeProcessWrapper` configured
@@ -1672,12 +1458,17 @@ When Claude opens a tab in a new editor group, the extension locks that group, s
 
 Use the sidebar for your main Claude session and open additional tabs for side tasks. Claude remembers your preferred location. The Activity Bar sessions list icon is separate from the Claude panel: the sessions list is always visible in the Activity Bar, while the Claude panel icon only appears there when the panel is docked to the left sidebar.
 
+
+[​](#continue-conversations-after-a-reload)
+
+Continue conversations after a reload
+
 After you run **Developer: Reload Window** or restart VS Code, whether a chat comes back with its conversation depends on where it was open:
 
 - **Editor tab**: the conversation comes back with its tab.
 - **Sidebar**: the conversation comes back if you sent a message or Claude responded in it within the last 10 minutes. If it doesn’t come back, resume the conversation from [Session history](#resume-past-conversations).
 
-If the reload interrupted Claude mid-step, Claude continues that step when the conversation comes back, and a notice in the chat marks the continuation. Requires Claude Code v2.1.274 or later. If the step was interrupted more than an hour ago or the session is open elsewhere, the conversation comes back idle instead. To turn continuation off, open the [Continue After Reload setting](vscode://settings/claudeCode.continueAfterReload) and uncheck it.
+If another Claude Code process still has the conversation open, you’re asked before it opens here, with the same **Open here anyway** notice as when you [resume it from session history](#resume-past-conversations). If the reload interrupted Claude mid-step, Claude continues that step when the conversation comes back, and a notice in the chat marks the continuation. Requires Claude Code v2.1.274 or later. If the step was interrupted more than an hour ago or the session is open elsewhere, the conversation comes back idle instead. To turn continuation off, open the [Continue After Reload setting](vscode://settings/claudeCode.continueAfterReload) and uncheck it. Setting [`CLAUDE_CODE_RESUME_INTERRUPTED_TURN`](../02-Claude-Code-CLI/env-vars.md#variables) or any other `CLAUDE_CODE_RESUME_` variable in VS Code’s environment or in the [`environmentVariables` setting](#extension-settings) has no effect in the panel, because the extension removes those variables before it starts the panel’s sessions.
 
 
 [​](#run-multiple-conversations)
@@ -1733,7 +1524,9 @@ Install plugins
 
 The plugin dialog shows two tabs: **Plugins** and **Marketplaces**. In the Plugins tab:
 
-- **Installed plugins** appear at the top with toggle switches to enable or disable them
+- **Installed plugins** appear at the top with toggle switches to enable or disable them.
+  - If you turn off a plugin that your project’s shared `.claude/settings.json` turns on, the extension asks first: **Disable for me** turns it off only for you, while **Disable for everyone** changes the shared file.
+  - A plugin that failed to load shows a short reason on its row. Click the reason for what you can do about it, including copying the full error message to look up in [Troubleshoot plugins](../08-Plugins-Skills/plugins-troubleshooting.md).
 - **Available plugins** from your configured marketplaces appear below
 - Search to filter plugins by name or description
 - Click **Install** on any available plugin
@@ -1743,6 +1536,18 @@ When you install a plugin, choose the installation scope:
 - **Install for you**: available in all your projects (user scope)
 - **Install for this project**: shared with project collaborators (project scope)
 - **Install locally**: only for you, only in this repository (local scope)
+
+Once the install finishes, a form asks for any of the plugin’s [configuration options](../08-Plugins-Skills/plugins-components.md#user-configuration) that aren’t set yet. To review or change the options later, click the gear icon on the plugin’s row. Sensitive text fields are masked, and a secret you saved earlier shows **(unchanged)**. Leave the field blank to keep the saved value. After you save changes, the open sessions reload their plugins and the dialog shows **Restart Claude to apply plugin changes**.
+
+
+[​](#uninstall-plugins)
+
+Uninstall plugins
+
+Each installed row names the [scope](../08-Plugins-Skills/discover-plugins.md#choose-an-install-scope) it’s installed at. To uninstall that installation, click the row’s trash icon. A dimmed trash icon marks a row you can’t uninstall from this workspace, such as a plugin your organization manages or one installed for another project. The extension asks first in two cases:
+
+- **A plugin your project’s shared `.claude/settings.json` turns on**: choose **Disable for me**, which keeps the plugin installed for your collaborators, or **Uninstall for everyone**, which removes the project’s installation with [`--keep-data`](../08-Plugins-Skills/plugins-cli-reference.md#what-an-uninstall-deletes-and-keeps), so the plugin’s saved data directory stays. If you already turned the plugin off for yourself, the trash icon removes your own installation without the question.
+- **Otherwise, the last installation of a plugin with saved data**: choose whether to keep or delete the data; **Keep** is the default
 
 
 [​](#share-a-plugin-install-link)
@@ -1757,15 +1562,22 @@ vscode://anthropic.claude-code/install-plugin?plugin=code-review&marketplace=ant
 
 The URL takes two query parameters:
 
-| Parameter     | Description                                                                                                                                                                                     |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `plugin`      | The plugin’s name as its marketplace lists it. Required.                                                                                                                                        |
-| `marketplace` | Where the plugin comes from: a GitHub `owner/repo`, an `https://` URL, or a git SSH URL such as `git@github.com:owner/repo.git`. Defaults to `anthropics/claude-plugins-official` when omitted. |
+| Parameter     | Description                                                                                                                                                                                                                                    |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `plugin`      | The plugin’s name as its marketplace lists it. Required.                                                                                                                                                                                       |
+| `marketplace` | The marketplace’s [source](../08-Plugins-Skills/discover-plugins.md#add-a-marketplace): a GitHub `owner/repo`, an `https://` URL, or a git SSH address such as `git@github.com:owner/repo.git`. Defaults to `anthropics/claude-plugins-official` when omitted. |
 
-Some values that the [Marketplaces tab](#manage-marketplaces) accepts don’t work in a link, such as a local path or an `http://` address. For those, VS Code shows an error message and the dialog doesn’t open. Two cases end at a message in the dialog instead of the scope choice:
+The extension checks both values before it opens anything:
+
+- **Plugin name**: at most 100 characters, starting with an ASCII letter or digit and otherwise using only ASCII letters, digits, `.`, `_`, and `-`.
+- **Marketplace source**: only the forms the `marketplace` parameter lists, so not a local path, an `http://` address, or the marketplace’s name, such as `claude-plugins-official`. An `https://` URL can’t contain a user name, password, or query string.
+- **Git ref**: to pin the marketplace to a branch or tag, append the ref to the source after `%23`, the encoded form of `#`, as in `marketplace=owner/repo%23v1.0`. A link with an unencoded `#` fails. Marketplaces in the `anthropics` GitHub organization can’t be pinned in a link.
+
+Someone who opens a link that breaks these rules sees an error that starts with `Invalid plugin installation URL`. The Claude Code panel and the dialog don’t open, and nothing installs. If your plugin’s name or marketplace can’t go in a link, tell people to add the marketplace in the **Marketplaces** tab and then install the plugin from the **Plugins** tab. These cases end at a message in the dialog instead of the scope choice:
 
 - **The marketplace doesn’t list a plugin by that name**: the dialog reports that the plugin wasn’t found. Check the `plugin` value against the marketplace’s listing.
 - **The plugin is already installed**: the dialog says so, and nothing changes.
+- **A different marketplace with the same name is already added**: the dialog says the link’s marketplace wasn’t added, and nothing installs.
 
 
 [​](#manage-marketplaces)
@@ -1776,7 +1588,7 @@ Switch to the **Marketplaces** tab to add or remove plugin sources:
 
 - Enter a GitHub repo, URL, or local path to add a new marketplace
 - Click the refresh icon to update a marketplace’s plugin list
-- Click the trash icon to remove a marketplace
+- Click the trash icon to remove a marketplace. Removing it [uninstalls every plugin you installed from it](../08-Plugins-Skills/discover-plugins.md#manage-marketplaces), so a confirmation names those plugins first
 
 Plugin changes you make in the dialog apply right away to the Claude Code sessions open in that VS Code window. If the session you opened the dialog from can’t reload its plugins, the dialog offers to try again or to restart Claude in that session.
 
@@ -1795,7 +1607,7 @@ Connect Claude to your Chrome browser to test web apps, debug with console logs,
 @browser go to localhost:3000 and check the console for errors
 ```
 
-You can also open the attachment menu to select specific browser tools like opening a new tab or reading page content. Claude opens new tabs for browser tasks and shares your browser’s login state, so it can access any site you’re already signed into. For setup instructions, the full list of capabilities, and troubleshooting, see [Use Claude Code with Chrome](chrome.md).
+You can also open the attachment menu to select specific browser tools like opening a new tab or reading page content. Claude opens new tabs for browser tasks and shares your browser’s login state, so it can access any site you’re already signed into. To have each session connect to your browser as it starts, without typing `@browser`, see [Enable Chrome by default](chrome.md#enable-chrome-by-default). For when Claude Code asks you before a browser action, see [Permission prompts in VS Code sessions](chrome.md#permission-prompts-in-vs-code-sessions). For setup instructions, the full list of capabilities, and troubleshooting, see [Use Claude Code with Chrome](chrome.md).
 
 
 [​](#vs-code-commands-and-shortcuts)
@@ -1895,28 +1707,30 @@ Extension settings
 
 VS Code reads `initialPermissionMode` from your user settings and ignores workspace values. Before v2.1.225, VS Code defaulted the setting to `default` and applied workspace values.
 
-| Setting                             | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|-------------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `useTerminal`                       | `false` | Launch Claude in terminal mode instead of graphical panel                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `initialPermissionMode`             | \-      | Controls approval prompts for new conversations: `default`, `plan`, `acceptEdits`, or `bypassPermissions`. `manual` is an alias for `default` and selects the mode labeled **Manual** in the mode indicator. When you leave it unset, the extension chooses the starting permission mode as described in [Switch permission modes](../02-Claude-Code-CLI/permission-modes.md#switch-permission-modes).                                                                                                                                                                                                                                                                                                                                                                                                |
-| `preferredLocation`                 | `panel` | Where Claude opens: `sidebar` (right) or `panel` (new tab)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `lockEditorGroups`                  | `true`  | [Lock the editor groups Claude starts for its tabs](#choose-where-claude-lives), so files you open while a Claude tab is focused go to another group. When off, the extension never locks an editor group. Requires Claude Code v2.1.274 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `autosave`                          | `true`  | Auto-save files before Claude reads or writes them                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| `attachOpenFile`                    | `true`  | Add the file that is open in the editor to your messages and show it in the prompt box. When off, only your selected text is added. Requires Claude Code v2.1.271 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `useCtrlEnterToSend`                | `false` | Use Ctrl/Cmd+Enter instead of Enter to send prompts                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `scrollToBottomOnSend`              | `true`  | Scroll the conversation to the bottom when you send a message. When off, the conversation stays where you left it. Requires Claude Code v2.1.275 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `enableNewConversationShortcut`     | `false` | Enable Cmd/Ctrl+N to start a new conversation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `enableReopenClosedSessionShortcut` | `true`  | Use Cmd/Ctrl+Shift+T to reopen the most recently closed Claude session tab. When the last closed tab wasn’t a Claude session, the shortcut runs VS Code’s normal reopen-closed-editor command instead.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `archiveInactiveSessions`           | `14`    | [Archive a session automatically](#resume-past-conversations) after this many days without activity: `1`, `2`, `7`, or `14`. Set `0` to turn it off. Requires Claude Code v2.1.265 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `continueAfterReload`               | `true`  | After a window reload, Claude [continues the step that was interrupted](#choose-where-claude-lives) in the restored session. Requires Claude Code v2.1.274 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `hideOnboarding`                    | `false` | Hide the onboarding checklist (graduation cap icon)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `focusView`                         | `false` | Hide tool calls, tool results, and thinking behind expandable rows, leaving your prompts and Claude’s responses. Claude’s latest to-do list stays visible; this requires Claude Code v2.1.225 or later. You can also toggle Focus view from the command menu. Requires Claude Code v2.1.221 or later                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `respectGitIgnore`                  | `true`  | Exclude .gitignore patterns from file searches and from [selection context](#reference-files-and-folders)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `usePythonEnvironment`              | `true`  | Activate the workspace’s Python environment when running Claude. Requires the Python extension.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `environmentVariables`              | `[]`    | Set environment variables for the Claude process. Use Claude Code settings instead for shared config.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `disableLoginPrompt`                | `false` | Skip authentication prompts (for third-party provider setups)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `allowDangerouslySkipPermissions`   | `false` | Adds Bypass permissions to the mode selector. Use it only in sandboxes with no internet access.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `claudeProcessWrapper`              | \-      | Executable used to launch the Claude process. The bundled binary path is passed as an argument when present. Set this to a separately installed `claude` binary if the extension build doesn’t include one for your platform. In a wrapped setup, conversations start in Manual mode unless you set `initialPermissionMode` or picked Manual, Edit automatically, or Auto in an earlier conversation, because the extension skips the settings and built-in-default steps there; see [Switch permission modes](../02-Claude-Code-CLI/permission-modes.md#switch-permission-modes). An “Unsupported platform” error at activation means no binary is bundled for your platform; see [which platforms have prebuilt binaries](../02-Claude-Code-CLI/troubleshoot-install.md#native-binary-not-found-after-npm-install). |
+| Setting                             | Default                           | Description                                                                                                                                                                                                                                                                                                                                                                            |
+|-------------------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `useTerminal`                       | `false`                           | Launch Claude in terminal mode instead of graphical panel                                                                                                                                                                                                                                                                                                                              |
+| `initialPermissionMode`             | \-                                | Controls approval prompts for new conversations: `default`, `plan`, `acceptEdits`, or `bypassPermissions`. `manual` is an alias for `default` and selects the mode labeled **Manual** in the mode indicator. When you leave it unset, the extension chooses the starting permission mode as described in [Switch permission modes](../02-Claude-Code-CLI/permission-modes.md#switch-permission-modes). |
+| `preferredLocation`                 | `panel`                           | Where Claude opens: `sidebar` (right) or `panel` (new tab)                                                                                                                                                                                                                                                                                                                             |
+| `lockEditorGroups`                  | `true`                            | [Lock the editor groups Claude starts for its tabs](#choose-where-claude-lives), so files you open while a Claude tab is focused go to another group. When off, the extension never locks an editor group. Requires Claude Code v2.1.274 or later                                                                                                                                      |
+| `autosave`                          | `true`                            | Auto-save files before Claude reads or writes them                                                                                                                                                                                                                                                                                                                                     |
+| `attachOpenFile`                    | `true`                            | Add the file that is open in the editor to your messages and show it in the prompt box. When off, only your selected text is added. Requires Claude Code v2.1.271 or later                                                                                                                                                                                                             |
+| `useCtrlEnterToSend`                | `false`                           | Use Ctrl/Cmd+Enter instead of Enter to send prompts                                                                                                                                                                                                                                                                                                                                    |
+| `scrollToBottomOnSend`              | `true`                            | Scroll the conversation to the bottom when you send a message. When off, the conversation stays where you left it. Requires Claude Code v2.1.275 or later                                                                                                                                                                                                                              |
+| `showMessageTimestamps`             | `true`                            | Show when each message was sent. A date line marks where the day changes. Requires Claude Code v2.1.284 or later. Before v2.1.290, the default was `false`                                                                                                                                                                                                                             |
+| `spinnerVerbs`                      | `{"mode": "append", "verbs": []}` | Set the verbs the conversation spinner rotates through while a turn runs, with the same `mode` and `verbs` fields as the CLI’s [`spinnerVerbs`](../02-Claude-Code-CLI/settings-reference.md#spinnerverbs).                                                                                                                                                                                             |
+| `enableNewConversationShortcut`     | `false`                           | Enable Cmd/Ctrl+N to start a new conversation                                                                                                                                                                                                                                                                                                                                          |
+| `enableReopenClosedSessionShortcut` | `true`                            | Use Cmd/Ctrl+Shift+T to reopen the most recently closed Claude session tab. When the last closed tab wasn’t a Claude session, the shortcut runs VS Code’s normal reopen-closed-editor command instead.                                                                                                                                                                                 |
+| `archiveInactiveSessions`           | `14`                              | [Archive a session automatically](#resume-past-conversations) after this many days without activity: `1`, `2`, `7`, or `14`. Set `0` to turn it off. Requires Claude Code v2.1.265 or later                                                                                                                                                                                            |
+| `continueAfterReload`               | `true`                            | After a window reload, Claude [continues the step that was interrupted](#continue-conversations-after-a-reload) in the restored session. Requires Claude Code v2.1.274 or later                                                                                                                                                                                                        |
+| `hideOnboarding`                    | `false`                           | Hide the onboarding checklist (graduation cap icon)                                                                                                                                                                                                                                                                                                                                    |
+| `focusView`                         | `false`                           | Hide tool calls, tool results, and thinking behind expandable rows, leaving your prompts and Claude’s responses. Claude’s latest to-do list stays visible; this requires Claude Code v2.1.225 or later. You can also toggle Focus view from the command menu. Requires Claude Code v2.1.221 or later                                                                                   |
+| `respectGitIgnore`                  | `true`                            | Exclude .gitignore patterns from file searches and from [selection context](#reference-files-and-folders)                                                                                                                                                                                                                                                                              |
+| `usePythonEnvironment`              | `true`                            | Activate the workspace’s Python environment when running Claude. Requires the Python extension.                                                                                                                                                                                                                                                                                        |
+| `environmentVariables`              | `[]`                              | Set environment variables for the Claude process. Use Claude Code settings instead for shared config. A [`CLAUDE_CONFIG_DIR`](../02-Claude-Code-CLI/env-vars.md) entry applies only when its value is an absolute path; the extension doesn’t expand `~` and ignores a relative value.                                                                                                                 |
+| `disableLoginPrompt`                | `false`                           | Skip authentication prompts (for third-party provider setups)                                                                                                                                                                                                                                                                                                                          |
+| `allowDangerouslySkipPermissions`   | `false`                           | Adds Bypass permissions to the mode selector. Use it only in sandboxes with no internet access.                                                                                                                                                                                                                                                                                        |
+| `claudeProcessWrapper`              | \-                                | Executable used to launch the Claude process. The bundled binary path is passed as an argument when present. Set this to a separately installed `claude` binary if the extension build doesn’t include one for your platform.                                                                                                                                                          |
 
 
 [​](#use-a-screen-reader)
@@ -1928,6 +1742,7 @@ The extension’s chat panel works with screen readers. You don’t need to turn
 - **Claude’s replies**: the extension announces each reply once, when it’s complete, and stays silent while text streams in. Your screen reader reads code blocks as a line-count summary, reads links by their label, and reads tables cell by cell; the full reply stays readable in the transcript.
 - **Permission requests and questions**: the extension announces a request when its permission prompt appears, naming the tool Claude wants to use. It announces in the same way when Claude asks you a question and when Claude finishes a plan and waits for your review.
 - **Status changes**: the extension announces when Claude starts working, when Claude is ready for your input, and when Claude Code starts compacting the conversation.
+- **Queued messages**: when you send a message while Claude is working, the extension announces “Message queued.” for that message.
 - **Errors and model prompts**: the extension announces errors in the conversation, and announces when the [usage-credits consent prompt](../02-Claude-Code-CLI/model-config.md#fable-and-usage-credits) or the [flagged-request prompt](../02-Claude-Code-CLI/model-config.md#ask-before-switching) appears.
 
 While Claude works, your screen reader reads a text label in place of the progress spinner’s animation. When you reopen a session or switch to another one, the extension announces nothing: restored history, pending permission prompts, and in-progress status stay silent until something new happens.
@@ -1996,11 +1811,18 @@ Include terminal output in prompts
 Reference terminal output in your prompts using `@terminal:name` where `name` is the terminal’s title. This lets Claude see command output, error messages, or logs without copy-pasting.
 
 
+[​](#move-a-running-command-or-subagent-to-the-background)
+
+Move a running command or subagent to the background
+
+When Claude is waiting on a command or a [subagent](../09-Agents-Patterns/sub-agents.md) that is taking longer than you want, click **Run in background** below its tool call in the conversation. The action appears once a command has been running for about two seconds, or as soon as a subagent starts. Claude stops waiting and continues the turn, while the command or subagent keeps running as a [background task](../02-Claude-Code-CLI/tools-reference.md#background-commands) that notifies Claude when it finishes. Requires Claude Code v2.1.287 or later. To check on the task or stop it in the meantime, type `/tasks` in the prompt box to open the [agent map](#use-the-prompt-box). A subagent keeps its place in the tree of agents there, and a command is listed below the agents with its [latest output on its card](#monitor-background-processes).
+
+
 [​](#monitor-background-processes)
 
 Monitor background processes
 
-Type `/tasks` in the prompt box to open the [agent map](#use-the-prompt-box), which lists the session’s background tasks, such as a dev server Claude left running as a background shell command. Click a task to open its card and stop it there. Requires Claude Code v2.1.277 or later.
+Type `/tasks` in the prompt box to open the [agent map](#use-the-prompt-box), which lists the session’s background tasks, such as a dev server Claude left running as a background shell command. Click a task to open its card, where you can stop it. Requires Claude Code v2.1.277 or later. For a background shell command, or a [monitor](../02-Claude-Code-CLI/tools-reference.md#monitor-tool) that runs a command, the card also shows the command’s latest output and refreshes it while the command runs.
 
 
 [​](#connect-to-external-tools-with-mcp)
@@ -2088,7 +1910,20 @@ When the extension is active, it runs a local MCP server that the CLI connects t
 | `mcp__ide__getDiagnostics`   | Returns language-server diagnostics: the errors and warnings in VS Code’s Problems panel. Optionally scoped to one file. | Yes       |
 | `mcp__ide__executeCode`      | Runs Python code in the active Jupyter notebook’s kernel. See confirmation flow below.                                   | No        |
 
-**Jupyter execution always asks first.** `mcp__ide__executeCode` can’t run anything silently. On each call, the code is inserted as a new cell at the end of the active notebook, VS Code scrolls it into view, and a native Quick Pick asks you to **Execute** or **Cancel**. Cancelling, or dismissing the picker with `Esc`, returns an error to Claude and nothing runs. The tool also refuses outright when there’s no active notebook, when the Jupyter extension (`ms-toolsai.jupyter`) isn’t installed, or when the kernel isn’t Python.
+**Diagnostics in the chat panel.** In the chat panel, with Claude Code v2.1.285 or later, Claude reads VS Code’s Problems panel through a separate built-in server named `claude-vscode`. Claude can ask it for the current errors and warnings in one file, or in every file VS Code has diagnostics for. Hooks and permission rules see the chat panel’s diagnostics tool as `mcp__claude-vscode__getDiagnostics`. To cover diagnostics in both the CLI and the chat panel, name both `mcp__ide__getDiagnostics` and `mcp__claude-vscode__getDiagnostics` in your hook or rule. This `settings.json` example denies both tools:
+
+```python
+{
+  "permissions": {
+    "deny": [
+      "mcp__ide__getDiagnostics",
+      "mcp__claude-vscode__getDiagnostics"
+    ]
+  }
+}
+```
+
+A `Read` deny rule covers neither tool, so block them by name with a [deny rule](../02-Claude-Code-CLI/permissions.md#mcp) as the example does. **Jupyter execution always asks first.** `mcp__ide__executeCode` can’t run anything silently. On each call, the code is inserted as a new cell at the end of the active notebook, VS Code scrolls it into view, and a native Quick Pick asks you to **Execute** or **Cancel**. Cancelling, or dismissing the picker with `Esc`, returns an error to Claude and nothing runs. The tool also refuses outright when there’s no active notebook, when the Jupyter extension (`ms-toolsai.jupyter`) isn’t installed, or when the kernel isn’t Python.
 
 The Quick Pick confirmation is separate from `PreToolUse` hooks. An allowlist entry for `mcp__ide__executeCode` lets Claude *propose* running a cell; the Quick Pick inside VS Code is what lets it *actually* run.
 
@@ -2096,6 +1931,19 @@ The Quick Pick confirmation is separate from `PreToolUse` hooks. An allowlist en
 [​](#fix-common-issues)
 
 Fix common issues
+
+Sign-in, network, and launch errors have their own entries on the install troubleshooting and error reference pages. Find what you see in the table, then follow the link.
+
+| What you see                                                                | Where to go                                                                                                                                            |
+|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `API Error: 403 Request not allowed` after you sign in                      | [403 Forbidden after login](../02-Claude-Code-CLI/troubleshoot-install.md#403-forbidden-after-login)                                                                   |
+| You’re asked to sign in again after you already signed in                   | [Not logged in or token expired](../02-Claude-Code-CLI/troubleshoot-install.md#not-logged-in-or-token-expired)                                                         |
+| Cloud provider credentials work in your terminal but not in the extension   | [Bedrock, Agent Platform, or Foundry credentials not loading](../02-Claude-Code-CLI/troubleshoot-install.md#bedrock-agent-platform-or-foundry-credentials-not-loading) |
+| `SSL certificate verification failed` or `Self-signed certificate detected` | [SSL certificate errors](../02-Claude-Code-CLI/errors.md#ssl-certificate-errors)                                                                                       |
+| `Claude Code process exited with code 1`, or another code                   | [Claude Code process exited with code N](../02-Claude-Code-CLI/errors.md#claude-code-process-exited-with-code-n)                                                       |
+| `Could not locate the Claude CLI on PATH`                                   | [Could not locate the Claude CLI on PATH](../02-Claude-Code-CLI/errors.md#could-not-locate-the-claude-cli-on-path)                                                     |
+| `The connection to Claude Code ended before this message completed`         | [The connection to Claude Code ended before this message completed](../02-Claude-Code-CLI/errors.md#the-connection-to-claude-code-ended-before-this-message-completed) |
+| `claude` isn’t found in VS Code’s integrated terminal                       | [Run CLI in VS Code](#run-cli-in-vs-code)                                                                                                              |
 
 
 [​](#extension-won’t-install)
@@ -2119,7 +1967,7 @@ The Spark icon appears in the **Editor Toolbar** (top-right of editor) when you 
 4.  **Disable conflicting extensions**: Temporarily disable other AI extensions (Cline, Continue, etc.)
 5.  **Check workspace trust**: The extension doesn’t work in Restricted Mode
 
-Alternatively, if you’ve set [`preferredLocation`](#extension-settings) to `sidebar`, or opened Claude with **Claude Code: Open in Side Bar**, click ”✻ Claude Code” in the **Status Bar** (bottom-right corner). This works even without a file open. You can also use the **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`) and type “Claude Code”.
+Alternatively, click **✻ Claude Code** in the **Status Bar** at the bottom-right corner of the window. This works even without a file open. You can also use the **Command Palette** (`Cmd+Shift+P` / `Ctrl+Shift+P`) and type “Claude Code”.
 
 
 [​](#cmd+esc-does-nothing-on-macos)

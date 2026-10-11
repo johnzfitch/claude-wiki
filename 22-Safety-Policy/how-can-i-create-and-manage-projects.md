@@ -2,7 +2,7 @@
 title: "How can I create and manage projects? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:33:16Z"
+fetched_at: "2026-10-10T06:28:30Z"
 tags: ["safety"]
 ---
 
@@ -127,6 +127,8 @@ You can also remove chats from projects, or move them between projects, using th
 Memory is on by default for Free, Pro, and Max plans on the web, Claude Desktop, and Claude Mobile. On Team and Enterprise plans, memory is available when an owner has enabled it.
 
 For Team and Enterprise plans using Claude’s memory, the ability to move chats into and out of projects allows you to manage what’s included in Claude’s memory. Each project has its own memory, kept separate from your non-project chats. For example, if you accidentally start an unrelated chat in a project and need to remove it from the project-specific memory summary, you can click “Remove from project” so it will be included in Claude’s non-project memory instead.
+
+You can also turn memory off for a single chat, inside or outside a project, by turning off "Memory" in the "+" menu before you send your first message. A project chat started this way doesn't use or add to the project's memory.
 
 Refer to our article on chat search and memory for more information: **[What is Claude’s memory?](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context#h_82126ebcc9)**
 

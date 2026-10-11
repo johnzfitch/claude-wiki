@@ -2,7 +2,7 @@
 title: "Claude Sonnet 4.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/sonnet-4-5/overview"
 category: "20-Models"
-fetched_at: "2026-09-26T06:39:54Z"
+fetched_at: "2026-10-04T08:32:56Z"
 tags: ["models"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["models"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -38,7 +38,7 @@ Models
 
 [Claude Opus 5.5](models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
@@ -46,7 +46,7 @@ Specialized models
 
 Legacy models
 
-[Claude Fable 5](models-fable-5-overview.md)[Claude Opus 5](models-opus-5-overview.md)[Claude Opus 4.8](models-opus-4-8-overview.md)[Claude Opus 4.7](models-opus-4-7-overview.md)[Claude Opus 4.6](models-opus-4-6-overview.md)[Claude Sonnet 4.6](models-sonnet-4-6-overview.md)[Claude Opus 4.5](models-opus-4-5-overview.md)[Claude Sonnet 4.5](models-sonnet-4-5-overview.md)
+[Claude Fable 5](models-fable-5-overview.md)[Claude Opus 5](models-opus-5-overview.md)[Claude Sonnet 5](models-sonnet-5-overview.md)[Claude Opus 4.8](models-opus-4-8-overview.md)[Claude Opus 4.7](models-opus-4-7-overview.md)[Claude Opus 4.6](models-opus-4-6-overview.md)[Claude Sonnet 4.6](models-sonnet-4-6-overview.md)[Claude Opus 4.5](models-opus-4-5-overview.md)[Claude Sonnet 4.5](models-sonnet-4-5-overview.md)
 
 Guides
 
@@ -62,13 +62,13 @@ Lifecycle and reference
 
 
 
-Although Claude Sonnet 4.5 is still available, you should consider migrating to Claude Sonnet 5 for improved performance.
+Claude Sonnet 4.5 is deprecated: it is still functional but no longer recommended, and retires on November 30, 2026. Recommended replacement: Claude Sonnet 5.5.
 
-[See Claude Sonnet 5](models-sonnet-5-overview.md)
+[See Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Models & pricing](about-claude-models-overview.md)Legacy models
 
-# Claude Sonnet 4.5Legacy
+# Claude Sonnet 4.5Deprecated
 
 Copy page
 
@@ -76,7 +76,7 @@ Although Claude Sonnet 4.5 is still available, you should consider migrating to 
 
 claude-sonnet-4-5-20250929
 
-[Migrate to Claude Sonnet 5](models-sonnet-5-migration-guide.md#migrating-from-sonnet-45)
+[Migrate to Claude Sonnet 5.5](models-sonnet-5-5-migration-guide.md#migrating-from-sonnet-45)
 
 Copy page
 
@@ -170,26 +170,29 @@ Jul 2025
 ### Availability
 
 [Status](about-claude-model-deprecations.md)  
-Active (legacy)
+Deprecated
 
 Released  
 September 29, 2025
 
-Retirement  
-Not sooner than September 29, 2026
+Deprecated  
+September 30, 2026
+
+Retires  
+November 30, 2026
 
 Platforms  
 Claude API[Amazon Bedrock (InvokeModel)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)
 
 ## Resources
 
-[Migrate to Claude Sonnet 5](models-sonnet-5-migration-guide.md#migrating-from-sonnet-45)
+[Migrate to Claude Sonnet 5.5](models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-4-6)
 
-What changes when moving from Claude Sonnet 4.5 and earlier Sonnet models to Claude Sonnet 5.
+What changes when moving from Claude Sonnet 4.5 and earlier Sonnet models to Claude Sonnet 5.5.
 
 
 
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 The current Sonnet model: overview, specs, and resources.
 

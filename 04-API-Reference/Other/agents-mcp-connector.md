@@ -14,7 +14,7 @@ Claude's Model Context Protocol (MCP) connector feature enables you to connect t
 >
 > The previous version (`mcp-client-2025-04-04`) is deprecated. See the [deprecated version documentation](#deprecated-version-mcp-client-2025-04-04) below.
 
-> **Note:** This feature is **not** eligible for [Zero Data Retention (ZDR)](manage-claude-api-and-data-retention.md). Data is retained according to the feature's standard retention policy.
+> **Note:** This feature is **not** eligible for [Zero Data Retention (ZDR)](../Guides/build-with-claude-api-and-data-retention.md). Data is retained according to the feature's standard retention policy.
 
 ## Key features
 
@@ -759,7 +759,7 @@ The conversion functions throw `UnsupportedMCPValueError` if an MCP value isn't 
 
 The MCP Connector is not covered by ZDR arrangements. Data exchanged with MCP servers, including tool definitions and execution results, is retained according to Anthropic's standard data retention policy.
 
-For ZDR eligibility across all features, see [API and data retention](manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Migration guide
 

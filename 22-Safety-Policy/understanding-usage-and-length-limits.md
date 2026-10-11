@@ -2,7 +2,7 @@
 title: "How do usage and length limits work? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:32:24Z"
+fetched_at: "2026-10-10T06:25:04Z"
 tags: ["safety"]
 ---
 
@@ -13,13 +13,13 @@ When working with Claude, you may encounter two different types of limits that w
 
 ## What are usage limits?
 
-Usage limits control how much you can interact with Claude over a specific time period. Think of this as your "conversation budget" that determines how many messages you can send to Claude, or how long you can work with Claude Code, before needing to wait for your limit to reset.
+Usage limits control how much you can interact with Claude over a specific time period. Think of this as your "conversation budget" that determines how many messages you can send to Claude, or how long you can work with Claude Code, before needing to wait for your limit to reset. Paid plans have two types of usage limits: a session limit that resets every five hours, and weekly limits that reset once every week.
 
 Your usage is affected by several factors, including the length and complexity of your conversations, the features you use, which Claude model you're chatting with, and the effort level you've selected. Different subscription plans (Pro, Max, Team, etc.) have different usage allowances, with paid plans offering higher limits.
 
 Note that your usage of all different Claude product surfaces (claude.ai, Claude Code, Claude Desktop) counts towards the same usage limit.
 
-Learn more about **[changing the model, effort, and thinking settings](../15-Claude-AI-Features/how-can-i-change-the-model-version-that-i-m-chatting-with.md)**.
+Learn more about **[changing the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
 
 ## How can I get unlimited usage?
 
@@ -27,13 +27,13 @@ There are a couple of different ways to increase your usage depending on your pl
 
 - If you're using a paid plan, including Pro, Max, Team, or seat-based Enterprise plans, see these articles for details about purchasing usage credits:
 
-  - **[Manage usage credits for paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)**
+  - **[Manage usage credits for paid Claude plans](https://support.claude.com/en/articles/12429409-)**
 
   - **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**
 
 - If your organization has a usage-based Enterprise plan, your usage is based on consumption. See this article for additional information: **[How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
 
-For strategies to maximize your message allotment, see **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
+For strategies to maximize your message allotment, see **[Usage limit best practices](../17-Billing-Plans/usage-limit-best-practices.md)**.
 
 ## What are length limits?
 
@@ -73,4 +73,4 @@ While you can't increase the fixed context window size for your plan, you can us
 
 The main distinction is that usage limits control *how much* you can use Claude across all your conversations, while length limits control *how long* any single conversation can become. Usage limits are about quantity over time, while length limits are about the depth and complexity of individual conversations.
 
-If you hit your usage limit, you'll need to wait for it to reset, upgrade your plan, or purchase usage credits. If you hit a length limit, you can start a new conversation or use **[features like projects](https://support.claude.com/en/articles/9517075-what-are-projects)** to work with larger amounts of information more efficiently.
+If you hit your session limit or weekly limit, you can wait for it to reset or upgrade your plan. With usage credits enabled, your work continues on usage credits instead of stopping. If you hit a length limit, you can start a new conversation or use **[features like projects](../15-Claude-AI-Features/what-are-projects.md)** to work with larger amounts of information more efficiently.

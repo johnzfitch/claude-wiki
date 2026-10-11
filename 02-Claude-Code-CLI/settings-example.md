@@ -2,7 +2,7 @@
 title: "Example settings files - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/settings-example"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:09Z"
+fetched_at: "2026-10-02T06:30:48Z"
 tags: ["claude-code"]
 ---
 
@@ -238,7 +238,7 @@ The same file with a comment above each key. Read it here; copy from the other t
   "enabledPlugins": {
     "code-formatter@acme-tools": true
   },
-  // Sandbox commands: writable build dir; npm and example.com pre-allowed, other hosts still prompt
+  // Sandbox commands: writable build dir; npm and example.com pre-allowed
   "sandbox": {
     "enabled": true,
     "filesystem": {
@@ -271,7 +271,7 @@ A `managed-settings.json` file that shows the shape of the managed keys, with on
 - [`allowManagedPermissionRulesOnly`](settings-reference.md#allowmanagedpermissionrulesonly) and [`allowManagedMcpServersOnly`](settings-reference.md#allowmanagedmcpserversonly) make the managed permission and MCP allowlists the only ones that apply
 - `allowedMcpServers` pins the MCP server by URL
 - `strictKnownMarketplaces` allows one plugin marketplace
-- `sandbox` sandboxes commands with a fixed network allowlist and no unsandboxed retry
+- `sandbox` sandboxes commands with a fixed network allowlist and no unsandboxed retry. Its `failIfUnavailable` key [stops Claude Code from starting where the sandbox can’t run](sandboxing.md#enforce-sandboxing-with-managed-settings)
 - `requiredMinimumVersion` sets a minimum Claude Code version
 - `cleanupPeriodDays` shortens retention of session transcripts and other local data to seven days
 - `companyAnnouncements` shows a message at startup

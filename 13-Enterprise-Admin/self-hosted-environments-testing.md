@@ -2,7 +2,7 @@
 title: "Test self-hosted environments end to end - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments-testing"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-16T06:24:20Z"
+fetched_at: "2026-10-10T06:24:16Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -114,7 +114,10 @@ Run the test loop
 
 The `--environment` and `--ref` dispatch flags require Claude Code v2.1.224 or later on the machine that runs the script, the same floor as the runner itself. With the hook in place and a runner started on this host, the test script:
 
-1.  Creates a session on the test environment with `claude -p "<prompt>" --environment <environment-id> --output-format json`, run from a git checkout so the CLI can auto-detect the repository from the `origin` remote. The optional `--ref <branch>` bases the session’s checkout on a named ref instead of local HEAD. The command creates the session, prints one line of JSON containing `session_id`, and exits without waiting for Claude’s reply.
+1.  Creates a session on the test environment with `claude -p "<prompt>" --environment <environment-id> --output-format json`. Run the command from a git checkout so the CLI can auto-detect the repository from the `origin` remote. The optional `--ref <branch>` bases the session’s checkout on a named ref instead of local HEAD. The command exits without waiting for Claude’s reply. What it prints tells your script the outcome:
+    - **Session created**: one line of JSON such as `{"ok":true,"session_id":"session_...","title":"...","url":"...","pool_id":"..."}`
+    - **Session creation failed**: the line `{"ok":false,"error":"..."}`, and the command exits with status 1
+    - **Some earlier errors**, such as cloud sessions being unavailable for your organization or a missing prompt: the error on stderr with no JSON line, and the command exits with status 1
 2.  Waits for the reply to appear in `$E2E_REPLY_DIR/<session_id>.txt`, written by the Stop hook on the runner once the turn completes.
 3.  Sends a follow-up with `claude -p "<message>" --cloud <session_id> --output-format json` (see [Send a follow-up message to a running session](../02-Claude-Code-CLI/claude-code-on-the-web.md#send-follow-ups-from-the-cli)), which posts a user event to the existing session and exits.
 4.  Waits for the follow-up’s reply the same way as step 2.
@@ -131,7 +134,14 @@ Claude Code creates the session, prints the session ID and a link to it, and exi
 
 Example script
 
-The script below runs the full loop against `$CLAUDE_TEST_ENVIRONMENT_ID`, your test environment’s `ccpool_...` ID, shown in the environment’s detail dialog on the admin page or returned by the [create-environment call](#create-a-dedicated-test-environment), and asserts on a sentinel phrase in each reply. Run it from a git checkout of the repository you want the session to work in, after starting a runner on this host with the capture hook installed and `E2E_REPLY_DIR` exported.
+The example script runs on the same machine as the test runner. Before you run it, prepare that machine:
+
+- **Repository checkout**: run the script from a git checkout of the repository you want the session to work in.
+- **Runner**: start a runner on this host with the capture hook installed and `E2E_REPLY_DIR` exported.
+- **Sign-in**: sign in with a claude.ai account on the machine that runs the script, as [Authenticate from CI](#authenticate-from-ci) describes.
+- **Environment ID**: set `CLAUDE_TEST_ENVIRONMENT_ID` to your test environment’s `ccpool_...` ID, shown in the environment’s detail dialog on the admin page or returned by the [create-environment call](#create-a-dedicated-test-environment).
+
+The script below runs the full loop against `$CLAUDE_TEST_ENVIRONMENT_ID` and asserts on a sentinel phrase in each reply.
 
 ```python
 #!/usr/bin/env bash
@@ -179,7 +189,7 @@ await_reply() {
 TURN1="e2e-probe-$(date +%s)-$$: say exactly 'ok: custom tools are reachable' and nothing else"
 EXPECT1="ok: custom tools are reachable"
 create_json=$(claude -p "$TURN1" --environment "$CLAUDE_TEST_ENVIRONMENT_ID" \
-  --ref "$TEST_REPO_REF" --output-format json)
+  --ref "$TEST_REPO_REF" --output-format json < /dev/null)
 echo "create: $create_json"
 SESSION_ID=$(jq -er '.session_id' <<<"$create_json")
 
@@ -190,7 +200,7 @@ echo "turn-1 reply ok"
 # 3. Post a follow-up via the CLI.
 TURN2="e2e-probe-followup-$(date +%s): say exactly 'ok: follow-up delivered' and nothing else"
 EXPECT2="ok: follow-up delivered"
-followup_json=$(claude -p "$TURN2" --cloud "$SESSION_ID" --output-format json)
+followup_json=$(claude -p "$TURN2" --cloud "$SESSION_ID" --output-format json < /dev/null)
 echo "followup: $followup_json"
 jq -e '.ok == true' <<<"$followup_json" >/dev/null
 
@@ -236,7 +246,7 @@ Both `claude -p ... --environment` and `claude -p ... --cloud` authenticate with
 
 Long-lived CI host
 
-Run `claude auth login` once interactively on the machine that executes the script, using a dedicated user account for automation. Claude Code stores the token in the OS keychain on macOS, or in `~/.claude/.credentials.json` on Linux and Windows. On a macOS host whose Keychain can’t be written, as is typical in an SSH session where the login Keychain stays locked, Claude Code stores the token in `~/.claude/.credentials.json` there too. See [Credential management](iam.md#credential-management). The CLI refreshes the short-lived access token automatically on each invocation, but the underlying refresh-token grant is capped at 30 days from the initial login, so re-run `claude auth login` interactively on that host every 30 days.
+Run `claude auth login` once interactively on the machine that executes the script, using a dedicated user account for automation. Claude Code stores the token in the OS keychain on macOS, or in `~/.claude/.credentials.json` on Linux and Windows. On a macOS host whose Keychain can’t be written, as is typical in an SSH session where the login Keychain stays locked, Claude Code stores the token in `~/.claude/.credentials.json` there too. See [Credential management](../02-Claude-Code-CLI/authentication.md#credential-management). The CLI refreshes the short-lived access token automatically on each invocation, but the underlying refresh-token grant is capped at 30 days from the initial login, so re-run `claude auth login` interactively on that host every 30 days.
 
 
 [​](#ephemeral-ci-runners)

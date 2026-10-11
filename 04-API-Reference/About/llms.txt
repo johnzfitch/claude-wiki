@@ -16,7 +16,7 @@ Path: 04-API-Reference/About/about-claude-additional-resources.md
 - Resources
   - [Best practices](about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -39,7 +39,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -111,6 +111,230 @@ LLM-optimized documentation index.
 
 ---
 
+## API credits for Max and Team plans - Claude Platform Docs
+
+Source: https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers
+Path: 04-API-Reference/About/about-claude-api-credits-for-subscribers.md
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](../Endpoints/overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fapi-credits-for-subscribers)
+
+
+
+
+
+SearchCtrlK
+
+Models
+
+[Models overview](../../20-Models/about-claude-models-overview.md)
+
+[Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md)
+
+[Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
+
+[Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
+
+[Claude Haiku 5.5](../../20-Models/models-haiku-5-5-overview.md)
+
+Specialized models
+
+Legacy models
+
+Guides
+
+[Choosing a model](../../20-Models/about-claude-models-choosing-a-model.md)[Optimizing for cost and intelligence](../../20-Models/about-claude-models-optimizing-for-cost-and-intelligence.md)[Upgrade between model versions](../../20-Models/about-claude-models-migration-guide.md)
+
+Lifecycle and reference
+
+[Model IDs and versioning](../../20-Models/about-claude-models-model-ids-and-versions.md)[Model deprecations](../../20-Models/about-claude-model-deprecations.md)[Model cards](../Other/resources-overview.md)[Pricing](../../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](about-claude-api-credits-for-subscribers.md)
+
+[System prompts](../../20-Models/release-notes-system-prompts-overview.md)
+
+[Console](../Other/usage-limits.md)
+
+[Models & pricing](../../20-Models/about-claude-models-overview.md)Lifecycle and reference
+
+# API credits for Max and Team plans
+
+Copy page
+
+
+
+Claim the monthly Claude Platform credits included with Claude Max and Team plans, and learn what they cover.
+
+Copy page
+
+
+
+Claude Max and Team plans include monthly credits for the Claude API. To claim them, you link a [Claude Console](../Other/usage-limits.md) organization to your plan. Credits then arrive in that organization each billing cycle (or monthly for annual plans), and you can use them to build and run your own applications and agents. You don't need to add a payment method to Claude Platform.
+
+
+
+Claude Platform on AWS, Amazon Bedrock, Google Cloud, and Microsoft Foundry: These credits apply only to the Claude API in the Claude Console. They can't be used on other platforms.
+
+## At a glance
+
+| Topic                                  | Details                                                                   |
+|:---------------------------------------|:--------------------------------------------------------------------------|
+| **Eligible plans**                     | Max 5x, Max 20x, and Team, including discounted Team plans                |
+| **Monthly amount**                     | \$100 USD (Max 5x), \$200 USD (Max 20x), up to \$500 USD (Team, pooled\*) |
+| **Covers**                             | Claude API, Claude Managed Agents, the Claude Agent SDK, and playground   |
+| **Doesn't cover**                      | Claude Code, extra usage in the Claude apps                               |
+| **Refresh**                            | Each billing cycle (or monthly for annual plans)                          |
+| **Expiry**                             | End of each billing cycle (or monthly for annual plans), with no rollover |
+| **Payment method for Claude Platform** | Not required                                                              |
+
+## API credits amounts
+
+| Plan                                          | Monthly credit                                                         |
+|:----------------------------------------------|:-----------------------------------------------------------------------|
+| Max 5x                                        | \$100 USD                                                              |
+| Max 20x                                       | \$200 USD                                                              |
+| Team, Standard seat                           | \$20 USD per seat\*                                                    |
+| Team, Premium seat                            | \$100 USD per seat\*                                                   |
+| Discounted Team plans (Nonprofit, Scientists) | Same as Team: \$20 USD per Standard seat, \$100 USD per Premium seat\* |
+
+\*On Team plans, credits for all seats are pooled into one monthly balance, capped at \$500 USD. Each monthly credit, including the first, is based on the seats on your plan at the start of that billing month. For example, a team with three Standard seats and two Premium seats receives \$260 USD a month. Adding another Premium seat raises the next month's credit to \$360 USD.
+
+## Eligibility
+
+- Your eligible plan must be active and in good standing.
+- New subscribers can claim credits after 7 days on an eligible plan.
+- Plans purchased through Claude for iOS or Claude for Android are eligible. Claim your credits on [claude.ai](https://claude.ai) in a web browser.
+- Free, Pro, and Enterprise plans aren't eligible.
+
+## Claim your credits
+
+### Before you begin
+
+You need both of the following roles:
+
+[TABLE]
+
+If you don't have a Console organization, create one at [platform.claude.com](../Other/usage-limits.md) first, or create one during the claim flow.
+
+### Steps
+
+1.  1
+
+    ### Open billing settings
+
+    On claude.ai, go to **Settings \> Billing** on a Max plan, or **Organization settings \> Billing** on a Team plan.
+
+2.  2
+
+    ### Link a Console organization
+
+    In the **API credits** section, choose the Console organization that should receive the credits, then accept the [program terms](https://www.anthropic.com/legal/credit-terms) by linking.
+
+3.  3
+
+    ### Start building
+
+    Your credits appear in the Console, in the **Promotional credits** section under [**Settings \> Billing**](../Other/playground.md). Create an API key and make your first request. See [Get started](../../01-Getting-Started/get-started.md).
+
+
+
+Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can't change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+
+Subscribers who aren't eligible don't see API credits in their settings page. If you think you should be eligible but don't see the API credits, [reach out to support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+
+## What the credits cover
+
+These API credits can only be used on the Claude Platform. The following table shows which products are covered:
+
+| Product                                                                | Covered |
+|:-----------------------------------------------------------------------|:--------|
+| [Claude API](../Endpoints/overview.md)                                    | Yes     |
+| [Claude Managed Agents](../Other/managed-agents-overview.md)              | Yes     |
+| [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md) | Yes     |
+| [Playground](../Other/playground.md)                                              | Yes     |
+| Claude Code                                                            | No      |
+| Extra usage in the Claude apps                                         | No      |
+| Claude Platform on AWS, Bedrock, Google Cloud, Microsoft Foundry       | No      |
+
+## How credits are applied
+
+- **Timing.** Credits arrive each billing cycle, shortly after your plan payment is processed. On annual plans, credits arrive monthly.
+- **Order.** Included credits are spent first, then any credits you've purchased. Auto-reload is based only on your purchased balance. It reloads when that balance reaches your threshold, even if included credits remain.
+- **Expiry.** Unused credits expire at the end of each billing cycle (or monthly for annual plans) and don't roll over.
+- **Sharing.** Every API key and workspace in the linked organization draws from the same balance. To cap spending on a project, give it its own workspace and set that workspace's [spend limit](../Other/manage-claude-workspaces.md#setting-workspace-limits).
+- **Visibility.** Your credits appear in the Console under [**Settings \> Billing**](../Other/playground.md), in the **Promotional credits** section, with the amount and expiry date.
+- **Your Claude plan.** Credits don't change your usage limits in Claude or Claude Code.
+
+## Spend limits and rate limits
+
+Credits don't change how [rate limits and spend limits](../Endpoints/rate-limits.md) work:
+
+- Usage paid with credits counts toward your organization's [monthly spend cap](../Endpoints/rate-limits.md#spend-limits). Spend caps reset on the first of each calendar month, while credits refresh on your billing cycle (or monthly for annual plans).
+- Organizations linked to an eligible plan move up to at least the Start tier. If their monthly credits are over \$200 USD, they move up to at least the Build tier.
+- Claiming credits doesn't otherwise change your [usage tier](../Endpoints/rate-limits.md#about-rate-limits), and these credits don't count toward moving to a higher tier.
+
+### When credits run out
+
+- **If the organization has other credits**, requests continue using purchased credits. Auto-reload, if it's turned on, adds credits to the purchased balance.
+- **If the organization has no credits left**, API requests stop until your next monthly API credits arrive. Usage is never charged to your Claude plan. To keep building, purchase credits or turn on auto-reload in the Console.
+- **If your organization is invoiced through Anthropic sales**, usage beyond the API credits is billed as usual.
+
+When the balance is exhausted, requests return:
+
+``` block
+Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
+```
+
+
+
+If an organization holds only these credits and sends a request they don't cover, such as a Claude Code session, Claude Code displays:
+
+``` block
+Credit balance too low · Add funds: https://platform.claude.com/settings/billing
+```
+
+
+
+## If your plan changes
+
+| Change                                             | What happens                                                                                                                                                                                          |
+|:---------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Cancel, downgrade to an ineligible plan, or refund | New credits stop when your plan ends. Credits you already have stay usable until they expire.                                                                                                         |
+| Upgrade from Max 5x to Max 20x                     | You receive prorated API credits right away, then \$200 USD each billing cycle. If you subscribe through Google Play, the \$200 USD credit arrives later, by your next renewal at the latest.         |
+| Upgrade from Max to Team                           | The Max link ends. A Team owner can claim the team's credits after the Team plan has been active for 7 days.                                                                                          |
+| Add or remove Team seats                           | Seats added to your plan count from the next billing month's credit. Seats you remove stay on your plan until it renews, so the credit might be lower after that. The pool stays capped at \$500 USD. |
+
+## Make your credits go further
+
+Your monthly cost depends mainly on the model you choose and how often your application runs. To stretch your credits:
+
+- Choose a model that fits each task. To learn how, see [Choosing the right model](../../20-Models/about-claude-models-choosing-a-model.md).
+- Use [prompt caching](../Guides/build-with-claude-prompt-caching.md) for repeated context.
+- Use the [Message Batches API](../Guides/build-with-claude-batch-processing.md) for work that doesn't need an immediate response. It costs 50 percent less.
+- Check [pricing](../../17-Billing-Plans/about-claude-pricing.md) and track spend on the [Cost](../Other/playground.md) page.
+
+## Related
+
+- [Rate limits and spend limits](../Endpoints/rate-limits.md)
+- [Workspaces](../Other/manage-claude-workspaces.md)
+- [Pricing](../../17-Billing-Plans/about-claude-pricing.md)
+- [Help Center: API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)
+
+---
+
 ## Glossary - Claude Platform Docs
 
 Source: https://platform.claude.com/docs/en/about-claude/glossary
@@ -123,7 +347,7 @@ Path: 04-API-Reference/About/about-claude-glossary.md
 - Resources
   - [Best practices](about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -146,7 +370,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -406,7 +630,7 @@ Build a shopping agent and a merchant agent on Claude using Claude for commerce,
 
 
 
-This guide shows how to build commerce agents on Claude: a shopping agent that customers use inside your app, and a merchant agent for the people running the store, whether that is the business's own operations staff or the sellers on its platform. It does that through Claude for commerce, an open-source blueprint with a working implementation of each agent on the [Messages API](../Guides/build-with-claude-working-with-messages.md), the [Claude Agent SDK](https://platform.claude.com/docs/en/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md), and [Claude Managed Agents](../Other/managed-agents-overview.md), runnable examples for retail, travel, telecom, and entertainment, and a Claude Code plugin that scaffolds the same design against your own systems.
+This guide shows how to build commerce agents on Claude: a shopping agent that customers use inside your app, and a merchant agent for the people running the store, whether that is the business's own operations staff or the sellers on its platform. It does that through Claude for commerce, an open-source blueprint with a working implementation of each agent on the [Messages API](../Guides/build-with-claude-working-with-messages.md), the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), and [Claude Managed Agents](../Other/managed-agents-overview.md), runnable examples for retail, travel, telecom, and entertainment, and a Claude Code plugin that scaffolds the same design against your own systems.
 
 The code, setup instructions, and safety documentation are in the [Claude for commerce repository on GitHub](https://github.com/anthropics/commerce-agents). For how the agents are built and why, including the single-agent-with-skills design, UI components as tools, harness-enforced safety, prompt caching, memory, and evals, read the engineering post [A guide to the anatomy of effective commerce agents](https://claude.com/blog/the-anatomy-of-effective-commerce-agents).
 
@@ -460,7 +684,7 @@ The Messages API and Agent SDK runtimes run against the Claude API, [Amazon Bedr
 
 ## Build your own with the Claude Code plugin
 
-The blueprint ships with a [Claude Code](https://platform.claude.com/docs/en/01-Getting-Started/overview.md) plugin that reads the cloned repository as its reference and builds an agent against your own systems. Its four commands cover the path from nothing to a tested agent:
+The blueprint ships with a [Claude Code](../../02-Claude-Code-CLI/code-home.md) plugin that reads the cloned repository as its reference and builds an agent against your own systems. Its four commands cover the path from nothing to a tested agent:
 
 | Command                    | What it does                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
@@ -499,7 +723,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-content-moderation.md
 - Resources
   - [Best practices](about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -522,7 +746,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -1114,7 +1338,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-customer-support-chat.
 - Resources
   - [Best practices](about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -1137,7 +1361,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -1875,7 +2099,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-legal-summarization.md
 - Resources
   - [Best practices](about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -1898,7 +2122,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -2320,7 +2544,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-overview.md
 - Resources
   - [Best practices](about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -2343,7 +2567,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -2405,7 +2629,7 @@ Build shopping and merchant agents from an open-source blueprint that runs on th
 
 ## Choosing a build path
 
-The three paths for building with Claude differ in how much control you keep and how much of the implementation you offload to Anthropic. The [Messages API](../Guides/build-with-claude-working-with-messages.md) gives you the most control: you write the agent loop and run your own tools and infrastructure. The [Claude Agent SDK](https://platform.claude.com/docs/en/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md) sits in between, providing the agent loop and tool execution in a process you operate. With [Claude Managed Agents](../Other/managed-agents-overview.md), you offload the most: Anthropic hosts the agent loop, tool execution, and runtime for you.
+The three paths for building with Claude differ in how much control you keep and how much of the implementation you offload to Anthropic. The [Messages API](../Guides/build-with-claude-working-with-messages.md) gives you the most control: you write the agent loop and run your own tools and infrastructure. The [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md) sits in between, providing the agent loop and tool execution in a process you operate. With [Claude Managed Agents](../Other/managed-agents-overview.md), you offload the most: Anthropic hosts the agent loop, tool execution, and runtime for you.
 
 ---
 
@@ -2421,7 +2645,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-ticket-routing.md
 - Resources
   - [Best practices](about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -2444,7 +2668,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
 
 Test and evaluate
 
@@ -2769,6 +2993,10 @@ def classify_support_request(ticket_contents):
 ```
 
 
+
+
+
+This prompt is written for Claude Haiku 4.5, which runs here without thinking. On Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 Here are the key components of this prompt:
 

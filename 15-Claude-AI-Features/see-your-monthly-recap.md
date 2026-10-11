@@ -1,8 +1,8 @@
 ---
 title: "See your monthly recap | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/15672559"
+source_url: "https://support.claude.com/en/articles/15672559-see-your-monthly-recap"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:08Z"
+fetched_at: "2026-10-10T06:24:45Z"
 tags: ["claude-ai"]
 ---
 
@@ -81,7 +81,7 @@ Some conversations are left out of your recap completely:
 
 - Activity in Claude Cowork and Claude Code
 
-Learn more about **[memory](https://support.claude.com/en/articles/11817273)**, **[incognito chats](https://support.claude.com/en/articles/12260368)**, and health features on **[iOS](https://support.claude.com/en/articles/11869619-use-claude-with-ios-apps#h_21f4b10d6d)** and **[Android](../16-Mobile-Desktop/using-claude-with-android-apps.md#h_62b72ef926)**.
+Learn more about **[memory](use-claudes-chat-search-and-memory-to-build-on-previous-context-claude-help-center.md)**, **[incognito chats](https://support.claude.com/en/articles/12260368)**, and health features on **[iOS](https://support.claude.com/en/articles/11869619-use-claude-with-ios-apps#h_21f4b10d6d)** and **[Android](https://support.claude.com/en/articles/11869629-use-claude-with-android-apps#h_62b72ef926)**.
 
 ------------------------------------------------------------------------
 

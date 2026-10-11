@@ -2,7 +2,7 @@
 title: "Deny Spend Limit Increase Request - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits/increase_requests/deny"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:26:57Z"
+fetched_at: "2026-10-04T08:31:56Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -153,7 +136,9 @@ Spend Limits
 Delete Spend Limit
 
 
-List Effective Spend Limits
+List Spend Limits
+
+Effective
 
 Increase Requests
 
@@ -172,6 +157,27 @@ Increase Requests
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -314,7 +320,7 @@ Response 200
     "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
   },
   "created_at": "2019-12-27T18:11:19.117Z",
-  "period": "monthly",
+  "period": "daily",
   "resolved_at": "2019-12-27T18:11:19.117Z",
   "resolved_by": {
     "deleted": true,
@@ -333,7 +339,7 @@ Response 200
     },
     "amount": "50000",
     "currency": "USD",
-    "period": "monthly",
+    "period": "daily",
     "period_to_date_spend": "12050.5",
     "scope": {
       "type": "user",
@@ -367,7 +373,7 @@ Response 200
     "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
   },
   "created_at": "2019-12-27T18:11:19.117Z",
-  "period": "monthly",
+  "period": "daily",
   "resolved_at": "2019-12-27T18:11:19.117Z",
   "resolved_by": {
     "deleted": true,
@@ -386,7 +392,7 @@ Response 200
     },
     "amount": "50000",
     "currency": "USD",
-    "period": "monthly",
+    "period": "daily",
     "period_to_date_spend": "12050.5",
     "scope": {
       "type": "user",

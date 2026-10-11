@@ -2,8 +2,8 @@
 title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
 source_url: "https://code.claude.com/"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:31:38Z"
-last_modified: "Wed, 30 Sep 2026 06:29:14 GMT"
+fetched_at: "2026-10-10T06:24:09Z"
+last_modified: "Sat, 10 Oct 2026 06:19:03 GMT"
 tags: ["agents", "claude-code", "slack"]
 ---
 
@@ -28,13 +28,11 @@ Other ways to use Claude Code:
 - [JetBrains (opens in new tab)](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
 - [Slack (opens in new tab)](https://slack.com/oauth/v2/authorize?client_id=1601185624273.8899143856786&scope=app_mentions:read,assistant:write,channels:history,channels:read,chat:write,files:read,files:write,groups:history,groups:read,im:history,im:read,im:write,mpim:history,reactions:write,users:read,users:read.email,commands,search:read.public&user_scope=bookmarks:read,channels:history,channels:read,chat:write,emoji:read,files:read,groups:history,groups:read,groups:write,im:history,im:read,im:write,links:read,mpim:history,mpim:read,mpim:write,mpim:write.topic,pins:read,reactions:read,reactions:write,remote_files:read,team:read,users:read,users:read.email,search:read.public,search:read.private,search:read.im,search:read.mpim,search:read.files,search:read.users,canvases:read,canvases:write)
 
-Home
+New
 
-Code
+ProjectsNew
 
-New session
-
-Routines
+Artifacts
 
 Customize
 
@@ -86,13 +84,11 @@ Opus
 
 Extra high
 
-Home
+New
 
-Code
+ProjectsNew
 
-New session
-
-Routines
+Artifacts
 
 Customize
 
@@ -254,7 +250,7 @@ Per month with annual subscription discount (\$200 billed up front). \$20 if bil
 
 ### Max 5x
 
-Claude Code is included in your Max plan. Great value for everyday use in larger codebases.
+Claude Code is included in your Max plan. Great value for everyday use in larger codebases. Includes \$100 per month in API credits.
 
 \$100
 
@@ -264,7 +260,7 @@ Per month
 
 ### Max 20x
 
-Even more Claude Code included in your Max plan. Great value for power users with the most access to Claude models.
+Even more Claude Code included in your Max plan. Great value for power users with the most access to Claude models. Includes \$200 per month in API credits.
 
 \$200
 
@@ -272,9 +268,9 @@ Per month
 
 [Try Claude (opens in new tab)](https://claude.ai/login?plan=max)
 
-[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](../17-Billing-Plans/usage-limit-best-practices.md). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](../17-Billing-Plans/usage-limit-best-practices.md). Price and plans are subject to change at Anthropic's discretion.
 
 ## Latest feature announcements
 

@@ -2,7 +2,7 @@
 title: "Using Moody's for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:39:58Z"
+fetched_at: "2026-10-10T06:28:06Z"
 tags: ["claude-ai"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 Use Moody's credit ratings connector with Claude for comprehensive financial analysis including credit ratings, outlooks, and research documents.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 

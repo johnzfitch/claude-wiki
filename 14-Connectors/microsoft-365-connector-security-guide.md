@@ -2,7 +2,7 @@
 title: "Microsoft 365 connector security guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
 category: "14-Connectors"
-fetched_at: "2026-09-30T06:32:34Z"
+fetched_at: "2026-10-10T06:25:09Z"
 tags: ["connectors", "security"]
 ---
 
@@ -19,7 +19,7 @@ The connector operates as a **secure proxy**, and your Microsoft 365 documents, 
 
 ### Access can be fully restricted
 
-The connector provides **multiple layers of access control** to address your security requirements. For detailed information on administration of the Microsoft 365 connector, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**.
+The connector provides **multiple layers of access control** to address your security requirements. For detailed information on administration of the Microsoft 365 connector, see **[Set up the Microsoft 365 connector](12542951.md)**.
 
 **1. Microsoft Entra tenant requirement**
 
@@ -311,8 +311,8 @@ Anthropic has the following certifications:
 
 ## Additional resources
 
-- **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**
+- **[Set up the Microsoft 365 connector](12542951.md)**
 
-- **[Connect Claude to Microsoft 365](connect-to-microsoft-365.md)**
+- **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774)**
 
 - **[Overview of Microsoft Graph permissions: Delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions)**

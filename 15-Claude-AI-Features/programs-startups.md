@@ -1,101 +1,160 @@
 ---
-title: "Claude for startups | Claude by Anthropic"
+title: "Claude for Startups program | Claude by Anthropic"
 source_url: "https://www.claude.com/programs/startups"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-23T06:29:18Z"
-tags: ["claude-ai"]
+fetched_at: "2026-10-10T06:29:09Z"
+tags: ["claude-ai", "enterprise", "security"]
 ---
 
 # Claude Startups
 
-Build and break through
+Start upand stand out
 
-Join the founders building on Claude. Access community and resources to accelerate your growth. Apply to be considered for credits and priority rate limits.
+Join the founders building on Claude. Get special offers on tools that help with running an AI-native company, office hours with Anthropic’s Applied AI team, and more.
 
-Join the program
+[Apply now (opens in new tab)](https://platform.claude.com/offers/startups-application)
 
-[Join the program](https://www.claude.com/form/startups-application)
+Michael Truell, Co-founder & CEO of Cursor
 
-Join the program
+1 of 6: Michael Truell, Co-founder & CEO of Cursor
 
-Name
-
-Read story
-
-[Read story](#)
-
-Read story
-
+[Read story](../18-Industry-UseCases/cursor-qa.md)
 
 ## For founders on the frontier
 
-### Get Claude credits
+### Tools to run an AI-native company
 
-Venture backed? Apply for free credits and priority rate limits. Token max to product market fit on us.
+Access discounts and credits worth up to \$45,000 from companies building with Claude.
 
-### Connect with community
+### A support system as you grow
 
-Meet likeminded builders by participating in hackathons, Founder Days, and meetups in six cities.
+Members can book virtual office hours with Anthropic’s Applied AI team and join exclusive Claude Startup events, hackathons, and community meetups.
 
-### Stay close to Anthropic
+- 
 
-Be first to hear about launches, model releases, and program perks for eligible startups.
+- 
 
-## Supporting venture-backed startups
+- 
 
-### Funded startups
+- 
 
-Backed by a VC? You may qualify for credits and priority rate limits. Mention your investor when you apply.
+- 
 
-Join the startups program
+- 
 
-[Join the startups program](https://www.claude.com/form/startups-application)
+- 
 
-Join the startups program
+- 
 
-### Equity investors
+- 
 
-Investing in startups? You may be able to give founders access to free credits. VC funds can apply to join our program.
+- 
 
-Join the VC partner program
+- 
 
-[Join the VC partner program](https://www.claude.com/contact-sales/vc-partner)
+Customer stories
 
-Join the VC partner program
+## In good company
+
+A look inside the startups and founders using Claude. See what they shipped and how Claude transformed their business.
+
+Wondr Health scales trusted health coaching with Claude
+
+How Notability built a study tool that improves with every Claude release
+
+Eve Legal helps plaintiff law firms settle cases 60 days faster with Claude
+
+EvenUp cuts document drafting from 15 hours to 15 minutes with Claude
+
+Deepgram ships 4–10x more durable code with Claude
+
+Vega's cyber defense platform returns 67% of analysts' time with Claude
+
+Wondr Health scales trusted health coaching with Claude
+
+How Notability built a study tool that improves with every Claude release
+
+Eve Legal helps plaintiff law firms settle cases 60 days faster with Claude
+
+EvenUp cuts document drafting from 15 hours to 15 minutes with Claude
+
+Deepgram ships 4–10x more durable code with Claude
+
+Vega's cyber defense platform returns 67% of analysts' time with Claude
+
+1/6
+
+Claude Startup Stack
+
+## Start building now
+
+Access discounts and credits worth up to \$45,000 from the AI-native tools you need to run a company, from teams building on Claude. Members redeem in the Claude Console.
+
+Claude Startup Stack benefits are offered by independent third-party companies, not by Anthropic.
+
+[Apply to redeem (opens in new tab)](https://platform.claude.com/offers/startups-application)
+
+All
+
+Build
+
+Design
+
+Analyze
+
+Grow
+
+PartnerOffersAboutCategory
+
+- AttentionOffer20% off your first year (7-day free trial)What it isSee the pattern in every conversation while agents act.Grow
+
+- Augment CodeOffer\$100 in Cosmos creditsWhat it isAn always-on software delivery system you control.Build
+
+- ClickHouseOffer\$5K for ClickHouse Cloud creditsWhat it isMillisecond queries at petabyte scale for agentic systems.Analyze
+
+- ElevenLabsOffer12 months free + 33M charactersWhat it isAI audio and conversational agents platform.Build
+
+- EmergentOffer20% off Emergent for your first 6 monthsWhat it isBuild full-stack web and mobile apps with AI, no code.Build
+
+- FirecrawlOffer2.5x your plan’s monthly credits for a yearWhat it isThe API to search and scrape the web.Analyze
+
+- GammaOffer25% off your first year of Gamma Pro annualWhat it isPolished decks, websites, and one-pagers from a prompt.Design
+
+- GranolaOffer3 months of Business free, up to 10 seatsWhat it isThe AI notepad for back-to-back meetings.Grow
+
+- HexOffer6 months free on the Enterprise planWhat it isAI analytics platform anyone can use to explore data.Analyze
+
+View more
 
 ## Find your community
 
 Meet in person, online, and everywhere builders gather.
 
+## Claude Founder House San Francisco
+
+October 6–8, 2026
+
+Join the Anthropic team at the Claude Founder House during SF Tech Week, built for the next generation of great AI companies. Come cowork with our team, join us for a number of talks and workshops, and close the week out with our Founder Salon.
+
+[Learn more](https://www.anthropic.com/events/claude-founder-house-san-francisco)
+
 ### From Anthropic
 
-Builder Days, hackathons, and Founder Days hosted by our team.
+Founder House, Founder Days, Builder Days, and hackathons hosted by our team.
 
-See events
-
-[See events](https://www.anthropic.com/events)
-
-See events
+[Find events](https://www.anthropic.com/events)
 
 ### From the community
 
 Meetups and demo nights organized by founders building with Claude.
 
-See events
-
-[See events](https://luma.com/claudecommunity)
-
-See events
+[Find events](https://luma.com/claudecommunity)
 
 ### From anywhere
 
 Livestreams, AMAs, and on-demand sessions you can watch on your own time.
 
-See events
-
-[See events](https://www.anthropic.com/events#webinars)
-
-See events
+[Find events](https://www.claude.com/resources/webinars)
 
 ## Build, ship, and scale with Claude
 
@@ -105,623 +164,314 @@ Claude products for startups give you everything you need to build your idea and
 
 Build on frontier intelligence by adding Claude models with a single integration.
 
-Learn more
-
 [Learn more](https://www.claude.com/platform/api)
-
-Learn more
 
 ### Claude Code
 
 Ship faster with Claude Code. Describe what you need and Claude Code works across your code to build, debug, and ship it.
 
-Learn more
-
-[Learn more](claude-com-product-claude-code.md)
-
-Learn more
+[Learn more](product-claude-code-fad1ab4b.md)
 
 ### Claude Managed Agents
 
 Create your own production agents with MCP, code execution, and tool use. Go from prototype to deployed agents in days.
 
-Learn more
+[Learn more](../04-API-Reference/Other/managed-agents-overview.md)
 
-[Learn more](https://www.claude.com/04-API-Reference/Other/managed-agents-overview-b12cd03916.md)
+## Resources
 
-Learn more
+Stories, playbooks, and lessons from founders shipping with Claude.
 
-### Claude Cowork
+### Building AI-native: Inside the stacks powering Cognition, Gamma, and Harvey
 
-Delegate file work, research, and everyday tasks across the tools you already use.
+The conversation covers multi-agent orchestration, MCP in production, autonomous agent design, and the tradeoffs each team has worked through along the way.
 
-Learn more
 
-[Learn more](product-cowork.md)
+The founder's playbook: Building an AI-native startup from idea, MVP, launch, to scale
 
-Learn more
+Ebook
 
-Customer stories
 
-## In good company
+How Warp builds self improving agents on Claude
 
-Inside the startups and founders using Claude. See what they shipped, and what it gave back.
+Webinar
 
-[View story](../18-Industry-UseCases/evenup.md)
 
-View story
+How CodeRabbit used Claude to build an agent orchestration system
 
-EvenUp cuts document drafting from 15 hours to 15 minutes with Claude
+Case study
 
-EvenUp
 
-Startup
+The Claude Code guide for startups
 
-North America
+Guide
 
-August 26, 2026
 
-Claude Platform
+### Does the Startup Program still offer a free year of Claude Team and \$1K in API Credits?
 
-Claude Enterprise
-
-Claude Code
-
-Legal
-
-Claude Platform
-
-[View story](../18-Industry-UseCases/deepgram.md)
-
-View story
-
-Deepgram ships 4–10x more durable code with Claude
-
-Deepgram
-
-Startup
-
-North America
-
-August 20, 2026
-
-Claude Code
-
-Claude Enterprise
-
-Software
-
-Claude Code
-
-[View story](../18-Industry-UseCases/vega.md)
-
-View story
-
-Vega's cyber defense platform returns 67% of analysts' time with Claude
-
-Vega
-
-Startup
-
-AWS
-
-North America
-
-August 12, 2026
-
-Claude Agent SDK
-
-Claude Platform
-
-Cybersecurity
-
-Claude Agent SDK
-
-[View story](../18-Industry-UseCases/wondr-health.md)
-
-View story
-
-Wondr Health scales trusted health coaching with Claude
-
-Wondr Health
-
-Startup
-
-AWS
-
-North America
-
-August 7, 2026
-
-Claude Platform
-
-Software
-
-Claude Platform
-
-[View story](../18-Industry-UseCases/notability.md)
-
-View story
-
-How Notability built a study tool that improves with every Claude release
-
-Notability
-
-Startup
-
-North America
-
-August 3, 2026
-
-Claude Platform
-
-Software
-
-Claude Platform
-
-[View story](../18-Industry-UseCases/eve-legal.md)
-
-View story
-
-Eve Legal helps plaintiff law firms settle cases 60 days faster with Claude
-
-Eve Legal
-
-Startup
-
-North America
-
-July 17, 2026
-
-Claude Platform
-
-Claude Code
-
-Legal
-
-Claude Platform
-
-[Prev](#)
-
-Prev
-
-0/5
-
-
-### Who can apply?
-
-Any early-stage founder or startup building with Claude can join the Startups program. To qualify for Claude credits and extras, your company must have received equity funding from institutional investor, been founded within the last four years, and not previously received Anthropic startup credits. You'll need a Claude Console account, a company email, your website, and a short description of what you're building.
+We didn’t anticipate the demand for the Claude Startups program. We’ve received hundreds of thousands of applications over the past few days, and we’re currently over capacity on the Claude Team and \$1,000 API credit offers. If you’ve already claimed the offer, nothing changes; you can use the offer in the account. We’re reshaping the Claude Startups program to ensure this initiative is of, by and for startup founders. This means that we’ll re-review all applications which may result in a change in the status of some applications, which we regret. All existing members will still have full access to the Startup Stack, Applied AI office hours and events, and if you’re on a Claude Max or Team plan, your monthly API credits are available in Console as usual.
 
 ### Do I need VC funding to apply?
 
-No. The program is open to any early-stage founder or startup with or without VC backing. If you're backed by an Anthropic partner VC or accelerator, mention it in your application and you may qualify for additional benefits.
+No. The program is open to bootstrapped, pre-seed, and venture-backed startups. If you’re backed by a VC in our partner network, you may be eligible to receive up to \$100K in additional API credits, claimed through your VC.
 
 ### How do I apply?
 
-Fill out the application on this page. It takes about two minutes. You'll need a Claude Console account (the API console, not the Claude app) and a company email address.
+Sign in to the Claude Console and fill out the application.
 
-### Can I use credits on AWS Bedrock or Google Vertex AI?
+### What is the Claude Startup Stack?
 
-No. Claude startup credits apply to the first-party Claude API via the Claude Console. They can't be used on AWS Bedrock, Google Cloud Vertex AI, or other third-party platforms.
+Offers from AI-native companies building on Claude, across sales, design, data, meetings, and engineering. Members redeem each offer with a code in the Claude Console.
 
 ### Does the program include higher API rate limits?
 
-Yes. Acceptance upgrades you to our highest rate limits , so you can ship to production without throttling while you're on credits.
+Yes. Members who receive credits through the program automatically get higher API rate limits.
 
-### What happens after the program? 
+### Can I use credits on AWS Bedrock or Google Vertex AI?
 
-You keep building. Standard API pricing kicks in automatically with no migration. If you need help optimizing costs as you scale, the Claude for Startups team can help.
+No. Claude Startups credits apply to the first-party Claude API through Claude Console. They can’t be used on AWS Bedrock, Google Cloud Vertex AI, or other third-party platforms.
 
-[Prev](#)
+### I’m already a member. Do I need to reapply?
 
-Prev
+No. As a member of our Claude for Startups program you are now eligible to redeem the offers in the console.
 
+### How long does an application review take?
+
+We aim to review every application within one week. You’ll get an email as soon as there’s a decision.
+
+### How do I book office hours?
+
+Applied AI office hours are 45-minute live sessions for members, held every other week. Accepted members get a link to register by email and in the Claude Startups portal.
 
 ## Build with us
 
-The Claude Startups Program gives founders access to priority rate limits to build on the best models, community, and resources to support growth. Apply today.
+The Claude Startups program gives founders offers on the tools they build with, technical support from Anthropic, and a community of founders building at the frontier. Apply today.
 
-Join the program
+[Apply now (opens in new tab)](https://platform.claude.com/offers/startups-application)
 
-[Join the program](https://www.claude.com/form/startups-application)
+[](https://www.claude.com/)
 
-Join the program
+© 2026 Anthropic PBC
 
-[Homepage](https://claude.com)
+## Products
+
+- [Claude](product-overview.md)
+- [Claude Code](product-claude-code-fad1ab4b.md)
+- [Claude Cowork](product-cowork.md)
+- [@Claude](product-tag.md)
+- [Claude Science](product-claude-science.md)
+- [Claude Security](product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](claude-mythos.md)
+- [Fable](claude-fable.md)
+- [Opus](claude-opus.md)
+- [Sonnet](claude-sonnet.md)
+- [Haiku](claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](../18-Industry-UseCases/customer-support.md)
+- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
+- [Legal](../18-Industry-UseCases/legal.md)
+- [Sales](../18-Industry-UseCases/sales.md)
+
+## Industries
+
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
+- [Financial services](../18-Industry-UseCases/finance.md)
+- [Government](../18-Industry-UseCases/government.md)
+- [Healthcare](../18-Industry-UseCases/healthcare.md)
+- [Higher education](../18-Industry-UseCases/education.md)
+- [K-12 teachers](../18-Industry-UseCases/teachers.md)
+- [Life sciences](../18-Industry-UseCases/life-sciences.md)
+- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Small business](../18-Industry-UseCases/small-business.md)
+
+## Programs
+
+- [Campus](programs-campus.md)
+- [Frontier Academy](programs-frontier-academy.md)
+- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Startups](programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
 
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](product-overview.md)
-  Claude
-
-- Claude Code
-
-  [Claude Code](claude-com-product-claude-code.md)
-  Claude Code
-
-- Claude Cowork
-
-  [Claude Cowork](product-cowork.md)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](../14-Connectors/claude-for-slack.md)
-  @Claude
-
-- Claude Science
-
-  [Claude Science](product-claude-science.md)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](product-claude-security.md)
-  Claude Security
-
-- Download app
-
-  [Download app](https://www.claude.com/download)
-  Download app
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Capabilities
-
-- Artifacts
-
-  [Artifacts](https://www.claude.com/features/artifacts)
-  Artifacts
-
-- Design
-
-  [Design](product-design.md)
-  Design
-
-- Connectors
-
-  [Connectors](../04-API-Reference/Other/partners-mcp.md)
-  Connectors
-
-- Plugins
-
-  [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-  Plugins
-
-- Skills
-
-  [Skills](https://www.claude.com/skills)
-  Skills
-
-Extensions
-
-- Claude in Chrome
-
-  [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-  Claude in Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-Models
-
-- Mythos
-
-  [Mythos](claude-mythos.md)
-  Mythos
-
-- Fable
-
-  [Fable](claude-fable.md)
-  Fable
-
-- Opus
-
-  [Opus](https://www.claude.com/programs/claude-opus-4-6-anthropic.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.claude.com/programs/claude-sonnet-4-6-anthropic.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.claude.com/programs/claude-haiku-4-5-anthropic.md)
-  Haiku
-
-Enterprise
-
-- Overview
-
-  [Overview](../18-Industry-UseCases/enterprise.md)
-  Overview
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](product-claude-code-enterprise.md)
-  Claude Code for Enterprise
-
-Use cases
-
-- AI agents
-
-  [AI agents](../18-Industry-UseCases/agents.md)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](../18-Industry-UseCases/code-modernization.md)
-  Code modernization
-
-- Coding
-
-  [Coding](../18-Industry-UseCases/coding.md)
-  Coding
-
-- Commerce
-
-  [Commerce](../18-Industry-UseCases/commerce.md)
-  Commerce
-
-Departments
-
-- Customer support
-
-  [Customer support](../18-Industry-UseCases/customer-support.md)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-  Cybersecurity
-
-- Legal
-
-  [Legal](../18-Industry-UseCases/legal.md)
-  Legal
-
-- Sales
-
-  [Sales](../18-Industry-UseCases/sales.md)
-  Sales
-
-Industries
-
-- Financial services
-
-  [Financial services](../18-Industry-UseCases/finance.md)
-  Financial services
-
-- Government
-
-  [Government](../18-Industry-UseCases/government.md)
-  Government
-
-- Healthcare
-
-  [Healthcare](../18-Industry-UseCases/healthcare.md)
-  Healthcare
-
-- Higher education
-
-  [Higher education](../18-Industry-UseCases/education.md)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](../18-Industry-UseCases/teachers.md)
-  K-12 teachers
-
-- Life sciences
-
-  [Life sciences](../18-Industry-UseCases/life-sciences.md)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-  Nonprofits
-
-- Small business
-
-  [Small business](../18-Industry-UseCases/small-business.md)
-  Small business
-
-Programs
-
-- Startups
-
-  [Startups](programs-startups.md)
-  Startups
-
-- Scientists
-
-  [Scientists](programs-claude-team-plan-for-research-labs.md)
-  Scientists
-
-Developers
-
-- Developer docs
-
-  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
-  Developer docs
-
-- Developer blog
-
-  [Developer blog](https://claude.dev/)
-  Developer blog
-
-- Community
-
-  [Community](https://www.claude.com/community)
-  Community
-
-- Console
-
-  [Console](../04-API-Reference/Other/home.md)
-  Console
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-Platform
-
-- Overview
-
-  [Overview](https://www.claude.com/platform/api)
-  Overview
-
-- Ecosystem
-
-  [Ecosystem](https://www.claude.com/ecosystem)
-  Ecosystem
-
-- Marketplace
-
-  [Marketplace](https://www.claude.com/platform/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-  Microsoft Foundry
-
-Resources
-
-- Blog
-
-  [Blog](https://www.claude.com/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](../04-API-Reference/Other/partners.md)
-  Claude partner network
-
-- Claude Academy
-
-  [Claude Academy](https://academy.claude.com/)
-  Claude Academy
-
-- Customer stories
-
-  [Customer stories](../18-Industry-UseCases/customers.md)
-  Customer stories
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Powered by Claude
-
-  [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](#)
-  Service partners
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Check files
-
-  [Check files](https://claude.com/check-files)
-  Check files
-
-- Regional compliance
-
-  [Regional compliance](https://www.claude.com/regional-compliance)
-  Regional compliance
-
-- Report abuse
-
-  [Report abuse](https://claude.com/form/anthropic-content-reporting)
-  Report abuse
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Research
-
-  [Research](../19-Reference/anthropic-com-research.md)
-  Research
-
-- Anthropic news
-
-  [Anthropic news](../19-Reference/news.md)
-  Anthropic news
-
-- Policy on the AI Exponential
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](../18-Industry-UseCases/customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](product-overview.md)
+- [Claude Code](product-claude-code-fad1ab4b.md)
+- [Claude Cowork](product-cowork.md)
+- [@Claude](product-tag.md)
+- [Claude Science](product-claude-science.md)
+- [Claude Security](product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](claude-mythos.md)
+- [Fable](claude-fable.md)
+- [Opus](claude-opus.md)
+- [Sonnet](claude-sonnet.md)
+- [Haiku](claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](../18-Industry-UseCases/customer-support.md)
+- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
+- [Legal](../18-Industry-UseCases/legal.md)
+- [Sales](../18-Industry-UseCases/sales.md)
+
+## Industries
+
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
+- [Financial services](../18-Industry-UseCases/finance.md)
+- [Government](../18-Industry-UseCases/government.md)
+- [Healthcare](../18-Industry-UseCases/healthcare.md)
+- [Higher education](../18-Industry-UseCases/education.md)
+- [K-12 teachers](../18-Industry-UseCases/teachers.md)
+- [Life sciences](../18-Industry-UseCases/life-sciences.md)
+- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
+- [Small business](../18-Industry-UseCases/small-business.md)
+
+## Programs
+
+- [Campus](programs-campus.md)
+- [Frontier Academy](programs-frontier-academy.md)
+- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Startups](programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](../18-Industry-UseCases/customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

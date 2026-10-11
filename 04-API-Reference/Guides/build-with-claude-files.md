@@ -2,7 +2,7 @@
 title: "Files API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/files"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:22Z"
+fetched_at: "2026-10-04T08:33:26Z"
 tags: ["api", "billing", "rag"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "billing", "rag"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,7 +96,7 @@ Upload files once, reference them by file_id in Messages requests, and download 
 
 Files API
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](build-with-claude-api-and-data-retention.md)
 
 Not eligible
 
@@ -344,7 +344,7 @@ For .docx files containing images, convert them to PDF format first, then use [P
 
 #### List files
 
-Retrieve a list of your uploaded files. The endpoint is paginated: each request returns up to `limit` files (20 by default, and at most 1,000), and the response's `next_page` cursor fetches the next page when passed back as the `page` parameter. Files are ordered newest first. See the [List Files API reference](../Endpoints/files-list.md). The SDKs return the first page and provide auto-pagination helpers. The CLI example bounds the total with `--max-items`:
+Retrieve a list of your uploaded files. The endpoint is paginated: each request returns up to `limit` files (20 by default, and at most 1,000), and the response's `next_page` cursor fetches the next page when passed back as the `page` parameter. Files are ordered newest first. See the [List Files API reference](../Endpoints/files-list.md). The SDK returns the first page and provides [auto-pagination](../Endpoints/overview.md#pagination) helpers. The CLI example bounds the total with `--max-items`:
 
 cURL
 
@@ -481,7 +481,7 @@ On the Claude API, supported image, video, and audio files that Claude produces 
 - Files persist until you delete them with the `DELETE /v1/files/{file_id}` endpoint or they reach their `expires_at`
 - Deleted files cannot be recovered
 - Files are inaccessible through the API shortly after deletion, but they may persist in active Messages API calls and associated tool uses
-- Files that users delete will be deleted in accordance with Anthropic's [data retention policy](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data). For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md)
+- Files that users delete will be deleted in accordance with Anthropic's [data retention policy](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data). For ZDR eligibility across all features, see [API and data retention](build-with-claude-api-and-data-retention.md)
 
 ### File expiration
 

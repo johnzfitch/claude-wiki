@@ -2,7 +2,7 @@
 title: "Claude on Google Cloud - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:19Z"
+fetched_at: "2026-10-04T08:33:24Z"
 tags: ["agents", "api", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -151,9 +151,10 @@ Lifecycle terms (Deprecated, Retired) are defined in [Model deprecations](../../
 | Claude Opus 4.5                                                                               | claude-opus-4-5@20251101    |
 | Claude Opus 4.1 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                      | claude-opus-4-1@20250805    |
 | Claude Opus 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                        | claude-opus-4@20250514      |
+| Claude Sonnet 5.5                                                                             | claude-sonnet-5-5           |
 | Claude Sonnet 5                                                                               | claude-sonnet-5             |
 | Claude Sonnet 4.6                                                                             | claude-sonnet-4-6           |
-| Claude Sonnet 4.5                                                                             | claude-sonnet-4-5@20250929  |
+| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                    | claude-sonnet-4-5@20250929  |
 | Claude Sonnet 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                      | claude-sonnet-4@20250514    |
 | Claude Haiku 4.5                                                                              | claude-haiku-4-5@20251001   |
 | Claude Haiku 3.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                     | claude-3-5-haiku@20241022   |
@@ -252,7 +253,7 @@ For the full feature list with Google Cloud availability, see [Features overview
 
 ### Context window
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Agent Platform. Other Claude models, including Sonnet 4.5 and Sonnet 4 (deprecated), have a 200k-token context window.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Agent Platform. Other Claude models, including Sonnet 4.5 and Sonnet 4 (deprecated), have a 200k-token context window.
 
 Agent Platform limits request payloads to 30 MB. When sending large documents or many images, you might reach this limit before the token limit.
 

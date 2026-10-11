@@ -1,8 +1,8 @@
 ---
-title: "CLI, SDKs, and libraries - Claude Platform Docs"
+title: "SDKs, CLI, and libraries - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/overview"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:40Z"
+fetched_at: "2026-10-04T08:34:01Z"
 tags: ["agents", "api", "claude-code", "cli", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["agents", "api", "claude-code", "cli", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["agents", "api", "claude-code", "cli", "sdk"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,15 +48,15 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
-# CLI, SDKs, and libraries
+# SDKs, CLI, and libraries
 
 Copy page
 
 
 
-Official tools for building with the Claude API: the ant CLI, client SDKs in seven languages, and framework-specific libraries.
+Official tools for building with the Claude API: client SDKs in seven languages, the ant CLI, and framework-specific libraries.
 
 Copy page
 
@@ -124,11 +124,11 @@ Use Claude through the OpenAI SDK surface
 
 The CLI, client SDKs, and libraries are for calling the Claude API yourself: you send each request and handle each response. Claude Code, the Claude Agent SDK, and Claude Managed Agents work at a higher level, providing the agent loop, tool execution, and runtime.
 
-[Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md)
+[Claude Code](../../02-Claude-Code-CLI/code-home.md)
 
 Agentic coding tool for delegating coding tasks to Claude
 
-[Claude Agent SDK](https://platform.claude.com/docs/09-Agents-Patterns/agent-sdk-overview-b27888bae2.md)
+[Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md)
 
 Build agents that run in a process you operate
 

@@ -2,7 +2,7 @@
 title: "Using the BioRender Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-30T06:31:40Z"
+fetched_at: "2026-10-09T06:28:18Z"
 tags: ["connectors"]
 ---
 

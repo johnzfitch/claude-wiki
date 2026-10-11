@@ -2,7 +2,7 @@
 title: "Cache diagnostics - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:28Z"
+fetched_at: "2026-10-04T08:32:31Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,11 +96,11 @@ Diagnose unexpected prompt cache misses by comparing consecutive requests and id
 
 Cache diagnostics
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](build-with-claude-api-and-data-retention.md)
 
 Eligible
 
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+excludes [Covered Models](build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 [Prompt caching](build-with-claude-prompt-caching.md) cuts latency and cost significantly, but only when the beginning of your prompt is byte-for-byte identical to a recent request. A reordered tool, a timestamp interpolated into your system prompt, or an edit to an earlier message can silently invalidate the cache. Without cache diagnostics, the only signal is `usage.cache_read_input_tokens` dropping to zero, with no indication of what changed.
 
@@ -362,7 +362,7 @@ Cache diagnostics is ZDR eligible (qualified). Anthropic does not store the raw 
 
 The API stores a fingerprint only for requests that include the `diagnostics` object. The fingerprint consists only of cryptographic hashes and token-count estimates, keyed by the response `id` and scoped to your organization and workspace. Fingerprints expire after a short period and are not used for any other purpose.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 ## See also
 

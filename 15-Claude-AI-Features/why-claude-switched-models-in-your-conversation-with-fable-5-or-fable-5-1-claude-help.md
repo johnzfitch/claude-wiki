@@ -2,7 +2,7 @@
 title: "Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15363606"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:57Z"
+fetched_at: "2026-10-10T06:28:18Z"
 tags: ["billing", "claude-ai"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Streaming Input - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode"
 category: "05-Agent-SDK"
-fetched_at: "2026-08-29T06:28:34Z"
+fetched_at: "2026-10-02T06:30:26Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -189,7 +189,7 @@ async def streaming_analysis():
 asyncio.run(streaming_analysis())
 ```
 
-When you run the example, the TypeScript version prints each response as it completes. The Python version’s `receive_response()` loop ends at the first result message, so it prints the security analysis; to read both responses, use one `query()` and `receive_response()` pair per message as shown in the [Python reference’s example of continuing a conversation](agent-sdk-python.md#example-continuing-a-conversation).
+When you run the example, the TypeScript version prints each response as it completes. The Python version’s `receive_response()` loop ends at the first result message, so it prints the security analysis; to read both responses, use one `query()` and `receive_response()` pair per message as shown in the [Python reference’s example of continuing a conversation](agent-sdk-python.md#example-continuing-a-conversation). If an image block’s `source` is missing or isn’t an object, the SDK doesn’t report an error. Claude Code sends Claude a text note in place of the image, such as `[Image could not be processed: image block has no source object]`, and the session continues.
 
 In the TypeScript SDK, if your message generator throws, for example when a file it reads is missing, the stream ends with an error that reads `Claude Code process aborted by user` instead of the original error, so check the code inside your generator first when you see that message. The error may also be preceded by a long minified line of bundled SDK source, so read to the end of the output for the error text.In the Python SDK, a generator exception is logged at debug level and the session stalls without raising, so if a streaming session hangs with no output, enable debug logging and check your generator.
 

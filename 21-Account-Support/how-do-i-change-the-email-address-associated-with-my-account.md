@@ -2,7 +2,7 @@
 title: "How do I change the email address associated with my account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8452276-how-do-i-change-the-email-address-associated-with-my-account"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:32:20Z"
+fetched_at: "2026-10-10T06:28:27Z"
 tags: ["account"]
 ---
 

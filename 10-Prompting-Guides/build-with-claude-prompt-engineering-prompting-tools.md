@@ -26,7 +26,7 @@ The prompt generator is particularly useful for solving the "blank page problem"
 
 <Tip>Try the prompt generator now directly on the [Console](https://platform.claude.com/dashboard).</Tip>
 
-If you're interested in analyzing the underlying prompt and architecture, check out our [prompt generator Google Colab notebook](https://anthropic.com/metaprompt-notebook/). To run the Colab notebook, you'll need an [API key](../04-API-Reference/Other/usage-limits.md).
+If you're interested in analyzing the underlying prompt and architecture, check out our [prompt generator Google Colab notebook](https://anthropic.com/metaprompt-notebook/). To run the Colab notebook, you'll need an [API key](../04-API-Reference/Other/playground.md).
 
 ---
 

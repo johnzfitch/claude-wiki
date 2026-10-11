@@ -2,7 +2,7 @@
 title: "Channels reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/channels-reference"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:30Z"
+fetched_at: "2026-10-06T06:23:37Z"
 tags: ["claude-code"]
 ---
 
@@ -207,7 +207,7 @@ claude --dangerously-load-development-channels plugin:yourplugin@yourmarketplace
 claude --dangerously-load-development-channels server:webhook
 ```
 
-The bypass is per-entry. Combining this flag with `--channels` doesn’t extend the bypass to the `--channels` entries. During the research preview, your channel isn’t on the approved allowlist, so it stays on the development flag while you build and test.
+Run the development flag in an interactive session, where Claude Code can show the confirmation prompt. If you pass it in non-interactive mode with `-p` or through the Agent SDK, Claude Code ignores the flag and the channel doesn’t register. The bypass is per-entry. Combining this flag with `--channels` doesn’t extend the bypass to the `--channels` entries. During the research preview, your channel isn’t on the approved allowlist, so it stays on the development flag while you build and test.
 
 This flag skips the allowlist only. The `channelsEnabled` organization policy still applies. Don’t use it to run channels from untrusted sources.
 

@@ -2,7 +2,7 @@
 title: "Quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/quickstart"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-25T06:28:51Z"
+fetched_at: "2026-10-06T06:23:10Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -147,7 +147,7 @@ The SDK reads the key from the environment of the process that runs your agent; 
 
 See the setup guides for [Amazon Bedrock](../02-Claude-Code-CLI/amazon-bedrock.md), [Claude Platform on AWS](../02-Claude-Code-CLI/claude-platform-on-aws.md), [Google Cloud’s Agent Platform](../02-Claude-Code-CLI/google-vertex-ai.md), or [Microsoft Foundry](../02-Claude-Code-CLI/microsoft-foundry.md) for details.
 
-Unless previously approved, Anthropic does not allow third party developers to offer claude.ai login or rate limits for their products, including agents built on the Claude Agent SDK. Please use the API key authentication methods described in this document instead.
+Unless previously approved, Anthropic does not allow third party developers to offer claude.ai login or rate limits for their products, including agents built on the Claude Agent SDK. Use the API key authentication methods described in this document instead.
 
 
 [​](#create-a-buggy-file)

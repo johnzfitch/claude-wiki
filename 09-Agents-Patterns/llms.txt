@@ -134,7 +134,7 @@ From there, Claude populates a [shared task list](../02-Claude-Code-CLI/interact
 - **Enter**: open the selected teammate’s transcript and message it directly
 - **Escape**: clear the selection. While you’re viewing a teammate’s transcript, Escape interrupts that teammate’s current turn
 
-As of v2.1.199, an idle teammate’s row stays in the panel while any teammate or subagent is still working, so you can select it to review its transcript or send it more work. Once every agent in the panel is idle, idle rows hide after 30 seconds and reappear on the teammate’s next turn; the teammate stays running and addressable while hidden. In v2.1.181 through v2.1.198, an idle row hid 30 seconds after its own turn ended, even while other teammates were still working; idle rows are not hidden on versions before v2.1.181. When more than three teammates are idle at once, the rows beyond the first three collapse into a single row that counts the collapsed teammates, such as `2 idle agents` when five are idle. Select it and press Enter to expand the collapsed rows, or press Esc to collapse them again. Working teammates, failed teammates, and the teammate you’re viewing always keep their own rows. If you want each teammate in its own split pane, see [Choose a display mode](#choose-a-display-mode).
+An idle teammate’s row stays in the panel while any teammate or subagent is still working, so you can select it to review its transcript or send it more work. Once every agent in the panel is idle, idle rows hide after 30 seconds and reappear on the teammate’s next turn; the teammate stays running and addressable while hidden. When more than three teammates are idle at once, the rows beyond the first three collapse into a single row that counts the collapsed teammates, such as `2 idle agents` when five are idle. Select it and press Enter to expand the collapsed rows, or press Esc to collapse them again. Working teammates, failed teammates, and the teammate you’re viewing always keep their own rows. If you want each teammate in its own split pane, see [Choose a display mode](#choose-a-display-mode).
 
 
 [​](#control-your-agent-team)
@@ -193,7 +193,7 @@ Claude Code picks each teammate’s model from the first of these that applies:
 3.  [`CLAUDE_CODE_SUBAGENT_MODEL`](../02-Claude-Code-CLI/model-config.md#environment-variables), when it’s set to anything other than `inherit`.
 4.  The lead’s current model.
 
-If you set [`CLAUDE_CODE_SUBAGENT_MODEL_FORCE=1`](sub-agents.md#run-every-subagent-on-one-model), the first two sources don’t apply. Claude Code picks every teammate’s model from `CLAUDE_CODE_SUBAGENT_MODEL` when it’s set to anything other than `inherit`, and from the lead’s current model otherwise. Requires Claude Code v2.1.257 or later. Before v2.1.251, `CLAUDE_CODE_SUBAGENT_MODEL` came first in this order.
+If an installed [mod](../08-Plugins-Skills/plugins-mods-overview.md) sets a model in its [`agent.spawn`](../08-Plugins-Skills/plugins-mods-reference.md#subagents) hook, Claude Code uses that model in place of the first source. If you set [`CLAUDE_CODE_SUBAGENT_MODEL_FORCE=1`](sub-agents.md#run-every-subagent-on-one-model), the first two sources don’t apply. Claude Code picks every teammate’s model from `CLAUDE_CODE_SUBAGENT_MODEL` when it’s set to anything other than `inherit`, and from the lead’s current model otherwise. Requires Claude Code v2.1.257 or later. Before v2.1.251, `CLAUDE_CODE_SUBAGENT_MODEL` came first in this order.
 
 `teammateDefaultModel` was removed in v2.1.234; Claude Code ignores a leftover value. Name the model in your prompt instead.
 
@@ -202,7 +202,7 @@ Claude Code checks the model it selects for a teammate against your organization
 - **Family alias such as `opus`**: On the Anthropic API and Claude Platform on AWS, Claude Code runs the teammate on the newest version of that family the allowlist permits. On providers with provider-specific model IDs, where the [substitution doesn’t operate](../02-Claude-Code-CLI/model-config.md#restrict-model-selection), a blocked alias falls back like any other blocked value per the next bullet
 - **Any other blocked value, including a family alias on providers where the substitution doesn’t operate, or one whose family has no permitted version**: Claude Code runs the teammate on the lead’s model instead. If you set `CLAUDE_CODE_SUBAGENT_MODEL`, Claude Code tries that model first, under these same rules
 
-Teammates inherit the lead’s [effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level). In split-pane mode this applies from v2.1.186; earlier versions did not pass the lead’s session effort to split-pane teammates.
+By default, teammates inherit the lead’s [effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level). In split-pane mode this applies from v2.1.186; earlier versions did not pass the lead’s session effort to split-pane teammates.
 
 
 [​](#have-teammates-plan-before-implementing)
@@ -227,7 +227,12 @@ Each teammate is a full, independent Claude Code session. You can message any te
 - **In-process mode**: use the up and down arrow keys in the agent panel to select a teammate, then press Enter to view its session and type to send it a message. Press `x` on a selected teammate to stop it. Press Ctrl+T to toggle the task list.
 - **Split-pane mode**: click into a teammate’s pane to interact with their session directly. Each teammate has a full view of their own terminal.
 
-While you’re viewing an in-process teammate, plain text and [skills](../08-Plugins-Skills/skills.md) go to that teammate, but built-in commands still run in the lead’s session. A teammate’s model and fast mode are fixed when it spawns, so `/model` and `/fast` only change the lead’s settings. As of v2.1.199, typing either command while viewing a teammate shows a notice that the change applies to the lead; earlier versions applied it to the lead with no indication. `/effort` still applies to the viewed teammate’s later turns, because teammates follow the lead’s [effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level).
+While you’re viewing an in-process teammate, plain text and [skills](../08-Plugins-Skills/skills.md) go to that teammate, and built-in commands go to the lead’s session, with these safeguards:
+
+- `/compact`, `/clear`, and `/rewind` act on the lead’s conversation, so Claude Code asks you to confirm before running one of them from this view.
+- `/model` and `/fast` set the lead’s model and fast mode, not the teammate’s, so they don’t run from this view. A notice tells you why.
+
+A teammate’s model and fast mode are fixed when it spawns.
 
 
 [​](#assign-and-claim-tasks)
@@ -305,7 +310,7 @@ Claude Code generates both of these automatically at session startup and updates
 
 Use subagent definitions for teammates
 
-When spawning a teammate in either display mode, you can reference a [subagent](sub-agents.md) type from the project, user, or managed [subagent scope](sub-agents.md#choose-the-subagent-scope). This lets you define a role once, such as a security-reviewer or test-runner, and reuse it both as a delegated subagent and as an agent team teammate. To use a subagent definition, name it when you ask Claude to spawn the teammate:
+When spawning a teammate in either display mode, you can reference a [subagent](sub-agents.md) type from the project, user, managed, or plugin [subagent scope](sub-agents.md#choose-the-subagent-scope). This lets you define a role once, such as a security-reviewer or test-runner, and reuse it both as a delegated subagent and as an agent team teammate. To use a subagent definition, name it when you ask Claude to spawn the teammate:
 
 ```python
 Spawn a teammate using the security-reviewer agent type to audit the auth module.
@@ -315,6 +320,8 @@ Claude Code reads the subagent definition you named and applies these parts of i
 
 - **`tools`**: Claude Code limits the teammate to the tools in the definition’s `tools` list. For an in-process teammate, Claude Code adds `SendMessage` to that list, and in a [session that has the Task tools](../02-Claude-Code-CLI/tools-reference.md#task-tool-availability) it adds `TaskCreate`, `TaskGet`, `TaskList`, and `TaskUpdate` too.
 - **`model`**: Claude Code uses the definition’s `model` in either display mode when your spawn prompt doesn’t name one. See [how Claude Code picks a teammate’s model](#specify-teammates-and-models).
+- **`disallowedTools`**: for an in-process teammate, Claude Code removes the tools in the definition’s `disallowedTools` from the teammate’s set. `SendMessage` and the Task tools it adds stay available even when the list names them.
+- **`effort`**: for an in-process teammate, Claude Code applies the definition’s [`effort`](sub-agents.md#supported-frontmatter-fields) under the [frontmatter effort rules](../02-Claude-Code-CLI/model-config.md#set-the-effort-level).
 - **Body**: for an in-process teammate, Claude Code appends the definition’s body to its default system prompt as additional instructions. For a split-pane teammate, Claude Code uses the body in place of its default system prompt.
 - **`skills`**: Claude Code doesn’t apply the definition’s `skills` to a teammate in either display mode. The teammate loads skills from your project and user settings.
 - **`mcpServers`**: for a split-pane teammate, Claude Code applies the definition’s `mcpServers` under the [rules for that field](sub-agents.md#scope-mcp-servers-to-a-subagent), which cover a session started with `--agent` as well. An in-process teammate ignores the field and loads MCP servers from your project and user settings.
@@ -601,13 +608,13 @@ Path: 09-Agents-Patterns/agent-view.md
   - [Filter sessions](#filter-sessions)
   - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Dispatch new agents](#dispatch-new-agents)
-  - [From agent view](#from-agent-view)
+  - [Dispatch an agent from agent view](#dispatch-an-agent-from-agent-view)
   - [Dispatch to a specific directory](#dispatch-to-a-specific-directory)
-  - [From inside a session](#from-inside-a-session)
+  - [Send or copy a session to the background](#send-or-copy-a-session-to-the-background)
   - [Send the session to the background](#send-the-session-to-the-background)
   - [Copy the session with /fork](#copy-the-session-with-%2Ffork)
   - [What carries over when you background](#what-carries-over-when-you-background)
-  - [From your shell](#from-your-shell)
+  - [Dispatch an agent from your shell](#dispatch-an-agent-from-your-shell)
   - [Run a shell command](#run-a-shell-command)
   - [How file edits are isolated](#how-file-edits-are-isolated)
   - [What deleting a session removes](#what-deleting-a-session-removes)
@@ -635,8 +642,6 @@ Path: 09-Agents-Patterns/agent-view.md
   - [Opening a session says the conversation is already open](#opening-a-session-says-the-conversation-is-already-open)
   - [Opening a session says it has no saved transcript](#opening-a-session-says-it-has-no-saved-transcript)
   - [The terminal host died or the session stopped responding](#the-terminal-host-died-or-the-session-stopped-responding)
-  - [Terminal host died](#terminal-host-died)
-  - [Session isn’t responding](#session-isn%E2%80%99t-responding)
   - [A session fails before starting with a possibly low memory note](#a-session-fails-before-starting-with-a-possibly-low-memory-note)
   - [Agent view says the background service did not respond](#agent-view-says-the-background-service-did-not-respond)
   - [Dispatch fails with Could not resolve authentication method](#dispatch-fails-with-could-not-resolve-authentication-method)
@@ -765,11 +770,11 @@ Needs input
 
 Working
   ✽ collision detection       Adding swept-AABB checks to CollisionSystem   2m
-  ✢ playtest level 3          run 12 · all checkpoints cleared           in 4m
+  ✢ playtest level 3          all checkpoints cleared ×12                in 4m
 
 Completed
-  ✻ title screen              result: menu, options, and credits done       9m
-  ∙ sound effects             result: 14 SFX exported to assets/audio       4h
+  ✻ title screen              menu, options, and credits done               9m
+  ∙ sound effects             14 SFX exported to assets/audio               4h
   … 6 more
 ```
 
@@ -789,11 +794,11 @@ Each row starts with an icon whose color and animation show the session’s stat
 | Failed      | Red           | The task ended with an error                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Stopped     | Grey          | You stopped the session with `Ctrl+X` or `claude stop`, [its process was ended from outside Claude Code](#the-supervisor-process), or [it ended while the background service was off](#sessions-show-as-failed-after-shutdown)                                                                                                                                                                                                                                                   |
 
-Separately, the icon’s shape shows whether the underlying process is running:
+Separately, the icon’s shape has its own meaning:
 
 | Shape               | What it means                                                                                                               |
 |:--------------------|:----------------------------------------------------------------------------------------------------------------------------|
-| `✻` or animated `✽` | The session process is alive and replies immediately                                                                        |
+| `✻` or animated `✽` | The session process is running, or the session needs your input                                                             |
 | `∙`                 | The process has exited. You can still peek at the row, and when you reply or attach, Claude restarts from where it left off |
 | `✢`                 | A [`/loop`](../02-Claude-Code-CLI/scheduled-tasks.md) session sleeping between iterations. The row shows its run count and a countdown      |
 
@@ -845,7 +850,19 @@ Press `Space` on a selected row to open the peek panel. It opens with the senten
 - A finished session: its result
 - A working session: its full status sentence
 
-Any pull requests linked to the session are listed next. For a session that’s waiting on you, a line such as `waiting 3m` below them shows how long it has been waiting, and it’s the only time shown in the panel. The age at the right edge of the row is a different number: it counts from when the session started. Most of the time the peek panel is enough and you don’t need to open the full transcript. Type a reply in the peek panel and press `Enter` to send it to that session. When the session asks a question with predefined choices, the peek panel shows them as a numbered list and you can press a number key to pick one. A permission prompt shows as text describing what the session wants to run, without numbered options. Type a reply to answer it, or attach to answer with the standard prompt. For other blocked sessions, press `Tab` to fill the input with a suggested reply you can edit before sending. Prefix a reply with `!` to send a Bash command instead. When a [`PermissionRequest`](../07-Hooks/hooks.md#permissionrequest) or [`PreToolUse`](../07-Hooks/hooks.md#pretooluse) hook returns output Claude Code can’t validate for the call the session is asking about, the row shows the hook event and `hook output invalid:` with the validation error before the pending request’s text. For a hook that fails another way, the row says the hook failed. The session still waits on the same request. A reply that can’t be delivered, because the background service is unreachable or the send fails, is saved and sent to the session as its next prompt when its process starts again, and the error message says the reply was saved. A reply prefixed with `!` isn’t saved, because the saved text would reach the session as a plain prompt rather than run as a Bash command. With [voice dictation](../02-Claude-Code-CLI/voice-dictation.md) enabled, hold or tap your push-to-talk key while the reply input is focused to dictate a reply instead of typing it. The same works in the dispatch input at the bottom of agent view. Use `↑` and `↓` to peek at adjacent sessions without closing the panel, or `→` to attach.
+Any pull requests linked to the session are listed next. For a session that’s waiting on you, a line such as `waiting 3m` below them shows how long it has been waiting, and it’s the only time shown in the panel. The age at the right edge of the row is a different number: it counts from when the session started. Most of the time the peek panel is enough and you don’t need to open the full transcript. Type a reply in the peek panel and press `Enter` to send it to that session. Prefix a reply with `!` to send a Bash command instead. What happens to the reply depends on the session and on what you send:
+
+- A session that’s working: `/model`, `/effort`, `/rename`, and `/usage` run right away. Other replies join the session’s [message queue](../02-Claude-Code-CLI/interactive-mode.md#queue-messages-while-claude-works) instead of interrupting the response, and take effect [when queued input does](../02-Claude-Code-CLI/interactive-mode.md#when-claude-code-sends-what-you-queued). Other [commands](../02-Claude-Code-CLI/commands.md) wait for the turn to end, even ones that run as soon as you type them at a session’s own prompt
+- A reply that is exactly `/stop`: stops the session at once instead of being delivered to it, whether the session is working or waiting on you
+- A [shell job](#run-a-shell-command): the reply, `/stop` included, goes to the command’s terminal as typed input
+
+When the session is waiting on you, how you answer from the peek panel depends on what it’s waiting for:
+
+- A question with predefined choices: the panel lists the choices by number. With the reply input empty, press a choice’s number to fill it in, then `Enter` to send it, or type your own answer instead
+- A question without predefined choices: type your answer. When the empty input shows a suggested reply, press `Tab` to fill it in and edit it before sending
+- A permission prompt or another dialog, such as a [sandbox](../02-Claude-Code-CLI/sandboxing.md) prompt or an MCP server’s [request for input](../06-MCP-Tools/General/mcp.md#respond-to-mcp-elicitation-requests): replying doesn’t answer it. Your message waits in the queue. To answer the dialog, attach with `→`
+
+When a [`PermissionRequest`](../07-Hooks/hooks.md#permissionrequest) or [`PreToolUse`](../07-Hooks/hooks.md#pretooluse) hook returns output Claude Code can’t validate for the call the session is asking about, the row shows the hook event and `hook output invalid:` with the validation error before the pending request’s text. For a hook that fails another way, the row says the hook failed. The session still waits on the same request. When a reply can’t be delivered, the error message says whether it was saved. A reply prefixed with `!` or `/` is never saved. Claude Code sends a saved reply as the session’s next prompt the next time you restart the session; send any other reply again. With [voice dictation](../02-Claude-Code-CLI/voice-dictation.md) enabled in [hold mode](../02-Claude-Code-CLI/voice-dictation.md#hold-to-record), hold your push-to-talk key while the reply input is focused to dictate a reply instead of typing it. The same works in the dispatch input at the bottom of agent view. Use `↑` and `↓` to peek at adjacent sessions without closing the panel, or `→` to attach.
 
 
 [​](#attach-to-a-session)
@@ -865,19 +882,26 @@ In a session running in the foreground, one you started in the terminal rather t
 - Press `Esc` to undo the switch and return to the conversation. If `Esc` shows `Still starting — try again in a moment`, the background session isn’t ready yet, so press `Esc` again in a moment.
 - Press `Ctrl+C` twice to exit to your shell.
 
-When Claude Code can’t reopen the conversation, it exits and prints a `claude --resume` command that resumes it. [Claude’s task list](../02-Claude-Code-CLI/interactive-mode.md#task-list) moves to the background session with the conversation, so the checklist is intact when you return to that row. The row you pressed `←` from also keeps a bold, undimmed name after you move the selection with the arrow keys or the mouse, so you can tell which session you came from. If a tool is running when you press `←`, Claude Code waits up to about ten seconds for it to finish before backgrounding, and Claude continues the response in the background session. Press `←` again to background immediately instead of waiting. When in-flight work can’t carry over to the background session, Claude Code shows the `Background this session?` dialog first, the same as with [`/background`](#from-inside-a-session). The ten-second limit doesn’t apply while the [foreground subagents](sub-agents.md#run-subagents-in-foreground-or-background) Claude started in the conversation are still running. Claude Code keeps waiting so their work carries over, and shows a `Still backgrounding after the current tool` notice while it waits. Press `←` again to background without waiting, which restarts those subagents from the beginning. Claude Code doesn’t wait for the subagents a [dynamic workflow](../02-Claude-Code-CLI/workflows.md) is running. When a workflow has subagents running, Claude Code shows the `Background this session?` dialog instead. Claude Code doesn’t background the session while you have unsent text in the prompt input, because the text stays in your terminal’s input box and wouldn’t move to the background session. If you type into the input while Claude Code waits to background the session, it cancels the switch with `Backgrounding cancelled — you have unsent text in the input. Send it or clear it, then press ← again.` Pressing `←` creates the session’s row even when the conversation has no messages yet, so `→` still returns to it. You can turn this shortcut off for foreground sessions with the [`leftArrowOpensAgents`](../02-Claude-Code-CLI/settings-reference.md#leftarrowopensagents) setting in `/config`.
+When Claude Code can’t reopen the conversation, it exits and prints a `claude --resume` command that resumes it. [Claude’s task list](../02-Claude-Code-CLI/interactive-mode.md#task-list) moves to the background session with the conversation, so the checklist is intact when you return to that row. The row you pressed `←` from also keeps a bold, undimmed name after you move the selection with the arrow keys or the mouse, so you can tell which session you came from. If a tool is running when you press `←`, Claude Code waits for it to finish before backgrounding, and Claude continues the response in the background session. Press `←` again to background immediately instead of waiting. When in-flight work can’t carry over to the background session, Claude Code shows the `Background this session?` dialog first, the same as with [`/background`](#from-inside-a-session). After about ten seconds, Claude Code backgrounds the session without waiting any longer, except in cases such as these:
+
+- **Foreground subagents are still running**: Claude Code keeps waiting so the work of the [foreground subagents](sub-agents.md#run-subagents-in-foreground-or-background) Claude started carries over, and shows `Still backgrounding after the current tool`. Press `←` again to background without waiting, which restarts those subagents from the beginning.
+- **A permission prompt or question is waiting for your answer**: while a permission prompt or a question Claude asked waits, Claude Code keeps waiting and shows `Still backgrounding after the current tool — a question is waiting for your answer.`
+- **You type into the prompt input**: Claude Code cancels the switch, because unsent text stays in your terminal’s input box and wouldn’t move to the background session. It shows `Backgrounding cancelled — you have unsent text in the input. Send it or clear it, then press ← again.`
+- **A queued message can’t move**: messages you [queued while Claude was working](../02-Claude-Code-CLI/interactive-mode.md#queue-messages-while-claude-works) move to the background session with the conversation. When one of them can’t, the session stays in the foreground and Claude Code shows a notice such as `Cannot open agents — 1 queued message can't move to the background. Press ← again once Claude has read it.`
+
+Pressing `←` creates the session’s row even when the conversation has no messages yet, so `→` still returns to it. You can turn this shortcut off for foreground sessions with the [`leftArrowOpensAgents`](../02-Claude-Code-CLI/settings-reference.md#leftarrowopensagents) setting in `/config`.
 
 
 [​](#organize-the-list)
 
 Organize the list
 
-Agent view groups sessions so the ones that need input are at the top, with `Ready for review` and `Needs input` above `Working` and `Completed`. These group names don’t map one-to-one to the [states](#read-session-state) above: a session moves to `Ready for review` when it has an open pull request, and `Completed` collects finished, failed, and stopped sessions together. Press `Ctrl+S` to group by directory instead. Your choice persists across runs. Within a group:
+Agent view groups sessions so the ones that need input are at the top, with `Ready for review` and `Needs input` above `Working` and `Completed`. These group names don’t map one-to-one to the [states](#read-session-state) above: a session moves to `Ready for review` when it has an open pull request that needs review or has failing checks, and `Completed` collects finished, failed, and stopped sessions together. Press `Ctrl+S` to group by directory instead. Your choice persists across runs. Within a group:
 
 - Press `Ctrl+T` to pin a session to the top and [keep its process running](#the-supervisor-process) while idle
 - Press `Shift+↑` or `Shift+↓` to reorder sessions
 - Press `Ctrl+R` to rename a session
-- Press `Enter` on a group header to collapse it
+- Press `Enter` on a group header to collapse it, except while a [filter](#filter-sessions) is active, when every group stays expanded
 
 To remove a session from the list, press `Ctrl+X` to stop it and `Ctrl+X` again within two seconds to delete it. Pressing `Ctrl+X` on a group header deletes every session in that group after confirmation. The second press deletes the session even when the stop attempt fails, for example because the [background service isn’t responding](#agent-view-says-the-background-service-did-not-respond): the confirmation stays active for another two seconds, and the delete ends the session’s process itself. Press `Esc` to dismiss the confirmation without deleting. Except in the kept cases covered in [What deleting a session removes](#what-deleting-a-session-removes), deleting removes the session from the list, and a worktree Claude created for it is removed, kept, or left in place depending on how you delete and what the worktree holds. The conversation transcript always stays on your local machine, available through `claude --resume`. To bring a session back on Claude Code v2.1.212 or later, type `/resume` in the dispatch input. A picker opens with past sessions of the repository you opened agent view from, newest first, including sessions you deleted from the list; sessions that already have a row aren’t listed. `↑`/`↓` move the selection, `Enter` resumes the selected session as a background session so it rejoins the list as a row, and `Esc` closes the picker. The picker opens only for a bare `/resume`. A targeted, scoped, or restricted resume can’t be served by the picker, so agent view shows the `attach to a session to run it` hint instead when:
 
@@ -886,33 +910,39 @@ To remove a session from the list, press `Ctrl+X` to stop it and `Ctrl+X` again 
 - the view was started with [`--safe-mode`](../02-Claude-Code-CLI/cli-reference.md#cli-flags)
 - the view was opened with a flag such as `--permission-mode` or `--settings`
 
-Completed sessions that don’t fit on screen fold into a `… N more` row. Failures and sessions with an open pull request always stay visible. The `Completed` group fills the vertical space left after the live groups, and on a short terminal the header compacts to a single summary line so sessions that are working or need input stay visible.
+Completed sessions that don’t fit on screen fold into a `… N more` row. The `Completed` group fills the vertical space left after the live groups, and on a short terminal the header compacts to a single summary line so sessions that are working or need input stay visible.
 
 
 [​](#filter-sessions)
 
 Filter sessions
 
-Type in the dispatch input to filter instead of dispatching:
+Start the dispatch input with one of these filters to narrow the list as you type:
 
-| Filter                                     | Shows                                                                                                    |
-|:-------------------------------------------|:---------------------------------------------------------------------------------------------------------|
-| `a:<name>`                                 | Sessions running the named agent                                                                         |
-| `s:<state>`                                | Sessions in the given state, such as `s:working`. Also accepts `s:blocked` for everything waiting on you |
-| `#<number>` or a pull or merge request URL | The session working on that pull request or merge request                                                |
-| Any other URL                              | The session whose first prompt contained that URL                                                        |
+| Filter                                                      | Shows                                                                                                                                                                    |
+|:------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `a:<name>`                                                  | Sessions running the named agent                                                                                                                                         |
+| `s:<state>`                                                 | Sessions in the given state, such as `s:working`, or under the given group header, such as `s:ready` for `Ready for review`. `s:blocked` lists everything waiting on you |
+| `n:<text>`                                                  | Sessions whose name or first prompt contains the text, such as `n:login`. Requires Claude Code v2.1.287 or later                                                         |
+| `o:<text>`                                                  | Sessions whose result contains the text, such as `o:merged`. A bare `o:` lists every session that has reported a result                                                  |
+| A pull or merge request number, such as `#1234`, or its URL | The session working on that pull request or merge request                                                                                                                |
+| Any other URL                                               | The session whose first prompt contained that URL                                                                                                                        |
+
+To combine filters, start with `a:`, `s:`, `n:`, or `o:` and add more, separated by spaces. The list shows the sessions that match all of them. For example, `s:blocked a:reviewer` lists the `reviewer` sessions that are waiting on you. While a filter is active, groups you collapsed expand to show their matches and a match is selected, so pressing `Enter` opens it. Clear the input to remove the filter, and those groups collapse again.
 
 
 [​](#keyboard-shortcuts)
 
 Keyboard shortcuts
 
-Press `?` in agent view to see every shortcut in context. The table below summarizes them.
+Press `?` in agent view to see shortcuts in context. The table below summarizes them.
 
 | Shortcut              | Action                                                                                                                                                                                                                                                                                                                                                               |
 |:----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `↑` / `↓`             | Move between rows                                                                                                                                                                                                                                                                                                                                                    |
-| `Enter`               | Attach to the selected session, or dispatch if there’s text in the input                                                                                                                                                                                                                                                                                             |
+| `PgUp` / `PgDn`       | Move up or down by a screenful of rows                                                                                                                                                                                                                                                                                                                               |
+| `Home` / `End`        | Jump to the first or last row                                                                                                                                                                                                                                                                                                                                        |
+| `Enter`               | Attach to the selected session, or submit the input’s text if it isn’t a [filter](#filter-sessions)                                                                                                                                                                                                                                                                  |
 | `Space`               | Open or close the peek panel for the selected session                                                                                                                                                                                                                                                                                                                |
 | `Shift+Enter`         | Insert a newline in the dispatch input, [as in the main prompt](../02-Claude-Code-CLI/terminal-config.md#enter-multiline-prompts)                                                                                                                                                                                                                                                    |
 | `Ctrl+Enter`          | Dispatch and attach immediately, in terminals where the `?` overlay lists `ctrl+enter to start and open`                                                                                                                                                                                                                                                             |
@@ -921,6 +951,8 @@ Press `?` in agent view to see every shortcut in context. The table below summar
 | `Tab`                 | On an empty input, browse all subagents. Otherwise apply the highlighted suggestion                                                                                                                                                                                                                                                                                  |
 | `Ctrl+S`              | Switch grouping between state and directory                                                                                                                                                                                                                                                                                                                          |
 | `Ctrl+T`              | Pin or unpin the selected session                                                                                                                                                                                                                                                                                                                                    |
+| `Ctrl+F`              | Find sessions by name, with the [`n:` filter](#filter-sessions)                                                                                                                                                                                                                                                                                                      |
+| `Alt+↑` / `Alt+↓`     | Jump to the previous or next group header                                                                                                                                                                                                                                                                                                                            |
 | `Ctrl+R`              | Rename the selected session                                                                                                                                                                                                                                                                                                                                          |
 | `Ctrl+G`              | Open the dispatch prompt in your `$VISUAL` or `$EDITOR`                                                                                                                                                                                                                                                                                                              |
 | `Ctrl+J`              | Insert a newline in the dispatch input                                                                                                                                                                                                                                                                                                                               |
@@ -928,9 +960,9 @@ Press `?` in agent view to see every shortcut in context. The table below summar
 | `Shift+↑` / `Shift+↓` | Reorder the selected session                                                                                                                                                                                                                                                                                                                                         |
 | `Esc`                 | Close the peek panel, clear the input, or exit. When you opened agent view by backgrounding your session with `←`, the final `Esc` returns to that conversation instead of exiting. With [vim editor mode](../02-Claude-Code-CLI/interactive-mode.md#vim-editor-mode) on, pressing `Esc` in the input switches from INSERT to NORMAL mode and keeps your text, as in the main prompt |
 | `Ctrl+C`              | Clear the input; press twice to exit                                                                                                                                                                                                                                                                                                                                 |
-| `?`                   | Show all shortcuts                                                                                                                                                                                                                                                                                                                                                   |
+| `?`                   | Show shortcuts                                                                                                                                                                                                                                                                                                                                                       |
 
-`Ctrl+S`, `Ctrl+T`, and `Ctrl+G` follow your [`keybindings.json`](../02-Claude-Code-CLI/keybindings.md). Rebind or unbind `Ctrl+S` and `Ctrl+T` with the `agents:switchView` and `agents:togglePin` actions in the [`Agents` context](../02-Claude-Code-CLI/keybindings.md#agents-actions), and `Ctrl+G` through the `Chat` context’s `chat:externalEditor` binding. The other shortcuts in the table can’t be rebound.
+The shortcuts that have an action in the [`Agents` context](../02-Claude-Code-CLI/keybindings.md#agents-actions) follow your [`keybindings.json`](../02-Claude-Code-CLI/keybindings.md). So does `Ctrl+G`, through the `Chat` context’s `chat:externalEditor` binding.
 
 
 [​](#dispatch-new-agents)
@@ -940,9 +972,9 @@ Dispatch new agents
 You can dispatch new background sessions from agent view, send or copy an existing interactive session to the background, or start one directly from the shell.
 
 
-[​](#from-agent-view)
+[​](#dispatch-an-agent-from-agent-view)
 
-From agent view
+Dispatch an agent from agent view
 
 Type a prompt in the input at the bottom of agent view and press `Enter` to start a new background session. The session is named automatically from the prompt; rename it later with `Ctrl+R`. The automatic name is a short label written by a [Haiku-class model](../02-Claude-Code-CLI/model-config.md). A name the session gets later also appears on its row, including the [generated title](../02-Claude-Code-CLI/sessions.md#name-your-sessions) the session gets when you [accept a plan](../02-Claude-Code-CLI/permission-modes.md#review-and-approve-a-plan) in that session. Paste an image into the prompt to include a screenshot or diagram with the task. Pasted text longer than 800 characters or more than three lines collapses to a `[Pasted text #N]` placeholder so the input stays on one line; the full text is sent when you dispatch. To review or edit the collapsed text before dispatching, paste the same text again and the placeholder expands back into the input. Prefix or mention parts of the prompt to control how the session starts:
 
@@ -984,9 +1016,9 @@ A new session runs in the directory you opened agent view from. To target a diff
 When agent view is grouped by directory, dispatching sends the prompt to the selected row’s directory, so you can select a group and dispatch into it without retyping the path.
 
 
-[​](#from-inside-a-session)
+[​](#send-or-copy-a-session-to-the-background)
 
-From inside a session
+Send or copy a session to the background
 
 Two commands move work from the session you’re in to the background: `/background` sends the current conversation there and frees your terminal, and `/fork` sends a copy while you keep working where you are.
 
@@ -1029,9 +1061,9 @@ Backgrounding starts a fresh process that resumes from the saved conversation, a
 Directories you added during the session with [`/add-dir`](../02-Claude-Code-CLI/permissions.md#additional-directories-grant-file-access-not-configuration) also carry through. Carrying `--allow-dangerously-skip-permissions` keeps `bypassPermissions` reachable in the backgrounded session, but it doesn’t grant anything new: the mode still requires the one-time interactive acceptance described in [Permission mode, model, and effort](#permission-mode-model-and-effort).
 
 
-[​](#from-your-shell)
+[​](#dispatch-an-agent-from-your-shell)
 
-From your shell
+Dispatch an agent from your shell
 
 Pass `--bg` or its long form `--background` to start a session that goes straight to the background:
 
@@ -1085,8 +1117,9 @@ From agent view, dispatch the same kind of job by typing `!` as the first charac
 
 How file edits are isolated
 
-Every background session, whether started from agent view, `/bg`, or `claude --bg`, starts in your working directory. Before editing files, Claude moves the session into an isolated [git worktree](../02-Claude-Code-CLI/worktrees.md) under `.claude/worktrees/`, so parallel sessions can read the same checkout but each writes to its own. Once the session is in its worktree, Claude Code [enforces worktree isolation](../02-Claude-Code-CLI/worktrees.md#how-claude-code-enforces-isolation) for the session and for any subagents it spawns. Claude skips the worktree when:
+When you dispatch a background session from agent view or start one with `claude --bg`, the session starts in your working directory. Before editing files, Claude moves the session into an isolated [git worktree](../02-Claude-Code-CLI/worktrees.md) under `.claude/worktrees/`, so parallel sessions can read the same checkout but each writes to its own. Once the session is in its worktree, Claude Code [enforces worktree isolation](../02-Claude-Code-CLI/worktrees.md#how-claude-code-enforces-isolation) for the session and for any subagents it spawns. Claude skips the worktree when:
 
+- You [moved a session you already had open to the background](#from-inside-a-session) with `←` or `/background`. That session keeps editing files where it was already working
 - The session is already inside a linked git worktree, whether Claude created it under `.claude/worktrees/` or you created it with `git worktree add` somewhere else
 - The file that Claude is editing is inside a linked git worktree, such as one that the session or its subagent created with `git worktree add`
 - The working directory isn’t a git repository and no [`WorktreeCreate` hook](../07-Hooks/hooks.md#worktreecreate) is configured
@@ -1102,7 +1135,7 @@ To turn off worktree isolation for a repository where git worktrees are impracti
 }
 ```
 
-Outside a git repository, sessions write to the working directory directly and aren’t isolated from each other, so avoid dispatching parallel sessions that edit the same files. If you use a different version control system, configure a [`WorktreeCreate` hook](../02-Claude-Code-CLI/worktrees.md#non-git-version-control) and Claude isolates edits the same way it does for git. When the hook fails in a directory that isn’t a git repository, Claude skips isolation for that directory and edits the working directory in place. Inside a git repository, Claude Code blocks writes to the shared checkout until Claude moves the session into a worktree. To find a session’s worktree path, peek the session or attach and check its working directory. A [subagent](sub-agents.md) the background session spawns inherits the session’s working directory, so its file edits land in the session’s worktree rather than your working copy. To give a subagent its own separate worktree instead, set [`isolation: worktree`](sub-agents.md#supported-frontmatter-fields) in its frontmatter or pass `isolation: "worktree"` when spawning it. When a background session has made code changes in a worktree Claude entered, Claude Code instructs Claude to preserve the work before finishing, so it survives if you delete the session and its worktree:
+Outside a git repository, sessions write to the working directory directly and aren’t isolated from each other, so avoid dispatching parallel sessions that edit the same files. If you use a different version control system, configure a [`WorktreeCreate` hook](../02-Claude-Code-CLI/worktrees.md#non-git-version-control) and Claude isolates edits the same way it does for git. When the hook fails in a directory that isn’t a git repository, Claude skips isolation for that directory and edits the working directory in place. Inside a git repository, a session that Claude moves into a worktree before editing can’t use the `Edit`, `Write`, or `NotebookEdit` tools on the shared checkout until that move happens. To find a session’s worktree path, attach and check its working directory. A [subagent](sub-agents.md) the background session spawns inherits the session’s working directory. Once the session is in a worktree, the subagent’s file edits land in that worktree rather than in your working copy. To give a subagent its own separate worktree instead, set [`isolation: worktree`](sub-agents.md#supported-frontmatter-fields) in its frontmatter or pass `isolation: "worktree"` when spawning it. When a background session has made code changes in a worktree Claude entered, Claude Code instructs Claude to preserve the work before finishing, so it survives if you delete the session and its worktree:
 
 - **Commit and push**: Claude commits without asking, and pushes the branch when the repository has a remote.
 - **Draft pull request**: Claude opens one when the task calls for it, and the [`#N` label](#pull-request-status) appears on the row.
@@ -1267,8 +1300,8 @@ Every background session has a short ID you can use from the shell. The ID is pr
 | `claude agents`                                            | Open agent view                                                                                                                                                                                                                                                                                                                                  |
 | `claude agents --cwd <path>`                               | Open agent view scoped to sessions started under `<path>`                                                                                                                                                                                                                                                                                        |
 | `claude agents --json`                                     | Print sessions as a JSON array and exit. See [List sessions as JSON](#list-sessions-as-json)                                                                                                                                                                                                                                                     |
-| `claude attach <id>`                                       | Attach to a session in this terminal                                                                                                                                                                                                                                                                                                             |
-| `claude logs <id>`                                         | Print the session’s recent output                                                                                                                                                                                                                                                                                                                |
+| `claude attach <id|name>`                                  | Attach to a session in this terminal                                                                                                                                                                                                                                                                                                             |
+| `claude logs <id|name>`                                    | Print the session’s recent output                                                                                                                                                                                                                                                                                                                |
 | `claude stop <id>`                                         | Stop a session. Also accepts `claude kill`                                                                                                                                                                                                                                                                                                       |
 | `claude respawn <id>`                                      | Restart a session, running or stopped, e.g. to pick up an updated Claude Code binary. The restarted session resumes its saved conversation; when none is on disk, it runs its original prompt again as a new conversation                                                                                                                        |
 | `claude respawn --all`                                     | Restart every running session, e.g. to move all sessions onto an updated Claude Code binary at once                                                                                                                                                                                                                                              |
@@ -1276,7 +1309,10 @@ Every background session has a short ID you can use from the shell. The ID is pr
 | `claude rm <id> --discard-unpushed <commit>@<worktree-id>` | Delete a session whose delete was refused over unpushed commits, discarding the worktree along with its branch and commits. Pass the exact value that refusal printed; see [What deleting a session removes](#what-deleting-a-session-removes). Requires v2.1.260 or later                                                                       |
 | `claude rm <id> --force-remove-worktree <worktree-id>`     | Delete a session whose delete was refused because git or the `WorktreeRemove` hook couldn’t remove its worktree, deleting the worktree directory anyway and leaving its branch in the repository. Pass the exact value that refusal printed; see [What deleting a session removes](#what-deleting-a-session-removes). Requires v2.1.268 or later |
 | `claude daemon status`                                     | Print the [supervisor’s](#the-supervisor-process) state, version, socket directory, and worker count                                                                                                                                                                                                                                             |
+| `claude daemon logs`                                       | Follow the supervisor’s log file, [`~/.claude/daemon.log`](#where-state-is-stored), printing new lines as they arrive until you press `Ctrl+C`                                                                                                                                                                                                   |
 | `claude daemon stop --any`                                 | Stop the supervisor process and the background sessions it hosts. Pass `--keep-workers` to leave background sessions running so the next supervisor reconnects to them. The next `claude agents` or `claude --bg` starts a fresh supervisor                                                                                                      |
+
+`claude attach` and `claude logs` can take part of a session’s name in place of the ID, as in `claude logs "auth refactor"`. Passing a name requires Claude Code v2.1.290 or later.
 
 
 [​](#list-sessions-as-json)
@@ -1324,7 +1360,7 @@ The supervisor process
 
 The supervisor is a background service that runs your background sessions so they keep working after you close agent view or your terminal. Claude Code starts it the first time you background a session or open agent view, and you don’t need to manage it yourself. Each session is its own Claude Code process under the supervisor, and what happens to that process depends on the session’s state:
 
-- **Working, paused on a permission prompt or other dialog, or attached**: the process keeps running. A running subagent, workflow, or monitor counts as working.
+- **Working, paused on a permission prompt or other dialog, or attached**: the process keeps running. A running subagent, workflow, or monitor counts as working, and so does a pending [session-scoped scheduled task](../02-Claude-Code-CLI/scheduled-tasks.md), such as a `/loop` wakeup.
 - **Finished or waiting for your next message, and unattached for about an hour**: the supervisor stops the process to free resources. A session that ended its turn by asking you a question counts as waiting for your next message. The conversation stays on disk, and the next time you attach or reply, the session resumes where it left off. Pin a session with `Ctrl+T` to keep its process running.
 - **Exited unexpectedly while the supervisor is running**: the supervisor restarts the process. Ending a session you backgrounded yourself with `←` or `/background`, for example with `kill`, marks it stopped instead of restarting it. For sessions that ended with a shutdown, see [Sessions show as failed or stopped after shutdown](#sessions-show-as-failed-after-shutdown).
 - **After an auto-update**: the supervisor restarts itself onto the new version and moves idle sessions over in the background. Sessions that are working, waiting on you, or attached aren’t interrupted.
@@ -1415,14 +1451,19 @@ Two processes can’t write to the same transcript. When a stopped session’s s
 - A terminal where you resumed the conversation, for example with `claude --resume` or `/resume`: the row shows `Open in a terminal` with a hint to continue it there, and opening the row shows `Can't open — this session is running in another terminal`. Continue in that terminal, or exit it and open the row again.
 - Another non-interactive Claude Code process, for example a background session process for the same conversation that hasn’t exited yet: opening the row shows `This conversation is already open in another running Claude session`. Use that process, or wait for it to exit and open the row again.
 
-Claude Code saves a reply you typed with the refused attempt and sends it the next time the session starts.
+Claude Code saves a reply you typed with the refused attempt, except one prefixed with `!` or `/`, and sends it the next time the session starts.
 
 
 [​](#opening-a-session-says-it-has-no-saved-transcript)
 
 Opening a session says it has no saved transcript
 
-A stopped session that was [backgrounded from another conversation](#from-inside-a-session) and stopped before its first response finished has nothing to resume: until that first response finishes, the conversation still lives only in the session it was backgrounded from. `claude attach` refuses to open it with `This session has no saved transcript`. In agent view, opening that row shows `Press enter again to restart this session fresh` below the list. Press `Enter` on the same row again to restart the session with an empty conversation, or run `claude respawn <id>` from the shell. The original conversation is intact; resume it with `claude --resume` or keep working in it. See the [error reference](../02-Claude-Code-CLI/errors.md#this-session-has-no-saved-transcript) for details.
+When you open a session that you [backgrounded from another conversation](#from-inside-a-session) and that stopped before it ran a turn of its own, Claude Code resumes that conversation. If Claude Code can’t find the conversation, it refuses to open the session:
+
+- `claude attach` prints `This session has no saved transcript`.
+- Agent view shows `Press enter again to restart this session fresh` below the list.
+
+Press `Enter` on the same row again to restart the session with an empty conversation, or run `claude respawn <id>` from the shell. See the [error reference](../02-Claude-Code-CLI/errors.md#this-session-has-no-saved-transcript) for details.
 
 
 [​](#the-terminal-host-died-or-the-session-stopped-responding)
@@ -1430,26 +1471,6 @@ A stopped session that was [backgrounded from another conversation](#from-inside
 The terminal host died or the session stopped responding
 
 The [supervisor](#the-supervisor-process) runs each background session’s terminal in its own host process. When that process dies or stops responding, Claude Code shows the reason and offers a restart; in both cases the conversation is saved and the restart resumes it. The [error reference](../02-Claude-Code-CLI/errors.md#terminal-host-process-died) quotes the full messages. Claude Code never restarts a row running a [shell command](#run-a-shell-command), from `Enter` or from `claude attach`, because that would run the command again; the row’s message and `claude attach` both say the command isn’t run again.
-
-
-[​](#terminal-host-died)
-
-Terminal host died
-
-On Linux and WSL, the supervisor checks each host process every few seconds, whether or not you open the session, and marks the session failed when the process has exited but its connection to the supervisor never closed.
-
-- In agent view, the row shows `terminal host process died — press Enter to restart`. Press `Enter` on it and Claude Code restarts the session on a fresh host process.
-- From the shell, `claude attach <id>` restarts a session already marked failed. Otherwise it reports the cause and exits, telling you to run `claude attach <id>` again.
-
-
-[​](#session-isn’t-responding)
-
-Session isn’t responding
-
-When the supervisor accepts an open but no output arrives for about ten seconds, Claude Code ends the attempt and offers a restart. A session that merely stalled, for example across machine sleep, doesn’t reach this offer: the supervisor [restarts it on open](#read-session-state) itself.
-
-- In agent view, the footer shows `Press enter again to restart this session — it isn't responding (its conversation is saved and resumes).` Press `Enter` on the same row again and Claude Code stops the unresponsive process and restarts the session; it stops nothing without that second press.
-- From the shell, `claude attach <id>` reports the cause and exits, telling you to run `claude stop <id>`, then `claude attach <id>`.
 
 
 [​](#a-session-fails-before-starting-with-a-possibly-low-memory-note)
@@ -1580,7 +1601,7 @@ Claude Code has five ways to work on several tasks at once: [subagents](sub-agen
 
 In every approach the workers are Claude sessions. To involve a different tool, expose it to Claude as an [MCP server](../06-MCP-Tools/General/mcp.md). Three more tools support this work without being a way to run agents themselves:
 
-- [Worktrees](../02-Claude-Code-CLI/worktrees.md) give each session a separate git checkout, so parallel sessions never edit the same files. Use them for sessions you run yourself. A session you dispatch from agent view [moves into a worktree of its own before it edits files](agent-view.md#how-file-edits-are-isolated), and subagents you spawn can each get one too.
+- [Worktrees](../02-Claude-Code-CLI/worktrees.md) give each session a separate git checkout, so parallel sessions each edit their own copy of the files. Use them for sessions you run yourself. A session you dispatch from agent view [moves into a worktree of its own before it edits files](agent-view.md#how-file-edits-are-isolated), and subagents you spawn can each get one too.
 - [Cross-session messaging](../02-Claude-Code-CLI/cross-session-messaging.md) lets Claude list and message your other Claude Code sessions on this machine, on another machine, or [in the cloud](../02-Claude-Code-CLI/claude-code-on-the-web.md), so sessions you run yourself can pass findings and status between themselves.
 - [`/batch`](../02-Claude-Code-CLI/commands.md) is a [skill](../08-Plugins-Skills/skills.md) that has Claude split one large change into 5 to 30 worktree-isolated subagents. It’s a packaged use of subagents and worktrees, not a separate coordination style.
 
@@ -1615,7 +1636,7 @@ Check on running work
 The command for checking on running work depends on which approach you used:
 
 - For background sessions, `claude agents` opens [agent view](agent-view.md): one screen showing every session, its state, and which ones need your input.
-- For subagents in the current session, named background subagents appear in the @-mention typeahead with their status. As of v2.1.198, `/agents` no longer opens a panel; it prints a notice pointing to the subagent file locations. To [create and edit custom subagents](sub-agents.md#configure-subagents), ask Claude or edit the files directly. Despite the similar name, `/agents` is separate from `claude agents`.
+- For subagents in the current session, named background subagents appear in the @-mention typeahead with their status. The `/agents` command prints a notice pointing to the subagent file locations. To [create and edit custom subagents](sub-agents.md#configure-subagents), ask Claude or edit the files directly. Despite the similar name, `/agents` is separate from `claude agents`.
 - For anything running in the background of the current session, `/tasks` lists each item and lets you check on, attach to, or stop it. The list also includes subagents that have finished.
 - For dynamic workflows, `/workflows` lists running and completed runs, the phase each is in, and how many agents have finished.
 
@@ -1633,6 +1654,247 @@ Each guide below covers setup and configuration for one approach:
 - [Orchestrate agent teams](agent-teams.md): set up a lead and teammates, assign tasks, and review their work.
 - [Orchestrate dynamic workflows](../02-Claude-Code-CLI/workflows.md): run a bundled workflow or have Claude write one that runs many subagents and verifies their findings against each other.
 - [Run parallel sessions with worktrees](../02-Claude-Code-CLI/worktrees.md): start Claude in an isolated checkout, control what gets copied in, and clean up afterward.
+
+---
+
+## Building AI agents for financial services | Claude by Anthropic
+
+Source: https://www.claude.com/blog/building-ai-agents-in-financial-services
+Path: 09-Agents-Patterns/building-ai-agents-in-financial-services.md
+
+# Building AI agents for financial services
+
+Financial institutions are deploying autonomous AI systems to improve operations while navigating regulatory complexity and risk. Here's how.
+
+
+- 
+
+  Category[Best practices](https://www.claude.com/resources/best-practices)
+- 
+
+  ProductClaude Platform
+- 
+
+  DateOctober 30, 2025
+- 
+
+  Reading time16 min
+- 
+
+
+Guide: Building AI agents for financial services
+
+Learn how teams at NBIM, Brex, and more build reliable AI agents with Claude on AWS Bedrock.
+
+[Read more](https://resources.anthropic.com/financial-services-guide-aws-anthropic)
+
+In financial services, AI agents are moving beyond pilot programs to deliver concrete business value.
+
+In banking, wealth management, and insurance, autonomous AI agents are transforming how customers understand spending patterns and find savings opportunities. Among other use cases, these tools spot potential overdraft fees, suggest better savings strategies, and guide financial decisions.
+
+For instance, McKinsey research shows that financial institutions adopting AI agent workflows in fraud detection could generate [two hundred to two thousand percent productivity gains](https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/how-agentic-ai-can-change-the-way-banks-fight-financial-crime), while Norges Bank Investment Management (NBIM) employees [save hundreds of cumulative hours per week](../18-Industry-UseCases/nbim.md) on analytical and operational tasks using Claude.
+
+For most organizations, the real challenge isn't adopting AI agents. It's building systems that navigate complex regulations, manage real-time risk, and protect customer assets while improving business outcomes.
+
+## **Moving beyond analysis: how agents change the game**
+
+Agents represent a fundamental shift in enterprise AI, replacing generative AI tools that depend upon constant human input and oversight with [autonomous systems](../19-Reference/claude-for-financial-services.md) that handle long-running, context-heavy tasks with minimal – if any – intervention.
+
+This evolution is especially welcome in financial services, where data often lives in fragmented systems that don't talk to each other, making it harder to see the complete picture of a customer's financial health. Agentic systems can understand financial context, ingest information from multiple unrelated sources, process multiple kinds of data (transaction records, market data, regulatory documents), and apply all of these capabilities to taking meaningful actions within your customer’s existing financial workflows.
+
+What does this look like in practice? Instead of an analyst manually pulling data from five different systems, reviewing it, and then updating a risk assessment, an agent can monitor transaction patterns across those systems, recognize concerning trends, draft updated risk recommendations based on current regulations, and route them to the right analyst for approval. The agent handles the coordination and analysis, while the analyst makes the final decision.
+
+This shift from traditional AI to AI agents is particularly significant for financial services because it tackles the process completion problem. Financial workflows don't just need information, they need actions taken across multiple systems to actually complete transactions and maintain compliance. Agents can bridge those gaps.
+
+## **Real-world results AI agents in finance**
+
+AI-powered financial agents are already delivering real-world results in areas such as customer service, fraud detection, and workforce empowerment.
+
+### **Transforming customer interactions**
+
+Customer service operations are a natural starting point because this area has already proven successful. Financial institutions implementing AI-powered customer service are seeing measurable improvements:
+
+- Multilingual virtual assistants now handle hundreds of millions of interactions annually, serving millions of users across different language groups.
+- Customer service agents automate routine tasks like balance inquiries and card replacements, reducing wait times while delivering 24/7 responses and suggesting relevant products, turning support interactions into opportunities to actually help people manage their finances.
+
+[Intuit TurboTax](../18-Industry-UseCases/intuit.md), for example, built an AI financial assistant powered by Claude that generates clear and accurate tax explanations for millions of customers. The agentic implementation was so successful that the AI-powered experiences achieved higher customer ratings compared to non-Claude experiences in the previous tax season.
+
+### **Combating fraud and financial crime**
+
+In fraud detection and cybercrime prevention, AI agents excel at spotting patterns that may slip past human analysts due to sheer volume. When you consider that financial institutions currently [catch only about 2%](https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/how-agentic-ai-can-change-the-way-banks-fight-financial-crime) of global financial crime, you can see why this matters.
+
+AI agents monitor millions of transactions in real-time, working around the clock without the fatigue or cognitive limitations that affect human teams. McKinsey found that [a single team member](https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/how-agentic-ai-can-change-the-way-banks-fight-financial-crime) can effectively supervise more than 20 AI agents in financial crime-detection workflows.
+
+For [Brex](../18-Industry-UseCases/brex.md), a modern financial platform, Claude powers their AI anomaly detection, reviewing 100% percent of transactions and providing critical aircover for financial professionals by proactively grouping related expenses, flagging policy concerns, and providing explanations with recommended actions.
+
+### **Amplifying team capabilities**
+
+AI agents deliver tangible benefits right where your teams need them most. When implemented thoughtfully, these tools don't replace your workforce but rather amplify what they can accomplish and let them focus on the high-value work that requires their knowledge and expertise. Here's how financial services organizations like [Block](../18-Industry-UseCases/block.md) and [Campfire](../18-Industry-UseCases/campfire.md) are doing this:
+
+- Design teams turn ideas into working prototypes without coding barriers
+- Operations teams automate case ticket closure
+- Accounting teams query financial data through natural language, perform flux analyses, and access audit support
+
+## **Unique challenges in financial services**
+
+Banks and financial institutions face unique challenges that make AI agent implementation more complex than typical enterprise deployments. When every decision potentially impacts customer finances, regulatory compliance, and institutional risk, the stakes are at a different level altogether.
+
+The combination of complex financial contexts, regulatory requirements, and direct impact on customer outcomes creates an implementation environment where thoroughness trumps speed. These are some of the challenges you can expect to encounter.
+
+### **Integrating with legacy infrastructure**
+
+Financial institutions typically run on decades-old core banking systems that weren't designed for real-time AI integration. Your loan origination system, trading platforms, and compliance databases often use different protocols, data formats, and security models.
+
+Legacy system integration often shows up in:
+
+- Core banking platform incompatibilities across vendors
+- Departmental data silos requiring cross-system orchestration
+- Legacy mainframe integration challenges
+- Real-time synchronization needs for time-sensitive trading decisions
+
+When tackling these challenges, teams need to make practical decisions about integration approaches. The first consideration involves connectivity: does the AI agent have direct integration capabilities with the necessary systems? If not, teams face two practical options: building custom connectors (typically through APIs or MCP approaches) or implementing middleware systems to bridge these communication gaps.
+
+For early agentic solutions, look to integrate with modern platforms with APIs and standard protocols. If you decide you need to connect to legacy systems, you'll need to develop middleware that can translate between these systems while maintaining transaction integrity and audit trails.
+
+### **Navigating regulatory complexity**
+
+A single transaction might trigger compliance requirements from multiple regulators, including SEC, FDIC, state banking authorities, and international bodies for cross-border payments. AI agents must understand not just what actions to take, but which regulatory frameworks apply to each decision and how to document actions for different audit requirements.
+
+Some regulatory considerations that need to be part of your agent architecture include:
+
+- SOC 2 and PCI DSS compliance for AI data processing workflows
+- Evidence-based validation of risk assessment accuracy
+- Documentation requirements for AI decision audit trails
+
+Ensure you build observability and traceability into the agentic solutions from day one. You'll want it simply from a troubleshooting perspective, but you'll definitely need it from a regulatory one.
+
+### **Managing real-time risk**
+
+Unlike other industries where decisions can be reviewed later, financial agents often make choices that immediately impact customer accounts, market positions, or regulatory standing. This demands fail-safe architectures where agents can act quickly but always within predefined risk parameters that protect both customers and the institution.
+
+Implementation requires:
+
+- Transparent reasoning that financial professionals can validate and explain to clients
+- Clear escalation pathways for complex or ambiguous financial situations
+- Override capabilities allowing advisors to reject AI recommendations when client circumstances warrant
+- Fail-safe defaults that prioritize customer protection over operational efficiency
+
+Identify which actions will require human-in-the-loop authorization, either from a risk or regulatory perspective. For high-risk actions, consider how the system, agentic or otherwise, can fail in a known safe state.
+
+## **Practical deployment strategies**
+
+AI agents are already transforming financial operations for some companies. There are abundant examples of agents currently in production and delivering measurable impact on fraud detection, customer satisfaction, and operational efficiency. So, how do you build and deploy agents that address your specific operational challenges, while making sure they meet regulatory requirements and risk management standards?
+
+### **Finding your starting point**
+
+The best agent initiatives begin by targeting the things that everyone already agrees need fixing. Clear metrics make all the difference here, because they show whether the solution actually works and help build momentum for wider adoption.
+
+#### **Choose high-impact, low-risk targets**
+
+Target opportunities for adding agents within your organization to areas where the stakes are manageable, but the potential impact is meaningful.
+
+Look for processes where human oversight already exists or where consequences of imperfect automation remain minimal: these are perfect for early adoption without introducing excessive organizational risk. Customer service triage, internal knowledge retrieval, and routine data validation are natural entry points where AI agents can immediately reduce workloads while humans remain in the verification loop.
+
+Beyond immediate productivity gains, these initial agent deployments are extremely valuable learning experiences. Each low-risk implementation helps your teams develop practical understanding of agent capabilities, limitation patterns, and integration requirements without the pressure of mission-critical deadlines. Your technical staff learns to fine-tune prompts and monitoring systems in environments where mistakes are learning opportunities rather than costly errors.
+
+#### **Start simple, learn fast**
+
+Start with agents that handle one straightforward task, like flagging unusual transaction patterns, monitoring compliance deadlines, or automating document classification.
+
+You'll get tangible operational improvements while keeping human judgment firmly in the loop while building the organizational muscle memory needed for more ambitious agent applications. When you eventually tackle higher-risk use cases, you'll have technical capabilities and confidence built through experience rather than theoretical assumptions about how agents might perform in your specific environment.
+
+### **Scaling across the organization**
+
+Success with initial implementations opens the door to enterprise-wide capabilities. The key is moving from point solutions to shared infrastructure that serves multiple departments.
+
+#### **Building reusable foundations**
+
+Your organization will get better results when you build foundational AI agent capabilities that serve multiple departments rather than deploying one-off solutions for individual problems.
+
+For example, you might implement a document processing capability that could be used across your organization. The same AI system that automates [bank reconciliations](../18-Industry-UseCases/campfire.md) and invoice processing can help compliance teams analyze regulatory documents and support various departments with financial data extraction. Each department contributes use cases that strengthen the core capability while benefiting from improvements driven by other teams.
+
+#### **Earning trust with stakeholders**
+
+Agents interact with both your workforce and your customers, and each group will respond differently to AI-assisted processes. Trust-building matters as much as technical deployment.
+
+For customers, transparency matters. Make it clear when they're interacting with an AI agent versus a human, explain what the agent can and cannot do, and provide straightforward pathways to human specialists when needed. This clarity builds confidence and encourages broader adoption of AI-assisted services.
+
+Internal adoption follows similar principles. Your organization already has change management processes for new systems. Apply them here. Staff need to understand how agents work, when to trust their recommendations, and how to escalate concerns.
+
+Frame the conversation around enhancement rather than replacement. For example,[ Block's internal AI agent](../18-Industry-UseCases/block.md) reached 4,000 active users out of 10,000 employees across 15 different job profiles (sales, design, product, customer success, and operations). Adoption doubled in one month, with user engagement increasing 40-50% weekly as employees found new ways to use it.
+
+The most successful implementations emphasize how AI enhances human capabilities rather than replacing them.
+
+#### **Advancing to complex use cases**
+
+At this stage, your organization has an augmented workforce, refined core capabilities, demonstrated wins, and experienced teams ready for larger challenges. The lessons learned from early implementations provide the foundation for more complex agent deployments.
+
+The observability and human-in-the-loop mechanisms you built for simpler use cases become even more critical as complexity increases. More than ever, your implementation needs:
+
+- **Comprehensive audit trails** that track every agent decision and data source used, enabling review and regulatory compliance
+- **Real-time monitoring systems** that detect when agents encounter edge cases or uncertain scenarios requiring human judgment
+- **Escalation protocols** that automatically route complex cases to appropriate specialists based on clear criteria
+- **Performance metrics** that measure not just technical accuracy but business outcomes and workflow integration success
+
+## **Taking action**
+
+AI agents represent a significant opportunity to address persistent challenges in financial services. Success requires thoughtful implementation that balances technological capability with industry-specific requirements. This approach delivers quick wins that build confidence while establishing the foundation for more sophisticated initiatives.
+
+The path forward demands partnership between technology and business teams. Financial services leaders who prioritize customer protection through robust testing and escalation pathways, and build modular systems that evolve with advancing AI capabilities, will lead the way.
+
+
+### Building agents for financial services
+
+Learn how organizations like NBIM, Brex, and Verisk build and deply AI agents at scale with Claude in AWS Bedrock.
+
+[Read more](https://resources.anthropic.com/financial-services-guide-aws-anthropic)
+
+Learn more about how organizations like Visa, Citi, and NBIM are transforming their industries with Claude for Financial Services.
+
+[See here](../18-Industry-UseCases/finance.md)
+
+## Related articles
+
+Explore more product news and best practices for teams building with Claude.
+
+
+ArticleOct 8, 2026
+
+### Building effective agent automations
+
+A reference implementation walkthrough for a scheduled Claude Managed Agents automation, with the config files and six rules for avoiding common failure modes.
+
+Claude Platform
+
+(opens in new tab)[](https://claude.dev/blog/automating-eval-design-and-hillclimbing/)
+
+ArticleOct 7, 2026
+
+### Automating eval design and hillclimbing with Claude
+
+Principles for designing evals and hillclimbing against them without fooling yourself, and how the claude-api skill's build-eval and hillclimb commands put them to work.
+
+Claude Platform
+
+(opens in new tab)[](https://claude.dev/blog/claude-code-in-the-cloud/)
+
+ArticleOct 6, 2026
+
+### Claude Code in the cloud: a field guide to cloud sessions
+
+What changes when Claude Code runs on its own machine, the workflows where that pays off, and how to connect GitHub on the first try.
+
+Claude Code
+
+(opens in new tab)[](https://www.claude.com/resources/articles/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk)
+
+ArticleOct 5, 2026
+
+### How Cresta turned CX expertise into an agent builder on the Claude Agent SDK
+
+See how Cresta built Conductor, an agent that builds other agents, on the Claude Agent SDK, and how the team evaluates it with every new Claude model.
+
+Claude Platform
 
 ---
 
@@ -17952,6 +18214,108 @@ help us improve!
 
 ---
 
+## How enterprises are building AI agents in 2026 | Claude by Anthropic
+
+Source: https://www.claude.com/blog/how-enterprises-are-building-ai-agents-in-2026
+Path: 09-Agents-Patterns/how-enterprises-are-building-ai-agents-in-2026.md
+
+# How enterprises are building AI agents in 2026
+
+How are organizations deploying AI agents today—and what's in store for tomorrow? We surveyed over 500 technical leaders across industries to find out.
+
+- 
+
+  Category[Insights](https://www.claude.com/resources/insights)
+- 
+
+  DateDecember 9, 2025
+- 
+
+  Reading time5 min
+- 
+
+
+AI agents have moved from experimental to an essential part of an organization’s tech stack. But how are enterprises actually using them?
+
+In partnership with research firm Material, we surveyed over 500 technical leaders across industries and company sizes to understand how organizations are deploying agents today and where they see opportunity ahead.
+
+The findings show a clear pattern: organizations are shifting from simple task automation to complex, multi-step workflows that span teams and business functions.
+
+## **What the data shows**
+
+More than half of organizations (57%) now deploy agents for multi-stage workflows, with 16% running cross-functional processes across multiple teams. In 2026, 81% plan to tackle more complex use cases, including 39% developing agents for multi-step processes and 29% deploying them for cross-functional projects.
+
+Coding leads adoption. Nearly 90% of organizations use AI to assist with development, and 86% deploy agents for production code. Organizations report time savings across the entire development lifecycle: planning and ideation (58%), code generation (59%), documentation (59%), and code review and testing (59%).
+
+But the impact extends beyond engineering. Data analysis and report generation (60%) and internal process automation (48%) rank among the highest-impact use cases. Looking ahead, 56% plan to implement agents for research and reporting over the next year.
+
+Perhaps most notably, 80% of organizations report their AI agent investments are already delivering measurable economic returns.
+
+## **What this looks like in practice**
+
+The organizations seeing results are treating agents as a core part of their infrastrucuture, not experiments.
+
+[Thomson Reuters](../18-Industry-UseCases/thomson-reuters.md) uses Claude to power CoCounsel, their AI legal platform. Lawyers who once spent hours manually searching through documents can now access 150 years of case law and 3,000 domain experts in minutes.
+
+Cybersecurity company [eSentire](../18-Industry-UseCases/esentire.md) compressed expert threat analysis from 5 hours to 7 minutes, with AI-driven analysis aligning with their senior security experts 95% of the time. In healthcare, [Doctolib](../18-Industry-UseCases/doctolib.md) rolled out Claude Code across their entire engineering team, replacing legacy testing infrastructure in hours instead of weeks and shipping features 40% faster.
+
+The retail sector is seeing similar gains. [L'Oréal](../18-Industry-UseCases/loreal.md) achieved 99.9% accuracy on conversational analytics, enabling 44,000 monthly users to query data directly instead of waiting for custom dashboards.
+
+## **The path forward**
+
+The question for leaders in 2026 isn't whether to adopt AI agents but how to scale them strategically. The data points to three primary challenges: integration with existing systems (46%), data access and quality (42%), and change management needs (39%).
+
+Nine in 10 leaders report that agents are shifting how their teams work, with employees spending more time on strategic activities, relationship building, and skill development rather than routine execution.
+
+This transition requires purpose-built infrastructure: models optimized for coding and enterprise workflows, frameworks like the Agent SDK, and tools like Claude Code that help teams move from prototype to production faster.
+
+We're also finding that while coding has been the proving ground for AI agents, it's just the beginning. As agents expand into research, customer service, financial planning, and supply chain operations, the organizations that build expertise now will capture disproportionate value as the technology matures.
+
+**Read the full 2026 State of AI Agents Report, [here](https://cdn.sanity.io/files/4zrzovbb/website/cd77281ebc251e6b860543d8943ede8d06c4ef50.pdf).**
+
+## Related articles
+
+Explore more product news and best practices for teams building with Claude.
+
+
+ArticleSep 25, 2026
+
+### What a task costs on Opus 5.5
+
+The same token price can cost very different amounts per task. Learn what Claude Code tasks cost on Opus 5.5 and which settings change the bill.
+
+Claude Code
+
+(opens in new tab)[](https://www.claude.com/resources/articles/claude-opus-5-5-built-for-coding-sessions-that-use-more-context)
+
+ArticleSep 24, 2026
+
+### Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind.
+
+Our latest Opus model is priced and trained to optimize costs for how developers code now.
+
+Claude CodeClaude Enterprise
+
+
+ArticleSep 2, 2026
+
+### Building commerce agents with Claude
+
+Retailers running shopping agents on Claude have seen carts up to 35% larger and shoppers 60% more likely to complete a purchase.
+
+Claude Platform
+
+
+ArticleJul 7, 2026
+
+### How people are using Claude Cowork
+
+In a sample of Claude Cowork sessions, we found that roughly half of all usage comprises “the work around the work”—tasks that are part of a broad swath of jobs, but are rarely a person’s core responsibility.
+
+Claude Cowork
+
+---
+
 ## Create custom subagents - Claude Code Docs
 
 Source: https://code.claude.com/docs/en/sub-agents
@@ -17968,10 +18332,12 @@ Path: 09-Agents-Patterns/sub-agents.md
   - [Subagent files Claude Code skips](#subagent-files-claude-code-skips)
   - [Choose a model](#choose-a-model)
   - [Run every subagent on one model](#run-every-subagent-on-one-model)
+  - [Choose an effort level](#choose-an-effort-level)
   - [Control subagent capabilities](#control-subagent-capabilities)
   - [Available tools](#available-tools)
   - [Restrict which subagents can be spawned](#restrict-which-subagents-can-be-spawned)
   - [Scope MCP servers to a subagent](#scope-mcp-servers-to-a-subagent)
+  - [Trust required for inline MCP servers](#inline-server-trust)
   - [Permission modes](#permission-modes)
   - [Preload skills into subagents](#preload-skills-into-subagents)
   - [Enable persistent memory](#enable-persistent-memory)
@@ -18029,7 +18395,7 @@ Subagents help you:
 - **Enforce constraints** by limiting which tools a subagent can use
 - **Reuse configurations** across projects with user-level subagents
 - **Specialize behavior** with focused system prompts for specific domains
-- **Control costs** by routing tasks to faster, cheaper models like Haiku
+- **Control costs** by routing tasks to faster, lower-cost models like Haiku
 
 Claude uses each subagent’s description to decide when to delegate tasks. When you create a subagent, write a clear description so Claude knows when to use it. Those descriptions take up context, so keep them short. When the combined descriptions of your subagents, except the built-in ones, exceed 15,000 tokens, Claude Code shows a [warning at startup with the total token count](../02-Claude-Code-CLI/errors.md#agent-descriptions-are-over-the-15000-token-limit). Trim the `description` fields of your subagents, and move detail into each subagent’s system prompt, which only loads when that subagent runs.
 
@@ -18050,11 +18416,13 @@ Claude Code includes built-in subagents that Claude automatically uses when appr
 
 A fast, read-only agent optimized for searching and analyzing codebases.
 
-- **Model**: inherits from the main conversation, capped at Opus on the Claude API, so Explore never runs on a more expensive model than the one you already chose for the session, unless you set `CLAUDE_CODE_SUBAGENT_MODEL` and [force it onto every subagent](#run-every-subagent-on-one-model)
+- **Model**: the main conversation’s model. When the main conversation runs Fable, Explore’s model depends on how you connect:
+  - With a Claude subscription, an Anthropic Console account, or an [LLM gateway](../13-Enterprise-Admin/llm-gateway.md) reached through `ANTHROPIC_BASE_URL`, Explore runs on the Opus model that the [`opus` alias](../02-Claude-Code-CLI/model-config.md#model-aliases) resolves to.
+  - On Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, [Claude Platform on AWS](../02-Claude-Code-CLI/claude-platform-on-aws.md), or a [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), Explore stays on the main conversation’s model.
 - **Tools**: read-only tools; Write and Edit are denied
 - **Purpose**: file discovery, code search, codebase exploration
 
-As of v2.1.198, Explore inherits the main conversation’s model instead of always running on Haiku. On the Claude API, the inherited model is capped at Opus: a main conversation on a higher tier runs Explore on Opus, and a main conversation on Sonnet or Haiku runs Explore on that same model. On any other provider, such as [Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, or Claude Platform on AWS](../02-Claude-Code-CLI/third-party-integrations.md), Explore inherits the main conversation’s model directly.A [user or project subagent](#choose-the-subagent-scope) named `Explore` overrides the built-in and keeps its own `model` field, so define one with `model: haiku` to keep exploration on a lower-cost model.Claude delegates to Explore when it needs to search or understand a codebase without making changes. This keeps exploration results out of your main conversation context.When invoking Explore, Claude specifies a thoroughness level: **quick** for targeted lookups, **medium** for balanced exploration, or **very thorough** for comprehensive analysis.
+A [user or project subagent](#choose-the-subagent-scope) named `Explore` overrides the built-in and keeps its own `model` field, so define one with `model: haiku` to run exploration on a lower-cost model. To force one model onto every subagent, Explore included, see [Run every subagent on one model](#run-every-subagent-on-one-model).Claude delegates to Explore when it needs to search or understand a codebase without making changes. This keeps exploration results out of your main conversation context.When invoking Explore, Claude specifies a thoroughness level: **quick** for targeted lookups, **medium** for balanced exploration, or **very thorough** for comprehensive analysis.
 
 A research agent used during [plan mode](../02-Claude-Code-CLI/permission-modes.md#analyze-before-you-edit-with-plan-mode) to gather context before presenting a plan.
 
@@ -18094,7 +18462,7 @@ An Agent tool call that omits `subagent_type` fails with [`subagent_type is requ
 
 Quickstart: create your first subagent
 
-Subagents are Markdown files with YAML frontmatter. To create one, ask Claude to write it for you, or [write the file yourself](#write-subagent-files). As of v2.1.198, the `/agents` command no longer opens the interactive creation wizard; running it prints a reminder to ask Claude or edit `.claude/agents/` directly. Subagent files, frontmatter fields, and the `.claude/agents/` and `~/.claude/agents/` locations are unchanged; only the terminal wizard is removed. This walkthrough creates a user-level subagent that reviews code and suggests improvements.
+Subagents are Markdown files with YAML frontmatter. To create one, ask Claude to write it for you, or [write the file yourself](#write-subagent-files). This walkthrough creates a user-level subagent that reviews code and suggests improvements.
 
 1
 
@@ -18145,7 +18513,7 @@ Claude delegates to your new subagent, which scans the codebase and returns impr
 
 You now have a subagent you can use in any project on your machine to analyze codebases and suggest improvements. You can also write subagent files by hand, define them via CLI flags, or distribute them through plugins. The following sections cover all configuration options.
 
-On Claude Code v2.1.197 and earlier, `/agents` opens an interactive wizard with a **Running** tab that lists live subagents and a **Library** tab for creating, editing, and deleting them.
+Running `/agents` prints a reminder to ask Claude or edit `.claude/agents/` and `~/.claude/agents/` directly. On Claude Code v2.1.197 and earlier, `/agents` opens an interactive wizard with a **Running** tab that lists live subagents and a **Library** tab for creating, editing, and deleting them.
 
 
 [​](#configure-subagents)
@@ -18215,9 +18583,9 @@ In [non-interactive mode](../02-Claude-Code-CLI/headless.md), `--agents` also ac
 
 For what Claude Code does with a value it can’t load, and the flags and environment variable that skip that check, see [`Invalid --agents configuration`](../02-Claude-Code-CLI/errors.md#invalid-agents-configuration). **Managed subagents** are deployed by organization administrators. Place markdown files in `.claude/agents/` inside the [managed settings directory](../13-Enterprise-Admin/managed-settings.md#delivery-mechanisms), using the same frontmatter format as project and user subagents. Managed definitions take precedence over project and user subagents with the same name. **Plugin subagents** come from [plugins](../08-Plugins-Skills/plugins.md) you’ve installed. They load automatically alongside your custom subagents and appear in the @-mention typeahead under their scoped name. See the [plugin components reference](../08-Plugins-Skills/plugins-components.md#agents) for details on creating plugin subagents.
 
-For security reasons, plugin subagents don’t support the `hooks`, `mcpServers`, or `permissionMode` frontmatter fields. These fields are ignored when loading agents from a plugin. If you need them, copy the agent file into `.claude/agents/` or `~/.claude/agents/`. You can also add rules to [`permissions.allow`](../02-Claude-Code-CLI/settings-reference.md#permissions-allow) in `settings.json` or `settings.local.json`, but these rules apply to the entire session, not only the plugin subagent.
+For security reasons, plugin subagents don’t support the `hooks`, `mcpServers`, or `permissionMode` frontmatter fields. These fields are ignored when loading agents from a plugin. If you need them, copy the agent file into `.claude/agents/` or `~/.claude/agents/`. You can also add rules to [`permissions.allow`](../02-Claude-Code-CLI/settings-reference.md#permissions-allow) in `settings.json` or `settings.local.json`, but these rules apply to the entire session, not only the plugin subagent.If you’re the plugin’s author, ship the hooks in the plugin’s [`hooks/hooks.json`](../08-Plugins-Skills/plugins-components.md#hooks) and the MCP servers in its [`.mcp.json`](../08-Plugins-Skills/plugins-components.md#mcp-servers) instead. They apply whenever the plugin is enabled rather than only inside the subagent.
 
-Subagent definitions from any of these scopes are also available to [agent teams](agent-teams.md#use-subagent-definitions-for-teammates): when spawning a teammate, you can reference a subagent type, and Claude Code applies parts of that definition to the teammate. See [agent teams](agent-teams.md#use-subagent-definitions-for-teammates) for which parts apply in each display mode.
+You can also reuse a subagent definition as an [agent team](agent-teams.md) teammate: name the subagent type when you ask Claude to spawn the teammate, and Claude Code applies parts of that definition to it. [Use subagent definitions for teammates](agent-teams.md#use-subagent-definitions-for-teammates) says which scopes and which parts apply in each display mode.
 
 
 [​](#write-subagent-files)
@@ -18262,12 +18630,12 @@ Configure a subagent with YAML [frontmatter](../02-Claude-Code-CLI/glossary.md#f
 
 | Field             | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |:------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`            | Yes      | Unique identifier, such as `code-reviewer` or `reviewer-v2`. [Hooks](../07-Hooks/hooks.md#subagentstart) receive this value as `agent_type`. The filename doesn’t have to match. Names can’t contain `:`, which is reserved for [plugin-scoped identifiers](../08-Plugins-Skills/plugins.md) such as `my-plugin:reviewer`. Claude Code doesn’t load a file whose name contains one and logs an error to the debug log. Before v2.1.218, such names were accepted                                                   |
+| `name`            | Yes      | Unique identifier of at most 256 characters, such as `code-reviewer` or `reviewer-v2`. [Hooks](../07-Hooks/hooks.md#subagentstart) receive this value as `agent_type`. The filename doesn’t have to match. Names can’t contain `:`, which is reserved for [plugin-scoped identifiers](../08-Plugins-Skills/plugins.md) such as `my-plugin:reviewer`                                                                                                                                                                |
 | `description`     | Yes      | When Claude should delegate to this subagent                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `tools`           | No       | [Tools](#available-tools) the subagent can use, as a comma-separated string such as `Read, Grep, Bash` or a YAML list. Inherits every tool available to subagents if omitted. If no entry in the list resolves to a tool, the subagent usually [fails to launch](../02-Claude-Code-CLI/errors.md#agent-would-be-spawned-with-zero-tools) with an error naming the entries. To preload Skills into context, use the `skills` field rather than listing `Skill` here                                                     |
 | `disallowedTools` | No       | Tools to deny, removed from inherited or specified list. Same format as `tools`. An entry with a specifier, such as `Bash(git push *)`, still [removes the whole tool](#available-tools)                                                                                                                                                                                                                                                                                                               |
 | `model`           | No       | [Model](#choose-a-model) to use: `sonnet`, `opus`, `haiku`, `fable`, a full model ID such as `claude-opus-5-5`, or `inherit`. When you omit it, Claude Code picks the model in the [subagent model order](#choose-a-model)                                                                                                                                                                                                                                                                             |
-| `permissionMode`  | No       | [Permission mode](#permission-modes): `default`, `acceptEdits`, `auto`, `dontAsk`, `bypassPermissions`, `plan`, or `manual` as an alias for `default`. The `manual` alias requires Claude Code v2.1.200 or later. Ignored for [plugin subagents](#choose-the-subagent-scope)                                                                                                                                                                                                                           |
+| `permissionMode`  | No       | [Permission mode](#permission-modes): `default`, `acceptEdits`, `auto`, `dontAsk`, `bypassPermissions`, `plan`, or `manual` as an alias for `default`. Ignored for [plugin subagents](#choose-the-subagent-scope)                                                                                                                                                                                                                                                                                      |
 | `maxTurns`        | No       | Maximum number of agentic turns before the subagent stops. When the subagent reaches the limit, Claude Code returns its output marked as partial, and Claude can [resume it](#resume-subagents) to continue. The partial marking requires Claude Code v2.1.246 or later                                                                                                                                                                                                                                |
 | `skills`          | No       | [Skills](../08-Plugins-Skills/skills.md) to preload into the subagent’s context at startup. The full skill content is injected, not only the description. Subagents can still invoke unlisted project, user, and plugin skills through the Skill tool                                                                                                                                                                                                                                                                 |
 | `mcpServers`      | No       | [MCP servers](../06-MCP-Tools/General/mcp.md) available to this subagent. Each entry is either a server name referencing an already-configured server (e.g., `"slack"`) or an inline definition with the server name as key and a full [MCP server config](../06-MCP-Tools/General/mcp.md#installing-mcp-servers) as value. Ignored for [plugin subagents](#choose-the-subagent-scope)                                                                                                                                                     |
@@ -18275,7 +18643,7 @@ Configure a subagent with YAML [frontmatter](../02-Claude-Code-CLI/glossary.md#f
 | `memory`          | No       | [Persistent memory scope](#enable-persistent-memory): `user`, `project`, or `local`. Enables cross-session learning                                                                                                                                                                                                                                                                                                                                                                                    |
 | `background`      | No       | Set to `true` to keep this subagent in the background even when Claude asks to run it in the foreground. Where [fork mode](#turn-fork-mode-on-or-off) is on, Claude Code already runs the subagents Claude spawns [in the background](#run-subagents-in-foreground-or-background)                                                                                                                                                                                                                      |
 | `omitClaudeMd`    | No       | Set to `true` to launch this subagent without the user, project, and local CLAUDE.md files; [managed policy files](../02-Claude-Code-CLI/memory.md#how-claude-md-files-load) still load, except for [managed subagents](#choose-the-subagent-scope). Use it for subagents that take everything they need from the [delegation prompt](#what-loads-at-startup). Ignored when the agent runs as the main session agent via `--agent` or the `agent` setting. Requires Claude Code v2.1.271 or later                      |
-| `effort`          | No       | Effort level when this subagent is active. Overrides the session effort level. Default: inherits from session. Options: `low`, `medium`, `high`, `xhigh`, `max`; available levels depend on the model                                                                                                                                                                                                                                                                                                  |
+| `effort`          | No       | Effort level when this subagent is active. Overrides the session effort level, but not the [`CLAUDE_CODE_EFFORT_LEVEL`](../02-Claude-Code-CLI/env-vars.md#variables) environment variable. Options: `low`, `medium`, `high`, `xhigh`, `max`; available levels depend on the model. See [Choose an effort level](#choose-an-effort-level)                                                                                                                                                                               |
 | `isolation`       | No       | Set to `worktree` to run the subagent in a temporary [git worktree](../02-Claude-Code-CLI/worktrees.md), giving it an isolated copy of the repository branched by default from your [default branch](../02-Claude-Code-CLI/worktrees.md#choose-the-base-branch) rather than the parent session’s `HEAD`. The worktree is automatically cleaned up if the subagent makes no changes                                                                                                                                                     |
 | `color`           | No       | Display color for the subagent in the task list and transcript. Accepts `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, or `cyan`                                                                                                                                                                                                                                                                                                                                                        |
 | `initialPrompt`   | No       | Auto-submitted as the first user turn when this agent runs as the main session agent (via `--agent` or the `agent` setting). [Commands](../02-Claude-Code-CLI/commands.md) and [skills](../08-Plugins-Skills/skills.md) are processed. Prepended to any user-provided prompt. Ignored for [plugin subagents](#choose-the-subagent-scope)                                                                                                                                                                                              |
@@ -18301,7 +18669,7 @@ Claude Code skips a file in a project, user, or managed `agents` directory, or i
 
 - **No `name`**: Claude Code treats the file as documentation kept beside your agents.
 - **An opening `---` that isn’t the file’s first line**: Claude Code reads the file as having no frontmatter and treats it as documentation.
-- **A `name` that starts with `-` or contains `:`**: Claude Code skips the file and writes an error to the debug log. See the `name` row in the table above.
+- **A `name` that starts with `-`, contains `:`, or is longer than 256 characters**: Claude Code skips the file and writes an error to the debug log.
 - **A `name` but no `description`**: Claude Code skips the file and writes the reason to the debug log.
 - **YAML that doesn’t parse**: Claude Code reads no fields from the file, skips it, and writes the parse error to the debug log.
 
@@ -18329,7 +18697,7 @@ When Claude invokes a subagent, it can also pass a `model` parameter for that sp
 3.  The [`CLAUDE_CODE_SUBAGENT_MODEL`](../02-Claude-Code-CLI/model-config.md#environment-variables) environment variable, when you set it to a model alias or model ID
 4.  The main conversation’s model
 
-In two cases, a family alias such as `opus` in the per-invocation parameter or the frontmatter resolves to the main conversation’s model instead of the [version the alias points to](../02-Claude-Code-CLI/model-config.md#model-aliases):
+If an installed [mod](../08-Plugins-Skills/plugins-mods-overview.md) sets a model in its [`agent.spawn`](../08-Plugins-Skills/plugins-mods-reference.md#subagents) hook, Claude Code uses that model in place of the per-invocation parameter. In two cases, a family alias such as `opus` in the per-invocation parameter or the frontmatter resolves to the main conversation’s model instead of the [version the alias points to](../02-Claude-Code-CLI/model-config.md#model-aliases):
 
 - **The main conversation’s model belongs to that family**: the subagent runs on the main conversation’s exact model, including any `[1m]` suffix, so it gets the same [extended context](../02-Claude-Code-CLI/model-config.md#extended-context) window as the main conversation.
 - **Claude Code can’t tell the main conversation’s model family, on [a provider other than the Anthropic API](../02-Claude-Code-CLI/third-party-integrations.md)**: this can happen with an [application inference profile ARN](../02-Claude-Code-CLI/amazon-bedrock.md#iam-configuration) on Amazon Bedrock that Claude Code hasn’t resolved to a backing model. This case covers only the `opus` alias, and doesn’t apply when you set [`ANTHROPIC_DEFAULT_OPUS_MODEL`](../02-Claude-Code-CLI/model-config.md#environment-variables), since `opus` then resolves to the model you set.
@@ -18339,7 +18707,7 @@ An alias in `CLAUDE_CODE_SUBAGENT_MODEL` always resolves to the version the alia
 - When the blocked value is a family alias such as `opus`, Claude Code runs the subagent on the newest version of that family the allowlist permits, following the same [substitution rules and provider scope](../02-Claude-Code-CLI/model-config.md#restrict-model-selection) as `/model`. Before v2.1.222, Claude Code ran the subagent on the inherited model for a blocked family alias as well.
 - For any other blocked value, on providers where that substitution doesn’t operate, or when the allowlist permits no version of the family, Claude Code runs the subagent on the inherited model instead. If you set `CLAUDE_CODE_SUBAGENT_MODEL`, Claude Code tries that model first, under these same rules.
 
-In interactive sessions, Claude Code shows a warning naming the requested model and the model the subagent runs on, for either substitution. To check which model a subagent is running on, run [`/tasks`](../02-Claude-Code-CLI/commands.md). Claude Code names the model on the subagent’s row, and adds the [effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level) when the subagent’s definition, or the skill it forked from, sets [`effort`](#supported-frontmatter-fields). Requires Claude Code v2.1.242 or later. A per-invocation `model` parameter also applies when the subagent is [resumed or sent a follow-up message](#resume-subagents), so the subagent stays on that model. Before v2.1.211, resuming dropped the per-invocation value and the subagent reverted to its definition’s `model` field or, without one, the main conversation’s model. As of v2.1.198, subagents also inherit the main conversation’s [extended thinking](../02-Claude-Code-CLI/model-config.md#extended-thinking) configuration: if thinking is on in your session, it’s on for the subagent, and if it’s off, it stays off. There is no per-subagent thinking setting. Before v2.1.198, subagents ran with extended thinking disabled regardless of the main conversation’s setting.
+In interactive sessions, Claude Code shows a warning naming the requested model and the model the subagent runs on, for either substitution. To check which model a subagent is running on, run [`/tasks`](../02-Claude-Code-CLI/commands.md). Claude Code names the model on the subagent’s row, and adds the [effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level) set for that subagent, if any. Requires Claude Code v2.1.242 or later. A per-invocation `model` parameter also applies when the subagent is [resumed or sent a follow-up message](#resume-subagents), so the subagent stays on that model. Before v2.1.211, resuming dropped the per-invocation value and the subagent reverted to its definition’s `model` field or, without one, the main conversation’s model. As of v2.1.198, subagents also inherit the main conversation’s [extended thinking](../02-Claude-Code-CLI/model-config.md#extended-thinking) configuration: if thinking is on in your session, it’s on for the subagent, and if it’s off, it stays off. There is no per-subagent thinking setting. Before v2.1.198, subagents ran with extended thinking disabled regardless of the main conversation’s setting.
 
 
 [​](#run-every-subagent-on-one-model)
@@ -18349,7 +18717,7 @@ Run every subagent on one model
 `CLAUDE_CODE_SUBAGENT_MODEL` is a default, so a subagent’s definition or a model Claude passes still takes precedence over it. To apply one model to every subagent, [teammate](agent-teams.md#specify-teammates-and-models), and [workflow agent](../02-Claude-Code-CLI/workflows.md), also set `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` to `1`. Requires Claude Code v2.1.257 or later.
 
 - If you set both variables, subagents run on the model in `CLAUDE_CODE_SUBAGENT_MODEL`.
-- If you set only `CLAUDE_CODE_SUBAGENT_MODEL_FORCE`, subagents run on the main conversation’s model.
+- If you set only `CLAUDE_CODE_SUBAGENT_MODEL_FORCE`, subagents run on the main conversation’s model, except that the built-in Explore subagent runs on the [model listed for it under Built-in subagents](#built-in-subagents).
 
 For example, to run every subagent on Haiku, set both variables in the `env` block of a [settings file](../02-Claude-Code-CLI/settings.md):
 
@@ -18362,12 +18730,17 @@ For example, to run every subagent on Haiku, set both variables in the `env` blo
 }
 ```
 
-To check that the setting took effect, run [`/tasks`](../02-Claude-Code-CLI/commands.md) while a subagent is running. The subagent’s row shows the model it runs on. While `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` is [on](../02-Claude-Code-CLI/env-vars.md), Claude Code ignores the `model` field of every subagent definition, including the built-in Explore and Plan subagents, and Claude can’t pass a model when it starts a subagent. Two kinds of subagent still run on the main conversation’s model:
+To check that the setting took effect, run [`/tasks`](../02-Claude-Code-CLI/commands.md) while a subagent is running. The subagent’s row shows the model it runs on. While `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` is [on](../02-Claude-Code-CLI/env-vars.md), Claude Code ignores the `model` field in subagent definitions, and Claude can’t pass a model when it starts a subagent. These subagents still run on the main conversation’s model:
 
 - A [fork](#fork-the-current-conversation)
 - A [skill that runs in a subagent](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent) with `model: inherit`
 
-When you set only `CLAUDE_CODE_SUBAGENT_MODEL_FORCE`, the built-in Explore subagent keeps its [model cap](#built-in-subagents).
+
+[​](#choose-an-effort-level)
+
+Choose an effort level
+
+To run a subagent at its own [effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level), set the [`effort`](#supported-frontmatter-fields) field in its definition. When you ask Claude to run a non-fork subagent at a specific effort level, it can also pass an `effort` parameter for that invocation. The parameter overrides the `effort` field and stays in effect when the subagent is [resumed](#resume-subagents). The [`CLAUDE_CODE_EFFORT_LEVEL`](../02-Claude-Code-CLI/env-vars.md#variables) environment variable takes precedence over both. The per-invocation parameter requires Claude Code v2.1.292 or later.
 
 
 [​](#control-subagent-capabilities)
@@ -18482,7 +18855,20 @@ mcpServers:
 Use the Playwright tools to navigate, screenshot, and interact with pages.
 ```
 
-Inline definitions use the same schema as `.mcp.json` server entries, keyed by the server name, and support the `stdio`, `http`, `sse`, and `ws` types. To keep an MCP server out of the main conversation entirely and avoid its tool descriptions consuming context there, define it inline here rather than in `.mcp.json`. The subagent gets the tools; the parent conversation doesn’t. Claude Code loads an inline server from an agent file in your project’s `.claude/agents/` directory, or in an `--add-dir` directory’s `.claude/agents/`, only after you [trust the folder the agent file came from](../02-Claude-Code-CLI/permissions.md#what-runs-before-you-trust-a-folder). Before v2.1.238, Claude Code loaded these servers without checking trust.
+Inline definitions use the same schema as `.mcp.json` server entries, keyed by the server name, and support the `stdio`, `http`, `sse`, and `ws` types. To keep an MCP server out of the main conversation entirely and avoid its tool descriptions consuming context there, define it inline here rather than in `.mcp.json`. The subagent gets the tools; the parent conversation doesn’t. The MCP restrictions that apply to the main session also cover servers declared in subagent frontmatter:
+
+- [`--strict-mcp-config`](../02-Claude-Code-CLI/cli-reference.md) and [`--bare`](../02-Claude-Code-CLI/cli-reference.md)
+- [Enterprise managed MCP configuration](../06-MCP-Tools/General/managed-mcp.md)
+- [`allowedMcpServers` and `deniedMcpServers` policies](../06-MCP-Tools/General/managed-mcp.md#policy-based-control-with-allowlists-and-denylists)
+
+When one of these blocks a server, Claude Code skips it and shows a warning naming the blocked servers. Managed-settings restrictions apply to every subagent regardless of how it is defined. `--strict-mcp-config` doesn’t filter servers you pass inline via `--agents` or the SDK `agents` option, since those are explicit caller input.
+
+
+[​](#inline-server-trust)
+
+Trust required for inline MCP servers
+
+Claude Code loads an [inline MCP server](#scope-mcp-servers-to-a-subagent) from an agent file in your project’s `.claude/agents/` directory, or in an `--add-dir` directory’s `.claude/agents/`, only after you [trust the folder the agent file came from](../02-Claude-Code-CLI/permissions.md#what-runs-before-you-trust-a-folder). Before v2.1.238, Claude Code loaded these servers without checking trust.
 
 - **Trust that doesn’t count**: a parent folder’s trust, and the automatic trust a `-p` or SDK session gets for [hooks in settings files](../02-Claude-Code-CLI/permissions.md#what-runs-before-you-trust-a-folder)
 - **Until then**: Claude Code skips every inline server in that agent file and writes the exact `projects["<path>"].hasTrustDialogAccepted` key for `~/.claude.json` to the debug log
@@ -18493,14 +18879,6 @@ Claude Code loads two kinds of server without checking trust for the folder the 
 - A name that references a server you already configured
 - An inline server in an agent file from `~/.claude/agents/`, in one you pass with `--agents` or the SDK `agents` option, or in one that managed settings supplies
 
-The MCP restrictions that apply to the main session also cover servers declared in subagent frontmatter:
-
-- [`--strict-mcp-config`](../02-Claude-Code-CLI/cli-reference.md) and [`--bare`](../02-Claude-Code-CLI/cli-reference.md)
-- [Enterprise managed MCP configuration](../06-MCP-Tools/General/managed-mcp.md)
-- [`allowedMcpServers` and `deniedMcpServers` policies](../06-MCP-Tools/General/managed-mcp.md#policy-based-control-with-allowlists-and-denylists)
-
-When one of these blocks a server, Claude Code skips it and shows a warning naming the blocked servers. Managed-settings restrictions apply to every subagent regardless of how it is defined. `--strict-mcp-config` doesn’t filter servers you pass inline via `--agents` or the SDK `agents` option, since those are explicit caller input.
-
 
 [​](#permission-modes)
 
@@ -18509,7 +18887,9 @@ Permission modes
 Set `permissionMode` to choose the permission mode a subagent runs in. Use the modes’ config values, so Manual mode is `default`. If you leave it unset, the subagent inherits the main conversation’s [permission mode](../02-Claude-Code-CLI/permission-modes.md). The main conversation’s permission mode decides whether Claude Code uses the value you set:
 
 - When the main conversation is in `bypassPermissions`, `acceptEdits`, or [auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode), the subagent runs in that same mode and Claude Code ignores the `permissionMode` you set. Under auto mode, the classifier evaluates the subagent’s tool calls with the main conversation’s block and allow rules. When the subagent finishes, the classifier also reviews its work and its final report before the report is delivered, as [How auto mode handles subagents](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode) describes.
-- When the main conversation is in `default`, `dontAsk`, or `plan` mode, the subagent runs in the permission mode you set, except `bypassPermissions`. A subagent that declares `bypassPermissions` keeps the main conversation’s mode instead. The `bypassPermissions` exception requires Claude Code v2.1.267 or later.
+- When the main conversation is in `default`, `dontAsk`, or `plan` mode, the subagent runs in the permission mode you set. It keeps the main conversation’s permission mode instead in these cases:
+  - You set `bypassPermissions`. The `bypassPermissions` exception requires Claude Code v2.1.267 or later.
+  - You set `auto` and [auto mode isn’t available](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode) to the subagent, such as when a settings file sets [`disableAutoMode`](../02-Claude-Code-CLI/settings-reference.md#disableautomode) or the subagent’s model doesn’t support auto mode.
 
 `permissionMode` accepts these values, and `manual` as an alias for `default`:
 
@@ -18541,7 +18921,7 @@ skills:
 Implement API endpoints. Follow the conventions and patterns from the preloaded skills.
 ```
 
-The full content of each listed skill is injected into the subagent’s context at startup. This field controls which skills are preloaded, not which skills the subagent can access: without it, the subagent can still discover and invoke project, user, and plugin skills through the Skill tool during execution. To prevent a subagent from invoking skills entirely, omit `Skill` from the [`tools`](#available-tools) list or add it to `disallowedTools`. You can’t preload skills that set [`disable-model-invocation: true`](../08-Plugins-Skills/skills.md#control-who-invokes-a-skill), since preloading draws from the same set of skills Claude can invoke. This includes the bundled `/verify` skill: only you can run it, so it can’t be preloaded either. If a listed skill is missing or disabled, for example by your organization’s policy, Claude Code skips it and logs a warning to the debug log.
+The full content of each listed skill is injected into the subagent’s context at startup, up to the first 32 distinct names in the list. This field controls which skills are preloaded, not which skills the subagent can access: without it, the subagent can still discover and invoke project, user, and plugin skills through the Skill tool during execution. To prevent a subagent from invoking skills entirely, omit `Skill` from the [`tools`](#available-tools) list or add it to `disallowedTools`. You can’t preload skills that set [`disable-model-invocation: true`](../08-Plugins-Skills/skills.md#control-who-invokes-a-skill), since preloading draws from the same set of skills Claude can invoke. This includes the bundled `/verify` skill, which Claude can’t run on its own. If a listed skill is missing or disabled, for example by your organization’s policy, Claude Code skips it and logs a warning to the debug log.
 
 This is the inverse of [running a skill in a subagent](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent). With `skills` in a subagent, the subagent controls the system prompt and loads skill content. With `context: fork` in a skill, the skill content is injected into the agent you specify. In both cases the subagent starts without your conversation history.
 
@@ -18855,9 +19235,9 @@ Claude can give a subagent a name by passing a `name` parameter on the Agent too
 
 API errors in subagents
 
-When something [cuts off a subagent’s response mid-stream](../02-Claude-Code-CLI/errors.md#the-response-above-may-be-incomplete), and the partial response contains text but no tool calls, Claude Code prompts the subagent to continue rather than ending the run. This happens in interactive sessions too. The run ends on the error only once those continuations are used up. As of v2.1.199, a subagent whose run ends on an API error, such as a usage limit or a repeated server error, reports that failure back to Claude instead of returning the error text as if it were the subagent’s findings. What Claude receives depends on where the subagent ran:
+When something [cuts off a subagent’s response mid-stream](../02-Claude-Code-CLI/errors.md#the-response-above-may-be-incomplete), and the partial response contains text but no tool calls, Claude Code prompts the subagent to continue rather than ending the run. This happens in interactive sessions too. The run ends on the error only once those continuations are used up. A subagent whose run ends on an API error, such as a usage limit or a repeated server error, reports that failure back to Claude. What Claude receives depends on where the subagent ran:
 
-- **Foreground**: if a rate limit, overload, or server error cuts off a subagent that already produced text output, the Agent tool returns that partial output with a note that the subagent was cut off and didn’t finish its task. A subagent that produced nothing, or whose only output was tool calls, fails with [`Agent terminated early due to an API error`](../02-Claude-Code-CLI/errors.md#agent-terminated-early-due-to-an-api-error), followed by the error detail. In v2.1.199, a rate limit, overload, or server error that cut off the tool-calls-only shape returned an empty partial result containing only the cut-off note instead.
+- **Foreground**: if a rate limit, overload, or server error cuts off a subagent that already produced text output, the Agent tool returns that partial output with a note that the subagent was cut off and didn’t finish its task. A subagent that produced nothing, or whose only output was tool calls, fails with [`Agent terminated early due to an API error`](../02-Claude-Code-CLI/errors.md#agent-terminated-early-due-to-an-api-error), followed by the error detail.
 - **Background**: the subagent is marked failed, and the message Claude receives when it ends names the API error and includes the subagent’s last output, so partial work isn’t lost.
 
 When you configure a [fallback model chain](../02-Claude-Code-CLI/model-config.md#fallback-model-chains) and a subagent encounters a failure the chain covers, such as its model being unavailable, Claude Code switches the subagent to the first model in the chain that accepts the request. The subagent keeps working instead of ending on the error. Once the underlying API error clears, ask Claude to retry the task or [resume the subagent](#resume-subagents).
@@ -19008,7 +19388,7 @@ Each subagent invocation creates a new instance rather than continuing an earlie
 
 - When a subagent completes, Claude receives its agent ID.
 - The built-in Explore and Plan agents are one-shot and return no agent ID, so Claude can’t resume them. Use `general-purpose` or a custom subagent when you need to continue the work.
-- When a subagent stops at its [`maxTurns`](#supported-frontmatter-fields) limit, Claude Code marks the returned output as partial. For subagents that return an agent ID, Claude Code also notes in the result that Claude can message the subagent to continue from where it stopped.
+- When a subagent stops at its [`maxTurns`](#supported-frontmatter-fields) limit, Claude Code marks the returned output as partial, and Claude can resume the subagent to continue its work.
 
 Claude uses the `SendMessage` tool with the agent’s ID or name as the `to` field to resume it. `SendMessage` doesn’t require [agent teams](agent-teams.md) to be enabled; only structured team-protocol messages such as `shutdown_request` and `plan_approval_response` do. Beyond subagents and teammates, in sessions where cross-session messaging is enabled, Claude can use the same tool to message [your other Claude Code sessions](../02-Claude-Code-CLI/cross-session-messaging.md), on this machine or [beyond it](../02-Claude-Code-CLI/cross-session-messaging.md#message-sessions-on-other-machines). To resume a subagent, ask Claude to continue the previous work:
 
@@ -19020,7 +19400,7 @@ Continue that code review and now analyze the authorization logic
 [Claude resumes the subagent with full context from previous conversation]
 ```
 
-When Claude sends a completed subagent a message with the `SendMessage` tool, the subagent resumes in the background without a new `Agent` invocation. The same applies to a subagent that Claude stopped with the `TaskStop` tool, once its stopped run has exited. The resumed run keeps the [tool set from where the subagent first ran](#run-subagents-in-foreground-or-background) and can keep reading the [prompt cache the original run warmed](../02-Claude-Code-CLI/prompt-caching.md#subagents-and-the-cache). A subagent that has the `SendMessage` tool can send that message too. In an interactive session, the resumed agent then reports back to the subagent that resumed it, not to your main conversation. That subagent waits for the result before finishing its own work. When a subagent messages an agent it reports to, such as its own launcher, Claude Code resumes that agent without redirecting its results. A subagent you stopped yourself, with `x` in `/tasks` or an SDK `stop_task` request, doesn’t auto-resume. If Claude sends it a message, the message is refused and Claude is told the agent was cancelled. While [that subagent’s row is still in the subagent panel](#run-subagents-in-foreground-or-background), type into its transcript to resume it yourself. After that, a message from Claude can auto-resume it again. Resuming starts a new run of the agent under the same ID, so a subagent that had already failed or completed shows as running again in the task list and in the Agent SDK’s task events. Before v2.1.205, it kept showing its earlier failed or completed status while the resumed run was working. As of v2.1.199, `SendMessage` checks that a name still refers to the same agent it reached earlier in the conversation. If a newer agent has taken the name, such as a re-spawned background agent that reused it, Claude Code refuses the send rather than delivering it to the wrong agent, and the error reports which agent the name now reaches so Claude can retarget. To reach the earlier agent while it’s still running, Claude addresses it by the agent ID it received when it spawned that agent. The check is scoped to the current conversation and resets on `/clear`. As of v2.1.198, a subagent treats messages from the agent that launched it as normal task direction, including mid-task course corrections, and acts on them within its own permission settings. Two limits still hold regardless of who sent the message: no message from any agent counts as your approval for a pending permission prompt, and no agent message can change a subagent’s permission settings, `CLAUDE.md`, or configuration. Only the permission system or your own messages can grant approval. You can also ask Claude for the agent ID if you want to reference it explicitly, or find IDs in the transcript files at `~/.claude/projects/{project}/{sessionId}/subagents/`. Each transcript is stored as `agent-{agentId}.jsonl`. Subagent transcripts persist independently of the main conversation:
+When Claude sends a completed subagent a message with the `SendMessage` tool, the subagent resumes in the background without a new `Agent` invocation. The same applies to a subagent that Claude stopped with the `TaskStop` tool, once its stopped run has exited. The resumed run keeps the [tool set from where the subagent first ran](#run-subagents-in-foreground-or-background) and can keep reading the [prompt cache the original run warmed](../02-Claude-Code-CLI/prompt-caching.md#subagents-and-the-cache). A subagent that has the `SendMessage` tool can send that message too. In an interactive session, the resumed agent then reports back to the subagent that resumed it, not to your main conversation. That subagent waits for the result before finishing its own work. When a subagent messages an agent it reports to, such as its own launcher, Claude Code resumes that agent without redirecting its results. A subagent you stopped yourself, with `x` in `/tasks` or an SDK `stop_task` request, doesn’t auto-resume. If Claude sends it a message, the message is refused and Claude is told the agent was cancelled. While [that subagent’s row is still in the subagent panel](#run-subagents-in-foreground-or-background), type into its transcript to resume it yourself. After that, a message from Claude can auto-resume it again. Resuming starts a new run of the agent under the same ID, so a subagent that had already failed or completed shows as running again in the task list and in the Agent SDK’s task events. Before v2.1.205, it kept showing its earlier failed or completed status while the resumed run was working. `SendMessage` checks that a name still refers to the same agent it reached earlier in the conversation. If a newer agent has taken the name, such as a re-spawned background agent that reused it, Claude Code refuses the send rather than delivering it to the wrong agent, and the error reports which agent the name now reaches so Claude can retarget. To reach the earlier agent while it’s still running, Claude addresses it by the agent ID it received when it spawned that agent. The check is scoped to the current conversation and resets on `/clear`. A subagent treats messages from the agent that launched it as normal task direction, including mid-task course corrections, and acts on them within its own permission settings. Two limits hold regardless of who sent the message: no message from any agent counts as your approval for a pending permission prompt, and no agent message can change a subagent’s permission settings, `CLAUDE.md`, or configuration. Only the permission system or your own messages can grant approval. You can also ask Claude for the agent ID if you want to reference it explicitly, or find IDs in the transcript files at `~/.claude/projects/{project}/{sessionId}/subagents/`. Each transcript is stored as `agent-{agentId}.jsonl`. Subagent transcripts persist independently of the main conversation:
 
 - **Main conversation compaction**: when the main conversation compacts, subagent transcripts are unaffected. They’re stored in separate files.
 - **Session persistence**: subagent transcripts persist within their session. You can [resume a subagent](#resume-subagents) after restarting Claude Code by resuming the same session.
@@ -19075,7 +19455,12 @@ Running forks appear in a panel below the prompt input, with one row for the mai
 | `x`       | Stop the selected fork if it’s running, or dismiss its row if it’s no longer running. On the main session row, or on the row of the fork whose transcript you opened with `Enter`, `x` types into the prompt instead |
 | `Esc`     | Return focus to the prompt input                                                                                                                                                                                     |
 
-With a fork’s or subagent’s transcript open, follow-up messages and [skills](../08-Plugins-Skills/skills.md) go to that agent, but built-in commands still run in your main conversation. As of v2.1.199, typing `/model` or `/fast` in that view shows a notice that it changes the main conversation’s model or fast mode, not the viewed agent’s, instead of running it silently.
+With a fork’s or subagent’s transcript open, follow-up messages and [skills](../08-Plugins-Skills/skills.md) go to that agent, and built-in commands go to your main conversation, with these safeguards:
+
+- `/compact`, `/clear`, and `/rewind` act on the main conversation, so Claude Code asks you to confirm before running one of them from this view.
+- `/model` and `/fast` set the main conversation’s model and fast mode, not the viewed agent’s, so they don’t run from this view. A notice tells you why.
+
+To have the viewed agent read your message before the work it’s waiting on finishes, send it with [`Ctrl+Enter` or `Ctrl+X Ctrl+S`](../02-Claude-Code-CLI/keybindings.md#chat-actions). Any shell command or subagent the agent is waiting on that can move to the [background](../02-Claude-Code-CLI/tools-reference.md#background-commands) moves there and keeps running. When the agent is writing a response, or waiting on work that can’t move to the background, it keeps going and reads your message once that finishes. Requires Claude Code v2.1.286 or later.
 
 
 [​](#how-forks-differ-from-other-subagents)
@@ -19092,7 +19477,7 @@ A fork inherits everything the main session has at the moment it spawns. Any oth
 | Permissions             | Prompts surface in your terminal | [Prompts surface in your main session](#run-subagents-in-foreground-or-background) when running in the background |
 | Prompt cache            | Shared with main session         | Separate cache                                                                                                    |
 
-Because a fork’s system prompt and tool definitions are identical to the parent, its first request reuses the parent’s [prompt cache](../02-Claude-Code-CLI/prompt-caching.md#subagents-and-the-cache). This makes forking cheaper than spawning a fresh subagent for tasks that need the same context. When Claude spawns a fork through the Agent tool, it can pass `isolation: "worktree"` so the fork’s file edits are written to a separate git worktree instead of your checkout. A fork can’t spawn further forks.
+Because a fork’s system prompt and tool definitions are identical to the parent, its first request reuses the parent’s [prompt cache](../02-Claude-Code-CLI/prompt-caching.md#subagents-and-the-cache). Because of that reuse, a fork costs less than a fresh subagent for tasks that need the same context. When Claude spawns a fork through the Agent tool, it can pass `isolation: "worktree"` so the fork’s file edits are written to a separate git worktree instead of your checkout. A fork can’t spawn further forks.
 
 
 [​](#turn-fork-mode-on-or-off)

@@ -2,7 +2,7 @@
 title: "API overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/overview"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:39:17Z"
+fetched_at: "2026-10-04T08:33:22Z"
 tags: ["api", "authentication", "cli", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication", "cli", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -242,7 +246,7 @@ The Claude API is a RESTful API at `https://api.anthropic.com` that provides pro
 To use the Claude API, you'll need:
 
 - A [Claude Console account](../Other/usage-limits.md)
-- An [API key](../Other/usage-limits.md), or a configured [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md) rule
+- An [API key](../Other/playground.md), or a configured [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md) rule
 
 For step-by-step setup instructions, see [Get started](../../01-Getting-Started/get-started.md).
 
@@ -269,13 +273,13 @@ For the complete API reference with all endpoints, parameters, and response sche
 
 For details on each authentication method and when to use it, see [Authentication](../Other/manage-claude-authentication.md). Requests to the Claude API include these headers:
 
-| Header                   | Value                                                                                                                                                                                                              | Required                                                                                                                                                             |
-|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Authorization`          | `Bearer <token>`, where `<token>` is your API key or a short-lived access token obtained from `POST /v1/oauth/token` through [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md)   | Yes, unless `x-api-key` is set                                                                                                                                       |
-| `x-api-key`              | Your API key from Console. Legacy fallback for `Authorization`, still supported                                                                                                                                    | No                                                                                                                                                                   |
-| `anthropic-workspace-id` | ID of the [workspace](../Other/manage-claude-workspaces.md) the request runs in (for example, `wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ`). See [Select a workspace](../Other/manage-claude-authentication.md#select-a-workspace). | Required with a multi-workspace API key. Optional for other API keys. Not used with Workload Identity Federation tokens, which select a workspace at token exchange. |
-| `anthropic-version`      | API version (for example, `2023-06-01`)                                                                                                                                                                            | Yes                                                                                                                                                                  |
-| `content-type`           | `application/json`                                                                                                                                                                                                 | Yes                                                                                                                                                                  |
+| Header                   | Value                                                                                                                                                                                                              | Required                                                                                                                                                                                                                                                   |
+|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Authorization`          | `Bearer <token>`, where `<token>` is your API key or a short-lived access token obtained from `POST /v1/oauth/token` through [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md)   | Yes, unless `x-api-key` is set                                                                                                                                                                                                                             |
+| `x-api-key`              | Your API key from Console. Legacy fallback for `Authorization`, still supported                                                                                                                                    | No                                                                                                                                                                                                                                                         |
+| `anthropic-workspace-id` | ID of the [workspace](../Other/manage-claude-workspaces.md) the request runs in (for example, `wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ`). See [Select a workspace](../Other/manage-claude-authentication.md#select-a-workspace). | Required with a multi-workspace API key. Optional for other API keys. A key created for a single workspace runs in that workspace when you omit the header. Not used with Workload Identity Federation tokens, which select a workspace at token exchange. |
+| `anthropic-version`      | API version (for example, `2023-06-01`)                                                                                                                                                                            | Yes                                                                                                                                                                                                                                                        |
+| `content-type`           | `application/json`                                                                                                                                                                                                 | Yes                                                                                                                                                                                                                                                        |
 
 If you are using the [Client SDKs](#client-sdks), the SDK sends the authentication, version, and content-type headers automatically; you pass `anthropic-workspace-id` yourself when your key needs it. For API versioning details, see [API versions](versioning.md).
 
@@ -283,7 +287,7 @@ When accessing Claude through a [cloud platform](#claude-api-vs-cloud-platforms)
 
 ### Getting API keys
 
-The API is made available through the web [Console](../Other/usage-limits.md). You can use [playground](../Other/usage-limits.md) to try out the API in the browser and then generate API keys in [Account Settings](../Other/usage-limits.md) (see [Get your Claude API key](../Other/get-api-key.md)). You choose each key's type (see [Key types](../Other/manage-claude-authentication.md#key-types)) and its [expiration](../Other/manage-claude-authentication.md#key-expiration) when you create it. Use [workspaces](../Other/usage-limits.md) to separate environments and [control spend](rate-limits.md) by use case.
+The API is made available through the web [Console](../Other/usage-limits.md). You can use [playground](../Other/playground.md) to try out the API in the browser and then generate API keys in [Account Settings](../Other/playground.md) (see [Get your Claude API key](../Other/get-api-key.md)). You choose each key's type (see [Key types](../Other/manage-claude-authentication.md#key-types)) and its [expiration](../Other/manage-claude-authentication.md#key-expiration) when you create it. Use [workspaces](../Other/playground.md) to separate environments and [control spend](rate-limits.md) by use case.
 
 ## Client SDKs
 
@@ -375,7 +379,7 @@ List endpoints return results in pages. Most newer list endpoints use the `page`
 
 To go back a page, pass `prev_page` as the `page` parameter. `prev_page` is `null` when you're on the first page. Not all list endpoints support `prev_page`. Only `GET /v1/sessions` returns `prev_page`; on list endpoints that do not support backward pagination, the field is absent from the response rather than `null`. For a request walkthrough, see [Listing sessions](../Other/managed-agents-session-operations.md#listing-sessions).
 
-Every SDK provides an auto-paginating iterator that follows `next_page` for you. In Python and TypeScript, you get it by iterating the list result directly. The other SDKs provide the iterator through a separate method. SDK auto-pagination is forward-only; to go back a page, read `prev_page` from the response and pass it back as the `page` parameter yourself. See [client SDKs](../Other/cli-sdks-libraries-overview.md) for language-specific details.
+The SDK provides an auto-paginating iterator that follows `next_page` for you. For example, `for session in client.beta.sessions.list()` walks through every session. SDK auto-pagination is forward-only; to go back a page, read `prev_page` from the response and pass it back as the `page` parameter yourself. See [client SDKs](../Other/cli-sdks-libraries-overview.md) for details.
 
 
 
@@ -390,7 +394,7 @@ The API enforces rate limits and spend limits to prevent misuse and manage capac
 - **Spend limits**: Maximum monthly cost for API usage
 - **Rate limits**: Maximum number of requests per minute (RPM) and tokens per minute (TPM)
 
-You can view your rate limits on the [Rate limits](../Other/usage-limits.md) page and your spend limits on the [Billing](../Other/usage-limits.md) page in the Console. For higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the Rate limits page.
+You can view your rate limits on the [Rate limits](../Other/playground.md) page and your spend limits on the [Billing](../Other/playground.md) page in the Console. For higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the Rate limits page.
 
 For detailed information about limits, tiers, and the token bucket algorithm used for rate limiting, see [Rate limits](rate-limits.md).
 

@@ -2,7 +2,7 @@
 title: "Ramp | Office Hours with Boris Cherny | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/ramp-boris-office-hours"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:46Z"
+fetched_at: "2026-10-10T06:25:23Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -106,7 +106,7 @@ How Anthropic teams use Claude Code
 
 From debugging production issues to navigating unfamiliar codebases to building custom automation—here's how teams across Anthropic use Claude Code.
 
-[Read more](https://claude.com/blog/how-anthropic-teams-use-claude-code)
+[Read more](https://claude.com/resources/articles/how-anthropic-teams-use-claude-code)
 
 **Austin:** I also do want to mention On-call Assistant, which has always run on Claude Code. And that's another instance of just taking what works really well locally, proving it out locally, building up the skills and MCPs and prompts that make, essentially, an AI SRE run really well on incidents to root cause them and put up PRs of fixes and then just packaging that and having it run in a container with safeguards and guardrails. So On-call Assistant runs on every incident that gets assigned to our engineers. So that includes customer support tickets that require an engineer, but also includes system-level incidents. We're working on it. And then it comes back in with a really solid root cause analysis in the Slack channel that we have for every incident. And then the incident responders interact with it. And we've had that running since late February or March. The stuff you can build on the primitives on this sort of Unix philosophy, Claude Code executable, it's just wild.
 
@@ -138,9 +138,12 @@ Claude Enterprise
 
 Put Claude to work across your organization. Help everyone think deeper, do more, and build securely.
 
-[Read more](enterprise.md)
+[Read more](../17-Billing-Plans/pricing-enterprise.md)
 
 ## Related stories
+
+
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
@@ -151,9 +154,6 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -161,9 +161,9 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -193,7 +193,7 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -205,6 +205,7 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -216,8 +217,10 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -237,7 +240,9 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -280,9 +285,9 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -312,7 +317,7 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -324,6 +329,7 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -335,8 +341,10 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -356,7 +364,9 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

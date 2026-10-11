@@ -2,7 +2,7 @@
 title: "Claude Enterprise activation promo for Claude Code and Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15282265-claude-enterprise-activation-promo-for-claude-code-and-cowork"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:56Z"
+fetched_at: "2026-10-08T06:25:48Z"
 tags: ["claude-code", "enterprise"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Tool search tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:23Z"
+fetched_at: "2026-10-04T08:32:43Z"
 tags: ["api", "mcp", "prompting", "search"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "mcp", "prompting", "search"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -115,7 +115,7 @@ Share feedback on this feature through the [feedback form](https://forms.gle/Mhc
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 
 

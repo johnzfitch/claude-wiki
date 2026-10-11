@@ -2,7 +2,7 @@
 title: "Run agents in parallel - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agents"
 category: "09-Agents-Patterns"
-fetched_at: "2026-09-26T06:37:52Z"
+fetched_at: "2026-10-07T06:23:23Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -34,7 +34,7 @@ Claude Code has five ways to work on several tasks at once: [subagents](sub-agen
 
 In every approach the workers are Claude sessions. To involve a different tool, expose it to Claude as an [MCP server](../06-MCP-Tools/General/mcp.md). Three more tools support this work without being a way to run agents themselves:
 
-- [Worktrees](../02-Claude-Code-CLI/worktrees.md) give each session a separate git checkout, so parallel sessions never edit the same files. Use them for sessions you run yourself. A session you dispatch from agent view [moves into a worktree of its own before it edits files](agent-view.md#how-file-edits-are-isolated), and subagents you spawn can each get one too.
+- [Worktrees](../02-Claude-Code-CLI/worktrees.md) give each session a separate git checkout, so parallel sessions each edit their own copy of the files. Use them for sessions you run yourself. A session you dispatch from agent view [moves into a worktree of its own before it edits files](agent-view.md#how-file-edits-are-isolated), and subagents you spawn can each get one too.
 - [Cross-session messaging](../02-Claude-Code-CLI/cross-session-messaging.md) lets Claude list and message your other Claude Code sessions on this machine, on another machine, or [in the cloud](../02-Claude-Code-CLI/claude-code-on-the-web.md), so sessions you run yourself can pass findings and status between themselves.
 - [`/batch`](../02-Claude-Code-CLI/commands.md) is a [skill](../08-Plugins-Skills/skills.md) that has Claude split one large change into 5 to 30 worktree-isolated subagents. It’s a packaged use of subagents and worktrees, not a separate coordination style.
 
@@ -69,7 +69,7 @@ Check on running work
 The command for checking on running work depends on which approach you used:
 
 - For background sessions, `claude agents` opens [agent view](agent-view.md): one screen showing every session, its state, and which ones need your input.
-- For subagents in the current session, named background subagents appear in the @-mention typeahead with their status. As of v2.1.198, `/agents` no longer opens a panel; it prints a notice pointing to the subagent file locations. To [create and edit custom subagents](sub-agents.md#configure-subagents), ask Claude or edit the files directly. Despite the similar name, `/agents` is separate from `claude agents`.
+- For subagents in the current session, named background subagents appear in the @-mention typeahead with their status. The `/agents` command prints a notice pointing to the subagent file locations. To [create and edit custom subagents](sub-agents.md#configure-subagents), ask Claude or edit the files directly. Despite the similar name, `/agents` is separate from `claude agents`.
 - For anything running in the background of the current session, `/tasks` lists each item and lets you check on, attach to, or stop it. The list also includes subagents that have finished.
 - For dynamic workflows, `/workflows` lists running and completed runs, the phase each is in, and how many agents have finished.
 

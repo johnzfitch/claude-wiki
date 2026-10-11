@@ -2,7 +2,7 @@
 title: "Claude Code: Common developer use cases | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14553517-claude-code-common-developer-use-cases"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:32:01Z"
+fetched_at: "2026-10-10T06:25:22Z"
 tags: ["claude-code"]
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Roots - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2024-11-05/client/roots"
+source_url: "https://modelcontextprotocol.io/specification/2025-11-25/client/roots"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-09-29T06:30:53Z"
+fetched_at: "2026-10-09T06:27:37Z"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -44,7 +44,7 @@ Roots in MCP are typically exposed through workspace or project configuration in
 
 Capabilities
 
-Clients that support roots **MUST** declare the `roots` capability during [initialization](2024-11-05-basic-lifecycle.md#initialization):
+Clients that support roots **MUST** declare the `roots` capability during [initialization](2025-11-25-basic-lifecycle.md#initialization):
 
 ```python
 {

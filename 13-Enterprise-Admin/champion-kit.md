@@ -2,7 +2,7 @@
 title: "Champion kit - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/champion-kit"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-08-29T06:27:57Z"
+fetched_at: "2026-10-03T06:31:16Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -79,7 +79,7 @@ What is worth sharing
 The most useful posts describe a technique a colleague can reuse tomorrow rather than an outcome that is already complete. Techniques compound as they spread through a team; status updates do not. Examples of reusable techniques:
 
 - “I learned that @-mentioning a directory works. Pointing it at `@src/components/` and asking which were missing tests surfaced two I had overlooked.”
-- “Plan mode (`Shift+Tab`) shows exactly which files will be touched before any edit is made, which is why I am comfortable using it on shared code.”
+- “Plan mode (`Shift+Tab`) lays out the proposed changes first, which is why I am comfortable using it on shared code.”
 - “I configured a Stop hook so I receive a desktop notification when a long task completes. Configuration is in the thread.”
 - “Running `/init` generates a `CLAUDE.md` from the repository so the assistant stops re-asking about our conventions.”
 
@@ -118,8 +118,8 @@ it finished. Configuration is in the thread.
 
 ```python
 Plan mode is the reason I am comfortable using this on code that matters.
-Press Shift+Tab until you see "plan"; it lays out exactly which files it
-intends to touch before changing anything.
+Press Shift+Tab until you see "plan"; it lays out the changes it proposes
+without editing your source.
 ```
 
 
@@ -159,7 +159,7 @@ Questions you are likely to hear
 | Question                                           | Suggested response                                                                                                                                                                                                           | Follow-up resource                                                |
 |----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
 | ”What should I try it on first?”                   | Recommend a real but contained task, ideally a bug or chore the person has been postponing because it is tedious rather than difficult.                                                                                      | [Common workflows](../02-Claude-Code-CLI/common-workflows.md)                     |
-| ”How do I trust it with my code?”                  | Introduce plan mode: pressing `Shift+Tab` cycles into it, Claude proposes exactly what it intends to change, and nothing is modified until the user approves.                                                                | [Permissions](../02-Claude-Code-CLI/permissions.md)                               |
+| ”How do I trust it with my code?”                  | Introduce plan mode: pressing `Shift+Tab` cycles into it, and Claude researches and proposes changes without editing your source.                                                                                            | [Permissions](../02-Claude-Code-CLI/permissions.md)                               |
 | ”Is the setup worth the effort?”                   | Installation takes roughly two minutes, runs in the terminal, and requires no IDE extension. Running `/init` once is sufficient to begin working.                                                                            | [Quickstart](../01-Getting-Started/quickstart.md)                                 |
 | ”It produced an incorrect result.”                 | Encourage them to provide the failure back to Claude. Pasting the error message or failing test is far more effective than rephrasing the original request.                                                                  | [Common workflows](../02-Claude-Code-CLI/common-workflows.md)                     |
 | ”It does not understand our codebase conventions.” | Suggest running `/init` to generate a `CLAUDE.md` file, then adding the team’s conventions, test commands, and any directories that should be avoided.                                                                       | [Memory](../02-Claude-Code-CLI/memory.md)                                         |
@@ -235,7 +235,7 @@ Healthy skepticism is expected; engineers should be cautious about tools that to
 | Concern                                       | Suggested response                                                                                                                                                                           | Evidence to offer                                         |
 |-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
 | ”I am faster without it.”                     | That is likely true for code the person writes routinely. Suggest trying it on the work they tend to avoid: legacy files, unfamiliar services, or test scaffolding, where it helps the most. | Time one tedious task both ways and compare.              |
-| ”I do not trust AI to touch production code.” | Agree that no change should land unread. Plan mode combined with normal diff review means nothing is applied that the engineer has not inspected, the same standard as any pull request.     | Demonstrate plan mode on a real file.                     |
+| ”I do not trust AI to touch production code.” | Agree that no change should land unread. Suggest plan mode to see the proposed changes first, then review the diff to the same standard as any pull request.                                 | Demonstrate plan mode on a real file.                     |
 | ”It will make junior engineers weaker.”       | Used well, it is an effective explainer. Encourage junior engineers to ask Claude to explain a file and its call sites before asking it to change anything.                                  | Run “Explain @file and where it is called from” together. |
 | ”I tried it once and it hallucinated.”        | This is usually a context problem rather than a model problem. @-mentioning the relevant files, running `/init`, and providing the actual error output typically resolves it.                | Re-run their original prompt with proper `@`-context.     |
 | ”We do not have time to learn another tool.”  | Claude Code is a terminal command rather than a platform. If it does not return value within the first session, it is reasonable to set it aside.                                            | A two-minute install followed by one real bug.            |
@@ -250,7 +250,7 @@ The techniques below are the ones that most reliably move someone from a first t
 | Technique                        | How to apply it                                                                                                                                                       |
 |----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Provide the right context        | Use `@file` or `@directory/` references, or paste the error or log output directly. Supplying relevant context is more effective than elaborate prompting.            |
-| Review the plan before the edit  | Press `Shift+Tab` to enter plan mode. Claude will describe the intended changes for your approval before executing them.                                              |
+| Review the plan before the edit  | Press `Shift+Tab` to enter plan mode. Claude researches and proposes changes without editing your source.                                                             |
 | Teach it your repository         | Run `/init` to generate a `CLAUDE.md` file, then add your conventions, test commands, and any directories that should not be modified. See [Memory](../02-Claude-Code-CLI/memory.md). |
 | Reuse a workflow                 | Save a `SKILL.md` file in `.claude/skills/<name>/` to create a `/name` skill that the entire team can use. See [Skills](../08-Plugins-Skills/skills.md).                             |
 | Stay informed during long tasks  | Configure a Stop hook to receive a desktop notification when a long-running task completes. See [Hooks](../07-Hooks/hooks-guide.md).                                        |

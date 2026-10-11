@@ -2,8 +2,7 @@
 title: "Claude Code for Enterprise | Claude by Anthropic"
 source_url: "https://www.claude.com/product/claude-code/enterprise"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:38Z"
-last_modified: "Tue, 29 Sep 2026 22:09:31 GMT"
+fetched_at: "2026-10-10T06:25:32Z"
 tags: ["claude-ai", "claude-code", "enterprise", "security"]
 ---
 
@@ -11,150 +10,107 @@ tags: ["claude-ai", "claude-code", "enterprise", "security"]
 
 Claude Code for enterprise autonomously writes, debugs, and refactors code with support for terminal and any IDE to help teams ship faster.
 
-Get Enterprise plan
-
-[Get Enterprise plan](https://claude.ai/create/enterprise)
-
-Get Enterprise plan
-
-Try Claude Code
-
-[Try Claude Code](https://claude.ai/code)
-
-Try Claude Code
-
-[Play video](#)
-
-Play video
+[Get Enterprise plan](https://claude.ai/create/enterprise)[Try Claude Code (opens in new tab)](https://claude.ai/code)
 
 ## Trusted by leading engineering teams
 
-Read story
+> “The level of support has built trust in both Claude Code and Anthropic, making it easier for us to expand our use of the tool.”
 
-[Read story](../18-Industry-UseCases/spotify.md)
+Austin Ray, Senior Software Engineer
 
-Read story
+[Read story](../18-Industry-UseCases/ramp.md)
 
-"Our engineers are now able to execute fleet-wide migrations at a pace that simply wasn't possible before. It's a promising sign of how AI can reduce the complexity of maintaining large code bases and a clear signal of how AI is reshaping development velocity.”
+> “Claude Code has helped me become a better engineer," said Signoretti. "As AI continues to evolve, I expect my role to become more and more creative—unlocking a lot of time for system design, as well as understanding the ideal us”
+
+Francesco Signoretti, Engineering Lead, Developer Experience AI
+
+[Read story](../18-Industry-UseCases/hubspot.md)
+
+> “Claude Code has transformed how we build internal tools at Shopify.”
+
+Andrew McNamara, Director of Applied AI
+
+[Read story](../18-Industry-UseCases/shopify.md)
+
+> “This project would never have happened without Claude Code. The amount of effort and time that we would have needed to invest—we just wouldn’t do it.”
+
+Liran Benodis, Team Lead, Data Security Posture Management
+
+[Read story](../18-Industry-UseCases/wiz.md)
+
+> “Our engineers are now able to execute fleet-wide migrations at a pace that simply wasn't possible before. It's a promising sign of how AI can reduce the complexity of maintaining large code bases and a clear signal of how AI is reshaping development velocity.”
 
 Max Charas, Senior Staff Engineer
 
-Read story
-
 [Read story](../18-Industry-UseCases/spotify.md)
-
-Read story
 
 79%
 
 reduced time to market for new features (from 24 days to 5 days)
 
-Read story
-
 [Read story](../18-Industry-UseCases/rakuten.md)
 
-Read story
-
-Read story
-
-[Read story](../18-Industry-UseCases/notion.md)
-
-Read story
-
-“Claude Code is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Claude Code busy as possible.”
+> “Claude Code is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Claude Code busy as possible.”
 
 Simon Last, Co-founder
 
-Read story
-
 [Read story](../18-Industry-UseCases/notion.md)
-
-Read story
 
 89%
 
-employee adoption, 800+ AI agents deployed, 10x app usage growth 
-
-Read story
+employee adoption, 800+ AI agents deployed, 10x app usage growth
 
 [Read story](../18-Industry-UseCases/zapier.md)
 
-Read story
-
-1M+
-
-lines of AI-suggested code implemented in just 30 days
-
-Read story
-
-[Read story](../18-Industry-UseCases/ramp.md)
-
-Read story
-
-“The level of support has built trust in both Claude Code and Anthropic, making it easier for us to expand our use of the tool.”
+> “The level of support has built trust in both Claude Code and Anthropic, making it easier for us to expand our use of the tool.”
 
 Austin Ray, Senior Software Engineer
 
-Read story
-
 [Read story](../18-Industry-UseCases/ramp.md)
 
-Read story
-
-Read story
-
-[Read story](../18-Industry-UseCases/hubspot.md)
-
-Read story
-
-"Claude Code has helped me become a better engineer," said Signoretti. "As AI continues to evolve, I expect my role to become more and more creative—unlocking a lot of time for system design, as well as understanding the ideal us"
+> “Claude Code has helped me become a better engineer," said Signoretti. "As AI continues to evolve, I expect my role to become more and more creative—unlocking a lot of time for system design, as well as understanding the ideal us”
 
 Francesco Signoretti, Engineering Lead, Developer Experience AI
 
-Read story
-
 [Read story](../18-Industry-UseCases/hubspot.md)
 
-Read story
-
-Read story
-
-[Read story](../18-Industry-UseCases/shopify.md)
-
-Read story
-
-“Claude Code has transformed how we build internal tools at Shopify.”
+> “Claude Code has transformed how we build internal tools at Shopify.”
 
 Andrew McNamara, Director of Applied AI
 
-Read story
-
 [Read story](../18-Industry-UseCases/shopify.md)
 
-Read story
-
-Read story
-
-[Read story](../18-Industry-UseCases/wiz.md)
-
-Read story
-
-"This project would never have happened without Claude Code. The amount of effort and time that we would have needed to invest—we just wouldn’t do it.”
+> “This project would never have happened without Claude Code. The amount of effort and time that we would have needed to invest—we just wouldn’t do it.”
 
 Liran Benodis, Team Lead, Data Security Posture Management
 
-Read story
-
 [Read story](../18-Industry-UseCases/wiz.md)
 
-Read story
+> “Our engineers are now able to execute fleet-wide migrations at a pace that simply wasn't possible before. It's a promising sign of how AI can reduce the complexity of maintaining large code bases and a clear signal of how AI is reshaping development velocity.”
 
-[Prev](#)
+Max Charas, Senior Staff Engineer
 
-Prev
+[Read story](../18-Industry-UseCases/spotify.md)
 
-0/5
+79%
 
+reduced time to market for new features (from 24 days to 5 days)
+
+[Read story](../18-Industry-UseCases/rakuten.md)
+
+> “Claude Code is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Claude Code busy as possible.”
+
+Simon Last, Co-founder
+
+[Read story](../18-Industry-UseCases/notion.md)
+
+89%
+
+employee adoption, 800+ AI agents deployed, 10x app usage growth
+
+[Read story](../18-Industry-UseCases/zapier.md)
+
+1/8
 
 ## The Claude Code difference
 
@@ -170,31 +126,23 @@ Terminal, desktop, any IDE, Slack, or web. Claude Code fits into your team's exi
 
 ### Full codebase context
 
-Claude searches your whole codebase, not just the open file. That full context is what enables [legacy codebase migration](../18-Industry-UseCases/code-modernization.md), debugging across files, and meaningful code reviews.
+Claude searches your whole codebase, not just the open file. That full context is what enables [legacy codebase migration (opens in new tab)](../18-Industry-UseCases/code-modernization.md), debugging across files, and meaningful code reviews.
 
-### Built on the best models 
+### Built on the best models
 
 Claude consistently leads coding benchmarks. As our models improve, your team gets the benefit automatically with no workflow changes, no migrations, and no retraining.
 
 2026 Agentic Coding Trends Report
 
-How is AI changing the way software gets built—and what should engineering leaders expect in 2026? We analyzed the patterns emerging across the industry.  
+How is AI changing the way software gets built—and what should engineering leaders expect in 2026? We analyzed the patterns emerging across the industry.
 
-Read more
-
-[Read more](https://claude.com/blog/eight-trends-defining-how-software-gets-built-in-2026)
-
-Read more
+[Read more](https://www.claude.com/resources/articles/eight-trends-defining-how-software-gets-built-in-2026)
 
 Code modernization
 
-Claude Code helps leading enterprises modernize legacy codebases, assisting with scalable migration while maintaining business logic integrity.  
-
-Learn more
+Claude Code helps leading enterprises modernize legacy codebases, assisting with scalable migration while maintaining business logic integrity.
 
 [Learn more](../18-Industry-UseCases/code-modernization.md)
-
-Learn more
 
 ## Built for enterprise engineering
 
@@ -222,33 +170,28 @@ Enterprise governance is built in with SOC 2 Type II compliance, SSO, role-based
 
 Read more about Anthropic's safety and compliance in our [Trust Center](https://trust.anthropic.com/).
 
-Bring your own keys
+- 
+  Bring your own keys
 
-Run Claude Code using keys from Amazon Bedrock, Google Vertex AI, or Microsoft Foundry within your existing VPC.
+  Run Claude Code using keys from Amazon Bedrock, Google Vertex AI, or Microsoft Foundry within your existing VPC.
+- 
+  SSO and SCIM
 
-SSO and SCIM
+  Integrate with Okta, Azure AD, or any SAML 2.0 provider. Enterprise plans add SCIM for automated provisioning.
+- 
+  Encrypted everywhere
 
-Integrate with Okta, Azure AD, or any SAML 2.0 provider. Enterprise plans add SCIM for automated provisioning.
-
-Encrypted everywhere
-
-TLS 1.3 in transit, AES-256 at rest. All data encrypted end-to-end with your keys if needed.
+  TLS 1.3 in transit, AES-256 at rest. All data encrypted end-to-end with your keys if needed.
 
 ## Solve problems that slow developers down
 
-Get Enterprise plan
-
 [Get Enterprise plan](https://claude.ai/create/enterprise)
-
-Get Enterprise plan
 
 Terminal and IDE
 
 Slack
 
 Code reviews
-
-Active
 
 ### Development without leaving your environment
 
@@ -268,18 +211,7 @@ Analyze PRs automatically before human review. Claude Code checks against your o
 
 Enterprise plan premium seats include everything in the Team plan, plus advanced security, data, and user management.
 
-
-Get Enterprise plan
-
-[Get Enterprise plan](https://claude.ai/create/enterprise)
-
-Get Enterprise plan
-
-Talk to sales
-
-[Talk to sales](https://www.claude.com/contact-sales)
-
-Talk to sales
+[Get Enterprise plan](https://claude.ai/create/enterprise)[Talk to sales (opens in new tab)](https://www.claude.com/contact-sales)
 
 ### Team
 
@@ -289,31 +221,51 @@ Claude Code is included with Team plan. Includes self-serve seat management and 
 
 Per person / month. Minimum 2 members.
 
-Get Team plan
+[Get Team plan](https://claude.ai/upgrade?initialPlanType=team)[Learn more](https://www.claude.com/archive/team)
 
-[Get Team plan](https://claude.ai/upgrade?initialPlanType=team)
+[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-Get Team plan
-
-Learn more
-
-[Learn more](https://www.claude.com/archive/team)
-
-Learn more
-
-[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
-
-[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
 
 Trusted by engineering teams at leading global organizations
 
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
 Already using Amazon Bedrock, Google Vertex AI, or Microsoft Foundry?
 
-Read API docs
-
-[Read API docs](../02-Claude-Code-CLI/third-party-integrations.md)
-
-Read API docs
+[Read API docs (opens in new tab)](../02-Claude-Code-CLI/third-party-integrations.md)
 
 
 ### Is Claude Code secure?
@@ -352,57 +304,32 @@ faster execution speed for delivering features and fixes
 
 accuracy on complex code modifications
 
-[Prev](#)
+2x
 
-Prev
+faster execution speed for delivering features and fixes
 
+99.9%
+
+accuracy on complex code modifications
 
 ## Get the technical  rundown
 
-[Claude Code documentation](../02-Claude-Code-CLI/code-home.md)
-
-Claude Code documentation
 
 Claude Code documentation
 
 Developer docs
 
-[Developer docs](../02-Claude-Code-CLI/code-home.md)
-
-Developer docs
-
-[Common workflows](../02-Claude-Code-CLI/common-workflows.md)
-
-Common workflows
 
 Common workflows
 
 Developer docs
 
-[Developer docs](../02-Claude-Code-CLI/common-workflows.md)
-
-Developer docs
-
-[How Anthropic teams use Claude Code](https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf)
-
-How Anthropic teams use Claude Code
 
 How Anthropic teams use Claude Code
 
 Case study
 
-[Case study](https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf)
-
-Case study
-
-[Claude Code: AI-powered coding assistant for developers](claude-com-product-claude-code.md)
 
 Claude Code: AI-powered coding assistant for developers
-
-Claude Code: AI-powered coding assistant for developers
-
-Website
-
-[Website](claude-com-product-claude-code.md)
 
 Website

@@ -2,7 +2,7 @@
 title: "CLI authentication options - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:38Z"
+fetched_at: "2026-10-04T08:34:00Z"
 tags: ["api", "authentication", "cli"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication", "cli"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api", "authentication", "cli"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,7 +48,7 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-[CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)ant CLI
+[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
 # CLI authentication options
 
@@ -111,7 +111,7 @@ The `org:admin` scope is granted only to organization members with the admin, ow
 
 ## API key
 
-The CLI also reads your API key from the `ANTHROPIC_API_KEY` environment variable. Get a key from the [Claude Console](usage-limits.md).
+The CLI also reads your API key from the `ANTHROPIC_API_KEY` environment variable. Get a key from the [Claude Console](playground.md).
 
 zsh
 
@@ -128,7 +128,7 @@ source ~/.zshrc
 
 To override the key for a single invocation, pass `--api-key`. To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url`.
 
-If you are using an API key scoped to multiple workspaces, such as a [personal or service account key](manage-claude-authentication.md#key-types), you must [specify the workspace](manage-claude-authentication.md#select-a-workspace) to run your command in. Do this by setting an `ANTHROPIC_WORKSPACE_ID` environment variable, which the CLI reads automatically, or by using the [`--workspace-id` flag](cli-sdks-libraries-cli-using.md#global-flags). The value must be a `wrkspc_...` ID; the literal `default` that the SDKs accept in `ANTHROPIC_WORKSPACE_ID` for [federated token exchange](manage-claude-wif-reference.md#environment-variables) isn't valid here.
+If you are using an API key scoped to multiple workspaces, such as a [personal or service account key](manage-claude-authentication.md#key-types), you must [specify the workspace](manage-claude-authentication.md#select-a-workspace) to run your command in. Do this by setting an `ANTHROPIC_WORKSPACE_ID` environment variable, which the CLI reads automatically, or by using the [`--workspace-id` flag](cli-sdks-libraries-cli-using.md#global-flags). The value must be a `wrkspc_...` ID.
 
 CLI
 

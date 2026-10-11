@@ -2,7 +2,7 @@
 title: "Adapt to new model personas after deprecations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 category: "20-Models"
-fetched_at: "2026-09-30T06:31:36Z"
+fetched_at: "2026-10-10T06:24:32Z"
 tags: ["models"]
 ---
 

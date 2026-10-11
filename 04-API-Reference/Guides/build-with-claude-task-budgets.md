@@ -2,7 +2,7 @@
 title: "Task budgets - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/task-budgets"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:27Z"
+fetched_at: "2026-10-04T08:33:31Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -170,7 +170,7 @@ Claude sees a budget-countdown marker injected server-side throughout the conver
 
 
 
-**The countdown is visible only to the model.** API responses do not include a remaining-budget field: there is no `task_budget` information in the response `usage` object, and SDKs have no accessor for it. To track spend client-side, sum token usage across the requests in your loop as shown in [Measure your current usage](#measure-your-current-usage), or pass your own figure forward with `remaining` when [carrying a budget across compaction](#carrying-a-budget-across-compaction-with-remaining).
+**The countdown is visible only to the model.** API responses do not include a remaining-budget field: there is no `task_budget` information in the response `usage` object, and the SDK has no accessor for it. To track spend client-side, sum token usage across the requests in your loop as shown in [Measure your current usage](#measure-your-current-usage), or pass your own figure forward with `remaining` when [carrying a budget across compaction](#carrying-a-budget-across-compaction-with-remaining).
 
 
 
@@ -427,6 +427,7 @@ The minimum accepted `task_budget.total` is **20,000 tokens** on every model tha
 | Claude Opus 5     | Beta (set `task-budgets-2026-03-13` header) |
 | Claude Fable 5    | Beta (set `task-budgets-2026-03-13` header) |
 | Claude Mythos 5   | Beta (set `task-budgets-2026-03-13` header) |
+| Claude Sonnet 5.5 | Beta (set `task-budgets-2026-03-13` header) |
 | Claude Sonnet 5   | Not supported                               |
 | Claude Opus 4.8   | Beta (set `task-budgets-2026-03-13` header) |
 | Claude Opus 4.7   | Beta (set `task-budgets-2026-03-13` header) |
@@ -434,7 +435,7 @@ The minimum accepted `task_budget.total` is **20,000 tokens** on every model tha
 | Claude Sonnet 4.6 | Not supported                               |
 | Claude Haiku 4.5  | Not supported                               |
 
-Task budgets are not supported on [Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md) or Cowork surfaces. Use task budgets directly through the Messages API on a [supported model](#feature-support).
+Task budgets are not supported on [Claude Code](../../02-Claude-Code-CLI/code-home.md) or Cowork surfaces. Use task budgets directly through the Messages API on a [supported model](#feature-support).
 
 ## Next steps
 
@@ -468,3 +469,4 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5 and 5.1
 - Opus 4.7, 4.8, 5, and 5.5
+- Sonnet 5.5

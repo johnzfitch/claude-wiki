@@ -2,11 +2,13 @@
 title: "Claim and migrate accounts on your domain | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625619-claim-and-migrate-accounts-on-your-domain"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:32:03Z"
+fetched_at: "2026-10-10T06:25:18Z"
 tags: ["account"]
 ---
 
 # Claim and migrate accounts on your domain
+
+September 2, 2026
 
 
 Domain claiming lets Enterprise admins discover, claim, and migrate existing personal Claude accounts (Free, Pro, and Max) on a verified company domain into their Enterprise workspace. This gives your organization a clean path to consolidate accounts on day one of an Enterprise deployment, and allows people using Claude on personal accounts to keep their work. Domain claiming is available for Enterprise plans, whether purchased directly through Anthropic or through the AWS Marketplace, and works the same in both cases.
@@ -25,9 +27,9 @@ Before you can enable domain claiming, your organization must have all of the fo
 
 2.  Complete domain verification (DNS).
 
-3.  Enforce SSO (not just configured—SSO must be actively enforced). See **[Set up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**.
+3.  Enforce SSO (not just configured—SSO must be actively enforced). See **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
 
-4.  Enable JIT provisioning or SCIM. See **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+4.  Enable JIT provisioning or SCIM. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 These prerequisites exist to prevent people from being locked out of Claude during the migration process. If SSO is enforced and provisioning is active, everyone on your domain will have a path to sign in after their accounts are migrated.
 
@@ -89,7 +91,7 @@ To migrate accounts on a domain you verified later:
 
 1.  Wait for the current claim's 30-day window to end. Only one claim can be in progress at a time.
 
-2.  Verify the new domain if you haven't already. See **[Set up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**.
+2.  Verify the new domain if you haven't already. See **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
 
 3.  Review the accounts on the new domain, then initiate a new claim. This claim has its own 30-day window, and the accounts on the new domain receive the same email and in-product notifications.
 
@@ -97,7 +99,7 @@ To migrate accounts on a domain you verified later:
 
 ## What’s not supported
 
-- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 - Claiming Team plan accounts. Only individual accounts (Free, Pro, Max) can be claimed.
 

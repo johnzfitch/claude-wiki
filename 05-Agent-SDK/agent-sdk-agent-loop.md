@@ -2,7 +2,7 @@
 title: "How the agent loop works - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/agent-loop"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-16T06:24:04Z"
+fetched_at: "2026-10-09T06:27:00Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -18,6 +18,7 @@ tags: ["agents", "claude-code", "sdk"]
   - [Parallel tool execution](#parallel-tool-execution)
 - [Control how the loop runs](#control-how-the-loop-runs)
   - [Turns and budget](#turns-and-budget)
+  - [Budget headroom](#budget-headroom)
   - [Effort level](#effort-level)
   - [Permission mode](#permission-mode)
   - [Model](#model)
@@ -237,19 +238,26 @@ You can limit how many turns the loop takes, how much it costs, how deeply Claud
 
 Turns and budget
 
-| Option                                         | What it controls             | Default  |
-|:-----------------------------------------------|:-----------------------------|:---------|
-| Max turns (`max_turns` / `maxTurns`)           | Maximum tool-use round trips | No limit |
-| Max budget (`max_budget_usd` / `maxBudgetUsd`) | Maximum cost before stopping | No limit |
+| Option                                         | What it controls                        | Default  |
+|:-----------------------------------------------|:----------------------------------------|:---------|
+| Max turns (`max_turns` / `maxTurns`)           | Maximum tool-use round trips            | No limit |
+| Max budget (`max_budget_usd` / `maxBudgetUsd`) | Estimated spend at which the loop stops | No limit |
 
 When either limit is hit, the SDK returns a `ResultMessage` with a corresponding error subtype (`error_max_turns` or `error_max_budget_usd`). See [Handle the result](#handle-the-result) for how to check these subtypes and [`ClaudeAgentOptions`](agent-sdk-python.md#claudeagentoptions) / [`Options`](agent-sdk-typescript.md#options) for syntax. The budget cap covers [subagents](agent-sdk-subagents.md): their spend counts toward the total. Once spend reaches the cap, spawning another subagent fails with `Budget limit reached`, and Claude Code stops any background subagents still running. The cap-enforcement behaviors require Claude Code v2.1.217 or later. With [streaming input](agent-sdk-streaming-vs-single-mode.md), a message that is still queued when a turn ends at the max-turns limit stays queued. Claude Code doesn’t add it to that turn’s last model call. It starts a new turn for the message, and the max-turns count starts over for that turn. The budget total keeps accumulating across messages, and once spend reaches `maxBudgetUsd`, later messages in the same conversation end with the `error_max_budget_usd` result. A [`/clear`](agent-sdk-cost-tracking.md) starts the budget over.
+
+
+[​](#budget-headroom)
+
+Budget headroom
+
+Claude Code compares spend with the `max_budget_usd` / `maxBudgetUsd` cap after model responses arrive, because each response’s cost comes from the token usage the API returns with it. The response that reaches the cap still completes and counts toward [`total_cost_usd`](agent-sdk-cost-tracking.md#get-the-total-cost-of-a-query). Spend can therefore pass the cap by up to the cost of that one response, plus anything that subagents still running at that moment spend before they stop. Leave headroom for this when you set the cap.
 
 
 [​](#effort-level)
 
 Effort level
 
-The `effort` option controls how much reasoning Claude applies. Lower effort levels use fewer tokens per turn and reduce cost. Not all models support the effort parameter. See [Effort](https://code.claude.com/docs/en/04-API-Reference/effort.md) for which models support it.
+The `effort` option controls how much reasoning Claude applies. Lower effort levels use fewer tokens per turn and reduce cost. Not all models support the effort parameter. See [Effort](../04-API-Reference/Guides/build-with-claude-effort.md) for which models support it.
 
 | Level      | Behavior                          | Good for                                                                                            |
 |:-----------|:----------------------------------|:----------------------------------------------------------------------------------------------------|
@@ -278,7 +286,7 @@ The permission mode option (`permission_mode` in Python, `permissionMode` in Typ
 | `"acceptEdits"`       | Auto-approves file edits and common filesystem commands (`mkdir`, `touch`, `mv`, `cp`, etc.); other Bash commands follow default rules                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | You trust Claude’s edits and want faster iteration, such as during prototyping or when working in an isolated directory                       |
 | `"plan"`              | Claude explores and plans without editing your source files; file edits are never auto-approved and prompt through your `canUseTool` callback                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | You want Claude to propose changes without executing them, such as during code review or when you need to approve changes before they’re made |
 | `"dontAsk"`           | Never prompts. Tools pre-approved by [permission rules](../02-Claude-Code-CLI/settings-reference.md#permission-settings) run, and so do calls that need no approval in `default` mode, such as file reads inside your working directories; every call that would otherwise prompt is denied. `AskUserQuestion`, connector tools [your organization set to `ask`](../06-MCP-Tools/General/mcp.md#organization-controls-on-connector-tools), and MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool) are denied even if you’ve allowed them                                                                                                                                                                                                                                         | You want a fixed, explicit tool surface for a headless agent and prefer a hard deny over silent reliance on `canUseTool` being absent         |
-| `"auto"`              | Uses a model classifier to approve or deny permission prompts. See [Auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode) for availability and behavior                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Autonomous agents that still want safety guardrails on tool use                                                                               |
+| `"auto"`              | Uses a model classifier to review actions such as shell commands and network requests, allowing or blocking each one it reviews. See [Auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode) for availability and the decision order                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Autonomous agents that still want safety guardrails on tool use                                                                               |
 | `"bypassPermissions"` | Runs all allowed tools without asking, except tools matched by an explicit [`ask` rule](../02-Claude-Code-CLI/settings-reference.md#permission-settings), connector tools [your organization set to `ask`](../06-MCP-Tools/General/mcp.md#organization-controls-on-connector-tools), and tools that require user interaction. The [cross-session messaging safeguards](../02-Claude-Code-CLI/permission-modes.md#skip-all-checks-with-bypasspermissions-mode) still apply. See [How permissions are evaluated](agent-sdk-permissions.md#how-permissions-are-evaluated) for the precedence order. In the TypeScript SDK, also requires `allowDangerouslySkipPermissions: true` in `options`. Can’t be used when running as root on Unix. Use only in isolated environments where the agent’s actions can’t affect systems you care about | CI, containers, or other isolated environments                                                                                                |
 
 For interactive applications, use `"default"` with a tool approval callback to surface approval prompts. For autonomous agents on a dev machine, `"acceptEdits"` auto-approves file edits and common filesystem commands (`mkdir`, `touch`, `mv`, `cp`, etc.) while still gating other `Bash` commands behind allow rules. Reserve `"bypassPermissions"` for CI, containers, or other isolated environments. See [Permissions](agent-sdk-permissions.md) for full details.
@@ -348,7 +356,7 @@ Keep context efficient
 
 A few strategies for long-running agents:
 
-- **Use subagents for subtasks.** Each subagent starts with a fresh conversation (no prior message history, though it does load its own system prompt and project-level context like CLAUDE.md). It does not see the parent’s turns, and only its final response returns to the parent as a tool result. The main agent’s context grows by that summary, not by the full subtask transcript. See [What subagents inherit](agent-sdk-subagents.md#what-subagents-inherit) for details.
+- **Use subagents for subtasks.** Each subagent starts with a fresh conversation (no prior message history, though it does load its own system prompt and project-level context like CLAUDE.md). It does not see the parent’s turns, and only its final response returns to the parent. The main agent’s context grows by that summary, not by the full subtask transcript. See [What subagents inherit](agent-sdk-subagents.md#what-subagents-inherit) for details.
 - **Be selective with tools.** Every tool definition takes context space. Use the `tools` field on [`AgentDefinition`](agent-sdk-subagents.md#agentdefinition-configuration) to scope subagents to the minimum set they need.
 - **Watch MCP server costs.** [MCP tool search](agent-sdk-mcp.md#mcp-tool-search) defers MCP tool schemas by default and loads them on demand. When tool search is off or has fallen back to upfront loading, each MCP server adds all its tool schemas to every request, so a few servers with many tools can consume significant context before the agent does any work. See [Configure tool search](agent-sdk-tool-search.md#configure-tool-search) for the configurations where the fallback applies.
 - **Use lower effort for routine tasks.** Set [effort](#effort-level) to `"low"` for agents that only need to read files or list directories. This reduces token usage and cost.

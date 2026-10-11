@@ -2,7 +2,7 @@
 title: "Roll out an LLM gateway for your organization - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/llm-gateway-rollout"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-28T06:33:10Z"
+fetched_at: "2026-10-07T06:23:38Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -17,6 +17,7 @@ tags: ["claude-code", "enterprise"]
   - [Distribute the configuration](#distribute-the-configuration)
   - [What to distribute](#what-to-distribute)
   - [Distribute through managed settings](#distribute-through-managed-settings)
+  - [The HIPAA configuration behind a gateway](#the-hipaa-configuration-behind-a-gateway)
   - [Hand developers the values to set themselves](#hand-developers-the-values-to-set-themselves)
   - [Verify the rollout](#verify-the-rollout)
 - [Maintain the gateway](#maintain-the-gateway)
@@ -47,7 +48,7 @@ To complete the rollout, you’ll need:
 
 - A gateway deployed on your infrastructure, serving HTTPS at the exact address you’ll distribute to developers, not an address that redirects to it, and configured to route Claude model names to your provider
 - A provider credential for the gateway to forward with:
-  - For the Anthropic API: an API key from the [Claude Console](../04-API-Reference/Other/usage-limits.md)
+  - For the Anthropic API: an API key from the [Claude Console](../04-API-Reference/Other/playground.md)
   - For a cloud provider: cloud credentials with model access. See the prerequisites on the [Amazon Bedrock](../02-Claude-Code-CLI/amazon-bedrock.md#prerequisites), [Google Cloud’s Agent Platform](../02-Claude-Code-CLI/google-vertex-ai.md#prerequisites), or [Microsoft Foundry](../02-Claude-Code-CLI/microsoft-foundry.md#prerequisites) page
 - A way to deliver settings files to developer machines, such as MDM or configuration management
   - If you don’t have one yet, [how settings reach devices](admin-setup.md#decide-how-settings-reach-devices) compares the options
@@ -231,6 +232,18 @@ Add the conditional variables from the table to the same `env` block. A managed 
 - The desktop app reads gateway routing from its third-party inference configuration, not from managed settings; deploy that file through MDM alongside managed settings so desktop sessions route through the gateway too. See the [desktop third-party configuration docs](https://claude.com/docs/third-party/claude-desktop/configuration) and the [desktop gateway docs](https://claude.com/docs/third-party/claude-desktop/gateway)
 - CI runners need `ANTHROPIC_BASE_URL` and the credential set in the [runner’s environment](llm-gateway-connect.md#configure-each-surface)
 - WSL on managed Windows machines reads the Windows managed settings only when [`wslInheritsWindowsSettings`](../02-Claude-Code-CLI/settings-reference.md#wslinheritswindowssettings) is `true`
+
+
+[​](#the-hipaa-configuration-behind-a-gateway)
+
+The HIPAA configuration behind a gateway
+
+Sessions that go through a gateway aren’t eligible for the HIPAA configuration. [Check how developers sign in and connect](../02-Claude-Code-CLI/hipaa-setup.md#check-how-developers-sign-in-and-connect) lists which sign-in and connection methods are. To restrict features for those sessions in the managed settings file, use the keys in [Map egress paths to managed controls and events](monitoring-usage.md#map-egress-paths-to-managed-controls-and-events). These keys don’t make a session eligible for the HIPAA configuration, and they don’t cover everything the configuration changes. For example:
+
+- **Cloud sessions**: no managed key turns them off. See [Admin console controls](../16-Mobile-Desktop/desktop.md#admin-console-controls)
+- **Anthropic credentials in child processes**: the configuration [removes them](../02-Claude-Code-CLI/hipaa-setup.md#anthropic-credentials-in-commands-hooks-and-mcp-servers) from the processes Claude Code starts, and no settings key does only that
+
+Don’t use `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` in place of these keys. It turns off some of these features, but it also turns off the auto-updater, and it leaves WebFetch on.
 
 
 [​](#hand-developers-the-values-to-set-themselves)

@@ -1,9 +1,9 @@
 ---
-title: "Plans & Pricing | Claude by Anthropic"
+title: "Plans & pricing | Claude by Anthropic"
 source_url: "https://www.claude.com/pricing"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:55Z"
-last_modified: "Wed, 30 Sep 2026 06:27:52 GMT"
+fetched_at: "2026-10-10T06:26:06Z"
+last_modified: "Sat, 10 Oct 2026 06:23:07 GMT"
 tags: ["billing", "enterprise", "security"]
 ---
 
@@ -33,8 +33,11 @@ Free for everyone
 - Memory across conversations
 - Connect your apps and tools
 - Create Artifacts
+- Claude Design, Slides, Docs
 
 ### Pro
+
+Claude Code included
 
 For everyday work
 
@@ -48,14 +51,15 @@ Everything in Free, plus:
 
 - More usage\*
 - Hand off and schedule tasks
-- Claude Design, Slides, Docs
-- Claude Code
+- Claude Dashboards (beta)
 - Claude Science
 - Projects
 - More Claude models
 - Claude in Chrome and Microsoft 365
 
 ### Max
+
+Claude Code included
 
 For people who work with Claude all day
 
@@ -71,10 +75,11 @@ Everything in Pro, plus:
 - Higher output limits for all tasks
 - Early access to advanced Claude features
 - Priority access at high traffic times
+- \$100 to \$200/month in API credits to build on the Claude Platform^(†)
 
-[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## Compare features across plans
 
@@ -136,6 +141,7 @@ Per seat / month if billed annually. \$125 if billed monthly.
 
 - Claude Code and Claude Cowork
 - Claude Design, Slides, and Docs
+- Claude Motion and Dashboards (beta)
 - Claude Science
 - Microsoft 365, @Claude, and more
 - Enterprise search across your organization
@@ -145,6 +151,7 @@ Per seat / month if billed annually. \$125 if billed monthly.
 - Enterprise deployment for the Claude desktop app
 - No model training on your content by default
 - Mix and match seat types
+- Up to \$500 per month in pooled API credits^(†)
 
 ### Enterprise
 
@@ -169,9 +176,9 @@ All Team plan features, plus:
 - HIPAA-ready offering available
 - Claude Security (beta)
 
-[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits](usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ### Education plan
 
@@ -291,7 +298,7 @@ Prompt caching
 
 Read
 
-\$0.20 / MTok
+\$0.10 / MTok
 
 Write
 
@@ -305,29 +312,53 @@ Output
 
 \$10 / MTok
 
-### Haiku 4.5
+### Haiku 5.5
 
 Fastest, most cost-efficient model
 
 Prompt caching
 
+Prompts ≤ 100K tokens
+
 Read
 
-\$0.10 / MTok
+\$0.01 / MTok
 
 Write
 
-\$1.25 / MTok
+\$0.125 / MTok
+
+Prompts \> 100K tokens
+
+Read
+
+\$0.05 / MTok
+
+Write
+
+\$0.625 / MTok
 
 Input
 
-\$1 / MTok
+Prompts ≤ 100K tokens
+
+\$0.10 / MTok
+
+Prompts \> 100K tokens
+
+\$0.50 / MTok
 
 Output
 
-\$5 / MTok
+Prompts ≤ 100K tokens
 
-For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](../04-API-Reference/Guides/build-with-claude-data-residency.md).
+\$0.50 / MTok
+
+Prompts \> 100K tokens
+
+\$2.50 / MTok
+
+For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](../04-API-Reference/Other/manage-claude-data-residency.md).
 
 Get up to 2.5x faster speeds with fast mode for Opus 5.5 at 2x standard pricing. [Learn more](about-claude-pricing.md#fast-mode-pricing).
 
@@ -383,9 +414,27 @@ Balance availability, performance, and predictable costs based on your needs.
 
 [Learn more (opens in new tab)](../20-Models/about-claude-models-overview.md)[Explore detailed pricing (opens in new tab)](about-claude-pricing.md)
 
-### Sonnet 5
+### Haiku 4.5
 
-High-performance model for coding and agents
+Prompt caching
+
+Read
+
+\$0.10 / MTok
+
+Write
+
+\$1.25 / MTok
+
+Input
+
+\$1 / MTok
+
+Output
+
+\$5 / MTok
+
+### Sonnet 5
 
 Prompt caching
 
@@ -405,9 +454,11 @@ Output
 
 \$10 / MTok
 
-### Opus 5
+Save 50% with batch processing. [Learn more](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
 
-Ideal for complex agentic coding and enterprise work
+Batch processing
+
+### Opus 5
 
 Prompt caching
 
@@ -426,10 +477,6 @@ Input
 Output
 
 \$25 / MTok
-
-Save 50% with batch processing. [Learn more](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
-
-Batch processing
 
 ### Fable 5
 
@@ -585,7 +632,7 @@ Managing your plan
 
 #### What do I get with Claude Pro?
 
-The [Pro plan](what-is-the-pro-plan.md) gives you everything in a Free plan with more usage and more of Claude's capabilities. That includes Claude Code, Claude Design, Slides, and Docs, along with projects to organize your chats and documents, access to more Claude models, and Claude for Microsoft 365. You can choose a monthly or annual subscription.
+The [Pro plan](what-is-the-pro-plan.md) gives you everything in a Free plan with more usage and more of Claude's capabilities. That includes Claude Code, along with projects to organize your chats and documents, access to more Claude models, and Claude for Microsoft 365. You can choose a monthly or annual subscription.
 
 #### How is Claude Max different from Pro?
 
@@ -593,15 +640,15 @@ The [Max plan](what-is-the-max-plan.md) is built for people who work with Claude
 
 #### What are the usage limits on each plan, and what happens when I hit them?
 
-Every plan has [usage limits](https://support.claude.com/en/articles/9797557-usage-limit-best-practices) that reset on a rolling five-hour session window, and paid plans add weekly limits on top. Your activity across Claude on web, desktop, mobile, and Claude Code all draws from the same pool. How much you can do depends on the length and complexity of your conversations, the model you choose, and the features you use, so there's no fixed message count. Free covers everyday questions. Pro gives you at least 5x more usage per 5-hour session than Free. Max gives you 5x or 20x more usage per 5-hour session than Pro. On Team plans, Standard seats give more than Pro and Premium seats give 5x more than Standard. To manage capacity and make sure all users have fair access, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion. When you reach a limit, you can wait for it to reset, move to a higher plan, or, on paid plans, turn on [usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans) to keep working at standard API rates. You can see where you stand anytime in [Settings \> Usage](https://claude.ai/settings/usage).
+Every plan has [usage limits](usage-limit-best-practices.md) that reset on a rolling five-hour session window, and paid plans add weekly limits on top. Your activity across Claude on web, desktop, mobile, and Claude Code all draws from the same pool. How much you can do depends on the length and complexity of your conversations, the model you choose, and the features you use, so there's no fixed message count. Free covers everyday questions. Pro gives you at least 5x more usage per 5-hour session than Free. Max gives you 5x or 20x more usage per 5-hour session than Pro. On Team plans, Standard seats give more than Pro and Premium seats give 5x more than Standard. To manage capacity and make sure all users have fair access, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion. When you reach a limit, you can wait for it to reset, move to a higher plan, or, on paid plans, turn on [usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans) to keep working at standard API rates. You can see where you stand anytime in [Settings \> Usage](https://claude.ai/settings/usage).
 
 #### Is Claude Code included in my plan?
 
-[Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md) is included in all paid plans. It shares the same usage limits as the rest of your plan, so your work in the terminal and your chats draw from one pool. For heavy coding sessions, you can also switch to pay-as-you-go API credits through a [Console account](../04-API-Reference/Other/usage-limits.md).
+[Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) is included in all paid plans. It shares the same usage limits as the rest of your plan, so your work in the terminal and your chats draw from one pool. For heavy coding sessions, you can also switch to pay-as-you-go API credits through a [Console account](../04-API-Reference/Other/usage-limits.md).
 
 #### How much does the Claude Enterprise plan cost?
 
-The [Claude Enterprise plan](../18-Industry-UseCases/enterprise.md) is built for large businesses operating at scale. Pricing is \$20 per seat per month plus usage billed at API rates, so cost scales with the models and tasks your team runs. Enterprise is billed annually and includes everything in Team plus advanced security and admin controls, including SCIM, audit logs, custom data retention, and role-based access. You can get started self-serve or [contact sales](https://claude.com/contact-sales) for a tailored quote.
+The [Claude Enterprise plan](pricing-enterprise.md) is built for large businesses operating at scale. Pricing is \$20 per seat per month plus usage billed at API rates, so cost scales with the models and tasks your team runs. Enterprise is billed annually and includes everything in Team plus advanced security and admin controls, including SCIM, audit logs, custom data retention, and role-based access. You can get started self-serve or [contact sales](https://claude.com/contact-sales) for a tailored quote.
 
 ### Billing and payments
 
@@ -609,13 +656,13 @@ The [Claude Enterprise plan](../18-Industry-UseCases/enterprise.md) is built for
 
 Yes, annual plans are designed to cost less than monthly subscriptions. Annual subscriptions are available for Pro and Team plans. Enterprise plans are only available as annual subscriptions.
 
-When you choose to pay annually, you're billed once up front for the year. If you're already on a monthly plan, you can switch to annual in [Settings \> Billing](https://claude.ai/settings/billing), and any unused time is credited toward your first annual invoice. See the steps for [Pro](how-to-change-your-pro-plan-from-monthly-to-annual-billing.md) and [Team](how-to-change-your-team-plan-from-monthly-to-annual-billing.md).
+When you choose to pay annually, you're billed once up front for the year. If you're already on a monthly plan, you can switch to annual in [Settings \> Billing](https://claude.ai/settings/billing), and any unused time is credited toward your first annual invoice. See the steps for [Pro](how-to-change-your-pro-plan-from-monthly-to-annual-billing.md) and [Team](https://support.claude.com/en/articles/12083917-change-your-team-plan-from-monthly-to-annual-billing).
 
 #### Does Claude offer refunds?
 
 Payments are generally non-refundable, except where our [Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms) say otherwise or where local law requires it.
 
-Customers outside of Europe can follow this process to [request a refund](https://support.claude.com/en/articles/12386328-requesting-a-refund-for-a-paid-claude-plan):
+Customers outside of Europe can follow this process to [request a refund](requesting-a-refund-for-a-paid-claude-plan.md):
 
 - Log in, open Get help from the menu, start a message, and choose Claude Refund Request to check your eligibility.
 - If you subscribed through the App Store, [Apple](https://support.apple.com/billing) handles the refund, so you'll request it from Apple.
@@ -658,9 +705,9 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -690,7 +737,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Enterprise
 
-- [Overview](../18-Industry-UseCases/enterprise.md)
+- [Overview](pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -702,6 +749,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Industries
 
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -713,8 +761,10 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -734,7 +784,9 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](../18-Industry-UseCases/customers.md)
@@ -777,9 +829,9 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -809,7 +861,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Enterprise
 
-- [Overview](../18-Industry-UseCases/enterprise.md)
+- [Overview](pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -821,6 +873,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Industries
 
+- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -832,8 +885,10 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -853,7 +908,9 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](../18-Industry-UseCases/customers.md)

@@ -2,7 +2,7 @@
 title: "Get your Claude API key - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/get-api-key"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:32Z"
+fetched_at: "2026-10-04T08:33:27Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -94,7 +94,7 @@ Find, create, and manage your API keys for the Claude API in the Claude Console.
 
 
 
-API keys for the Claude API (also called Anthropic API keys) live in the Claude Console. To view your existing keys or create a new one, go to [Settings → API keys](usage-limits.md).
+API keys for the Claude API (also called Anthropic API keys) live in the Claude Console. To view your existing keys or create a new one, go to [Settings → API keys](playground.md).
 
 ## Choose a key type
 
@@ -114,13 +114,13 @@ You can also create a **workspace key**, a legacy key without an owner: it belon
 
     ### Open the API keys page
 
-    Go to [Settings → API keys](usage-limits.md).
+    Go to [Settings → API keys](playground.md).
 
 3.  3
 
     ### Create a key
 
-    Click **Create key**, name the key, choose an [expiration](manage-claude-authentication.md#key-expiration), and set **Linked account** to yourself or a service account. You can also choose a [workspace](usage-limits.md) to scope the key to.
+    Click **Create key**, name the key, choose an [expiration](manage-claude-authentication.md#key-expiration), and set **Linked account** to yourself or a service account. You can also choose a [workspace](playground.md) to scope the key to.
 
 4.  4
 
@@ -140,7 +140,7 @@ export ANTHROPIC_API_KEY="sk-ant-api03-..."
 
 
 
-The [client SDKs](cli-sdks-libraries-overview.md) read `ANTHROPIC_API_KEY` automatically. Direct HTTP requests send the key in the `x-api-key` header. If your API key works on multiple workspaces, you must also send the `anthropic-workspace-id` header on each Claude API request, as shown in [Select a workspace](manage-claude-authentication.md#select-a-workspace). For the Admin API, see [API keys and the Admin API](#api-keys-and-the-admin-api).
+The [client SDK](cli-sdks-libraries-overview.md) reads `ANTHROPIC_API_KEY` automatically. Direct HTTP requests send the key in the `x-api-key` header. If your API key works on multiple workspaces, you must also send the `anthropic-workspace-id` header on each Claude API request, as shown in [Select a workspace](manage-claude-authentication.md#select-a-workspace). For the Admin API, see [API keys and the Admin API](#api-keys-and-the-admin-api).
 
 To make your first request, follow the [Quickstart](../../01-Getting-Started/get-started.md), and see [Authentication](manage-claude-authentication.md) for the full picture, including short-lived credentials with Workload Identity Federation.
 
@@ -150,4 +150,4 @@ The [Admin API](../Admin/http-beta-organization.md) includes endpoints for manag
 
 
 
-The Admin API can't recover a lost key or give you a key to call the Claude API with. To get a usable API key, create one in [Settings → API keys](usage-limits.md) in the Claude Console.
+The Admin API can't recover a lost key or give you a key to call the Claude API with. To get a usable API key, create one in [Settings → API keys](playground.md) in the Claude Console.

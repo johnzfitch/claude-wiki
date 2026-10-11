@@ -1,8 +1,8 @@
 ---
-title: "What Do You Want from AI? \\ Anthropic"
+title: "What do you want from AI? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/your-thoughts-on-ai"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:33:25Z"
+fetched_at: "2026-10-08T06:25:30Z"
 tags: ["news-research"]
 ---
 
@@ -12,7 +12,7 @@ Sep 29, 2026
 
 [Participate here ](https://claude.ai/anthropic-interviewer/your-thoughts-on-ai?from=blog)
 
-*We’re launching a new study using [Anthropic Interviewer](https://www.anthropic.com/about-anthropic-interviewer) to learn from your experiences with AI, and we’d like you to participate. After you finish, you can decide to make your interview public, so that anyone, not just Anthropic, can read and learn from it. You can [participate here](https://claude.ai/redirect/website.v1.85917256-9048-476b-a422-852a3102f855/anthropic-interviewer/your-thoughts-on-ai?from=blog).*
+*We’re launching a new study using [Anthropic Interviewer](https://www.anthropic.com/about-anthropic-interviewer) to learn from your experiences with AI, and we’d like you to participate. After you finish, you can decide to make your interview public, so that anyone, not just Anthropic, can read and learn from it. You can [participate here](https://claude.ai/redirect/website.v1.a26e538f-8948-4b05-a561-27cf157b5f43/anthropic-interviewer/your-thoughts-on-ai?from=blog).*
 
 We are at a pivotal moment in the development of AI, as its growing capabilities mean it becomes potentially more useful and more dangerous. Frontier AI is rapidly accelerating discoveries in [science](claude-accelerates-protein-design.md) and [medicine](https://openai.com/index/diagnose-rare-childhood-diseases/), while at the same time the cost of its misuse grows [more consequential](https://darioamodei.com/post/we-must-pace-the-frontier)—[a single security incident](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#core-takeaways-about-this-incident) can cause far more damage than it did a year ago.
 
@@ -26,7 +26,7 @@ This project builds on a similar study conducted last December, in which [81,000
 
 AI and Anthropic have changed a lot since then. AI has improved, more people use Claude, and people’s feelings toward the technology have shifted. For the previous study, only the high-level results and a small number of quotes were made public. This time, we want your thoughts to be made widely available so that anyone can learn from them.
 
-We’ve written a FAQ so you can make an informed decision about whether to make your interview public and what to share. You can choose to [participate here](https://claude.ai/redirect/website.v1.85917256-9048-476b-a422-852a3102f855/anthropic-interviewer/your-thoughts-on-ai?from=blog).
+We’ve written a FAQ so you can make an informed decision about whether to make your interview public and what to share. You can choose to [participate here](https://claude.ai/redirect/website.v1.a26e538f-8948-4b05-a561-27cf157b5f43/anthropic-interviewer/your-thoughts-on-ai?from=blog).
 
 ##  FAQ
 
@@ -107,33 +107,33 @@ Participants in this study will all be people who use Claude, which is not a rep
 
 ## Related content
 
+### Claude-shaped science
+
+Guest author Prof. Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calculations in quantitative science, which he has been applying across scientific fields alongside experts.
+
+[Read more](claude-shaped-science.md)
+
+### What work can robots do?
+
+We built an index of how well today’s robots can perform US job tasks. Robots can already do three-quarters of physical tasks, mostly in limited settings, but are cost-competitive for just 0.3% of them.
+
+[Read more](what-work-can-robots-do.md)
+
 ### GLM-5.3 and the spread of advanced cyber capabilities
 
 Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse.
 
 [Read more](glm-5-3-and-the-spread-of-advanced-cyber-capabilities.md)
 
-### Yes, Claude can do Nine Loops
-
-Guest writer and physicist Matt von Hippel shares what happened when he issued a challenge to AI companies to solve a problem in his former subfield of theoretical physics.
-
-[Read more](yes-claude-can-do-nine-loops.md)
-
-### Project Swap: What happens when agents trade for us?
-
-To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes.
-
-[Read more](project-swap.md)
-
 [](https://www.anthropic.com/)
 
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Design](../15-Claude-AI-Features/product-design.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
@@ -160,7 +160,7 @@ To see what works and what breaks when agents are sent into a market, we made a
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
+- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)
@@ -181,7 +181,7 @@ To see what works and what breaks when agents are sent into a market, we made a
 - [Marketplace](https://claude.com/platform/marketplace)
 - [Regional compliance](https://claude.com/regional-compliance)
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
 - [Console login](../04-API-Reference/Other/usage-limits.md)
 
@@ -204,8 +204,10 @@ To see what works and what breaks when agents are sent into a market, we made a
 
 ### Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ### Help and security
 

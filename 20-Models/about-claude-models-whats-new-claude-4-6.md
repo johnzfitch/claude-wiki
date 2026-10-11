@@ -96,7 +96,7 @@ On the Message Batches API, Opus 4.6 and Sonnet 4.6 can generate up to 300k outp
 
 ### Data residency controls
 
-[Data residency controls](../04-API-Reference/Guides/build-with-claude-data-residency.md) allow you to specify where model inference runs using the `inference_geo` parameter. You can choose `"global"` (default) or `"us"` routing per request. US-only inference is priced at 1.1x on Claude Opus 4.6 and newer models.
+[Data residency controls](../04-API-Reference/Other/manage-claude-data-residency.md) allow you to specify where model inference runs using the `inference_geo` parameter. You can choose `"global"` (default) or `"us"` routing per request. US-only inference is priced at 1.1x on Claude Opus 4.6 and newer models.
 
 ## Deprecations
 

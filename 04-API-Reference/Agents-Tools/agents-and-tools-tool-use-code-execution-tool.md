@@ -2,7 +2,7 @@
 title: "Code execution tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:39:51Z"
+fetched_at: "2026-10-04T08:33:53Z"
 tags: ["api", "containers"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "containers"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,7 +96,7 @@ Run Python and bash code in a sandboxed container to analyze data, generate file
 
 Code execution tool
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Not eligible
 
@@ -767,7 +767,7 @@ To upgrade, update the tool type in your API requests:
 
 Code execution runs in server-side sandbox containers. Container data, including execution artifacts, uploaded files, and outputs, is retained for up to 30 days. This retention applies to all data processed within the container environment. Files that code execution creates in the [Files API](../Guides/build-with-claude-files.md) (retrievable with `client.files.download()`) persist until explicitly deleted.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Next steps
 
@@ -799,7 +799,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5 and 5.1
 - Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
-- Sonnet 4.5, 4.6, and 5
+- Sonnet 4.5, 4.6, 5, and 5.5
 - Haiku 4.5
 
 Supported platforms  

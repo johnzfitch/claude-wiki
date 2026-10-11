@@ -2,7 +2,7 @@
 title: "Apple Foundation Models - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:30Z"
+fetched_at: "2026-10-04T08:33:33Z"
 tags: ["api", "authentication"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -30,7 +30,7 @@ tags: ["api", "authentication"]
 
 SearchCtrlK
 
-CLI, SDKs, and libraries
+SDKs, CLI, and libraries
 
 [Overview](cli-sdks-libraries-overview.md)
 
@@ -48,7 +48,7 @@ Libraries and integrations
 
 [Console](usage-limits.md)
 
-[CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)Libraries and integrations
+[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Libraries and integrations
 
 # Apple Foundation Models
 

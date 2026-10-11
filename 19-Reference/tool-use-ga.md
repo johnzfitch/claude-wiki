@@ -2,8 +2,7 @@
 title: "Claude can now use tools | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/tool-use-ga"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:32:36Z"
-last_modified: "Wed, 30 Sep 2026 04:21:08 GMT"
+fetched_at: "2026-10-10T06:25:38Z"
 tags: ["news-research"]
 ---
 
@@ -11,34 +10,20 @@ tags: ["news-research"]
 
 Claude now connects with external tools and APIs to perform tasks, manipulate data, and deliver more accurate responses.
 
-
 - 
 
-
-  [Product announcements](https://claude.com/blog/category/announcements)
-
+  Category[Announcements](https://www.anthropic.com/resources/product-announcements)
 - 
 
-
-  [Claude Platform](https://claude.com/platform/api)
-
+  ProductClaude Platform
 - 
 
-
-  May 30, 2024
-
+  DateMay 30, 2024
 - 
 
-
-  5
-
-  min
-
+  Reading time6 min
 - 
 
-
-  [Copy link](#)
-  https://claude.com/blog/tool-use-ga
 
 Tool use, which enables Claude to interact with external tools and APIs, is now generally available across the entire Claude 3 model family on the Anthropic Messages API, Amazon Bedrock, and Google Cloud's Vertex AI. With tool use, Claude can perform tasks, manipulate data, and provide more dynamic—and accurate—responses.
 
@@ -84,9 +69,39 @@ Intuned, the browser automation platform, uses Claude to power data extraction w
 
 You can get started with tool use today on the Anthropic Messages API, Amazon Bedrock, and Google Cloud's Vertex AI. To learn more, explore our [documentation](https://docs.anthropic.com/en/docs/tool-use), [tool use tutorial](https://github.com/anthropics/courses/tree/master/tool_use), and [Anthropic Cookbooks on tool use](https://platform.claude.com/cookbook/tool-use-calculator-tool).
 
+## Related articles
 
-[Prev](#)
+Explore more product news and best practices for teams building with Claude.
 
-Prev
 
-0/5
+ArticleOct 8, 2026
+
+### Build live dashboards and animate explainers with Claude 
+
+Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
+
+Claude appsClaude Design
+
+2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+
+
+ArticleOct 7, 2026
+
+### Claude Haiku 5.5
+
+Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
+
+(opens in new tab)[](https://www.anthropic.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
+
+ArticleOct 6, 2026
+
+### Claude now works with Google Docs, Sheets, and Slides
+
+Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
+
+Claude Enterprise
+
+
+ArticleOct 6, 2026
+
+### We’re expanding the Claude Startups program to help founders build

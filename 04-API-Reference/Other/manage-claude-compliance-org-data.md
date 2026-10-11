@@ -2,8 +2,8 @@
 title: "List organizations, users, roles, groups, and settings - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-org-data"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:35Z"
-tags: ["api"]
+fetched_at: "2026-10-04T08:33:31Z"
+tags: ["api", "plugins"]
 ---
 
 - [Managed Agents](managed-agents-overview.md)
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -386,6 +388,19 @@ The top-level `organization_id` is the organization's bare UUID: the same value 
 Rows reflect the enforced state rather than the last-stored configuration: for example, `sso_provisioning_mode` reports a configured SCIM mode only while directory sync is enabled, `ip_allowlist_enabled` is `true` only while the allowlist is on and has at least one active range, and `code_execution_network_egress_enabled` is `false` whenever code execution is off.
 
 The response reflects the state at read time; nothing is snapshotted. Changes to most of these settings surface as events in the [Activity Feed](manage-claude-compliance-activity-feed.md); use this endpoint for the current resolved state and the feed to audit who changed what, and when.
+
+## Read plugins and plugin marketplaces
+
+Your organization's plugins and plugin marketplaces are part of the [Admin API](manage-claude-plugins-api.md) rather than the Compliance API, but a Compliance Access Key with `read:compliance_org_data` can call the Plugins API's read endpoints directly:
+
+- List plugins and retrieve a plugin
+- List a plugin's versions, retrieve a version, and download a version's files
+- List a plugin's installation settings and its shares
+- List plugin marketplaces and retrieve a marketplace
+
+Send the `anthropic-beta: ce-plugins-2026-09-01` header on every request; without it these endpoints return [404 Not Found](manage-claude-plugins-api.md#error-responses). Each call reads one organization: a key that covers the parent organization reads the linked organization it was created in unless you pass the `organization_id` query parameter (a linked organization's UUID or its `org_`-prefixed ID) to [read a different one](manage-claude-plugins-api.md#reading-another-organization-under-the-same-parent), and a key restricted to one organization reads only that organization. These calls count against the Admin API's [rate limits](manage-claude-plugins-api.md#rate-limiting), not the Compliance API's.
+
+Creating or changing plugins, their installation settings, or a marketplace's settings requires an Admin API key with `write:plugins`. Of the read calls, only downloading the files of a plugin in a member's personal marketplace records an [Activity Feed](manage-claude-compliance-activity-feed.md) event (`claude_plugin_archive_accessed`). See the [Plugins API guide](manage-claude-plugins-api.md) for each endpoint, request examples, and the [events the API records](manage-claude-plugins-api.md#activity-feed-events).
 
 ## Next steps
 

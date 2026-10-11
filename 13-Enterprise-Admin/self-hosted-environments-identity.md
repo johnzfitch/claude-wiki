@@ -2,7 +2,7 @@
 title: "Verify session identity in self-hosted environments - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments-identity"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-16T06:24:26Z"
+fetched_at: "2026-10-10T06:24:53Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -217,13 +217,13 @@ def verify_session_token(raw: str) -> dict:
 
 Verify the token inside the session
 
-[Wrapper scripts](self-hosted-environments-configuration.md#wrapper-scripts) run inside the session, before Claude starts. Instead of calling a JWT library, they can run the runner binary’s `self-hosted-runner decode-token` subcommand. The subcommand reads the token from a positional argument, from `CLAUDE_CODE_SESSION_ACCESS_TOKEN`, or from piped stdin, in that order, then strips the prefix, verifies the signature against the JWKS endpoint, checks expiry, and prints the claims as JSON. The subcommand performs the signature and expiry checks only; it doesn’t check `iss`, `aud`, or `ccr:role`. When your wrapper’s auth decision depends on those claims, read them from the printed JSON and compare them explicitly. This command extracts the creator identity, preferring the SSO provider’s subject, then the email address, then the creator’s `act.sub` subject, `user:<id>` or `agent:<id>`:
+[Wrapper scripts](self-hosted-environments-configuration.md#wrapper-scripts) run inside the session, before Claude starts. Instead of calling a JWT library, they can run the runner binary’s `self-hosted-runner decode-token` subcommand. The subcommand reads the token from a positional argument, from `CLAUDE_CODE_SESSION_ACCESS_TOKEN`, or from piped stdin, in that order, then strips the prefix, verifies the signature against the JWKS endpoint, checks expiry, and prints the claims as JSON. The subcommand performs the signature and expiry checks only; it doesn’t check `iss`, `aud`, or `ccr:role`. When your wrapper’s auth decision depends on those claims, read them from the printed JSON and compare them explicitly. This command extracts the creator identity, preferring the email address, then the creator’s `act.sub` subject, `user:<id>` or `agent:<id>`:
 
 ```python
-"$CLAUDE_RUNNER_CLAUDE_BIN" self-hosted-runner decode-token | jq -re '.act.attested_by.sub // .act.email // .act.sub'
+"$CLAUDE_RUNNER_CLAUDE_BIN" self-hosted-runner decode-token | jq -re '.act.email // .act.sub'
 ```
 
-Wrappers receive the absolute path to the runner’s own binary in `CLAUDE_RUNNER_CLAUDE_BIN`; use that path rather than a PATH-resolved `claude` so the decode runs on the same binary the runner itself uses. Use `jq -re` rather than `jq -r` so a missing claim causes a non-zero exit. With `-r` alone, a missing claim prints the literal string `null` and exits zero, which silently passes a bad value downstream. Pass `--no-verify` to `decode-token` only for offline inspection where the JWKS endpoint is unreachable.
+Wrappers receive the absolute path to the runner’s own binary in `CLAUDE_RUNNER_CLAUDE_BIN`; use that path rather than a PATH-resolved `claude` so the decode runs on the same binary the runner itself uses. Use `jq -re` rather than `jq -r` so a missing claim causes a non-zero exit. With `-r` alone, a missing claim prints the literal string `null` and exits zero, which silently passes a bad value downstream. If `decode-token` can’t fetch the keys from the JWKS endpoint or can’t verify the token, it prints the reason to stderr, prints no claims, and exits with code 1. Pass `--no-verify` to `decode-token` only for offline inspection where the JWKS endpoint is unreachable.
 
 
 [​](#claims-reference)
@@ -257,14 +257,14 @@ The `act` chain
 
 The `act` claim records the full delegation path from the user or service identity that created the session down to the [environment](self-hosted-environments.md#key-concepts) whose secret admitted the runner, and the identity that created that secret. The creator is the outermost actor, so `act.sub` identifies them directly.
 
-| Path              | Description                                                                                                                                                                                                                                              |
-|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `act.sub`         | The creating user’s Anthropic user ID, in the form `user:<id>`, or `agent:<id>` when your organization’s service identity created the session, as it does for Claude Tag channel sessions.                                                               |
-| `act.email`       | The creating user’s email address, when one was recorded at session creation. Don’t require it; key on `act.sub`.                                                                                                                                        |
-| `act.attested_by` | The upstream identity provider’s attestation for the creating user, when available. `act.attested_by.sub` is the subject your SSO provider, such as Google or Okta, issued. Prefer this over `act.email` when mapping to identities in your own systems. |
-| `act.act`         | The runner that spawned the session. `act.act.sub` is `ccr:runner:<runner_id>`.                                                                                                                                                                          |
-| `act.act.act`     | The environment. `act.act.act.sub` is `ccr:pool:<pool_id>`.                                                                                                                                                                                              |
-| `act.act.act.act` | The identity that created the environment secret the runner registered with. The chain ends here.                                                                                                                                                        |
+| Path              | Description                                                                                                                                                                                                    |
+|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `act.sub`         | The creating user’s Anthropic user ID, in the form `user:<id>`, or `agent:<id>` when your organization’s service identity created the session, as it does for Claude Tag channel sessions.                     |
+| `act.email`       | The creating user’s email address, when one was recorded at session creation. Don’t require it; key on `act.sub`.                                                                                              |
+| `act.attested_by` | Reserved for the upstream identity provider’s attestation for the creating user. Expect it to be absent, and don’t depend on it. Key on `act.sub`. If you need an address, read `act.email` when it’s present. |
+| `act.act`         | The runner that spawned the session. `act.act.sub` is `ccr:runner:<runner_id>`.                                                                                                                                |
+| `act.act.act`     | The environment. `act.act.act.sub` is `ccr:pool:<pool_id>`.                                                                                                                                                    |
+| `act.act.act.act` | The identity that created the environment secret the runner registered with. The chain ends here.                                                                                                              |
 
 
 [​](#scope-derived-credentials)

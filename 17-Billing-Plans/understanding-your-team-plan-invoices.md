@@ -2,13 +2,11 @@
 title: "Understanding your Team plan invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607668-understanding-your-team-plan-invoices"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:31:45Z"
+fetched_at: "2026-10-10T06:24:47Z"
 tags: ["billing"]
 ---
 
 # Understanding your Team plan invoices
-
-August 24, 2026
 
 
 This article explains the invoices your organization receives for a Team plan, where to find them, and how to read the charges on them.
@@ -43,7 +41,7 @@ An organization owner can also open and download any invoice from your organizat
 
 4.  Click “Download invoice.”
 
-To change the billing email address or add more recipients, contact our Support team. Learn more in **[Team plan billing FAQs](team-plan-billing-faqs.md)**.
+To change the billing email address or add more recipients, contact our Support team. Learn more in **[Team plan billing FAQs](https://support.claude.com/en/articles/12997503)**.
 
 ## Read your invoice
 
@@ -53,7 +51,7 @@ To change the billing email address or add more recipients, contact our Support 
 
 **Applied balance.** An "Applied balance" line means a credit already on your organization's account was used to pay part or all of the invoice. It's not a new charge and not a discount on that invoice. Credits come from a credit note or an overpayment on an earlier invoice, and they're applied to your next invoices automatically.
 
-**Tax.** Tax is calculated from your organization's billing address. Learn more about **[your billing address and tax calculation](understanding-your-billing-address-and-tax-calculation.md)**. If your organization is tax-exempt, see **[Team plan billing FAQs](team-plan-billing-faqs.md)** for how to have tax removed.
+**Tax.** Tax is calculated from your organization's billing address. Learn more about **[your billing address and tax calculation](https://support.claude.com/en/articles/12997130)**. If your organization is tax-exempt, see **[Team plan billing FAQs](https://support.claude.com/en/articles/12997503)** for how to have tax removed.
 
 **Amount due.** The invoice total minus any applied balance. This is what your organization's payment method was charged.
 
@@ -84,3 +82,7 @@ If your organization uses usage credits, those purchases are billed separately f
 ### Can you correct the details on an invoice we already received?
 
 No. Issued invoices can't be changed. An owner can update your billing details in **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**, and the changes will appear on your next invoice.
+
+### Where can I see our team’s monthly API credits?
+
+In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.

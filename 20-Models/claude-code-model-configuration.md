@@ -2,7 +2,7 @@
 title: "Claude Code model configuration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11940350-claude-code-model-configuration"
 category: "20-Models"
-fetched_at: "2026-09-30T06:32:27Z"
+fetched_at: "2026-10-10T06:28:02Z"
 tags: ["claude-code", "models"]
 ---
 
@@ -24,6 +24,8 @@ The simplest way to change models is to use the /model command directly within C
 **Note:** You can check your current model anytime by running `/status` in Claude Code.
 
 ## Supported models
+
+- Haiku 5.5, `claude-haiku-5-5`
 
 - Sonnet 5.5, `claude-sonnet-5-5`
 
@@ -58,6 +60,8 @@ Use the `--model` flag when starting Claude Code.
 1.  Start a fresh Terminal session.
 
 2.  Enter the following commands (depending on the model you’d like to use for that session):
+
+    - **For Haiku 5.5**: `claude --model claude-haiku-5-5`
 
     - **For Sonnet 5.5**: `claude --model claude-sonnet-5-5`
 
@@ -97,6 +101,8 @@ Use the `--model` flag when starting Claude Code.
 
 ### For ZSH users (macOS)
 
+- Haiku 5.5: `echo 'export ANTHROPIC_MODEL="claude-haiku-5-5"' >> ~/.zshrc`
+
 - Sonnet 5.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5-5"' >> ~/.zshrc`
 
 - Opus 5.5: `echo 'export ANTHROPIC_MODEL="claude-opus-5-5"' >> ~/.zshrc`
@@ -124,6 +130,8 @@ Use the `--model` flag when starting Claude Code.
 - Sonnet 4.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-4-5-20250929"' >> ~/.zshrc`
 
 ### For BASH users (Linux)
+
+- Haiku 5.5: `echo 'export ANTHROPIC_MODEL="claude-haiku-5-5"' >> ~/.bashrc`
 
 - Sonnet 5.5: `echo 'export ANTHROPIC_MODEL="claude-sonnet-5-5"' >> ~/.bashrc`
 

@@ -1,8 +1,8 @@
 ---
-title: "Migrating to Claude Opus 5.5 - Claude Platform Docs"
+title: "Claude Opus 5.5 migration guide - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-5-5/migration-guide"
 category: "20-Models"
-fetched_at: "2026-09-30T06:31:00Z"
+fetched_at: "2026-10-08T06:24:45Z"
 tags: ["models"]
 ---
 
@@ -42,7 +42,7 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -54,7 +54,7 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
@@ -62,13 +62,13 @@ Lifecycle and reference
 
 [Models & pricing](about-claude-models-overview.md)Claude Opus 5.5
 
-# Migrating to Claude Opus 5.5
+# Claude Opus 5.5 migration guide
 
 Copy page
 
 
 
-Migrate to Claude Opus 5.5 from earlier Opus models or Claude Sonnet 5: request settings that return errors, thinking blocks in every response, and a checklist for each starting model.
+Switch to Claude Opus 5.5 from earlier Opus models or Claude Sonnet 5 with this migration guide. The guidance to enable Claude Opus 5.5 includes request settings that return errors, thinking blocks in every response, and a checklist for each starting model.
 
 Copy page
 
@@ -103,7 +103,7 @@ Whichever model you are coming from, a request to `claude-opus-5-5` must meet th
 - **Effort:** Control thinking depth with the [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md), the only request parameter that controls it. All five levels (`low`, `medium`, `high`, `xhigh`, `max`) are supported, and the default is `medium`. See [Recommended effort levels for Claude Opus 5.5](../04-API-Reference/Guides/build-with-claude-effort.md#recommended-effort-levels-for-claude-opus-5-5).
 - **Tool choice:** Use `tool_choice` `{"type": "auto"}` (the default) or `{"type": "none"}`. Forcing a tool call with `{"type": "any"}` or `{"type": "tool", "name": "..."}` is rejected. See the [before and after for tool choice](#forced-tool-use).
 - **Sampling parameters:** Omit `temperature`, `top_p`, and `top_k`, or leave them at their defaults: any other value is rejected. Use prompting to guide the model's behavior.
-- **Prefill:** Don't end `messages` with a prefilled assistant turn: it is rejected. Use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md) or system prompt instructions instead.
+- **Prefill:** Don't end `messages` with a prefilled assistant turn: it is rejected. Use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md) or system prompt instructions instead. On Amazon Bedrock, structured outputs aren't available for Claude Opus 5.5, so use system prompt instructions there.
 - **Computer use:** On the Claude API and Google Cloud, declare computer use as the `computer_toolset_20260801` toolset; the earlier `computer_20251124` tool is rejected there. See the [computer use breaking change](#computer-use-toolset).
 - **Context window:** No context-window beta header is needed. The [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) is the default, and a header sent for older models has no effect.
 
@@ -191,9 +191,9 @@ Work down the groups and stop after the one that names your current model: every
 - Update the model ID to `claude-opus-5-5`.
 - Remove `thinking: {"type": "disabled"}` and `thinking: {"type": "enabled", ...}`; choose an effort level instead.
 - Set `effort` explicitly: the default is `medium`, where Claude Opus 5's is `high`.
-- Replace `tool_choice` types `any` and `tool` with `auto` plus strict tool use or structured outputs.
+- Replace `tool_choice` types `any` and `tool` with `auto` plus strict tool use or structured outputs, or with `auto` alone on Amazon Bedrock.
 - If you use computer use on the Claude API or Google Cloud, declare `computer_toolset_20260801` (no beta header) instead of `computer_20251124` and update your agent loop for the toolset. On Amazon Bedrock, keep `computer_20251124`; check the computer use tool's [Compatibility](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#compatibility) section for other platforms.
-- If a router or fallback can move a conversation from Claude Opus 5.5 to another model, expect that model to run without Claude Opus 5.5's thinking blocks (Claude Fable 5.1 and Claude Mythos 5.1 on the Claude API are the exception and keep them). Claude Opus 5.5 itself reads thinking from Claude Opus 5 and earlier Opus, Sonnet, and Haiku models, but not from Claude Fable or Claude Mythos models.
+- If a router or fallback can move a conversation from Claude Opus 5.5 to another model, expect that model to run without Claude Opus 5.5's thinking blocks (Claude Fable 5.1 and Claude Mythos 5.1 on the Claude API are the exception and keep them). Claude Opus 5.5 itself reads thinking from Claude Opus 5, from earlier Opus, Sonnet, and Haiku models, and, on the Claude API and Google Cloud, from Claude Sonnet 5.5, but not from Claude Fable or Claude Mythos models.
 - Read content blocks by `type`, and pass `thinking` blocks back unmodified in tool-use loops.
 - If your interface renders text between tool calls, set `display: "updates"` (beta) or `"summarized"` and render the non-empty `thinking` blocks.
 - If your code edits earlier turns, the `system` prompt, or `tools` mid-conversation, follow [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md).
@@ -229,13 +229,13 @@ Work down the groups and stop after the one that names your current model: every
 - If your application sends images, re-budget for [high-resolution image support](../04-API-Reference/Guides/build-with-claude-vision.md#high-resolution-image-support-on-claude-opus-4-7) (up to approximately 3x more image tokens per full-resolution image). Downsample before sending if you do not need the additional fidelity.
 - If you consume pointing or bounding-box coordinates from the model, remove any scale-factor conversion; coordinates are 1:1 with actual image pixels on Claude Opus 4.7 and later models.
 - Review the [behavior changes](#behavior-changes) that began in Claude Opus 4.7.
-- If your product does legitimate security work, apply to the [Cyber Verification Program](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for access to lower restrictions on cyber content.
+- If your product does legitimate security work, apply to the [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) for access to lower restrictions on cyber content.
 
 ### Claude Opus 4.5 or earlier
 
 - Remove any assistant-message prefills; Claude Opus 4.6 already rejects them.
 - Verify tool call JSON parsing uses a standard JSON parser.
-- Move from `client.beta.messages.create` to `client.messages.create`: adaptive thinking and effort need no beta namespace.
+- Move from `client.beta.messages.create()` to `client.messages.create()`: adaptive thinking and effort need no beta namespace.
 - Remove the `effort-2025-11-24` beta header (the effort parameter does not require it).
 - Remove the `fine-grained-tool-streaming-2025-05-14` beta header.
 - Remove the `interleaved-thinking-2025-05-14` beta header (adaptive thinking enables interleaved thinking automatically).
@@ -342,7 +342,7 @@ client.messages.create(
 
 #### Forced tool use is not supported
 
-`tool_choice` types `any` and `tool` return a 400 error (`tool_choice: type "tool" and "any" are not supported for this model.`), including on the token counting endpoint. Use `auto` with [strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) or [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md), and say in the prompt when the tool applies. Strict tool use accepts a subset of JSON Schema, so check each tool's `input_schema` before you add `strict: true`. Every object in the schema must set `additionalProperties: false`; see [JSON Schema limitations](../04-API-Reference/Guides/build-with-claude-structured-outputs.md#json-schema-limitations). See [Forced tool use is not supported](models-opus-5-5-whats-new-opus-5-5.md#forced-tool-use-is-not-supported).
+`tool_choice` types `any` and `tool` return a 400 error (`tool_choice: type "tool" and "any" are not supported for this model.`), including on the token counting endpoint. Use `auto` with [strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) or [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md), and say in the prompt when the tool applies. Strict tool use accepts a subset of JSON Schema, so check each tool's `input_schema` before you add `strict: true`. Every object in the schema must set `additionalProperties: false`; see [JSON Schema limitations](../04-API-Reference/Guides/build-with-claude-structured-outputs.md#json-schema-limitations). On Amazon Bedrock, structured outputs, which include strict tool use, aren't available for Claude Opus 5.5. There, send `auto` without `strict`, say in the prompt when the tool applies, and validate the tool input in your code. See [Forced tool use is not supported](models-opus-5-5-whats-new-opus-5-5.md#forced-tool-use-is-not-supported).
 
 Before. Claude Opus 5 accepts this request, and Claude Opus 5.5 rejects it with a 400 error:
 
@@ -416,7 +416,7 @@ client.messages.create(
 
 #### Thinking blocks are tied to the model and the conversation
 
-On the Claude API, Claude Fable 5.1 and Claude Mythos 5.1 read Claude Opus 5.5 thinking blocks; no other model does. A router or fallback that moves a conversation from Claude Opus 5.5 to any other model runs those turns without them. In the other direction, Claude Opus 5.5 reads thinking blocks from Claude Opus 5 and earlier Opus, Sonnet, and Haiku models, but not from Claude Fable or Claude Mythos models. Keep the conversation append-only (no edits to the `system` prompt, `tools`, or earlier messages mid-conversation) so the blocks stay valid; Claude Code, claude.ai, Claude Managed Agents, and the Claude Agent SDK already do. Enforcement matches Claude Fable 5.1 on every platform: for accounts created on or after August 31, 2026, 00:00 UTC, replaying a thinking block after such an edit returns a 400 error by default. There is no code change for append-only integrations. See [Thinking blocks are tied to the model and the conversation](models-opus-5-5-whats-new-opus-5-5.md#thinking-blocks-are-tied-to-the-model-that-produced-them) and [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md).
+On the Claude API, Claude Fable 5.1 and Claude Mythos 5.1 read Claude Opus 5.5 thinking blocks; no other model does. A router or fallback that moves a conversation from Claude Opus 5.5 to any other model runs those turns without them. In the other direction, Claude Opus 5.5 reads thinking blocks from Claude Opus 5, from earlier Opus, Sonnet, and Haiku models, and, on the Claude API and Google Cloud, from Claude Sonnet 5.5, but not from Claude Fable or Claude Mythos models. Keep the conversation append-only (no edits to the `system` prompt, `tools`, or earlier messages mid-conversation) so the blocks stay valid; Claude Code, claude.ai, Claude Managed Agents, and the Claude Agent SDK already do. Enforcement matches Claude Fable 5.1 on every platform: for accounts created on or after August 31, 2026, 00:00 UTC, replaying a thinking block after such an edit returns a 400 error by default. There is no code change for append-only integrations. See [Thinking blocks are tied to the model and the conversation](models-opus-5-5-whats-new-opus-5-5.md#thinking-blocks-are-tied-to-the-model-that-produced-them) and [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md).
 
 #### The `computer_20251124` computer use tool is not supported on the Claude API and Google Cloud
 
@@ -499,7 +499,7 @@ On Claude Opus 5, text the model writes between tool calls comes back as `text` 
 
 ### Safety classifiers and fallback
 
-Claude Opus 5.5 can return `stop_reason: "refusal"` with a `stop_details` category. Its classifiers cover a broader set of categories than Claude Opus 5's, so expect `stop_details.category` values such as `"bio"` and `"reasoning_extraction"` in addition to `"cyber"`; see the [refusal category table](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response). Handle refusals and configure [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) or your own retry (server-side fallback doesn't retry requests declined with `"reasoning_extraction"`; that refusal is returned to you); see [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md) and [Safeguard refusals](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#safeguard-refusals).
+Claude Opus 5.5 can return `stop_reason: "refusal"` with a `stop_details` category. Its classifiers cover a broader set of categories than Claude Opus 5's, so expect `stop_details.category` values such as `"bio"` in addition to `"cyber"` and `"reasoning_extraction"`; see the [refusal category table](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response). Handle refusals and configure [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) or your own retry (server-side fallback doesn't retry requests declined with `"reasoning_extraction"`; that refusal is returned to you); see [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md) and [Safeguard refusals](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#safeguard-refusals).
 
 ### Recommended changes
 
@@ -624,7 +624,7 @@ This section adds what changed in Claude Opus 4.7, with `claude-opus-4-6` as the
 
     Update your `max_tokens` parameters to give additional headroom, including compaction triggers, and re-test any code path that estimates tokens client-side or assumes a fixed token-to-character ratio. Use the [Token counting endpoint](../04-API-Reference/Guides/build-with-claude-token-counting.md) to verify. Prompting interventions, [`task_budget`](../04-API-Reference/Guides/build-with-claude-task-budgets.md), and [`effort`](../04-API-Reference/Guides/build-with-claude-effort.md) can help control costs; these controls may trade off model intelligence.
 
-5.  **Prefill removal (already in effect on Claude Opus 4.6):** Prefilling assistant messages returns a 400 error on Claude Opus 4.6 and later Opus models, including Claude Opus 5.5, so this is a change only if you come from Claude Opus 4.5 or earlier. Use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md), system prompt instructions, or `output_config.format` instead.
+5.  **Prefill removal (already in effect on Claude Opus 4.6):** Prefilling assistant messages returns a 400 error on Claude Opus 4.6 and later Opus models, including Claude Opus 5.5, so this is a change only if you come from Claude Opus 4.5 or earlier. Use [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md) or system prompt instructions instead. On Amazon Bedrock, structured outputs aren't available for Claude Opus 5.5, so use system prompt instructions there.
 
 ### Behavior changes
 
@@ -632,7 +632,7 @@ Claude Opus 4.7 introduced behavioral differences from Claude Opus 4.6 that are 
 
 1.  **Built-in progress updates in agentic traces:** Claude Opus 4.7 provides more regular, higher-quality updates to the user throughout long agentic traces. If you've added scaffolding to force interim status messages ("After every 3 tool calls, summarize progress"), try removing it. On Claude Opus 5.5 these updates arrive in `thinking` blocks, which are empty at the default `thinking.display`. To receive them, see [Text between tool calls is returned in thinking blocks](#text-between-tool-calls). To shape their length and contents, see [User-facing progress updates](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#user-facing-progress-updates).
 
-2.  **Real-time cybersecurity safeguards:** Newly added in Claude Opus 4.7, requests that involve prohibited or high-risk topics may lead to refusals. For legitimate security work such as penetration testing, vulnerability research, or red-teaming, apply to the [Cyber Verification Program](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) to request reduced restrictions. The application route depends on how you access Claude.
+2.  **Real-time cybersecurity safeguards:** Newly added in Claude Opus 4.7, requests that involve prohibited or high-risk topics may lead to refusals. For legitimate security work such as penetration testing, vulnerability research, or red-teaming, apply to the [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) to request reduced restrictions. The application route depends on how you access Claude.
 
 3.  **High-resolution image support:** Claude Opus 4.7 is the first Claude model with high-resolution image support. Maximum image resolution is 2,576 pixels on the long edge, up from 1,568 pixels on prior models. This unlocks gains on vision-heavy workloads and is particularly valuable for computer use, screenshot understanding, and document analysis.
 
@@ -659,13 +659,13 @@ If you are migrating from Claude Opus 4.5, Claude Opus 4.1, or an earlier model 
 
 The first item is required on Claude Opus 5.5; the rest are recommended.
 
-1.  **Migrate to adaptive thinking (required):** `thinking: {"type": "enabled", "budget_tokens": N}` returns a 400 error on Claude Opus 4.7 and later models. The before and after is item 1 of the [breaking changes for migrating from Claude Opus 4.6](#opus-46-breaking-changes). The migration also moves from `client.beta.messages.create` to `client.messages.create`: adaptive thinking and effort do not require the beta SDK namespace or any beta headers.
+1.  **Migrate to adaptive thinking (required):** `thinking: {"type": "enabled", "budget_tokens": N}` returns a 400 error on Claude Opus 4.7 and later models. The before and after is item 1 of the [breaking changes for migrating from Claude Opus 4.6](#opus-46-breaking-changes). The migration also moves from `client.beta.messages.create()` to `client.messages.create()`: adaptive thinking and effort do not require the beta SDK namespace or any beta headers.
 
-2.  **Remove effort beta header:** The effort parameter does not require a beta header. Remove `betas=["effort-2025-11-24"]` from your requests.
+2.  **Remove effort beta header:** The effort parameter does not require a beta header. Remove the `effort-2025-11-24` beta from your requests.
 
-3.  **Remove fine-grained tool streaming beta header:** Fine-grained tool streaming does not require a beta header. Remove `betas=["fine-grained-tool-streaming-2025-05-14"]` from your requests.
+3.  **Remove fine-grained tool streaming beta header:** Fine-grained tool streaming does not require a beta header. Remove the `fine-grained-tool-streaming-2025-05-14` beta from your requests.
 
-4.  **Remove interleaved thinking beta header:** With adaptive thinking, interleaved thinking is automatic on every model that supports adaptive thinking. Remove `betas=["interleaved-thinking-2025-05-14"]` from your requests.
+4.  **Remove interleaved thinking beta header:** With adaptive thinking, interleaved thinking is automatic on every model that supports adaptive thinking. Remove the `interleaved-thinking-2025-05-14` beta from your requests.
 
 5.  **Migrate to output_config.format:** If using structured outputs, update `output_format={...}` to `output_config={"format": {...}}`. The `output_format` parameter is deprecated and will be removed in the future. To use it anyway, add the `structured-outputs-2025-11-13` beta header. Without it, the API returns a 400 error. The Python SDK (v1.0 and later) does not accept `output_format={...}` on `client.beta.messages.create()` or `count_tokens()`. The `output_format=Model` argument of the `parse()` and `stream()` helpers is unchanged.
 

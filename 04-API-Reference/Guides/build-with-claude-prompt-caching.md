@@ -2,7 +2,7 @@
 title: "Prompt caching - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:24Z"
+fetched_at: "2026-10-04T08:33:28Z"
 tags: ["api", "prompting"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "prompting"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -98,7 +98,7 @@ Prompt caching optimizes your API usage by allowing resuming from specific prefi
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 There are two ways to enable prompt caching:
 
@@ -386,7 +386,7 @@ Adding more `cache_control` breakpoints doesn't increase your costs; you still p
 
 On the Claude API, [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md), [Google Cloud](build-with-claude-claude-on-vertex-ai.md), and [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md), the minimum cacheable prompt length is:
 
-- 512 tokens for Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, and [Claude Mythos 5](../../22-Safety-Policy/glasswing.md)
+- 512 tokens for Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Fable 5, and [Claude Mythos 5](../../22-Safety-Policy/glasswing.md)
 - 2,048 tokens for [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md) and Claude Opus 4.7
 - 4,096 tokens for Claude Opus 4.6 and Claude Opus 4.5
 - 1,024 tokens for Claude Opus 4.8, Claude Sonnet 5, Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Opus 4.1 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md)), Claude Opus 4 ([retired, except on Google Cloud](../../20-Models/about-claude-model-deprecations.md)), and Claude Sonnet 4 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md))
@@ -450,13 +450,13 @@ The following table shows which parts of the cache are invalidated by different 
 | **Thinking parameters**                                   | Model-specific | Model-specific | ✘              | The thinking configuration (mode, and `budget_tokens` in extended mode) is rendered into the prompt, so changing it always invalidates message blocks; tool and system caches are also invalidated on models that render the configuration ahead of them. See [Thinking and prompt caching](build-with-claude-thinking.md#thinking-and-prompt-caching).                                                                                                                                                                                |
 | **Effort setting**                                        | Model-specific | Model-specific | ✘              | Changing the [`output_config.effort`](build-with-claude-effort.md) value always invalidates message blocks, with the same model-specific effect on tool and system caches as thinking parameters. Setting effort explicitly to the model's default is equivalent to omitting it and does not invalidate. On models that support [per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta), an effort change carried in a `role: "system"` message inside `messages` leaves the cached prefix intact. |
 | **Non-tool results passed to extended thinking requests** | ✓              | ✓              | Model-specific | On Opus 4.5+ and Sonnet 4.6+, thinking blocks are preserved by default, so the cache remains valid (✓). On earlier Opus/Sonnet models and all Haiku models, all previously-cached thinking blocks are stripped from context, and any messages that follow those thinking blocks are removed from the cache (✘). For more details, see [Caching with thinking blocks](#caching-with-thinking-blocks).                                                                                                                                         |
-| **Dropped thinking blocks**                               | ✓              | ✓              | ✘              | When the API drops a Claude Fable 5.1, Claude Mythos 5.1, or Claude Opus 5.5 thinking block that isn't [preserved](build-with-claude-thinking.md#preserved-thinking) on that request (for example, one you replay to a model that can't read it), the cached prefix changes from that block's position onward on that request. Blocks the receiving model can read, passed back unchanged, keep the cache intact.                                                                                                                      |
+| **Dropped thinking blocks**                               | ✓              | ✓              | ✘              | When the API drops a Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, or Claude Sonnet 5.5 thinking block that isn't [preserved](build-with-claude-thinking.md#preserved-thinking) on that request (for example, one you replay to a model that can't read it), the cached prefix changes from that block's position onward on that request. Blocks the receiving model can read, passed back unchanged, keep the cache intact.                                                                                                   |
 
 On models that support [mid-conversation tool changes](build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes), the `inline-tools-2026-09-15` beta header lets you add a tool, or change a tool's definition, partway through a conversation without editing `tools`. Send the definition in a `tool_addition` block in a mid-conversation system message and leave `tools` exactly as you first sent it. The cached prefix still matches, so only the appended message is processed as new input. The one exception is a `tools` array with no non-deferred tool, where the first tool defined this way costs one full cache miss on that request. See [Define tools in a message](build-with-claude-mid-conversation-system-messages.md#define-tools-in-a-message-beta).
 
 
 
-On Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, [Claude Mythos 5](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 4.8, and Claude Opus 5, you can add a new system instruction partway through a conversation without invalidating the system or message caches. Append a `{"role": "system"}` message to `messages` instead of editing the top-level `system` field, so the cached prefix stays unchanged. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. See [Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md).
+On Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, [Claude Mythos 5](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 4.8, Claude Opus 5, and Claude Sonnet 5.5, you can add a new system instruction partway through a conversation without invalidating the system or message caches. Append a `{"role": "system"}` message to `messages` instead of editing the top-level `system` field, so the cached prefix stays unchanged. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. See [Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md).
 
 ### Tracking cache performance
 
@@ -1209,7 +1209,7 @@ Prompt caching (both automatic and explicit) is ZDR eligible. Anthropic does not
 
 KV (key-value) cache representations and cryptographic hashes of cached content are held in memory only and are not stored at rest. Cached entries have a minimum lifetime of 5 minutes (standard) or 1 hour (extended), after which they are promptly, though not immediately, deleted. Cache entries are isolated between organizations and, on the Claude API, Claude Platform on AWS, and Microsoft Foundry, between workspaces within an organization.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](build-with-claude-api-and-data-retention.md).
 
 ------------------------------------------------------------------------
 

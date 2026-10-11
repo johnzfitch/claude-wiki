@@ -2,7 +2,7 @@
 title: "Beta - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/http/beta"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-27T06:27:05Z"
+fetched_at: "2026-10-04T08:33:07Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -231,7 +235,7 @@ cURL
 
 
 
-AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
+AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 47 more
 
 
 
@@ -1121,7 +1125,7 @@ Retrieve information about the organization associated with the authenticated AP
 
 GET/v1/organizations/api_keys/{api_key_id}
 
-Retrieve information about a single API key in your organization, looked up by its ID. This Admin API endpoint requires an Admin API key, is intended for programmatic key management, and never returns the key's secret value. To view or create your own API keys, go to [API keys](../Other/usage-limits.md) in the Claude Console.
+Retrieve information about a single API key in your organization, looked up by its ID. This Admin API endpoint requires an Admin API key, is intended for programmatic key management, and never returns the key's secret value. To view or create your own API keys, go to [API keys](../Other/playground.md) in the Claude Console.
 
 ##### [Update API Key](https://platform.claude.com/docs/en/api/http/beta/organization/api_keys/update)
 
@@ -1553,41 +1557,13 @@ Deprecated
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
-#### BetaOrganization[Analytics](../Admin/http-beta-organization-analytics.md)
+#### BetaOrganizationAnalytics[Summaries](../Admin/http-beta-organization-analytics-summaries.md)
 
-##### [Get Activity Summaries](../Admin/http-beta-organization-analytics-retrieve-summaries.md)
+##### [Get Activity Summaries](../Admin/http-beta-organization-analytics-summaries-list.md)
 
 GET/v1/organizations/analytics/summaries
 
 Get organization-wide activity summaries for a date range.
-
-#### BetaOrganizationAnalytics[Usage](../Admin/http-beta-organization-analytics-usage.md)
-
-##### [Get Token Usage Over Time](../Admin/http-beta-organization-analytics-usage-list.md)
-
-GET/v1/organizations/analytics/usage_report
-
-Get token usage over time across a date range.
-
-##### [Get Per-User Token Usage](../Admin/beta-organization-analytics-usage-list-by-user.md)
-
-GET/v1/organizations/analytics/user_usage_report
-
-Get per-user token usage across a date range.
-
-#### BetaOrganizationAnalytics[Cost](../Admin/http-beta-organization-analytics-cost.md)
-
-##### [Get Cost Over Time](../Admin/http-beta-organization-analytics-cost-list.md)
-
-GET/v1/organizations/analytics/cost_report
-
-Get cost in USD over time across a date range.
-
-##### [Get Per-User Cost](../Admin/beta-organization-analytics-cost-list-by-user.md)
-
-GET/v1/organizations/analytics/user_cost_report
-
-Get per-user cost in USD across a date range.
 
 #### BetaOrganizationAnalytics[Users](../Admin/http-beta-organization-analytics-users.md)
 
@@ -1597,13 +1573,13 @@ Get per-user cost in USD across a date range.
 
 Get per-user activity for a given day, with cursor-based pagination.
 
-#### BetaOrganizationAnalytics[Skills](../Admin/beta-organization-analytics-skills.md)
+#### BetaOrganizationAnalyticsAppsChat[Projects](../Admin/http-beta-organization-analytics-apps-chat-projects.md)
 
-##### [Get Skill Usage](../Admin/http-beta-organization-analytics-skills-list.md)
+##### [Get Chat Project Usage](../Admin/http-beta-organization-analytics-apps-chat-projects-list.md)
 
-GET/v1/organizations/analytics/skills
+GET/v1/organizations/analytics/apps/chat/projects
 
-Get per-skill usage for a given day, with cursor-based pagination.
+Get per-project activity for a given day, with cursor-based pagination.
 
 #### BetaOrganizationAnalytics[Connectors](../Admin/beta-organization-analytics-connectors.md)
 
@@ -1613,14 +1589,6 @@ Get per-skill usage for a given day, with cursor-based pagination.
 
 Get per-connector usage for a given day, with cursor-based pagination.
 
-#### BetaOrganizationAnalytics[Chat Projects](../Admin/http-beta-organization-analytics-chat-projects.md)
-
-##### [Get Chat Project Usage](../Admin/http-beta-organization-analytics-chat-projects-list.md)
-
-GET/v1/organizations/analytics/apps/chat/projects
-
-Get per-project activity for a given day, with cursor-based pagination.
-
 #### BetaOrganizationAnalytics[Plugins](../Admin/http-beta-organization-analytics-plugins.md)
 
 ##### [Get Plugin Usage](../Admin/http-beta-organization-analytics-plugins-list.md)
@@ -1628,6 +1596,14 @@ Get per-project activity for a given day, with cursor-based pagination.
 GET/v1/organizations/analytics/plugins
 
 Get per-plugin install + invocation usage for a given day, with pagination.
+
+#### BetaOrganizationAnalytics[Skills](../Admin/beta-organization-analytics-skills.md)
+
+##### [Get Skill Usage](../Admin/http-beta-organization-analytics-skills-list.md)
+
+GET/v1/organizations/analytics/skills
+
+Get per-skill usage for a given day, with cursor-based pagination.
 
 #### BetaOrganizationAnalytics[Artifacts](../Admin/beta-organization-analytics-artifacts.md)
 
@@ -1637,9 +1613,41 @@ Get per-plugin install + invocation usage for a given day, with pagination.
 
 Get artifact-creation activity for a given day, broken out by MIME type.
 
+#### BetaOrganizationAnalytics[Usage Report](../Admin/http-beta-organization-analytics-usage-report.md)
+
+##### [Get Token Usage Over Time](../Admin/http-beta-organization-analytics-usage-report-list.md)
+
+GET/v1/organizations/analytics/usage_report
+
+Get token usage over time across a date range.
+
+#### BetaOrganizationAnalytics[User Usage Report](../Admin/http-beta-organization-analytics-user-usage-report.md)
+
+##### [Get Per-User Token Usage](../Admin/http-beta-organization-analytics-user-usage-report-list.md)
+
+GET/v1/organizations/analytics/user_usage_report
+
+Get per-user token usage across a date range.
+
+#### BetaOrganizationAnalytics[Cost Report](../Admin/http-beta-organization-analytics-cost-report.md)
+
+##### [Get Cost Over Time](../Admin/http-beta-organization-analytics-cost-report-list.md)
+
+GET/v1/organizations/analytics/cost_report
+
+Get cost in USD over time across a date range.
+
+#### BetaOrganizationAnalytics[User Cost Report](../Admin/http-beta-organization-analytics-user-cost-report.md)
+
+##### [Get Per-User Cost](../Admin/http-beta-organization-analytics-user-cost-report-list.md)
+
+GET/v1/organizations/analytics/user_cost_report
+
+Get per-user cost in USD across a date range.
+
 #### BetaOrganization[Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits)
 
-##### [Set Spend Limit](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/create)
+##### [Set Spend Limit](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/set)
 
 POST/v1/organizations/spend_limits
 
@@ -1657,7 +1665,15 @@ Retrieve a spend limit by ID.
 
 Delete a spend limit.
 
-##### [List Effective Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/list_effective)
+##### [List Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/list)
+
+GET/v1/organizations/spend_limits
+
+List the organization's spend limits.
+
+#### BetaOrganizationSpend Limits[Effective](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/effective)
+
+##### [List Effective Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/effective/list)
 
 GET/v1/organizations/spend_limits/effective
 
@@ -1691,6 +1707,12 @@ Deny a pending spend limit increase request.
 
 #### BetaOrganization[RBAC Groups](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups)
 
+##### [Create RBAC Group](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/create)
+
+POST/v1/organizations/rbac_groups
+
+Create an RBAC Group in the Claude Enterprise tenant. Groups created via the API have source type `"direct"`.
+
 ##### [List RBAC Groups](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/list)
 
 GET/v1/organizations/rbac_groups
@@ -1702,12 +1724,6 @@ List RBAC Groups in the Claude Enterprise tenant.
 GET/v1/organizations/rbac_groups/{rbac_group_id}
 
 Retrieve an RBAC Group by ID.
-
-##### [Create RBAC Group](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/create)
-
-POST/v1/organizations/rbac_groups
-
-Create an RBAC Group in the Claude Enterprise tenant. Groups created via the API have source type `"direct"`.
 
 ##### [Update RBAC Group](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/update)
 
@@ -1729,13 +1745,13 @@ Delete an RBAC Group. Groups provisioned by an identity provider (source type `"
 
 List members of an RBAC Group.
 
-##### [Add RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/create)
+##### [Add RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/add)
 
 POST/v1/organizations/rbac_groups/{rbac_group_id}/members
 
 Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
 
-##### [Remove RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/delete)
+##### [Remove RBAC Group Member](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members/remove)
 
 DELETE/v1/organizations/rbac_groups/{rbac_group_id}/members/{user_id}
 
@@ -1762,3 +1778,121 @@ Retrieve an RBAC Role by ID.
 GET/v1/organizations/rbac_roles/{rbac_role_id}/permissions
 
 List the permissions an RBAC Role grants.
+
+#### BetaOrganization[Plugins](https://platform.claude.com/docs/en/api/http/beta/organization/plugins)
+
+##### [Create Plugin](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/create)
+
+POST/v1/organizations/plugins
+
+Create an organization-owned Plugin and its first version by uploading the version's files.
+
+##### [Get Plugin](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/retrieve)
+
+GET/v1/organizations/plugins/{plugin_id}
+
+Retrieve a Plugin by ID.
+
+##### [Update Plugin](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/update)
+
+POST/v1/organizations/plugins/{plugin_id}
+
+Change which stored version of an organization-owned Plugin is served to members, for example to roll back to an earlier one. This pins the served version: later uploads are stored but no longer change what is served, and pinning cannot currently be undone, here or in claude.ai.
+
+##### [List Plugins](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/list)
+
+GET/v1/organizations/plugins
+
+List the Plugins created under the organization, newest first: those in the organization's own plugin marketplaces and those in members' personal plugin marketplaces.
+
+##### [Delete Plugin](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/delete)
+
+DELETE/v1/organizations/plugins/{plugin_id}
+
+Permanently delete a Plugin and every version it holds, exactly as when an administrator deletes it in claude.ai. The Plugin may belong to the organization or to a member, including a member who has since left the organization.
+
+#### BetaOrganizationPlugins[Versions](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/versions)
+
+##### [Create Plugin Version](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/versions/create)
+
+POST/v1/organizations/plugins/{plugin_id}/versions
+
+Add a version to an organization-owned Plugin by uploading the new version's files; it becomes the version served to members unless the Plugin's served version has been pinned.
+
+##### [List Plugin Versions](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/versions/list)
+
+GET/v1/organizations/plugins/{plugin_id}/versions
+
+List a Plugin's versions, newest first.
+
+##### [Get Plugin Version](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/versions/retrieve)
+
+GET/v1/organizations/plugins/{plugin_id}/versions/{version}
+
+Retrieve one version of a Plugin by its ID, or the Plugin's newest version.
+
+##### [Download Plugin Version Archive](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/versions/download)
+
+GET/v1/organizations/plugins/{plugin_id}/versions/{version}/content
+
+Download one version's `.zip` archive, exactly as stored. Each download of a Plugin from a member's personal plugin marketplace is recorded on the Compliance API activity feed.
+
+#### BetaOrganizationPlugins[Installation Settings](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings)
+
+##### [List Plugin Installation Settings](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings/list)
+
+GET/v1/organizations/plugins/{plugin_id}/installation_settings
+
+List an organization-owned Plugin's installation settings, which say which members it is for, most recently created first.
+
+##### [Set Plugin Installation Setting](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings/set)
+
+POST/v1/organizations/plugins/{plugin_id}/installation_settings/{target}
+
+Set or change an organization-owned Plugin's installation setting for the whole organization or for one RBAC Group.
+
+##### [Remove Plugin Installation Setting](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings/remove)
+
+DELETE/v1/organizations/plugins/{plugin_id}/installation_settings/{target}
+
+Remove an organization-owned Plugin's own installation setting for the whole organization or for one RBAC Group.
+
+#### BetaOrganizationPlugins[Shares](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/shares)
+
+##### [List Plugin Shares](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/shares/list)
+
+GET/v1/organizations/plugins/{plugin_id}/shares
+
+List the shares the owner of a member-owned Plugin has given — to every member of the organization, to an RBAC Group, or to one member — most recently granted first.
+
+#### BetaOrganization[Plugin Marketplaces](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces)
+
+##### [List Plugin Marketplaces](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/list)
+
+GET/v1/organizations/plugin_marketplaces
+
+List the plugin marketplaces Plugins live in, newest first: the organization's own and its members' personal ones.
+
+##### [Get Plugin Marketplace](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/retrieve)
+
+GET/v1/organizations/plugin_marketplaces/{marketplace_id}
+
+Retrieve a plugin marketplace by ID.
+
+##### [Update Plugin Marketplace](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/update)
+
+POST/v1/organizations/plugin_marketplaces/{marketplace_id}
+
+Set the default installation setting of one of the organization's own plugin marketplaces. Every Plugin in it without a setting of its own gets this default as its organization-wide setting, including Plugins added later.
+
+##### [Validate Plugin Marketplace Repository](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/validate_repository)
+
+POST/v1/organizations/plugin_marketplaces/validate_repository
+
+Check whether a plugin marketplace held in a public GitHub repository would synchronize into claude.ai, without connecting or storing it.
+
+##### [Validate Plugin Marketplace Archive](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/validate_archive)
+
+POST/v1/organizations/plugin_marketplaces/validate_archive
+
+Check whether a plugin marketplace, uploaded as a `.zip` of the marketplace directory, would synchronize into claude.ai, without connecting or storing it.

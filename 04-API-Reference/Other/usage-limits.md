@@ -1,8 +1,8 @@
 ---
-title: "Admin keys | Claude Platform"
-source_url: "https://platform.claude.com/settings/admin-keys"
+title: "Claude Platform"
+source_url: "https://platform.claude.com/"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:32:13Z"
+fetched_at: "2026-10-04T08:32:32Z"
 tags: ["api"]
 ---
 

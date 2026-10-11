@@ -2,7 +2,7 @@
 title: "List Spend Limit Increase Requests - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits/increase_requests/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:04Z"
+fetched_at: "2026-10-04T08:33:09Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -153,7 +136,9 @@ Spend Limits
 Delete Spend Limit
 
 
-List Effective Spend Limits
+List Spend Limits
+
+Effective
 
 Increase Requests
 
@@ -172,6 +157,27 @@ Increase Requests
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -291,7 +297,7 @@ Opaque cursor from a previous response's `next_page`.
 
 
 
-status: optional array of "approved" or "denied" or "pending"
+status: optional array of [BetaSpendLimitIncreaseRequestStatus](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/increase_requests#beta_spend_limit_increase_request_status)
 
 
 
@@ -333,7 +339,15 @@ id: string
 
 
 
-actor: object{ type: "user_actor", deleted, email_address, 2 more }
+actor: [BetaSpendLimitUserActor](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_user_actor) or [BetaSpendLimitScopedAPIKeyActor](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_scoped_api_key_actor)
+
+
+
+One of the following:
+
+
+
+BetaSpendLimitUserActor object{ type: "user_actor", deleted, email_address, 2 more }
 
 
 
@@ -379,6 +393,26 @@ Tagged ID of the user.
 
 
 
+BetaSpendLimitScopedAPIKeyActor object{ type: "scoped_api_key_actor", scoped_api_key_id }
+
+
+
+A scoped Admin API key acting on behalf of the organization.
+
+
+
+type: "scoped_api_key_actor"
+
+
+
+defaultscoped_api_key_actor
+
+scoped_api_key_id: string
+
+
+
+
+
 created_at: string
 
 
@@ -387,7 +421,7 @@ formatdate-time
 
 
 
-period: "daily" or "monthly" or "weekly"
+period: [BetaSpendLimitPeriod](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_period)
 
 
 
@@ -415,7 +449,7 @@ formatdate-time
 
 
 
-resolved_by: UserActor or ScopedAPIKeyActor or null
+resolved_by: [BetaSpendLimitUserActor](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_user_actor) or [BetaSpendLimitScopedAPIKeyActor](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_scoped_api_key_actor) or null
 
 
 
@@ -423,7 +457,7 @@ One of the following:
 
 
 
-UserActor object{ type: "user_actor", deleted, email_address, 2 more }
+BetaSpendLimitUserActor object{ type: "user_actor", deleted, email_address, 2 more }
 
 
 
@@ -469,7 +503,7 @@ Tagged ID of the user.
 
 
 
-ScopedAPIKeyActor object{ type: "scoped_api_key_actor", scoped_api_key_id }
+BetaSpendLimitScopedAPIKeyActor object{ type: "scoped_api_key_actor", scoped_api_key_id }
 
 
 
@@ -497,7 +531,7 @@ Per-member effective-limit report row (`GET /spend_limits/effective`).
 
 
 
-status: "approved" or "denied" or "pending"
+status: [BetaSpendLimitIncreaseRequestStatus](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/increase_requests#beta_spend_limit_increase_request_status)
 
 
 
@@ -548,7 +582,7 @@ Response 200
         "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
       },
       "created_at": "2019-12-27T18:11:19.117Z",
-      "period": "monthly",
+      "period": "daily",
       "resolved_at": "2019-12-27T18:11:19.117Z",
       "resolved_by": {
         "deleted": true,
@@ -567,7 +601,7 @@ Response 200
         },
         "amount": "50000",
         "currency": "USD",
-        "period": "monthly",
+        "period": "daily",
         "period_to_date_spend": "12050.5",
         "scope": {
           "type": "user",
@@ -606,7 +640,7 @@ Response 200
         "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
       },
       "created_at": "2019-12-27T18:11:19.117Z",
-      "period": "monthly",
+      "period": "daily",
       "resolved_at": "2019-12-27T18:11:19.117Z",
       "resolved_by": {
         "deleted": true,
@@ -625,7 +659,7 @@ Response 200
         },
         "amount": "50000",
         "currency": "USD",
-        "period": "monthly",
+        "period": "daily",
         "period_to_date_spend": "12050.5",
         "scope": {
           "type": "user",

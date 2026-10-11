@@ -1,8 +1,8 @@
 ---
-title: "Customer Stories | Claude by Anthropic"
-source_url: "https://www.anthropic.com/customers"
+title: "Customer stories | Claude by Anthropic"
+source_url: "https://www.claude.com/customers"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:32:32Z"
+fetched_at: "2026-10-10T06:25:48Z"
 tags: ["case-studies"]
 ---
 
@@ -10,31 +10,31 @@ tags: ["case-studies"]
 
 Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, legal, and more.
 
-[Contact sales](https://www.anthropic.com/contact-sales)
+[Contact sales](https://www.claude.com/contact-sales)
 
 Customer story
 
 Notion is building a workspace for teams and agents
 
-[Read story](https://www.anthropic.com/customers/notion-qa)
+[Read story](notion-qa.md)
 
 Customer story
 
 How Slack uses Claude for AI search and summaries
 
-[Read story](https://www.anthropic.com/customers/slack)
+[Read story](slack.md)
 
 Customer story
 
 Figma transforms ideas into interactive software
 
-[Read story](https://www.anthropic.com/customers/figma)
+[Read story](figma.md)
 
 Customer story
 
 HubSpot reclaims time for creativity with Claude
 
-[Read story](https://www.anthropic.com/customers/hubspot)
+[Read story](hubspot.md)
 
 Filter and sort
 
@@ -153,7 +153,10 @@ Grid
 
 List
 
-283 stories
+284 stories
+
+
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
 ### A conversation with IRC on turning frontline health data into action in Burkina Faso
@@ -196,8 +199,5 @@ List
 
 
 ### How League went all in on Claude in a regulated industry
-
-
-### How Notion ships and scales agents with Claude Managed Agents
 
 View more

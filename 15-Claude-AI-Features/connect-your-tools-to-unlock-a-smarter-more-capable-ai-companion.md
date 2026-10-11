@@ -2,7 +2,7 @@
 title: "Connect your tools to unlock a smarter, more capable AI companion · Claude Academy"
 source_url: "https://support.claude.com/en/articles/11817150-connect-your-tools-to-unlock-a-smarter-more-capable-ai-companion"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:40:02Z"
+fetched_at: "2026-10-10T06:25:04Z"
 tags: ["claude-ai", "connectors", "mcp"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai", "connectors", "mcp"]
 
 Learn how to connect third-party tools and applications to Claude through the Connectors feature for accessing data across platforms.
 
-6 minClaude.ai
+6 minClaude
 
 Watch
 
@@ -22,7 +22,7 @@ Loading
 
 ## MCP-powered capabilities, without the complex setup[](#mcp-powered-capabilities-without-the-complex-setup)
 
-Connectors let Claude **understand** and **take action** in your connected tools. In the connectors menu you’ll see both 1st party and Model Context Protocol (MCP) integrations, which are a secure way for Claude to connect with your tools and data. This transforms it from a helpful assistant into an informed collaborator who actually understands and can help with your work. You can learn more about custom MCP servers [here(opens in new tab)](../14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md).
+Connectors let Claude **understand** and **take action** in your connected tools. In the connectors menu you’ll see both 1st party and Model Context Protocol (MCP) integrations, which are a secure way for Claude to connect with your tools and data. This transforms it from a helpful assistant into an informed collaborator who actually understands and can help with your work. You can learn more about custom MCP servers [here(opens in new tab)](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp).
 
 In short, think of Connectors as giving Claude a key to an otherwise locked door. Suddenly, with your direction, Claude can:
 

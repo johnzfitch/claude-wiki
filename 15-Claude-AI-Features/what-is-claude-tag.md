@@ -2,14 +2,14 @@
 title: "What is Claude Tag? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15594475-what-is-claude-tag"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:59Z"
+fetched_at: "2026-10-10T06:28:20Z"
 tags: ["claude-ai"]
 ---
 
 # What is Claude Tag?
 
 
-**[Claude in Slack](../14-Connectors/claude-for-slack.md)** switched over to the new Claude Tag experience on August 3, 2026. To integrate Claude and Slack, use Claude Tag instead. Learn how to **[set up Claude Tag](https://claude.com/docs/claude-tag/admins/setup-overview)** or **[migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier)**.
+**[Claude in Slack](product-tag.md)** switched over to the new Claude Tag experience on August 3, 2026. To integrate Claude and Slack, use Claude Tag instead. Learn how to **[set up Claude Tag](https://claude.com/docs/claude-tag/admins/setup-overview)** or **[migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier)**.
 
 Claude Tag is a new way to work with Claude: tag @Claude into a conversation and it takes on real work, using your organization's tools and the shared context around it. Claude works under its own identity, builds context by remembering relevant information from the channels it’s in, and can follow up on its own.
 

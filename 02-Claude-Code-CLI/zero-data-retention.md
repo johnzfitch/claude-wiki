@@ -2,7 +2,7 @@
 title: "Zero data retention - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/zero-data-retention"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:49Z"
+fetched_at: "2026-10-06T06:23:56Z"
 tags: ["claude-code"]
 ---
 
@@ -31,7 +31,7 @@ Zero Data Retention (ZDR) for Claude Code is available to qualified accounts on 
 
 ZDR is not included in the standard Claude for Enterprise plan and cannot be enabled from your admin settings. It is available to qualified accounts and requires separate enablement by Anthropic. If your organization requires ZDR, [contact sales](https://www.anthropic.com/contact-sales?utm_source=claude_code&utm_medium=docs&utm_content=zero_data_retention_request) or your Anthropic account team to confirm eligibility.
 
-ZDR on Claude for Enterprise gives enterprise customers the ability to use Claude Code with zero data retention and access administrative capabilities:
+Claude for Enterprise organizations that have enabled HIPAA can bring the Claude Code CLI and the Code tab in Claude Desktop under their Business Associate Agreement (BAA) without ZDR once the HIPAA configuration is applied to Claude Code (local mode) and Cowork (local mode). See [Set up Claude Code (local mode) for a HIPAA-ready organization](hipaa-setup.md). Organizations without the HIPAA configuration still need ZDR for BAA coverage of Claude Code. See the [Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide) for a list of Eligible Services. ZDR on Claude for Enterprise gives enterprise customers the ability to use Claude Code with zero data retention and access administrative capabilities:
 
 - Cost controls per user
 - [Analytics](../13-Enterprise-Admin/analytics.md) dashboard
@@ -54,7 +54,7 @@ ZDR is enabled on a per-organization basis. Each new organization requires ZDR t
 
 Route Claude Code traffic to your ZDR organization
 
-ZDR applies to requests that authenticate into a ZDR-enabled organization. If a developer signs in to Claude Code with a personal account or with an API key from a different organization, those sessions are not covered. To require that developers’ claude.ai logins belong to your ZDR organization, deploy the `forceLoginMethod` and `forceLoginOrgUUID` managed settings; see [Restrict login to your organization](../13-Enterprise-Admin/iam.md#restrict-login-to-your-organization), which also explains how these keys treat Claude Console logins.
+ZDR applies to requests that authenticate into a ZDR-enabled organization. If a developer signs in to Claude Code with a personal account or with an API key from a different organization, those sessions are not covered. To require that developers’ claude.ai logins belong to your ZDR organization, deploy the `forceLoginMethod` and `forceLoginOrgUUID` managed settings; see [Restrict login to your organization](authentication.md#restrict-login-to-your-organization), which also explains how these keys treat Claude Console logins.
 
 
 [​](#what-zdr-covers)
@@ -100,7 +100,7 @@ These features are blocked in the backend regardless of client-side display. If 
 
 Model availability under ZDR
 
-Claude Fable 5.1 and Fable 5 are [Covered Models](https://code.claude.com/docs/20-Models/covered-models-9b5d036943.md) that [require data retention](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements) by default, and whether a ZDR organization or workspace can use them is governed by the Covered Models policies rather than by Claude Code. Where your organization can’t use them, the models are either absent from the `/model` picker or shown as disabled, and the server rejects requests for them regardless of client configuration. Other models remain available under ZDR. Fable models are not the default, and the `best` alias, which resolves to the latest Fable model where it is available, resolves to Opus for organizations where it is not.
+Claude Fable 5.1 and Fable 5 are [Covered Models](../15-Claude-AI-Features/covered-models.md) that [require data retention](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements) by default, and whether a ZDR organization or workspace can use them is governed by the Covered Models policies rather than by Claude Code. Where your organization can’t use them, the models are either absent from the `/model` picker or shown as disabled, and the server rejects requests for them regardless of client configuration. Other models remain available under ZDR. Fable models are not the default, and the `best` alias, which resolves to the latest Fable model where it is available, resolves to Opus for organizations where it is not.
 
 
 [​](#data-retention-for-policy-violations)

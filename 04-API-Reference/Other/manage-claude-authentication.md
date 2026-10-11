@@ -2,7 +2,7 @@
 title: "Authentication - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/authentication"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-27T06:27:09Z"
+fetched_at: "2026-10-04T08:33:37Z"
 tags: ["api", "authentication"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "authentication"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -126,7 +126,7 @@ Workspace API keys still work but should be considered legacy; identity-backed k
 
 ### Create and use a key
 
-- **Create a key:** Go to [Settings → API keys](usage-limits.md) in the Claude Console and click **Create key**. Name the key and choose an [expiration](#key-expiration). Set **Linked account** to yourself for a personal key, or to a service account for a key shared across multiple users. You can also scope the key to a specific workspace, which lets you skip setting a workspace ID manually in future requests.
+- **Create a key:** Go to [Settings → API keys](playground.md) in the Claude Console and click **Create key**. Name the key and choose an [expiration](#key-expiration). Set **Linked account** to yourself for a personal key, or to a service account for a key shared across multiple users. You can also scope the key to a specific workspace, which lets you skip setting a workspace ID manually in future requests.
 - **Use the key:** Send it as `Authorization: Bearer <key>` on direct HTTP requests, or set the `ANTHROPIC_API_KEY` environment variable and the [client SDKs](cli-sdks-libraries-overview.md) pick it up automatically.
 
 ```python
@@ -140,7 +140,7 @@ content-type: application/json
 
 The legacy `x-api-key: YOUR_API_KEY` header is still supported in place of `Authorization`.
 
-Store API keys in a secrets manager, rotate them periodically, and disable or delete any key you suspect has leaked. On the [API keys page](usage-limits.md), **Disable** is reversible (the Admin API reports the key's `status` as `"inactive"`, and **Re-enable** returns it to `"active"`), while **Delete** is permanent: the key is archived and still appears in [List API Keys](../Admin/beta-organization-api-keys-list.md) with `status: "archived"`. Expired keys can only be deleted. You can also set an [expiration](#key-expiration) when you create a key to limit how long a leaked credential stays usable.
+Store API keys in a secrets manager, rotate them periodically, and disable or delete any key you suspect has leaked. On the [API keys page](playground.md), **Disable** is reversible (the Admin API reports the key's `status` as `"inactive"`, and **Re-enable** returns it to `"active"`), while **Delete** is permanent: the key is archived and still appears in [List API Keys](../Admin/beta-organization-api-keys-list.md) with `status: "archived"`. Expired keys can only be deleted. You can also set an [expiration](#key-expiration) when you create a key to limit how long a leaked credential stays usable.
 
 cURL
 
@@ -176,7 +176,7 @@ If your API key isn't scoped to a workspace, you must specify the workspace ID i
 
 The [Admin API](manage-claude-admin-api.md) accepts a personal key or service account key only if the key isn't scoped to a specific workspace.
 
-You can find a workspace's ID in the **ID** column of [Settings → Workspaces](usage-limits.md) in the Claude Console, or by calling the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint. List Workspaces omits the Default Workspace; its ID is in the `anthropic-workspace-id` [response header](manage-claude-workspaces.md#identify-the-workspace-behind-an-api-response) of any request that runs there.
+You can find a workspace's ID in the **ID** column of [Settings → Workspaces](playground.md) in the Claude Console, or by calling the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint. List Workspaces includes the Default Workspace only when you pass `include_default=true`; its ID is also in the `anthropic-workspace-id` [response header](manage-claude-workspaces.md#identify-the-workspace-behind-an-api-response) of any request that runs there.
 
 cURL
 
@@ -240,7 +240,7 @@ Workload Identity Federation selects a workspace at token exchange instead; see 
 
 ### Key expiration
 
-When you create an API key from the [API keys page](usage-limits.md) in the Claude Console, you choose an expiration: a preset (3 hours, 1 day, 7 days, or 30 days), a custom duration, or **Never** for keys you store in a secrets manager and rotate yourself. If your organization has a maximum expiration policy, the Console limits presets and custom durations to the policy maximum, and **Never** is unavailable. Existing keys keep their current behavior; expiration is set at creation time and cannot be changed afterward. The same expiration choice applies when you [create an Admin API key](manage-claude-admin-api-keys.md) in the Claude Console.
+When you create an API key from the [API keys page](playground.md) in the Claude Console, you choose an expiration: a preset (3 hours, 1 day, 7 days, or 30 days), a custom duration, or **Never** for keys you store in a secrets manager and rotate yourself. If your organization has a maximum expiration policy, the Console limits presets and custom durations to the policy maximum, and **Never** is unavailable. Existing keys keep their current behavior; expiration is set at creation time and cannot be changed afterward. The same expiration choice applies when you [create an Admin API key](manage-claude-admin-api-keys.md) in the Claude Console.
 
 Anthropic emails the key's creator as the expiration approaches: 7 days before expiration for keys created with a lifetime of at least 14 days, and 1 day before for keys with a lifetime of at least 7 days. Keys with shorter lifetimes expire without a warning email.
 
@@ -262,7 +262,7 @@ To replace a workspace key with a personal or service account key:
 2.  **Create a service account** if necessary. You may have to ask an organization admin to create one in [Settings → Service accounts](https://platform.claude.com/settings/service-accounts) and add it to the relevant workspace.
 3.  **Create the new key.** Create it specifically for the integration's workspace unless multiple workspaces are needed.
 4.  **Deploy the new key.** Replace the old key wherever the integration reads it, typically the `ANTHROPIC_API_KEY` environment variable or a secrets manager entry. For a multi-workspace key, also send the `anthropic-workspace-id` header as shown in [Select a workspace](#select-a-workspace).
-5.  **Delete the old key.** Confirm that requests succeed, then delete the workspace key on the [API keys page](usage-limits.md).
+5.  **Delete the old key.** Confirm that requests succeed, then delete the workspace key on the [API keys page](playground.md).
 
 ## Workload Identity Federation
 

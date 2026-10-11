@@ -2,7 +2,7 @@
 title: "Enforce network-level access control with Tenant Restrictions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:21Z"
+fetched_at: "2026-10-10T06:28:09Z"
 tags: ["enterprise", "security"]
 ---
 
@@ -71,7 +71,7 @@ Members of Enterprise plans can find this in two different places:
 
 2.  Navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** and scroll down to the bottom of the page to locate **Organization ID**.
 
-Members of Console organizations can find this in **[Settings \> Organization](../04-API-Reference/Other/usage-limits.md)**.
+Members of Console organizations can find this in **[Settings \> Organization](../04-API-Reference/Other/playground.md)**.
 
 ### 2. Configure your network proxy
 

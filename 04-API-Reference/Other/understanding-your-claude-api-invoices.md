@@ -2,7 +2,7 @@
 title: "Understanding your Claude API invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16608069-understanding-your-claude-api-invoices"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:32:03Z"
+fetched_at: "2026-10-10T06:25:23Z"
 tags: ["api", "billing"]
 ---
 
@@ -29,7 +29,7 @@ Invoices are also available in the Console to users with the Admin or Billing ro
 
 1.  Log in to the Console with an Admin or Billing role.
 
-2.  Go to **[Console Settings \> Billing](usage-limits.md)**.
+2.  Go to **[Console Settings \> Billing](playground.md)**.
 
 3.  Find the **Invoice history** section.
 
@@ -49,7 +49,7 @@ Expired credit grants also appear in **Invoice history**, even though they aren'
 
 ## Billing details on your invoice
 
-The name, address, and tax information on an invoice come from your billing details at the time the invoice was issued. If you update your billing details, the changes apply to future invoices—issued invoices can't be modified. To update your details, go to **[Console Settings \> Billing](usage-limits.md)**.
+The name, address, and tax information on an invoice come from your billing details at the time the invoice was issued. If you update your billing details, the changes apply to future invoices—issued invoices can't be modified. To update your details, go to **[Console Settings \> Billing](playground.md)**.
 
 ## Frequently asked questions
 
@@ -63,4 +63,4 @@ Invoices below \$0.50 aren't charged on their own. The amount rolls forward and 
 
 ### Can you correct the details on an invoice I already received?
 
-No. Issued invoices can't be changed. Update your billing details in **[Console Settings \> Billing](usage-limits.md)** and the changes will appear on future invoices.
+No. Issued invoices can't be changed. Update your billing details in **[Console Settings \> Billing](playground.md)** and the changes will appear on future invoices.

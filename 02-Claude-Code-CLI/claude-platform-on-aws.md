@@ -2,7 +2,7 @@
 title: "Claude Code on Claude Platform on AWS - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-platform-on-aws"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:28:59Z"
+fetched_at: "2026-10-08T06:24:34Z"
 tags: ["claude-code"]
 ---
 
@@ -11,6 +11,8 @@ tags: ["claude-code"]
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
   - [1. Configure AWS credentials](#1-configure-aws-credentials)
+  - [Use AWS credentials with SigV4](#use-aws-credentials-with-sigv4)
+  - [Use a workspace API key](#use-a-workspace-api-key)
   - [2. Configure Claude Code](#2-configure-claude-code)
   - [3. Pin model versions](#3-pin-model-versions)
   - [4. Launch and verify](#4-launch-and-verify)
@@ -58,14 +60,24 @@ Setup
 
 1. Configure AWS credentials
 
-Claude Code supports two authentication methods for Claude Platform on AWS. Choose the method that fits how your team manages access. **Option A: AWS credentials with SigV4** Claude Code signs requests with SigV4 using the standard AWS credential chain: environment variables, shared credentials in `~/.aws/credentials`, IAM roles, AWS SSO sessions, and any other sources the AWS SDK supports. For local use, log in with the AWS CLI before starting Claude Code. The example below uses an SSO profile, but any method that produces credentials in the standard locations works.
+Claude Code supports two authentication methods for Claude Platform on AWS. Choose the method that fits how your team manages access:
+
+- [AWS credentials with SigV4](#use-aws-credentials-with-sigv4): authenticate as an IAM principal, with credentials from the standard AWS credential chain
+- [Workspace API key](#use-a-workspace-api-key): authenticate with a long-lived key you generate in the AWS Console
+
+
+[​](#use-aws-credentials-with-sigv4)
+
+Use AWS credentials with SigV4
+
+Claude Code signs requests with SigV4 using the standard AWS credential chain: environment variables, shared credentials in `~/.aws/credentials`, IAM roles, AWS SSO sessions, and any other sources the AWS SDK supports. For local use, log in with the AWS CLI before starting Claude Code. The example below uses an SSO profile, but any method that produces credentials in the standard locations works.
 
 ```python
 aws sso login --profile my-profile
 export AWS_PROFILE=my-profile
 ```
 
-For CI and automation, give the runner an IAM role with permission to invoke the Anthropic service and set `AWS_REGION`. The credential chain picks the role up automatically. If your SSO credentials expire mid-session, configure [`awsAuthRefresh`](amazon-bedrock.md#advanced-credential-configuration) so Claude Code re-runs your login command and retries instead of failing. Automatic refresh on Claude Platform on AWS requires Claude Code v2.1.198 or later; earlier versions stop with a prompt to run `/login`, which can’t refresh AWS credentials. Add the command to your [settings file](settings.md), such as `~/.claude/settings.json`:
+For CI and automation, give the runner an IAM role with permission to invoke the Anthropic service and set `AWS_REGION`. The credential chain picks the role up automatically. If your SSO credentials expire mid-session, configure [`awsAuthRefresh`](amazon-bedrock.md#advanced-credential-configuration) so Claude Code re-runs your login command and retries instead of failing. Add the command to your [settings file](settings.md), such as `~/.claude/settings.json`:
 
 ```python
 {
@@ -73,7 +85,14 @@ For CI and automation, give the runner an IAM role with permission to invoke the
 }
 ```
 
-Claude Code also runs this command at startup when it can’t validate your existing AWS credentials, and shows the command’s output in an `Authentication` panel until the login completes. With `awsAuthRefresh` configured, run `/login`, select **3rd-party platform**, then select **Claude Platform on AWS · refresh credentials** under **Using 3rd-party platforms**. Claude Code runs the configured command and re-reads your AWS credentials without a restart. **Option B: Workspace API key** A workspace API key is a long-lived secret, useful when you don’t want to manage federated AWS credentials. Generate one in the AWS Console under **Claude Platform on AWS → API keys** and set it as `ANTHROPIC_AWS_API_KEY`:
+Claude Code also runs this command at startup when it can’t validate your existing AWS credentials, and shows the command’s output in an `Authentication` panel until the login completes. With `awsAuthRefresh` configured, run `/login`, select **3rd-party platform**, then select **Claude Platform on AWS · refresh credentials** under **Using 3rd-party platforms**. Claude Code runs the configured command and re-reads your AWS credentials without a restart.
+
+
+[​](#use-a-workspace-api-key)
+
+Use a workspace API key
+
+A workspace API key is a long-lived secret, useful when you don’t want to manage federated AWS credentials. Generate one in the AWS Console under **Claude Platform on AWS → API keys** and set it as `ANTHROPIC_AWS_API_KEY`:
 
 ```python
 export ANTHROPIC_AWS_API_KEY=sk-ant-xxxxx

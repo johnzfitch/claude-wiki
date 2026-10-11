@@ -1,8 +1,8 @@
 ---
 title: "Resources - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/resources"
+source_url: "https://modelcontextprotocol.io/specification/draft/server/resources"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-09-29T06:31:04Z"
+fetched_at: "2026-10-09T06:27:28Z"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -41,7 +41,7 @@ Copy pageCopy page
 
 The Model Context Protocol (MCP) provides a standardized way for servers to expose resources to clients. Resources allow servers to share data that provides context to language models, such as files, database schemas, or application-specific information. Each resource is uniquely identified by a [URI](https://datatracker.ietf.org/doc/html/rfc3986).
 
-For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta).
+For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/draft/basic/index#meta).
 
 
 [​](#user-interaction-model)
@@ -184,7 +184,7 @@ To retrieve resource contents, clients send a `resources/read` request. This ope
 }
 ```
 
-Servers **MAY** return multiple resource contents in response to a single `resources/read` request. For example, a server could return the contents of several files when a directory resource is read. Servers **MAY** also respond to `resources/read` with an [`InputRequiredResult`](2026-07-28-basic-patterns-mrtr.md#inputrequiredresult) to indicate that additional input is needed before the resource can be read. This follows the [multi round-trip requests](2026-07-28-basic-patterns-mrtr.md#multi-round-trip-requests) mechanism. When retrying the request, clients include `inputResponses` and, if provided by the server, `requestState` in the request parameters. Alternatively, if the scheme of `uri` is `https://`, clients may fetch the resource directly from the web. See the [Common URI Schemes section](#https%3A%2F%2F) for more information.
+Servers **MAY** return multiple resource contents in response to a single `resources/read` request. For example, a server could return the contents of several files when a directory resource is read. Servers **MAY** also respond to `resources/read` with an [`InputRequiredResult`](draft-basic-patterns-mrtr.md#inputrequiredresult) to indicate that additional input is needed before the resource can be read. This follows the [multi round-trip requests](draft-basic-patterns-mrtr.md#multi-round-trip-requests) mechanism. When retrying the request, clients include `inputResponses` and, if provided by the server, `requestState` in the request parameters. Alternatively, if the scheme of `uri` is `https://`, clients may fetch the resource directly from the web. See the [Common URI Schemes section](#https%3A%2F%2F) for more information.
 
 
 [​](#resource-templates)

@@ -2,7 +2,7 @@
 title: "Automate work with routines - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/web-scheduled-tasks"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:32:01Z"
+fetched_at: "2026-10-10T06:24:53Z"
 tags: ["claude-code"]
 ---
 
@@ -106,7 +106,7 @@ Select an environment
 Pick a [cloud environment](cloud-environments.md) for the routine. Environments control what the cloud session has access to:
 
 - **Network access**: set the level of internet access available during each run
-- **Environment variables**: provide values Claude can use during each run. They’re [visible to anyone who uses the environment](cloud-environments.md#what-carries-over-from-your-setup), so on Pro and Max plans, store keys for the APIs Claude calls during a run as [API credentials](cloud-environments.md#add-api-credentials) instead. That section also lists the requests that never get a credential
+- **Environment variables**: provide values Claude can use during each run. They’re [visible to anyone who uses the environment](cloud-environments.md#what-carries-over-from-your-setup), so on Pro and Max plans, store keys for the APIs Claude calls during a run as [network secrets](cloud-environments.md#add-network-secrets) instead. That section also lists the requests that never get a secret
 - **Setup script**: install dependencies and tools the routine needs. The result is [cached](cloud-environments.md#environment-caching), so the script doesn’t re-run on every session
 
 A **Default** environment is provided with **Trusted** network access, which allows only the [default allowlist](cloud-environments.md#default-allowed-domains) of package registries, cloud provider APIs, container registries, and common development domains through the session’s network. Connectors you add to the routine reach their services through Anthropic’s servers, so they don’t need allowlist changes. If your routine needs to reach your own services directly, or a domain outside that list, edit the environment’s [network access](cloud-environments.md#network-access) before running. To use a separate environment, [create one](cloud-environments.md#configure-your-environment) first.
@@ -357,11 +357,7 @@ The CLI supports managing existing routines. Run `/schedule list` to see all rou
 
 Repositories and branch permissions
 
-Routines need GitHub access to clone repositories. When you create a routine from the CLI with `/schedule`, Claude checks whether your account has GitHub access for the repository you ran it from and, if it doesn’t, adds a setup note naming how to grant it. See [GitHub authentication options](claude-code-on-the-web.md#github-authentication-options) for the two ways to grant access. If your GitHub connection is missing or expired when a run is due, the routine skips runs until you reconnect, for up to 72 hours. Reconnect GitHub within that window and the routine resumes on its own. After 72 hours without a connection, the routine turns off, and you turn it back on after reconnecting GitHub. Each repository you add is cloned on every run. Claude starts from the repository’s default branch unless your prompt specifies otherwise. Claude pushes its work to branches prefixed with `claude/`, which are always accepted. When your prompt directs Claude to push to another branch, Claude Code checks the push first and rejects it if any of the following is true:
-
-- The branch is protected on GitHub
-- Someone else has an open pull request from that branch
-- The branch carries commits authored by someone other than you
+Routines need GitHub access to clone repositories. When you create a routine from the CLI with `/schedule`, Claude checks whether your account has GitHub access for the repository you ran it from and, if it doesn’t, adds a setup note naming how to grant it. See [GitHub authentication options](claude-code-on-the-web.md#github-authentication-options) for the two ways to grant access. If your GitHub connection is missing or expired when a run is due, the routine skips runs until you reconnect, for up to 72 hours. Reconnect GitHub within that window and the routine resumes on its own. After 72 hours without a connection, the routine turns off, and you turn it back on after reconnecting GitHub. Each repository you add is cloned on every run. Claude starts from the repository’s default branch unless your prompt specifies otherwise. Claude pushes its work to a branch prefixed with `claude/` unless your prompt directs it to push to another branch. To control which branches a run can push to, use branch protection rules or rulesets on GitHub. For runs on Anthropic-managed infrastructure, and for self-hosted runs that push through [Anthropic’s git proxy](../13-Enterprise-Admin/self-hosted-environments-deploy.md#use-the-anthropic-git-proxy), GitHub applies them to the GitHub access you connected, so a rule that access can bypass doesn’t block a run’s push. A self-hosted run that pushes with the git credentials your deployment provides is checked against those instead. See [Configure git](../13-Enterprise-Admin/self-hosted-environments-deploy.md#configure-git).
 
 
 [​](#connectors)
@@ -399,7 +395,7 @@ Hover over the environment in the list and click the settings icon that appears 
 
 Change the network access level
 
-In the **Update cloud environment** dialog, change **Network access** to **Custom** and enter your domains in **Allowed domains**. Check **Also include default list of common package managers** to keep the [default allowlist](cloud-environments.md#default-allowed-domains) alongside your custom domains. Select **Full** instead for unrestricted access.
+In the **Edit environment** dialog, change **Network access** to **Custom** and enter your domains in **Allowed domains**. Check **Also include default list of common package managers** to keep the [default allowlist](cloud-environments.md#default-allowed-domains) alongside your custom domains. Select **Full** instead for unrestricted access.
 
 5
 
@@ -438,7 +434,7 @@ Troubleshooting
 
 The CLI hides `/schedule` when one of its requirements isn’t met: the command menu shows `No commands match "/schedule"` while you type. Submitting it returns `Unknown command: /schedule`, except in the cases below that note a different answer. The cause is usually one of the following:
 
-- You are authenticated with a Console API key, an [Anthropic profile or federation credential](../13-Enterprise-Admin/iam.md#anthropic-profiles-and-federation-credentials), or a cloud provider such as Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. `/schedule` requires a claude.ai subscription login. With a Console API key or a profile, and feature-flag fetching enabled, submitting `/schedule` instead shows `/schedule is available with Claude for Enterprise — ask your admin about migrating from API-key access`. With a cloud-provider login, you still see `Unknown command: /schedule`. If `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` is set in your shell, or `apiKeyHelper` is set in `settings.json`, remove it first, since these take precedence over a claude.ai login. A profile or federation credential takes precedence too, so switch that off as well
+- You are authenticated with a Console API key, an [Anthropic profile or federation credential](authentication.md#anthropic-profiles-and-federation-credentials), or a cloud provider such as Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. `/schedule` requires a claude.ai subscription login. With a Console API key or a profile, and feature-flag fetching enabled, submitting `/schedule` instead shows `/schedule is available with Claude for Enterprise — ask your admin about migrating from API-key access`. With a cloud-provider login, you still see `Unknown command: /schedule`. If `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` is set in your shell, or `apiKeyHelper` is set in `settings.json`, remove it first, since these take precedence over a claude.ai login. A profile or federation credential takes precedence too, so switch that off as well
 - You are fully signed out, with no API key or other credential. With feature-flag fetching enabled, submitting `/schedule` shows `/schedule requires a claude.ai subscription. Run /login to sign in with your claude.ai account.` Before v2.1.268, a signed-out session showed the same Claude for Enterprise message as a Console API key
 - You are inside a cloud session, where submitting `/schedule` answers that the command isn’t available in that environment. Manage routines from the [web UI](https://claude.ai/code/routines) instead
 - Your organization’s policy disables [cloud sessions](claude-code-on-the-web.md), which routines require. In this case, submitting `/schedule` answers [`Cloud sessions are disabled by your organization's policy`](errors.md#cloud-sessions-are-disabled-by-your-organizations-policy) instead. Before v2.1.268, it returned `Unknown command: /schedule`

@@ -310,7 +310,7 @@ Products
 
 - Claude Code
 
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+  [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
   Claude Code
 
 - Claude Code for Enterprise
@@ -325,7 +325,7 @@ Products
 
 - Max plan
 
-  [Max plan](../17-Billing-Plans/pricing-max.md)
+  [Max plan](../17-Billing-Plans/pricing.md)
   Max plan
 
 - Team plan
@@ -361,7 +361,7 @@ Features
 
 - Claude for Slack
 
-  [Claude for Slack](../14-Connectors/claude-for-slack.md)
+  [Claude for Slack](../15-Claude-AI-Features/product-tag.md)
   Claude for Slack
 
 - Claude for Excel
@@ -405,7 +405,7 @@ Solutions
 
 - Claude Code Security
 
-  [Claude Code Security](claude-code-security.md)
+  [Claude Code Security](../15-Claude-AI-Features/product-claude-security.md)
   Claude Code Security
 
 - Code modernization
@@ -477,12 +477,12 @@ Claude Platform
 
 - Amazon Bedrock
 
-  [Amazon Bedrock](../04-API-Reference/Other/partners-amazon-bedrock.md)
+  [Amazon Bedrock](../04-API-Reference/Other/partners-claude-on-aws.md)
   Amazon Bedrock
 
 - Google Cloud’s Vertex AI
 
-  [Google Cloud’s Vertex AI](../04-API-Reference/Other/partners-google-cloud-vertex-ai.md)
+  [Google Cloud’s Vertex AI](../04-API-Reference/Other/partners-google-cloud.md)
   Google Cloud’s Vertex AI
 
 - Microsoft Foundry

@@ -2,7 +2,7 @@
 title: "Model cards - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/resources/overview"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:50Z"
+fetched_at: "2026-10-04T08:34:22Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -38,7 +38,7 @@ Models
 
 [Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](../../20-Models/models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)
 
@@ -74,7 +74,7 @@ Model cards with detailed documentation for Claude models.
 
 
 
-[Claude Opus 5.5 System Card](../../15-Claude-AI-Features/claude-opus-5-5-system-card.md)
+[Claude Opus 5.5 System Card](../../19-Reference/this-system-card-describes-claude-opus-5-5-the-latest-opus-class-large.md)
 
 Detailed documentation of Claude Opus 5.5.
 

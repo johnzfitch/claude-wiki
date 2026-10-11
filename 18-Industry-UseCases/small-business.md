@@ -2,8 +2,8 @@
 title: "Claude for Small Business | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/small-business"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-24T06:29:58Z"
-tags: ["case-studies"]
+fetched_at: "2026-10-10T06:26:10Z"
+tags: ["case-studies", "enterprise", "security"]
 ---
 
 # Claude for small business
@@ -12,48 +12,65 @@ Run and grow your business
 
 Claude helps you run and grow your business with ready-to-run workflows you sign off on, so you can take on more. Close the books, answer every lead, and get proposals out the door.
 
-Install the plugin
+[Install the plugin (opens in new tab)](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)[Find a workshop](#events)
 
-[Install the plugin](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)
-
-Install the plugin
-
-Find a workshop
-
-[Find a workshop](#events)
-
-Find a workshop
-
-“We got about \$180,000 back in shipping overcharges. There's just no way a person could have done that analysis, even if they were dedicated full time to it.”
-
-Kirsten Maitland, Co-founder & CEO
-
-“Cowork has completely changed my business. It's saving me over 21 hours a week. It has turned Claude into an employee and an executive assistant to help me get more done and build a better business.”
-
-Pat Miller, Founder
-
-“What used to take me 120 hours now takes me five minutes with Claude Code, and I'm able to really scale.”
+> “What used to take me 120 hours now takes me five minutes with Claude Code, and I'm able to really scale.”
 
 Pedro Rubio, Founder and CEO
 
-“I've never coded anything in my life. Our design team is more efficient, our buying is better, and the customer is a lot more likely to get what they ordered.”
+> “I've never coded anything in my life. Our design team is more efficient, our buying is better, and the customer is a lot more likely to get what they ordered.”
 
 Cameron Pappas, Owner
 
-“Dashboards that would take weeks or months, we can now build in a day or two. It's allowed me to become the CFO of a growing company and keep pace with it.”
+> “Dashboards that would take weeks or months, we can now build in a day or two. It's allowed me to become the CFO of a growing company and keep pace with it.”
 
 Ashley Wells, CFO
 
-“At Chief of Minds, we treat our partners' time as the most valuable thing they have. Claude helps us protect it. What used to take our team two days… we now turn around in hours, with the same quality our partners expect. That's not replacing people, it's freeing them to do the work only they can do.”
+> “At Chief of Minds, we treat our partners' time as the most valuable thing they have. Claude helps us protect it. What used to take our team two days… we now turn around in hours, with the same quality our partners expect. That's not replacing people, it's freeing them to do the work only they can do.”
 
 Lakeisha Robichaux, CEO and Founder
 
-[Prev](#)
+> “We got about \$180,000 back in shipping overcharges. There's just no way a person could have done that analysis, even if they were dedicated full time to it.”
 
-Prev
+Kirsten Maitland, Co-founder & CEO
 
-0/5
+> “Cowork has completely changed my business. It's saving me over 21 hours a week. It has turned Claude into an employee and an executive assistant to help me get more done and build a better business.”
 
+Pat Miller, Founder
+
+> “What used to take me 120 hours now takes me five minutes with Claude Code, and I'm able to really scale.”
+
+Pedro Rubio, Founder and CEO
+
+> “I've never coded anything in my life. Our design team is more efficient, our buying is better, and the customer is a lot more likely to get what they ordered.”
+
+Cameron Pappas, Owner
+
+> “Dashboards that would take weeks or months, we can now build in a day or two. It's allowed me to become the CFO of a growing company and keep pace with it.”
+
+Ashley Wells, CFO
+
+> “At Chief of Minds, we treat our partners' time as the most valuable thing they have. Claude helps us protect it. What used to take our team two days… we now turn around in hours, with the same quality our partners expect. That's not replacing people, it's freeing them to do the work only they can do.”
+
+Lakeisha Robichaux, CEO and Founder
+
+> “We got about \$180,000 back in shipping overcharges. There's just no way a person could have done that analysis, even if they were dedicated full time to it.”
+
+Kirsten Maitland, Co-founder & CEO
+
+> “Cowork has completely changed my business. It's saving me over 21 hours a week. It has turned Claude into an employee and an executive assistant to help me get more done and build a better business.”
+
+Pat Miller, Founder
+
+> “What used to take me 120 hours now takes me five minutes with Claude Code, and I'm able to really scale.”
+
+Pedro Rubio, Founder and CEO
+
+> “I've never coded anything in my life. Our design team is more efficient, our buying is better, and the customer is a lot more likely to get what they ordered.”
+
+Cameron Pappas, Owner
+
+1/6
 
 ## A big difference for small businesses
 
@@ -77,11 +94,7 @@ Trust center
 
 Explore security with Claude: your data, your business, what Claude does with it.
 
-Read more
-
 [Read more](https://trust.anthropic.com)
-
-Read more
 
 ## See what Claude can do for your business
 
@@ -97,241 +110,45 @@ Marketing
 
 Build agents
 
-Active
-
 Prompt
 
 Every Monday at 6:30 AM, post my business brief to my Slack: cash position, weekend sales by café and online, what's committed this week, anything on the watch-list, and the one thing that needs me today. Keep it to what fits on my phone.
 
 Connectors
 
-Xero
-
-
-Shopify
-
-
-Gusto
-
-
-Search
-
-Claude
-
-Messages
-
-Message Claude
-
-*Monday brief — Sep 14*
-
-💰 *Cash:* \$212.4k operating (+\$8.1k WoW) · 41 days runway
-
-☕ *Weekend sales:* Main St \$9.2k (+4%) · Riverside \$7.8k (+6%) · Eastside \$5.1k (−11%) · Online \$3.4k (+9%)
-
-📅 *This week:* \$38.6k committed — payroll Fri \$24.2k · roaster invoice \$9.1k · rent \$5.3k
-
-👀 *Watch-list:* Eastside down 2 weekends running · Riverside espresso machine service 12d overdue · online subscription churn up to 6%
-
-🎯 *Needs you today:* Eastside is the only café down two weekends running; staffing or foot traffic? Kira has the weekend schedules pulled if you want 15 min.
+- [Xero](https://www.claude.com/marketplace/connectors/xero)
+- [Shopify](https://www.claude.com/marketplace/connectors/shopify)
+- [Gusto](https://www.claude.com/marketplace/connectors/gusto)
 
 ### Get a handle on Monday
 
-Get a brief highlighting your cash, weekend sales, the week ahead, and the one thing that needs your attention today in Slack at 6:30 every Monday, without you asking.  
-
-Prompt
-
-Close July. Reconcile QuickBooks against my Shopify Payments and Stripe settlements, flag anything uncategorized or duplicated, write the P&L in plain English, and refresh my cash forecast off the closed numbers. I want the packet ready for my accountant by Tuesday.
-
-Connectors
-
-Intuit QuickBooks
-
-
-Stripe
-
-
-Shopify
-
-
-### July 2026 close packet
-
-*Greenleaf Grounds · July 1–31, 2026 · Prepared Aug 3, 2026*
-
-##### Reconciliation
-
-**Shopify Payments:** 31 payouts, \$77,436.15 — matches QuickBooks to the cent.
-
-**Stripe:** 9 settlements, \$31,778.35 — matches QuickBooks to the cent.
-
-**Uncategorized transactions:** 7 → 0, all coded.
-
-**Duplicates:** 1 found, held (see below).
-
-
-##### Flags for review
-
-**Duplicate vendor bill — held, not paid.** Cascade Packaging bill \#4471 (\$1,842.00) was entered twice. The second copy is on hold in QuickBooks; nothing left the bank. Confirm and delete it.
-
-‍**Café labor over target.** Labor ran 34.1% of café sales against a 30% target, about \$1,700 over, mostly street-fair overtime and two new hires in training.
-
-
-##### P&L summary
-
-July brought in **\$112,400**, up 6% from June, led by online orders and wholesale. After \$47,900 of coffee and goods, \$41,200 of payroll, and \$14,800 of everything else, the business kept **\$8,500 — a 7.6% net margin.**That is \$1,100 better than June, mostly because green-coffee costs fell under the new supplier contract.
-
-
-##### Cash forecast
-
-**Covers Aug 15 payroll with \$22K headroom.** \$41.8K cash at close, plus \$36.4K in settlements due by Aug 14, less \$31.8K in rent, bills, and loan payment and \$24.4K in payroll.
-
-
-**Books closed Day 3.**
+Get a brief highlighting your cash, weekend sales, the week ahead, and the one thing that needs your attention today in Slack at 6:30 every Monday, without you asking.
 
 Close the books
 
-Claude can check your books against Stripe and Shopify, flag anything odd, and explain the month in plain English, so you can share with your accountant.  
-
-Prompt
-
-Here's my voice memo from the Harbor Dental site visit plus photos of their break rooms. Build the wholesale proposal on my template with our standard pricing from past wholesale deals, twelve locations, weekly delivery. Route it for signature when I've approved it.
-
-Connectors
-
-Google Drive
-
-
-Docusign
-
-
-Canva
-
-
-#### Wholesale Supply Proposal
-
-###### Meridian Roasting Co.
-
-*Prepared for Harbor Dental Group · September 1, 2026*
-
-##### Scope
-
-Following our August 27 site visit, this proposal covers weekly wholesale coffee and break-room supply for all twelve Harbor Dental locations. Each break room is set up for drip service, and the quantities below are sized to roughly 40 cups per location per day.
-
-##### Monthly pricing
-
-- **House Blend, whole bean** — 96 five-lb bags at \$38.00 — \$3,648.00
-- **Decaf, whole bean** — 24 five-lb bags at \$41.00 — \$984.00
-- **Assorted tea** — 12 cases at \$29.00 — \$348.00
-- **Creamers, dairy and oat —** 12 locations at \$34.00 — \$408.00
-- **Cups, lids and sleeves** — 24 cases at \$18.50 — \$444.00
-- **Brewer service and filters** — 12 locations at \$25.00 — \$300.00
-- **Weekly delivery, twelve locations** — included
-- **Total monthly:** \$6,132.00
-
-‍*Pricing matched to your last three wholesale agreements in QuickBooks.*
+Claude can check your books against Stripe and Shopify, flag anything odd, and explain the month in plain English, so you can share with your accountant.
 
 ### Win the work
 
-Send Claude a voice memo and photos from your site visit, get back a proposal in your format, priced from your last three deals and ready for signature once you approve.  
-
-Prompt
-
-A wholesale inquiry just came in from Harbor Dental Group asking about coffee service for their offices. Qualify it against my wholesale criteria in HubSpot, draft a reply with two real meeting times from my calendar this week, and log the contact and next step in HubSpot. Don't send anything without me.
-
-Connectors
-
-Gmail
-
-
-Hubspot
-
-
-Apollo.io
-
-
-Re: Coffee service for Harbor Dental Group offices
-
-fatima.davis@harbordentalgroup.com
-
-Hi Fatima,
-
-Thanks for reaching out about coffee service for Harbor Dental's offices. You mentioned four locations and that the pod machines at the front desks aren't keeping up now that patient volume is back to normal — that's a setup we know well, and it's exactly the kind of account we're built for.
-
-Meridian handles wholesale for a handful of multi-site groups in the area. We roast weekly and deliver to each location on a fixed route, keep a standing order per office that your team can adjust with a quick reply, and put everything on one monthly invoice for the group. Brewers, filters, and setup are included, and we'll match roast and volume to what each office actually goes through rather than sending the same box to every door.
-
-I'd like to hear a bit more about how each office runs before I put numbers together. Would either of these work for a 20-minute call? **Wednesday, September 2 at 10:30 AM** or **Thursday, September 3 at 2:00 PM**. If neither fits, send over a couple of windows and I'll make one work.
-
-— Omar  
-Meridian Coffee Roasters
-
-Send
-
-Draft saved 9:02 PM
+Send Claude a voice memo and photos from your site visit, get back a proposal in your format, priced from your last three deals and ready for signature once you approve.
 
 ### Never lose a lead
 
-Claude can work all hours, so a 9pm inquiry will get a reply with two real meeting times that land in your CRM before you wake up. Nothing sends until you say so. 
-
-Prompt
-
-Coffee-club signups have dipped three weeks running. Build me a two-week posting calendar that pushes the subscription, pull the product images and prices from my Shopify store for the graphics, write the captions, and stage everything for my approval. Nothing posts until I say so.
-
-Connectors
-
-Canva
-
-
-Shopify
-
-
-X
-
-Workbook.xlsx - Excel
+Claude can work all hours, so a 9pm inquiry will get a reply with two real meeting times that land in your CRM before you wake up. Nothing sends until you say so.
 
 ### Run your marketing
 
-Keep your signups high. Claude can build a two-week posting calendar with product shots from your store complete with written captions, all for your approval.  
-
-Prompt
-
-My roastery runs production on BeanTrack and Claude can't see it. Build me a connection so my Monday brief and month-end close can read roast batches and green-coffee inventory. Read-only for now, and I approve any write later.
-
-Connectors
-
-Zapier
-
-
-\> My roastery runs production on BeanTrack and Claude can't see it. Build me a connection so my Monday brief and month-end close can read roast batches and green-coffee inventory. Read-only for now, and I approve any write later.
-
-
-› Checking for an existing connector for BeanTrack… none found
-
-› Checking for a public API… none. Routing through Zapier
-
-› Creating Zapier bridge: BeanTrack → Claude (triggers: batch completed, inventory updated)
-
-✓ Scoped credentials stored (read-only)
-
-✓ Approval gate: any write action requires owner confirmation
-
-✓ Registered with router as "beantrack" · available to business-pulse, /close-month, inventory-planner
-
-› Test pull: 14 batches this week · Harbor Blend green stock: 220 lb (11 days at current velocity)
-
-✓ Done in 84s.
+Keep your signups high. Claude can build a two-week posting calendar with product shots from your store complete with written captions, all for your approval.
 
 ### Build what we didn’t ship
 
-Run on a system Claude doesn't connect to yet? Tell Claude what the system is and what you need, and it builds the connection so your other workflows can use that data. Read-only to start; any changes wait for your approval.  
+Run on a system Claude doesn't connect to yet? Tell Claude what the system is and what you need, and it builds the connection so your other workflows can use that data. Read-only to start; any changes wait for your approval.
 
 ## You stay in charge
 
 Claude drafts and prepares. You decide what goes out. Payroll is set up for you to submit, bills wait for your approval before they're paid, and Claude doesn't file anything for you. The permissions you've set in each tool still apply.
 
-Visit trust center
-
-[Visit trust center](https://trust.anthropic.com/)
-
-Visit trust center
+[Visit trust center (opens in new tab)](https://trust.anthropic.com/)
 
 ### Your data stays yours
 
@@ -371,11 +188,7 @@ Claude shows its plan before it acts. By default, nothing sends or pays without 
 
 Don't see yours? Every workflow also runs from a spreadsheet or a forwarded email, and Claude can connect more tools as you go.
 
-Explore connectors
-
 [Explore connectors](../04-API-Reference/Other/partners-mcp.md)
-
-Explore connectors
 
 ## Join a free workshop in your city
 
@@ -385,385 +198,63 @@ In-person
 
 Virtual
 
-Active
-
-title
-
-Location
-
-
-MI
-
-Detroit \| Claude SMB Workshop
-
-Detroit, MI
-
-September 29, 2026
-
-Detroit
-
-[Detroit \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-detroit/rta)
-
-Detroit \| Claude SMB Workshop
-
-
-MN
-
-Minneapolis \| Claude SMB Workshop
-
-Minneapolis, MN
-
-October 1, 2026
-
-Minneapolis
-
-[Minneapolis \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-minneapolis/rta)
-
-Minneapolis \| Claude SMB Workshop
-
-
-AZ
-
-Phoenix \| Claude SMB Workshop
-
-Phoenix, AZ
-
-October 8, 2026
-
-Phoenix
-
-[Phoenix \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-phoenix/rta)
-
-Phoenix \| Claude SMB Workshop
-
-
-TN
-
-Memphis \| Claude SMB Workshop
-
-Memphis, TN
-
-October 20, 2026
-
-Memphis
-
-[Memphis \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-memphis/rta)
-
-Memphis \| Claude SMB Workshop
-
-
-GA
-
-Savannah \| Claude SMB Workshop
-
-Savannah, GA
-
-October 22, 2026
-
-Savannah
-
-[Savannah \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-savannah/rta)
-
-Savannah \| Claude SMB Workshop
-
-
-AR
-
-Bentonville \| Claude SMB Workshop
-
-Bentonville, AR
-
-November 4, 2026
-
-Bentonville
-
-[Bentonville \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-bentonville/rta)
-
-Bentonville \| Claude SMB Workshop
-
-
-FL
-
-Tampa \| Claude SMB Workshop
-
-Tampa, FL
-
-November 10, 2026
-
-Tampa
-
-[Tampa \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-tampa/rta)
-
-Tampa \| Claude SMB Workshop
-
-
-NC
-
-Raleigh \| Claude SMB Workshop
-
-Raleigh, NC
-
-November 12, 2026
-
-Raleigh
-
-[Raleigh \| Claude SMB Workshop](https://anthropic.swoogo.com/claude-smb-workshop-raleigh/rta)
-
-Raleigh \| Claude SMB Workshop
-
-
-title
-
-Location
-
-
-V
-
-Notion Webinar
-
-Virtual
-
-September 25, 2026
-
-Virtual
-
-[Notion Webinar](https://luma.com/0p7fmc93)
-
-Notion Webinar
-
-
-V
-
-RingCentral Webinar
-
-Virtual
-
-October 1, 2026
-
-Virtual
-
-[RingCentral Webinar](https://events.ringcentral.com/events/ringcentral-anthropic-webinar?code=1VT0iDMhkYRYHvCvKuh7xHS1x)
-
-RingCentral Webinar
-
-
-V
-
-Zoom Webinar
-
-Virtual
-
-October 8, 2026
-
-Virtual
-
-[Zoom Webinar](https://events.zoom.us/ev/AiJIgCaSD_osXZeGeXnc35LGiTBIHdUDmFozuhmTENO1P2oUl3I-~AgAG7IFCoItAIlAIpdM2J7wX0K8l1OTZimYEPk8HrltCwvlqK6sEY7HXfqtWBB5w0i-aA4o-9WIvF50a6y0xYOIbiQ)
-
-Zoom Webinar
-
-
-V
-
-Monday.com Webinar
-
-Virtual
-
-October 12, 2026
-
-Virtual
-
-[Monday.com Webinar](https://monday.zoom.us/webinar/register/WN_WkuWnYDXQ9GQMisrSzJgpg#/registration)
-
-Monday.com Webinar
-
-
-V
-
-Expensify Webinar
-
-Virtual
-
-October 13, 2026
-
-Virtual
-
-[Expensify Webinar](https://use.expensify.com/c4sb-webinar?utm_source=anthropic&utm_medium=partner_blog&utm_campaign=claude_for_small_business_sept_2026)
-
-Expensify Webinar
-
-
-V
-
-Apollo Webinar
-
-Virtual
-
-October 15, 2026
-
-Virtual
-
-[Apollo Webinar](https://events.apollo.io/apollo-claude-growth/)
-
-Apollo Webinar
-
-
-V
-
-Hubspot Webinar
-
-Virtual
-
-October 20, 2026
-
-Virtual
-
-[Hubspot Webinar](https://adminhug.info/claude102026)
-
-Hubspot Webinar
-
-
-V
-
-Gusto Webinar
-
-Virtual
-
-October 21, 2026
-
-Virtual
-
-[Gusto Webinar](https://event.on24.com/wcc/r/5496016/977F305A86D5D6E06F602DE266A993C6)
-
-Gusto Webinar
-
-
-V
-
-Zapier Webinar
-
-Virtual
-
-October 22, 2026
-
-Virtual
-
-[Zapier Webinar](https://zapier.com/resources/events/claude-smb-zapier-with-anthropic)
-
-Zapier Webinar
-
-
-V
-
-Xero Webinar
-
-Virtual
-
-October 27, 2026
-
-Virtual
-
-[Xero Webinar](https://xero.zoom.us/webinar/register/WN_c_4fE7BGRGi35kiIK1OwCA#/registration)
-
-Xero Webinar
-
-
-V
-
-Clay Webinar
-
-Virtual
-
-October 28, 2026
-
-Virtual
-
-[Clay Webinar](https://www.clay.com/livestreams/claude-for-small-business-build-your-growth-engine-with-clay?utm_source=all&utm_medium=influencerpartner&utm_campaign=claude_smb_anthropic)
-
-Clay Webinar
-
-
-V
-
-TikTok Webinar
-
-Virtual
-
-October 29, 2026
-
-Virtual
-
-[TikTok Webinar](https://www.tiktokacademy.com/student/page/3663358-north-american-europe-putting-ai-agents-to-work-powering-growth-with-tiktok-ads-and-claude-for-small-business?utm_source=partner_site&utm_medium=blog&utm_campaign=anthropic_MCP_261022_partner_enablement_na&utm_content=webinar)
-
-TikTok Webinar
-
-
-V
-
-Alignable Webinar
-
-Virtual
-
-November 5, 2026
-
-Virtual
-
-[Alignable Webinar](https://www.alignable.com/groups/invite-only-events/events/how-small-businesses-are-growing-with-ai-nov-2026)
-
-Alignable Webinar
-
-
-V
-
-Atlassian Webinar
-
-Virtual
-
-November 17, 2026
-
-Virtual
-
-[Atlassian Webinar](https://www.linkedin.com/events/run-grow-andenableyourbusinessw7503923852599525376/)
-
-Atlassian Webinar
-
+titleLocationDate
+
+- [TNMemphis \| Claude SMB WorkshopMemphis, TNOctober 20, 2026](https://anthropic.swoogo.com/claude-smb-workshop-memphis/rta)
+- [GASavannah \| Claude SMB WorkshopSavannah, GAOctober 22, 2026](https://anthropic.swoogo.com/claude-smb-workshop-savannah/rta)
+- [ARBentonville \| Claude SMB WorkshopBentonville, ARNovember 4, 2026](https://anthropic.swoogo.com/claude-smb-workshop-bentonville/rta)
+- [FLTampa \| Claude SMB WorkshopTampa, FLNovember 10, 2026](https://anthropic.swoogo.com/claude-smb-workshop-tampa/rta)
+- [NCRaleigh \| Claude SMB WorkshopRaleigh, NCNovember 12, 2026](https://anthropic.swoogo.com/claude-smb-workshop-raleigh/rta)
 
 Course
 
 Can’t make an in-person event? Take the AI Fluency course, co-presented with PayPal.
 
-Enroll now
-
-[Enroll now](https://anthropic.skilljar.com/ai-fluency-for-small-businesses)
-
-Enroll now
+[Enroll now (opens in new tab)](https://anthropic.skilljar.com/ai-fluency-for-small-businesses)
 
 Claude for Small Business plugin
 
 How to install and use the Claude for Small Business plugin.
 
-Read now
+[Read now (opens in new tab)](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)
 
-[Read now](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)
+titleLocationDate
 
-Read now
+- [VMonday.com WebinarVirtualOctober 12, 2026](https://monday.zoom.us/webinar/register/WN_WkuWnYDXQ9GQMisrSzJgpg#/registration)
+- [VExpensify WebinarVirtualOctober 13, 2026](https://use.expensify.com/c4sb-webinar?utm_source=anthropic&utm_medium=partner_blog&utm_campaign=claude_for_small_business_sept_2026)
+- [VApollo WebinarVirtualOctober 15, 2026](https://events.apollo.io/apollo-claude-growth/)
+- [VHubspot WebinarVirtualOctober 20, 2026](https://adminhug.info/claude102026)
+- [VGusto WebinarVirtualOctober 21, 2026](https://event.on24.com/wcc/r/5496016/977F305A86D5D6E06F602DE266A993C6)
+- [VZapier WebinarVirtualOctober 22, 2026](https://zapier.com/resources/events/claude-smb-zapier-with-anthropic)
+- [VXero WebinarVirtualOctober 27, 2026](https://xero.zoom.us/webinar/register/WN_c_4fE7BGRGi35kiIK1OwCA#/registration)
+- [VClay WebinarVirtualOctober 28, 2026](https://www.clay.com/livestreams/claude-for-small-business-build-your-growth-engine-with-clay?utm_source=all&utm_medium=influencerpartner&utm_campaign=claude_smb_anthropic)
+- [VTikTok WebinarVirtualOctober 29, 2026](https://www.tiktokacademy.com/student/page/3663358-north-american-europe-putting-ai-agents-to-work-powering-growth-with-tiktok-ads-and-claude-for-small-business?utm_source=partner_site&utm_medium=blog&utm_campaign=anthropic_MCP_261022_partner_enablement_na&utm_content=webinar)
+- [VAlignable WebinarVirtualNovember 5, 2026](https://www.alignable.com/groups/invite-only-events/events/how-small-businesses-are-growing-with-ai-nov-2026)
+- [VAtlassian WebinarVirtualNovember 17, 2026](https://www.linkedin.com/events/run-grow-andenableyourbusinessw7503923852599525376/)
+
+Course
+
+Can’t make an in-person event? Take the AI Fluency course, co-presented with PayPal.
+
+[Enroll now (opens in new tab)](https://anthropic.skilljar.com/ai-fluency-for-small-businesses)
+
+Claude for Small Business plugin
+
+How to install and use the Claude for Small Business plugin.
+
+[Read now (opens in new tab)](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)
 
 Need more hands-on help?
 
 We work with several service partners in the Claude Partner Network who specialize in helping small businesses get set up.
 
-See Partner Directory
-
-[See Partner Directory](https://partnerhub.claude.com/directory?filters=1789178865067x436833862108438660)
-
-See Partner Directory
+[See Partner Directory (opens in new tab)](https://partnerhub.claude.com/directory?filters=1789178865067x436833862108438660)
 
 ## FAQ
 
 Getting started
 
 Privacy & security
-
-Active
 
 ### Getting started
 
@@ -793,12 +284,7 @@ Pro for one person, Team for a business with more than one; both are month to mo
 
 ### What happens if I get stuck?
 
-Visit the resources section for support, review the [small business tutorial](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin), or [file a ticket](https://www.claude.com/21-Account-Support/how-to-get-support-57c428239c.md).
-
-[Prev](#)
-
-Prev
-
+Visit the resources section for support, review the [small business tutorial](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin), or [file a ticket](https://support.claude.com/en/articles/9015913-how-to-get-support).
 
 ### Privacy & security
 
@@ -818,415 +304,233 @@ No. We don't train our models on your business data.
 
 No. We don't sell your data or use what's in your tools to build products that compete with you.
 
-[Prev](#)
-
-Prev
-
-
 ## Run and grow your business with Claude
 
-Install the plugin
+[Install the plugin (opens in new tab)](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)[Find a workshop](#events)
 
-[Install the plugin](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin)
+[](https://www.claude.com/)
 
-Install the plugin
-
-Find a workshop
-
-[Find a workshop](#events)
-
-Find a workshop
-
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](../15-Claude-AI-Features/product-overview.md)
-  Claude
-
-- Claude Code
-
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
-  Claude Code
-
-- Claude Cowork
-
-  [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](../14-Connectors/claude-for-slack.md)
-  @Claude
-
-- Claude Science
-
-  [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-  Claude Security
-
-- Download app
-
-  [Download app](https://www.claude.com/download)
-  Download app
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Capabilities
-
-- Artifacts
-
-  [Artifacts](https://www.claude.com/features/artifacts)
-  Artifacts
-
-- Design
-
-  [Design](../15-Claude-AI-Features/product-design.md)
-  Design
-
-- Connectors
-
-  [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-  Connectors
-
-- Plugins
-
-  [Plugins](https://www.claude.com/marketplace/plugins)
-  Plugins
-
-- Skills
-
-  [Skills](https://www.claude.com/skills)
-  Skills
-
-Extensions
-
-- Claude in Chrome
-
-  [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-  Claude in Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-Models
-
-- Mythos
-
-  [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-  Mythos
-
-- Fable
-
-  [Fable](../15-Claude-AI-Features/claude-fable.md)
-  Fable
-
-- Opus
-
-  [Opus](https://www.claude.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.claude.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.claude.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-  Haiku
-
-Enterprise
-
-- Overview
-
-  [Overview](enterprise.md)
-  Overview
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-  Claude Code for Enterprise
-
-Use cases
-
-- AI agents
-
-  [AI agents](agents.md)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](code-modernization.md)
-  Code modernization
-
-- Coding
-
-  [Coding](coding.md)
-  Coding
-
-- Commerce
-
-  [Commerce](commerce.md)
-  Commerce
-
-Departments
-
-- Customer support
-
-  [Customer support](customer-support.md)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](cybersecurity.md)
-  Cybersecurity
-
-- Legal
-
-  [Legal](legal.md)
-  Legal
-
-- Sales
-
-  [Sales](sales.md)
-  Sales
-
-Industries
-
-- Financial services
-
-  [Financial services](finance.md)
-  Financial services
-
-- Government
-
-  [Government](government.md)
-  Government
-
-- Healthcare
-
-  [Healthcare](healthcare.md)
-  Healthcare
-
-- Higher education
-
-  [Higher education](education.md)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](teachers.md)
-  K-12 teachers
-
-- Life sciences
-
-  [Life sciences](life-sciences.md)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](nonprofits.md)
-  Nonprofits
-
-- Small business
-
-  [Small business](small-business.md)
-  Small business
-
-Programs
-
-- Startups
-
-  [Startups](../15-Claude-AI-Features/programs-startups.md)
-  Startups
-
-- Scientists
-
-  [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-  Scientists
-
-Developers
-
-- Developer docs
-
-  [Developer docs](https://www.claude.com/01-Getting-Started/overview.md)
-  Developer docs
-
-- Developer blog
-
-  [Developer blog](https://claude.dev/)
-  Developer blog
-
-- Community
-
-  [Community](https://www.claude.com/community)
-  Community
-
-- Console
-
-  [Console](../04-API-Reference/Other/home.md)
-  Console
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-Platform
-
-- Overview
-
-  [Overview](https://www.claude.com/platform/api)
-  Overview
-
-- Marketplace
-
-  [Marketplace](https://www.claude.com/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-  Microsoft Foundry
-
-Resources
-
-- Blog
-
-  [Blog](https://www.claude.com/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](../04-API-Reference/Other/partners.md)
-  Claude partner network
-
-- Claude Academy
-
-  [Claude Academy](https://academy.claude.com/)
-  Claude Academy
-
-- Customer stories
-
-  [Customer stories](customers.md)
-  Customer stories
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Powered by Claude
-
-  [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](https://www.claude.com/marketplace/service-partners)
-  Service partners
-
-Help and security
-
-- Availability
-
-  [Availability](https://www.anthropic.com/supported-countries)
-  Availability
-
-- Check files
-
-  [Check files](https://claude.com/check-files)
-  Check files
-
-- Regional compliance
-
-  [Regional compliance](https://www.claude.com/regional-compliance)
-  Regional compliance
-
-- Report abuse
-
-  [Report abuse](https://claude.com/form/anthropic-content-reporting)
-  Report abuse
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Status
-
-  [Status](https://status.anthropic.com/)
-  Status
-
-- Support center
-
-  [Support center](https://support.claude.com/en/)
-  Support center
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Research
-
-  [Research](../19-Reference/anthropic-com-research.md)
-  Research
-
-- Anthropic news
-
-  [Anthropic news](../19-Reference/news.md)
-  Anthropic news
-
-- Policy on the AI Exponential
+© 2026 Anthropic PBC
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

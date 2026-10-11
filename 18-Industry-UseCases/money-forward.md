@@ -2,13 +2,13 @@
 title: "Money Forward Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/money-forward"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:41Z"
+fetched_at: "2026-10-10T06:25:53Z"
 tags: ["case-studies", "claude-code", "enterprise", "evaluation", "security"]
 ---
 
 # Money Forward builds an AI-native engineering organization with Claude Code
 
-[Try Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+[Try Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 
 Industry:  
 Financial services
@@ -51,7 +51,7 @@ Money Forward launched MEPAR—Money Forward Engineering Productivity AI Researc
 
 Money Forward built a disciplined evaluation process within MEPAR, running trials with small groups of engineers and only rolling out tools that received strong feedback. For each trial, the team created a public channel where members could exchange thoughts and share how they were using the tools.
 
-The team built an internal template to integrate [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md) into PR workflows based on their style guide, then tested several options side by side. Teams consistently found Claude Code's reviews to be the most useful. Developers could fix issues before human review, which elevated overall PR quality and made reviewers' jobs significantly easier.
+The team built an internal template to integrate [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) into PR workflows based on their style guide, then tested several options side by side. Teams consistently found Claude Code's reviews to be the most useful. Developers could fix issues before human review, which elevated overall PR quality and made reviewers' jobs significantly easier.
 
 The trial's visibility across the company meant any employee could follow along. When trial members shared their results, more than 200 engineers from teams outside the trial requested access. The adoption became bottom-up instead of top-down—engineers pulled Claude Code into their workflows because they saw their peers getting real productivity gains.
 
@@ -102,9 +102,9 @@ Money Forward plans to extend Claude Code across the full software development l
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -134,7 +134,7 @@ Money Forward plans to extend Claude Code across the full software development l
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -146,6 +146,7 @@ Money Forward plans to extend Claude Code across the full software development l
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -157,8 +158,10 @@ Money Forward plans to extend Claude Code across the full software development l
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -178,7 +181,9 @@ Money Forward plans to extend Claude Code across the full software development l
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -221,9 +226,9 @@ Money Forward plans to extend Claude Code across the full software development l
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -253,7 +258,7 @@ Money Forward plans to extend Claude Code across the full software development l
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -265,6 +270,7 @@ Money Forward plans to extend Claude Code across the full software development l
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -276,8 +282,10 @@ Money Forward plans to extend Claude Code across the full software development l
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -297,7 +305,9 @@ Money Forward plans to extend Claude Code across the full software development l
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

@@ -1,8 +1,8 @@
 ---
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning"
+source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:39Z"
+fetched_at: "2026-10-10T06:28:09Z"
 tags: ["enterprise"]
 ---
 
@@ -13,7 +13,7 @@ This guide covers how to configure user provisioning and role assignment for you
 
 JIT provisioning is available for Team plans, Enterprise plans, and Console organizations. SCIM provisioning is available for Enterprise and Console organizations only.
 
-**Before you begin:** This guide assumes you have already completed the steps in **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)**, including domain verification and SSO configuration with your Identity Provider (IdP), and you have an Admin (Console) or Owner (Claude) role.
+**Before you begin:** This guide assumes you have already completed the steps in **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso.md)**, including domain verification and SSO configuration with your Identity Provider (IdP), and you have an Admin (Console) or Owner (Claude) role.
 
 ------------------------------------------------------------------------
 
@@ -44,13 +44,13 @@ Use this table to help decide which provisioning mode is right for your organiza
 Both JIT and SCIM can be combined with **Enable group mappings** to control role or seat tier assignment based on IdP group membership. If you select either of these options for your provisioning mode, **Enable group mappings** will appear within the **User provisioning** section:
 
 
-**Important:** Group mappings set a user’s role type and seat tier only. Users with the Custom role get their permissions from groups in Claude, and those groups sync from your IdP only when your provisioning mode is SCIM directory sync. With JIT, you need to create groups and add users to them manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. If you map an IdP group to the Custom role under JIT without doing this, those users have no permissions when they log in. Learn more about **[managing groups on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
+**Important:** Group mappings set a user’s role type and seat tier only. Users with the Custom role get their permissions from groups in Claude, and those groups sync from your IdP only when your provisioning mode is SCIM directory sync. With JIT, you need to create groups and add users to them manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. If you map an IdP group to the Custom role under JIT without doing this, those users have no permissions when they log in. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
 
 ### Available roles and seat tiers
 
 [TABLE]
 
-For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**.
+For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
 
 ------------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ Once your IdP is connected, continue to Step 3.
 
     2.  Toggle on **Enable group mappings** and move to Step 4.
 
-**Important**: Saving before users are properly assigned will result in those users being deprovisioned from the organization. Where it's available, the admin console shows a preview of what the sync will change, including how many members will be removed, before it applies. Review it before you confirm, and cancel if the removal count is higher than you expect. Learn more about **[how SCIM sync works](how-scim-sync-works-for-enterprise-organizations.md)**.
+**Important**: Saving before users are properly assigned will result in those users being deprovisioned from the organization. Where it's available, the admin console shows a preview of what the sync will change, including how many members will be removed, before it applies. Review it before you confirm, and cancel if the removal count is higher than you expect. Learn more about **[how SCIM sync works](https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations)**.
 
 ------------------------------------------------------------------------
 
@@ -159,7 +159,7 @@ Once your IdP is connected, continue to Step 3.
 
 Verify you have enough seats purchased and available to add members to your org.
 
-1.  Check the number of available seats shown in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)** and purchase additional seats if needed (see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**).
+1.  Check the number of available seats shown in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)** and purchase additional seats if needed (see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**).
 
 2.  Once you have available seats, go back to the Organization and access page and click “Sync now,” next to **Directory sync (SCIM)**. This will trigger a sync to provision accounts for those users not yet added as members.
 
@@ -180,9 +180,9 @@ This happens when your provisioning mode is JIT and an IdP group is mapped to th
 
 To fix this, do one of the following:
 
-1.  Add the affected users to the appropriate groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. Learn more about **[managing groups on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
+1.  Add the affected users to the appropriate groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
 
-2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](https://support.claude.com/en/articles/14499648)**.
+2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](how-scim-sync-works-for-enterprise-organizations-claude-help-center.md)**.
 
 ### I lost Admin/Owner access after enabling group mappings
 
@@ -194,7 +194,7 @@ To fix this, do one of the following:
 
 1.  Contact another Admin or Owner of your organization.
 
-2.  Ask them to navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** (for Claude) or **[Settings \> Members](../04-API-Reference/Other/usage-limits.md)** (for Console).
+2.  Ask them to navigate to **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)** (for Claude) or **[Settings \> Members](../04-API-Reference/Other/playground.md)** (for Console).
 
 3.  Have them change your role back to Admin or Owner.
 

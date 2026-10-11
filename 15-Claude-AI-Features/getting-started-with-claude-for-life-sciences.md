@@ -2,7 +2,7 @@
 title: "Getting Started with Claude for Life Sciences · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-25T06:30:14Z"
+fetched_at: "2026-10-08T06:25:02Z"
 tags: ["claude-ai", "connectors", "search"]
 ---
 
@@ -24,7 +24,7 @@ Individuals can access Claude for Life Sciences features and tools from a [Claud
 
 ## **Connectors for the life sciences development cycle**[](#connectors-for-the-life-sciences-development-cycle)
 
-Through Model Context Protocol (MCP) [connectors(opens in new tab)](https://support.claude.com/en/14-Connectors/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md) and [desktop extensions(opens in new tab)](../16-Mobile-Desktop/getting-started-with-local-mcp-servers-on-claude-desktop.md), Claude connects directly to leading platforms and databases, enabling you to query data using natural language and receive responses with source citations.
+Through Model Context Protocol (MCP) [connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) and [desktop extensions(opens in new tab)](../16-Mobile-Desktop/getting-started-with-local-mcp-servers-on-claude-desktop.md), Claude connects directly to leading platforms and databases, enabling you to query data using natural language and receive responses with source citations.
 
 **Scientific research & discovery**
 
@@ -47,16 +47,16 @@ Through Model Context Protocol (MCP) [connectors(opens in new tab)](https://supp
 
 *\*Available as Desktop Extensions for access on Claude Desktop App ([download here(opens in new tab)](https://claude.ai/download)).*
 
-Claude also includes Connectors to other workplace and productivity platforms like **Microsoft 365**, **Gmail & Google Drive**, **Box**, **Databricks**, **Slack**, and many more. Explore all available Claude Connectors [here(opens in new tab)](https://support.claude.com/en/04-API-Reference/Other/connectors-claude.md).
+Claude also includes Connectors to other workplace and productivity platforms like **Microsoft 365**, **Gmail & Google Drive**, **Box**, **Databricks**, **Slack**, and many more. Explore all available Claude Connectors [here(opens in new tab)](../04-API-Reference/Other/partners-mcp.md).
 
-You can also add custom connectors to connect Claude directly to the tools and data sources that matter most to your workflows. Learn more about setting up custom connectors [here(opens in new tab)](../14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md).
+You can also add custom connectors to connect Claude directly to the tools and data sources that matter most to your workflows. Learn more about setting up custom connectors [here(opens in new tab)](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp).
 
 ## Common research & discovery use cases[](#common-research-discovery-use-cases)
 
 - **Advanced data analysis and hypothesis generation:** Synthesize multi-source data to accelerate discovery cycles from weeks to hours.
 - **Literature synthesis with citations:** Access abstracts and full papers to clarify experimental approaches, identify key findings, determine novelty and applicability, and surface specific papers for deeper exploration.
 - **Protocol optimization:** Generate optimized protocols by synthesizing literature, successful existing protocols, and experimental best practices.
-- **Single-cell data processing:** Synthesize days of bioinformatics and computational analysis in minutes with automated cell population identification. Check out the [single-cell-rna-qc skill(opens in new tab)](https://support.claude.com/en/02-Claude-Code-CLI/how-to-use-the-single-cell-rna-qc-skill-with-claude.md) which gives Claude the ability to perform quality control on single-cell RNA-seq data using scverse best practices.
+- **Single-cell data processing:** Synthesize days of bioinformatics and computational analysis in minutes with automated cell population identification. Check out the [single-cell-rna-qc skill(opens in new tab)](how-to-use-the-single-cell-rna-qc-skill-with-claude.md) which gives Claude the ability to perform quality control on single-cell RNA-seq data using scverse best practices.
 - **Experimental design automation:** Generate literature-informed experimental designs automatically.
 - **Figure interpretation and analysis:** Accelerate figure creation and analysis with automated visualization.
 

@@ -1,8 +1,8 @@
 ---
 title: "Create a marketplace - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/plugins/create-marketplace"
+source_url: "https://code.claude.com/docs/en/plugin-marketplaces"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-30T06:31:54Z"
+fetched_at: "2026-10-10T06:27:46Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -152,7 +152,7 @@ Every plugin you distribute is one object in the `plugins` array of `marketplace
 - `source`: where Claude Code fetches the plugin from. Write a relative path string for a plugin inside the marketplace directory, as in [the walkthrough](#create-a-marketplace), or a source object for a plugin outside it. See [Choose a plugin source](#choose-a-plugin-source).
 - `description`: the line people see next to the plugin when they browse your marketplace in `/plugin`.
 
-For the full field list, see [Plugin entries](plugins-marketplace-reference.md#plugin-entries). An entry can also set any [`plugin.json`](plugins-reference.md) field. For when an entry’s `plugin.json` fields apply to a plugin that has its own `plugin.json`, see [Entry and plugin.json](plugins-marketplace-reference.md#entry-and-plugin-json).
+For the full field list, see [Plugin entries](plugins-marketplace-reference.md#plugin-entries), which also covers the [`plugin.json`](plugins-reference.md) fields an entry can set and when they apply.
 
 
 [​](#rules-for-plugin-entries)

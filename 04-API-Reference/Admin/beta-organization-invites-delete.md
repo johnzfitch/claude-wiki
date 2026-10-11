@@ -1,8 +1,8 @@
 ---
 title: "Delete Invite - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/beta/organization/invites/delete"
+source_url: "https://platform.claude.com/docs/en/api/admin/invites/delete"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-28T06:32:32Z"
+fetched_at: "2026-09-18T06:36:41Z"
 tags: ["api"]
 ---
 

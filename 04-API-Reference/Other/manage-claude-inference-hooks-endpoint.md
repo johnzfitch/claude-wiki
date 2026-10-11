@@ -2,7 +2,7 @@
 title: "Develop an Inference hooks integration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-30T06:30:49Z"
+fetched_at: "2026-10-08T06:24:43Z"
 tags: ["api", "hooks", "prompting"]
 ---
 
@@ -32,7 +32,7 @@ tags: ["api", "hooks", "prompting"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,11 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -134,7 +134,7 @@ These servers accept every request, including unsigned ones. Add [signature veri
 
 Anthropic sends an HTTPS `POST` to the URL your administrator configures. The whole configured URL is the endpoint: there is no fixed path suffix, so choose any path that suits your server.
 
-Host your AI security server where Anthropic can reach it: an `https://` URL on port 443, on a publicly routable host (private, loopback, and carrier-grade NAT ranges are refused at connect time), with a certificate that validates against the public CA trust store, responding without redirects. The configured URL must be the final destination. Reverse-tunnel hosts (ngrok and similar tunnel services) are not supported: Anthropic's network policy blocks them. Host your server on a domain you control. [Configure Inference hooks](manage-claude-inference-hooks-configuration.md) covers how your administrator sets and tests the URL.
+Host your AI security server where Anthropic can reach it: an `https://` URL on port 443, on a publicly routable host (private, loopback, and carrier-grade NAT ranges are refused at connect time), with a certificate that validates against the public CA trust store, responding without redirects. The host must have an IPv4 address, which Anthropic uses even when the host also has IPv6 addresses; a URL whose host is `localhost` or an IPv6 address is refused. The configured URL must be the final destination. Reverse-tunnel hosts (ngrok and similar tunnel services) are not supported: Anthropic's network policy blocks them. Host your server on a domain you control. [Configure Inference hooks](manage-claude-inference-hooks-configuration.md) covers how your administrator sets and tests the URL.
 
 Every request carries these fixed headers, along with any [custom request headers](manage-claude-inference-hooks-configuration.md) your administrator configured and, once your organization has a signing secret, the `webhook-*` signature headers described in [Verify the signature](#verify-the-signature):
 
@@ -144,7 +144,7 @@ Every request carries these fixed headers, along with any [custom request header
 | `User-Agent`      | `anthropic-dlp/1`  |
 | `Accept-Encoding` | `identity`         |
 
-There is one hook event today: the prompt frame, sent once per governed inference request, before inference begins. Anthropic holds the request until your AI security server responds or the verdict timeout elapses.
+There are two hook events, told apart by the top-level `type` field. The prompt frame is sent once per governed inference request, before inference begins. The tool call frame is sent when a model response contains tool calls, before any of them runs, in organizations that have **Validate tool calls** on. Either way, Anthropic waits until your AI security server responds or the verdict timeout elapses.
 
 ## The prompt frame
 
@@ -152,8 +152,8 @@ The request body is a JSON object with these fields:
 
 | Field        | Type           | Description                                                                                                                                                                                                                                                           |
 |--------------|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`       | string         | The hook event. Always `"prompt"` today; other event types will be introduced in the future, so handle an unrecognized value gracefully (see [Forward compatibility](#forward-compatibility)).                                                                        |
-| `request_id` | string         | Opaque per-inference-call identifier for correlation. Equals the `webhook-id` header.                                                                                                                                                                                 |
+| `type`       | string         | The hook event: `"prompt"` or `"tool_call"` (see [The tool call frame](#the-tool-call-frame)). Other event types will be introduced in the future, so handle an unrecognized value gracefully (see [Forward compatibility](#forward-compatibility)).                  |
+| `request_id` | string         | Opaque per-frame identifier for correlation. Equals the `webhook-id` header.                                                                                                                                                                                          |
 | `tenant_id`  | string or null | Opaque identifier for the organization the request belongs to.                                                                                                                                                                                                        |
 | `actor`      | object         | The principal the request is attributed to, discriminated on `type` (`"user"` is the only value sent today): `id` (a tagged identifier, stable across requests for the same account) and `email_address` (when available). Both `id` and `email_address` can be null. |
 | `source`     | object         | The originating application: `application` (see [Source values](#source-values)).                                                                                                                                                                                     |
@@ -210,7 +210,7 @@ Each entry in `messages` has a `role` of `user` or `assistant` (tool results app
 | Block `type`  | Fields                                                                                                                                                                                                                                                                                                                                                                                       |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `text`        | `text`: the text content.                                                                                                                                                                                                                                                                                                                                                                    |
-| `tool_use`    | `id`: the identifier the matching tool result references. `tool_name`: the tool's name. `input`: the arguments the model passed to the tool.                                                                                                                                                                                                                                                 |
+| `tool_use`    | `id`: the identifier the matching tool result references. `tool_name`: the tool's name. `input`: the arguments the model passed to the tool. `tool_info`: on a tool call frame only (left out elsewhere, never `null`), an object that says who runs or provides the tool; see [The tool call frame](#the-tool-call-frame).                                                                  |
 | `tool_result` | `content`: the tool's output as text, with parts joined by newlines; binary parts such as images are replaced by placeholder markers, and raw bytes are never sent. `is_error`: whether the tool call failed. `tool_name`: the tool's name, so a policy can condition on tool identity without cross-referencing an earlier block. `tool_use_id`: the `id` of the matching `tool_use` block. |
 | `attachment`  | `file_name`: the original file name or path. `media_type`: the attachment's media type. `size_bytes`: the size of the original file. `text`: the text content of the attachment when available, such as extracted document text, an audio transcript, or link metadata. Raw attachment bytes are never sent.                                                                                 |
 
@@ -231,6 +231,124 @@ Transcripts are sent untruncated, so a long conversation with large attachments 
 `source.application` is an open string, not a closed enum. Common values are `claude-ai`, `claude-code`, and `cowork`; [connection tests](manage-claude-inference-hooks-configuration.md) and automatic circuit-breaker [recovery checks](#circuit-breaker) use `config-test`. New values may appear, and your server must not reject a request because of one it doesn't recognize.
 
 Treat `source.application` as advisory routing metadata, not a trust boundary: don't rest a security-critical policy decision on it alone.
+
+## The tool call frame
+
+When Claude produces tool calls, Anthropic sends one tool call frame that lists them. Calls to some of claude.ai's own tools may be left out, and a response whose only tool calls are left out doesn't produce a tool call frame; see [Availability](manage-claude-inference-hooks.md#availability). One verdict covers the whole frame: you can't allow some tool calls and deny others. The frame goes to the same endpoint as the prompt frame, with the same headers, signature, and top-level fields. Tool calls made by code that Claude runs in the code execution tool are sent the same way, in separate tool call frames, before they run.
+
+It differs from the prompt frame in three ways:
+
+- `type` is `"tool_call"`.
+- `messages` holds only the latest message, the `assistant` message Claude just produced: any `text` blocks and one `tool_use` block per tool call the frame lists, in the order the model produced them. Earlier conversation is left out, because the prompt frame sent before that model call carried it. Read the last entry of `messages`, because the protocol may later add earlier messages before it.
+- Each `tool_use` block carries a `tool_info` object that says who runs or provides the tool.
+
+Where `session_id` is set, it is the same on both frames. The tool call frame has its own `request_id`, which is opaque like the prompt frame's.
+
+`tool_info` says who runs or provides the tool, not what the tool can reach. It is one of four kinds, told apart by its `type` field, and each kind carries its own fields. Anthropic sends the first of the following kinds that fits the tool. New kinds may appear: accept a `type` you don't recognize, and for such a kind rely only on `type`.
+
+An optional field that doesn't apply is left out, never `null`, so a `tool_info` can be just `{"type": "client"}`. `tool_name` is chosen by whoever defined the tool, and a server's `toolset_name` by whoever wrote the request, so don't treat either as a trust boundary.
+
+### Platform tools
+
+A platform tool is one that the Claude API itself runs while it serves the request, such as web search or code execution.
+
+| Field          | Present  | Description                                                                                                         |
+|----------------|----------|---------------------------------------------------------------------------------------------------------------------|
+| `type`         | Always   | `"platform"`                                                                                                        |
+| `tool_type`    | Always   | The tool's versioned type, such as `web_search_20250305`. Match it exactly; don't parse a name or a date out of it. |
+| `toolset_name` | Optional | The group of tools it belongs to.                                                                                   |
+
+### Application tools
+
+An application tool is one that the Anthropic application making the request provides itself, such as claude.ai's own tools.
+
+| Field          | Present  | Description                       |
+|----------------|----------|-----------------------------------|
+| `type`         | Always   | `"application"`                   |
+| `toolset_name` | Optional | The group of tools it belongs to. |
+
+### Third-party tools
+
+A third-party tool is one on a server that Anthropic knows of, such as a claude.ai connector or an MCP server that the request names in `mcp_servers`. This doesn't mean Anthropic has vetted the server.
+
+| Field             | Present              | Description                                                                                                                                                         |
+|-------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`            | Always               | `"third_party"`                                                                                                                                                     |
+| `toolset_name`    | Optional             | The name the request gives the server.                                                                                                                              |
+| `origin`          | Optional             | The scheme, host, and non-default port of the server's URL. It can be a private or local address, `localhost` included. An absent `origin` means unknown, not safe. |
+| `verified_origin` | Whenever `origin` is | `true` only when Anthropic's servers connect to the server themselves. Treat `false` as an origin that Anthropic hasn't confirmed.                                  |
+
+A `tool_use` block for a tool on an MCP server that the request names `crm` in `mcp_servers`:
+
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01GhIjKlMnOpQrStUvWxYzAb",
+  "tool_name": "crm_search",
+  "input": {
+    "query": "accounts renewing in Q4"
+  },
+  "tool_info": {
+    "type": "third_party",
+    "toolset_name": "crm",
+    "origin": "https://mcp.crm.example.com",
+    "verified_origin": true
+  }
+}
+```
+
+
+
+### Client tools
+
+A client tool is any other tool, usually one that the application calling Claude runs. A tool that Anthropic defines but the calling application runs, such as bash or computer use, is a client tool too, and carries its versioned type in `tool_type`. A call to a tool the request doesn't declare is also `"client"`.
+
+A tool on an MCP server that Claude Code connects to directly from the user's computer, such as a local MCP server, is a client tool. Its `tool_info` is `{"type": "client"}`, and its `tool_name` is the name Claude Code gives it, in the form `mcp__<server>__<tool>`.
+
+A deny stops the call before Claude Code runs it. The exchange between Claude Code and a local server doesn't pass through Anthropic, so your AI security server sees the tool's result only when Claude Code sends it back. Its text is then in a `tool_result` block in the next prompt frame.
+
+| Field          | Present  | Description                                                                                                                                    |
+|----------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`         | Always   | `"client"`                                                                                                                                     |
+| `tool_type`    | Optional | The tool's versioned type, such as `bash_20250124`, when Anthropic defines the tool. Match it exactly; don't parse a name or a date out of it. |
+| `toolset_name` | Optional | The group of tools it belongs to, such as `browser`.                                                                                           |
+
+A `tool_use` block for a tool that the calling application declares:
+
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01AbCdEfGhIjKlMnOpQrStUv",
+  "tool_name": "read_file",
+  "input": {
+    "path": "reports/q3.txt"
+  },
+  "tool_info": {
+    "type": "client"
+  }
+}
+```
+
+
+
+A `tool_use` block for bash, which Anthropic defines and the calling application runs:
+
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01HiJkLmNoPqRsTuVwXyZaBc",
+  "tool_name": "bash",
+  "input": {
+    "command": "ls -la reports/"
+  },
+  "tool_info": {
+    "type": "client",
+    "tool_type": "bash_20250124"
+  }
+}
+```
+
+
 
 ## Return a verdict
 
@@ -270,6 +388,8 @@ The reverse doesn't hold. Anything other than HTTP 200 with a parseable verdict 
 - Any `action` value other than `allow` or `deny` is treated as a webhook failure.
 
 Anthropic reads at most 64 KiB of the response body, and the body must be uncompressed. Redirects are not followed, and cookies are ignored. Unknown fields in the verdict body are ignored, so you can return a richer object alongside the fields documented here.
+
+A tool call frame takes the same verdict body, and every rule in this section applies to it unchanged. `allow` lets the tool calls run and the response continues; `deny` stops all of them and ends the response with the same error as a denied prompt, including your `deny_reason`. Text delivered before the first tool call is not taken back.
 
 ## Verify the signature
 
@@ -359,7 +479,7 @@ def verify(secret: str, headers: dict[str, str], body: bytes) -> bool:
 
 ### Timeout and retry
 
-Your administrator sets a verdict timeout between 1 and 10,000ms (5,000ms by default). The budget covers the entire exchange: connection, TLS handshake, request, and response.
+Your administrator sets a verdict timeout between 1 and 10,000ms (5,000ms by default). The budget covers the entire exchange: connection, TLS handshake, request, and response. The same timeout applies to tool call frames.
 
 Anthropic retries exactly once, after a 100ms delay, and only when the connection attempt fails. The retry shares the same timeout budget and carries the same `webhook-id` and the same signature. Once your AI security server has responded, the exchange is never retried.
 
@@ -373,11 +493,13 @@ Sustained webhook failures attributable to your AI security server trip a circui
 
 Starting 10 minutes after the trip, Anthropic checks whether your server has recovered: at most about once per minute it sends your server the same synthetic test request that **Test connection** sends (`source.application` is `config-test`), signed like any other request and carrying no user content. Respond to it normally. A valid verdict, allow or deny, resets the breaker and enforcement resumes; a webhook failure leaves the breaker tripped, and the checks continue. An administrator can also reset the breaker at any time, and administrator configuration changes stop the automatic checks; see [Circuit breaker](manage-claude-inference-hooks-configuration.md#circuit-breaker).
 
+Prompt frames and tool call frames share one circuit breaker, and failures on either count toward it.
+
 Each trip is recorded as an `inference_hooks_circuit_breaker_tripped` activity in the [Activity Feed](manage-claude-compliance-activity-feed.md), one activity per trip. While the breaker is tripped, no per-request Inference hooks activities are recorded, so the trip activity is the feed's only record of the tripped window.
 
 ### Latency
 
-Enforcement adds your AI security server's round trip to the latency of every governed request in your organization. Keep the verdict fast, and load-test your server before rolling it out to a large organization.
+Enforcement adds your AI security server's round trip to the latency of every governed request in your organization. With **Validate tool calls** on, a response that produces a tool call frame also waits for its verdict, in shadow mode as well. Keep the verdict fast, and load-test your server before rolling it out to a large organization.
 
 ### Source IP addresses
 
@@ -387,11 +509,12 @@ Requests to your AI security server originate from `160.79.106.0/24`, part of An
 
 The protocol grows without breaking correctly written servers. Your server must ignore:
 
-- Unknown top-level fields on the prompt frame.
+- Unknown top-level fields on either frame.
 - Unknown keys in `metadata`.
 - New `source.application` values.
 - New `actor.type` values. `actor` is a union discriminated on `type`, and `"user"` is the only kind sent today; a future kind guarantees only that `type` is present.
 - Content blocks with an unrecognized `type`.
+- Messages with a `role` other than `user` or `assistant`, which a later revision may add.
 
 Never reject a request because of an unrecognized block type or field; read the fields you know and skip the rest.
 

@@ -2,7 +2,7 @@
 title: "Migrate your organization from Team to Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:44Z"
+fetched_at: "2026-10-10T06:28:12Z"
 tags: ["enterprise"]
 ---
 
@@ -83,17 +83,17 @@ Go to **[Organization settings \> Usage](https://claude.ai/admin-settings/usage)
 
 During migration, some users may appear as **No seat assigned** rather than being automatically mapped to seat tiers. Admins should verify all users have correct seat assignments after the cutover. Pay attention to your highest-usage members, and note that users without a seat won't have access until an admin corrects their seat assignment.
 
-For detailed guidance, refer to **[Purchase and manage seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**.
+For detailed guidance, refer to **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991)**.
 
 ### Role-based access controls
 
-After migrating your organization from a Team plan to an Enterprise plan, an Owner or Primary Owner can follow the instructions to configure custom roles, groups, and group spend limits: **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)**.
+After migrating your organization from a Team plan to an Enterprise plan, an Owner or Primary Owner can follow the instructions to configure custom roles, groups, and group spend limits: **[Set up role-based permissions on Enterprise plans](../17-Billing-Plans/set-up-role-based-permissions-on-enterprise-plans.md)**.
 
 Read more about groups, group spend limits, and custom roles:
 
-- **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**
+- **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**
 
-- **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**
+- **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**
 
 ------------------------------------------------------------------------
 
@@ -115,6 +115,8 @@ For usage-based Enterprise plans, usage is billed based on actual consumption. F
 
 If you had purchased usage credits for your Team plan, any unused balance will roll over and become available on your new usage-based Enterprise plan.
 
+**Note:** Enterprise plans aren’t eligible for monthly API credits. If your team has claimed them, new credits stop when you migrate. Credits you already have stay usable until they expire.
+
 ### Provisioning process
 
 On the start date, you'll be provisioned and able to use the new features by the end of the day. After initial setup, Owners and Primary Owners can self-serve additional seats by navigating to **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)** and clicking "Manage" under **Total seats**.
@@ -123,14 +125,14 @@ On the start date, you'll be provisioned and able to use the new features by the
 
 ## Helpful resources
 
-- **[Set up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso-for-claude-and-claude-console.md)**
+- **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**
 
-- **[Set up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**
+- **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**
 
 - **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)**
 
-- **[Manage members on Team and Enterprise plans](../17-Billing-Plans/managing-members-on-team-and-enterprise-plans.md)**
+- **[Manage members on Team and Enterprise plans](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)**
 
 - **[Enterprise billing information](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
 
-- **[Use Claude Code with your Team or Enterprise plan](../17-Billing-Plans/using-claude-code-with-your-team-or-enterprise-plan.md)**
+- **[Use Claude Code with your Team or Enterprise plan](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan)**

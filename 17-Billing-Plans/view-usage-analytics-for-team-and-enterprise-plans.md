@@ -2,7 +2,7 @@
 title: "View usage analytics for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:35Z"
+fetched_at: "2026-10-10T06:24:33Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 

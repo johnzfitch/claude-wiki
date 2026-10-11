@@ -1,8 +1,8 @@
 ---
 title: "Enable US-only inference for your organization | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/15422948"
+source_url: "https://support.claude.com/en/articles/15422948-enable-us-only-inference-for-your-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:57Z"
+fetched_at: "2026-10-10T06:28:18Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -59,7 +59,7 @@ Primary Owners, Owners, and members with a custom role that has the Privacy perm
 
 ### Does this setting apply to the Claude API?
 
-This setting applies to your Claude Enterprise organization. For inference location options on the Claude API, see the **[data residency documentation on Claude API Docs](../04-API-Reference/Guides/build-with-claude-data-residency.md)**.
+This setting applies to your Claude Enterprise organization. For inference location options on the Claude API, see the **[data residency documentation on Claude API Docs](../04-API-Reference/Other/manage-claude-data-residency.md)**.
 
 ### Why don't I see this setting?
 

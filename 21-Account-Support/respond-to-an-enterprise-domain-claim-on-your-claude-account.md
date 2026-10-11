@@ -2,7 +2,7 @@
 title: "Respond to an Enterprise domain claim on your Claude account | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625626-respond-to-an-enterprise-domain-claim-on-your-claude-account"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:31:55Z"
+fetched_at: "2026-10-10T06:28:17Z"
 tags: ["account", "enterprise"]
 ---
 
@@ -23,7 +23,7 @@ You’ll receive an email and an in-product notification letting you know that y
 
 ## Your two options
 
-**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the merge and join option isn't available. Your only option is to join fresh. Export your data before the deadline if you want a copy. Your subscription is still canceled and refunded as described below. Learn more about **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the merge and join option isn't available. Your only option is to join fresh. Export your data before the deadline if you want a copy. Your subscription is still canceled and refunded as described below. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ### Merge and join
 

@@ -2,7 +2,7 @@
 title: "Overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/transports"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-09-29T06:30:48Z"
+fetched_at: "2026-10-09T06:27:46Z"
 tags: ["mcp", "mcp-spec"]
 ---
 

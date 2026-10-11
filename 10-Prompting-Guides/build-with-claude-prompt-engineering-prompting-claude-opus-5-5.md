@@ -2,7 +2,7 @@
 title: "Prompting Claude Opus 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-09-30T06:32:05Z"
+fetched_at: "2026-10-08T06:25:15Z"
 tags: ["agents", "prompting"]
 ---
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -112,7 +112,7 @@ Changing the top-level `effort` value between requests invalidates the prompt ca
 Claude Opus 5 accepts `thinking: {"type": "disabled"}` at `high` effort or below; Claude Opus 5.5 doesn't, and the [migration guide](../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5) covers the request change. If your Claude Opus 5 integration ran with thinking disabled, four changes go with it:
 
 - **Start at `low` effort and measure.** At `low` the model keeps its thinking short. How often it skips thinking altogether depends on your prompts, so measure latency and quality on your own traffic and move to `medium` if quality drops. If time to first token still matters after that, a system prompt line such as "Answer directly without deliberating." can reduce thinking further; measure quality when you add it, because less thinking can lower it.
-- **Remove instructions that stood in for thinking.** If your prompt asked the model to write out its reasoning in the response as a substitute for thinking, remove that instruction and read the reasoning from [summarized thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#summarized-thinking) blocks instead (`display: "summarized"`); a prompt that pushes the model to reproduce its reasoning in the response text can be declined with the `reasoning_extraction` [refusal category](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response).
+- **Remove instructions that stood in for thinking.** If your prompt asked the model to write out its reasoning in the response as a substitute for thinking, remove that instruction and read the reasoning from [summarized thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#summarized-thinking) blocks instead (`display: "summarized"`); a prompt that pushes the model to reproduce its reasoning in the response text may be declined with the `reasoning_extraction` [refusal category](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response).
 - **Re-test the thinking-disabled mitigations.** [Running with thinking disabled](build-with-claude-prompt-engineering-prompting-claude-opus-5.md#running-with-thinking-disabled) recommends a combined instruction (permission to speak before a tool call, what to do when no tool fits, no internal tags) and removing any rule that tells the model not to think. Both address artifacts that appear on Claude Opus 5 only when thinking is disabled. With thinking always on, check whether you still need the instruction, and remove the no-thinking rule either way.
 - **Read the response by block type.** Check each block's type instead of assuming the first content block is text: a response may or may not begin with a `thinking` block, whose `thinking` field is empty under the default `display: "omitted"`.
 
@@ -146,7 +146,7 @@ Claude Opus 5.5 runs safety classifiers, including for biology, cybersecurity, a
 
 - **Biology:** The biology safeguards are the same as Claude Fable 5.1's and are new if you're coming from Claude Opus 5. Everyday health and educational questions are unaffected. If the biology classifier gets in the way of your organization's life sciences work, apply to the [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md).
 - **Cybersecurity:** Finding vulnerabilities in source code is allowed. High-risk dual-use cybersecurity activities are not.
-- **Reasoning extraction:** Requests that push the model to reproduce its internal reasoning in the response text can be declined with the `reasoning_extraction` category, which is new if you're coming from Claude Opus 5. If your prompts ask the model to write out its reasoning in the response, remove those instructions, set `display: "summarized"`, and read the summarized reasoning from the thinking blocks instead; see [Prompts written for thinking disabled](#prompts-written-for-thinking-disabled).
+- **Reasoning extraction:** Requests that push the model to reproduce its internal reasoning in the response text may be declined with the `reasoning_extraction` category. If your prompts ask the model to write out its reasoning in the response, remove those instructions, set `display: "summarized"`, and read the summarized reasoning from the thinking blocks instead; see [Prompts written for thinking disabled](#prompts-written-for-thinking-disabled). You can still ask for a short explanation of the answer or a summary of the actions taken; see [Keep reasoning in thinking blocks](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 A classifier decline arrives as a normal response with `stop_reason: "refusal"` and a `stop_details` object naming the category. You can have the request retried automatically on a fallback model, except for `reasoning_extraction` declines, which server-side fallback returns to you instead of retrying; see [Refusals and fallback](../20-Models/models-opus-5-5-whats-new-opus-5-5.md#refusals-and-fallback).
 
@@ -194,7 +194,7 @@ In Anthropic's evaluations of small agent teams on research tasks, both signals 
 
 ## Thinking instructions in chat system prompts
 
-In chat applications, if your system prompt contains instructions that tell Claude to think carefully before answering, consider removing them for Claude Opus 5.5. The model decides for itself how much to think, and [effort](#calibrate-effort) is the main control. In Anthropic's testing in a chat product, removing such a line made replies start sooner, with no clear decline in the quality of the reply.
+In chat applications, if your system prompt contains instructions that tell Claude to think carefully before answering, consider removing them for Claude Opus 5.5. The model determines how much to think, and [effort](#calibrate-effort) is the main control. In Anthropic's testing in a chat product, removing such a line made replies start sooner, with no clear decline in the quality of the reply.
 
 In multi-turn chat, Claude Opus 5.5 sometimes goes back over an earlier answer while it thinks about a new message, even a short follow-up, which adds thinking and latency on later turns. If you would rather the model treat earlier answers as settled, add two sentences at the end of the system prompt:
 

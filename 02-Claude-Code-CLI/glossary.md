@@ -2,7 +2,7 @@
 title: "Glossary - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/glossary"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:50Z"
+fetched_at: "2026-10-10T06:24:11Z"
 tags: ["claude-code"]
 ---
 
@@ -70,6 +70,7 @@ tags: ["claude-code"]
 - [T](#t)
   - [Teleport](#teleport)
   - [Tool](#tool)
+  - [Transcript](#transcript)
   - [Turn](#turn)
 - [V](#v)
   - [Verification loop](#verification-loop)
@@ -200,7 +201,7 @@ The directory where Claude Code reads project-scoped configuration: settings, ho
 
 CLAUDE.md
 
-A markdown file of persistent instructions you write for Claude, loaded at the start of every session as a user message after the system prompt. Put project conventions, architecture notes, and “always do X” rules here. Project-root CLAUDE.md survives [compaction](#compaction) and is re-read fresh from disk afterward. You can place CLAUDE.md at project scope in `./CLAUDE.md` or `./.claude/CLAUDE.md`, at user scope in `~/.claude/CLAUDE.md`, or as [managed policy](#managed-settings) for your organization. All discovered files are concatenated into context rather than overriding each other, ordered from broadest scope to most specific. Claude Code can also load a project’s [AGENTS.md](#agents-md) files, on their own or alongside CLAUDE.md. Learn more: [CLAUDE.md files](memory.md#claude-md-files)
+A markdown file of persistent instructions you write for Claude, loaded at the start of every session as a user message after the system prompt. Put project conventions, architecture notes, and “always do X” rules here. Project-root CLAUDE.md survives [compaction](#compaction) and is re-read fresh from disk afterward. You can place CLAUDE.md at project scope in `./CLAUDE.md` or `./.claude/CLAUDE.md`, at user scope in `~/.claude/CLAUDE.md`, or as [managed policy](#managed-settings) for your organization. All discovered files are concatenated into context rather than overriding each other, ordered from broadest scope to most specific. Claude Code can also load a project’s [AGENTS.md](#agents-md) files in place of CLAUDE.md. Learn more: [CLAUDE.md files](memory.md#claude-md-files)
 
 
 [​](#cloud-session)
@@ -259,7 +260,7 @@ E
 
 Effort level
 
-A setting that controls adaptive reasoning, which lets the model decide whether and how much to think on each step. Higher effort means more thinking tokens and deeper reasoning; lower effort is faster and cheaper. Effort is supported on Fable models, on Opus 4.6 and later, and on Sonnet 4.6 and later. Learn more: [Adjust effort level](model-config.md#adjust-effort-level)
+A setting that controls adaptive reasoning, which lets the model decide whether and how much to think on each step. Higher effort means more thinking tokens and deeper reasoning; lower effort is faster and cheaper. Effort is supported on Fable models, on Opus 4.6 and later, on Sonnet 4.6 and later, and on Haiku 5.5. Learn more: [Adjust effort level](model-config.md#adjust-effort-level)
 
 
 [​](#extended-thinking)
@@ -353,7 +354,7 @@ O
 
 Output style
 
-A configuration that changes the instructions Claude Code gives Claude, to set response behavior, tone, or format. Unlike [CLAUDE.md](#claude-md), which adds project context alongside Claude Code’s default instructions, a custom output style can replace the default software engineering instructions. Learn more: [Output styles](output-styles.md)
+A configuration that changes the instructions Claude Code gives Claude, to set response behavior, tone, or format. Unlike [CLAUDE.md](#claude-md), which adds project context alongside Claude Code’s default instructions, a custom output style adds its own instructions and can leave out the default software engineering instructions. Learn more: [Output styles](output-styles.md)
 
 
 [​](#p)
@@ -419,7 +420,7 @@ A way to continue a local Claude Code session from your phone or browser via cla
 
 Rules
 
-Modular instruction files in `.claude/rules/` that load alongside CLAUDE.md. A rule can be path-scoped with YAML `paths:` frontmatter so it only loads when Claude reads a matching file, keeping context lean until it’s relevant. Learn more: [Organize rules with `.claude/rules/`](memory.md#organize-rules-with-claude/rules/)
+Modular instruction files in `.claude/rules/` that load alongside CLAUDE.md. A rule can be path-scoped with YAML `paths:` frontmatter so it only loads when Claude reads, writes, or edits a matching file, keeping context lean until it’s relevant. Learn more: [Organize rules with `.claude/rules/`](memory.md#organize-rules-with-claude/rules/)
 
 
 [​](#s)
@@ -445,7 +446,7 @@ A conversation tied to your current directory, with its own independent [context
 
 Settings layers
 
-The hierarchy Claude Code reads configuration from, in precedence order from highest to lowest: [managed policy](#managed-settings), command-line arguments, local settings at `.claude/settings.local.json`, project settings at `.claude/settings.json`, then user settings at `~/.claude/settings.json`. Arrays merge across layers; scalars at a higher layer override lower ones. See [Settings precedence](settings.md#settings-precedence). Learn more: [Settings files](settings.md#where-settings-live)
+The hierarchy Claude Code reads configuration from, in precedence order from highest to lowest: [managed policy](#managed-settings), settings you pass with the `--settings` flag, local settings at `.claude/settings.local.json`, project settings at `.claude/settings.json`, then user settings at `~/.claude/settings.json`. Arrays merge across layers; scalars at a higher layer override lower ones. See [Settings precedence](settings.md#settings-precedence). Learn more: [Settings files](settings.md#where-settings-live)
 
 
 [​](#skill)
@@ -501,7 +502,7 @@ T
 
 Teleport
 
-A command, `/teleport`, that pulls a cloud Claude Code session into your local terminal. Claude fetches the branch, loads the conversation history, and resumes from the cloud session’s last state. The reverse direction is `--cloud`, which sends a local task to run in the cloud. Learn more: [From cloud to terminal](claude-code-on-the-web.md#from-cloud-to-terminal)
+A command, `/teleport`, that pulls a cloud Claude Code session into your local terminal. Claude fetches the branch, loads the conversation history, and resumes from the cloud session’s last state. The reverse direction is `--cloud`, which sends a local task to run in the cloud. Learn more: [Continue a cloud session in your terminal](claude-code-on-the-web.md#from-cloud-to-terminal)
 
 
 [​](#tool)
@@ -509,6 +510,13 @@ A command, `/teleport`, that pulls a cloud Claude Code session into your local t
 Tool
 
 An action Claude can take: read a file, edit code, run a shell command, search the web, spawn a subagent. Tools are what make Claude Code agentic. Without them, Claude can only respond with text. Each tool use returns a result that informs Claude’s next decision in the [agentic loop](#agentic-loop). Learn more: [Tools available to Claude](tools-reference.md)
+
+
+[​](#transcript)
+
+Transcript
+
+The stored record of a [session](#session). The conversation is what you and Claude exchange; the transcript is that conversation kept as a file, by default at `~/.claude/projects/<project>/<session-id>.jsonl`. Claude Code reads the file back when you resume, which is how a conversation continues after the session ends. For the on-screen view of the same conversation, see the [transcript viewer](interactive-mode.md#transcript-viewer). Learn more: [Where transcripts are stored](sessions.md#where-transcripts-are-stored)
 
 
 [​](#turn)
@@ -527,7 +535,7 @@ V
 
 Verification loop
 
-How a session knows the work is actually done rather than just plausible. You give Claude a check it can run, such as a test suite, a build, or a screenshot comparison, and Claude iterates until the check passes instead of stopping after one attempt. A verification loop is the prerequisite for [`/goal`](goal.md), unattended runs, and [dynamic workflows](workflows.md): without one, the only thing deciding the agent is finished is the agent itself. Learn more: [Give Claude a way to verify its work](best-practices.md#give-claude-a-way-to-verify-its-work)
+How a session knows the work is actually done instead of accepting a result that looks plausible. You give Claude a check it can run, such as a test suite, a build, or a screenshot comparison, and Claude iterates until the check passes instead of stopping after one attempt. A verification loop is the prerequisite for [`/goal`](goal.md), unattended runs, and [dynamic workflows](workflows.md): without one, the only thing deciding the agent is finished is the agent itself. Learn more: [Give Claude a way to verify its work](best-practices.md#give-claude-a-way-to-verify-its-work)
 
 
 [​](#w)
@@ -539,7 +547,7 @@ W
 
 Worktree isolation
 
-An isolation mode that runs Claude in a separate git worktree under `.claude/worktrees/`, enabled with the `-w` flag or `isolation: worktree` in subagent config. Changes stay on a separate branch in a separate directory, so parallel agents don’t overwrite each other’s files. Learn more: [Run parallel sessions with git worktrees](worktrees.md)
+An isolation mode that runs Claude in a separate git worktree under `.claude/worktrees/`, enabled with the `-w` flag or `isolation: worktree` in subagent config. Changes stay on a separate branch in a separate directory, so parallel agents each edit their own copy of the files. Learn more: [Run parallel sessions with git worktrees](worktrees.md)
 
 ------------------------------------------------------------------------
 

@@ -2,7 +2,7 @@
 title: "Provision and manage skills for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13119606-provisioning-and-managing-skills-for-your-organization"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:38Z"
+fetched_at: "2026-10-10T06:28:08Z"
 tags: ["claude-ai", "plugins", "skills"]
 ---
 
@@ -69,7 +69,7 @@ When **User-created skills** is off:
 
 - Skills you've provisioned and Anthropic's built-in skills stay available, and users can still enable and use them.
 
-**Note:** If your organization uses custom roles, a user also needs the **Create skills** capability on their role. The organization setting is the main switch: when it's off, users can't create or upload their own skills, regardless of role, but Owners can still provision skills for the organization. When it's on, Enterprise plan users on custom roles still need the role capability. Learn more about **[managing custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
+**Note:** If your organization uses custom roles, a user also needs the **Create skills** capability on their role. The organization setting is the main switch: when it's off, users can't create or upload their own skills, regardless of role, but Owners can still provision skills for the organization. When it's on, Enterprise plan users on custom roles still need the role capability. Learn more about **[managing custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)**.
 
 ------------------------------------------------------------------------
 
@@ -169,13 +169,23 @@ To let users add skills and plugins to the organization library, use the **Publi
 
 The **Skill sharing** toggle is on by default for Team plans and for Enterprise plans that haven't set a skills preference. For organizations with HIPAA readiness or other regulated configurations, skills and skill sharing are off by default and an admin can enable them in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab. The **Share with groups** toggle is also off by default and can be enabled by an admin.
 
+When the Primary Owner applies the **[HIPAA configuration to Claude Code (local mode) and Cowork (local mode)](https://support.claude.com/en/articles/17318731)**, these settings change:
+
+- **Skills** turns off. Skills stay off until an Owner turns on **Skills** in **Organization settings \> Plugins & skills**, in the "Policy" tab.
+
+- **User-created skills** turns off. Members can't create skills until an Owner turns on **User-created skills** in the "Policy" tab.
+
+- Members can't share skills with a group, and no setting turns that on.
+
+With **Skills** on, the skills a member turns on in Claude are also available in their Cowork and Code tab sessions. Skills are available but not covered under your BAA.
+
 **Note:** Shared skills and plugins are view-only, and stay off until the recipient chooses to enable them. Recipients can enable and use a shared skill or plugin but can't edit its contents. When the owner saves a new version, everyone it's shared with gets the update automatically at next use. The owner can revoke someone's access at any time, and access is removed automatically if the recipient leaves the organization.
 
 ### Share skills with a group
 
-Before you can share with a group, an admin needs to turn on **Share resources with this group** in the group's visibility settings. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
+Before you can share with a group, an admin needs to turn on **Share resources with this group** in the group's visibility settings. See **[Manage groups and group spend limits on Enterprise plans](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
 
-If you use custom roles, also make sure the **Share skills with groups** capability is enabled for their role. See **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
+If you use custom roles, also make sure the **Share skills with groups** capability is enabled for their role. See **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)**.
 
 Once these settings are on, users can begin sharing skills with groups.
 

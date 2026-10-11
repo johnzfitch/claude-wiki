@@ -2,7 +2,7 @@
 title: "What's new in Claude Opus 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-5-5/whats-new-opus-5-5"
 category: "20-Models"
-fetched_at: "2026-09-30T06:31:07Z"
+fetched_at: "2026-10-08T06:25:17Z"
 tags: ["models"]
 ---
 
@@ -42,7 +42,7 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -54,7 +54,7 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
@@ -120,7 +120,7 @@ tool_choice: type "tool" and "any" are not supported for this model.
 
 ### Thinking blocks are tied to the model and the conversation
 
-Every thinking block records which model produced it, and each model reads its own blocks and only some other models'. Claude Opus 5.5 reads thinking blocks from Claude Opus 5 and earlier Opus, Sonnet, and Haiku models, but not from Claude Fable or Claude Mythos models. On the Claude API, Claude Fable 5.1 and Claude Mythos 5.1 read thinking blocks from Claude Opus 5.5; no other model does. A conversation that moves from Claude Opus 5 onto Claude Opus 5.5, or from Claude Opus 5.5 up to Claude Fable 5.1 or Claude Mythos 5.1 on the Claude API, keeps its reasoning. One that moves from Claude Opus 5.5 to any model other than those two, or onto it from a Claude Fable or Claude Mythos model, runs the turns after the switch without the previous model's reasoning. When a request carries a block the target model can't read, the API drops it before the model sees it: the request succeeds, and dropped blocks aren't billed. With the `thinking-binding-controls-2026-08-01` beta header the drop is reported in a top-level `input_transformations` array. See [Switching models mid-conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#switching-models).
+Every thinking block records which model produced it, and each model reads its own blocks and only some other models'. Claude Opus 5.5 reads thinking blocks from Claude Opus 5, from earlier Opus, Sonnet, and Haiku models, and, on the Claude API and Google Cloud, from Claude Sonnet 5.5, but not from Claude Fable or Claude Mythos models. On the Claude API, Claude Fable 5.1 and Claude Mythos 5.1 read thinking blocks from Claude Opus 5.5; no other model does. A conversation that moves from Claude Opus 5 onto Claude Opus 5.5, or from Claude Opus 5.5 up to Claude Fable 5.1 or Claude Mythos 5.1 on the Claude API, keeps its reasoning. One that moves from Claude Opus 5.5 to any model other than those two, or onto it from a Claude Fable or Claude Mythos model, runs the turns after the switch without the previous model's reasoning. When a request carries a block the target model can't read, the API drops it before the model sees it: the request succeeds, and dropped blocks aren't billed. With the `thinking-binding-controls-2026-08-01` beta header the drop is reported in a top-level `input_transformations` array. See [Switching models mid-conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#switching-models).
 
 The API also checks whether anything before a Claude Opus 5.5 thinking block (the `system` prompt, the `tools`, or an earlier message) has changed since the block was produced. As on Claude Fable 5.1, it enforces that check by default for accounts created on or after August 31, 2026, 00:00 UTC, on the Claude API and on cloud platforms. On those accounts, a request that replays a block after such a change returns a 400 error. To drop the affected blocks instead, send the `thinking-binding-controls-2026-08-01` beta header and set `thinking.block_binding.prefix_mismatch_behavior` to `"drop_block"`. On older accounts, setting that field to either value opts the request in. Keep the conversation append-only so the question never arises: change instructions or tools with [mid-conversation system messages](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md) rather than edits. See [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) and the migration guide's [note on this change](models-opus-5-5-migration-guide.md#thinking-blocks).
 
@@ -159,7 +159,7 @@ Claude Opus 5.5 differs from Claude Opus 5 in several ways that show up without 
 - **The default effort is `medium`.** A request that omits `effort` runs at `medium`; on Claude Opus 5 it ran at `high`. Set `effort` explicitly and re-run your sweep; see [Calibrate effort](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#calibrate-effort).
 - **More thinking per turn at a given effort level.** At the same [effort](../04-API-Reference/Guides/build-with-claude-effort.md) setting the model tends to think more per turn than Claude Opus 5, most of all at `xhigh` and `max`. Re-run your effort sweep rather than carrying a setting over, and leave room in `max_tokens` for the thinking. See [Calibrate effort](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#calibrate-effort).
 - **Text between tool calls comes back in thinking blocks.** The short notes the model writes between tool calls arrive as [progress-update `thinking` blocks](../04-API-Reference/Guides/build-with-claude-thinking.md#progress-updates) rather than `text` blocks, so at the default `display: "omitted"` an application that streams them to its users goes quiet between tool calls, with no error. The [migration guide](models-opus-5-5-migration-guide.md#text-between-tool-calls) has the fix for receiving them, and [User-facing progress updates](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#user-facing-progress-updates) covers how to ask for more of them.
-- **More safeguard categories.** The model runs a biology safety classifier in addition to the cybersecurity one, and requests that push it to reproduce its internal reasoning in the response text can be declined with the `reasoning_extraction` category. See [Refusals and fallback](#refusals-and-fallback) and [Safeguard refusals](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#safeguard-refusals).
+- **More safeguard categories.** The model runs a biology safety classifier in addition to the cybersecurity one. As on Claude Opus 5, requests that push it to reproduce its internal reasoning in the response text may be declined with the `reasoning_extraction` category. See [Refusals and fallback](#refusals-and-fallback) and [Safeguard refusals](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#safeguard-refusals).
 - **Sharper reading of charts, diagrams, and screenshots.** The model reads values off dense charts and layout-dependent visuals much more precisely without tools, so prompt-side vision workarounds built for earlier models may no longer be needed; image tools still add accuracy on the densest inputs. See [Tools for complex visual inputs](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#tools-for-complex-visual-inputs).
 
 If your Claude Opus 5 integration ran with thinking disabled, see [Prompts written for thinking disabled](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#prompts-written-for-thinking-disabled) alongside the [breaking change](#thinking-cant-be-disabled). For the capability gains in agentic coding and code review, knowledge work, communication, visual inputs, and computer use, see [Capabilities relevant to prompting](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md#capability-improvements).

@@ -2,11 +2,13 @@
 title: "Okta SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917894-okta-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:55Z"
+fetched_at: "2026-10-10T06:28:13Z"
 tags: ["enterprise"]
 ---
 
 # Okta SSO setup
+
+September 2, 2026
 
 
 This guide covers configuring SSO and SCIM provisioning for Claude with Okta as your identity provider. It applies to Team plans, Enterprise plans, and Console organizations.
@@ -47,7 +49,7 @@ Start the SSO setup flow there and keep it open alongside the Okta Admin console
 
 2.  Under **Attribute Statements**, add an attribute named email with value user.email.
 
-    1.  If you use group mappings (JIT or SCIM provisioning with **Enable group mappings** turned on), also add a Group Attribute Statement named "groups" with a filter that includes every Okta group you map to a Claude role or seat type. Without it, sign-ins arrive with no group information: users can’t be assigned a mapped role, and under JIT with group mappings, a user whose sign-in includes no mapped group is removed from the organization at their next login. See **[Set up JIT or SCIM provisioning](setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+    1.  If you use group mappings (JIT or SCIM provisioning with **Enable group mappings** turned on), also add a Group Attribute Statement named "groups" with a filter that includes every Okta group you map to a Claude role or seat type. Without it, sign-ins arrive with no group information: users can’t be assigned a mapped role, and under JIT with group mappings, a user whose sign-in includes no mapped group is removed from the organization at their next login. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 3.  Download the **Identity Provider metadata** XML and upload it in the WorkOS setup flow when prompted.
 
@@ -65,7 +67,7 @@ Start the SSO setup flow there and keep it open alongside the Okta Admin console
 
 5.  In **Attribute Mappings → To App**, confirm the email attribute maps to user.email — the same field as your SAML assertion.
 
-**Important:** SCIM and SAML must use the same Okta field for email. A common issue is SCIM using user.login while SAML uses user.email. See **[Okta SSO/SCIM email mismatch](okta-sso-scim-email-mismatch.md)** if people can't log in after provisioning.
+**Important:** SCIM and SAML must use the same Okta field for email. A common issue is SCIM using user.login while SAML uses user.email. See **[Okta SSO/SCIM email mismatch](https://support.claude.com/en/articles/13917840)** if people can't log in after provisioning.
 
 ## Step 4 — Assign people or groups
 

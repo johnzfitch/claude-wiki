@@ -2,7 +2,7 @@
 title: "MCP tunnels - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-09-26T06:38:22Z"
+fetched_at: "2026-10-04T08:32:06Z"
 tags: ["api", "mcp", "security"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "mcp", "security"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -102,7 +102,7 @@ MCP tunnels let you connect Claude to Model Context Protocol (MCP) servers that 
 
 MCP tunnels are in research preview. [Request access](https://claude.com/form/mcp-tunnels) to try them. They are provided "as-is" without any uptime, support, or continuity commitment, and they depend on a third-party network provider (Cloudflare) that makes no availability commitment for the underlying transport. Anthropic may modify or discontinue MCP tunnels at any time.
 
-For Zero Data Retention and HIPAA BAA eligibility, see [API and data retention](../Other/manage-claude-api-and-data-retention.md#feature-eligibility).
+For Zero Data Retention and HIPAA BAA eligibility, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md#feature-eligibility).
 
 ## How it works
 

@@ -2,7 +2,7 @@
 title: "Push events into a running session with channels - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/channels"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:37:54Z"
+fetched_at: "2026-10-06T06:23:39Z"
 tags: ["claude-code"]
 ---
 
@@ -57,7 +57,7 @@ Open [BotFather](https://t.me/BotFather) in Telegram and send `/newbot`. Give it
 
 Install the plugin
 
-In Claude Code, run:
+Start Claude Code by running `claude` in your terminal, then enter this at its prompt:
 
 ```python
 /plugin install telegram@claude-plugins-official
@@ -68,7 +68,7 @@ If the install fails, match the message Claude Code reports:
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 - The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
 
-When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to make the plugin’s configure command available.
+When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to make the plugin’s configure command available.
 
 3
 
@@ -145,7 +145,7 @@ Open the generated URL to add the bot to your server.
 
 Install the plugin
 
-In Claude Code, run:
+Start Claude Code by running `claude` in your terminal, then enter this at its prompt:
 
 ```python
 /plugin install discord@claude-plugins-official
@@ -156,7 +156,7 @@ If the install fails, match the message Claude Code reports:
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 - The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
 
-When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to make the plugin’s configure command available.
+When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to make the plugin’s configure command available.
 
 5
 
@@ -212,7 +212,7 @@ The Messages database at `~/Library/Messages/chat.db` is protected by macOS. The
 
 Install the plugin
 
-In Claude Code, run:
+Start Claude Code by running `claude` in your terminal, then enter this at its prompt:
 
 ```python
 /plugin install imessage@claude-plugins-official
@@ -223,7 +223,7 @@ If the install fails, match the message Claude Code reports:
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 - The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
 
-When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.If the install summary reports `Run /reload-plugins to activate.`, you don’t need to act on it here, because restarting in the next step picks up the plugin.
+When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.If the install summary reports `Run /reload-plugins to apply.`, you don’t need to act on it here, because restarting in the next step picks up the plugin.
 
 3
 
@@ -270,7 +270,7 @@ Fakechat is an officially supported demo channel that runs a chat UI on localhos
 
 Install the fakechat channel plugin
 
-Start a Claude Code session and run the install command:
+Start Claude Code by running `claude` in your terminal, then enter the install command at its prompt:
 
 ```python
 /plugin install fakechat@claude-plugins-official
@@ -281,7 +281,7 @@ If the install fails, match the message Claude Code reports:
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 - The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
 
-When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.If the install summary reports `Run /reload-plugins to activate.`, you don’t need to act on it here, because restarting in the next step picks up the plugin.
+When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.If the install summary reports `Run /reload-plugins to apply.`, you don’t need to act on it here, because restarting in the next step picks up the plugin.
 
 2
 
@@ -349,7 +349,7 @@ Pro and Max users without an organization skip these checks entirely: channels a
 
 Enable channels for your organization
 
-Enable channels for your organization from [**claude.ai → Admin settings → Claude Code → Channels**](https://claude.ai/admin-settings/claude-code), which requires the Owner role, or by setting `channelsEnabled` to `true` in managed settings. Once enabled, users in your organization can use `--channels` to opt channel servers into individual sessions. If the setting is disabled or unset, the MCP server still connects and its tools work, but channel messages won’t arrive. A startup warning tells the user to have an admin enable the setting.
+Enable channels for your organization from [**Organization settings \> Claude Code \> Channels**](https://claude.ai/admin-settings/claude-code), which requires the Owner role, or by setting `channelsEnabled` to `true` in managed settings. Once enabled, users in your organization can use `--channels` to opt channel servers into individual sessions. If the setting is disabled or unset, the MCP server still connects and its tools work, but channel messages won’t arrive. A startup warning tells the user to have an admin enable the setting.
 
 
 [​](#restrict-which-channel-plugins-can-run)
@@ -369,7 +369,7 @@ By default, any plugin on the Anthropic-maintained allowlist can register as a c
 }
 ```
 
-If you set an empty array, you block all channel plugins from the allowlist, but `--dangerously-load-development-channels` can still bypass that block for local testing. To block channels entirely including the development flag, leave `channelsEnabled` unset instead. This setting requires `channelsEnabled: true`. If a user passes a plugin to `--channels` that isn’t on your list, Claude Code starts normally but the channel doesn’t register, and the startup notice explains that the plugin isn’t on the organization’s approved list. If you set `MCP_PROTOCOL_NEGOTIATION` to `auto` on the v2 MCP client runtime, a channel can also fail to register because Claude Code [doesn’t register a channel server that negotiates protocol revision 2026-07-28](../06-MCP-Tools/General/mcp.md#push-messages-with-channels).
+If you set an empty array, you block all channel plugins from the allowlist, but `--dangerously-load-development-channels` can still bypass that block for local testing. To block channels entirely including the development flag, leave `channelsEnabled` unset instead. This setting requires `channelsEnabled: true`. If a user passes a plugin to `--channels` that isn’t on your list, Claude Code starts normally but the channel doesn’t register, and the startup notice explains that the plugin isn’t on the organization’s approved list. On the v2 MCP client runtime, a channel can also fail to register because Claude Code [doesn’t register a channel server that negotiates protocol revision 2026-07-28](../06-MCP-Tools/General/mcp.md#push-messages-with-channels).
 
 
 [​](#research-preview)

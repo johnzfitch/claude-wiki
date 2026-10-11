@@ -2,11 +2,13 @@
 title: "Turn on data retention for a Workspace in a zero data retention organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16824617-turn-on-data-retention-for-a-workspace-in-a-zero-data-retention-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:47Z"
+fetched_at: "2026-10-10T06:25:30Z"
 tags: ["enterprise"]
 ---
 
 # Turn on data retention for a Workspace in a zero data retention organization
+
+September 5, 2026
 
 
 This article shows you how to turn on 30-day data retention for a Workspace in your Claude Console organization when your organization uses zero data retention (ZDR).
@@ -15,7 +17,7 @@ This is only available to organizations on the Claude API that use zero data ret
 
 ## Why a Workspace needs data retention
 
-**[Covered Models](https://support.claude.com/en/articles/15425695-covered-models)**, such as Claude Fable 5.1, require 30-day data retention and aren't available under zero data retention unless Anthropic has expressly authorized it for your organization (for example, under Enterprise Frontier Safeguards). If not, you need to turn on data retention. Data retention is configured at the Workspace level, so you need to turn it on for each Workspace you’d like to use Covered Models in.
+**[Covered Models](../15-Claude-AI-Features/covered-models.md)**, such as Claude Fable 5.1, require 30-day data retention and aren't available under zero data retention unless Anthropic has expressly authorized it for your organization (for example, under Enterprise Frontier Safeguards). If not, you need to turn on data retention. Data retention is configured at the Workspace level, so you need to turn it on for each Workspace you’d like to use Covered Models in.
 
 Requests to Covered Models from a Workspace with retention off return an error like this one:
 
@@ -39,7 +41,7 @@ To turn on data retention for a Workspace:
 
 2.  Click your initials (or name) in the lower left corner to open your account menu.
 
-3.  Navigate to **[Organization settings \> Workspaces](../04-API-Reference/Other/usage-limits.md)**. The **Data retention** column shows the current setting for each Workspace.
+3.  Navigate to **[Organization settings \> Workspaces](../04-API-Reference/Other/playground.md)**. The **Data retention** column shows the current setting for each Workspace.
 
 4.  Click the Workspace you want to change.
 
@@ -55,7 +57,7 @@ The **This workspace** row now shows **On · 30 days**. There's no separate conf
 
 ## See which Workspaces have retention on
 
-To see which Workspaces have data retention on, navigate to **[Organization settings \> Workspaces](../04-API-Reference/Other/usage-limits.md)** and check the **Data retention** column for each Workspace. You'll see either **Zero data retention** or **30 day retention**.
+To see which Workspaces have data retention on, navigate to **[Organization settings \> Workspaces](../04-API-Reference/Other/playground.md)** and check the **Data retention** column for each Workspace. You'll see either **Zero data retention** or **30 day retention**.
 
 ## What changes after you turn it on
 
@@ -69,7 +71,7 @@ To see which Workspaces have data retention on, navigate to **[Organization sett
 
 - Requests to Covered Models from this Workspace's API keys now succeed, as long as your organization already has access to the model. You don't need new API keys.
 
-**Important:** This setting covers API requests and responses from the Workspace. It doesn't cover features that need to store data to work, such as the Batch API, the Files API, and Claude Managed Agents sessions. Learn more about **[which features are eligible for zero data retention](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#feature-eligibility)**.
+**Important:** This setting covers API requests and responses from the Workspace. It doesn't cover features that need to store data to work, such as the Batch API, the Files API, and Claude Managed Agents sessions. Learn more about **[which features are eligible for zero data retention](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#feature-eligibility)**.
 
 ## Turn off data retention for a Workspace
 

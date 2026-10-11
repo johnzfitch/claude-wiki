@@ -2,7 +2,7 @@
 title: "Frequently Asked Questions - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/faq"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-09-29T06:29:44Z"
+fetched_at: "2026-10-09T06:27:35Z"
 tags: ["mcp", "mcp-registry"]
 ---
 

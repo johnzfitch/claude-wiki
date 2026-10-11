@@ -2,7 +2,7 @@
 title: "Session event stream - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/events-and-streaming"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:48Z"
+fetched_at: "2026-10-04T08:33:36Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -630,7 +630,7 @@ No event resumes a session paused at its cap. Instead, update the session's budg
 
 
 
-`system.message` is supported by Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5.5, Claude Opus 5, and Claude Opus 4.8. If the agent's primary model does not support mid-conversation system injection, the event is rejected with a `model_does_not_support_mid_conversation_system` validation error. Subagent models are not checked, because `system.message` lands on the primary thread only.
+`system.message` is supported by Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, and Claude Sonnet 5.5. If the agent's primary model does not support mid-conversation system injection, the event is rejected with a `model_does_not_support_mid_conversation_system` validation error. Subagent models are not checked, because `system.message` lands on the primary thread only.
 
 Send a `system.message` event to give the agent privileged system-level context that applies to the accompanying turn and all subsequent turns. Unlike the `system` field on the agent definition (which sets the top-level system prompt), `system.message` content is appended to the session's system context as a `role: "system"` turn rather than replacing that prompt. Use it when the agent needs updated system-level guidance mid-session: a different persona, revised constraints, or context fetched at runtime that should shape the model's behavior going forward.
 
@@ -734,5 +734,5 @@ With `ant beta:sessions connect`, you can open the same viewer from the `ant` CL
 - **Check session events:** Session errors are conveyed through the `session.error` event
 - **Review tool results:** Tool execution failures often explain unexpected agent behavior
 - **Track token usage:** Monitor token consumption to optimize prompts and reduce costs
-- **Use system prompts:** Add logging instructions to the system prompt to make the agent explain its reasoning
+- **Use system prompts:** Add logging instructions to the system prompt so the agent summarizes what it did and what it found
 - **Troubleshoot previews:** If a stream that opts in to event deltas doesn't behave as you expect, see [Troubleshoot previews](#troubleshoot-previews)

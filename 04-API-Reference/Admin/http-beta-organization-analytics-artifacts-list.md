@@ -1,8 +1,8 @@
 ---
 title: "Get Artifact Activity - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/artifacts/list"
+source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/artifacts/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:06Z"
+fetched_at: "2026-10-04T08:32:27Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fartifacts%2Flist)
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fartifacts%2Flist)
 
 
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -141,33 +124,57 @@ MCP Tunnels
 
 Analytics
 
-
-Get Activity Summaries
-
-Usage
-
-Cost
+Summaries
 
 Users
 
-Skills
+Apps
 
 Connectors
 
-Chat Projects
-
 Plugins
+
+Skills
 
 Artifacts
 
 
 Get Artifact Activity
 
+Usage Report
+
+User Usage Report
+
+Cost Report
+
+User Cost Report
+
 Spend Limits
 
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -327,13 +334,69 @@ Opaque cursor from a previous response's `next_page` field. Only valid with `gro
 
 
 
-BetaArtifactUsage object{ data, next_page }
+data: array of [BetaAnalyticsArtifactActivity](http-beta-organization-analytics.md#beta_analytics_artifact_activity) { artifact_type, artifacts_created_count, distinct_user_count, 6 more }
 
 
 
-Response for GET /v1/organizations/analytics/artifacts.
+artifact_type: string
 
-`next_page` is null on ungrouped queries — the artifact-type cube is finite and returned in full. Grouped queries (`group_by[]` on `product` / `user_id` / `rbac_group_id`) multiply the cube and paginate like the other analytics list endpoints.
+
+
+Canonical artifact MIME type (e.g. `text/markdown`, `application/vnd.ant.react`, `image/svg+xml`), or `other`. Claude Code and Cowork artifacts report as `text/html`.
+
+artifacts_created_count: number
+
+
+
+Number of artifacts created in this bucket on the requested day
+
+distinct_user_count: number
+
+
+
+Number of distinct users who created artifacts in this bucket on the requested day
+
+is_shared: boolean
+
+
+
+Whether the artifacts in this bucket have ever been shared (a Claude Code / Cowork artifact is shared once anyone beyond its creator may open it: named members, the whole organization, or anyone with the link).
+
+published_artifacts_created_count: number
+
+
+
+Number of those artifacts that have been published (for Claude Code / Cowork artifacts: open to anyone with the link); never exceeds `artifacts_created_count`
+
+product: optional string or null
+
+
+
+Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost & Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+
+rbac_group_id: optional string or null
+
+
+
+Tagged RBAC group identifier (`rbac_group_...`), matching the spend-limits API spelling. Present only when the request grouped by `rbac_group_id`.
+
+rbac_group_name: optional string or null
+
+
+
+Resolved RBAC group display name, alongside `rbac_group_id` when name resolution is available. Null if the group has been deleted or its name could not be resolved; `rbac_group_id` remains the stable key.
+
+user_id: optional string or null
+
+
+
+Tagged user identifier (e.g. `user_...`). Present only when the request grouped by `user_id`.
+
+next_page: string or null
+
+
+
+Cursor for the next page of a grouped query; always null for the ungrouped artifact-type cube, which is returned in full.
 
 Get Artifact Activity
 

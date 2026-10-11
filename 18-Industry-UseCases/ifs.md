@@ -2,7 +2,7 @@
 title: "IFS Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/ifs"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-30T06:33:36Z"
+fetched_at: "2026-10-10T06:25:49Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -51,7 +51,7 @@ IFS Nexus Black brings together AI specialists and the industrial knowledge of I
 
 Claude's capabilities opened up approaches that weren't possible before. Resolve uses Claude's multimodal capabilities to analyze thousands of equipment images, correlate sensor readings, and connect patterns across visual inspections and operational data to catch problems before they become failures.
 
-The Model Context Protocol (MCP), built and open-sourced by Anthropic, facilitates easier connections between systems—including legacy infrastructure that has traditionally been challenging to integrate. This enables Claude to bridge data silos that have long complicated industrial operations. And [Skills by Claude](https://www.claude.com/blog/skills) helps IFS manage the complex context that comes with decades of industrial data—ensuring engineers get relevant, accurate information without drowning in documentation.
+The Model Context Protocol (MCP), built and open-sourced by Anthropic, facilitates easier connections between systems—including legacy infrastructure that has traditionally been challenging to integrate. This enables Claude to bridge data silos that have long complicated industrial operations. And [Skills by Claude](https://claude.com/resources/articles/skills) helps IFS manage the complex context that comes with decades of industrial data—ensuring engineers get relevant, accurate information without drowning in documentation.
 
 "We're working in environments where safety and compliance aren't optional," said Kriti Sharma, CEO of IFS Nexus Black. "If you don't build AI safety-first in our world, lives are put at risk."
 
@@ -86,6 +86,9 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 ## Related stories
 
 
+### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
+
+
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
 
@@ -94,9 +97,6 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ### Rocket Money on building agents that fix their own code
 
-
-### How Rocket Money built its personal finance agent with Claude
-
 [](https://www.claude.com/)
 
 © 2026 Anthropic PBC
@@ -104,9 +104,9 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -136,7 +136,7 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -148,6 +148,7 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -159,8 +160,10 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -180,7 +183,9 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
@@ -223,9 +228,9 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../14-Connectors/claude-for-slack.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -255,7 +260,7 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ## Enterprise
 
-- [Overview](enterprise.md)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -267,6 +272,7 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ## Industries
 
+- [Financial advisors](financial-advisors.md)
 - [Financial services](finance.md)
 - [Government](government.md)
 - [Healthcare](healthcare.md)
@@ -278,8 +284,10 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ## Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
 - [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
@@ -299,7 +307,9 @@ Resolve represents the first major product from IFS Nexus Black's work with Anth
 
 ## Resources
 
-- [Blog](https://www.claude.com/blog)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
 - [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)

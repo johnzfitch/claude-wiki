@@ -2,7 +2,7 @@
 title: "Workspaces - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/workspaces"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:38Z"
+fetched_at: "2026-10-04T08:32:48Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -82,18 +84,18 @@ Key characteristics:
 
 - **Workspace identifiers** use the `wrkspc_` prefix (for example, `wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ`)
 - **Maximum 100 workspaces** per organization by default (archived workspaces don't count); contact your account team if you need more
-- **Default Workspace** has a `wrkspc_` ID like any other workspace (returned in the [`anthropic-workspace-id` response header](#identify-the-workspace-behind-an-api-response) and accepted by [Get Workspace](../Admin/beta-organization-workspaces-retrieve.md)), but it doesn't appear in [List Workspaces](../Admin/beta-organization-workspaces-list.md) results, and API keys, usage reports, and cost reports show `null` for its `workspace_id`, as do all-workspaces API keys (an API key's `scope` field tells them apart; for a key bound to the Default Workspace it carries the real ID)
+- **Default Workspace** has a `wrkspc_` ID like any other workspace (returned in the [`anthropic-workspace-id` response header](#identify-the-workspace-behind-an-api-response) and accepted by [Get Workspace](../Admin/beta-organization-workspaces-retrieve.md)), but it appears in [List Workspaces](../Admin/beta-organization-workspaces-list.md) results only when you pass `include_default=true`, and API keys, usage reports, and cost reports show `null` for its `workspace_id`, as do all-workspaces API keys (an API key's `scope` field tells them apart; for a key bound to the Default Workspace it carries the real ID)
 - **API keys** can be scoped to a single workspace. In this case, they can only access resources within that workspace. Some API keys can be granted permissions across multiple workspaces, and provide a [workspace ID header](manage-claude-authentication.md#select-a-workspace) to access resources within that workspace
 
 ### Claude Code workspace
 
-When a member of your organization first signs in to [Claude Code](https://platform.claude.com/docs/01-Getting-Started/overview.md) with their Claude Console account, Anthropic automatically creates a **Claude Code** workspace in the organization and adds that member to it. Every subsequent member who signs in to Claude Code is added the same way.
+When a member of your organization first signs in to [Claude Code](../../02-Claude-Code-CLI/code-home.md) with their Claude Console account, Anthropic automatically creates a **Claude Code** workspace in the organization and adds that member to it. Every subsequent member who signs in to Claude Code is added the same way.
 
 The Claude Code workspace keeps Claude Code traffic separate from your other API workloads:
 
 - Claude Code mints a per-user API key in this workspace at sign-in. You cannot create keys in it manually from the Console.
 - A Claude Code key stops working if its owner is removed from the workspace or organization, unlike a workspace key.
-- Claude Code usage is rate-limited separately, and admins can cap its share of the organization's limits under [Settings \> Workspaces](usage-limits.md).
+- Claude Code usage is rate-limited separately, and admins can cap its share of the organization's limits under [Settings \> Workspaces](playground.md).
 - It is the only workspace that supports per-user monthly spend limits.
 
 
@@ -117,7 +119,7 @@ Members can have different roles in each workspace, allowing fine-grained access
 - **Organization admins** automatically receive Workspace Admin access to all workspaces
 - **Organization billing members** automatically receive Workspace Billing access to all workspaces
 - **Organization users and developers** must be explicitly added to each workspace
-- **Service accounts** are added to workspaces from the service account's page in [Settings → Service accounts](https://platform.claude.com/settings/service-accounts) or from the workspace's **Service accounts** tab
+- **Service accounts** are added to workspaces in [Settings \> Service accounts](https://platform.claude.com/settings/service-accounts): select **Add to workspace** in the account's menu or on its own page. To see the accounts in one workspace, filter the list by workspace.
 
 
 
@@ -131,7 +133,7 @@ Only organization admins can create workspaces. Organization users and developer
 
 ### Using the Console
 
-Create and manage workspaces in the [Claude Console](usage-limits.md).
+Create and manage workspaces in the [Claude Console](playground.md).
 
 #### Create a workspace
 
@@ -439,7 +441,7 @@ Some resources are managed differently:
 - **[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)** are managed with a `workspace:manage_tunnels` OAuth token obtained through [Workload Identity Federation](manage-claude-workload-identity-federation.md), not an API key. Tunnels are created in a workspace, and the Console **MCP tunnels** list and the Managed Agent server picker show tunnels in the current workspace only; the cap of 10 active tunnels applies organization-wide. Tunnel management requires a role with tunnel management permissions; organization developers can view but not change them.
 - **Workspaces** themselves and **organization members** are managed at the organization level through the [Admin API](manage-claude-admin-api.md), using an Admin API key, an `org:admin` OAuth token, or a personal or service account key that isn't scoped to a specific workspace.
 
-To look up your organization's workspace IDs, call the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint or find them in the [Claude Console](usage-limits.md).
+To look up your organization's workspace IDs, call the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint (pass `include_default=true` to include the Default Workspace) or find them in the [Claude Console](playground.md).
 
 
 
@@ -508,8 +510,8 @@ With the workspace ID from a response, you can:
 
 - Confirm which workspace's usage, cost, and [rate limits](../Endpoints/rate-limits.md) the request counted toward
 - Match it against the `workspace_id` field in [Usage and Cost API](manage-claude-usage-cost-api.md) reports and on [Admin API](manage-claude-admin-api.md) objects such as API keys (both report `null` for the Default Workspace, as API keys also do for all-workspaces keys; an API key's `scope` field tells the two apart and, for a key bound to one workspace, carries that workspace's real ID)
-- Check whether it's your Default Workspace's ID by passing it to [Get Workspace](../Admin/beta-organization-workspaces-retrieve.md) with an [Admin API key](manage-claude-admin-api-keys.md): the Default Workspace comes back with `"name": "Default"`, even though [List Workspaces](../Admin/beta-organization-workspaces-list.md) omits it
-- Open that workspace in the [Console](usage-limits.md) to find the request's resources, such as sessions, files, message batches, and skills
+- Check whether it's your Default Workspace's ID by passing it to [Get Workspace](../Admin/beta-organization-workspaces-retrieve.md) with an [Admin API key](manage-claude-admin-api-keys.md): the Default Workspace comes back with `"name": "Default"`, even though [List Workspaces](../Admin/beta-organization-workspaces-list.md) omits it unless you pass `include_default=true`
+- Open that workspace in the [Console](playground.md) to find the request's resources, such as sessions, files, message batches, and skills
 
 ## Workspace limits
 
@@ -519,8 +521,8 @@ You can set custom spend and rate limits for each workspace to protect against o
 
 You can set workspace limits lower than (but not higher than) your organization's limits:
 
-- **Spend limits:** Cap monthly spending for a workspace. Set these on the workspace's **Spend limits** settings tab in the [Claude Console](usage-limits.md).
-- **Rate limits:** Limit requests per minute, input tokens per minute, or output tokens per minute. Set these on the workspace's **Rate limits** settings tab in the [Claude Console](usage-limits.md).
+- **Spend limits:** Cap monthly spending for a workspace. Set these on the workspace's **Spend limits** settings tab in the [Claude Console](playground.md).
+- **Rate limits:** Limit requests per minute, input tokens per minute, or output tokens per minute. Set these on the workspace's **Rate limits** settings tab in the [Claude Console](playground.md).
 
 
 
@@ -611,7 +613,7 @@ Create workspaces for specific projects or products to track usage and costs sep
 
 ### What's the Default Workspace?
 
-Every organization has a "Default Workspace" that cannot be renamed, archived, or deleted. Like every workspace, it has a `wrkspc_` ID: the API returns it in the [`anthropic-workspace-id` response header](#identify-the-workspace-behind-an-api-response), and you can pass it to [Get Workspace](../Admin/beta-organization-workspaces-retrieve.md) and [Update Workspace](../Admin/beta-organization-workspaces-update.md). It has no member list of its own, because access to it follows each member's organization role. It doesn't appear in [List Workspaces](../Admin/beta-organization-workspaces-list.md) results, and API keys, usage reports, and cost reports that belong to it show `null` for `workspace_id`, as do all-workspaces API keys; an API key's `scope` field tells the two apart and, for a key that belongs to the Default Workspace, carries its real ID.
+Every organization has a "Default Workspace" that cannot be renamed, archived, or deleted. Like every workspace, it has a `wrkspc_` ID: the API returns it in the [`anthropic-workspace-id` response header](#identify-the-workspace-behind-an-api-response), and you can pass it to [Get Workspace](../Admin/beta-organization-workspaces-retrieve.md) and [Update Workspace](../Admin/beta-organization-workspaces-update.md). It has no member list of its own, because access to it follows each member's organization role. It appears in [List Workspaces](../Admin/beta-organization-workspaces-list.md) results only when you pass `include_default=true`, and API keys, usage reports, and cost reports that belong to it show `null` for `workspace_id`, as do all-workspaces API keys; an API key's `scope` field tells the two apart and, for a key that belongs to the Default Workspace, carries its real ID.
 
 ### What's the Claude Code workspace?
 

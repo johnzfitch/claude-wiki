@@ -2,7 +2,7 @@
 title: "Microsoft Entra ID SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917889-microsoft-entra-id-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:47Z"
+fetched_at: "2026-10-10T06:25:15Z"
 tags: ["enterprise"]
 ---
 

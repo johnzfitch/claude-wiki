@@ -2,7 +2,7 @@
 title: "Use skills in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:32:33Z"
+fetched_at: "2026-10-10T06:28:05Z"
 tags: ["claude-code", "security", "skills"]
 ---
 

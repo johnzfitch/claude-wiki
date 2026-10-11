@@ -2,7 +2,7 @@
 title: "Use interactive connectors in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-30T06:32:43Z"
+fetched_at: "2026-10-10T06:28:11Z"
 tags: ["connectors", "enterprise", "mcp", "security"]
 ---
 

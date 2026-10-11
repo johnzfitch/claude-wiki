@@ -2,7 +2,7 @@
 title: "Ping Identity SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917902-ping-identity-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:48Z"
+fetched_at: "2026-10-10T06:24:39Z"
 tags: ["enterprise"]
 ---
 
@@ -63,7 +63,7 @@ Start the SSO setup flow there and keep it open alongside your Ping admin consol
 
 3.  Map `emails[primary].value` to the PingOne **Email Address** attribute—the same attribute used in SAML.
 
-**Critical:** Ensure SAML and SCIM use identical attribute sources. See **[Ping Identity SSO/SCIM email mismatch](ping-identity-sso-scim-email-mismatch.md)** for troubleshooting.
+**Critical:** Ensure SAML and SCIM use identical attribute sources. See **[Ping Identity SSO/SCIM email mismatch](https://support.claude.com/en/articles/13917875)** for troubleshooting.
 
 ### Step 4 — Assign population
 

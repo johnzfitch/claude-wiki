@@ -1,8 +1,8 @@
 ---
 title: "Export your organization's data | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13346720"
+source_url: "https://support.claude.com/en/articles/13346720-how-can-i-export-my-organization-s-data"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:41Z"
+fetched_at: "2026-10-10T06:24:36Z"
 tags: ["enterprise"]
 ---
 
@@ -43,4 +43,4 @@ Please note:
 
 - If your link expires, you can always request a new one by repeating the export process.
 
-If you're an Enterprise Primary Owner looking to export audit logs, see **[How to access audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**.
+If you're an Enterprise Primary Owner looking to export audit logs, see **[How to access audit logs](how-to-access-audit-logs.md)**.

@@ -562,7 +562,7 @@ npx cloudflared tunnel --url http://localhost:3001
 ```
 
 Copy the generated URL (e.g., `https://random-name.trycloudflare.com`) and add it
-as a [custom connector](../../14-Connectors/getting-started-with-custom-integrations-using-remote-mcp.md)
+as a [custom connector](https://support.anthropic.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp)
 in Claude - click on your profile, go to **Settings**, **Connectors**, and
 finally **Add custom connector**.
 

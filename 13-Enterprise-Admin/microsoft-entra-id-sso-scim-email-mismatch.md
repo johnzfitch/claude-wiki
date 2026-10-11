@@ -2,7 +2,7 @@
 title: "Microsoft Entra ID SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917829-microsoft-entra-id-sso-scim-email-mismatch"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:46Z"
+fetched_at: "2026-10-10T06:24:39Z"
 tags: ["enterprise"]
 ---
 

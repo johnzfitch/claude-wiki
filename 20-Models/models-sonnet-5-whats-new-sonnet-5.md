@@ -153,7 +153,7 @@ The largest gains over Claude Sonnet 4.6 are in coding and agentic tasks. For be
 
 ## Cybersecurity safeguards
 
-Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused. Refusals return as a successful HTTP 200 response with `stop_reason: "refusal"`, not an error. See [Real-time cyber safeguards on Claude Opus and Sonnet](real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for what the safeguards block and how legitimate security work can apply to the Cyber Verification Program.
+Claude Sonnet 5 is the first Sonnet-tier model with real-time cybersecurity safeguards. Requests that involve prohibited or high-risk cybersecurity topics may be refused. Refusals return as a successful HTTP 200 response with `stop_reason: "refusal"`, not an error. See [Real-time cyber safeguards on Claude Opus and Sonnet](https://platform.claude.com/docs/en/models/sonnet-5/real-time-cyber-safeguards-on-claude-opus-and-sonnet-3e3f54fb4c.md) for what the safeguards block and how legitimate security work can apply to the Cyber Verification Program.
 
 ## Pricing
 
@@ -170,7 +170,7 @@ At launch, Claude Sonnet 5 is available on:
 - **Google Cloud:** available through [Claude on Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md).
 - **Microsoft Foundry:** available through [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md).
 
-Claude Sonnet 5 supports [zero data retention](../04-API-Reference/Other/manage-claude-api-and-data-retention.md) for organizations with ZDR agreements.
+Claude Sonnet 5 supports [zero data retention](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md) for organizations with ZDR agreements.
 
 ## Migration guide
 

@@ -1,8 +1,8 @@
 ---
 title: "Understanding your billing address and tax calculation | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12997130"
+source_url: "https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:31:43Z"
+fetched_at: "2026-10-10T06:28:08Z"
 tags: ["billing"]
 ---
 
@@ -25,7 +25,7 @@ You can update your billing address directly in Settings → Billing → Billing
 
 ### API (usage tiers / self-serve)
 
-Your billing address is tied to your payment method. Update your payment method by navigating to **[Settings \> Billing in the Claude Console](../04-API-Reference/Other/usage-limits.md)** and clicking the pencil icon to the right of your current card number to change your billing address.
+Your billing address is tied to your payment method. Update your payment method by navigating to **[Settings \> Billing in the Claude Console](../04-API-Reference/Other/playground.md)** and clicking the pencil icon to the right of your current card number to change your billing address.
 
 ### Paid API contracts
 

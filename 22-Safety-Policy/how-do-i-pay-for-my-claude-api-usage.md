@@ -2,20 +2,18 @@
 title: "How do I pay for my Claude API usage? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:33:12Z"
+fetched_at: "2026-10-10T06:28:28Z"
 tags: ["api", "safety"]
 ---
 
 # How do I pay for my Claude API usage?
-
-August 19, 2026
 
 
 This article explains how billing works for the Claude API, the playground, and Claude Code when you use them through a Claude Console account. Most organizations pay with prepaid usage credits. Organizations with an invoicing arrangement are billed monthly instead.
 
 ## Prepaid usage credits
 
-Claude API and playground usage is billed through prepaid usage credits. Buy credits before you use the API, and they're applied to your usage according to our current **[pricing](../17-Billing-Plans/pricing.md#api)**. Credits cover API access, playground usage, and Claude Code.
+Claude API and playground usage is billed through prepaid usage credits. Buy credits before you use the API, and they're applied to your usage according to our current **[pricing](../17-Billing-Plans/pricing.md#api)**. Purchased credits cover API access, playground usage, and Claude Code.
 
 You're billed only for successful API calls and completed tasks. Failed requests aren't charged.
 
@@ -23,11 +21,17 @@ You're billed only for successful API calls and completed tasks. Failed requests
 
 If you run out of credits, you can no longer call the API or use the playground until you add more.
 
+## Monthly API credits for Max and Team plans
+
+Claude Max and Team plans include monthly credits for the Claude API. To claim your credits, you link a Claude Console organization to your plan. Your monthly credits are spent before any credits you’ve purchased, and unused credits expire at the end of each billing cycle. Monthly API credits can’t be used in Claude Code or the Claude apps, including for extra usage.
+
+If your organization is invoiced through Anthropic sales, usage beyond the credits is billed as usual. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
+
 ## Buy credits
 
 1.  Log in to the Console with an Admin or Billing role.
 
-2.  Navigate to **[Settings \> Billing](../04-API-Reference/Other/usage-limits.md)**.
+2.  Navigate to **[Settings \> Billing](../04-API-Reference/Other/playground.md)**.
 
 3.  Click "Buy credits."
 
@@ -57,7 +61,7 @@ Some organizations are billed monthly in arrears instead of buying credits upfro
 
 On monthly invoicing, we aggregate your usage across API calls, Console usage, and any other services associated with your account, and bill it at our standard **[pay-as-you-go pricing](../17-Billing-Plans/pricing.md#api)**. At the end of each calendar month, you'll receive an invoice from Stripe. Enter your payment details in Stripe to pay it.
 
-You can view charges for the current billing period on the **[Billing](../04-API-Reference/Other/usage-limits.md)** page in your Console settings.
+You can view charges for the current billing period on the **[Billing](../04-API-Reference/Other/playground.md)** page in your Console settings.
 
 If you need custom rate limits, monthly invoicing, or hands-on support, **[contact our Sales team](https://claude.com/contact-sales)**.
 
@@ -65,7 +69,7 @@ If you need custom rate limits, monthly invoicing, or hands-on support, **[conta
 
 1.  Log in to the Console with an Admin or Billing role.
 
-2.  Navigate to **[Settings \> Billing](../04-API-Reference/Other/usage-limits.md)**.
+2.  Navigate to **[Settings \> Billing](../04-API-Reference/Other/playground.md)**.
 
 3.  Click the pencil icon next to your current payment method.
 

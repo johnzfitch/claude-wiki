@@ -324,7 +324,7 @@ One of the following:
 
 GET/v1/organizations/api_keys/{api_key_id}
 
-Retrieve information about a single API key in your organization, looked up by its ID. This Admin API endpoint requires an Admin API key, is intended for programmatic key management, and never returns the key's secret value. To view or create your own API keys, go to [API keys](../Other/usage-limits.md) in the Claude Console.
+Retrieve information about a single API key in your organization, looked up by its ID. This Admin API endpoint requires an Admin API key, is intended for programmatic key management, and never returns the key's secret value. To view or create your own API keys, go to [API keys](../Other/playground.md) in the Claude Console.
 
 ##### [Update API Key](https://platform.claude.com/docs/en/api/http/beta/organization/api_keys/update)
 

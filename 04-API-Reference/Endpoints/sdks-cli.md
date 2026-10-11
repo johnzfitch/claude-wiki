@@ -100,7 +100,7 @@ Open a new terminal for the change to take effect.
 </Tab>
 </Tabs>
 
-Get a key from the [Claude Console](../Other/usage-limits.md). To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url` on any command.
+Get a key from the [Claude Console](../Other/playground.md). To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url` on any command.
 
 ## Send your first request
 

@@ -1,8 +1,8 @@
 ---
 title: "Architecture - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/architecture"
+source_url: "https://modelcontextprotocol.io/specification/draft/architecture"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-09-29T06:30:59Z"
+fetched_at: "2026-10-09T06:27:25Z"
 tags: ["mcp", "mcp-spec"]
 ---
 

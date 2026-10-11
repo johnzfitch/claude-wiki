@@ -2,12 +2,24 @@
 title: "Release notes | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:31:29Z"
+fetched_at: "2026-10-10T06:25:04Z"
 tags: ["news-research"]
 ---
 
 # Release notes
 
+
+## October 2026
+
+### October 7, 2026
+
+**Claude Haiku 5.5 launch**
+
+We just launched Claude Haiku 5.5, the cheapest, fastest, and most capable small model we’ve released, designed for high-volume, cost-sensitive tasks. For more information, see our blog post: **[Claude Haiku 5.5](../15-Claude-AI-Features/claude-haiku-5-5.md)**.
+
+**Monthly API credits for Max and Team plans**
+
+Max and Team plans now include monthly API credits for running your own apps and agents on the Claude Platform. They roll out over a few days. Claim them by linking a Claude Console organization in **Settings \> Billing** (Max) or **Organization settings \> Billing** (Team). Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 ## September 2026
 
@@ -37,7 +49,7 @@ We're rolling out a new Claude experience that makes everything Claude Cowork do
 
 **Create designs, decks, and docs in any conversation**
 
-You can now ask for a design, deck, or document in any conversation with Claude, including in Claude Code and the **Artifacts** tab, and edit it with Claude or directly as you work. Claude Design works inside your conversations with all of its features, including on-canvas editing and importing your design system. Claude Slides gives presentations their own starting point, and Claude Docs is a new way to write living documents with Claude and your team. Artifacts, including Claude Design, Claude Slides, and Claude Docs, are available on every plan, including Free. On Enterprise plans, Claude Design, Claude Slides, and Claude Docs are in beta and off by default until an owner turns them on. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/17153992)** and **[Get started with Claude Docs](../15-Claude-AI-Features/get-started-with-claude-docs.md)**.
+You can now ask for a design, deck, or document in any conversation with Claude, including in Claude Code and the **Artifacts** tab, and edit it with Claude or directly as you work. Claude Design works inside your conversations with all of its features, including on-canvas editing and importing your design system. Claude Slides gives presentations their own starting point, and Claude Docs is a new way to write living documents with Claude and your team. Artifacts, including Claude Design, Claude Slides, and Claude Docs, are available on every plan, including Free. On Enterprise plans, Claude Design, Claude Slides, and Claude Docs are in beta and off by default until an owner turns them on. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/17153992)** and **[Get started with Claude Docs](https://support.claude.com/en/articles/16923645)**.
 
 ### September 15, 2026
 
@@ -63,7 +75,7 @@ We just launched Claude Fable 5.1 and Claude Mythos 5.1, the world’s most adva
 
 **Memory in Claude Cowork, editable topics, and a sensitive topics setting**
 
-Memory now works across chat and Cowork in the cloud. Everything Claude remembers is listed under **Topics** in **[Settings \> Memory](https://claude.ai/settings/memory)**, where you can edit or delete any item. Topics such as health or beliefs stay out of memory unless you turn on **Include sensitive topics in memory**. Memory is on by default for Free, Pro, and Max plans and off by default for Team and Enterprise organizations. See **[Use Claude's chat search and memory to build on previous context](https://support.claude.com/en/articles/11817273)**.
+Memory now works across chat and Cowork in the cloud. Everything Claude remembers is listed under **Topics** in **[Settings \> Memory](https://claude.ai/settings/memory)**, where you can edit or delete any item. Topics such as health or beliefs stay out of memory unless you turn on **Include sensitive topics in memory**. Memory is on by default for Free, Pro, and Max plans and off by default for Team and Enterprise organizations. See **[Use Claude's chat search and memory to build on previous context](../15-Claude-AI-Features/use-claudes-chat-search-and-memory-to-build-on-previous-context-claude-help-center.md)**.
 
 ### August 6, 2026
 
@@ -85,7 +97,7 @@ We launched Claude Opus 5, a thoughtful and proactive model that comes close to 
 
 **HIPAA configuration for your Claude organizations is now self-serve**
 
-You can now manage HIPAA readiness for your Claude organizations yourself. This applies to both Claude Enterprise and the Claude Platform (API). In each product, an eligible admin can review the Business Associate Agreement (BAA), download the implementation guide, and enable the HIPAA configuration in a single flow. For more information, refer to **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)** and **[HIPAA readiness for Claude API](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#hipaa-readiness)**.
+You can now manage HIPAA readiness for your Claude organizations yourself. This applies to both Claude Enterprise and the Claude Platform (API). In each product, an eligible admin can review the Business Associate Agreement (BAA), download the implementation guide, and enable the HIPAA configuration in a single flow. For more information, refer to **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[HIPAA readiness for Claude API](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#hipaa-readiness)**.
 
 ### July 10, 2026
 
@@ -97,17 +109,17 @@ Memory on Claude now works as a set of individual, categorized entries that Clau
 
 **A new way to reflect with Claude**
 
-Your monthly recap is a new feature at **Settings \> Reflect** that shows you the topics you spent time on, your most active day and peak hour, and observations about how you work with Claude. It's in beta on Free, Pro, and Max plans on the web and Claude Desktop, and requires memory to be on. Alongside it, **Settings \> Time and focus** lets you set optional break reminders and quiet hours. For more information, refer to **[See your monthly recap](../15-Claude-AI-Features/see-your-monthly-recap.md)** and **[Set break reminders and quiet hours](https://support.claude.com/en/articles/15672868)**.
+Your monthly recap is a new feature at **Settings \> Reflect** that shows you the topics you spent time on, your most active day and peak hour, and observations about how you work with Claude. It's in beta on Free, Pro, and Max plans on the web and Claude Desktop, and requires memory to be on. Alongside it, **Settings \> Time and focus** lets you set optional break reminders and quiet hours. For more information, refer to **[See your monthly recap](https://support.claude.com/en/articles/15672559)** and **[Set break reminders and quiet hours](https://support.claude.com/en/articles/15672868)**.
 
 ### July 7, 2026
 
 **Claude Cowork on web and mobile**
 
-Claude Cowork is now available on web and mobile in addition to desktop. We are rolling this capability out over the next several weeks starting with the Max plan, with more plans to follow. Cowork runs your sessions remotely (in beta), so your sessions and files are saved to your Claude account and go where you go, on any device. Work continues when you close your laptop, and scheduled tasks run with no device online. Chat and Cowork also share one home now, with one place for your projects and artifacts across both. For more information, see **[Use Claude Cowork on web, desktop, and mobile](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md)**.
+Claude Cowork is now available on web and mobile in addition to desktop. We are rolling this capability out over the next several weeks starting with the Max plan, with more plans to follow. Cowork runs your sessions remotely (in beta), so your sessions and files are saved to your Claude account and go where you go, on any device. Work continues when you close your laptop, and scheduled tasks run with no device online. Chat and Cowork also share one home now, with one place for your projects and artifacts across both. For more information, see **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
 **Write tools for the Microsoft 365 connector**
 
-The Microsoft 365 connector now goes beyond search. With write tools enabled, Claude can draft, send, and organize email, manage calendar events, update mailbox settings, and create and update files in OneDrive and SharePoint. Read and search tools work as before, and Teams remains read-only. Before members can use write tools, a Microsoft Entra administrator needs to consent to the updated permission set and an admin needs to enable them for the organization. For more information, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector#h_a51d877afd)** and **[Connect to Microsoft 365](../14-Connectors/connect-to-microsoft-365.md)**.
+The Microsoft 365 connector now goes beyond search. With write tools enabled, Claude can draft, send, and organize email, manage calendar events, update mailbox settings, and create and update files in OneDrive and SharePoint. Read and search tools work as before, and Teams remains read-only. Before members can use write tools, a Microsoft Entra administrator needs to consent to the updated permission set and an admin needs to enable them for the organization. For more information, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector#h_a51d877afd)** and **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774)**.
 
 ### July 1, 2026
 
@@ -116,7 +128,7 @@ We are restoring access to Claude Fable 5 and Claude Mythos 5. See **[our statem
 
 **Model entitlements for Enterprise plans (beta)**
 
-Admins on Enterprise plans can now control what models their users have access to, and what effort level settings they can use. For more information, see **[Manage model access for your organization](../13-Enterprise-Admin/manage-model-access-for-your-organization-claude-help-center.md)**.
+Admins on Enterprise plans can now control what models their users have access to, and what effort level settings they can use. For more information, see **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**.
 
 ------------------------------------------------------------------------
 
@@ -160,7 +172,7 @@ We launched Claude Fable 5, a Mythos-class model that we’ve made safe for gene
 
 **Enterprise plans can manage admin permissions with custom roles**
 
-We extended the existing custom roles framework by adding admin permissions. Admin permissions give members access to specific administrative areas, like billing or privacy, without the need to make them Owners. For more information, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_fde60b08bd)**.
+We extended the existing custom roles framework by adding admin permissions. Admin permissions give members access to specific administrative areas, like billing or privacy, without the need to make them Owners. For more information, see **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_fde60b08bd)**.
 
 ------------------------------------------------------------------------
 
@@ -174,7 +186,7 @@ We’ve upgraded Claude Opus to a new version. Claude Opus 4.8 shows improvement
 
 **Enterprise plans can manage connector access with custom roles**
 
-We added connector permissions to extend the existing custom roles framework and allow administrators to control which connectors, and which individual tools on those connectors, are available to each custom role. For more information, see **[Manage custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans#h_979e558d00)**.
+We added connector permissions to extend the existing custom roles framework and allow administrators to control which connectors, and which individual tools on those connectors, are available to each custom role. For more information, see **[Manage custom roles on Enterprise plans](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_979e558d00)**.
 
 ### May 21, 2026
 
@@ -190,7 +202,7 @@ We introduced Claude Compliance API integrations with notable security and compl
 
 **Claude Design by Anthropic Labs**
 
-With Opus 4.7, we also launched Claude Design, a new **[Anthropic Labs](introducing-anthropic-labs.md)** product that lets you collaborate with Claude to create visual outputs like designs, prototypes, slides, and one-pagers. For more information, see **[Get started with Claude Design](https://support.claude.com/en/articles/14604416-get-started-with-claude-design)**.
+With Opus 4.7, we also launched Claude Design, a new **[Anthropic Labs](introducing-anthropic-labs.md)** product that lets you collaborate with Claude to create visual outputs like designs, prototypes, slides, and one-pagers. For more information, see **[Get started with Claude Design](../15-Claude-AI-Features/get-started-with-claude-design.md)**.
 
 ### April 16, 2026
 
@@ -208,11 +220,11 @@ Claude Cowork is now generally available on macOS and Windows through the Claude
 
 - **Usage analytics for Claude Cowork.** For more information, see **[View usage analytics for Team and Enterprise plans](../17-Billing-Plans/view-usage-analytics-for-team-and-enterprise-plans.md)**.
 
-- **Claude Cowork OpenTelemetry support.** For more information, see **[Monitor Claude Cowork activity with OpenTelemetry](../15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry.md)**.
+- **Claude Cowork OpenTelemetry support.** For more information, see **[Monitor Claude Cowork activity with OpenTelemetry](https://support.claude.com/en/articles/14477985-monitor-cowork-activity-with-opentelemetry)**.
 
 **Role-based access controls for Enterprise plans**
 
-Admins can now organize users into groups, manually or via SCIM from your identity provider, and assign each group a custom role defining which Claude capabilities its members can use. Turn Claude Cowork on for specific teams, restrict features by department and adjust as adoption grows. Learn more about **[setting up role-based permissions](../17-Billing-Plans/set-up-role-based-entitlements-on-enterprise-plans.md)**, **[managing group spend limit](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**[s](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans), and **[managing custom roles](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)**.
+Admins can now organize users into groups, manually or via SCIM from your identity provider, and assign each group a custom role defining which Claude capabilities its members can use. Turn Claude Cowork on for specific teams, restrict features by department and adjust as adoption grows. Learn more about **[setting up role-based permissions](https://support.claude.com/en/articles/13930458-set-up-role-based-entitlements-on-enterprise-plans)**, **[managing group spend limit](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**[s](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md), and **[managing custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
 
 ------------------------------------------------------------------------
 
@@ -238,7 +250,7 @@ Users on Pro and Max plans can give Claude access to computer use. Claude can op
 
 **Control Cowork from your phone with a persistent thread (research preview for Pro/Max)**
 
-Users on Pro and Max plans can access a persistent agent thread via Claude Desktop or Claude for iOS/Android to manage tasks in Cowork. We're rolling this out to Max plans starting today, and Pro plans over the next two days. For more information, see **[Assign tasks to Claude from anywhere in Cowork](https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork)**.
+Users on Pro and Max plans can access a persistent agent thread via Claude Desktop or Claude for iOS/Android to manage tasks in Cowork. We're rolling this out to Max plans starting today, and Pro plans over the next two days. For more information, see **[Assign tasks to Claude from anywhere in Cowork](../21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md)**.
 
 # An error occurred.
 
@@ -272,7 +284,7 @@ Memory from chat history is now available for all Claude users, including free u
 
 - **[Use Claude’s chat search and memory to build on previous context](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context#h_c1c0b33879)**
 
-- **[Import and export your memory from Claude](https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude)**
+- **[Import and export your memory from Claude](../15-Claude-AI-Features/importing-and-exporting-your-memory-from-claude.md)**
 
 ------------------------------------------------------------------------
 
@@ -282,7 +294,7 @@ Memory from chat history is now available for all Claude users, including free u
 
 **Scheduled tasks in Cowork**
 
-We introduced the ability to create and schedule both recurring and on-demand tasks in Cowork, as well as a new Customize section in Claude Desktop that groups skills, plugins, and connectors in one place. For more information, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
+We introduced the ability to create and schedule both recurring and on-demand tasks in Cowork, as well as a new Customize section in Claude Desktop that groups skills, plugins, and connectors in one place. For more information, see **[Schedule recurring tasks in Cowork](../15-Claude-AI-Features/schedule-recurring-tasks-in-cowork.md)**.
 
 # An error occurred.
 
@@ -366,13 +378,13 @@ See the following articles for more information:
 
 - **[Using Claude with iOS Apps](../16-Mobile-Desktop/using-claude-with-ios-apps.md)**
 
-- **[Using Claude with Android Apps](https://support.claude.com/en/articles/11869629-using-claude-with-android-apps)**
+- **[Using Claude with Android Apps](../16-Mobile-Desktop/using-claude-with-android-apps.md)**
 
 **HIPAA-ready Enterprise plans**
 
 We now offer a HIPAA-ready version of Claude that is available for organizations with Enterprise plans that choose to process protected health information (PHI) through Claude.
 
-See **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans)** for more information.
+See **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** for more information.
 
 ------------------------------------------------------------------------
 
@@ -492,9 +504,9 @@ Users on Enterprise plans can leverage memory; Claude can now remember relevant 
 
 - **[Using Claude’s chat search and memory to build on previous context](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)**
 
-- **[Importing and exporting your memory from Claude](https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude)**
+- **[Importing and exporting your memory from Claude](../15-Claude-AI-Features/importing-and-exporting-your-memory-from-claude.md)**
 
-- **[Using incognito chats](../15-Claude-AI-Features/using-incognito-chats.md)**
+- **[Using incognito chats](https://support.claude.com/en/articles/12260368-using-incognito-chats)**
 
 ### September 16, 2025
 
@@ -514,11 +526,11 @@ Claude in Chrome expanded to 10,000 Max plan users with the release of new capab
 
 Claude can now remember relevant context from your chats and will generate a memory summary. Incognito chats give you a way to exclude conversations from Claude’s memory. Refer to the following new articles for more information:
 
-- **[Using Claude’s chat search and memory to build on previous context](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md)**
+- **[Using Claude’s chat search and memory to build on previous context](https://support.anthropic.com/en/articles/11817273-how-does-claude-s-memory-work)**
 
-- **[Importing and exporting your memory from Claude](https://support.anthropic.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude)**
+- **[Importing and exporting your memory from Claude](../15-Claude-AI-Features/importing-and-exporting-your-memory-from-claude.md)**
 
-- **[Using incognito chats](../15-Claude-AI-Features/using-incognito-chats.md)**
+- **[Using incognito chats](https://support.anthropic.com/en/articles/12260368-using-incognito-chats)**
 
 ### September 9, 2025
 
@@ -538,7 +550,7 @@ Claude can now connect with iOS and Android apps to draft calendar events, help 
 
 - **[Using Claude with iOS Apps](../16-Mobile-Desktop/using-claude-with-ios-apps.md)**
 
-- **[Using Claude with Android Apps](https://support.anthropic.com/en/articles/11869629-using-claude-with-android-apps)**
+- **[Using Claude with Android Apps](../16-Mobile-Desktop/using-claude-with-android-apps.md)**
 
 ------------------------------------------------------------------------
 
@@ -578,13 +590,13 @@ Introduced a premium seat tier for Team and Enterprise plans offering more usage
 
 **Extra usage for Team and Enterprise plans**
 
-A new setting allows Team and Enterprise plan users to purchase more usage to continue chatting with Claude or using Claude Code after hitting their usage limit. See **[Extra Usage for Team and Enterprise Plans](../17-Billing-Plans/manage-usage-credits-for-team-and-seat-based-enterprise-plans.md)**.
+A new setting allows Team and Enterprise plan users to purchase more usage to continue chatting with Claude or using Claude Code after hitting their usage limit. See **[Extra Usage for Team and Enterprise Plans](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-enterprise-plans)**.
 
 ### August 15, 2025
 
 **Ability to change monthly Team plan billing to annual**
 
-Allowing Team plan organizations with monthly billing to upgrade to annual billing. See **[How to change your Team plan from monthly to annual billing](https://support.claude.com/en/articles/12083917-how-to-change-your-team-plan-from-monthly-to-annual-billing)**.
+Allowing Team plan organizations with monthly billing to upgrade to annual billing. See **[How to change your Team plan from monthly to annual billing](../17-Billing-Plans/how-to-change-your-team-plan-from-monthly-to-annual-billing.md)**.
 
 ### August 12, 2025
 

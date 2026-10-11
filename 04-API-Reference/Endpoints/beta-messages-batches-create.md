@@ -2,7 +2,7 @@
 title: "Create a Message Batch - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/batches/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:38:43Z"
+fetched_at: "2026-10-04T08:32:25Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -111,24 +111,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -164,6 +147,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -254,7 +258,7 @@ Send a batch of Message creation requests.
 
 The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.
 
-Learn more about the Message Batches API in our [user guide](https://platform.claude.com/docs/en/api/beta/messages/Guides/build-with-claude-batch-processing-58f98b4064.md)
+Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Headers
 
@@ -271,14 +275,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -472,6 +468,14 @@ One of the following:
 
 
 
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
+
+
+
 "anthropic-user-profile-id": optional string
 
 
@@ -526,7 +530,7 @@ params: object{ max_tokens, messages, model, 23 more }
 
 Messages API creation parameters for the individual request.
 
-See the [Messages API reference](https://platform.claude.com/docs/en/api/beta/messages/batches/api-messages-2dd213ca95.md) for full documentation on available parameters.
+See the [Messages API reference](messages.md) for full documentation on available parameters.
 
 
 
@@ -605,7 +609,7 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](https://platform.claude.com/docs/en/api/beta/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
 
 There is a limit of 100,000 messages in a single request.
 
@@ -989,35 +993,11 @@ Identifies one hop of a fallback transition.
 
 
 
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
-
-
-
 to: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
 Identifies one hop of a fallback transition.
-
-
-
-model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
-
-The model that will complete your prompt.
-
-See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
-
-One of the following:
 
 trigger: optional unknown
 
@@ -1116,6 +1096,136 @@ The model that will complete your prompt.
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 One of the following:
+
+"claude-sonnet-5-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5-1"
+
+
+
+Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
+
+"claude-opus-5-5"
+
+
+
+Powerful intelligence for coding, knowledge work, and long-running agents
+
+"claude-mythos-5-1"
+
+
+
+Our most capable model for cybersecurity and biology research, available through trusted access programs
+
+"claude-sonnet-5"
+
+
+
+Efficient model for coding and agents
+
+"claude-fable-5"
+
+
+
+Next generation of intelligence for the hardest knowledge work and coding problems
+
+"claude-mythos-5"
+
+
+
+Most capable model for cybersecurity and biology research
+
+"claude-opus-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-8"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-7"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-6"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-sonnet-4-6"
+
+
+
+Best combination of speed and intelligence
+
+"claude-haiku-4-5"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-haiku-4-5-20251001"
+
+
+
+Fastest model with near-frontier intelligence
+
+"claude-opus-4-5"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+"claude-opus-4-5-20251101"
+
+
+
+Powerful intelligence for long-running agents and coding
+
+
+
+"claude-mythos-preview"⁠Deprecated
+
+
+
+New class of intelligence, strongest in coding and cybersecurity
+
+Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+
+
+"claude-sonnet-4-5-20250929"⁠Deprecated
+
+
+
+High-performance model for agents and coding
+
+Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+
+string
+
+
 
 
 
@@ -1436,7 +1546,7 @@ service_tier: optional "auto" or "standard_only"
 
 Determines whether to use priority capacity (if available) or standard capacity for this request.
 
-Anthropic offers different levels of service for your API requests. See [service-tiers](https://platform.claude.com/docs/en/api/beta/messages/batches/api-service-tiers-165fc24251.md) for details.
+Anthropic offers different levels of service for your API requests. See [service-tiers](service-tiers.md) for details.
 
 One of the following:
 
@@ -1484,9 +1594,9 @@ stream: optional boolean
 
 
 
-Whether to incrementally stream the response using server-sent events.
+Whether to incrementally stream the response using server-sent events. When `true`, SDKs return a raw event stream.
 
-See [streaming](../Guides/build-with-claude-streaming.md) for details.
+In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messages.stream()`. It sets `stream` for you and accumulates the events into the final message. See [Streaming with SDKs](../Guides/build-with-claude-streaming.md#streaming-with-sdks) for an example in each language.
 
 
 
@@ -1496,7 +1606,7 @@ system: optional string or array of [BetaTextBlockParam](http-beta-messages.md#b
 
 System prompt.
 
-A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://platform.claude.com/docs/en/api/beta/10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices-a71861e842.md#give-claude-a-role).
+A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
 
 One of the following:
 
@@ -1843,7 +1953,7 @@ Definitions of tools that the model may use.
 
 If you include `tools` in your API request, the model may return `tool_use` content blocks that represent the model's use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using `tool_result` content blocks.
 
-There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](https://platform.claude.com/docs/en/api/beta/messages/api-web-search.md)).
+There are two types of tools: **client tools** and **server tools**. The behavior described below applies to client tools. For [server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md), see their individual documentation as each has its own behavior (e.g., the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)).
 
 Each tool definition includes:
 
@@ -1905,7 +2015,7 @@ You might then run your `get_stock_price` tool with `{"ticker": "^GSPC"}` as an 
 
 Tools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.
 
-See our [guide](https://platform.claude.com/docs/en/api/beta/messages/tool-use-overview.md) for more details.
+See our [guide](../Agents-Tools/agents-and-tools-tool-use-overview.md) for more details.
 
 One of the following:
 

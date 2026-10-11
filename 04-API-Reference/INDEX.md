@@ -1,10 +1,11 @@
 # API Reference
 
-1774 pages. The full text of every page is in [llms.txt](llms.txt).
+1923 pages. The full text of every page is in [llms.txt](llms.txt).
 
 ## About
 
 - [Additional resources - Claude Platform Docs](About/about-claude-additional-resources.md) — Learning resources and documentation formats optimized for AI ingestion.
+- [API credits for Max and Team plans - Claude Platform Docs](About/about-claude-api-credits-for-subscribers.md) — Claim the monthly Claude Platform credits included with Claude Max and Team plans, and learn what they cover.
 - [Classification - Claude Platform Docs](About/about-claude-use-case-guides-classification.md) — Claude excels at processing, understanding, and recognizing patterns in text, images, and data. These capabilities make Claude especially powerful for…
 - [Commerce agent - Claude Platform Docs](About/about-claude-use-case-guides-commerce-agents.md) — Build a shopping agent and a merchant agent on Claude using Claude for commerce, an open-source blueprint with working implementations on the Messages API, the…
 - [Content moderation - Claude Platform Docs](About/about-claude-use-case-guides-content-moderation.md) — Content moderation is a critical aspect of maintaining a safe, respectful, and productive environment in digital applications. This guide discusses how Claude…
@@ -18,83 +19,93 @@
 
 - [Activities - Claude API Reference](Admin/compliance-activities.md) — Count tokens in a Message
 - [Add Federation Rule Workspace - Claude API Reference](Admin/admin-federation-rules-workspaces-create.md) — Count tokens in a Message
-- [Add Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-add.md) — Count tokens in a Message
 - [Add RBAC Group Member - Claude API Reference](Admin/admin-rbac-groups-members-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-add.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Add RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Add Workspace To Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-create.md) — Count tokens in a Message
-- [Add Workspace To Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add Workspace To Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-add.md) — Count tokens in a Message
 - [Admin - Claude API Reference](Admin/http-admin.md) — Count tokens in a Message
 - [Analytics - Claude API Reference](Admin/http-admin-analytics.md) — Count tokens in a Message
 - [Analytics - Claude API Reference](Admin/http-beta-organization-analytics.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [API Keys - Claude API Reference](Admin/admin-api-keys.md) — Count tokens in a Message
-- [API Keys - Claude API Reference](Admin/beta-organization-api-keys.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [API Keys - Claude API Reference](Admin/beta-organization-api-keys.md) — Count tokens in a Message
 - [Approve Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-approve.md) — Count tokens in a Message
 - [Approve Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-approve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Apps - Claude API Reference](Admin/beta-organization-analytics-apps.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Apps - Claude API Reference](Admin/compliance-apps.md) — Count tokens in a Message
 - [Archive Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-archive.md) — Count tokens in a Message
-- [Archive Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-archive.md) — Count tokens in a Message
 - [Archive Federation Rule - Claude API Reference](Admin/admin-federation-rules-archive.md) — Count tokens in a Message
-- [Archive Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-archive.md) — Count tokens in a Message
 - [Archive Service Account - Claude API Reference](Admin/admin-service-accounts-archive.md) — Count tokens in a Message
-- [Archive Service Account - Claude API Reference](Admin/beta-organization-service-accounts-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Service Account - Claude API Reference](Admin/beta-organization-service-accounts-archive.md) — Count tokens in a Message
 - [Archive Tunnel - Claude API Reference](Admin/admin-mcp-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Tunnel - Claude API Reference](Admin/beta-organization-mcp-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Workspace - Claude API Reference](Admin/admin-workspaces-archive.md) — Count tokens in a Message
-- [Archive Workspace - Claude API Reference](Admin/beta-organization-workspaces-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Workspace - Claude API Reference](Admin/beta-organization-workspaces-archive.md) — Count tokens in a Message
 - [Artifacts - Claude API Reference](Admin/beta-organization-analytics-artifacts.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Artifacts - Claude API Reference](Admin/compliance-apps-artifacts.md) — Count tokens in a Message
 - [Artifacts - Claude API Reference](Admin/compliance-code-artifacts.md) — Count tokens in a Message
 - [Artifacts - Claude API Reference](Admin/http-admin-analytics-artifacts.md) — Count tokens in a Message
 - [Attachments - Claude API Reference](Admin/compliance-apps-projects-attachments.md) — Count tokens in a Message
+- [Chat - Claude API Reference](Admin/beta-organization-analytics-apps-chat.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Chat Projects - Claude API Reference](Admin/http-admin-analytics-chat-projects.md) — Count tokens in a Message
 - [Chat Projects - Claude API Reference](Admin/http-beta-organization-analytics-chat-projects.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Chats - Claude API Reference](Admin/compliance-apps-chats.md) — Count tokens in a Message
 - [Code - Claude API Reference](Admin/compliance-code.md) — Count tokens in a Message
 - [Collaborators - Claude API Reference](Admin/compliance-apps-projects-collaborators.md) — Count tokens in a Message
-- [Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings.md) — Count tokens in a Message
 - [Connectors - Claude API Reference](Admin/beta-organization-analytics-connectors.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Connectors - Claude API Reference](Admin/http-admin-analytics-connectors.md) — Count tokens in a Message
 - [Cost - Claude API Reference](Admin/http-admin-analytics-cost.md) — Count tokens in a Message
 - [Cost - Claude API Reference](Admin/http-beta-organization-analytics-cost.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Cost Report - Claude API Reference](Admin/admin-cost-report.md) — Count tokens in a Message
+- [Cost Report - Claude API Reference](Admin/beta-organization-analytics-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Cost Report - Claude API Reference](Admin/beta-organization-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Cost Report - Claude API Reference](Admin/http-beta-organization-analytics-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create External Key - Claude API Reference](Admin/admin-external-keys-create.md) — Count tokens in a Message
-- [Create External Key - Claude API Reference](Admin/beta-organization-external-keys-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create External Key - Claude API Reference](Admin/beta-organization-external-keys-create.md) — Count tokens in a Message
 - [Create Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-create.md) — Count tokens in a Message
-- [Create Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-create.md) — Count tokens in a Message
 - [Create Federation Rule - Claude API Reference](Admin/admin-federation-rules-create.md) — Count tokens in a Message
-- [Create Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-create.md) — Count tokens in a Message
 - [Create Invite - Claude API Reference](Admin/beta-organization-invites-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Invite - Claude API Reference](Admin/platform-claude-com-beta-organization-invites-create.md) — Count tokens in a Message
+- [Create Plugin - Claude API Reference](Admin/beta-organization-plugins-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Plugin Version - Claude API Reference](Admin/beta-organization-plugins-versions-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create RBAC Group - Claude API Reference](Admin/admin-rbac-groups-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create Service Account - Claude API Reference](Admin/admin-service-accounts-create.md) — Count tokens in a Message
-- [Create Service Account - Claude API Reference](Admin/beta-organization-service-accounts-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Service Account - Claude API Reference](Admin/beta-organization-service-accounts-create.md) — Count tokens in a Message
 - [Create Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-create.md) — Count tokens in a Message
-- [Create Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-add.md) — Count tokens in a Message
 - [Create Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create Workspace - Claude API Reference](Admin/admin-workspaces-create.md) — Count tokens in a Message
-- [Create Workspace - Claude API Reference](Admin/beta-organization-workspaces-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Workspace - Claude API Reference](Admin/beta-organization-workspaces-create.md) — Count tokens in a Message
 - [Create Workspace Member - Claude API Reference](Admin/admin-workspaces-members-create.md) — Count tokens in a Message
-- [Create Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-add.md) — Count tokens in a Message
 - [Delete chat - Claude API Reference](Admin/compliance-apps-chats-delete.md) — Count tokens in a Message
 - [Delete Code Artifact - Claude API Reference](Admin/compliance-code-artifacts-delete.md) — Count tokens in a Message
 - [Delete External Key - Claude API Reference](Admin/admin-external-keys-delete.md) — Count tokens in a Message
-- [Delete External Key - Claude API Reference](Admin/beta-organization-external-keys-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete External Key - Claude API Reference](Admin/beta-organization-external-keys-delete.md) — Count tokens in a Message
 - [Delete file - Claude API Reference](Admin/compliance-apps-chats-files-delete.md) — Count tokens in a Message
 - [Delete Invite - Claude API Reference](Admin/beta-organization-invites-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Invite - Claude API Reference](Admin/platform-claude-com-beta-organization-invites-delete.md) — Count tokens in a Message
+- [Delete Plugin - Claude API Reference](Admin/beta-organization-plugins-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Delete project - Claude API Reference](Admin/compliance-apps-projects-delete.md) — Count tokens in a Message
 - [Delete project document - Claude API Reference](Admin/compliance-apps-projects-documents-delete.md) — Count tokens in a Message
 - [Delete RBAC Group - Claude API Reference](Admin/admin-rbac-groups-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Delete RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Delete Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-delete.md) — Count tokens in a Message
-- [Delete Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-remove.md) — Count tokens in a Message
 - [Delete Spend Limit - Claude API Reference](Admin/admin-spend-limits-delete.md) — Count tokens in a Message
 - [Delete Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Delete Workspace Member - Claude API Reference](Admin/admin-workspaces-members-delete.md) — Count tokens in a Message
-- [Delete Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-remove.md) — Count tokens in a Message
 - [Deny Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-deny.md) — Count tokens in a Message
 - [Deny Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-deny.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Documents - Claude API Reference](Admin/compliance-apps-projects-documents.md) — Count tokens in a Message
@@ -102,52 +113,67 @@
 - [Download artifact content - Claude API Reference](Admin/compliance-apps-artifacts-download.md) — Count tokens in a Message
 - [Download Code Artifact Version Content - Claude API Reference](Admin/compliance-code-artifacts-retrieve-version.md) — Count tokens in a Message
 - [Download file content - Claude API Reference](Admin/compliance-apps-chats-files-download.md) — Count tokens in a Message
+- [Download Plugin Version Archive - Claude API Reference](Admin/beta-organization-plugins-versions-download.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Effective - Claude API Reference](Admin/beta-organization-spend-limits-effective.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [External Keys - Claude API Reference](Admin/admin-external-keys.md) — Count tokens in a Message
-- [External Keys - Claude API Reference](Admin/beta-organization-external-keys.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Federation - Claude API Reference](Admin/beta-organization-federation.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [External Keys - Claude API Reference](Admin/beta-organization-external-keys.md) — Count tokens in a Message
+- [Federation - Claude API Reference](Admin/beta-organization-federation.md) — Count tokens in a Message
 - [Federation Issuers - Claude API Reference](Admin/admin-federation-issuers.md) — Count tokens in a Message
 - [Federation Rules - Claude API Reference](Admin/admin-federation-rules.md) — Count tokens in a Message
 - [Files - Claude API Reference](Admin/compliance-apps-chats-files.md) — Count tokens in a Message
 - [Generated Files - Claude API Reference](Admin/compliance-apps-chats-generated-files.md) — Count tokens in a Message
+- [Get Activity Summaries - Claude API Reference](Admin/beta-organization-analytics-summaries-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Activity Summaries - Claude API Reference](Admin/http-admin-analytics-retrieve-summaries.md) — Count tokens in a Message
 - [Get Activity Summaries - Claude API Reference](Admin/http-beta-organization-analytics-retrieve-summaries.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Activity Summaries - Claude API Reference](Admin/http-beta-organization-analytics-summaries-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Artifact Activity - Claude API Reference](Admin/http-admin-analytics-artifacts-list.md) — Count tokens in a Message
 - [Get Artifact Activity - Claude API Reference](Admin/http-beta-organization-analytics-artifacts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get artifact metadata - Claude API Reference](Admin/compliance-apps-artifacts-retrieve.md) — Count tokens in a Message
 - [Get chat messages - Claude API Reference](Admin/compliance-apps-chats-messages-list.md) — Count tokens in a Message
+- [Get Chat Project Usage - Claude API Reference](Admin/beta-organization-analytics-apps-chat-projects-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Chat Project Usage - Claude API Reference](Admin/http-admin-analytics-chat-projects-list.md) — Count tokens in a Message
+- [Get Chat Project Usage - Claude API Reference](Admin/http-beta-organization-analytics-apps-chat-projects-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Chat Project Usage - Claude API Reference](Admin/http-beta-organization-analytics-chat-projects-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Claude Code Usage Report - Claude API Reference](Admin/admin-usage-report-retrieve-claude-code.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Claude Code Usage Report - Claude API Reference](Admin/beta-organization-usage-report-retrieve-claude-code.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Claude-generated file metadata - Claude API Reference](Admin/compliance-apps-chats-generated-files-retrieve.md) — Count tokens in a Message
 - [Get Compliance Group - Claude API Reference](Admin/compliance-groups-retrieve.md) — Count tokens in a Message
 - [Get Compliance Role - Claude API Reference](Admin/compliance-organizations-roles-retrieve.md) — Count tokens in a Message
-- [Get Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-retrieve.md) — Count tokens in a Message
 - [Get Connector Usage - Claude API Reference](Admin/http-admin-analytics-connectors-list.md) — Count tokens in a Message
 - [Get Connector Usage - Claude API Reference](Admin/http-beta-organization-analytics-connectors-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Cost Over Time - Claude API Reference](Admin/beta-organization-analytics-cost-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Cost Over Time - Claude API Reference](Admin/http-admin-analytics-cost-list.md) — Count tokens in a Message
 - [Get Cost Over Time - Claude API Reference](Admin/http-beta-organization-analytics-cost-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Cost Over Time - Claude API Reference](Admin/http-beta-organization-analytics-cost-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Cost Report - Claude API Reference](Admin/admin-cost-report-retrieve.md) — Count tokens in a Message
 - [Get Cost Report - Claude API Reference](Admin/beta-organization-cost-report-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Current Organization - Claude API Reference](Admin/admin-organizations-me.md) — Count tokens in a Message
-- [Get Current Organization - Claude API Reference](Admin/beta-organization-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Current Organization - Claude API Reference](Admin/beta-organization-retrieve.md) — Count tokens in a Message
 - [Get effective organization settings - Claude API Reference](Admin/compliance-organizations-settings-retrieve.md) — Count tokens in a Message
 - [Get External Key - Claude API Reference](Admin/admin-external-keys-retrieve.md) — Count tokens in a Message
-- [Get External Key - Claude API Reference](Admin/beta-organization-external-keys-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get External Key - Claude API Reference](Admin/beta-organization-external-keys-retrieve.md) — Count tokens in a Message
 - [Get Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-retrieve.md) — Count tokens in a Message
-- [Get Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-retrieve.md) — Count tokens in a Message
 - [Get Federation Rule - Claude API Reference](Admin/admin-federation-rules-retrieve.md) — Count tokens in a Message
-- [Get Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-retrieve.md) — Count tokens in a Message
 - [Get file metadata - Claude API Reference](Admin/compliance-apps-chats-files-retrieve.md) — Count tokens in a Message
-- [Get Invite - Claude API Reference](Admin/beta-organization-invites-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Invite - Claude API Reference](Admin/beta-organization-invites-retrieve.md) — Count tokens in a Message
 - [Get Messages Usage Report - Claude API Reference](Admin/admin-usage-report-retrieve-messages.md) — Count tokens in a Message
 - [Get Messages Usage Report - Claude API Reference](Admin/beta-organization-usage-report-retrieve-messages.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Per-User Cost - Claude API Reference](Admin/beta-organization-analytics-cost-list-by-user.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Per-User Cost - Claude API Reference](Admin/beta-organization-analytics-user-cost-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Per-User Cost - Claude API Reference](Admin/http-admin-analytics-cost-list-by-user.md) — Count tokens in a Message
+- [Get Per-User Cost - Claude API Reference](Admin/http-beta-organization-analytics-user-cost-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Per-User Token Usage - Claude API Reference](Admin/beta-organization-analytics-usage-list-by-user.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Per-User Token Usage - Claude API Reference](Admin/beta-organization-analytics-user-usage-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Per-User Token Usage - Claude API Reference](Admin/http-admin-analytics-usage-list-by-user.md) — Count tokens in a Message
+- [Get Per-User Token Usage - Claude API Reference](Admin/http-beta-organization-analytics-user-usage-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Plugin - Claude API Reference](Admin/beta-organization-plugins-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Plugin Marketplace - Claude API Reference](Admin/beta-organization-plugin-marketplaces-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Plugin Usage - Claude API Reference](Admin/http-admin-analytics-plugins-list.md) — Count tokens in a Message
 - [Get Plugin Usage - Claude API Reference](Admin/http-beta-organization-analytics-plugins-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Plugin Version - Claude API Reference](Admin/beta-organization-plugins-versions-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get project details - Claude API Reference](Admin/compliance-apps-projects-retrieve.md) — Count tokens in a Message
 - [Get project document content - Claude API Reference](Admin/compliance-apps-projects-documents-retrieve.md) — Count tokens in a Message
 - [Get project document metadata - Claude API Reference](Admin/compliance-apps-projects-documents-metadata.md) — Count tokens in a Message
@@ -156,34 +182,37 @@
 - [Get RBAC Role - Claude API Reference](Admin/admin-rbac-roles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get RBAC Role - Claude API Reference](Admin/beta-organization-rbac-roles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Service Account - Claude API Reference](Admin/admin-service-accounts-retrieve.md) — Count tokens in a Message
-- [Get Service Account - Claude API Reference](Admin/beta-organization-service-accounts-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Service Account - Claude API Reference](Admin/beta-organization-service-accounts-retrieve.md) — Count tokens in a Message
 - [Get Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-retrieve.md) — Count tokens in a Message
-- [Get Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-retrieve.md) — Count tokens in a Message
 - [Get Skill Usage - Claude API Reference](Admin/http-admin-analytics-skills-list.md) — Count tokens in a Message
 - [Get Skill Usage - Claude API Reference](Admin/http-beta-organization-analytics-skills-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Spend Limit - Claude API Reference](Admin/admin-spend-limits-retrieve.md) — Count tokens in a Message
 - [Get Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-retrieve.md) — Count tokens in a Message
 - [Get Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Token Usage Over Time - Claude API Reference](Admin/beta-organization-analytics-usage-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Token Usage Over Time - Claude API Reference](Admin/http-admin-analytics-usage-list.md) — Count tokens in a Message
 - [Get Token Usage Over Time - Claude API Reference](Admin/http-beta-organization-analytics-usage-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Token Usage Over Time - Claude API Reference](Admin/http-beta-organization-analytics-usage-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Tunnel - Claude API Reference](Admin/admin-mcp-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Tunnel - Claude API Reference](Admin/beta-organization-mcp-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get User - Claude API Reference](Admin/beta-organization-users-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get User - Claude API Reference](Admin/beta-organization-users-retrieve.md) — Count tokens in a Message
 - [Get Workspace - Claude API Reference](Admin/admin-workspaces-retrieve.md) — Count tokens in a Message
-- [Get Workspace - Claude API Reference](Admin/beta-organization-workspaces-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Workspace - Claude API Reference](Admin/beta-organization-workspaces-retrieve.md) — Count tokens in a Message
 - [Get Workspace Member - Claude API Reference](Admin/admin-workspaces-members-retrieve.md) — Count tokens in a Message
-- [Get Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-retrieve.md) — Count tokens in a Message
 - [Groups - Claude API Reference](Admin/compliance-groups.md) — Count tokens in a Message
 - [Increase Requests - Claude API Reference](Admin/admin-spend-limits-increase-requests.md) — Count tokens in a Message
 - [Increase Requests - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Installation Settings - Claude API Reference](Admin/beta-organization-plugins-installation-settings.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Invites - Claude API Reference](Admin/admin-invites.md) — Count tokens in a Message
-- [Invites - Claude API Reference](Admin/beta-organization-invites.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Issuers - Claude API Reference](Admin/beta-organization-federation-issuers.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Invites - Claude API Reference](Admin/beta-organization-invites.md) — Count tokens in a Message
+- [Issuers - Claude API Reference](Admin/beta-organization-federation-issuers.md) — Count tokens in a Message
 - [List API Keys - Claude API Reference](Admin/admin-api-keys-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List API Keys - Claude API Reference](Admin/beta-organization-api-keys-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List API Keys - Claude API Reference](Admin/beta-organization-api-keys-list.md) — Count tokens in a Message
 - [List chats - Claude API Reference](Admin/compliance-apps-chats-list.md) — Count tokens in a Message
 - [List Code Artifacts - Claude API Reference](Admin/compliance-code-artifacts-list.md) — Count tokens in a Message
 - [List Compliance Group Members - Claude API Reference](Admin/compliance-groups-members-list.md) — Count tokens in a Message
@@ -191,22 +220,28 @@
 - [List Compliance Role Permissions - Claude API Reference](Admin/compliance-organizations-roles-permissions-list.md) — Count tokens in a Message
 - [List Compliance Roles - Claude API Reference](Admin/compliance-organizations-roles-list.md) — Count tokens in a Message
 - [List Effective Spend Limits - Claude API Reference](Admin/admin-spend-limits-list-effective.md) — Count tokens in a Message
+- [List Effective Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-effective-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Effective Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-list-effective.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List External Keys - Claude API Reference](Admin/admin-external-keys-list.md) — Count tokens in a Message
-- [List External Keys - Claude API Reference](Admin/beta-organization-external-keys-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List External Keys - Claude API Reference](Admin/beta-organization-external-keys-list.md) — Count tokens in a Message
 - [List Federation Issuers - Claude API Reference](Admin/admin-federation-issuers-list.md) — Count tokens in a Message
-- [List Federation Issuers - Claude API Reference](Admin/beta-organization-federation-issuers-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Federation Issuers - Claude API Reference](Admin/beta-organization-federation-issuers-list.md) — Count tokens in a Message
 - [List Federation Rule Workspaces - Claude API Reference](Admin/admin-federation-rules-workspaces-list.md) — Count tokens in a Message
-- [List Federation Rule Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Federation Rule Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-list.md) — Count tokens in a Message
 - [List Federation Rules - Claude API Reference](Admin/admin-federation-rules-list.md) — Count tokens in a Message
-- [List Federation Rules - Claude API Reference](Admin/beta-organization-federation-rules-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Federation Rules - Claude API Reference](Admin/beta-organization-federation-rules-list.md) — Count tokens in a Message
 - [List Invites - Claude API Reference](Admin/admin-invites-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Invites - Claude API Reference](Admin/beta-organization-invites-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Invites - Claude API Reference](Admin/beta-organization-invites-list.md) — Count tokens in a Message
 - [List local sessions - Claude API Reference](Admin/compliance-apps-sessions-local-list.md) — Count tokens in a Message
 - [List Organization Rate Limits - Claude API Reference](Admin/admin-rate-limits-list.md) — Count tokens in a Message
-- [List Organization Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Organization Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits-list.md) — Count tokens in a Message
 - [List organization users - Claude API Reference](Admin/compliance-organizations-users-list.md) — Count tokens in a Message
 - [List organizations - Claude API Reference](Admin/compliance-organizations-list.md) — Count tokens in a Message
+- [List Plugin Installation Settings - Claude API Reference](Admin/beta-organization-plugins-installation-settings-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Plugin Marketplaces - Claude API Reference](Admin/beta-organization-plugin-marketplaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Plugin Shares - Claude API Reference](Admin/beta-organization-plugins-shares-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Plugin Versions - Claude API Reference](Admin/beta-organization-plugins-versions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Plugins - Claude API Reference](Admin/beta-organization-plugins-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List project attachments - Claude API Reference](Admin/compliance-apps-projects-attachments-list.md) — Count tokens in a Message
 - [List project collaborators - Claude API Reference](Admin/compliance-apps-projects-collaborators-list.md) — Count tokens in a Message
 - [List projects - Claude API Reference](Admin/compliance-apps-projects-list.md) — Count tokens in a Message
@@ -220,11 +255,12 @@
 - [List RBAC Roles - Claude API Reference](Admin/beta-organization-rbac-roles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List remote sessions - Claude API Reference](Admin/compliance-apps-sessions-remote-list.md) — Count tokens in a Message
 - [List Service Account Workspace Members - Claude API Reference](Admin/admin-workspaces-service-accounts-list.md) — Count tokens in a Message
-- [List Service Account Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Service Account Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-list.md) — Count tokens in a Message
 - [List Service Accounts - Claude API Reference](Admin/admin-service-accounts-list.md) — Count tokens in a Message
-- [List Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts-list.md) — Count tokens in a Message
 - [List Spend Limit Increase Requests - Claude API Reference](Admin/admin-spend-limits-increase-requests-list.md) — Count tokens in a Message
 - [List Spend Limit Increase Requests - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Tunnel Certificates - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Tunnel Certificates - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Tunnels - Claude API Reference](Admin/admin-mcp-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
@@ -232,56 +268,63 @@
 - [List User Activity - Claude API Reference](Admin/http-admin-analytics-users-list.md) — Count tokens in a Message
 - [List User Activity - Claude API Reference](Admin/http-beta-organization-analytics-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Users - Claude API Reference](Admin/admin-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Users - Claude API Reference](Admin/beta-organization-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Users - Claude API Reference](Admin/beta-organization-users-list.md) — Count tokens in a Message
 - [List Workspace Members - Claude API Reference](Admin/admin-workspaces-members-list.md) — Count tokens in a Message
-- [List Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-members-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-members-list.md) — Count tokens in a Message
 - [List Workspace Rate Limits - Claude API Reference](Admin/admin-workspaces-rate-limits-list.md) — Count tokens in a Message
-- [List Workspace Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspace Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits-list.md) — Count tokens in a Message
 - [List Workspaces - Claude API Reference](Admin/admin-workspaces-list.md) — Count tokens in a Message
-- [List Workspaces - Claude API Reference](Admin/beta-organization-workspaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspaces - Claude API Reference](Admin/beta-organization-workspaces-list.md) — Count tokens in a Message
 - [List Workspaces For Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-list.md) — Count tokens in a Message
-- [List Workspaces For Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspaces For Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-list.md) — Count tokens in a Message
 - [Local - Claude API Reference](Admin/compliance-apps-sessions-local.md) — Count tokens in a Message
 - [MCP Tunnels - Claude API Reference](Admin/admin-mcp-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [MCP Tunnels - Claude API Reference](Admin/beta-organization-mcp-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Members - Claude API Reference](Admin/admin-rbac-groups-members.md) — Count tokens in a Message
 - [Members - Claude API Reference](Admin/admin-workspaces-members.md) — Count tokens in a Message
 - [Members - Claude API Reference](Admin/beta-organization-rbac-groups-members.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Members - Claude API Reference](Admin/beta-organization-workspaces-members.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Members - Claude API Reference](Admin/beta-organization-workspaces-members.md) — Count tokens in a Message
 - [Members - Claude API Reference](Admin/compliance-groups-members.md) — Count tokens in a Message
 - [Messages - Claude API Reference](Admin/compliance-apps-chats-messages.md) — Count tokens in a Message
 - [Messages - Claude API Reference](Admin/compliance-apps-sessions-local-messages.md) — Count tokens in a Message
 - [Messages - Claude API Reference](Admin/compliance-apps-sessions-remote-messages.md) — Count tokens in a Message
 - [Organization - Claude API Reference](Admin/admin.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Organization - Claude API Reference](Admin/http-beta-organization.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Organization - Claude API Reference](Admin/http-beta-organization.md) — Count tokens in a Message
 - [Organizations - Claude API Reference](Admin/admin-organizations.md) — Count tokens in a Message
 - [Organizations - Claude API Reference](Admin/compliance-organizations.md) — Count tokens in a Message
 - [Permissions - Claude API Reference](Admin/admin-rbac-roles-permissions.md) — Count tokens in a Message
 - [Permissions - Claude API Reference](Admin/beta-organization-rbac-roles-permissions.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Permissions - Claude API Reference](Admin/compliance-organizations-roles-permissions.md) — Count tokens in a Message
+- [Plugin Marketplaces - Claude API Reference](Admin/beta-organization-plugin-marketplaces.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Plugins - Claude API Reference](Admin/beta-organization-plugins.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Plugins - Claude API Reference](Admin/http-admin-analytics-plugins.md) — Count tokens in a Message
 - [Plugins - Claude API Reference](Admin/http-beta-organization-analytics-plugins.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Projects - Claude API Reference](Admin/beta-organization-analytics-apps-chat-projects.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Projects - Claude API Reference](Admin/compliance-apps-projects.md) — Count tokens in a Message
+- [Projects - Claude API Reference](Admin/http-beta-organization-analytics-apps-chat-projects.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Query compliance activities - Claude API Reference](Admin/compliance-activities-list.md) — Count tokens in a Message
 - [Rate Limits - Claude API Reference](Admin/admin-rate-limits.md) — Count tokens in a Message
 - [Rate Limits - Claude API Reference](Admin/admin-workspaces-rate-limits.md) — Count tokens in a Message
-- [Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits.md) — Count tokens in a Message
+- [Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits.md) — Count tokens in a Message
 - [RBAC Groups - Claude API Reference](Admin/admin-rbac-groups.md) — Count tokens in a Message
 - [RBAC Groups - Claude API Reference](Admin/beta-organization-rbac-groups.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [RBAC Roles - Claude API Reference](Admin/admin-rbac-roles.md) — Count tokens in a Message
 - [RBAC Roles - Claude API Reference](Admin/beta-organization-rbac-roles.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Remote - Claude API Reference](Admin/compliance-apps-sessions-remote.md) — Count tokens in a Message
 - [Remove Federation Rule Workspace - Claude API Reference](Admin/admin-federation-rules-workspaces-delete.md) — Count tokens in a Message
-- [Remove Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-remove.md) — Count tokens in a Message
+- [Remove Plugin Installation Setting - Claude API Reference](Admin/beta-organization-plugins-installation-settings-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Remove RBAC Group Member - Claude API Reference](Admin/admin-rbac-groups-members-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Remove RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Remove User - Claude API Reference](Admin/beta-organization-users-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove User - Claude API Reference](Admin/platform-claude-com-beta-organization-users-remove.md) — Count tokens in a Message
 - [Remove Workspace From Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-delete.md) — Count tokens in a Message
-- [Remove Workspace From Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove Workspace From Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-remove.md) — Count tokens in a Message
 - [Retrieve a local session - Claude API Reference](Admin/compliance-apps-sessions-local-retrieve.md) — Count tokens in a Message
 - [Retrieve API Key (Admin API) - Claude API Reference](Admin/admin-api-keys-retrieve.md) — Count tokens in a Message
-- [Retrieve API Key (Admin API) - Claude API Reference](Admin/beta-organization-api-keys-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Retrieve API Key (Admin API) - Claude API Reference](Admin/beta-organization-api-keys-retrieve.md) — Count tokens in a Message
 - [Retrieve local session messages - Claude API Reference](Admin/compliance-apps-sessions-local-messages-list.md) — Count tokens in a Message
 - [Retrieve remote session messages - Claude API Reference](Admin/compliance-apps-sessions-remote-messages-list.md) — Count tokens in a Message
 - [Reveal Tunnel Token - Claude API Reference](Admin/admin-mcp-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
@@ -289,58 +332,75 @@
 - [Roles - Claude API Reference](Admin/compliance-organizations-roles.md) — Count tokens in a Message
 - [Rotate Tunnel Token - Claude API Reference](Admin/admin-mcp-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Rotate Tunnel Token - Claude API Reference](Admin/beta-organization-mcp-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Rules - Claude API Reference](Admin/beta-organization-federation-rules.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Rules - Claude API Reference](Admin/beta-organization-federation-rules.md) — Count tokens in a Message
 - [Service Accounts - Claude API Reference](Admin/admin-service-accounts.md) — Count tokens in a Message
 - [Service Accounts - Claude API Reference](Admin/admin-workspaces-service-accounts.md) — Count tokens in a Message
-- [Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Service Accounts - Claude API Reference](Admin/beta-organization-workspaces-service-accounts.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts.md) — Count tokens in a Message
+- [Service Accounts - Claude API Reference](Admin/beta-organization-workspaces-service-accounts.md) — Count tokens in a Message
 - [Sessions - Claude API Reference](Admin/compliance-apps-sessions.md) — Count tokens in a Message
+- [Set Plugin Installation Setting - Claude API Reference](Admin/beta-organization-plugins-installation-settings-set.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Set Spend Limit - Claude API Reference](Admin/admin-spend-limits-create.md) — Count tokens in a Message
 - [Set Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Set Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-set.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Settings - Claude API Reference](Admin/compliance-organizations-settings.md) — Count tokens in a Message
+- [Shares - Claude API Reference](Admin/beta-organization-plugins-shares.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Skills - Claude API Reference](Admin/beta-organization-analytics-skills.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Skills - Claude API Reference](Admin/http-admin-analytics-skills.md) — Count tokens in a Message
 - [Spend Limits - Claude API Reference](Admin/admin-spend-limits.md) — Count tokens in a Message
 - [Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Summaries - Claude API Reference](Admin/beta-organization-analytics-summaries.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Summaries - Claude API Reference](Admin/http-beta-organization-analytics-summaries.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Tunnel Certificates - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Tunnel Certificates - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update API Key - Claude API Reference](Admin/admin-api-keys-update.md) — Count tokens in a Message
-- [Update API Key - Claude API Reference](Admin/beta-organization-api-keys-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update API Key - Claude API Reference](Admin/beta-organization-api-keys-update.md) — Count tokens in a Message
+- [Update Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-update.md) — Count tokens in a Message
 - [Update External Key - Claude API Reference](Admin/admin-external-keys-update.md) — Count tokens in a Message
-- [Update External Key - Claude API Reference](Admin/beta-organization-external-keys-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update External Key - Claude API Reference](Admin/beta-organization-external-keys-update.md) — Count tokens in a Message
 - [Update Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-update.md) — Count tokens in a Message
-- [Update Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-update.md) — Count tokens in a Message
 - [Update Federation Rule - Claude API Reference](Admin/admin-federation-rules-update.md) — Count tokens in a Message
-- [Update Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-update.md) — Count tokens in a Message
+- [Update Plugin - Claude API Reference](Admin/beta-organization-plugins-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Plugin Marketplace - Claude API Reference](Admin/beta-organization-plugin-marketplaces-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update RBAC Group - Claude API Reference](Admin/admin-rbac-groups-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update Service Account - Claude API Reference](Admin/admin-service-accounts-update.md) — Count tokens in a Message
-- [Update Service Account - Claude API Reference](Admin/beta-organization-service-accounts-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Service Account - Claude API Reference](Admin/beta-organization-service-accounts-update.md) — Count tokens in a Message
 - [Update Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-update.md) — Count tokens in a Message
-- [Update Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-update.md) — Count tokens in a Message
 - [Update User - Claude API Reference](Admin/beta-organization-users-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update User - Claude API Reference](Admin/platform-claude-com-beta-organization-users-update.md) — Count tokens in a Message
 - [Update Workspace - Claude API Reference](Admin/admin-workspaces-update.md) — Count tokens in a Message
-- [Update Workspace - Claude API Reference](Admin/beta-organization-workspaces-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Workspace - Claude API Reference](Admin/beta-organization-workspaces-update.md) — Count tokens in a Message
 - [Update Workspace Member - Claude API Reference](Admin/admin-workspaces-members-update.md) — Count tokens in a Message
-- [Update Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-update.md) — Count tokens in a Message
 - [Usage - Claude API Reference](Admin/http-admin-analytics-usage.md) — Count tokens in a Message
 - [Usage - Claude API Reference](Admin/http-beta-organization-analytics-usage.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Usage Report - Claude API Reference](Admin/admin-usage-report.md) — Count tokens in a Message
+- [Usage Report - Claude API Reference](Admin/beta-organization-analytics-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Usage Report - Claude API Reference](Admin/beta-organization-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Usage Report - Claude API Reference](Admin/http-beta-organization-analytics-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [User Cost Report - Claude API Reference](Admin/beta-organization-analytics-user-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [User Cost Report - Claude API Reference](Admin/http-beta-organization-analytics-user-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [User Usage Report - Claude API Reference](Admin/beta-organization-analytics-user-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [User Usage Report - Claude API Reference](Admin/http-beta-organization-analytics-user-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Users - Claude API Reference](Admin/admin-users.md) — Count tokens in a Message
-- [Users - Claude API Reference](Admin/beta-organization-users.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Users - Claude API Reference](Admin/beta-organization-users.md) — Count tokens in a Message
 - [Users - Claude API Reference](Admin/compliance-organizations-users.md) — Count tokens in a Message
 - [Users - Claude API Reference](Admin/http-admin-analytics-users.md) — Count tokens in a Message
 - [Users - Claude API Reference](Admin/http-beta-organization-analytics-users.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Validate External Key - Claude API Reference](Admin/admin-external-keys-validate.md) — Count tokens in a Message
-- [Validate External Key - Claude API Reference](Admin/beta-organization-external-keys-validate.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Validate External Key - Claude API Reference](Admin/beta-organization-external-keys-validate.md) — Count tokens in a Message
+- [Validate Plugin Marketplace Archive - Claude API Reference](Admin/beta-organization-plugin-marketplaces-validate-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Validate Plugin Marketplace Repository - Claude API Reference](Admin/beta-organization-plugin-marketplaces-validate-repository.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Versions - Claude API Reference](Admin/beta-organization-plugins-versions.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Workspaces - Claude API Reference](Admin/admin-federation-rules-workspaces.md) — Count tokens in a Message
 - [Workspaces - Claude API Reference](Admin/admin-service-accounts-workspaces.md) — Count tokens in a Message
 - [Workspaces - Claude API Reference](Admin/admin-workspaces.md) — Count tokens in a Message
-- [Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Workspaces - Claude API Reference](Admin/beta-organization-service-accounts-workspaces.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Workspaces - Claude API Reference](Admin/beta-organization-workspaces.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces.md) — Count tokens in a Message
+- [Workspaces - Claude API Reference](Admin/beta-organization-service-accounts-workspaces.md) — Count tokens in a Message
+- [Workspaces - Claude API Reference](Admin/beta-organization-workspaces.md) — Count tokens in a Message
 
 ## Agents Tools
 
@@ -348,6 +408,7 @@
 - [Agent Skills - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-overview.md) — Claude on cloud platforms
 - [Architecture and components - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-concepts.md) — Claude on cloud platforms
 - [Bash tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-bash-tool.md) — Claude on cloud platforms
+- [Browser and computer use with the SDK toolsets - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md) — Claude on cloud platforms
 - [Browser use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) — Claude on cloud platforms
 - [Claude API skill - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md) — An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building applications with…
 - [Code execution tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) — Claude on cloud platforms
@@ -393,7 +454,9 @@
 ## Endpoints
 
 - [Acknowledge Work - Claude API Reference](Endpoints/beta-environments-work-ack.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add Federation Rule Workspace - Claude API Reference](Endpoints/organization-federation-rules-workspaces-add.md) — Count tokens in a Message
 - [Add Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add Workspace To Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-add.md) — Count tokens in a Message
 - [Agents](Endpoints/cli-beta-agents.md) — - --model: BetaManagedAgentsModelConfigParams
 - [Agents](Endpoints/csharp-beta-agents.md) — BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Agents](Endpoints/go-beta-agents.md) — client.Beta.Agents.New(ctx, params) (BetaManagedAgentsAgent, error)
@@ -751,6 +814,7 @@
 - [Api Java Messages Create 08A0E124Cd](Endpoints/java-messages-create.md) — Message messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
 - [Api Java Models List 25D15Be48F](Endpoints/java-models-list.md) — ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 - [Api Java Models Retrieve 57894Cb23E](Endpoints/java-models-retrieve.md) — ModelInfo models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
+- [API Keys - Claude API Reference](Endpoints/organization-api-keys.md) — Count tokens in a Message
 - [API overview - Claude Platform Docs](Endpoints/overview.md) — Count tokens in a Message
 - [Api Php Beta Agents Archive C8F4Ff6Fe2](Endpoints/php-beta-agents-archive.md)
 - [Api Php Beta Agents C52F409D40](Endpoints/php-beta-agents.md)
@@ -1243,11 +1307,15 @@
 - [Archive Credential - Claude API Reference](Endpoints/beta-vaults-credentials-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Deployment - Claude API Reference](Endpoints/beta-deployments-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Environment - Claude API Reference](Endpoints/beta-environments-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-archive.md) — Count tokens in a Message
+- [Archive Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-archive.md) — Count tokens in a Message
+- [Archive Service Account - Claude API Reference](Endpoints/organization-service-accounts-archive.md) — Count tokens in a Message
 - [Archive Session - Claude API Reference](Endpoints/beta-sessions-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Session Thread - Claude API Reference](Endpoints/beta-sessions-threads-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Archive Vault - Claude API Reference](Endpoints/beta-vaults-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Workspace - Claude API Reference](Endpoints/organization-workspaces-archive.md) — Count tokens in a Message
 - [Batches](Endpoints/cli-beta-messages-batches.md) — $ ant beta:messages:batches create
 - [Batches](Endpoints/cli-messages-batches.md) — $ ant messages:batches create
 - [Batches](Endpoints/csharp-beta-messages-batches.md) — BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)
@@ -1290,6 +1358,7 @@
 - [Completions](Endpoints/typescript-completions.md) — client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>
 - [Completions - Claude API Reference](Endpoints/http-completions.md) — Count tokens in a Message
 - [Compliance API - Claude API Reference](Endpoints/http-compliance.md) — Count tokens in a Message
+- [Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings.md) — Count tokens in a Message
 - [Count tokens in a Message - Claude API Reference](Endpoints/http-beta-messages-count-tokens.md) — Count tokens in a Message
 - [Count tokens in a Message - Claude API Reference](Endpoints/messages-count-tokens.md) — Count tokens in a Message
 - [Count tokens in a Message - Claude API Reference](Endpoints/platform-claude-com-messages-count-tokens.md) — Count tokens in a Message
@@ -1307,6 +1376,12 @@
 - [Create Deployment - Claude API Reference](Endpoints/beta-deployments-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create Enrollment URL - Claude API Reference](Endpoints/http-beta-user-profiles-create-enrollment-url.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create Environment - Claude API Reference](Endpoints/beta-environments-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create External Key - Claude API Reference](Endpoints/organization-external-keys-create.md) — Count tokens in a Message
+- [Create Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-create.md) — Count tokens in a Message
+- [Create Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-create.md) — Count tokens in a Message
+- [Create Invite - Claude API Reference](Endpoints/organization-invites-create.md) — Count tokens in a Message
+- [Create Service Account - Claude API Reference](Endpoints/organization-service-accounts-create.md) — Count tokens in a Message
+- [Create Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-add.md) — Count tokens in a Message
 - [Create Session - Claude API Reference](Endpoints/beta-sessions-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create Skill - Claude API Reference](Endpoints/http-beta-skills-create.md) — Count tokens in a Message
 - [Create Skill - Claude API Reference](Endpoints/skills-create-skill.md) — Count tokens in a Message
@@ -1317,6 +1392,8 @@
 - [Create Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Create Vault - Claude API Reference](Endpoints/beta-vaults-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Workspace - Claude API Reference](Endpoints/organization-workspaces-create.md) — Count tokens in a Message
+- [Create Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-add.md) — Count tokens in a Message
 - [Credentials](Endpoints/cli-beta-vaults-credentials.md) — $ ant beta:vaults:credentials create
 - [Credentials](Endpoints/csharp-beta-vaults-credentials.md) — BetaManagedAgentsCredential Beta.Vaults.Credentials.Create(CredentialCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Credentials](Endpoints/go-beta-vaults-credentials.md) — client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (BetaManagedAgentsCredential, error)
@@ -1331,8 +1408,11 @@
 - [Delete a Message Batch - Claude API Reference](Endpoints/messages-batches-delete.md) — Count tokens in a Message
 - [Delete Credential - Claude API Reference](Endpoints/beta-vaults-credentials-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Delete Environment - Claude API Reference](Endpoints/beta-environments-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete External Key - Claude API Reference](Endpoints/organization-external-keys-delete.md) — Count tokens in a Message
 - [Delete File - Claude API Reference](Endpoints/files-delete.md) — Count tokens in a Message
 - [Delete File - Claude API Reference](Endpoints/http-beta-files-delete.md) — Count tokens in a Message
+- [Delete Invite - Claude API Reference](Endpoints/organization-invites-delete.md) — Count tokens in a Message
+- [Delete Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-remove.md) — Count tokens in a Message
 - [Delete Session - Claude API Reference](Endpoints/beta-sessions-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Delete Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Delete Skill - Claude API Reference](Endpoints/http-beta-skills-delete.md) — Count tokens in a Message
@@ -1340,6 +1420,7 @@
 - [Delete Skill Version - Claude API Reference](Endpoints/beta-skills-versions-delete.md) — Count tokens in a Message
 - [Delete Skill Version - Claude API Reference](Endpoints/skills-versions-delete.md) — Count tokens in a Message
 - [Delete Vault - Claude API Reference](Endpoints/beta-vaults-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-remove.md) — Count tokens in a Message
 - [Deployment Runs - Claude API Reference](Endpoints/beta-deployment-runs.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Deployments - Claude API Reference](Endpoints/beta-deployments.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Download File - Claude API Reference](Endpoints/files-download.md) — Count tokens in a Message
@@ -1363,6 +1444,8 @@
 - [Events](Endpoints/typescript-beta-sessions-events.md) — client.beta.sessions.events.list(stringsessionID, EventListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionEvent>
 - [Events - Claude API Reference](Endpoints/beta-sessions-events.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Events - Claude API Reference](Endpoints/beta-sessions-threads-events.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [External Keys - Claude API Reference](Endpoints/organization-external-keys.md) — Count tokens in a Message
+- [Federation - Claude API Reference](Endpoints/organization-federation.md) — Count tokens in a Message
 - [Files](Endpoints/cli-beta-files.md) — Body param: The file to upload
 - [Files](Endpoints/csharp-beta-files.md) — FileMetadata Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)
 - [Files](Endpoints/go-beta-files.md) — client.Beta.Files.Upload(ctx, params) (FileMetadata, error)
@@ -1376,13 +1459,23 @@
 - [Get a Model - Claude API Reference](Endpoints/http-beta-models-retrieve.md) — Count tokens in a Message
 - [Get a Model - Claude API Reference](Endpoints/models-retrieve.md) — Count tokens in a Message
 - [Get Agent - Claude API Reference](Endpoints/beta-agents-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings-retrieve.md) — Count tokens in a Message
 - [Get Credential - Claude API Reference](Endpoints/beta-vaults-credentials-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Current Organization - Claude API Reference](Endpoints/admin-api-organization-get-me.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Current Organization - Claude API Reference](Endpoints/organization-retrieve.md) — Count tokens in a Message
 - [Get Deployment - Claude API Reference](Endpoints/beta-deployments-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Deployment Run - Claude API Reference](Endpoints/beta-deployment-runs-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Environment - Claude API Reference](Endpoints/beta-environments-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get External Key - Claude API Reference](Endpoints/organization-external-keys-retrieve.md) — Count tokens in a Message
+- [Get Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-retrieve.md) — Count tokens in a Message
+- [Get Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-retrieve.md) — Count tokens in a Message
 - [Get File Metadata - Claude API Reference](Endpoints/files-retrieve-metadata.md) — Count tokens in a Message
 - [Get File Metadata - Claude API Reference](Endpoints/http-beta-files-retrieve-metadata.md) — Count tokens in a Message
+- [Get Invite - Claude API Reference](Endpoints/admin-api-invites-get-invite.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Invite - Claude API Reference](Endpoints/organization-invites-retrieve.md) — Count tokens in a Message
 - [Get Queue Statistics - Claude API Reference](Endpoints/beta-environments-work-stats.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Service Account - Claude API Reference](Endpoints/organization-service-accounts-retrieve.md) — Count tokens in a Message
+- [Get Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-retrieve.md) — Count tokens in a Message
 - [Get Session - Claude API Reference](Endpoints/beta-sessions-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Session Thread - Claude API Reference](Endpoints/beta-sessions-threads-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
@@ -1392,24 +1485,37 @@
 - [Get Skill Version - Claude API Reference](Endpoints/skills-versions-retrieve.md) — Count tokens in a Message
 - [Get Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get User - Claude API Reference](Endpoints/admin-api-users-get-user.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get User - Claude API Reference](Endpoints/organization-users-retrieve.md) — Count tokens in a Message
 - [Get User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Vault - Claude API Reference](Endpoints/beta-vaults-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Work Item - Claude API Reference](Endpoints/beta-environments-work-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Workspace - Claude API Reference](Endpoints/organization-workspaces-retrieve.md) — Count tokens in a Message
+- [Get Workspace Member - Claude API Reference](Endpoints/admin-api-workspace-members-get-workspace-member.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-retrieve.md) — Count tokens in a Message
 - [Go SDK](Endpoints/sdks-go.md) — Install and configure the Anthropic Go SDK with context-based cancellation and functional options
 - [HTTP API reference - Claude API Reference](Endpoints/http.md) — Count tokens in a Message
 - [IAM actions for Claude Platform on AWS - Claude Platform Docs](Endpoints/claude-platform-on-aws-iam-actions.md) — Count tokens in a Message
+- [Invites - Claude API Reference](Endpoints/organization-invites.md) — Count tokens in a Message
 - [IP addresses - Claude Platform Docs](Endpoints/ip-addresses.md) — Count tokens in a Message
+- [Issuers - Claude API Reference](Endpoints/organization-federation-issuers.md) — Count tokens in a Message
 - [Java SDK](Endpoints/sdks-java.md) — Install and configure the Anthropic Java SDK with builder patterns and async support
 - [List Agent Versions - Claude API Reference](Endpoints/beta-agents-versions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Agents - Claude API Reference](Endpoints/beta-agents-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List API Keys - Claude API Reference](Endpoints/organization-api-keys-list.md) — Count tokens in a Message
 - [List Credentials - Claude API Reference](Endpoints/beta-vaults-credentials-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Deployment Runs - Claude API Reference](Endpoints/beta-deployment-runs-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Deployments - Claude API Reference](Endpoints/beta-deployments-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Dreams - Claude API Reference](Endpoints/beta-dreams-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Environments - Claude API Reference](Endpoints/beta-environments-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Events - Claude API Reference](Endpoints/beta-sessions-events-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List External Keys - Claude API Reference](Endpoints/organization-external-keys-list.md) — Count tokens in a Message
+- [List Federation Issuers - Claude API Reference](Endpoints/organization-federation-issuers-list.md) — Count tokens in a Message
+- [List Federation Rule Workspaces - Claude API Reference](Endpoints/organization-federation-rules-workspaces-list.md) — Count tokens in a Message
+- [List Federation Rules - Claude API Reference](Endpoints/organization-federation-rules-list.md) — Count tokens in a Message
 - [List Files - Claude API Reference](Endpoints/files-list.md) — Count tokens in a Message
 - [List Files - Claude API Reference](Endpoints/http-beta-files-list.md) — Count tokens in a Message
+- [List Invites - Claude API Reference](Endpoints/organization-invites-list.md) — Count tokens in a Message
 - [List memories - Claude API Reference](Endpoints/beta-memory-stores-memories-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List memory stores - Claude API Reference](Endpoints/beta-memory-stores-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List memory versions - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
@@ -1417,6 +1523,9 @@
 - [List Message Batches - Claude API Reference](Endpoints/messages-batches-list.md) — Count tokens in a Message
 - [List Models - Claude API Reference](Endpoints/http-beta-models-list.md) — Count tokens in a Message
 - [List Models - Claude API Reference](Endpoints/models-list.md) — Count tokens in a Message
+- [List Organization Rate Limits - Claude API Reference](Endpoints/organization-rate-limits-list.md) — Count tokens in a Message
+- [List Service Account Workspace Members - Claude API Reference](Endpoints/organization-workspaces-service-accounts-list.md) — Count tokens in a Message
+- [List Service Accounts - Claude API Reference](Endpoints/organization-service-accounts-list.md) — Count tokens in a Message
 - [List Session Resources - Claude API Reference](Endpoints/beta-sessions-resources-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Session Thread Events - Claude API Reference](Endpoints/beta-sessions-threads-events-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Session Threads - Claude API Reference](Endpoints/beta-sessions-threads-list.md) — Include beta APIsThe API you’re viewing is only available in beta
@@ -1428,8 +1537,14 @@
 - [List Tunnel Certificates - Claude API Reference](Endpoints/beta-tunnels-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Tunnels - Claude API Reference](Endpoints/http-beta-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List User Profiles - Claude API Reference](Endpoints/http-beta-user-profiles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Users - Claude API Reference](Endpoints/organization-users-list.md) — Count tokens in a Message
 - [List Vaults - Claude API Reference](Endpoints/beta-vaults-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Work Items - Claude API Reference](Endpoints/beta-environments-work-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Workspace Members - Claude API Reference](Endpoints/organization-workspaces-members-list.md) — Count tokens in a Message
+- [List Workspace Rate Limits - Claude API Reference](Endpoints/organization-workspaces-rate-limits-list.md) — Count tokens in a Message
+- [List Workspaces - Claude API Reference](Endpoints/organization-workspaces-list.md) — Count tokens in a Message
+- [List Workspaces For Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-list.md) — Count tokens in a Message
+- [Members - Claude API Reference](Endpoints/organization-workspaces-members.md) — Count tokens in a Message
 - [Memories](Endpoints/cli-beta-memory-stores-memories.md) — $ ant beta:memory-stores:memories create
 - [Memories](Endpoints/csharp-beta-memory-stores-memories.md) — BetaManagedAgentsMemory Beta.MemoryStores.Memories.Create(MemoryCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Memories](Endpoints/go-beta-memory-stores-memories.md) — client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (BetaManagedAgentsMemory, error)
@@ -1487,14 +1602,20 @@
 - [Models - Claude API Reference](Endpoints/http-beta-models.md) — Count tokens in a Message
 - [Models - Claude API Reference](Endpoints/models.md) — Count tokens in a Message
 - [OpenAI SDK compatibility](Endpoints/openai-sdk.md) — Anthropic provides a compatibility layer that enables you to use the OpenAI SDK to test the Claude API. With a few code changes, you can quickly evaluate…
+- [Organization - Claude API Reference](Endpoints/organization.md) — Count tokens in a Message
 - [Parse Unverified - Claude API Reference](Endpoints/http-beta-webhooks-parse-unverified.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Pause Deployment - Claude API Reference](Endpoints/beta-deployments-pause.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [PHP SDK](Endpoints/sdks-php.md) — Install and configure the Anthropic PHP SDK with value objects and builder patterns
 - [Poll for Work - Claude API Reference](Endpoints/beta-environments-work-poll.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Python SDK](Endpoints/sdks-python.md) — Install and configure the Anthropic Python SDK with sync and async client support
+- [Rate Limits - Claude API Reference](Endpoints/organization-rate-limits.md) — Count tokens in a Message
+- [Rate Limits - Claude API Reference](Endpoints/organization-workspaces-rate-limits.md) — Count tokens in a Message
 - [Rate limits - Claude Platform Docs](Endpoints/rate-limits.md) — Count tokens in a Message
 - [Record Heartbeat - Claude API Reference](Endpoints/beta-environments-work-heartbeat.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Redact a memory version - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-redact.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove Federation Rule Workspace - Claude API Reference](Endpoints/organization-federation-rules-workspaces-remove.md) — Count tokens in a Message
+- [Remove User - Claude API Reference](Endpoints/organization-users-remove.md) — Count tokens in a Message
+- [Remove Workspace From Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-remove.md) — Count tokens in a Message
 - [Resources](Endpoints/cli-beta-sessions-resources.md) — $ ant beta:sessions:resources add
 - [Resources](Endpoints/csharp-beta-sessions-resources.md) — BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)
 - [Resources](Endpoints/go-beta-sessions-resources.md) — client.Beta.Sessions.Resources.Add(ctx, sessionID, params) (BetaManagedAgentsFileResource, error)
@@ -1508,13 +1629,17 @@
 - [Retrieve a memory version - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Retrieve a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-retrieve.md) — Count tokens in a Message
 - [Retrieve a Message Batch - Claude API Reference](Endpoints/messages-batches-retrieve.md) — Count tokens in a Message
+- [Retrieve API Key (Admin API) - Claude API Reference](Endpoints/organization-api-keys-retrieve.md) — Count tokens in a Message
 - [Retrieve Message Batch results - Claude API Reference](Endpoints/beta-messages-batches-results.md) — Count tokens in a Message
 - [Retrieve Message Batch results - Claude API Reference](Endpoints/messages-batches-results.md) — Count tokens in a Message
 - [Reveal Tunnel Token - Claude API Reference](Endpoints/http-beta-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Rotate Tunnel Token - Claude API Reference](Endpoints/http-beta-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Ruby SDK](Endpoints/sdks-ruby.md) — Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
+- [Rules - Claude API Reference](Endpoints/organization-federation-rules.md) — Count tokens in a Message
 - [Run Deployment Now - Claude API Reference](Endpoints/beta-deployments-run.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Send Events - Claude API Reference](Endpoints/beta-sessions-events-send.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Service Accounts - Claude API Reference](Endpoints/organization-service-accounts.md) — Count tokens in a Message
+- [Service Accounts - Claude API Reference](Endpoints/organization-workspaces-service-accounts.md) — Count tokens in a Message
 - [Service tiers - Claude Platform Docs](Endpoints/service-tiers.md) — Count tokens in a Message
 - [Sessions](Endpoints/cli-beta-sessions.md) — $ ant beta:sessions create
 - [Sessions](Endpoints/csharp-beta-sessions.md) — BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)
@@ -1546,18 +1671,30 @@
 - [Update a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update a memory store - Claude API Reference](Endpoints/beta-memory-stores-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update Agent - Claude API Reference](Endpoints/beta-agents-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update API Key - Claude API Reference](Endpoints/organization-api-keys-update.md) — Count tokens in a Message
+- [Update Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings-update.md) — Count tokens in a Message
 - [Update Credential - Claude API Reference](Endpoints/beta-vaults-credentials-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update Deployment - Claude API Reference](Endpoints/beta-deployments-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update Environment - Claude API Reference](Endpoints/beta-environments-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update External Key - Claude API Reference](Endpoints/organization-external-keys-update.md) — Count tokens in a Message
+- [Update Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-update.md) — Count tokens in a Message
+- [Update Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-update.md) — Count tokens in a Message
+- [Update Service Account - Claude API Reference](Endpoints/organization-service-accounts-update.md) — Count tokens in a Message
+- [Update Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-update.md) — Count tokens in a Message
 - [Update Session - Claude API Reference](Endpoints/beta-sessions-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update User - Claude API Reference](Endpoints/organization-users-update.md) — Count tokens in a Message
 - [Update User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update Vault - Claude API Reference](Endpoints/beta-vaults-update.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Update Work Item - Claude API Reference](Endpoints/beta-environments-work-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Workspace - Claude API Reference](Endpoints/organization-workspaces-update.md) — Count tokens in a Message
+- [Update Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-update.md) — Count tokens in a Message
 - [Upload File - Claude API Reference](Endpoints/files-upload.md) — Count tokens in a Message
 - [Upload File - Claude API Reference](Endpoints/http-beta-files-upload.md) — Count tokens in a Message
 - [User Profiles - Claude API Reference](Endpoints/http-beta-user-profiles.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Users - Claude API Reference](Endpoints/organization-users.md) — Count tokens in a Message
 - [Validate Credential - Claude API Reference](Endpoints/beta-vaults-credentials-mcp-oauth-validate.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Validate External Key - Claude API Reference](Endpoints/organization-external-keys-validate.md) — Count tokens in a Message
 - [Vaults](Endpoints/cli-beta-vaults.md) — Body param: Human-readable name for the vault. 1-255 characters.
 - [Vaults](Endpoints/csharp-beta-vaults.md) — BetaManagedAgentsVault Beta.Vaults.Create(VaultCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Vaults](Endpoints/go-beta-vaults.md) — client.Beta.Vaults.New(ctx, params) (BetaManagedAgentsVault, error)
@@ -1587,10 +1724,14 @@
 - [Webhooks - Claude API Reference](Endpoints/beta-webhooks.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Webhooks - Claude API Reference](Endpoints/http-beta-webhooks.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Work - Claude API Reference](Endpoints/beta-environments-work.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Workspaces - Claude API Reference](Endpoints/organization-federation-rules-workspaces.md) — Count tokens in a Message
+- [Workspaces - Claude API Reference](Endpoints/organization-service-accounts-workspaces.md) — Count tokens in a Message
+- [Workspaces - Claude API Reference](Endpoints/organization-workspaces.md) — Count tokens in a Message
 
 ## Guides
 
 - [Admin API overview](Guides/build-with-claude-administration-api.md) — The Admin API is unavailable for individual accounts. To collaborate with teammates and add members, set up your organization in Console → Settings →…
+- [API and data retention - Claude Platform Docs](Guides/build-with-claude-api-and-data-retention.md) — Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
 - [Batch processing - Claude Platform Docs](Guides/build-with-claude-batch-processing.md) — Claude on cloud platforms
 - [Build an orchestration mode - Claude Platform Docs](Guides/build-with-claude-mid-conversation-effort-example.md) — Claude on cloud platforms
 - [Cache diagnostics - Claude Platform Docs](Guides/build-with-claude-cache-diagnostics.md) — Claude on cloud platforms
@@ -1611,7 +1752,6 @@
 - [Context editing - Claude Platform Docs](Guides/build-with-claude-context-editing.md) — Claude on cloud platforms
 - [Context windows - Claude Platform Docs](Guides/build-with-claude-context-windows.md) — Claude on cloud platforms
 - [Coordinates and bounding boxes - Claude Platform Docs](Guides/build-with-claude-vision-coordinates.md) — Claude on cloud platforms
-- [Data residency - Claude Platform Docs](Guides/build-with-claude-data-residency.md) — Manage where model inference runs and where data is stored with geographic controls.
 - [Effort - Claude Platform Docs](Guides/build-with-claude-effort.md) — Claude on cloud platforms
 - [Embeddings - Claude Platform Docs](Guides/build-with-claude-embeddings.md) — Claude on cloud platforms
 - [Extended thinking - Claude Platform Docs](Guides/build-with-claude-extended-thinking.md) — Claude on cloud platforms
@@ -1640,6 +1780,7 @@
 - [Using Agent Skills with the API - Claude Platform Docs](Guides/build-with-claude-skills-guide.md) — Claude on cloud platforms
 - [Using the Messages API - Claude Platform Docs](Guides/build-with-claude-working-with-messages.md) — Claude on cloud platforms
 - [Vision - Claude Platform Docs](Guides/build-with-claude-vision.md) — Claude on cloud platforms
+- [Workspaces - Claude Platform Docs](Guides/build-with-claude-workspaces.md) — Organize API keys, manage team access, and control costs with workspaces.
 
 ## Other
 
@@ -1647,9 +1788,7 @@
 - [Accessing GitHub - Claude Platform Docs](Other/managed-agents-github.md) — Configure agent environment
 - [Adding files - Claude Platform Docs](Other/managed-agents-files.md) — Configure agent environment
 - [Admin API - Claude Platform Docs](Other/manage-claude-admin-api.md) — Manage organization members, workspaces, invites, and API keys programmatically with the Admin API, using an Admin API key, an org:admin OAuth token, or a…
-- [Admin keys | Claude Platform](Other/usage-limits.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
 - [Analytics APIs - Claude Platform Docs](Other/manage-claude-analytics-api.md) — Understand which analytics API and API key your organization needs, then provision access to Claude Code productivity metrics or Claude Enterprise engagement…
-- [API and data retention - Claude Platform Docs](Other/manage-claude-api-and-data-retention.md) — Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
 - [API Key Best Practices: Keeping Your Keys Safe and Secure | Claude Help Center](Other/api-key-best-practices-keeping-your-keys-safe-and-secure.md) — API keys enable access to the Claude API, but they can pose significant security risks if not handled properly. Your API key is a digital key to your account…
 - [API Safeguards Tools | Claude Help Center](Other/api-safeguards-tools.md) — Whether you are just starting the process of setting up safeguards for your API deployment of Claude, or your deployment is already running, here are some…
 - [API usage primer for Claude - Claude Platform Docs](Other/claude-api-primer.md) — This guide is designed to give Claude the basics of using the Claude API. It gives explanation and examples of model IDs/the basic messages API, tool use…
@@ -1664,13 +1803,12 @@
 - [Claude Code Analytics API - Claude Platform Docs](Other/manage-claude-claude-code-analytics-api.md) — Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 - [Claude in Microsoft Foundry | Claude by Anthropic](Other/partners-microsoft-foundry.md) — Deploy frontier AI solutions safely and simply, using your existing Azure ecosystem.
 - [Claude Managed Agents overview - Claude Platform Docs](Other/managed-agents-overview.md) — Configure agent environment
-- [Claude on AWS | Claude by Anthropic](Other/partners-amazon-bedrock.md) — Give your team a thinking partner, build agents, and ship AI products to customers in your AWS environment.
 - [Claude on AWS | Claude by Anthropic](Other/partners-claude-on-aws.md) — Give your team a thinking partner, build agents, and ship AI products to customers in your AWS environment.
 - [Claude Partner Network Directory](Other/partners-services.md) — Find a Claude certified consulting partner or system integrator to help you build your AI strategy and successfully implement Claude.
+- [Claude Platform](Other/usage-limits.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
 - [CLI authentication options - Claude Platform Docs](Other/cli-sdks-libraries-cli-authentication.md) — Libraries and integrations
 - [CLI quickstart - Claude Platform Docs](Other/cli-sdks-libraries-cli-quickstart.md) — Libraries and integrations
 - [CLI scripting and automation - Claude Platform Docs](Other/cli-sdks-libraries-cli-scripting.md) — Libraries and integrations
-- [CLI, SDKs, and libraries - Claude Platform Docs](Other/cli-sdks-libraries-overview.md) — Libraries and integrations
 - [Cloud environment setup - Claude Platform Docs](Other/managed-agents-environments.md) — Configure agent environment
 - [Cloud sandbox reference - Claude Platform Docs](Other/managed-agents-cloud-sandboxes-reference.md) — Configure agent environment
 - [Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api.md) — Programmatic access to your organization's Claude activity, chats, files, projects, sessions in Claude apps, and users for compliance, audit, and governance.
@@ -1683,10 +1821,13 @@
 - [Connectors and plugins | Claude Marketplace | Claude by Anthropic](Other/partners-mcp.md) — Bring the tools you already use into every Claude conversation.
 - [Container reference](Other/managed-agents-cloud-containers.md) — Pre-installed packages, databases, and utilities available in cloud containers.
 - [Create an Admin API key - Claude Platform Docs](Other/manage-claude-admin-api-keys.md) — Create an Admin API key for your Claude Console or Claude Enterprise organization.
+- [Custom tools in self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-custom-tools.md) — Configure agent environment
 - [Customer-managed encryption keys - Claude Platform Docs](Other/manage-claude-cmek.md) — Encrypt Claude workspace data at rest with a key you control.
+- [Data residency - Claude Platform Docs](Other/manage-claude-data-residency.md) — Manage where model inference runs and where data is stored with geographic controls.
 - [Define outcomes](Other/managed-agents-output-patterns.md) — Tell the agent what 'done' looks like, and let it iterate until it gets there.
 - [Define outcomes - Claude Platform Docs](Other/managed-agents-define-outcomes.md) — Configure agent environment
 - [Define your agent - Claude Platform Docs](Other/managed-agents-agent-setup.md) — Configure agent environment
+- [Deploy self-hosted workers - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-workers.md) — Configure agent environment
 - [Design your compliance integration - Claude Platform Docs](Other/manage-claude-compliance-integration-patterns.md) — Choose between polling and cursor-driven Activity Feed consumption, correlate Compliance API events with your SIEM, and plan retention.
 - [Develop an Inference hooks integration - Claude Platform Docs](Other/manage-claude-inference-hooks-endpoint.md) — Build the AI security server that receives signed Inference hooks requests, verifies them, and returns allow or deny verdicts.
 - [Documentation - Claude Platform Docs](Other/home.md) — Everything you need to integrate Claude into your applications. From first API call to production.
@@ -1694,19 +1835,18 @@
 - [Get started with Claude Managed Agents - Claude Platform Docs](Other/managed-agents-quickstart.md) — Configure agent environment
 - [Get your Claude API key - Claude Platform Docs](Other/get-api-key.md) — Claude on cloud platforms
 - [Go SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-go.md) — Libraries and integrations
-- [Google Cloud | Claude by Anthropic](Other/partners-google-cloud-vertex-ai.md) — Build advanced AI agents with Claude on Google Cloud.
 - [Google Cloud | Claude by Anthropic](Other/partners-google-cloud.md) — Build advanced AI agents with Claude on Google Cloud.
 - [Handle Compliance API errors - Claude Platform Docs](Other/manage-claude-compliance-errors.md) — Compliance API error responses by HTTP status code, with the cause and fix for each.
-- [How can I access the Claude API? | Claude Help Center](Other/how-can-i-access-the-anthropic-api.md) — Organizations interested in building with the Claude API can create a Claude Console account. The Claude Console is where you can create API keys, add users to…
+- [How can I access the Claude API? | Claude Help Center](Other/how-can-i-access-the-claude-api.md) — Organizations interested in building with the Claude API can create a Claude Console account. The Claude Console is where you can create API keys, add users to…
 - [How can I check connectivity to the Claude API? | Claude Help Center](Other/how-can-i-check-connectivity-to-the-claude-api.md) — You can programmatically verify your connection to the Claude API by following these steps:
-- [How can I get higher rate limits on the Claude API? | Claude Help Center](Other/how-can-i-get-higher-rate-limits-on-the-claude-api.md) — Usage tiers are assigned automatically. There's no deposit or purchase that moves you up, and you don't need to take any action.
+- [How can I get higher rate limits on the Claude API? | Claude Help Center](Other/how-can-i-advance-my-claude-api-usage-to-tier-2.md) — Usage tiers are assigned automatically. There's no deposit or purchase that moves you up, and you don't need to take any action.
 - [How do I get access to Claude in Amazon Bedrock? | Claude Help Center](Other/how-do-i-get-access-to-claude-in-amazon-bedrock.md) — Get started with Claude in Amazon Bedrock by visiting the Amazon Bedrock console. For a step-by-step walkthrough on how to request Claude model access in the…
 - [How will I be billed for Claude API use? | Anthropic Help Center](Other/how-will-i-be-billed-for-claude-api-use.md) — Note: If you have received access to the Claude Console on or after 2/13/24, you will pay via our prepaid billing process. Refer to this article for more…
 - [I created a Claude Console organization - how do I start using the Claude API? | Claude Help Center](Other/i-created-a-claude-console-organization-how-do-i-start-using-the-claude-api.md) — To use the Claude API and the playground, add usage credits to your organization's balance. You’ll need to fill out some additional information about your…
 - [I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries? | Claude Help Center](Other/i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries.md) — If you're using Claude through AWS Bedrock, your usage is non-refundable. If you are a customer with a private offer and direct contract with Anthropic for…
 - [I'm getting an API connection error. How can I fix it? | Claude Help Center](Other/i-m-getting-an-api-connection-error-how-can-i-fix-it.md) — This error usually indicates an issue on your end, potentially related to your firewall, network, or VPN. Try these steps:
 - [Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks.md) — Send each governed prompt to your organization's AI security server for an allow or deny verdict before inference proceeds.
-- [Intro to Claude - Claude Platform Docs](Other/welcome.md) — Claude on cloud platforms
+- [Inspect sessions and track usage - Claude Platform Docs](Other/managed-agents-session-observability.md) — Configure agent environment
 - [Inviting members to the Claude Console | Claude Help Center](Other/inviting-members-to-the-claude-console.md) — The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: Creating…
 - [Java SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-java.md) — Libraries and integrations
 - [Legal summarization](Other/build-use-case-legal-summarization.md) — This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key…
@@ -1716,9 +1856,11 @@
 - [MCP connector](Other/agents-mcp-connector.md) — Claude's Model Context Protocol (MCP) connector feature enables you to connect to remote MCP servers directly from the Messages API without a separate MCP…
 - [MCP connector](Other/managed-agents-custom-mcp-servers.md) — Connect MCP servers to your agents for access to external tools and data sources.
 - [MCP connector - Claude Platform Docs](Other/managed-agents-mcp-connector.md) — Configure agent environment
+- [Memory stores in self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-memory.md) — Configure agent environment
 - [Migration - Claude Platform Docs](Other/managed-agents-migration.md) — Configure agent environment
 - [Model cards - Claude Platform Docs](Other/resources-overview.md) — Model cards with detailed documentation for Claude models.
 - [Models overview - Claude Platform Docs](Other/how-large-is-the-claude-api-s-context-window.md) — Claude is a family of state-of-the-art large language models developed by Anthropic. Compare the current lineup, find the model ID for every platform, and open…
+- [Monitor and troubleshoot self-hosted workers - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-operations.md) — Configure agent environment
 - [Multiagent orchestration - Claude Platform Docs](Other/managed-agents-multiagent-orchestration.md) — Coordinate multiple agents within a single session.
 - [Multiagent sessions](Other/managed-agents-multi-agent.md) — Coordinate multiple agents within a single session.
 - [Not Found - Claude Platform Docs](Other/features-adaptive-thinking.md) — The requested page could not be found. These pages are close:
@@ -1727,8 +1869,11 @@
 - [Partners | Claude by Anthropic](Other/partners.md) — Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
 - [Permission policies - Claude Platform Docs](Other/managed-agents-permission-policies.md) — Configure agent environment
 - [PHP SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-php.md) — Libraries and integrations
+- [Playground | Claude Platform](Other/playground.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
+- [Plugins API - Claude Platform Docs](Other/manage-claude-plugins-api.md) — Inventory and manage the plugins in your Claude Enterprise organization: upload plugins and versions, choose the version members are served, control who can…
 - [Powered by Claude | Claude by Anthropic](Other/partners-powered-by-claude.md) — A curated list of businesses that use Claude to build better, faster, and safer.
 - [Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center](Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md) — We're changing how the Messages API handles thinking blocks to protect against distillation. A thinking block is a record of the reasoning Claude may produce…
+- [Preview responses with event deltas - Claude Platform Docs](Other/managed-agents-event-deltas.md) — Configure agent environment
 - [Programatic Tool Calling (PTC) with the Claude API](Other/claude-cookbooks-tool-use-programmatic-tool-calling-ptc.md) — Programmatic Tool Calling (PTC) allows Claude to write code that calls
 - [Prompt caching through the Claude API](Other/claude-cookbooks-misc-prompt-caching.md) — Prompt caching allows you to store and reuse context within your prompt.
 - [Python SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-python.md) — Libraries and integrations
@@ -1736,17 +1881,21 @@
 - [Rate Limits API - Claude Platform Docs](Other/manage-claude-rate-limits-api.md) — Programmatically query your organization's API rate limits with the Rate Limits API.
 - [Reference - Claude Platform Docs](Other/managed-agents-reference.md) — Configure agent environment
 - [Remote MCP servers](Other/agents-remote-mcp-servers.md) — Several companies have deployed remote MCP servers that developers can connect to via the Anthropic MCP connector API. These servers expand the capabilities…
+- [Restrict web search and web fetch domains - Claude Platform Docs](Other/managed-agents-tools-web-restrictions.md) — Configure agent environment
 - [Retrieve and delete chats, files, and projects - Claude Platform Docs](Other/manage-claude-compliance-content-data.md) — Access chat content, file attachments, and projects for claude.ai organizations through the Compliance API.
 - [Retrieve session transcripts - Claude Platform Docs](Other/manage-claude-compliance-sessions.md) — List the sessions your users run in Claude apps and agents, such as Claude Cowork and Claude Code, and retrieve their transcripts through the Compliance API.
 - [Ruby SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-ruby.md) — Libraries and integrations
 - [Scheduled deployments - Claude Platform Docs](Other/managed-agents-scheduled-deployments.md) — Create and manage deployments with the Claude API: run an agent on a recurring cron schedule and inspect its run history.
 - [SDK middleware - Claude Platform Docs](Other/cli-sdks-libraries-middleware.md) — Libraries and integrations
+- [SDKs, CLI, and libraries - Claude Platform Docs](Other/cli-sdks-libraries-overview.md) — Libraries and integrations
 - [Security model - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-security.md) — Configure agent environment
 - [Self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes.md) — Configure agent environment
+- [Self-hosted worker reference - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-reference.md) — Configure agent environment
 - [Session budgets - Claude Platform Docs](Other/managed-agents-budgets.md) — Configure agent environment
 - [Session event stream](Other/managed-agents-how-managed-agents-work.md) — Send events, stream responses, and interrupt or redirect your session mid-execution.
 - [Session event stream - Claude Platform Docs](Other/managed-agents-events-and-streaming.md) — Configure agent environment
 - [Session operations - Claude Platform Docs](Other/managed-agents-session-operations.md) — Configure agent environment
+- [Session threads - Claude Platform Docs](Other/managed-agents-session-threads.md) — Configure agent environment
 - [Session tracing](Other/managed-agents-observability.md) — Monitor and debug your sessions using the Console timeline and raw event views.
 - [Set up the Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api-access.md) — Enable the Compliance API for your organization, then create a Compliance Access Key (with scoped permissions) or an Admin API key, and learn which to use.
 - [Skills - Claude Platform Docs](Other/managed-agents-skills.md) — Configure agent environment
@@ -1780,6 +1929,7 @@
 - [Where do I find Claude in Amazon Bedrock documentation? | Claude Help Center](Other/where-do-i-find-claude-in-amazon-bedrock-documentation.md) — Visit the Claude in Amazon Bedrock user guide.
 - [Where is the Claude API supported? | Claude Help Center](Other/where-is-the-claude-api-supported.md) — We support using the Claude API in a number of locations. Please check our website in the future for updates.
 - [WIF reference - Claude Platform Docs](Other/manage-claude-wif-reference.md) — Environment variables, validation rules, profile configuration, and error reference for Workload Identity Federation.
+- [Workflow runs - Claude Platform Docs](Other/managed-agents-workflow-runs.md) — Configure agent environment
 - [Workload Identity Federation - Claude Platform Docs](Other/manage-claude-workload-identity-federation.md) — Authenticate workloads to the Claude API with short-lived identity tokens from your own identity provider instead of long-lived static API keys.
 - [Workspaces - Claude Platform Docs](Other/manage-claude-workspaces.md) — Organize API keys, manage team access, and control costs with workspaces.
 
@@ -1790,7 +1940,6 @@
 - [Handle streaming refusals - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md) — Claude on cloud platforms
 - [Increase output consistency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md) — Make Claude's outputs more consistent by specifying exact formats, prefilling responses, constraining with examples, and grounding answers in retrieval.
 - [Keep Claude in character with role prompting and prefilling - Claude API Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-keep-claude-in-character.md) — This guide provides actionable tips to keep Claude in character, even during long, complex interactions.
-- [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/platform-claude-com-test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) — Defend your application against jailbreaks and prompt injection with input screening, hardened system prompts, and safe handling of untrusted tool content.
 - [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) — Defend your application against jailbreaks and prompt injection with input screening, hardened system prompts, and safe handling of untrusted tool content.
 - [Reduce hallucinations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md) — Minimize hallucinations in Claude's outputs by allowing uncertainty, grounding responses in direct quotes, and verifying claims with citations.
 - [Reduce prompt leak - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md) — Reduce the risk of prompt leaks by separating context from user queries, filtering Claude's outputs, and auditing prompts, without degrading task performance.

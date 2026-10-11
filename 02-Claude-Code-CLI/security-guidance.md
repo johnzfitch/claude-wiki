@@ -2,7 +2,7 @@
 title: "Catch security issues as Claude writes code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/security-guidance"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:40Z"
+fetched_at: "2026-10-10T06:24:52Z"
 tags: ["claude-code", "security"]
 ---
 
@@ -12,9 +12,9 @@ tags: ["claude-code", "security"]
 - [Install the plugin](#install-the-plugin)
   - [Enable for your team in local sessions](#enable-for-your-team-in-local-sessions)
 - [What the plugin checks](#what-the-plugin-checks)
-  - [On each file edit](#on-each-file-edit)
-  - [At the end of each turn](#at-the-end-of-each-turn)
-  - [On each commit or push Claude makes](#on-each-commit-or-push-claude-makes)
+  - [Checks on each file edit](#checks-on-each-file-edit)
+  - [Checks at the end of each turn](#checks-at-the-end-of-each-turn)
+  - [Checks on each commit or push Claude makes](#checks-on-each-commit-or-push-claude-makes)
   - [Review independence and limits](#review-independence-and-limits)
 - [Add your own rules](#add-your-own-rules)
   - [Add guidance for the model-backed reviews](#add-guidance-for-the-model-backed-reviews)
@@ -71,7 +71,7 @@ The terminal install prompts for a scope. Choose user scope to write the plugin 
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 - The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
 
-Check the install summary. If it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to activate the plugin in your current session.
+Check the install summary. If it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to activate the plugin in your current session.
 
 
 [​](#enable-for-your-team-in-local-sessions)
@@ -106,9 +106,9 @@ The plugin reviews Claude’s work at three points, each at a different depth:
 You can extend each layer by [adding your own rules](#add-your-own-rules). Built-in checks cannot be removed individually, but you can [disable each layer](#disable-or-uninstall) independently.
 
 
-[​](#on-each-file-edit)
+[​](#checks-on-each-file-edit)
 
-On each file edit
+Checks on each file edit
 
 When Claude writes to a file, the plugin scans the new content for known risky patterns. This is a pattern match with no model call, so it adds no usage cost. Example pattern categories:
 
@@ -120,9 +120,9 @@ When Claude writes to a file, the plugin scans the new content for known risky p
 The check runs after the edit lands and appends the warning to Claude’s context for the next step. Each warning fires once per pattern per file per session, so repeat matches in the same file do not flood the conversation. You can [add your own patterns](#add-custom-per-edit-patterns) to this layer with a `security-patterns.yaml` file.
 
 
-[​](#at-the-end-of-each-turn)
+[​](#checks-at-the-end-of-each-turn)
 
-At the end of each turn
+Checks at the end of each turn
 
 A turn is one round of Claude responding: you send a message, Claude works and replies, and the turn ends. After each turn, the plugin computes a git diff of everything that changed in the working tree during the turn, including changes from Claude’s edit tools, Bash commands, and subagents, and sends it to a separate Claude review focused on security. The review runs in the background, so Claude’s reply is not delayed. If the review finds issues, Claude is re-prompted with the findings and addresses them as a follow-up. This catches issues a string match cannot, such as:
 
@@ -135,9 +135,9 @@ A turn is one round of Claude responding: you send a message, Claude works and r
 You see both the finding and Claude’s resolution directly in your session. The review covers up to 30 changed files per turn and fires at most three times in a row before yielding back to you.
 
 
-[​](#on-each-commit-or-push-claude-makes)
+[​](#checks-on-each-commit-or-push-claude-makes)
 
-On each commit or push Claude makes
+Checks on each commit or push Claude makes
 
 When Claude runs `git commit` or `git push` through its Bash tool, the plugin runs a deeper agentic review of the change in the background. This review reads surrounding code, including callers, sanitizers, and related files, to decide whether a finding is real before reporting it. The extra context keeps false positives low on patterns that look dangerous in isolation but are safe in your codebase. This layer fires only on commits and pushes Claude makes through its Bash tool. Commits you run from your own shell, including the `!` shell escape inside a session, are not reviewed. Commit and push reviews are capped at 20 per rolling hour. If the commit review’s findings duplicate what the end-of-turn review already reported, Claude is not re-prompted, so a clean commit produces no visible output from this layer.
 

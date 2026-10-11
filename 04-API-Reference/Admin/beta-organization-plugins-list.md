@@ -1,0 +1,1073 @@
+---
+title: "List Plugins - Claude API Reference"
+source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugins/list"
+category: "04-API-Reference/Admin"
+fetched_at: "2026-10-09T06:27:50Z"
+tags: ["api", "plugins"]
+---
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](../Endpoints/overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fplugins%2Flist)
+
+
+
+
+
+SearchCtrlK
+
+Include beta APIsThe API you’re viewing is only available in beta
+
+Using the API
+
+[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
+
+
+Messages
+
+
+Create a Message
+
+
+Count tokens in a Message
+
+Batches
+
+Managed Agents
+
+Agents
+
+Environments
+
+Sessions
+
+Deployments
+
+Deployment Runs
+
+Vaults
+
+Memory Stores
+
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
+
+Models
+
+
+List Models
+
+
+Get a Model
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
+
+Plugins
+
+
+Create Plugin
+
+
+Get Plugin
+
+
+Update Plugin
+
+
+List Plugins
+
+
+Delete Plugin
+
+Versions
+
+Installation Settings
+
+Shares
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+Tunnels
+
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Create Enrollment URL
+
+
+Compliance API
+
+Activities
+
+Organizations
+
+Groups
+
+Apps
+
+Code
+
+
+Completions
+
+
+Create a Text Completion Deprecated
+
+Support & configuration
+
+[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
+
+Claude Code
+
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+
+[Console](../Other/usage-limits.md)
+
+Copy page
+
+
+
+cURL
+
+1.  [API reference](../Endpoints/http.md)
+2.  [Beta](../Endpoints/http-beta.md)
+3.  [Organization](http-beta-organization.md)
+4.  [Plugins](https://platform.claude.com/docs/en/api/http/beta/organization/plugins)
+
+# List Plugins
+
+GET/v1/organizations/plugins
+
+List the Plugins created under the organization, newest first: those in the organization's own plugin marketplaces and those in members' personal plugin marketplaces.
+
+Plugins in members' personal marketplaces are listed with the same detail as the organization's own, and their files can be downloaded through the version archive endpoint, which records each such download on the Compliance API activity feed.
+
+**Accepted credentials:** an Admin API key with the `read:plugins` or `read:org_audit` scope, or a Compliance Access Key with the `read:compliance_org_data` scope.
+
+Every request must include the beta header `anthropic-beta: ce-plugins-2026-09-01`. A request without it returns `404`, exactly as if the endpoint did not exist. The Plugins API is in beta and is available to Claude Enterprise organizations only. It is not available to Claude Platform (Claude Console) organizations, or to organizations with HIPAA readiness enabled.
+
+##### Query parameters
+
+
+
+"created_at\[gt\]": optional string
+
+
+
+RFC 3339 timestamp bound; combine \[gte\], \[gt\], \[lte\], \[lt\].
+
+formatdate-time
+
+
+
+"created_at\[gte\]": optional string
+
+
+
+RFC 3339 timestamp bound; combine \[gte\], \[gt\], \[lte\], \[lt\].
+
+formatdate-time
+
+
+
+"created_at\[lt\]": optional string
+
+
+
+RFC 3339 timestamp bound; combine \[gte\], \[gt\], \[lte\], \[lt\].
+
+formatdate-time
+
+
+
+"created_at\[lte\]": optional string
+
+
+
+RFC 3339 timestamp bound; combine \[gte\], \[gt\], \[lte\], \[lt\].
+
+formatdate-time
+
+
+
+limit: optional number
+
+
+
+Number of items to return per page.
+
+Defaults to `20`. Ranges from `1` to `100`.
+
+default20
+
+minimum1
+
+maximum100
+
+marketplace_id: optional string
+
+
+
+Only Plugins in this plugin marketplace (prefixed `marketplace_`).
+
+organization_id: optional string
+
+
+
+For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+
+
+
+owner_type: optional "organization" or "user"
+
+
+
+`organization` for Plugins in the organization's plugin marketplaces, `user` for Plugins in members' personal plugin marketplaces.
+
+One of the following:
+
+"organization"
+
+
+
+"user"
+
+
+
+owner_user_id: optional string
+
+
+
+Only Plugins in this member's personal plugin marketplaces (prefixed `user_`); a removed member's ID is accepted.
+
+
+
+page: optional string
+
+
+
+Optionally set to the `next_page` token from the previous response.
+
+maxLength2048
+
+##### Headers
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `ce-plugins-2026-09-01` in this header.
+
+One of the following:
+
+string
+
+
+
+"message-batches-2024-09-24"
+
+
+
+"prompt-caching-2024-07-31"
+
+
+
+"computer-use-2024-10-22"
+
+
+
+"computer-use-2025-01-24"
+
+
+
+"pdfs-2024-09-25"
+
+
+
+"token-counting-2024-11-01"
+
+
+
+"token-efficient-tools-2025-02-19"
+
+
+
+"output-128k-2025-02-19"
+
+
+
+"files-api-2025-04-14"
+
+
+
+"mcp-client-2025-04-04"
+
+
+
+"mcp-client-2025-11-20"
+
+
+
+"dev-full-thinking-2025-05-14"
+
+
+
+"interleaved-thinking-2025-05-14"
+
+
+
+"code-execution-2025-05-22"
+
+
+
+"extended-cache-ttl-2025-04-11"
+
+
+
+"context-1m-2025-08-07"
+
+
+
+"context-management-2025-06-27"
+
+
+
+"model-context-window-exceeded-2025-08-26"
+
+
+
+"skills-2025-10-02"
+
+
+
+"fast-mode-2026-02-01"
+
+
+
+"output-300k-2026-03-24"
+
+
+
+"user-profiles-2026-03-24"
+
+
+
+"user-profiles-2026-08-18"
+
+
+
+"user-profiles-2026-09-04"
+
+
+
+"advisor-tool-2026-03-01"
+
+
+
+"managed-agents-2026-04-01"
+
+
+
+"cache-diagnosis-2026-04-07"
+
+
+
+"dreaming-2026-04-21"
+
+
+
+"thinking-token-count-2026-05-13"
+
+
+
+"server-side-fallback-2026-06-01"
+
+
+
+"server-side-fallback-2026-07-01"
+
+
+
+"fallback-credit-2026-06-01"
+
+
+
+"fallback-credit-2026-07-01"
+
+
+
+"agent-memory-2026-07-22"
+
+
+
+"mid-conversation-tool-changes-2026-07-01"
+
+
+
+"compact-2026-01-12"
+
+
+
+"computer-use-2025-11-24"
+
+
+
+"mcp-tunnels-2026-06-22"
+
+
+
+"structured-outputs-2025-11-13"
+
+
+
+"task-budgets-2026-03-13"
+
+
+
+"thinking-display-updates-2026-08-18"
+
+
+
+"ce-user-management-2026-07-13"
+
+
+
+"mid-conversation-output-config-2026-07-01"
+
+
+
+"thinking-binding-controls-2026-08-01"
+
+
+
+"mid-conversation-system-clear-at-2026-08-21"
+
+
+
+"compact-2026-09-04"
+
+
+
+"inline-tools-2026-09-15"
+
+
+
+"mcp-client-2026-09-15"
+
+
+
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
+
+
+
+##### Returns
+
+
+
+data: array of [BetaPlugin](https://platform.claude.com/docs/en/api/http/beta/organization/plugins#beta_plugin) { type: "plugin", id, components, 16 more }
+
+
+
+
+
+type: "plugin"
+
+
+
+Always `plugin`.
+
+defaultplugin
+
+id: string
+
+
+
+The Plugin's ID.
+
+
+
+components: array of [BetaPluginComponent](https://platform.claude.com/docs/en/api/http/beta/organization/plugins#beta_plugin_component) { type, description, name } or null
+
+
+
+What the served version contains; null when not enumerated.
+
+
+
+type: "agent" or "cli" or "command" or 3 more
+
+
+
+The kind of component.
+
+One of the following:
+
+"agent"
+
+
+
+"cli"
+
+
+
+"command"
+
+
+
+"hook"
+
+
+
+"mcp_server"
+
+
+
+"skill"
+
+
+
+description: string or null
+
+
+
+What the component declares about itself; always null for MCP servers, hooks, and CLIs.
+
+name: string
+
+
+
+The component's name: a skill's, command's or agent's name, an MCP server's key in the manifest, the event a hook runs on, or a CLI's executable.
+
+
+
+content_scan: [BetaPluginContentScan](https://platform.claude.com/docs/en/api/http/beta/organization/plugins#beta_plugin_content_scan) { assessment, reason, status } or null
+
+
+
+The served version's content scan; null when it has not been scanned.
+
+
+
+assessment: "fail" or "pass" or "unknown" or "warn" or null
+
+
+
+The scan's verdict; set only when `status` is `completed`.
+
+One of the following:
+
+"fail"
+
+
+
+"pass"
+
+
+
+"unknown"
+
+
+
+"warn"
+
+
+
+reason: string or null
+
+
+
+The primary mechanism behind a `warn` or `fail`, such as `credential-exposure` or `guardrail-tampering`; a mechanism this API does not yet name reads as `other`. Null on a `pass`, whenever `assessment` is null, and when no mechanism is reported for the verdict.
+
+
+
+status: "completed" or "errored" or "processing"
+
+
+
+`processing` while a scan runs, `completed` when it ran to completion, `errored` when it could not run or its outcome cannot be read.
+
+One of the following:
+
+"completed"
+
+
+
+"errored"
+
+
+
+"processing"
+
+
+
+
+
+created_at: string
+
+
+
+RFC 3339.
+
+formatdate-time
+
+
+
+created_by: [BetaPluginUserActor](https://platform.claude.com/docs/en/api/http/beta/organization/plugins#beta_plugin_user_actor) or [BetaPluginAPIActor](https://platform.claude.com/docs/en/api/http/beta/organization/plugins#beta_plugin_api_actor) or null
+
+
+
+Who created the Plugin; null when no creator is recorded.
+
+One of the following:
+
+
+
+BetaPluginUserActor object{ type: "user_actor", email_address, user_id }
+
+
+
+
+
+type: "user_actor"
+
+
+
+A member of the organization.
+
+defaultuser_actor
+
+email_address: string or null
+
+
+
+The member's email address; may be null, for example when they are no longer a member of the organization.
+
+user_id: string
+
+
+
+The member's User ID.
+
+
+
+BetaPluginAPIActor object{ type: "api_actor", api_key_id }
+
+
+
+
+
+type: "api_actor"
+
+
+
+An Admin API key, in the same form the Compliance API activity feed uses for it.
+
+defaultapi_actor
+
+api_key_id: string
+
+
+
+The key's ID.
+
+description: string or null
+
+
+
+The served version's description.
+
+display_name: string or null
+
+
+
+The served version's display name.
+
+latest_version_id: string
+
+
+
+The newest version.
+
+manifest_version: string or null
+
+
+
+The version string the served version's manifest declares.
+
+marketplace_id: string
+
+
+
+The ID of the plugin marketplace the Plugin lives in.
+
+name: string
+
+
+
+Lowercase identifier, unique within its plugin marketplace. Fixed for an organization-owned Plugin's lifetime; a member-owned Plugin's changes when its owner renames it in claude.ai, while its `id` stays the same.
+
+
+
+organization_installation_preference: "auto_install" or "available" or "not_available" or "required" or null
+
+
+
+Organization-owned Plugin: the organization-wide installation setting every member gets unless an RBAC Group they belong to holds its own — the Plugin's own setting, or its plugin marketplace's default. Null for a member-owned Plugin, which has shares instead. One of `required`, `auto_install`, `available`, `not_available`; a value this API does not yet name is returned as stored.
+
+One of the following:
+
+"auto_install"
+
+
+
+"available"
+
+
+
+"not_available"
+
+
+
+"required"
+
+
+
+organization_installation_preference_inherited: boolean or null
+
+
+
+Organization-owned Plugin: true while it has no organization-wide setting of its own and `organization_installation_preference` is its plugin marketplace's default. Null for a member-owned Plugin.
+
+
+
+owner: [BetaPluginOwnerOrganization](https://platform.claude.com/docs/en/api/http/beta/organization/plugins#beta_plugin_owner_organization) or [BetaPluginOwnerUser](https://platform.claude.com/docs/en/api/http/beta/organization/plugins#beta_plugin_owner_user)
+
+
+
+Who owns the Plugin: the organization, or the member whose personal plugin marketplace it lives in.
+
+One of the following:
+
+
+
+BetaPluginOwnerOrganization object{ type: "organization" }
+
+
+
+
+
+type: "organization"
+
+
+
+The Plugin lives in a plugin marketplace the organization owns.
+
+defaultorganization
+
+
+
+BetaPluginOwnerUser object{ type: "user", user_id }
+
+
+
+
+
+type: "user"
+
+
+
+The Plugin lives in one member's personal plugin marketplace.
+
+defaultuser
+
+user_id: string
+
+
+
+The member's User ID.
+
+
+
+reach: "contained" or "privileged" or "remote" or null
+
+
+
+How far the served version reaches: `remote` when it declares an MCP server or a CLI, `privileged` when it declares a hook, monitor, language server or settings but nothing remote, `contained` otherwise; null when not classifiable.
+
+One of the following:
+
+"contained"
+
+
+
+"privileged"
+
+
+
+"remote"
+
+
+
+served_version_id: string
+
+
+
+The version claude.ai serves to members.
+
+served_version_pinned: boolean
+
+
+
+False while the served version follows each new version; true once it has been pinned to one.
+
+
+
+updated_at: string
+
+
+
+RFC 3339. Moves on a new version and on a served-version change; a change to the Plugin's installation settings or shares does not move it.
+
+formatdate-time
+
+next_page: string or null
+
+
+
+Token to provide in as `page` in the subsequent request to retrieve the next page of data. A page may hold fewer than `limit` Plugins, even none, while this is set; keep following it until it is null.
+
+List Plugins
+
+cURL
+
+
+
+```python
+curl https://api.anthropic.com/v1/organizations/plugins \
+    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-beta: ce-plugins-2026-09-01' \
+    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+```
+
+Response 200
+
+
+
+```python
+{
+  "data": [
+    {
+      "id": "plugin_01JyHfbRkZvD1gW7oTqXc3Ne",
+      "components": [
+        {
+          "description": "description",
+          "name": "review-pr",
+          "type": "skill"
+        }
+      ],
+      "content_scan": {
+        "assessment": "warn",
+        "reason": "credential-exposure",
+        "status": "completed"
+      },
+      "created_at": "2026-03-14T09:26:53.589793Z",
+      "created_by": {
+        "email_address": "user@example.com",
+        "type": "user_actor",
+        "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
+      },
+      "description": "Reviews pull requests against your team's conventions.",
+      "display_name": "Code Review Helper",
+      "latest_version_id": "pluginver_01KaZmQpRsTuVwXyZ2b4c6d8",
+      "manifest_version": "1.2.0",
+      "marketplace_id": "marketplace_01HxQ3v9KpZ2mTn8RwLc4Ys7",
+      "name": "code-review-helper",
+      "organization_installation_preference": "available",
+      "organization_installation_preference_inherited": true,
+      "owner": {
+        "type": "organization"
+      },
+      "reach": "contained",
+      "served_version_id": "pluginver_01K9wPcHd4Rm2Tx8Vq6Ln3Sb",
+      "served_version_pinned": true,
+      "type": "plugin",
+      "updated_at": "2026-03-14T09:26:53.589793Z"
+    }
+  ],
+  "next_page": "page_MjAyNi0wOS0xNlQxNDowNTowOVo"
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+
+
+```python
+{
+  "data": [
+    {
+      "id": "plugin_01JyHfbRkZvD1gW7oTqXc3Ne",
+      "components": [
+        {
+          "description": "description",
+          "name": "review-pr",
+          "type": "skill"
+        }
+      ],
+      "content_scan": {
+        "assessment": "warn",
+        "reason": "credential-exposure",
+        "status": "completed"
+      },
+      "created_at": "2026-03-14T09:26:53.589793Z",
+      "created_by": {
+        "email_address": "user@example.com",
+        "type": "user_actor",
+        "user_id": "user_01WCz1FkmYMm4gnmykNKUu3Q"
+      },
+      "description": "Reviews pull requests against your team's conventions.",
+      "display_name": "Code Review Helper",
+      "latest_version_id": "pluginver_01KaZmQpRsTuVwXyZ2b4c6d8",
+      "manifest_version": "1.2.0",
+      "marketplace_id": "marketplace_01HxQ3v9KpZ2mTn8RwLc4Ys7",
+      "name": "code-review-helper",
+      "organization_installation_preference": "available",
+      "organization_installation_preference_inherited": true,
+      "owner": {
+        "type": "organization"
+      },
+      "reach": "contained",
+      "served_version_id": "pluginver_01K9wPcHd4Rm2Tx8Vq6Ln3Sb",
+      "served_version_pinned": true,
+      "type": "plugin",
+      "updated_at": "2026-03-14T09:26:53.589793Z"
+    }
+  ],
+  "next_page": "page_MjAyNi0wOS0xNlQxNDowNTowOVo"

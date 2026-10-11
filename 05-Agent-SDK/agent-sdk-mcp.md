@@ -2,7 +2,7 @@
 title: "Connect to external tools with MCP - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/mcp"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-26T06:37:57Z"
+fetched_at: "2026-10-10T06:27:32Z"
 tags: ["agents", "claude-code", "mcp", "sdk"]
 ---
 
@@ -10,8 +10,8 @@ tags: ["agents", "claude-code", "mcp", "sdk"]
 
 - [Quickstart](#quickstart)
 - [Add an MCP server](#add-an-mcp-server)
-  - [In code](#in-code)
-  - [From a config file](#from-a-config-file)
+  - [Add a server in code](#add-a-server-in-code)
+  - [Add a server from a config file](#add-a-server-from-a-config-file)
 - [Connection timing](#connection-timing)
 - [Allow MCP tools](#allow-mcp-tools)
   - [Tool naming convention](#tool-naming-convention)
@@ -33,6 +33,7 @@ tags: ["agents", "claude-code", "mcp", "sdk"]
 - [Troubleshooting](#troubleshooting)
   - [Server shows “failed” status](#server-shows-%E2%80%9Cfailed%E2%80%9D-status)
   - [Tools not being called](#tools-not-being-called)
+  - [A tool is missing from an SDK MCP server](#a-tool-is-missing-from-an-sdk-mcp-server)
   - [Connection timeouts](#connection-timeouts)
   - [Tool output exceeds maximum allowed tokens](#tool-output-exceeds-maximum-allowed-tokens)
 - [Related resources](#related-resources)
@@ -56,7 +57,7 @@ This page covers MCP configuration for the Agent SDK. To add MCP servers to the 
 
 Quickstart
 
-This example connects to the [Claude Code documentation](https://code.claude.com/docs/en/02-Claude-Code-CLI/claude-code-overview-claude-code-docs.md) MCP server using [HTTP transport](#http%2Fsse-servers) and uses [`allowedTools`](#allow-mcp-tools) with a wildcard to permit all tools from the server.
+This example connects to the [Claude Code documentation](../02-Claude-Code-CLI/code-home.md) MCP server using [HTTP transport](#http%2Fsse-servers) and uses [`allowedTools`](#allow-mcp-tools) with a wildcard to permit all tools from the server.
 
 TypeScript
 
@@ -120,9 +121,9 @@ Add an MCP server
 You can configure MCP servers in code when calling `query()`, or in a `.mcp.json` file loaded via [`settingSources`](#from-a-config-file).
 
 
-[​](#in-code)
+[​](#add-a-server-in-code)
 
-In code
+Add a server in code
 
 Pass MCP servers directly in the `mcpServers` option. This example starts a local filesystem MCP server for `/Users/me/projects`. Replace that path with a directory on your machine:
 
@@ -180,9 +181,9 @@ asyncio.run(main())
 ```
 
 
-[​](#from-a-config-file)
+[​](#add-a-server-from-a-config-file)
 
-From a config file
+Add a server from a config file
 
 Create a `.mcp.json` file at your project root. The file is picked up when the `project` setting source is enabled, which it is for default `query()` options. If you set `settingSources` explicitly, include `"project"` for this file to load. Replace `/Users/me/projects` with a directory on your machine:
 
@@ -345,7 +346,7 @@ MCP servers communicate with your agent using different transport protocols. Che
 
 stdio servers
 
-Local processes that communicate via stdin/stdout. Use this for MCP servers you run on the same machine. For the `.mcp.json` form, use the same fields shown at [From a config file](#from-a-config-file). In code, pass the command and its arguments. Replace `/Users/me/projects` with a directory on your machine:
+Local processes that communicate via stdin/stdout. Use this for MCP servers you run on the same machine. For the `.mcp.json` form, use the same fields shown at [Add a server from a config file](#from-a-config-file). In code, pass the command and its arguments. Replace `/Users/me/projects` with a directory on your machine:
 
 TypeScript
 
@@ -978,6 +979,19 @@ options = ClaudeAgentOptions(
 ```
 
 
+[​](#a-tool-is-missing-from-an-sdk-mcp-server)
+
+A tool is missing from an SDK MCP server
+
+In the TypeScript SDK, when a tool’s input schema can’t be converted to JSON Schema, the server you created with [`createSdkMcpServer()`](agent-sdk-typescript.md#createsdkmcpserver) leaves that tool out when it lists its tools. The SDK emits a warning at that point. Under Node.js the warning is a process warning with code `CLAUDE_SDK_MCP_TOOL_SCHEMA_UNCONVERTIBLE`, and it starts with this text:
+
+```python
+Tool "<name>" on SDK MCP server "<server>" was left out of the server's tool list, because its input schema cannot be converted to JSON Schema
+```
+
+The rest of the warning gives the conversion error’s message when it has one, then says what to check and change. Before TypeScript Agent SDK v0.3.286, one unconvertible schema made the server’s whole tool listing fail without this warning, so none of that server’s tools reached Claude.
+
+
 [​](#connection-timeouts)
 
 Connection timeouts
@@ -995,7 +1009,7 @@ In TypeScript, you can set the tool-call limit for a single [SDK MCP server](#sd
 
 Tool output exceeds maximum allowed tokens
 
-The SDK applies the same MCP output limit as Claude Code. When a tool result with no image content is larger than 25,000 tokens, Claude Code saves the output to a file and replaces the tool result with an error message that names the file path, so the agent can read the output back in portions. Raise the limit with the [`MAX_MCP_OUTPUT_TOKENS`](../02-Claude-Code-CLI/env-vars.md) environment variable. See [MCP output limits and warnings](../06-MCP-Tools/General/mcp.md#mcp-output-limits-and-warnings) for the full behavior, including how a server can declare a higher per-tool limit with the `anthropic/maxResultSizeChars` annotation.
+The SDK applies the same MCP output limits as Claude Code. When a successful tool result with no image content is larger than 25,000 tokens, Claude Code saves the output to a file and replaces the tool result with an error message that names the file path, so the agent can read the output back in portions. To change the token limit, set the [`MAX_MCP_OUTPUT_TOKENS`](../02-Claude-Code-CLI/env-vars.md) environment variable. Unless the tool declares `anthropic/maxResultSizeChars`, a successful text result longer than 50,000 characters is saved to a file regardless of the token limit. See [MCP output limits and warnings](../06-MCP-Tools/General/mcp.md#mcp-output-limits-and-warnings) for the full behavior, including how a server declares that annotation.
 
 
 [​](#related-resources)

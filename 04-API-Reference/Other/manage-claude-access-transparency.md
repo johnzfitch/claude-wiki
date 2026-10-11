@@ -2,7 +2,7 @@
 title: "Access Transparency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/access-transparency"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:33Z"
+fetched_at: "2026-10-04T08:33:28Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,13 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Overview](manage-claude-access-transparency.md)[Transparency log (beta)](manage-claude-access-transparency-log.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -58,7 +62,7 @@ Compliance API
 
 [Console](usage-limits.md)
 
-[Admin](manage-claude-admin-api.md)Data & compliance
+[Admin](manage-claude-admin-api.md)Access Transparency
 
 # Access Transparency
 
@@ -90,11 +94,12 @@ Anthropic personnel access customer content only under defined conditions. Acces
 - **Human access happens only under a published reason code.**
 - **Human views of your covered content are recorded.** Anthropic's internal tooling that can reach your covered content is instrumented to emit an event on each view.
 - **Events represent human access, not automated processing.** Anthropic's automated safety systems process your content in a secured pipeline with no interactive human access; that processing does not generate `anthropic_access` events. The one event automated processing can initiate is a `cmek_preserve` preservation record (see [CMEK content preservation](#cmek-content-preservation)).
-- **Events arrive on your existing feed.** Activities are accessible through your [Compliance API Activity Feed](manage-claude-compliance-activity-feed.md). Existing credentials, audit, export, and SIEM integrations for the Compliance API will still apply.
+- **Events arrive on your existing feed.** Activities are accessible through your [Compliance API Activity Feed](manage-claude-compliance-activity-feed.md). Existing credentials, audit, export, and SIEM integrations for the Compliance API still apply.
+- **Events are tamper-evident.** Each event recorded after your organization's [transparency log](manage-claude-access-transparency-log.md) (beta) is created is also committed to that log. The log is an append-only, signed record that you can verify independently of Anthropic's serving systems.
 
 ## What Access Transparency covers
 
-- **Covered content:** Access Transparency covers prompt and response content sent through the Claude Messages API or Claude Code sessions. Anthropic's [general ZDR documentation](manage-claude-api-and-data-retention.md) and [ZDR for Claude Code documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md) explain which APIs and features are covered by ZDR. The same APIs and features are covered by Access Transparency.
+- **Covered content:** Access Transparency covers prompt and response content sent through the Claude Messages API or Claude Code sessions. Anthropic's [general ZDR documentation](../Guides/build-with-claude-api-and-data-retention.md) explains which APIs and features are covered by ZDR. The same APIs and features are covered by Access Transparency.
 - **Manual views by Anthropic personnel:** Manual views of your covered content by Anthropic reviewers generate events.
 
 ## What Access Transparency does not cover
@@ -104,7 +109,7 @@ Anthropic personnel access customer content only under defined conditions. Acces
 - **Claude for Enterprise and Claude Apps:** claude.ai Enterprise seats, Claude for Work, Cowork, and Claude in Chrome are not covered.
 - **Claude consumer products:** Claude Free, Pro, or Max plans.
 - **Partner-operated platforms:** Amazon Bedrock and Google Cloud; refer to those platforms' transparency controls.
-- **Anything ZDR does not cover:** Products that are not covered by ZDR (for example, the Files API, Anthropic-hosted stateful applications, and the Batch API) are not covered by Access Transparency. See [ZDR documentation](https://platform.claude.com/docs/22-Safety-Policy/zero-data-retention-claude-code-docs-6ec9ee63f1.md#what-zdr-does-not-cover) for additional details.
+- **Anything ZDR does not cover:** Products that are not covered by ZDR (for example, the Files API, Anthropic-hosted stateful applications, and the Batch API) are not covered by Access Transparency. See [ZDR documentation](../Guides/build-with-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) for additional details.
 
 ## Getting started
 
@@ -149,20 +154,22 @@ Pagination, date-range filtering (`created_at.gte` / `.lt`), and the response en
 
 Each `anthropic_access` activity carries the standard Activity fields plus the following:
 
-| Field                     | Type            | Description                                                                                                                                                      |
-|:--------------------------|:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`                      | string          | Unique identifier for this activity                                                                                                                              |
-| `accessed_at`             | RFC 3339 string | When the access occurred. Might be earlier than when the activity becomes visible in your feed                                                                   |
-| `created_at`              | RFC 3339 string | When the activity became visible in your feed                                                                                                                    |
-| `actor`                   | object          | Always `{ "type": "anthropic_actor", "email_address": null }`. Individual employee identity is not disclosed                                                     |
-| `accessor_department`     | string          | The Anthropic team that performed the access (for example, `Safeguards`)                                                                                         |
-| `reason_code`             | enum            | See [Reason codes](#reason-codes)                                                                                                                                |
-| `resource_details.type`   | enum            | A resource type, currently only `message`. Extensible for future resource types                                                                                  |
-| `resource_details.id`     | string or null  | Identifier of the content accessed                                                                                                                               |
-| `resource_details.parent` | string or null  | Identifier of the content's parent, for example the conversation ID containing a message. Currently `null` or omitted until resources with parents are supported |
-| `organization_id`         | string          | The organization the content belongs to. Tagged ID format (`org_...`)                                                                                            |
-| `organization_uuid`       | string          | The organization the content belongs to. UUID format                                                                                                             |
-| `workspace_id`            | string or null  | The workspace the content belongs to                                                                                                                             |
+| Field                         | Type            | Description                                                                                                                                                                                                                                                                                      |
+|:------------------------------|:----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                          | string          | Unique identifier for this activity                                                                                                                                                                                                                                                              |
+| `accessed_at`                 | RFC 3339 string | When the access occurred. Might be earlier than when the activity becomes visible in your feed                                                                                                                                                                                                   |
+| `created_at`                  | RFC 3339 string | When Anthropic recorded the event. An event usually becomes visible in your feed shortly after; see [Timing](manage-claude-access-transparency-log.md#timing) for when it can lag                                                                                                          |
+| `actor`                       | object          | Always `{ "type": "anthropic_actor", "email_address": null }`. Individual employee identity is not disclosed                                                                                                                                                                                     |
+| `accessor_department`         | string          | The Anthropic team that performed the access (for example, `Safeguards`)                                                                                                                                                                                                                         |
+| `reason_code`                 | enum            | See [Reason codes](#reason-codes)                                                                                                                                                                                                                                                                |
+| `resource_details.type`       | enum            | A resource type, currently only `message`. Extensible for future resource types                                                                                                                                                                                                                  |
+| `resource_details.id`         | string or null  | Identifier of the content accessed                                                                                                                                                                                                                                                               |
+| `resource_details.parent`     | string or null  | Identifier of the content's parent, for example the conversation ID containing a message. Currently `null` or omitted until resources with parents are supported                                                                                                                                 |
+| `organization_id`             | string          | The organization the content belongs to. Tagged ID format (`org_...`)                                                                                                                                                                                                                            |
+| `organization_uuid`           | string          | The organization the content belongs to. UUID format                                                                                                                                                                                                                                             |
+| `workspace_id`                | string or null  | The workspace the content belongs to                                                                                                                                                                                                                                                             |
+| `workspace_uuid`              | string          | The workspace the content belongs to. UUID format. Present when the access was scoped to a workspace, and absent otherwise. Not one of the transparency log's [leaf fields](manage-claude-access-transparency-log.md#how-an-event-becomes-a-leaf), so an inclusion proof does not cover it |
+| `transparency_log_leaf_index` | integer         | The event's zero-based position in your organization's transparency log (beta). Present whenever the event has a leaf, and absent otherwise. See [Verify Access Transparency events with the transparency log](manage-claude-access-transparency-log.md)                                   |
 
 Example JSON message:
 
@@ -177,7 +184,8 @@ Example JSON message:
   "resource_details": { "type": "message", "id": "msg_1234ABCD" },
   "accessor_department": "Safeguards",
   "reason_code": "safety_review",
-  "organization_uuid": "5b236db4-3fb4-4bf3-a560-b5e266038a15"
+  "organization_uuid": "5b236db4-3fb4-4bf3-a560-b5e266038a15",
+  "transparency_log_leaf_index": 41
 }
 ```
 
@@ -217,7 +225,8 @@ Example JSON message:
   "resource_details": { "type": "message", "id": "msg_0ExampleExampleExample" },
   "accessor_department": "Safeguards",
   "reason_code": "policy_violation_investigation",
-  "organization_uuid": "00000000-1111-2222-3333-444444444444"
+  "organization_uuid": "00000000-1111-2222-3333-444444444444",
+  "transparency_log_leaf_index": 57
 }
 ```
 
@@ -261,7 +270,7 @@ Access Transparency applies from the time it is enabled for your organization. C
 
 ### Notification timing
 
-`anthropic_access` and `cmek_preserve` events are delivered to your Compliance API feed within two business days of the access or preservation they record. This feed should not be treated as a real-time alerting channel, and the `accessed_at` timestamp reflects when the access occurred, which might be up to two business days before the activity becomes visible in your feed. The `created_at` field reflects the time that the event became visible.
+`anthropic_access` and `cmek_preserve` events are delivered to your Compliance API feed within two business days of the access or preservation they record. This feed should not be treated as a real-time alerting channel, and the `accessed_at` timestamp reflects when the access occurred, which might be up to two business days before the activity becomes visible in your feed. The `created_at` field reflects the time Anthropic recorded the event, and the event usually becomes visible in your feed shortly after that time. These events do not follow the Activity Feed's usual 1-minute [indexing lag](manage-claude-compliance-integration-patterns.md#window-polling): an event can become visible up to two business days after its `created_at`. If you poll the feed by `created_at` window, overlap consecutive windows by at least two business days for `anthropic_access` and `cmek_preserve` events so that a late-indexed event is not dropped.
 
 ### Automated processing does not generate access events
 
@@ -309,15 +318,20 @@ Access Transparency is enabled at the organization level and covers all workspac
 
 They are independent. With CMEK, safety preservation outside your key emits a separate `cmek_preserve` event on the same feed. See [CMEK content preservation](#cmek-content-preservation) and [CMEK](manage-claude-cmek.md).
 
+### How can I tell that my Access Transparency record has not been altered?
+
+Verify your organization's transparency log (beta): an append-only, signed record of your Access Transparency events, with inclusion and consistency proofs you check on your own infrastructure. See [Verify Access Transparency events with the transparency log](manage-claude-access-transparency-log.md).
+
 ### How do I request Access Transparency?
 
 Contact your Anthropic account representative.
 
 ## Related resources
 
+- [Verify Access Transparency events with the transparency log (beta)](manage-claude-access-transparency-log.md)
 - [Compliance API overview](manage-claude-compliance-api.md)
 - [Activity Feed](manage-claude-compliance-activity-feed.md)
-- [API and data retention](manage-claude-api-and-data-retention.md)
+- [API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 - [Customer-Managed Encryption Keys (CMEK)](manage-claude-cmek.md)
-- [Claude Code data usage](https://platform.claude.com/docs/22-Safety-Policy/data-usage-claude-code-docs-06b2864aaa.md)
+- [Claude Code data usage](../../13-Enterprise-Admin/data-usage.md)
 - [Trust Center](https://trust.anthropic.com/resources)

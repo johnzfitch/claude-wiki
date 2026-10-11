@@ -2,7 +2,7 @@
 title: "Migrate to Claude Agent SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/migration-guide"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-05T06:27:26Z"
+fetched_at: "2026-10-10T06:24:21Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -11,8 +11,8 @@ tags: ["agents", "claude-code", "sdk"]
 - [Overview](#overview)
 - [What’s Changed](#what%E2%80%99s-changed)
 - [Migration Steps](#migration-steps)
-  - [For TypeScript/JavaScript Projects](#for-typescript%2Fjavascript-projects)
-  - [For Python Projects](#for-python-projects)
+  - [Migrate a TypeScript or JavaScript project](#migrate-a-typescript-or-javascript-project)
+  - [Migrate a Python project](#migrate-a-python-project)
 - [Breaking changes](#breaking-changes)
   - [Python: ClaudeCodeOptions renamed to ClaudeAgentOptions](#python-claudecodeoptions-renamed-to-claudeagentoptions)
   - [System prompt no longer default](#system-prompt-no-longer-default)
@@ -34,7 +34,7 @@ Copy pageCopy page
 
 Overview
 
-The Claude Code SDK has been renamed to the **Claude Agent SDK** and its documentation has been reorganized. This change reflects the SDK’s broader capabilities for building AI agents beyond just coding tasks. Migrating from the OpenAI Agents SDK instead? The [OpenAI Agents SDK migration recipe](https://platform.claude.com/cookbook/claude-agent-sdk-04-migrating-from-openai-agents-sdk) maps each primitive onto the Claude Agent SDK through a single worked example.
+The Claude Code SDK has been renamed to the **Claude Agent SDK** and its documentation has been reorganized. This change reflects the SDK’s broader capabilities for building AI agents beyond coding tasks. Migrating from the OpenAI Agents SDK instead? The [OpenAI Agents SDK migration recipe](https://platform.claude.com/cookbook/claude-agent-sdk-04-migrating-from-openai-agents-sdk) maps each primitive onto the Claude Agent SDK through a single worked example.
 
 
 [​](#what’s-changed)
@@ -53,9 +53,9 @@ What’s Changed
 Migration Steps
 
 
-[​](#for-typescript/javascript-projects)
+[​](#migrate-a-typescript-or-javascript-project)
 
-For TypeScript/JavaScript Projects
+Migrate a TypeScript or JavaScript project
 
 **1. Uninstall the old package:**
 
@@ -82,9 +82,9 @@ import { query, tool, createSdkMcpServer } from "@anthropic-ai/claude-agent-sdk"
 **4. Update package.json:** If `@anthropic-ai/claude-code` is still listed in your `package.json`, replace it with `@anthropic-ai/claude-agent-sdk` and update the version range as well, for example from `"^0.0.42"` to `"^0.3.0"`. **5. Review [breaking changes](#breaking-changes)** Make any code changes needed to complete the migration.
 
 
-[​](#for-python-projects)
+[​](#migrate-a-python-project)
 
-For Python Projects
+Migrate a Python project
 
 **1. Uninstall the old package:**
 

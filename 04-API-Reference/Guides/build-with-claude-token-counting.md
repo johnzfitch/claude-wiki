@@ -2,7 +2,7 @@
 title: "Token counting - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/token-counting"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:28Z"
+fetched_at: "2026-10-04T08:33:23Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,11 +96,11 @@ Count the tokens in a message before you send it to Claude. Use token counts to 
 
 Token counting
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](build-with-claude-api-and-data-retention.md)
 
 Eligible
 
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+excludes [Covered Models](build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 Token counting lets you determine the number of tokens in a message before you send it to Claude. This helps you make informed decisions about your prompts and usage. With token counting, you can:
 
@@ -446,7 +446,7 @@ Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 share t
 
 ## Pricing and rate limits
 
-Token counting is **free to use** but subject to requests per minute rate limits based on your [usage tier](../Endpoints/rate-limits.md#rate-limits). If you need higher limits, use **Request rate limit increase** on the [Rate limits](../Other/usage-limits.md) page.
+Token counting is **free to use** but subject to requests per minute rate limits based on your [usage tier](../Endpoints/rate-limits.md#rate-limits). If you need higher limits, use **Request rate limit increase** on the [Rate limits](../Other/playground.md) page.
 
 | Usage tier | Requests per minute (RPM) |
 |------------|---------------------------|

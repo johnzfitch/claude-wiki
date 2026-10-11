@@ -2,7 +2,7 @@
 title: "Other LLM gateways - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/llm-gateway"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-28T06:32:26Z"
+fetched_at: "2026-10-01T06:33:43Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -58,7 +58,7 @@ When you’re ready to roll out an LLM gateway to your organization, the sequenc
 3.  Distribute the configuration through a [managed settings file](managed-settings.md#delivery-mechanisms) and your secrets tooling, so every machine receives the base URL and a credential. When both are distributed, developers don’t configure anything. If you don’t have settings distribution in place, developers follow the [connect page](llm-gateway-connect.md) to set the variables themselves.
 4.  Have each developer [check for the configuration in Claude Code](llm-gateway-connect.md#check-for-an-existing-configuration), so distribution problems surface before they depend on the gateway.
 
-[Roll out an LLM gateway for your organization](llm-gateway-rollout.md) walks each step and shows the configuration files to distribute at each one. The gateway is one part of organization setup; for policy enforcement, usage visibility, and data handling decisions, see [Set up Claude Code for your organization](admin-setup.md).
+[Roll out an LLM gateway for your organization](llm-gateway-rollout.md) walks each step and shows the configuration files to distribute at each one. The gateway is one part of organization setup; for policy enforcement, usage visibility, and data handling decisions, see [Set up Claude Code for your organization](admin-setup.md). To make a gateway reached through `ANTHROPIC_BASE_URL` the only destination a managed machine may use, set [`allowedProviders`](../02-Claude-Code-CLI/settings-reference.md#allowedproviders) to `["customEndpoint"]` in the same managed settings file and put the gateway’s `ANTHROPIC_BASE_URL` in that file’s `env` block. Claude Code then refuses a session pointed anywhere else, including at Anthropic directly or at a developer’s own proxy, and accepts `ANTHROPIC_BASE_URL` only with the value you set there. For a gateway reached through a provider-specific endpoint variable such as `ANTHROPIC_BEDROCK_BASE_URL`, the `allowedProviders` entry says which variable to pin. Requires Claude Code v2.1.285 or later.
 
 
 [​](#subscriptions-and-gateways)

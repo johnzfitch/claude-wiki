@@ -2,7 +2,7 @@
 title: "Claude Opus 5.5 system prompts - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-opus-5-5"
 category: "20-Models"
-fetched_at: "2026-09-24T06:28:21Z"
+fetched_at: "2026-10-09T06:27:43Z"
 tags: ["models", "prompting"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["models", "prompting"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -38,9 +38,9 @@ Models
 
 [Claude Opus 5.5](models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](models-sonnet-5-overview.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -52,11 +52,11 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Overview](release-notes-system-prompts-overview.md)[Claude Opus 5.5](release-notes-system-prompts-claude-opus-5-5.md)[Claude Fable 5.1](release-notes-system-prompts-claude-fable-5-1.md)[Claude Opus 5](release-notes-system-prompts-claude-opus-5.md)[Claude Fable 5](release-notes-system-prompts-claude-fable-5.md)[Claude Opus 4.8](release-notes-system-prompts-claude-opus-4-8.md)[Claude Opus 4.7](release-notes-system-prompts-claude-opus-4-7.md)[Claude Sonnet 4.6](release-notes-system-prompts-claude-sonnet-4-6.md)[Claude Opus 4.6](release-notes-system-prompts-claude-opus-4-6.md)[Claude Opus 4.5](release-notes-system-prompts-claude-opus-4-5.md)[Claude Haiku 4.5](release-notes-system-prompts-claude-haiku-4-5.md)[Claude Sonnet 4.5](release-notes-system-prompts-claude-sonnet-4-5.md)[Claude Opus 4.1](release-notes-system-prompts-claude-opus-4-1.md)[Claude Opus 4](release-notes-system-prompts-claude-opus-4.md)[Claude Sonnet 4](release-notes-system-prompts-claude-sonnet-4.md)[Claude Sonnet 3.7](release-notes-system-prompts-claude-sonnet-3-7.md)[Claude Sonnet 3.5](release-notes-system-prompts-claude-sonnet-3-5.md)[Claude Haiku 3.5](release-notes-system-prompts-claude-haiku-3-5.md)[Claude Opus 3](release-notes-system-prompts-claude-opus-3.md)[Claude Haiku 3](release-notes-system-prompts-claude-haiku-3.md)
+[Overview](release-notes-system-prompts-overview.md)[Claude Haiku 5.5](release-notes-system-prompts-claude-haiku-5-5.md)[Claude Sonnet 5.5](release-notes-system-prompts-claude-sonnet-5-5.md)[Claude Opus 5.5](release-notes-system-prompts-claude-opus-5-5.md)[Claude Fable 5.1](release-notes-system-prompts-claude-fable-5-1.md)[Claude Opus 5](release-notes-system-prompts-claude-opus-5.md)[Claude Sonnet 5](release-notes-system-prompts-claude-sonnet-5.md)[Claude Fable 5](release-notes-system-prompts-claude-fable-5.md)[Claude Opus 4.8](release-notes-system-prompts-claude-opus-4-8.md)[Claude Opus 4.7](release-notes-system-prompts-claude-opus-4-7.md)[Claude Sonnet 4.6](release-notes-system-prompts-claude-sonnet-4-6.md)[Claude Opus 4.6](release-notes-system-prompts-claude-opus-4-6.md)[Claude Opus 4.5](release-notes-system-prompts-claude-opus-4-5.md)[Claude Haiku 4.5](release-notes-system-prompts-claude-haiku-4-5.md)[Claude Sonnet 4.5](release-notes-system-prompts-claude-sonnet-4-5.md)[Claude Opus 4.1](release-notes-system-prompts-claude-opus-4-1.md)[Claude Opus 4](release-notes-system-prompts-claude-opus-4.md)[Claude Sonnet 4](release-notes-system-prompts-claude-sonnet-4.md)[Claude Sonnet 3.7](release-notes-system-prompts-claude-sonnet-3-7.md)[Claude Sonnet 3.5](release-notes-system-prompts-claude-sonnet-3-5.md)[Claude Haiku 3.5](release-notes-system-prompts-claude-haiku-3-5.md)[Claude Opus 3](release-notes-system-prompts-claude-opus-3.md)[Claude Haiku 3](release-notes-system-prompts-claude-haiku-3.md)
 
 [Console](../04-API-Reference/Other/usage-limits.md)
 

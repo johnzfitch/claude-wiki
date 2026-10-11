@@ -2,7 +2,7 @@
 title: "Streaming messages - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/streaming"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:26Z"
+fetched_at: "2026-10-04T08:32:38Z"
 tags: ["api", "sdk"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "sdk"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -132,7 +132,7 @@ with client.messages.stream(
 
 ## Get the final message without handling events
 
-If you don't need to process text as it arrives, the SDKs provide a way to use streaming internally while returning the complete `Message` object, identical to what `.create()` returns. This is especially useful for requests with large `max_tokens` values, where the SDKs require streaming to avoid HTTP timeouts.
+If you don't need to process text as it arrives, the SDK provides a way to use streaming internally while returning the complete `Message` object, identical to what `client.messages.create()` returns. This is especially useful for requests with large `max_tokens` values, where the SDK requires streaming to avoid HTTP timeouts.
 
 CLI
 
@@ -167,7 +167,7 @@ for block in message.content:
         print(block.text)
 ```
 
-The `.stream()` call keeps the HTTP connection alive with server-sent events, then `.get_final_message()` (Python) or `.finalMessage()` (TypeScript) accumulates all events and returns the complete `Message` object. In Go, you call `message.Accumulate(event)` inside the stream loop to build the same complete `Message`. In Java, use `MessageAccumulator.create()` and call `accumulator.accumulate(event)` on each event. In C#, await the stream's `.Aggregate()` extension method to get the complete `Message`, or pass a `MessageContentAggregator` to `.CollectAsync()` to aggregate while handling events. In Ruby, call `.accumulated_message` on the stream. In the PHP SDK, you iterate over stream events manually to accumulate the response.
+The `.stream()` call keeps the HTTP connection alive with server-sent events, then the SDK's message-accumulation helper, `stream.get_final_message()`, collects all events into the complete `Message` object.
 
 ## Event types
 
@@ -226,7 +226,7 @@ data: {"type": "content_block_delta","index": 0,"delta": {"type": "text_delta", 
 
 The deltas for `tool_use` content blocks correspond to updates for the `input` field of the block. To support maximum granularity, the deltas are *partial JSON strings*, whereas the final `tool_use.input` is always an *object*.
 
-You can accumulate the string deltas and parse the JSON once you receive a `content_block_stop` event, by using a library like [Pydantic](https://docs.pydantic.dev/latest/concepts/json/#partial-json-parsing) to do partial JSON parsing, or by using the [SDKs](../Other/cli-sdks-libraries-overview.md), which provide helpers to access parsed incremental values.
+You can accumulate the string deltas and parse the JSON once you receive a `content_block_stop` event, by using a library like [Pydantic](https://docs.pydantic.dev/latest/concepts/json/#partial-json-parsing) to do partial JSON parsing, or by using the SDK's [streaming helpers](#streaming-with-sdks). In the Python and TypeScript SDKs, these helpers also give you access to the parsed `input` incrementally, as it streams.
 
 A `tool_use` content block delta looks like:
 

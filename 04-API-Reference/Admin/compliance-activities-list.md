@@ -2,7 +2,7 @@
 title: "Query compliance activities - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/activities/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-26T06:39:07Z"
+fetched_at: "2026-10-04T08:32:57Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -244,7 +248,7 @@ The tenant is the caller's parent organization, or — for an organization with 
 
 
 
-activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 511 more
+activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 513 more
 
 
 
@@ -1038,6 +1042,12 @@ Plugin was deleted.
 
 User disabled a plugin for their account.
 
+"claude_plugin_downloaded"
+
+
+
+The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session).
+
 "claude_plugin_enabled"
 
 
@@ -1616,7 +1626,7 @@ Inference hooks configuration was created or updated for the organization.
 
 
 
-Inference hooks inspection denied a request. The request was blocked and no model response was produced.
+Inference hooks inspection denied a request. The request was blocked.
 
 "inference_hooks_request_failed_open"
 
@@ -2722,6 +2732,12 @@ An OAuth app was revoked.
 
 An OAuth app was updated.
 
+"platform_organization_created"
+
+
+
+An owner of the organization created a Claude Console organization under the same parent organization.
+
 "platform_plugin_directory_submission_created"
 
 
@@ -3422,7 +3438,7 @@ formatdate-time
 
 
 
-exclude_activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 511 more
+exclude_activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 513 more
 
 
 
@@ -4216,6 +4232,12 @@ Plugin was deleted.
 
 User disabled a plugin for their account.
 
+"claude_plugin_downloaded"
+
+
+
+The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session).
+
 "claude_plugin_enabled"
 
 
@@ -4794,7 +4816,7 @@ Inference hooks configuration was created or updated for the organization.
 
 
 
-Inference hooks inspection denied a request. The request was blocked and no model response was produced.
+Inference hooks inspection denied a request. The request was blocked.
 
 "inference_hooks_request_failed_open"
 
@@ -5900,6 +5922,12 @@ An OAuth app was revoked.
 
 An OAuth app was updated.
 
+"platform_organization_created"
+
+
+
+An owner of the organization created a Claude Console organization under the same parent organization.
+
 "platform_plugin_directory_submission_created"
 
 
@@ -6590,7 +6618,7 @@ Alias for `actor_ids[]`, for consistency with other compliance routes. If both a
 
 
 
-data: optional array of AbuseDecisionReceived or AccountDeleted or AdminAPIKeyCreated or 511 more
+data: optional array of AbuseDecisionReceived or AccountDeleted or AdminAPIKeyCreated or 513 more
 
 
 
@@ -6808,7 +6836,7 @@ The Claude Code agent proxy exchanged a minted identity token for short-lived cr
 
 
 
-CcrAgentProxyAnthropicOidcTokenMinted object{ type: "ccr_agent_proxy_anthropic_oidc_token_minted", actor, agent_id, 15 more }
+CcrAgentProxyAnthropicOidcTokenMinted object{ type: "ccr_agent_proxy_anthropic_oidc_token_minted", actor, agent_id, 16 more }
 
 
 
@@ -7536,6 +7564,14 @@ A version archive of a member-owned plugin, containing that member's own files, 
 
 
 
+ClaudePluginDownloaded object{ type: "claude_plugin_downloaded", actor, marketplace_id, 6 more }
+
+
+
+The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session).
+
+
+
 ClaudeProjectSyncSourceCreated object{ type: "claude_project_sync_source_created", actor, claude_project_id, 7 more }
 
 
@@ -7714,7 +7750,7 @@ This activity type is retired: project content reads are no longer recorded. Eve
 
 
 
-DesktopExtensionAllowlisted object{ type: "desktop_extension_allowlisted", actor, extension_id, 4 more }
+DesktopExtensionAllowlisted object{ type: "desktop_extension_allowlisted", actor, extension_id, 5 more }
 
 
 
@@ -7754,7 +7790,7 @@ A desktop extension was removed from the global blocklist.
 
 
 
-DesktopExtensionUploaded object{ type: "desktop_extension_uploaded", actor, extension_id, 5 more }
+DesktopExtensionUploaded object{ type: "desktop_extension_uploaded", actor, extension_id, 6 more }
 
 
 
@@ -7762,7 +7798,7 @@ A desktop extension was uploaded, either globally by an admin or org-scoped by a
 
 
 
-DesktopExtensionVersionUploaded object{ type: "desktop_extension_version_uploaded", actor, extension_id, 5 more }
+DesktopExtensionVersionUploaded object{ type: "desktop_extension_version_uploaded", actor, extension_id, 6 more }
 
 
 
@@ -7930,7 +7966,7 @@ Webhook signature validation failed.
 
 
 
-ClaudeGitHubIntegrationCreated object{ type: "claude_github_integration_created", actor, integration_id, 8 more }
+ClaudeGitHubIntegrationCreated object{ type: "claude_github_integration_created", actor, integration_id, 9 more }
 
 
 
@@ -7999,7 +8035,7 @@ An organization admin updated a self-managed GitLab configuration. Previous/new 
 
 
 
-ClaudeGdriveIntegrationCreated object{ type: "claude_gdrive_integration_created", actor, integration_id, 5 more }
+ClaudeGdriveIntegrationCreated object{ type: "claude_gdrive_integration_created", actor, integration_id, 6 more }
 
 
 
@@ -8139,7 +8175,7 @@ InferenceHooksRequestDenied object{ type: "inference_hooks_request_denied", acto
 
 
 
-Inference hooks inspection denied a request. The request was blocked and no model response was produced.
+Inference hooks inspection denied a request. The request was blocked.
 
 
 
@@ -8247,7 +8283,7 @@ Managed (AWS Marketplace) organization setup was completed.
 
 
 
-MarketplaceCreated object{ type: "marketplace_created", actor, marketplace_id, 5 more }
+MarketplaceCreated object{ type: "marketplace_created", actor, marketplace_id, 6 more }
 
 
 
@@ -8263,7 +8299,7 @@ Admin deleted an organization marketplace.
 
 
 
-MarketplaceUpdated object{ type: "marketplace_updated", actor, marketplace_id, 5 more }
+MarketplaceUpdated object{ type: "marketplace_updated", actor, marketplace_id, 6 more }
 
 
 
@@ -8295,7 +8331,7 @@ The organization published its approved MCP directory listing.
 
 
 
-McpServerCreated object{ type: "mcp_server_created", actor, mcp_server_id, 5 more }
+McpServerCreated object{ type: "mcp_server_created", actor, mcp_server_id, 6 more }
 
 
 
@@ -8327,7 +8363,7 @@ An MCP server's enterprise managed authorization settings were set, changed, or 
 
 
 
-McpServerUpdated object{ type: "mcp_server_updated", actor, mcp_server_id, 5 more }
+McpServerUpdated object{ type: "mcp_server_updated", actor, mcp_server_id, 6 more }
 
 
 
@@ -8335,7 +8371,7 @@ An MCP server's configuration was updated.
 
 
 
-McpToolPolicyUpdated object{ type: "mcp_tool_policy_updated", actor, mcp_server_id, 7 more }
+McpToolPolicyUpdated object{ type: "mcp_tool_policy_updated", actor, mcp_server_id, 9 more }
 
 
 
@@ -8743,7 +8779,7 @@ A primary owner click-accepted the BAA and enabled HIPAA protections for the org
 
 
 
-OrgIPRestrictionCreated object{ type: "org_ip_restriction_created", actor, id, 3 more }
+OrgIPRestrictionCreated object{ type: "org_ip_restriction_created", actor, id, 4 more }
 
 
 
@@ -8751,7 +8787,7 @@ Organization IP restriction was created.
 
 
 
-OrgIPRestrictionDeleted object{ type: "org_ip_restriction_deleted", actor, id, 3 more }
+OrgIPRestrictionDeleted object{ type: "org_ip_restriction_deleted", actor, id, 4 more }
 
 
 
@@ -8759,7 +8795,7 @@ Organization IP restriction was deleted.
 
 
 
-OrgIPRestrictionUpdated object{ type: "org_ip_restriction_updated", actor, id, 3 more }
+OrgIPRestrictionUpdated object{ type: "org_ip_restriction_updated", actor, id, 7 more }
 
 
 
@@ -9151,7 +9187,7 @@ Organization's custom icon uploaded or replaced.
 
 
 
-ClaudeOrganizationSettingsUpdated object{ type: "claude_organization_settings_updated", actor, updates, 4 more }
+ClaudeOrganizationSettingsUpdated object{ type: "claude_organization_settings_updated", actor, updates, 5 more }
 
 
 
@@ -9623,6 +9659,14 @@ An OAuth app was updated.
 
 
 
+PlatformOrganizationCreated object{ type: "platform_organization_created", actor, admin_email, 6 more }
+
+
+
+An owner of the organization created a Claude Console organization under the same parent organization.
+
+
+
 PlatformPluginDirectorySubmissionCreated object{ type: "platform_plugin_directory_submission_created", actor, plugin_name, 5 more }
 
 
@@ -9919,7 +9963,7 @@ User enabled a plugin for their account.
 
 
 
-PluginInstallationPreferenceUpdated object{ type: "plugin_installation_preference_updated", actor, marketplace_id, 10 more }
+PluginInstallationPreferenceUpdated object{ type: "plugin_installation_preference_updated", actor, marketplace_id, 11 more }
 
 
 

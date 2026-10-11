@@ -1,9 +1,9 @@
 ---
-title: "Life sciences AI adoption index | Claude"
+title: "Life sciences AI adoption index | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/life-sciences/ai-adoption-index"
 category: "18-Industry-UseCases"
-fetched_at: "2026-09-16T06:25:39Z"
-tags: ["case-studies", "enterprise"]
+fetched_at: "2026-10-10T06:29:11Z"
+tags: ["case-studies", "enterprise", "security"]
 ---
 
 # Life sciences AI adoption index
@@ -12,17 +12,7 @@ tags: ["case-studies", "enterprise"]
 
 AI is moving faster than most implementation playbooks. Take our AI Adoption Assessment and download the step-by-step guide to building, piloting, and scaling AI in regulated science.
 
-Take the assessment
-
 [Take the assessment](#assessment)
-
-Take the assessment
-
-Redo assessment
-
-[Redo assessment](#assessment)
-
-Redo assessment
 
 ## Your AI adoption score, and actionable next steps
 
@@ -40,123 +30,53 @@ A step-by-step playbook on AI governance, pilot selection, and scaling in regula
 
 ## What organizations like yours are achieving with Claude
 
-### 10 min
+- ### 10 min
 
-Clinical study reports that previously took 10+ weeks, at [Novo Nordisk](novo-nordisk.md)
+  Clinical study reports that previously took 10+ weeks, at [Novo Nordisk](novo-nordisk.md)
 
-### 800x
+- ### 800x
 
-Faster bioinformatics analysis: 35 minutes instead of three weeks, at [Biomni](biomni.md)
+  Faster bioinformatics analysis: 35 minutes instead of three weeks, at [Biomni (opens in new tab)](biomni.md)
 
-### 50–75%
+- ### 50–75%
 
-Faster regulatory document production, at [Bluenote](bluenote.md)
+  Faster regulatory document production, at [Bluenote (opens in new tab)](bluenote.md)
 
-### 100x
+- ### 100x
 
-Faster literature reviews, with reviews completed in days instead of months, at [FutureHouse](futurehouse.md)
+  Faster literature reviews, with reviews completed in days instead of months, at [FutureHouse (opens in new tab)](futurehouse.md)
 
 ## Take the assessment and download the guide
-
-## Your assessment results
-
-### You're ready to build AI right from day one
-
-You're at the start of your AI journey. Beginning here means you get to build on solid ground: with executive sponsorship and clear governance established early, your first initiatives are set up to gain traction and stick.
-
-#### Where to focus
-
-Secure an executive sponsor who can clear obstacles and commit beyond a single budget cycle.
-
-Establish governance early: access controls, usage guidelines, and quality standards built for GxP and 21 CFR Part 11 from day one. Building compliance in from the start is one of the biggest advantages of beginning here; you'll never have to retrofit it.
-
-Start with one or two narrow pilots in low-risk, high-value areas like scientific documentation, where AI speeds up existing workflows without altering scientific judgment.
-
-Step 1 of the guide, "Lay the foundation," covers this ground in detail.
-
-Download the guide
-
-[Download the guide](../19-Reference/the-ai-imperative-for-life-sciences.md)
-
-Download the guide
-
-- You've built momentum, now it's time to operationalize
-
-You have real momentum: you’ve assembled the right team, early infrastructure, and a few impactful pilots. It’s time to lean into scaled initiatives that engage cross-functional teams.
-
-#### Where to focus
-
-Run three to five strategic pilots while you keep strengthening your foundation. Scientific documentation, literature review, and protocol analysis are proven starting points.
-
-Set success metrics before you launch: adoption, efficiency, quality, scientific impact, and satisfaction. Track them weekly.
-
-Design pilots to showcase cross-functional potential, so a win in research sparks ideas in clinical and regulatory.
-
-Step 2 of the guide, "Launch a pilot," walks through pilot selection and post-mortems.
-
-Download the guide
-
-[Download the guide](../19-Reference/the-ai-imperative-for-life-sciences.md)
-
-Download the guide
-
-You're ready to scale
-
-Your foundation is strong: committed leadership, modern infrastructure, and AI already in production. You've moved past proving AI works — now you're positioned to scale it, weaving AI through discovery, clinical development, and regulatory work.
-
-#### Where to focus
-
-Launch a comprehensive program with multiple pilots across functions, backed by a structured rollout.
-
-Stand up a center of excellence with technical architects, domain experts, and data scientists, plus rotation programs that keep it connected to the science.
-
-Invest in upskilling: hackathons, peer mentorship, and certification tied to real workflows rather than compliance modules.
-
-Step 3 of the guide, "Scale impact," along with the Novo Nordisk, Bluenote, Biomni, and FutureHouse examples, show what this looks like in practice.
-
-Download the guide
-
-[Download the guide](../19-Reference/the-ai-imperative-for-life-sciences.md)
-
-Download the guide
-
-More about the guide
-
-[More about the guide](#about-the-guide)
-
-More about the guide
 
 ## Get the Enterprise AI Transformation Guide for Life Sciences
 
 In life sciences, AI errors have real consequences: a misplaced finding in a regulatory submission, a flawed protocol, a citation that doesn't hold up under review. Data is fragmented across discovery, development, and manufacturing. Frameworks like GxP, 21 CFR Part 11, and the EU AI Act set a compliance bar that most general-purpose AI deployments weren't designed to clear.
 
-Download the guide
-
 [Download the guide](../19-Reference/the-ai-imperative-for-life-sciences.md)
 
-Download the guide
+(opens in new tab)
 
 ### Our guide to deploying AI in regulated science covers what matters at each step, built alongside Anthropic customers already running these programs.
 
-1\. Lay the foundation
+1. Lay the foundation
 
 #### Build the architecture that makes AI deployments stick
 
 How to secure executive sponsorship, build cross-functional coalitions, and address scientific skepticism directly. Includes governance frameworks your compliance and quality teams can sign off on before the first user logs in.
 
-2\. Launch a pilot
+2. Launch a pilot
 
 #### Choose the right projects and learn rigorously from every one
 
 Explore use cases that work best for pilot programs, including scientific documentation, literature synthesis, and protocol analysis. Learn how to set success metrics before you go live, and how to design pilots that create cross-functional momentum.
 
-3\. Scale impact
+3. Scale impact
 
 #### Move from isolated wins to AI across discovery, clinical, and regulatory
 
 earn how to structure centers of excellence with cross-functional representation, build upskilling programs that stick like hackathons, mentorship, or rotations, and govern AI that can scale.
 
-4\. Real results
+4. Real results
 
 #### Before-and-after numbers from four organizations
 
@@ -166,400 +86,237 @@ Keep the conversation going
 
 On June 30, we’ll go further at *The Briefing: AI for Science.* Tune in for live product announcements, conversations with peers running these programs, and a look at where leading organizations are heading next.
 
-Register now
-
-[Register now](https://www.anthropic.com/events/the-briefing-ai-for-science-virtual-event)
-
-Register now
+[Register now (opens in new tab)](https://www.anthropic.com/events/the-briefing-ai-for-science-virtual-event)
 
 ## Get advice on your AI strategy
 
 Discuss your use cases and an AI implementation strategy that fits your regulated industry.
 
-
 [Contact sales](https://www.claude.com/contact-sales)
 
-
-[Homepage](https://claude.com)
-
-Homepage
-
-
-Thank you! Your submission has been received!
-
-Oops! Something went wrong while submitting the form.
-
-[Anthropic](https://www.anthropic.com/)
-
-Anthropic
-
-© \[year\] Anthropic PBC
-
-Products
-
-- Claude
-
-  [Claude](../15-Claude-AI-Features/product-overview.md)
-  Claude
-
-- Claude Code
-
-  [Claude Code](../15-Claude-AI-Features/claude-com-product-claude-code.md)
-  Claude Code
-
-- Claude Code for Enterprise
-
-  [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-  Claude Code for Enterprise
-
-- Claude Cowork
-
-  [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-  Claude Cowork
-
-- @Claude
-
-  [@Claude](../14-Connectors/claude-for-slack.md)
-  @Claude
-
-- Claude Design
-
-  [Claude Design](../15-Claude-AI-Features/product-design.md)
-  Claude Design
-
-- Claude Science
-
-  [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-  Claude Science
-
-- Claude Security
-
-  [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-  Claude Security
-
-- Download app
-
-  [Download app](https://www.claude.com/download)
-  Download app
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md)
-  Pricing
-
-- Log in
-
-  [Log in](https://claude.ai/login)
-
-Features
-
-- Claude in Chrome
-
-  [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-  Claude in Chrome
-
-- Claude for Microsoft 365
-
-  [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-  Claude for Microsoft 365
-
-- Skills
-
-  [Skills](https://www.claude.com/skills)
-  Skills
-
-Models
-
-- Mythos
-
-  [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-  Mythos
-
-- Fable
-
-  [Fable](../15-Claude-AI-Features/claude-fable.md)
-  Fable
-
-- Opus
-
-  [Opus](https://www.claude.com/solutions/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-  Opus
-
-- Sonnet
-
-  [Sonnet](https://www.claude.com/solutions/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-  Sonnet
-
-- Haiku
-
-  [Haiku](https://www.claude.com/solutions/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-  Haiku
-
-Solutions
-
-- AI agents
-
-  [AI agents](agents.md)
-  AI agents
-
-- Code modernization
-
-  [Code modernization](code-modernization.md)
-  Code modernization
-
-- Coding
-
-  [Coding](coding.md)
-  Coding
-
-- Commerce
-
-  [Commerce](commerce.md)
-  Commerce
-
-- Customer support
-
-  [Customer support](customer-support.md)
-  Customer support
-
-- Cybersecurity
-
-  [Cybersecurity](cybersecurity.md)
-  Cybersecurity
-
-- Enterprise
-
-  [Enterprise](enterprise.md)
-  Enterprise
-
-- Financial services
-
-  [Financial services](finance.md)
-  Financial services
-
-- Government
-
-  [Government](government.md)
-  Government
-
-- Healthcare
-
-  [Healthcare](healthcare.md)
-  Healthcare
-
-- Higher education
-
-  [Higher education](education.md)
-  Higher education
-
-- K-12 teachers
-
-  [K-12 teachers](teachers.md)
-  K-12 teachers
-
-- Legal
-
-  [Legal](legal.md)
-  Legal
-
-- Life sciences
-
-  [Life sciences](life-sciences.md)
-  Life sciences
-
-- Nonprofits
-
-  [Nonprofits](nonprofits.md)
-  Nonprofits
-
-- Sales
-
-  [Sales](sales.md)
-  Sales
-
-- Small business
-
-  [Small business](small-business.md)
-  Small business
-
-Claude Platform
-
-- Overview
-
-  [Overview](https://www.claude.com/platform/api)
-  Overview
-
-- Developer docs
-
-  [Developer docs](../04-API-Reference/Other/home.md)
-  Developer docs
-
-- Pricing
-
-  [Pricing](../17-Billing-Plans/pricing.md#api)
-  Pricing
-
-- Ecosystem
-
-  [Ecosystem](https://www.claude.com/ecosystem)
-  Ecosystem
-
-- Marketplace
-
-  [Marketplace](https://www.claude.com/platform/marketplace)
-  Marketplace
-
-- Claude on AWS
-
-  [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-  Claude on AWS
-
-- Google Cloud
-
-  [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-  Google Cloud
-
-- Microsoft Foundry
-
-  [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-  Microsoft Foundry
-
-- Regional compliance
-
-  [Regional compliance](https://www.claude.com/regional-compliance)
-  Regional compliance
-
-- Console login
-
-  [Console login](../04-API-Reference/Other/usage-limits.md)
-  Console login
-
-Resources
-
-- Blog
-
-  [Blog](https://www.claude.com/blog)
-  Blog
-
-- Claude partner network
-
-  [Claude partner network](../04-API-Reference/Other/partners.md)
-  Claude partner network
-
-- Community
-
-  [Community](https://www.claude.com/community)
-  Community
-
-- Connectors
-
-  [Connectors](../04-API-Reference/Other/partners-mcp.md)
-  Connectors
-
-- Courses
-
-  [Courses](https://academy.claude.com/courses)
-  Courses
-
-- Customer stories
-
-  [Customer stories](customers.md)
-  Customer stories
-
-- Engineering at Anthropic
-
-  [Engineering at Anthropic](https://www.anthropic.com/engineering)
-  Engineering at Anthropic
-
-- Events
-
-  [Events](https://www.anthropic.com/events)
-  Events
-
-- Plugins
-
-  [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-  Plugins
-
-- Powered by Claude
-
-  [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-  Powered by Claude
-
-- Service partners
-
-  [Service partners](#)
-  Service partners
-
-- Tutorials
-
-  [Tutorials](https://academy.claude.com/tutorials)
-  Tutorials
-
-- Use cases
-
-  [Use cases](https://academy.claude.com/use-cases)
-  Use cases
-
-Company
-
-- Anthropic
-
-  [Anthropic](https://www.anthropic.com/)
-  Anthropic
-
-- Careers
-
-  [Careers](https://www.anthropic.com/careers)
-  Careers
-
-- Policy
-
-  [Policy](https://www.anthropic.com/policy)
-  Policy
-
-- Economic Futures
-
-  [Economic Futures](https://www.anthropic.com/economic-futures)
-  Economic Futures
-
-- Research
-
-  [Research](../19-Reference/anthropic-com-research.md)
-  Research
-
-- News
-
-  [News](../19-Reference/news.md)
-  News
-
-- Policy on the AI Exponential
-
-  [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-  Policy on the AI Exponential
-
-- Responsible Scaling Policy
-
-  [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-  Responsible Scaling Policy
-
-- Security and compliance
-
-  [Security and compliance](https://trust.anthropic.com/)
-  Security and compliance
-
-- Transparency
-
-  [Transparency](https://anthropic.com/transparency)
-  Transparency
-
-Programs
-
-- Startups
-
-  [Startups](../15-Claude-AI-Features/programs-startups.md)
-  Startups
-
-- Scientists
-
-  [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+[](https://www.claude.com/)
+
+© 2026 Anthropic PBC
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+- [Security and compliance](https://trust.anthropic.com/)
+- [Status](https://status.anthropic.com/)
+- [Support center](https://support.claude.com/en/)
+
+## Company
+
+- [Anthropic](https://www.anthropic.com/)
+- [Careers](https://www.anthropic.com/careers)
+- [Policy](https://www.anthropic.com/policy)
+- [Research](../19-Reference/anthropic-com-research.md)
+- [Anthropic news](../19-Reference/news.md)
+- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
+- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
+- [Transparency](https://anthropic.com/transparency)
+
+## Terms and policies
+
+- Privacy choices
+- [Privacy policy](https://www.anthropic.com/legal/privacy)
+- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
+- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
+- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
+- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
+- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
+- [Usage Policy](https://www.anthropic.com/legal/aup)
+
+## Products
+
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
+- [Log in](https://claude.ai/login)
+
+## Capabilities
+
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
+
+## Extensions
+
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+
+## Models
+
+- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
+- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Opus](../15-Claude-AI-Features/claude-opus.md)
+- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
+- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+
+## Enterprise
+
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+
+## Departments
+
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
+
+## Industries
+
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
+
+## Programs
+
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
+
+## Developers
+
+- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer blog](https://claude.dev)
+- [Community](https://www.claude.com/community)
+- [Console](../04-API-Reference/Other/home.md)
+- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+
+## Platform
+
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+
+## Resources
+
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
+- [Claude Academy](https://academy.claude.com/)
+- [Customer stories](customers.md)
+- [Events](https://www.anthropic.com/events)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
+
+## Help and security
+
+- [Availability](https://www.anthropic.com/supported-countries)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Effort - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/effort"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-09-26T06:39:21Z"
+fetched_at: "2026-10-04T08:33:51Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -96,11 +96,11 @@ Control how many tokens Claude uses when responding with the effort parameter, t
 
 Effort
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](build-with-claude-api-and-data-retention.md)
 
 Eligible
 
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+excludes [Covered Models](build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 The effort parameter lets you control how many tokens Claude spends when responding to requests. You can trade off between response thoroughness and token efficiency with a single model. The top-level effort parameter is available on all supported models with no beta header required. [Per-message effort](#change-effort-mid-conversation-beta) is in beta.
 
@@ -170,13 +170,13 @@ Because effort applies to every output token, it works whether or not thinking i
 
 ### Effort levels
 
-| Level    | Description                                                                                                                                                                                                                                                                                             | Typical use case                                                                           |
-|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| `max`    | Absolute maximum capability with no constraints on token spending. Available on Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Mythos Preview, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5, and Claude Sonnet 4.6. | Tasks requiring the deepest possible reasoning and most thorough analysis                  |
-| `xhigh`  | Extended capability for long-horizon work. Available on Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, and Claude Sonnet 5.                                                                                    | Long-running agentic and coding tasks (over 30 minutes) with token budgets in the millions |
-| `high`   | Spends as many tokens as the task needs for excellent results. The default on every model that supports effort except Claude Opus 5.5.                                                                                                                                                                  | Complex reasoning, difficult coding problems, agentic tasks                                |
-| `medium` | Balanced approach with moderate token savings. The default on Claude Opus 5.5.                                                                                                                                                                                                                          | Agentic tasks that require a balance of speed, cost, and performance                       |
-| `low`    | Most efficient. Significant token savings with some capability reduction.                                                                                                                                                                                                                               | Simpler tasks that need the best speed and lowest costs, such as subagents                 |
+| Level    | Description                                                                                                                                                                                                                                                                                                                | Typical use case                                                                           |
+|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `max`    | Absolute maximum capability with no constraints on token spending. Available on Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Mythos Preview, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Sonnet 4.6. | Tasks requiring the deepest possible reasoning and most thorough analysis                  |
+| `xhigh`  | Extended capability for long-horizon work. Available on Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5.5, and Claude Sonnet 5.                                                                                    | Long-running agentic and coding tasks (over 30 minutes) with token budgets in the millions |
+| `high`   | Spends as many tokens as the task needs for excellent results. The default on every model that supports effort except Claude Opus 5.5.                                                                                                                                                                                     | Complex reasoning, difficult coding problems, agentic tasks                                |
+| `medium` | Balanced approach with moderate token savings. The default on Claude Opus 5.5.                                                                                                                                                                                                                                             | Agentic tasks that require a balance of speed, cost, and performance                       |
+| `low`    | Most efficient. Significant token savings with some capability reduction.                                                                                                                                                                                                                                                  | Simpler tasks that need the best speed and lowest costs, such as subagents                 |
 
 Not every model that supports `max` supports `xhigh`.
 
@@ -242,6 +242,14 @@ Claude Opus 4.7 also respects effort levels more strictly than Claude Opus 4.6, 
 
 When running Claude Opus 4.7 at `xhigh` or `max` effort, set a large `max_tokens` so the model has room to think and act across subagents and tool calls. Starting at 64k tokens and tuning from there is a reasonable default.
 
+### Recommended effort levels for Claude Sonnet 5.5
+
+Claude Sonnet 5.5 supports all five effort levels, and `high` is the default on the Claude API. Its levels are recalibrated, so a level doesn't produce the same amount of thinking as the same level on Claude Sonnet 5. Run a fresh effort sweep on your evals rather than carrying over the setting you used on Claude Sonnet 5. Start with `high` unless your workload is agentic or latency-sensitive. For agentic coding and multistep tool use, start with `medium` for well-specified tasks and move to `high` for harder or longer ones. For chat and other latency-sensitive work, start with `medium` or `low`. Use `xhigh` or `max` only where your evals show a quality gain. Set `max_tokens` with room for thinking and the reply. Thinking counts toward `max_tokens` even when the thinking content isn't returned. For agentic coding, set `max_tokens` to 128,000, the model's maximum, and [stream](build-with-claude-streaming.md) the response.
+
+To turn off up-front thinking, send `thinking: {"type": "between_tools"}` instead of `"disabled"`. It's the lowest thinking setting on Claude Sonnet 5.5, and it works at `low`, `medium`, and `high` effort. At `xhigh` or `max`, a request with it returns a 400 error, so use adaptive thinking at those levels: omit the `thinking` field or send `thinking: {"type": "adaptive"}`. See [Running without up-front thinking](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md#running-without-up-front-thinking).
+
+Claude Sonnet 5.5 also supports [changing effort mid-conversation](#change-effort-mid-conversation-beta) with a per-message `output_config`, which preserves the prompt cache. With `between_tools`, effort can't change mid-conversation: a per-message `output_config.effort` that differs from the level in effect returns a 400 error. To vary effort per turn, use adaptive thinking. See [Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md#calibrate-effort).
+
 ### Recommended effort levels for Claude Sonnet 5
 
 Claude Sonnet 5 defaults to `high` effort on the Claude API and Claude Code.
@@ -289,11 +297,11 @@ For per-model thinking availability, see the [per-model configuration table](bui
 
 ## Change effort mid-conversation
 
-You can run later turns of a conversation at a different effort level in two ways. On Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, and Claude Opus 5, use a per-message effort change, which keeps the prompt cache. On other models, set a new top-level value on the next request, which starts the cache over.
+You can run later turns of a conversation at a different effort level in two ways. On Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, use a per-message effort change, which keeps the prompt cache. On other models, set a new top-level value on the next request, which starts the cache over.
 
 ### Per-message effort (beta)
 
-Per-message effort is in beta and requires the [beta header](../Endpoints/beta-headers.md) `mid-conversation-output-config-2026-07-01`. Models without per-message effort, including Claude Fable 5, return a 400 error: `output_config.effort requires a model that supports per-turn effort; this model does not`.
+Per-message effort is in beta and requires the [beta header](../Endpoints/beta-headers.md) `mid-conversation-output-config-2026-07-01`. Models without per-message effort, including Claude Fable 5, return a 400 error: `output_config.effort requires a model that supports per-turn effort; this model does not`. On Claude Sonnet 5.5 with `thinking: {"type": "between_tools"}`, effort can't change mid-conversation: a per-message `output_config.effort` that differs from the level in effect returns a 400 error. To vary effort per turn, use adaptive thinking.
 
 Add a `role: "system"` message with empty `content` and the new level in `output_config.effort`. The new level takes effect from the next `user` turn and holds until a later message changes it. Everything before that message is unchanged, so the cached prefix still matches.
 
@@ -387,7 +395,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5, 5.1, and Preview
 - Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
-- Sonnet 4.6 and 5
+- Sonnet 4.6, 5, and 5.5
 
 Supported platforms  
 - Claude API

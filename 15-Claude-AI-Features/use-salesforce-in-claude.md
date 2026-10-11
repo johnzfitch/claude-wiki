@@ -2,7 +2,7 @@
 title: "Use Salesforce in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16952186-use-salesforce-in-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:06Z"
+fetched_at: "2026-10-10T06:25:31Z"
 tags: ["claude-ai"]
 ---
 
@@ -15,7 +15,7 @@ Salesforce in Claude is available in beta on all paid plans for organizations Sa
 
 ## Get started with Salesforce in Claude
 
-After your admin connects Salesforce for the organization, you just need to link your own Salesforce account so Claude can act on your behalf. If your organization hasn't enabled Salesforce in Claude yet, ask your admin to enable it. Learn more about **[setting up Salesforce in Claude for your organization](../13-Enterprise-Admin/set-up-salesforce-in-claude-for-your-organization-claude-help-center.md)**.
+After your admin connects Salesforce for the organization, you just need to link your own Salesforce account so Claude can act on your behalf. If your organization hasn't enabled Salesforce in Claude yet, ask your admin to enable it. Learn more about **[setting up Salesforce in Claude for your organization](https://support.claude.com/en/articles/16952184)**.
 
 To link your Salesforce account in Claude:
 

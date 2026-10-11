@@ -2,7 +2,7 @@
 title: "Claude Code communications kit | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14555877-claude-code-communications-kit"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:32:02Z"
+fetched_at: "2026-10-10T06:25:22Z"
 tags: ["claude-code"]
 ---
 

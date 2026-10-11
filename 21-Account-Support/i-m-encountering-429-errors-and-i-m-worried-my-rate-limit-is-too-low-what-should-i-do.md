@@ -2,7 +2,7 @@
 title: "I’m encountering 429 errors, and I’m worried my rate limit is too low. What should I do? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114527-i-m-encountering-429-errors-and-i-m-worried-my-rate-limit-is-too-low-what-should-i-do"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:33:08Z"
+fetched_at: "2026-10-10T06:25:27Z"
 tags: ["account"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["account"]
 June 26, 2026
 
 
-Your Claude API organization's rate limit depends on your usage tier. There are three usage tiers: Start, Build, and Scale. Accounts whose limits are managed with their account team are on a separate Custom tier. You can see your tier and current limits at **[Settings \> Limits](../04-API-Reference/Other/usage-limits.md)** in the Claude Console.
+Your Claude API organization's rate limit depends on your usage tier. There are three usage tiers: Start, Build, and Scale. Accounts whose limits are managed with their account team are on a separate Custom tier. You can see your tier and current limits at **[Settings \> Limits](../04-API-Reference/Other/playground.md)** in the Claude Console.
 
 If you're seeing 429 errors, you can request higher limits in the Console once you're using at least 50% of your current limits.
 

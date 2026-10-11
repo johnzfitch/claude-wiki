@@ -2,7 +2,7 @@
 title: "Use Claude with iOS apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11869619-using-claude-with-ios-apps"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-09-30T06:31:25Z"
+fetched_at: "2026-10-10T06:28:02Z"
 tags: ["desktop"]
 ---
 
@@ -245,7 +245,7 @@ Claude will only request permissions if needed for specific features, and you ca
 
 ### Claude isn't offering to use my apps
 
-- Make sure you're using the latest version of the Claude iOS app. For instructions, see **[How to update Claude for iOS](how-to-update-claude-for-ios.md).**
+- Make sure you're using the latest version of the Claude iOS app. For instructions, see **[How to update Claude for iOS](https://support.claude.com/en/articles/11825384-).**
 
 - Try being more specific in your request (refer to the examples listed above).
 
@@ -287,4 +287,4 @@ Claude will only request permissions if needed for specific features, and you ca
 
 - Try asking about a specific data type to confirm which categories Claude can access.
 
-**Need more help?** If you're experiencing issues with these features, try restarting Claude for iOS or **[updating to the latest version from the App Store](how-to-update-claude-for-ios.md)**.
+**Need more help?** If you're experiencing issues with these features, try restarting Claude for iOS or **[updating to the latest version from the App Store](https://support.claude.com/en/articles/11825384-)**.

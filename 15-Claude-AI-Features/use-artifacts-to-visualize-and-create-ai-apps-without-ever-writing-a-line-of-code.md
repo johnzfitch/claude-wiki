@@ -2,7 +2,7 @@
 title: "Use artifacts to visualize and create AI apps without ever writing a line of code · Claude Academy"
 source_url: "https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:39:58Z"
+fetched_at: "2026-10-10T06:28:00Z"
 tags: ["claude-ai"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 Artifacts are like mini-apps you can build with Claude. Learn how to use them to illustrate ideas. Then customize, and share them right from your Claude app.
 
-9 minClaude.ai
+9 minClaude
 
 Watch
 

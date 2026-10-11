@@ -2,13 +2,11 @@
 title: "Let team members run smart reports for specific groups | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16948886-let-team-members-run-smart-reports-for-specific-groups"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:05Z"
+fetched_at: "2026-10-10T06:24:48Z"
 tags: ["enterprise"]
 ---
 
 # Let team members run smart reports for specific groups
-
-Updated today
 
 
 Smart reports show how your organization uses Claude. By default, only Primary Owners, Owners, Admins, and custom roles with analytics view access can create and view smart reports. With delegated access, you can let team leads or department heads run smart reports without making them admins. They can only report on the groups, departments, or cost centers you choose, and they see only the reports they ran or that others share with them.

@@ -2,7 +2,7 @@
 title: "Get structured output from agents - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/structured-outputs"
 category: "05-Agent-SDK"
-fetched_at: "2026-08-29T06:27:51Z"
+fetched_at: "2026-10-08T06:24:46Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -26,7 +26,7 @@ Return validated JSON from agent workflows using JSON Schema, Zod, or Pydantic. 
 
 Copy pageCopy page
 
-Structured outputs let you define the exact shape of data you want back from an agent. The agent can use any tools it needs to complete the task, and you still get validated JSON matching your schema at the end. Define a [JSON Schema](https://json-schema.org/understanding-json-schema/about) for the structure you need, and the SDK validates the output against it, re-prompting on mismatch. If validation does not succeed within the retry limit, the result is an error instead of structured data; see [Error handling](#error-handling). For full type safety, use [Zod](#type-safe-schemas-with-zod-and-pydantic) (TypeScript) or [Pydantic](#type-safe-schemas-with-zod-and-pydantic) (Python) to define your schema and get strongly-typed objects back.
+Structured outputs let you define the exact shape of data you want back from an agent. The agent can use any tools it needs to complete the task, and you still get validated JSON matching your schema at the end. Define a [JSON Schema](https://json-schema.org/understanding-json-schema/about) for the structure you need, and the SDK validates the output against it, re-prompting on mismatch. If validation does not succeed within the retry limit, the result is an error instead of structured data; see [Error handling](#error-handling). For full type safety, use [Zod](#type-safe-schemas-with-zod-and-pydantic) (TypeScript) or [Pydantic](#type-safe-schemas-with-zod-and-pydantic) (Python) to define your schema and get strongly typed objects back.
 
 
 [​](#why-structured-outputs)
@@ -74,7 +74,7 @@ Typed data you can use directly in your UI.
 
 Quick start
 
-To use structured outputs, define a [JSON Schema](https://json-schema.org/understanding-json-schema/about) describing the shape of data you want, then pass it to `query()` via the `outputFormat` option (TypeScript) or `output_format` option (Python). When the agent finishes, the result message includes a `structured_output` field with validated data matching your schema. The example below asks the agent to research Anthropic and return the company name, year founded, and headquarters as structured output.
+To use structured outputs, define a [JSON Schema](https://json-schema.org/understanding-json-schema/about) describing the shape of data you want, then pass it to `query()` via the `outputFormat` option (TypeScript) or `output_format` option (Python). When the agent finishes, the result message includes a `structured_output` field with validated data matching your schema. Before running the examples on this page, install the Claude Agent SDK by following the [quickstart](agent-sdk-quickstart.md#setup). The example below asks the agent to research Anthropic and return the company name, year founded, and headquarters as structured output.
 
 TypeScript
 
@@ -404,7 +404,7 @@ asyncio.run(main())
 
 Error handling
 
-Structured output generation can fail when the agent cannot produce valid JSON matching your schema. This typically happens when the schema is too complex for the task, the task itself is ambiguous, or the agent hits its retry limit trying to fix validation errors. It can also happen without any validation failure: a [model fallback](../02-Claude-Code-CLI/model-config.md#automatic-model-fallback) can retract an already-completed output mid-stream, and if no retry replaces it the run ends with the same error. Check the `errors` list on the result message to tell the two causes apart before debugging your schema. When an error occurs, the result message has a `subtype` indicating what went wrong:
+Structured output generation can fail when the agent cannot produce valid JSON matching your schema. This typically happens when the schema is too complex for the task, the task itself is ambiguous, or the agent hits its retry limit trying to fix validation errors. It can also happen without any validation failure: a [model fallback](../02-Claude-Code-CLI/model-config.md#automatic-model-fallback) can retract an already-completed output mid-stream, and if no retry replaces it the run ends with the same error. Check the `errors` list on the error result message to tell the two causes apart before debugging your schema. When an error occurs, the result message has a `subtype` indicating what went wrong:
 
 | Subtype                               | Meaning                                                                                                                         |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|

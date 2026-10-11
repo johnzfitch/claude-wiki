@@ -2,11 +2,13 @@
 title: "Claude Tag launch promo for Claude Team and Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15575654"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:32:08Z"
+fetched_at: "2026-10-10T06:25:27Z"
 tags: ["enterprise"]
 ---
 
 # Claude Tag launch promo for Claude Team and Enterprise
+
+September 2, 2026
 
 
 With the launch of Claude Tag, we're issuing a one-time Claude Tag usage credit to eligible organizations—\$25000 per Claude Enterprise organization and \$2500 per Claude Team organization. Credits are issued automatically and are scoped to your organization's Claude Tag usage. The credit applies to Claude Tag usage in Slack channels, which is billed to your organization. It doesn't cover direct messages with Claude, which are billed to individual seats.

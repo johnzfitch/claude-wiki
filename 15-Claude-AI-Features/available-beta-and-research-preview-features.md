@@ -2,13 +2,11 @@
 title: "Available beta and research preview features | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503520-available-beta-and-research-preview-features"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:00Z"
+fetched_at: "2026-10-10T06:24:41Z"
 tags: ["claude-ai", "search"]
 ---
 
 # Available beta and research preview features
-
-July 7, 2026
 
 
 Claude offers some features in beta or research preview before they become generally available. This article explains what those labels mean, which features they apply to, and what to expect when you use them.

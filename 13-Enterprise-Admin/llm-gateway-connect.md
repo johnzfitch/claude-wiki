@@ -2,7 +2,7 @@
 title: "Connect Claude Code to an LLM gateway - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/llm-gateway-connect"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-28T06:33:05Z"
+fetched_at: "2026-10-08T06:24:39Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -253,7 +253,12 @@ The desktop app reads gateway routing from its [third-party inference configurat
 - **Distributed by an administrator**: if your organization has [deployed the configuration](llm-gateway-rollout.md#distribute-through-managed-settings), the desktop app routes through the gateway with no setup on your part
 - **Configured locally**: for devices without an administrator-distributed configuration, open Help → Troubleshooting → Enable Developer Mode, which restarts the app with a Developer menu. Then open Developer → Configure Third-Party Inference and enter your gateway base URL. An administrator-distributed configuration takes precedence and makes this form read-only
 
-With the gateway configuration active, the desktop app runs sessions on your local machine only: the environment picker doesn’t offer SSH sessions or Anthropic-hosted cloud environments, and [Remote Control](../02-Claude-Code-CLI/remote-control.md) is unavailable. To use Claude Code on a remote host through the gateway, run the CLI on that host with [`ANTHROPIC_BASE_URL` and the gateway credential](#set-the-base-url-and-credential) set there. If the desktop app shows `Gateway was unreachable`, the app couldn’t reach the configured base URL at startup; check the URL and network path with the [curl test above](#verify-the-connection).
+With the gateway configuration active, the environment picker doesn’t offer Anthropic-hosted cloud environments, and [Remote Control](../02-Claude-Code-CLI/remote-control.md) is unavailable. SSH sessions are in beta with a gateway configuration and require Claude Desktop v1.40609.0 or later. Before you connect, check the allowlist and the gateway’s address:
+
+- **Allowed hosts**: SSH sessions are off by default. To turn them on, you or your administrator lists the allowed hosts in the [`sshHostAllowlist`](https://claude.com/docs/third-party/claude-desktop/configuration#sshhostallowlist) key of the third-party inference configuration
+- **Gateway address**: the remote machine connects to the gateway itself, so a gateway at `localhost` on your computer doesn’t work for SSH sessions
+
+See [SSH remote sessions in Claude Desktop on 3P](https://claude.com/docs/third-party/claude-desktop/ssh-remote-sessions). You can also run the CLI on the remote host with [`ANTHROPIC_BASE_URL` and the gateway credential](#set-the-base-url-and-credential) set there. If the desktop app shows `Gateway was unreachable`, the app couldn’t reach the configured base URL at startup; check the URL and network path with the [curl test above](#verify-the-connection).
 
 
 [​](#github-actions)
@@ -327,7 +332,7 @@ options = ClaudeAgentOptions(
 
 Slack, cloud sessions, and Remote Control
 
-[Claude Code in Slack](../14-Connectors/slack.md) and [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) always use Anthropic’s API; they aren’t part of a gateway deployment. Gateway variables set in a cloud session’s environment configuration are not applied. If your traffic must stay on the gateway, don’t enable these surfaces for those users. [Remote Control](../02-Claude-Code-CLI/remote-control.md) and [voice dictation](../02-Claude-Code-CLI/voice-dictation.md) both rely on a claude.ai identity: Remote Control to pair a live session with your account, and voice dictation to reach the claude.ai transcription endpoint. They are unavailable while `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, or an `apiKeyHelper` is active. Remote Control is also disabled while `ANTHROPIC_BASE_URL` points at a non-Anthropic host, so signing in with claude.ai isn’t enough on its own. Before v2.1.196, a non-Anthropic base URL didn’t block Remote Control. To restore either feature, log in with claude.ai and unset the gateway variables that feature checks. The Remote Control section of `claude doctor` names what is currently blocking Remote Control.
+[Claude Code in Slack](../14-Connectors/slack.md) and [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) aren’t part of a gateway deployment. Gateway variables set in a cloud session’s environment configuration are not applied. If your traffic must stay on the gateway, don’t enable these surfaces for those users. [Remote Control](../02-Claude-Code-CLI/remote-control.md) and [voice dictation](../02-Claude-Code-CLI/voice-dictation.md) both rely on a claude.ai identity: Remote Control to pair a live session with your account, and voice dictation to reach the claude.ai transcription endpoint. They are unavailable while `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, or an `apiKeyHelper` is active. Remote Control is also disabled while `ANTHROPIC_BASE_URL` points at a non-Anthropic host, so signing in with claude.ai isn’t enough on its own. Before v2.1.196, a non-Anthropic base URL didn’t block Remote Control. To restore either feature, log in with claude.ai and unset the gateway variables that feature checks. The Remote Control section of `claude doctor` names what is currently blocking Remote Control.
 
 - Voice dictation: unset the gateway credential
 - Remote Control: unset the gateway credential and `ANTHROPIC_BASE_URL`
@@ -614,4 +619,4 @@ Related resources
 - [Roll out an LLM gateway for your organization](llm-gateway-rollout.md): the admin-facing checklist for deploying and distributing gateway configuration
 - [Gateway compatibility guide](llm-gateway-protocol.md): what Claude Code sends to a gateway, including the headers and fields the gateway must forward
 - [Settings](../02-Claude-Code-CLI/settings.md): where settings files live and how the `env` block is read
-- [Authentication](iam.md): how credential variables, `apiKeyHelper`, and OAuth login interact
+- [Authentication](../02-Claude-Code-CLI/authentication.md): how credential variables, `apiKeyHelper`, and OAuth login interact

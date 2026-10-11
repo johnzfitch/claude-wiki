@@ -2,7 +2,7 @@
 title: "Designated point of contact for users in the EU | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11595103-designated-point-of-contact-for-users-in-the-eu"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:32:23Z"
+fetched_at: "2026-10-10T06:25:03Z"
 tags: ["account"]
 ---
 

@@ -40,7 +40,7 @@ Not yet; though it’s coming this year. Until then, customers can use Claude Co
 
 Yes. Claude API is available via Amazon Bedrock (in AWS GovCloud - FedRAMP High, and in IL5+) and Google Vertex with Assured Workloads (FedRAMP-High).
 
-For more information, see our **[Claude Code product page](../15-Claude-AI-Features/claude-com-product-claude-code.md)**.
+For more information, see our **[Claude Code product page](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)**.
 
 ### What models are available in Claude for Government?
 

@@ -2,7 +2,7 @@
 title: "Building Effective AI Agents \\ Anthropic"
 source_url: "https://www.anthropic.com/news/building-effective-agents"
 category: "19-Reference"
-fetched_at: "2026-09-30T06:33:23Z"
+fetched_at: "2026-10-10T06:25:44Z"
 tags: ["agents", "news-research", "prompting"]
 ---
 

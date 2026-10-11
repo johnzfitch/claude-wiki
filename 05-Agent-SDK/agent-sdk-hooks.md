@@ -2,7 +2,7 @@
 title: "Intercept and control agent behavior with hooks - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/hooks"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-16T06:24:20Z"
+fetched_at: "2026-10-08T06:24:32Z"
 tags: ["agents", "claude-code", "hooks", "sdk"]
 ---
 
@@ -192,7 +192,7 @@ for await (const message of query({
 }
 ```
 
-When you run either script, Claude attempts to create the `.env` file, the hook denies the tool call, and Claude’s final response explains that it can’t create `.env` files.
+When you run either script, Claude attempts to create the `.env` file and the hook denies the tool call.
 
 
 [​](#available-hooks)
@@ -207,7 +207,7 @@ The SDK provides hooks for different stages of agent execution. Some hooks are a
 | `PostToolUse`                                               | Yes        | Yes            | Tool execution result                                                                                                                   | Log all file changes to audit trail                                                                                                                            |
 | `PostToolUseFailure`                                        | Yes        | Yes            | Tool execution failure                                                                                                                  | Handle or log tool errors                                                                                                                                      |
 | `PostToolBatch`                                             | No         | Yes            | A full batch of tool calls resolves, once per batch before the next model call                                                          | Inject conventions once for the whole batch                                                                                                                    |
-| `UserPromptSubmit`                                          | Yes        | Yes            | User prompt submission                                                                                                                  | Inject additional context into prompts                                                                                                                         |
+| [`UserPromptSubmit`](../07-Hooks/hooks.md#userpromptsubmit)       | Yes        | Yes            | A prompt is submitted, including a turn Claude Code starts on its own                                                                   | Inject additional context into prompts                                                                                                                         |
 | [`UserPromptExpansion`](../07-Hooks/hooks.md#userpromptexpansion) | No         | Yes            | A user-typed command, or an MCP prompt, expands into a prompt before it reaches Claude. Doesn’t fire when Claude invokes a skill itself | Block a command from direct invocation or add context when a skill is typed                                                                                    |
 | `MessageDisplay`                                            | No         | Yes            | An assistant message with text completes, once per message with the full message text                                                   | Redact or reformat the displayed text without changing the transcript                                                                                          |
 | `Stop`                                                      | Yes        | Yes            | Agent execution stop                                                                                                                    | Save session state before exit                                                                                                                                 |
@@ -232,7 +232,7 @@ The SDK provides hooks for different stages of agent execution. Some hooks are a
 | `ConfigChange`                                              | No         | Yes            | Configuration file changes                                                                                                              | Reload settings dynamically                                                                                                                                    |
 | `InstructionsLoaded`                                        | No         | Yes            | A `CLAUDE.md` or rules file is loaded into context                                                                                      | Audit which instruction files load                                                                                                                             |
 | `WorktreeCreate`                                            | No         | Yes            | Git worktree created                                                                                                                    | Track isolated workspaces                                                                                                                                      |
-| `WorktreeRemove`                                            | No         | Yes            | Git worktree removed                                                                                                                    | Clean up workspace resources                                                                                                                                   |
+| `WorktreeRemove`                                            | No         | Yes            | A worktree created by a `WorktreeCreate` hook is being removed                                                                          | Clean up workspace resources                                                                                                                                   |
 | `CwdChanged`                                                | No         | Yes            | The working directory changes during a session                                                                                          | Reload environment variables per directory                                                                                                                     |
 | `FileChanged`                                               | No         | Yes            | A watched file is modified, created, or deleted                                                                                         | Reload configuration when project files change                                                                                                                 |
 | `DirectoryAdded`                                            | No         | Yes            | A working directory is added during a session                                                                                           | Install dependencies for a repository added mid-session                                                                                                        |
@@ -319,8 +319,8 @@ Your callback returns an object with two categories of fields:
 
 - **Top-level fields** are accepted on every event: `systemMessage` shows a message to the user, and `continue` (`continue_` in Python) determines whether the agent keeps running after this hook. Some events discard them or deliver them elsewhere. Each [event’s section](../07-Hooks/hooks.md#hook-events) on the hooks page says where they land.
 - **`hookSpecificOutput`** controls the current operation. The fields you set inside depend on the hook event type:
-  - For `PreToolUse` hooks, this is where you set `permissionDecision` (`"allow"`, `"deny"`, `"ask"`, or `"defer"`), `permissionDecisionReason`, and `updatedInput`. If you return `"defer"`, the query ends so you can [resume it later](../07-Hooks/hooks.md#defer-a-tool-call-for-later).
-  - For `PostToolUse` hooks, you can set `additionalContext` to append information to the tool result. To replace the tool’s output before Claude sees it, set `updatedToolOutput`, which works for any tool in both SDKs. The older `updatedMCPToolOutput` field replaces MCP tool output only and is deprecated.
+  - For `PreToolUse` hooks, this is where you set `permissionDecision` (`"allow"`, `"deny"`, `"ask"`, or `"defer"`), `permissionDecisionReason`, and `updatedInput`. If you return `"defer"`, the turn ends with a result message whose `stop_reason` is `"tool_deferred"`, so you can [resume the call later](../07-Hooks/hooks.md#defer-a-tool-call-for-later).
+  - For `PostToolUse` hooks, you can set `additionalContext` to append information to the tool result. To replace the tool’s output before Claude sees it, set `updatedToolOutput`, which works for any tool in both SDKs. The older `updatedMCPToolOutput` field replaces MCP tool output only.
   - In the TypeScript SDK, a `PostToolUse` callback can also return `classifierContext`, a short note about the tool call’s result for the [auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode) permission classifier. Because your callback runs in your application’s own process, the classifier may weigh a user statement you relay in the note as user intent. The field requires TypeScript Agent SDK v0.3.236 or later. [Annotate a result for the auto mode classifier](../07-Hooks/hooks.md#annotate-a-result-for-the-auto-mode-classifier) covers the length cap, the synchronous-only rule, and what not to put in the note.
 
 Return `{}` to allow the operation without changes. SDK callback hooks use the same JSON output format as [Claude Code shell command hooks](../07-Hooks/hooks.md#json-output), which documents every field and event-specific option. For the SDK type definitions, see the [TypeScript](agent-sdk-typescript.md#synchookjsonoutput) and [Python](agent-sdk-python.md#synchookjsonoutput) SDK references.
@@ -480,6 +480,8 @@ const blockEtcWrites: HookCallback = async (input, toolUseID, { signal }) => {
 };
 ```
 
+To confirm the block, register the callback under `PreToolUse` with a `Write|Edit` matcher and ask the agent to create a file under `/etc`: the Write tool’s result in the message stream contains `Writing to /etc is not allowed`, and no file is created.
+
 
 [​](#auto-approve-specific-tools)
 
@@ -532,7 +534,7 @@ const autoApproveReadOnly: HookCallback = async (input, toolUseID, { signal }) =
 
 Register multiple hooks
 
-When an event fires, all matching hooks run in parallel. For permission decisions, the most restrictive result applies: a single `deny` blocks the tool call regardless of what the other hooks return. Because completion order is non-deterministic, write each hook to act independently rather than relying on another hook having run first. The example below registers three independent checks for every tool call:
+When an event fires, all matching hooks run in parallel. For permission decisions, the most restrictive result applies: a single `deny` blocks the tool call regardless of what the other hooks return. Because completion order is non-deterministic, write each hook to act independently rather than relying on another hook having run first. The example below registers three independent checks for every tool call. The hook names in it, such as `audit_logger` in Python or `auditLogger` in TypeScript, stand in for callbacks you define:
 
 Python
 
@@ -567,7 +569,7 @@ const options = {
 
 Filter with multi-tool matchers
 
-Use multi-tool matchers to share one callback across related tools. This example registers three matchers with different scopes:
+Use multi-tool matchers to share one callback across related tools. This example registers three matchers with different scopes, and each hook it names stands in for a callback you define:
 
 - A pipe-separated exact list (`Write|Edit|NotebookEdit`) triggers `file_security_hook` only for file modification tools.
 - A regex (`^mcp__`) triggers `mcp_audit_hook` for any MCP tool whose name starts with `mcp__`.
@@ -656,6 +658,8 @@ const options = {
   }
 };
 ```
+
+To confirm the hook fires, register the callback and ask the agent to delegate a small task to a subagent, such as listing the files in the current directory: when the subagent finishes, the callback prints the `[SUBAGENT] Completed:` lines with the subagent’s ID and transcript path.
 
 
 [​](#make-http-requests-from-hooks)
@@ -945,7 +949,7 @@ Modified input not applied
 
 Session hooks not available in Python
 
-`SessionStart` and `SessionEnd` can be registered as SDK callback hooks in TypeScript, but aren’t available in the Python SDK because its `HookEvent` type omits them. In Python, they are only available as [shell command hooks](../07-Hooks/hooks.md#hook-events) defined in settings files such as `.claude/settings.json`. To load shell command hooks from your SDK application, include the appropriate setting source with [`setting_sources`](agent-sdk-python.md#settingsource) or [`settingSources`](agent-sdk-typescript.md#settingsource):
+`SessionStart` and `SessionEnd` can be registered as SDK callback hooks in TypeScript, but aren’t available in the Python SDK because its `HookEvent` type omits them. In Python, they are only available as [shell command hooks](../07-Hooks/hooks.md#hook-events) defined in settings files such as `.claude/settings.json`. Which settings files your SDK application loads depends on [`setting_sources`](agent-sdk-python.md#settingsource) or [`settingSources`](agent-sdk-typescript.md#settingsource). If you set that option, include the source that holds the hooks:
 
 Python
 

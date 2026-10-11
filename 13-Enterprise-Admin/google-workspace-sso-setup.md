@@ -2,7 +2,7 @@
 title: "Google Workspace SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917884-google-workspace-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:31:47Z"
+fetched_at: "2026-10-10T06:24:39Z"
 tags: ["enterprise"]
 ---
 
@@ -71,7 +71,7 @@ Start the SSO setup flow there and keep it open alongside the Google Admin conso
 
 4.  Enable provisioning and save.
 
-**Critical:** Both SAML and SCIM must use primaryEmail. If someone has aliases, ensure their primary Google email matches what SCIM sends. For troubleshooting, see **[Google Workspace SSO/SCIM email mismatch](google-workspace-sso-scim-email-mismatch.md)**.
+**Critical:** Both SAML and SCIM must use primaryEmail. If someone has aliases, ensure their primary Google email matches what SCIM sends. For troubleshooting, see **[Google Workspace SSO/SCIM email mismatch](https://support.claude.com/en/articles/13917817)**.
 
 ## Step 5 — Assign the app to people or OUs
 

@@ -2,7 +2,7 @@
 title: "Claude Sonnet 5 system prompts - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-sonnet-5"
 category: "20-Models"
-fetched_at: "2026-09-29T06:31:20Z"
+fetched_at: "2026-10-07T06:23:58Z"
 tags: ["models", "prompting"]
 ---
 

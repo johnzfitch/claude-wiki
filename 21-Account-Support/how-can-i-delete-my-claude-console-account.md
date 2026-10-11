@@ -2,7 +2,7 @@
 title: "How can I delete my Claude Console account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:30:58Z"
+fetched_at: "2026-10-10T06:25:00Z"
 tags: ["account"]
 ---
 
@@ -27,7 +27,7 @@ This article explains how a Claude Console Admin can delete their organization v
 
 1.  Log in to your Console Admin account.
 
-2.  Navigate to [Settings \> Organization](../04-API-Reference/Other/usage-limits.md).
+2.  Navigate to [Settings \> Organization](../04-API-Reference/Other/playground.md).
 
 3.  Click the red “Delete organization” button.
 
@@ -45,7 +45,7 @@ If you followed the steps above to delete your Console organization but want to 
 
 ### I have an outstanding balance; how can I delete my Console organization?
 
-If you have an outstanding balance, you will see a message during the deletion flow that prompts you to pay the balance first by routing you to [Settings \> Billing](../04-API-Reference/Other/usage-limits.md).
+If you have an outstanding balance, you will see a message during the deletion flow that prompts you to pay the balance first by routing you to [Settings \> Billing](../04-API-Reference/Other/playground.md).
 
 
 You must pay this outstanding balance before you’re able to move forward with the deletion process.

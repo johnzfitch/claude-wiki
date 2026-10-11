@@ -1,8 +1,8 @@
 ---
 title: "Install and manage plugins - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/discover-plugins"
+source_url: "https://code.claude.com/docs/en/plugins/install"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-30T06:30:49Z"
+fetched_at: "2026-10-10T06:27:47Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -15,6 +15,8 @@ tags: ["claude-code", "plugins"]
   - [Install from your shell](#install-from-your-shell)
 - [Add a marketplace](#add-a-marketplace)
   - [Add a marketplace and install in one command](#add-a-marketplace-and-install-in-one-command)
+  - [Add and install in a session](#add-and-install-in-a-session)
+  - [Add and install from your shell](#add-and-install-from-your-shell)
   - [Add a private marketplace](#add-a-private-marketplace)
   - [Add a marketplace from claude.ai](#add-from-claude-ai)
 - [Manage installed plugins](#manage-installed-plugins)
@@ -26,7 +28,7 @@ tags: ["claude-code", "plugins"]
   - [Manage plugins from your shell](#manage-plugins-from-your-shell)
 - [Keep plugins updated](#keep-plugins-updated)
   - [Turn auto-update on or off for a marketplace](#turn-auto-update-on-or-off-for-a-marketplace)
-  - [Update one plugin now](#update-one-plugin-now)
+  - [Update plugins now](#update-plugins-now)
   - [Auto-update from a private marketplace](#auto-update-from-a-private-marketplace)
 - [Manage marketplaces](#manage-marketplaces)
 - [Next steps](#next-steps)
@@ -77,7 +79,7 @@ Run `/plugin install` with the plugin’s name and marketplace. In a session, th
 /plugin install commit-commands@claude-plugins-official
 ```
 
-To browse instead, run `/plugin` with no plugin name: the panel opens on the **Discover** tab, which lists plugins from every marketplace you’ve added, and you can type to search, then press **Enter** on a plugin to open its details.
+To browse instead, run `/plugin` with no plugin name: the panel opens on the **Discover** tab, which lists the plugins from your marketplaces, and you can type to search, then press **Enter** on a plugin to open its details.
 
 2
 
@@ -110,7 +112,8 @@ Read the install summary
 The last sentence of the summary tells you whether the plugin is usable in this session yet:
 
 - **Active now**: `Plugin is now active.` No reload is needed.
-- **Reload needed**: `Run /reload-plugins to activate.` The panel closes and Claude Code runs that reload for you. If the reload would [invalidate the prompt cache](../02-Claude-Code-CLI/prompt-caching.md#enabling-or-disabling-a-plugin), it warns and leaves the plugin pending instead. Run `/reload-plugins --force` to activate it anyway, which costs one uncached request.
+- **Active, but a server needs setup**: `Plugin is now active.` is followed by `Its bundled MCP server needs configuration before it can start`. The plugin’s [bundled MCP server](plugins-components.md#include-a-packaged-mcpb-server) can’t start until you set its options. Select the plugin on the **Installed** tab in `/plugin` and choose **Configure** to set the server’s options.
+- **Reload needed**: `Run /reload-plugins to apply.` The panel closes and Claude Code runs that reload for you. If the reload would [invalidate the prompt cache](../02-Claude-Code-CLI/prompt-caching.md#enabling-or-disabling-a-plugin), it warns and leaves the plugin pending instead. Run `/reload-plugins --force` to activate it anyway, which costs one uncached request.
 - **Load failed**: `The plugin couldn't be loaded`. Open the **Errors** tab in `/plugin` for the reason, then see [After install: plugin not working](plugins-troubleshooting.md#plugin-installed-but-not-working).
 
 5
@@ -222,13 +225,13 @@ Run `claude plugin install` in your shell to install a plugin without starting a
 
 - **Scope**: user scope by default. Pass `--scope project` or `--scope local` to change it.
 - **When the plugins load**: plugins it installs load the next time you start Claude Code, or when you run `/reload-plugins` in a session that’s already open.
-- **The marketplace must be added first**: on a machine where no one has opened an interactive Claude Code session yet, the official marketplace isn’t registered, so a script that installs from it runs `claude plugin marketplace add anthropics/claude-plugins-official` before the install.
+- **The marketplace on a new machine**: on a machine where no one has opened an interactive Claude Code session yet, the official marketplace isn’t registered, so a script that installs from it runs `claude plugin marketplace add anthropics/claude-plugins-official` before the install. See [Add and install from your shell](#add-and-install-from-your-shell).
 
 ```python
 claude plugin install formatter@your-org --scope project
 ```
 
-The command prints `Successfully installed plugin: formatter@your-org (scope: project)` when it finishes. Some plugins install by running a command that their marketplace names, called a [`command` source](plugins-marketplace-reference.md#command-plugin-source). Claude Code shows you that command and asks you to accept it before it runs. A script has no one to answer that prompt, so pass `--yes` there to accept it. For every `claude plugin install` flag, see [plugin install](plugins-cli-reference.md#plugin-install).
+The command prints `Successfully installed plugin: formatter@your-org (scope: project)` when it finishes. Some plugins install by running a command that their marketplace names, called a [`command` source](plugins-marketplace-reference.md#command-plugin-source). Claude Code shows you that command and asks you to accept it before it runs. A script has no one to answer that prompt, so pass `--yes` there to accept it. For the other `claude plugin install` flags, see [plugin install](plugins-cli-reference.md#plugin-install).
 
 
 [​](#add-a-marketplace)
@@ -255,13 +258,33 @@ Include the `https://` prefix on every URL, or use the `git@host:path` form for 
 
 Add a marketplace and install in one command
 
-To install a plugin from a marketplace you haven’t added yet, run `/plugin install` in a Claude Code session and name the marketplace source with `--marketplace`. Requires Claude Code v2.1.275 or later.
+To install a plugin from a marketplace you haven’t added yet, name the marketplace source with `--marketplace` on the install command, in a session or from your shell. The source takes [the same forms as `/plugin marketplace add`](#add-a-marketplace), such as GitHub `owner/repo`, a git URL, or a local path. Give the plugin name by itself, without an `@marketplace` suffix.
+
+
+[​](#add-and-install-in-a-session)
+
+Add and install in a session
+
+Run `/plugin install` in a Claude Code session with the plugin and the source. Requires Claude Code v2.1.275 or later. In a session, the source can’t contain spaces.
 
 ```python
 /plugin install deploy-helper --marketplace your-org/plugins
 ```
 
-The source takes [the same forms as `/plugin marketplace add`](#add-a-marketplace), such as GitHub `owner/repo`, a git URL, or a local path, except that it can’t contain spaces. Give the plugin name by itself, without an `@marketplace` suffix. If you haven’t added that marketplace yet, Claude Code shows the source it resolved and asks you to confirm before adding it. Once the marketplace is added, the plugin’s details open and you choose an [installation scope](#install-a-plugin). If the source matches a marketplace you’ve already added, Claude Code skips the confirmation and opens the plugin’s details in that marketplace.
+If you haven’t added that marketplace yet, Claude Code shows the source it resolved and asks you to confirm before adding it. Once the marketplace is added, the plugin’s details open and you choose an [installation scope](#install-a-plugin). If the source matches a marketplace you’ve already added, Claude Code skips the confirmation and opens the plugin’s details in that marketplace.
+
+
+[​](#add-and-install-from-your-shell)
+
+Add and install from your shell
+
+In your shell, without starting a session, run `claude plugin install` with the plugin and the source. Requires Claude Code v2.1.292 or later.
+
+```python
+claude plugin install deploy-helper --marketplace your-org/plugins
+```
+
+The shell command adds the marketplace without a confirmation step. A marketplace you’ve already added from that source is reused. A new one is added under the same [organization policy checks](plugins-org.md#restrict-what-users-can-install) as `claude plugin marketplace add`, and is declared in your user settings even when you pass `--scope project`. If you haven’t added that marketplace yet, the command prints `Successfully added marketplace: <name> (declared in user settings)` and then [installs the plugin](#install-from-your-shell).
 
 
 [​](#add-a-private-marketplace)
@@ -271,7 +294,7 @@ Add a private marketplace
 A private marketplace is one in a repository you need credentials to clone, on GitHub or any other git host. You add it with the same `/plugin marketplace add` or `claude plugin marketplace add` command as a public one. Claude Code clones it with the git credentials already on your machine and never prompts, so each way of connecting has a requirement:
 
 - **HTTPS**: your git credential helpers apply, so access you set up with `gh auth login`, the macOS Keychain, or `git-credential-store` works. Interactive prompts are suppressed, so a host you have never authenticated to fails instead of asking for a password.
-- **SSH**: the host must already be in your `known_hosts` file and the key must work without a passphrase prompt, because the host-fingerprint and passphrase prompts are suppressed too.
+- **SSH**: the host must already be in your `known_hosts` file and the key must work without a passphrase prompt. If your git setup names an SSH program in `GIT_SSH_COMMAND`, `GIT_SSH`, or your git config’s `core.sshCommand`, Claude Code runs that program.
 - **GitHub `owner/repo` shorthand**: Claude Code checks whether your SSH key authenticates to `github.com`, then clones over SSH if it does and over HTTPS if it doesn’t. Set [`CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1`](../02-Claude-Code-CLI/env-vars.md#variables) to skip that check and always clone over HTTPS.
 
 The same credentials apply when you run `/plugin install`, `/plugin marketplace update`, and `claude plugin update`. On a GitHub Enterprise Server host, see [Plugin marketplaces on GHES](../02-Claude-Code-CLI/github-enterprise-server.md#plugin-marketplaces-on-ghes) for the credentials each operation needs. If your organization registers the marketplace for you through managed settings, you don’t add it yourself. See [Pre-install and require plugins](plugins-org.md#pre-install-and-require-plugins).
@@ -303,7 +326,12 @@ The **Installed** tab in `/plugin` lists your plugins with actions to enable, di
 
 - Type to filter by name or description.
 - Press **Space** to enable or disable the selected plugin, and **f** to favorite it.
-- Press **Enter** to open a plugin’s details. The menu there offers **Disable plugin** or **Enable plugin**, **Update now**, and **Uninstall**. Plugins that take settings also offer **Configure options**.
+- Press **Enter** to open a plugin’s details.
+
+A plugin’s details menu offers **Disable plugin** or **Enable plugin**, **Update now**, and **Uninstall**. Two more items appear for plugins that take settings, and a plugin can show both:
+
+- **Configure options**: shown when the plugin’s manifest declares [`userConfig` options](plugins-reference.md#user-configuration). Opens the dialog for those options
+- **Configure**: shown when the plugin includes a [bundled MCP server](plugins-components.md#include-a-packaged-mcpb-server). Sets that server’s own `user_config` settings
 
 The tab can also show plugins at **Managed** scope. Your organization installed those through [managed settings](../02-Claude-Code-CLI/settings.md#settings-files), and you can’t enable, disable, or uninstall them here. For a synced plugin that your organization requires on claude.ai, see [Manage plugins synced from claude.ai](#manage-plugins-synced-from-claude-ai). When you close the `/plugin` panel with pending changes you made in it, Claude Code runs `/reload-plugins` for you to apply them. If the reload would [invalidate the prompt cache](../02-Claude-Code-CLI/prompt-caching.md#enabling-or-disabling-a-plugin), it warns and leaves the changes pending instead. Run `/reload-plugins --force` to apply them anyway.
 
@@ -395,11 +423,11 @@ Turn auto-update on or off for a marketplace
 In a Claude Code session, run `/plugin` and go to the **Marketplaces** tab. Select the marketplace, then select **Enable auto-update** or **Disable auto-update**.
 
 
-[​](#update-one-plugin-now)
+[​](#update-plugins-now)
 
-Update one plugin now
+Update plugins now
 
-In a session, open the plugin on the **Installed** tab in `/plugin` and select **Update now**, or in your shell run `claude plugin update <plugin>@<marketplace>`.
+To update one plugin, open it on the **Installed** tab in `/plugin` during a session and select **Update now**, or run `claude plugin update <plugin>@<marketplace>` in your shell. There’s no command that updates every plugin at once. To update the plugins you installed from one marketplace at once, go to the **Marketplaces** tab in `/plugin`, select the marketplace, and choose **Update marketplace**. That refreshes the marketplace’s listing, updates the plugins you installed from it, and reports any plugin it left for you to update yourself. A plugin with a [`command` source](plugins-marketplace-reference.md#command-plugin-source) or with a marketplace entry that sets a `headersHelper` command isn’t updated this way, so you update it from its view on the **Installed** tab or with `claude plugin update <plugin>@<marketplace>`. If you run `claude plugin marketplace update` in your shell with no name, it refreshes every marketplace’s listing but leaves your installed plugins at their current versions.
 
 
 [​](#auto-update-from-a-private-marketplace)

@@ -1,8 +1,8 @@
 ---
 title: "Manage custom roles on Enterprise plans | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/13930452"
+source_url: "https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:48Z"
+fetched_at: "2026-10-10T06:28:13Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -19,7 +19,7 @@ Custom roles work alongside groups. The typical workflow is: create custom roles
 
 **Note:** Custom roles only affect members whose role is set to “Custom.” Members with the User, Admin, or Owner roles get their permissions from those roles directly, not from custom roles.
 
-**Note:** With SCIM directory sync and group mappings enabled, each member’s role is owned by the sync. A member whose role was set to “Custom” before group mappings were enabled reverts to their mapped role on the next full sync unless they’re in an IdP group mapped to “Custom.” See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans#h_05cb172230)**.
+**Note:** With SCIM directory sync and group mappings enabled, each member’s role is owned by the sync. A member whose role was set to “Custom” before group mappings were enabled reverts to their mapped role on the next full sync unless they’re in an IdP group mapped to “Custom.” See **[Manage groups and group spend limits on Enterprise plans](manage-groups-and-group-spend-limits-on-enterprise-plans.md#h_05cb172230)**.
 
 ------------------------------------------------------------------------
 
@@ -119,7 +119,7 @@ Custom roles are assigned to groups, not directly to individual members. To assi
 
 4.  Click "Save role."
 
-You can also assign custom roles when creating or editing a group in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. See **[Manage groups and group spend limits on Enterprise plans](https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans)**.
+You can also assign custom roles when creating or editing a group in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. See **[Manage groups and group spend limits on Enterprise plans](manage-groups-and-group-spend-limits-on-enterprise-plans.md)**.
 
 ------------------------------------------------------------------------
 
@@ -269,7 +269,7 @@ Custom roles also control which Claude models a role can use and the maximum eff
 
 The organization-level model setting is the ceiling. A role can't grant a model that's disabled at the organization level. Across a member's roles, model access is additive and effort limits take the highest cap any role allows. Haiku models are always available and can't be disabled.
 
-For setup steps and what members see, see **[Manage model access for your organization](../13-Enterprise-Admin/manage-model-access-for-your-organization-claude-help-center.md)**. For default model behavior, see **[Set a default model for your organization](../13-Enterprise-Admin/set-a-default-model-for-your-organization-claude-help-center.md)**.
+For setup steps and what members see, see **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**. For default model behavior, see **[Set a default model for your organization](https://support.claude.com/en/articles/15330088)**.
 
 ------------------------------------------------------------------------
 

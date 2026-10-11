@@ -2,13 +2,11 @@
 title: "Understanding your Pro or Max plan invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607638-understanding-your-pro-or-max-plan-invoices"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:32:11Z"
+fetched_at: "2026-10-10T06:25:29Z"
 tags: ["billing"]
 ---
 
 # Understanding your Pro or Max plan invoices
-
-August 24, 2026
 
 
 This article explains the invoices you'll receive for a Pro or Max plan, where to find them, and how to read the charges on them.
@@ -21,11 +19,11 @@ This article covers Pro and Max plans purchased on the web. If you subscribed th
 
 **Plan change invoices.** If you upgrade your plan in the middle of a billing cycle, you'll reset your billing cycle and receive an immediate invoice for the change rather than waiting for your next renewal. For example, upgrading from Pro to Max charges you one full month of Max, less the unused value in your current billing cycle on your old plan.
 
-Learn more about **[signing up for the Max plan](how-do-i-sign-up-for-the-max-plan-claude-help-center.md)**.
+Learn more about **[signing up for the Max plan](https://support.claude.com/en/articles/11049752)**.
 
 **Usage credit receipts.** If you've enabled usage credits, each purchase of funds is charged separately from your subscription and has its own receipt. This includes purchases made automatically by auto-reload and any usage bundles you buy.
 
-Learn more about **[managing usage credits for paid Claude plans](https://support.claude.com/en/articles/12429409)**.
+Learn more about **[managing usage credits for paid Claude plans](manage-usage-credits-for-paid-claude-plans-claude-help-center.md)**.
 
 ## Find your invoices
 
@@ -45,7 +43,7 @@ You can also open any invoice from your account:
 
 **Credits.** For some mid-cycle plan changes, the cost of one cycle of the new plan is less than the remaining value of the current cycle of the old plan. In this case, any excess value from your old plan will be stored as a credit on your account, and will be used automatically to pay towards future invoices.
 
-**Tax.** Tax is calculated from your billing address, which is taken from your payment method’s address. Learn more about **[your billing address and tax calculation](understanding-your-billing-address-and-tax-calculation.md)**.
+**Tax.** Tax is calculated from your billing address, which is taken from your payment method’s address. Learn more about **[your billing address and tax calculation](https://support.claude.com/en/articles/12997130)**.
 
 **Applied balance.** An "Applied balance" line means a credit already on your account was used to pay part or all of the invoice. It's not a new charge and not a discount on that invoice.
 
@@ -56,7 +54,7 @@ You can also open any invoice from your account:
 
 The name and address on an invoice come from your payment method at the time the invoice was issued. To show a different name, such as a company name, check "Use a different name on invoices" when you add or update your payment method in **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
-You can also add a tax or VAT ID. Learn more about **[adding a tax or VAT ID to your paid Claude account](add-or-update-your-paid-claude-accounts-tax-or-vat-id-claude-help-center.md)**.
+You can also add a tax or VAT ID. Learn more about **[adding a tax or VAT ID to your paid Claude account](https://support.claude.com/en/articles/9889408)**.
 
 For help updating your payment method or other billing details, see **[Paid plan billing FAQs](paid-plan-billing-faqs.md)**.
 
@@ -79,3 +77,7 @@ No. Issued invoices can't be changed. Update your billing details in **[Settings
 ### Can I be invoiced in a different currency?
 
 Some subscribers pay their subscriptions using a different currency than the currency (or currencies) new subscribers would be offered in their region. To change your subscription currency, you must first mark your plan to cancel at the end of the current term, and wait for the end of term. Then when you re-purchase a new Pro or Max plan, you will use the same currency (or currency options) as new subscribers would in your region.
+
+### Where can I see my monthly API credits?
+
+In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.

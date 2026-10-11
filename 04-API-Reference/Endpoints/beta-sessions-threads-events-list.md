@@ -2,7 +2,7 @@
 title: "List Session Thread Events - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/threads/events/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-09-26T06:38:44Z"
+fetched_at: "2026-10-04T08:33:14Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -134,24 +134,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -187,6 +170,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -315,14 +319,6 @@ One of the following:
 string
 
 
-
-
-
-"message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 45 more
-
-
-
-One of the following:
 
 "message-batches-2024-09-24"
 
@@ -513,6 +509,14 @@ One of the following:
 
 
 "mcp-client-2026-09-15"
+
+
+
+"ce-plugins-2026-09-01"
+
+
+
+"spend-limit-reads-2026-09-26"
 
 
 
@@ -820,7 +824,7 @@ formatdate-time
 
 
 
-BetaManagedAgentsSessionStatusIdleEvent object{ type: "session.status_idle", id, processed_at, stop_reason }
+BetaManagedAgentsSessionStatusIdleEvent object{ type: "session.status_idle", id, processed_at, 2 more }
 
 
 
@@ -1104,7 +1108,7 @@ Public sthr\_ ID of the thread that started running.
 
 
 
-BetaManagedAgentsSessionThreadStatusIdleEvent object{ type: "session.thread_status_idle", id, agent_name, 3 more }
+BetaManagedAgentsSessionThreadStatusIdleEvent object{ type: "session.thread_status_idle", id, agent_name, 4 more }
 
 
 

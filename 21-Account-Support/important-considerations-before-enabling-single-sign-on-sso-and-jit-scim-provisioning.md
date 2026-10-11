@@ -2,7 +2,7 @@
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 category: "21-Account-Support"
-fetched_at: "2026-09-30T06:31:14Z"
+fetched_at: "2026-10-10T06:27:56Z"
 tags: ["account", "authentication"]
 ---
 
@@ -35,7 +35,7 @@ Our single sign-on feature uses the concept of a "parent organization." This is 
 
 You'll need to check the parent organization dynamic depending on your plan:
 
-- **If you have a Team or Enterprise plan:** You can proceed directly to the **[Setting up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)** guide. Your parent organization is already in place (or will be created when you enable SSO for Team plans).
+- **If you have a Team or Enterprise plan:** You can proceed directly to the **[Setting up single sign-on (SSO)](setting-up-single-sign-on-sso.md)** guide. Your parent organization is already in place (or will be created when you enable SSO for Team plans).
 
 - **If you have a Claude Console organization and an existing Team or Enterprise plan:** Your Console organization may already be linked to your Team or Enterprise parent organization. Check if you can access **[platform.claude.com/settings/identity](http://platform.claude.com/settings/identity)**. If so, this indicates that the org is linked to the parent organization and SSO is already configured. If not, an Owner on your Team or Enterprise plan can initiate a merge to link your Console organization (see **[Merge organizations](#h_3bad8701c8)** below) to their parent organization and the existing SSO configuration.
 
@@ -107,7 +107,7 @@ Once SSO is configured, you can choose how users are provisioned to your organiz
 
 **\*Note:** Only Enterprise plan organizations can enable SCIM provisioning; if a Console organization is merged with a Team plan's parent organization, it won't have access to SCIM provisioning.
 
-For detailed information on how each provisioning method works, see **[Set up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans.md)**.
+For detailed information on how each provisioning method works, see **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
 ------------------------------------------------------------------------
 
@@ -165,4 +165,4 @@ Taking time to test, communicate, and plan before enabling domain verification a
 
 ## Next steps
 
-Once you've reviewed these considerations and completed any necessary prerequisite steps (such as merging organizations), proceed to **[Set up single sign-on (SSO)](setting-up-single-sign-on-sso-for-claude-and-claude-console.md)** for detailed implementation instructions.
+Once you've reviewed these considerations and completed any necessary prerequisite steps (such as merging organizations), proceed to **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)** for detailed implementation instructions.

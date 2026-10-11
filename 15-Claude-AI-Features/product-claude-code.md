@@ -213,9 +213,9 @@ Per month
 
 [Try Claude (opens in new tab)](https://claude.ai/login?plan=max)
 
-[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](../17-Billing-Plans/usage-limit-best-practices.md). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits apply](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices). Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](../17-Billing-Plans/usage-limit-best-practices.md). Price and plans are subject to change at Anthropic's discretion.
 
 ## Latest feature announcements
 

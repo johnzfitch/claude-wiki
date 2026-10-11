@@ -2,7 +2,7 @@
 title: "Specification - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-09-29T06:30:47Z"
+fetched_at: "2026-10-09T06:27:45Z"
 tags: ["cli", "mcp", "mcp-spec"]
 ---
 

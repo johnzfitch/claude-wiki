@@ -2,7 +2,7 @@
 title: "Does Anthropic Act as a Data Processor or Controller? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-30T06:33:15Z"
+fetched_at: "2026-10-10T06:25:39Z"
 tags: ["enterprise"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Introducing Claude Fable 5 and Claude Mythos 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/fable-5/introducing-claude-fable-5-and-claude-mythos-5"
 category: "20-Models"
-fetched_at: "2026-09-26T06:39:52Z"
+fetched_at: "2026-10-04T08:32:54Z"
 tags: ["api", "billing", "models", "prompting"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api", "billing", "models", "prompting"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -97,7 +97,7 @@ A refusal that arrives before any output is billed when it is in a category with
 - **Claude Fable 5** is available on the Claude API, [Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md), and [Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md).
 - **Claude Mythos 5** is offered only to approved customers in [Project Glasswing](../22-Safety-Policy/glasswing.md). For access, contact your Anthropic, AWS, or Google Cloud account team. Customers without access to Claude Mythos 5 can use Claude Fable 5, which does not require access approval and offers the same capabilities.
 
-Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention unless expressly authorized by Anthropic. Both are designated [Covered Models](../15-Claude-AI-Features/covered-models-claude-help-center.md). See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention unless expressly authorized by Anthropic. Both are designated [Covered Models](https://support.claude.com/en/articles/15425695). See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 ## Prompting
 

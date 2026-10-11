@@ -2,7 +2,7 @@
 title: "About the Development Partner Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11174108-about-the-development-partner-program"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:21Z"
+fetched_at: "2026-10-10T06:24:57Z"
 tags: ["claude-ai"]
 ---
 
@@ -43,7 +43,7 @@ If you are an admin and are authorized by your organization to enter into agreem
 
 To opt in to the Development Partner Program:
 
-1.  From your Claude Console account, navigate to **[Settings \> Privacy controls](../04-API-Reference/Other/usage-limits.md)**.
+1.  From your Claude Console account, navigate to **[Settings \> Privacy controls](../04-API-Reference/Other/playground.md)**.
 
 2.  Locate the Development Partner Program section
 
@@ -53,7 +53,7 @@ After clicking join, you will be asked to agree to our Service Specific Terms fo
 
 To opt out of the Development Partner Program:
 
-1.  From your Claude Console account, navigate to **[Settings \> Privacy controls](../04-API-Reference/Other/usage-limits.md)**.
+1.  From your Claude Console account, navigate to **[Settings \> Privacy controls](../04-API-Reference/Other/playground.md)**.
 
 2.  Locate the Development Partner Program section.
 

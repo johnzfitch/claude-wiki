@@ -2,7 +2,7 @@
 title: "Using MT Newswires for real-Time financial news · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12663693-using-mt-newswires-for-real-time-financial-news"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-26T06:40:07Z"
+fetched_at: "2026-10-10T06:25:09Z"
 tags: ["claude-ai"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 Set up and use MT Newswires for real-time financial news delivering original multi-asset class market intelligence.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 

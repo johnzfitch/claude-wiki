@@ -2,7 +2,7 @@
 title: "Fullscreen rendering - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/fullscreen"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:30:47Z"
+fetched_at: "2026-10-06T06:23:19Z"
 tags: ["claude-code"]
 ---
 
@@ -119,15 +119,18 @@ Fullscreen rendering captures mouse events and handles them inside Claude Code:
 
 - **Click in the prompt input** to position your cursor anywhere in the text you’re typing.
 - **Click a suggestion in the `/` command or `@` file list** to accept it. Hovering highlights the row under your cursor.
-- **Click an option in a select menu** to choose it. This covers permission prompts, `/model`, `/config`, and other dialogs that show a list of options. Hovering shows a pointer on the row under your cursor.
+- **Click an option in a select menu** to choose it. This covers permission prompts, `/model`, `/config`, and other dialogs that show a list of options.
 - **Click an option in a multi-select menu** to toggle it, and click the submit button to confirm your choices. Clicking a free-text row, such as the `Other` row in a multiple-choice question, focuses its input field so you can type an answer. Requires Claude Code v2.1.208 or later.
 - **Click a setting’s value in the `/config` panel** to change it, and scroll the settings list with the mouse wheel. Requires Claude Code v2.1.271 or later.
 - **Scroll a select or multi-select menu with the mouse wheel** when it has more options than it shows at once, such as the `/model` list in a short terminal window. The wheel scrolls the list while the pointer is over its options. Requires Claude Code v2.1.280 or later.
 - **Scroll an overflowing list with its scrollbar.** In list panels such as `/skills`, `/mcp`, and `/plugin`’s Installed list, a scrollbar appears beside a list with more rows than fit while the pointer is over it. Click the track to jump to that point, or drag the thumb. Requires Claude Code v2.1.281 or later.
+  - Where the bar has `↑` and `↓` arrows at its ends, click an arrow to scroll a single row, or hold it to keep scrolling. The arrows require Claude Code v2.1.286 or later.
+- **Click the `↑ N more` or `↓ N more` row at the edge of a list** to jump to that end of the list without choosing an option. Requires Claude Code v2.1.286 or later.
 - **Click a collapsed tool result** to expand it and see the full output. Click again to collapse. The tool call and its result expand together. Only messages that have more to show are clickable.
   - Clicking also expands the output of a `!` shell command, whether an older truncated result or the live progress row while the command runs. Requires Claude Code v2.1.257 or later.
-  - Clicking also expands a dim `Message from @<sender>` line when the sender is a [teammate](../09-Agents-Patterns/agent-teams.md) or another agent running in your session. The line for a message from [one of your other sessions](cross-session-messaging.md#what-a-message-looks-like) also shows the message’s first line and isn’t clickable, so press `Ctrl+o` to read that one.
-- **Hold `Cmd` on macOS, or `Ctrl` on Linux and Windows, and click a URL or file path** to open it. Plain `http://` and `https://` URLs open in your browser, and file paths in tool output, like the ones printed after an Edit or Write, open in your default application. A plain click without the modifier doesn’t open links, matching native terminal behavior.
+  - Clicking also expands a dim `Message from @<sender>` line when the sender is a [teammate](../09-Agents-Patterns/agent-teams.md) or another agent running in your session.
+- **Hold `Cmd` on macOS, or `Ctrl` on Linux and Windows, and click a URL or file path** to open it. Plain `http://` and `https://` URLs open in your browser. When Claude Code handles the click, file paths in tool output, like the ones printed after an Edit or Write, open in your file manager with the file selected. A plain click without the modifier doesn’t open links, matching native terminal behavior.
+  - On Linux and WSL, clicking a file path needs a file manager that provides the `org.freedesktop.FileManager1` D-Bus interface. Without one, nothing opens.
   - Claude Code renders a network (UNC) path, such as `\\server\share\file.ts`, as plain text with no link, because opening a network path can send your Windows credentials to the host it names.
   - Some macOS terminals forward `Cmd`+click to the running app instead of opening the link themselves, and the terminal mouse protocol has no way to encode the `Cmd` key, so Claude Code receives a plain click. In Ghostty, and in Warp on macOS, Claude Code detects this and lets a plain click on a link open it, and holding `Cmd` still works.
   - In the VS Code integrated terminal and similar xterm.js-based terminals, Claude Code defers to the terminal’s own link handler, which uses the same gesture.
@@ -141,7 +144,7 @@ Selected text copies to your clipboard automatically on mouse release. To turn t
 - **Any other key, including plain arrow keys, `Enter`, and typed characters**: Claude Code clears the selection.
 - **A key bound to [`selection:clear`](keybindings.md#scroll-actions)**: Claude Code clears the selection, even when the key is `Esc` or another key that otherwise keeps it. The action has no default binding.
 
-In [transcript mode](#search-and-review-the-conversation), the navigation and search keys listed there also keep the selection.
+In [transcript mode](#search-and-review-the-conversation), the navigation keys listed there also keep the selection.
 
 
 [​](#scroll-the-conversation)
@@ -183,7 +186,7 @@ Mouse wheel scrolling requires your terminal to forward mouse events to Claude C
 export CLAUDE_CODE_SCROLL_SPEED=3
 ```
 
-A value of `3` matches the default in `vim` and similar applications. The setting accepts any positive value up to 20, including fractional values below 1 such as `0.25` to slow accelerated trackpad and wheel scrolling in terminals that already amplify wheel events. To adjust scroll speed interactively, run `/scroll-speed`. The dialog shows a ruler you can scroll while it is open so you can feel the change immediately. Press `←` and `→` to adjust the speed, `r` to reset to the auto-detected default, and `Enter` to save. The dialog steps in whole numbers up to 10, and on terminals that support finer control it also offers quarter steps down to 0.25. The command writes the same value the `CLAUDE_CODE_SCROLL_SPEED` environment variable sets, persisted to `~/.claude/settings.json`. The dialog’s maximum is 10: if you set a higher value through the environment variable, the dialog shows 10, and saving from the dialog persists 10. The command isn’t available in the JetBrains IDE terminal. Separately from the base speed, Claude Code accelerates the scroll rate when you spin the wheel quickly, so a fast spin covers more distance than the same number of slow notches. To turn acceleration off and keep a constant rate per notch, set `wheelScrollAccelerationEnabled` to `false` in [`settings.json`](settings-reference.md#all-settings). This setting requires Claude Code v2.1.174 or later.
+A value of `3` matches the default in `vim` and similar applications. The setting accepts any positive value up to 20, including fractional values below 1 such as `0.25` to slow accelerated trackpad and wheel scrolling in terminals that already amplify wheel events. To adjust scroll speed interactively, run `/scroll-speed`. Scroll while the dialog is open to feel the change immediately. Press `←` and `→` to adjust the speed, `r` to reset to the auto-detected default, and `Enter` to save. The dialog steps in whole numbers up to 10, and on terminals that support finer control it also offers quarter steps down to 0.25. The command writes the same value the `CLAUDE_CODE_SCROLL_SPEED` environment variable sets, persisted to `~/.claude/settings.json`. The dialog’s maximum is 10: if you set a higher value through the environment variable, the dialog shows 10, and saving from the dialog persists 10. The command isn’t available in the JetBrains IDE terminal. Separately from the base speed, Claude Code accelerates the scroll rate when you spin the wheel quickly, so a fast spin covers more distance than the same number of slow notches. To turn acceleration off and keep a constant rate per notch, set `wheelScrollAccelerationEnabled` to `false` in [`settings.json`](settings-reference.md#all-settings). This setting requires Claude Code v2.1.174 or later.
 
 
 [​](#scroll-in-the-jetbrains-ide-terminal)
@@ -220,7 +223,7 @@ Your terminal’s `Cmd+f` and tmux search don’t see the conversation because i
 
 Watch your changes in the diff panel
 
-In fullscreen rendering, [`/diff`](interactive-mode.md#review-changes-with-%2Fdiff) opens a panel beside the conversation rather than a viewer you have to close, so you can watch the changes accumulate while Claude works. In a wide terminal the panel can also open on its own once Claude starts editing files. [Diff panel](interactive-mode.md#diff-panel) covers what it shows, how to keep it closed, and how to change what it compares against.
+In fullscreen rendering, [`/diff`](interactive-mode.md#review-changes-with-%2Fdiff) opens a panel beside the conversation, so you can watch the changes accumulate while Claude works. [Diff panel](interactive-mode.md#diff-panel) covers what it shows, when it opens on its own, how to keep it closed, and how to change what it compares against.
 
 
 [​](#clear-the-conversation)

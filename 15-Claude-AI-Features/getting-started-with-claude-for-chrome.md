@@ -1,8 +1,8 @@
 ---
 title: "Get started with Claude in Chrome | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12012173"
+source_url: "https://support.claude.com/en/articles/12012173-getting-started-with-claude-for-chrome"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:32:28Z"
+fetched_at: "2026-10-10T06:28:03Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -15,7 +15,7 @@ Claude in Chrome is a browser extension that allows Claude to read, click, and n
 
 Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's available in Claude Cowork and Claude Code, and in beta in the Chrome side panel. On Max and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans. On Enterprise plans, the side panel runs as a Cowork session once your admin has enabled Cowork in the cloud; until then, it uses the classic experience.
 
-**Important:** Claude in Chrome allows Claude to interact directly with websites on your behalf. Claude in Chrome is enhanced with our safety classifiers but is still risky. Please review **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely)** before use.
+**Important:** Claude in Chrome allows Claude to interact directly with websites on your behalf. Claude in Chrome is enhanced with our safety classifiers but is still risky. Please review **[Use Claude in Chrome safely](using-claude-in-chrome-safely.md)** before use.
 
 ------------------------------------------------------------------------
 

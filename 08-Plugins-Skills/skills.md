@@ -2,14 +2,16 @@
 title: "Extend Claude with skills - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/skills"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-30T06:30:42Z"
+fetched_at: "2026-10-10T06:24:42Z"
 tags: ["claude-code", "plugins", "skills"]
 ---
 
 ## On this page
 
 - [Bundled skills](#bundled-skills)
+  - [Check your setup with /doctor](#check-your-setup-with-%2Fdoctor)
   - [Run and verify your app](#run-and-verify-your-app)
+  - [Run your checks before each commit](#run-your-checks-before-each-commit)
   - [Work on Claude API projects](#work-on-claude-api-projects)
 - [Getting started](#getting-started)
   - [Create your first skill](#create-your-first-skill)
@@ -34,8 +36,10 @@ tags: ["claude-code", "plugins", "skills"]
   - [Available string substitutions](#available-string-substitutions)
   - [Add supporting files](#add-supporting-files)
   - [Control who invokes a skill](#control-who-invokes-a-skill)
+  - [Where you write the skill’s name](#where-you-write-the-skill%E2%80%99s-name)
   - [Skill content lifecycle](#skill-content-lifecycle)
   - [Pre-approve tools for a skill](#pre-approve-tools-for-a-skill)
+  - [When only managed permission rules apply](#when-only-managed-permission-rules-apply)
   - [Pass arguments to skills](#pass-arguments-to-skills)
 - [Advanced patterns](#advanced-patterns)
   - [Inject dynamic context](#inject-dynamic-context)
@@ -54,6 +58,7 @@ tags: ["claude-code", "plugins", "skills"]
 - [Troubleshooting](#troubleshooting)
   - [Skill not triggering](#skill-not-triggering)
   - [Skill triggers too often](#skill-triggers-too-often)
+  - [Claude stops following a skill](#claude-stops-following-a-skill)
   - [Skill descriptions are cut short](#skill-descriptions-are-cut-short)
   - [Personal skills disappeared](#personal-skills-disappeared)
 - [Related resources](#related-resources)
@@ -86,11 +91,25 @@ The [`/doctor`](../02-Claude-Code-CLI/commands.md#all-commands) setup checkup st
 Bundled skills are listed alongside built-in commands in the [commands reference](../02-Claude-Code-CLI/commands.md), marked **Skill** in the Purpose column.
 
 
+[​](#check-your-setup-with-/doctor)
+
+Check your setup with `/doctor`
+
+Run `/doctor` at the Claude Code prompt for a setup checkup that diagnoses issues and can fix them. Claude reports its findings first and asks for confirmation before changing anything. The checkup covers these areas:
+
+- **Installation health**: duplicate or leftover installs, `PATH` problems, unparseable settings files, and whether a newer version is available on your [release channel](../01-Getting-Started/setup.md#configure-release-channel)
+- **Extensions**: unused skills, MCP servers, and plugins compared with their context cost, and slow [hooks](../07-Hooks/hooks.md)
+- **`CLAUDE.md` files**: local `CLAUDE.md` files that duplicate checked-in ones, checked-in [`CLAUDE.md` content Claude could derive from the codebase](../02-Claude-Code-CLI/memory.md#my-claude-md-is-too-large), and the always-loaded guidance that remains, which Claude offers to migrate into skills and nested `CLAUDE.md` files that load on demand
+- **Permissions**: an offer to make [auto mode](../02-Claude-Code-CLI/permissions.md#permission-modes) your default permission mode and to [pre-approve](../02-Claude-Code-CLI/permissions.md) read-only commands that you frequently deny
+
+For read-only installation diagnostics without starting a session, run `claude doctor` in your terminal instead. To audit your instructions rather than your setup, run `/doctor prompt-audit` at the Claude Code prompt. Claude [checks your `CLAUDE.md` files, skills, and other configuration](../02-Claude-Code-CLI/memory.md#audit-your-instruction-files) for outdated or conflicting instructions instead of running the checkup. The `prompt-audit` subcommand requires Claude Code v2.1.283 or later.
+
+
 [​](#run-and-verify-your-app)
 
 Run and verify your app
 
-Three bundled skills work together to launch your app and confirm changes against the running app instead of just tests:
+Three bundled skills work together to launch your app and confirm changes against the running app instead of tests alone:
 
 | Skill                  | Purpose                                                                                                           |
 |:-----------------------|:------------------------------------------------------------------------------------------------------------------|
@@ -98,7 +117,18 @@ Three bundled skills work together to launch your app and confirm changes agains
 | `/verify`              | Build and run your app to confirm a code change does what it should, without falling back to tests or type checks |
 | `/run-skill-generator` | Teach `/run` and `/verify` how to build and launch your project                                                   |
 
-`/run` and `/verify` work without setup. They infer the launch from your project type (CLI, server, TUI, browser-driven) and from what’s in your README, `package.json`, or `Makefile`. That inference gets unreliable for projects that need anything beyond a standard launch: a database, an env file, a graphical session, a multi-step build. `/run-skill-generator` records the recipe instead. It gets your app running from a clean environment, captures what worked (the install commands, the env vars, the launch script), and commits it as a per-project skill at `.claude/skills/run-<name>/`. After that, `/run`, `/verify`, and any other agent in the repo follow the recorded recipe instead of rediscovering it. Run `/run-skill-generator` once per project, and again if the build or launch process changes. `/verify` can also record its own recipe. When it has to build and drive your app without a recorded recipe, it writes what worked to `.claude/skills/verify/SKILL.md` at the repo root, or in the touched package directory in a monorepo, so later runs and other agents follow the same steps. At the repo root, the recorded skill replaces the bundled `/verify`. This requires Claude Code v2.1.200 or later. Claude edits the recorded file only when it steered a run wrong, such as a command that failed or a missing step, so you can commit the file without per-session diffs. Before v2.1.205, the bundled skill told Claude to fold in anything a run learned, which caused frequent merge conflicts.
+`/run` and `/verify` work without setup. They infer the launch from your project type (CLI, server, TUI, browser-driven) and from what’s in your README, `package.json`, or `Makefile`. That inference gets unreliable for projects that need anything beyond a standard launch: a database, an env file, a graphical session, a multi-step build. `/run-skill-generator` records the recipe instead. It gets your app running from a clean environment, captures what worked (the install commands, the env vars, the launch script), and commits it as a per-project skill at `.claude/skills/run-<name>/`. After that, `/run`, `/verify`, and any other agent in the repo follow the recorded recipe instead of rediscovering it. Run `/run-skill-generator` once per project, and again if the build or launch process changes. `/verify` can also record its own recipe. When it has to build and drive your app without a recorded recipe, it writes what worked to `.claude/skills/verify/SKILL.md` at the repo root, or in the touched package directory in a monorepo, so later runs and other agents follow the same steps. At the repo root, the recorded skill replaces the bundled `/verify`. Claude edits the recorded file only when it steered a run wrong, such as a command that failed or a missing step, so you can commit the file without per-session diffs. Before v2.1.205, the bundled skill told Claude to fold in anything a run learned, which caused frequent merge conflicts.
+
+
+[​](#run-your-checks-before-each-commit)
+
+Run your checks before each commit
+
+When a session starts with a skill named `verify` or `simplify` in place, Claude Code’s commit instructions tell Claude to run it right before each commit, except for changes to docs or tests. This requires Claude Code v2.1.286 or later. Claude gets that instruction when these conditions hold at the start of the session:
+
+- **Location**: the skill loads from the enterprise, personal, project, or additional-directory [location](#where-skills-live), or from a `.claude/commands/` file with that name. The recipe that `/verify` records at your repo root is a project skill, so it counts. The bundled `/verify` and `/simplify`, plugin skills, and skills from your claude.ai account don’t count.
+- **Invocation**: Claude can invoke the skill. If you’ve [stopped Claude from invoking it](#control-who-invokes-a-skill), for example with `disable-model-invocation: true`, Claude doesn’t get the instruction.
+- **Git instructions**: you haven’t turned off [`includeGitInstructions`](../02-Claude-Code-CLI/settings-reference.md#includegitinstructions). Turning it off removes this instruction together with the rest of the built-in commit and PR instructions.
 
 
 [​](#work-on-claude-api-projects)
@@ -107,16 +137,18 @@ Work on Claude API projects
 
 The bundled `/claude-api` skill loads [Claude API](../04-API-Reference/Endpoints/overview.md) and [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md) reference material for your project’s language. Claude also activates it automatically when your code imports `anthropic` or `@anthropic-ai/sdk`. To start one of the skill’s workflows, type a subcommand after the skill name at the Claude Code prompt, for example `/claude-api migrate`. The table lists what each subcommand does and the earliest Claude Code version that includes it. `migrate` and `managed-agents-onboard` predate v2.1.221, the oldest version the table tracks.
 
-| Subcommand                     | What it does                                                                                                                                                                                                                                                                                                                  | Minimum version       |
-|:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
-| `migrate`                      | Update your existing Claude API code to a newer model                                                                                                                                                                                                                                                                         | Earlier than v2.1.221 |
-| `upgrade`                      | Move your project’s Anthropic SDK dependency across a major version, currently the Python `anthropic` package from 0.x to 1.x                                                                                                                                                                                                 | v2.1.236 or later     |
-| `managed-agents-onboard`       | Walk through creating a new Managed Agent                                                                                                                                                                                                                                                                                     | Earlier than v2.1.221 |
-| `prompt-audit`                 | Flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff                                                                                                                                                                                                         | v2.1.221 or later     |
-| `cost-optimize`                | Profile where your project’s Claude API spend goes and propose savings from options such as prompt caching, trimming unneeded input and output tokens, batch processing, effort, and model choice, one change at a time                                                                                                       | v2.1.247 or later     |
-| `build-eval`                   | Build an eval set for your Claude-powered app                                                                                                                                                                                                                                                                                 | v2.1.259 or later     |
-| `hillclimb`                    | Iteratively improve your app against an existing eval                                                                                                                                                                                                                                                                         | v2.1.259 or later     |
-| `preserved-thinking-migration` | Find the edits your integration makes to earlier turns, its system prompt, or its tool list that invalidate [preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) blocks, measure how much reasoning each one drops, and propose fixes one at a time, re-measuring after each change | v2.1.282 or later     |
+| Subcommand                                 | What it does                                                                                                                                                                                                                                                                                                                  | Minimum version       |
+|:-------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
+| `migrate`                                  | Update your existing Claude API code to a newer model                                                                                                                                                                                                                                                                         | Earlier than v2.1.221 |
+| `upgrade`                                  | Move your project’s Anthropic SDK dependency across a major version, currently the Python `anthropic` package from 0.x to 1.x                                                                                                                                                                                                 | v2.1.236 or later     |
+| `managed-agents-onboard`                   | Walk through creating a new Managed Agent                                                                                                                                                                                                                                                                                     | Earlier than v2.1.221 |
+| `managed-agents-onboard <url>`             | Build the Managed Agent that the page at the URL describes, such as a page in the [Managed Agents docs](../04-API-Reference/Other/managed-agents-overview.md)                                                                                                                                                          | v2.1.290 or later     |
+| `managed-agents-onboard <quickstart-name>` | Build one of the Console’s quickstart templates, such as `deep-researcher`. If you give one word that isn’t a template name, Claude lists the valid names                                                                                                                                                                     | v2.1.290 or later     |
+| `prompt-audit`                             | Flag instructions written for older models in your prompts, skills, and tool descriptions and propose fixes as a diff                                                                                                                                                                                                         | v2.1.221 or later     |
+| `cost-optimize`                            | Profile where your project’s Claude API spend goes and propose savings from options such as prompt caching, trimming unneeded input and output tokens, batch processing, effort, and model choice, one change at a time                                                                                                       | v2.1.247 or later     |
+| `build-eval`                               | Build an eval set for your Claude-powered app                                                                                                                                                                                                                                                                                 | v2.1.259 or later     |
+| `hillclimb`                                | Iteratively improve your app against an existing eval                                                                                                                                                                                                                                                                         | v2.1.259 or later     |
+| `preserved-thinking-migration`             | Find the edits your integration makes to earlier turns, its system prompt, or its tool list that invalidate [preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) blocks, measure how much reasoning each one drops, and propose fixes one at a time, re-measuring after each change | v2.1.282 or later     |
 
 
 [​](#getting-started)
@@ -227,12 +259,13 @@ When you add a directory with `--add-dir` or `/add-dir`, Claude Code loads the s
 
 Resolve skills that share a name
 
-When two skills share a directory or file name, where each one came from decides which one `/name` runs. For a name set by the frontmatter `name` field, see [How a skill gets its command name](#how-a-skill-gets-its-command-name). The table covers the enterprise, personal, project, nested, plugin, and claude.ai locations, bundled skills, and command files:
+When two skills share a directory or file name, where each one came from decides which one `/name` runs. For a name set by the frontmatter `name` field, see [How a skill gets its command name](#how-a-skill-gets-its-command-name). The table covers the enterprise, personal, project, nested, plugin, and claude.ai locations, bundled skills, built-in commands, and command files:
 
 | Same name in                                                                                                   | Which one runs                                                                                                                                                                                           |
 |:---------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Two of enterprise, personal, and project                                                                       | Enterprise over personal, and personal over project. With `deploy` in both `~/.claude/skills/` and the project’s `.claude/skills/`, `/deploy` runs the personal one                                      |
 | Any of those locations and a [bundled skill](#bundled-skills)                                                  | Your skill replaces the bundled command, but not its aliases. A project `code-review` skill replaces `/code-review`, and the bundled alias `/review` never runs your skill                               |
+| Any of those locations and a [built-in command](../02-Claude-Code-CLI/commands.md)                                             | In a local terminal session, your skill replaces the built-in command, but not its aliases. A project `usage` skill replaces `/usage`, and the built-in alias `/cost` still runs the built-in command    |
 | A skill and a file in `.claude/commands/`                                                                      | The skill                                                                                                                                                                                                |
 | A project-root skill and a nested skill                                                                        | Both load. See [monorepos and subdirectories](#discovery-from-parent-and-nested-directories)                                                                                                             |
 | A plugin skill and a skill at any of the locations above                                                       | Both load, because plugin skills are namespaced as `/plugin-name:skill-name`                                                                                                                             |
@@ -245,7 +278,7 @@ Use skills in Cowork and cloud sessions
 
 [Cowork](../15-Claude-AI-Features/product-cowork.md) sessions and [cloud sessions](../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup), including [routines](../02-Claude-Code-CLI/web-scheduled-tasks.md), don’t read `~/.claude/skills/` on your machine. Both interactive and scheduled Cowork sessions load the skills enabled for your claude.ai account, synced at session start; manage them from **Customize** in the Desktop app sidebar or from the skills settings on claude.ai. Cloud sessions additionally load project skills committed to the cloned repository’s `.claude/skills/`. If a skill exists only in `~/.claude/skills/` on your machine, Claude Code reports that the skill was not found when a [routine](../02-Claude-Code-CLI/web-scheduled-tasks.md) invokes it, because each routine run starts as a fresh cloud session. To make a personal skill available in these sessions:
 
-- For Cowork and cloud sessions, enable the skill for your claude.ai account.
+- For Cowork and cloud sessions, enable the skill for your claude.ai account. [Some sessions in a self-hosted environment](../13-Enterprise-Admin/self-hosted-environments-configuration.md#how-each-session%E2%80%99s-config-is-assembled) don’t load your account’s skills.
 - For cloud sessions, you can instead commit the skill to the repository’s `.claude/skills/`. Plugins declared in the repository’s `.claude/settings.json` and plugins enabled only in your user settings [don’t load in cloud sessions](../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup).
 
 [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md) run locally on your machine, so they do load `~/.claude/skills/`.
@@ -262,7 +295,12 @@ This section applies to you if you use Cowork or cloud sessions, or sign in to C
 
 Where synced skills load
 
-In a Cowork or cloud session, Claude Code loads the skills enabled for your claude.ai account, and [Skills in Cowork and cloud sessions](#skills-in-cowork-and-cloud-sessions) says how to choose which skills those sessions get. In your terminal, Claude Code syncs those skills in sessions where you sign in with your claude.ai account. When the session starts, Claude Code downloads your account’s skills into `~/.claude/skills/synced/` in the background, then checks claude.ai for changes about every 10 minutes while the session runs. When a check finds that a skill was added, edited, or turned off on claude.ai, Claude Code adds, updates, or removes it in the running session without a restart. Syncing in terminal sessions requires Claude Code v2.1.273 or later. The sync never delays startup, because Claude waits for a skill’s download only when it invokes that skill. A short [non-interactive](../02-Claude-Code-CLI/headless.md) run can therefore finish before a newly added skill downloads, in which case a later session downloads it. To make a non-interactive run download your skills and wait for the list before it answers the prompt, set [`CLAUDE_CODE_SYNC_SKILLS`](../02-Claude-Code-CLI/env-vars.md#variables) to `1`. Claude Code syncs only in a session that signs in with your claude.ai account and [fetches feature flags from Anthropic](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching). It doesn’t sync in these sessions:
+In a Cowork or cloud session, Claude Code loads the skills enabled for your claude.ai account, and [Skills in Cowork and cloud sessions](#skills-in-cowork-and-cloud-sessions) says how to choose which skills those sessions get. In your terminal, Claude Code syncs those skills in sessions where you sign in with your claude.ai account. When the session starts, Claude Code downloads your account’s skills into `~/.claude/skills/synced/` in the background, then checks claude.ai for changes while the session runs. When a check finds that a skill was added, edited, or turned off on claude.ai, Claude Code adds, updates, or removes it in the running session without a restart. Syncing in terminal sessions requires Claude Code v2.1.273 or later. The checks run less often while the session is idle:
+
+- **While you or Claude work in the session**: a check runs about every 10 minutes.
+- **While the session is idle**: a check runs about every 40 minutes. When you type in the session again, Claude Code checks within a few minutes if the last check was more than 10 minutes ago.
+
+The sync never delays startup, because Claude waits for a skill’s download only when it invokes that skill. A short [non-interactive](../02-Claude-Code-CLI/headless.md) run can therefore finish before a newly added skill downloads, in which case a later session downloads it. To make a non-interactive run download your skills and wait for the list before it answers the prompt, set [`CLAUDE_CODE_SYNC_SKILLS`](../02-Claude-Code-CLI/env-vars.md#variables) to `1`. Before v2.1.273, terminal sessions downloaded them only in a `-p` run with this variable set. Claude Code syncs only in a session that signs in with your claude.ai account and [fetches feature flags from Anthropic](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching). It doesn’t sync in these sessions:
 
 - A session that doesn’t use a sign-in stored by `/login`, such as one that authenticates with an API key, or one where `ANTHROPIC_AUTH_TOKEN`, `CLAUDE_CODE_OAUTH_TOKEN`, or an `apiKeyHelper` script supplies the credential
 - A session that doesn’t fetch feature flags, such as one on Amazon Bedrock or one where you set `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`
@@ -303,7 +341,7 @@ How Claude Code handles the frontmatter of a synced skill
 
 Claude Code applies two rules to a synced skill’s frontmatter:
 
-- Claude Code honors the frontmatter in every kind of session, so an `allowed-tools` grant goes through the normal [permission flow](../02-Claude-Code-CLI/permissions.md).
+- The frontmatter applies in every kind of session, so an `allowed-tools` grant goes through the normal [permission flow](../02-Claude-Code-CLI/permissions.md). If your organization sets `allowManagedPermissionRulesOnly`, the grant [doesn’t apply](#when-only-managed-permission-rules-apply).
 - Claude Code sanitizes the display text the skill supplies, such as its description. It removes control characters, and in text that reaches Claude, such as the description, it also escapes angle brackets so the text can’t imitate Claude Code’s internal formatting. This sanitization requires Claude Code v2.1.228 or later.
 
 
@@ -415,7 +453,7 @@ All fields are optional. Only `description` is recommended so Claude knows when 
 | `allowed-tools`            | No          | Tools Claude can use without asking permission during the turn that invokes this skill. The grant clears when you send your next message. Accepts a space- or comma-separated string, or a YAML list. See [Pre-approve tools for a skill](#pre-approve-tools-for-a-skill).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | `disallowed-tools`         | No          | Tools removed from Claude’s available pool while this skill is active. Use for autonomous skills that should never call certain tools, such as `AskUserQuestion` for a background loop. Accepts a space- or comma-separated string, or a YAML list. The restriction clears when you send your next message. Like deny rules, the field can’t remove [`EndConversation`](../02-Claude-Code-CLI/tools-reference.md#endconversation-tool-behavior) while any other tool remains.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `model`                    | No          | Model to use when this skill is active. The override applies for the rest of the current turn and isn’t saved to settings. The session model resumes when you send your next prompt. Accepts the same values as [`/model`](../02-Claude-Code-CLI/model-config.md), or `inherit` to keep the active model. A value excluded by your organization’s [`availableModels`](../02-Claude-Code-CLI/model-config.md#restrict-model-selection) allowlist isn’t used, and the session keeps its current model. In [auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode), and in [plan mode while the classifier reviews commands](../02-Claude-Code-CLI/permission-modes.md#analyze-before-you-edit-with-plan-mode), a model that auto mode doesn’t support also isn’t used, and the session keeps its current model. With `context: fork`, the value sets the [forked subagent’s model](#run-skills-in-a-subagent) instead, and an excluded value follows the [same rules as a subagent model override](../02-Claude-Code-CLI/model-config.md#restrict-model-selection). |
-| `effort`                   | No          | [Effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level) when this skill is active. Overrides the session effort level. Default: inherits from session. Options: `low`, `medium`, `high`, `xhigh`, `max`; available levels depend on the model.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `effort`                   | No          | [Effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level) when this skill is active. Overrides the session effort level. When you omit it, the level comes from the [effort resolution order](../02-Claude-Code-CLI/model-config.md#adjust-effort-level). Options: `low`, `medium`, `high`, `xhigh`, `max`; available levels depend on the model.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `context`                  | No          | Set to `fork` to run in a forked subagent context. See [Run skills in a subagent](#run-skills-in-a-subagent).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `agent`                    | No          | Which subagent type to use when `context: fork` is set.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `background`               | No          | Only applies with `context: fork`. Set to `false` to wait for the forked subagent’s result in the turn that invoked the skill, instead of [running it in the background](#run-skills-in-a-subagent). Default: `true`. Requires Claude Code v2.1.218 or later.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -544,10 +582,10 @@ Control who invokes a skill
 
 By default, both you and Claude can invoke any skill. You can type `/skill-name` to invoke it directly, and Claude can load it automatically when relevant to your conversation. Two frontmatter fields let you restrict this:
 
-- **`disable-model-invocation: true`**: Only you can invoke the skill. Use this for workflows with side effects or that you want to control timing, like `/commit`, `/deploy`, or `/send-slack-message`. You don’t want Claude deciding to deploy because your code looks ready.
+- **`disable-model-invocation: true`**: Claude can’t invoke the skill on its own. Use this for workflows with side effects or that you want to control timing, like `/commit`, `/deploy`, or `/send-slack-message`. You don’t want Claude deciding to deploy because your code looks ready.
 - **`user-invocable: false`**: Only Claude can invoke the skill. Use this for background knowledge that isn’t actionable as a command. A `legacy-system-context` skill explains how an old system works. Claude should know this when relevant, but `/legacy-system-context` isn’t a meaningful action for users to take.
 
-This example creates a deploy skill that only you can trigger. If you set `disable-model-invocation: true`, Claude can’t run the skill automatically:
+This example creates a deploy skill. If you set `disable-model-invocation: true`, Claude can’t run the skill automatically:
 
 ```python
 ---
@@ -569,24 +607,38 @@ If Claude tries anyway, Claude Code blocks the call and instructs it not to repr
 | Frontmatter                      | You can invoke | Claude can invoke | When loaded into context                                     |
 |:---------------------------------|:---------------|:------------------|:-------------------------------------------------------------|
 | (default)                        | Yes            | Yes               | Description always in context, full skill loads when invoked |
-| `disable-model-invocation: true` | Yes            | No                | Description not in context, full skill loads when you invoke |
+| `disable-model-invocation: true` | Yes            | Not on its own    | Description not in context, full skill loads when invoked    |
 | `user-invocable: false`          | No             | Yes               | Description always in context, full skill loads when invoked |
 
 In a regular session, skill descriptions are loaded into context so Claude knows what’s available, but full skill content only loads when invoked. [Subagents with preloaded skills](../09-Agents-Patterns/sub-agents.md#preload-skills-into-subagents) work differently: the full skill content is injected at startup.
+
+
+[​](#where-you-write-the-skill’s-name)
+
+Where you write the skill’s name
+
+To run a skill directly, put its name at the start of your message. After plain text, the name gives Claude permission to run the skill but doesn’t run it:
+
+| Where                                                             | Example                           | What happens                                                                                                                                                                 |
+|:------------------------------------------------------------------|:----------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| At the start of your message                                      | `/deploy staging`                 | Claude Code runs the skill directly                                                                                                                                          |
+| After plain text, as a separate word with no punctuation attached | `go ahead and /deploy to staging` | Nothing runs directly. The name counts as your permission for that message: Claude can run the skill while it responds, and judges from your wording whether you asked it to |
+
+To write about the skill without permitting a run, leave off the slash.
 
 
 [​](#skill-content-lifecycle)
 
 Skill content lifecycle
 
-When you or Claude invoke a skill, the rendered `SKILL.md` content enters the conversation as a single message and stays there across later turns. This persistence applies to the skill’s instructions, not its permissions: an [`allowed-tools`](#pre-approve-tools-for-a-skill) grant clears when you send your next message. Claude Code does not re-read the skill file on later turns, so write guidance that should apply throughout a task as standing instructions rather than one-time steps. When Claude re-invokes a skill whose rendered content is identical to the copy already in context, Claude Code adds a short note that the skill is already loaded rather than a second copy of the content. When the rendered content differs, because the arguments changed or a [dynamic context](#inject-dynamic-context) command produced new output, Claude Code appends the full content again. [Auto-compaction](../02-Claude-Code-CLI/how-claude-code-works.md#when-context-fills-up) carries invoked skills forward within a token budget. When the conversation is summarized to free context, Claude Code re-attaches the most recent invocation of each skill after the summary, keeping the first 5,000 tokens of each. Re-attached skills share a combined budget of 25,000 tokens. Claude Code fills this budget starting from the most recently invoked skill, so older skills can be dropped entirely after compaction if you have invoked many in one session. If a skill seems to stop influencing behavior after the first response, the content is usually still present and the model is choosing other tools or approaches. Strengthen the skill’s `description` and instructions so the model keeps preferring it, or use [hooks](../07-Hooks/hooks.md) to enforce behavior deterministically. If the skill is large or you invoked several others after it, re-invoke it after compaction to restore the full content.
+When you or Claude invoke a skill, the rendered `SKILL.md` content enters the conversation as a single message and stays there across later turns. This persistence applies to the skill’s instructions, not its permissions: an [`allowed-tools`](#pre-approve-tools-for-a-skill) grant clears when you send your next message. Claude Code does not re-read the skill file on later turns, so write guidance that should apply throughout a task as standing instructions rather than one-time steps. When Claude re-invokes a skill whose rendered content is identical to the copy already in context, Claude Code adds a short note that the skill is already loaded rather than a second copy of the content. When the rendered content differs, because the arguments changed or a [dynamic context](#inject-dynamic-context) command produced new output, Claude Code appends the full content again. [Auto-compaction](../02-Claude-Code-CLI/how-claude-code-works.md#when-context-fills-up) carries invoked skills forward within a token budget. When the conversation is summarized to free context, Claude Code re-attaches the most recent invocation of each skill after the summary, keeping the first 5,000 tokens of each. Re-attached skills share a combined budget of 25,000 tokens. Claude Code fills this budget starting from the most recently invoked skill, so older skills can be dropped entirely after compaction if you have invoked many in one session. If Claude stops following a skill partway through a session, see [Claude stops following a skill](#claude-stops-following-a-skill).
 
 
 [​](#pre-approve-tools-for-a-skill)
 
 Pre-approve tools for a skill
 
-The `allowed-tools` field grants permission for the listed tools during the turn that invokes the skill, so Claude can use them without prompting you for approval. The grant clears when you send your next message, even though the skill content [stays in context](#skill-content-lifecycle); invoking the skill again re-applies it for that turn. It does not restrict which tools are available: every tool remains callable, and your [permission settings](../02-Claude-Code-CLI/permissions.md) still govern tools that are not listed. To pre-approve tools for the whole session rather than a single turn, add allow rules to those permission settings instead. Workspace trust doesn’t gate this field. Claude Code applies a project skill’s `allowed-tools` whenever you or Claude invoke the skill, including in a `-p` run in a folder you’ve never trusted. A skill can grant itself broad tool access, so review the `allowed-tools` of skills checked into a repository before you run Claude Code there. This skill lets Claude run git commands without per-use approval whenever you invoke it:
+The `allowed-tools` field grants permission for the listed tools during the turn that invokes the skill, so Claude can use them without prompting you for approval. The grant clears when you send your next message, even though the skill content [stays in context](#skill-content-lifecycle); invoking the skill again re-applies it for that turn. It does not restrict which tools are available: every tool remains callable, and your [permission settings](../02-Claude-Code-CLI/permissions.md) still govern tools that are not listed. To pre-approve tools for the whole session rather than a single turn, add allow rules to those permission settings instead. Workspace trust doesn’t gate this field. Claude Code applies a project skill’s `allowed-tools` even in a `-p` run in a folder you’ve never trusted. A skill can grant itself broad tool access, so review the `allowed-tools` of skills checked into a repository before you run Claude Code there. To withhold the field from repository skills across your organization, see [When only managed permission rules apply](#when-only-managed-permission-rules-apply). This skill lets Claude run git commands without per-use approval whenever you invoke it:
 
 ```python
 ---
@@ -598,6 +650,13 @@ allowed-tools: Bash(git add *) Bash(git commit *) Bash(git status *)
 ```
 
 To remove tools from Claude’s available pool while a skill is active, list them in `disallowed-tools` in the skill’s frontmatter. The restriction clears when you send your next message. Like deny rules, the field can’t remove [`EndConversation`](../02-Claude-Code-CLI/tools-reference.md#endconversation-tool-behavior) while any other tool remains. To block tools across all skills and prompts, add deny rules in your [permission settings](../02-Claude-Code-CLI/permissions.md).
+
+
+[​](#when-only-managed-permission-rules-apply)
+
+When only managed permission rules apply
+
+When your organization sets `allowManagedPermissionRulesOnly` in managed settings, Claude Code ignores `allowed-tools` in project and personal skills and in the [other sources the setting’s entry lists](../02-Claude-Code-CLI/settings-reference.md#allowmanagedpermissionrulesonly). This requires Claude Code v2.1.282 or later. The tools an affected skill lists go through your organization’s managed rules and the normal permission prompt instead. Run `/status` to list each skill whose `allowed-tools` Claude Code has ignored so far in the session. An injected command in the skill that no managed rule allows follows [Permission checks on injected commands](#permission-checks-on-injected-commands).
 
 
 [​](#pass-arguments-to-skills)
@@ -622,7 +681,7 @@ Fix GitHub issue $ARGUMENTS following our coding standards.
 5. Create a commit
 ```
 
-When you run `/fix-issue 123`, Claude receives “Fix GitHub issue 123 following our coding standards…” If you invoke a skill with arguments but no placeholder in the skill’s content receives one, Claude Code appends `ARGUMENTS: <your input>` to the end of the skill content so Claude still sees what you typed. A placeholder is `$ARGUMENTS`, an indexed form such as `$1`, or a named argument. An indexed placeholder with no argument at its position stays as literal text and doesn’t count as receiving one. A named placeholder counts even when its position has no argument, because it expands to an empty string. You can also stack several skills at the start of one message. Typing `/write-tests /fix-issue 123` loads both skills and passes the trailing text `123` as `$ARGUMENTS` to each of them. Before v2.1.199, only the first skill loaded and received `/fix-issue 123` as literal argument text. Claude Code expands the first skill plus up to five more stacked after it. Expansion stops at the first token that isn’t an inline user-invocable skill, so a skill that runs as a [forked subagent](#run-skills-in-a-subagent), such as [`/code-review`](../02-Claude-Code-CLI/code-review.md#review-a-diff-locally), or one whose arguments may themselves start with a slash command, such as `/loop`, also ends the run there. That token and everything after it become the argument text for every expanded skill. `/code-review` runs as a forked subagent from v2.1.218; on earlier versions it ran inline and stacked. To access individual arguments by position, use `$ARGUMENTS[N]` or the shorter `$N`:
+When you run `/fix-issue 123`, Claude receives “Fix GitHub issue 123 following our coding standards…” If you invoke a skill with arguments but no placeholder in the skill’s content receives one, Claude Code appends `ARGUMENTS: <your input>` to the end of the skill content so Claude still sees what you typed. A placeholder is `$ARGUMENTS`, an indexed form such as `$1`, or a named argument. An indexed placeholder with no argument at its position stays as literal text and doesn’t count as receiving one. A named placeholder counts even when its position has no argument, because it expands to an empty string. You can also stack several skills at the start of one message. Typing `/write-tests /fix-issue 123` loads both skills and passes the trailing text `123` as `$ARGUMENTS` to each of them. Claude Code expands the first skill plus up to five more stacked after it. Expansion stops at the first token that isn’t an inline user-invocable skill, so a skill that runs as a [forked subagent](#run-skills-in-a-subagent), such as [`/code-review`](../02-Claude-Code-CLI/code-review.md#review-a-diff-locally), or one whose arguments may themselves start with a slash command, such as `/loop`, also ends the run there. That token and everything after it become the argument text for every expanded skill. `/code-review` runs as a forked subagent from v2.1.218; on earlier versions it ran inline and stacked. To access individual arguments by position, use `$ARGUMENTS[N]` or the shorter `$N`:
 
 ```python
 ---
@@ -705,7 +764,7 @@ Either tool runs the commands the same way it runs Claude’s own shell commands
 
 - **Working directory**: Claude Code runs each command in the session shell’s current working directory. That directory moves when Claude runs `cd`. Use [`${CLAUDE_SKILL_DIR}` or `${CLAUDE_PROJECT_DIR}`](#available-string-substitutions) in paths that must resolve the same way every time.
 - **stderr**: with the default `bash` shell, Claude Code merges stderr into stdout. Anything the command writes to stderr appears in the injected text.
-- **Timeout**: each command runs under the Bash tool’s default 2-minute [timeout](../02-Claude-Code-CLI/tools-reference.md#timeout-and-output-limits). When the Bash tool [moves a timed-out command to the background](../02-Claude-Code-CLI/tools-reference.md#background-commands), the skill still renders. The injected text reports the move and names the background task and the file collecting the command’s output. When the command is one the Bash tool never auto-backgrounds, Claude Code kills it at the timeout. That failure [aborts the invocation](#when-an-injected-command-fails).
+- **Timeout**: each command runs under the Bash tool’s default 2-minute [timeout](../02-Claude-Code-CLI/tools-reference.md#timeout-and-output-limits). When the Bash tool [moves a timed-out command to the background](../02-Claude-Code-CLI/tools-reference.md#foreground-commands-that-move-to-the-background), the skill still renders. The injected text reports the move and names the background task and the file collecting the command’s output. When the command is one the Bash tool never auto-backgrounds, Claude Code kills it at the timeout. That failure [aborts the invocation](#when-an-injected-command-fails).
 - **Output size**: output past the Bash tool’s inline ceiling arrives as a file path plus a short preview, not truncated text. [Output limits](../02-Claude-Code-CLI/tools-reference.md#output-limits) covers the ceiling and how to adjust each boundary.
 
 The PowerShell tool applies the same timeout, backgrounding, and output-ceiling behavior to the commands it runs. See the [PowerShell tool](../02-Claude-Code-CLI/tools-reference.md#powershell-tool) section for its specifics.
@@ -727,7 +786,7 @@ With the default `bash` shell, append `|| true` to any other command you expect 
 
 Permission checks on injected commands
 
-Injected commands never prompt for permission while the skill renders. Claude Code checks each one against your [permission rules](../02-Claude-Code-CLI/permissions.md) first. A command a deny rule matches aborts the invocation with `Shell command permission check failed for pattern "..."`. Outside [auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode), when a command’s permission check returns anything other than allow, Claude Code aborts the invocation with the same error. This includes a rule that would normally ask you. To keep an unmatched command from aborting here, pre-approve it with [`allowed-tools`](#pre-approve-tools-for-a-skill). Deny and ask rules still override `allowed-tools`. See [Manage permissions](../02-Claude-Code-CLI/permissions.md#manage-permissions). In auto mode, a command that would otherwise need your approval doesn’t abort the invocation. The skill loads with an instruction telling Claude to run the command first, and Claude’s own call then goes through [auto mode’s usual checks](../02-Claude-Code-CLI/permission-modes.md#how-the-classifier-evaluates-actions). The invocation still aborts in a [forked skill](#run-skills-in-a-subagent) that sets `agent`, and in a session where Claude doesn’t have the [shell tool that runs injected commands](#how-injected-commands-run).
+Injected commands never prompt for permission while the skill renders. Claude Code checks each one against your [permission rules](../02-Claude-Code-CLI/permissions.md) first. A command a deny rule matches aborts the invocation with `Shell command permission check failed for pattern "..."`. Outside [auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode), when a command’s permission check returns anything other than allow, Claude Code aborts the invocation with the same error. This includes a rule that would normally ask you. To keep an unmatched command from aborting here, pre-approve it with [`allowed-tools`](#pre-approve-tools-for-a-skill). If your organization restricts permission rules to managed settings, see [When only managed permission rules apply](#when-only-managed-permission-rules-apply). Deny and ask rules still override `allowed-tools`. See [Manage permissions](../02-Claude-Code-CLI/permissions.md#manage-permissions). In auto mode, a command that would otherwise need your approval doesn’t abort the invocation. The skill loads with an instruction telling Claude to run the command first, and Claude’s own call then goes through [auto mode’s usual checks](../02-Claude-Code-CLI/permission-modes.md#how-the-classifier-evaluates-actions). The invocation still aborts in a [forked skill](#run-skills-in-a-subagent) that sets `agent`, and in a session where Claude doesn’t have the [shell tool that runs injected commands](#how-injected-commands-run).
 
 
 [​](#run-skills-in-a-subagent)
@@ -794,7 +853,7 @@ The `agent` field specifies which subagent configuration to use. Options include
 
 Restrict Claude’s skill access
 
-By default, Claude can invoke any skill that doesn’t have `disable-model-invocation: true` set. Skills that define `allowed-tools` grant Claude access to those tools without per-use approval during the turn that invokes the skill; the grant clears when you send your next message. Your [permission settings](../02-Claude-Code-CLI/permissions.md) still govern baseline approval behavior for all other tools. A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`. Other built-in commands such as `/compact` are not. Three ways to control which skills Claude can invoke: **Disable all skills** by denying the Skill tool in `/permissions`:
+By default, Claude can invoke any skill that doesn’t have `disable-model-invocation: true` set. Skills that define [`allowed-tools`](#pre-approve-tools-for-a-skill) grant Claude access to those tools without per-use approval during the turn that invokes the skill; the grant clears when you send your next message. Your [permission settings](../02-Claude-Code-CLI/permissions.md) still govern baseline approval behavior for all other tools. A few built-in commands are also available through the Skill tool, including `/init` and `/security-review`. Other built-in commands such as `/compact` are not. Three ways to control which skills Claude can invoke: **Disable all skills** by denying the Skill tool in `/permissions`:
 
 ```python
 # Add to deny rules:
@@ -812,7 +871,23 @@ Skill(review-pr *)
 Skill(deploy *)
 ```
 
-Permission syntax: `Skill(name)` for exact match, `Skill(name *)` for prefix match with any arguments. In an `allow` rule, a prefix outside the [namespace reserved for synced skills](#names-reserved-for-synced-skills) doesn’t match the names inside it: `Skill(anthropic *)` doesn’t cover `anthropic-skills:pdf`. If your `deny` rule names an alias or an unqualified name rather than the skill’s own name, Claude Code still blocks the skill: with `Skill(review)` it blocks the bundled `/code-review` through its `/review` alias, and with `Skill(deploy)` it blocks a [nested skill](#where-skills-live) listed as `apps/web:deploy` through its unqualified name. Before v2.1.260, Claude Code didn’t block a nested skill listed under its qualified name when the deny rule named only the unqualified name. Claude Code matches an `allow` rule only against the skill’s own name and the name in Claude’s invocation. To approve a [synced skill](#how-synced-skills-behave) without a prompt, name it inside its [reserved namespace](#names-reserved-for-synced-skills): `Skill(anthropic-skills:pdf)` approves the synced `pdf` skill, and `Skill(anthropic-skills *)` approves every synced skill. **Hide individual skills** by adding `disable-model-invocation: true` to their frontmatter. This removes the skill from Claude’s context entirely.
+Permission syntax: `Skill(name)` for exact match, `Skill(name *)` for prefix match with any arguments. The table shows what a `deny` rule blocks beyond the name you write, by the kind of name in the rule.
+
+| Your `deny` rule names                                                         | Example rule                     | Claude Code also blocks                                                                   |
+|:-------------------------------------------------------------------------------|:---------------------------------|:------------------------------------------------------------------------------------------|
+| An alias                                                                       | `Skill(review)`                  | The bundled `/code-review`, through its `/review` alias                                   |
+| An unqualified name                                                            | `Skill(deploy)`                  | A [nested skill](#where-skills-live) listed as `apps/web:deploy`                          |
+| A [skill synced from claude.ai](#how-synced-skills-behave)                     | `Skill(anthropic-skills:deploy)` | That skill when Claude Desktop delivers it to a session as a plugin                       |
+| The plugin form of a synced skill                                              | `Skill(deploy:deploy)`           | The synced skill                                                                          |
+| A skill in the [parameter form](../02-Claude-Code-CLI/permissions.md#match-by-input-parameter) | `Skill(skill:deploy)`            | The skill whichever of its names Claude calls it by, including its alias and display name |
+
+Before v2.1.260, Claude Code didn’t block a nested skill listed under its qualified name when the deny rule named only the unqualified name. Claude Code matches an `allow` rule only against the skill’s own name and the name in Claude’s invocation. To approve a [synced skill](#how-synced-skills-behave) without a prompt, name it inside its [reserved namespace](#names-reserved-for-synced-skills):
+
+- `Skill(anthropic-skills:pdf)` approves the synced `pdf` skill
+- `Skill(anthropic-skills *)` approves every synced skill
+- `Skill(anthropic *)` doesn’t cover `anthropic-skills:pdf`, because a prefix outside the namespace doesn’t match the names inside it
+
+**Hide individual skills** by adding `disable-model-invocation: true` to their frontmatter. This removes the skill from Claude’s context entirely.
 
 With `user-invocable: false`, you can’t invoke the skill, but Claude still can. To keep Claude from invoking it through the Skill tool, set `disable-model-invocation: true`.
 
@@ -830,7 +905,7 @@ The `skillOverrides` setting controls skill visibility from your [settings](../0
 | `"user-invocable-only"` | Hidden               | Yes         |
 | `"off"`                 | Hidden               | Hidden      |
 
-The `/skills` menu labels the `"user-invocable-only"` state `user-only`. As of v2.1.199, `"off"` also hides the skill from the command lists advertised to [Remote Control](../02-Claude-Code-CLI/remote-control.md) clients and to [Agent SDK](../05-Agent-SDK/agent-sdk-skills.md#discover-available-commands) callers, in addition to the terminal `/` menu. Invoking a hidden skill by its full name still returns the `skillOverrides` error instead of running it. A skill that is absent from `skillOverrides` is treated as `"on"`. The example below collapses one skill to its name and turns another off entirely:
+The `/skills` menu labels the `"user-invocable-only"` state `user-only`. `"off"` also hides the skill from the command lists advertised to [Remote Control](../02-Claude-Code-CLI/remote-control.md) clients and to [Agent SDK](../05-Agent-SDK/agent-sdk-skills.md#discover-available-commands) callers, in addition to the terminal `/` menu. Invoking a hidden skill by its full name returns the `skillOverrides` error instead of running it. A skill that is absent from `skillOverrides` is treated as `"on"`. The example below collapses one skill to its name and turns another off entirely:
 
 ```python
 {
@@ -855,14 +930,19 @@ Every skill in the [skill listing](#skill-descriptions-are-cut-short) adds to yo
 
 Evaluate and iterate on a skill
 
-Seeing a skill trigger tells you Claude found it, not that it did what you intended. To know a skill is working, measure separately whether Claude invokes it on the prompts it should, and whether the output matches what you expect when it does. The check for both is a baseline comparison. Collect a few realistic prompts, run each one in a fresh session with the skill available and again with it [disabled](#override-skill-visibility-from-settings), and compare the results. A fresh session matters because leftover context from authoring the skill will mask gaps in the written instructions. Two tools automate that comparison. For a skill that ships in a [plugin](plugins.md), [`claude plugin eval`](plugin-evals.md) runs each prompt in an isolated session with and without the plugin, scores it with graders you define or that it writes for you, and exits non-zero below a threshold so you can gate CI on it. For iterating on a single skill inside a Claude Code conversation, the skill-creator plugin below runs a similar loop with its own `evals/evals.json` format. The two formats aren’t interchangeable.
+Seeing a skill trigger tells you Claude found it, not that it did what you intended. To know a skill is working, measure separately whether Claude invokes it on the prompts it should, and whether the output matches what you expect when it does. The check for both is a baseline comparison. Collect a few realistic prompts, run each one in a fresh session with the skill available and again with it turned off, and compare the results. A fresh session matters because leftover context from authoring the skill will mask gaps in the written instructions. How you turn the skill off for the second run depends on where it comes from:
+
+- **Personal or project skill**: set it to `"off"` in [`skillOverrides`](#override-skill-visibility-from-settings).
+- **Skill that a plugin provides**: `skillOverrides` doesn’t apply to plugin skills. Use [`claude plugin eval`](plugin-evals.md#the-no-plugin-baseline) instead, which repeats each run with no plugin loaded.
+
+Two tools automate the baseline comparison. For a skill that ships in a [plugin](plugins.md), [`claude plugin eval`](plugin-evals.md) runs each prompt in an isolated session with and without the plugin, scores it with graders you define or that it writes for you, and exits non-zero below a threshold so you can gate CI on it. For iterating on a single skill inside a Claude Code conversation, the skill-creator plugin below runs a similar loop with its own `evals/evals.json` format. The two formats aren’t interchangeable.
 
 
 [​](#run-evals-with-skill-creator)
 
 Run evals with skill-creator
 
-The [`skill-creator` plugin](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) automates the comparison loop inside Claude Code. Install it from the official marketplace:
+The [`skill-creator` plugin](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator) automates the comparison loop inside Claude Code. In the VS Code extension or the desktop app, install it from the official marketplace by following [Install a plugin](discover-plugins.md#install-a-plugin). In a terminal, start Claude Code by running `claude`, then enter this at its prompt:
 
 ```python
 /plugin install skill-creator@claude-plugins-official
@@ -873,7 +953,7 @@ If the install fails, match the message Claude Code reports:
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 - The plugin is [not found in the marketplace](discover-plugins.md#install-a-plugin): check the plugin name.
 
-If the install summary reports `Run /reload-plugins to activate.`, Claude Code then runs that reload for you. If the reload warns that your next message would re-read the conversation, run `/reload-plugins --force` to make the plugin’s skills available in the current session. Then ask Claude to evaluate an existing skill, for example `evaluate my summarize-changes skill with skill-creator`. The plugin walks you through writing test cases and runs the loop:
+If the install summary reports `Run /reload-plugins to apply.`, Claude Code then runs that reload for you. If the reload warns that your next message would re-read the conversation, run `/reload-plugins --force` to make the plugin’s skills available in the current session. Then ask Claude to evaluate an existing skill, for example `evaluate my summarize-changes skill with skill-creator`. The plugin walks you through writing test cases and runs the loop:
 
 - **Test cases**: stores prompts, input files, and expected behavior in `evals/evals.json` inside the skill directory
 - **Isolated runs**: spawns a [subagent](../09-Agents-Patterns/sub-agents.md) per test case so each run starts with a clean context, and records token count and duration
@@ -1114,6 +1194,17 @@ If Claude uses your skill when you don’t want it:
 
 1.  Make the description more specific
 2.  Add `disable-model-invocation: true` if you only want manual invocation
+
+
+[​](#claude-stops-following-a-skill)
+
+Claude stops following a skill
+
+If Claude follows a skill in its first response and stops following it later, start with whichever of these cases matches:
+
+- **Claude skipped a rule that must hold every time**: move the rule into a [hook](../07-Hooks/hooks-guide.md). Claude Code runs a hook every time its event occurs, such as before each file edit, whether or not Claude is following the skill. To keep the rule with the skill, define the hook in the skill’s [`hooks` frontmatter](../07-Hooks/hooks.md#hooks-in-skills-and-agents). That hook applies from the time the skill is invoked until the session ends.
+- **Claude skipped guidance it should apply with judgment**: word the guidance so it applies to the whole task, for example “Run the tests after every edit” rather than “Run the tests”. Claude Code adds the skill’s content to the conversation when the skill is invoked and [doesn’t re-read the file](#skill-content-lifecycle) on later turns.
+- **The conversation was compacted**: invoke the skill again to restore its full content. After [compaction](../02-Claude-Code-CLI/how-claude-code-works.md#when-context-fills-up), Claude Code [can keep only the start of an invoked skill](#skill-content-lifecycle), so put the most important instructions near the top of `SKILL.md`.
 
 
 [​](#skill-descriptions-are-cut-short)

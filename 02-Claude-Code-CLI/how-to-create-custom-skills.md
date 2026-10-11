@@ -2,7 +2,7 @@
 title: "How to create custom skills | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:31:32Z"
+fetched_at: "2026-10-10T06:24:30Z"
 tags: ["claude-code", "security", "skills"]
 ---
 
@@ -81,7 +81,7 @@ Skills you save from a recording appear in **[Customize \> Skills](https://claud
 
 The video and audio from your recording aren't retained. After you send your recording to Claude, Claude reviews the recording to build the skill. What's saved afterward is a set of screenshots from the session, which you can view by expanding the **Recorded demonstration** step in the task.
 
-Because those screenshots live in the Cowork task, deleting the task removes them. See **[Get started with Claude Cowork](../15-Claude-AI-Features/getting-started-with-local-agent-mode.md)** for how task deletion and retention work.
+Because those screenshots live in the Cowork task, deleting the task removes them. See **[Get started with Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork)** for how task deletion and retention work.
 
 ------------------------------------------------------------------------
 

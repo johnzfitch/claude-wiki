@@ -2,7 +2,7 @@
 title: "Local - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions/local"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-30T06:32:02Z"
+fetched_at: "2026-10-08T06:24:48Z"
 tags: ["api"]
 ---
 
@@ -93,24 +93,7 @@ Models
 Get a Model
 
 
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
+Organization
 
 
 Get Current Organization
@@ -146,6 +129,27 @@ Spend Limits
 RBAC Groups
 
 RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
 
 
 Tunnels
@@ -225,7 +229,7 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
 
 Support & configuration
 

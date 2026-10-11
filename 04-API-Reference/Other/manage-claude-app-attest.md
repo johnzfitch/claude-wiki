@@ -2,7 +2,7 @@
 title: "App Attest for iOS and macOS apps - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/app-attest"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-29T06:30:39Z"
+fetched_at: "2026-10-07T06:23:43Z"
 tags: ["api"]
 ---
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,11 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 

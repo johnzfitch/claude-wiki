@@ -2,7 +2,7 @@
 title: "Claude Sonnet 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/sonnet-5/overview"
 category: "20-Models"
-fetched_at: "2026-09-26T06:39:45Z"
+fetched_at: "2026-10-04T08:34:18Z"
 tags: ["models"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["models"]
 - Resources
   - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](release-notes-overview.md)
 
@@ -38,15 +38,15 @@ Models
 
 [Claude Opus 5.5](models-opus-5-5-overview.md)
 
-[Claude Sonnet 5](models-sonnet-5-overview.md)
-
-[Overview](models-sonnet-5-overview.md)[What's new](models-sonnet-5-whats-new-sonnet-5.md)[Migration guide](models-sonnet-5-migration-guide.md)
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
 [Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
 Specialized models
 
 Legacy models
+
+[Claude Fable 5](models-fable-5-overview.md)[Claude Opus 5](models-opus-5-overview.md)[Claude Sonnet 5](models-sonnet-5-overview.md)[Claude Opus 4.8](models-opus-4-8-overview.md)[Claude Opus 4.7](models-opus-4-7-overview.md)[Claude Opus 4.6](models-opus-4-6-overview.md)[Claude Sonnet 4.6](models-sonnet-4-6-overview.md)[Claude Opus 4.5](models-opus-4-5-overview.md)[Claude Sonnet 4.5](models-sonnet-4-5-overview.md)
 
 Guides
 
@@ -60,11 +60,15 @@ Lifecycle and reference
 
 [Console](../04-API-Reference/Other/usage-limits.md)
 
-[Models & pricing](about-claude-models-overview.md)Models
+
 
-# Claude Sonnet 5Latest
+Although Claude Sonnet 5 is still available, you should consider migrating to Claude Sonnet 5.5 for improved performance.
 
-The best combination of speed and intelligence
+[See Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
+
+[Models & pricing](about-claude-models-overview.md)Legacy models
+
+# Claude Sonnet 5Legacy
 
 Copy page
 
@@ -72,13 +76,13 @@ The best combination of speed and intelligence
 
 claude-sonnet-5
 
-[Try in playground](../04-API-Reference/Other/usage-limits.md)
+[Migrate to Claude Sonnet 5.5](models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5)
 
 Copy page
 
 
 
-[Announcement(opens in new tab)](../19-Reference/claude-sonnet-5.md)[What’s new](models-sonnet-5-whats-new-sonnet-5.md)[Migration guide](models-sonnet-5-migration-guide.md)
+[Announcement(opens in new tab)](../19-Reference/claude-sonnet-5.md)
 
 Context window  
 1Mtokens
@@ -92,13 +96,7 @@ Input pricing
 Output pricing  
 \$10/ MTok
 
-## Overview
-
-Claude Sonnet 5 is the next generation of Anthropic's Sonnet model family. It is a drop-in upgrade for Claude Sonnet 4.6 with three behavior changes: [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) is on by default, manual extended thinking now returns a 400 error (it was deprecated on Claude Sonnet 4.6), and setting sampling parameters (`temperature`, `top_p`, `top_k`) to non-default values returns a 400 error. This page summarizes everything new at launch, including a new tokenizer.
-
-[What's new in Claude Sonnet 5](models-sonnet-5-whats-new-sonnet-5.md)
-
-## How it compares
+## How it compares to the current lineup
 
 [TABLE]
 
@@ -160,9 +158,6 @@ Adaptive
 [Default effort](../04-API-Reference/Guides/build-with-claude-effort.md)  
 `high`
 
-Comparative latency  
-Fast
-
 Input → output  
 Text and images → text
 
@@ -175,7 +170,7 @@ Jan 2026
 ### Availability
 
 [Status](about-claude-model-deprecations.md)  
-Active (latest)
+Active (legacy)
 
 Released  
 June 30, 2026
@@ -189,10 +184,20 @@ Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-i
 ## Good to know
 
 - On the [Message Batches API](../04-API-Reference/Guides/build-with-claude-batch-processing.md#extended-output-beta), Claude Sonnet 5 supports up to 300k output tokens with the `output-300k-2026-03-24` beta header.
-- Setting `temperature`, `top_p`, or `top_k` to non-default values returns a 400 error. See [What's new in Claude Sonnet 5](models-sonnet-5-whats-new-sonnet-5.md#sampling-parameters-not-accepted).
+- Setting `temperature`, `top_p`, or `top_k` to non-default values returns a 400 error.
 - Query limits and capabilities programmatically with the [Models API](../04-API-Reference/Endpoints/models-list.md).
 
 ## Resources
+
+[Migrate to Claude Sonnet 5.5](models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5)
+
+What changes when moving from Claude Sonnet 5 to Claude Sonnet 5.5.
+
+
+
+[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
+
+The current Sonnet model: overview, specs, and resources.
 
 
 
@@ -219,6 +224,12 @@ Effort defaults to `high` on the Claude API and Claude Code. Choose a level per 
 1M tokens by default. How the window is counted and managed.
 
 ## Reference
+
+
+
+[System prompt](release-notes-system-prompts-claude-sonnet-5.md)
+
+The system prompt Claude Sonnet 5 uses on claude.ai and the Claude apps.
 
 
 

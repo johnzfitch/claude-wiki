@@ -2,7 +2,7 @@
 title: "Handle Compliance API errors - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-errors"
 category: "04-API-Reference/Other"
-fetched_at: "2026-09-26T06:39:35Z"
+fetched_at: "2026-10-04T08:32:45Z"
 tags: ["api"]
 ---
 
@@ -13,7 +13,7 @@ tags: ["api"]
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
   - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -32,7 +32,7 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
 
 Authentication
 
@@ -46,9 +46,11 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Guides/build-with-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)[Access Transparency](manage-claude-access-transparency.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
 
-[Encryption keys](manage-claude-cmek.md)
+[Access Transparency](manage-claude-access-transparency.md)
+
+[Encryption keys (CMEK)](manage-claude-cmek.md)
 
 [Inference hooks](manage-claude-inference-hooks.md)
 
@@ -246,7 +248,7 @@ API key has expired.
 
 **Cause:** `API key is invalid.` means the value sent does not match a usable key, for example because it was truncated or altered when it was stored. `API key has been deactivated.` means the key has been disabled or deleted. `API key has expired.` means an Admin API key's expiration date has passed; Compliance Access Keys are not created with one.
 
-**Fix:** For `API key is invalid.`, compare the value your client sends against the secret you stored when the key was created; the full secret is displayed only once, so if your stored copy is wrong, create a new key. For `API key has been deactivated.`, re-enable the key if it was only disabled, in [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access) for a Compliance Access Key or [Claude Console \> Settings \> Admin keys](usage-limits.md) for an Admin API key; a deleted key cannot be restored. For a deleted or expired key, create a new key and update your integration to use it, as described in [Manage and rotate keys](manage-claude-compliance-api-access.md#manage-and-rotate-keys).
+**Fix:** For `API key is invalid.`, compare the value your client sends against the secret you stored when the key was created; the full secret is displayed only once, so if your stored copy is wrong, create a new key. For `API key has been deactivated.`, re-enable the key if it was only disabled, in [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access) for a Compliance Access Key or [Claude Console \> Settings \> Admin keys](playground.md) for an Admin API key; a deleted key cannot be restored. For a deleted or expired key, create a new key and update your integration to use it, as described in [Manage and rotate keys](manage-claude-compliance-api-access.md#manage-and-rotate-keys).
 
 ## 403 Forbidden
 
@@ -453,7 +455,7 @@ Local session not found.
 
 
 
-**Cause:** The session ID passed to `GET /v1/compliance/apps/sessions/local/{session_id}` or `GET /v1/compliance/apps/sessions/local/{session_id}/messages` does not match a local session readable through the Compliance API. Both endpoints return this one message, without distinguishing the cause, when the ID is not a session in an organization your key can read (including IDs that belong to another parent organization), when the session never existed, when [zero data retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect for the session, or when all of the session's activity has aged past the retention period that applies to the organization that ran it. The `Local session not found.` response has no transient form, because local sessions have no provisioning (`pending`) state; compare [Remote session not found](#remote-session-not-found), where a `pending` session 404s until it starts. A session ID that is not a well-formed `clls_` identifier returns [400 Bad Request](#400-bad-request) instead.
+**Cause:** The session ID passed to `GET /v1/compliance/apps/sessions/local/{session_id}` or `GET /v1/compliance/apps/sessions/local/{session_id}/messages` does not match a local session readable through the Compliance API. Both endpoints return this one message, without distinguishing the cause, when the ID is not a session in an organization your key can read (including IDs that belong to another parent organization), when the session never existed, when [zero data retention](../Guides/build-with-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect for the session, or when all of the session's activity has aged past the retention period that applies to the organization that ran it. The `Local session not found.` response has no transient form, because local sessions have no provisioning (`pending`) state; compare [Remote session not found](#remote-session-not-found), where a `pending` session 404s until it starts. A session ID that is not a well-formed `clls_` identifier returns [400 Bad Request](#400-bad-request) instead.
 
 The local session endpoints, including the list endpoint, return a different 404 message, `Local sessions are not available.`, while the endpoints themselves are unavailable to your parent organization. That response does not depend on the session ID; no customer-side key, scope, or setting changes it, and it can be temporary. Both responses carry the `not_found_error` type; the message text is what tells them apart.
 
@@ -567,7 +569,7 @@ If you poll the [Activity Feed](manage-claude-compliance-activity-feed.md) on a 
 
 ## 500 Internal Server Error
 
-A 500 from the Compliance API carries an `x-should-retry: false` response header when the failure is deterministic. Anthropic SDKs honor this header automatically. If you use a generic HTTP retry library that retries on every 5xx, suppress retries when `x-should-retry` is `false`; retrying this error fails identically on every attempt.
+A 500 from the Compliance API carries an `x-should-retry: false` response header when the failure is deterministic. The Claude SDK honors this header automatically. If you use a generic HTTP retry library that retries on every 5xx, suppress retries when `x-should-retry` is `false`; retrying this error fails identically on every attempt.
 
 A 500 without the `x-should-retry: false` header is transient: retry with exponential backoff (start at 1 second, double up to 60 seconds). The same applies to 502, 503, 504, and 529 responses. The exception is a small set of local session 503s, described next, that depend on an organization's settings or encryption key rather than on load. See [Errors](../Endpoints/errors.md) for the platform-wide retry semantics.
 

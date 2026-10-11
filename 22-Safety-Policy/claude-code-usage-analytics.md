@@ -2,7 +2,7 @@
 title: "Claude Code usage analytics | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 category: "22-Safety-Policy"
-fetched_at: "2026-09-30T06:31:35Z"
+fetched_at: "2026-10-10T06:25:06Z"
 tags: ["claude-code", "safety"]
 ---
 
@@ -41,7 +41,7 @@ Claude Code usage analytics are available to:
 
 3.  Click “Claude Code” under **Analytics**.
 
-4.  View Claude Code usage analytics on **[Settings \> Claude Code](../04-API-Reference/Other/usage-limits.md)**.
+4.  View Claude Code usage analytics on **[Settings \> Claude Code](../04-API-Reference/Other/playground.md)**.
 
 ------------------------------------------------------------------------
 

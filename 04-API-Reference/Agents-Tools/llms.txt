@@ -16,7 +16,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -1343,7 +1343,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-ski
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -1387,7 +1387,7 @@ The `claude-api` skill is an open-source [Agent Skill](agents-and-tools-agent-sk
 
 It covers eight programming languages for both the Messages API and Managed Agents: Python, TypeScript, C#, Go, Java, PHP, Ruby, and cURL.
 
-The skill comes bundled with [Claude Code](https://platform.claude.com/docs/en/agents-and-tools/01-Getting-Started/overview.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills), where you can install it in any environment that supports Agent Skills.
+The skill comes bundled with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and is also available in the open-source [Anthropic skills repository](https://github.com/anthropics/skills), where you can install it in any environment that supports Agent Skills.
 
 The skill uses [progressive disclosure](agents-and-tools-agent-skills-overview.md#how-skills-work) to keep context efficient: Claude loads only the documentation relevant to your project's language, surface (Messages API or Managed Agents), and the specific task at hand (tool use, streaming, batches, and so on), rather than loading everything at once.
 
@@ -1402,7 +1402,8 @@ When triggered, the skill equips Claude with:
 - **Streaming patterns:** Implementation details for building chat UIs and handling incremental display
 - **Batch processing:** Offline batch processing at 50% cost
 - **Prompt caching:** Prefix-stability design, breakpoint placement, and silent-invalidator audit
-- **Model migration:** Step-by-step guidance for migrating to newer Claude models (including the breaking changes and behavior shifts on [Claude Opus 5.5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5) and [Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md))
+- **Model migration:** Step-by-step guidance for migrating to newer Claude models (including the breaking changes and behavior shifts on [Claude Opus 5.5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), and [Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md))
+- **Preserved thinking migration:** Finding, measuring, and fixing the history edits that invalidate `thinking` blocks, available through the `/claude-api preserved-thinking-migration` subcommand
 - **Current model information:** Model IDs, context window sizes, and pricing
 - **Common pitfalls:** Detailed guidance on avoiding frequent mistakes when integrating with the API
 
@@ -1448,7 +1449,7 @@ If your project uses multiple languages, Claude asks which one applies. For unsu
 
 ### In Claude Code (bundled)
 
-The skill ships with [Claude Code](https://platform.claude.com/docs/en/agents-and-tools/01-Getting-Started/overview.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
+The skill ships with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and requires no installation. When you ask Claude to help build something with the Claude API, or when your project already imports an Anthropic SDK, the skill activates automatically.
 
 You can also invoke it directly:
 
@@ -1506,15 +1507,37 @@ The skill handles:
 - **Cloud platform detection**, preserving platform-specific model ID formats (for example, the `anthropic.` prefix on Amazon Bedrock) and skipping changes for features that are unavailable on partner-operated platforms
 - **Breaking parameter changes**, such as removing `temperature`, `top_p`, and `top_k` for Claude Opus 4.8 and Claude Opus 4.7, and converting `thinking: {type: "enabled", budget_tokens: N}` to `thinking: {type: "adaptive"}`
 - **Prefill replacement**, converting assistant-message prefill patterns to [structured outputs](../Guides/build-with-claude-structured-outputs.md) where applicable
-- **Beta header cleanup**, removing beta headers that the target model doesn't require (for example, `effort-2025-11-24`, `fine-grained-tool-streaming-2025-05-14`, `interleaved-thinking-2025-05-14`) and switching back from `client.beta.messages.create` to `client.messages.create`
+- **Beta header cleanup**, removing beta headers that the target model doesn't require (for example, `effort-2025-11-24`, `fine-grained-tool-streaming-2025-05-14`, `interleaved-thinking-2025-05-14`) and switching back from `client.beta.messages.create()` to `client.messages.create()`
 - **Effort calibration**, recommending an `output_config.effort` starting point for the target model (for example, the default `high` on Claude Opus 5, and `xhigh` for coding and agentic use cases on Claude Opus 4.8 and Claude Opus 4.7)
 - **Prompt-behavior tuning**, flagging length-control, tool-triggering, subagent, and instruction-following prompts that may behave differently on the target model
 - **Silent default handling**, opting back into thinking summarization (`thinking.display: "summarized"`) when reasoning is surfaced to users on Claude Opus 4.8 and Claude Opus 4.7
-- **Refusal fallback configuration**, adding `stop_reason: "refusal"` handling before reading response content and setting up a [fallback retry path](../Guides/build-with-claude-refusals-and-fallback.md) when the target is Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, or Claude Opus 5 (the server-side `fallbacks` parameter, typically in its `"default"` mode, the SDK refusal-fallback middleware, or a fallback-credit retry), and updating fallback code written against earlier preview shapes
+- **Refusal fallback configuration**, adding `stop_reason: "refusal"` handling before reading response content and setting up a [fallback retry path](../Guides/build-with-claude-refusals-and-fallback.md) when the target is Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5 (the server-side `fallbacks` parameter, typically in its `"default"` mode, the SDK refusal-fallback middleware, or a fallback-credit retry), and updating fallback code written against earlier preview shapes
 
 As it edits, the skill explains each change and its motivation inline. On completion, it produces a checklist of items that require manual verification (typically integration tests, length-control prompt tuning, and cost/rate-limit re-baselining).
 
-For the full list of model-specific changes the skill applies, see [Migrating to Claude Opus 5.5 from Claude Opus 5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8), and [Migrating to Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md).
+For the full list of model-specific changes the skill applies, see [Migrating to Claude Opus 5.5 from Claude Opus 5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8), [Migrating to Claude Sonnet 5.5 from Claude Sonnet 5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), and [Migrating to Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md).
+
+## Checking an integration for preserved thinking
+
+[Preserved thinking](../Guides/build-with-claude-preserved-thinking.md) keeps a `thinking` block valid only while the `system` prompt, `tools`, and messages before it stay unchanged. To find and fix the places where your code edits that history, open the repository that builds your requests and invoke the `preserved-thinking-migration` subcommand:
+
+```python
+/claude-api preserved-thinking-migration
+```
+
+
+
+The skill works through five steps:
+
+1.  **Scope:** Checks whether your integration is affected, then sends three test requests to confirm that the API reports a deliberate edit.
+2.  **Find:** Captures a few of your own multi-turn sessions, diffs consecutive requests, and lists each place your code edits the prefix.
+3.  **Measure:** Replays the sessions with `"drop_block"` and reports which conversations lose `thinking` blocks, at which turn, and why.
+4.  **Fix:** Replaces one edit at a time with the matching pattern in [Make changes without editing the prefix](../Guides/build-with-claude-preserved-thinking.md#replace-prefix-edits), and measures again after each change.
+5.  **Report:** Summarizes each cause, the change made for it, and the counts before and after.
+
+If your project has an eval, the skill also compares scores and token usage with and without dropped `thinking` blocks.
+
+The test requests and replays are real Messages API requests, billed at the model's normal rates. Each replay requests only a few output tokens and sets `tool_choice` to `none`, so no tool runs. The skill states the cost and asks for your approval before it sends them.
 
 ## Setting up a Managed Agent
 
@@ -1592,7 +1615,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-enterprise.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -1717,7 +1740,7 @@ Never deploy Skills from untrusted sources without a full audit. A malicious Ski
 
 Claude Enterprise organizations can turn on automated security scanning for custom Skills in claude.ai and Claude Cowork. After you turn on **Skill and plugin security scanning** at [claude.ai \> Organization settings \> Skills](https://claude.ai/admin-settings/skills), Skills that members then upload or edit in claude.ai or Cowork are scanned for signs of malicious behavior, such as hidden code execution, sending your data to an outside service, or instructions that tamper with Claude's safeguards. A Skill that fails the scan, or whose scan hasn't finished, is blocked from use. A Skill that passes with a warning stays usable behind a caution notice. If scanning is available to your organization, turn it on. It complements, but doesn't replace, the [review checklist](#review-checklist).
 
-Scanning doesn't cover the Claude API. Skills you upload through the Skills API (`/v1/skills`), including from the Claude Console, aren't scanned, so for API deployments, rely on the review checklist and [version pinning](#versioning-strategy). Scanning also doesn't apply to Skills that were already in your organization when you turned it on, or to organizations with certain data handling configurations, such as customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA readiness. For setup steps, exclusions, and result types, see [Get started with skill and plugin scanning](https://platform.claude.com/docs/en/02-Claude-Code-CLI/get-started-with-skill-and-plugin-scanning-030c4de89b.md) in the Claude Help Center.
+Scanning doesn't cover the Claude API. Skills you upload through the Skills API (`/v1/skills`), including from the Claude Console, aren't scanned, so for API deployments, rely on the review checklist and [version pinning](#versioning-strategy). Scanning also doesn't apply to Skills that were already in your organization when you turned it on, or to organizations with certain data handling configurations, such as customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA readiness. For setup steps, exclusions, and result types, see [Get started with skill and plugin scanning](https://support.claude.com/en/articles/15927065-get-started-with-skill-and-plugin-scanning) in the Claude Help Center.
 
 ## Evaluating Skills before deployment
 
@@ -1890,7 +1913,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -1973,7 +1996,7 @@ Agent Skills are modular capabilities that extend Claude's functionality. Each S
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Why use Skills
 
@@ -2125,7 +2148,7 @@ To learn more, see [Using Agent Skills with the API](../Guides/build-with-claude
 
 ### Claude Code
 
-[Claude Code](https://platform.claude.com/docs/en/01-Getting-Started/overview.md) supports custom Skills. The pre-built document Skills (PowerPoint, Excel, Word, PDF) are not available in Claude Code, though the open-source [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md) comes bundled with it. See the full list of [built-in commands and Skills](https://platform.claude.com/docs/en/02-Claude-Code-CLI/built-in-commands-claude-code-docs.md) that ship with Claude Code.
+[Claude Code](../../02-Claude-Code-CLI/code-home.md) supports custom Skills. The pre-built document Skills (PowerPoint, Excel, Word, PDF) are not available in Claude Code, though the open-source [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md) comes bundled with it. See the full list of [built-in commands and Skills](../../02-Claude-Code-CLI/commands.md) that ship with Claude Code.
 
 **Custom Skills:** Create Skills as directories with SKILL.md files. Claude discovers and uses them automatically.
 
@@ -2144,8 +2167,8 @@ To learn more, see [Use Skills in Claude Code](../../08-Plugins-Skills/skills.md
 To learn more about using Skills in claude.ai, see the following resources in the Claude Help Center:
 
 - [What are Skills?](../../02-Claude-Code-CLI/what-are-skills.md)
-- [Using Skills in Claude](https://platform.claude.com/docs/en/99-Other/using-skills-in-claude-a1bdb5a95a.md)
-- [How to create custom Skills](https://platform.claude.com/docs/en/02-Claude-Code-CLI/creating-custom-skills-eb687e04e2.md)
+- [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
+- [How to create custom Skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)
 - [Teach Claude your way of working using Skills](../../15-Claude-AI-Features/teach-claude-your-way-of-working-using-skills.md)
 
 ## Skill structure
@@ -2233,7 +2256,7 @@ For complete examples of custom Skills, see the [Skills cookbook](https://platfo
 
 Agent Skills is not covered by ZDR arrangements. Skill definitions and execution data are retained according to Anthropic's standard data retention policy.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 For audit logging of Skills API operations, see [Audit logging](../Guides/build-with-claude-skills-guide.md#audit-logging) in Using Agent Skills with the API.
 
@@ -2317,7 +2340,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-quickstart.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -2402,7 +2425,7 @@ This tutorial shows you how to use Agent Skills to create a PowerPoint presentat
 
 ## Prerequisites
 
-- A [Claude API key](../Other/usage-limits.md) or a logged-in [ant CLI](../Other/cli-sdks-libraries-cli-authentication.md)
+- A [Claude API key](../Other/playground.md) or a logged-in [ant CLI](../Other/cli-sdks-libraries-cli-authentication.md)
 - A [client SDK](../Other/cli-sdks-libraries-overview.md) for your language, or `curl` and `jq`
 - Basic familiarity with making API requests
 
@@ -2759,7 +2782,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-connector.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -2848,7 +2871,7 @@ MCP connector
 
 mcp-client-2025-11-20
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Not eligible
 
@@ -3413,7 +3436,7 @@ For detailed explanations of the OAuth flow, refer to the [Authorization section
 
 ## Client-side MCP helpers
 
-If you manage your own MCP client connection (for example, with local stdio servers, MCP prompts, or MCP resources), the SDKs provide helper functions that convert between MCP types and Claude API types. This eliminates manual conversion code when using an MCP SDK for your language (for example, the [TypeScript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk)) alongside the Anthropic SDK.
+If you manage your own MCP client connection (for example, with local stdio servers, MCP prompts, or MCP resources), the SDK provides helper functions that convert between MCP types and Claude API types. This eliminates manual conversion code when using an MCP SDK for your language (for example, the [TypeScript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk)) alongside the Anthropic SDK.
 
 
 
@@ -3474,14 +3497,12 @@ from anthropic.lib.tools.mcp import (
 )
 ```
 
-Helper names and exact signatures follow each language's conventions; this table shows the TypeScript forms:
-
-| Helper                           | Description                                                                             |
-|----------------------------------|-----------------------------------------------------------------------------------------|
-| `mcpTools(tools, mcpClient)`     | Converts MCP tools to Claude API tools for use with `client.beta.messages.toolRunner()` |
-| `mcpMessages(messages)`          | Converts MCP prompt messages to Claude API message format                               |
-| `mcpResourceToContent(resource)` | Converts an MCP resource to a Claude API content block                                  |
-| `mcpResourceToFile(resource)`    | Converts an MCP resource to a file object for upload                                    |
+| Helper                              | Description                                                                              |
+|-------------------------------------|------------------------------------------------------------------------------------------|
+| `async_mcp_tool(tool, mcp_client)`  | Converts MCP tools to Claude API tools for use with `client.beta.messages.tool_runner()` |
+| `mcp_message(message)`              | Converts MCP prompt messages to Claude API message format                                |
+| `mcp_resource_to_content(resource)` | Converts an MCP resource to a Claude API content block                                   |
+| `mcp_resource_to_file(resource)`    | Converts an MCP resource to a file object for upload                                     |
 
 ### Use MCP tools
 
@@ -3634,7 +3655,7 @@ You can include `mcp_servers` in [Message Batches API](../Guides/build-with-clau
 
 The MCP connector is not covered by ZDR arrangements. Data exchanged with MCP servers, including tool definitions and execution results, is retained according to Anthropic's standard data retention policy.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Migration guide
 
@@ -3723,7 +3744,7 @@ If you're using the deprecated `mcp-client-2025-04-04` beta header, follow this 
 
 ## Deprecated version: mcp-client-2025-04-04
 
-
+
 
 This version is deprecated. Migrate to `mcp-client-2025-11-20` using the preceding [migration guide](#migration-guide).
 
@@ -3777,7 +3798,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-concepts.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -3919,7 +3940,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-console.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -4040,7 +4061,7 @@ This page covers the Console side of an MCP tunnels deployment: creating a tunne
 
     1.  **A registered OIDC issuer** for the identity provider your stack presents tokens from (such as a Kubernetes cluster, AWS IAM, Google Cloud, or GitHub Actions). Register one under **Settings \> Workload identity \> Issuers** if your organization doesn't have one.
     2.  **A federation rule with the `workspace:manage_tunnels` scope.** Turning on the toggle reveals a **Federation rule** picker. Choose an existing rule with that scope, or click **Create federation rule** to create one inline.
-    3.  **The rule's service account added to this workspace.** The Tunnels API authorizes against the service account's workspace memberships. If you're creating the tunnel in a workspace other than the organization's default, add the service account under **Settings \> Workspaces** and pass the workspace ID at deploy time (`api.wif.workspaceId` for Helm, `ANTHROPIC_WORKSPACE_ID` for Compose).
+    3.  **The rule's service account added to this workspace.** The Tunnels API authorizes against the service account's workspace memberships. If you're creating the tunnel in a workspace other than the organization's default, [add the service account to that workspace](../Other/manage-claude-workspaces.md#role-inheritance) and pass the workspace ID at deploy time (`api.wif.workspaceId` for Helm, `ANTHROPIC_WORKSPACE_ID` for Compose).
 
     Skipping this step is fully supported; both deploy guides have a **Without programmatic access** tab.
 
@@ -4193,7 +4214,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-deploy-compose.
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -4630,7 +4651,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-deploy-helm.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -4820,7 +4841,7 @@ The setup component exchanges the cluster's projected ServiceAccount token throu
     
     The chart's default audience is `api.anthropic.com` with no scheme, but the Console's federation-rule form suggests `https://api.anthropic.com`. The two must match byte-for-byte or authentication fails. Either set the rule's audience to `api.anthropic.com`, or set `api.wif.audience` in `values.yaml` to `https://api.anthropic.com`.
 
-    If the tunnel is in a workspace other than the organization's default, also add the rule's service account as a member of that workspace under **Settings \> Workspaces** (the Tunnels API authorizes against the service account's workspace memberships).
+    If the tunnel is in a workspace other than the organization's default, also [add the rule's service account to that workspace](../Other/manage-claude-workspaces.md#role-inheritance) (the Tunnels API authorizes against the service account's workspace memberships).
 
     Note the rule's ID (`fdrl_...`); you'll set it as `api.wif.federationRuleId`.
 
@@ -5060,7 +5081,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-overview.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -5149,7 +5170,7 @@ MCP tunnels let you connect Claude to Model Context Protocol (MCP) servers that 
 
 MCP tunnels are in research preview. [Request access](https://claude.com/form/mcp-tunnels) to try them. They are provided "as-is" without any uptime, support, or continuity commitment, and they depend on a third-party network provider (Cloudflare) that makes no availability commitment for the underlying transport. Anthropic may modify or discontinue MCP tunnels at any time.
 
-For Zero Data Retention and HIPAA BAA eligibility, see [API and data retention](../Other/manage-claude-api-and-data-retention.md#feature-eligibility).
+For Zero Data Retention and HIPAA BAA eligibility, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md#feature-eligibility).
 
 ## How it works
 
@@ -5355,7 +5376,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-quickstart.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -5651,7 +5672,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-reference.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -5856,7 +5877,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-security.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -6058,7 +6079,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-troubleshooting
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -6325,7 +6346,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-remote-mcp-servers.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -7488,7 +7509,7 @@ URL
 https://mcp.cloud.cdata.com/mcp
 ```
 
-[Microsoft 365(opens in new tab)](https://platform.claude.com/docs/14-Connectors/enabling-and-using-the-microsoft-365-connector-f39b429330.md)
+[Microsoft 365(opens in new tab)](https://support.claude.com/en/articles/12542951-enabling-and-using-the-microsoft-365-connector)
 
 Access your company's SharePoint, OneDrive, Outlook, and Teams directly in Claude
 
@@ -9744,7 +9765,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -9831,7 +9852,7 @@ This pattern fits long-horizon agentic workloads (coding agents, computer use, m
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## When to use it
 
@@ -9969,7 +9990,7 @@ The `advisor_tool_result.content` field is a discriminated union. For successful
 
 
 
-Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 advisors return the encrypted `advisor_redacted_result`. Every other advisor model in the [compatibility table](#model-compatibility) returns the plaintext `advisor_result`. To read the advice text in your own responses, use an advisor that returns plaintext, such as `claude-opus-4-8`, where your executor's row in the [compatibility table](#model-compatibility) lists one. Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 executors pair only with advisors that return the encrypted form, so on those executors the advice text isn't readable in the response.
+Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 advisors return the encrypted `advisor_redacted_result`. Every other advisor model in the [compatibility table](#model-compatibility) returns the plaintext `advisor_result`. To read the advice text in your own responses, use an advisor that returns plaintext, such as `claude-opus-4-8`, where your executor's row in the [compatibility table](#model-compatibility) lists one. Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 executors pair only with advisors that return the encrypted form, so on those executors the advice text isn't readable in the response.
 
 Here is the same request sent twice, identical except for the advisor `model` in the tool definition, showing both variants.
 
@@ -10198,7 +10219,7 @@ Append the nudge as its own user message after the tool results rather than as a
 
 The plain-text nudge is highly salient on Haiku and Sonnet executors: 74 percent (Sonnet) to 98 percent (Haiku) of nudged attempts in Anthropic's testing called the advisor immediately at turn 2. If that lands before your executor has read the problem or gathered context, the resulting advisor call is low-context and can displace a better-timed later call. Measure your executor's baseline first-call turn before adding the nudge. If the executor already calls the advisor reliably and its first call typically lands at turn N, set `NUDGE_TURN` greater than N. In Anthropic's testing, a turn-2 nudge on workloads where the baseline first call was turn 7 or later correlated with a 3 to 4 percentage-point task-performance drop. On a browse workload where the baseline call rate was 86 percent, the same nudge raised engagement with no task-performance cost.
 
-To force a consult on a specific request instead of nudging, set `tool_choice` to `{"type": "tool", "name": "advisor"}`, subject to the constraints in [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). Forcing tool use cannot be combined with manual extended thinking (`thinking: {type: "enabled"}`): the API returns a `400 invalid_request_error` if you enable both. Adaptive thinking supports forced tool use. Claude Fable 5.1 and Claude Mythos 5.1 executors reject `tool_choice` types `tool` and `any`, so use the prompt nudge on those models instead.
+To force a consult on a specific request instead of nudging, set `tool_choice` to `{"type": "tool", "name": "advisor"}`, subject to the constraints in [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). Forcing tool use cannot be combined with manual extended thinking (`thinking: {type: "enabled"}`): the API returns a `400 invalid_request_error` if you enable both. Adaptive thinking supports forced tool use. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 executors reject `tool_choice` types `tool` and `any`, so use the prompt nudge on those models instead.
 
 ## Streaming
 
@@ -10358,7 +10379,7 @@ The executor can search the web, call the advisor, and use your custom tools in 
 | Feature                                                         | Interaction                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Batch processing](../Guides/build-with-claude-batch-processing.md) | Supported. `usage.iterations` is reported per item.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| [Token counting](../Guides/build-with-claude-token-counting.md)     | Returns the executor's first-iteration input tokens only. For a rough advisor estimate, call `count_tokens` with `model` set to the advisor model and the same messages.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| [Token counting](../Guides/build-with-claude-token-counting.md)     | Returns the executor's first-iteration input tokens only. For a rough advisor estimate, call `client.beta.messages.count_tokens()` with `model` set to the advisor model and the same messages.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [Context editing](../Guides/build-with-claude-context-editing.md)   | `clear_tool_uses` is not fully compatible with advisor tool blocks. With `clear_thinking`, see the earlier caching warning.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `pause_turn`                                                    | A dangling advisor call ends the response with `stop_reason: "pause_turn"` and a `server_tool_use` block with no result when no client `tool_use` block is awaiting your result in the same turn. The advisor runs on resumption. If the executor also called one of your tools in that turn, the response ends with `stop_reason: "tool_use"` instead, and the pending advisor call runs at the start of your next request, after you send the `tool_result` blocks. See [Resuming a paused turn](#resuming-a-paused-turn), [Mixing server tools and client tools in one turn](agents-and-tools-tool-use-server-tools.md#mixing-server-tools-and-client-tools-in-one-turn), and [Server tools](agents-and-tools-tool-use-server-tools.md#the-server-side-loop-and-pause-turn). |
 
@@ -10601,7 +10622,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -10684,7 +10705,7 @@ Let Claude request shell commands that your application runs in a persistent bas
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 The bash tool is a [client tool](agents-and-tools-tool-use-how-tool-use-works.md): Claude doesn't run commands itself. When you include the tool in a request, Claude replies with a `tool_use` block that names the command to run. Your application runs that command in a bash session it owns and returns the output in a `tool_result` block.
 
@@ -10819,7 +10840,7 @@ Restart the session:
 
 `bash_20250124` is the current version of the tool, and it requires no beta header. Every model from Claude Sonnet 3.7 ([retired](../../20-Models/about-claude-model-deprecations.md)) onward accepts it, including all current Claude models.
 
-The original `bash_20241022` version works only with the October 2024 Claude Sonnet 3.5 model ([retired](../../20-Models/about-claude-model-deprecations.md)). Requests that use it need the `anthropic-beta: computer-use-2024-10-22` header, and the SDKs expose it only in their beta namespaces. New integrations should use `bash_20250124`.
+The original `bash_20241022` version works only with the October 2024 Claude Sonnet 3.5 model ([retired](../../20-Models/about-claude-model-deprecations.md)). Requests that use it need the `anthropic-beta: computer-use-2024-10-22` header, and the SDK exposes it only in its beta namespace. New integrations should use `bash_20250124`.
 
 ## Example: Multistep automation
 
@@ -11330,6 +11351,992 @@ Connect Claude to external tools and APIs. See where tools execute, when Claude 
 
 ---
 
+## Browser and computer use with the SDK toolsets - Claude Platform Docs
+
+Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk
+Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](../Endpoints/overview.md)
+
+
+
+
+[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fbrowser-use-sdk)
+
+
+
+
+
+SearchCtrlK
+
+First steps
+
+[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
+
+Building with Claude
+
+[Features overview](../Guides/build-with-claude-overview.md)[Using the Messages API](../Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../Guides/build-with-claude-fallback-credit.md)
+
+Model capabilities
+
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+
+[Thinking](../Guides/build-with-claude-thinking.md)
+
+Tools
+
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+
+Tool infrastructure
+
+[Tool reference](agents-and-tools-tool-use-tool-reference.md)[Manage tool context](agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md)
+
+Context management
+
+[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
+
+[Compaction](../Guides/build-with-claude-compaction.md)
+
+Working with files
+
+[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
+
+[Images and vision](../Guides/build-with-claude-vision.md)
+
+Skills
+
+[Overview](agents-and-tools-agent-skills-overview.md)[Quickstart](agents-and-tools-agent-skills-quickstart.md)[Best practices](agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../Guides/build-with-claude-skills-guide.md)
+
+MCP
+
+[Remote MCP servers](agents-and-tools-remote-mcp-servers.md)[MCP connector](agents-and-tools-mcp-connector.md)
+
+[MCP tunnels](agents-and-tools-mcp-tunnels-overview.md)
+
+Claude on cloud platforms
+
+[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+
+[Console](../Other/usage-limits.md)
+
+[Messages](../../01-Getting-Started/intro.md)Tools
+
+# Browser and computer use with the SDK toolsets
+
+Copy page
+
+
+
+Run the browser use tool or the computer use tool from the Python or TypeScript SDK. The SDK runs the loop and the checks you configure, and you supply the browser or the desktop.
+
+Copy page
+
+
+
+The Python and TypeScript SDKs include a class for the [browser use tool](agents-and-tools-tool-use-browser-use-tool.md) and a class for the [computer use tool](agents-and-tools-tool-use-computer-use-tool.md). You subclass one and write one method per member tool, such as `navigate` or `left_click`, against your own browser or desktop automation. The SDK routes each call, runs the policies you pass, asks your approval callback, and builds each `tool_result`.
+
+Most of this page uses the browser class. [Computer toolset](#computer-toolset) covers the computer class and what differs for it.
+
+The SDK doesn't include a browser, a desktop, a ready-made driver, or a URL policy. The [minimal CDP example](https://github.com/anthropics/claude-quickstarts/tree/main/browser-toolset) is in the claude-quickstarts repository, in Python and TypeScript. It controls Chromium through the Chrome DevTools Protocol (CDP), and it isn't production code.
+
+
+
+The browser toolset class is in beta and available in the [Python SDK](https://github.com/anthropics/anthropic-sdk-python/blob/main/browser-toolset.md) and the [TypeScript SDK](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/browser-toolset.md). The computer toolset class is in beta in the same SDKs, which have a [Python computer toolset guide](https://github.com/anthropics/anthropic-sdk-python/blob/main/computer-toolset.md) and a [TypeScript computer toolset guide](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/computer-toolset.md). Each class runs with the [tool runner](agents-and-tools-tool-use-tool-runner.md) or in a loop you write.
+
+## Partner integrations
+
+Browser Use, Browserbase, Daytona, and E2B publish their own integrations with the SDK toolsets.
+
+### Browser Use
+
+- [Browser Use docs](https://docs.browser-use.com/open-source/customize/integrations/toolsets-for-claude)
+- [Browser Use quickstart](https://github.com/browser-use/browser-use/tree/main/examples/integrations/toolsets-for-claude)
+
+### Browserbase
+
+- [Browserbase Stagehand docs](https://docs.stagehand.dev/v4/integrations/agent-frameworks/claude-cua-toolset-quickstart)
+- [Browserbase toolset](https://github.com/browserbase/claude-cua-toolset)
+
+### Daytona
+
+- [Daytona guide](https://www.daytona.io/docs/en/guides/claude/claude-draws-daytona-sandbox/)
+
+### E2B
+
+- [E2B docs](https://docs.e2b.dev/agents/claude-toolsets)
+- [E2B example](https://github.com/e2b-dev/e2b-cookbook/tree/main/examples/anthropic-computer-use-orangehrm-js)
+
+## Quick start
+
+A driver is your subclass of `BetaAbstractBrowserToolset20260801`. This one implements `navigate`, `screenshot`, and `left_click`, plus `_browser_state`, the state report that every driver needs. In the example, `backend` stands for your own wrapper around a browser automation library, such as Playwright. The URL policy is an example. [Write a URL policy](#write-a-url-policy) explains it.
+
+Python
+
+TypeScript
+
+
+
+```python
+import re
+from urllib.parse import urlsplit
+
+from anthropic import Anthropic
+from anthropic.tools import ToolError
+from anthropic.tools.browser import (
+    BetaAbstractBrowserToolset20260801,
+    BetaBrowserNavigateResult,
+    BetaBrowserState,
+    BetaScreenshotResult,
+    BetaToolsetCallContext,
+    BetaURLContext,
+)
+from anthropic.types.beta import (
+    BetaBrowserLeftClickInput,
+    BetaBrowserNavigateInput,
+    BetaBrowserScreenshotInput,
+    BetaBrowserStateTabEntryParam,
+)
+
+
+class MyBrowser(BetaAbstractBrowserToolset20260801):
+    def __init__(self, backend, **options):
+        super().__init__(**options)
+        self.backend = backend
+
+    def _browser_state(self, context: BetaToolsetCallContext) -> BetaBrowserState:
+        return BetaBrowserState(
+            tabs=[
+                BetaBrowserStateTabEntryParam(
+                    tab_id=tab.id,
+                    title=tab.title,
+                    url=tab.url,
+                    active=tab.id == self.backend.active,
+                )
+                for tab in self.backend.tabs()
+            ],
+            state_changes=self.backend.drain_changes(),
+        )
+
+    def navigate(
+        self, context: BetaToolsetCallContext, input: BetaBrowserNavigateInput
+    ) -> BetaBrowserNavigateResult:
+        # input.url is "back", "forward", "reload", or a URL that your URL policy
+        # allowed, as Claude wrote it. Like is_allowed, backend.goto adds https://
+        # to a URL that doesn't start with a scheme.
+        page = self.backend.goto(input.url, input.tab_id)
+        return BetaBrowserNavigateResult(
+            url=page.url, status=page.status, title=page.title
+        )
+
+    def screenshot(
+        self, context: BetaToolsetCallContext, input: BetaBrowserScreenshotInput
+    ) -> BetaScreenshotResult:
+        data = self.backend.png_base64(input.tab_id)
+        return BetaScreenshotResult(data=data, media_type="image/png")
+
+    def left_click(
+        self, context: BetaToolsetCallContext, input: BetaBrowserLeftClickInput
+    ) -> None:
+        # Nothing to return: Claude reads "Clicked."
+        self.backend.click(input.target, input.tab_id)
+
+    def close(self) -> None:
+        super().close()  # first, so no call is still using the browser when it closes
+        if not self.backend.closed:
+            self.backend.close()
+
+
+ALLOWED_HOSTS = ("example.com", "iana.org")
+SCHEME_PREFIX = re.compile(r"[a-z][a-z0-9+.-]*:", re.IGNORECASE)
+
+
+def is_allowed(url: str) -> bool:
+    # An example, not a production policy. See "Write a URL policy".
+    if url.lower() == "about:blank":
+        return True
+    with_scheme = url if SCHEME_PREFIX.match(url) else f"https://{url}"
+    # A browser reads "\" as "/" in a web URL.
+    try:
+        parts = urlsplit(with_scheme.replace("\\", "/"))
+    except ValueError:
+        return False
+    host = parts.hostname or ""
+    listed = any(host == name or host.endswith(f".{name}") for name in ALLOWED_HOSTS)
+    return parts.scheme in ("http", "https") and listed
+
+
+def url_policy(context: BetaURLContext, url: str) -> None:
+    if not is_allowed(url):
+        raise ToolError(f"blocked: {url} is not on an allowed host")
+
+
+client = Anthropic()
+with MyBrowser(backend, url_policy=url_policy) as browser:
+    runner = client.beta.messages.tool_runner(
+        model="claude-opus-5-5",
+        max_tokens=1024,
+        tools=[browser],
+        messages=[
+            {
+                "role": "user",
+                "content": "Open example.com and tell me the page heading.",
+            }
+        ],
+        stream=True,
+        run_tools_eagerly=True,  # so a call can start before the response ends
+    )
+    for stream in runner:
+        print(stream.get_final_message())
+```
+
+Pass the driver instance itself as the `tools` entry. A member you don't implement is sent to the API as disabled. If Claude calls it anyway, the SDK returns an error, and the run continues. Overriding `execute` changes which members are sent as disabled ([Add before and after hooks](#add-before-and-after-hooks)). The runner never closes the toolset, so one instance can serve several runs. Close it when you're done.
+
+The example turns on early start. See [Start calls while the response streams](#start-calls-while-the-response-streams).
+
+
+
+Do these two things before you run a driver against anything but a throwaway browser:
+
+- [Write a URL policy](#write-a-url-policy), and block private network ranges and the cloud metadata address `169.254.169.254` with [egress rules on the container](#put-egress-policy-on-the-container). Without a URL policy, the SDK checks no URL. Egress rules outside the container don't see loopback, so a page can still reach anything listening in the browser's container.
+- Use a browser profile that isn't signed in to any account whose data or actions you wouldn't hand to Claude. See [Isolate the browser host](#isolate-the-browser-host).
+
+## Customize a driver
+
+### Enable or disable members
+
+`configs` takes the per-member settings described under [Configure the toolset](agents-and-tools-tool-use-browser-use-tool.md#configure-the-toolset). List only the members you change:
+
+Python
+
+TypeScript
+
+
+
+```python
+# A MyBrowser that also implements read_console
+browser = MyBrowser(
+    backend, configs={"read_console": {"enabled": True}, "navigate": {"enabled": False}}
+)
+```
+
+The SDK refuses a call to a disabled member before your code runs. Enabling a member your class doesn't implement is a configuration error, unless the class overrides `execute`.
+
+### Add before and after hooks
+
+Override `execute` and call the parent's `execute`. Code before that call runs after the [URL policy](#write-a-url-policy), the [file policy](#confine-uploads-and-downloads), and [`confirm`](#gate-consequential-members), and it can change the input. The SDK doesn't check the changed input again. Code after the call receives the result, and it can change the result. Raise `ToolError` (throw it in TypeScript) to refuse the call.
+
+Overriding `execute` changes which members Claude is offered. The SDK counts every member as implemented, so Claude is offered every member that's on by default. The quick start's `MyBrowser` serves three members, so the following `TracedBrowser` offers Claude members it can't serve. Turn those members off with `configs` before you use it.
+
+Python
+
+TypeScript
+
+
+
+```python
+import time
+
+
+class TracedBrowser(MyBrowser):
+    def execute(self, context, name, input):
+        started = time.monotonic()
+        result = super().execute(context, name, input)
+        elapsed_ms = (time.monotonic() - started) * 1000
+        call_id = context.tool_use.id if context.tool_use else "-"
+        log.info("%s %s %.0fms", call_id, name, elapsed_ms)
+        return redact(result) if name == "get_page_text" else result
+```
+
+## Implement a driver
+
+Override the members your browser supports. Each member receives the call context and the member's input as a typed object, such as `BetaBrowserNavigateInput`. The input types come from `anthropic.types.beta`. [Member tools](agents-and-tools-tool-use-browser-use-tool.md#member-tools) lists each input's fields.
+
+In TypeScript, write members as methods, not arrow-function fields, because the SDK finds them on the prototype. Spell the `type` member `type_` in TypeScript. In Python, it's `type`.
+
+### Return results
+
+What a member returns determines what Claude reads. A successful result ends with a `browser_state` block built from your state report. An error result carries no block.
+
+| Member                                                                                  | Returns                                                                                              | Claude reads                                                                                |
+|:----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
+| `screenshot`, `zoom`                                                                    | `BetaScreenshotResult`                                                                               | One image block                                                                             |
+| `navigate`                                                                              | `BetaBrowserNavigateResult`                                                                          | `Navigated to {url} — {title} (HTTP {status})`                                              |
+| `new_tab`, `switch_tab`, `list_tabs`, `close_tab`                                       | A tab entry (`new_tab`, `switch_tab`), a list of tab entries (`list_tabs`), or nothing (`close_tab`) | The `browser_state` block alone                                                             |
+| `read_page`, `get_page_text`, `find`, `read_console`, `read_network`, `javascript_exec` | A string                                                                                             | The string, or `(empty)` for an empty string                                                |
+| Every other member                                                                      | Nothing, or one line of text                                                                         | A short confirmation, such as `Clicked.`, then the returned line in a text block of its own |
+
+### Report browser state
+
+The SDK calls `_browser_state` after each call that returns a result, including refused and failed calls. Return every open tab, and what changed since the last report:
+
+- Opened tabs and download events.
+- A `BetaNavigationRefused` for each navigation your [request hook](#intercept-requests-in-the-driver) blocked.
+- A `BetaDialogDismissed` for each native dialog your driver dismissed.
+
+Put all of these in `state_changes`. In Python, `BetaNavigationRefused()` and `BetaDialogDismissed(kind=..., message=...)` come from `anthropic.tools.browser`. In TypeScript, they're `{ type: "navigation_refused" }` and `{ type: "dialog_dismissed", kind, message }`.
+
+The last two aren't API state changes. The SDK reports them to Claude as text outside the `browser_state` block: one line for all refused navigations, which doesn't name a URL, and a line for each of the first three dismissed dialogs, then a count of any others.
+
+When any tab is open, exactly one must be active. Every member that takes a `tab_id` must act on the tab it names. The API's limits on the report are listed under [Track tabs with `browser_state`](agents-and-tools-tool-use-browser-use-tool.md#track-tabs-and-page-state).
+
+Claude reads each tab's URL, each download's URL, and the URL that your `navigate` returns, as your driver wrote them. The SDK doesn't parse these URLs. It turns line breaks and other control characters into spaces, trims the ends, and cuts each URL at 4,096 characters. So a `data:` URL's contents, a `file:` URL's path, and a user name or password in a URL all reach Claude.
+
+### Handle errors
+
+| Raised by a member or the SDK | Claude reads                                                                         | The run   |
+|:------------------------------|:-------------------------------------------------------------------------------------|:----------|
+| `ToolError`                   | Its message, as an error result                                                      | Continues |
+| `ToolsetUsageError`           | Nothing                                                                              | Stops     |
+| Any other exception           | `ClassName: message` in Python or `Error: message` in TypeScript, as an error result | Continues |
+
+The SDK raises `ToolsetUsageError` for a configuration error, a misuse of the SDK during a call, or a call after `close`. It also raises one when `_browser_state` raises any exception, even a `ToolError`. The tool runner and `tool_result` don't catch it, so it reaches their caller.
+
+The SDK doesn't hide local paths in a member's error text, in the line an action such as `left_click` returns, in a failed download's error, or in a dismissed dialog's message.
+
+A `ToolError` from your URL policy, file policy, or `confirm` callable reaches Claude as written, so leave local paths out of its text. Catch exceptions in your members, and raise `ToolError` (throw it in TypeScript) with your own text.
+
+### Start calls while the response streams
+
+By default, the tool runner runs a turn's calls after Claude's response ends. With early start, it can start a browser or computer call while the response is still streaming.
+
+To turn it on, pass `stream=True` and `run_tools_eagerly=True` to the tool runner, as the quick start does. With `stream`, each pass through your loop over the runner gives you a stream instead of a message.
+
+Early start changes when a call can start, not how the toolset runs it:
+
+- **The checks still run first:** The SDK calls your URL policy, your file policy, and `confirm` before a call runs. With early start, it can call `confirm` while the response is still streaming.
+- **Calls still run one at a time:** A toolset runs its calls in the order Claude wrote them. A failed call still stops that toolset's later calls in the turn.
+- **A call that has started can't be taken back:** If the response is then cut off, for example at `max_tokens`, or your loop stops early, the action still happens, and Claude never reads its result.
+
+### Run without the tool runner
+
+Pass the instance in `tools` (`browser.toJSON()` in TypeScript), and answer each member call with `tool_result`. The browser use tool requires you to stop at the first failed call ([Batch actions](agents-and-tools-tool-use-browser-use-tool.md#batch-actions)). After a failed call, this loop answers the turn's later calls without running them:
+
+Python
+
+TypeScript
+
+
+
+```python
+from anthropic.types.beta import BetaMessageParam, BetaToolResultBlockParam
+
+NOT_EXECUTED = "Not executed: an earlier action in this turn failed."
+MAX_TURNS = 10
+
+with MyBrowser(backend, url_policy=url_policy) as browser:
+    messages: list[BetaMessageParam] = [{"role": "user", "content": "Open example.com"}]
+    for _ in range(MAX_TURNS):
+        response = client.beta.messages.create(
+            model="claude-opus-5-5",
+            max_tokens=1024,
+            tools=[browser],
+            messages=messages,
+        )
+        messages.append({"role": "assistant", "content": response.content})
+        calls = [
+            block
+            for block in response.content
+            if block.type == "tool_use" and block.toolset_name == browser.toolset_name
+        ]
+        if not calls:
+            break
+        results: list[BetaToolResultBlockParam] = []
+        failed = False
+        for call in calls:
+            if failed:
+                # After a failed call, the rest of the turn is answered, not run.
+                results.append(
+                    {
+                        "type": "tool_result",
+                        "tool_use_id": call.id,
+                        "toolset_name": call.toolset_name,
+                        "content": NOT_EXECUTED,
+                        "is_error": True,
+                    }
+                )
+                continue
+            result = browser.tool_result(call)
+            failed = bool(result.get("is_error"))
+            results.append(result)
+        messages.append({"role": "user", "content": results})
+```
+
+Each answer to a skipped call carries `is_error`, the call's `toolset_name`, and the exact text that [Batch actions](agents-and-tools-tool-use-browser-use-tool.md#batch-actions) requires. The tool runner sends the same answer.
+
+## Run the toolset safely
+
+Claude's next action depends on the pages it reads. A page, or text injected into one, can try to reach internal services or pull files off the host. It can also try to trigger actions with real effects. Before you run a driver against anything but a throwaway browser, take these six steps:
+
+1.  [Write a URL policy](#write-a-url-policy) that refuses every `navigate` URL the task doesn't need.
+2.  [Intercept requests in the driver](#intercept-requests-in-the-driver), and check each request with the same rules.
+3.  [Put egress policy on the container](#put-egress-policy-on-the-container), so the network blocks what the driver can't see.
+4.  [Confine uploads and downloads](#confine-uploads-and-downloads), or leave uploads off.
+5.  [Gate consequential members](#gate-consequential-members) with `confirm`.
+6.  [Isolate the browser host](#isolate-the-browser-host) in a dedicated container or VM for each session.
+
+The SDK applies steps 1, 4, and 5 through the policies and the callable you pass. Steps 2, 3, and 6 are up to your driver and your deployment. The precautions under [Security considerations](agents-and-tools-tool-use-browser-use-tool.md#security-considerations) apply as well.
+
+
+
+Anthropic's prompt-injection classifiers, described under [Security considerations](agents-and-tools-tool-use-browser-use-tool.md#security-considerations), don't currently run on browser toolset requests sent through Amazon Bedrock.
+
+### Write a URL policy
+
+
+
+Without a URL policy, the SDK checks no URL, and the API doesn't filter the URLs Claude opens. Even with a policy, a link Claude clicks or a redirect can take the browser to loopback (`localhost`, `127.0.0.1`), to link-local addresses such as the cloud metadata address `169.254.169.254`, and to private network ranges. [Egress rules on the container](#put-egress-policy-on-the-container) can block the link-local and private addresses. Rules enforced outside the container can't block loopback.
+
+The SDK doesn't check a URL's scheme, so your driver must refuse every scheme it doesn't mean to open, such as `javascript:`, `view-source:`, `data:`, and `file:`. Most drivers need only `http` and `https`. The example policy below allows only `http` and `https` URLs, plus `about:blank`.
+
+A `file:` URL lets Claude read files on the browser host. A `javascript:` URL runs script in the current page, even when `javascript_exec` is off. Egress rules don't stop either one.
+
+A URL policy is a function that you pass as `url_policy`. You write the policy, and you're responsible for making it ready for production. Before your `navigate` runs, the SDK calls the policy with the call's context and the URL as Claude wrote it.
+
+Return nothing to allow the URL. To refuse it, raise `ToolError` (throw it in TypeScript). Claude reads the error's message, and `navigate` doesn't run. The policy checks only the URL in each `navigate` call. It isn't a network control.
+
+This is the policy from the quick start. It allows `about:blank`, plus two sites and their subdomains over `http` and `https`:
+
+Python
+
+TypeScript
+
+
+
+```python
+import re
+from urllib.parse import urlsplit
+
+from anthropic.tools import ToolError
+from anthropic.tools.browser import BetaURLContext
+
+ALLOWED_HOSTS = ("example.com", "iana.org")
+SCHEME_PREFIX = re.compile(r"[a-z][a-z0-9+.-]*:", re.IGNORECASE)
+
+
+def is_allowed(url: str) -> bool:
+    # An example, not a production policy.
+    if url.lower() == "about:blank":
+        return True
+    with_scheme = url if SCHEME_PREFIX.match(url) else f"https://{url}"
+    # A browser reads "\" as "/" in a web URL.
+    try:
+        parts = urlsplit(with_scheme.replace("\\", "/"))
+    except ValueError:
+        return False
+    host = parts.hostname or ""
+    listed = any(host == name or host.endswith(f".{name}") for name in ALLOWED_HOSTS)
+    return parts.scheme in ("http", "https") and listed
+
+
+def url_policy(context: BetaURLContext, url: str) -> None:
+    if not is_allowed(url):
+        raise ToolError(f"blocked: {url} is not on an allowed host")
+
+
+browser = MyBrowser(backend, url_policy=url_policy)
+```
+
+The SDK calls the policy only for `navigate`, and not for `"back"`, `"forward"`, or `"reload"`. Claude can leave out the scheme, as in `example.com`, so before it reads the host, the example adds `https://` to a URL that doesn't start with a scheme. Your `navigate` gets the URL as Claude wrote it. Add the scheme there with the same test, so that the browser opens the URL your policy checked.
+
+The example isn't production grade. A production policy needs much more, in areas such as these:
+
+- Links Claude clicks, forms it submits, redirects, and the requests a page makes on its own. Only your driver sees them. See [Intercept requests in the driver](#intercept-requests-in-the-driver).
+- Hostnames and URLs that come from page content, which an attacker can choose.
+- Parsing each URL the way the browser does, not finding the hostname with a plain string split.
+- URL schemes. The SDK doesn't check them, so refuse every scheme your driver doesn't mean to open.
+- Egress rules on the container, for what no URL check can see. See [Put egress policy on the container](#put-egress-policy-on-the-container).
+
+If you pass `url_policy=None`, the SDK refuses every `navigate` to a URL, so a `None` read from your configuration can't leave URLs unchecked by accident. In TypeScript, `undefined` leaves the option unset, the same as not passing it.
+
+### Intercept requests in the driver
+
+The URL policy judges only the URL in a `navigate` call. A link Claude clicks, a form it submits, a redirect, or an image or script on an allowed page can still reach a host the policy would refuse. Use [egress rules](#put-egress-policy-on-the-container) to block those hosts.
+
+A driver with request interception can also check those requests in its request hook, the function your automation library calls before each request. Call the function that your policy uses, so that you write the rules once:
+
+Python
+
+TypeScript
+
+
+
+```python
+class MyBrowser(BetaAbstractBrowserToolset20260801):
+    ...
+
+    # Registered on a Playwright browser context with context.route("**/*", self._guard)
+    def _guard(self, route):
+        # is_allowed is the function from "Write a URL policy"
+        if not is_allowed(route.request.url):
+            return route.abort("blockedbyclient")
+        route.continue_()
+```
+
+A request hook like this one doesn't see WebSocket handshakes, service-worker requests, or redirect hops. Block service workers. Check WebSocket handshakes and redirect hops with a hook that sees them. The example policy refuses `ws://` and `wss://` URLs, so change `ws://` to `http://` and `wss://` to `https://` before you pass a WebSocket URL to `is_allowed`.
+
+### Put egress policy on the container
+
+Interception can't see every request the browser makes, and the URL policy doesn't see where a name resolves. An egress policy that the container's network enforces covers both:
+
+- Block link-local and private address ranges in IPv4 and IPv6. That includes the cloud metadata address `169.254.169.254`.
+- Allow outbound connections only to the hosts the task needs. If your rules match IP addresses, resolve the hostnames you allow when the container starts.
+- Allow DNS only to the container's resolver.
+
+Rules enforced outside the browser's container, such as a Kubernetes NetworkPolicy or a cloud firewall, don't see loopback inside it. With only those rules, a page can reach anything listening there, including a DevTools port, which shows a list of the browser's open tabs and the address that controls each one.
+
+### Confine uploads and downloads
+
+`file_upload` is off by default. With no `file_policy`, the SDK refuses every upload that names a path or a [document ID](agents-and-tools-tool-use-browser-use-tool.md#upload-files). To enable uploads, pass a `BetaLocalFilePolicy` with one upload directory that holds only the task's files:
+
+Python
+
+TypeScript
+
+
+
+```python
+from anthropic.tools.browser import BetaLocalFilePolicy
+
+# A MyBrowser that also implements file_upload
+browser = MyBrowser(
+    backend,
+    configs={"file_upload": {"enabled": True}},
+    confirm=make_confirm(),  # required for file_upload; see Gate consequential members
+    url_policy=url_policy,
+    file_policy=BetaLocalFilePolicy(
+        upload_roots=["/task/uploads"],
+        download_dir="/task/downloads",
+        expose_download_paths=False,
+    ),
+)
+```
+
+The SDK resolves each upload path, following symlinks, and refuses any path outside the upload roots. The file policy raises a configuration error for a download directory that is an upload root, is inside one, or contains one. That check can miss a symlink, so don't let one make the download directory the same as an upload root, or put one inside the other. The SDK includes a download's `path` in the state report only when `expose_download_paths` is true and the file is inside the download directory.
+
+The shipped file policy checks paths on the filesystem of the process that runs the SDK. It protects only a browser that shares that filesystem. For a remote browser, follow [Remote and hosted browsers](#remote-and-hosted-browsers) instead.
+
+Set up downloads this way:
+
+- Create the download directory yourself with mode `0700`, and mount it `noexec,nosuid,nodev`.
+- Keep the directory out of reach of other tools that Claude can call, such as a shell or a file tool.
+- In a `download_failed` state change, write `error` as a fixed phrase. An exception's text can contain the path or the URL.
+- Don't read a downloaded file into the conversation, or run it, until a person decides to.
+
+### Gate consequential members
+
+`javascript_exec` and `file_upload` are off by default. If you enable either one without a `confirm` callable, the constructor raises a configuration error. With a `confirm` callable, the SDK calls it before every call that's about to run. Without one, nothing is asked. In TypeScript, `confirm: null` doesn't raise the configuration error, and the SDK refuses every call to any member.
+
+Return `True` to run the call, or `False` to refuse it. When your callable asks a person, show them the member, the page's URL, and the call's input. First, escape every character outside printable ASCII in the URL and the input, because both can carry text from the page.
+
+This example asks about the two gated members through your own `ask_user` function, and approves the rest:
+
+Python
+
+TypeScript
+
+
+
+```python
+import json
+from collections.abc import Callable
+from urllib.parse import urlsplit
+
+from anthropic.tools.browser import BetaConfirmContext
+
+GATED = {"javascript_exec", "file_upload"}
+
+
+def shown(value: object) -> str:
+    """A value as JSON, with every character outside printable ASCII escaped."""
+    return json.dumps(value, ensure_ascii=True, indent=2)
+
+
+def make_confirm() -> Callable[[BetaConfirmContext], bool]:
+    granted: set[tuple[str, str, str]] = set()
+
+    def confirm(context: BetaConfirmContext) -> bool:
+        name = context.member
+        if name not in GATED:
+            return True
+        detail = shown(context.input.to_dict())
+        page = context.tab_url
+        where = shown(page) if page else "a tab with no URL"
+        question = f"Allow {name} on {where}?\n{detail}"
+        if page is None or urlsplit(page).scheme not in ("http", "https"):
+            return ask_user(question)  # no web origin: ask every time
+        # An approval covers only this exact input on this page.
+        key = (name, page, detail)
+        if key not in granted and ask_user(question):
+            granted.add(key)
+        return key in granted
+
+    return confirm
+
+
+# A MyBrowser that also implements javascript_exec and file_upload
+# file_upload also needs the file_policy from "Confine uploads and downloads"
+browser = MyBrowser(
+    backend,
+    configs={"javascript_exec": {"enabled": True}, "file_upload": {"enabled": True}},
+    confirm=make_confirm(),
+    url_policy=url_policy,
+)
+```
+
+Each call to `make_confirm()` returns a callable with no approvals. Call it once for each toolset, and give each user their own toolset.
+
+An approval covers the page as the last state report showed it, and the page can change before the call runs. Purchases, sent messages, and accepted terms happen through ordinary members such as `left_click` and `type`, so `confirm` can't pick them out by name. To have a person approve them, ask about those members too.
+
+Don't enable `javascript_exec` unless [egress rules](#put-egress-policy-on-the-container) limit the browser's outbound connections to the hosts the task needs. A script can send the page's content to any address that the browser can reach.
+
+A `javascript:` URL in a `navigate` call also runs script in the current page, even when `javascript_exec` is off. `confirm` sees that call as a `navigate`, so the example's `confirm` callable would approve it. Your driver must refuse `javascript:` URLs. In the example, the [URL policy](#write-a-url-policy) refuses them before `confirm` runs.
+
+### Isolate the browser host
+
+Run the browser in a dedicated, minimal-privilege container or VM for each session:
+
+- Run as a non-root user, with a read-only root filesystem where the browser allows it.
+- Mount nothing from the host beyond the upload and download directories you configured, if any.
+- Keep credentials out of the environment, and start from a fresh browser profile.
+- Share no filesystem with other tools Claude can call.
+
+
+
+The browser profile must not be signed in to any account whose data or actions you wouldn't hand to Claude. `javascript_exec` runs with the page's own authority: its cookies, its storage, and its signed-in sessions.
+
+Run the code that calls the API outside the browser's container, because that code holds your API key and the conversation. The tool runner and `tool_result` both run the toolset in that code's process, so the browser doesn't share the toolset's filesystem. Treat the browser as remote: [Remote and hosted browsers](#remote-and-hosted-browsers) applies.
+
+Treat everything a page returns as untrusted, including page text, screenshots, console and network entries, tab titles, and download names.
+
+### Remote and hosted browsers
+
+Some browsers don't share a filesystem with the process that runs the SDK. Examples are a browser in another container, one you reach at a DevTools URL, and one from a hosted browser service. With these, the URL policy, request interception, and `confirm` still run in your process.
+
+With a hosted browser, the provider controls egress and host isolation. Your own egress policy doesn't apply there, so the driver's request hook is your only check on the browser's requests. Find out what the browser's network can reach.
+
+The shipped path checks don't protect a remote browser. `BetaLocalFilePolicy` checks paths on the filesystem of the process that runs the SDK, and the browser reads and writes its own filesystem.
+
+The SDK can't detect that a browser is remote. So for a remote browser, keep `file_upload` off unless your driver checks upload paths where the browser runs, with a `BetaFilePolicy` of its own. A `BetaFilePolicy` vets each upload's paths and document IDs, and decides whether Claude sees a download's path.
+
+Have a remote browser refuse downloads, unless its own host has the download setup from [Confine uploads and downloads](#confine-uploads-and-downloads).
+
+Keep the provider's API key and the session's connection URL, which can contain a key, out of logs, tool results, and error text. If the provider records sessions, the recording is another copy of everything Claude saw and typed, and the provider's retention terms apply to it.
+
+## Computer toolset
+
+`BetaAbstractComputerToolset20260801` is the class for the [computer use tool](agents-and-tools-tool-use-computer-use-tool.md). You subclass it and write one method per tool, such as `screenshot` or `left_click`, against your own desktop automation. Your subclass is the driver. The SDK doesn't include a desktop or a ready-made driver. The [minimal VNC example](https://github.com/anthropics/claude-quickstarts/tree/main/computer-toolset) is in the claude-quickstarts repository, in Python and TypeScript. It controls a desktop over VNC, and it isn't production code.
+
+The class takes `configs`, `confirm`, and `tool_configs`, and you pass them as you do for the browser class. [Customize a driver](#customize-a-driver), [Handle errors](#handle-errors), [Start calls while the response streams](#start-calls-while-the-response-streams), and [Run without the tool runner](#run-without-the-tool-runner) apply to it too, with these differences:
+
+- **Browser-only options:** The class has no [URL policy](#write-a-url-policy), no [file policy](#confine-uploads-and-downloads), and no [state report](#report-browser-state).
+- **`configs`:** Every tool you implement is on by default. The per-tool settings are listed under [Tool parameters](agents-and-tools-tool-use-computer-use-tool.md#tool-parameters).
+- **`confirm`:** If your class implements `type`, `key`, or `hold_key`, the constructor raises a configuration error unless you pass a `confirm` callable or turn those tools off with `configs`. A class that overrides `execute` counts as implementing all three.
+- **Skipped calls:** After a failed computer call, the tool runner answers the turn's later computer calls with `Not executed: an earlier computer action in this turn failed.` Browser calls get a different text. In a loop you write, answer the skipped computer calls with that exact text ([Batch actions](agents-and-tools-tool-use-computer-use-tool.md#batch-actions)).
+- **`execute`:** In TypeScript, an `execute` override types `name` as `BetaComputerMemberName` and `input` as `BetaComputerMemberInput`. Both come from `@anthropic-ai/sdk/resources/beta`.
+- **Error text:** The SDK doesn't hide local paths in a computer tool's error text or in the text a tool returns. Claude reads both, cut at 4,096 characters. Catch exceptions in your tools, and raise `ToolError` (throw it in TypeScript) with your own text.
+
+### Write a desktop driver
+
+This driver implements five of the 17 tools listed under [Available actions](agents-and-tools-tool-use-computer-use-tool.md#available-actions). A tool you don't implement is sent to the API as disabled, as [Quick start](#quick-start) explains. In the example, `display` stands for your own wrapper around whatever controls the desktop, such as a VNC client or `xdotool`, and `ask_user` stands for your own function that asks a person.
+
+Python
+
+TypeScript
+
+
+
+```python
+from anthropic import Anthropic
+from anthropic.tools.computer import (
+    BetaAbstractComputerToolset20260801,
+    BetaComputerCursorPositionResult,
+    BetaScreenshotResult,
+    BetaToolsetCallContext,
+)
+from anthropic.types.beta import (
+    BetaComputerCursorPositionInput,
+    BetaComputerKeyInput,
+    BetaComputerLeftClickInput,
+    BetaComputerScreenshotInput,
+    BetaComputerTypeInput,
+)
+
+
+class MyDesktop(BetaAbstractComputerToolset20260801):
+    def __init__(self, display, **options):
+        super().__init__(**options)
+        self.display = display
+
+    def screenshot(
+        self, context: BetaToolsetCallContext, input: BetaComputerScreenshotInput
+    ) -> BetaScreenshotResult:
+        # Claude's coordinates are pixel positions in this image.
+        data = self.display.png_base64()
+        return BetaScreenshotResult(data=data, media_type="image/png")
+
+    def cursor_position(
+        self, context: BetaToolsetCallContext, input: BetaComputerCursorPositionInput
+    ) -> BetaComputerCursorPositionResult:
+        x, y = self.display.cursor()
+        return BetaComputerCursorPositionResult(x=x, y=y)
+
+    def left_click(
+        self, context: BetaToolsetCallContext, input: BetaComputerLeftClickInput
+    ) -> None:
+        # input.coordinate is [x, y], or None to click at the cursor. input.text is a
+        # modifier to hold, such as "shift". Nothing to return: Claude reads "Clicked."
+        self.display.click(input.coordinate, input.text)
+
+    def type(
+        self, context: BetaToolsetCallContext, input: BetaComputerTypeInput
+    ) -> None:
+        self.display.type(input.text)
+
+    def key(self, context: BetaToolsetCallContext, input: BetaComputerKeyInput) -> None:
+        self.display.press(input.text, input.repeat or 1)
+
+    def close(self) -> None:
+        super().close()  # first, so no call is still using the desktop when it closes
+        self.display.close()
+
+
+client = Anthropic()
+with MyDesktop(
+    display,
+    # required for type and key; see Run the computer toolset safely
+    confirm=lambda context: ask_user(f'Allow the "{context.member}" tool?'),
+) as desktop:
+    runner = client.beta.messages.tool_runner(
+        model="claude-opus-5-5",
+        max_tokens=1024,
+        tools=[desktop],
+        messages=[
+            {"role": "user", "content": "Open the calculator and compute 17 * 23."}
+        ],
+    )
+    for message in runner:
+        print(message)
+```
+
+
+
+The `confirm` in this example asks a person before every call the driver runs. Before you run the driver against anything but a throwaway machine, read [Run the computer toolset safely](#run-the-computer-toolset-safely).
+
+Four tools have no input fields: `screenshot`, `cursor_position`, `left_mouse_down`, and `left_mouse_up`. Every input type, including theirs, comes from `anthropic.types.beta`.
+
+In TypeScript, write tools as methods, not arrow-function fields. [Implement a driver](#implement-a-driver) gives the reason.
+
+### Scale coordinates and size images
+
+Every point Claude sends is a pixel position in the screenshots you return: each `coordinate` and `start_coordinate`, and both corners of a `zoom` `region`. The SDK passes them to your tools unchanged.
+
+If your screenshots are a different size from the display, convert in both directions in your driver: Claude's points to display pixels, and the cursor position you report to screenshot pixels. Keep the screenshot size the same for the whole session, and give it the display's aspect ratio:
+
+Python
+
+TypeScript
+
+
+
+```python
+from anthropic.tools import ToolError
+
+SCREENSHOT_SIZE = (1280, 720)  # the size of every full screenshot the driver returns
+DISPLAY_SIZE = (2560, 1440)
+
+
+def to_display(coordinate: list[int]) -> tuple[int, int]:
+    x, y = coordinate
+    width, height = SCREENSHOT_SIZE
+    if not (0 <= x < width and 0 <= y < height):
+        # Refuse the point. Moving it into range would click where Claude didn't choose.
+        raise ToolError(f"[{x}, {y}] is outside the {width}x{height} screenshot")
+    return x * DISPLAY_SIZE[0] // width, y * DISPLAY_SIZE[1] // height
+
+
+def to_screenshot(x: int, y: int) -> tuple[int, int]:
+    width, height = DISPLAY_SIZE
+    return x * SCREENSHOT_SIZE[0] // width, y * SCREENSHOT_SIZE[1] // height
+
+
+to_display([640, 360])  # (1280, 720)
+```
+
+Call `to_display` on each `coordinate` and `start_coordinate` before you act on it, and `to_screenshot` on the position that `cursor_position` reports. A click or scroll with no `coordinate` acts at the cursor, so it has nothing to convert. Scale a `zoom` `region` by the same factor. A `zoom` image doesn't change this: the next points Claude sends are still pixel positions in the full screenshot.
+
+The SDK never reads or resizes an image. The API rejects an image over the model's limits, which ends the run. Scale each screenshot and `zoom` image in the driver. See [Size screenshots to fit image limits](agents-and-tools-tool-use-computer-use-tool.md#handle-coordinate-scaling-for-higher-resolutions). On a long run, one request can hold more than 20 images, and the API then holds each one to a stricter limit. See [Manage screenshot history](agents-and-tools-tool-use-computer-use-tool.md#manage-screenshot-history).
+
+### Input checks and results
+
+Don't rely on the SDK to check a call's input. Have your driver check the fields it uses and refuse a call it can't run: raise `ToolError` (throw it in TypeScript). Claude reads the message and can send a corrected call.
+
+Neither SDK limits a `duration`, a `repeat` count, or a `scroll_amount`. Step 4 under [Run the computer toolset safely](#run-the-computer-toolset-safely) covers them.
+
+What a tool returns determines what Claude reads:
+
+| Tool                 | Returns                            | Claude reads                                                                                |
+|:---------------------|:-----------------------------------|:--------------------------------------------------------------------------------------------|
+| `screenshot`, `zoom` | `BetaScreenshotResult`             | One image block                                                                             |
+| `cursor_position`    | `BetaComputerCursorPositionResult` | `X={x},Y={y}`                                                                               |
+| Every other tool     | Nothing, or one line of text       | A short confirmation, such as `Clicked.`, then the returned line in a text block of its own |
+
+### Run the computer toolset safely
+
+What's on the screen steers Claude's next action. A page or a notification can try to make Claude type into the wrong window, or trigger an action with real effects.
+
+
+
+A driver that implements `type`, `key`, or `hold_key` needs a `confirm` callable. Without one, the constructor raises a configuration error, unless `configs` turns those tools off. The SDK itself asks no one: it runs every call that your `confirm` approves, and with no `confirm` it runs every call, including every click. Every computer tool you implement is on by default.
+
+Before you run a driver against anything but a throwaway machine, take these five steps:
+
+1.  Isolate the desktop. Run it in a dedicated, minimal-privilege container or VM for each session, with no credentials and no host mounts. Install only the applications the task needs. Run the code that calls the API outside it.
+2.  Gate actions that have real effects with `confirm`. A purchase or a sent message is an ordinary `left_click`, `type`, or `key`, and `confirm` receives the tool and its input, not the screen. So choose which tools need approval based on the applications Claude can reach on the desktop.
+3.  Keep terminals, run dialogs, and launchers off the desktop unless the task needs one. When one has keyboard focus, `type`, `key`, and `hold_key` run whatever Claude types, and a click can start a program. If the task needs one, ask a person before keyboard input and clicks, and isolate the desktop so that a command can reach no further than the task needs.
+4.  Refuse input your desktop shouldn't honor, such as a point outside the screenshot, a `wait` of several minutes, or a very large `repeat` or `scroll_amount`. Raise `ToolError` (throw it in TypeScript) instead of moving the value into range.
+5.  Treat everything on the screen as untrusted, including window titles and clipboard text. Don't run it or pass it on unchecked.
+
+The SDK applies step 2 through the callable you pass. The other steps are up to your driver and your deployment. The precautions under [Security considerations](agents-and-tools-tool-use-computer-use-tool.md#security-considerations) apply as well.
+
+The following `confirm` asks a person before any keyboard input, through your own `ask_user` function, and approves every other call. `context.member` is the tool's name. To have a person approve clicks too, set `ASK_FIRST` to `KEYBOARD | CLICKS`.
+
+Python
+
+TypeScript
+
+
+
+```python
+from anthropic.tools.computer import BetaComputerConfirmContext
+
+KEYBOARD = {"type", "key", "hold_key"}
+CLICKS = {
+    "left_click",
+    "right_click",
+    "middle_click",
+    "double_click",
+    "triple_click",
+    "left_click_drag",
+    "left_mouse_down",
+    "left_mouse_up",
+}
+ASK_FIRST = KEYBOARD
+
+
+def confirm(context: BetaComputerConfirmContext) -> bool:
+    if context.member not in ASK_FIRST:
+        return True
+    # shown is the function from "Gate consequential members".
+    detail = shown(context.input.to_dict())
+    return ask_user(f'Allow the "{context.member}" tool with this input?\n{detail}')
+
+
+desktop = MyDesktop(display, confirm=confirm)
+```
+
+A refused call gets an error result, and the run continues. For a refused `type` call, Claude reads `The user did not grant permission to run 'type'. Do not retry it unless the user asks you to.`
+
+This `confirm` approves every tool that isn't in `ASK_FIRST`, including any tool you add later. To fail closed, approve only the tools with no effect on the desktop (`screenshot`, `zoom`, `cursor_position`, and `wait`) and ask about every other tool.
+
+### Use both toolsets in one request
+
+Pass both instances in `tools`. Each call carries its `toolset_name`, `browser` or `computer`, and the tool runner sends the call to the matching instance. After a failed call, the tool runner skips only the turn's later calls to the same toolset, so a failed computer call doesn't skip the turn's browser calls.
+
+Python
+
+TypeScript
+
+
+
+```python
+# MyBrowser, backend, and url_policy are from the quick start.
+# confirm is the function from "Run the computer toolset safely".
+with (
+    MyBrowser(backend, url_policy=url_policy) as browser,
+    MyDesktop(display, confirm=confirm) as desktop,
+):
+    runner = client.beta.messages.tool_runner(
+        model="claude-opus-5-5",
+        max_tokens=1024,
+        tools=[browser, desktop],
+        messages=[
+            {
+                "role": "user",
+                "content": "Copy the heading on example.com into the open text editor.",
+            }
+        ],
+        stream=True,
+        run_tools_eagerly=True,  # so a call can start before the response ends
+    )
+    for stream in runner:
+        print(stream.get_final_message())
+```
+
+In a loop you write, answer each call with `tool_result` on the instance whose `toolset_name` matches the call's `toolset_name`. In each turn, track failed calls for each toolset separately, and answer a skipped call with that toolset's own text. [Run without the tool runner](#run-without-the-tool-runner) has the browser's text, and the Skipped calls bullet at the top of this section has the computer's.
+
+## Reference
+
+The constructor options have the same meaning in both SDKs:
+
+| Python                      | TypeScript     | Sets                                                                 |
+|:----------------------------|:---------------|:---------------------------------------------------------------------|
+| `configs`                   | `configs`      | Which members are enabled                                            |
+| `confirm`                   | `confirm`      | The callable that approves or refuses each call                      |
+| `url_policy`                | `urlPolicy`    | Your URL policy, which the SDK calls before each `navigate` to a URL |
+| `file_policy`               | `filePolicy`   | Upload roots and download path exposure                              |
+| `tool_configs`              | `toolConfigs`  | Fields for the `tools` entry, such as `cache_control`                |
+| The `_browser_state` method | `browserState` | The state report                                                     |
+
+The browser class takes every option in the table. The computer class takes `configs`, `confirm`, and `tool_configs`.
+
+You can't change an option after construction. The [Python browser toolset guide](https://github.com/anthropics/anthropic-sdk-python/blob/main/browser-toolset.md), the [TypeScript browser toolset guide](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/browser-toolset.md), the [Python computer toolset guide](https://github.com/anthropics/anthropic-sdk-python/blob/main/computer-toolset.md), and the [TypeScript computer toolset guide](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/computer-toolset.md) describe each option. The Python guides also cover the async classes, `BetaAsyncAbstractBrowserToolset20260801` and `BetaAsyncAbstractComputerToolset20260801`.
+
+## Limitations
+
+- **The URL policy sees only `navigate` calls:** It doesn't see the requests a page makes, or pages that open any other way, such as from a link Claude clicks or a redirect. See [Intercept requests in the driver](#intercept-requests-in-the-driver).
+- **An approval is based on the last state report:** The page can change after that report. The SDK doesn't check the page again before the call runs.
+- **Calls on one toolset run one at a time:** You can't turn this off.
+- **The SDK doesn't check that tab IDs are unique or how many tabs there are, and doesn't always check that one tab is active:** The API rejects a report that breaks those rules.
+- **For a computer call, `confirm` receives the tool and its input, not the screen:** You can't tell from them what a click at a given point does.
+- **The SDK doesn't resize a computer toolset's images:** The API rejects an image over the model's limits. See [Scale coordinates and size images](#scale-coordinates-and-size-images).
+
+## Next steps
+
+[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)
+
+The member tools, the `browser_state` block, and the tool's security considerations.
+
+
+
+[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)
+
+The 17 tools, coordinates and image limits, and the tool's security considerations.
+
+
+
+[Tool runner (SDK)](agents-and-tools-tool-use-tool-runner.md)
+
+How the SDK runs the loop, and how to change the messages it sends.
+
+
+
+[Mitigate jailbreaks and prompt injections](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)
+
+Guardrails for any application that reads untrusted content.
+
+---
+
 ## Browser use tool - Claude Platform Docs
 
 Source: https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool
@@ -11342,7 +12349,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.m
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -11425,11 +12432,11 @@ Let Claude navigate, read, and interact with webpages in your own browser enviro
 
 Browser use tool
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Eligible
 
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+excludes [Covered Models](../Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 The browser use tool lets Claude navigate, read, and interact with webpages in a browser that your application runs. Claude works with the page both through its structure (the accessibility tree, elements, forms, and tabs) and through screenshots and viewport coordinates.
 
@@ -12272,7 +13279,7 @@ Browser use follows the standard [tool use pricing](agents-and-tools-tool-use-ov
 
 If you also use the computer use tool, bash tool, text editor tool, or your own tools alongside browser use, those tools have their own token costs as documented on their respective pages.
 
-The browser session, downloads, and uploaded files stay in your environment; the screenshots, page text, and tab state you return are part of your API request content and follow the standard retention policy, or your ZDR arrangement if you have one. The browser use tool is ZDR eligible; see [API and data retention](../Other/manage-claude-api-and-data-retention.md) for retention periods and eligibility across features.
+The browser session, downloads, and uploaded files stay in your environment; the screenshots, page text, and tab state you return are part of your API request content and follow the standard retention policy, or your ZDR arrangement if you have one. The browser use tool is ZDR eligible; see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md) for retention periods and eligibility across features.
 
 ## Next steps
 
@@ -12300,7 +13307,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5 and 5.1
 - Opus 4.8, 5, and 5.5
-- Sonnet 5
+- Sonnet 5 and 5.5
 
 Supported platforms  
 - Claude API
@@ -12320,7 +13327,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -12969,10 +13976,6 @@ Rings 2 through 4 wrote the same loop by hand: call the API, check `stop_reason`
 
 Each SDK provides a helper that turns an ordinary function into a runnable tool and derives the input schema from its signature; the tabs below show the idiomatic form for each language.
 
-
-
-Tool Runner is available in all seven SDKs: Python, TypeScript, C#, Go, Java, PHP, and Ruby. See [Tool Runner](agents-and-tools-tool-use-tool-runner.md) for the full reference. The cURL and CLI tabs show a note instead of code; keep the Ring 4 loop for curl- or CLI-based scripts.
-
 cURL
 
 CLI
@@ -13097,7 +14100,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-too
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -13180,7 +14183,7 @@ Run Python and bash code in a sandboxed container to analyze data, generate file
 
 Code execution tool
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Not eligible
 
@@ -13851,7 +14854,7 @@ To upgrade, update the tool type in your API requests:
 
 Code execution runs in server-side sandbox containers. Container data, including execution artifacts, uploaded files, and outputs, is retained for up to 30 days. This retention applies to all data processed within the container environment. Files that code execution creates in the [Files API](../Guides/build-with-claude-files.md) (retrievable with `client.files.download()`) persist until explicitly deleted.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Next steps
 
@@ -13883,7 +14886,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5 and 5.1
 - Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
-- Sonnet 4.5, 4.6, and 5
+- Sonnet 4.5, 4.6, 5, and 5.5
 - Haiku 4.5
 
 Supported platforms  
@@ -13910,7 +14913,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -13993,11 +14996,11 @@ Give Claude screenshot, mouse, and keyboard control of a desktop environment wit
 
 Computer use tool
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Eligible
 
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+excludes [Covered Models](../Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 Claude can interact with computer environments through the computer use tool, which provides screenshot capabilities and mouse/keyboard control for autonomous desktop interaction.
 
@@ -14332,7 +15335,7 @@ The loop continues until either Claude responds without requesting any tools (ta
 ### Optimize model performance with prompting
 
 1.  Specify simple, well-defined tasks and provide explicit instructions for each step.
-2.  Claude sometimes assumes outcomes of its actions without explicitly checking their results. To prevent this you can prompt Claude with `After each step, take a screenshot and carefully evaluate if you have achieved the right outcome. Explicitly show your thinking: "I have evaluated step X..." If not correct, try again. Only when you confirm a step was executed correctly should you move on to the next one.`
+2.  Claude sometimes assumes outcomes of its actions without explicitly checking their results. To prevent this you can prompt Claude with `After each step, take a screenshot and carefully evaluate if you have achieved the right outcome. State in one sentence what the screenshot shows and whether the step succeeded. If it didn't, try again. Only when you confirm a step was executed correctly should you move on to the next one.`
 3.  Some UI elements (such as dropdowns and scrollbars) might be tricky for Claude to manipulate using mouse movements. If you experience this, try prompting the model to use keyboard shortcuts.
 4.  For repeatable tasks or UI interactions, include example screenshots and tool calls of successful outcomes in your prompt.
 5.  If you need the model to log in, provide it with the username and password in your prompt inside XML tags such as `<robot_credentials>`. Using computer use within applications that require login increases the risk of bad outcomes as a result of prompt injection. Review [Mitigate jailbreaks and prompt injections](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) before providing the model with login credentials.
@@ -14765,7 +15768,7 @@ To keep [Prompt caching](../Guides/build-with-claude-prompt-caching.md) effectiv
 
 - Place one `cache_control` breakpoint after the system prompt and tool definitions, and up to three more on the last `tool_result` block of each of the most recent turns, advancing them each turn. Within a [batch action](#batch-actions), markers on several blocks act as a single breakpoint but each still counts toward the limit of four, so use one per turn.
 - Prune old screenshots in *batches*, not one each turn. Dropping a screenshot every turn changes the prefix every turn and invalidates the cache. A reasonable default is to keep the last three screenshots and prune every 25 turns, so the prefix stays byte-identical between prune events; if your screenshots exceed 2000 px on either side, choose an interval that keeps each request at 20 or fewer images.
-- On Claude Fable 5.1 and Claude Opus 5.5, avoid pruning on the client: removing an earlier screenshot [invalidates every later thinking block](../Guides/build-with-claude-thinking.md#preserved-in-conversation) in every request that still carries those turns. Resize screenshots to 2000 px or less per side instead, and use server-side [tool result clearing](../Guides/build-with-claude-context-editing.md#tool-result-clearing) to drop old ones from the context. If you must prune, keep [`prefix_mismatch_behavior: "drop_block"`](../Guides/build-with-claude-thinking.md#preserved-thinking-controls) set from then on; after each prune, Claude continues without the thinking produced since the pruned screenshot, on that request and every later one.
+- On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, avoid pruning on the client: removing an earlier screenshot [invalidates every later thinking block](../Guides/build-with-claude-thinking.md#preserved-in-conversation) in every request that still carries those turns. Resize screenshots to 2000 px or less per side instead, and use server-side [tool result clearing](../Guides/build-with-claude-context-editing.md#tool-result-clearing) to drop old ones from the context. If you must prune, keep [`prefix_mismatch_behavior: "drop_block"`](../Guides/build-with-claude-thinking.md#preserved-thinking-controls) set from then on; after each prune, Claude continues without the thinking produced since the pruned screenshot, on that request and every later one. On Claude Sonnet 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools`, keep the history append-only, or strip the thinking blocks from the edited turn on.
 
 ### Diagnose click issues
 
@@ -14874,9 +15877,9 @@ def log_action(action_type, params, result):
 
 ## Migrate from `computer_20251124`
 
-Upgrading from `computer_20251124` to the toolset is optional: the models listed for `computer_20251124` under [Earlier tool versions](#earlier-tool-versions) keep accepting it with its beta header, so an existing integration keeps working until you change it. Claude 5.5 and later models are the exception on the Claude API and Google Cloud: there they accept only the toolset. Upgrade an integration before you move it to one of them. On Amazon Bedrock, Claude Opus 5.5 keeps accepting `computer_20251124`. To upgrade, make the following changes together:
+Upgrading from `computer_20251124` to the toolset is optional: the models listed for `computer_20251124` under [Earlier tool versions](#earlier-tool-versions) keep accepting it with its beta header, so an existing integration keeps working until you change it. Claude 5.5 and later models are the exception on the Claude API and Google Cloud: there they accept only the toolset. Upgrade an integration before you move it to one of them. On Amazon Bedrock, Claude Opus 5.5 and Claude Sonnet 5.5 keep accepting `computer_20251124`. To upgrade, make the following changes together:
 
-1.  **Remove the beta header.** Drop `anthropic-beta: computer-use-2025-11-24` from your requests. In the SDKs, remove the `betas` parameter and call the Messages API through the standard client rather than the beta namespace.
+1.  **Remove the beta header.** Drop `anthropic-beta: computer-use-2025-11-24` from your requests. With the SDK, remove `betas` and call the Messages API through the standard client rather than the beta namespace.
 2.  **Change the `tools` entry.** Set `type` to `computer_toolset_20260801` and delete `name`, `display_width_px`, `display_height_px`, `display_number`, and `enable_zoom`. The toolset rejects each of these fields.
 3.  **Choose whether to keep zoom enabled.** Zoom is enabled by default on the toolset, whereas `enable_zoom` defaults to `false`. If your environment doesn't implement zoom, add `"configs": {"zoom": {"enabled": false}}` to keep the previous behavior; otherwise implement it (see [Available actions](#available-actions)).
 4.  **Handle every block in a turn.** Update your agent loop to iterate over every `tool_use` block in a response rather than reading only the first, and to dispatch on the block's `name` together with `toolset_name` instead of on `input.action`. Member inputs no longer contain an `action` field; the remaining fields are unchanged.
@@ -14940,11 +15943,11 @@ The following pair shows a `tool_use` block before and after the change. The act
 
 ## Earlier tool versions
 
-Two earlier versions of the computer use tool remain available in beta for existing integrations, for models that don't support the toolset, and on platforms where the toolset isn't currently available. Each requires its [beta header](../Endpoints/beta-headers.md) on every request, and their parameters are documented in the [beta Messages API reference](../Endpoints/beta-messages-create.md). In the SDKs, pass the header through the `betas` parameter and use the beta namespace; only the computer use tool needs the header, not the bash or text editor tools in the same request.
+Two earlier versions of the computer use tool remain available in beta for existing integrations, for models that don't support the toolset, and on platforms where the toolset isn't currently available. Each requires its [beta header](../Endpoints/beta-headers.md) on every request, and their parameters are documented in the [beta Messages API reference](../Endpoints/beta-messages-create.md). With the SDK, pass the header through `betas` and use the beta namespace; only the computer use tool needs the header, not the bash or text editor tools in the same request.
 
 | Tool version        | Beta header               | Use with                                                                                                                                                                                                                                                                                                                                                   | Parameters                                         |
 |---------------------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
-| `computer_20251124` | `computer-use-2025-11-24` | Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.5; on Amazon Bedrock, also Claude Opus 5.5                                                                                                                   | [API reference](../Endpoints/beta-messages-create.md) |
+| `computer_20251124` | `computer-use-2025-11-24` | Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.5; on Amazon Bedrock, also Claude Opus 5.5 and Claude Sonnet 5.5                                                                                             | [API reference](../Endpoints/beta-messages-create.md) |
 | `computer_20250124` | `computer-use-2025-01-24` | Claude Sonnet 4.5, Claude Haiku 4.5, Claude Opus 4.1 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md)), Claude Sonnet 4 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md)), and Claude Opus 4 ([retired, except on Google Cloud](../../20-Models/about-claude-model-deprecations.md)) | [API reference](../Endpoints/beta-messages-create.md) |
 
 ------------------------------------------------------------------------
@@ -14964,9 +15967,9 @@ Always carefully review and verify Claude's computer use actions and logs. Do no
 
 ## Data retention
 
-Computer use is a client-side tool. All screenshots, mouse actions, keyboard inputs, and any files involved in a session are captured and stored in your environment, not by Anthropic. Anthropic processes the screenshot images and action requests in real time as part of the API call. Retention for those API requests is governed by [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+Computer use is a client-side tool. All screenshots, mouse actions, keyboard inputs, and any files involved in a session are captured and stored in your environment, not by Anthropic. Anthropic processes the screenshot images and action requests in real time as part of the API call. Retention for those API requests is governed by [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
-Because your application controls where and how computer use data is stored, computer use is ZDR eligible. For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+Because your application controls where and how computer use data is stored, computer use is ZDR eligible. For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Pricing
 
@@ -15022,7 +16025,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5 and 5.1
 - Opus 4.8, 5, and 5.5
-- Sonnet 5
+- Sonnet 5 and 5.5
 
 Supported platforms  
 - Claude API
@@ -15032,7 +16035,7 @@ Supported platforms
 - Microsoft FoundryBeta
 
 - On the Claude API and Google Cloud, Claude 5.5 and later models support computer use only through the `computer_toolset_20260801` toolset and return an error for the earlier `computer_20251124` tool version. To move an existing integration, see [Migrate from `computer_20251124`](#migrate-from-computer-20251124).
-- On Amazon Bedrock, Claude Opus 5.5 accepts the earlier `computer_20251124` tool version as Claude Opus 5 does.
+- On Amazon Bedrock, Claude Opus 5.5 and Claude Sonnet 5.5 accept the earlier `computer_20251124` tool version as Claude Opus 5 and Claude Sonnet 5 do.
 - Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.5 support computer use only through the earlier `computer_20251124` tool version, which requires a beta header; see [Earlier tool versions](#earlier-tool-versions).
 - Platforms other than the Claude API and Google Cloud currently offer only the [earlier beta tool versions](#earlier-tool-versions).
 
@@ -15050,7 +16053,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -15133,7 +16136,7 @@ Stream tool inputs without server-side JSON buffering for latency-sensitive appl
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 Fine-grained tool streaming delivers a tool's input to your client as Claude generates it, without server-side buffering or JSON validation. Skipping the buffering step reduces the time to the first fragment of a large parameter, such as a document or a block of code, and the fragments arrive through the same [Streaming messages](../Guides/build-with-claude-streaming.md) events as standard tool use.
 
@@ -15231,7 +16234,7 @@ The accumulation contract is the same as for standard tool-use streaming, so thi
 
 When a `tool_use` content block streams, the initial `content_block_start` event contains `input: {}` (an empty object). This is a placeholder. The actual input arrives as a series of `input_json_delta` events, each carrying a `partial_json` string fragment. To assemble the full input, concatenate these fragments and parse the result when the block closes.
 
-Where your SDK provides an accumulator helper (as the Python, TypeScript, Go, Java, and Ruby tabs in the previous example do), it handles this for you. The manual pattern is for SDKs without a helper, or when you want full control over how the input is assembled.
+Where your SDK provides an accumulator helper (as the Python, TypeScript, Go, Java, and Ruby tabs in the previous example do), it handles this for you. Use the manual pattern when your SDK has no helper or when you want full control over how the input is assembled.
 
 The accumulation contract:
 
@@ -15374,7 +16377,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -15774,7 +16777,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -15962,7 +16965,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -16124,6 +17127,7 @@ To get the best performance out of Claude when using tools, follow these guideli
 - **Consolidate related operations into fewer tools.** Rather than creating a separate tool for every action (`create_pr`, `review_pr`, `merge_pr`), group them into a single tool with an `action` parameter. Fewer, more capable tools reduce selection ambiguity and make your tool surface easier for Claude to navigate.
 - **Use meaningful namespacing in tool names.** When your tools span multiple services or resources, prefix names with the service (for example, `github_list_prs`, `slack_send_message`). This makes tool selection unambiguous as your library grows, and is especially important when using [tool search](agents-and-tools-tool-use-tool-search-tool.md).
 - **Design tool responses to return only high-signal information.** Return semantic, stable identifiers (for example, slugs or UUIDs) rather than opaque internal references, and include only the fields Claude needs to reason about its next step. Bloated responses waste context and make it harder for Claude to extract what matters.
+- **Ask for an explanation, not reasoning.** If a parameter asks Claude why it is making the call, ask for a short explanation or the supporting evidence. A parameter that asks for the model's thinking or step-by-step reasoning may lead to a `reasoning_extraction` refusal. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 ### Example of a good tool description
 
@@ -16260,10 +17264,10 @@ In some cases, you may want Claude to use a specific tool to answer the user's q
 
 Not every model and setting supports forced tool use. Where it isn't supported, `tool_choice: {"type": "any"}` and `tool_choice: {"type": "tool", "name": "..."}` fail, while `tool_choice: {"type": "auto"}` (the default) and `tool_choice: {"type": "none"}` still work:
 
-| Model or setting                                                                                         | Restriction                                                                              | What to use instead                                                                                                                                                                                                                                                                                                          |
-|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Manual [extended thinking](../Guides/build-with-claude-extended-thinking.md) (`thinking: {type: "enabled"}`) | `any` and `tool` are not supported and result in an error                                | `auto` or `none`. [Adaptive thinking](../Guides/build-with-claude-thinking.md) itself doesn't block forced tool use (Claude Opus 5 supports it with thinking on); the models in the next row reject forced tool use regardless of thinking settings                                                                              |
-| Claude Opus 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md)              | `any` and `tool` return a [400 error](../Endpoints/errors.md#forced-tool-use-not-supported) | `auto` with [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) to guarantee schema-valid tool inputs, or [structured outputs](../Guides/build-with-claude-structured-outputs.md) when you need a response in a fixed JSON shape. Prompting still influences which tool `auto` picks. `none` is also supported |
+| Model or setting                                                                                               | Restriction                                                                              | What to use instead                                                                                                                                                                                                                                                                                                          |
+|----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Manual [extended thinking](../Guides/build-with-claude-extended-thinking.md) (`thinking: {type: "enabled"}`)       | `any` and `tool` are not supported and result in an error                                | `auto` or `none`. [Adaptive thinking](../Guides/build-with-claude-thinking.md) itself doesn't block forced tool use (Claude Opus 5 supports it with thinking on); the models in the next row reject forced tool use regardless of thinking settings                                                                              |
+| Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md) | `any` and `tool` return a [400 error](../Endpoints/errors.md#forced-tool-use-not-supported) | `auto` with [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) to guarantee schema-valid tool inputs, or [structured outputs](../Guides/build-with-claude-structured-outputs.md) when you need a response in a fixed JSON shape. Prompting still influences which tool `auto` picks. `none` is also supported |
 
 On models that support it, the highlighted lines are the only difference from a standard tool use request:
 
@@ -16401,7 +17405,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-manage-tool-contex
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -16560,7 +17564,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -16653,7 +17657,7 @@ Reach out through the [feedback form](https://forms.gle/YXC2EKGMhjN1c4L88) to sh
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Use cases
 
@@ -16804,7 +17808,7 @@ print(message)
 
 Claude's reply to a request like the previous one ends with a `tool_use` block that requests a memory operation, such as `view /memories`. Your application executes the operation and returns the result in a `tool_result` block, then sends the conversation back so Claude can continue: the standard [tool-use loop](agents-and-tools-tool-use-handle-tool-calls.md).
 
-Four SDKs provide memory tool helpers that handle the tool interface and the loop. Subclass `BetaAbstractMemoryTool` (Python and C#), use `betaMemoryTool` (TypeScript), or implement `BetaMemoryToolHandler` (Java) to back memory with your own storage, such as files on disk, a database, cloud storage, or encrypted files. Python and TypeScript also ship a ready-made local-filesystem implementation, `BetaLocalFilesystemMemoryTool`. The helper and tool-runner surfaces live in each SDK's beta namespace even though the memory tool itself doesn't require a beta header. The Go and Ruby SDKs have no memory helper, so those examples run the tool-use loop themselves, and PHP wraps your handler closure in its generic `BetaRunnableTool`. All three use an in-memory store that you replace with your own storage.
+Four SDKs provide memory tool helpers that handle the tool interface and the loop. Subclass `BetaAbstractMemoryTool` (Python and C#), use `betaMemoryTool` (TypeScript), or implement `BetaMemoryToolHandler` (Java) to back memory with your own storage, such as files on disk, a database, cloud storage, or encrypted files. Python and TypeScript also ship a ready-made local-filesystem implementation, `BetaLocalFilesystemMemoryTool`. The helper and tool-runner surfaces live in your SDK's beta namespace even though the memory tool itself doesn't require a beta header. The Go and Ruby SDKs have no memory helper, so those examples run the tool-use loop themselves, and PHP wraps your handler closure in its generic `BetaRunnableTool`. All three use an in-memory store that you replace with your own storage.
 
 Python
 
@@ -16890,7 +17894,7 @@ Here're the files and directories up to 2 levels deep in {path}, excluding hidde
 - Excludes hidden items (files starting with `.`) and `node_modules`
 - Uses a tab character between the size and the path
 
-The first `view` of `/memories` on an empty store is not an error. The SDKs' local-filesystem memory tools (`BetaLocalFilesystemMemoryTool`) create the memory root before Claude's first call and return the listing header followed by a single size-and-path line for the empty directory itself.
+The first `view` of `/memories` on an empty store is not an error. Where your SDK ships a local-filesystem memory tool, `BetaLocalFilesystemMemoryTool`, it creates the memory root before Claude's first call and returns the listing header followed by a single size-and-path line for the empty directory itself.
 
 **For files:** Return file contents with a header and line numbers:
 
@@ -17203,7 +18207,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -17413,7 +18417,7 @@ Claude called get_weather with {"location": "San Francisco, CA"}
 The current weather in San Francisco is 15 degrees Celsius with partly cloudy skies.
 ```
 
-[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md) covers each step in detail, including result formatting and error signaling; [Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md) covers responses that call several tools at once. To skip writing this round trip yourself, use [Tool Runner](agents-and-tools-tool-use-tool-runner.md): the SDKs execute your tools and send the results back automatically.
+[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md) covers each step in detail, including result formatting and error signaling; [Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md) covers responses that call several tools at once. To skip writing this round trip yourself, use [Tool Runner](agents-and-tools-tool-use-tool-runner.md): the SDK executes your tools and sends the results back automatically.
 
 For the full conceptual model including the agentic loop and when to choose each approach, see [How tool use works](agents-and-tools-tool-use-how-tool-use-works.md).
 
@@ -17610,7 +18614,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -17958,7 +18962,7 @@ print(response.content)
 
 ### Exactly one tool call
 
-When `tool_choice` type is `any` or `tool`, setting `disable_parallel_tool_use: true` means Claude calls exactly one tool. Claude Opus 5.5, Claude Fable 5.1, and Claude Mythos 5.1 don't support these `tool_choice` types (see [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use)). The following example uses `any`. The same field works with `tool`:
+When `tool_choice` type is `any` or `tool`, setting `disable_parallel_tool_use: true` means Claude calls exactly one tool. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 don't support these `tool_choice` types (see [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use)). The following example uses `any`. The same field works with `tool`:
 
 cURL
 
@@ -18133,7 +19137,7 @@ Let Claude call your tools from code in the code execution container, cutting mo
 
 Programmatic tool calling
 
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
+[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
 
 Not eligible
 
@@ -18898,7 +19902,7 @@ Consider using Anthropic's managed solution if you're using the Claude API, [Cla
 
 Programmatic tool calling is built on the code execution infrastructure and uses the same sandbox containers. Container data, including execution artifacts and outputs, is retained for up to 30 days.
 
-For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Next steps
 
@@ -18932,7 +19936,7 @@ Supported models
 - Fable 5 and 5.1
 - Mythos 5 and 5.1
 - Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
-- Sonnet 4.5, 4.6, and 5
+- Sonnet 4.5, 4.6, 5, and 5.5
 
 Supported platforms  
 - Claude API
@@ -18958,7 +19962,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -19328,7 +20332,7 @@ This code is also correct when Claude does not mix the two kinds of call. A turn
 
 ## ZDR and allowed_callers
 
-The basic versions of web search (`web_search_20250305`) and web fetch (`web_fetch_20250910`) are eligible for [Zero Data Retention (ZDR)](../Other/manage-claude-api-and-data-retention.md).
+The basic versions of web search (`web_search_20250305`) and web fetch (`web_fetch_20250910`) are eligible for [Zero Data Retention (ZDR)](../Guides/build-with-claude-api-and-data-retention.md).
 
 The `_20260209` and later versions with dynamic filtering are **not** ZDR-eligible by default because dynamic filtering relies on code execution internally.
 
@@ -19459,7 +20463,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -19798,7 +20802,7 @@ Strict tool use compiles tool `input_schema` definitions into grammars using the
 
 Strict tool use is HIPAA eligible, but **protected health information (PHI) must not be included in tool schema definitions**. The API caches compiled schemas separately from message content, and these cached schemas do not receive the same PHI protections as prompts and responses. Do not include PHI in `input_schema` property names, `enum` values, `const` values, or `pattern` regular expressions. PHI should only appear in message content (prompts and responses), where it is protected under HIPAA safeguards.
 
-For ZDR and HIPAA eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+For ZDR and HIPAA eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 ## Next steps
 
@@ -19840,7 +20844,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.m
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -19923,7 +20927,7 @@ Give Claude the Anthropic-defined text editor tool to view, create, and edit fil
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 Claude can use an Anthropic-schema text editor tool to view and modify text files, helping you debug, fix, and improve your code or other text documents. This allows Claude to directly interact with your files, providing hands-on assistance rather than just suggesting changes.
 
@@ -20804,7 +21808,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-combinations.
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -21012,7 +22016,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-reference.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -21209,7 +22213,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -21494,7 +22498,7 @@ for message in runner:
 
 ### Automatic context management
 
-For long-running agentic tasks, the TypeScript and Ruby tool runners support automatic [compaction](../Guides/build-with-claude-context-editing.md#client-side-compaction-sdk), which generates summaries when token usage exceeds a threshold so the conversation can continue beyond context window limits. Both SDKs have deprecated this client-side option in favor of [server-side compaction](../Guides/build-with-claude-compaction-threshold.md), which works with every SDK's tool runner through the `context_management` request parameter. The Python SDK (v1.0 and later) and the Go, Java, C#, and PHP tool runners don't include client-side compaction. The Python, TypeScript, C#, Go, Java, PHP, and Ruby tool runners have a `compact_before_next_turn()` helper for on-demand compaction. See [Compact in a loop](../Guides/build-with-claude-compaction-on-demand.md#compact-in-a-loop). Use it or a `context_management` compaction edit on a runner, not both.
+For long-running agentic tasks, the TypeScript and Ruby tool runners support automatic [compaction](../Guides/build-with-claude-context-editing.md#client-side-compaction-sdk), which generates summaries when token usage exceeds a threshold so the conversation can continue beyond context window limits. Both SDKs have deprecated this client-side option in favor of [server-side compaction](../Guides/build-with-claude-compaction-threshold.md), which works with every SDK's tool runner through the `context_management` request parameter. The Python SDK (v1.0 and later) and the Go, Java, C#, and PHP tool runners don't include client-side compaction. The tool runner has a `compact_before_next_turn()` helper for on-demand compaction. See [Compact in a loop](../Guides/build-with-claude-compaction-on-demand.md#compact-in-a-loop). Use it or a `context_management` compaction edit on a runner, not both.
 
 ### Debugging tool execution
 
@@ -21517,8 +22521,6 @@ The Go, Ruby, C#, and PHP SDKs don't read `ANTHROPIC_LOG`. Outside Python, no SD
 ### Intercepting tool errors
 
 By default, tool errors are passed back to Claude, which can then respond appropriately. However, you might want to detect errors and handle them differently, for example, to stop execution early or implement custom error handling.
-
-In the Python and TypeScript SDKs, use the tool response method (`generate_tool_call_response()` in Python, `generateToolResponse()` in TypeScript) to intercept tool results and check for errors before they're sent to Claude. The other SDKs don't expose that hook. Their tabs describe the closest alternative:
 
 Python
 
@@ -21564,11 +22566,13 @@ for message in runner:
 
 
 
+
+
+Call `runner.generate_tool_call_response()` in the loop to get the tool results and check them for errors before the runner sends them to Claude.
+
 ### Modifying tool results
 
 You can modify tool results before they're sent back to Claude. This is useful for adding metadata such as `cache_control` to enable [prompt caching](../Guides/build-with-claude-prompt-caching.md) on tool results, or for transforming the tool output.
-
-In the Python and TypeScript SDKs, use the tool response method to get the tool result, then modify it before the runner proceeds. Whether you explicitly append the modified result or mutate it in place depends on the SDK. See the code comments in each tab.
 
 Python
 
@@ -21617,6 +22621,10 @@ for message in runner:
 ```
 
 
+
+
+
+Call `runner.generate_tool_call_response()` to get the tool result, modify it, and pass it to `runner.append_messages()` so the runner does not append the original.
 
 
 
@@ -21702,7 +22710,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.m
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -21804,7 +22812,7 @@ Share feedback on this feature through the [feedback form](https://forms.gle/Mhc
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 
 
@@ -22304,7 +23312,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-use-with-prom
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -22509,7 +23517,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-to
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -22676,7 +23684,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -22759,7 +23767,7 @@ Fetch and read content from specific URLs to augment Claude's context with live 
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 The web fetch tool allows Claude to retrieve full content from specified web pages and PDF documents.
 
@@ -23339,7 +24347,7 @@ Path: 04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md
 - Resources
   - [Best practices](../About/about-claude-use-case-guides-overview.md)
   - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
   - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
   - [Release notes](../../20-Models/release-notes-overview.md)
 
@@ -23422,7 +24430,7 @@ Give Claude access to current web content with cited sources, optional dynamic f
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
 
 The web search tool gives Claude direct access to real-time web content, allowing it to answer questions with up-to-date information beyond its knowledge cutoff. The response includes citations for sources drawn from search results.
 
@@ -23525,7 +24533,7 @@ print(response)
 
 
 
-Web search is enabled for your organization unless an administrator has disabled it in the [Claude Console](../Other/usage-limits.md), where they can also restrict which domains it searches. If it's disabled, a request that includes the tool fails with a 400 `invalid_request_error` that says web search is not enabled, rather than an [error code](#errors) inside a search result.
+Web search is enabled for your organization unless an administrator has disabled it in the [Claude Console](../Other/playground.md), where they can also restrict which domains it searches. If it's disabled, a request that includes the tool fails with a 400 `invalid_request_error` that says web search is not enabled, rather than an [error code](#errors) inside a search result.
 
 These organization-level settings in the Claude Console apply to Messages API requests only. [Claude Managed Agents](../Other/managed-agents-overview.md) sessions use only the per-tool `allowed_domains` and `blocked_domains` lists on the agent toolset; see [Restrict web search and web fetch domains](../Other/managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
 
@@ -23827,7 +24835,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "web
 
 You can include the web search tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md). Web search tool calls through the Messages Batches API are priced the same as those in regular Messages API requests.
 
-To protect shared capacity, the Batches API throttles web search requests per organization, so large batches with many searches might take longer to complete. You can see your organization's web search rate limit on the [Rate limits](../Other/usage-limits.md) page in the Claude Console. To request a higher limit, contact sales from that page.
+To protect shared capacity, the Batches API throttles web search requests per organization, so large batches with many searches might take longer to complete. You can see your organization's web search rate limit on the [Rate limits](../Other/playground.md) page in the Claude Console. To request a higher limit, contact sales from that page.
 
 ## Usage and pricing
 

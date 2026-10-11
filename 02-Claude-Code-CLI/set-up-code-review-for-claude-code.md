@@ -2,11 +2,13 @@
 title: "Set up Code Review for Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14233555-set-up-code-review-for-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:31:58Z"
+fetched_at: "2026-10-10T06:25:16Z"
 tags: ["claude-code"]
 ---
 
 # Set up Code Review for Claude Code
+
+September 2, 2026
 
 
 Code Review analyzes your GitHub pull requests and posts findings as inline comments on the lines of code where it found issues. A fleet of specialized agents examine the code changes in the context of your full codebase, looking for logic errors, security vulnerabilities, broken edge cases, and regressions.
@@ -195,7 +197,7 @@ Common GHES setup issues:
 
 ### Is Code Review available as a capability when creating a custom role?
 
-No, Code Review is not available to add to a **[custom role](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)** at this time.
+No, Code Review is not available to add to a **[custom role](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)** at this time.
 
 ------------------------------------------------------------------------
 

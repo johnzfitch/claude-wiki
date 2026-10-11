@@ -264,7 +264,7 @@ Claude Code
 
 
 
-Looking for your API keys? You can view and create them in [Settings → API keys](../Other/usage-limits.md) in the Claude Console.
+Looking for your API keys? You can view and create them in [Settings → API keys](../Other/playground.md) in the Claude Console.
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Admin](http-admin.md)
@@ -274,7 +274,7 @@ Looking for your API keys? You can view and create them in [Settings → API key
 
 GET/v1/organizations/api_keys/{api_key_id}
 
-Retrieve information about a single API key in your organization, looked up by its ID. This Admin API endpoint requires an Admin API key, is intended for programmatic key management, and never returns the key's secret value. To view or create your own API keys, go to [API keys](../Other/usage-limits.md) in the Claude Console.
+Retrieve information about a single API key in your organization, looked up by its ID. This Admin API endpoint requires an Admin API key, is intended for programmatic key management, and never returns the key's secret value. To view or create your own API keys, go to [API keys](../Other/playground.md) in the Claude Console.
 
 ##### Path parameters
 

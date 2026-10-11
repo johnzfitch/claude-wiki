@@ -2,7 +2,7 @@
 title: "Using the Synapse.org Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-09-26T06:40:06Z"
+fetched_at: "2026-10-10T06:25:08Z"
 tags: ["connectors"]
 ---
 
@@ -10,13 +10,13 @@ tags: ["connectors"]
 
 Set up and use the Synapse.org integration with Claude to discover biomedical data and explore project structures across the Synapse platform.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 
 The Synapse.org integration by Sage Bionetworks allows researchers to discover biomedical data across all of Synapse, see the structure of projects, and retrieve information on their data assets for authorized users. This article explains how to set up and use the Synapse.org integration with Claude to advance your research and analysis workflows.
 
-The Synapse.org integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/use-connectors-to-extend-claude-s-capabilities-d041e8447b.md).
+The Synapse.org integration relies upon Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this integration provides[](#what-this-integration-provides)
 

@@ -184,7 +184,7 @@ At launch, Claude Sonnet 5 is available on:
 - **Google Cloud:** available through [Claude on Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md).
 - **Microsoft Foundry:** available through [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md).
 
-Claude Sonnet 5 supports [zero data retention](../04-API-Reference/Other/manage-claude-api-and-data-retention.md) for organizations with ZDR agreements.
+Claude Sonnet 5 supports [zero data retention](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md) for organizations with ZDR agreements.
 
 
 

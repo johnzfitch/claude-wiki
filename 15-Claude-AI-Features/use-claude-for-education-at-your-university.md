@@ -2,11 +2,13 @@
 title: "Use Claude for Education at your university | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11139144-use-claude-for-education-at-your-university"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-09-30T06:31:19Z"
+fetched_at: "2026-10-10T06:27:58Z"
 tags: ["claude-ai"]
 ---
 
 # Use Claude for Education at your university
+
+September 9, 2026
 
 
 This guide helps you use Claude for Education through your university-sponsored account. Find resources and answers to frequently asked questions about getting started, optimizing usage, and troubleshooting issues.
@@ -135,7 +137,7 @@ Review the following resources to help you get the most out of your usage with C
 
 - **[Upload files to Claude](https://support.claude.com/en/articles/8241126)**
 
-- **[What are projects?](what-are-projects.md)**
+- **[What are projects?](https://support.claude.com/en/articles/9517075)**
 
 - **[How can I create and manage projects?](https://support.claude.com/en/articles/9519177)**
 
@@ -143,21 +145,21 @@ Review the following resources to help you get the most out of your usage with C
 
 - **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
 
-- **[Usage limit best practices](../17-Billing-Plans/usage-limit-best-practices-claude-help-center.md)**
+- **[Usage limit best practices](https://support.claude.com/en/articles/9797557)**
 
 - **[Create and edit files with Claude](create-and-edit-files-with-claude.md)**
 
 - **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164)**
 
-- **[Use Google Workspace connectors](../13-Enterprise-Admin/use-google-workspace-connectors-claude-help-center.md)**
+- **[Use Google Workspace connectors](https://support.claude.com/en/articles/10166901)**
 
 - **[Understanding Claude's personalization features](https://support.claude.com/en/articles/10185728)**
 
 - **[Enable and use web search](enabling-and-using-web-search.md)**
 
-- **[How to use Claude in your preferred language](how-to-use-claude-in-your-preferred-language-claude-help-center.md)**
+- **[How to use Claude in your preferred language](https://support.claude.com/en/articles/10769299)**
 
-- **[When should I use web search, extended thinking, and Research?](when-should-i-use-web-search-extended-thinking-and-research.md)**
+- **[When should I use web search, extended thinking, and Research?](https://support.claude.com/en/articles/11095361)**
 
 ------------------------------------------------------------------------
 
@@ -169,7 +171,7 @@ Your SSO configuration is managed by the Primary Owner or Owner on your account.
 
 ### I'm seeing a warning message about remaining messages
 
-Claude has a usage limit that varies based on message length, file attachments, and conversation length. You'll receive warning messages before reaching the limit. When you see the first warning, consider following these **[usage tips](../17-Billing-Plans/usage-limit-best-practices-claude-help-center.md)**.
+Claude has a usage limit that varies based on message length, file attachments, and conversation length. You'll receive warning messages before reaching the limit. When you see the first warning, consider following these **[usage tips](https://support.claude.com/en/articles/9797557)**.
 
 ### I'm seeing an error message about length limit
 
@@ -193,7 +195,7 @@ Review these resources and visit the **[Privacy Center](https://privacy.claude.c
 
 - **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866)**
 
-- **[Can you delete data that I sent via Claude?](../17-Billing-Plans/can-you-delete-data-that-i-sent-via-team-and-enterprise-plans.md)**
+- **[Can you delete data that I sent via Claude?](https://support.claude.com/en/articles/9796617)**
 
 - **[How can I delete or rename a conversation?](https://privacy.claude.com/en/articles/11117329)**
 

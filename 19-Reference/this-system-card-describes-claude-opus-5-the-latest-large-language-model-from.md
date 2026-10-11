@@ -1,8 +1,9 @@
 ---
 title: "This system card describes Claude Opus 5, the latest large language model from…"
-source_url: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude Opus 5 System Card.pdf"
+source_url: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude+Opus+5+System+Card.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-21T06:32:25Z"
+fetched_at: "2026-10-10T06:28:32Z"
+last_modified: "Fri, 24 Jul 2026 21:52:40 GMT"
 tags: ["news-research"]
 ---
 

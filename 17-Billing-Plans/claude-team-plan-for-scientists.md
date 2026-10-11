@@ -2,7 +2,7 @@
 title: "Claude Team plan for scientists | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16634237"
 category: "17-Billing-Plans"
-fetched_at: "2026-09-30T06:33:02Z"
+fetched_at: "2026-10-10T06:28:21Z"
 tags: ["billing"]
 ---
 
@@ -26,6 +26,8 @@ Every seat includes everything in Claude Team:
 - Single sign-on (SSO)
 
 Premium seats add five times more usage and higher limits for long-running analyses.
+
+Claude Max and Team plans include monthly credits for the Claude API. On the Team plan for scientists, you’ll receive \$20 USD per Standard seat and \$100 USD per Premium seat. Credits for all seats are pooled into one monthly balance, capped at \$500. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 ## What does it cost?
 
