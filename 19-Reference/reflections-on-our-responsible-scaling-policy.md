@@ -2,13 +2,39 @@
 title: "Reflections on our Responsible Scaling Policy \\ Anthropic"
 source_url: "https://www.anthropic.com/news/reflections-on-our-responsible-scaling-policy"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:07Z"
-tags: ["evaluation", "news-research"]
+fetched_at: "2026-10-21T06:30:13Z"
+tags: ["news-research"]
 ---
 
 # Reflections on our Responsible Scaling Policy
 
-May 20, 2024
+- Published
+
+  May 20, 2024
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  Sep 5, 2025
+
+  [Why do we take LLMs seriously as a potential source of biorisk?](biorisk.md)
+
+[View more](https://www.anthropic.com/search?topic=responsible-scaling-policy)
 
 Last summer we published our first [Responsible Scaling Policy (RSP)](anthropics-responsible-scaling-policy.md), which focuses on addressing catastrophic safety failures and misuse of frontier models. In adopting this policy, our primary goal is to help turn high-level safety concepts into practical guidelines for fast-moving technical organizations and demonstrate their viability as possible standards. As we operationalize the policy, we expect to learn a great deal and plan to share our findings. This post shares reflections from implementing the policy so far. We are also working on an updated RSP and will share this soon.
 
@@ -26,7 +52,7 @@ Our current framework for doing so is summarized below, as a set of five high-le
 4.  **Iteratively extending this policy.** Before we proceed with activities which require the ASL-3 standard, we commit to publish a clear description of its upper bound of suitability: a new set of *Red Line Capabilities* for which we must build *Frontier Risk Evaluations*, and which would require a higher standard of safety and security (ASL-4) before proceeding with training and deployment. This includes maintaining a clear evaluation process and summary of our evaluations publicly.
 5.  **Assurance Mechanisms.** We commit to ensuring this policy is executed as intended, by implementing *Assurance Mechanisms*. These should ensure that our evaluation process is stress-tested; our safety and security mitigations are validated publicly or by disinterested experts; our Board of Directors and [Long-Term Benefit Trust](the-long-term-benefit-trust.md) have sufficient oversight over the policy implementation to identify any areas of non-compliance; and that the policy itself is updated via an appropriate process.
 
-## Threat Modeling and Evaluations
+### Threat Modeling and Evaluations
 
 Our Frontier Red Team and Alignment Science teams have focused on threat modeling and engaging with domain experts. They are primarily focused on (a) improving threat models to determine which capabilities would warrant the ASL-3 standard of security and safety, (b) working with teams developing ASL-3 controls to ensure that those controls are tailored to the correct risks, and (c) mapping capabilities which the ASL-3 standard would be insufficient to handle, and which we would continue to test for even once it is implemented. Some key reflections are:
 
@@ -34,7 +60,7 @@ Our Frontier Red Team and Alignment Science teams have focused on threat modelin
 - There is reasonable disagreement amongst experts over which risks to prioritize and how new capabilities might cause harm, even in relatively established Chemical, Biological, Radiological, and Nuclear (CBRN) domains. Talking to a wide variety of experts in different sub-domains has been valuable, given the lack of consensus view.
 - Attempting to make threat models quantitative has been helpful for deciding which capabilities and scenarios to prioritize.
 
-Our Frontier Red Team, Alignment Science, Finetuning, and Alignment Stress Testing teams are focused on building evaluations and improving our overall methodology. Currently, we conduct pre-deployment testing in the domains of cybersecurity, CBRN, and Model Autonomy for frontier models which have reached 4x the compute of our most recently tested model (you can read a more detailed description of our most recent set of evaluations on Claude 3 Opus [here](https://cdn.sanity.io/files/4zrzovbb/website/210523b8e11b09c704c5e185fd362fe9e648d457.pdf)). We also test models mid-training if they reach this threshold, and re-test our most capable model every 3 months to account for finetuning improvements. Teams are also focused on building evaluations in a number of new domains to monitor for capabilities for which the ASL-3 standard will still be unsuitable, and identifying ways to make the overall testing process more robust. Some key reflections are:
+Our Frontier Red Team, Alignment Science, Finetuning, and Alignment Stress Testing teams are focused on building evaluations and improving our overall methodology. Currently, we conduct pre-deployment testing in the domains of cybersecurity, CBRN, and Model Autonomy for frontier models which have reached 4x the compute of our most recently tested model (you can read a more detailed description of our most recent set of evaluations on Claude 3 Opus [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/210523b8e11b09c704c5e185fd362fe9e648d457.pdf)). We also test models mid-training if they reach this threshold, and re-test our most capable model every 3 months to account for finetuning improvements. Teams are also focused on building evaluations in a number of new domains to monitor for capabilities for which the ASL-3 standard will still be unsuitable, and identifying ways to make the overall testing process more robust. Some key reflections are:
 
 - Fast iteration cycles with domain experts are especially valuable for recognizing when the difficulty level of a test is poorly calibrated or the task is divorced from the threat model in question.
 - We should increasingly aim to leverage and encourage the growing ecosystem of researchers and firms in this space. Many of the risks we aim to assess, particularly those involving autonomy or misalignment, are inherently complex and speculative, and our own testing and threat modeling is likely incomplete. It will also be valuable to develop a mature external ecosystem that can adequately assess the quality of our claims, as well as offer accessible evals as a service to less well-resourced companies. We have begun to test partnerships with external organizations in these areas.
@@ -48,7 +74,7 @@ Our Frontier Red Team, Alignment Science, Finetuning, and Alignment Stress Testi
   - Techniques can be used to help models complete tasks more effectively, including domain-specific reinforcement learning training, prompt engineering, and supervised fine-tuning. This makes it impossible to guarantee we are eliciting all the relevant model capabilities during testing. A good testing process involves a concerted effort to pass evaluations and invest in capability elicitation improvements. This is important to simulate scenarios where well-resourced malicious actors bypass security controls and gain access to model weights. However, there is no clear distinction between trying extremely hard to elicit a dangerous capability in some model and simply training a model to have that capability. We hope to make more precise and principled claims about what sufficient elicitation would look like in future versions of the policy.
   - There is significant value in making our risk assessment process externally legible. We have therefore aimed to pre-specify test results we think are indicative of an intolerable level of risk when left unmitigated. These clear commitments help avoid production pressures incentivizing the relaxation of standards, although they may inevitably result in somewhat crude or arbitrary thresholds. We would like to explore ways to better aggregate the different sources of evidence described above while maintaining external legibility for verifiable commitments. Similarly, we may explore whether to incorporate other sources of evidence, such as forecasting, which are common in [other domains](https://en.wikipedia.org/wiki/Delphi_method#Applications).
 
-## The ASL-3 Standard
+### The ASL-3 Standard
 
 Our Security, Alignment Science, and Trust and Safety teams have been focused on developing the ASL-3 standard. Their goal is to design and implement a set of controls that will sufficiently mitigate the risk of the model weights being stolen by non-state actors or models being misused via our product surfaces. This standard would be sufficient for many models with capabilities where even a low rate of misuse could be catastrophic. However, it would not be sufficient to handle capabilities which would enable state groups or groups with substantial state backing and resources. Some key reflections are:
 
@@ -60,7 +86,7 @@ Our Security, Alignment Science, and Trust and Safety teams have been focused on
   - Our threat modeling assumes that insider device compromise is our highest risk vector. Given this, one of our main areas of focus has been implementing multi-party authorization, time-bounded access controls in order to reduce the risk of model weights exfiltration. Under this system, employees are granted temporary access and only via the smallest set of necessary permissions. Fortunately, Anthropic has already adopted a culture of peer review across software engineering, research, comms, and finance teams, and so adopting multi-party controls as we approach the ASL-3 level has been a well-received extension of these existing cultural norms.
 - In such a fast-moving field, it is often difficult to define risk mitigations, or even the methods we will use to assess their effectiveness, upfront. We want to make binding commitments where possible while still allowing degrees of freedom when new information and situations arise. We expect it will be most practical, for both the ASL-3 standard and future standards, to provide a high-level sketch of expected mitigations and set clear “attestation” standards they must meet before use. For example, with our security standard, we can clarify the goal of defending against non-state actors without specifying detailed controls in advance, and pair this with a sensible attestation process involving detailed control lists, review from disinterested experts, and board approval.
 
-## Assurance Structures
+### Assurance Structures
 
 Lastly, our Responsible Scaling, Alignment Stress Testing, and Compliance teams have been focused on exploring possible governance, coordination, and assurance structures. We intend to introduce more independent checks over time and are looking to hire a [Risk Manager](https://boards.greenhouse.io/anthropic/jobs/4024668008) to develop these structures, drawing on best practices from other industries and relevant research. Some key reflections are:
 
@@ -69,119 +95,3 @@ Lastly, our Responsible Scaling, Alignment Stress Testing, and Compliance teams 
 - In addition to providing regular updates to our Board of Directors and the [Long-Term Benefit Trust](the-long-term-benefit-trust.md), we have shared evaluations reports and quarterly updates on progress towards future mitigations to all employees. Encouraging employees to feel ownership over the RSP and share areas they would like to see us improve the policy has been immensely helpful, with staff drawing on diverse backgrounds to provide valuable insights. We also recently implemented a non-compliance reporting policy that allows employees to anonymously report concerns to our Responsible Scaling Officer about our implementation of our RSP.
 
 Ensuring future generations of frontier models are trained and deployed responsibly will require serious investment from both Anthropic and others across industry and governments. Our Responsible Scaling Policy has been a powerful rallying point with many teams' objectives over the past months connecting directly back to the major workstreams above. The progress we have made on operationalizing safety during this period has necessitated significant engagement from teams across Anthropic, and there is much more work to be done. Our goal in sharing these reflections ahead of the upcoming AI Seoul Summit is to continue the discussion on creating thoughtful, empirically-grounded frameworks for managing risks from frontier models. We are eager to see more companies adopt their own frameworks and share their own experiences, leading to the development of shared best practices and informing future efforts by governments.
-
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

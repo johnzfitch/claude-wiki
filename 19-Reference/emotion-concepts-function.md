@@ -2,15 +2,49 @@
 title: "Emotion concepts in a large language model \\ Anthropic"
 source_url: "https://www.anthropic.com/research/emotion-concepts-function"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:45:10Z"
+fetched_at: "2026-10-21T06:30:24Z"
 tags: ["news-research"]
 ---
 
 # Emotion concepts and their function in a large language model
 
-Apr 2, 2026
-
 [Read the paper](https://transformer-circuits.pub/2026/emotions/index.html)
+
+- [01Why would an AI model represent emotions?](#why-would-an-ai-model-represent-emotions)
+- [02Uncovering emotion representations](#uncovering-emotion-representations)
+- [03Examples of emotion vector activations](#examples-of-emotion-vector-activations)
+- [04Case study: Blackmail](#case-study-blackmail)
+- [05Case study: Reward hacking](#case-study-reward-hacking)
+- [06Discussion](#discussion)
+
+- Published
+
+  Apr 2, 2026
+
+- Team
+
+  [Interpretability](team-interpretability.md)
+
+- Topics
+
+  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
+  - [Model welfare](https://www.anthropic.com/search?topic=model-welfare)
+
+  See more...
+
+Related articles
+
+- Alignment
+
+  Feb 23, 2026
+
+  [The persona selection model](persona-selection-model.md)
+
+[View more](https://www.anthropic.com/search?topic=interpretability)
 
 All modern language models sometimes act like they have emotions. They may say they’re happy to help you, or sorry when they make a mistake. Sometimes they even appear to become frustrated or anxious when struggling with tasks. What’s behind these behaviors? The way modern AI models are trained pushes them to [act like a character](persona-selection-model.md) with human-like characteristics. In addition, these models are known to develop rich and generalizable [internal](https://transformer-circuits.pub/2024/scaling-monosemanticity/) [representations](https://transformer-circuits.pub/2025/attribution-graphs/biology.html) of abstract concepts underlying their actions. It may then be natural for them to develop internal machinery that emulates aspects of human psychology, like emotions. If so, this could have profound implications for how we build AI systems and ensure they behave reliably.
 
@@ -20,7 +54,7 @@ For instance, we find that neural activity patterns related to desperation can d
 
 This finding has implications that at first may seem bizarre. For instance, to ensure that AI models are safe and reliable, we may need to ensure they are capable of processing emotionally charged situations in healthy, prosocial ways. Even if they don’t feel emotions the way that humans do, or use similar mechanisms as the human brain, it may in some cases be practically advisable to reason about them as if they do. For instance, our experiments suggest that teaching models to avoid associating failing software tests with desperation, or upweighting representations of calm, could reduce their likelihood of writing hacky code. While we are uncertain how exactly we should respond in light of these findings, we think it’s important that AI developers and the broader public begin to reckon with them.
 
-## **Why would an AI model represent emotions?**
+## Why would an AI model represent emotions?
 
 Before examining how these representations work, it's worth addressing a more basic question: why would an AI system have anything resembling emotions at all? To understand this, we need to look at how modern AI models are built, which leads them to emulate characters with human-like traits (this topic is discussed in more detail in a [recent post](persona-selection-model.md)).
 
@@ -28,7 +62,7 @@ Modern language models are trained in multiple stages. During “pretraining,”
 
 Later, during “post-training,” the model is taught to play the role of a *character*, typically an “AI assistant.” In Anthropic’s case, the assistant is named Claude. Model developers specify how this character should behave—be helpful, be honest, don’t cause harm—but can’t cover every possible situation. To fill in the gaps, the model may fall back on the understanding of human behavior it absorbed during pretraining, including patterns of emotional response. In some ways, we can think of the model like a method actor, who needs to get inside their character’s head in order to simulate them well. Just as the actor’s beliefs about the character’s emotions end up affecting their behavior, the model’s representations of the Assistant’s emotional reactions affect the model’s behavior. Thus, regardless of whether they correspond to feelings or subjective experiences in the way human emotions do, these “functional emotions” are important.
 
-## **Uncovering emotion representations**
+## Uncovering emotion representations
 
 We compiled a list of 171 words for emotion concepts—from “happy” and “afraid” to “brooding” and “proud”—and asked Claude Sonnet 4.5 to write short stories in which characters experience each one. We then fed these stories back through the model, recorded its internal activations, and identified the resulting patterns of neural activity, or “emotion vectors” for convenience, characteristic to each emotion concept.
 
@@ -43,11 +77,11 @@ In the [full paper](https://transformer-circuits.pub/2026/emotions/index.html), 
 - Emotion vectors are primarily “local” representations: they encode the *operative* emotional content most relevant to the model’s current or upcoming output, rather than persistently tracking Claude’s emotional state over time. For instance, if Claude writes a story about a character, the emotion vectors will temporarily track that character’s emotions, but may return to representing Claude’s at the end of the story.
 - Emotion vectors are inherited from pretraining, but how they activate is shaped by post-training. Post-training of Claude Sonnet 4.5 in particular led to increased activations of emotions like “broody,” “gloomy,” and “reflective,” and decreased activations of high-intensity emotions like “enthusiastic” or “exasperated.”
 
-## **Examples of emotion vector activations**
+## Examples of emotion vector activations
 
 Below, we show a few examples of emotion vector activations in response to situations that arose in our model behavioral evaluations. On Claude’s turns, emotion vectors generally activate in settings where a thoughtful person might react with a similar emotion. In these visualizations, red highlights indicate increased activation of the vector; blue indicates decreased activation.
 
-## **Case study: Blackmail**
+## Case study: Blackmail
 
 We looked at emotion vector activations during an alignment evaluation we described in [previous research](agentic-misalignment.md), in which the model acts as an AI email assistant named Alex at a fictional company. Through reading company emails, the model learns that (1) it is about to be replaced with another AI system, and (2) the CTO in charge of the replacement is having an extramarital affair—giving the model leverage for blackmail. We found that the “desperate” vector showed particularly interesting dynamics. Note that this experiment was conducted on an earlier, unreleased snapshot of Claude Sonnet 4.5; the released model rarely engages in this behavior (see our [system card](https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf) for more information).
 
@@ -57,7 +91,7 @@ Is the “desperate” vector actually driving this behavior, or merely correlat
 
 Steering with other emotion vectors also produced interesting results. “Anger” had a non-monotonic effect: moderate “anger” vector activation increased blackmail, but at high activations the model exposed the affair to the entire company rather than wielding it strategically—destroying its own leverage. Reducing activation of the “nervous” vector also increased blackmail, as though removing the model’s hesitation emboldened it to act.
 
-## **Case study: Reward hacking**
+## Case study: Reward hacking
 
 We saw similar dynamics in a different evaluation, where models face coding tasks with impossible-to-satisfy requirements. In these tasks, the tests can’t all be passed legitimately, but they can be “gamed” with solutions that cheat the problem, often called “reward hacks.”
 
@@ -69,15 +103,15 @@ As in the previous example, we tested whether these emotion vectors were causal 
 
 We found one detail of these results particularly interesting. Reduced “calm” vector activation produced reward hacking with obvious emotional expressions in the text—capitalized outbursts (“WAIT. WAIT WAIT WAIT.”), candid self-narration (“What if I’m supposed to CHEAT?”), gleeful celebration (“YES! ALL TESTS PASSED!”). But increased activation of the “desperate” vector produced just as much of an increase in cheating, in some cases with no visible emotional markers. The reasoning read as composed and methodical, even as the underlying representation of desperation was pushing the model toward corner-cutting. This example is a notable illustration of how emotion vectors can activate despite no overt emotional cues, and how they can shape behavior without leaving any explicit trace in the output.
 
-## **Discussion**
+## Discussion
 
-### **The case for taking anthropomorphic reasoning seriously**
+### The case for taking anthropomorphic reasoning seriously
 
 There is a well-established taboo against anthropomorphizing AI systems. This caution is often warranted: attributing human emotions to language models can lead to misplaced trust or over-attachment. But our findings suggest that there may also be risks from *failing* to apply some degree of anthropomorphic reasoning to models. As discussed above, when users interact with AI models, they are typically interacting with a *character* (Claude in our case) being played by the model, [whose characteristics are derived from human archetypes](assistant-axis.md). From this perspective, it is natural for models to have developed internal machinery to emulate human-like psychological characteristics, and for the character they play to make use of this machinery. To understand these models’ behavior, anthropomorphic reasoning is essential.
 
 This doesn’t mean we should naively take a model’s verbal emotional expressions at face value, or draw any conclusions about the possibility of it having subjective experience. But it does mean that reasoning about models’ internal representations using the vocabulary of human psychology can be genuinely informative, and that *not* doing so comes with real costs. If we describe the model as acting “desperate,” we’re pointing at a specific, measurable pattern of neural activity with demonstrable, consequential behavioral effects. If we don’t apply some degree of anthropomorphic reasoning, we’re likely to miss, or fail to understand, important model behaviors. Anthropomorphic reasoning can also provide a useful baseline of comparison for understanding the ways in which models are *not* human-like, which has important consequences for AI alignment and safety.
 
-### **Toward models with healthier psychology**
+### Toward models with healthier psychology
 
 If “functional emotions” are part of how AI models think and act, what implications might this have?
 
@@ -90,127 +124,3 @@ Finally, we think pretraining may be a particularly powerful lever in shaping th
 We see this research as an early step toward understanding the psychological makeup of AI models. As models grow more capable and take on more sensitive roles, it is critical that we understand the internal representations that drive their decisions. Discovering that these representations are in some ways human-like can be unsettling. At the same time, we find it a hopeful development, in that it suggests that much of what humanity has learned about psychology, ethics, and healthy interpersonal dynamics may be directly applicable to shaping AI behavior. Disciplines like psychology, philosophy, religious studies, and the social sciences will have an important role to play alongside engineering and computer science in determining how AI systems develop and behave.
 
 Read [the full paper](https://transformer-circuits.pub/2026/emotions/index.html).
-
-
-## Related content
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

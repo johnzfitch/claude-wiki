@@ -2,7 +2,7 @@
 title: "Week 32 · August 3–7, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w32"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-25T06:29:48Z"
+fetched_at: "2026-10-16T06:24:59Z"
 tags: ["claude-code"]
 ---
 
@@ -76,7 +76,7 @@ Sandbox credential files accept [`mode: “mask”`](sandboxing.md#mask-credenti
 
 Marketplaces can distribute a plugin as a [zip archive](../08-Plugins-Skills/plugins-marketplace-reference.md#archive-plugin-source) with the new `archive` source, downloaded over HTTPS with an optional SHA-256 pin, so installs work without git or npm
 
-`/review` is now an alias of [`/code-review`](code-review.md#review-a-diff-locally), and `/code-review` with no effort level reuses the level you typed last
+`/review` is now an alias of [`/code-review`](code-review-local.md), and `/code-review` with no effort level reuses the level you typed last
 
 A session you copy with [`/fork`](../09-Agents-Patterns/agent-view.md#copy-the-session-with-%2Ffork) now makes its code changes in a worktree of its own instead of the original session’s checkout
 

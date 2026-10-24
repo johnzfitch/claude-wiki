@@ -2,7 +2,7 @@
 title: "Create Federation Rule - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/federation/rules/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-09T06:27:53Z"
+fetched_at: "2026-10-17T06:26:04Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fcreate)
 
 
 
@@ -141,7 +141,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -151,9 +151,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -224,13 +226,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -238,9 +242,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -259,6 +263,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Federation Rule
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_rules
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -266,6 +276,18 @@ A beta version of this method exists and may have additional functionality. [Vie
 Create a federation rule owned by your organization.
 
 The referenced issuer and the target service account must already exist in the same organization; invalid references are rejected with a 400 error. The workspace reference is validated. Membership is not checked at rule creation: token exchange resolves a single enabled workspace per call and is rejected unless the target service account is a member of that workspace (it is implicitly a member of the default workspace). Rules on well-known shared issuers (GitHub Actions, GitLab, Buildkite, Terraform Cloud, Google) must constrain tenant identity via an identity-bearing claim, a tenant-pinning subject prefix (such as `repo:YOUR_ORG/...`), or a CEL condition referencing one of those identity claims (e.g. `claims.repository_owner`). OAuth callers may only manage rules whose `oauth_scope` is `workspace:developer` or `workspace:inference`; other scopes require a Console session.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 

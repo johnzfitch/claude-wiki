@@ -2,7 +2,7 @@
 title: "Inference hooks - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/inference-hooks"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-08T06:25:16Z"
+fetched_at: "2026-10-23T06:28:46Z"
 tags: ["api", "hooks"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "hooks"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Finference-hooks)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Finference-hooks)
 
 
 
@@ -32,11 +32,11 @@ tags: ["api", "hooks"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)[Organization webhooks (beta)](manage-claude-organization-webhooks.md)[User profiles](manage-claude-user-profiles.md)[Verification Portal links](manage-claude-user-profiles-verification-portal.md)
 
 Authentication
 
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
+[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF with the Admin API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
 
 Identity providers
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -60,7 +62,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Inference hooks
 
@@ -78,13 +80,13 @@ Send each governed prompt to your organization's AI security server for an allow
 
 
 
-Inference hooks are in beta and available to Claude Enterprise organizations. Configuring them requires the `organization:manage` permission in claude.ai, which only the Owner and Primary owner roles hold; see [Configure Inference hooks](manage-claude-inference-hooks-configuration.md).
+Inference hooks are available only to Claude Enterprise organizations. Configuring them requires the `organization:manage` permission in claude.ai, which only the Owner and Primary owner roles hold; see [Configure Inference hooks](manage-claude-inference-hooks-configuration.md).
 
 Inference hooks let a Claude Enterprise organization route every governed prompt through an AI security server, an HTTPS service that the organization or its security vendor operates, before inference runs. When a user submits a prompt, Anthropic sends the conversation transcript to your AI security server and waits for an allow or deny verdict; a denied request never reaches the model. Security and compliance teams use Inference hooks to enforce data policies inline, and developers build the AI security server that evaluates each request.
 
-Because the hook runs on Anthropic's servers, after the request leaves the client and before the model runs, it applies to every governed request uniformly, with nothing to install or deploy on user devices.
+Because the hook runs on Anthropic's servers, after the request leaves the client and before the model runs, it applies to every governed request uniformly, across all Claude products in your organization, with nothing to install or deploy on user devices.
 
-There are two hook events. `prompt` fires once per governed inference request, before inference begins. `tool_call` fires when Claude's response contains tool calls, before any of them runs, in organizations that have **Validate tool calls** on.
+There are two hook events. `prompt` fires once for each governed inference request, before inference starts. `tool_call` fires when Claude's response contains tool calls, before any of them runs, in organizations that have **Validate tool calls** on.
 
 ------------------------------------------------------------------------
 
@@ -103,11 +105,11 @@ Your AI security server sees what the user sees: transcript text, tool calls and
 
 The Inference hooks system doesn't keep its own copy of prompt or response content. It stores only your hook configuration and metadata about hook activity, such as verdicts, timestamps, and request identifiers. The Claude product you use stores prompts and responses under its own data retention rules, whether or not hooks are on. For example, a message that a hook blocks on claude.ai stays in the conversation.
 
-If your AI security server is unreachable, returns an error, or doesn't respond within the timeout, your organization's failure handling setting decides the outcome: block the request, or allow it to proceed without inspection. Sustained failures attributable to your server trip a circuit breaker: Anthropic stops contacting it and applies your failure handling setting to every request, then resets the breaker automatically once it detects that your server is returning verdicts again; see [Circuit breaker](manage-claude-inference-hooks-configuration.md#circuit-breaker).
+If your AI security server is unreachable, returns an error, or doesn't respond within the timeout, your organization's failure handling setting determines the outcome: block the request, or allow it to proceed without inspection. Sustained failures attributable to your server trip a circuit breaker: Anthropic stops contacting it and applies your failure handling setting to every request, then resets the breaker automatically once it detects that your server is returning verdicts again; see [Circuit breaker](manage-claude-inference-hooks-configuration.md#circuit-breaker).
 
 Enforcement can roll out at your pace, so nobody has to be blocked on day one: shadow mode observes verdicts on live traffic without blocking anything, a rollout percentage inspects a chosen fraction of requests, and exclusions exempt members of chosen roles entirely. See [Configure Inference hooks](manage-claude-inference-hooks-configuration.md).
 
-For the full request and response schemas, signature verification, and operational details, see [Develop an integration](manage-claude-inference-hooks-endpoint.md).
+For the full request and response schemas, signature verification, and operational details, see [Develop an Inference hooks integration](manage-claude-inference-hooks-endpoint.md).
 
 ------------------------------------------------------------------------
 
@@ -137,7 +139,7 @@ The steps depend on the app:
 
 - Attachments are represented by metadata and extracted text. Raw file and image bytes are never sent, so image-only content (for example, a screenshot of a document) is not inspected.
 - Verdicts are allow or deny. Rewriting or redacting a prompt is not supported.
-- Platform organizations (API access through the Claude Platform) are out of scope.
+- Claude Platform organizations (API access through the Platform) are out of scope.
 
 ------------------------------------------------------------------------
 
@@ -145,9 +147,9 @@ The steps depend on the app:
 
 Inference hooks are available to Claude Enterprise organizations. Configuring them requires the `organization:manage` permission, which only the Owner and Primary owner roles hold.
 
-One hook governs conversations across claude.ai, Cowork, Claude Code, and Claude Tag sessions in your Claude Enterprise organization, whether they run on the web, in the desktop or mobile apps, in the CLI, or in Slack. Inference hooks are not available on Amazon Bedrock or Google Cloud.
+One hook governs conversations across all Claude products in your Claude Enterprise organization, including, but not limited to, claude.ai, Cowork, Claude Code, Claude for Microsoft 365, Claude Tag, and Claude in Chrome, whether they run on the web, in the desktop or mobile apps, in the CLI, or in Slack. Inference hooks are not available on Amazon Bedrock or Google Cloud.
 
-Governed requests are the inference requests behind the user's conversation. Ancillary requests aren't sent to your endpoint. These include conversation title generation and a measurement that Anthropic runs on Claude's reply after Claude Tag has posted it in Slack. System prompts and tool definitions are never included in what is sent. In voice mode, prompts and tool calls are sent to your endpoint too, though a small share of tool calls isn't, so don't rely on inference hooks as your only control for voice. If your endpoint denies a request in voice mode, the voice call usually ends with a general error message, and your deny reason isn't shown.
+Governed requests are the inference requests behind the user's conversation or session. System prompts and tool definitions are never included in what is sent. In voice mode, prompts and tool calls are sent to your endpoint too, though a small share of tool calls isn't, so don't rely on Inference hooks as your only control for voice. If your endpoint denies a request in voice mode, the voice call usually ends with a general error message, and your deny reason isn't shown.
 
 With **Validate tool calls** on, `tool_call` events may leave out calls to some of claude.ai's own tools, such as tools that list, search for, or suggest connectors, plugins, or skills, suggest starting research or turning on web search, search for other tools, switch to a larger model, end the chat, give Claude the user's local time, or read the user's own past chats and saved memory. These calls and their results stay in the conversation, so the next `prompt` event from that conversation, if there is one, includes them.
 
@@ -155,7 +157,7 @@ Some features that Anthropic runs for your organization make model calls of thei
 
 - **Claude Security scans (beta).** [Claude Security](../../15-Claude-AI-Features/product-claude-security.md) runs hosted scans on your connected repositories. A session a user opens to fix a finding, and the Claude Security plugin in Claude Code, are governed.
 - **Code Review (research preview).** [Code Review](../../02-Claude-Code-CLI/code-review.md) runs reviews on your GitHub pull requests. A review a user runs locally in Claude Code with `/code-review` is governed.
-- **Smart reports (beta).** Anthropic makes model calls to build your organization's [smart reports](../../15-Claude-AI-Features/get-started-with-smart-reports.md).
+- **Smart reports (beta).** Anthropic makes model calls to build your organization's [smart reports](../../15-Claude-AI-Features/get-started-with-smart-reports.md). What a user types or uploads when creating a report is governed.
 
 ------------------------------------------------------------------------
 
@@ -169,7 +171,7 @@ Both features serve security, legal, and compliance teams at Claude Enterprise o
 | What it does | Allows or denies each governed request in real time | Retrieves activity, chats, files, projects, session transcripts, and users for audit and export |
 | Direction    | Anthropic calls your AI security server             | You call Anthropic's API                                                                        |
 
-Use Inference hooks to stop a request before it reaches the model, and the [Compliance API](manage-claude-compliance-api.md) to audit what happened afterward.
+Use Inference hooks to stop a request before it reaches the model, and the [Compliance API](manage-claude-compliance-api.md) to audit what occurred afterward.
 
 ------------------------------------------------------------------------
 

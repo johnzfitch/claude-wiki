@@ -2,7 +2,7 @@
 title: "Intuit Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/intuit"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:50Z"
+fetched_at: "2026-10-23T06:29:58Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,7 +41,7 @@ Intuit, the global financial technology platform for consumers and small busines
 
 Intuit’s flagship product, TurboTax, helps millions of Americans accurately prepare and file their taxes each year.
 
-"There is a lot of fear associated with doing your taxes because you're worried about unintentionally making a mistake," explains Nhung Ho, Vice President of AI at Intuit. "We want to build experiences that help our customers feel much more confident at every step."
+“There is a lot of fear associated with doing your taxes because you’re worried about unintentionally making a mistake,” explains Nhung Ho, Vice President of AI at Intuit. “We want to build experiences that help our customers feel much more confident at every step.”
 
 Applying its years of domain expertise, robust data set and proprietary tax knowledge engine, Intuit worked closely with Anthropic and Amazon Web Services to further boost filer confidence by integrating Claude via Amazon Bedrock into their AI financial assistant, Intuit Assist for TurboTax. During federal tax reviews, where customers see a summary of their return, the combined work of Intuit, Anthropic and AWS provides simple explanations of tax calculations, helping users better understand how their tax result is calculated and feel assured their taxes were completed correctly.
 
@@ -49,11 +49,11 @@ Applying its years of domain expertise, robust data set and proprietary tax know
 
 As an early pioneer in incorporating generative AI into their products and services, Intuit is always on the lookout for cutting-edge technologies.
 
-By combining Claude's advanced natural language capabilities with its extensive tax knowledge engine, Intuit provides consumers with more comprehensive, precise, and helpful generative AI-powered explanations throughout the tax filing experience.
+By combining Claude’s advanced natural language capabilities with its extensive tax knowledge engine, Intuit provides consumers with more comprehensive, precise, and helpful generative AI-powered explanations throughout the tax filing experience.
 
 Intuit’s tax engine codifies more than 100,000 pages, including descriptions and interpretations of the tax code, and more than 15,000 federal tax forms and state tax forms for individual and business tax filers in the U.S. Intuit customers know they can count on TurboTax to be up to date on the latest tax laws when guiding them through the filing process.
 
-To further optimize Claude's performance for TurboTax, Intuit collaborated extensively with Anthropic's team. "Anthropic provides exceptional support, giving us direct access to expert researchers who help us get the most out of Claude," remarks Nhung. "Our close partnership has been instrumental in pushing output quality for our customers."
+To further optimize Claude’s performance for TurboTax, Intuit collaborated extensively with Anthropic’s team. “Anthropic provides exceptional support, giving us direct access to expert researchers who help us get the most out of Claude,” remarks Nhung. “Our close partnership has been instrumental in pushing output quality for our customers.”
 
 ## Increasing confidence for millions of tax filers
 
@@ -72,7 +72,7 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 ### Pictet turns weeks of work into hours with Claude Code
 
 
-### How Satispay's engineers write 75% of their code with Claude
+### How Satispay’s engineers write 75% of their code with Claude
 
 
 ### OffDeal powers every stage of M&A advisory with one Claude-based agent
@@ -86,7 +86,8 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -104,12 +105,12 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -142,7 +143,7 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -160,6 +161,7 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -175,7 +177,7 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -210,7 +212,8 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -228,12 +231,12 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -266,7 +269,7 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -284,6 +287,7 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -299,7 +303,7 @@ Looking ahead, Nhung notes, “We are incredibly excited about Anthropic’s cur
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

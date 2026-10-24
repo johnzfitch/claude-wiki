@@ -2,7 +2,7 @@
 title: "Use visual and interactive content on Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13663666-use-visual-and-interactive-content-on-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:11Z"
+fetched_at: "2026-10-23T06:29:02Z"
 tags: ["billing", "enterprise"]
 ---
 

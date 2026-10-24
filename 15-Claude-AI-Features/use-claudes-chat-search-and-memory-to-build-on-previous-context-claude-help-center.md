@@ -2,7 +2,7 @@
 title: "Use Claude’s chat search and memory to build on previous context | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11817273"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:01Z"
+fetched_at: "2026-10-23T06:28:52Z"
 tags: ["claude-ai", "enterprise", "search"]
 ---
 
@@ -47,8 +47,9 @@ When Claude searches your previous chats, you will see this reflected in your cu
 
 ## Can I prevent Claude from searching my past chats?
 
-Yes, navigate to **[Settings \> Memory](https://claude.ai/new#settings/customize-memory)** and switch the toggle next to "Search and reference chats" off:
+Yes, navigate to **[Settings \> Memory](https://claude.ai/new#settings/customize-memory)** and switch the toggle next to **Search and reference chats** off.
 
+**Note:** This setting also controls whether Claude Duet, a research preview for Pro and Max plans, can search your past chats. Learn more about **[getting started with Claude](get-started-with-claude-duet-claude-help-center.md)** [**Duet**](get-started-with-claude-duet-claude-help-center.md).
 
 ## Can I exclude a specific past chat from searches?
 
@@ -76,13 +77,15 @@ In addition to searching past chats, enabling Claude's memory feature adds sever
 
 Claude saves memory as a set of individual topics as you chat, rather than summarizing conversations after they end. Mention that a deadline moved, and your next conversation already knows. Claude saves on its own, and you can also tell Claude to "remember this" to save something directly.
 
-### Project memory and summary
+### Project memory
 
-Each project has its own separate memory space and dedicated project summary, so the context within each of your projects is focused, relevant, and separate from other projects or non-project chats.
+Each project has its own memory. While working in a project, Claude uses the project's memory alongside your memory from chats outside of projects, but not memory from other projects. New memory is saved to the project, and if you have memory turned on, Claude can reference it in chats outside of projects too. To keep a project's memory fully separate, turn off "Use account memory" under **Memory** on the project's page.
 
 ### One memory across chat and Claude Cowork
 
 What Claude remembers from your chats is available when you hand it a task in Cowork in the cloud, and what comes up in a Cowork task carries back to chat. For example, ask Cowork to draft an update for your manager, and it already knows who that is and how they like updates written.
+
+Claude Duet, a research preview for Pro and Max plans, also uses and adds to your memory, so what Claude knows about you is there from your first message.
 
 To run a single chat or Cowork task without memory, open a new chat, click the “+” menu, and turn off "Memory." Claude won't use or add to your memory in that chat or task, and your other chats and tasks aren't affected. Your memory setting is set when the task starts and can't be changed later.
 

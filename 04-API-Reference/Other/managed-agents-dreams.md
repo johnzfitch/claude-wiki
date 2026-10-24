@@ -2,7 +2,7 @@
 title: "Dreams - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/dreams"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:10Z"
+fetched_at: "2026-10-20T06:40:31Z"
 tags: ["api", "billing"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "billing"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fdreams)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fdreams)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -58,7 +58,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -84,7 +88,7 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Build persistent memory
 
@@ -121,7 +125,7 @@ A **dream** is an asynchronous job that takes:
 - a pre-existing **memory store:** the store Claude verifies, deduplicates, and reorganizes, and
 - 1 to 100 **sessions:** past transcripts Claude mines for patterns and insights to fold into the output.
 
-The dream produces another **output memory store**, separate from the input. The output store ID appears in the dream's `outputs[]` shortly after the dream starts `running`, once the workflow has cloned the input store; a `running` dream can briefly report an empty `outputs[]`.
+The dream produces another **output memory store**, separate from the input. The output store ID appears in the dream's `outputs` array shortly after the dream starts `running`, once the workflow has cloned the input store; a `running` dream can briefly report an empty `outputs` array.
 
 ## Create a dream
 
@@ -143,6 +147,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -151,13 +157,13 @@ dream = client.beta.dreams.create(
         {"type": "memory_store", "memory_store_id": store_id},
         {"type": "sessions", "session_ids": [session_a, session_b]},
     ],
-    model="claude-opus-4-8",
+    model="claude-opus-5-5",
     instructions="Focus on coding-style preferences; ignore one-off debugging notes.",
 )
 print(dream.id)  # drm_01...
 ```
 
-Dreaming inputs include the pre-existing memory store and an array of sessions. The selected model runs the dreaming pipeline. During the research preview, `claude-opus-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-5`, and `claude-sonnet-4-6` are supported. You can optionally pass `instructions` to steer the dreaming process. See [Steer with instructions](#steer-with-instructions).
+Dreaming inputs include the pre-existing memory store and an array of sessions. The selected model runs the dreaming pipeline. During the research preview, `claude-opus-5-5`, `claude-fable-5-1`, `claude-opus-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-5-5`, `claude-sonnet-5`, and `claude-sonnet-4-6` are supported. You can optionally pass `instructions` to steer the dreaming process. See [Steer with instructions](#steer-with-instructions).
 
 The response is the full `dream` resource with `status: "pending"`:
 
@@ -171,7 +177,7 @@ The response is the full `dream` resource with `status: "pending"`:
     { "type": "sessions", "session_ids": ["sesn_01...", "sesn_02..."] }
   ],
   "outputs": [],
-  "model": { "id": "claude-opus-4-8" },
+  "model": { "id": "claude-opus-5-5" },
   "instructions": "Focus on coding-style preferences; ignore one-off debugging notes.",
   "session_id": null,
   "created_at": "2026-04-29T17:04:10Z",
@@ -221,6 +227,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -236,7 +244,7 @@ while dream.status in ("pending", "running"):
 |-------------|-------------------------------------------------------------------------------------------------------------------|
 | `pending`   | Dream successfully created and queued.                                                                            |
 | `running`   | The pipeline is processing. `usage` updates as work progresses.                                                   |
-| `completed` | Finished successfully. The `outputs[]` value is the new memory store.                                             |
+| `completed` | Finished successfully. The `outputs` value is the new memory store.                                               |
 | `failed`    | Dreaming run ended with an error. The output memory store is left as-is with whatever was written before failure. |
 | `canceled`  | Dreaming run canceled. The output memory store is left as-is.                                                     |
 
@@ -246,7 +254,7 @@ Once a dream is `running`, its `session_id` field points at the underlying [sess
 
 ## Use the output
 
-When `status` reaches `completed`, the `memory_store` entry in `outputs[]` references a fully populated store. It's an ordinary memory store in your workspace. Review it with the [Memory Stores API](managed-agents-memory.md#view-and-edit-memories) or in the Console, then either:
+When `status` reaches `completed`, the `memory_store` entry in `outputs` references a fully populated store. It's an ordinary memory store in your workspace. Review it with the [Memory Stores API](managed-agents-memory.md#view-and-edit-memories) or in the Console, then either:
 
 - **Leverage it:** attach it to future sessions as a `memory_store` resource in place of (or alongside) the input memory store, or
 - **Discard it:** [delete the memory store](../Endpoints/beta-memory-stores-delete.md) or [archive the memory store](../Endpoints/beta-memory-stores-archive.md).
@@ -268,6 +276,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -318,6 +328,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -346,6 +358,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -356,7 +370,7 @@ Archiving a dream does not touch its output memory store; manage that separately
 
 ## List dreams
 
-Returns all non-archived dreams in the workspace, newest first. Use `limit` (default 20, max 100) and the `page` cursor to paginate. Pass `include_archived=true` to include archived dreams.
+Returns all non-archived dreams in the workspace, newest first. Use `limit` (default 20, max 100) and the `page` cursor to paginate. Set `include_archived` to `true` to include archived dreams.
 
 cURL
 
@@ -375,6 +389,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -402,10 +418,10 @@ Dreams are billed at standard API token rates for the model you select; `usage` 
 
 ## Limits
 
-| Limit                 | Value                                                                                                           |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| Sessions per dream    | 100                                                                                                             |
-| `instructions` length | 4,096 characters                                                                                                |
-| Supported models      | `claude-opus-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-5`, `claude-sonnet-4-6` |
+| Limit                 | Value                                                                                                                                                                       |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Sessions per dream    | 100                                                                                                                                                                         |
+| `instructions` length | 4,096 characters                                                                                                                                                            |
+| Supported models      | `claude-opus-5-5`, `claude-fable-5-1`, `claude-opus-5`, `claude-fable-5`, `claude-opus-4-8`, `claude-opus-4-7`, `claude-sonnet-5-5`, `claude-sonnet-5`, `claude-sonnet-4-6` |
 
 Default rate limits apply to dream creation while this feature is in research preview. [Contact support](https://support.claude.com) if you need higher limits.

@@ -2,7 +2,7 @@
 title: "Use WIF with SPIFFE - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/wif-providers/spiffe"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:08Z"
+fetched_at: "2026-10-20T06:40:20Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-providers%2Fspiffe)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-providers%2Fspiffe)
 
 
 
@@ -46,9 +46,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -60,7 +62,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Identity providers
 
@@ -205,7 +207,7 @@ In Kubernetes, run spiffe-helper as a sidecar container that shares a memory-bac
 
 ## Configure Anthropic
 
-In the Claude Console, open **Settings → Workload identity**, click **Connect workload**, and select **Custom OIDC**. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
+In the Claude Console, go to the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`), click **Connect workload**, and select **Custom OIDC**. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
 
 The wizard creates these resources for you. Use the following values whether you enter them in the wizard or send them to the [Admin API](manage-claude-wif-admin-api.md):
 
@@ -257,11 +259,13 @@ Be as specific as the workload allows. Loosen `subject_prefix` to `spiffe://prod
 
 ## Acquire and use the token
 
-The Claude SDK can either read the JWT-SVID from the file that spiffe-helper maintains or call the SPIFFE Workload API directly through a token-provider callable. The file path is the simplest integration and works in every SDK language. The callable path removes the sidecar but requires a SPIFFE Workload API client in your application's language.
+The Claude SDK can read the JWT-SVID from the file that spiffe-helper maintains or, except in Java, call the SPIFFE Workload API directly through a token provider. The file path is the simplest integration and works in every SDK language. The token-provider path removes the sidecar but requires a SPIFFE Workload API client in your application's language.
 
 File-based with spiffe-helper
 
-Callable through the SPIFFE Workload API
+Token provider through the SPIFFE Workload API
+
+File-based with spiffe-helper
 
 With spiffe-helper writing a fresh JWT-SVID to `/var/run/secrets/anthropic.com/token`, set `ANTHROPIC_IDENTITY_TOKEN_FILE` to that path along with `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`, and `ANTHROPIC_WORKSPACE_ID`. The SDK reads the file on every token exchange, so it always picks up the most recently rotated SVID, and refreshes the Anthropic access token automatically before it expires. See [Environment variables](manage-claude-wif-reference.md#environment-variables) for where each value comes from.
 
@@ -283,6 +287,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -300,6 +306,57 @@ message = client.messages.create(
 )
 print(next(block.text for block in message.content if block.type == "text"))
 ```
+
+Token provider through the SPIFFE Workload API
+
+Except in Java, workloads that link a SPIFFE Workload API client directly can skip spiffe-helper and pass the SDK a token provider that fetches a fresh JWT-SVID from the agent socket. The SDK invokes the provider before each token exchange, so the workload always presents an unexpired SVID. Python ([py-spiffe](https://github.com/HewlettPackard/py-spiffe)) and Go ([go-spiffe](https://github.com/spiffe/go-spiffe)) have mature Workload API clients.
+
+Python
+
+Go
+
+Python
+
+
+
+```python
+import os
+import anthropic
+from anthropic import WorkloadIdentityCredentials
+from spiffe import JwtSource
+
+AUDIENCE = "https://api.anthropic.com"
+
+# Connects to the SPIRE Agent socket at SPIFFE_ENDPOINT_SOCKET.
+jwt_source = JwtSource()
+
+
+def fetch_jwt_svid() -> str:
+    svid = jwt_source.fetch_svid(audience={AUDIENCE})  # audience is a set of strings
+    return svid.token
+
+
+client = anthropic.Anthropic(
+    credentials=WorkloadIdentityCredentials(
+        identity_token_provider=fetch_jwt_svid,
+        federation_rule_id=os.environ["ANTHROPIC_FEDERATION_RULE_ID"],
+        organization_id=os.environ["ANTHROPIC_ORGANIZATION_ID"],
+        service_account_id=os.environ["ANTHROPIC_SERVICE_ACCOUNT_ID"],
+        workspace_id=os.environ.get("ANTHROPIC_WORKSPACE_ID"),
+    ),
+)
+
+message = client.messages.create(
+    model="claude-opus-5-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello, Claude"}],
+)
+print(next(block.text for block in message.content if block.type == "text"))
+```
+
+
+
+For other languages, fetch the JWT-SVID with your runtime's SPIFFE Workload API client (or shell out to `spire-agent api fetch jwt`), write it to a file, and set `ANTHROPIC_IDENTITY_TOKEN_FILE` to that path as in the file-based tab.
 
 ## Verify the setup
 
@@ -322,7 +379,7 @@ spire-agent api fetch jwt \
   | jq -rR 'split(".")[1] | gsub("-";"+") | gsub("_";"/") | @base64d | fromjson'
 ```
 
-The `-output json` flag returns the SVID response and bundle response as a two-element JSON array, so `jq -r '.[0].svids[0].svid'` extracts the bare token. On older SPIRE versions without `-output`, the command prints a labeled block instead. In that case, pipe the default output through `awk '/^[[:space:]]*eyJ/{print $1; exit}'` to extract the token line. Check that `iss` is the OIDC Discovery Provider URL you registered, `sub` is the workload's SPIFFE ID, and `aud` contains `https://api.anthropic.com`. Then run the cURL example from [Acquire and use the token](#acquire-and-use-the-token). A successful exchange returns an `access_token` beginning with `sk-ant-oat01-`. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange). The most common SPIRE-side cause is a mismatch between SPIRE Server's `jwt_issuer` and the URL registered as the federation issuer.
+The `-output json` flag returns the SVID response and bundle response as a two-element JSON array, so `jq -r '.[0].svids[0].svid'` extracts the bare token. On older SPIRE versions without `-output`, the command prints a labeled block instead. In that case, pipe the default output through `awk '/^[[:space:]]*eyJ/{print $1; exit}'` to extract the token line. Check that `iss` is the OIDC Discovery Provider URL you registered, `sub` is the workload's SPIFFE ID, and `aud` contains `https://api.anthropic.com`. Then run the cURL example from [Acquire and use the token](#acquire-and-use-the-token). A successful exchange returns an `access_token` beginning with `sk-ant-oat01-`. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) in the Claude Console for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange). The most common SPIRE-side cause is a mismatch between SPIRE Server's `jwt_issuer` and the URL registered as the federation issuer.
 
 ## Scope your rule
 

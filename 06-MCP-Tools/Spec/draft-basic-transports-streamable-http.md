@@ -2,7 +2,7 @@
 title: "Streamable HTTP - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/transports/streamable-http"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-09T06:27:07Z"
+fetched_at: "2026-10-21T06:29:17Z"
 tags: ["mcp", "mcp-spec"]
 ---
 

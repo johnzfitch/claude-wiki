@@ -2,7 +2,7 @@
 title: "Skills for enterprise - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:31:58Z"
+fetched_at: "2026-10-20T06:36:50Z"
 tags: ["api", "enterprise", "security", "skills"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "enterprise", "security", "skills"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fagent-skills%2Fenterprise)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fagent-skills%2Fenterprise)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Skills
 
@@ -138,7 +138,7 @@ Never deploy Skills from untrusted sources without a full audit. A malicious Ski
 
 Claude Enterprise organizations can turn on automated security scanning for custom Skills in claude.ai and Claude Cowork. After you turn on **Skill and plugin security scanning** at [claude.ai \> Organization settings \> Skills](https://claude.ai/admin-settings/skills), Skills that members then upload or edit in claude.ai or Cowork are scanned for signs of malicious behavior, such as hidden code execution, sending your data to an outside service, or instructions that tamper with Claude's safeguards. A Skill that fails the scan, or whose scan hasn't finished, is blocked from use. A Skill that passes with a warning stays usable behind a caution notice. If scanning is available to your organization, turn it on. It complements, but doesn't replace, the [review checklist](#review-checklist).
 
-Scanning doesn't cover the Claude API. Skills you upload through the Skills API (`/v1/skills`), including from the Claude Console, aren't scanned, so for API deployments, rely on the review checklist and [version pinning](#versioning-strategy). Scanning also doesn't apply to Skills that were already in your organization when you turned it on, or to organizations with certain data handling configurations, such as customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA readiness. For setup steps, exclusions, and result types, see [Get started with skill and plugin scanning](https://support.claude.com/en/articles/15927065-get-started-with-skill-and-plugin-scanning) in the Claude Help Center.
+Scanning doesn't cover the Claude API. Skills you upload through the Skills API (`/v1/skills`), including from the Claude Console, aren't scanned, so for API deployments, rely on the review checklist and [version pinning](#versioning-strategy). Scanning also doesn't apply to Skills that were already in your organization when you turned it on, or to organizations with certain data handling configurations, such as customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA readiness. For setup steps, exclusions, and result types, see [Get started with skill and plugin scanning](../../15-Claude-AI-Features/get-started-with-skill-and-plugin-scanning.md) in the Claude Help Center.
 
 ## Evaluating Skills before deployment
 

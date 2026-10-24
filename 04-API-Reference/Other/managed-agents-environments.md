@@ -2,7 +2,7 @@
 title: "Cloud environment setup - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/environments"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:42Z"
+fetched_at: "2026-10-20T06:39:36Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fenvironments)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fenvironments)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Configure agent environment
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Cloud environment setup
 
@@ -98,17 +110,9 @@ Customize cloud sandboxes for your sessions.
 
 
 
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
-
 Environments define the sandbox configuration where your agent runs. You create an environment once, then reference its ID each time you start a session. Multiple sessions can share the same environment, but each session gets its own isolated sandbox (a fresh Linux container).
 
-This page covers `type: cloud` environments. To run sandboxes on your own infrastructure, see [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md).
+This page covers `type: cloud` environments. To run sandboxes on your own infrastructure, see [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md). To choose between the two, see [Choosing an agent environment](managed-agents-choosing-an-environment.md).
 
 ## Create an environment
 
@@ -129,6 +133,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -178,6 +184,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -191,7 +199,7 @@ session = client.beta.sessions.create(
 
 ### Packages
 
-The `packages` field pre-installs packages into the sandbox before the agent starts. Packages are installed by their respective package managers and cached across sessions that share the same environment. When multiple package managers are specified, they run in alphabetical order (apt, cargo, gem, go, npm, pip). You can optionally pin specific versions. Unpinned packages install the latest version. If the environment uses `limited` [networking](#networking), also set `networking.allow_package_managers` to `true`; otherwise the request is rejected with a 400 error.
+The `packages` field pre-installs packages into the sandbox before the agent starts. Packages are installed by their respective package managers and cached across sessions that share the same environment. When multiple package managers are specified, they run in alphabetical order (apt, cargo, gem, go, npm, pip). You can optionally pin specific versions. Unpinned packages install the latest version. If the environment uses `limited` [networking](#networking), also set `allow_package_managers` in `networking` to `true`; otherwise the request is rejected with a 400 error.
 
 cURL
 
@@ -210,6 +218,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -253,7 +263,9 @@ Supported package managers:
 
 ### Networking
 
-The `networking` field controls the sandbox's outbound network access. It does not affect the `web_search` or `web_fetch` tools, which run on Anthropic's servers; to restrict the sites those tools can reach, set `allowed_domains` or `blocked_domains` on the tool's entry in the agent toolset. See [Restrict web search and web fetch domains](managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
+The `networking` field controls the sandbox's outbound network access.
+
+With `limited` networking, `allowed_hosts` also applies to the `web_search` and `web_fetch` tools, which run on Anthropic's servers. A `web_fetch` call for a URL on a host that `allowed_hosts` does not match returns an error result to the agent. `web_search` omits results from hosts that `allowed_hosts` does not match. `allow_package_managers` and `allow_mcp_servers` add no hosts for these tools. When `allowed_hosts` lists no hosts, no `web_fetch` or `web_search` call returns a page or a search result. A host that you add to `allowed_hosts` for these tools is also open to the sandbox. `unrestricted` networking and self-hosted environments do not limit these tools. To restrict them further, set `allowed_domains` or `blocked_domains` on the tool's entry in the agent toolset. See [Restrict web search and web fetch domains](managed-agents-tools-web-restrictions.md).
 
 | Mode           | Description                                                                                                                                                                                                                              |
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -283,6 +295,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -317,7 +331,7 @@ With `limited` networking and no other fields set, no hosts are allowed. Files, 
 
 When using `limited` networking:
 
-- `allowed_hosts` specifies domains the sandbox can reach. Specify bare hostnames or wildcard patterns (such as `*.example.com`). Do not include a URL scheme, port, or path.
+- `allowed_hosts` specifies domains the sandbox can reach. Specify bare hostnames or wildcard patterns (such as `*.example.com`). Do not include a URL scheme, port, or path. A bare hostname matches that exact host: `example.com` does not match `www.example.com`. `*.example.com` matches every subdomain of `example.com`, but not `example.com` itself.
 - `allow_mcp_servers` allows outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array. Defaults to `false`. While it is `false`, session creation fails with a 400 error if the agent declares an MCP server whose host is not in `allowed_hosts`. The same applies to [an agent it can delegate to](managed-agents-multiagent-orchestration.md). To fix it, add the host to `allowed_hosts` or set `allow_mcp_servers` to `true`.
 - `allow_package_managers` allows outbound access to a set of public package registries and code hosts beyond those listed in the `allowed_hosts` array. See [Package manager hosts](#package-manager-hosts) for the list. Defaults to `false`. Set it to `true` whenever the environment specifies `packages`; otherwise the request is rejected with a 400 error, even if the registry hosts are listed in `allowed_hosts`.
 
@@ -366,7 +380,7 @@ To reduce these risks, use `limited` networking with an explicit list of hosts. 
 
 
 
-An agent that only uses the `web_search` and `web_fetch` tools does not need `unrestricted` networking if you can list the sites it needs. [Networking](#networking) says when `allowed_hosts` applies to those tools. Where it does, list those sites in `allowed_hosts`. Listing them in `web_search`'s `allowed_domains` too makes it search those sites. A host that you add to `allowed_hosts` is also open to the sandbox. To restrict the tools further, see [Restrict web search and web fetch domains](managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
+An agent that only uses the `web_search` and `web_fetch` tools does not need `unrestricted` networking if you can list the sites it needs. With `limited` networking, `allowed_hosts` also applies to those tools (see [Networking](#networking)), so list those sites in `allowed_hosts`. Listing them in `web_search`'s `allowed_domains` too makes it search those sites. A host that you add to `allowed_hosts` is also open to the sandbox. To restrict the tools further, see [Restrict web search and web fetch domains](managed-agents-tools-web-restrictions.md).
 
 Use `unrestricted` only when the agent must reach sites you cannot list in advance. In that case, keep secrets and sensitive files out of the sandbox, and give the agent only the credentials the task needs. Consider setting the `bash` tool's permission policy to `always_ask` or `auto`, and [watch the session's events](managed-agents-events-and-streaming.md).
 
@@ -395,6 +409,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

@@ -2,7 +2,7 @@
 title: "Pulpit AI Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/pulpit-ai"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:22Z"
+fetched_at: "2026-10-23T06:29:41Z"
 tags: ["api", "case-studies", "enterprise", "git", "security"]
 ---
 
@@ -46,11 +46,11 @@ Whittle, a former pastor, created Pulpit AI to maximize the reach and impact of 
 
 ## Transforming sermons into multi-format content
 
-Pulpit AI originally used a different LLM that didn't fully meet the unique needs of faith-based content creation. It struggled to parse complex theological ideas and often produced robotic-sounding content.
+Pulpit AI originally used a different LLM that didn’t fully meet the unique needs of faith-based content creation. It struggled to parse complex theological ideas and often produced robotic-sounding content.
 
 Andy Waters, Pulpit AI’s CTO, suggested trying Claude, noting, “We chose Claude for its superior ability to parse theological ideas without sounding robotic or obviously written by AI. Our customers noticed the improvement, noting that Claude sounds human and can adopt the ‘voice’ of the preacher.”
 
-The integration process was smooth and efficient. According to Waters, "Integrating Claude into our platform was quick, required minimal prompt engineering and had high-quality outputs."
+The integration process was smooth and efficient. According to Waters, “Integrating Claude into our platform was quick, required minimal prompt engineering and had high-quality outputs.”
 
 With Claude, Pulpit AI offers innovative features for pastors and congregation members:
 
@@ -60,15 +60,15 @@ With Claude, Pulpit AI offers innovative features for pastors and congregation m
 
 ## Expanded reach, empowered pastors, engaged congregations
 
-Claude's integration into Pulpit AI's platform created a ripple of positive change. "When we integrated Claude Sonnet into our platform, our costs went down 80% overnight." Whittle said. This cost reduction fueled rapid growth, and Pulpit AI saw a 200% increase in its customer base within three months.
+Claude’s integration into Pulpit AI’s platform created a ripple of positive change. “When we integrated Claude Sonnet into our platform, our costs went down 80% overnight.” Whittle said. This cost reduction fueled rapid growth, and Pulpit AI saw a 200% increase in its customer base within three months.
 
-Pulpit AI drastically reduces pastors' content creation time, turning hours into minutes. Waters explained, "We're increasing pastors' reach and scaling their ability to engage with their congregations."
+Pulpit AI drastically reduces pastors’ content creation time, turning hours into minutes. Waters explained, “We’re increasing pastors’ reach and scaling their ability to engage with their congregations.”
 
-Pulpit AI, designed for pastors, has had a significant impact on congregations. It transforms a single sermon into multiple pieces of content, providing "spiritual nourishment" throughout the week, catering to diverse learning styles and preferences. "Our goal is for the local church pastor's voice to be the loudest in a Christian's life," says Whittle. "Pulpit AI helps extend the impact of sermons beyond Sunday."
+Pulpit AI, designed for pastors, has had a significant impact on congregations. It transforms a single sermon into multiple pieces of content, providing “spiritual nourishment” throughout the week, catering to diverse learning styles and preferences. “Our goal is for the local church pastor’s voice to be the loudest in a Christian’s life,” says Whittle. “Pulpit AI helps extend the impact of sermons beyond Sunday.”
 
 ## The future of faith-based content
 
-Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis and personalized content creation. The team envisions a personalized AI model based on a pastor's body of work, revolutionizing the multi-billion dollar Christian publishing industry.
+Pulpit AI is excited to use Claude’s expanding capabilities for sermon analysis and personalized content creation. The team envisions a personalized AI model based on a pastor’s body of work, revolutionizing the multi-billion dollar Christian publishing industry.
 
 > We’re excited to continue our partnership with Anthropic to help pastors connect with their congregations. With 5 million sermons delivered worldwide to 2 billion Christians every week, the impact is enormous!
 
@@ -80,7 +80,7 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 ### StubHub transforms live event ticketing with Claude
 
 
-### Audience Strategies expands the electronic music industry's policy influence with Claude
+### Audience Strategies expands the electronic music industry’s policy influence with Claude
 
 
 ### Orange localizes manga at an unprecedented scale with Claude
@@ -97,7 +97,8 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -115,12 +116,12 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -153,7 +154,7 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -171,6 +172,7 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -186,7 +188,7 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -221,7 +223,8 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -239,12 +242,12 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -277,7 +280,7 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -295,6 +298,7 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -310,7 +314,7 @@ Pulpit AI is excited to use Claude's expanding capabilities for sermon analysis 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

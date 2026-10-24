@@ -424,7 +424,7 @@ Claude Platform
 
 - Console login
 
-  [Console login](../04-API-Reference/Other/usage-limits.md)
+  [Console login](../04-API-Reference/Other/playground.md)
   Console login
 
 Resources

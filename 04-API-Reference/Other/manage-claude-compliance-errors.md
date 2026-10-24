@@ -2,7 +2,7 @@
 title: "Handle Compliance API errors - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-errors"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:32:45Z"
+fetched_at: "2026-10-20T06:40:17Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-errors)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-errors)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Compliance API
 
@@ -95,13 +97,13 @@ The Compliance API returns errors in the standard [Anthropic error format](../En
 
 On this page, local sessions run on users' machines and remote sessions run in the cloud; see [Retrieve session transcripts](manage-claude-compliance-sessions.md).
 
-Match on the HTTP status code and `error.type`, not on the message string. Messages are stable enough to copy into runbooks but might be reworded over time; the status codes and type values are part of the API contract. A few responses that share a status code and type are told apart by their message; each is called out where it applies.
+Match on the HTTP status code and `error.type`, not on the message string. Messages are stable enough to copy into runbooks but might be reworded over time; the status codes and type values are part of the API contract. A few responses that share a status code and type are told apart by an error code in `error.details.error_code` when the response carries one, and otherwise by their message; each is called out where it applies.
 
 The following table tells you at a glance whether to retry. Each section that follows shows the verbatim error body and the fix.
 
 | Status                                                  | Retry?                      | When                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [400 Bad Request](#400-bad-request)                     | No                          | Fix the request, or enable the Compliance API if the message says it is not enabled, then resend.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [400 Bad Request](#400-bad-request)                     | No                          | Fix the request, or enable the Compliance API if the message says it is not enabled, then resend. If `error.details.error_code` is `transcript_page_read_limit_exceeded` (the message says a page of a session's transcript is too large to read), do not resend the same request; [Transcript page too large](#transcript-page-too-large) says what to do instead.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | [401 Unauthorized](#401-unauthorized)                   | No                          | The key is not recognized, has been deactivated, or has expired; re-enable or replace it, then resend.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [403 Forbidden](#403-forbidden)                         | No                          | Add the missing scope or use the right key type, then resend.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | [404 Not Found](#404-not-found)                         | Usually no                  | A message that names a resource means it was deleted or never existed; remove it from your queue. The bare message `Not found` means the request did not authenticate (or the path does not exist), not that a resource is gone; see [Request not authenticated](#request-not-authenticated). The session endpoints add two more cases: on the local session endpoints, the message `Local sessions are not available.` (returned on every call, including the list) means the endpoints are currently unavailable to your parent organization, not that a session is gone; keep your queued IDs and see [Local session not found](#local-session-not-found). A remote session still in `pending` status 404s on its messages endpoint until it starts; see [Remote session not found](#remote-session-not-found). |
@@ -112,7 +114,7 @@ The following table tells you at a glance whether to retry. Each section that fo
 
 ## 400 Bad Request
 
-The request was syntactically valid, but the server rejected a parameter or the Compliance API is not enabled for the organization. Fix the cause named in the message and resend.
+The request was syntactically valid, but the server rejected a parameter or the Compliance API is not enabled for the organization. Fix the cause named in the message and resend. One 400 is different: [Transcript page too large](#transcript-page-too-large), which the local session messages endpoint can return for a page of a very large session even when every parameter is valid; its entry says what to do instead of resending.
 
 ### Compliance API not enabled
 
@@ -140,7 +142,7 @@ Unknown query parameter: 'created_at[gte]'. Did you mean 'created_at.gte'?
 
 **Cause:** The request included a query parameter that the endpoint does not define; the Compliance API rejects unrecognized parameters rather than ignoring them. The message names the parameter and, for near misses such as bracket notation in place of a dot or a missing `[]` suffix, suggests the defined name.
 
-**Fix:** Use the parameter names shown on the endpoint's [Compliance API reference](../Endpoints/http-compliance.md) page. Range filters use dot notation (for example, `created_at.gte`), array filters take a `[]` suffix (for example, `activity_types[]`), and the pagination parameters are `after_id`, `before_id`, or `page`, depending on the endpoint.
+**Fix:** Use the parameter names shown on the endpoint's [Compliance API reference](../Admin/compliance.md) page. Range filters use dot notation (for example, `created_at.gte`), array filters take a `[]` suffix (for example, `activity_types[]`), and the pagination parameters are `after_id`, `before_id`, or `page`, depending on the endpoint.
 
 ### Invalid parameter value
 
@@ -166,9 +168,9 @@ activity_types[].0: Input is not one of the permitted values.
 
 **Cause:** A query parameter's value failed validation. The message starts with the parameter name (followed by the element's position for an array parameter), then states the constraint that failed. Three common cases are shown: a `limit` above the endpoint's maximum (the number in the message is that endpoint's maximum), a `created_at.*` or `updated_at.*` value that cannot be parsed as a date or timestamp, and an `activity_types[]` value that is not a supported activity type.
 
-**Fix:** Correct the parameter named in the message. Each list endpoint has its own `limit` range; see the parameter constraints on the corresponding [Compliance API reference](../Endpoints/http-compliance.md) page. Send timestamps in RFC 3339 format with an explicit UTC offset, for example, `2024-03-01T00:00:00Z` or `2024-03-01T00:00:00+00:00`; the local session list rejects a timestamp without an offset (`created_at.gte: Input should have timezone info`). For the supported `activity_types[]` values, see [Query compliance activities](../Admin/compliance-activities-list.md).
+**Fix:** Correct the parameter named in the message. Each list endpoint has its own `limit` range; see the parameter constraints on the corresponding [Compliance API reference](../Admin/compliance.md) page. Send timestamps in RFC 3339 format with an explicit UTC offset, for example, `2024-03-01T00:00:00Z` or `2024-03-01T00:00:00+00:00`; the local session list rejects a timestamp without an offset (`created_at.gte: Input should have timezone info`). For the supported `activity_types[]` values, see [Query compliance activities](../Admin/compliance-activities-list.md).
 
-The local session list (`GET /v1/compliance/apps/sessions/local`) also returns a 400 `invalid_request_error` when both time bounds are supplied and `created_at.lt` is not strictly after `created_at.gte`. The body reads:
+The local session list (`GET /v1/compliance/apps/sessions/local`) also returns a 400 `invalid_request_error` when you supply a lower bound (`created_at.gte` or `created_at.gt`) and an upper bound (`created_at.lt` or `created_at.lte`) and the upper bound is not after the lower bound. Equal bounds are allowed only for `created_at.gte` with `created_at.lte`. The message names the two parameters, for example:
 
 ``` block
 created_at.lt must be strictly after created_at.gte.
@@ -176,7 +178,13 @@ created_at.lt must be strictly after created_at.gte.
 
 
 
-Send a `created_at.lt` later than `created_at.gte`, or omit one of the bounds.
+``` block
+created_at.lte must be at or after created_at.gte.
+```
+
+
+
+Send an upper bound later than the lower bound, or omit one of the bounds.
 
 The session transcript endpoints (`GET /v1/compliance/apps/sessions/local/{session_id}/messages` and `GET /v1/compliance/apps/sessions/remote/{session_id}/messages`) validate their truncation parameters the same way: `tool_use_input_max_bytes` and `tool_result_max_bytes` each accept a positive byte count or `-1` (the server maximum), so a value such as `0` returns the same 400 `invalid_request_error`.
 
@@ -220,6 +228,28 @@ The page cursor has expired. Restart the walk without a page parameter; results 
 
 For the first body, resend the unmodified `next_page` value from the previous response to the endpoint and session that issued it. For an expired cursor, restart without a `page` parameter; the new walk reflects the retention boundary in effect when it starts, so messages that aged out of the retention period in the meantime are no longer returned (see [Retrieve a local session transcript](manage-claude-compliance-sessions.md#retrieve-a-local-session-transcript)).
 
+### Transcript page too large
+
+**Type:** `invalid_request_error`
+
+**Error code:** `transcript_page_read_limit_exceeded`, returned in `error.details.error_code`
+
+``` block
+This page of the session's transcript is too large to read, and retrying will not help. If you are reading newest first (order=desc), read this session oldest first instead: omit the order and page parameters, then follow next_page.
+```
+
+
+
+**Cause:** `GET /v1/compliance/apps/sessions/local/{session_id}/messages` can return this error for a page of a very large session. Only this endpoint returns this error. It shares the `invalid_request_error` type with the other 400s, so identify it by its error code, not by the message text, which might be reworded.
+
+**Fix:** Do not retry the request. If it used `order=desc`, read that session oldest first instead:
+
+- Restart the session's walk (one pass through its pages; see [Retrieve a local session transcript](manage-claude-compliance-sessions.md#retrieve-a-local-session-transcript)) without `order` (or with `order=asc`) and without `page`, and follow `next_page` until it is `null`. Messages you already stored from the newest-first read keep the same `id`, so deduplicate on `id`.
+- Set your client's request timeout to at least 5 minutes for this walk.
+- Lowering `limit` is not a reliable way to avoid this error.
+
+If an oldest-first request returns this error, do not retry it either. Keep the pages you have already read, record the session as incomplete, continue with the rest of your export, and contact your Anthropic representative with the `request-id` response header.
+
 ## 401 Unauthorized
 
 The request carried a Compliance Access Key (`sk-ant-api01-...`) or Admin API key (`sk-ant-admin01-...`) that does not authenticate. A request that carries no key, or a key of another type, returns [404 Not Found](#request-not-authenticated) instead on every endpoint except organization settings, and a valid key with the wrong scopes returns [403 Forbidden](#403-forbidden).
@@ -248,7 +278,7 @@ API key has expired.
 
 **Cause:** `API key is invalid.` means the value sent does not match a usable key, for example because it was truncated or altered when it was stored. `API key has been deactivated.` means the key has been disabled or deleted. `API key has expired.` means an Admin API key's expiration date has passed; Compliance Access Keys are not created with one.
 
-**Fix:** For `API key is invalid.`, compare the value your client sends against the secret you stored when the key was created; the full secret is displayed only once, so if your stored copy is wrong, create a new key. For `API key has been deactivated.`, re-enable the key if it was only disabled, in [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access) for a Compliance Access Key or [Claude Console \> Settings \> Admin keys](playground.md) for an Admin API key; a deleted key cannot be restored. For a deleted or expired key, create a new key and update your integration to use it, as described in [Manage and rotate keys](manage-claude-compliance-api-access.md#manage-and-rotate-keys).
+**Fix:** For `API key is invalid.`, compare the value your client sends against the secret you stored when the key was created; the full secret is displayed only once, so if your stored copy is wrong, create a new key. For `API key has been deactivated.`, re-enable the key if it was only disabled, in [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access) for a Compliance Access Key or on the [Admin keys](playground.md) page (`platform.claude.com/settings/admin-keys`) in the Claude Console for an Admin API key; a deleted key cannot be restored. For a deleted or expired key, create a new key and update your integration to use it, as described in [Manage and rotate keys](manage-claude-compliance-api-access.md#manage-and-rotate-keys).
 
 ## 403 Forbidden
 
@@ -349,7 +379,7 @@ Not found
 
 **Cause:** The request did not carry a credential the Compliance API accepts: no API key was sent, or the key is not a Compliance Access Key (`sk-ant-api01-...`) or Admin API key (`sk-ant-admin01-...`), for example, a Claude API key (`sk-ant-api03-...`). The status, type, and message are the same as for a path that does not exist and do not depend on the endpoint or any resource ID, so list endpoints such as `GET /v1/compliance/activities` return this body too. The one exception is `GET /v1/compliance/organizations/{organization_id}/settings`, which answers these requests with 401 `authentication_error`. On every endpoint, a Compliance Access Key or Admin API key that does not authenticate returns [401 Unauthorized](#401-unauthorized) instead.
 
-**Fix:** Send the key in the `x-api-key` header and check its prefix: the Compliance API accepts only `sk-ant-api01-...` and `sk-ant-admin01-...` keys; see [Which key do you need?](manage-claude-compliance-api-access.md#which-key-do-you-need). If the header and key are right and one path still returns `Not found` while others succeed, check that path against the [Compliance API reference](../Endpoints/http-compliance.md).
+**Fix:** Send the key in the `x-api-key` header and check its prefix: the Compliance API accepts only `sk-ant-api01-...` and `sk-ant-admin01-...` keys; see [Which key do you need?](manage-claude-compliance-api-access.md#which-key-do-you-need). If the header and key are right and one path still returns `Not found` while others succeed, check that path against the [Compliance API reference](../Admin/compliance.md).
 
 ### Chat not found
 
@@ -455,7 +485,7 @@ Local session not found.
 
 
 
-**Cause:** The session ID passed to `GET /v1/compliance/apps/sessions/local/{session_id}` or `GET /v1/compliance/apps/sessions/local/{session_id}/messages` does not match a local session readable through the Compliance API. Both endpoints return this one message, without distinguishing the cause, when the ID is not a session in an organization your key can read (including IDs that belong to another parent organization), when the session never existed, when [zero data retention](../Guides/build-with-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect for the session, or when all of the session's activity has aged past the retention period that applies to the organization that ran it. The `Local session not found.` response has no transient form, because local sessions have no provisioning (`pending`) state; compare [Remote session not found](#remote-session-not-found), where a `pending` session 404s until it starts. A session ID that is not a well-formed `clls_` identifier returns [400 Bad Request](#400-bad-request) instead.
+**Cause:** The session ID passed to `GET /v1/compliance/apps/sessions/local/{session_id}` or `GET /v1/compliance/apps/sessions/local/{session_id}/messages` does not match a local session readable through the Compliance API. Both endpoints return this one message, without distinguishing the cause, when the ID is not a session in an organization your key can read (including IDs that belong to another parent organization), when the session never existed, when [zero data retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect for the session, or when all of the session's activity has aged past the retention period that applies to the organization that ran it. The `Local session not found.` response has no transient form, because local sessions have no provisioning (`pending`) state; compare [Remote session not found](#remote-session-not-found), where a `pending` session 404s until it starts. A session ID that is not a well-formed `clls_` identifier returns [400 Bad Request](#400-bad-request) instead.
 
 The local session endpoints, including the list endpoint, return a different 404 message, `Local sessions are not available.`, while the endpoints themselves are unavailable to your parent organization. That response does not depend on the session ID; no customer-side key, scope, or setting changes it, and it can be temporary. Both responses carry the `not_found_error` type; the message text is what tells them apart.
 
@@ -527,6 +557,8 @@ The "claude_proj_01KGp4eZNug9ri4kE35RSppq" project cannot be deleted as it has c
 
 Requests to the Compliance API are limited to **600 requests per minute per [parent organization](manage-claude-compliance-api.md#how-the-compliance-api-works)**. The limit is one budget shared across every key under the parent (Compliance Access Keys and the Admin API keys of all linked organizations) and across every `/v1/compliance/*` endpoint; the remote session endpoints carry a second request budget on top. For a standalone Claude Console organization, which has no parent organization, the same budget applies to the organization itself and is shared across its Admin API keys. Contact your Anthropic representative if your integration needs a higher limit.
 
+One 429 is different: on a very large session, the local session messages endpoint might return [Server busy reading large transcripts](#server-busy-reading-large-transcripts), which is not a rate limit and not a limit on your organization. Its entry, at the end of this section, says how to identify it and what to do.
+
 Once your API key authenticates, Compliance API responses report the shared budget through the standard [rate-limit response headers](../Endpoints/rate-limits.md#response-headers) so your client can throttle proactively instead of waiting for a 429:
 
 - `anthropic-ratelimit-requests-limit` is the per-minute request budget.
@@ -563,9 +595,25 @@ anthropic-ratelimit-requests-reset: 2026-04-21T14:38:25Z
 
 Requests that fail authentication (a missing or unrecognized key, or a Claude API key rather than a Compliance Access Key or Admin API key) are rejected before the rate limiter and do not consume quota. A valid key that lacks the endpoint's required scope consumes one quota unit before the 403 is returned.
 
-The [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions) count only against the shared limit. The [remote session endpoints](manage-claude-compliance-sessions.md#retrieve-remote-sessions) also carry a second request budget, keyed to your parent organization like the shared limit, on top of it. A 429 from that budget carries a `retry-after` header that is always `1` (a minimum wait, not the actual reset time); any `anthropic-ratelimit-*` headers on that response describe the shared limit rather than this budget, so back off exponentially if the 429 repeats.
+The [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions) count only against the shared limit. The [remote session endpoints](manage-claude-compliance-sessions.md#retrieve-remote-sessions) also carry a second request budget, keyed to your parent organization like the shared limit, on top of it. A 429 from that budget carries a `retry-after` header that is always `1` (a minimum wait, not the actual reset time); any `anthropic-ratelimit-*` headers on that response describe the shared limit rather than this budget, so back off exponentially if the 429 repeats. One 429 comes from no request budget: [Server busy reading large transcripts](#server-busy-reading-large-transcripts), which only the local session messages endpoint returns.
 
 If you poll the [Activity Feed](manage-claude-compliance-activity-feed.md) on a schedule, budget your aggregate request rate (across all keys, linked organizations, and concurrent workers) below the shared limit. Watch `anthropic-ratelimit-requests-remaining` to slow down before you reach it. See [Design your compliance integration](manage-claude-compliance-integration-patterns.md#choose-a-feed-consumption-pattern) for choosing between window-polling and cursor-driven ingestion.
+
+### Server busy reading large transcripts
+
+**Type:** `rate_limit_error`
+
+**Error code:** `transcript_read_server_busy`, returned in `error.details.error_code`
+
+```python
+Too many large session transcripts are being read at once. This is not a limit on your organization. Retry this request after the number of seconds in the retry-after header.
+```
+
+
+
+**Cause:** `GET /v1/compliance/apps/sessions/local/{session_id}/messages` might return this 429 for a page of a very large session. Only this endpoint returns this error, and it might occur with either `order` value. It is not a rate limit and not a limit on your organization: it does not mean you exceeded the shared limit or any other request budget. This error shares the 429 status code and the `rate_limit_error` type with the rate-limit responses, so identify it by its error code, not by the message text, which might be reworded.
+
+**Fix:** Wait the number of seconds in the `retry-after` header, then send the same request again, unchanged: keep the same `page` value, or none if the request had none. If the retry returns this error again, wait and retry in the same way. If the `retry-after` header is absent, fall back to exponential backoff (start at 1 second, double up to 60 seconds). If this error keeps recurring across runs, contact your Anthropic representative and include the `request-id` response header.
 
 ## 500 Internal Server Error
 
@@ -605,7 +653,7 @@ The local-sessions index cannot currently evaluate retention overrides for this 
 
 - For the two `Try again shortly.` bodies, retry with exponential backoff and do not advance your `page` cursor, because the failed request returned no data.
 - If the `Captured content` body keeps recurring on the messages endpoint for an organization that uses a customer-managed key, treat it as persistent: stop walking that organization's transcripts and check the key's status in your key management service. Transcripts in other linked organizations, and session metadata everywhere, are unaffected. If you retry on a later run, restart each session's walk without `page`, because messages page cursors expire 24 hours after the walk's first page.
-- For the `Try again later.` body, do not hold a walk open waiting for it to clear. On the list endpoint, either retry later by restarting without the `page` parameter (a list page token older than 24 hours is still accepted but is re-evaluated against the current retention boundary, so a parked walk can skip sessions), or narrow the `created_at.gte` and `created_at.lt` window until the request succeeds and export the skipped range separately on a later run. On the retrieve and messages endpoints, skip that session ID, continue with the rest of your export, and retry the session on a later run. Messages page cursors expire 24 hours after the walk's first page, so restart that session's walk without `page` when you return to it.
+- For the `Try again later.` body, do not hold a walk open waiting for it to clear. On the list endpoint, either retry later by restarting without the `page` parameter (a list page token older than 24 hours is still accepted but is re-evaluated against the current retention boundary, so a parked walk can skip sessions), or narrow the `created_at` window until the request succeeds and export the skipped range separately on a later run. On the retrieve and messages endpoints, skip that session ID, continue with the rest of your export, and retry the session on a later run. Messages page cursors expire 24 hours after the walk's first page, so restart that session's walk without `page` when you return to it.
 
 If any of these conditions recurs across runs, contact your Anthropic representative and include the `request-id` response header. For the customer-managed key case, do this only if the error continues while that key is usable.
 

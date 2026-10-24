@@ -2,7 +2,7 @@
 title: "Get Session Thread - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/threads/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:02Z"
+fetched_at: "2026-10-20T06:39:34Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Fretrieve)
 
 
 
@@ -155,7 +155,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -165,9 +165,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -238,13 +240,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -252,9 +256,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -263,11 +267,17 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Sessions](https://platform.claude.com/docs/en/api/http/beta/sessions)
 4.  [Threads](https://platform.claude.com/docs/en/api/http/beta/sessions/threads)
 
 # Get Session Thread
+
+Copy page
+
+
+
+cURL
 
 GET/v1/sessions/{session_id}/threads/{thread_id}
 
@@ -287,11 +297,21 @@ thread_id: string
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -499,6 +519,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -513,11 +537,11 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-BetaManagedAgentsSessionThread object{ type: "session_thread", id, agent, 8 more }
+BetaManagedAgentsSessionThread object{ type: "session_thread", id, agent, 9 more }
 
 
 
-An execution thread within a `session`. Each session has one primary thread plus zero or more child threads spawned by the coordinator.
+An execution thread within a `session`. Each session has one primary thread plus zero or more child threads.
 
 Get Session Thread
 
@@ -538,10 +562,13 @@ Response 200
 
 ```python
 {
-  "id": "sthr_011CZkZVWa6oIjw0rgXZpnBt",
+  "id": "sthr_011CZkZVWa6oJjw1rgXZpnBt",
   "agent": {
     "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
     "description": "A focused research subagent.",
+    "execution_identity": {
+      "type": "service_account"
+    },
     "mcp_servers": [
       {
         "name": "example-mcp",
@@ -550,7 +577,7 @@ Response 200
       }
     ],
     "model": {
-      "id": "claude-opus-5",
+      "id": "claude-opus-5-5",
       "effort": {
         "type": "low"
       },
@@ -619,7 +646,8 @@ Response 200
       "web_fetch_requests": 0,
       "web_search_requests": 3
     }
-  }
+  },
+  "workflow_run_id": null
 }
 ```
 
@@ -631,10 +659,13 @@ Response 200
 
 ```python
 {
-  "id": "sthr_011CZkZVWa6oIjw0rgXZpnBt",
+  "id": "sthr_011CZkZVWa6oJjw1rgXZpnBt",
   "agent": {
     "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
     "description": "A focused research subagent.",
+    "execution_identity": {
+      "type": "service_account"
+    },
     "mcp_servers": [
       {
         "name": "example-mcp",
@@ -643,7 +674,7 @@ Response 200
       }
     ],
     "model": {
-      "id": "claude-opus-5",
+      "id": "claude-opus-5-5",
       "effort": {
         "type": "low"
       },

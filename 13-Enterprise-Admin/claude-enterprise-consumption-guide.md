@@ -2,7 +2,7 @@
 title: "Claude Enterprise consumption guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14782391-claude-enterprise-consumption-guide"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:25:19Z"
+fetched_at: "2026-10-23T06:29:09Z"
 tags: ["enterprise"]
 ---
 
@@ -47,7 +47,7 @@ Think about groups in terms of job function and use case, not organizational hie
 
 - Limit group proliferation. More than 8–10 groups becomes hard to manage. Start with 4–6 and split only if usage patterns clearly diverge.
 
-- Use groups to gate access to high-intensity surfaces. For example: only members of the "Engineering" group can access Claude Code; other users see Chat and Cowork only. Access is granted by the custom roles you assign to each group, and it only takes effect for members whose organization role is set to Custom. Members left on the built-in User role keep everything enabled org-wide. Groups can be created manually or synced from your identity provider. See **[Set up role-based permissions on Enterprise plans](../17-Billing-Plans/set-up-role-based-permissions-on-enterprise-plans.md)**.
+- Use groups to gate access to high-intensity surfaces. For example: only members of the "Engineering" group can access Claude Code; other users see Chat and Cowork only. Access is granted by the custom roles you assign to each group, and it only takes effect for members whose organization role is set to Custom. Members left on the built-in User role keep everything enabled org-wide. Groups can be created manually or synced from your identity provider. See **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)**.
 
 - Assign group-level spend caps as a starting point, then override at the user level for outliers (e.g., a non-technical PM who needs Claude Code for a specific project).
 
@@ -201,7 +201,7 @@ A few ways you can use organization instructions to manage consumption and usage
 
 ------------------------------------------------------------------------
 
-## Tracking usage and spend
+## Track usage and spend
 
 ### Analytics page
 
@@ -235,13 +235,13 @@ Use this when you have a specific question and don't want to navigate the dashbo
 
 For programmatic access, use the Claude Enterprise Analytics API. Pull a ranked list of users by tokens used or dollars spent, or look at usage and cost trends over time broken down by product, model, RBAC group, context window, region, or service tier (standard vs. fast). Grouping the cost report by RBAC group gives per-department spend for chargeback without exporting per-user rows. Each request is capped at 31 days wide, starting within the last 365 days, and no earlier than January 1, 2026.
 
-Your Primary Owner can create a key with the read:analytics scope under Organization settings \> API. Cost and usage data typically lands within about four hours (occasionally up to 24) and can be revised for up to 30 days, so query dates 30+ days in the past for invoicing-grade totals. Engagement endpoints such as users, skills, plugins, and connectors update daily with roughly a one-day lag. **[Learn more](../04-API-Reference/Other/manage-claude-analytics-api.md)** and review the **[API reference guide](../04-API-Reference/Admin/http-beta-organization-analytics.md)**.
+Your Primary Owner can create a key with the read:analytics scope under **Organization settings \> API**. Cost and usage data typically lands within about four hours (occasionally up to 24) and can be revised until seven days after the end of the month it belongs to. For invoicing-grade totals, wait until that window closes before you query a month. Engagement endpoints such as users, skills, plugins, and connectors update daily with roughly a one-day lag. **[Learn more](../04-API-Reference/Other/manage-claude-analytics-api.md)** and review the **[API reference guide](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics.md)**.
 
 ### Per-user skills, plugin, and connector usage
 
 The Analytics API also breaks skill, plugin, and connector usage down per user. The `skills`, `plugins`, and `connectors` endpoints each support a `group_by[]=user_id` parameter, turning the org-wide totals you see in the dashboard into one row per user per skill (or plugin, or connector)—so you can see exactly who is running a given skill, how often, and which team members have actually invoked a plugin you rolled out. You can also group by RBAC group or product surface, or filter down to a single skill, plugin, or connector by name.
 
-This is useful for the same per-skill ROI questions above, just broken down by individual user instead of exported to a spreadsheet—for example, confirming a plugin rollout actually landed with the team it was distributed to, rather than just checking that it was installed. Learn more in the API reference: **[skills](../04-API-Reference/Admin/http-beta-organization-analytics-skills-list.md)**, **[plugins](../04-API-Reference/Admin/http-beta-organization-analytics-plugins-list.md)**, **[connectors](../04-API-Reference/Admin/http-beta-organization-analytics-connectors-list.md)**.
+This is useful for the same per-skill ROI questions above, just broken down by individual user instead of exported to a spreadsheet—for example, confirming a plugin rollout actually landed with the team it was distributed to, rather than just checking that it was installed. Learn more in the API reference: **[skills](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics-skills-list.md)**, **[plugins](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics-plugins-list.md)**, **[connectors](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics-connectors-list.md)**.
 
 ### Admin API
 
@@ -335,4 +335,4 @@ When you onboard users, share the following:
 
 - **[Anthropic Academy](https://www.anthropic.com/learn)**
 
-- **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings.md)**
+- **[Change the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings)**

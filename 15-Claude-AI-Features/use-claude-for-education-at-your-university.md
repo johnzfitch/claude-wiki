@@ -2,13 +2,11 @@
 title: "Use Claude for Education at your university | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11139144-use-claude-for-education-at-your-university"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:27:58Z"
+fetched_at: "2026-10-23T06:28:49Z"
 tags: ["claude-ai"]
 ---
 
 # Use Claude for Education at your university
-
-September 9, 2026
 
 
 This guide helps you use Claude for Education through your university-sponsored account. Find resources and answers to frequently asked questions about getting started, optimizing usage, and troubleshooting issues.
@@ -109,7 +107,7 @@ You can access Claude through multiple platforms to suit your needs:
 
 - Download Claude for Desktop for macOS or Windows.
 
-- For macOS: Requires macOS 11 (Big Sur) or higher.
+- For macOS: Requires macOS 13 (Ventura) or higher.
 
 - For Windows: Requires Windows 10 or higher.
 
@@ -139,11 +137,11 @@ Review the following resources to help you get the most out of your usage with C
 
 - **[What are projects?](https://support.claude.com/en/articles/9517075)**
 
-- **[How can I create and manage projects?](https://support.claude.com/en/articles/9519177)**
+- **[How can I create and manage projects?](../22-Safety-Policy/how-can-i-create-and-manage-projects-claude-help-center.md)**
 
 - **[Manage project visibility and sharing](https://support.claude.com/en/articles/9519189)**
 
-- **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
+- **[What are artifacts and how do I use them?](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md)**
 
 - **[Usage limit best practices](https://support.claude.com/en/articles/9797557)**
 
@@ -153,9 +151,9 @@ Review the following resources to help you get the most out of your usage with C
 
 - **[Use Google Workspace connectors](https://support.claude.com/en/articles/10166901)**
 
-- **[Understanding Claude's personalization features](https://support.claude.com/en/articles/10185728)**
+- **[Understanding Claude's personalization features](understanding-claude-s-personalization-features-claude-help-center.md)**
 
-- **[Enable and use web search](enabling-and-using-web-search.md)**
+- **[Enable and use web search](https://support.claude.com/en/articles/10684626)**
 
 - **[How to use Claude in your preferred language](https://support.claude.com/en/articles/10769299)**
 
@@ -183,7 +181,7 @@ This appears when your prompt exceeds Claude's available context window. When th
 
 ### I already have a Claude account using my university email
 
-When you log in, you can select between your previous account and the new university-sponsored account. You can't migrate data between accounts, but you can **[export data](../22-Safety-Policy/export-your-claude-data-claude-help-center.md)** from your existing account and upload the conversation data (JSON format) to your new account.
+When you log in, you can select between your previous account and the new university-sponsored account. You can't migrate data between accounts, but you can **[export data](https://support.claude.com/en/articles/9450526)** from your existing account and upload the conversation data (JSON format) to your new account.
 
 ------------------------------------------------------------------------
 

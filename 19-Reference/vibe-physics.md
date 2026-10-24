@@ -2,17 +2,56 @@
 title: "Vibe physics: The AI grad student \\ Anthropic"
 source_url: "https://www.anthropic.com/research/vibe-physics"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:45:12Z"
+fetched_at: "2026-10-21T06:30:53Z"
 tags: ["news-research"]
 ---
 
-# Vibe physics: The AI grad student
+# **Vibe physics: **The AI grad student
 
-Mar 23, 2026
+- [01Who am I?](#who-am-i)
+- [02The hype](#the-hype)
+- [03Problem selection](#problem-selection)
+- [04Initial steps](#initial-steps)
+- [05The first draft](#the-first-draft)
+- [06Claude loves to please](#claude-loves-to-please)
+- [07The real work](#the-real-work)
+- [08The long tail of errors](#the-long-tail-of-errors)
+- [09The final product](#the-final-product)
+- [10Lessons](#lessons)
+- [11Conclusions](#conclusions)
+- [12Epilogue](#epilogue)
+
+- Published
+
+  Mar 23, 2026
+
+- Team
+
+  [Science](https://www.anthropic.com/science)
+
+- Topics
+
+  - [Discovery](https://www.anthropic.com/search?topic=discovery)
+  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+  - [Productivity](https://www.anthropic.com/search?topic=productivity)
+  - [Hallucination](https://www.anthropic.com/search?topic=hallucination)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+
+  See more...
+
+Related articles
+
+- Science
+
+  Oct 8, 2026
+
+  [The missing map of the sky](the-missing-map-of-the-sky.md)
+
+[View more](https://www.anthropic.com/search?topic=discovery)
 
 **Can AI do theoretical physics? In this guest post, professor of physics [Matthew Schwartz](https://www.physics.harvard.edu/people/facpages/schwartz) decided to find out by supervising Claude through a real research calculation, start to finish, without ever touching a file himself. His account of what happened is below.**
 
-### **Summary**
+#### Summary
 
 - I guided Claude Opus 4.5 through a real theoretical physics calculation, encapsulating the complexity of code and computations behind text prompts.
 - The result was a technically rigorous, impactful [high-energy theoretical physics paper](https://arxiv.org/abs/2601.02484) in two weeks instead of the usual year.
@@ -21,11 +60,11 @@ Mar 23, 2026
 - AI is not doing end-to-end science yet. But this project proves that I could create a set of prompts that can get Claude to do frontier science. This wasn’t true three months ago.
 - This may be the most important paper I’ve ever written—not for the physics, but for the method. There is no going back.
 
-### **Who am I?**
+## Who am I?
 
 I’m [Matthew Schwartz](https://www.physics.harvard.edu/people/facpages/schwartz), a professor of physics at Harvard and a principal investigator in the NSF Institute for Artificial Intelligence and Fundamental Interactions ([IAIFI](http://www.iaifi.org)). My area of expertise is quantum field theory, which asks what matter is, how particles interact, and why the Universe has the rules it does. One might say I wrote the [book](https://www.amazon.com/Quantum-Field-Theory-Standard-Model/dp/1107034736) on the subject. I’ve been working with modern machine learning tools for over a decade. My [first modern ML paper](https://arxiv.org/abs/1612.01551), from 2016, was an early application of deep learning to particle physics. In a [*Nature Reviews Physics*](https://www.nature.com/articles/s42254-022-00538-z) piece in 2022, I compared the timescale of AI and human evolution, arguing that transferring understanding between biological and artificial intelligence would become a fundamental challenge. Since then, I’ve been trying to push AI towards [more symbolic work](https://arxiv.org/abs/2408.04720) (manipulating mathematical expressions rather than numerical data) and the core questions in theoretical physics.
 
-### **The hype**
+## The hype
 
 There has been a lot of recent hype about AI scientists doing end-to-end research autonomously. In August 2024, Sakana AI released their [AI Scientist](https://sakana.ai/ai-scientist/), a system designed to automate the entire research lifecycle—from generating hypotheses to writing papers. In February 2025, Google released an [AI co-scientist](https://arxiv.org/abs/2502.18864) built on Gemini, promising to help researchers generate and evaluate hypotheses at scale. And in August 2025, the Allen Institute for AI (Ai2) launched the open-source [Asta](https://allenai.org/asta) ecosystem, featuring tools like [CodeScientist](https://github.com/allenai/codescientist) and [AutoDiscovery](https://allenai.org/blog/autodiscovery) to find patterns in complex datasets. Since then, a new entrant has appeared every few months—FutureHouse’s [Kosmos](https://edisonscientific.com/articles/announcing-kosmos), the Autoscience Institute’s [Carl](https://autoscience.ai/), the Simons Foundation’s [Denario](https://www.simonsfoundation.org/2025/11/04/meet-denario-an-ai-assistant-for-every-step-of-the-scientific-process/) project, among others—each promising some version of end-to-end autonomous research. Even as these approaches are visionary, their successes to date seem a bit forced: run [hundreds or thousands of trials](https://www.youtube.com/watch?v=no_elVGGgW8) and define the best one as interesting. While I believe we are not far from end-to-end science, I’m not convinced we can skip the intermediate steps. Maybe LLMs need to go to graduate school before advancing straight to the Ph.D.
 
@@ -33,7 +72,7 @@ In mathematics, automated end-to-end AI agents have produced impressive results,
 
 What about theoretical physics? End-to-end AI scientists have found their footing in data-rich domains, but theoretical physics is not one of them. Unlike mathematics, theoretical physics problems can be more nebulous—less about formal proof search and more about physical intuition, choosing the right approximations, and navigating a landscape of subtleties that often trip up even experienced researchers. Even so, there are problems in physics where AI might be better suited. Not yet the paradigm-shifting questions at the frontier, but those where the conceptual framework is established and the goal well-defined. To find out if AI can solve these types of theory problems, I supervised Claude through a real research calculation at the level of a second-year grad student.
 
-### **Problem selection**
+## Problem selection
 
 In grad school, at least at my institution, first-year theory students (G1s) typically just take classes. Research often begins in the second year. G2 students start with well-defined projects that have a guarantee of success—often follow-ups from previous studies where the methods are established and the endpoints clear. This gives them a chance to learn the techniques, make mistakes in a controlled setting, and build confidence. It's also easy for me as an advisor: I can check their work, spot where they've gone off track, and quickly reorient them.
 
@@ -53,17 +92,17 @@ and out would pop the paper. We are not there yet, of course. I tried giving thi
 
 To go about this scientifically, I encapsulated all the work. The rules were strict:
 
-- Only give text prompts to [Claude Code](https://claude.ai/redirect/website.v1.ab037235-07dc-4e34-ad70-63cfa0d2179e/code). No editing files directly.
+- Only give text prompts to [Claude Code](https://claude.ai/code). No editing files directly.
 - Don’t cut and paste my own calculations into the chat.
 - But pasting Gemini or GPT calculations was OK, as long as they were only text-prompted.
 
 My question was: is there a set of prompts, like instructions to a talented G2, that can guide an AI to produce a high-quality physics paper (one that is genuinely interesting and pushes the field forward)?
 
-### **Initial steps**
+## Initial steps
 
 I knew from experience that LLMs struggle with context and organization over long projects. So I started by asking Claude to come up with a plan of attack: what tasks needed to be done in what order. I also asked GPT 5.2 and Gemini 3.0. Then, I had all three LLMs merge the best ideas from each, using web interfaces and copying one to another. Next, I gave those merges to Claude, asking it to break the outline into detailed subsections. The result is [here](https://www-cdn.anthropic.com/2595299ccf7f8b9a9c74823c24faaa5d9b216804.pdf). There were 102 separate tasks across seven stages.
 
-From there, I turned to [Claude Code](https://claude.ai/redirect/website.v1.ab037235-07dc-4e34-ad70-63cfa0d2179e/code), using the extension in VS Code.
+From there, I turned to [Claude Code](https://claude.ai/code), using the extension in VS Code.
 
 I created a folder for the project, put in the master plan, and had it try to solve each task separately, writing its results in a separate markdown file. Some examples are [Task 1.1: Review BSZ Paper](https://www-cdn.anthropic.com/c993ead637f1a102fe1f5346e89f59e82c579b37.pdf) and [Task 1.2: Review Catani—Webber](https://www-cdn.anthropic.com/94b3c41e52e19ba450fe5e804400ebcf0a88f3d0.pdf).
 
@@ -73,7 +112,7 @@ Claude worked through the stages sequentially: kinematics, NLO structure, SCET f
 
 Even this first stage wasn’t completely hands-off. After finishing 7 of 14 tasks in Stage 1, Claude cheerfully announced it was ready for Stage 2. When I pointed out that it had skipped half the tasks, it replied, “You’re absolutely right! Stage 1 has 14 tasks, not 7.” In Stage 2, it crashed mid-task and lost its context, so I restarted and told it, “Don’t do too much at once. Do them one at a time, write the summary, let me look at it, then continue.” It also attempted to merge two tasks into one until I caught it.
 
-### **The first draft**
+## The first draft
 
 During the initial stage, I had Claude postpone the numerics, which I knew would require some babysitting. Instead, I had it focus on the conceptual and analytic parts. Claude hit the ground running: it compiled EVENT2, an old Fortran code, wrote analysis scripts, and started generating events. It was great at running the code but struggled with normalization, such as simple factors of 2 and histogram binning. After a few tries, however, it produced something that looked excellent—the theory agreed with the simulation:
 
@@ -85,7 +124,7 @@ By the end of day three, Claude had completed 65 tasks, produced a literature re
 
 Then, I actually read it.
 
-### **Claude loves to please**
+## Claude loves to please
 
 When I asked Claude to verify it had incorporated all its task results into the draft, it responded:
 
@@ -101,7 +140,7 @@ Most of the mistakes were minor, and Claude could fix them. After a couple more 
 
 Unfortunately, Claude was basically faking the whole plot. I had told it to make an uncertainty band with hard, jet, and soft uncertainties using profile variations (the standard thing). But it decided the hard variations were too large and dropped them. Then, it decided the curve wasn’t smooth enough, so it adjusted it to make it look nice! At this point, I realized that I was definitely going to have to check every step myself. Yet, if this had been the first project I did with a graduate student, I would also have had to check everything, so maybe this is not so surprising. But a graduate student would never have handed me a complete draft after three days and told me it was perfect.
 
-### **The real work**
+## The real work
 
 Once Claude had completed a revised draft under my supervision, I reviewed it again. It almost had things right. Unfortunately, there was a serious error at the very beginning: the factorization formula was wrong. This was the keystone of the whole paper: all of the downstream calculations and results followed from this central formula. Even I didn’t spot it right away. It looked good and was natural. (It turned out it was copying something over from a different physical system without modifying it).
 
@@ -117,11 +156,11 @@ The final money plot was:
 
 This looks similar to the other one, but—after many cross-checks—I can confirm it’s actually correct.
 
-## **The long tail of errors**
+## The long tail of errors
 
 Beyond these larger structural problems, there was a constant stream of smaller errors that required intervention. Some highlights:
 
-### **Inventing terms that don’t exist**
+### Inventing terms that don’t exist
 
 When I asked Claude to verify that its formulas expanded correctly to fixed order, it kept producing “verification” documents that invented coefficients that were not in the paper. When I called Claude out, it said:
 
@@ -129,7 +168,7 @@ When I asked Claude to verify that its formulas expanded correctly to fixed orde
 
 It was generating plausible-sounding justifications for answers it hadn’t actually derived.
 
-### **Unjustified assertions**
+### Unjustified assertions
 
 The one-loop soft function calculation (one of the core ingredients in the paper) was supposed to be straightforward: set up the eikonal integrals, regulate in dimensional regularization, and extract the finite part. But Claude’s initial setup in the draft seemed off. When I asked it to start from scratch:
 
@@ -137,13 +176,13 @@ The one-loop soft function calculation (one of the core ingredients in the paper
 
 It had been asserting a result without checking. Eventually, GPT solved the integral and Claude incorporated it. They needed each other, and I needed both of them.
 
-### **Oversimplifying the code**
+### Oversimplifying the code
 
 When I gave Claude Code the implementation guide for NNLL resummation, it couldn’t implement it. It would see a formula in our paper and simplify it based on patterns from other examples, not accounting for the specifics of our particular case. After hours of debugging:
 
 > *You’re absolutely right—I cheated! The formula NLL = Singular × Sudakov trivially gives NLL = Singular when Sudakov = 1, but that’s not the actual physics.*
 
-### **Zombie sections and inconsistent notation**
+### Zombie sections and inconsistent notation
 
 When I started reading the draft in detail, it was a mess. In particular, there were lots of “zombie sections” it forgot about, repetitions, and guesses that it pretended to derive. I had to go section by section, having Claude reorganize things, like:
 
@@ -151,7 +190,7 @@ When I started reading the draft in detail, it was a mess. In particular, there 
 
 Claude had no trouble doing this once I pointed it out. But it didn’t do it without my prompting.
 
-## **The final product**
+## The final product
 
 The [final paper](https://arxiv.org/abs/2601.02484) is a valuable contribution to quantum field theory. Notably, it has a new factorization theorem. There aren’t that many of these, and it’s these kinds of theorems that lead to a deeper understanding of quantum field theory. And it makes novel predictions about the physical world that can be tested with data. Again, this is relatively rare these days. I’m proud of the paper. People are reading it, using it for physics, and engaging in a follow-up project looking at comparison to data from experiments.
 
@@ -161,16 +200,16 @@ Given Claude’s contribution to this paper, I wanted to have Claude as co-autho
 
 Such recognition of integrity and responsibility is important. After all, it would not be good for science if people put out AI slop and then blamed the LLM for its errors. On the other hand, grad students are often on papers with implicit responsibility for the content even when they cannot fully understand it, which is why everyone knows it’s truly the PI’s fault when something is wrong.
 
-## **Lessons**
+## Lessons
 
-### **What Claude is good at**
+### What Claude is good at
 
 - **Tireless iteration.** 110 paper versions. Hundreds of debug plots. No complaints.
 - **Basic calculus and algebra.** Setting up integrals, changing variables, expanding functions, checking factors.
 - **Code generation.** Python plots, Fortran interfaces, Mathematica notebooks—all working. No more Python version number conflicts, missing libraries, or syntax errors.
 - **Literature synthesis.** Combining results from multiple papers coherently and scouring the literature. Make sure to have Claude double check the authors, titles, and journals one by one in the bibliography.
 
-### **What Claude is bad at**
+### What Claude is bad at
 
 - **Maintaining conventions.** When conventions are non-standard, it constantly reverts to textbook defaults even if you force it to write the conventions down and stick with them.
 - **Honest verification.** It says “verified” when it hasn’t actually checked. You have to call it out, insisting, “Did you honestly check everything?” or, “Go line by line and verify every step.” Skills and CLAUDE.md help with this a little, but not enough.
@@ -179,7 +218,7 @@ Such recognition of integrity and responsibility is important. After all, it wou
 - **Plot aesthetics.** Axis labels, legends, fonts, and colors all need micromanagement to be human-readable.
 - **Resisting pressure.** If I forced it to think deeply about something, after a while it would just give me the answer I seemed to want, even if it wasn’t justified.
 
-### **The tricks that worked**
+### The tricks that worked
 
 - **Cross-verification.** I had GPT check Claude’s work and vice versa. They caught each other’s errors. For the hardest integral, GPT solved it, and Claude incorporated the solution.
 - **Tree structure.** Instead of one long document, Claude maintained a hierarchy of task summaries. It works better with things it can look up than things it has to remember.
@@ -188,7 +227,7 @@ Such recognition of integrity and responsibility is important. After all, it wou
 
 One final recommendation I’d give is to move away from the web-based LLMs. These have been around for a while, and are good. But for me the real phase transition was running Claude Code with access to files, terminal commands, agents, skills, memory etc. It makes a big difference.
 
-## **Conclusions**
+## Conclusions
 
 This paper started out as an experiment: how close are we to end-to-end science with AI? My conclusion is that current LLMs are at the G2 level. I think they reached the G1 level around August 2025, when GPT-5 could do the coursework for basically any course we offer at Harvard. By December 2025, Claude Opus 4.5 was at the G2 level.
 
@@ -210,7 +249,7 @@ In any case, we are not yet in that future. We are in possession of tools that c
 
 Before long, everyone else will catch on. While such efficiency gains will have outsized effects across all domains, one large consequence I foresee in science is that people will work on harder problems: quality, not quantity. That’s what I’m doing. And because of that, I expect to see real advances in theoretical physics, and science more broadly, at a level that is hard to fathom.
 
-## **Epilogue**
+## Epilogue
 
 I conducted this project in the last two weeks of December 2025. My paper came out January 5, 2026, and made a pretty big splash—I got a flood of emails and invitations to explain it to various physics groups worldwide. It was trending on r/physics for a while and made the water-cooler circuit at a large number of theory departments. When I go to conferences, all anyone wants to talk about is how to use Claude. I visited the Institute for Advanced Study in Princeton in January, and soon after they had an [emergency meeting](https://www.youtube.com/watch?v=PctlBxRh0p4) about using LLMs. The word is getting out.
 
@@ -222,142 +261,32 @@ In addition to the growth in interest, the tools themselves have been steadily i
 
 ### Appendix: The numbers
 
-|                           |              |
-|---------------------------|--------------|
-| Total Claude sessions     | 270          |
-| Messages exchanged        | 51,248       |
-| Input tokens              | ~27.5M       |
-| Output tokens             | ~8.6M        |
-| Draft versions            | 110          |
-| CPU hours for simulations | ~40          |
-| Human oversight time      | ~50–60 hours |
+Total Claude sessions
+
+270
+
+Messages exchanged
+
+51,248
+
+Input tokens
+
+~27.5M
+
+Output tokens
+
+~8.6M
+
+Draft versions
+
+110
+
+CPU hours for simulations
+
+~40
+
+Human oversight time
+
+~50–60 hours
 
 *[Matthew Schwartz](https://www.physics.harvard.edu/people/facpages/schwartz) is a professor of physics at Harvard University. The paper discussed here is [available on arXiv](https://arxiv.org/abs/2601.02484).*
-
-
-## Related content
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-## Subscribe to Anthropic Science
-
-Features on AI-assisted discoveries, practical workflows, and field notes across the sciences.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

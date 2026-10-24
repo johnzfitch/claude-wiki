@@ -2,7 +2,7 @@
 title: "Legal summarization - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization"
 category: "04-API-Reference/About"
-fetched_at: "2026-10-04T08:32:04Z"
+fetched_at: "2026-10-20T06:38:08Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Flegal-summarization)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Flegal-summarization)
 
 
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -50,7 +50,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Use cases
 
@@ -100,6 +100,24 @@ There is no single correct summary for any given document. Without clear directi
 
 For instance, when summarizing a sublease agreement, you might want to extract the following key points:
 
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
+
+
 ```python
 details_to_extract = [
     "Parties involved (sublessor, sublessee, and original lessor)",
@@ -110,8 +128,6 @@ details_to_extract = [
     "Special provisions (furniture, parking, and subletting restrictions)",
 ]
 ```
-
-
 
 ### Establish success criteria
 
@@ -149,7 +165,7 @@ See the guide on [establishing success criteria](../Test-Evaluate/test-and-evalu
 
 ### Select the right Claude model
 
-Model accuracy is extremely important when summarizing legal documents. Claude Opus 5 is an excellent choice for use cases such as this where high accuracy is required. If the size and quantity of your documents is large such that costs start to become a concern, you can also try using a smaller model such as Claude Haiku 4.5.
+Model accuracy is extremely important when summarizing legal documents. Claude Opus 5.5 is an excellent choice for use cases such as this where high accuracy is required. If the size and quantity of your documents is large such that costs start to become a concern, you can also try using a smaller model such as Claude Haiku 5.5.
 
 To help estimate these costs, the following is a comparison of the cost to summarize 1,000 sublease agreements using Opus and Haiku models:
 
@@ -161,37 +177,53 @@ To help estimate these costs, the following is a comparison of the cost to summa
 
 - **Estimated tokens**
 
-  - Input tokens: 86M (assuming 1 token per 3.5 characters)
-  - Output tokens per summary: 350
-  - Total output tokens: 350,000
+  - Input tokens: 108M, about 108,000 per agreement (about 1 token per 2.8 characters, the rate both models showed on this guide's sample agreement)
+  - Output tokens per summary, including any thinking tokens, which are billed as output: about 6,200 on Claude Opus 5.5 and 3,100 on Claude Haiku 5.5
+  - Total output tokens: 6.2M on Claude Opus 5.5 and 3.1M on Claude Haiku 5.5
 
-- **Claude Opus 5 estimated cost**
+- **Claude Opus 5.5 estimated cost**
 
-  - Input token cost: 86 MTok \* \$5.00/MTok = \$430.00 USD
-  - Output token cost: 0.35 MTok \* \$25.00/MTok = \$8.75 USD
-  - Total cost: \$430.00 + \$8.75 = \$438.75 USD
+  - Input token cost: 108 MTok \* \$4.00/MTok = \$432.00 USD
+  - Output token cost: 6.2 MTok \* \$20.00/MTok = \$124.00 USD
+  - Total cost: \$432.00 + \$124.00 = \$556.00 USD
 
-- **Claude Opus 4.8 estimated cost**
+- **Claude Haiku 5.5 estimated cost**, at its prices for prompts over 100,000 tokens
 
-  - Input token cost: 86 MTok \* \$5.00/MTok = \$430.00 USD
-  - Output token cost: 0.35 MTok \* \$25.00/MTok = \$8.75 USD
-  - Total cost: \$430.00 + \$8.75 = \$438.75 USD
-
-- **Claude Haiku 4.5 estimated cost**
-
-  - Input token cost: 86 MTok \* \$1.00/MTok = \$86.00 USD
-  - Output token cost: 0.35 MTok \* \$5.00/MTok = \$1.75 USD
-  - Total cost: \$86.00 + \$1.75 = \$87.75 USD
+  - Input token cost: 108 MTok \* \$0.50/MTok = \$54.00 USD
+  - Output token cost: 3.1 MTok \* \$2.50/MTok = \$7.75 USD
+  - Total cost: \$54.00 + \$7.75 = \$61.75 USD
 
 
 
-Actual costs may differ from these estimates. These estimates are based on the example highlighted in the [Build a strong prompt](#build-a-strong-prompt) section.
+Actual costs may differ from these estimates. The token counts come from running the example in the [Build a strong prompt](#build-a-strong-prompt) section on this guide's sample agreement, about 105,000 input tokens, and output length varies with the document and from run to run. Each agreement here is one prompt of about 108,000 tokens, over the 100,000-token threshold of Claude Haiku 5.5's [long-prompt prices](../../17-Billing-Plans/about-claude-pricing.md#long-context-pricing). A document whose prompt stays at or under 100,000 tokens pays \$0.10/MTok input and \$0.50/MTok output instead. To see which prices apply, count your documents with [token counting](../Guides/build-with-claude-token-counting.md) and `model` set to `claude-haiku-5-5`.
 
 ### Transform documents into a format that Claude can process
 
 Before you begin summarizing documents, you need to prepare your data. This involves extracting text from PDFs, cleaning the text, and ensuring it's ready to be processed by Claude.
 
 Here is a demonstration of this process on a sample PDF:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
+
 
 ```python
 from io import BytesIO
@@ -228,17 +260,33 @@ document_text = get_llm_text(pdf_file)
 print(document_text[:50000])
 ```
 
-
-
 In this example, you first download a PDF of a sample sublease agreement used in the [summarization cookbook](https://platform.claude.com/cookbook/capabilities-summarization-guide). This agreement was sourced from a publicly available sublease agreement from the [sec.gov website](https://www.sec.gov/Archives/edgar/data/1045425/000119312507044370/dex1032.htm).
 
-The example uses the pypdf library to extract the contents of the PDF and convert it to text. The text data is then cleaned by removing page numbers and extra whitespace.
+The example uses the `pypdf` library to extract the contents of the PDF and convert it to text. The text data is then cleaned by removing page numbers and extra whitespace.
 
 ### Build a strong prompt
 
 Claude can adapt to various summarization styles. You can change the details of the prompt to guide Claude to be more or less verbose, include more or less technical terminology, or provide a higher- or lower-level summary of the context at hand.
 
 Here’s an example of how to create a prompt that ensures the generated summaries follow a consistent structure when analyzing sublease agreements:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
 
 Python
 
@@ -250,7 +298,7 @@ client = anthropic.Anthropic()
 
 
 def summarize_document(
-    text, details_to_extract, model="claude-opus-5-5", max_tokens=1000
+    text, details_to_extract, model="claude-opus-5-5", max_tokens=16000
 ):
     # Format the details to extract to be placed within the prompt's context
     details_to_extract_str = "\n".join(details_to_extract)
@@ -341,21 +389,35 @@ Legal summarization often involves handling long documents or many related docum
 
 Here's an example of how to perform meta-summarization:
 
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
 Python
 
 
 
 ```python
-# Initialize the Anthropic client
-client = anthropic.Anthropic()
-
-
 def chunk_text(text, chunk_size=20000):
     return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
 
 
 def summarize_long_document(
-    text, details_to_extract, model="claude-opus-5-5", max_tokens=1000
+    text, details_to_extract, model="claude-opus-5-5", max_tokens=16000
 ):
     # Format the details to extract to be placed within the prompt's context
     details_to_extract_str = "\n".join(details_to_extract)

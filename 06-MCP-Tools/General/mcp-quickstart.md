@@ -2,7 +2,7 @@
 title: "Connect to MCP servers - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/mcp-quickstart"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-01T06:33:43Z"
+fetched_at: "2026-10-22T06:28:05Z"
 tags: ["claude-code", "mcp"]
 ---
 
@@ -331,7 +331,7 @@ This guide uses the `claude mcp` CLI commands, but every Claude Code surface can
 - **Claude Code desktop app**: add servers through the [Connectors UI](../../16-Mobile-Desktop/desktop.md#connect-external-tools).
 - **Claude Desktop chat app**: a separate app from Claude Code. To copy servers from its `claude_desktop_config.json` into the CLI, run `claude mcp add-from-claude-desktop` on macOS or WSL.
 - **VS Code**: see [Connect to external tools with MCP](../../03-IDE-Integrations/vs-code.md#connect-to-external-tools-with-mcp).
-- **Cloud sessions**: commit a `.mcp.json` to your repository; a session with one repository loads it. See [Edit .mcp.json directly](#edit-mcp-json-directly) and [What carries over from your setup](../../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup).
+- **Cloud sessions**: outside a [project](../../02-Claude-Code-CLI/claude-projects.md#what-threads-pick-up-from-your-repositories)’s threads, commit a `.mcp.json` to your repository; a session with one repository loads it. Cloud threads in a project use your claude.ai connectors instead. See [Edit .mcp.json directly](#edit-mcp-json-directly) and [What carries over from your setup](../../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup).
 - **Claude.ai**: connectors you add at [claude.ai/customize/connectors](https://claude.ai/customize/connectors) load automatically in the CLI when you sign in with that account. See [Use MCP servers from Claude.ai](mcp.md#use-mcp-servers-from-claude-ai).
 
 
@@ -393,6 +393,8 @@ In PowerShell, set the variable before the command on the same line:
 $env:MCP_TIMEOUT = "60000"; claude
 ```
 
+Before v2.1.299, some connections to HTTP servers that were up timed out at startup regardless of `MCP_TIMEOUT`. If you use one of those versions and an HTTP server that is up still times out after you raise the limit, [update Claude Code](../../01-Getting-Started/setup.md#update-claude-code).
+
 Server already exists
 
 You’ve already added a server with that name at the same scope. Either remove the existing entry first or choose a different name:
@@ -405,7 +407,7 @@ If the name exists at more than one scope, `remove` reports `exists in multiple 
 
 Server connects but no tools appear
 
-Run `/mcp` inside a session and select the server to see its tool list. If the list is empty, the server started but didn’t register any tools, which usually means it’s missing a required environment variable such as an API key.Pass the variable with `--env KEY=value` on `claude mcp add`, or in the `env` field of the server’s `.mcp.json` entry. The server’s documentation lists the variables it needs.
+Run `/mcp` inside a session and select the server to see its tool list. If the list is empty, the server started but didn’t register any tools, which usually means it’s missing a required environment variable such as an API key.Pass the variable with `--env KEY=value` on `claude mcp add`, or in the `env` field of the server’s `.mcp.json` entry. The server’s documentation lists the variables it needs.Before v2.1.302, `/mcp` showed the status `tools fetch failed` for a server using [protocol revision 2026-07-28](mcp.md#mcp-client-runtimes) that left `resultType`, `ttlMs`, or `cacheScope` out of its replies. If you use one of those versions and a server shows that status, [update Claude Code](../../01-Getting-Started/setup.md#update-claude-code).
 
 Changes to .mcp.json don't take effect
 

@@ -2,7 +2,7 @@
 title: "List memories - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memories/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:23Z"
+fetched_at: "2026-10-20T06:37:07Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Fmemories%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Fmemories%2Flist)
 
 
 
@@ -157,7 +157,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -167,9 +167,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -240,13 +242,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -254,9 +258,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -265,11 +269,17 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Memory Stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores)
 4.  [Memories](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories)
 
 # List memories
+
+Copy page
+
+
+
+cURL
 
 GET/v1/memory_stores/{memory_store_id}/memories
 
@@ -343,11 +353,21 @@ Return the object with `content` populated. On list endpoints, `view=full` caps 
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -555,6 +575,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -630,19 +654,19 @@ Response 200
 {
   "data": [
     {
-      "id": "id",
-      "content_sha256": "content_sha256",
-      "content_size_bytes": 0,
-      "created_at": "2019-12-27T18:11:19.117Z",
-      "memory_store_id": "memory_store_id",
-      "memory_version_id": "memory_version_id",
-      "path": "path",
+      "id": "mem_011CZkZ9X2dpNyB6YbtxvB6e",
+      "content_sha256": "ba7936d94c84d948a2232088f78228f175df6a8353b2d5bc9228eee5794a0024",
+      "content_size_bytes": 28,
+      "created_at": "2026-03-15T10:00:00Z",
+      "memory_store_id": "memstore_01Wf3kQ8tZxB2mVr7HcJ4aNd",
+      "memory_version_id": "memver_011CZkZBJq5dWxk9fVLNcPht",
+      "path": "/preferences/formatting.md",
       "type": "memory",
-      "updated_at": "2019-12-27T18:11:19.117Z",
-      "content": "content"
+      "updated_at": "2026-03-15T10:00:00Z",
+      "content": null
     }
   ],
-  "next_page": "next_page"
+  "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="
 }
 ```
 
@@ -656,12 +680,16 @@ Response 200
 {
   "data": [
     {
-      "id": "id",
-      "content_sha256": "content_sha256",
-      "content_size_bytes": 0,
-      "created_at": "2019-12-27T18:11:19.117Z",
-      "memory_store_id": "memory_store_id",
-      "memory_version_id": "memory_version_id",
-      "path": "path",
+      "id": "mem_011CZkZ9X2dpNyB6YbtxvB6e",
+      "content_sha256": "ba7936d94c84d948a2232088f78228f175df6a8353b2d5bc9228eee5794a0024",
+      "content_size_bytes": 28,
+      "created_at": "2026-03-15T10:00:00Z",
+      "memory_store_id": "memstore_01Wf3kQ8tZxB2mVr7HcJ4aNd",
+      "memory_version_id": "memver_011CZkZBJq5dWxk9fVLNcPht",
+      "path": "/preferences/formatting.md",
       "type": "memory",
-      "updated_at": "2019-12-27T18:11:19.117Z",
+      "updated_at": "2026-03-15T10:00:00Z",
+      "content": null
+    }
+  ],
+  "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="

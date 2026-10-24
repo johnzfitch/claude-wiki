@@ -2,7 +2,7 @@
 title: "Compliance API FAQ - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-faq"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:05Z"
+fetched_at: "2026-10-20T06:40:26Z"
 tags: ["api", "rag"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "rag"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-faq)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-faq)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Compliance API
 
@@ -82,11 +84,11 @@ To enable the Compliance API, see [Set up the Compliance API](manage-claude-comp
 
 ### Who can enable the Compliance API?
 
-For a Claude Enterprise organization, the primary owner enables the Compliance API at [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access), and enablement cascades from the parent organization to every linked organization. For an eligible standalone Claude Console organization (one with no parent organization), an organization admin enables it at [Claude Console \> Settings \> Security](playground.md). A Claude Console organization that is linked to a parent organization does not enable the Compliance API itself; it is enabled from the parent organization. See [Set up the Compliance API](manage-claude-compliance-api-access.md#set-up-the-compliance-api) for the steps.
+For a Claude Enterprise organization, the primary owner enables the Compliance API at [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access), and enablement cascades from the parent organization to every linked organization. For an eligible standalone Claude Console organization (one with no parent organization), an organization admin enables it on the [Compliance](playground.md) page (`platform.claude.com/settings/security`) in the Claude Console. A Claude Console organization that is linked to a parent organization does not enable the Compliance API itself; it is enabled from the parent organization. See [Set up the Compliance API](manage-claude-compliance-api-access.md#set-up-the-compliance-api) for the steps.
 
 ### Can I turn the Compliance API off after enabling it in Claude Console?
 
-Yes. For a standalone Claude Console organization, an organization admin can turn the **Compliance API** toggle off at [Claude Console \> Settings \> Security](playground.md), the same place it is turned on. While the Compliance API is off, no activity events are recorded for your organization, so the [Activity Feed](manage-claude-compliance-activity-feed.md) receives no new events. If your organization is enrolled in [Access Transparency](manage-claude-access-transparency.md), turning the Compliance API off also stops Access Transparency event delivery. Activity that is not recorded while the Compliance API is off cannot be recovered later. Turning the Compliance API back on resumes recording from that point forward; activity that was already recorded is not deleted.
+Yes. For a standalone Claude Console organization, an organization admin can turn the **Compliance API** toggle off on the [Compliance](playground.md) page (`platform.claude.com/settings/security`) in the Claude Console, the same place it is turned on. While the Compliance API is off, no activity events are recorded for your organization, so the [Activity Feed](manage-claude-compliance-activity-feed.md) receives no new events. If your organization is enrolled in [Access Transparency](manage-claude-access-transparency.md), turning the Compliance API off also stops Access Transparency event delivery. Activity that is not recorded while the Compliance API is off cannot be recovered later. Turning the Compliance API back on resumes recording from that point forward; activity that was already recorded is not deleted.
 
 ### Does turning the Compliance API off delete events that were already captured?
 
@@ -140,13 +142,13 @@ No. The Activity Feed records who did what and when (authentication, chat creati
 
 To retrieve message bodies and file contents, use the chat, message, and file endpoints with a Compliance Access Key carrying `read:compliance_user_data`. The same key and scope retrieve transcripts of sessions on users' machines (such as Cowork and Claude Code sessions) through the [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions), and transcripts of Cowork sessions in the cloud through the [remote session endpoints](manage-claude-compliance-sessions.md#retrieve-remote-sessions). These endpoints serve Claude Enterprise content only; Claude Console workloads, and Claude API workloads authenticated with an API key, expose administrative and resource events through the Activity Feed but do not expose prompt text or model responses through the Compliance API.
 
-### Do Cowork, Claude Code, Claude Science, Claude for Microsoft 365, and Claude in Chrome sessions appear in the Compliance API?
+### Do sessions in Cowork, Claude Code, and other Claude apps and add-ins appear in the Compliance API?
 
-Yes. Cowork sessions in Claude Desktop that run on users' machines, Claude Code sessions (in the terminal, in Claude Desktop, or in an IDE extension), sessions in the Claude Science desktop app, Claude for Microsoft 365 sessions (in Excel, PowerPoint, Word, and Outlook), and chats in the Claude in Chrome browser extension are captured while users are signed in with their Claude Enterprise account and are available through the [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions). Cowork sessions started on claude.ai web or mobile, which run in the cloud in Anthropic-managed environments, are available through the [remote session endpoints](manage-claude-compliance-sessions.md#retrieve-remote-sessions). Each family has a list endpoint that returns session metadata and a messages endpoint that returns the session transcript (user prompts, assistant responses, and tool calls and results). The local family adds a third endpoint that retrieves one session's metadata. All of these endpoints use your existing Compliance Access Key with `read:compliance_user_data`; no new key or scope is needed.
+Yes. Cowork sessions in Claude Desktop that run on users' machines, Claude Code sessions (in the terminal, in Claude Desktop, or in an IDE extension), sessions in the Claude Science desktop app, Claude for Microsoft 365 sessions (in Excel, PowerPoint, Word, and Outlook), sessions in the Claude add-ins for Google Docs, Google Sheets, and Google Slides, and chats in the Claude in Chrome browser extension are captured while users are signed in with their Claude Enterprise account and are available through the [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions). Cowork sessions started on claude.ai web or mobile, which run in the cloud in Anthropic-managed environments, are available through the [remote session endpoints](manage-claude-compliance-sessions.md#retrieve-remote-sessions). Each family has a list endpoint that returns session metadata and a messages endpoint that returns the session transcript (user prompts, assistant responses, and tool calls and results). The local family adds a third endpoint that retrieves one session's metadata. All of these endpoints use your existing Compliance Access Key with `read:compliance_user_data`; no new key or scope is needed.
 
-Local sessions are captured as their requests reach the Claude API, so nothing is installed on the device, and on-device activity that never reaches the API is not captured. Claude Code sessions authenticated with a Claude Console API key, Claude Code sessions run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), and [Claude Code cloud sessions](../../02-Claude-Code-CLI/claude-code-on-the-web.md), which run on cloud infrastructure instead of the user's machine, are not captured. These cloud sessions are not remote sessions, even though both run in the cloud; the remote session endpoints return Cowork sessions only. Each run of a Cowork scheduled task in the cloud is a remote session: the remote session list endpoint returns it as an [agent-owned session](manage-claude-compliance-sessions.md#retrieve-remote-sessions) (`agent_id` is set, and `started_by_user` identifies the human who initiated the run), and the messages endpoint returns its transcript, but neither returns the task's name or schedule. Claude Code routines that run in the cloud are Claude Code cloud sessions, so the session endpoints do not return them. Organizations with [HIPAA readiness](../Guides/build-with-claude-api-and-data-retention.md#hipaa-readiness) enabled get local session data for Cowork and Claude Code only, stored for 30 days, and sessions for which [zero data retention (ZDR)](../Guides/build-with-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect are excluded.
+Local sessions are captured as their requests reach the Claude API, so nothing is installed on the device, and on-device activity that never reaches the API is not captured. Claude Code sessions authenticated with a Claude Console API key, Claude Code sessions run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), and [Claude Code cloud sessions](../../02-Claude-Code-CLI/claude-code-on-the-web.md), which run on cloud infrastructure instead of the user's machine, are not captured. These cloud sessions are not remote sessions, even though both run in the cloud; the remote session endpoints return Cowork sessions only. Each run of a Cowork scheduled task in the cloud is a remote session: the remote session list endpoint returns it as an [agent-owned session](manage-claude-compliance-sessions.md#retrieve-remote-sessions) (`agent_id` is set, and `started_by_user` identifies the human who initiated the run), and the messages endpoint returns its transcript, but neither returns the task's name or schedule. Claude Code routines that run in the cloud are Claude Code cloud sessions, so the session endpoints do not return them. Organizations with [HIPAA readiness](manage-claude-api-and-data-retention.md#hipaa-readiness) enabled get local session data for Cowork and Claude Code only, stored for 30 days, and sessions for which [zero data retention (ZDR)](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect are excluded.
 
-The local and remote session endpoints are stable for Cowork, Claude Code, and Claude for Microsoft 365 sessions; coverage of Claude Science and Claude in Chrome sessions is in beta.
+The local and remote session endpoints are stable for Cowork, Claude Code, and Claude for Microsoft 365 sessions. Coverage of sessions in Claude Science, the Claude add-ins for Google Docs, Google Sheets, and Google Slides, and Claude in Chrome is in beta.
 
 ### What do session transcripts include?
 
@@ -169,7 +171,7 @@ See [Sessions on users' machines](manage-claude-compliance-sessions.md#retrieve-
 
 ### How does session coverage compare with OpenTelemetry logging (OTEL) for Cowork and Claude Code?
 
-[Cowork's OpenTelemetry logging](../../15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md) overlap with the session endpoints but answer different needs: OTEL streams per-event telemetry to infrastructure you run as activity happens, whereas the Compliance API lets you retrieve retained per-session transcripts from Anthropic after the fact. OTEL can also capture prompts and responses, but Anthropic recommends the Compliance API for retrieving the content of Cowork and Claude Code sessions. For a table comparing local sessions, remote sessions, and OTEL, see the introduction to [Retrieve session transcripts](manage-claude-compliance-sessions.md).
+[Cowork's OpenTelemetry logging](https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md) overlap with the session endpoints but answer different needs: OTEL streams per-event telemetry to infrastructure you run as activity happens, whereas the Compliance API lets you retrieve retained per-session transcripts from Anthropic after the fact. OTEL can also capture prompts and responses, but Anthropic recommends the Compliance API for retrieving the content of Cowork and Claude Code sessions. For a table comparing local sessions, remote sessions, and OTEL, see the introduction to [Retrieve session transcripts](manage-claude-compliance-sessions.md).
 
 OTEL events and Compliance API records share organization and user identifiers, so you can join them.
 
@@ -201,7 +203,7 @@ Activities are returned newest first, with ties in `created_at` broken by activi
 
 ### How do I get a sandbox to test the Compliance API?
 
-To test only the [Activity Feed](manage-claude-compliance-activity-feed.md), you do not need a Claude Enterprise organization: an organization admin can [enable the Compliance API](manage-claude-compliance-api-access.md#set-up-the-compliance-api) on an eligible standalone Claude Console test organization and query the feed with a new Admin API key. If the **Compliance API** section is not visible in that organization's Security settings, the organization is not eligible for self-service enablement.
+To test only the [Activity Feed](manage-claude-compliance-activity-feed.md), you do not need a Claude Enterprise organization: an organization admin can [enable the Compliance API](manage-claude-compliance-api-access.md#set-up-the-compliance-api) on an eligible standalone Claude Console test organization and query the feed with a new Admin API key. If that organization's [Compliance](playground.md) page (`platform.claude.com/settings/security`) in the Claude Console shows a page-not-found error, or doesn't show the **Compliance API** section, the organization is not eligible for self-service enablement.
 
 To test every endpoint, set up a Claude Enterprise sandbox organization linked to a Claude Console organization under the same parent. This lets the sandbox exercise both the Activity Feed (through an Admin API key) and the chat, file, project, and session endpoints (through a Compliance Access Key).
 

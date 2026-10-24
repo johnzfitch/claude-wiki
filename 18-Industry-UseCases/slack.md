@@ -2,7 +2,7 @@
 title: "Slack Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/slack"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:21Z"
+fetched_at: "2026-10-23T06:29:49Z"
 tags: ["api", "case-studies", "enterprise", "security", "slack"]
 ---
 
@@ -61,18 +61,18 @@ Technical advantages that power this transformation include:
 - **Extensive Context Window:** Claude excels at processing lengthy discussions and providing personalized tone and format for user interactions due to its industry-leading, extensive context window capabilities.
 - **Safety and Compliance:** Anthropic’s commitment to safety and compliance solidified the partnership, ensuring that Slack’s AI solution meets the paramount security and data protection needs of all customers, especially large enterprises.
 
-"Anthropic has been instrumental as we’ve built our AI solution” said Ananya Helmich, VP of Software Engineering at Slack. “The exceptional quality and high performance of Claude models empower us to build AI-driven solutions that truly make a difference for our customers.”
+“Anthropic has been instrumental as we’ve built our AI solution” said Ananya Helmich, VP of Software Engineering at Slack. “The exceptional quality and high performance of Claude models empower us to build AI-driven solutions that truly make a difference for our customers.”
 
 ### Transforming how teams work with Slack’s AI features and Claude
 
-Claude models enhance a range of Slack’s AI features, provide intelligent assistance across everyday tasks, and make organizational knowledge readily accessible and actionable. Here's how:
+Claude models enhance a range of Slack’s AI features, provide intelligent assistance across everyday tasks, and make organizational knowledge readily accessible and actionable. Here’s how:
 
 - **AI-Powered Search:** Slack users ask questions in natural language to search for relevant information across all content - conversations, threads, and files. Search results locate relevant content and deliver clear, rapid results.
 - **Instant Summaries:** Slack’s AI delivers prompt conversation summaries of channels and threads, highlighting key decisions and action items, tailored to the user.
 - **AI-Generated Recaps:** This capability streamlines work by prioritizing important messages and unread mentions, providing a concise overview of priority discussions across channels.
 - **Productivity-Boosting Tools:** Slack’s AI acts as an intelligent assistant, helping users build workflows and create detailed meeting notes from huddles, providing real-time advantages within the platform.
 
-"Slack's close collaboration with Anthropic has helped our Engineering and Product teams accelerate prototyping and model testing," said Samuel Messing, VP of Engineering for search and AI at Slack. "By leveraging Claude's advanced AI capabilities, we've been able to create meaningful improvements across the Slack platform."
+“Slack’s close collaboration with Anthropic has helped our Engineering and Product teams accelerate prototyping and model testing,” said Samuel Messing, VP of Engineering for search and AI at Slack. “By leveraging Claude’s advanced AI capabilities, we’ve been able to create meaningful improvements across the Slack platform.”
 
 By focusing on these deep-seated technical and efficiency improvements, Slack and Anthropic are not just accelerating workflows—they are co-inventing the future of work.
 
@@ -100,7 +100,8 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -118,12 +119,12 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -156,7 +157,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -174,6 +175,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -189,7 +191,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -224,7 +226,8 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -242,12 +245,12 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -280,7 +283,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -298,6 +301,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -313,7 +317,7 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

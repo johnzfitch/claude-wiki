@@ -2,7 +2,7 @@
 title: "Scan your codebase for vulnerabilities - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-security"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:15Z"
+fetched_at: "2026-10-22T06:28:03Z"
 tags: ["claude-code"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["claude-code"]
 - [Troubleshooting](#troubleshooting)
 - [Related resources](#related-resources)
 
-Code review & CI/CD
+Security scans
 
 # Scan your codebase for vulnerabilities
 
@@ -32,7 +32,7 @@ Install the Claude Security plugin to scan your codebase for vulnerabilities in 
 
 Copy pageCopy page
 
-The Claude Security plugin runs a multi-agent vulnerability scan of your codebase inside a Claude Code session. A team of Claude agents maps your architecture, builds a threat model, hunts for vulnerabilities, and independently reviews every finding before writing the report. Use the plugin to scan a whole repository or [only a set of changes](#scan-only-your-changes), such as a branch’s diff, a pull request’s diff, or a single commit, then turn the findings you choose into patches that you review and apply yourself. The plugin runs locally in your session, uses [whichever models you have access to in Claude Code](#models-and-providers), and each scan counts toward your [usage](../17-Billing-Plans/costs.md). If you want a managed service that monitors your repositories, or want to run scans on [Claude Mythos](../20-Models/about-claude-models-introducing-claude-fable-5-and-claude-mythos-5.md), see the [Claude Security](../15-Claude-AI-Features/product-claude-security.md) product, available on the Enterprise plan. The plugin reaches code the managed product can’t reach, such as repositories hosted on GitLab or Bitbucket, or on networks that don’t allow inbound connections. The plugin is also distinct from the review tools already in Claude Code: the [security guidance plugin](security-guidance.md) reviews code as Claude writes it, [`/security-review`](commands.md#all-commands) runs a single pass over your branch, and [Code Review](code-review.md) reviews pull requests. For how the layers stack, see [How the plugin fits with other security tools](#how-the-plugin-fits-with-other-security-tools).
+The Claude Security plugin runs a multi-agent vulnerability scan of your codebase inside a Claude Code session. A team of Claude agents maps your architecture, builds a threat model, hunts for vulnerabilities, and independently reviews every finding before writing the report. Use the plugin to scan a whole repository or [only a set of changes](#scan-only-your-changes), such as a branch’s diff, a pull request’s diff, or a single commit, then turn the findings you choose into patches that you review and apply yourself. The plugin runs locally in your session, uses [whichever models you have access to in Claude Code](#models-and-providers), and each scan counts toward your [usage](../17-Billing-Plans/costs.md). If you want a managed service that monitors your repositories, or want to run scans on [Claude Mythos](../20-Models/about-claude-models-introducing-claude-fable-5-and-claude-mythos-5.md), see the [Claude Security](../15-Claude-AI-Features/product-claude-security.md) product, available on the Enterprise plan. The plugin is also distinct from the review tools already in Claude Code: the [security guidance plugin](security-guidance.md) reviews code as Claude writes it, [`/security-review`](commands.md#all-commands) runs a single pass over your branch, and [Code Review](code-review.md) reviews pull requests. For how the layers stack, see [How the plugin fits with other security tools](#how-the-plugin-fits-with-other-security-tools).
 
 
 [​](#prerequisites)
@@ -69,10 +69,10 @@ In the VS Code extension or the desktop app, install it by following [Install a 
 /plugin install claude-security@claude-plugins-official
 ```
 
-The command opens the plugin’s details, where you choose an [installation scope](../08-Plugins-Skills/discover-plugins.md#install-a-plugin) to start the install. If the install fails, the fix depends on which message Claude Code reports:
+The command opens the plugin’s details, where you choose an [installation scope](../08-Plugins-Skills/discover-plugins.md#install-a-plugin) to start the install. If the install fails, match the message Claude Code reports:
 
-- If it reports `Marketplace "claude-plugins-official" not found`, add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
-- If it reports that it [can’t find the plugin in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin), check the plugin name for a typo.
+- `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
+- `Plugin "claude-security" not found in marketplace "claude-plugins-official"`: your local copy of the marketplace catalog may be out of date. Refresh it with `/plugin marketplace update claude-plugins-official`, then retry the install. If the retry prints the same message, see [Plugin not found in marketplace](../08-Plugins-Skills/plugins-troubleshooting.md#plugin-not-found-in-marketplace).
 
 Check the install summary. If it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to activate the plugin in your current session. Once the plugin is active, you’re ready to [scan and fix your codebase](#scan-and-fix-your-codebase).
 

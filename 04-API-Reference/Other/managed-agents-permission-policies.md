@@ -2,7 +2,7 @@
 title: "Permission policies - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/permission-policies"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:32:51Z"
+fetched_at: "2026-10-20T06:40:34Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fpermission-policies)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fpermission-policies)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Define your agent
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Permission policies
 
@@ -97,14 +109,6 @@ Control when agent and MCP tools execute.
 Copy page
 
 
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 Permission policies control whether server-executed tools (the pre-built agent toolset and MCP toolset) run automatically, wait for your approval, or have each call evaluated by the server. Custom tools are executed by your application and controlled by you, so they are not governed by permission policies.
 
@@ -145,6 +149,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -198,6 +204,8 @@ PHP
 
 Ruby
 
+CLI
+
 
 
 ```python
@@ -249,6 +257,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -310,6 +320,8 @@ PHP
 
 Ruby
 
+CLI
+
 
 
 ```python
@@ -347,7 +359,7 @@ tools:
 ---
 ```
 
-What you post in `user.message` events counts as your intent, and it can lead the server to allow a call it would otherwise deny. The server does not read intent from a tool result, a fetched webpage, an MCP server's response, or a message between [session threads](managed-agents-multiagent-orchestration.md#tool-permissions-and-custom-tools). It assesses that content but does not take instructions from it. The server evaluates some calls as high-risk no matter who asks. If you relay untrusted end-user input in `user.message` events, the server reads that input as your intent too, and it can get a call allowed. Configure `always_ask` on the tools you would not let that end user run without review.
+What you post in `user.message` events counts as your intent, and it can lead the server to allow a call it would otherwise deny. The server does not read intent from a tool result, a fetched webpage, an MCP server's response, or a message between [session threads](managed-agents-session-threads.md#tool-permissions-and-custom-tools). It assesses that content but does not take instructions from it. The server evaluates some calls as high-risk no matter who asks. If you relay untrusted end-user input in `user.message` events, the server reads that input as your intent too, and it can get a call allowed. Configure `always_ask` on the tools you would not let that end user run without review.
 
 
 
@@ -402,15 +414,35 @@ Write your client to tolerate an `evaluation.type` or `reason_code` it does not 
 A tool call evaluates to `ask` under an `always_ask` policy, or under `auto` when the server reaches no determination. When that happens:
 
 1.  The session emits an `agent.tool_use` or `agent.mcp_tool_use` event.
-2.  The session pauses with a `session.status_idle` event whose `stop_reason.type` is `requires_action`. The blocking event IDs are in the `stop_reason.event_ids` array. The session waits indefinitely for a response.
+2.  The session pauses with a `session.status_idle` event whose `stop_reason.type` is `requires_action`. The blocking event IDs are in the `stop_reason.event_ids` array. The session waits indefinitely for a response. A call from a thread of a [workflow run](managed-agents-workflow-runs.md#while-a-run-is-open) reaches your client on the primary stream. While anything else in the session is working, the session can stay `running` and send no `session.status_idle`, so answer the tool-use event itself. The call waits only until the run finishes with that thread or the run ends. An interrupt might leave it waiting, so allow or deny it yourself.
 3.  Send a `user.tool_confirmation` event for each blocking event, passing the event ID in the `tool_use_id` parameter. Set `result` to `"allow"` or `"deny"`. Use `deny_message` to explain a denial. You can send several confirmations in a single `events` request.
 4.  Once all blocking events are resolved, the session transitions back to `running`. Allowed tools execute. Denied tools do not run, and the agent receives a tool result saying the call was rejected, including your `deny_message`.
+
+For example, a `bash` call paused under an `always_ask` policy appears on the stream as follows:
+
+```python
+{
+  "type": "agent.tool_use",
+  "id": "sevt_01def...",
+  "name": "bash",
+  "input": {
+    "command": "pip install -r requirements.txt"
+  },
+  "evaluated_permission": "ask",
+  "evaluation": {
+    "type": "always_ask"
+  },
+  "processed_at": "2026-03-25T14:01:45Z"
+}
+```
+
+
 
 If you send a `user.tool_confirmation` for an event whose `evaluated_permission` is not `ask`, the API rejects it with a 400 error. That includes calls the server denied under `auto`: your client cannot override them.
 
 To answer interactively instead, use `ant beta:sessions connect`, which shows the waiting call and sends this event when you allow or deny it. See [Connect to a Managed Agents session from your terminal](cli-sdks-libraries-cli-sessions-connect.md#follow-and-steer-the-session).
 
-In the following examples, the tool-use event IDs come from the `stop_reason.event_ids` array of the `session.status_idle` event. Learn more about receiving events in the [Session event stream](managed-agents-events-and-streaming.md#integrating-events) guide, or [subscribe to webhooks](managed-agents-webhooks.md) to be notified when a session pauses for input.
+In the following examples, the tool-use event IDs come from the `stop_reason.event_ids` array of the `session.status_idle` event. Learn more about receiving events in the [Session event stream](managed-agents-events-and-streaming.md#stream-events) guide, or [subscribe to webhooks](managed-agents-webhooks.md) to be notified when a session pauses for input.
 
 cURL
 
@@ -429,6 +461,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -461,7 +495,7 @@ client.beta.sessions.events.send(
 
 ## Custom tools
 
-Permission policies do not apply to custom tools. When the agent invokes a custom tool, your application receives an `agent.custom_tool_use` event and is responsible for deciding whether to execute it before sending back a `user.custom_tool_result`. See [Session event stream](managed-agents-events-and-streaming.md#handling-custom-tool-calls) for the full flow.
+Permission policies do not apply to custom tools. When the agent invokes a custom tool, your application receives an `agent.custom_tool_use` event and is responsible for deciding whether to execute it before sending back a `user.custom_tool_result`. See [Session event stream](managed-agents-events-and-streaming.md#answer-tool-calls-that-pause-the-session) for the full flow.
 
 ## Next steps
 

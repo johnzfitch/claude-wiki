@@ -2,7 +2,7 @@
 title: "Claude in Microsoft Foundry - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:32:32Z"
+fetched_at: "2026-10-20T06:39:15Z"
 tags: ["api", "authentication", "billing", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication", "billing", "sdk"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fclaude-in-microsoft-foundry)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fclaude-in-microsoft-foundry)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Claude on cloud platforms
 
@@ -94,7 +94,7 @@ Access Claude models through Microsoft Foundry with Azure-native endpoints and a
 
 
 
-This guide shows you how to set up and make API calls to Claude in Microsoft Foundry using one of Anthropic's client SDKs or direct HTTP requests. When you access Claude in Microsoft Foundry, you are billed for Claude usage in the Azure Marketplace. You can use Claude models including Claude Fable 5.1, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Sonnet 5, and features such as the [1M-token context window](build-with-claude-context-windows.md), while managing costs through your Azure subscription.
+This guide shows you how to set up and make API calls to Claude in Microsoft Foundry using one of Anthropic's client SDKs or direct HTTP requests. When you access Claude in Microsoft Foundry, you are billed for Claude usage in the Azure Marketplace. You can use Claude models including Claude Fable 5.1, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Haiku 5.5, and features such as the [1M-token context window](build-with-claude-context-windows.md), while managing costs through your Azure subscription.
 
 Claude is available in Global Standard and US Data Zone Standard deployment types in Foundry resources, billed in Claude Consumption Units through the Azure Marketplace. Visit [Claude in Microsoft Foundry pricing](../../17-Billing-Plans/about-claude-pricing.md#claude-in-microsoft-foundry-pricing) for details.
 
@@ -121,7 +121,7 @@ Before you begin, ensure you have:
 
 - An active Azure subscription
 - Access to the [Foundry portal](https://ai.azure.com/)
-- The [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) installed (required for the Entra ID cURL example, optional otherwise)
+- The [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) installed (required for the Entra ID cURL and CLI examples, optional otherwise)
 - An Azure RBAC role that allows you to use the resource, such as **Foundry User** (formerly Azure AI User) or **Cognitive Services User**
 
 ## Install an SDK
@@ -145,6 +145,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 ```python
 pip install -U "anthropic"
@@ -177,7 +179,7 @@ After creating your resource, deploy a Claude model to make it available for API
 
 1.  Sign in to the Foundry portal. From the portal homepage, select **Discover** in the upper-right navigation, then **Models** in the left pane to open the model catalog.
 2.  Search for and select a Claude model (for example,
-    claude-opus-5
+    claude-opus-5-5
     ). Each model appears once in the catalog regardless of how many hosting options it supports.
 3.  On the model card, select **Deploy**, then **Custom settings** to open the deployment settings pane. If you choose **Default settings** instead, the deployment is automatically configured as Hosted on Azure for models available in both hosting options.
 4.  On your first Claude deployment, review the Azure Marketplace terms, select an industry, and select **Agree and Proceed** to accept the terms and subscribe to the Azure Marketplace offer.
@@ -237,6 +239,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -288,6 +292,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -324,7 +330,7 @@ Claude in Microsoft Foundry supports most Claude features. You can find all the 
 
 ### Context window
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Microsoft Foundry. Other Claude models, including Claude Sonnet 4.5, have a 200k-token context window.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, Claude Sonnet 4.6, and Claude Haiku 5.5 have a [1M-token context window](build-with-claude-context-windows.md) on Microsoft Foundry. Other Claude models, including Claude Sonnet 4.5 (deprecated), have a 200k-token context window.
 
 ### Claude features not supported for Claude in Microsoft Foundry
 
@@ -335,7 +341,7 @@ Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.
 - Models API
 - Message Batches API
 - Server-side fallback (the [`fallbacks` parameter](build-with-claude-refusals-and-fallback.md#server-side-fallback); use the [client-side fallback pattern](build-with-claude-refusals-and-fallback.md#client-side-fallback) instead)
-- [Computer use](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) and [browser use](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) toolsets (`computer_toolset_20260801` and `browser_toolset_20260801` are not currently available on Microsoft Foundry; the beta computer use tool versions remain available)
+- [Computer use](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) and [browser use](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) toolsets (`computer_toolset_20260801` and `browser_toolset_20260801` are not currently available on Microsoft Foundry; the beta computer use tool versions remain available for the models listed under [Earlier tool versions](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#earlier-tool-versions))
 
 ### Additional features not supported when hosted on Azure
 
@@ -361,23 +367,24 @@ Lifecycle terms (Deprecated, Retired) are defined in [Model deprecations](../../
 
 The following Claude models are available through Foundry:
 
-| Model                                                                                         | Default deployment name | Hosted on Azure | Hosted on Anthropic |
-|-----------------------------------------------------------------------------------------------|-------------------------|:---------------:|:-------------------:|
-| Claude Fable 5.1                                                                              | claude-fable-5-1        |                 |          ✓          |
-| Claude Mythos 5.1 ([limited availability(opens in new tab)](../../22-Safety-Policy/glasswing.md)) | claude-mythos-5-1       |                 |          ✓          |
-| Claude Fable 5                                                                                | claude-fable-5          |                 |          ✓          |
-| Claude Mythos 5 ([limited availability(opens in new tab)](../../22-Safety-Policy/glasswing.md))   | claude-mythos-5         |                 |          ✓          |
-| Claude Opus 5.5                                                                               | claude-opus-5-5         |        ✓        |          ✓          |
-| Claude Opus 5                                                                                 | claude-opus-5           |        ✓        |          ✓          |
-| Claude Opus 4.8                                                                               | claude-opus-4-8         |        ✓        |          ✓          |
-| Claude Opus 4.7                                                                               | claude-opus-4-7         |                 |          ✓          |
-| Claude Opus 4.6                                                                               | claude-opus-4-6         |                 |          ✓          |
-| Claude Opus 4.5                                                                               | claude-opus-4-5         |                 |          ✓          |
-| Claude Sonnet 5.5                                                                             | claude-sonnet-5-5       |        ✓        |          ✓          |
-| Claude Sonnet 5                                                                               | claude-sonnet-5         |        ✓        |          ✓          |
-| Claude Sonnet 4.6                                                                             | claude-sonnet-4-6       |                 |          ✓          |
-| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                    | claude-sonnet-4-5       |                 |          ✓          |
-| Claude Haiku 4.5                                                                              | claude-haiku-4-5        |        ✓        |          ✓          |
+| Model                                                                                                         | Default deployment name | Hosted on Azure | Hosted on Anthropic |
+|---------------------------------------------------------------------------------------------------------------|-------------------------|:---------------:|:-------------------:|
+| Claude Fable 5.1                                                                                              | claude-fable-5-1        |                 |          ✓          |
+| Claude Mythos 5.1 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842)) | claude-mythos-5-1       |                 |          ✓          |
+| Claude Fable 5                                                                                                | claude-fable-5          |                 |          ✓          |
+| Claude Mythos 5 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842))   | claude-mythos-5         |                 |          ✓          |
+| Claude Opus 5.5                                                                                               | claude-opus-5-5         |        ✓        |          ✓          |
+| Claude Opus 5                                                                                                 | claude-opus-5           |        ✓        |          ✓          |
+| Claude Opus 4.8                                                                                               | claude-opus-4-8         |        ✓        |          ✓          |
+| Claude Opus 4.7                                                                                               | claude-opus-4-7         |                 |          ✓          |
+| Claude Opus 4.6                                                                                               | claude-opus-4-6         |                 |          ✓          |
+| Claude Opus 4.5                                                                                               | claude-opus-4-5         |                 |          ✓          |
+| Claude Sonnet 5.5                                                                                             | claude-sonnet-5-5       |        ✓        |          ✓          |
+| Claude Sonnet 5                                                                                               | claude-sonnet-5         |        ✓        |          ✓          |
+| Claude Sonnet 4.6                                                                                             | claude-sonnet-4-6       |                 |          ✓          |
+| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                    | claude-sonnet-4-5       |                 |          ✓          |
+| Claude Haiku 5.5                                                                                              | claude-haiku-5-5        |        ✓        |          ✓          |
+| Claude Haiku 4.5                                                                                              | claude-haiku-4-5        |        ✓        |          ✓          |
 
 By default, deployment names match the model IDs shown in the preceding table. However, you can create custom deployments with different names in the Foundry portal to manage different configurations, versions, or rate limits. Use the deployment name (not necessarily the model ID) in your API requests.
 
@@ -387,7 +394,19 @@ By default, deployment names match the model IDs shown in the preceding table. H
 
 
 
-Upgrading to a newer Claude model? In Claude Code, run `/claude-api migrate` to apply model ID swaps and breaking parameter changes across your codebase. The skill detects which cloud platform your code targets and adjusts model ID formats and feature changes for that platform. See [Migrating to a newer Claude model](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md#migrating-to-a-newer-claude-model).
+Upgrading to a newer Claude model? The [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md#migrating-to-a-newer-claude-model) in Claude Code applies model ID swaps and breaking parameter changes across your code base:
+
+Claude Code
+
+Let Claude Code migrate your code for you
+
+Run in
+
+`❯``/claude-api`` migrate this project to the latest Claude Opus model`
+
+
+
+The skill detects which cloud platform your code targets and adjusts model ID formats and feature changes for that platform.
 
 ## Billing
 
@@ -448,7 +467,7 @@ Foundry does not include Anthropic's standard rate limit headers (`anthropic-rat
 **Error:** `Model not found` or `Deployment not found`
 
 - **Solution:** Verify you're using the correct deployment name. If you haven't created a custom deployment, use the default model ID (for example,
-  claude-opus-5
+  claude-opus-5-5
   ).
 - **Solution:** Ensure the model/deployment is available in your Azure region.
 

@@ -2,7 +2,7 @@
 title: "Get project document content - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/projects/documents/retrieve"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:16Z"
+fetched_at: "2026-10-20T06:39:07Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fprojects%2Fdocuments%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fprojects%2Fdocuments%2Fretrieve)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -241,7 +243,11 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -249,9 +255,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -269,6 +275,10 @@ To enable the Compliance API, see the setup guide.
 
 # Get project document content
 
+Copy page
+
+
+
 GET/v1/compliance/apps/projects/documents/{document_id}
 
 Get detailed information for a specific project document.
@@ -282,6 +292,16 @@ document_id: string
 The document ID (tagged ID, e.g., claude_proj_doc_abc123)
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 "x-api-key": optional string
 

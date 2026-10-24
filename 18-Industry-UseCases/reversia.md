@@ -2,7 +2,7 @@
 title: "Reversia Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/reversia"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:58Z"
+fetched_at: "2026-10-23T06:30:07Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -28,9 +28,9 @@ validated by native-speaking translation professionals
 
 2–3 weeks to minutes
 
-to launch a new language on a merchant's store
+to launch a new language on a merchant’s store
 
-[Reversia](https://reversia.tech/) is a Paris-based e-commerce translation platform that integrates natively with Shopify app. It translates every piece of a merchant's store: product descriptions, collections, blog posts, navigation, SEO metadata, and the structured data fields that power modern Shopify storefronts. More than 100 brands use Reversia across 110+ supported languages.
+[Reversia](https://reversia.tech/) is a Paris-based e-commerce translation platform that integrates natively with Shopify app. It translates every piece of a merchant’s store: product descriptions, collections, blog posts, navigation, SEO metadata, and the structured data fields that power modern Shopify storefronts. More than 100 brands use Reversia across 110+ supported languages.
 
 ## With Claude, Reversia:
 
@@ -42,13 +42,13 @@ to launch a new language on a merchant's store
 
 ## The challenge
 
-## Machine translation wasn't built for brand copy
+## Machine translation wasn’t built for brand copy
 
-For brands running [Shopify stores in multiple countries](https://apps.shopify.com/reversia), localization has been a persistent bottleneck. When Reversia's co-founder Anatole Rozan looked at what was available, the options weren't close to what merchants needed.
+For brands running [Shopify stores in multiple countries](https://apps.shopify.com/reversia), localization has been a persistent bottleneck. When Reversia’s co-founder Anatole Rozan looked at what was available, the options weren’t close to what merchants needed.
 
-"The existing translation apps on Shopify had massive gaps," Rozan said. "The translations themselves were literal and low quality, and most apps capped the number of languages you could add." Key content types like metafields and metaobjects often went untranslated entirely, and internal linking for SEO was broken or ignored. Merchants knew international expansion was a growth lever, but the tools weren't keeping up.
+“The existing translation apps on Shopify had massive gaps,” Rozan said. “The translations themselves were literal and low quality, and most apps capped the number of languages you could add.” Key content types like metafields and metaobjects often went untranslated entirely, and internal linking for SEO was broken or ignored. Merchants knew international expansion was a growth lever, but the tools weren’t keeping up.
 
-Reversia's first version used a conventional machine translation engine, and the same problems applied: the output was overly literal, and the engine produced significant errors when processing HTML content. Launching a new language still took two to three weeks of manual work, coordinating translations, verifying internal links, and checking that nothing was missed.
+Reversia’s first version used a conventional machine translation engine, and the same problems applied: the output was overly literal, and the engine produced significant errors when processing HTML content. Launching a new language still took two to three weeks of manual work, coordinating translations, verifying internal links, and checking that nothing was missed.
 
 Choosing the right Claude model
 
@@ -60,19 +60,19 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 
 When the team decided to rebuild the translation layer on an LLM, they ran a structured benchmark across multiple providers. They tested each model side-by-side on real merchant content across multiple language pairs. The criteria included translation quality, contextual understanding, tone consistency, and the ability to handle glossary rules and HTML structure. Claude scored highest on all four quality metrics.
 
-"It's overall more expensive than some alternatives, but we haven't found anything better to this day," Rozan said. "For a product where translation quality is the entire value proposition, that's what matters."
+“It’s overall more expensive than some alternatives, but we haven’t found anything better to this day,” Rozan said. “For a product where translation quality is the entire value proposition, that’s what matters.”
 
 Reversia now runs Claude Sonnet 4.6 as its primary translation model, with Claude Haiku 4.5 running a secondary quality-check pass on all translated content to flag inconsistencies before publication. The team plans to upgrade to Opus 4.7.
 
 ## How Reversia translates stores with Claude
 
-The core of Reversia's product is a glossary system that injects merchant-defined rules directly into Claude's prompt context at translation time. Rather than simple find-and-replace word matching, merchants can force specific term translations (always render "vestiaire" as "wardrobe" in English), exclude brand and product names from translation so they stay unchanged across every language, and add free-form natural language instructions such as "Adapt shoe size conventions for the German market" or "Translate in a modern, accessible tone for urban 20–40 year-olds." This is where Claude's reasoning matters. A conventional translation engine can swap words, but Reversia needed a model that could apply brand-specific rules around tone, audience, and terminology without breaking the output.
+The core of Reversia’s product is a glossary system that injects merchant-defined rules directly into Claude’s prompt context at translation time. Rather than simple find-and-replace word matching, merchants can force specific term translations (always render “vestiaire” as “wardrobe” in English), exclude brand and product names from translation so they stay unchanged across every language, and add free-form natural language instructions such as “Adapt shoe size conventions for the German market” or “Translate in a modern, accessible tone for urban 20–40 year-olds.” This is where Claude’s reasoning matters. A conventional translation engine can swap words, but Reversia needed a model that could apply brand-specific rules around tone, audience, and terminology without breaking the output.
 
 Claude also translates content types that often go unaddressed in localization: metafields and metaobjects, SEO title tags, meta descriptions, hreflang attributes, canonical URLs, and internal cross-language linking. Every URL is preserved so shoppers experience identical navigation in any language.
 
-Reversia monitors each merchant's store in real time. When content is created or updated, the platform detects the change and triggers a new Claude translation within 1 to 3 minutes. The pipeline runs on Google’s Cloud Run with Cloud Tasks managing job priority, and the app is fully native to Shopify, so merchants manage everything from within their existing admin.
+Reversia monitors each merchant’s store in real time. When content is created or updated, the platform detects the change and triggers a new Claude translation within 1 to 3 minutes. The pipeline runs on Google’s Cloud Run with Cloud Tasks managing job priority, and the app is fully native to Shopify, so merchants manage everything from within their existing admin.
 
-"The goal is that after six months on Reversia, the AI translates as if it were an internal team member who knows your brand inside out," Rozan said. "Claude's ability to reason about context, not just words, is what makes that possible."
+“The goal is that after six months on Reversia, the AI translates as if it were an internal team member who knows your brand inside out,” Rozan said. “Claude’s ability to reason about context, not just words, is what makes that possible.”
 
 Introducing Claude Sonnet 4.6
 
@@ -88,14 +88,14 @@ Reversia validates the output by having native-speaking translation professional
 
 ## What’s next
 
-Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality scoring will have Claude evaluate its own translations before publication and flag segments that fall below a confidence threshold so merchants only review what needs attention. And persistent brand memory will soon let the system learn each merchant's preferences over time, making translations progressively more on-brand without additional glossary configuration.
+Reversia’s roadmap deepens its use of Claude on two fronts. Automatic quality scoring will have Claude evaluate its own translations before publication and flag segments that fall below a confidence threshold so merchants only review what needs attention. And persistent brand memory will soon let the system learn each merchant’s preferences over time, making translations progressively more on-brand without additional glossary configuration.
 
-"Our customers tell us the translations feel like they were written by a native speaker who actually knows their brand," Rozan said. "That's what we were after. Claude makes that possible at scale."
+“Our customers tell us the translations feel like they were written by a native speaker who actually knows their brand,” Rozan said. “That’s what we were after. Claude makes that possible at scale.”
 
 ## Related stories
 
 
-### Inside Rakuten's plan to turn every employee into a builder with Claude Managed Agents
+### Inside Rakuten’s plan to turn every employee into a builder with Claude Managed Agents
 
 
 ### Rakuten accelerates development with Claude Code
@@ -104,7 +104,7 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 ### How Shopify uses Anthropic’s Claude on Google Cloud to supercharge Sidekick
 
 
-### L'Oréal advances conversational analytics with Claude
+### L’Oréal advances conversational analytics with Claude
 
 [](https://www.claude.com/)
 
@@ -115,7 +115,8 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -133,12 +134,12 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -171,7 +172,7 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -189,6 +190,7 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -204,7 +206,7 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -239,7 +241,8 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -257,12 +260,12 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -295,7 +298,7 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -313,6 +316,7 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -328,7 +332,7 @@ Reversia's roadmap deepens its use of Claude on two fronts. Automatic quality sc
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

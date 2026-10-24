@@ -2,7 +2,7 @@
 title: "Using the Candid connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-10-08T06:25:10Z"
+fetched_at: "2026-10-23T06:28:58Z"
 tags: ["connectors"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["connectors"]
 
 Connect Claude to Candid's database of 1.9M+ nonprofits and foundations for organizational research, grant discovery, and sector analysis.
 
-10 minClaude.ai
+10 minClaude
 
 [Open Claude](https://claude.ai/new)
 

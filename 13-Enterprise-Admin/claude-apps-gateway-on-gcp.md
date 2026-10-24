@@ -2,7 +2,7 @@
 title: "Deploy Claude apps gateway on Google Cloud - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-apps-gateway-on-gcp"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-28T06:33:06Z"
+fetched_at: "2026-10-22T06:29:16Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -259,7 +259,11 @@ gcloud run deploy claude-gateway \
   --no-invoker-iam-check
 ```
 
-Direct VPC egress, via `--network`, `--subnet`, and `--vpc-egress=private-ranges-only`, lets the service reach the Cloud SQL private IP directly. Each instance holds up to [`store.max_connections`](claude-apps-gateway-config.md#store) Postgres connections, five by default, so keep maximum instances × `store.max_connections` below your Cloud SQL tier’s connection limit; the [reference assets](#terraform-reference) cap instances at 8 for the `db-g1-small` tier for this reason. Public egress to Google Cloud’s Agent Platform endpoints and `accounts.google.com` goes directly to the internet rather than through the VPC, so no Cloud NAT is needed.The invoker IAM check must be open or disabled. The gateway runs its own OIDC and its clients carry no GCP token, so Cloud Run’s invoker check has to admit unauthenticated requests. The gateway’s OIDC sign-in authenticates the request once it reaches the container, with `allowed_email_domains` gating which domains may sign in.Two flags admit unauthenticated requests:
+Direct VPC egress, via `--network`, `--subnet`, and `--vpc-egress=private-ranges-only`, lets the service reach the Cloud SQL private IP directly. Public egress to Google Cloud’s Agent Platform endpoints and `accounts.google.com` goes directly to the internet rather than through the VPC, so no Cloud NAT is needed.
+
+Each instance holds up to [`store.max_connections`](claude-apps-gateway-config.md#store) Postgres connections, five by default. Use [Size the connection pool](claude-apps-gateway-deploy.md#size-the-connection-pool) to check `--max-instances=8` against the connections your database has left for the gateway, and include the extra instances a rolling update starts.
+
+The invoker IAM check must be open or disabled. The gateway runs its own OIDC and its clients carry no GCP token, so Cloud Run’s invoker check has to admit unauthenticated requests. The gateway’s OIDC sign-in authenticates the request once it reaches the container, with `allowed_email_domains` gating which domains may sign in.Two flags admit unauthenticated requests:
 
 - `--no-invoker-iam-check`: disables the check with no `allUsers` binding to manage, and works under Domain Restricted Sharing
 - `--allow-unauthenticated`: grants `allUsers` the `run.invoker` role; use it if your organization doesn’t allow `--no-invoker-iam-check`

@@ -2,7 +2,7 @@
 title: "Get Cost Over Time - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/cost_report/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-10T06:24:47Z"
+fetched_at: "2026-10-18T06:26:48Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fcost_report%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fcost_report%2Flist)
 
 
 
@@ -159,6 +159,8 @@ Plugins
 
 Plugin Marketplaces
 
+Telemetry Destinations
+
 
 Skills
 
@@ -228,13 +230,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -244,7 +248,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,12 +257,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
 5.  [Cost Report](http-beta-organization-analytics-cost-report.md)
 
 # Get Cost Over Time
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/analytics/cost_report
 
@@ -304,7 +314,7 @@ One of the following:
 
 
 
-claude_tag_categories: optional array of [BetaAnalyticsClaudeTagCategory](http-beta-organization-analytics.md#beta_analytics_claude_tag_category)
+claude_tag_categories: optional array of [BetaAnalyticsClaudeTagCategory](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_claude_tag_category)
 
 
 
@@ -346,7 +356,7 @@ maxItems100
 
 
 
-context_windows: optional array of [BetaAnalyticsContextWindow](http-beta-organization-analytics.md#beta_analytics_context_window)
+context_windows: optional array of [BetaAnalyticsContextWindow](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_context_window)
 
 
 
@@ -432,7 +442,7 @@ One of the following:
 
 
 
-inference_geos: optional array of [BetaAnalyticsInferenceGeoFilter](http-beta-organization-analytics.md#beta_analytics_inference_geo_filter)
+inference_geos: optional array of [BetaAnalyticsInferenceGeoFilter](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_inference_geo_filter)
 
 
 
@@ -482,7 +492,7 @@ Opaque cursor from a previous response's `next_page` field.
 
 
 
-products: optional array of [BetaAnalyticsProductFilter](http-beta-organization-analytics.md#beta_analytics_product_filter)
+products: optional array of [BetaAnalyticsProductFilter](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_product_filter)
 
 
 
@@ -590,7 +600,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-data: array of [BetaAnalyticsCostReportTimeBucket](http-beta-organization-analytics.md#beta_analytics_cost_report_time_bucket) { ending_at, results, starting_at }
+data: array of [BetaAnalyticsCostReportTimeBucket](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_cost_report_time_bucket) { ending_at, results, starting_at }
 
 
 
@@ -608,7 +618,7 @@ formatdate-time
 
 
 
-results: array of [BetaAnalyticsCostBucketedResult](http-beta-organization-analytics.md#beta_analytics_cost_bucketed_result) { amount, claude_tag_category, claude_tag_user_id, 12 more }
+results: array of [BetaAnalyticsCostBucketedResult](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_cost_bucketed_result) { amount, claude_tag_category, claude_tag_user_id, 12 more }
 
 
 
@@ -622,7 +632,7 @@ Amount (post-discount, pre-credit) in fractional cents.
 
 
 
-claude_tag_category: [BetaAnalyticsClaudeTagCategory](http-beta-organization-analytics.md#beta_analytics_claude_tag_category) or null
+claude_tag_category: [BetaAnalyticsClaudeTagCategory](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_claude_tag_category) or null
 
 
 
@@ -658,7 +668,7 @@ Slack user ID (for example `U0123ABCDEF`) of the member the Claude Tag (Claude i
 
 
 
-context_window: [BetaAnalyticsContextWindow](http-beta-organization-analytics.md#beta_analytics_context_window) or null
+context_window: [BetaAnalyticsContextWindow](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_context_window) or null
 
 
 
@@ -676,7 +686,7 @@ One of the following:
 
 
 
-cost_type: [BetaAnalyticsCostType](http-beta-organization-analytics.md#beta_analytics_cost_type) or null
+cost_type: [BetaAnalyticsCostType](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_cost_type) or null
 
 
 
@@ -734,7 +744,7 @@ model: string or null
 
 
 
-Model that produced the usage or cost, as a model name in the form the `models[]` filter accepts (for example, `claude-opus-5`). Null unless `model` is in `group_by[]`; it can also be null on grouped rows whose usage or cost is not attributed to a specific model, such as code execution.
+Model that produced the usage or cost, as a model name in the form the `models[]` filter accepts (for example, `claude-opus-5-5`). Null unless `model` is in `group_by[]`; it can also be null on grouped rows whose usage or cost is not attributed to a specific model, such as code execution.
 
 product: string or null
 
@@ -780,7 +790,7 @@ One of the following:
 
 
 
-token_type: [BetaAnalyticsTokenType](http-beta-organization-analytics.md#beta_analytics_token_type) or null
+token_type: [BetaAnalyticsTokenType](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_token_type) or null
 
 
 
@@ -877,7 +887,7 @@ Response 200
           "currency": "USD",
           "inference_geo": "global",
           "list_amount": "list_amount",
-          "model": "claude-opus-5",
+          "model": "claude-opus-5-5",
           "product": "chat",
           "rbac_group_id": "rbac_group_012rppKaSVsmTo6NqRDXQXNF",
           "requests": 0,
@@ -917,7 +927,7 @@ Response 200
           "currency": "USD",
           "inference_geo": "global",
           "list_amount": "list_amount",
-          "model": "claude-opus-5",
+          "model": "claude-opus-5-5",
           "product": "chat",
           "rbac_group_id": "rbac_group_012rppKaSVsmTo6NqRDXQXNF",
           "requests": 0,

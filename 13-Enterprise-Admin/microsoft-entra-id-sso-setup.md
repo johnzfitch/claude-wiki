@@ -2,7 +2,7 @@
 title: "Microsoft Entra ID SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917889-microsoft-entra-id-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:25:15Z"
+fetched_at: "2026-10-23T06:29:24Z"
 tags: ["enterprise"]
 ---
 
@@ -91,4 +91,4 @@ Start the SSO setup flow there and keep it open alongside the Entra Admin Center
 
 ## Need help?
 
-See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your Entra tenant ID and a screenshot of your SAML configuration.
+See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](https://support.claude.com/en/articles/9015913)** with your Entra tenant ID and a screenshot of your SAML configuration.

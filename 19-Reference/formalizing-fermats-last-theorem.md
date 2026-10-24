@@ -2,13 +2,44 @@
 title: "Formalizing Fermat's Last Theorem \\ Anthropic"
 source_url: "https://www.anthropic.com/research/formalizing-fermats-last-theorem"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:28:41Z"
+fetched_at: "2026-10-21T06:30:45Z"
 tags: ["news-research"]
 ---
 
 # Formalizing Fermat's Last Theorem
 
-Sep 4, 2026
+- [01The challenge of verifying mathematical proofs](#the-challenge-of-verifying-mathematical-proofs)
+- [02Formalizing Fermat’s Last Theorem](#formalizing-fermats-last-theorem)
+- [03Reducing the burden of formal verification](#reducing-the-burden-of-formal-verification)
+- [04Learn more](#learn-more)
+
+- Published
+
+  Sep 4, 2026
+
+- Team
+
+  [Science](https://www.anthropic.com/science)
+
+- Topics
+
+  - [Discovery](https://www.anthropic.com/search?topic=discovery)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  Oct 16, 2026
+
+  [Claude reveals ECDSA curve origins](ecdsa-curve-origins.md)
+
+[View more](https://www.anthropic.com/search?topic=discovery)
 
 *We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.  
   
@@ -48,7 +79,7 @@ Claude completed the proof in 11 days, producing computer-verifiable proofs of 3
 
 Claude’s proof follows [a simplified version of Wiles’s proof from Darmon, Diamond, and Taylor](https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf). Mathematical input from humans was limited to occasional high-level instructions from Tianyi: “Jacobian as a scheme sounds high priority,” “push \[the\] Mazur \[theorem\] to be done soon.” You can find excerpts of Claude’s thinking [here](formalizing-fermats-last-theorem-in-lean.md).
 
-```
+``` CodeBlock-module-scss-module__PbWBnq__code
 “THE FLT root reads Proved on the site. Historic moment (modulo re-check).”
 
 “!!! The FLT ROOT 62eb32c0 reads PROVED. R = T closed and cascaded to the root. This is the campaign's goal: e2e FLT on prove2me.”
@@ -56,7 +87,7 @@ Claude’s proof follows [a simplified version of Wiles’s proof from Darmon, D
 “🏁🏁🏁The FLT root reads PROVED on prove2me at 02:00:57Z Aug-18 (10:00:57pm ET Aug-17). Historic moment for this campaign.”
 ```
 
-*Excerpts of Claude’s thinking as it realizes what it has just accomplished.*
+Excerpts of Claude’s thinking as it realizes what it has just accomplished.
 
 A number of Claude’s initial attempts failed: while agents had some early success, they quickly lost track of the project’s state and stopped collaborating effectively. Their failed efforts contributed ~7% of the non-boilerplate lines in the final proof.
 
@@ -84,154 +115,30 @@ To this end, [Anthropic](expanding-support-for-scientists.md) as well as [other 
 
 With AI rapidly changing what it looks like to do math research, mathematicians—at Anthropic and elsewhere—[are grappling with what that means for their work](https://leidendeclaration.ai/). Formalization, however, is a place where we feel unambiguously good about the role of AI. As formalization becomes a more commonplace tool, we are hopeful that it will help maintain trust in the common body of mathematical knowledge.
 
-## Acknowledgments
-
-Our formalization effort is a small piece of the long history of Fermat’s theorem and the development of formal mathematics. The first full proof from Andrew Wiles together with Richard Taylor was a culmination of more than 300 years of mathematics, integrating ideas from Gerhard Frey, Jean-Pierre Serre, Ken Ribet, Barry Mazur, Robert Langlands, Jerrold Tunnell, Yutaka Taniyama, Goro Shimura, and André Weil, among others. Claude’s proof follows [the exposition by Henri Darmon, Fred Diamond, and Richard Taylor.](https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf)
-
-Our proof adapts pieces from the [Imperial College London FLT project](https://github.com/ImperialCollegeLondon/FLT) led by Kevin Buzzard and the [flt-regular project](https://github.com/leanprover-community/flt-regular). Lean and Mathlib are both their own labors of love and have received contributions from hundreds of mathematicians, many working with the [Lean FRO](https://lean-lang.org/fro/). We thank Kevin Buzzard for reviewing the proof and for his comments.
-
 ## Learn more
 
 The full proof is available on [GitHub](https://github.com/anthropics/fermats-last-theorem) along with a written walk-through of the proof.
 
-### Recommended expository reading
+#### Recommended expository reading
 
 - [*The Proof in the Code*](https://www.quantabooks.org/books/the-proof-in-the-code/) is a recent book about the history of the Lean theorem prover and the formalization of mathematics.
 - [The 1996 “Fermat’s Last Theorem” BBC documentary](https://www.bbc.co.uk/programmes/b0074rxx) has interviews with Wiles and other mathematicians involved in the proof, and is fondly remembered by some authors of this post.
 - For those with a mathematical background, a technical history of propositions-as-types (the underlying discipline of proof assistants such as Lean, Rocq, and Agda) can be found in [*Propositions as Types*](https://dl.acm.org/doi/pdf/10.1145/2699407) by Philip Wadler.
-- Chen, S., Marwaha, K., Lu, X., Yuen, H., & Peng, T. (2026). Prove2Me: An open collaborative platform for scaling math formalization. arXiv. <https://doi.org/10.48550/arXiv.2608.28433>
+- Chen, S., Marwaha, K., Lu, X., Yuen, H., & Peng, T. (2026). Prove2Me: An open collaborative platform for scaling math formalization. arXiv. [https://doi.org/10.48550/arXiv.2608.28433](https://doi.org/10.48550/arXiv.2608.28433)
 - [*Automating Math*](https://asteriskmag.com/issues/09/automating-math), Adam Marblestone, in Asterisk Magazine.
 
-### Footnotes
+## Footnotes
 
-1.  During his undergrad, Peng’s research advisor wanted to include results from Peng’s thesis in a *Nature* article. He asked Peng whether he was sure the proof was correct. Peng’s honest answer was: “I'm 99% sure, but it's hard to be 100% certain about a proof this long.” Peng missed out on getting his work published in *Nature*.[](#footnote-ref-1)
-2.  There are numerous other stories of the mathematical community struggling with verification. Among the most famous is Thomas Hales’s 1998 proof of the [Kepler conjecture](https://en.wikipedia.org/wiki/Kepler_conjecture), which spent four years in review before a 12-referee panel settled for “99% certain” (Hales eventually led a 20-person project, [Flyspeck](https://github.com/flyspeck/flyspeck), that formalized the proof). Grigori Perelman’s 2002 proof of the [Poincaré conjecture](https://en.wikipedia.org/wiki/Poincar%C3%A9_conjecture) took the community roughly four years and three 300-page expositions to accept. Harald Helfgott’s 2013 proof of the [weak Goldbach conjecture](https://en.wikipedia.org/wiki/Goldbach%27s_weak_conjecture) is still under review. Sometimes results that turn out to be wrong are [accepted for years](https://www.ias.edu/ideas/2014/voevodsky-origins), and other mathematicians build their theories on these faulty foundations.[](#footnote-ref-2)
-3.  This is partly because Mathlib is concise and well-reviewed, while our proof is likely much longer than it needs to be.[](#footnote-ref-3)
+01During his undergrad, Peng’s research advisor wanted to include results from Peng’s thesis in a *Nature* article. He asked Peng whether he was sure the proof was correct. Peng’s honest answer was: “I'm 99% sure, but it's hard to be 100% certain about a proof this long.” Peng missed out on getting his work published in *Nature*.[](#footnote-ref-1)
 
+02There are numerous other stories of the mathematical community struggling with verification. Among the most famous is Thomas Hales’s 1998 proof of the [Kepler conjecture](https://en.wikipedia.org/wiki/Kepler_conjecture), which spent four years in review before a 12-referee panel settled for “99% certain” (Hales eventually led a 20-person project, [Flyspeck](https://github.com/flyspeck/flyspeck), that formalized the proof). Grigori Perelman’s 2002 proof of the [Poincaré conjecture](https://en.wikipedia.org/wiki/Poincar%C3%A9_conjecture) took the community roughly four years and three 300-page expositions to accept. Harald Helfgott’s 2013 proof of the [weak Goldbach conjecture](https://en.wikipedia.org/wiki/Goldbach%27s_weak_conjecture) is still under review. Sometimes results that turn out to be wrong are [accepted for years](https://www.ias.edu/ideas/2014/voevodsky-origins), and other mathematicians build their theories on these faulty foundations.[](#footnote-ref-2)
 
-## Related content
+03This is partly because Mathlib is concise and well-reviewed, while our proof is likely much longer than it needs to be.[](#footnote-ref-3)
 
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
+## Authors & Acknowledgments
 
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
+### Acknowledgements
 
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
+Our formalization effort is a small piece of the long history of Fermat’s theorem and the development of formal mathematics. The first full proof from Andrew Wiles together with Richard Taylor was a culmination of more than 300 years of mathematics, integrating ideas from Gerhard Frey, Jean-Pierre Serre, Ken Ribet, Barry Mazur, Robert Langlands, Jerrold Tunnell, Yutaka Taniyama, Goro Shimura, and André Weil, among others. Claude’s proof follows [the exposition by Henri Darmon, Fred Diamond, and Richard Taylor.](https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf)
 
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-## Subscribe to Anthropic Science
-
-Features on AI-assisted discoveries, practical workflows, and field notes across the sciences.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+Our proof adapts pieces from the [Imperial College London FLT project](https://github.com/ImperialCollegeLondon/FLT) led by Kevin Buzzard and the [flt-regular project](https://github.com/leanprover-community/flt-regular). Lean and Mathlib are both their own labors of love and have received contributions from hundreds of mathematicians, many working with the [Lean FRO](https://lean-lang.org/fro/). We thank Kevin Buzzard for reviewing the proof and for his comments.

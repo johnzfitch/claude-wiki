@@ -2,7 +2,7 @@
 title: "Claude Sonnet 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/sonnet-5-5/overview"
 category: "20-Models"
-fetched_at: "2026-10-07T06:24:07Z"
+fetched_at: "2026-10-22T06:29:48Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fsonnet-5-5%2Foverview)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fsonnet-5-5%2Foverview)
 
 
 
@@ -42,7 +42,7 @@ Models
 
 [Overview](models-sonnet-5-5-overview.md)[What's new](models-sonnet-5-5-whats-new-sonnet-5-5.md)[Migration guide](models-sonnet-5-5-migration-guide.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -54,11 +54,11 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)Models
 
@@ -100,7 +100,7 @@ Claude Sonnet 5.5 offers the best combination of speed and intelligence. Five br
 - [Forced tool use returns an error](models-sonnet-5-5-whats-new-sonnet-5-5.md#forced-tool-use-is-not-supported).
 - [Thinking blocks are tied to the model and the conversation](models-sonnet-5-5-whats-new-sonnet-5-5.md#thinking-blocks-are-tied-to-the-model-that-produced-them).
 - [On the Claude API and Google Cloud, the earlier `computer_20251124` computer use tool is not accepted](models-sonnet-5-5-whats-new-sonnet-5-5.md#computer-20251124-is-not-supported).
-- [The advisor tool rejects Claude Opus 4.8, Claude Opus 4.7, and Claude Sonnet 5 as advisors](models-sonnet-5-5-whats-new-sonnet-5-5.md#advisor-tool-pairings).
+- [The advisor tool rejects Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5, and Claude Haiku 5.5 as advisors](models-sonnet-5-5-whats-new-sonnet-5-5.md#advisor-tool-pairings).
 
 One more change alters the response shape without failing any request: [text between tool calls comes back in `thinking` blocks](models-sonnet-5-5-whats-new-sonnet-5-5.md#text-between-tool-calls). An application that streams that text to its users goes quiet between tool calls until it sets a `display` value that returns the text, or turns off up-front thinking with `between_tools`.
 
@@ -144,7 +144,7 @@ Output
 \$4 / MTok
 
 [Cache read](../04-API-Reference/Guides/build-with-claude-prompt-caching.md)  
-\$0.20 / MTok
+\$0.10 / MTok
 
 [Batch API](../04-API-Reference/Guides/build-with-claude-batch-processing.md)  
 50% discount on input and output
@@ -197,7 +197,7 @@ Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-i
 ## Good to know
 
 - Adaptive thinking is on by default. The lowest thinking setting is `between_tools`, which turns off up-front thinking. It works at `high` effort or below. See [What's new in Claude Sonnet 5.5](models-sonnet-5-5-whats-new-sonnet-5-5.md#turn-off-up-front-thinking).
-- Setting `temperature`, `top_p`, or `top_k` to a non-default value returns a 400 error.
+- Setting `temperature`, `top_p`, or `top_k` returns a 400 error.
 - The minimum cacheable prompt length is 512 tokens. See [Prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md#cache-limitations).
 - On the [Message Batches API](../04-API-Reference/Guides/build-with-claude-batch-processing.md#extended-output-beta), Claude Sonnet 5.5 supports up to 300k output tokens with the `output-300k-2026-03-24` beta header.
 - Query limits and capabilities programmatically with the [Models API](../04-API-Reference/Endpoints/models-list.md).
@@ -214,7 +214,7 @@ Behavioral differences and prompting patterns specific to Claude Sonnet 5.5.
 
 [Effort](../04-API-Reference/Guides/build-with-claude-effort.md)
 
-The control for thinking depth, latency, and cost. Choose a level per workload.
+The control for thinking depth, latency, and cost. Choose a level for each workload.
 
 
 

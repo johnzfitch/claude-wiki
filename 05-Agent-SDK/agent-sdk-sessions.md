@@ -2,7 +2,7 @@
 title: "Work with sessions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/sessions"
 category: "05-Agent-SDK"
-fetched_at: "2026-08-22T06:28:36Z"
+fetched_at: "2026-10-11T06:34:31Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -312,7 +312,7 @@ You should see a response that builds on the earlier analysis instead of startin
 
 Claude Code stores sessions under `~/.claude/projects/<encoded-cwd>/*.jsonl`. If you set the `CLAUDE_CONFIG_DIR` environment variable, look under `$CLAUDE_CONFIG_DIR/projects/` instead.To find your session’s directory, replace every non-alphanumeric character in the absolute working directory with `-`: `/Users/me/proj` becomes `-Users-me-proj`. For a working directory whose converted name exceeds 200 characters, Claude Code [truncates the name and appends a hash](../02-Claude-Code-CLI/sessions.md#where-transcripts-are-stored), so match the first 200 characters of the converted name when you list `projects/`.If you set [`CLAUDE_CODE_PROJECT_DIR_NAME`](../02-Claude-Code-CLI/sessions.md#name-the-project-directory-yourself) beside `CLAUDE_CONFIG_DIR`, look under that name in `projects/` instead. Requires TypeScript Agent SDK v0.3.234 or later, or Python Agent SDK v0.2.140 or later.You can resume from any working directory:
 
-- **Cross-directory lookup**: Claude Code searches beyond the current project directory to find the ID; see [Resume a session](../02-Claude-Code-CLI/sessions.md#resume-a-session) for the exact lookup order and how duplicate copies are handled.
+- **Cross-directory lookup**: Claude Code searches beyond the current project directory to find the ID; see [Resume a session](../02-Claude-Code-CLI/sessions.md#where-the-session-picker-looks) for the exact lookup order and how duplicate copies are handled.
 - **Same machine only**: the session file still needs to exist on the current machine.
 
 Before v2.1.223, the lookup was scoped to the current project directory and its git worktrees; SDK versions that bundle an older CLI still behave this way.
@@ -440,7 +440,7 @@ Resume across hosts
 Session files are local to the machine that created them. To resume a session on a different host (CI workers, ephemeral containers, serverless), pick the approach that fits:
 
 - **Pass a session store.** Attach a [`sessionStore` / `session_store` adapter](agent-sdk-session-storage.md) so the SDK mirrors transcripts to your own backend and another host can resume them. The store lookup key derives from the working directory, so resume from a `cwd` matching the original run’s.
-- **Move the session file.** Persist `~/.claude/projects/<encoded-cwd>/<session-id>.jsonl` from the first run and restore it inside any directory under `~/.claude/projects/` on the new host before calling `resume`. Claude Code searches beyond the current project directory to find the ID; see [Resume a session](../02-Claude-Code-CLI/sessions.md#resume-a-session) for the exact lookup order and how duplicate copies are handled. Before v2.1.223, the lookup was scoped to the current project directory and its git worktrees; SDK versions that bundle an older CLI still behave this way.
+- **Move the session file.** Persist `~/.claude/projects/<encoded-cwd>/<session-id>.jsonl` from the first run and restore it inside any directory under `~/.claude/projects/` on the new host before calling `resume`. Claude Code searches beyond the current project directory to find the ID; see [Resume a session](../02-Claude-Code-CLI/sessions.md#where-the-session-picker-looks) for the exact lookup order and how duplicate copies are handled. Before v2.1.223, the lookup was scoped to the current project directory and its git worktrees; SDK versions that bundle an older CLI still behave this way.
 - **Don’t rely on session resume.** Capture the results you need (analysis output, decisions, file diffs) as application state and pass them into a fresh session’s prompt. This is often more robust than shipping transcript files around.
 
 Both SDKs expose functions for enumerating sessions on disk and reading their messages: [`listSessions()`](agent-sdk-typescript.md#listsessions) and [`getSessionMessages()`](agent-sdk-typescript.md#getsessionmessages) in TypeScript, [`list_sessions()`](agent-sdk-python.md#list_sessions) and [`get_session_messages()`](agent-sdk-python.md#get_session_messages) in Python. Use them to build custom session pickers, cleanup logic, or transcript viewers. Both SDKs also expose functions for looking up and mutating individual sessions: [`get_session_info()`](agent-sdk-python.md#get_session_info), [`rename_session()`](agent-sdk-python.md#rename_session), and [`tag_session()`](agent-sdk-python.md#tag_session) in Python, and [`getSessionInfo()`](agent-sdk-typescript.md#getsessioninfo), [`renameSession()`](agent-sdk-typescript.md#renamesession), and [`tagSession()`](agent-sdk-typescript.md#tagsession) in TypeScript. Use them to organize sessions by tag or give them human-readable titles.

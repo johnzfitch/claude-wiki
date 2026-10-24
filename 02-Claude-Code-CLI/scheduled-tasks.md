@@ -2,7 +2,7 @@
 title: "Run prompts on a schedule - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/scheduled-tasks"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:39Z"
+fetched_at: "2026-10-23T06:28:31Z"
 tags: ["claude-code", "prompting"]
 ---
 
@@ -15,15 +15,16 @@ tags: ["claude-code", "prompting"]
   - [Run the built-in maintenance prompt](#run-the-built-in-maintenance-prompt)
   - [Customize the default prompt with loop.md](#customize-the-default-prompt-with-loop-md)
   - [Stop a loop](#stop-a-loop)
+  - [Detach without stopping a loop](#detach-without-stopping-a-loop)
 - [Set a one-time reminder](#set-a-one-time-reminder)
-- [Manage scheduled tasks](#manage-scheduled-tasks)
-- [How scheduled tasks run](#how-scheduled-tasks-run)
+- [Manage session-scoped scheduled tasks](#manage-session-scoped-scheduled-tasks)
+- [How session-scoped scheduled tasks run](#how-session-scoped-scheduled-tasks-run)
   - [Jitter](#jitter)
   - [How late a recurring task runs](#how-late-a-recurring-task-runs)
   - [When a one-shot task runs early](#when-a-one-shot-task-runs-early)
   - [Seven-day expiry](#seven-day-expiry)
 - [Cron expression reference](#cron-expression-reference)
-- [Disable scheduled tasks](#disable-scheduled-tasks)
+- [Disable session-scoped scheduled tasks](#disable-session-scoped-scheduled-tasks)
 - [Limitations](#limitations)
 
 Automation
@@ -36,7 +37,14 @@ Use /loop and the cron scheduling tools to run prompts repeatedly, poll for stat
 
 Copy pageCopy page
 
-Scheduled tasks let Claude re-run a prompt automatically on an interval. Use them to poll a deployment, babysit a PR, check back on a long-running build, or remind yourself to do something later in the session. To react to events as they happen instead of polling, see [Channels](channels.md): your CI can push the failure into the session directly. To keep the session working turn after turn toward a condition rather than on an interval, see [`/goal`](goal.md). Tasks are session-scoped. When you resume with `--resume` or `--continue`, Claude Code restores tasks that haven’t [expired](#seven-day-expiry), except those listed under [Limitations](#limitations). For scheduling that survives independently of any session, use [Routines](web-scheduled-tasks.md) to create a routine on the cloud, set up a [Desktop scheduled task](../16-Mobile-Desktop/desktop-scheduled-tasks.md), or use [GitHub Actions](github-actions.md).
+Session-scoped scheduled tasks let Claude re-run a prompt automatically on an interval within a Claude Code session. Use them to poll a deployment, babysit a PR, check back on a long-running build, or remind yourself to do something later in the session.
+
+These cases are covered on other pages:
+
+- **Reacting to events as they happen instead of polling**: see [Channels](channels.md). Your CI can push the failure into the session directly.
+- **Keeping the session working turn after turn toward a condition rather than on an interval**: see [`/goal`](goal.md).
+
+Tasks are session-scoped. When you resume with `--resume` or `--continue`, Claude Code restores tasks that haven’t [expired](#seven-day-expiry), except those listed under [Limitations](#limitations). For scheduling that survives independently of any session, create a [cloud scheduled task](web-scheduled-tasks.md), set up a [Desktop scheduled task](../16-Mobile-Desktop/desktop-scheduled-tasks.md), or use [GitHub Actions](github-actions.md).
 
 
 [​](#compare-scheduling-options)
@@ -45,17 +53,17 @@ Compare scheduling options
 
 Claude Code offers three ways to schedule recurring or one-off work:
 
-|                            | [Cloud](web-scheduled-tasks.md)          | [Desktop](../16-Mobile-Desktop/desktop-scheduled-tasks.md) | [`/loop`](scheduled-tasks.md)                                             |
-|:---------------------------|:------------------------------------|:--------------------------------------------|:--------------------------------------------------------------------------------|
-| Runs on                    | Cloud, Anthropic-managed by default | Your machine                                | Your machine                                                                    |
-| Requires machine on        | No                                  | Yes                                         | Yes                                                                             |
-| Requires open session      | No                                  | No                                          | Yes                                                                             |
-| Persistent across restarts | Yes                                 | Yes                                         | Restored on `--resume`, with [exceptions](scheduled-tasks.md#limitations) |
-| Access to local files      | No (fresh clone)                    | Yes                                         | Yes                                                                             |
-| MCP servers                | Connectors configured per task      | [Config files](../06-MCP-Tools/General/mcp.md) and connectors | Inherits from session                                                           |
-| Permission prompts         | No (runs autonomously)              | Configurable per task                       | Inherits from session                                                           |
-| Customizable schedule      | Via `/schedule` in the CLI          | Yes                                         | Yes                                                                             |
-| Minimum interval           | 1 hour                              | 1 minute                                    | 1 minute                                                                        |
+|                            | [Cloud](web-scheduled-tasks.md)                                                | [Desktop](../16-Mobile-Desktop/desktop-scheduled-tasks.md)                                                            | [`/loop`](scheduled-tasks.md)                                             |
+|:---------------------------|:--------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
+| Runs on                    | Cloud, Anthropic-managed by default                                       | Your machine                                                                                           | Your machine                                                                    |
+| Requires machine on        | No                                                                        | Yes                                                                                                    | Yes                                                                             |
+| Requires open session      | No                                                                        | No                                                                                                     | Yes                                                                             |
+| Persistent across restarts | Yes                                                                       | Yes                                                                                                    | Restored on `--resume`, with [exceptions](scheduled-tasks.md#limitations) |
+| Access to local files      | No (fresh clone)                                                          | Yes                                                                                                    | Yes                                                                             |
+| MCP servers                | Connectors configured per task                                            | [Config files](../06-MCP-Tools/General/mcp.md) and connectors                                                            | Inherits from session                                                           |
+| Permission prompts         | [Auto mode](web-scheduled-tasks.md#permission-prompts-during-a-run) by default | Configurable per task                                                                                  | Inherits from session                                                           |
+| Customizable schedule      | Yes                                                                       | Yes                                                                                                    | Yes                                                                             |
+| Minimum interval           | 1 hour                                                                    | 1 minute when Claude sets it, [1 hour in the forms](../16-Mobile-Desktop/desktop-scheduled-tasks.md#schedule-options) | 1 minute                                                                        |
 
 Use **cloud tasks** for work that should run reliably without your machine. Use **Desktop tasks** when you need access to local files and tools. Use **`/loop`** for quick polling during a session.
 
@@ -103,7 +111,7 @@ When you omit the interval, Claude chooses one dynamically instead of running on
 /loop check whether CI passed and address any review comments
 ```
 
-In a session where the [Monitor tool is available](tools-reference.md#monitor-tool), Claude may use it directly when you ask for a dynamic `/loop` schedule. Monitor runs a background script and streams each output line back, which avoids polling altogether and is often more token-efficient and responsive than re-running a prompt on an interval. A dynamically scheduled loop appears in your [scheduled task list](#manage-scheduled-tasks) like any other task, so you can list or cancel it the same way. The [jitter rules](#jitter) don’t apply to it, but the [seven-day expiry](#seven-day-expiry) does.
+In a session where the [Monitor tool is available](tools-reference.md#monitor-tool), Claude may use it directly when you ask for a dynamic `/loop` schedule. Monitor runs a background script and streams each output line back, which avoids polling altogether and is often more token-efficient and responsive than re-running a prompt on an interval. A dynamically scheduled loop appears in your [scheduled task list](#manage-scheduled-tasks) like any other task, so you can list or cancel it the same way. The list shows its pending wakeup as a one-shot task, so a wakeup scheduled for `:00` or `:30` can [run a little early](#when-a-one-shot-task-runs-early). The [seven-day expiry](#seven-day-expiry) applies to the loop too.
 
 Dynamically chosen intervals and the [built-in maintenance prompt](#run-the-built-in-maintenance-prompt) work on every provider, and with [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) turned off. On Amazon Bedrock, Claude Platform on AWS, Google Cloud’s Agent Platform, and Microsoft Foundry, or with fetching turned off, both require Claude Code v2.1.248 or later.
 
@@ -156,7 +164,17 @@ Edits to `loop.md` take effect on the next iteration, so you can refine the inst
 
 Stop a loop
 
-To stop a [self-paced `/loop`](#let-claude-choose-the-interval) while it is waiting for the next iteration, press `Esc`. This clears the pending wakeup so the loop does not fire again. Tasks you scheduled by [asking Claude directly](#manage-scheduled-tasks) are not affected by `Esc` and stay in place until you delete them. In [self-paced mode](#let-claude-choose-the-interval), Claude can also end the loop on its own once the task is complete. Claude calls the [`ScheduleWakeup` tool](tools-reference.md) with `stop: true`, which cancels the pending wakeup immediately. If an iteration ends without either rescheduling or stopping, Claude Code schedules one fallback wakeup about 20 minutes later and ends the loop when that iteration doesn’t reschedule either. Loops on a fixed interval keep running until you [cancel them like any other scheduled task](#manage-scheduled-tasks) or [seven days elapse](#seven-day-expiry).
+- **[Self-paced loop](#let-claude-choose-the-interval)**: while the loop is waiting for its next iteration, press `Esc` to stop it. You can also stop it with `Ctrl+C` while Claude is idle, except in a [background session you’ve attached to](#detach-without-stopping-a-loop). A `Pending wakeup cancelled` notice confirms that the loop won’t fire again.
+- **[Fixed-interval loop](#run-on-a-fixed-interval)**: to stop a loop such as `/loop 5m`, ask Claude to cancel it, for example `cancel the deploy check loop`. `Esc` and `Ctrl+C` don’t stop it, or any task you [scheduled by asking Claude directly](#manage-scheduled-tasks). A loop you don’t cancel ends when [seven days elapse](#seven-day-expiry).
+
+In [self-paced mode](#let-claude-choose-the-interval), Claude can also end the loop on its own once the task is complete. Claude calls the [`ScheduleWakeup` tool](tools-reference.md) with `stop: true`, which cancels the pending wakeup immediately. If an iteration ends without either rescheduling or stopping, Claude Code schedules one fallback wakeup about 20 minutes later and ends the loop when that iteration doesn’t reschedule either.
+
+
+[​](#detach-without-stopping-a-loop)
+
+Detach without stopping a loop
+
+When you’re [attached to a background session](../09-Agents-Patterns/agent-view.md#attach-to-a-session) and Claude is idle, press `Ctrl+C` twice on an empty prompt to detach. A self-paced loop waiting there for its next iteration keeps running, and that iteration starts on schedule. To stop the loop instead, press `Esc` before you detach. Detaching with `Ctrl+C` without stopping the loop requires Claude Code v2.1.295 or later.
 
 
 [​](#set-a-one-time-reminder)
@@ -176,9 +194,9 @@ in 45 minutes, check whether the integration tests passed
 Claude pins the fire time to a specific minute and hour using a cron expression and confirms when it will fire.
 
 
-[​](#manage-scheduled-tasks)
+[​](#manage-session-scoped-scheduled-tasks)
 
-Manage scheduled tasks
+Manage session-scoped scheduled tasks
 
 Ask Claude in natural language to list or cancel tasks, or reference the underlying tools directly.
 
@@ -195,15 +213,15 @@ These are the underlying tools Claude uses:
 | Tool         | Purpose                                                                                                         |
 |:-------------|:----------------------------------------------------------------------------------------------------------------|
 | `CronCreate` | Schedule a new task. Accepts a 5-field cron expression, the prompt to run, and whether it recurs or fires once. |
-| `CronList`   | List all scheduled tasks with their IDs, schedules, and prompts.                                                |
+| `CronList`   | List scheduled tasks with their IDs, schedules, [next run times](#jitter), and prompts.                         |
 | `CronDelete` | Cancel a task by ID.                                                                                            |
 
 Each scheduled task has an 8-character ID you can pass to `CronDelete`. A session can hold up to 50 scheduled tasks at once.
 
 
-[​](#how-scheduled-tasks-run)
+[​](#how-session-scoped-scheduled-tasks-run)
 
-How scheduled tasks run
+How session-scoped scheduled tasks run
 
 The scheduler checks every second for due tasks and enqueues them at low priority. A scheduled prompt fires between your turns, not while Claude is mid-response. If Claude is busy when a task comes due, the prompt waits until the current turn ends. All times are interpreted in your local timezone. A cron expression like `0 9 * * *` means 9am wherever you’re running Claude Code, not UTC.
 
@@ -212,20 +230,27 @@ The scheduler checks every second for due tasks and enqueues them at low priorit
 
 Jitter
 
-A scheduled task can run at a different time than its schedule says. If every session’s tasks ran exactly on schedule, many of them would call the API at the same moment, so Claude Code shifts each task’s run time. Recurring tasks run late, and one-shot tasks scheduled on the hour or half hour run a little early.
+A scheduled task can run at a different time than its schedule says. If every session’s tasks ran exactly on schedule, many of them would call the API at the same moment, so Claude Code shifts each task’s run time. Recurring tasks run late, except a task that runs every five minutes, written `*/5 * * * *`. One-shot tasks scheduled on the hour or half hour run a little early. To see when a task is next due, read the row under Claude’s `CronCreate` call in your terminal. The row shows that time after the schedule, for example `next run 10:21 AM`. To check again later, [ask Claude to list your tasks](#manage-scheduled-tasks) and look for `next run` in the rows under the `CronList` call. Next run times in these rows require Claude Code v2.1.299 or later.
 
 
 [​](#how-late-a-recurring-task-runs)
 
 How late a recurring task runs
 
-When you create a recurring task, Claude Code gives it a fixed delay and adds that delay to every run. The delay is worked out from the task’s ID, so the same task runs the same number of minutes late each time, including when the session is idle and nothing else is running. Tasks that run more often get shorter delays, and 30 minutes is the longest delay a task can get. These are the delay ranges for some common schedules:
+Unless it runs every five minutes, a recurring task starts each run late by up to half the gap to the next run, and by at most 30 minutes. Your task is one of these three cases:
 
-| Task runs                               | Delay is between |
-|:----------------------------------------|:-----------------|
-| Every 10 minutes                        | 0 and 5 minutes  |
-| Every 30 minutes                        | 0 and 15 minutes |
-| Every hour, or less often such as daily | 0 and 30 minutes |
+- **Evenly spaced runs**: a task with equal gaps, such as hourly, daily, or every 10 minutes, runs the same number of minutes late every time, including when the session is idle.
+- **Unevenly spaced runs**: a task with uneven gaps, such as one scheduled for `:00` and `:15` each hour, can run a different number of minutes late at each.
+- **Every five minutes**: a task written `*/5 * * * *` isn’t delayed. A run exactly five minutes after the last one would start after a five-minute [prompt cache](prompt-caching.md#which-ttl-each-request-gets) had expired, so each run starts 15 seconds sooner.
+
+Find your schedule in the first column of this table to see when each of its runs starts.
+
+| Schedule                                                                 | When each run starts                        |
+|:-------------------------------------------------------------------------|:--------------------------------------------|
+| Every 5 minutes, written `*/5 * * * *`, which is what `/loop 5m` creates | 4 minutes 45 seconds after the previous run |
+| Every 10 minutes                                                         | 0 to 5 minutes late                         |
+| Every 30 minutes                                                         | 0 to 15 minutes late                        |
+| Every hour, or less often such as daily                                  | 0 to 30 minutes late                        |
 
 For example, `7,37 * * * *` schedules a task for `:07` and `:37`, which are 30 minutes apart, so its delay is somewhere between 0 and 15 minutes. If this task’s delay is 14 minutes, it runs at `:21` and `:51` every hour. Changing the schedule to a different minute moves the run time, and a delay is still added on top.
 
@@ -241,7 +266,7 @@ A one-shot task scheduled for `:00` or `:30` runs up to 90 seconds early. Claude
 
 Seven-day expiry
 
-Recurring tasks automatically expire 7 days after creation. The task fires one final time, then deletes itself. This bounds how long a forgotten loop can run. If you need a recurring task to last longer, cancel and recreate it before it expires, or use [Routines](web-scheduled-tasks.md) or [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md) for durable scheduling.
+Recurring tasks automatically expire 7 days after creation. The task fires one final time, then deletes itself. This bounds how long a forgotten loop can run. If you need a recurring task to last longer, cancel and recreate it before it expires, or use [cloud scheduled tasks](web-scheduled-tasks.md) or [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md) for durable scheduling.
 
 
 [​](#cron-expression-reference)
@@ -262,9 +287,9 @@ Cron expression reference
 Day-of-week uses `0` or `7` for Sunday through `6` for Saturday. Extended syntax like `L`, `W`, `?`, and name aliases such as `MON` or `JAN` is not supported. When both day-of-month and day-of-week are constrained, a date matches if either field matches. This follows standard vixie-cron semantics.
 
 
-[​](#disable-scheduled-tasks)
+[​](#disable-session-scoped-scheduled-tasks)
 
-Disable scheduled tasks
+Disable session-scoped scheduled tasks
 
 Set `CLAUDE_CODE_DISABLE_CRON=1` in your environment to disable the scheduler entirely. The cron tools and `/loop` become unavailable, and any already-scheduled tasks stop firing. See [Environment variables](env-vars.md) for the full list of disable flags.
 
@@ -277,11 +302,14 @@ Session-scoped scheduling has inherent constraints:
 
 - Tasks only fire while Claude Code is running and idle. Closing the terminal or letting the session exit stops them firing. [Backgrounding the session](../09-Agents-Patterns/agent-view.md#from-inside-a-session) carries `/loop` tasks over to a background session, which keeps running without a terminal.
 - No catch-up for missed fires. If a task’s scheduled time passes while Claude is busy on a long-running request, it fires once when Claude becomes idle, not once per missed interval.
-- When you resume a session with `claude --resume` or `claude --continue`, Claude Code restores the tasks scheduled with `CronCreate`, except recurring tasks that have [expired](#seven-day-expiry) and one-shot tasks whose scheduled time has passed. A [self-paced `/loop`](#let-claude-choose-the-interval) isn’t restored, so run `/loop` again to restart it. Background Bash and monitor tasks are never restored on resume.
+- In a [background session](../09-Agents-Patterns/agent-view.md#from-inside-a-session), a [self-paced loop](#let-claude-choose-the-interval) stops if its next wakeup comes due while the session’s process isn’t running, such as after a crash. When the process starts again, the transcript shows a [notice that the wakeup won’t fire](errors.md#restarted-after-its-next-loop-wakeup-was-due). To continue the loop, [reply to the session](../09-Agents-Patterns/agent-view.md#peek-and-reply) and ask Claude to keep it running.
+- When you resume a session with `claude --resume` or `claude --continue`, Claude Code restores the tasks scheduled with `CronCreate`, except recurring tasks that have [expired](#seven-day-expiry) and one-shot tasks whose scheduled time has passed. A [self-paced `/loop`](#let-claude-choose-the-interval) isn’t restored, so run `/loop` again to restart it.
+- A restored recurring task doesn’t fire for the runs it missed while the session wasn’t running. Its next run is the first one due after you resume, and [jitter](#jitter) applies to that run.
+- When you resume with `claude --resume` or `claude --continue`, Claude Code doesn’t restart the background Bash commands and monitors that were running when the session ended. If you still need one, ask Claude to start it again.
 - With [feature-flag fetching off](env-vars.md#features-that-need-feature-flag-fetching), Claude Code stores a task you asked to keep across sessions in the project’s `.claude/scheduled_tasks.json` file. When the `.claude` directory or that file is a symlink, Claude Code returns an error instead of scheduling the task. A saved task runs only in the project folder where you created it. If you copy the file into another folder, such as a new worktree, sessions there list the copied tasks but don’t run them, so create the task again in that folder.
 
 For cron-driven automation that needs to run unattended:
 
-- [Routines](web-scheduled-tasks.md): run in the cloud on a schedule, via API call, or on GitHub events
+- [Cloud scheduled tasks](web-scheduled-tasks.md): run in the cloud on a schedule, via API call, or on GitHub events
 - [GitHub Actions](github-actions.md): use a `schedule` trigger in CI
 - [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md): run locally on your machine

@@ -2,13 +2,46 @@
 title: "Patterns and problems in multiagent systems \\ Anthropic"
 source_url: "https://www.anthropic.com/research/multiagent-systems"
 category: "19-Reference"
-fetched_at: "2026-08-28T09:23:36Z"
+fetched_at: "2026-10-21T06:30:06Z"
 tags: ["agents", "news-research"]
 ---
 
 # Patterns and problems in emerging multiagent systems
 
-Aug 13, 2026
+- [01Measuring coordination](#measuring-coordination)
+- [02Failures from conformity](#failures-from-conformity)
+- [03Epistemic failures](#epistemic-failures)
+- [04Incompatible goals](#incompatible-goals)
+- [05Conclusion](#conclusion)
+
+- Published
+
+  Aug 13, 2026
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+
+  See more...
+
+Related articles
+
+- Models
+
+  Jul 24, 2026
+
+  [Introducing Claude Opus 5](claude-opus-5.md)
+
+[View more](https://www.anthropic.com/search?topic=agents)
 
 Models are improving and AI agents are taking on more tasks in shared codebases, markets, and other social systems. As a result, an increase in real-world interactions between agents is imminent. We've already [begun studying this](https://www.anthropic.com/features/project-deal), but still have a lot of uncertainty regarding what this looks like at scale. The trajectory is easy to imagine and hard to slow: current institutions are designed by and for people, resting on assumptions about the sufficiency of oversight at human speed. Some institutions will become human-AI hybrids; others where agents outcompete on speed or cost will become agent-only. The volume of agent-agent interaction could plausibly exceed that of human-human and human-agent interactions before the world understands the conditions for making such interactions go well.
 
@@ -123,130 +156,3 @@ Nothing above suggests that these failures are permanent—but nothing suggests 
 The conditions that allow multiagent interaction to go well will be discovered one way or another: either deliberately and early, or—and by default—in production, after agents’ interactions far outnumber ours. We would prefer the former.
 
 *Corresponding author: [Carolyn Zou](https://www.anthropic.com/research/cqz@anthropic.com)*
-
-
-## Related content
-
-### Enabling independent research on how people use Claude
-
-Earlier this year, we ran a pilot giving external researchers access to aggregate, real-world Claude usage data. Three research groups designed their own studies for Anthropic Insights, our privacy-preserving analysis tool. In this post, we share high-level results from those studies and what we learned running this pilot.
-
-[Read more](enabling-independent-research.md)
-
-### How Claude is accelerating protein design and analytical chemistry
-
-In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
-
-[Read more](claude-accelerates-protein-design.md)
-
-### Reviewing the evidence on worker retraining programs
-
-We're sharing a review of the evidence on worker retraining programs, coauthored by independent researcher David Roodman and Anthropic's Maxim Massenkoff.
-
-[Read more](reviewing-the-evidence-on-worker-retraining-programs.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

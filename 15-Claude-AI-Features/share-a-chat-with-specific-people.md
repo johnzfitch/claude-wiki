@@ -2,7 +2,7 @@
 title: "Share a chat with specific people | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16762496-share-a-chat-with-specific-people"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:30Z"
+fetched_at: "2026-10-23T06:29:12Z"
 tags: ["claude-ai", "enterprise"]
 ---
 

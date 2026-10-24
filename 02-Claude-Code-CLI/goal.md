@@ -2,7 +2,7 @@
 title: "Keep Claude working toward a goal - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/goal"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:48Z"
+fetched_at: "2026-10-20T06:38:44Z"
 tags: ["claude-code"]
 ---
 
@@ -57,7 +57,7 @@ Three approaches keep the current session running between prompts. Pick based on
 
 `/goal` and a Stop hook both fire after every turn. `/goal` is a session-scoped shortcut: you type a condition and it’s active for the current session only. A Stop hook lives in your settings file, applies to every session in its scope, and can run a script for deterministic checks or a prompt for model-evaluated ones. [Auto mode](auto-mode-config.md) on its own approves tool calls within a single turn but doesn’t start a new one. Claude stops when it judges the work done. `/goal` adds a separate evaluator that checks your condition after every turn, so completion is decided by a fresh model rather than the one doing the work. The two are complementary: auto mode removes per-tool prompts, and `/goal` removes per-turn prompts.
 
-The approaches above keep the current session running. You can also schedule work that runs independent of any open session, such as nightly tests or morning triage. See [scheduling options](scheduled-tasks.md#compare-scheduling-options) for cloud routines and desktop scheduled tasks.
+The approaches above keep the current session running. You can also schedule work that runs independent of any open session, such as nightly tests or morning triage. See [scheduling options](scheduled-tasks.md#compare-scheduling-options) for cloud and Desktop scheduled tasks.
 
 
 [​](#use-/goal)

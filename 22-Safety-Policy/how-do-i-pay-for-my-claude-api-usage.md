@@ -2,7 +2,7 @@
 title: "How do I pay for my Claude API usage? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8977456-how-do-i-pay-for-my-claude-api-usage"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:28:28Z"
+fetched_at: "2026-10-23T06:29:38Z"
 tags: ["api", "safety"]
 ---
 
@@ -31,7 +31,7 @@ If your organization is invoiced through Anthropic sales, usage beyond the credi
 
 1.  Log in to the Console with an Admin or Billing role.
 
-2.  Navigate to **[Settings \> Billing](../04-API-Reference/Other/playground.md)**.
+2.  Go to the **Billing** page (platform.claude.com/settings/billing).
 
 3.  Click "Buy credits."
 
@@ -43,11 +43,19 @@ Purchased credits are available immediately. Your organization's available credi
 
 Auto-reload purchases additional credits automatically when your balance falls below a threshold you set.
 
-1.  On the **Billing** page, click "Edit" in the **Auto-reload** section.
+1.  Go to the **[Billing page](../04-API-Reference/Other/playground.md)**.
 
-2.  Toggle auto-reload on or off.
+2.  In the **Credit balance** section, click “Set up auto-reload.” If auto-reload is already on, the button reads “Manage auto-reload.”
 
-3.  If auto-reload is on, set the minimum balance that triggers a purchase and the amount to reload to.
+3.  In **When credit balance reaches**, enter the balance that triggers a purchase.
+
+4.  In **Bring credit balance back up to**, enter the balance to reload to.
+
+5.  Click “Turn on,” or “Update” if you’re changing existing settings.
+
+**Note:** If your balance is already at or below the minimum you set, the button reads “Turn on and purchase” or “Update and purchase,” and you’re charged right away to bring your balance up to the target, plus applicable taxes.
+
+To turn off auto-reload, click “Manage auto-reload,” then “Turn off,” and confirm by clicking “Turn off” again.
 
 ## Credit expiration and refunds
 
@@ -61,7 +69,7 @@ Some organizations are billed monthly in arrears instead of buying credits upfro
 
 On monthly invoicing, we aggregate your usage across API calls, Console usage, and any other services associated with your account, and bill it at our standard **[pay-as-you-go pricing](../17-Billing-Plans/pricing.md#api)**. At the end of each calendar month, you'll receive an invoice from Stripe. Enter your payment details in Stripe to pay it.
 
-You can view charges for the current billing period on the **[Billing](../04-API-Reference/Other/playground.md)** page in your Console settings.
+You can view charges for the current billing period on the **Billing** page (platform.claude.com/settings/billing) in the Claude Console.
 
 If you need custom rate limits, monthly invoicing, or hands-on support, **[contact our Sales team](https://claude.com/contact-sales)**.
 
@@ -69,7 +77,7 @@ If you need custom rate limits, monthly invoicing, or hands-on support, **[conta
 
 1.  Log in to the Console with an Admin or Billing role.
 
-2.  Navigate to **[Settings \> Billing](../04-API-Reference/Other/playground.md)**.
+2.  Go to the Billing page (platform.claude.com/settings/billing).
 
 3.  Click the pencil icon next to your current payment method.
 

@@ -1,14 +1,41 @@
 ---
-title: "Anthropic’s Recommendations to OSTP for the U.S. AI Action Plan \\ Anthropic"
+title: "Recommendations to OSTP for the US AI Action Plan \\ Anthropic"
 source_url: "https://www.anthropic.com/news/anthropic-s-recommendations-ostp-u-s-ai-action-plan"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:02Z"
+fetched_at: "2026-10-21T06:29:45Z"
 tags: ["news-research"]
 ---
 
 # Anthropic’s recommendations to OSTP for the U.S. AI action plan
 
-Mar 6, 2025
+- Published
+
+  Mar 6, 2025
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [National security](https://www.anthropic.com/search?topic=national-security)
+  - [Democratic lead](https://www.anthropic.com/search?topic=democratic-lead)
+  - [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
+  - [Government capacity](https://www.anthropic.com/search?topic=government-capacity)
+  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+
+  See more...
+
+Related articles
+
+- Policy
+
+  Feb 11, 2026
+
+  [Covering electricity price increases from our data centers](covering-electricity-price-increases.md)
+
+[View more](https://www.anthropic.com/search?topic=national-security)
 
 In response to the White House’s [Request for Information on an AI Action Plan](https://www.whitehouse.gov/briefings-statements/2025/02/public-comment-invited-on-artificial-intelligence-action-plan/), Anthropic [has submitted recommendations](https://assets.anthropic.com/m/4e20a4ab6512e217/original/Anthropic-Response-to-OSTP-RFI-March-2025-Final-Submission-v3.pdf) to the Office of Science and Technology Policy (OSTP). Our recommendations are designed to better prepare America to capture the economic benefits and national security implications of powerful AI systems.
 
@@ -33,119 +60,3 @@ We believe the United States must take decisive action to maintain technological
 These recommendations build on Anthropic's previous policy work, including our advocacy for [responsible scaling policies](anthropics-responsible-scaling-policy.md) and [testing and evaluation](third-party-testing.md#:~:text=A%20robust%20third%2Dparty%20testing,should%20and%20shouldn't%20include). Our aim is to strike a balance—enabling innovation while mitigating serious risks posed by increasingly capable AI systems.
 
 Our full submission, found [here](https://assets.anthropic.com/m/4e20a4ab6512e217/original/Anthropic-Response-to-OSTP-RFI-March-2025-Final-Submission-v3.pdf), offers further detail into these recommendations and provides practical implementation strategies to help the U.S. government navigate this critical technological transition.
-
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

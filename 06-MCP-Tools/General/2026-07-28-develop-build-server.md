@@ -2,7 +2,7 @@
 title: "Build an MCP server - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2026-07-28/develop/build-server"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-09-29T06:30:35Z"
+fetched_at: "2026-10-13T06:29:56Z"
 tags: ["agents", "cli", "mcp", "skills"]
 ---
 
@@ -535,25 +535,19 @@ Now let’s dive into building your server.
 Building your server
 
 
-[​](#importing-packages-and-setting-up-the-instance-2)
+[​](#importing-packages-and-setting-up-constants)
 
-Importing packages and setting up the instance
+Importing packages and setting up constants
 
 Add these to the top of your `src/index.ts`:
 
 ```python
 import { McpServer } from "@modelcontextprotocol/server";
-import { StdioServerTransport } from "@modelcontextprotocol/server/stdio";
+import { serveStdio } from "@modelcontextprotocol/server/stdio";
 import { z } from "zod";
 
 const NWS_API_BASE = "https://api.weather.gov";
 const USER_AGENT = "weather-app/1.0";
-
-// Create server instance
-const server = new McpServer({
-  name: "weather",
-  version: "1.0.0",
-});
 ```
 
 
@@ -637,157 +631,166 @@ interface ForecastResponse {
 
 Implementing tool execution
 
-The tool execution handler is responsible for actually executing the logic of each tool. Let’s add it:
+The tool execution handler is responsible for actually executing the logic of each tool. Let’s add it, inside a `createServer()` function that builds the server instance and registers both tools on it:
 
 ```python
-// Register weather tools
+// Build a server instance and register its tools. serveStdio calls this
+// whenever it needs an instance, so every call must return a fresh one.
+function createServer() {
+  const server = new McpServer({
+    name: "weather",
+    version: "1.0.0",
+  });
 
-server.registerTool(
-  "get_alerts",
-  {
-    description: "Get weather alerts for a state",
-    inputSchema: z.object({
-      state: z
-        .string()
-        .length(2)
-        .describe("Two-letter state code (e.g. CA, NY)"),
-    }),
-  },
-  async ({ state }) => {
-    const stateCode = state.toUpperCase();
-    const alertsUrl = `${NWS_API_BASE}/alerts?area=${stateCode}`;
-    const alertsData = await makeNWSRequest<AlertsResponse>(alertsUrl);
+  server.registerTool(
+    "get_alerts",
+    {
+      description: "Get weather alerts for a state",
+      inputSchema: z.object({
+        state: z
+          .string()
+          .length(2)
+          .describe("Two-letter state code (e.g. CA, NY)"),
+      }),
+    },
+    async ({ state }) => {
+      const stateCode = state.toUpperCase();
+      const alertsUrl = `${NWS_API_BASE}/alerts?area=${stateCode}`;
+      const alertsData = await makeNWSRequest<AlertsResponse>(alertsUrl);
 
-    if (!alertsData) {
+      if (!alertsData) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: "Failed to retrieve alerts data",
+            },
+          ],
+        };
+      }
+
+      const features = alertsData.features || [];
+      if (!features.length) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `No active alerts for ${stateCode}`,
+            },
+          ],
+        };
+      }
+
+      const formattedAlerts = features.map(formatAlert);
+      const alertsText = `Active alerts for ${stateCode}:\n\n${formattedAlerts.join("\n")}`;
+
       return {
         content: [
           {
             type: "text",
-            text: "Failed to retrieve alerts data",
+            text: alertsText,
           },
         ],
       };
-    }
+    },
+  );
 
-    const features = alertsData.features || [];
-    if (!features.length) {
+  server.registerTool(
+    "get_forecast",
+    {
+      description: "Get weather forecast for a location",
+      inputSchema: z.object({
+        latitude: z
+          .number()
+          .min(-90)
+          .max(90)
+          .describe("Latitude of the location"),
+        longitude: z
+          .number()
+          .min(-180)
+          .max(180)
+          .describe("Longitude of the location"),
+      }),
+    },
+    async ({ latitude, longitude }) => {
+      // Get grid point data
+      const pointsUrl = `${NWS_API_BASE}/points/${latitude.toFixed(4)},${longitude.toFixed(4)}`;
+      const pointsData = await makeNWSRequest<PointsResponse>(pointsUrl);
+
+      if (!pointsData) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Failed to retrieve grid point data for coordinates: ${latitude}, ${longitude}. This location may not be supported by the NWS API (only US locations are supported).`,
+            },
+          ],
+        };
+      }
+
+      const forecastUrl = pointsData.properties?.forecast;
+      if (!forecastUrl) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: "Failed to get forecast URL from grid point data",
+            },
+          ],
+        };
+      }
+
+      // Get forecast data
+      const forecastData = await makeNWSRequest<ForecastResponse>(forecastUrl);
+      if (!forecastData) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: "Failed to retrieve forecast data",
+            },
+          ],
+        };
+      }
+
+      const periods = forecastData.properties?.periods || [];
+      if (periods.length === 0) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: "No forecast periods available",
+            },
+          ],
+        };
+      }
+
+      // Format forecast periods
+      const formattedForecast = periods.map((period: ForecastPeriod) =>
+        [
+          `${period.name || "Unknown"}:`,
+          `Temperature: ${period.temperature || "Unknown"}°${period.temperatureUnit || "F"}`,
+          `Wind: ${period.windSpeed || "Unknown"} ${period.windDirection || ""}`,
+          `${period.shortForecast || "No forecast available"}`,
+          "---",
+        ].join("\n"),
+      );
+
+      const forecastText = `Forecast for ${latitude}, ${longitude}:\n\n${formattedForecast.join("\n")}`;
+
       return {
         content: [
           {
             type: "text",
-            text: `No active alerts for ${stateCode}`,
+            text: forecastText,
           },
         ],
       };
-    }
+    },
+  );
 
-    const formattedAlerts = features.map(formatAlert);
-    const alertsText = `Active alerts for ${stateCode}:\n\n${formattedAlerts.join("\n")}`;
-
-    return {
-      content: [
-        {
-          type: "text",
-          text: alertsText,
-        },
-      ],
-    };
-  },
-);
-
-server.registerTool(
-  "get_forecast",
-  {
-    description: "Get weather forecast for a location",
-    inputSchema: z.object({
-      latitude: z
-        .number()
-        .min(-90)
-        .max(90)
-        .describe("Latitude of the location"),
-      longitude: z
-        .number()
-        .min(-180)
-        .max(180)
-        .describe("Longitude of the location"),
-    }),
-  },
-  async ({ latitude, longitude }) => {
-    // Get grid point data
-    const pointsUrl = `${NWS_API_BASE}/points/${latitude.toFixed(4)},${longitude.toFixed(4)}`;
-    const pointsData = await makeNWSRequest<PointsResponse>(pointsUrl);
-
-    if (!pointsData) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: `Failed to retrieve grid point data for coordinates: ${latitude}, ${longitude}. This location may not be supported by the NWS API (only US locations are supported).`,
-          },
-        ],
-      };
-    }
-
-    const forecastUrl = pointsData.properties?.forecast;
-    if (!forecastUrl) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Failed to get forecast URL from grid point data",
-          },
-        ],
-      };
-    }
-
-    // Get forecast data
-    const forecastData = await makeNWSRequest<ForecastResponse>(forecastUrl);
-    if (!forecastData) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Failed to retrieve forecast data",
-          },
-        ],
-      };
-    }
-
-    const periods = forecastData.properties?.periods || [];
-    if (periods.length === 0) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "No forecast periods available",
-          },
-        ],
-      };
-    }
-
-    // Format forecast periods
-    const formattedForecast = periods.map((period: ForecastPeriod) =>
-      [
-        `${period.name || "Unknown"}:`,
-        `Temperature: ${period.temperature || "Unknown"}°${period.temperatureUnit || "F"}`,
-        `Wind: ${period.windSpeed || "Unknown"} ${period.windDirection || ""}`,
-        `${period.shortForecast || "No forecast available"}`,
-        "---",
-      ].join("\n"),
-    );
-
-    const forecastText = `Forecast for ${latitude}, ${longitude}:\n\n${formattedForecast.join("\n")}`;
-
-    return {
-      content: [
-        {
-          type: "text",
-          text: forecastText,
-        },
-      ],
-    };
-  },
-);
+  return server;
+}
 ```
 
 
@@ -795,22 +798,22 @@ server.registerTool(
 
 Running the server
 
-Finally, implement the main function to run the server:
+Finally, serve the server over stdio:
 
 ```python
-async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-  console.error("Weather MCP Server running on stdio");
-}
-
-main().catch((error) => {
-  console.error("Fatal error in main():", error);
-  process.exit(1);
+serveStdio(createServer, {
+  onerror: (error) => console.error("Weather MCP Server error:", error),
 });
+console.error("Weather MCP Server running on stdio");
 ```
 
-Make sure to run `npm run build` to build your server! This is a very important step in getting your server to connect.Let’s now test your server from an existing MCP host, Claude for Desktop.
+`serveStdio` negotiates the protocol revision with each client, so the same server answers both 2026-07-28 clients and clients that still open with the 2025-era `initialize` handshake. It calls `createServer()` whenever it needs an instance, including once for a `server/discover` probe that is discarded if the client falls back to `initialize`, which is why the factory returns a new `McpServer` on every call. Wiring the server by hand with `server.connect(new StdioServerTransport())` still compiles, but a server started that way only serves 2025-era clients.Make sure to run `npm run build` to build your server! This is a very important step in getting your server to connect.To check that the server answers 2026-07-28 clients, list its tools with the [Inspector CLI](draft-tools-inspector-cli.md) in the `modern` [protocol era](2026-07-28-tools-inspector-protocol-eras.md):
+
+```python
+npx @modelcontextprotocol/inspector --cli node build/index.js --protocol-era modern --method tools/list
+```
+
+The Inspector defaults to the `legacy` era, which only exercises the 2025-era handshake, so run the same command once more with `--protocol-era legacy`. Both runs list `get_alerts` and `get_forecast`.Let’s now test your server from an existing MCP host, Claude for Desktop.
 
 
 [​](#testing-your-server-with-claude-for-desktop-2)
@@ -1945,7 +1948,7 @@ Now let’s dive into building your server.
 Building your server
 
 
-[​](#importing-packages-and-setting-up-constants)
+[​](#importing-packages-and-setting-up-constants-2)
 
 Importing packages and setting up constants
 
@@ -3099,7 +3102,9 @@ Save the file, and restart **Claude for Desktop**.
 
 Test with commands
 
-Let’s make sure Claude for Desktop is picking up the two tools we’ve exposed in our `weather` server. You can do this by looking for the “Add files, connectors, and more /” icon:
+Let’s make sure Claude for Desktop is picking up the two tools we’ve exposed in our `weather` server. You can do this by looking for the “Add files, connectors, and more /”
+
+icon:
 
 After clicking on the plus icon, hover over the “Connectors” menu. You should see the `weather` servers listed:
 

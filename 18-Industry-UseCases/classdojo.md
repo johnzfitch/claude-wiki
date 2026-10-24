@@ -2,7 +2,7 @@
 title: "ClassDojo Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/classdojo"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:56Z"
+fetched_at: "2026-10-23T06:29:33Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,27 +41,27 @@ ClassDojo transforms education by using Claude to power AI teaching assistants t
 
 ## Combating classroom exhaustion
 
-Every day, teachers face an avalanche of administrative tasks that keep them from doing what they love—teaching children. Brendan Kereiakes, Product Lead for Core, Growth & Teacher AI at ClassDojo, says, "We talk to teachers every day and one thing is clear—they're overwhelmed and under-supported. When we examined where their time was going, we identified the major time-consuming activities: lesson planning, developing behavior interventions, and writing communications both internally and to parents. Many teachers report spending half their time on paperwork instead of instruction, leading to twelve-hour workdays and burnout."
+Every day, teachers face an avalanche of administrative tasks that keep them from doing what they love—teaching children. Brendan Kereiakes, Product Lead for Core, Growth & Teacher AI at ClassDojo, says, “We talk to teachers every day and one thing is clear—they’re overwhelmed and under-supported. When we examined where their time was going, we identified the major time-consuming activities: lesson planning, developing behavior interventions, and writing communications both internally and to parents. Many teachers report spending half their time on paperwork instead of instruction, leading to twelve-hour workdays and burnout.”
 
-ClassDojo was well suited to address these challenges with its fundamentally different approach. Tom Pryor, Head of Product at ClassDojo, says, "Unlike most education companies, we started small—one teacher and classroom at a time. Instead of going top-down to school districts, we built a simple, helpful communication app that teachers, kids and families could start using right away." This grassroots growth gave them a deep understanding of classroom needs and built trust with millions of users—essential for introducing AI responsibly.
+ClassDojo was well suited to address these challenges with its fundamentally different approach. Tom Pryor, Head of Product at ClassDojo, says, “Unlike most education companies, we started small—one teacher and classroom at a time. Instead of going top-down to school districts, we built a simple, helpful communication app that teachers, kids and families could start using right away.” This grassroots growth gave them a deep understanding of classroom needs and built trust with millions of users—essential for introducing AI responsibly.
 
 ## Why Claude stood out for the classroom
 
 After evaluating multiple AI models, ClassDojo selected Claude for three critical factors that set it apart for educational applications—tone, accuracy, and safety.
 
-Brendan explained, "Many AI models struggle with humor, emotion, and conversation. Claude consistently produced responses that felt warm, thoughtful, and aligned with the way teachers and families naturally communicate. This was particularly important since teachers aren't professional prompt engineers—they need tools that work intuitively.”
+Brendan explained, “Many AI models struggle with humor, emotion, and conversation. Claude consistently produced responses that felt warm, thoughtful, and aligned with the way teachers and families naturally communicate. This was particularly important since teachers aren’t professional prompt engineers—they need tools that work intuitively.”
 
-Another decisive factor was educational accuracy. Tom shared, "We really prioritized consistency and accuracy. We can’t have hallucinations and factually wrong output—especially in areas like math, where precision is non-negotiable. Claude generated materials that aligned with teaching standards and created accurate assessments that teachers could actually use."
+Another decisive factor was educational accuracy. Tom shared, “We really prioritized consistency and accuracy. We can’t have hallucinations and factually wrong output—especially in areas like math, where precision is non-negotiable. Claude generated materials that aligned with teaching standards and created accurate assessments that teachers could actually use.”
 
-Brendan added that safety considerations were paramount, given ClassDojo's responsibility to protect children's data and maintain trust. "Claude handles inappropriate prompts gracefully, maintaining context better, and staying within age-appropriate guardrails without constant supervision."
+Brendan added that safety considerations were paramount, given ClassDojo’s responsibility to protect children’s data and maintain trust. “Claude handles inappropriate prompts gracefully, maintaining context better, and staying within age-appropriate guardrails without constant supervision.”
 
 ## How Claude powers the classroom experience
 
-ClassDojo uses Claude across several key products to simplify teachers' lives and improve education.
+ClassDojo uses Claude across several key products to simplify teachers’ lives and improve education.
 
 **Sidekick**: Every teacher gets an AI teaching assistant powered by Claude that helps with lesson planning, creating activities, and developing interventions for individual students—instantly eliminating hours of administrative work.A powerful example: Teachers can now snap a photo of their class roster—or even their entire school directory—instead of manually entering student information. Claude-powered AI makes sense of different data structures and processes the content instantly. This transforms what used to take 20-30 minutes into seconds.
 
-**Dojo Tutor**: Claude helps tutors prepare by analyzing previous sessions and creating custom lesson plans. It also generates highlight reels from tutoring sessions so families can see their children's progress.
+**Dojo Tutor**: Claude helps tutors prepare by analyzing previous sessions and creating custom lesson plans. It also generates highlight reels from tutoring sessions so families can see their children’s progress.
 
 **Safety and Identity Verification**: Claude powers conversational verification flows that ensure only authorized users can access school spaces, improving security while creating a more natural user experience.
 
@@ -69,21 +69,21 @@ ClassDojo uses Claude across several key products to simplify teachers' lives an
 
 ## Transforming education for teachers, students, and families
 
-The impact of Claude-powered features extends across the entire educational ecosystem. AI now serves as an essential assistant. "It's like having a colleague who's always available, works tirelessly to help me, and never judges my questions," reports one teacher. Another explains, "When I'm having one of those overwhelming days where I’m completely stretched, Claude helps me articulate my thoughts in professional 'teacher' language."
+The impact of Claude-powered features extends across the entire educational ecosystem. AI now serves as an essential assistant. “It’s like having a colleague who’s always available, works tirelessly to help me, and never judges my questions,” reports one teacher. Another explains, “When I’m having one of those overwhelming days where I’m completely stretched, Claude helps me articulate my thoughts in professional ‘teacher’ language.”
 
 School leaders also benefit from streamlined administrative processes. Tasks that previously consumed hours now take seconds, reducing both time investment and stress. The photo-based roster import feature exemplifies this transformation—ClassDojo has seen teachers create a half-dozen full classes in under two minutes. Teachers find this both delightful and efficient.
 
-Families gain better tools to support their children's education. Tom explains, "For parents, Claude helps them stay connected to and monitor their child's education. Homework Helper breaks concepts down in a way that empowers parents to support learning without doing the work for their child." Parents notice the difference, with one noting the video highlights feature in Dojo Tutor, "I love seeing their interactions because when I'm present, my child often hesitates before responding to the tutor. This feature gives me insight into their sessions without having to be there."
+Families gain better tools to support their children’s education. Tom explains, “For parents, Claude helps them stay connected to and monitor their child’s education. Homework Helper breaks concepts down in a way that empowers parents to support learning without doing the work for their child.” Parents notice the difference, with one noting the video highlights feature in Dojo Tutor, “I love seeing their interactions because when I’m present, my child often hesitates before responding to the tutor. This feature gives me insight into their sessions without having to be there.”
 
 ## Building AI for the future of education
 
-ClassDojo envisions an educational future where AI closes opportunity gaps and makes high-quality learning accessible to all. Brendan shared, "We're building an ecosystem of AI-powered experiences for kids, families, and teachers. These products will be smarter, more helpful, and more joyful because AI is at their core."
+ClassDojo envisions an educational future where AI closes opportunity gaps and makes high-quality learning accessible to all. Brendan shared, “We’re building an ecosystem of AI-powered experiences for kids, families, and teachers. These products will be smarter, more helpful, and more joyful because AI is at their core.”
 
-ClassDojo also sees Claude helping break down language barriers—a critical need when one in five US families don't speak English at home—with real-time translation and resources in families' native languages.
+ClassDojo also sees Claude helping break down language barriers—a critical need when one in five US families don’t speak English at home—with real-time translation and resources in families’ native languages.
 
-"These AI tools fundamentally change how we approach personalized learning," says Tom. "We can now provide truly adaptive experiences that respond to a child's unique needs, while also giving teachers back the time they need to focus on building relationships."
+“These AI tools fundamentally change how we approach personalized learning,” says Tom. “We can now provide truly adaptive experiences that respond to a child’s unique needs, while also giving teachers back the time they need to focus on building relationships.”
 
-Through their work with Anthropic, ClassDojo is working to fulfill their mission, "to give every child on Earth an education they love." By combining Claude's intelligence with their deep understanding of classroom needs, they're creating AI tools that free teachers to teach, engage students more effectively, and strengthen the crucial connection between school and home.
+Through their work with Anthropic, ClassDojo is working to fulfill their mission, “to give every child on Earth an education they love.” By combining Claude’s intelligence with their deep understanding of classroom needs, they’re creating AI tools that free teachers to teach, engage students more effectively, and strengthen the crucial connection between school and home.
 
 ## Related stories
 
@@ -108,7 +108,8 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -126,12 +127,12 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -164,7 +165,7 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -182,6 +183,7 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -197,7 +199,7 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -232,7 +234,8 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -250,12 +253,12 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -288,7 +291,7 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -306,6 +309,7 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -321,7 +325,7 @@ Through their work with Anthropic, ClassDojo is working to fulfill their mission
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Design your compliance integration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-integration-patterns"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:38Z"
+fetched_at: "2026-10-20T06:39:32Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-integration-patterns)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-integration-patterns)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Compliance API
 
@@ -139,14 +141,13 @@ cURL
 
 
 ```python
-first_id="activity_01XyDMpzjS89pFZXqSFUBDr6"  # first_id from a previous response
-
+# before_id is the first_id from a previous response
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/activities" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   --header "anthropic-version: 2023-06-01" \
   --data-urlencode "limit=5000" \
-  --data-urlencode "before_id=$first_id"
+  --data-urlencode "before_id=activity_01XyDMpzjS89pFZXqSFUBDr6"
 ```
 
 Page through until `has_more` is `false`, then persist `first_id` from the final response and pass it unchanged as `before_id` on the next run to retrieve activities newer than the saved cursor. To walk in the opposite direction for a backfill, persist `last_id` and pass it as `after_id` instead. For the full cursor-vs-page-token reference and retry semantics, see [Paginate results](manage-claude-compliance-activity-feed.md#paginate-results).
@@ -200,7 +201,7 @@ Five retention horizons govern what you can retrieve later:
 | Remote session transcripts (sessions in the cloud)      | 6 years, unless a user deletes the session sooner                                                                                                               | Anthropic                                                            |
 | Content hard-deleted through the Compliance API         | Not retained; deletion is immediate and permanent                                                                                                               | The caller of the `DELETE` endpoint                                  |
 
-To learn how the rest of the Claude Platform handles retention, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
+To learn how the rest of the Claude Platform handles retention, see [API and data retention](manage-claude-api-and-data-retention.md).
 
 Decide between export-and-archive and on-demand API retrieval as follows:
 
@@ -228,7 +229,7 @@ The content endpoints (chats, files, projects, project attachments, and local an
 - Prompt text or model responses from Claude Console, or from Claude API workloads authenticated with an API key.
 - On-device activity in local sessions that is never sent to Anthropic, such as local files that Claude did not read.
 - Claude Code usage authenticated with a Claude Console API key, run through a third-party cloud platform (Amazon Bedrock, Google Cloud, or Microsoft Foundry), or run in a [Claude Code cloud session](../../02-Claude-Code-CLI/claude-code-on-the-web.md), which runs on cloud infrastructure instead of the user's machine.
-- Local sessions from products other than Cowork and Claude Code in organizations with [HIPAA readiness](../Guides/build-with-claude-api-and-data-retention.md#hipaa-readiness) enabled, and local sessions for which [zero data retention](../Guides/build-with-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect.
+- Local sessions from products other than Cowork and Claude Code in organizations with [HIPAA readiness](manage-claude-api-and-data-retention.md#hipaa-readiness) enabled, and local sessions for which [zero data retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect.
 - Thinking blocks, and images or other binary content, inside session transcripts (transcripts carry user prompts, assistant responses, and tool activity only; local session transcripts show a placeholder `text` block where binary content was omitted).
 - The original file for a chat attachment that claude.ai stored as extracted text, such as some Word, PowerPoint, and PDF uploads (the file content endpoint returns the extracted text; see [Retrieve files and artifacts](manage-claude-compliance-content-data.md#retrieve-files-and-artifacts)).
 - The system prompt of local sessions (a marker message stands in for it).

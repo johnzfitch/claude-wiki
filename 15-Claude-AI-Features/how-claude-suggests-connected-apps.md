@@ -2,7 +2,7 @@
 title: "How Claude suggests connected apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14730684-how-claude-suggests-connected-apps"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:24:43Z"
+fetched_at: "2026-10-23T06:29:07Z"
 tags: ["claude-ai"]
 ---
 

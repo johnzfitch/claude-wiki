@@ -2,7 +2,7 @@
 title: "Glossary - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/glossary"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:11Z"
+fetched_at: "2026-10-23T06:28:40Z"
 tags: ["claude-code"]
 ---
 
@@ -187,7 +187,7 @@ An [MCP server](#mcp-model-context-protocol) that pushes events into your runnin
 
 Checkpoint
 
-A restore point created at each prompt you send that starts a turn. Claude Code snapshots files before every edit so a checkpoint can revert them. Press `Esc` twice or run `/rewind` to restore code, conversation, or both to an earlier point, or to summarize part of the conversation from a selected message. Checkpoints are saved with the conversation, so a resumed session can still `/rewind` to them. They’re separate from git and don’t track changes made through the Bash tool. Learn more: [Checkpointing](checkpointing.md)
+A restore point created at each prompt you send that starts a turn. Claude Code snapshots files before every edit so a checkpoint can revert them. Press `Esc` twice or run `/rewind` to restore code, conversation, or both to an earlier point, or to summarize part of the conversation from a selected message. Checkpoints are saved with the conversation, so a resumed session can still `/rewind` to them. Rewinding doesn’t undo a Bash command’s changes to a file unless Claude had already used its file editing tools on that file in your conversation. Learn more: [Checkpointing](checkpointing.md)
 
 
 [​](#claude-directory)
@@ -208,7 +208,7 @@ A markdown file of persistent instructions you write for Claude, loaded at the s
 
 Cloud session
 
-A Claude Code session that keeps running after you close your laptop, because it runs on cloud infrastructure instead of your machine: Anthropic-managed by default, or a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) your organization operates. You start one from claude.ai/code, the Claude mobile app, the Desktop app with **Cloud** selected, `claude --cloud`, or a [routine](web-scheduled-tasks.md). A session in your terminal, IDE, or the Desktop app with **Local** selected is a local session; to reach a local session from another device, use [Remote Control](#remote-control). Learn more: [Use Claude Code in the cloud](claude-code-on-the-web.md)
+A Claude Code session that keeps running after you close your laptop, because it runs on cloud infrastructure instead of your machine. That infrastructure is Anthropic-managed by default, or a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) your organization operates. You start one from claude.ai/code, the Claude mobile app, the Desktop app with **Cloud** selected, `claude --cloud`, or a [cloud scheduled task](web-scheduled-tasks.md). A session in your terminal, IDE, or the Desktop app with **Local** selected is a local session; to reach a local session from another device, use [Remote Control](#remote-control). Learn more: [Use Claude Code in the cloud](claude-code-on-the-web.md)
 
 
 [​](#command)

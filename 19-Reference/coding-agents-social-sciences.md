@@ -2,15 +2,50 @@
 title: "Coding agents in the social sciences \\ Anthropic"
 source_url: "https://www.anthropic.com/research/coding-agents-social-sciences"
 category: "19-Reference"
-fetched_at: "2026-08-26T06:29:08Z"
+fetched_at: "2026-10-21T06:30:22Z"
 tags: ["agents", "news-research", "search"]
 ---
 
 # Coding agents in the social sciences
 
-May 27, 2026
+- [01How are AI coding agents changing how we study the economy and society?](#how-are-ai-coding-agents-changing-how-we-study-the-economy-and-society)
+- [02A new survey on AI coding agent use among quantitative social scientists](#a-new-survey-on-ai-coding-agent-use-among-quantitative-social-scientists)
+- [03Coding agents haven't reached most social scientists](#coding-agents-havent-reached-most-social-scientists)
+- [04Adoption is highly uneven](#adoption-is-highly-uneven)
+- [05Researchers mainly use AI to code and edit, not write](#researchers-mainly-use-ai-to-code-and-edit-not-write)
+- [06Coding agent users are posting more working papers and sending out more grant proposals, but not submitting more to journals](#coding-agent-users-are-posting-more-working-papers-and-sending-out-more-grant-proposals-but-not-submitting-more-to-journals)
+- [07Researchers expect AI tools to raise productivity, but are less confident that they will improve social science overall](#researchers-expect-ai-tools-to-raise-productivity-but-are-less-confident-that-they-will-improve-social-science-overall)
+- [08Discussion](#discussion)
 
-## Summary
+- Published
+
+  May 27, 2026
+
+- Team
+
+  [Science](https://www.anthropic.com/science)
+
+- Topics
+
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+  - [Productivity](https://www.anthropic.com/search?topic=productivity)
+  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+  - [Discovery](https://www.anthropic.com/search?topic=discovery)
+
+  See more...
+
+Related articles
+
+- Announcements
+
+  Sep 15, 2026
+
+  [Introducing Claude Mythos and Fable 5.1](../15-Claude-AI-Features/claude-fable-and-mythos-5-1.md)
+
+[View more](https://www.anthropic.com/search?topic=how-people-use-ai)
+
+### Summary
 
 - *We present results from a survey of 1,260 social scientists about AI and coding agent use, fielded in February and March 2026.*
 - *The vast majority of respondents (81%) have tried using AI chatbots in research, particularly for writing code and editing prose. But only 20% have adopted coding agents—tools like Claude Code that autonomously write and execute analysis code—into their work.*
@@ -18,7 +53,7 @@ May 27, 2026
 - *Users of coding agents post more working papers and grant proposals than others in the same discipline and career stage, but this could reflect pre-existing differences among early adopters.*
 - *Researchers are more optimistic about AI helping write publishable papers than about the effects of AI on the social sciences as a whole.*
 
-## **How are AI coding agents changing how we study the economy and society?**
+## How are AI coding agents changing how we study the economy and society?
 
 The human sciences are shifting: for the first time, core research tasks can be handed off to machines. AI chatbots increasingly contribute to scientific research, including in the most [prestigious publications](https://www.nature.com/articles/s41562-025-02273-8) and in the [social sciences](https://sociologicalscience.com/articles-v13-3-45/). This has spurred optimism that AI could boost research productivity—while also stoking fears about overloaded peer review and a deluge of academic AI slop.
 
@@ -28,21 +63,21 @@ These tools could accelerate science and make it more daring: fast research exec
 
 In this post, we offer a first look, drawing on a survey of 1,260 quantitative social scientists fielded in early 2026. The survey is the baseline wave of a larger ongoing study of how coding agents affect research productivity, including a randomized experiment providing researchers with access to Claude Code. We will publish results from this experiment in the future. For now, we report what the baseline survey reveals about who is using these tools and for what; how output differs between users and non-users; and what researchers expect about the implications of growing adoption.
 
-## **A new survey on AI coding agent use among quantitative social scientists**
+## A new survey on AI coding agent use among quantitative social scientists
 
-We fielded the survey in late February and March 2026, targeting active quantitative social scientists. This was not a representative sample—respondents were recruited for a study that offered access to Claude Max accounts, so selection into the sample could tilt toward researchers curious about AI tools. However, the respondents were fairly similar to an earlier sample that received a more generic invitation (see Table A2 in the [Appendix](https://cdn.sanity.io/files/4zrzovbb/website/403415e54964751190003985896630e56829e797.pdf)).
+We fielded the survey in late February and March 2026, targeting active quantitative social scientists. This was not a representative sample—respondents were recruited for a study that offered access to Claude Max accounts, so selection into the sample could tilt toward researchers curious about AI tools. However, the respondents were fairly similar to an earlier sample that received a more generic invitation (see Table A2 in the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/403415e54964751190003985896630e56829e797.pdf)).
 
 Respondents were evenly split between economics, political science and sociology, each around a fifth of the sample, with management sciences and psychology close behind (see Table A1). We also received a smaller number of responses from public health, education and communications researchers. Roughly 40% were full or associate professors, 25% were assistant professors, and about 30% were doctoral students.
 
-## **Coding agents haven't reached most social scientists**
+## Coding agents haven't reached most social scientists
 
 We measured overall AI use in two ways. First, we asked “Have you previously used genAI models to aid your research process?” 81% of respondents said yes.
 
-But what about those who have actually adopted increasingly capable coding agents into their workflow? Here, we asked “Do you regularly (more than once a week) use an AI coding assistant integrated into your command line (such as Codex, Cursor, or Claude Code)?” In a follow-up question, we verified that they used one of those tools (or Google Antigravity).¹
+But what about those who have actually adopted increasingly capable coding agents into their workflow? Here, we asked “Do you regularly (more than once a week) use an AI coding assistant integrated into your command line (such as Codex, Cursor, or Claude Code)?” In a follow-up question, we verified that they used one of those tools (or Google Antigravity).^([1](#footnote-1))
 
 Only 20% of respondents use coding agents. Our survey came around two months after a flurry of discussion about Claude Code and Opus 4.6 that kicked off in late December of 2025. Yet even among interested respondents who self-selected into our survey, only ⅕ had adopted agents into their workflow. Claude Code is the most common coding agent tool reported, with 86% of users reporting Claude Code use (31% report using Codex, the next most common tool).
 
-## **Adoption is highly uneven**
+## Adoption is highly uneven
 
 Figure 1 shows there is large variation in the overall adoption rate, from 39% of economists and 25% of political scientists to single digits for public health (6%), education (4%) and communication (6%). This gradient roughly tracks differences across fields in overall AI use, but differences in coding agent adoption are steeper on average.
 
@@ -52,13 +87,13 @@ Adoption differences extend beyond discipline and career stage. We classify rese
 
 The gender gap in coding agent use does not just reflect a gap in rates of trying AI. Among respondents who have tried using AI for research, there is even a slightly larger gender gap in regular coding agent use than in the overall sample. These differences also persist when comparing across genders in the same disciplines and career stages.
 
-## **Researchers mainly use AI to code and edit, not write**
+## Researchers mainly use AI to code and edit, not write
 
 Among researchers using AI, whether through coding agents or chatbots, what are they actually using it for? Debate about AI in academic research has focused heavily on writing: hallucinated literature reviews, “it’s not X, it’s Y” strewn across formulaic introductions, and the possibility of fully automated paper writing.
 
 But Figure 4 shows that the most common use, for both coding agent users and others, is for coding up analysis of quantitative data: 97% of coding agent users and 77% of other AI users report using it to generate code. Next most common is editing prose, followed by asking for methods advice and background on prior research. Aggregating across coding agent users and others, only a third of all AI users have used it to draft prose at all. These patterns generally hold across disciplines, with only economists and management researchers commonly using AI to draft prose.
 
-## **Coding agent users are posting more working papers and sending out more grant proposals, but not submitting more to journals**
+## Coding agent users are posting more working papers and sending out more grant proposals, but not submitting more to journals
 
 Are coding agents making researchers more productive? That’s the question motivating the broader study this survey kicks off. The experiment we are running on this question is still ongoing. But the baseline survey lets us compare coding agent users to others across a whole bunch of checkpoints in the research process. This comparison is purely descriptive: we compare researchers who select into coding agent use to those who do not, and expect that the two groups differ in a number of ways that we cannot adjust for. Differences should not be interpreted as causal, but as a first cut comparison between researchers using coding agents and those who are not.
 
@@ -68,7 +103,7 @@ So are coding agent users writing more papers? First, consider the differences i
 
 However, this productivity difference only appears for these early pipeline measures. We find no evidence that coding agent users are submitting more new papers to journals or resubmitting papers more quickly. This could reflect the timeline of getting a paper to submission, as coding agent use is a recent phenomenon. But it could also reflect that coding agents are more useful at getting projects up and running than they are at the last mile of perfecting a paper for journal submission.
 
-## **Researchers expect AI tools to raise productivity, but are less confident that they will improve social science overall**
+## Researchers expect AI tools to raise productivity, but are less confident that they will improve social science overall
 
 We also asked researchers what they expected of AI tools. Does AI make social scientists more productive, in terms of writing publishable papers? And do they think AI will make the social sciences better or worse?
 
@@ -86,31 +121,9 @@ There are several caveats to the findings in this report. The data presented her
 
 Notwithstanding these limitations, we show that coding agents are diffusing into the social sciences. The way we study the economy and politics, for example, is increasingly through analysis decisions made in part by AI coding agents. We plan to bring more evidence in future reports on the potential and risks of this kind of automation.
 
-### Authors
-
-Thomas Lyttelton, Maxim Massenkoff, Nathan Wilmers
-
-### Acknowledgements
-
-Tim Belonax, Keir Bradwell, Jake Eaton, Rebecca Hiscott, Peter McCrory, Kerry Persen, Sarah Pollack, Santi Ruiz, Heather Whitney, Jack Clark.
-
 ### Appendix
 
-Available [here](https://cdn.sanity.io/files/4zrzovbb/website/403415e54964751190003985896630e56829e797.pdf).
-
-### Citation
-
-```
-@online{lyttelton2026agents,
- author = {Thomas Lyttelton and Maxim Massenkoff and Nathan Wilmers},
- title = {Coding Agents in the Social Sciences},
- date = {2026-05-27},
- year = {2026},
- url = {https://www.anthropic.com/research/coding-agents-social-sciences},
-}
-```
-
-Copy
+Available [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/403415e54964751190003985896630e56829e797.pdf).
 
 ### References
 
@@ -124,129 +137,28 @@ Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., ... & Clune, J. 
 
 Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
-#### Footnotes
+## Footnotes
 
-1.  We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.
+01We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.[](#footnote-ref-1)
 
+## Authors & Acknowledgments
 
-## Related content
+### Contributors
 
-### How Claude is accelerating protein design and analytical chemistry
+Thomas Lyttelton, Maxim Massenkoff, Nathan Wilmers
 
-In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
+### Acknowledgements
 
-[Read more](claude-accelerates-protein-design.md)
+Tim Belonax, Keir Bradwell, Jake Eaton, Rebecca Hiscott, Peter McCrory, Kerry Persen, Sarah Pollack, Santi Ruiz, Heather Whitney, Jack Clark.
 
-### Patterns and problems in emerging multiagent systems
+### Citation
 
-Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.
+Copy
 
-[Read more](multiagent-systems.md)
-
-### Reviewing the evidence on worker retraining programs
-
-We're sharing a review of the evidence on worker retraining programs, coauthored by independent researcher David Roodman and Anthropic's Maxim Massenkoff.
-
-[Read more](reviewing-the-evidence-on-worker-retraining-programs.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+``` CodeBlock-module-scss-module__PbWBnq__code
+@online{lyttelton2026agents,
+ author = {Thomas Lyttelton and Maxim Massenkoff and Nathan Wilmers},
+ title = {Coding Agents in the Social Sciences},
+ date = {2026-05-27},
+ year = {2026},
+ url = {https://www.anthropic.com/research/coding-agents-social-sciences},

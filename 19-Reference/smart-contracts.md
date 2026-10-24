@@ -2,13 +2,46 @@
 title: "AI agents find smart contract exploits \\ Anthropic"
 source_url: "https://www.anthropic.com/research/smart-contracts"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:29:01Z"
+fetched_at: "2026-10-21T06:30:10Z"
 tags: ["agents", "news-research"]
 ---
 
 # AI agents find \$4.6M in blockchain smart contract exploits
 
-Dec 1, 2025
+- [01Introduction](#introduction)
+- [02Evaluating AI agents on SCONE-bench](#evaluating-ai-agents-on-scone-bench)
+- [03Finding novel, profitable exploits in recent smart contracts](#finding-novel-profitable-exploits-in-recent-smart-contracts)
+- [04Related Work](#related-work)
+- [05Conclusion](#conclusion)
+- [06Appendix](#appendix)
+
+- Published
+
+  Dec 1, 2025
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
+
+  See more...
+
+Related articles
+
+- Models
+
+  Jun 30, 2026
+
+  [Introducing Claude Sonnet 5](claude-sonnet-5.md)
+
+[View more](https://www.anthropic.com/search?topic=cybersecurity)
 
 *Winnie Xiao\*, Cole Killian\*  
 Henry Sleight, Alan Chan  
@@ -23,13 +56,13 @@ AI models are increasingly good at cyber tasks, as we've [written about before](
 
 AI cyber capabilities are accelerating rapidly: they are now capable of tasks from orchestrating [complex network intrusions](https://red.anthropic.com/2025/cyber-toolkits/) to augmenting [state-level espionage](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf). Benchmarks, like [CyberGym](https://www.cybergym.io/) and [Cybench](https://cybench.github.io/), are valuable for tracking and preparing for future improvements in such capabilities.
 
-However, existing cyber benchmarks miss a critical dimension: they do not quantify the exact financial consequences of AI cyber capabilities. Compared to arbitrary success rates, quantifying capabilities in monetary terms is more useful for assessing and communicating risks to policymakers, engineers, and the public. Yet estimating the real value of software vulnerabilities requires speculative modelling of downstream impacts, user base, and remediation costs.^(\[1\])
+However, existing cyber benchmarks miss a critical dimension: they do not quantify the exact financial consequences of AI cyber capabilities. Compared to arbitrary success rates, quantifying capabilities in monetary terms is more useful for assessing and communicating risks to policymakers, engineers, and the public. Yet estimating the real value of software vulnerabilities requires speculative modelling of downstream impacts, user base, and remediation costs.^([1](#footnote-1))
 
 Here, we take an alternate approach and turn to a domain where software vulnerabilities can be priced directly: smart contracts. Smart contracts are programs deployed on blockchains like Ethereum. They power financial blockchain applications which offer services similar to those of PayPal, but all of their source code and transaction logic—such as for transfers, trades, and loans—are public on the blockchain and handled entirely by software without a human in the loop. As a result, vulnerabilities can allow for direct theft from contracts, and we can measure the dollar value of exploits by running them in simulated environments. These properties make smart contracts an ideal testing ground for AI agents’ exploitation capabilities.
 
 To give a concrete example of what such an exploit could look like: [Balancer](https://messari.io/project/balancer/profile) is a blockchain application that allows users to trade cryptocurrencies. In November 2025, an attacker exploited a rounding direction issue to withdraw other users’ funds, [stealing over \$120 million](https://blog.trailofbits.com/2025/11/07/balancer-hack-analysis-and-guidance-for-the-defi-ecosystem/). Since smart contract and traditional software exploits draw on a similar set of core skills (e.g. control-flow reasoning, boundary analysis, and programming fluency), assessing AI agents on smart contract exploitations gives a concrete lower bound on the economic impact of their broader cyber capabilities.
 
-We introduce SCONE-bench—the first benchmark that evaluates agents’ ability to exploit smart contracts, measured by the total dollar value^(\[2\]) of simulated stolen funds. For each target contract(s), the agent is prompted to identify a vulnerability and produce an exploit script that takes advantage of the vulnerability so that, when executed, the executor’s native token balance increases by a minimum threshold. Instead of relying on bug bounty or speculative models, SCONE-bench uses on-chain assets to directly quantify losses. SCONE-bench provides:
+We introduce SCONE-bench—the first benchmark that evaluates agents’ ability to exploit smart contracts, measured by the total dollar value^([2](#footnote-2)) of simulated stolen funds. For each target contract(s), the agent is prompted to identify a vulnerability and produce an exploit script that takes advantage of the vulnerability so that, when executed, the executor’s native token balance increases by a minimum threshold. Instead of relying on bug bounty or speculative models, SCONE-bench uses on-chain assets to directly quantify losses. SCONE-bench provides:
 
 1.  **A benchmark comprising 405 smart contracts with real-world vulnerabilities** exploited between 2020 and 2025 across 3 Ethereum-compatible blockchains (Ethereum, Binance Smart Chain, and Base), derived from the [DefiHackLabs repository](https://github.com/SunWeb3Sec/DeFiHackLabs/tree/main).
 2.  **A baseline agent **running in each sandboxed environment that attempts to exploit the provided contract(s) within a time limit (60 minutes) using tools exposed via the Model Context Protocol (MCP).
@@ -38,23 +71,23 @@ We introduce SCONE-bench—the first benchmark that evaluates agents’ ability 
 
 We present three main evaluation results.
 
-First, we evaluated 10 models^(\[3\]) across all 405 benchmark problems. Collectively, these models produced turnkey exploits for 207 (51.11%) of these problems, yielding \$550.1 million in simulated stolen funds.^(\[4\]) 
+First, we evaluated 10 models^([3](#footnote-3)) across all 405 benchmark problems. Collectively, these models produced turnkey exploits for 207 (51.11%) of these problems, yielding \$550.1 million in simulated stolen funds.^([4](#footnote-4)) 
 
-econd, to control for potential data contamination, we evaluated the same 10 models on vulnerabilities that were exploited after their knowledge cutoffs (June 1, 2025 for Opus 4.5 and March 1, 2025 for all other models). Collectively, Opus 4.5, Sonnet 4.5, and GPT-5 produced exploits for 19 of these problems (55.8%), yielding a maximum of \$4.6 million in simulated stolen funds.^(\[5\]) The top performing model, Opus 4.5, successfully exploited 13 of the 20 problems (65%) that occurred after June 1, 2025, corresponding to \$3.7 million in simulated stolen funds—an estimate of how much these AI agents could have stolen had they been pointed to these smart contracts throughout 2025.^(\[6\]) 
+econd, to control for potential data contamination, we evaluated the same 10 models on vulnerabilities that were exploited after their knowledge cutoffs (June 1, 2025 for Opus 4.5 and March 1, 2025 for all other models). Collectively, Opus 4.5, Sonnet 4.5, and GPT-5 produced exploits for 19 of these problems (55.8%), yielding a maximum of \$4.6 million in simulated stolen funds.^([5](#footnote-5)) The top performing model, Opus 4.5, successfully exploited 13 of the 20 problems (65%) that occurred after June 1, 2025, corresponding to \$3.7 million in simulated stolen funds—an estimate of how much these AI agents could have stolen had they been pointed to these smart contracts throughout 2025.^([6](#footnote-6)) 
 
-Third, to assess our agent’s ability to uncover completely novel zero-day exploits, we evaluated the Sonnet 4.5 and GPT-5 agents on October 3, 2025 against 2,849 recently deployed contracts that contained no known vulnerabilities. The agents both uncovered two novel zero-day vulnerabilities and produced exploits worth \$3,694,^(\[7\]) with GPT-5 doing so at an API cost of \$3,476, demonstrating as a proof-of-concept that profitable, real-world autonomous exploitation is technically feasible.^(\[8\])
+Third, to assess our agent’s ability to uncover completely novel zero-day exploits, we evaluated the Sonnet 4.5 and GPT-5 agents on October 3, 2025 against 2,849 recently deployed contracts that contained no known vulnerabilities. The agents both uncovered two novel zero-day vulnerabilities and produced exploits worth \$3,694,^([7](#footnote-7)) with GPT-5 doing so at an API cost of \$3,476, demonstrating as a proof-of-concept that profitable, real-world autonomous exploitation is technically feasible.^([8](#footnote-8))
 
 ## Evaluating AI agents on SCONE-bench
 
 We evaluated 10 frontier AI models across all 405 benchmark challenges using Best@8. As mentioned above, this yielded exploits in 207 of these problems, corresponding to a total simulated revenue of \$550.1 million dollars from simulated stolen funds. Importantly, it is not possible for us to determine the profit of such an attack, as we have already down-selected those contracts that are known to be vulnerable.
 
-To evaluate exploitation capabilities over time, we plotted the total exploit revenue of each model against its release date, using only the contracts that were exploited after their knowledge cutoffs to control for potential data contamination. Although total exploit revenue is an imperfect metric—since a few outlier exploits dominate the total revenue^(\[9\])—we highlight it over attack success rate^(\[10\])because attackers care about how much money AI agents can extract, not the number or difficulty of the bugs they find.
+To evaluate exploitation capabilities over time, we plotted the total exploit revenue of each model against its release date, using only the contracts that were exploited after their knowledge cutoffs to control for potential data contamination. Although total exploit revenue is an imperfect metric—since a few outlier exploits dominate the total revenue^([9](#footnote-9))—we highlight it over attack success rate^([10](#footnote-10))because attackers care about how much money AI agents can extract, not the number or difficulty of the bugs they find.
 
 A second motivation for evaluating exploitation capabilities in dollars stolen rather than attack success rate (ASR) is that ASR ignores how effectively an agent can monetize a vulnerability once it finds one. Two agents can both "solve" the same problem, yet extract vastly different amounts of value. For example, on the benchmark problem ["FPC"](https://github.com/SunWeb3Sec/DeFiHackLabs/blob/dd6934579014a65dc6d9fc2394469100d22ab1b3/src/test/2025-07/FPC_exp.sol#L4), GPT-5 exploited \$1.12M in simulated stolen funds, while Opus 4.5 exploited \$3.5M. Opus 4.5 was substantially better at maximizing the revenue per exploit by systematically exploring and attacking many smart contracts affected by the same vulnerability (e.g., draining all liquidity pools listing the vulnerable token rather than just a single pool, targeting all tokens that reused the same vulnerable pattern rather than a single instance). ASR treats both runs as equal “successes,” but the dollar metric captures this economically meaningful gap in capability.
 
 Over the last year, frontier models' exploit revenue on the 2025 problems doubled roughly every 1.3 months (Figure 1). We attribute the increase in total exploit revenue to improvements in agentic capabilities like [tool use](https://gorilla.cs.berkeley.edu/leaderboard.html), error recovery, and [long-horizon task execution](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/). Even though we expect this doubling trend to plateau eventually, it remains a striking demonstration of how fast exploit revenue increased based on capability improvements in just a year.
 
-We also analyzed how exploit complexity, as measured through various proxies (i.e. time from deployment to attack, code complexity), affects exploit profitability in our benchmark dataset: none of the complexity metrics we evaluated show meaningful correlation with exploit revenue.^(\[11\]) The exploit revenue appears to be primarily dependent on the amount of assets held by the contract at the time of the exploit.
+We also analyzed how exploit complexity, as measured through various proxies (i.e. time from deployment to attack, code complexity), affects exploit profitability in our benchmark dataset: none of the complexity metrics we evaluated show meaningful correlation with exploit revenue.^([11](#footnote-11)) The exploit revenue appears to be primarily dependent on the amount of assets held by the contract at the time of the exploit.
 
 The complete benchmark is currently available in the [SCONE-bench repo](https://github.com/safety-research/SmartContract-bench), with the full harness to be released there in the coming weeks. We recognize the dual-use concerns with releasing our benchmark. However, attackers already have strong financial incentives to build these tools independently. By open-sourcing our benchmark, we aim to give defenders the tools to stress-test and fix their contracts before attackers can exploit them.
 
@@ -886,7 +919,7 @@ We reached out to the developers via information left in the source code, but re
 
 *See the exploit code for Vulnerability \#1 below.*
 
-```
+``` CodeBlock-module-scss-module__PbWBnq__code
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 import {console} from "forge-std/console.sol";
@@ -994,7 +1027,7 @@ We found no way to contact the developer, a common issue due to the anonymous na
 
 *See the exploit code for Vulnerability \#2 below.*
 
-```
+``` CodeBlock-module-scss-module__PbWBnq__code
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 interface IERC20 {
@@ -1158,24 +1191,6 @@ Importantly, the same agents capable of exploiting vulnerabilities can also be d
 
 *If you want to contribute to work like this, Anthropic is [hiring](https://www.anthropic.com/careers) LLM and security researchers to continue research in this direction. If you’re new to this area, you can apply to programs like [MATS](https://www.matsprogram.org/) (the program that hosted Winnie and Cole, the two primary authors of this study) or [Anthropic Fellows Program](https://alignment.anthropic.com/2024/anthropic-fellows-program/) that offer excellent entry points.*
 
-## Acknowledgements
-
-We would like to thank Nicholas Marwell for guidance on our evaluation harness. We also thank Kevin Troy, Ethan Morgan, Keane Lucas, and Andres Monteoliva for their valuable feedback on earlier drafts of this blogpost and early discussions that helped shape this work. We are grateful to [SEAL](https://x.com/_SEAL_Org) for insights on smart contract vulnerabilities and their assistance in attempting to recover the affected funds. Finally, we thank John Hughes, Ethan Perez, Maria Kostylew, and Avery Griffin for their support with computing resources and project management.
-
-*Edited December 2, 2025:*
-
-- *Repositioned the author list*
-
-- *Corrected an error in the characterization of the November 2025 exploit of Balancer*
-
-- *Added a Related Work section*
-
-- *Updated the Acknowledgments section*
-
-*Edited December 8, 2025:*
-
-- *Modified text to reflect accurate knowledge cutoff date for Claude Opus 4.5*
-
 ## Appendix
 
 ### Our benchmark
@@ -1203,156 +1218,48 @@ We validate the exploit by running the exploit script developed by the agent and
 
 ### Additional results
 
-#### Footnotes
+## Footnotes
 
-\[1\] One proxy for estimating the value of a software vulnerability is the bug bounty—the amount a company offers security researchers for responsibly disclosing flaws in its code. However, bug bounties reflect only the defensive value of a vulnerability to an organization, not the offensive value that could be realized through exploitation in the wild.
+01One proxy for estimating the value of a software vulnerability is the bug bounty—the amount a company offers security researchers for responsibly disclosing flaws in its code. However, bug bounties reflect only the defensive value of a vulnerability to an organization, not the offensive value that could be realized through exploitation in the wild. [](#footnote-ref-1)
 
-\[2\] For each contract in the benchmark, we estimated the exploit’s dollar value by converting the agent’s profit in the native token (ETH or BNB) to USD using the historical exchange rate from the day the real exploit occurred, as reported by the [CoinGecko API](https://docs.coingecko.com/).        
+02For each contract in the benchmark, we estimated the exploit’s dollar value by converting the agent’s profit in the native token (ETH or BNB) to USD using the historical exchange rate from the day the real exploit occurred, as reported by the [CoinGecko API](https://docs.coingecko.com/).        [](#footnote-ref-2)
 
-\[3\] We evaluated models that were considered "frontier" based on their release dates throughout the year: Llama 3, GPT-4o, DeepSeek V3, Sonnet 3.7, o3, Opus 4, Opus 4.1, GPT-5, Sonnet 4.5, and Opus 4.5. We use extended thinking for all Claude models (except Sonnet 3.7) and high reasoning for GPT-5. In the revenue vs models charts, we only show models that solved at least one problem.
+03We evaluated models that were considered "frontier" based on their release dates throughout the year: Llama 3, GPT-4o, DeepSeek V3, Sonnet 3.7, o3, Opus 4, Opus 4.1, GPT-5, Sonnet 4.5, and Opus 4.5. We use extended thinking for all Claude models (except Sonnet 3.7) and high reasoning for GPT-5. In the revenue vs models charts, we only show models that solved at least one problem. [](#footnote-ref-3)
 
-\[4\] This is according to each model's Best@8 performance. Best@8 means that we run each model on each smart contract 8 independent times, and take the highest dollar value achieved across those attempts as the model's performance for that problem.
+04This is according to each model's Best@8 performance. Best@8 means that we run each model on each smart contract 8 independent times, and take the highest dollar value achieved across those attempts as the model's performance for that problem.[](#footnote-ref-4)
 
-\[5\] For each problem, we look at all 10 models, take the highest exploit revenue of any model achieved on that problem, and then sum those per-problem maxima across all problems to get the maximum total revenue.
+05For each problem, we look at all 10 models, take the highest exploit revenue of any model achieved on that problem, and then sum those per-problem maxima across all problems to get the maximum total revenue.[](#footnote-ref-5)
 
-\[6\]  This is according to each model's Best@8 performance.
+06This is according to each model's Best@8 performance.[](#footnote-ref-6)
 
-\[7\] On the recently deployed contracts, the exploit’s dollar value is estimated by converting the agent’s profit in BNB to USD using the historical exchange rate on the day we ran the agent (October 3, 2025), as reported by the [CoinGecko API](https://docs.coingecko.com/).
+07On the recently deployed contracts, the exploit’s dollar value is estimated by converting the agent’s profit in BNB to USD using the historical exchange rate on the day we ran the agent (October 3, 2025), as reported by the [CoinGecko API](https://docs.coingecko.com/).[](#footnote-ref-7)
 
-\[8\] This is according to each model's Best@1 performance.
+08This is according to each model's Best@1 performance.[](#footnote-ref-8)
 
-\[9\] See Figure 3 for more details.
+09See Figure 3 for more details. [](#footnote-ref-9)
 
-\[10\] See Figure 6a and 6b for more details.  
+10See Figure 6a and 6b for more details.  [](#footnote-ref-10)
 
-\[11\] See Figure 7 and Figure 8 for more details.
+11See Figure 7 and Figure 8 for more details. [](#footnote-ref-11)
 
-\[12\] One agent run ends either when the agent stops making tool calls or the session times out after 60 minutes.
+12One agent run ends either when the agent stops making tool calls or the session times out after 60 minutes.
 
+## Authors & Acknowledgments
 
-## Related content
+### Acknowledgements
 
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
+We would like to thank Nicholas Marwell for guidance on our evaluation harness. We also thank Kevin Troy, Ethan Morgan, Keane Lucas, and Andres Monteoliva for their valuable feedback on earlier drafts of this blogpost and early discussions that helped shape this work. We are grateful to [SEAL](https://x.com/_SEAL_Org) for insights on smart contract vulnerabilities and their assistance in attempting to recover the affected funds. Finally, we thank John Hughes, Ethan Perez, Maria Kostylew, and Avery Griffin for their support with computing resources and project management.
 
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
+*Edited December 2, 2025:*
 
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
+- *Repositioned the author list*
 
-### An alignment assessment of recent cybersecurity incidents
+- *Corrected an error in the characterization of the November 2025 exploit of Balancer*
 
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
+- *Added a Related Work section*
 
-[Read more](alignment-assessment-cybersecurity-incidents.md)
+- *Updated the Acknowledgments section*
 
-### Formalizing Fermat's Last Theorem
+*Edited December 8, 2025:*
 
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+- *Modified text to reflect accurate knowledge cutoff date for Claude Opus 4.5*

@@ -2,16 +2,14 @@
 title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
 source_url: "https://www.claude.com/product/claude-code"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:26:31Z"
-last_modified: "Sat, 10 Oct 2026 06:21:11 GMT"
+fetched_at: "2026-10-23T06:29:56Z"
+last_modified: "Fri, 23 Oct 2026 06:26:34 GMT"
 tags: ["agents", "claude-ai", "claude-code", "slack"]
 ---
 
 # Claude Code
 
 Hand Claude a bug fix, test, or multi-day migration. Steer and review from your terminal, IDE, Slack, or web.
-
-Claude Code is included in Claude Pro and Max plans. [See plans](#pricing)
 
 [Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](../02-Claude-Code-CLI/code-home.md)
 
@@ -277,12 +275,17 @@ Per month
 ## Latest feature announcements
 
 
+### **Code Review:** Catch more bugs before they reach production. Now generally available for Team and Enterprise.
+
+BlogOct 15, 2026
+
+
 ### **Projects:** Group related coding sessions so you can run and easily supervise multiple Claude agents at once. Available on Claude Code Desktop.
 
 BlogSep 17, 2026
 
 
-### **Auto mode by default:** Claude Code now runs in auto mode by default on Pro, Max, and Team plans, so it can work longer while still catching risky commands.
+### **Auto mode by default:** Claude Code now runs in auto mode by default on Pro, Max, and Team plans, so it can work longer while still being designed to catch risky commands.
 
 BlogAug 7, 2026
 
@@ -290,11 +293,6 @@ BlogAug 7, 2026
 ### **Self-hosted environments:** Run Claude Code sessions on your own infrastructure, inside your network and next to your internal services. Now in public beta.
 
 BlogAug 6, 2026
-
-
-### **Artifacts:** Preview in-progress work as a live, interactive artifact built from your session context, and share it with your team.
-
-BlogJun 18, 2026
 
 [View changelog](../02-Claude-Code-CLI/changelog.md)
 
@@ -391,7 +389,7 @@ The architecture allows for both using Excalidraw as a component in other applic
 
 - ### Code onboarding
 
-  Claude Code maps and explains entire codebases in a few seconds. It uses agentic search to understand project structure and dependencies without you having to manually select context files.
+  Claude Code maps and explains large codebases in a few seconds. It uses agentic search to understand project structure and dependencies without you having to manually select context files.
 
 - ### Turn issues into PRs
 
@@ -405,7 +403,7 @@ The architecture allows for both using Excalidraw as a component in other applic
 
 ### Start in your terminal
 
-Super powerful terminal integration. Works with all your CLI tools alongside any IDE.
+Super powerful terminal integration. Works with all your CLI tools alongside popular IDEs.
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
@@ -507,7 +505,7 @@ Claude Code runs in your terminal and works alongside your preferred IDE and dev
 
 ### Is Claude Code secure?
 
-Yes. Claude Code runs locally in your terminal and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
+Claude Code is designed with security in mind. When used in your terminal, Claude Code runs locally and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
 
 ### What are the system requirements to run Claude Code?
 
@@ -523,7 +521,7 @@ Yes. Max, Pro, Team, and Enterprise users can access Claude Code on the [Claude 
 
 ### What is fast mode on Claude Code?
 
-Fast mode is a high-speed configuration for Opus 5.5, making the model 2.5x faster at a higher cost per token. Fast mode is available:
+Fast mode is a high-speed configuration for Opus 5.5, delivering lower-latency responses at a higher cost per token. Fast mode is available:
 
 - In research preview on Claude Code, and is priced at \$8/\$40 per million tokens.
 - On consumption-based plans.

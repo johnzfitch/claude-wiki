@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_roles%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_roles%2Fretrieve)
 
 
 
@@ -223,7 +223,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -232,8 +232,8 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [RBAC Roles](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_roles)
 
 # Get RBAC Role

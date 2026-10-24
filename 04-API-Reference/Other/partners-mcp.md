@@ -2,7 +2,7 @@
 title: "Connectors and plugins | Claude Marketplace | Claude by Anthropic"
 source_url: "https://www.claude.com/partners/mcp"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:26:05Z"
+fetched_at: "2026-10-23T06:30:01Z"
 tags: ["api", "connectors", "enterprise", "plugins", "security"]
 ---
 
@@ -61,7 +61,7 @@ SortRecommendedMost popularTrendingNewestA–Z
 
 ## Top connectors
 
-Show all 934
+Show all 1006
 
 ### [Google Drive](https://www.claude.com/marketplace/connectors/google-drive)
 
@@ -135,6 +135,15 @@ Send messages, create canvases, and fetch Slack data
 
 Add Slack in Claude (opens in new tab)
 
+### [Atlassian MCP](https://www.claude.com/marketplace/connectors/atlassian)
+
+Anthropic verified
+
+Search, read and update Jira, Confluence, Bitbucket, Loom and other Atlassian apps with your existing Atlassian permissions.
+
+
+Add Atlassian MCP in Claude (opens in new tab)
+
 ### [HubSpot](https://www.claude.com/marketplace/connectors/hubspot)
 
 Anthropic verified
@@ -161,15 +170,6 @@ Manage issues, projects & team workflows in Linear
 
 
 Add Linear in Claude (opens in new tab)
-
-### [monday.com](https://www.claude.com/marketplace/connectors/monday)
-
-Anthropic verified
-
-monday.com project management & CRM for projects, tasks, portfolios, boards, workflows, milestones, dependencies, forms, dashboards, cross-project portfolio status, and critical paths.
-
-
-Add monday.com in Claude (opens in new tab)
 
 ## Top plugins
 
@@ -209,139 +209,139 @@ Browser automation and end-to-end testing MCP server by Microsoft. Enables Claud
 
 Show all 6
 
-### [SlickTrip](https://www.claude.com/marketplace/connectors/slicktrip)
+### [NSDAP Archiv - DER SPIEGEL](https://www.claude.com/marketplace/connectors/nsdap-archiv-der-spiegel)
 
 Anthropic verifiedTrending
 
-Search flights, hotels and seats, then get alerted the moment a price drops.
+Search for NSDAP party members
 
 
-Add SlickTrip in Claude (opens in new tab)
+Add NSDAP Archiv - DER SPIEGEL in Claude (opens in new tab)
 
-### [GoVola](https://www.claude.com/marketplace/connectors/govola)
-
-Anthropic verifiedTrending
-
-Search for the best flight offers and get refunded if the ticket price drops even after you book
-
-
-Add GoVola in Claude (opens in new tab)
-
-### [Brek - Hotel Wholesale Booking](https://www.claude.com/marketplace/connectors/brek-hotel-wholesale-booking)
+### [Zillow](https://www.claude.com/marketplace/connectors/zillow)
 
 Anthropic verifiedTrending
 
-Search and compare hotels with public and private wholesale rates.
+Search homes, rentals, neighborhoods, and affordability
 
 
-Add Brek - Hotel Wholesale Booking in Claude (opens in new tab)
+Add Zillow in Claude (opens in new tab)
 
-### [Coinversa Pulse](https://www.claude.com/marketplace/connectors/coinversa-pulse)
-
-Anthropic verifiedTrending
-
-Live crypto, stock, gold & oil trading data from Hyperliquid: see what the best traders and whales are doing on Bitcoin, ETH, the S&P 500 and more
-
-
-Add Coinversa Pulse in Claude (opens in new tab)
-
-### [PaperOffice](https://www.claude.com/marketplace/connectors/paperoffice)
+### [Etherscan](https://www.claude.com/marketplace/connectors/etherscan)
 
 Anthropic verifiedTrending
 
-Built for companies. Ready for AI agents. The headless DMS for Claude: search, read, extract, approve, send for signing and archive documents in your own account, with your permissions.
+Explore wallets, tokens, transactions, contracts, logs, blocks, and gas across 60+ EVM chains with Etherscan
 
 
-Add PaperOffice in Claude (opens in new tab)
+Add Etherscan in Claude (opens in new tab)
 
-### [SuperBooks](https://www.claude.com/marketplace/connectors/superbooks)
+### [AI Producer by OpusClip](https://www.claude.com/marketplace/connectors/ai-producer-by-opusclip)
 
 Anthropic verifiedTrending
 
-Financial OS for small businesses
+Edit videos with AI
 
 
-Add SuperBooks in Claude (opens in new tab)
+Add AI Producer by OpusClip in Claude (opens in new tab)
+
+### [Bird](https://www.claude.com/marketplace/connectors/bird)
+
+Anthropic verifiedTrending
+
+Send email, SMS, and WhatsApp, place calls, verify users, and run your agent's inbox
+
+
+Add Bird in Claude (opens in new tab)
+
+### [TEXT TO QUANT](https://www.claude.com/marketplace/connectors/texttoquant)
+
+Anthropic verifiedTrending
+
+Backtest trading strategies written in plain English on real market data, with graded, honesty flagged reports.
+
+
+Add TEXT TO QUANT in Claude (opens in new tab)
 
 ## New connectors
 
 Show all 8
 
-### [Ivo](https://www.claude.com/marketplace/connectors/ivo)
+### [Military and Veteran Family Assistant](https://www.claude.com/marketplace/connectors/military-and-veteran-family-assistant)
 
 Anthropic verifiedNew
 
-Explore your contracts, ask questions with supporting evidence, and build renewal calendars with Ivo.
+An assistant to help military and veteran families find and access resources.
 
 
-Add Ivo in Claude (opens in new tab)
+Add Military and Veteran Family Assistant in Claude (opens in new tab)
 
-### [Grafana Cloud](https://www.claude.com/marketplace/connectors/grafana-cloud)
-
-Anthropic verifiedNew
-
-Query metrics, logs, and traces and manage dashboards and alerts
-
-
-Add Grafana Cloud in Claude (opens in new tab)
-
-### [Clerq MCP](https://www.claude.com/marketplace/connectors/clerq-mcp)
+### [LinkedIn Hiring Pro](https://www.claude.com/marketplace/connectors/linkedin-hiring-pro)
 
 Anthropic verifiedNew
 
-AI-powered patent retrieval and analysis capabilities
+Draft, review, and post one free LinkedIn job from Claude.
 
 
-Add Clerq MCP in Claude (opens in new tab)
+Add LinkedIn Hiring Pro in Claude (opens in new tab)
 
-### [Checkout.com](https://www.claude.com/marketplace/connectors/checkout-com)
-
-Anthropic verifiedNew
-
-Investigate, troubleshoot, and understand payment operations.
-
-
-Add Checkout.com in Claude (opens in new tab)
-
-### [eDreams](https://www.claude.com/marketplace/connectors/edreams)
+### [UKG Bryte](https://www.claude.com/marketplace/connectors/ukg-bryte)
 
 Anthropic verifiedNew
 
-Find flights and hotels
+Bring your UKG HR and workforce data into Claude: find people and org charts, check time-off balances, and request and track time off.
 
 
-Add eDreams in Claude (opens in new tab)
+Add UKG Bryte in Claude (opens in new tab)
 
-### [Robin (Workplace)](https://www.claude.com/marketplace/connectors/robin-powered)
-
-Anthropic verifiedNew
-
-Robin is the workplace platform teams use to manage desks, rooms, and hybrid office schedules, and optimize how their workplace is planned and used.
-
-
-Add Robin (Workplace) in Claude (opens in new tab)
-
-### [WebMCP Evaluator](https://www.claude.com/marketplace/connectors/webmcp-evaluator)
+### [Greenhouse](https://www.claude.com/marketplace/connectors/greenhouse)
 
 Anthropic verifiedNew
 
-Check whether a public page is ready for agents: tools observed, tools to add, what must never be exposed.
+Connect Claude to Greenhouse. Search, analyze and update candidates, applications, jobs, interviews, scorecards, offers and more in plain language.
 
 
-Add WebMCP Evaluator in Claude (opens in new tab)
+Add Greenhouse in Claude (opens in new tab)
 
-### [OnChainDiligence](https://www.claude.com/marketplace/connectors/onchaindiligence)
+### [Claude Motion to Mirage](https://www.claude.com/marketplace/connectors/claude-motion-to-mirage)
 
 Anthropic verifiedNew
 
-Inspect autonomous payments before execution and independently verify evidence afterward.
+Import a Claude Motion video into Mirage
 
 
-Add OnChainDiligence in Claude (opens in new tab)
+Add Claude Motion to Mirage in Claude (opens in new tab)
+
+### [AI Producer by OpusClip](https://www.claude.com/marketplace/connectors/ai-producer-by-opusclip)
+
+Anthropic verifiedTrending
+
+Edit videos with AI
+
+
+Add AI Producer by OpusClip in Claude (opens in new tab)
+
+### [Sana from Workday](https://www.claude.com/marketplace/connectors/workday)
+
+Anthropic verifiedNew
+
+Bring Workday agents, data, and actions into Claude
+
+
+Add Sana from Workday in Claude (opens in new tab)
+
+### [QuickStart](https://www.claude.com/marketplace/connectors/quickstart)
+
+Anthropic verifiedNew
+
+AI-powered accounting
+
+
+Add QuickStart in Claude (opens in new tab)
 
 ## All connectors
 
-934 connectors
+1006 connectors
 
 ### [Google Drive](https://www.claude.com/marketplace/connectors/google-drive)
 
@@ -370,15 +370,6 @@ Manage your schedule and coordinate meetings effortlessly
 
 Add Google Calendar in Claude (opens in new tab)
 
-### [Canva](https://www.claude.com/marketplace/connectors/canva)
-
-Anthropic verified
-
-Search, create, autofill, and export Canva designs
-
-
-Add Canva in Claude (opens in new tab)
-
 ### [Microsoft 365](https://www.claude.com/marketplace/connectors/microsoft-365)
 
 Anthropic verified
@@ -387,6 +378,15 @@ Access your company's SharePoint, OneDrive, Outlook, and Teams directly in Claud
 
 
 Add Microsoft 365 in Claude (opens in new tab)
+
+### [Canva](https://www.claude.com/marketplace/connectors/canva)
+
+Anthropic verified
+
+Search, create, autofill, and export Canva designs
+
+
+Add Canva in Claude (opens in new tab)
 
 ### [Notion](https://www.claude.com/marketplace/connectors/notion)
 
@@ -397,15 +397,6 @@ Connect your Notion workspace to search, update, and power workflows across tool
 
 Add Notion in Claude (opens in new tab)
 
-### [Figma](https://www.claude.com/marketplace/connectors/figma)
-
-Anthropic verified
-
-Generate diagrams and better code from Figma context
-
-
-Add Figma in Claude (opens in new tab)
-
 ### [Slack](https://www.claude.com/marketplace/connectors/slack)
 
 Anthropic verified
@@ -414,69 +405,6 @@ Send messages, create canvases, and fetch Slack data
 
 
 Add Slack in Claude (opens in new tab)
-
-### [Coinversa Pulse](https://www.claude.com/marketplace/connectors/coinversa-pulse)
-
-Anthropic verifiedTrending
-
-Live crypto, stock, gold & oil trading data from Hyperliquid: see what the best traders and whales are doing on Bitcoin, ETH, the S&P 500 and more
-
-
-Add Coinversa Pulse in Claude (opens in new tab)
-
-### [HubSpot](https://www.claude.com/marketplace/connectors/hubspot)
-
-Anthropic verified
-
-CRM context for every answer, insight, and action
-
-
-Add HubSpot in Claude (opens in new tab)
-
-### [Asana](https://www.claude.com/marketplace/connectors/asana)
-
-Anthropic verified
-
-Connect to Asana to coordinate tasks, projects, and goals
-
-
-Add Asana in Claude (opens in new tab)
-
-### [Shopify](https://www.claude.com/marketplace/connectors/shopify)
-
-Anthropic verified
-
-Build, manage, and analyze your Shopify store
-
-
-Add Shopify in Claude (opens in new tab)
-
-### [Linear](https://www.claude.com/marketplace/connectors/linear)
-
-Anthropic verified
-
-Manage issues, projects & team workflows in Linear
-
-
-Add Linear in Claude (opens in new tab)
-
-### [Gemini](https://www.claude.com/marketplace/connectors/gemini-mcp)
-
-Anthropic verified
-
-Connect AI assistants to live crypto markets, prediction markets, your trading accounts, all through our secure read-only plugin
-
-
-Add Gemini in Claude (opens in new tab)
-
-### [monday.com](https://www.claude.com/marketplace/connectors/monday)
-
-Anthropic verified
-
-monday.com project management & CRM for projects, tasks, portfolios, boards, workflows, milestones, dependencies, forms, dashboards, cross-project portfolio status, and critical paths.
-
-
-Add monday.com in Claude (opens in new tab)
 
 ### [Atlassian MCP](https://www.claude.com/marketplace/connectors/atlassian)
 
@@ -487,23 +415,95 @@ Search, read and update Jira, Confluence, Bitbucket, Loom and other Atlassian ap
 
 Add Atlassian MCP in Claude (opens in new tab)
 
-### [Adobe](https://www.claude.com/marketplace/connectors/adobe-creativity)
+### [Zillow](https://www.claude.com/marketplace/connectors/zillow)
+
+Anthropic verifiedTrending
+
+Search homes, rentals, neighborhoods, and affordability
+
+
+Add Zillow in Claude (opens in new tab)
+
+### [Figma](https://www.claude.com/marketplace/connectors/figma)
 
 Anthropic verified
 
-Design, combine, and edit with Adobe pro tools
+Generate diagrams and better code from Figma context
 
 
-Add Adobe in Claude (opens in new tab)
+Add Figma in Claude (opens in new tab)
 
-### [Supabase](https://www.claude.com/marketplace/connectors/supabase)
+### [NSDAP Archiv - DER SPIEGEL](https://www.claude.com/marketplace/connectors/nsdap-archiv-der-spiegel)
+
+Anthropic verifiedTrending
+
+Search for NSDAP party members
+
+
+Add NSDAP Archiv - DER SPIEGEL in Claude (opens in new tab)
+
+### [HubSpot](https://www.claude.com/marketplace/connectors/hubspot)
 
 Anthropic verified
 
-Manage databases, authentication, and storage
+CRM context for every answer, insight, and action
 
 
-Add Supabase in Claude (opens in new tab)
+Add HubSpot in Claude (opens in new tab)
+
+### [Bird](https://www.claude.com/marketplace/connectors/bird)
+
+Anthropic verifiedTrending
+
+Send email, SMS, and WhatsApp, place calls, verify users, and run your agent's inbox
+
+
+Add Bird in Claude (opens in new tab)
+
+### [Etherscan](https://www.claude.com/marketplace/connectors/etherscan)
+
+Anthropic verifiedTrending
+
+Explore wallets, tokens, transactions, contracts, logs, blocks, and gas across 60+ EVM chains with Etherscan
+
+
+Add Etherscan in Claude (opens in new tab)
+
+### [TEXT TO QUANT](https://www.claude.com/marketplace/connectors/texttoquant)
+
+Anthropic verifiedTrending
+
+Backtest trading strategies written in plain English on real market data, with graded, honesty flagged reports.
+
+
+Add TEXT TO QUANT in Claude (opens in new tab)
+
+### [Asana](https://www.claude.com/marketplace/connectors/asana)
+
+Anthropic verified
+
+Connect to Asana to coordinate tasks, projects, and goals
+
+
+Add Asana in Claude (opens in new tab)
+
+### [Linear](https://www.claude.com/marketplace/connectors/linear)
+
+Anthropic verified
+
+Manage issues, projects & team workflows in Linear
+
+
+Add Linear in Claude (opens in new tab)
+
+### [monday.com](https://www.claude.com/marketplace/connectors/monday)
+
+Anthropic verified
+
+monday.com project management & CRM for projects, tasks, portfolios, boards, workflows, milestones, dependencies, forms, dashboards, cross-project portfolio status, and critical paths.
+
+
+Add monday.com in Claude (opens in new tab)
 
 ### [Box](https://www.claude.com/marketplace/connectors/box)
 
@@ -514,14 +514,41 @@ Search, edit and get insights on your Box content
 
 Add Box in Claude (opens in new tab)
 
-### [Intercom](https://www.claude.com/marketplace/connectors/intercom)
+### [Supabase](https://www.claude.com/marketplace/connectors/supabase)
 
 Anthropic verified
 
-Access to Intercom data for better customer insights
+Manage databases, authentication, and storage
 
 
-Add Intercom in Claude (opens in new tab)
+Add Supabase in Claude (opens in new tab)
+
+### [Shopify](https://www.claude.com/marketplace/connectors/shopify)
+
+Anthropic verified
+
+Build, manage, and analyze your Shopify store
+
+
+Add Shopify in Claude (opens in new tab)
+
+### [Adspirer Search Ads](https://www.claude.com/marketplace/connectors/adspirer-search-ads)
+
+Anthropic verified
+
+PPC and paid search agent for Google Ads and Microsoft Advertising (Bing Ads) — does competitor ads research, plans, launches, and autonomously runs your search advertising campaigns.
+
+
+Add Adspirer Search Ads in Claude (opens in new tab)
+
+### [Vercel](https://www.claude.com/marketplace/connectors/vercel)
+
+Anthropic verified
+
+Analyze, debug, and manage projects and deployments
+
+
+Add Vercel in Claude (opens in new tab)
 
 ### [Miro](https://www.claude.com/marketplace/connectors/miro)
 
@@ -531,33 +558,6 @@ Access and create new content on Miro boards
 
 
 Add Miro in Claude (opens in new tab)
-
-### [Indeed](https://www.claude.com/marketplace/connectors/indeed)
-
-Anthropic verified
-
-Search for jobs on Indeed
-
-
-Add Indeed in Claude (opens in new tab)
-
-### [Spotify](https://www.claude.com/marketplace/connectors/spotify)
-
-Anthropic verified
-
-Music and podcast recommendations, just for you.
-
-
-Add Spotify in Claude (opens in new tab)
-
-### [Gamma](https://www.claude.com/marketplace/connectors/gamma)
-
-Anthropic verified
-
-Create presentations, docs, socials, and sites with AI
-
-
-Add Gamma in Claude (opens in new tab)
 
 View more
 
@@ -570,7 +570,8 @@ View more
 - [Claude](../../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -588,12 +589,12 @@ View more
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../../15-Claude-AI-Features/claude-haiku.md)
@@ -626,7 +627,7 @@ View more
 
 - [Campus](../../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -644,6 +645,7 @@ View more
 - [Claude on AWS](partners-claude-on-aws.md)
 - [Google Cloud](partners-google-cloud.md)
 - [Microsoft Foundry](partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -659,7 +661,7 @@ View more
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -694,7 +696,8 @@ View more
 - [Claude](../../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -712,12 +715,12 @@ View more
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../../15-Claude-AI-Features/claude-haiku.md)
@@ -750,7 +753,7 @@ View more
 
 - [Campus](../../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -768,6 +771,7 @@ View more
 - [Claude on AWS](partners-claude-on-aws.md)
 - [Google Cloud](partners-google-cloud.md)
 - [Microsoft Foundry](partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -783,7 +787,7 @@ View more
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

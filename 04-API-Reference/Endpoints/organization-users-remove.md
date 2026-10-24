@@ -2,7 +2,7 @@
 title: "Remove User - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/users/remove"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-09T06:27:57Z"
+fetched_at: "2026-10-17T06:26:09Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fremove)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fremove)
 
 
 
@@ -132,7 +132,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -142,9 +142,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -215,13 +217,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -229,9 +233,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -249,6 +253,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Remove User
 
+Copy page
+
+
+
+cURL
+
 DELETE/v1/organizations/users/{user_id}
 
 Remove a member from the organization.
@@ -260,6 +270,18 @@ user_id: string
 
 
 ID of the User.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 

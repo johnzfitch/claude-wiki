@@ -2,7 +2,7 @@
 title: "Airtree Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/airtree"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:38Z"
+fetched_at: "2026-10-23T06:29:31Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -20,41 +20,41 @@ Airtree is a venture capital firm backing founders in Australia and New Zealand,
 
 **Anthropic: Before Claude Cowork, what was creating the most friction in how your team worked day to day?**
 
-**Jackie Vullinghs, Airtree:** Our biggest operational pain point wasn't access to information; it was that it was scattered across many tools. Google Workspace, Slack, Notion, Affinity, Sigma, Webflow, Typeform, Canva. We had everything we needed to produce board reports, portfolio updates, market research, and marketing materials. In practice, pulling data and synthesizing insights across platforms was slow, fragmented, and inefficient.
+**Jackie Vullinghs, Airtree:** Our biggest operational pain point wasn’t access to information; it was that it was scattered across many tools. Google Workspace, Slack, Notion, Affinity, Sigma, Webflow, Typeform, Canva. We had everything we needed to produce board reports, portfolio updates, market research, and marketing materials. In practice, pulling data and synthesizing insights across platforms was slow, fragmented, and inefficient.
 
-We'd made ad-hoc dashboards, created new Slack channels, consolidated reporting, and tried new ways of working to share context and avoid duplication. But inevitably we're still missing a trick when it comes to seamlessly connecting with and utilizing all the information, data, insights, and existing materials at our disposal.
+We’d made ad-hoc dashboards, created new Slack channels, consolidated reporting, and tried new ways of working to share context and avoid duplication. But inevitably we’re still missing a trick when it comes to seamlessly connecting with and utilizing all the information, data, insights, and existing materials at our disposal.
 
-We pride ourselves on moving fast with conviction, coming well-prepared for meetings so we can focus on building relationships with founders. When you're digging through fragmented data, trying to find the right file, and doing individual research for each of the eight back-to-back meetings you have that day, that's all time that could have been spent on deeper diligence, tailored portfolio support, and getting to know founders.
+We pride ourselves on moving fast with conviction, coming well-prepared for meetings so we can focus on building relationships with founders. When you’re digging through fragmented data, trying to find the right file, and doing individual research for each of the eight back-to-back meetings you have that day, that’s all time that could have been spent on deeper diligence, tailored portfolio support, and getting to know founders.
 
 **Anthropic: How did the team first start using Claude, and what made you decide to roll Cowork out fund-wide?**
 
-**Vullinghs:** We're a bunch of builders and tinkerers who love to play around with new tools, so when Cowork came out in January, lots of the team were quick to jump on it. Over the winter break, a few employees got hooked on Claude Code. They saw dramatic improvements in productivity when creating Skills to automate routine tasks and do the things on their to-do list that never got done. Onboarding the whole team to the terminal felt hard, though.
+**Vullinghs:** We’re a bunch of builders and tinkerers who love to play around with new tools, so when Cowork came out in January, lots of the team were quick to jump on it. Over the winter break, a few employees got hooked on Claude Code. They saw dramatic improvements in productivity when creating Skills to automate routine tasks and do the things on their to-do list that never got done. Onboarding the whole team to the terminal felt hard, though.
 
-When Claude Cowork launched, the accessible UI made it easy for the team to onboard and reach their "a-ha moment." Our Data Lead built a one-hour course tailored to our different functions. Each step compounded. We started with the basics, connected tools we already used, and built up to creating Skills. By the end, the team's reaction was genuinely enthusiastic, unlike typical tool rollouts. Not "this seems useful" but "this is going to change how I work."
+When Claude Cowork launched, the accessible UI made it easy for the team to onboard and reach their “a-ha moment.” Our Data Lead built a one-hour course tailored to our different functions. Each step compounded. We started with the basics, connected tools we already used, and built up to creating Skills. By the end, the team’s reaction was genuinely enthusiastic, unlike typical tool rollouts. Not “this seems useful” but “this is going to change how I work.”
 
 We saw that using Cowork across teams multiplied its value. Skills built by one person could be used by everyone. Cowork became shared firm infrastructure rather than just an individual productivity tool.
 
 **Anthropic: Had you evaluated other AI tools before landing on Cowork?**
 
-**Vullinghs:** We'd spent a year exploring various AI and automation tools, but seats and subscriptions quickly add up, especially when only used for one step in the workflow rather than end to end.
+**Vullinghs:** We’d spent a year exploring various AI and automation tools, but seats and subscriptions quickly add up, especially when only used for one step in the workflow rather than end to end.
 
-The real turning point was watching people in our investment and operations teams, who aren't technical but are curious enough to vibe code on the weekends, start using Claude Code seriously and seeing meaningful productivity gains from automating the repetitive tasks in their week. The capability was there, but bringing it to the rest of the organization through the terminal was a technical barrier we needed to remove.
+The real turning point was watching people in our investment and operations teams, who aren’t technical but are curious enough to vibe code on the weekends, start using Claude Code seriously and seeing meaningful productivity gains from automating the repetitive tasks in their week. The capability was there, but bringing it to the rest of the organization through the terminal was a technical barrier we needed to remove.
 
-Cowork provided that. We didn't want to retrofit how we work around a new tool, and Cowork meets the team where they already are, in Google Docs, Granola, and Slack.
+Cowork provided that. We didn’t want to retrofit how we work around a new tool, and Cowork meets the team where they already are, in Google Docs, Granola, and Slack.
 
-**Anthropic: Walk us through a workflow that's become part of the team's regular routine.**
+**Anthropic: Walk us through a workflow that’s become part of the team’s regular routine.**
 
-**Vullinghs:** We created a board meeting preparation Skill that reads all the board materials in a portfolio company's Google Drive folder, searches Slack for company references and updates, browses the web for recent competitor news and market developments, and looks at the public market comparables in its competitor set. From there, it cross-references this information against the previous board preparation to track what's changed, what commitments were made, and what's outstanding.
+**Vullinghs:** We created a board meeting preparation Skill that reads all the board materials in a portfolio company’s Google Drive folder, searches Slack for company references and updates, browses the web for recent competitor news and market developments, and looks at the public market comparables in its competitor set. From there, it cross-references this information against the previous board preparation to track what’s changed, what commitments were made, and what’s outstanding.
 
 We have another Skill that pulls in company-specific insights, adding business model context, key financial metrics, the competitor set, and recurring watch items specific to that company.
 
-We use our Board Summary Skill to cross-reference the notes captured during the board meeting with the prep documents to identify items that were covered and outstanding. Two key outputs after the board meeting are a Slack summary and a detailed meeting record. When the user says "Send," a roughly 250-word summary is sent to a Slack channel. The meeting record acts like an analyst agent, updating the board prep with everything we learned and saving it to the relevant Google Drive folder.
+We use our Board Summary Skill to cross-reference the notes captured during the board meeting with the prep documents to identify items that were covered and outstanding. Two key outputs after the board meeting are a Slack summary and a detailed meeting record. When the user says “Send,” a roughly 250-word summary is sent to a Slack channel. The meeting record acts like an analyst agent, updating the board prep with everything we learned and saving it to the relevant Google Drive folder.
 
 **Anthropic: Where has Cowork had the most impact on the investment workflow?**
 
-**Vullinghs:** The judgment, conviction, and founder relationships that define great venture investing will always be human, but that's why automating the knowledge work that consumes most of an investor's week matters so much. Every hour spent on research and preparation is an hour not spent with a founder.
+**Vullinghs:** The judgment, conviction, and founder relationships that define great venture investing will always be human, but that’s why automating the knowledge work that consumes most of an investor’s week matters so much. Every hour spent on research and preparation is an hour not spent with a founder.
 
-Cowork has had the most impact on tasks with a narrow, explicit scope that we do routinely, like meeting preparation. The value of AI in a workflow like ours isn't replacing judgment; it's in protecting the time and space for it.
+Cowork has had the most impact on tasks with a narrow, explicit scope that we do routinely, like meeting preparation. The value of AI in a workflow like ours isn’t replacing judgment; it’s in protecting the time and space for it.
 
 **Anthropic: What concrete results has the team seen?**
 
@@ -62,39 +62,39 @@ Cowork has had the most impact on tasks with a narrow, explicit scope that we do
 
 Our marketing team saves two hours a month on reporting. We provide Cowork CSVs of results from our platforms that are used to populate our reporting dashboard and to share a summary of key insights, like month-over-month comparisons, for the team to discuss. We spend less time creating reports and more time analyzing insights and exploring how we can iterate on and improve our strategy.
 
-**Anthropic: What can Airtree do now with Cowork that genuinely wasn't possible before?**
+**Anthropic: What can Airtree do now with Cowork that genuinely wasn’t possible before?**
 
-**Vullinghs:** We've always punched above our weight, whether that be on the volume of pitches we review, the inbound we manage, or the LP relationships we maintain. Getting that done to the quality standard we hold ourselves to has always involved significant manual work. Using Cowork hasn't changed what we do but it has changed what we can do with the time it gives us back in our day.
+**Vullinghs:** We’ve always punched above our weight, whether that be on the volume of pitches we review, the inbound we manage, or the LP relationships we maintain. Getting that done to the quality standard we hold ourselves to has always involved significant manual work. Using Cowork hasn’t changed what we do but it has changed what we can do with the time it gives us back in our day.
 
 The clearest example is founder meetings. We meet thousands of companies every year, and our company research Skill means we can go deep from the very first conversation rather than spending it on introductions. Our founder surveys tell us they choose Airtree because of the depth of our relationships and understanding of their business, and Cowork is a tool we use to reinforce that.
 
-**Anthropic: What's surprised you about how people across the firm have picked up Cowork?**
+**Anthropic: What’s surprised you about how people across the firm have picked up Cowork?**
 
-**Vullinghs:** The team self-organizes around building new Skills and workflows, rather than waiting to be shown what's possible.
+**Vullinghs:** The team self-organizes around building new Skills and workflows, rather than waiting to be shown what’s possible.
 
 Our Head of People created a detailed prompt to help people write their self-reviews. We track goals, metrics, and one-on-ones in Notion alongside our performance framework. Cowork triangulates that context to form a view of performance, wins, and areas for improvement calibrated to our frameworks and goals. The result: we spend more time on reflection and better feedback conversations, not on the writing itself.
 
 Our Head of Marketing and Comms took a dense media briefing document and turned it into an interactive quiz app for spokesperson interview preparation that pulled out key messages, insights, and data points to prompt the spokesperson to think through their responses rather than just passively read a brief.
 
-**Anthropic: You've connected Cowork to a lot of tools the team already uses. What's been the biggest win?**
+**Anthropic: You’ve connected Cowork to a lot of tools the team already uses. What’s been the biggest win?**
 
-**Vullinghs:** We've connected Cowork to most of the tools the team relies on day to day: Notion, Slack, Google Drive, Affinity, Gmail, Granola, Harmonic, Canva, and Webflow. The biggest wins have come from making it easy to surface information that was previously siloed across those systems.
+**Vullinghs:** We’ve connected Cowork to most of the tools the team relies on day to day: Notion, Slack, Google Drive, Affinity, Gmail, Granola, Harmonic, Canva, and Webflow. The biggest wins have come from making it easy to surface information that was previously siloed across those systems.
 
-We've found that Claude Cowork's value scales with the number of systems you connect it to. I've built a personal CRM with Claude Code that is connected to Cowork through a custom MCP, so others on the team can query it.
+We’ve found that Claude Cowork’s value scales with the number of systems you connect it to. I’ve built a personal CRM with Claude Code that is connected to Cowork through a custom MCP, so others on the team can query it.
 
 **Anthropic: Airtree handles sensitive information across the investment lifecycle. How does Cowork fit within those requirements?**
 
-**Vullinghs:** We need to be deliberate and transparent about how AI is used in our workflows, especially when handling sensitive information. Key to this is ensuring the people whose information we hold know there's always a human in the loop when it counts.
+**Vullinghs:** We need to be deliberate and transparent about how AI is used in our workflows, especially when handling sensitive information. Key to this is ensuring the people whose information we hold know there’s always a human in the loop when it counts.
 
 All content generated by Claude Cowork must be verified and reviewed by a human before it’s used for decision-making or published. Cowork underwent an initial assessment by our IT Security, Risk and Compliance managers before use, and we maintain a record of usage for accountability. All users complete training on responsible AI use, with our IT and Security Manager providing ongoing guidance to ensure we meet our obligations to protect sensitive data.
 
-**Anthropic: You published your internal Cowork onboarding course through Airtree's Open Source VC library. What response have you seen?**
+**Anthropic: You published your internal Cowork onboarding course through Airtree’s Open Source VC library. What response have you seen?**
 
-**Vullinghs:** Open Source VC is built on a simple idea: anything that helps founders shortcut company-building firsts is worth sharing openly. We published our internal Claude Cowork onboarding course so any team could use it. At the time of writing, it's been downloaded 700-plus times from individuals at startups, scaleups, other funds, legal firms, and huge enterprise companies. It's a useful reminder that the desire to get up to speed on these tools cuts across company stage, sector, and roles.
+**Vullinghs:** Open Source VC is built on a simple idea: anything that helps founders shortcut company-building firsts is worth sharing openly. We published our internal Claude Cowork onboarding course so any team could use it. At the time of writing, it’s been downloaded 700-plus times from individuals at startups, scaleups, other funds, legal firms, and huge enterprise companies. It’s a useful reminder that the desire to get up to speed on these tools cuts across company stage, sector, and roles.
 
 **Anthropic: Where do you see the most untapped potential for Cowork at Airtree?**
 
-**Vullinghs:** We are just scratching the surface. We planned an internal hackathon where the team pitches Cowork workflows to build. Some of the ideas so far include a portfolio snapshot portal that gives anyone in the firm an instant read on a company's performance and key updates, a travel briefing tool that automatically compiles everything you need to know about the meetings and events in your itinerary, and automating our fund analysis reporting to capture movements across periods, explaining what drove changes and producing summary reports needed for quarterly and half-yearly reviews.
+**Vullinghs:** We are just scratching the surface. We planned an internal hackathon where the team pitches Cowork workflows to build. Some of the ideas so far include a portfolio snapshot portal that gives anyone in the firm an instant read on a company’s performance and key updates, a travel briefing tool that automatically compiles everything you need to know about the meetings and events in your itinerary, and automating our fund analysis reporting to capture movements across periods, explaining what drove changes and producing summary reports needed for quarterly and half-yearly reviews.
 
 
 How to create Skills
@@ -126,7 +126,8 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -144,12 +145,12 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -182,7 +183,7 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -200,6 +201,7 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -215,7 +217,7 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -250,7 +252,8 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -268,12 +271,12 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -306,7 +309,7 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -324,6 +327,7 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -339,7 +343,7 @@ Follow our step-by-step guide to write custom skills that extend Claude's capabi
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

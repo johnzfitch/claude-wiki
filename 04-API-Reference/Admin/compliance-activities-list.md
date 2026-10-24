@@ -2,7 +2,7 @@
 title: "Query compliance activities - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/activities/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:57Z"
+fetched_at: "2026-10-20T06:39:02Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Factivities%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Factivities%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -206,13 +208,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -220,9 +224,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -238,6 +242,10 @@ To enable the Compliance API, see the setup guide.
 
 # Query compliance activities
 
+Copy page
+
+
+
 GET/v1/compliance/activities
 
 List compliance activities for the authenticated tenant.
@@ -248,7 +256,7 @@ The tenant is the caller's parent organization, or — for an organization with 
 
 
 
-activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 513 more
+activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 533 more
 
 
 
@@ -628,11 +636,29 @@ A member changed the access level of an email invitation to an artifact for some
 
 A new version of an artifact was published — for an artifact created in a chat this is the action that made it publicly viewable; for an artifact created outside a chat it is recorded when the artifact is saved, including saves of private artifacts, except that automatic saves made while a person keeps editing may be recorded periodically for that person rather than once per save; changes to who can access the artifact are recorded separately as claude_artifact_sharing_updated.
 
+"claude_artifact_sent_to_partner"
+
+
+
+A member sent an export of an artifact to a partner application ("Send to …" on the artifact; a partner is a third-party application listed in Claude's connector directory): a file exported from the artifact was made available over a temporary link for the chosen partner to fetch. One activity is recorded per send, in the artifact owner's organization with the sending member as actor, whether or not the partner then retrieved the file; the partner's own import of the file is not part of this record. The file's name and contents are not recorded.
+
 "claude_artifact_sharing_updated"
 
 
 
 An artifact's sharing settings were updated.
+
+"claude_artifact_type_default_updated"
+
+
+
+An organization's default artifact for an artifact type (for example, its default design system) was set or cleared. Neither artifact named is itself modified.
+
+"claude_artifact_type_pin_updated"
+
+
+
+An artifact was pinned or unpinned for an artifact type (for example, a design system was pinned so every member sees it in their picker). Neither artifact named is itself modified, and pinning does not change who can open it.
 
 "claude_artifact_viewed"
 
@@ -1046,7 +1072,7 @@ User disabled a plugin for their account.
 
 
 
-The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session).
+The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session). Recorded when the member explicitly installs, updates or downloads the plugin (user_action), and when a fetch creates the member's install record for the plugin — its first delivery to them, whether a background sync of a plugin distributed to them or their own first install, which then carries both records (first_delivery). A plugin the member enabled in Claude is on the feed as claude_plugin_enabled and its later delivery by a client's background sync is not recorded again; nor are re-syncs, or fetches that only display the plugin's files in the browser.
 
 "claude_plugin_enabled"
 
@@ -1066,11 +1092,23 @@ Plugin was replaced.
 
 A security scan of a plugin completed and produced a verdict.
 
+"claude_plugin_served_version_updated"
+
+
+
+A plugin's served version was updated: an administrator or the owner chose a version, a saved version became the served version, or an accepted library submission was published into the plugin.
+
 "claude_plugin_updated"
 
 
 
 Plugin was updated.
+
+"claude_plugin_version_created"
+
+
+
+A new version of a plugin was created.
 
 "claude_project_archived"
 
@@ -1228,6 +1266,12 @@ Skill was deleted.
 
 User disabled a skill for their account.
 
+"claude_skill_downloaded"
+
+
+
+A member explicitly downloaded a skill's files to their device: the Download action in Claude, a single file saved from the skill viewer, or an install they asked one of their Claude apps for. Background syncs to the Claude apps, viewing a skill in the app and services reading a skill on the member's behalf are not recorded.
+
 "claude_skill_enabled"
 
 
@@ -1245,6 +1289,36 @@ Skill was replaced.
 
 
 A security scan of a skill completed and produced a verdict.
+
+"claude_survey_closed"
+
+
+
+An organization admin closed an in-app survey before its end date, ending the collection of responses; a survey that reaches its end date records no event.
+
+"claude_survey_created"
+
+
+
+An organization admin launched an in-app survey to its chosen audience, opening it immediately or at a scheduled start time.
+
+"claude_survey_deleted"
+
+
+
+An organization admin permanently deleted a closed in-app survey together with every response collected for it.
+
+"claude_survey_response_submitted"
+
+
+
+A member submitted their response to an in-app survey run by their organization; the record omits the response content, and a retried submission can produce more than one record for the same response.
+
+"claude_survey_responses_exported"
+
+
+
+An organization admin downloaded a survey's responses as a CSV file, one row per response with the member's email address (blank if it is no longer available, for example because they left the organization), the groups, department and cost center they were invited through, the product they answered in, the submission time, and their answers.
 
 "claude_user_role_updated"
 
@@ -1608,7 +1682,7 @@ An RBAC group's visibility policy was updated.
 
 
 
-The organization's Inference hooks circuit breaker tripped automatically: calls to the organization's Inference hooks endpoint crossed a failure threshold, and inspection was suspended to protect live traffic. While tripped, requests are handled according to the organization's failure handling setting — allowed through uninspected (fail open) or rejected (fail closed) — and no per-request Inference hooks activities are recorded. The tripped state persists until an administrator re-enables Inference hooks inspection (or explicitly resets the circuit breaker).
+The organization's Inference hooks circuit breaker tripped automatically: calls to the organization's Inference hooks endpoint crossed a failure threshold, and inspection was suspended to protect live traffic. While tripped, requests are handled according to the organization's failure handling setting — allowed through uninspected (fail open) or rejected (fail closed) — and no per-request Inference hooks activities are recorded. Inspection turns back on by itself once the organization's Inference hooks endpoint returns a valid allow or deny answer to Anthropic's test request again, at least 10 minutes after the trip. An administrator can also end the tripped state by re-enabling Inference hooks inspection. If an administrator saves the Inference hooks settings after the trip (even without changing anything) or generates a new signing secret, inspection no longer turns back on by itself and stays off until an administrator re-enables it.
 
 "inference_hooks_config_deleted"
 
@@ -1801,6 +1875,18 @@ A capability grant was added to a workspace or role.
 
 
 A capability grant was removed from a workspace or role.
+
+"org_chat_cowork_unified_disabled"
+
+
+
+The organization's setting for the unified Chat and Cowork experience was turned off.
+
+"org_chat_cowork_unified_enabled"
+
+
+
+The organization's setting for the unified Chat and Cowork experience was turned on.
 
 "org_claude_code_data_sharing_disabled"
 
@@ -2072,11 +2158,29 @@ A CMEK external key config was updated.
 
 A CMEK external key config was validated against the customer's KMS.
 
+"org_hipaa_artifacts_terms_accepted"
+
+
+
+An owner of the organization accepted the terms for using artifacts with the HIPAA configuration enabled.
+
+"org_hipaa_claude_code_cowork_restrictions_deferred"
+
+
+
+The HIPAA configuration for Claude Code (local mode) and Cowork (local mode) was left off for the organization when the configuration launched, and stays off until it is applied.
+
+"org_hipaa_claude_code_cowork_restrictions_enabled"
+
+
+
+The HIPAA configuration was applied to Claude Code (local mode) and Cowork (local mode) for the organization.
+
 "org_hipaa_self_serve_enabled"
 
 
 
-A primary owner click-accepted the BAA and enabled HIPAA protections for the organization via the self-serve flow.
+A primary owner accepted the Business Associate Agreement and enabled the HIPAA configuration for the organization through the self-serve flow.
 
 "org_invite_link_disabled"
 
@@ -2162,11 +2266,35 @@ Join request was instantly approved.
 
 Admin bulk-dismissed join requests.
 
+"org_library_submission_created"
+
+
+
+A member submitted one of their own skills or plugins for publication into the organization library.
+
+"org_library_submission_resolved"
+
+
+
+A member's submission of a skill or plugin to the organization library was accepted or denied, or an accepted one finished publishing.
+
+"org_library_submission_withdrawn"
+
+
+
+A pending submission to the organization library was withdrawn before any reviewer decided on it.
+
 "org_magic_link_second_factor_toggled"
 
 
 
 Organization magic link second factor was toggled.
+
+"org_member_avatar_removed"
+
+
+
+An administrator removed another member's profile picture.
 
 "org_member_invites_disabled"
 
@@ -2280,13 +2408,13 @@ Organization synchronized files were deleted.
 
 
 
-A taint was added to an organization.
+A compliance marker (taint) was added to an organization, for example the marker that records its HIPAA configuration.
 
 "org_taint_removed"
 
 
 
-A taint was removed from an organization.
+A compliance marker (taint) was removed from an organization.
 
 "org_user_deleted"
 
@@ -3438,7 +3566,7 @@ formatdate-time
 
 
 
-exclude_activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 513 more
+exclude_activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 533 more
 
 
 
@@ -3818,11 +3946,29 @@ A member changed the access level of an email invitation to an artifact for some
 
 A new version of an artifact was published — for an artifact created in a chat this is the action that made it publicly viewable; for an artifact created outside a chat it is recorded when the artifact is saved, including saves of private artifacts, except that automatic saves made while a person keeps editing may be recorded periodically for that person rather than once per save; changes to who can access the artifact are recorded separately as claude_artifact_sharing_updated.
 
+"claude_artifact_sent_to_partner"
+
+
+
+A member sent an export of an artifact to a partner application ("Send to …" on the artifact; a partner is a third-party application listed in Claude's connector directory): a file exported from the artifact was made available over a temporary link for the chosen partner to fetch. One activity is recorded per send, in the artifact owner's organization with the sending member as actor, whether or not the partner then retrieved the file; the partner's own import of the file is not part of this record. The file's name and contents are not recorded.
+
 "claude_artifact_sharing_updated"
 
 
 
 An artifact's sharing settings were updated.
+
+"claude_artifact_type_default_updated"
+
+
+
+An organization's default artifact for an artifact type (for example, its default design system) was set or cleared. Neither artifact named is itself modified.
+
+"claude_artifact_type_pin_updated"
+
+
+
+An artifact was pinned or unpinned for an artifact type (for example, a design system was pinned so every member sees it in their picker). Neither artifact named is itself modified, and pinning does not change who can open it.
 
 "claude_artifact_viewed"
 
@@ -4236,7 +4382,7 @@ User disabled a plugin for their account.
 
 
 
-The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session).
+The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session). Recorded when the member explicitly installs, updates or downloads the plugin (user_action), and when a fetch creates the member's install record for the plugin — its first delivery to them, whether a background sync of a plugin distributed to them or their own first install, which then carries both records (first_delivery). A plugin the member enabled in Claude is on the feed as claude_plugin_enabled and its later delivery by a client's background sync is not recorded again; nor are re-syncs, or fetches that only display the plugin's files in the browser.
 
 "claude_plugin_enabled"
 
@@ -4256,11 +4402,23 @@ Plugin was replaced.
 
 A security scan of a plugin completed and produced a verdict.
 
+"claude_plugin_served_version_updated"
+
+
+
+A plugin's served version was updated: an administrator or the owner chose a version, a saved version became the served version, or an accepted library submission was published into the plugin.
+
 "claude_plugin_updated"
 
 
 
 Plugin was updated.
+
+"claude_plugin_version_created"
+
+
+
+A new version of a plugin was created.
 
 "claude_project_archived"
 
@@ -4418,6 +4576,12 @@ Skill was deleted.
 
 User disabled a skill for their account.
 
+"claude_skill_downloaded"
+
+
+
+A member explicitly downloaded a skill's files to their device: the Download action in Claude, a single file saved from the skill viewer, or an install they asked one of their Claude apps for. Background syncs to the Claude apps, viewing a skill in the app and services reading a skill on the member's behalf are not recorded.
+
 "claude_skill_enabled"
 
 
@@ -4435,6 +4599,36 @@ Skill was replaced.
 
 
 A security scan of a skill completed and produced a verdict.
+
+"claude_survey_closed"
+
+
+
+An organization admin closed an in-app survey before its end date, ending the collection of responses; a survey that reaches its end date records no event.
+
+"claude_survey_created"
+
+
+
+An organization admin launched an in-app survey to its chosen audience, opening it immediately or at a scheduled start time.
+
+"claude_survey_deleted"
+
+
+
+An organization admin permanently deleted a closed in-app survey together with every response collected for it.
+
+"claude_survey_response_submitted"
+
+
+
+A member submitted their response to an in-app survey run by their organization; the record omits the response content, and a retried submission can produce more than one record for the same response.
+
+"claude_survey_responses_exported"
+
+
+
+An organization admin downloaded a survey's responses as a CSV file, one row per response with the member's email address (blank if it is no longer available, for example because they left the organization), the groups, department and cost center they were invited through, the product they answered in, the submission time, and their answers.
 
 "claude_user_role_updated"
 
@@ -4798,7 +4992,7 @@ An RBAC group's visibility policy was updated.
 
 
 
-The organization's Inference hooks circuit breaker tripped automatically: calls to the organization's Inference hooks endpoint crossed a failure threshold, and inspection was suspended to protect live traffic. While tripped, requests are handled according to the organization's failure handling setting — allowed through uninspected (fail open) or rejected (fail closed) — and no per-request Inference hooks activities are recorded. The tripped state persists until an administrator re-enables Inference hooks inspection (or explicitly resets the circuit breaker).
+The organization's Inference hooks circuit breaker tripped automatically: calls to the organization's Inference hooks endpoint crossed a failure threshold, and inspection was suspended to protect live traffic. While tripped, requests are handled according to the organization's failure handling setting — allowed through uninspected (fail open) or rejected (fail closed) — and no per-request Inference hooks activities are recorded. Inspection turns back on by itself once the organization's Inference hooks endpoint returns a valid allow or deny answer to Anthropic's test request again, at least 10 minutes after the trip. An administrator can also end the tripped state by re-enabling Inference hooks inspection. If an administrator saves the Inference hooks settings after the trip (even without changing anything) or generates a new signing secret, inspection no longer turns back on by itself and stays off until an administrator re-enables it.
 
 "inference_hooks_config_deleted"
 
@@ -4991,6 +5185,18 @@ A capability grant was added to a workspace or role.
 
 
 A capability grant was removed from a workspace or role.
+
+"org_chat_cowork_unified_disabled"
+
+
+
+The organization's setting for the unified Chat and Cowork experience was turned off.
+
+"org_chat_cowork_unified_enabled"
+
+
+
+The organization's setting for the unified Chat and Cowork experience was turned on.
 
 "org_claude_code_data_sharing_disabled"
 
@@ -5262,11 +5468,29 @@ A CMEK external key config was updated.
 
 A CMEK external key config was validated against the customer's KMS.
 
+"org_hipaa_artifacts_terms_accepted"
+
+
+
+An owner of the organization accepted the terms for using artifacts with the HIPAA configuration enabled.
+
+"org_hipaa_claude_code_cowork_restrictions_deferred"
+
+
+
+The HIPAA configuration for Claude Code (local mode) and Cowork (local mode) was left off for the organization when the configuration launched, and stays off until it is applied.
+
+"org_hipaa_claude_code_cowork_restrictions_enabled"
+
+
+
+The HIPAA configuration was applied to Claude Code (local mode) and Cowork (local mode) for the organization.
+
 "org_hipaa_self_serve_enabled"
 
 
 
-A primary owner click-accepted the BAA and enabled HIPAA protections for the organization via the self-serve flow.
+A primary owner accepted the Business Associate Agreement and enabled the HIPAA configuration for the organization through the self-serve flow.
 
 "org_invite_link_disabled"
 
@@ -5352,11 +5576,35 @@ Join request was instantly approved.
 
 Admin bulk-dismissed join requests.
 
+"org_library_submission_created"
+
+
+
+A member submitted one of their own skills or plugins for publication into the organization library.
+
+"org_library_submission_resolved"
+
+
+
+A member's submission of a skill or plugin to the organization library was accepted or denied, or an accepted one finished publishing.
+
+"org_library_submission_withdrawn"
+
+
+
+A pending submission to the organization library was withdrawn before any reviewer decided on it.
+
 "org_magic_link_second_factor_toggled"
 
 
 
 Organization magic link second factor was toggled.
+
+"org_member_avatar_removed"
+
+
+
+An administrator removed another member's profile picture.
 
 "org_member_invites_disabled"
 
@@ -5470,13 +5718,13 @@ Organization synchronized files were deleted.
 
 
 
-A taint was added to an organization.
+A compliance marker (taint) was added to an organization, for example the marker that records its HIPAA configuration.
 
 "org_taint_removed"
 
 
 
-A taint was removed from an organization.
+A compliance marker (taint) was removed from an organization.
 
 "org_user_deleted"
 
@@ -6610,6 +6858,16 @@ Alias for `actor_ids[]`, for consistency with other compliance routes. If both a
 
 ##### Headers
 
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
 "x-api-key": optional string
 
 
@@ -6618,7 +6876,7 @@ Alias for `actor_ids[]`, for consistency with other compliance routes. If both a
 
 
 
-data: optional array of AbuseDecisionReceived or AccountDeleted or AdminAPIKeyCreated or 513 more
+data: optional array of AbuseDecisionReceived or AccountDeleted or AdminAPIKeyCreated or 533 more
 
 
 
@@ -6772,7 +7030,7 @@ A new version of an artifact was published — for an artifact created in a chat
 
 
 
-ClaudeArtifactSharingUpdated object{ type: "claude_artifact_sharing_updated", actor, audience, 14 more }
+ClaudeArtifactSharingUpdated object{ type: "claude_artifact_sharing_updated", actor, audience, 22 more }
 
 
 
@@ -7180,6 +7438,30 @@ A member changed the access level of an email invitation to an artifact for some
 
 
 
+ClaudeArtifactSentToPartner object{ type: "claude_artifact_sent_to_partner", actor, claude_artifact_id, 9 more }
+
+
+
+A member sent an export of an artifact to a partner application ("Send to …" on the artifact; a partner is a third-party application listed in Claude's connector directory): a file exported from the artifact was made available over a temporary link for the chosen partner to fetch. One activity is recorded per send, in the artifact owner's organization with the sending member as actor, whether or not the partner then retrieved the file; the partner's own import of the file is not part of this record. The file's name and contents are not recorded.
+
+
+
+ClaudeArtifactTypeDefaultUpdated object{ type: "claude_artifact_type_default_updated", action, actor, 7 more }
+
+
+
+An organization's default artifact for an artifact type (for example, its default design system) was set or cleared. Neither artifact named is itself modified.
+
+
+
+ClaudeArtifactTypePinUpdated object{ type: "claude_artifact_type_pin_updated", action, actor, 6 more }
+
+
+
+An artifact was pinned or unpinned for an artifact type (for example, a design system was pinned so every member sees it in their picker). Neither artifact named is itself modified, and pinning does not change who can open it.
+
+
+
 ClaudeChatAccessFailed object{ type: "claude_chat_access_failed", actor, claude_chat_id, 4 more }
 
 
@@ -7564,11 +7846,27 @@ A version archive of a member-owned plugin, containing that member's own files, 
 
 
 
-ClaudePluginDownloaded object{ type: "claude_plugin_downloaded", actor, marketplace_id, 6 more }
+ClaudePluginDownloaded object{ type: "claude_plugin_downloaded", actor, marketplace_id, 7 more }
 
 
 
-The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session).
+The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session). Recorded when the member explicitly installs, updates or downloads the plugin (user_action), and when a fetch creates the member's install record for the plugin — its first delivery to them, whether a background sync of a plugin distributed to them or their own first install, which then carries both records (first_delivery). A plugin the member enabled in Claude is on the feed as claude_plugin_enabled and its later delivery by a client's background sync is not recorded again; nor are re-syncs, or fetches that only display the plugin's files in the browser.
+
+
+
+ClaudePluginServedVersionUpdated object{ type: "claude_plugin_served_version_updated", actor, marketplace_id, 8 more }
+
+
+
+A plugin's served version was updated: an administrator or the owner chose a version, a saved version became the served version, or an accepted library submission was published into the plugin.
+
+
+
+ClaudePluginVersionCreated object{ type: "claude_plugin_version_created", actor, is_initial_version, 9 more }
+
+
+
+A new version of a plugin was created.
 
 
 
@@ -7593,6 +7891,54 @@ ClaudeProjectSyncSourceUpdated object{ type: "claude_project_sync_source_updated
 
 
 A Claude project sync source's configuration was updated.
+
+
+
+ClaudeSkillDownloaded object{ type: "claude_skill_downloaded", actor, download_kind, 11 more }
+
+
+
+A member explicitly downloaded a skill's files to their device: the Download action in Claude, a single file saved from the skill viewer, or an install they asked one of their Claude apps for. Background syncs to the Claude apps, viewing a skill in the app and services reading a skill on the member's behalf are not recorded.
+
+
+
+ClaudeSurveyClosed object{ type: "claude_survey_closed", actor, survey_id, 4 more }
+
+
+
+An organization admin closed an in-app survey before its end date, ending the collection of responses; a survey that reaches its end date records no event.
+
+
+
+ClaudeSurveyCreated object{ type: "claude_survey_created", actor, all_members, 9 more }
+
+
+
+An organization admin launched an in-app survey to its chosen audience, opening it immediately or at a scheduled start time.
+
+
+
+ClaudeSurveyDeleted object{ type: "claude_survey_deleted", actor, response_count, 5 more }
+
+
+
+An organization admin permanently deleted a closed in-app survey together with every response collected for it.
+
+
+
+ClaudeSurveyResponseSubmitted object{ type: "claude_survey_response_submitted", actor, survey_id, 4 more }
+
+
+
+A member submitted their response to an in-app survey run by their organization; the record omits the response content, and a retried submission can produce more than one record for the same response.
+
+
+
+ClaudeSurveyResponsesExported object{ type: "claude_survey_responses_exported", actor, response_count, 5 more }
+
+
+
+An organization admin downloaded a survey's responses as a CSV file, one row per response with the member's email address (blank if it is no longer available, for example because they left the organization), the groups, department and cost center they were invited through, the product they answered in, the submission time, and their answers.
 
 
 
@@ -7814,7 +8160,7 @@ Inference hooks configuration was removed for the organization.
 
 
 
-InferenceHooksConfigUpdated object{ type: "inference_hooks_config_updated", actor, enabled, 15 more }
+InferenceHooksConfigUpdated object{ type: "inference_hooks_config_updated", actor, enabled, 16 more }
 
 
 
@@ -8167,11 +8513,11 @@ InferenceHooksCircuitBreakerTripped object{ type: "inference_hooks_circuit_break
 
 
 
-The organization's Inference hooks circuit breaker tripped automatically: calls to the organization's Inference hooks endpoint crossed a failure threshold, and inspection was suspended to protect live traffic. While tripped, requests are handled according to the organization's failure handling setting — allowed through uninspected (fail open) or rejected (fail closed) — and no per-request Inference hooks activities are recorded. The tripped state persists until an administrator re-enables Inference hooks inspection (or explicitly resets the circuit breaker).
+The organization's Inference hooks circuit breaker tripped automatically: calls to the organization's Inference hooks endpoint crossed a failure threshold, and inspection was suspended to protect live traffic. While tripped, requests are handled according to the organization's failure handling setting — allowed through uninspected (fail open) or rejected (fail closed) — and no per-request Inference hooks activities are recorded. Inspection turns back on by itself once the organization's Inference hooks endpoint returns a valid allow or deny answer to Anthropic's test request again, at least 10 minutes after the trip. An administrator can also end the tripped state by re-enabling Inference hooks inspection. If an administrator saves the Inference hooks settings after the trip (even without changing anything) or generates a new signing secret, inspection no longer turns back on by itself and stays off until an administrator re-enables it.
 
 
 
-InferenceHooksRequestDenied object{ type: "inference_hooks_request_denied", actor, id, 7 more }
+InferenceHooksRequestDenied object{ type: "inference_hooks_request_denied", actor, id, 8 more }
 
 
 
@@ -8408,6 +8754,22 @@ OrgCapabilityGrantRemoved object{ type: "org_capability_grant_removed", actor, g
 
 
 A capability grant was removed from a workspace or role.
+
+
+
+OrgChatCoworkUnifiedDisabled object{ type: "org_chat_cowork_unified_disabled", actor, id, 5 more }
+
+
+
+The organization's setting for the unified Chat and Cowork experience was turned off.
+
+
+
+OrgChatCoworkUnifiedEnabled object{ type: "org_chat_cowork_unified_enabled", actor, id, 5 more }
+
+
+
+The organization's setting for the unified Chat and Cowork experience was turned on.
 
 
 
@@ -8771,11 +9133,35 @@ A CMEK external key config was validated against the customer's KMS.
 
 
 
+OrgHipaaArtifactsTermsAccepted object{ type: "org_hipaa_artifacts_terms_accepted", actor, terms_content_hash, 5 more }
+
+
+
+An owner of the organization accepted the terms for using artifacts with the HIPAA configuration enabled.
+
+
+
+OrgHipaaClaudeCodeCoworkRestrictionsDeferred object{ type: "org_hipaa_claude_code_cowork_restrictions_deferred", actor, id, 3 more }
+
+
+
+The HIPAA configuration for Claude Code (local mode) and Cowork (local mode) was left off for the organization when the configuration launched, and stays off until it is applied.
+
+
+
+OrgHipaaClaudeCodeCoworkRestrictionsEnabled object{ type: "org_hipaa_claude_code_cowork_restrictions_enabled", actor, reason, 4 more }
+
+
+
+The HIPAA configuration was applied to Claude Code (local mode) and Cowork (local mode) for the organization.
+
+
+
 OrgHipaaSelfServeEnabled object{ type: "org_hipaa_self_serve_enabled", actor, baa_content_hash, 6 more }
 
 
 
-A primary owner click-accepted the BAA and enabled HIPAA protections for the organization via the self-serve flow.
+A primary owner accepted the Business Associate Agreement and enabled the HIPAA configuration for the organization through the self-serve flow.
 
 
 
@@ -8891,11 +9277,43 @@ Admin bulk-dismissed join requests.
 
 
 
+OrgLibrarySubmissionCreated object{ type: "org_library_submission_created", actor, library_submission_id, 9 more }
+
+
+
+A member submitted one of their own skills or plugins for publication into the organization library.
+
+
+
+OrgLibrarySubmissionResolved object{ type: "org_library_submission_resolved", actor, content_hash, 16 more }
+
+
+
+A member's submission of a skill or plugin to the organization library was accepted or denied, or an accepted one finished publishing.
+
+
+
+OrgLibrarySubmissionWithdrawn object{ type: "org_library_submission_withdrawn", actor, library_submission_id, 8 more }
+
+
+
+A pending submission to the organization library was withdrawn before any reviewer decided on it.
+
+
+
 OrgMagicLinkSecondFactorToggled object{ type: "org_magic_link_second_factor_toggled", actor, enabled, 4 more }
 
 
 
 Organization magic link second factor was toggled.
+
+
+
+OrgMemberAvatarRemoved object{ type: "org_member_avatar_removed", actor, user_id, 4 more }
+
+
+
+An administrator removed another member's profile picture.
 
 
 
@@ -9047,7 +9465,7 @@ OrgTaintAdded object{ type: "org_taint_added", actor, id, 5 more }
 
 
 
-A taint was added to an organization.
+A compliance marker (taint) was added to an organization, for example the marker that records its HIPAA configuration.
 
 
 
@@ -9055,7 +9473,7 @@ OrgTaintRemoved object{ type: "org_taint_removed", actor, id, 4 more }
 
 
 
-A taint was removed from an organization.
+A compliance marker (taint) was removed from an organization.
 
 
 
@@ -9843,7 +10261,7 @@ A workspace was archived.
 
 
 
-PlatformWorkspaceCreated object{ type: "platform_workspace_created", actor, workspace_id, 4 more }
+PlatformWorkspaceCreated object{ type: "platform_workspace_created", actor, workspace_id, 10 more }
 
 
 

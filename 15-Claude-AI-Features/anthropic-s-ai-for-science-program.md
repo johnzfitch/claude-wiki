@@ -2,7 +2,7 @@
 title: "Anthropic's AI for Science Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:24:25Z"
+fetched_at: "2026-10-23T06:28:50Z"
 tags: ["claude-ai"]
 ---
 
@@ -17,7 +17,7 @@ If you are a researcher working on applying Generative AI to scientific research
 
 ## About this Program
 
-**Please note that you can access the Claude model family immediately via API by simply creating a [Claude Console](../04-API-Reference/Other/usage-limits.md) account – you do not need to contact us first.**
+**Please note that you can access the Claude model family immediately via API by simply creating a [Claude Console](../04-API-Reference/Other/playground.md) account – you do not need to contact us first.**
 
 - This program provides free API credits for our standard model suite to researchers in academia and nonprofit organizations working on scientific research topics we consider high priority.
 

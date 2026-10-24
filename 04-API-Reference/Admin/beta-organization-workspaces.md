@@ -2,7 +2,7 @@
 title: "Workspaces - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/workspaces"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-05T06:37:52Z"
+fetched_at: "2026-10-21T06:29:11Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fworkspaces)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fworkspaces)
 
 
 
@@ -141,7 +141,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -151,9 +151,13 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
+
+Webhooks
 
 
 Skills
@@ -171,6 +175,29 @@ Skills
 Delete Skill
 
 Versions
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Delete User Profile
+
+
+Create Enrollment URL
+
+Action URLs
 
 
 Tunnels
@@ -196,24 +223,6 @@ Tunnels
 Certificates
 
 
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
 Compliance API
 
 Activities
@@ -224,13 +233,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -238,9 +249,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -249,10 +260,16 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 
 # Workspaces
+
+Copy page
+
+
+
+cURL
 
 ##### [List Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/list)
 
@@ -591,6 +608,12 @@ One of the following:
 GET/v1/organizations/workspaces/{workspace_id}/rate_limits
 
 List a workspace's rate limits.
+
+##### [Set Workspace Rate Limits](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/rate_limits/update)
+
+POST/v1/organizations/workspaces/{workspace_id}/rate_limits/{rate_limit_id}
+
+Set or clear rate-limit overrides for one rate-limit group in a workspace.
 
 #### Workspaces[Members](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/members)
 

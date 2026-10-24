@@ -2,7 +2,7 @@
 title: "Spend Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:35Z"
+fetched_at: "2026-10-20T06:37:17Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fspend_limits)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fspend_limits)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -146,9 +146,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -219,13 +221,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -233,9 +237,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -244,10 +248,16 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 
 # Spend Limits
+
+Copy page
+
+
+
+cURL
 
 ##### [Set Spend Limit](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/set)
 
@@ -390,6 +400,24 @@ defaultseat_tier
 seat_tier: string
 
 
+
+
+
+BetaSpendLimitUsageTierScope object{ type: "usage_tier" }
+
+
+
+Scope of the monthly spend cap Anthropic sets for a Claude Console organization from its usage tier, or a higher cap Anthropic granted the organization. Read-only; its `created_at` and `updated_at` are the organization's creation time, so `amount` can change while `updated_at` stays the same.
+
+
+
+type: "usage_tier"
+
+
+
+Scope type. Always `usage_tier` for this scope.
+
+defaultusage_tier
 
 
 

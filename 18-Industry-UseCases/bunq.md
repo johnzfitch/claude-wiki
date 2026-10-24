@@ -2,7 +2,7 @@
 title: "bunq Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/bunq"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:41Z"
+fetched_at: "2026-10-23T06:29:50Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -24,15 +24,15 @@ Europe
 
 ~80% automated support resolution
 
-Claude's advanced reasoning improved automated resolution, enabling Finn to handle most support tickets
+Claude’s advanced reasoning improved automated resolution, enabling Finn to handle most support tickets
 
 5-minute account opening
 
 Fully verified bank accounts created through AI-powered automation
 
-[bunq](https://www.bunq.com) is Europe's second-largest neobank, built to serve people and businesses with an international lifestyle. Founded in 2012 by Ali Niknam, bunq empowers 20 million users across Europe to spend, save, budget, and invest through a single user-friendly app.
+[bunq](https://www.bunq.com) is Europe’s second-largest neobank, built to serve people and businesses with an international lifestyle. Founded in 2012 by Ali Niknam, bunq empowers 20 million users across Europe to spend, save, budget, and invest through a single user-friendly app.
 
-bunq selected Claude after extensive A/B testing showed it consistently excelled at the complex planning capabilities their support scenarios require. Failed payment investigations, for instance, require checking cards, accounts, balances, and transactions in precise sequences. Claude demonstrated superior ability to reason through these multi-step problems while maintaining the precision needed for their agentic workflows. "When we benchmarked the best models, Claude came out on top," explains bunq's Machine Learning Engineering Lead.
+bunq selected Claude after extensive A/B testing showed it consistently excelled at the complex planning capabilities their support scenarios require. Failed payment investigations, for instance, require checking cards, accounts, balances, and transactions in precise sequences. Claude demonstrated superior ability to reason through these multi-step problems while maintaining the precision needed for their agentic workflows. “When we benchmarked the best models, Claude came out on top,” explains bunq’s Machine Learning Engineering Lead.
 
 With Claude, bunq:
 
@@ -44,31 +44,31 @@ With Claude, bunq:
 
 ## The problem: Complex banking queries at massive scale
 
-Banking support isn't simple. A single failed payment query might require checking the card status, verifying account details, confirming balance availability, and analyzing the transaction itself—all while maintaining security and accuracy. For a neobank serving 20 million users across Europe with different languages and banking needs, traditional support models couldn't scale.
+Banking support isn’t simple. A single failed payment query might require checking the card status, verifying account details, confirming balance availability, and analyzing the transaction itself—all while maintaining security and accuracy. For a neobank serving 20 million users across Europe with different languages and banking needs, traditional support models couldn’t scale.
 
 bunq needed more than a chatbot. They needed an intelligent system that could reason through complex, multi-step investigations while producing the precise structured outputs their automations required. A single JSON formatting error could break entire workflows. The challenge was finding an AI model that combined sophisticated reasoning with absolute precision.
 
 ## **Building an intelligent banking assistant**
 
-"From the very beginning, our goal with AI has been simple: make life easy for our users," says bunq's Machine Learning Engineering Lead. "To do that at scale, we built agentic workflows where AI works hand-in-hand with code to solve problems."
+“From the very beginning, our goal with AI has been simple: make life easy for our users,” says bunq’s Machine Learning Engineering Lead. “To do that at scale, we built agentic workflows where AI works hand-in-hand with code to solve problems.”
 
-The transformation began with Finn's launch in 2023 as a conversational assistant to help users search their finances and navigate the app. But bunq's vision went far beyond basic assistance. They built a multi-agent system that could securely act on behalf of users if they asked it to —investigating issues, processing documents, and executing complex banking operations.
+The transformation began with Finn’s launch in 2023 as a conversational assistant to help users search their finances and navigate the app. But bunq’s vision went far beyond basic assistance. They built a multi-agent system that could securely act on behalf of users if they asked it to —investigating issues, processing documents, and executing complex banking operations.
 
 In 2024, bunq became the first bank to launch real-time speech-to-speech AI translation, a breakthrough that exemplified their approach to making banking accessible. Users could now speak to support agents in their native language, with Finn translating in real-time. Combined with app translation into 38 languages, this broke down barriers that had long excluded millions from modern banking services.
 
-The implementation was remarkably swift. Thanks to bunq's in-house LLM router—which manages different models, providers, and configurations—adding Claude took just days. "Our internal benchmarks and LLM router made it easy to test and integrate quickly," the team notes. "The Anthropic team was always on hand to support us, from optimizing prompts to scaling up capacity."
+The implementation was remarkably swift. Thanks to bunq’s in-house LLM router—which manages different models, providers, and configurations—adding Claude took just days. “Our internal benchmarks and LLM router made it easy to test and integrate quickly,” the team notes. “The Anthropic team was always on hand to support us, from optimizing prompts to scaling up capacity.”
 
 ## **The outcome: approximately 80% automation with instant account access**
 
-The results demonstrate significant improvements across all metrics. With Claude's advanced reasoning, bunq's automated resolution rate improved by 8%, bringing their total automation to over 80% of all support tickets. Users get faster, more reliable answers without waiting in queues or navigating complex phone trees.
+The results demonstrate significant improvements across all metrics. With Claude’s advanced reasoning, bunq’s automated resolution rate improved by 8%, bringing their total automation to over 80% of all support tickets. Users get faster, more reliable answers without waiting in queues or navigating complex phone trees.
 
-The impact extends beyond user support. Engineering productivity improved instantly with Claude Code—new developers now contribute meaningful code in 16 hours instead of 40, a 60% reduction that accelerates product delivery across the organization. "This combination made implementation seamless and much faster than we'd experienced with other models," the team reports.
+The impact extends beyond user support. Engineering productivity improved instantly with Claude Code—new developers now contribute meaningful code in 16 hours instead of 40, a 60% reduction that accelerates product delivery across the organization. “This combination made implementation seamless and much faster than we’d experienced with other models,” the team reports.
 
-Most importantly, bunq has redefined what banking can be. Account opening that once took days with paperwork and branch visits now takes 5 minutes. "We hear from new users all the time that they're amazed at how quick and seamless the experience is," says the ML Engineering Lead. "For them, it's not just about speed, it's about freedom. Instead of waiting days or visiting a branch, they're up and running in minutes."
+Most importantly, bunq has redefined what banking can be. Account opening that once took days with paperwork and branch visits now takes 5 minutes. “We hear from new users all the time that they’re amazed at how quick and seamless the experience is,” says the ML Engineering Lead. “For them, it’s not just about speed, it’s about freedom. Instead of waiting days or visiting a branch, they’re up and running in minutes.”
 
-Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The team envisions users simply asking Finn to "set aside 20% of my income for taxes" or "move €50 from my main account to my vacation savings" and having it done instantly.
+Looking ahead, bunq sees enormous potential to expand Finn’s capabilities. The team envisions users simply asking Finn to “set aside 20% of my income for taxes” or “move €50 from my main account to my vacation savings” and having it done instantly.
 
-"We're just scratching the surface of what AI can do for banking," the team explains. "Anthropic's focus on trust, safety, and reasoning aligns perfectly with bunq's mission to make life easy without ever compromising security."
+“We’re just scratching the surface of what AI can do for banking,” the team explains. “Anthropic’s focus on trust, safety, and reasoning aligns perfectly with bunq’s mission to make life easy without ever compromising security.”
 
 ## Related stories
 
@@ -79,7 +79,7 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 ### Pictet turns weeks of work into hours with Claude Code
 
 
-### How Satispay's engineers write 75% of their code with Claude
+### How Satispay’s engineers write 75% of their code with Claude
 
 
 ### OffDeal powers every stage of M&A advisory with one Claude-based agent
@@ -93,7 +93,8 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -111,12 +112,12 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -149,7 +150,7 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -167,6 +168,7 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -182,7 +184,7 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -217,7 +219,8 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -235,12 +238,12 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -273,7 +276,7 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -291,6 +294,7 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -306,7 +310,7 @@ Looking ahead, bunq sees enormous potential to expand Finn's capabilities. The t
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

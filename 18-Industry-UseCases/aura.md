@@ -2,7 +2,7 @@
 title: "Aura Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/aura"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:51Z"
+fetched_at: "2026-10-23T06:29:30Z"
 tags: ["api", "bedrock", "case-studies", "enterprise", "security"]
 ---
 
@@ -44,19 +44,19 @@ With Claude in Amazon Bedrock, Aura:
 
 ## Meeting the workforce analytics challenge
 
-Aura Intelligence helps analyze insights on hiring trends, skills evolution, workforce dynamics, and competitor benchmarks. Their initial system struggled with a fundamental challenge: making sense of job titles and roles across different industries and languages. Without AI capabilities, they relied on basic manual lookups and fuzzy matching to categorize roles. This manual approach couldn't capture crucial industry context. For example, a Vice President at a bank typically holds a mid-level position, while the same title in tech indicates senior leadership. With 200 million titles and industry pairings to analyze, plus data in multiple languages, Aura needed a more sophisticated solution.
+Aura Intelligence helps analyze insights on hiring trends, skills evolution, workforce dynamics, and competitor benchmarks. Their initial system struggled with a fundamental challenge: making sense of job titles and roles across different industries and languages. Without AI capabilities, they relied on basic manual lookups and fuzzy matching to categorize roles. This manual approach couldn’t capture crucial industry context. For example, a Vice President at a bank typically holds a mid-level position, while the same title in tech indicates senior leadership. With 200 million titles and industry pairings to analyze, plus data in multiple languages, Aura needed a more sophisticated solution.
 
 ## Choosing Claude for superior accuracy and seamless integration
 
-After evaluating multiple AI models, Aura selected Claude in Amazon Bedrock for its superior accuracy and contextual understanding. "We ran four different models across competitors, and with Claude we had close to 94% accuracy," said Setareh Lotfi, technical leader at Aura. As a startup with limited engineering resources, they valued Claude's ability to deliver high performance without extensive fine-tuning. "We don't have as much engineering power these days. Something out of the box that solves the problem and doesn't need too many contexts and fine-tuning—that was the biggest evaluation gap," said Lotfi.
+After evaluating multiple AI models, Aura selected Claude in Amazon Bedrock for its superior accuracy and contextual understanding. “We ran four different models across competitors, and with Claude we had close to 94% accuracy,” said Setareh Lotfi, technical leader at Aura. As a startup with limited engineering resources, they valued Claude’s ability to deliver high performance without extensive fine-tuning. “We don’t have as much engineering power these days. Something out of the box that solves the problem and doesn’t need too many contexts and fine-tuning—that was the biggest evaluation gap,” said Lotfi.
 
 The accuracy was impressive in key industries, with Claude achieving 100% accuracy in tech, finance, and medical sectors. This enabled Aura to lower their unclassified data rates to under 8% across industries, a crucial metric for customers making significant financial decisions based on their insights.
 
 ## Maximizing AI capabilities with Amazon Bedrock
 
-The Amazon Bedrock integration provided significant technical advantages through its seamless connection with Aura's existing AWS infrastructure. Lotfi said, "We were already using AWS services, particularly SageMaker for our data science stack. Having Bedrock align with our existing tools reduced development complexity and enabled better collaboration between our data science and engineering teams."
+The Amazon Bedrock integration provided significant technical advantages through its seamless connection with Aura’s existing AWS infrastructure. Lotfi said, “We were already using AWS services, particularly SageMaker for our data science stack. Having Bedrock align with our existing tools reduced development complexity and enabled better collaboration between our data science and engineering teams.”
 
-Amazon Bedrock's model customization and prompt management capabilities were essential for their role mapping project. The platform allowed them to fine-tune foundation models on their proprietary datasets without managing additional ML infrastructure. "We do classifications across locations—from different metropolitans to different zip codes. Tying it down to smaller data subsets for user interaction has been crucial," said Lotfi.
+Amazon Bedrock’s model customization and prompt management capabilities were essential for their role mapping project. The platform allowed them to fine-tune foundation models on their proprietary datasets without managing additional ML infrastructure. “We do classifications across locations—from different metropolitans to different zip codes. Tying it down to smaller data subsets for user interaction has been crucial,” said Lotfi.
 
 The integration also optimized their technical operations through prompt caching and vector search capabilities. With automated scaling and pay-per-use pricing, Aura could efficiently expand their multilingual content classification while maintaining accuracy across languages. Since everything stayed within the AWS infrastructure, they maintained robust security while scaling their AI capabilities.
 
@@ -75,13 +75,13 @@ Aura has transformed their ML pipeline from a traditional structure requiring mu
 
 Aura’s platform provides tailored solutions for different client needs. Lotfi said, “Private equity funds have a very different use case than a hedge fund. Whether you’re a private equity fund closely monitoring a small set of companies, or a hedge fund looking for macro industry trends, our new Reports feature will keep you updated.” With Aura’s Reports, clients can create a personalized data set and receive it on a personalized schedule, helping clients analyze portfolio companies and industry trends with unprecedented speed and accuracy.
 
-For Aura's engineering team, Claude eliminated the need for Ωfour to five engineering sprints previously required for fine-tuning. The solution has also enabled automated QA processes, with AI-powered pipelines ensuring consistent accuracy at scale. This efficiency allows them to serve more clients while maintaining their lean startup structure.
+For Aura’s engineering team, Claude eliminated the need for Ωfour to five engineering sprints previously required for fine-tuning. The solution has also enabled automated QA processes, with AI-powered pipelines ensuring consistent accuracy at scale. This efficiency allows them to serve more clients while maintaining their lean startup structure.
 
 ## Building an AI-powered future for workforce intelligence
 
-Aura aims to revolutionize how organizations access Organizational Decision Intelligence. Lotfi said, "We want to automate these reports and ensure people can access insights as quickly as opening their email, rather than building reports from scratch."
+Aura aims to revolutionize how organizations access Organizational Decision Intelligence. Lotfi said, “We want to automate these reports and ensure people can access insights as quickly as opening their email, rather than building reports from scratch.”
 
-They're already expanding their impact, launching APIs with major high-frequency trading hedge funds and developing new sentiment analysis capabilities. By combining their deep understanding of workforce dynamics with Claude's capabilities in Amazon Bedrock, Aura continues to transform how organizations understand and act on Organizational Decision Intelligence.
+They’re already expanding their impact, launching APIs with major high-frequency trading hedge funds and developing new sentiment analysis capabilities. By combining their deep understanding of workforce dynamics with Claude’s capabilities in Amazon Bedrock, Aura continues to transform how organizations understand and act on Organizational Decision Intelligence.
 
 ## Related stories
 
@@ -106,7 +106,8 @@ They're already expanding their impact, launching APIs with major high-frequency
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -124,12 +125,12 @@ They're already expanding their impact, launching APIs with major high-frequency
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -162,7 +163,7 @@ They're already expanding their impact, launching APIs with major high-frequency
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -180,6 +181,7 @@ They're already expanding their impact, launching APIs with major high-frequency
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -195,7 +197,7 @@ They're already expanding their impact, launching APIs with major high-frequency
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -230,7 +232,8 @@ They're already expanding their impact, launching APIs with major high-frequency
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -248,12 +251,12 @@ They're already expanding their impact, launching APIs with major high-frequency
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -286,7 +289,7 @@ They're already expanding their impact, launching APIs with major high-frequency
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -304,6 +307,7 @@ They're already expanding their impact, launching APIs with major high-frequency
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -319,7 +323,7 @@ They're already expanding their impact, launching APIs with major high-frequency
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

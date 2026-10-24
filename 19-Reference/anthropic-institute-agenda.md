@@ -2,13 +2,40 @@
 title: "Focus areas for The Anthropic Institute \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-institute-agenda"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:46:17Z"
-tags: ["news-research", "search"]
+fetched_at: "2026-10-23T06:29:45Z"
+tags: ["news-research"]
 ---
 
 # Focus areas for The Anthropic Institute
 
-May 7, 2026
+- Published
+
+  May 7, 2026
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [Institute](https://www.anthropic.com/search?topic=institute)
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
+  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
+  - [Transparency](https://www.anthropic.com/search?topic=transparency)
+
+  See more...
+
+Related articles
+
+- Economics
+
+  Sep 9, 2026
+
+  [Scenarios for our economic future](https://www.anthropic.com/institute/econ-scenarios)
+
+[View more](https://www.anthropic.com/search?topic=institute)
 
 At [The Anthropic Institute](the-anthropic-institute.md) (TAI), we’ll be using the information we can access from within a frontier lab to investigate AI’s impact on the world, and sharing our learnings with the public. Here, we’re sharing the questions that drive our research agenda.
 
@@ -39,11 +66,11 @@ This is a living agenda, rather than a fixed one. We'll continue to fine-tune th
 
 If you are interested in helping us answer some of these questions, we welcome your application to become an Anthropic Fellow. The Fellowship is a four-month funded opportunity to tackle one or more of these questions with mentorship from TAI team members. You can find out more and apply to the next cohort [here](https://job-boards.greenhouse.io/anthropic/jobs/5023394008).
 
-## **Our research agenda:**
+### Our research agenda:
 
 *Last updated: May 7, 2026*
 
-### Economic diffusion
+#### Economic diffusion
 
 It’s crucial to understand how the deployment of increasingly powerful AI systems changes the economy. We also need to develop the necessary economic data and predictive ability to choose to deploy AI in ways that benefit the public.
 
@@ -73,7 +100,7 @@ To answer the questions in this pillar of our research, we’ll further develop 
 - **Studying for the future:** What should people study today to be well positioned for the future? What are the professions of the future? How does AI change what it means to learn something and to develop expertise?
 - **The role of paid work:** If AI substantially reduces the centrality of paid work in human life, what conditions will allow people to reallocate their time and effort toward other sources of meaning, and what can we learn from historical or contemporary populations where work has been scarce or optional? How do societies navigate this transition?
 
-### Threats and resilience
+#### Threats and resilience
 
 AI systems tend to advance many capabilities at once, including [dual-use capabilities](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-1.ipd2.pdf). An AI system that gets better at biology also gets better at creating biological weapons. AI systems which are performant at computer programming also get better at hacking into computers. If we can better understand the potential for threats to be exacerbated by AI systems, society can more easily become resilient to this changed threat landscape.
 
@@ -94,7 +121,7 @@ We're asking these questions to help develop partnerships to improve the world's
 
 - **AI’s effect on surveillance:** How does AI change how surveillance works? Will it make surveillance cheaper, or more effective, or both?
 
-### AI systems in the wild
+#### AI systems in the wild
 
 The interaction of people and organizations with AI systems will be a major source of societal change. Understanding the ways AI systems might alter the people and institutions that interact with them is a core focus area for our [Societal Impacts](team-societal-impacts.md) team. To study these changes, we are advancing our existing tools and building new ones to carry out our research, ranging from software for better observability of our platform to tools for conducting large-scale qualitative surveys.
 
@@ -118,7 +145,7 @@ The interaction of people and organizations with AI systems will be a major sour
 - **AI governance of AI:** How effectively can we use AI to govern AI systems? What are areas of AI oversight where humans either have a comparative advantage or a legal or normative requirement to be 'in the loop'?
 - **Agent interactions:** What kinds of norms emerge in how AI agents interact with one another? How might different agents express different preferences, and how might these influence other agents?
 
-### AI-driven R&D
+#### AI-driven R&D
 
 As AI systems get more powerful, scientists are using them to carry out more of their research. This means that more scientific research is occurring autonomously or semi-autonomously with less and less active oversight from humans. In AI research itself, increasingly powerful systems may be used to help develop successor versions of themselves. We sometimes call this “AI-driven AI R&D.”
 
@@ -137,127 +164,3 @@ AI-driven AI R&D holds within itself the potential for significant danger. As po
 
 - **The tech tree:** AI is speeding up some sciences far faster than others, depending on data availability, evaluation signals, and how much knowledge is tacit or institutionally gated. How uneven is this gradient, and what does the changing composition of scientific progress imply for which human problems get solved first?
 - **The jagged frontier:** Model capabilities are stronger in some domains than in others. Domains with large positive externalities—like drug discovery and materials science—receive less investment than their value warrants. Markets steer the direction of model improvement according to private return, but can we improve how models perform to address social externalities?
-
-
-## Related content
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

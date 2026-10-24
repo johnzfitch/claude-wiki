@@ -2,7 +2,7 @@
 title: "Lindy Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/lindy"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:52Z"
+fetched_at: "2026-10-23T06:30:00Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 
@@ -45,7 +45,7 @@ With Claude, Lindy AI agents:
 
 Lindy set out with an ambitious vision: to build a platform where businesses could create AI agents that handle repetitive knowledge work, enabling human teams to focus on what they do best: creative problem-solving, relationship building, and strategic thinking.
 
-"The vision has always been to build an AI employee that provides both maximum capability and maximum ease of use," explained Luiz Scheidegger, Head of Engineering at Lindy. "We wanted to give teams leverage—letting them focus on high-impact work while AI handles the repetitive tasks."
+“The vision has always been to build an AI employee that provides both maximum capability and maximum ease of use,” explained Luiz Scheidegger, Head of Engineering at Lindy. “We wanted to give teams leverage—letting them focus on high-impact work while AI handles the repetitive tasks.”
 
 The challenge was finding an AI model that could power agents sophisticated enough to handle ambiguous tasks, make complex tool calls, and communicate naturally, all while maintaining the reliability enterprise customers demand.
 
@@ -53,11 +53,11 @@ The challenge was finding an AI model that could power agents sophisticated enou
 
 After extensive evaluation, Lindy chose Claude as their default model, and while customers can select alternative LLMs, they rarely override Claude. The decision came down to performance in real-world agent scenarios.
 
-"Claude models simply performed better in our evals and use cases," said Scheidegger. "They were able to better navigate ambiguity in large context windows, and to make better tool calls when dealing with complex workflows such as calendar management, natural language conditions, and other critical Lindy needs."
+“Claude models simply performed better in our evals and use cases,” said Scheidegger. “They were able to better navigate ambiguity in large context windows, and to make better tool calls when dealing with complex workflows such as calendar management, natural language conditions, and other critical Lindy needs.”
 
-The team found Claude particularly strong at handling deeply nested data structures requiring nuanced reasoning. Calendar handling and natural language conditions—two areas where other models struggled—became Claude's strengths.
+The team found Claude particularly strong at handling deeply nested data structures requiring nuanced reasoning. Calendar handling and natural language conditions—two areas where other models struggled—became Claude’s strengths.
 
-Once customers experienced the quality of Claude-powered agents, adoption was clear. "Almost no one overrides the default LLM," Scheidegger noted. “The vast majority of all model calls on the platform are for Claude.”
+Once customers experienced the quality of Claude-powered agents, adoption was clear. “Almost no one overrides the default LLM,” Scheidegger noted. “The vast majority of all model calls on the platform are for Claude.”
 
 ## AI colleagues that enhance team capabilities
 
@@ -67,17 +67,17 @@ In go-to-market workflows, Lindy agents handle initial outreach and qualificatio
 
 For customer support, Lindy agents resolve routine queries instantly, enabling human agents to tackle complex issues that require greater empathy and creative problem-solving. A bootstrapped productivity tool uses Lindy to provide 24/7 first-line support. Their AI agent resolves over 70% of routine tickets, while their support team can now focus on product feedback, customer success initiatives, and handling sensitive situations that necessitate human involvement.
 
-As executive assistants, Lindy agents handle scheduling and information synthesis, giving leaders more time for strategic decision-making. One executive founder uses Lindy to prep daily briefings and manage calendar conflicts. "It feels like I'm delegating to a real team member," they shared. This allows them to spend more time on vision, strategy, and team development.
+As executive assistants, Lindy agents handle scheduling and information synthesis, giving leaders more time for strategic decision-making. One executive founder uses Lindy to prep daily briefings and manage calendar conflicts. “It feels like I’m delegating to a real team member,” they shared. This allows them to spend more time on vision, strategy, and team development.
 
 ## Empowering teams to do their best work
 
 Claude has unlocked capabilities that transform how Lindy customers think about human-AI collaboration. Teams using Lindy agents see 3-5x productivity gains by eliminating tedious tasks that previously consumed valuable time.
 
-"Our customers consistently tell us that Lindy doesn't replace team members—it makes existing teams more effective," said Everett Butler, Head of Marketing at Lindy. "Sales reps close more deals, support agents solve harder problems, and executives make better decisions when they're not bogged down by repetitive work."
+“Our customers consistently tell us that Lindy doesn’t replace team members—it makes existing teams more effective,” said Everett Butler, Head of Marketing at Lindy. “Sales reps close more deals, support agents solve harder problems, and executives make better decisions when they’re not bogged down by repetitive work.”
 
-The impact extends beyond efficiency. One customer noted that after implementing Lindy, their support team finally had time to contribute to product development discussions, something they'd always wanted to do but never had bandwidth for. Sales teams report higher job satisfaction when they can focus on relationship-building rather than cold email drafting.
+The impact extends beyond efficiency. One customer noted that after implementing Lindy, their support team finally had time to contribute to product development discussions, something they’d always wanted to do but never had bandwidth for. Sales teams report higher job satisfaction when they can focus on relationship-building rather than cold email drafting.
 
-"Claude has been pivotal in making our AI agents feel more human, more helpful, and more trustworthy," Butler explained.
+“Claude has been pivotal in making our AI agents feel more human, more helpful, and more trustworthy,” Butler explained.
 
 This trust enables teams to confidently delegate routine tasks while maintaining control over strategic decisions.
 
@@ -85,11 +85,11 @@ This trust enables teams to confidently delegate routine tasks while maintaining
 
 Lindy envisions a future where AI enhances rather than replaces human capabilities. The company has launched two new features powered by Claude: Autopilot, a native computer use capability, and Agent Builder, which creates agents from simple prompts. These tools enable customers to quickly and easily create agents that are incredibly capable.
 
-"We see a future where every professional has AI colleagues that handle the repetitive parts of their job," the team explained. "This isn't about reducing headcount, it's about letting people do work that's more creative, strategic, and fulfilling."
+“We see a future where every professional has AI colleagues that handle the repetitive parts of their job,” the team explained. “This isn’t about reducing headcount, it’s about letting people do work that’s more creative, strategic, and fulfilling.”
 
-As Claude's capabilities expand, Lindy plans to create agents that can support entire projects while humans provide direction, creativity, and judgment.
+As Claude’s capabilities expand, Lindy plans to create agents that can support entire projects while humans provide direction, creativity, and judgment.
 
-"We believe Claude will be the foundation for a new kind of work, one where humans and AI collaborate to achieve things neither could do alone," said Butler. "And we're building Lindy to make that future real, today."
+“We believe Claude will be the foundation for a new kind of work, one where humans and AI collaborate to achieve things neither could do alone,” said Butler. “And we’re building Lindy to make that future real, today.”
 
 ## Related stories
 
@@ -114,7 +114,8 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -132,12 +133,12 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -170,7 +171,7 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -188,6 +189,7 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -203,7 +205,7 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -238,7 +240,8 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -256,12 +259,12 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -294,7 +297,7 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -312,6 +315,7 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -327,7 +331,7 @@ As Claude's capabilities expand, Lindy plans to create agents that can support e
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

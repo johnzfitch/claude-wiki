@@ -2,7 +2,7 @@
 title: "Use the Claude Agent SDK with your Claude plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:24:43Z"
+fetched_at: "2026-10-23T06:29:07Z"
 tags: ["agents", "billing", "sdk"]
 ---
 

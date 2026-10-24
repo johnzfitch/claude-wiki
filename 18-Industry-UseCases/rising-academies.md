@@ -2,7 +2,7 @@
 title: "Rising Academies Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/rising-academies"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:24Z"
+fetched_at: "2026-10-23T06:29:42Z"
 tags: ["api", "case-studies", "enterprise", "mobile", "security"]
 ---
 
@@ -35,16 +35,16 @@ Working with communities across Sub-Saharan Africa, Rising Academies has develop
 With these tools, Rising Academies has:
 
 - Already reached over 150,000 students, with a large number of students using Rori across Ghana, Sierra Leone, Nigeria, Kenya and Rwanda.
-- Achieved a 0.3 standard deviation effect size in learning outcomes, equivalent to accelerating a year's worth of learning
+- Achieved a 0.3 standard deviation effect size in learning outcomes, equivalent to accelerating a year’s worth of learning
 - Provided teachers with 24/7 access to curriculum support and subject matter expertise
 
 ## Creating accessible education solutions through widely available mobile technology
 
 Rising Academies was founded in Sierra Leone in 2014. The organization aims to improve learning outcomes in the places that need it most using a unique blend of high-tech and low-tech learning solutions. They are already working with 1,000 schools across Africa, supporting more than 300,000 students through their programs. From this experience, they recognized that in most educationally disadvantaged regions, many learners progress through the curriculum without mastering critical skills, creating knowledge gaps that compound over time.
 
-"When students learn in large classes, they often receive minimal individual attention," explains Owen Henkel, Product Manager at Rising Academies. "This creates situations where learners encounter increasingly complex material before mastering fundamentals—like attempting college chemistry without the necessary background knowledge."
+“When students learn in large classes, they often receive minimal individual attention,” explains Owen Henkel, Product Manager at Rising Academies. “This creates situations where learners encounter increasingly complex material before mastering fundamentals—like attempting college chemistry without the necessary background knowledge.”
 
-In recent years, Rising Academies has developed tools leveraging basic smartphones and WhatsApp, noting that conventional edtech solutions requiring laptops and reliable high-speed internet reach less than 5% of students in their service regions. “This approach meets families where they are, using technology that's already integrated into their daily lives while superpowering it with AI, and what’s best is that it can sustain the test of time,” says Shabnam Aggarwal, Chief Technology Officer at Rising Academies.
+In recent years, Rising Academies has developed tools leveraging basic smartphones and WhatsApp, noting that conventional edtech solutions requiring laptops and reliable high-speed internet reach less than 5% of students in their service regions. “This approach meets families where they are, using technology that’s already integrated into their daily lives while superpowering it with AI, and what’s best is that it can sustain the test of time,” says Shabnam Aggarwal, Chief Technology Officer at Rising Academies.
 
 ## How Claude supports personalized learning and teacher development
 
@@ -59,11 +59,11 @@ Rori is a student-facing math tutor that uses a mix of pre-written lesson plans 
 Tari is a teacher support tool where almost all the interactions are powered by Claude:
 
 - Proactively initiates conversations with teachers about lesson planning
-- Offers private subject knowledge support without risking teachers' professional standing
-- Maintains conversations across multiple messages, checking in when users don't respond
+- Offers private subject knowledge support without risking teachers’ professional standing
+- Maintains conversations across multiple messages, checking in when users don’t respond
 - Provides an AI-native experience with 95% of interactions through Claude
 
-Both platforms use WhatsApp to reach users on basic smartphones without requiring downloads or banking access. "WhatsApp is the main communication platform in Sub-Saharan Africa," explains Henkel. "Many phone users can't access app stores without credit cards or formal banking."
+Both platforms use WhatsApp to reach users on basic smartphones without requiring downloads or banking access. “WhatsApp is the main communication platform in Sub-Saharan Africa,” explains Henkel. “Many phone users can’t access app stores without credit cards or formal banking.”
 
 “Across many regions where we work, people typically purchase mobile data in small amounts—perhaps one gigabyte for a dollar,” notes Henkel. “Text conversations use significantly less data than video, making this solution more cost-effective and accessible for everyone”.
 
@@ -71,7 +71,7 @@ Both platforms use WhatsApp to reach users on basic smartphones without requirin
 
 Rising’s Claude-supported solutions impact regional education. School-based studies by researchers from the University of Oxford and JPAL show Rori producing a 0.3 standard deviation effect in math learning—accelerating progress beyond a typical school year.
 
-For students, Rori delivers learning tailored to actual ability rather than nominal grade level for students. Henkel says, "There's robust evidence that teaching students at their current level, with practice opportunities and immediate feedback, is highly effective. It's one of the few approaches that consistently works." This approach builds confidence as students progress at their own pace.
+For students, Rori delivers learning tailored to actual ability rather than nominal grade level for students. Henkel says, “There’s robust evidence that teaching students at their current level, with practice opportunities and immediate feedback, is highly effective. It’s one of the few approaches that consistently works.” This approach builds confidence as students progress at their own pace.
 
 Teachers find Tari valuable as a professional development tool. The platform provides confidential support for strengthening content knowledge and preparing lessons, creating a judgment-free space for educators to explore concepts and enhance their teaching effectiveness.
 
@@ -79,19 +79,19 @@ Rising Academies expands access to educational resources through technology alre
 
 ## Building toward an AI-enhanced educational future
 
-Rising Academies is expanding Rori to more countries while developing open-ended lessons beyond their core curriculum. Henkel says his vision includes group chats where "Rori is one member in a conversation with multiple students."
+Rising Academies is expanding Rori to more countries while developing open-ended lessons beyond their core curriculum. Henkel says his vision includes group chats where “Rori is one member in a conversation with multiple students.”
 
-Future innovations aim to break down barriers. Voice interfaces will eliminate reading constraints. Support for indigenous languages and visual classroom analysis (uploading photos of classroom activity) will bring expert teaching guidance to remote areas. "The teacher could speak in their native language but receive answers in English," explains Henkel, creating more linguistically inclusive educational experiences.
+Future innovations aim to break down barriers. Voice interfaces will eliminate reading constraints. Support for indigenous languages and visual classroom analysis (uploading photos of classroom activity) will bring expert teaching guidance to remote areas. “The teacher could speak in their native language but receive answers in English,” explains Henkel, creating more linguistically inclusive educational experiences.
 
-By leveraging the simple smartphones already in people's hands, Rising Academies is proving that transformative education doesn't require expensive infrastructure or cutting-edge devices on the front-end. Their success across Sub-Saharan Africa demonstrates a powerful truth: when innovation meets accessibility, we can build educational bridges that reach every learner, no matter where they are. With each student who masters a new concept through Rori, and each teacher who gains confidence through Tari, Rising Academies is turning this vision of inclusive, quality education from an aspiration into reality.
+By leveraging the simple smartphones already in people’s hands, Rising Academies is proving that transformative education doesn’t require expensive infrastructure or cutting-edge devices on the front-end. Their success across Sub-Saharan Africa demonstrates a powerful truth: when innovation meets accessibility, we can build educational bridges that reach every learner, no matter where they are. With each student who masters a new concept through Rori, and each teacher who gains confidence through Tari, Rising Academies is turning this vision of inclusive, quality education from an aspiration into reality.
 
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
@@ -108,7 +108,8 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -126,12 +127,12 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -164,7 +165,7 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -182,6 +183,7 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -197,7 +199,7 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -232,7 +234,8 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -250,12 +253,12 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -288,7 +291,7 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -306,6 +309,7 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -321,7 +325,7 @@ By leveraging the simple smartphones already in people's hands, Rising Academies
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

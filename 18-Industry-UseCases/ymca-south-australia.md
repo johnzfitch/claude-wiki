@@ -2,7 +2,7 @@
 title: "YMCA South Australia Claude case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/ymca-south-australia"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:05Z"
+fetched_at: "2026-10-23T06:30:13Z"
 tags: ["case-studies", "enterprise", "security", "skills"]
 ---
 
@@ -30,7 +30,7 @@ Time redirected from production work to strategy and community impact
 
 that previously took a full day, with cross-site benchmarking, trend analysis, and recommended actions
 
-[YMCA South Australia](https://www.sa.ymca.org.au/) is a nonprofit social enterprise delivering recreation, aquatics, gymnastics, children's services, and allied health programs across more than 65 locations in South Australia. With around 1,250 staff and over \$50 million in annual revenue predominantly through government contracts, the organization operates with a small corporate services team relative to the network it supports.
+[YMCA South Australia](https://www.sa.ymca.org.au/) is a nonprofit social enterprise delivering recreation, aquatics, gymnastics, children’s services, and allied health programs across more than 65 locations in South Australia. With around 1,250 staff and over \$50 million in annual revenue predominantly through government contracts, the organization operates with a small corporate services team relative to the network it supports.
 
 ## With Claude, YMCA South Australia achieved:
 
@@ -44,11 +44,11 @@ that previously took a full day, with cross-site benchmarking, trend analysis, a
 
 ## A small corporate team for a large network
 
-YMCA South Australia's corporate services team handles marketing, technology, finance, risk, and people and culture for its entire 65-site network. "Every dollar we earn goes back into the communities we serve, so the tools we adopt need to create real operational value," said Devan Seamans, Head of Marketing and Technology at YMCA South Australia.
+YMCA South Australia’s corporate services team handles marketing, technology, finance, risk, and people and culture for its entire 65-site network. “Every dollar we earn goes back into the communities we serve, so the tools we adopt need to create real operational value,” said Devan Seamans, Head of Marketing and Technology at YMCA South Australia.
 
-The challenge was one of scale. The network spans 16 recreation contracts (aquatic centers, fitness facilities, gymnastics centers), around 50 after-school care and early learning sites, as well as specialist programs, from metro Adelaide to regional centers like Port Lincoln and Whyalla. Each generates its own membership, attendance, financial, and program data. Comparing and analyzing performance across sites was challenging with multiple databases and thousands of records, and the manual effort meant it wasn't happening as often or as deeply as the organization needed. A high volume of communications, operational documentation, tender submissions, and stakeholder reports also needed to be produced with limited capacity to do so.
+The challenge was one of scale. The network spans 16 recreation contracts (aquatic centers, fitness facilities, gymnastics centers), around 50 after-school care and early learning sites, as well as specialist programs, from metro Adelaide to regional centers like Port Lincoln and Whyalla. Each generates its own membership, attendance, financial, and program data. Comparing and analyzing performance across sites was challenging with multiple databases and thousands of records, and the manual effort meant it wasn’t happening as often or as deeply as the organization needed. A high volume of communications, operational documentation, tender submissions, and stakeholder reports also needed to be produced with limited capacity to do so.
 
-"We needed a way to multiply output," Seamans said. “Our goal was to reduce time on repeatable, structured work so the team could focus on strategy and relationships."
+“We needed a way to multiply output,” Seamans said. “Our goal was to reduce time on repeatable, structured work so the team could focus on strategy and relationships.”
 
 Nonprofits
 
@@ -62,9 +62,9 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 
 Adoption started organically: one team member began using Claude personally, the value became clear quickly, and the use cases expanded.
 
-As the organization evaluated how to scale AI use responsibly, values alignment mattered. YMCA South Australia handles sensitive data across children's services, health programs, and employment records. Not all that data touches AI tools, but the organisation needed confidence that its AI platform had the governance framework to match its own obligations. "We work with children, health data, and government contracts. We needed an AI partner that takes that seriously, not just in their marketing but in how they build the product,” explained Seamans. “Anthropic's approach to safety and the enterprise controls they've invested in gave us confidence to build on the platform."
+As the organization evaluated how to scale AI use responsibly, values alignment mattered. YMCA South Australia handles sensitive data across children’s services, health programs, and employment records. Not all that data touches AI tools, but the organisation needed confidence that its AI platform had the governance framework to match its own obligations. “We work with children, health data, and government contracts. We needed an AI partner that takes that seriously, not just in their marketing but in how they build the product,” explained Seamans. “Anthropic’s approach to safety and the enterprise controls they’ve invested in gave us confidence to build on the platform.”
 
-Moving to Claude for Nonprofits represented a commitment to consolidating on one tool across the organization, reducing overhead for security, compliance, and billing while creating a cohort of users learning together. Implementation was deliberately phased: personal adoption to prove value, then organizational rollout with SSO enforcement and domain capture, followed by ongoing infrastructure work including custom skills, MCP integrations, and an AI Acceptable Use Policy. "The technical implementation was straightforward," noted Regan Marshall, IT Manager at YMCA South Australia. "The bigger investment has been in change management. AI requires a fundamentally different way of thinking about how to approach work, and that shift takes time."
+Moving to Claude for Nonprofits represented a commitment to consolidating on one tool across the organization, reducing overhead for security, compliance, and billing while creating a cohort of users learning together. Implementation was deliberately phased: personal adoption to prove value, then organizational rollout with SSO enforcement and domain capture, followed by ongoing infrastructure work including custom skills, MCP integrations, and an AI Acceptable Use Policy. “The technical implementation was straightforward,” noted Regan Marshall, IT Manager at YMCA South Australia. “The bigger investment has been in change management. AI requires a fundamentally different way of thinking about how to approach work, and that shift takes time.”
 
 10–15 hours
 
@@ -76,7 +76,7 @@ saved per week, with time redirected to strategy and community impact
 
 Operational reports that once consumed a full day to compile can now be produced in less than 30 minutes, freeing site managers to spend that time on programs and community relationships. Tender submissions, the proposals YMCA South Australia writes to win and retain government contracts, now reflect a depth of research, financial modeling, and stakeholder alignment that would be difficult to achieve manually in available timeframes. And work that once required contracted developers, including HTML/CSS development, email template coding, and integration troubleshooting, is now handled internally.
 
-"The biggest shift has been the ability to interpret and synthesize large, complex datasets and contexts, faster and more thoroughly than our team could do manually," Seamans added.
+“The biggest shift has been the ability to interpret and synthesize large, complex datasets and contexts, faster and more thoroughly than our team could do manually,” Seamans added.
 
 “Hours saved doesn’t really capture it,” said Seamans. “I’m delivering projects now that I’ve always wanted to do but never had the capacity for. A project that would have taken a week is now feasible in a day, and often at a higher quality because Claude holds the organisational context I’ve built up over months. The more I use Claude, the more I learn how to integrate it into my day. That compounds.”
 
@@ -86,23 +86,23 @@ Another use case has been institutional knowledge capture. YMCA South Australia 
 
 A related emerging use case is structured site autonomy. Custom skills allow center managers to independently flesh out new program concepts: reviewing financials, checking organizational alignment, and developing rough ideas into well-structured proposals without corporate services involvement at the ideation stage.
 
-"Children's Services have a handful of risk assessments per site that all need to meet specific criteria from legislation but also have details tailored to the physical location," explained Marshall. "With a bit of context and a few examples, we have a skill that can read the draft risk assessment, compare it to the legislation, and determine if the controls are specific enough to that site. Instead of providing a risk assessment as a result, it provides coaching questions that address the gaps. The director of the site still needs to do all the work; they have just been provided direction."
+“Children’s Services have a handful of risk assessments per site that all need to meet specific criteria from legislation but also have details tailored to the physical location,” explained Marshall. “With a bit of context and a few examples, we have a skill that can read the draft risk assessment, compare it to the legislation, and determine if the controls are specific enough to that site. Instead of providing a risk assessment as a result, it provides coaching questions that address the gaps. The director of the site still needs to do all the work; they have just been provided direction.”
 
-For Marshall, that distinction mattered. Claude wasn't producing the risk assessment; it was reviewing one and coaching the site director on what to fix. "The reframing of the task from writing a risk assessment with AI to writing feedback on a risk assessment was a significant moment for me," Marshall said. "It shifted my perspective on making AI work more human-focused rather than result-focused."
+For Marshall, that distinction mattered. Claude wasn’t producing the risk assessment; it was reviewing one and coaching the site director on what to fix. “The reframing of the task from writing a risk assessment with AI to writing feedback on a risk assessment was a significant moment for me,” Marshall said. “It shifted my perspective on making AI work more human-focused rather than result-focused.”
 
 ## Looking ahead
 
-Claude is now formally embedded in YMCA South Australia's FY27–30 organizational strategy, which includes a more integrated data foundation. Near-term priorities include broader adoption through phased change management, expanding custom skills for structured site autonomy, and packaging AI tools so any staff member can access them.
+Claude is now formally embedded in YMCA South Australia’s FY27–30 organizational strategy, which includes a more integrated data foundation. Near-term priorities include broader adoption through phased change management, expanding custom skills for structured site autonomy, and packaging AI tools so any staff member can access them.
 
 “Claude is already proving what’s possible with individual data exports,” said Seamans. “The future for us is about Claude becoming embedded infrastructure: a core part of how we operate, report, and serve our communities.”
 
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
@@ -119,7 +119,8 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -137,12 +138,12 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -175,7 +176,7 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -193,6 +194,7 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -208,7 +210,7 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -243,7 +245,8 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -261,12 +264,12 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -299,7 +302,7 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -317,6 +320,7 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -332,7 +336,7 @@ Claude is now formally embedded in YMCA South Australia's FY27–30 organization
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

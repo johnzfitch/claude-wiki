@@ -2,7 +2,7 @@
 title: "Rocket Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/rocket"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:58Z"
+fetched_at: "2026-10-23T06:29:53Z"
 tags: ["api", "case-studies", "enterprise", "prompting", "security"]
 ---
 
@@ -44,17 +44,17 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## The challenge: Delivering beautiful designs without sacrificing depth
 
-From the start, Rocket's team of 35 engineers focused on depth: generating complete, multi-page website experiences from a single prompt rather than requiring users to refine their way to a finished product.
+From the start, Rocket’s team of 35 engineers focused on depth: generating complete, multi-page website experiences from a single prompt rather than requiring users to refine their way to a finished product.
 
-Early user feedback validated that approach, but pointed to a gap. "The constant feedback was that our solutioning is good, but the designs look outdated," said Vishal Virani, CEO and co-founder of Rocket. Users wanted both: the comprehensive output Rocket was known for, and a design quality that felt current and intuitive.
+Early user feedback validated that approach, but pointed to a gap. “The constant feedback was that our solutioning is good, but the designs look outdated,” said Vishal Virani, CEO and co-founder of Rocket. Users wanted both: the comprehensive output Rocket was known for, and a design quality that felt current and intuitive.
 
-The team considered switching to a different model for design generation, but found that doing so meant losing the code quality and comprehensiveness they had spent months optimizing with Claude. Rocket had built its platform on Claude Sonnet 4 from the beginning, and rather than accept that tradeoff, the engineers committed to achieving both depth and design quality by investing deeper in Claude's capabilities.
+The team considered switching to a different model for design generation, but found that doing so meant losing the code quality and comprehensiveness they had spent months optimizing with Claude. Rocket had built its platform on Claude Sonnet 4 from the beginning, and rather than accept that tradeoff, the engineers committed to achieving both depth and design quality by investing deeper in Claude’s capabilities.
 
 ## Hundreds of experiments to unlock design on Sonnet 4.5
 
 Rocket’s conviction came from what the team had already seen in Claude’s output. “The code quality is up to the mark, very low hallucination—we didn’t want to compromise on our solutioning depth by switching to another model,” Virani said. Instead, the engineering team ran hundreds of experiments, adjusting system prompts, context layers, and research inputs to get high-quality visual output from Sonnet 4.5. Within weeks, Rocket was generating creative, animated, and media-rich website designs with zero iterations required.
 
-## How Rocket routes prompts across Claude's model family
+## How Rocket routes prompts across Claude’s model family
 
 Rocket’s implementation of Claude goes beyond a single API call. The platform uses a seven-layer decision-making architecture that processes every user prompt through a series of steps before generating any code.
 
@@ -68,7 +68,7 @@ Today, when a user enters a prompt—even a single sentence—Rocket’s system 
 
 This hybrid approach lets Rocket optimize for both quality and cost. “Instead of giving a choice of model to the user and increasing the cost, we decided to use a combination of multiple models for different purposes to optimize cost and speed,” Virani said.
 
-“Not every model is good at everything," added co-founder and COO Deepak Dhanak. "After thousands of experiments, we decided to be a deterministic platform and have an opinion about which model to use and when."
+“Not every model is good at everything,” added co-founder and COO Deepak Dhanak. “After thousands of experiments, we decided to be a deterministic platform and have an opinion about which model to use and when.”
 
 ## From engineering bet to measurable results
 
@@ -80,7 +80,7 @@ The response to the design improvements has shaped Rocket’s roadmap. Users who
 
 Virani’s team is also experimenting with Anthropic’s Agent SDK for future capabilities, though those plans are still in early stages.
 
-"We are using almost everything in the Anthropic system,” Virani said. "We don't want our users to have the cognitive load of putting more and more prompts to get the result. We want them to feel the magic.”
+“We are using almost everything in the Anthropic system,” Virani said. “We don’t want our users to have the cognitive load of putting more and more prompts to get the result. We want them to feel the magic.”
 
 
 ## Related stories
@@ -106,7 +106,8 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -124,12 +125,12 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -162,7 +163,7 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -180,6 +181,7 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -195,7 +197,7 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -230,7 +232,8 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -248,12 +251,12 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -286,7 +289,7 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -304,6 +307,7 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -319,7 +323,7 @@ Virani’s team is also experimenting with Anthropic’s Agent SDK for future ca
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

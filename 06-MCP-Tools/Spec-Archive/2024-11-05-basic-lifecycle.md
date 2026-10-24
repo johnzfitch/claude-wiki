@@ -2,7 +2,7 @@
 title: "Lifecycle - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/basic/lifecycle"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-09T06:27:36Z"
+fetched_at: "2026-10-21T06:28:46Z"
 tags: ["mcp", "mcp-spec"]
 ---
 

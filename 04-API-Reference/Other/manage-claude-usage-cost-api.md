@@ -2,7 +2,7 @@
 title: "Usage and Cost API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/usage-cost-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:32:46Z"
+fetched_at: "2026-10-20T06:37:55Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fusage-cost-api)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fusage-cost-api)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Monitoring
 
@@ -68,7 +70,7 @@ Compliance API
 
 
 
-Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.
+Programmatically access your organization's API usage and cost data with the Usage and Cost Admin API.
 
 Copy page
 
@@ -76,9 +78,9 @@ Programmatically access your organization's API usage and cost data with the Usa
 
 
 
-**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
+**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.
 
-The Usage & Cost Admin API provides programmatic and granular access to historical API usage and cost data for your organization. This data is similar to the information available in the [Usage](playground.md) and [Cost](playground.md) pages of the Claude Console.
+The Usage and Cost Admin API provides programmatic and granular access to historical API usage and cost data for your organization. This data is similar to the information available on the [Usage](playground.md) page (`platform.claude.com/usage`) and the [Cost](playground.md) page (`platform.claude.com/cost`) in the Claude Console.
 
 This API enables you to better monitor, analyze, and optimize your Claude implementations:
 
@@ -143,6 +145,12 @@ Advanced querying and visualization through OpenTelemetry
 
 
 
+[Tempo](https://help.tempo.io/workforceintelligence/latest/connect-to-anthropic)
+
+Usage and cost attribution to Jira work items
+
+
+
 [Vantage](https://docs.vantage.sh/connecting_anthropic)
 
 FinOps platform for LLM cost & usage observability
@@ -184,7 +192,7 @@ Track token consumption across your organization with detailed breakdowns by mod
 
 - **Time buckets:** Aggregate usage data in fixed intervals (`1m`, `1h`, or `1d`)
 - **Token tracking:** Measure uncached input, cached input, cache creation, and output tokens
-- **Filtering & grouping:** Filter by API key, workspace, model, service tier, context window, [data residency](manage-claude-data-residency.md), or speed (beta), and group results by these dimensions
+- **Filtering & grouping:** Filter by API key, workspace, model, service tier, context window, [data residency](manage-claude-data-residency.md), or speed, and group results by these dimensions
 - **Server tool usage:** Track usage of server-side tools such as web search
 
 For complete parameter details and response schemas, see the [Usage API reference](../Admin/beta-organization-usage-report-retrieve-messages.md).
@@ -246,9 +254,9 @@ bucket_width=1d" \
 
 
 
-To retrieve your organization's API key IDs, use the [List API Keys](../Admin/beta-organization-api-keys-list.md) endpoint.
+To retrieve your organization's API key IDs, use the [List API Keys](../Endpoints/organization-api-keys-list.md) endpoint.
 
-To retrieve your organization's workspace IDs, use the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint, or find your organization's workspace IDs in the Claude Console.
+To retrieve your organization's workspace IDs, use the [List Workspaces](../Endpoints/organization-workspaces-list.md) endpoint, or find your organization's workspace IDs in the Claude Console.
 
 #### Data residency
 
@@ -290,7 +298,7 @@ bucket_width=1d" \
 
 Models released before February 2026 (prior to Claude Opus 4.6 and Claude Sonnet 4.6) don't support the `inference_geo` request parameter, so their usage reports return `"not_available"` for this dimension. You can use `not_available` as a filter value in `inference_geos[]` to target those models.
 
-#### Fast mode (research preview)
+#### Fast mode
 
 Track [fast mode](../Guides/build-with-claude-fast-mode.md) usage by grouping and filtering with the `speed` dimension. This is useful for monitoring standard versus fast mode usage.
 
@@ -306,7 +314,6 @@ group_by[]=speed&\
 group_by[]=model&\
 bucket_width=1d" \
   -H "anthropic-version: 2023-06-01" \
-  -H "anthropic-beta: fast-mode-2026-02-01" \
   -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
 ```
 
@@ -324,13 +331,8 @@ speeds[]=fast&\
 group_by[]=model&\
 bucket_width=1d" \
   -H "anthropic-version: 2023-06-01" \
-  -H "anthropic-beta: fast-mode-2026-02-01" \
   -H "x-api-key: $ANTHROPIC_ADMIN_KEY"
 ```
-
-
-
-Both the `speeds[]` filter and the `speed` group_by value require the `fast-mode-2026-02-01` beta header.
 
 ### Time granularity limits
 

@@ -2,7 +2,7 @@
 title: "AI agents | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/agents"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:34Z"
+fetched_at: "2026-10-23T06:29:51Z"
 tags: ["agents", "case-studies", "enterprise", "security"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["agents", "case-studies", "enterprise", "security"]
 
 With Claude, you can build AI agents that plan, act, and collaborate more effectively.
 
-[Start building (opens in new tab)](../04-API-Reference/Other/usage-limits.md)[Contact sales](https://www.claude.com/contact-sales)
+[Start building (opens in new tab)](../04-API-Reference/Other/playground.md)[Contact sales](https://www.claude.com/contact-sales)
 
 - 
 
@@ -38,17 +38,13 @@ With Claude, you can build AI agents that plan, act, and collaborate more effect
 
 Get superior reasoning and human-quality responses.
 
-### Best model for AI agents
+### Leading model for AI agents
 
-Claude outperforms other models in AI agent scenarios from customer support to coding.
+Claude is more advanced than other AI agents in AI agent scenarios from customer support to coding.
 
 ### AI agents with a human touch
 
 Claude’s conversational style leads to true collaboration between AI agents and users.
-
-### AI that protects your brand
-
-Claude ranks highest on honesty, jailbreak resistance, and brand safety.
 
 Building effective agents
 
@@ -123,7 +119,7 @@ Claude Code is an agentic tool. Developers work with Claude directly from their 
 
 ## See why industry leaders choose Claude
 
-[Start building (opens in new tab)](../04-API-Reference/Other/usage-limits.md)[See customer stories](customers.md)
+[Start building (opens in new tab)](../04-API-Reference/Other/playground.md)[See customer stories](customers.md)
 
 - 
 
@@ -145,7 +141,7 @@ Claude Code is an agentic tool. Developers work with Claude directly from their 
 
 ## AI agent resources
 
-[Start building (opens in new tab)](../04-API-Reference/Other/usage-limits.md)
+[Start building (opens in new tab)](../04-API-Reference/Other/playground.md)
 
 
 See how other companies are building AI agents with Claude
@@ -171,7 +167,8 @@ Developer docs
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -189,12 +186,12 @@ Developer docs
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -227,7 +224,7 @@ Developer docs
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -245,6 +242,7 @@ Developer docs
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -260,7 +258,7 @@ Developer docs
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -295,7 +293,8 @@ Developer docs
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -313,12 +312,12 @@ Developer docs
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -351,7 +350,7 @@ Developer docs
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -369,6 +368,7 @@ Developer docs
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -384,7 +384,7 @@ Developer docs
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Finvites%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Finvites%2Flist)
 
 
 
@@ -227,7 +227,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -236,8 +236,8 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Invites](https://platform.claude.com/docs/en/api/http/beta/organization/invites)
 
 # List Invites
@@ -388,7 +388,7 @@ RBAC group IDs recorded on the Invite (Claude Enterprise organizations), to be a
 
 
 
-role: [BetaOrganizationRole](http-beta-organization.md#beta_organization_role)
+role: [BetaOrganizationRole](platform-claude-com-http-beta-organization.md#beta_organization_role)
 
 
 

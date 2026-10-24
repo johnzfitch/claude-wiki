@@ -1,6 +1,6 @@
 # Models
 
-83 pages. The full text of every page is in [llms.txt](llms.txt).
+84 pages. The full text of every page is in [llms.txt](llms.txt).
 
 - [Adapt to new model personas after deprecations | Claude Help Center](adapting-to-new-model-personas-after-deprecations.md) — Model deprecations and retirements are routine parts of the model lifecycle. While we would like to keep past models publicly available as we continue to…
 - [Applying Claude Opus 4.5's strengths to your everyday work | Claude by Anthropic](applying-claude-opus-4-5-s-strengths-to-your-everyday-work.md) — Learn how Claude Opus 4.5 excels at complex multi-step work including long conversations, polished document creation, and sophisticated coding.
@@ -8,32 +8,34 @@
 - [Can I use my Outputs to train an AI model? | Claude Help Center](can-i-use-my-outputs-to-train-an-ai-model.md) — When you use Claude, you own the Outputs generated from your Inputs. However, there are important restrictions on using these Outputs to train AI models which…
 - [Choosing the right model - Claude Platform Docs](about-claude-models-choosing-a-model.md) — Choosing a Claude model means balancing capabilities, speed, and cost. This guide covers the questions to ask, two ways to pick a starting model, and how to…
 - [Claude Code model configuration | Claude Help Center](claude-code-model-configuration.md) — This guide shows you three ways to change which Claude model you're using with Claude Code: the quick /model command for instant changes, the --model flag for…
-- [Claude Fable 5 - Claude Platform Docs](models-fable-5-overview.md) — Although Claude Fable 5 is still available, you should consider migrating to Claude Fable 5.1 for improved performance.
+- [Claude Fable 5 - Claude Platform Docs](models-fable-5-overview.md) — Although Claude Fable 5 is still available, you should consider migrating to Claude Fable 5.1.
 - [Claude Fable 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-fable-5.md) — See updates to the core system prompt for Claude Fable 5 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Fable 5.1 - Claude Platform Docs](models-fable-5-1-overview.md) — For demanding reasoning and long-horizon agentic work
+- [Claude Fable 5.1 and Claude Mythos 5.1 migration guide - Claude Platform Docs](models-fable-5-1-migration-guide.md) — Switch to Claude Fable 5.1 and Claude Mythos 5.1 from Claude Fable 5, Claude Mythos 5, Claude Opus 5, or Claude Opus 4.8 with this migration guide. The…
 - [Claude Fable 5.1 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-fable-5-1.md) — See updates to the core system prompt for Claude Fable 5.1 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Haiku 3 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-3.md) — See updates to the core system prompt for Claude Haiku 3 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Haiku 3.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-3-5.md) — See updates to the core system prompt for Claude Haiku 3.5 on claude.ai and the Claude iOS app and Claude Android app.
-- [Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-overview.md) — The fastest model with near-frontier intelligence
+- [Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-overview.md) — Although Claude Haiku 4.5 is still available, you should consider migrating to Claude Haiku 5.5.
+- [Claude Haiku 4.5 is leaving the model selector | Claude Help Center](claude-haiku-4-5-is-leaving-the-model-selector.md) — On October 29, 2026, we’re removing Claude Haiku 4.5 from the model selector in chat, Claude Cowork, and Claude Design on the Free, Pro, and Max plans…
 - [Claude Haiku 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-4-5.md) — See updates to the core system prompt for Claude Haiku 4.5 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Haiku 5.5 - Claude Platform Docs](models-haiku-5-5-overview.md) — For high-volume, latency-sensitive tasks such as classification, extraction, and routing
-- [Claude Haiku 5.5 migration guide - Claude Platform Docs](models-haiku-5-5-migration-guide.md) — Switch to Claude Haiku 5.5 from earlier Haiku models with this migration guide. The guidance to enable Claude Haiku 5.5 includes the new model ID, each…
-- [Claude Haiku 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-5-5.md) — See updates to the core system prompt for Claude Haiku 5.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Haiku 5.5 migration guide - Claude Platform Docs](models-haiku-5-5-migration-guide.md) — Switch to Claude Haiku 5.5 from earlier Haiku models with this migration guide. The guidance to enable Claude Haiku 5.5 includes the new model ID, settings…
+- [Claude Haiku 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-haiku-5-5.md) — See updates to the core system prompt for Claude Haiku 5.5 on claude.ai, the Claude iOS app, and the Claude Android app.
 - [Claude Help Center](using-claude-for-financial-services-for-analysis-and-modeling.md) — Uh oh. That page doesn’t exist.
 - [Claude Mythos 5 - Claude Platform Docs](models-mythos-5-overview.md) — Most capable model for cybersecurity and biology research
-- [Claude Mythos 5.1 - Claude Platform Docs](models-mythos-5-1-overview.md) — Claude Fable 5.1 for Project Glasswing participants
+- [Claude Mythos 5.1 - Claude Platform Docs](models-mythos-5-1-overview.md) — Claude Fable 5.1 for verified organizations
 - [Claude Opus 3 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-3.md) — See updates to the core system prompt for Claude Opus 3 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Opus 4 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4.md) — See updates to the core system prompt for Claude Opus 4 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Opus 4.1 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-1.md) — See updates to the core system prompt for Claude Opus 4.1 on claude.ai and the Claude iOS app and Claude Android app.
-- [Claude Opus 4.5 - Claude Platform Docs](models-opus-4-5-overview.md) — Although Claude Opus 4.5 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 4.5 - Claude Platform Docs](models-opus-4-5-overview.md) — Although Claude Opus 4.5 is still available, you should consider migrating to Claude Opus 5.5.
 - [Claude Opus 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-5.md) — See updates to the core system prompt for Claude Opus 4.5 on claude.ai and the Claude iOS app and Claude Android app.
-- [Claude Opus 4.6 - Claude Platform Docs](models-opus-4-6-overview.md) — Although Claude Opus 4.6 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 4.6 - Claude Platform Docs](models-opus-4-6-overview.md) — Although Claude Opus 4.6 is still available, you should consider migrating to Claude Opus 5.5.
 - [Claude Opus 4.6 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-6.md) — See updates to the core system prompt for Claude Opus 4.6 on claude.ai and the Claude iOS app and Claude Android app.
-- [Claude Opus 4.7 - Claude Platform Docs](models-opus-4-7-overview.md) — Although Claude Opus 4.7 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 4.7 - Claude Platform Docs](models-opus-4-7-overview.md) — Although Claude Opus 4.7 is still available, you should consider migrating to Claude Opus 5.5.
 - [Claude Opus 4.7 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-7.md) — See updates to the core system prompt for Claude Opus 4.7 on claude.ai and the Claude iOS app and Claude Android app.
-- [Claude Opus 4.8 - Claude Platform Docs](models-opus-4-8-overview.md) — Although Claude Opus 4.8 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 4.8 - Claude Platform Docs](models-opus-4-8-overview.md) — Although Claude Opus 4.8 is still available, you should consider migrating to Claude Opus 5.5.
 - [Claude Opus 4.8 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-4-8.md) — See updates to the core system prompt for Claude Opus 4.8 on claude.ai and the Claude iOS app and Claude Android app.
-- [Claude Opus 5 - Claude Platform Docs](models-opus-5-overview.md) — Although Claude Opus 5 is still available, you should consider migrating to Claude Opus 5.5 for improved performance.
+- [Claude Opus 5 - Claude Platform Docs](models-opus-5-overview.md) — Although Claude Opus 5 is still available, you should consider migrating to Claude Opus 5.5.
 - [Claude Opus 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-opus-5.md) — See updates to the core system prompt for Claude Opus 5 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Opus 5.5 - Claude Platform Docs](models-opus-5-5-overview.md) — For long-running agentic coding and knowledge work
 - [Claude Opus 5.5 migration guide - Claude Platform Docs](models-opus-5-5-migration-guide.md) — Switch to Claude Opus 5.5 from earlier Opus models or Claude Sonnet 5 with this migration guide. The guidance to enable Claude Opus 5.5 includes request…
@@ -46,29 +48,28 @@
 - [Claude Sonnet 4 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4.md) — See updates to the core system prompt for Claude Sonnet 4 on claude.ai and the Claude iOS app and Claude Android app.
 - [Claude Sonnet 4.5 - Claude Platform Docs](models-sonnet-4-5-overview.md) — Claude Sonnet 4.5 is deprecated: it is still functional but no longer recommended, and retires on November 30, 2026. Recommended replacement: Claude Sonnet 5.5.
 - [Claude Sonnet 4.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-5.md) — See updates to the core system prompt for Claude Sonnet 4.5 on claude.ai and the Claude iOS app and Claude Android app.
-- [Claude Sonnet 4.6 - Claude Platform Docs](models-sonnet-4-6-overview.md) — Although Claude Sonnet 4.6 is still available, you should consider migrating to Claude Sonnet 5.5 for improved performance.
+- [Claude Sonnet 4.6 - Claude Platform Docs](models-sonnet-4-6-overview.md) — Although Claude Sonnet 4.6 is still available, you should consider migrating to Claude Sonnet 5.5.
 - [Claude Sonnet 4.6 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-4-6.md) — See updates to the core system prompt for Claude Sonnet 4.6 on claude.ai and the Claude iOS app and Claude Android app.
-- [Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-overview.md) — Although Claude Sonnet 5 is still available, you should consider migrating to Claude Sonnet 5.5 for improved performance.
-- [Claude Sonnet 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5.md) — See updates to the core system prompt for Claude Sonnet 5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-overview.md) — Although Claude Sonnet 5 is still available, you should consider migrating to Claude Sonnet 5.5.
+- [Claude Sonnet 5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5.md) — See updates to the core system prompt for Claude Sonnet 5 on claude.ai, the Claude iOS app, and the Claude Android app.
 - [Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-overview.md) — The best combination of speed and intelligence
-- [Claude Sonnet 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5-5.md) — See updates to the core system prompt for Claude Sonnet 5.5 on claude.ai and the Claude iOS app and Claude Android app.
+- [Claude Sonnet 5.5 migration guide - Claude Platform Docs](models-sonnet-5-5-migration-guide.md) — Switch to Claude Sonnet 5.5 from earlier Sonnet models or Claude Haiku 4.5 with this migration guide. The guidance to enable Claude Sonnet 5.5 includes…
+- [Claude Sonnet 5.5 system prompts - Claude Platform Docs](release-notes-system-prompts-claude-sonnet-5-5.md) — See updates to the core system prompt for Claude Sonnet 5.5 on claude.ai, the Claude iOS app, and the Claude Android app.
 - [Create professional results across tools with Claude Sonnet 4.5 | Claude by Anthropic](create-professional-results-across-tools-with-claude-sonnet-4-5.md) — Use Claude Sonnet 4.5's code execution and file creation to build professional presentations, spreadsheets, and documents efficiently.
 - [Data retention practices for Covered Models | Claude Help Center](data-retention-practices-for-covered-models-claude-help-center.md) — To ensure we’re responsibly deploying covered models, we are requiring limited data retention and review as part of our safety work. Prompts submitted to, and…
 - [Finetuning Claude 3 Haiku on Bedrock](claude-cookbooks-finetuning-finetuning-on-bedrock.md) — In this notebook, we\'ll walk you through the process of finetuning
 - [Getting the most out of Sonnet 4.5 in Claude.ai | Claude by Anthropic](getting-the-most-out-of-sonnet-4-5-in-claude-ai.md) — Maximize Claude Sonnet 4.5's capabilities for creating professional documents, writing code, conducting research, and completing complex tasks.
 - [Introducing Claude Fable 5 and Claude Mythos 5 - Claude Platform Docs](about-claude-models-introducing-claude-fable-5-and-claude-mythos-5.md) — Claude Fable 5 and Claude Mythos 5 capabilities, API changes, and availability.
 - [Introducing Claude Fable 5 and Claude Mythos 5 - Claude Platform Docs](models-fable-5-introducing-claude-fable-5-and-claude-mythos-5.md) — Claude Fable 5 and Claude Mythos 5 capabilities, API changes, and availability.
-- [Migrating to Claude Fable 5.1 and Claude Mythos 5.1 - Claude Platform Docs](models-fable-5-1-migration-guide.md) — Migrate to Claude Fable 5.1 and Claude Mythos 5.1 from Claude Fable 5, Claude Mythos 5, Claude Opus 5, or Claude Opus 4.8: model IDs, breaking changes, and…
 - [Migrating to Claude Haiku 4.5 - Claude Platform Docs](models-haiku-4-5-migration-guide.md) — Migrate to Claude Haiku 4.5 from earlier Haiku models: model IDs, breaking changes, and a migration checklist.
 - [Migrating to Claude Mythos 5 and Claude Fable 5 - Claude Platform Docs](models-fable-5-migration-guide.md) — Migrate to Claude Mythos 5 and Claude Fable 5 from Claude Mythos Preview, Claude Opus 5, or Claude Opus 4.8: model IDs, API changes, and migration checklists.
 - [Migrating to Claude Opus 5 - Claude Platform Docs](models-opus-5-migration-guide.md) — Migrate to Claude Opus 5 from earlier Claude models: model IDs, breaking changes, recommended changes, and migration checklists.
 - [Migrating to Claude Sonnet 5 - Claude Platform Docs](models-sonnet-5-migration-guide.md) — Migrate to Claude Sonnet 5 from earlier Claude models: model IDs, breaking changes, and migration checklists.
-- [Migrating to Claude Sonnet 5.5 - Claude Platform Docs](models-sonnet-5-5-migration-guide.md) — Move code to Claude Sonnet 5.5 from Claude Sonnet 5, Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Sonnet 4, Claude 3.7 Sonnet, or Claude Haiku 4.5: settings…
 - [Migration guides - Claude Platform Docs](about-claude-models-migration-guide.md) — Guides for migrating to the latest Claude models from previous Claude versions
 - [Model deprecations - Claude Platform Docs](about-claude-model-deprecations.md) — See which Claude models are active, deprecated, or retired, and find retirement dates and recommended replacements for models and API parameters.
 - [Model IDs and versioning - Claude Platform Docs](about-claude-models-model-ids-and-versions.md) — How Claude model IDs are structured and versioned, including the dateless format introduced with the Claude 4.6 generation and what it means for stability.
 - [Models overview - Claude Platform Docs](about-claude-models-overview.md) — Claude is a family of state-of-the-art large language models developed by Anthropic. Compare the current lineup, find the model ID for every platform, and open…
-- [Optimizing for cost and intelligence - Claude Platform Docs](about-claude-models-optimizing-for-cost-and-intelligence.md) — Balance cost and intelligence on the Claude Platform, with measured results for prompt caching, effort, model choice, budgets, and multi-model strategies.
+- [Optimizing for cost and intelligence - Claude Platform Docs](about-claude-models-optimizing-for-cost-and-intelligence.md) — Balance cost and intelligence on the Claude Platform, with measured results for prompt caching, effort, model choice, output caps, and multi-model strategies.
 - [Parallel tool calls on Claude 3.7 Sonnet](claude-cookbooks-tool-use-parallel-tools.md) — Claude 3.7 Sonnet may be less likely to make make parallel tool calls in
 - [Summarizing Web Page Content with Claude 3 Haiku](claude-cookbooks-misc-read-web-pages-with-haiku.md) — In this recipe, we\'ll learn how to fetch the content of a web page
 - [System prompts - Claude Platform Docs](release-notes-system-prompts-overview.md) — See updates to the core system prompts on claude.ai and the Claude iOS app and Claude Android app.

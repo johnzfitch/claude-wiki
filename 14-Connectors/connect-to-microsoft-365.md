@@ -2,7 +2,7 @@
 title: "Connect to Microsoft 365 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15183774-connect-to-microsoft-365"
 category: "14-Connectors"
-fetched_at: "2026-10-10T06:24:44Z"
+fetched_at: "2026-10-23T06:29:07Z"
 tags: ["connectors"]
 ---
 
@@ -19,7 +19,7 @@ The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Te
 
 You'll need a work Microsoft 365 account tied to a Microsoft Entra tenant. Personal Microsoft accounts (such as @outlook.com, @hotmail.com, or @live.com) can't be used. If you're not sure whether your account qualifies, check with your IT administrator.
 
-**Important:** Before anyone in your organization can connect Microsoft 365, an admin needs to set it up. On Team and Enterprise plans, your Claude organization Owner enables Microsoft 365 for the organization. In every tenant, a Microsoft Entra Global Administrator also needs to grant a one-time consent. For details on the admin side, see **[Set up the Microsoft 365 connector](12542951.md)**.
+**Important:** Before anyone in your organization can connect Microsoft 365, an admin needs to set it up. On Team and Enterprise plans, your Claude organization Owner enables Microsoft 365 for the organization. In every tenant, a Microsoft Entra Global Administrator also needs to grant a one-time consent. For details on the admin side, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**.
 
 ## Connect Microsoft 365
 
@@ -159,7 +159,7 @@ Microsoft 365 stays under your control once connected. A few things to keep in m
 
 - **You can disconnect any time.** Use the steps above to remove Claude's access.
 
-For the full list of permissions the integration requests, see **[Set up the Microsoft 365 connector](12542951.md)** or the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-)**.
+For the full list of permissions the integration requests, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)** or the **[Microsoft 365 connector security guide](https://support.claude.com/en/articles/12684923-)**.
 
 ------------------------------------------------------------------------
 

@@ -2,7 +2,7 @@
 title: "Create a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/create"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-10T06:24:52Z"
+fetched_at: "2026-10-20T06:38:49Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -53,7 +53,7 @@ Describe the mod
 
 Ask for the mod in your own words, for example `make a mod that shows the current git branch above the prompt`. Claude writes the mod in a directory of its own in the session’s mods folder, which is `~/.claude/dev-mods/` followed by the session’s ID. A mod’s full path looks like `~/.claude/dev-mods/3f2a9c1e-5b7d-4e8a-9c21-6d0f4b8a7e13/git-branch/`.
 
-In the `default` and `acceptEdits` [permission modes](../02-Claude-Code-CLI/permission-modes.md#protected-paths), Claude Code asks before Claude creates each of the mod’s files, because `~/.claude` is a protected path. Approve each file as it comes up.
+In the `default` and `acceptEdits` [permission modes](../02-Claude-Code-CLI/permission-modes.md), Claude Code asks you to approve each of the mod’s files before Claude creates it, because the mods folder is a [protected path](../02-Claude-Code-CLI/permission-modes.md#protected-paths). Approve each file as it comes up.
 
 2
 

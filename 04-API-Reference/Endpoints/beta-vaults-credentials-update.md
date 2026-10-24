@@ -1,8 +1,8 @@
 ---
-title: "Update Credential - Claude API Reference"
+title: "Update a Credential - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials/update"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:22Z"
+fetched_at: "2026-10-20T06:39:49Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults%2Fcredentials%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults%2Fcredentials%2Fupdate)
 
 
 
@@ -62,45 +62,45 @@ Deployment Runs
 Vaults
 
 
-Create Vault
+Create a Vault
 
 
 List Vaults
 
 
-Get Vault
+Retrieve a Vault
 
 
-Update Vault
+Update a Vault
 
 
-Delete Vault
+Delete a Vault
 
 
-Archive Vault
+Archive a Vault
 
 Credentials
 
 
-Create Credential
+Create a Credential
 
 
 List Credentials
 
 
-Get Credential
+Retrieve a Credential
 
 
-Update Credential
+Update a Credential
 
 
-Delete Credential
+Delete a Credential
 
 
-Archive Credential
+Archive a Credential
 
 
-Validate Credential
+Validate an MCP OAuth Credential
 
 Memory Stores
 
@@ -161,7 +161,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -171,9 +171,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -244,13 +246,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -258,9 +262,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -269,15 +273,21 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Vaults](https://platform.claude.com/docs/en/api/http/beta/vaults)
 4.  [Credentials](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials)
 
-# Update Credential
+# Update a Credential
+
+Copy page
+
+
+
+cURL
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}
 
-Update Credential
+Update a Credential
 
 ##### Path parameters
 
@@ -297,11 +307,21 @@ Unique identifier of the credential to update.
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -509,6 +529,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -527,7 +551,7 @@ auth: optional [BetaManagedAgentsMCPOAuthUpdateParams](https://platform.claude.c
 
 
 
-Updated authentication configuration. The `type` is immutable; the variant sent must match the stored credential's type.
+New authentication settings for the credential. The `type` must match the credential's current type, which can't be changed.
 
 One of the following:
 
@@ -549,7 +573,7 @@ access_token: optional string or null
 
 
 
-Updated OAuth access token.
+The new OAuth access token to replace the stored one.
 
 minLength1
 
@@ -561,7 +585,11 @@ expires_at: optional string or null
 
 
 
-A timestamp in RFC 3339 format
+When the credential's access token expires, in RFC 3339. Leave it out to keep the stored expiry.
+
+If you send a new `access_token`, send its `expires_at` too, or the new token keeps the old expiry.
+
+Must be in the future.
 
 formatdate-time
 
@@ -591,7 +619,7 @@ token: optional string or null
 
 
 
-Updated static bearer token value.
+The new static bearer token to replace the stored one.
 
 minLength1
 
@@ -633,7 +661,7 @@ BetaManagedAgentsCredential object{ type: "vault_credential", id, archived_at, 6
 
 A credential stored in a vault. Sensitive fields are never returned in responses.
 
-Update Credential
+Update a Credential
 
 cURL
 
@@ -659,7 +687,7 @@ Response 200
 
 ```python
 {
-  "id": "vcrd_011CZkZEMt8gZan2iYOQfSkw",
+  "id": "vcrd_011CZkZEMt8gZan2iYPQfSkw",
   "archived_at": null,
   "auth": {
     "mcp_server_url": "https://example-server.modelcontextprotocol.io/sse",
@@ -684,7 +712,7 @@ Response 200
 
 ```python
 {
-  "id": "vcrd_011CZkZEMt8gZan2iYOQfSkw",
+  "id": "vcrd_011CZkZEMt8gZan2iYPQfSkw",
   "archived_at": null,
   "auth": {
     "mcp_server_url": "https://example-server.modelcontextprotocol.io/sse",

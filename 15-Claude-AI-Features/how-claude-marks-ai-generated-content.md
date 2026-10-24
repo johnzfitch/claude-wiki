@@ -2,7 +2,7 @@
 title: "How Claude marks AI-generated content | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:22Z"
+fetched_at: "2026-10-23T06:29:31Z"
 tags: ["claude-ai"]
 ---
 
@@ -45,7 +45,7 @@ As AI-generated content becomes commonplace, greater transparency and signals ab
 
 [TABLE]
 
-*\*Rollout on Amazon Bedrock will complete by October 17.*
+*\*Rollout on Amazon Bedrock will complete by October 23.*
 
 Consistent with our commitments under the Code, Anthropic is adding watermarks to outputs from models released before August 2, 2026.
 

@@ -2,7 +2,7 @@
 title: "Anthropic Education Report: The AI Fluency Index · Claude Academy"
 source_url: "https://www.anthropic.com/research/AI-fluency-index"
 category: "19-Reference"
-fetched_at: "2026-09-15T06:30:16Z"
+fetched_at: "2026-10-21T06:30:17Z"
 tags: ["news-research"]
 ---
 
@@ -20,7 +20,7 @@ Previous Anthropic Education Reports have studied how [university students(opens
 
 In this report, we begin answering that question. We track the presence or absence of a taxonomy of behaviors that we take to represent AI fluency across a large sample of anonymized conversations.
 
-In line with our recent [Economic Index(opens in new tab)](research-economic-index-primitives.md), we find that the most common expression of AI fluency is *augmentative*—treating AI as a thought partner, rather than delegating work entirely. In fact, these conversations exhibit more than double the number of AI fluency behaviors than quick, back-and-forth chats.
+In line with our recent [Economic Index(opens in new tab)](economic-index-primitives.md), we find that the most common expression of AI fluency is *augmentative*—treating AI as a thought partner, rather than delegating work entirely. In fact, these conversations exhibit more than double the number of AI fluency behaviors than quick, back-and-forth chats.
 
 But we also find that when AI produces artifacts—including apps, code, documents, or interactive tools—users are *less* likely to question its reasoning (-3.1 percentage points) or identify missing context (-5.2pp). This aligns with related patterns we observed in our [recent study on coding skills(opens in new tab)](ai-assistance-coding-skills.md).
 
@@ -28,7 +28,7 @@ These initial findings present us with a baseline that we can use to study the d
 
 ## Measuring AI fluency[](#measuring-ai-fluency)
 
-To quantify AI fluency, we use the [4D AI Fluency Framework(opens in new tab)](https://www.anthropic.com/collections/ai-fluency), developed by Professors Rick Dakan and Joseph Feller in collaboration with Anthropic. This framework helps us define 24 specific behaviors that we take to exemplify safe and effective human-AI collaboration.
+To quantify AI fluency, we use the [4D AI Fluency Framework(opens in new tab)](https://www.anthropic.com/collections/collaborating-with-ai), developed by Professors Rick Dakan and Joseph Feller in collaboration with Anthropic. This framework helps us define 24 specific behaviors that we take to exemplify safe and effective human-AI collaboration.
 
 Of these 24 behaviors, 11 (listed in the graph below) are directly observable when humans interact with Claude on Claude.ai or Claude Code. The other 13 (including things like being honest about AI's role in work, or considering the consequences of sharing AI-generated output), happen outside Claude.ai's chat interface, so they're much harder for us to track. These unobservable behaviors are arguably some of the most consequential dimensions of AI fluency, so in future work we plan to use qualitative methods to assess them.
 

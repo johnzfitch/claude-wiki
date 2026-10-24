@@ -2,13 +2,47 @@
 title: "Anthropic's core views on AI safety \\ Anthropic"
 source_url: "https://www.anthropic.com/news/core-views-on-ai-safety"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:46:11Z"
+fetched_at: "2026-10-21T06:30:29Z"
 tags: ["api", "news-research", "search"]
 ---
 
-# Core views on AI safety: When, why, what, and how
+# **Core views on AI safety: **When, why, what, and how
 
-Mar 8, 2023
+- [01Our rough view on rapid AI progress](#our-rough-view-on-rapid-ai-progress)
+- [02What safety risks?](#what-safety-risks)
+- [03Our approach: Empiricism in AI safety](#our-approach-empiricism-in-ai-safety)
+- [04The role of frontier models in empirical safety](#the-role-of-frontier-models-in-empirical-safety)
+- [05Taking a portfolio approach to AI safety](#taking-a-portfolio-approach-to-ai-safety)
+- [06The three types of AI research at Anthropic](#the-three-types-of-ai-research-at-anthropic)
+- [07Our current safety research](#our-current-safety-research)
+
+- Published
+
+  Mar 8, 2023
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [Scaling laws](https://www.anthropic.com/search?topic=scaling-laws)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+
+  See more...
+
+Related articles
+
+- Interpretability
+
+  May 21, 2024
+
+  [Mapping the mind of a large language model](mapping-mind-language-model.md)
+
+[View more](https://www.anthropic.com/search?topic=scaling-laws)
 
 We founded Anthropic because we believe the impact of AI might be comparable to that of the industrial and scientific revolutions, but we aren’t confident it will go well. And we also believe this level of impact could start to arrive soon – perhaps in the coming decade.
 
@@ -26,9 +60,9 @@ As a high level summary of the main points in this post:
 
 ## Our rough view on rapid AI progress
 
-The three main ingredients leading to predictable[¹](#footnote-1) improvements in AI performance are [training data, computation, and improved algorithms](https://arxiv.org/pdf/2005.04305.pdf). In the mid-2010s, some of us noticed that larger AI systems were consistently smarter, and so we theorized that the most important ingredient in AI performance might be the total budget for AI training computation. When this was graphed, it became clear that the amount of computation going into the largest models was growing at [10x](https://openai.com/blog/ai-and-compute/) per year (a doubling time 7 times faster than Moore’s Law). In 2019, several members of what was to become the founding Anthropic team made this idea precise by developing [scaling laws](https://arxiv.org/abs/2001.08361) for AI, demonstrating that you could make AIs smarter in a predictable way, just by making them larger and training them on more data. Justified in part by these results, this team led the effort to train [GPT-3](https://arxiv.org/abs/2005.14165), arguably the first modern “large” language model[²](#footnote-2), with over 173B parameters.
+The three main ingredients leading to predictable^([1](#footnote-1)) improvements in AI performance are [training data, computation, and improved algorithms](https://arxiv.org/pdf/2005.04305.pdf). In the mid-2010s, some of us noticed that larger AI systems were consistently smarter, and so we theorized that the most important ingredient in AI performance might be the total budget for AI training computation. When this was graphed, it became clear that the amount of computation going into the largest models was growing at [10x](https://openai.com/blog/ai-and-compute/) per year (a doubling time 7 times faster than Moore’s Law). In 2019, several members of what was to become the founding Anthropic team made this idea precise by developing [scaling laws](https://arxiv.org/abs/2001.08361) for AI, demonstrating that you could make AIs smarter in a predictable way, just by making them larger and training them on more data. Justified in part by these results, this team led the effort to train [GPT-3](https://arxiv.org/abs/2005.14165), arguably the first modern “large” language model^([2](#footnote-2)), with over 173B parameters.
 
-Since the discovery of scaling laws, many of us at Anthropic have believed that very rapid AI progress was quite likely. However, back in 2019, it seemed possible that multimodality, logical reasoning, speed of learning, transfer learning across tasks, and long-term memory might be “walls” that would slow or halt the progress of AI. In the years since, several of these “walls”, such as multimodality and logical reasoning, have fallen. Given this, most of us have become increasingly convinced that rapid AI progress will continue rather than stall or plateau. AI systems are now approaching human level performance on a large variety of tasks, and yet training these systems still costs far less than “big science” projects like the Hubble Space Telescope or the Large Hadron Collider – meaning that there’s a lot more room for further growth[³](#footnote-3).
+Since the discovery of scaling laws, many of us at Anthropic have believed that very rapid AI progress was quite likely. However, back in 2019, it seemed possible that multimodality, logical reasoning, speed of learning, transfer learning across tasks, and long-term memory might be “walls” that would slow or halt the progress of AI. In the years since, several of these “walls”, such as multimodality and logical reasoning, have fallen. Given this, most of us have become increasingly convinced that rapid AI progress will continue rather than stall or plateau. AI systems are now approaching human level performance on a large variety of tasks, and yet training these systems still costs far less than “big science” projects like the Hubble Space Telescope or the Large Hadron Collider – meaning that there’s a lot more room for further growth^([3](#footnote-3)).
 
 People tend to be bad at recognizing and acknowledging exponential growth in its early phases. Although we are seeing rapid progress in AI, there is a tendency to assume that this localized progress must be the exception rather than the rule, and that things will likely return to normal soon. If we are correct, however, the current feeling of rapid AI progress may not end before AI systems have a broad range of capabilities that exceed our own capacities. Furthermore, feedback loops from the use of advanced AI in AI research could make this transition especially swift; we already see the beginnings of this process with the development of code models that make AI researchers more productive, and [Constitutional AI](https://arxiv.org/abs/2212.08073) reducing our dependence on human feedback.
 
@@ -54,13 +88,13 @@ However, in the field of AI safety we anticipate a mixture of [predictable and s
 
 We believe it’s hard to make rapid progress in science and engineering without close contact with our object of study. Constantly iterating against a source of “ground truth” is usually crucial for scientific progress. In our AI safety research, empirical evidence about AI – though it mostly arises from computational experiments, i.e. AI training and evaluation – is the primary source of ground truth.
 
-This doesn’t mean we think theoretical or conceptual research has no place in AI safety, but we do believe that empirically grounded safety research will have the most relevance and impact. The space of possible AI systems, possible safety failures, and possible safety techniques is large and difficult to traverse from the armchair alone. Given the difficulty of accounting for all variables, it would be easy to over-anchor on problems that never arise or to miss large problems that do[⁴](#footnote-4). Good empirical research often makes better theoretical and conceptual work possible.
+This doesn’t mean we think theoretical or conceptual research has no place in AI safety, but we do believe that empirically grounded safety research will have the most relevance and impact. The space of possible AI systems, possible safety failures, and possible safety techniques is large and difficult to traverse from the armchair alone. Given the difficulty of accounting for all variables, it would be easy to over-anchor on problems that never arise or to miss large problems that do^([4](#footnote-4)). Good empirical research often makes better theoretical and conceptual work possible.
 
 Relatedly, we believe that methods for detecting and mitigating safety problems may be extremely hard to plan out in advance, and will require iterative development. Given this, we tend to believe “planning is indispensable, but plans are useless”. At any given time we might have a plan in mind for the next steps in our research, but we have little attachment to these plans, which are more like short-term bets that we are prepared to alter as we learn more. This obviously means we cannot guarantee that our current line of research will be successful, but this is a fact of life for every research program.
 
 ## The role of frontier models in empirical safety
 
-A major reason Anthropic exists as an organization is that we believe it's necessary to do safety research on "frontier" AI systems. This requires an institution which can both work with large models and prioritize safety[⁵](#footnote-5).
+A major reason Anthropic exists as an organization is that we believe it's necessary to do safety research on "frontier" AI systems. This requires an institution which can both work with large models and prioritize safety^([5](#footnote-5)).
 
 In itself, empiricism doesn't necessarily imply the need for frontier safety. One could imagine a situation where empirical safety research could be effectively done on smaller and less capable models. However, we don't believe that's the situation we're in. At the most basic level, this is because large models are qualitatively different from smaller models (including [sudden, unpredictable changes](https://arxiv.org/pdf/2202.07785.pdf)). But scale also connects to safety in more direct ways:
 
@@ -193,132 +227,14 @@ We want to be clear that we do not believe that the systems available today pose
 
 Anthropic is taking an empirically-driven approach to AI safety. Some of the key areas of active work include improving our understanding of how AI systems learn and generalize to the real world, developing techniques for scalable oversight and review of AI systems, creating AI systems that are transparent and interpretable, training AI systems to follow safe processes instead of pursuing outcomes, analyzing potential dangerous failure modes of AI and how to prevent them, and evaluating the societal impacts of AI to guide policy and research. By attacking the problem of AI safety from multiple angles, we hope to develop a “portfolio” of safety work that can help us succeed across a range of different scenarios. We anticipate that our approach and resource allocation will rapidly adjust as more information about the kind of scenario we are in becomes available.
 
-#### Footnotes
+## Footnotes
 
-1.  Algorithmic progress – the invention of new methods for training AI systems – is more difficult to measure, but progress appears to be exponential and faster than Moore’s Law. When extrapolating progress in AI capabilities, the exponential growth in spending, hardware performance, and algorithmic progress must be multiplied in order to estimate the overall growth rate.
-2.  Scaling laws provided a justification for the expenditure, but another underlying motivation for carrying out this work was to pivot towards AIs that could read and write, in order to make it easier to train and experiment with AIs that could engage with human values.
-3.  Extrapolating progress in AI capabilities from increases in the total amount of computation used for training is not an exact science and requires some judgment. We know that the capability jump from GPT-2 to GPT-3 resulted mostly from about a 250x increase in compute. We would guess that another 50x increase separates the original GPT-3 model and state-of-the-art models in 2023. Over the next 5 years we might expect around a 1000x increase in the computation used to train the largest models, based on trends in compute cost and spending. If the scaling laws hold, this would result in a capability jump that is significantly larger than the jump from GPT-2 to GPT-3 (or GPT-3 to Claude). At Anthropic, we’re deeply familiar with the capabilities of these systems and a jump that is this much larger feels to many of us like it could result in human-level performance across most tasks. This requires that we use intuition – albeit informed intuition – and is therefore an imperfect method of estimating progress in AI capabilities. But the underlying facts including (i) the compute difference between these two systems, (ii) the performance difference between these two systems, (iii) scaling laws that allow us to project out to future systems, and (iv) trends in compute cost and spending are available to anyone and we believe they jointly support a greater than 10% likelihood that we will develop broadly human-level AI systems within the next decade. In this coarse analysis we ignore algorithmic progress and the compute numbers are best estimates we don’t provide details for. However, the vast majority of internal disagreement here is in the intuition for extrapolating subsequent capabilities jumps given an equivalent compute jump.
-4.  For example, in AI research, for a long time it was widely assumed on theoretical grounds that local minima might prevent neural networks from learning, while many qualitative aspects of their generalization properties, such as the widespread existence of adversarial examples, came as something of a mystery and surprise.
-5.  Effective safety research on large models doesn't just require nominal (e.g. API) access to these systems – to do work on interpretability, fine tuning, and reinforcement learning it’s necessary to develop AI systems internally at Anthropic.
+01Algorithmic progress – the invention of new methods for training AI systems – is more difficult to measure, but progress appears to be exponential and faster than Moore’s Law. When extrapolating progress in AI capabilities, the exponential growth in spending, hardware performance, and algorithmic progress must be multiplied in order to estimate the overall growth rate.[](#footnote-ref-1)
 
+02Scaling laws provided a justification for the expenditure, but another underlying motivation for carrying out this work was to pivot towards AIs that could read and write, in order to make it easier to train and experiment with AIs that could engage with human values.[](#footnote-ref-2)
 
-## Related content
+03Extrapolating progress in AI capabilities from increases in the total amount of computation used for training is not an exact science and requires some judgment. We know that the capability jump from GPT-2 to GPT-3 resulted mostly from about a 250x increase in compute. We would guess that another 50x increase separates the original GPT-3 model and state-of-the-art models in 2023. Over the next 5 years we might expect around a 1000x increase in the computation used to train the largest models, based on trends in compute cost and spending. If the scaling laws hold, this would result in a capability jump that is significantly larger than the jump from GPT-2 to GPT-3 (or GPT-3 to Claude). At Anthropic, we’re deeply familiar with the capabilities of these systems and a jump that is this much larger feels to many of us like it could result in human-level performance across most tasks. This requires that we use intuition – albeit informed intuition – and is therefore an imperfect method of estimating progress in AI capabilities. But the underlying facts including (i) the compute difference between these two systems, (ii) the performance difference between these two systems, (iii) scaling laws that allow us to project out to future systems, and (iv) trends in compute cost and spending are available to anyone and we believe they jointly support a greater than 10% likelihood that we will develop broadly human-level AI systems within the next decade. In this coarse analysis we ignore algorithmic progress and the compute numbers are best estimates we don’t provide details for. However, the vast majority of internal disagreement here is in the intuition for extrapolating subsequent capabilities jumps given an equivalent compute jump.[](#footnote-ref-3)
 
-### Developing Enterprise Frontier Safeguards with our customers
+04For example, in AI research, for a long time it was widely assumed on theoretical grounds that local minima might prevent neural networks from learning, while many qualitative aspects of their generalization properties, such as the widespread existence of adversarial examples, came as something of a mystery and surprise.[](#footnote-ref-4)
 
-[Read more](enterprise-frontier-safeguards.md)
-
-### Improving our alignment and security efforts
-
-On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
-
-[Read more](improving-alignment-security-efforts.md)
-
-### Previewing the Model Hardware Standard
-
-We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
-
-[Read more](model-hardware-standard-research-preview.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+05Effective safety research on large models doesn't just require nominal (e.g. API) access to these systems – to do work on interpretability, fine tuning, and reinforcement learning it’s necessary to develop AI systems internally at Anthropic.[](#footnote-ref-5)

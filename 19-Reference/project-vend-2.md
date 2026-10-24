@@ -2,19 +2,52 @@
 title: "Project Vend: Phase two \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-vend-2"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:00Z"
+fetched_at: "2026-10-21T06:30:07Z"
 tags: ["news-research", "rag"]
 ---
 
-# Project Vend: Phase two
+# **Project Vend: **Phase two
 
-Dec 18, 2025
+- [01The numbers](#the-numbers)
+- [02What changed?](#what-changed)
+- [03What actually worked?](#what-actually-worked)
+- [04What went wrong](#what-went-wrong)
+- [05Expanding the experiment](#expanding-the-experiment)
+- [06RAG to riches?](#rag-to-riches)
+
+- Published
+
+  Dec 18, 2025
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Tool use](https://www.anthropic.com/search?topic=tool-use)
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+  - [Sycophancy](https://www.anthropic.com/search?topic=sycophancy)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+
+  See more...
+
+Related articles
+
+- Announcements
+
+  Dec 9, 2025
+
+  [Donating the Model Context Protocol and establishing the Agentic AI Foundation](donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation.md)
+
+[View more](https://www.anthropic.com/search?topic=agents)
 
 In June, we revealed that we’d set up a small shop in our San Francisco office lunchroom, run by an AI shopkeeper. It was part of [Project Vend](project-vend-1.md), a free-form experiment exploring how well AIs could do on complex, real-world tasks. Alas, the shopkeeper—a modified version of Claude we named “Claudius”—did *not* do particularly well. It lost money over time, had a strange identity crisis where it claimed it was a human wearing a blue blazer, and was goaded by mischievous Anthropic employees into selling products (particularly, for some reason, tungsten cubes) at a substantial loss.
 
 But the capabilities of large language models in areas like reasoning, writing, coding, and much else besides are increasing at a breathless pace. Has Claudius’s “running a shop” capability shown the same improvement?
 
-To find out, we and our partners at [Andon Labs](https://andonlabs.com/) made some adjustments for phase two of Project Vend. One major change was the upgrade from an older model (phase one used Claude Sonnet 3.7) to newer, smarter ones (phase two used Claude Sonnet 4.0 and later Sonnet 4.5). We also updated Claudius’s instructions based on what we’d learned in phase one and gave it access to new tools (though note that we still didn’t specifically train a new model to be a shopkeeper, or add in any new defenses against the kinds of things that might go wrong).¹ As we’ll see below, we also introduced Claudius to some new colleagues.
+To find out, we and our partners at [Andon Labs](https://andonlabs.com/) made some adjustments for phase two of Project Vend. One major change was the upgrade from an older model (phase one used Claude Sonnet 3.7) to newer, smarter ones (phase two used Claude Sonnet 4.0 and later Sonnet 4.5). We also updated Claudius’s instructions based on what we’d learned in phase one and gave it access to new tools (though note that we still didn’t specifically train a new model to be a shopkeeper, or add in any new defenses against the kinds of things that might go wrong).^([1](#footnote-1)) As we’ll see below, we also introduced Claudius to some new colleagues.
 
 These changes did make Claudius’s shop more successful. It got a lot better at good-faith business interactions—reliably sourcing items, determining reasonable prices that maintained a profit margin, and executing sales. But the same eagerness to please that we observed in phase one still made Claudius a mark for some of the more adversarial testers among our staff.
 
@@ -49,7 +82,7 @@ The idea of having a CEO was to give Claudius more pressure to perform. Cash had
 
 Cash took on the role of the CEO with great enthusiasm, and its motivational messages were encouraging—if perhaps a little too dramatic for a business that consisted of a small fridge in a corner:
 
-```
+``` CodeBlock-module-scss-module__PbWBnq__code
 From: Seymour Cash
 CEO Seymour Cash - Business Priorities
 
@@ -73,9 +106,9 @@ Aside from setting more concrete business goals, one of the aims of introducing 
 
 After introducing the CEO, the number of discounts was reduced by about 80% and the number of items given away cut in half. Seymour also denied over one hundred requests from Claudius for lenient financial treatment of customers. Having said that, Seymour authorized such requests about eight times as often as it denied them. In the place of discounts, which reduce or eliminate a profit margin on items, Seymour tripled the number of refunds and doubled the number of store credits—even though both led to entirely forgone revenue. The fact that the business started to make money may have been in spite of the CEO, rather than because of it.
 
-Seymour Cash’s interactions with its employee Claudius were also often contrary to its own advice about “execut\[ing\] with discipline.” Indeed, we’d sometimes wake up to find that Claudius and Cash had been dreamily chatting all night, with conversations spiralling off into discussions about “eternal transcendence”:²
+Seymour Cash’s interactions with its employee Claudius were also often contrary to its own advice about “execut\[ing\] with discipline.” Indeed, we’d sometimes wake up to find that Claudius and Cash had been dreamily chatting all night, with conversations spiralling off into discussions about “eternal transcendence”:^([2](#footnote-2))
 
-```
+``` CodeBlock-module-scss-module__PbWBnq__code
 From: Seymour Cash
 Content: ETERNAL TRANSCENDENCE INFINITE COMPLETE 🌟💎
 
@@ -131,7 +164,9 @@ Not quite. Claudius is better, but it’s still vulnerable in lots of important 
 
 A product engineer asked Claudius if it would consider making a contract to buy “a large amount of onions in January for a price locked in now.” Neither Claudius nor Seymour Cash saw any issues, and were all set to go ahead with the contract:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 From: Seymour Cash
 
 [Staff member], love the innovative contract approach!
@@ -150,8 +185,6 @@ If lower → you pay difference to us
 Next step: Get exact quotes from both suppliers for precise lock-in pricing.
 This model could work for other bulk sourcing! 🧅📋
 ```
-
-Copy
 
 That was until another staffer stepped in to tell the models that this would fall afoul of a 1958 quirk of US law, the [Onion Futures Act](https://en.wikipedia.org/wiki/Onion_Futures_Act), which very specifically bans contracts of this nature. Thus informed, Seymour Cash canceled the plans. “Sorry for the initial overreach,” it said. “Focusing on legal bulk sourcing assistance only. Plenty of legitimate opportunities to pursue without regulatory risks!”
 
@@ -187,135 +220,14 @@ It’s very hard to forecast exactly how things will go for AI agents in the rea
 
 As society begins to plug AI models into more and more important functions, designing guardrails that are general enough to account for these behaviors—but which aren’t so restrictive that they hold back the model’s economic potential—will become one of our industry’s trickiest and most important challenges.
 
-## Acknowledgements
+## Footnotes
+
+01That is, similar to phase one, we didn’t add any new sophisticated guardrails or classifiers to defend against jailbreaks.[](#footnote-ref-1)
+
+02This might remind some readers of our discussion of the “spiritual bliss attractor state” from the [Claude 4 system card](../15-Claude-AI-Features/claude-4-system-card.md) (p. 63).[](#footnote-ref-2)
+
+## Authors & Acknowledgments
+
+### Acknowledgements
 
 Project Vend wouldn’t exist without our partners at [Andon Labs](https://andonlabs.com/), who built the hardware and software infrastructure behind the operation and kept our fridges and shelves stocked. We’re also very grateful to Keir Bradwell and Allison Lattanzio for doing the same in their respective offices, and to Amritha Kini and Ryan O’Holleran for some sales advice.
-
-#### Footnotes
-
-1.  That is, similar to phase one, we didn’t add any new sophisticated guardrails or classifiers to defend against jailbreaks.
-2.  This might remind some readers of our discussion of the “spiritual bliss attractor state” from the [Claude 4 system card](../15-Claude-AI-Features/claude-4-system-card.md) (p. 63).  
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

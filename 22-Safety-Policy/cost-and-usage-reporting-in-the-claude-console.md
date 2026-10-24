@@ -1,32 +1,27 @@
 ---
-title: "Cost and Usage Reporting in the Claude Console | Claude Help Center"
+title: "Cost and usage reporting in the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9534590-cost-and-usage-reporting-in-the-claude-console"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:32Z"
+fetched_at: "2026-10-23T06:29:24Z"
 tags: ["safety"]
 ---
 
-# Cost and Usage Reporting in the Claude Console
+# Cost and usage reporting in the Claude Console
 
-March 16, 2026
-
-
-**Note:** Usage and Cost reporting is visible to the following user roles: **Developer, Billing, and Admin**. See [Claude Console Roles and Permissions](../13-Enterprise-Admin/claude-console-roles-and-permissions.md) for more information.
 
 The Claude Console provides detailed cost and usage reporting to help you effectively manage your API usage and associated costs. This guide walks you through these features and how to use them.
 
-## Accessing Cost and Usage Reports
+Usage and Cost reporting is visible to the following user roles: **Developer, Billing, and Admin**. See **[Claude Console roles and permissions](../13-Enterprise-Admin/claude-console-roles-and-permissions.md)** for more information.
 
-Users with access to these reports can click into them on the left navigation menu on the Console:
+## Access cost and usage reports
 
+Users with access can open these reports at the addresses below.
 
-------------------------------------------------------------------------
+## Usage reporting
 
-## Usage Reporting
+The **Usage** page (platform.claude.com/usage) offers a detailed breakdown of your API usage across different models and API keys.
 
-The [Usage page](../04-API-Reference/Other/playground.md) offers a detailed breakdown of your API usage across different models and API keys.
-
-### Key Features
+### Key features
 
 - **Detailed Breakdown**: View usage data by model, date/time, and API key. Click into the bars on the bar chart for hour and minute granularity.
 
@@ -42,7 +37,7 @@ The [Usage page](../04-API-Reference/Other/playground.md) offers a detailed brea
 
 - **CSV Export**: Download your usage data for further analysis or reporting.
 
-### How to Use
+### How to use
 
 1.  Select the Workspace you want to view (or choose "All Workspaces").
 
@@ -56,8 +51,7 @@ The [Usage page](../04-API-Reference/Other/playground.md) offers a detailed brea
 
 6.  Use the export button to download a CSV of the displayed data.
 
-
-### Rate Limit Use
+### Rate limit use
 
 The Usage page also includes a separate section displaying rate limit use per-model for input and output tokens. You can click the dropdown in the upper left corner of this section to change the model and view related rate limit metrics. These visualizations can be used to determine when you’re hitting peak use for your organization, which specific rate limits need to be increased, and how you can increase your caching rate.
 
@@ -67,11 +61,11 @@ The Usage page also includes a separate section displaying rate limit use per-mo
 
 ------------------------------------------------------------------------
 
-## Cost Reporting
+## Cost reporting
 
-The [Cost page](../04-API-Reference/Other/playground.md) helps you understand your spending across different models.
+The **Cost** page (platform.claude.com/cost) helps you understand your spending across different models.
 
-### Key Features
+### Key features
 
 - **Model-Specific Data**: View costs for individual models or all models combined.
 
@@ -83,7 +77,7 @@ The [Cost page](../04-API-Reference/Other/playground.md) helps you understand yo
 
 - **CSV Export**: Download cost data for your records for further analysis.
 
-### How to Use
+### How to use
 
 1.  Choose the Workspace you want to view costs for (or select "All Workspaces").
 
@@ -94,6 +88,5 @@ The [Cost page](../04-API-Reference/Other/playground.md) helps you understand yo
 4.  You can see the chart, token cost, and tool use costs, which will update based on your selections.
 
 5.  Use the export button to download a CSV of the cost data.
-
 
 **Note**: Currently, it's not possible to break down usage or cost by individual users.

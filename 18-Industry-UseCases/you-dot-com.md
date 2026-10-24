@@ -2,7 +2,7 @@
 title: "You.com Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/you-dot-com"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:30Z"
+fetched_at: "2026-10-23T06:29:48Z"
 tags: ["api", "case-studies", "enterprise", "search", "security"]
 ---
 
@@ -42,7 +42,7 @@ These metrics underscore You.com’s success in not just finding information, bu
 
 ## From search to ‘productivity engine’
 
-You.com emerged from the vision of two AI pioneers: Richard Socher, the fourth most-cited researcher in Natural Language Processing (NLP) and former Chief Scientist at Salesforce, and Bryan McCann, who previously led AI research at Salesforce. Early in their careers, both recognized the transformative potential of LLMs to re-imagine online search—where billions of questions were being asked daily. "We were looking at the search box as the starting place people go whenever they need something, want something, or want to do something. We saw a huge opportunity for impact if AI could better understand their search motivation,” said Bryan McCann, You.com’s CTO.
+You.com emerged from the vision of two AI pioneers: Richard Socher, the fourth most-cited researcher in Natural Language Processing (NLP) and former Chief Scientist at Salesforce, and Bryan McCann, who previously led AI research at Salesforce. Early in their careers, both recognized the transformative potential of LLMs to re-imagine online search—where billions of questions were being asked daily. “We were looking at the search box as the starting place people go whenever they need something, want something, or want to do something. We saw a huge opportunity for impact if AI could better understand their search motivation,” said Bryan McCann, You.com’s CTO.
 
 You.com became the first to integrate LLMs into a search context in 2021, starting with code generation for developer queries, and in December 2022, achieved another milestone as the first to connect an LLM to live web access, providing users with up-to-date, verifiable responses with citations. Today, You.com has evolved far beyond its search engine origins into a comprehensive productivity engine, helping millions of knowledge workers and businesses solve complex problems, conduct research, and automate specific workflows with AI agents.
 
@@ -57,25 +57,25 @@ Claude is used across a variety of use cases on You.com, including:
 - Providing coding assistance and analyzing data visualizations
 - Offering customizable AI agents that users can configure for specific tasks
 
-A standout feature is You.com's Research Agent, which leverages Claude to deliver comprehensive and contextually relevant information. McCann highlights its effectiveness: "Our Research Agent delivers high-quality, comprehensive results...saving me many searches and scrolling through ads and attention-grabbing stuff."
+A standout feature is You.com’s Research Agent, which leverages Claude to deliver comprehensive and contextually relevant information. McCann highlights its effectiveness: “Our Research Agent delivers high-quality, comprehensive results...saving me many searches and scrolling through ads and attention-grabbing stuff.”
 
-The platform's coding assistance feature, powered by Claude, helps developers with code generation, debugging, and explaining complex algorithms. You.com offers a unique interface that allows users to upload files or conduct searches, receiving synthesized responses from multiple sources.
+The platform’s coding assistance feature, powered by Claude, helps developers with code generation, debugging, and explaining complex algorithms. You.com offers a unique interface that allows users to upload files or conduct searches, receiving synthesized responses from multiple sources.
 
-McCann emphasizes the impact of integrating Claude across these features, saying, "The reasoning, agentic capabilities, tool use, and overall answer quality for many users has increased so much."
+McCann emphasizes the impact of integrating Claude across these features, saying, “The reasoning, agentic capabilities, tool use, and overall answer quality for many users has increased so much.”
 
 ## Driving growth and user satisfaction
 
 Offering all-in-one access to the latest and most powerful LLMs, including Claude, has helped fuel remarkable growth for You.com, with revenue soaring by 1000% since January.
 
-Beyond metrics, Claude's impact is transforming user experiences. The AI-powered Research Agent is streamlining complex information gathering, while the coding assistance feature is boosting developer productivity. Enterprise customers are leveraging customizable AI agents to automate workflows, enhancing decision-making across industries.
+Beyond metrics, Claude’s impact is transforming user experiences. The AI-powered Research Agent is streamlining complex information gathering, while the coding assistance feature is boosting developer productivity. Enterprise customers are leveraging customizable AI agents to automate workflows, enhancing decision-making across industries.
 
-You.com's commitment to a user-centric, ad-free experience is resonating strongly with users. McCann notes, "Users accomplish tasks in minutes that used to take hours of searching and scrolling." This shift drives satisfaction and positions You.com as a trusted, efficient alternative in the search and productivity landscape.
+You.com’s commitment to a user-centric, ad-free experience is resonating strongly with users. McCann notes, “Users accomplish tasks in minutes that used to take hours of searching and scrolling.” This shift drives satisfaction and positions You.com as a trusted, efficient alternative in the search and productivity landscape.
 
 ## Looking ahead
 
-You.com plans to enhance its platform with the latest AI capabilities, focusing on customization and multi-agent systems. McCann explains, "We're starting to make it multiplayer, allowing people to configure, create, and share custom agents using the model of their choice.”
+You.com plans to enhance its platform with the latest AI capabilities, focusing on customization and multi-agent systems. McCann explains, “We’re starting to make it multiplayer, allowing people to configure, create, and share custom agents using the model of their choice.”
 
-McCann envisions a future where AI can lower barriers to entry and enable more people to quickly turn ideas into reality, saying, "I think the time to execution will drop for many things—using AI is like having access to designers, engineers, PMs, CFOs, etc. This will provide more equal access to knowledge and experience, allowing more people to go from an idea to a business or product much faster."
+McCann envisions a future where AI can lower barriers to entry and enable more people to quickly turn ideas into reality, saying, “I think the time to execution will drop for many things—using AI is like having access to designers, engineers, PMs, CFOs, etc. This will provide more equal access to knowledge and experience, allowing more people to go from an idea to a business or product much faster.”
 
 ## Related stories
 
@@ -100,7 +100,8 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -118,12 +119,12 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -156,7 +157,7 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -174,6 +175,7 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -189,7 +191,7 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -224,7 +226,8 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -242,12 +245,12 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -280,7 +283,7 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -298,6 +301,7 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -313,7 +317,7 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

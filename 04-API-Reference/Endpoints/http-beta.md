@@ -1,8 +1,8 @@
 ---
 title: "Beta - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta"
+source_url: "https://platform.claude.com/docs/en/api/beta"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:07Z"
+fetched_at: "2026-10-20T06:39:13Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -231,11 +235,17 @@ cURL
 
 # Beta
 
+Copy page
+
+
+
+cURL
+
 ##### Models
 
 
 
-AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 47 more
+AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 48 more
 
 
 
@@ -313,7 +323,7 @@ BetaCurrency = "USD"
 
 
 
-BetaError = [BetaInvalidRequestError](http-beta.md#beta_invalid_request_error) or [BetaAuthenticationError](http-beta.md#beta_authentication_error) or [BetaBillingError](http-beta.md#beta_billing_error) or 6 more
+BetaError = [BetaInvalidRequestError](platform-claude-com-http-beta.md#beta_invalid_request_error) or [BetaAuthenticationError](platform-claude-com-http-beta.md#beta_authentication_error) or [BetaBillingError](platform-claude-com-http-beta.md#beta_billing_error) or 6 more
 
 
 
@@ -335,7 +345,7 @@ defaulterror
 
 
 
-error: [BetaError](http-beta.md#beta_error)
+error: [BetaError](platform-claude-com-http-beta.md#beta_error)
 
 
 
@@ -403,7 +413,7 @@ amount: string
 
 Amount in minor units of the currency, as an integer decimal string with no leading zeros: "2500" is \$25.00 and "50" is fifty cents. A string rather than a number so no float rounding is ever applied.
 
-currency: [BetaCurrency](http-beta.md#beta_currency)
+currency: [BetaCurrency](platform-claude-com-http-beta.md#beta_currency)
 
 
 
@@ -497,21 +507,21 @@ message: string
 
 defaultRate limited
 
-#### Beta[Models](http-beta-models.md)
+#### Beta[Models](platform-claude-com-http-beta-models.md)
 
-##### [List Models](http-beta-models-list.md)
+##### [List Models](platform-claude-com-http-beta-models-list.md)
 
 GET/v1/models
 
 List available models.
 
-##### [Get a Model](http-beta-models-retrieve.md)
+##### [Get a Model](platform-claude-com-http-beta-models-retrieve.md)
 
 GET/v1/models/{model_id}
 
 Get a specific model.
 
-#### Beta[Messages](http-beta-messages.md)
+#### Beta[Messages](platform-claude-com-http-beta-messages.md)
 
 ##### [Create a Message](http-beta-messages-create.md)
 
@@ -519,7 +529,7 @@ Get a specific model.
 
 Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.
 
-##### [Count tokens in a Message](http-beta-messages-count-tokens.md)
+##### [Count tokens in a Message](platform-claude-com-http-beta-messages-count-tokens.md)
 
 POST/v1/messages/count_tokens
 
@@ -809,7 +819,7 @@ Get statistics about the work queue for an environment.
 
 #### Beta[Vaults](https://platform.claude.com/docs/en/api/http/beta/vaults)
 
-##### [Create Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/create)
+##### [Create a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/create)
 
 POST/v1/vaults
 
@@ -817,25 +827,25 @@ Get statistics about the work queue for an environment.
 
 GET/v1/vaults
 
-##### [Get Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/retrieve)
+##### [Retrieve a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/retrieve)
 
 GET/v1/vaults/{vault_id}
 
-##### [Update Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/update)
+##### [Update a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/update)
 
 POST/v1/vaults/{vault_id}
 
-##### [Delete Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/delete)
+##### [Delete a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/delete)
 
 DELETE/v1/vaults/{vault_id}
 
-##### [Archive Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/archive)
+##### [Archive a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/archive)
 
 POST/v1/vaults/{vault_id}/archive
 
 #### BetaVaults[Credentials](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials)
 
-##### [Create Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/create)
+##### [Create a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/create)
 
 POST/v1/vaults/{vault_id}/credentials
 
@@ -843,23 +853,23 @@ Get statistics about the work queue for an environment.
 
 GET/v1/vaults/{vault_id}/credentials
 
-##### [Get Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/retrieve)
+##### [Retrieve a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/retrieve)
 
 GET/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Update Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/update)
+##### [Update a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/update)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Delete Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/delete)
+##### [Delete a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/delete)
 
 DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Archive Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/archive)
+##### [Archive a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/archive)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
 
-##### [Validate Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
+##### [Validate an MCP OAuth Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate
 
@@ -925,43 +935,43 @@ Get statistics about the work queue for an environment.
 
 POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
 
-#### Beta[Files](http-beta-files.md)
+#### Beta[Files](platform-claude-com-http-beta-files.md)
 
-##### [Upload File](http-beta-files-upload.md)
+##### [Upload File](platform-claude-com-http-beta-files-upload.md)
 
 POST/v1/files
 
-##### [List Files](http-beta-files-list.md)
+##### [List Files](platform-claude-com-http-beta-files-list.md)
 
 GET/v1/files
 
-##### [Download File](http-beta-files-download.md)
+##### [Download File](platform-claude-com-http-beta-files-download.md)
 
 GET/v1/files/{file_id}/content
 
-##### [Get File Metadata](http-beta-files-retrieve-metadata.md)
+##### [Get File Metadata](platform-claude-com-http-beta-files-retrieve-metadata.md)
 
 GET/v1/files/{file_id}
 
-##### [Delete File](http-beta-files-delete.md)
+##### [Delete File](platform-claude-com-http-beta-files-delete.md)
 
 DELETE/v1/files/{file_id}
 
-#### Beta[Skills](http-beta-skills.md)
+#### Beta[Skills](platform-claude-com-http-beta-skills.md)
 
-##### [Create Skill](http-beta-skills-create.md)
+##### [Create Skill](platform-claude-com-http-beta-skills-create.md)
 
 POST/v1/skills
 
-##### [List Skills](http-beta-skills-list.md)
+##### [List Skills](platform-claude-com-http-beta-skills-list.md)
 
 GET/v1/skills
 
-##### [Get Skill](http-beta-skills-retrieve.md)
+##### [Get Skill](platform-claude-com-http-beta-skills-retrieve.md)
 
 GET/v1/skills/{skill_id}
 
-##### [Delete Skill](http-beta-skills-delete.md)
+##### [Delete Skill](platform-claude-com-http-beta-skills-delete.md)
 
 DELETE/v1/skills/{skill_id}
 
@@ -989,25 +999,25 @@ Download a skill version's content as a zip archive.
 
 DELETE/v1/skills/{skill_id}/versions/{version}
 
-#### Beta[User Profiles](http-beta-user-profiles.md)
+#### Beta[User Profiles](platform-claude-com-http-beta-user-profiles.md)
 
-##### [Create User Profile](http-beta-user-profiles-create.md)
+##### [Create User Profile](platform-claude-com-http-beta-user-profiles-create.md)
 
 POST/v1/user_profiles
 
-##### [List User Profiles](http-beta-user-profiles-list.md)
+##### [List User Profiles](platform-claude-com-http-beta-user-profiles-list.md)
 
 GET/v1/user_profiles
 
-##### [Get User Profile](http-beta-user-profiles-retrieve.md)
+##### [Get User Profile](platform-claude-com-http-beta-user-profiles-retrieve.md)
 
 GET/v1/user_profiles/{user_profile_id}
 
-##### [Update User Profile](http-beta-user-profiles-update.md)
+##### [Update User Profile](platform-claude-com-http-beta-user-profiles-update.md)
 
 POST/v1/user_profiles/{user_profile_id}
 
-##### [Create Enrollment URL](http-beta-user-profiles-create-enrollment-url.md)
+##### [Create Enrollment URL](platform-claude-com-http-beta-user-profiles-create-enrollment-url.md)
 
 POST/v1/user_profiles/{user_profile_id}/enrollment_url
 
@@ -1043,39 +1053,39 @@ Stop a `pending` or `running` dream.
 
 Hide a `completed`, `failed`, or `canceled` dream from the default list of dreams.
 
-#### Beta[Tunnels](http-beta-tunnels.md)
+#### Beta[Tunnels](platform-claude-com-http-beta-tunnels.md)
 
-##### [Create Tunnel](http-beta-tunnels-create.md)
+##### [Create Tunnel](platform-claude-com-http-beta-tunnels-create.md)
 
 POST/v1/tunnels
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### [Get Tunnel](http-beta-tunnels-retrieve.md)
+##### [Get Tunnel](platform-claude-com-http-beta-tunnels-retrieve.md)
 
 GET/v1/tunnels/{tunnel_id}
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### [List Tunnels](http-beta-tunnels-list.md)
+##### [List Tunnels](platform-claude-com-http-beta-tunnels-list.md)
 
 GET/v1/tunnels
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### [Archive Tunnel](http-beta-tunnels-archive.md)
+##### [Archive Tunnel](platform-claude-com-http-beta-tunnels-archive.md)
 
 POST/v1/tunnels/{tunnel_id}/archive
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### [Reveal Tunnel Token](http-beta-tunnels-reveal-token.md)
+##### [Reveal Tunnel Token](platform-claude-com-http-beta-tunnels-reveal-token.md)
 
 POST/v1/tunnels/{tunnel_id}/reveal_token
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-##### [Rotate Tunnel Token](http-beta-tunnels-rotate-token.md)
+##### [Rotate Tunnel Token](platform-claude-com-http-beta-tunnels-rotate-token.md)
 
 POST/v1/tunnels/{tunnel_id}/rotate_token
 
@@ -1107,9 +1117,9 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
-#### Beta[Organization](../Admin/http-beta-organization.md)
+#### Beta[Organization](../Admin/platform-claude-com-http-beta-organization.md)
 
-##### [Get Current Organization](../Admin/beta-organization-retrieve.md)
+##### [Get Current Organization](../Admin/http-beta-organization-retrieve.md)
 
 GET/v1/organizations/me
 
@@ -1565,9 +1575,9 @@ Deprecated
 
 Get organization-wide activity summaries for a date range.
 
-#### BetaOrganizationAnalytics[Users](../Admin/http-beta-organization-analytics-users.md)
+#### BetaOrganizationAnalytics[Users](../Admin/platform-claude-com-http-beta-organization-analytics-users.md)
 
-##### [List User Activity](../Admin/http-beta-organization-analytics-users-list.md)
+##### [List User Activity](../Admin/platform-claude-com-http-beta-organization-analytics-users-list.md)
 
 GET/v1/organizations/analytics/users
 
@@ -1581,33 +1591,33 @@ Get per-user activity for a given day, with cursor-based pagination.
 
 Get per-project activity for a given day, with cursor-based pagination.
 
-#### BetaOrganizationAnalytics[Connectors](../Admin/beta-organization-analytics-connectors.md)
+#### BetaOrganizationAnalytics[Connectors](../Admin/http-beta-organization-analytics-connectors.md)
 
-##### [Get Connector Usage](../Admin/http-beta-organization-analytics-connectors-list.md)
+##### [Get Connector Usage](../Admin/platform-claude-com-http-beta-organization-analytics-connectors-list.md)
 
 GET/v1/organizations/analytics/connectors
 
 Get per-connector usage for a given day, with cursor-based pagination.
 
-#### BetaOrganizationAnalytics[Plugins](../Admin/http-beta-organization-analytics-plugins.md)
+#### BetaOrganizationAnalytics[Plugins](../Admin/platform-claude-com-http-beta-organization-analytics-plugins.md)
 
-##### [Get Plugin Usage](../Admin/http-beta-organization-analytics-plugins-list.md)
+##### [Get Plugin Usage](../Admin/platform-claude-com-http-beta-organization-analytics-plugins-list.md)
 
 GET/v1/organizations/analytics/plugins
 
 Get per-plugin install + invocation usage for a given day, with pagination.
 
-#### BetaOrganizationAnalytics[Skills](../Admin/beta-organization-analytics-skills.md)
+#### BetaOrganizationAnalytics[Skills](../Admin/http-beta-organization-analytics-skills.md)
 
-##### [Get Skill Usage](../Admin/http-beta-organization-analytics-skills-list.md)
+##### [Get Skill Usage](../Admin/platform-claude-com-http-beta-organization-analytics-skills-list.md)
 
 GET/v1/organizations/analytics/skills
 
 Get per-skill usage for a given day, with cursor-based pagination.
 
-#### BetaOrganizationAnalytics[Artifacts](../Admin/beta-organization-analytics-artifacts.md)
+#### BetaOrganizationAnalytics[Artifacts](../Admin/http-beta-organization-analytics-artifacts.md)
 
-##### [Get Artifact Activity](../Admin/http-beta-organization-analytics-artifacts-list.md)
+##### [Get Artifact Activity](../Admin/platform-claude-com-http-beta-organization-analytics-artifacts-list.md)
 
 GET/v1/organizations/analytics/artifacts
 
@@ -1896,3 +1906,61 @@ Check whether a plugin marketplace held in a public GitHub repository would sync
 POST/v1/organizations/plugin_marketplaces/validate_archive
 
 Check whether a plugin marketplace, uploaded as a `.zip` of the marketplace directory, would synchronize into claude.ai, without connecting or storing it.
+
+#### BetaOrganization[Telemetry Destinations](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations)
+
+##### [Create a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/create)
+
+POST/v1/organizations/telemetry_destinations
+
+Register an OpenTelemetry destination for the organization.
+
+##### [List Telemetry Destinations](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/list)
+
+GET/v1/organizations/telemetry_destinations
+
+List the organization's destinations, newest first, optionally only those that cover given workspaces.
+
+##### [Retrieve a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/retrieve)
+
+GET/v1/organizations/telemetry_destinations/{destination_id}
+
+Read a destination's configuration, state, and most recent delivery results.
+
+##### [Update a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/update)
+
+POST/v1/organizations/telemetry_destinations/{destination_id}
+
+Change a telemetry destination's settings, its state, or which workspaces it covers.
+
+##### [Delete a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/delete)
+
+DELETE/v1/organizations/telemetry_destinations/{destination_id}
+
+Delete a destination and its workspace list.
+
+##### [Test a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/test)
+
+POST/v1/organizations/telemetry_destinations/{destination_id}/test
+
+Send one test span, named `anthropic.test`, to the destination with its registered headers, once and without retries, and report the destination's answer. The response is 200 whether or not the destination answered with a 2xx status: its `result` has the type `success`, or the type `failure` and the reason in `error`. The destination's configuration, `state` and `delivery_health` do not change. A disabled destination can be tested too. Wait 10 seconds between tests of one destination; a request that comes sooner may be answered with status 429.
+
+#### BetaOrganizationTelemetry Destinations[Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces)
+
+##### [List Telemetry Destination Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/list)
+
+GET/v1/organizations/telemetry_destinations/{destination_id}/workspaces
+
+List the workspaces on a destination's workspace list, newest entry first.
+
+##### [Add a Telemetry Destination Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/add)
+
+POST/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
+
+Add one workspace to a destination's workspace list.
+
+##### [Remove a Telemetry Destination Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/remove)
+
+DELETE/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
+
+Remove one workspace from a destination's workspace list.

@@ -2,7 +2,7 @@
 title: "Sessions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:37Z"
+fetched_at: "2026-10-20T06:38:42Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions)
 
 
 
@@ -144,7 +144,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -154,9 +154,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -227,13 +229,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -241,9 +245,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -252,9 +256,15 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 
 # Sessions
+
+Copy page
+
+
+
+cURL
 
 ##### [Create Session](https://platform.claude.com/docs/en/api/http/beta/sessions/create)
 
@@ -300,7 +310,7 @@ model: string
 
 
 
-A Claude model id. The model must be permitted as an advisor for this agent's model — see the sessions/threads/advisor spec.
+A Claude model id. The model must be permitted as an advisor for this agent's model.
 
 minLength1
 
@@ -416,7 +426,7 @@ type: "limit"
 
 
 
-max_list_cost: [BetaMonetaryAmount](http-beta.md#beta_monetary_amount) { amount, currency }
+max_list_cost: [BetaMonetaryAmount](platform-claude-com-http-beta.md#beta_monetary_amount) { amount, currency }
 
 
 
@@ -428,7 +438,7 @@ amount: string
 
 Amount in minor units of the currency, as an integer decimal string with no leading zeros: "2500" is \$25.00 and "50" is fifty cents. A string rather than a number so no float rounding is ever applied.
 
-currency: [BetaCurrency](http-beta.md#beta_currency)
+currency: [BetaCurrency](platform-claude-com-http-beta.md#beta_currency)
 
 
 
@@ -654,19 +664,55 @@ maxLength4096
 
 
 
-BetaManagedAgentsMultiagent object{ type: "coordinator", agents }
+BetaManagedAgentsMultiagent = [BetaManagedAgentsMultiagentCoordinator](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_coordinator) or [BetaManagedAgentsMultiagent20261001](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent20261001)
 
 
 
 Resolved multiagent orchestration configuration as returned in API responses.
 
+One of the following:
+
 
 
-BetaManagedAgentsMultiagentParams object{ type: "coordinator", agents }
+BetaManagedAgentsMultiagentCoordinator object{ type: "coordinator", agents }
 
 
 
-Multiagent orchestration configuration. Currently supports the `coordinator` topology.
+Resolved coordinator topology with a concrete agent roster.
+
+
+
+BetaManagedAgentsMultiagent20261001 object{ type: "multiagent_20261001", advisor, subagents, workflows }
+
+
+
+Resolved multiagent configuration with three members, each enabled or disabled on its own.
+
+
+
+BetaManagedAgentsMultiagentParams = [BetaManagedAgentsMultiagentCoordinatorParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_coordinator_params) or [BetaManagedAgentsMultiagent20261001Params](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent20261001_params)
+
+
+
+Multiagent orchestration configuration.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentCoordinatorParams object{ type: "coordinator", agents }
+
+
+
+A coordinator topology: the session's primary thread orchestrates work by spawning session threads, each running an agent drawn from the `agents` roster.
+
+
+
+BetaManagedAgentsMultiagent20261001Params object{ type: "multiagent_20261001", advisor, subagents, workflows }
+
+
+
+Multiagent configuration with three members, each enabled or disabled on its own. On an update, if the agent's stored `multiagent` also has type `multiagent_20261001`, this configuration is merged into the stored one, level by level, instead of replacing it. A key that the update omits keeps its stored value. A key sent as null takes its default, on create as well, so `"workflows": null` enables workflows. An object sent with a `type` other than the stored one replaces the stored object, and the keys that it omits take their defaults. A `predefined_agents` list that is sent replaces the stored list. Every object that is sent needs its `type`, and an enabled `advisor` needs its `model`. Other validation applies to the merged result.
 
 
 
@@ -772,7 +818,7 @@ A Managed Agents `session`.
 
 
 
-BetaManagedAgentsSessionAgent object{ type: "agent", id, description, 8 more }
+BetaManagedAgentsSessionAgent object{ type: "agent", id, description, 9 more }
 
 
 
@@ -788,51 +834,121 @@ Mid-session agent configuration update. Only `tools` and `mcp_servers` are updat
 
 
 
+BetaManagedAgentsSessionMultiagent = [BetaManagedAgentsSessionMultiagentCoordinator](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_session_multiagent_coordinator) or [BetaManagedAgentsSessionMultiagent20261001](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_session_multiagent20261001)
+
+
+
+Resolved multiagent orchestration configuration as returned on a `session`.
+
+One of the following:
+
+
+
 BetaManagedAgentsSessionMultiagentCoordinator object{ type: "coordinator", agents }
 
 
 
 Resolved coordinator topology with full agent definitions for each roster member.
 
-type: "coordinator"
+
+
+BetaManagedAgentsSessionMultiagent20261001 object{ type: "multiagent_20261001", advisor, subagents, workflows }
 
 
+
+Resolved multiagent configuration with three members, as copied to the `session` at creation.
 
 
 
-agents: array of [BetaManagedAgentsSessionThreadAgent](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_session_thread_agent) or [BetaManagedAgentsAdvisor](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_advisor)
+BetaManagedAgentsSessionMultiagentCoordinator object{ type: "coordinator", agents }
 
 
 
-Full `agent` definitions the coordinator may spawn as session threads.
+Resolved coordinator topology with full agent definitions for each roster member.
+
+
+
+BetaManagedAgentsSessionMultiagentSubagents = [BetaManagedAgentsSessionMultiagentSubagentsEnabled](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_session_multiagent_subagents_enabled) or [BetaManagedAgentsMultiagentSubagentsDisabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_subagents_disabled)
+
+
+
+Whether the agent can spawn session threads.
 
 One of the following:
 
 
 
-BetaManagedAgentsSessionThreadAgent object{ type: "agent", id, description, 7 more }
+BetaManagedAgentsSessionMultiagentSubagentsEnabled object{ type: "enabled", inline_agents, predefined_agents }
 
 
 
-Resolved `agent` definition for a single `session_thread`. Snapshot of the agent at thread creation time. The multiagent roster is not repeated here; read it from `Session.agent`.
+The agent can spawn session threads.
 
 
 
-BetaManagedAgentsAdvisor object{ type: "advisor", model }
+BetaManagedAgentsMultiagentSubagentsDisabled object{ type: "disabled" }
 
 
 
-Platform advisor roster entry: a model the session's primary thread may consult mid-turn.
+The agent cannot spawn session threads.
 
-type: "advisor"
-
-
-
-model: string
+type: "disabled"
 
 
 
-The advisor model id.
+
+
+BetaManagedAgentsSessionMultiagentSubagentsEnabled object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can spawn session threads.
+
+
+
+BetaManagedAgentsSessionMultiagentWorkflows = [BetaManagedAgentsSessionMultiagentWorkflowsEnabled](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_session_multiagent_workflows_enabled) or [BetaManagedAgentsMultiagentWorkflowsDisabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_workflows_disabled)
+
+
+
+Whether the agent can start workflow runs.
+
+One of the following:
+
+
+
+BetaManagedAgentsSessionMultiagentWorkflowsEnabled object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can start workflow runs.
+
+
+
+BetaManagedAgentsMultiagentWorkflowsDisabled object{ type: "disabled" }
+
+
+
+The agent cannot start workflow runs.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsSessionMultiagentWorkflowsEnabled object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can start workflow runs.
+
+
+
+BetaManagedAgentsSessionMultiagent20261001 object{ type: "multiagent_20261001", advisor, subagents, workflows }
+
+
+
+Resolved multiagent configuration with three members, as copied to the `session` at creation.
 
 
 

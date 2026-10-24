@@ -2,7 +2,7 @@
 title: "Claude in Chrome admin controls | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:28:08Z"
+fetched_at: "2026-10-23T06:29:00Z"
 tags: ["desktop", "enterprise"]
 ---
 
@@ -126,7 +126,7 @@ To test Claude in Chrome with a subset of users before broader rollout:
 
 We recommend sharing these resources with users before they start using Claude in Chrome:
 
-- **[Get started with Claude in Chrome](../15-Claude-AI-Features/getting-started-with-claude-for-chrome.md)**: Installation and core capabilities
+- **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173-getting-started-with-claude-for-chrome)**: Installation and core capabilities
 
 - **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)**: Risks and best practices
 

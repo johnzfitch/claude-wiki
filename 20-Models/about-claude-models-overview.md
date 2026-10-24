@@ -2,7 +2,7 @@
 title: "Models overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/en/docs/about-claude/models/overview"
 category: "20-Models"
-fetched_at: "2026-10-04T08:34:23Z"
+fetched_at: "2026-10-20T06:39:49Z"
 tags: ["api", "models", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "models", "prompting"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Foverview)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Foverview)
 
 
 
@@ -40,7 +40,7 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -52,21 +52,21 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 Models & pricingModels
 
 # Models overview
 
-Claude is a family of state-of-the-art large language models developed by Anthropic. Compare the current lineup, find the model ID for every platform, and open each model's page for its full specs and resources.
-
 Copy page
 
 
+
+Claude is a family of state-of-the-art large language models developed by Anthropic. Compare the current lineup, find the model ID for every platform, and open each model's page for its full specs and resources.
 
 [Choosing a model](about-claude-models-choosing-a-model.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[Migration guide](about-claude-models-migration-guide.md)
 
@@ -86,13 +86,23 @@ Once you've picked a model, [learn how to make your first API call](../01-Gettin
 
 You can query model capabilities and token limits programmatically with the [Models API](../04-API-Reference/Endpoints/models-list.md). The response includes `max_input_tokens`, `max_tokens`, and a `capabilities` object for every available model.
 
+Each model in the response also has a `line` field, which names the model line it belongs to. Claude Opus 4.5 and Claude Opus 4.6 both report `opus`. Use `line` to group models, for example, in a model picker. `line` is `null` when a model belongs to no line. Read `line` instead of inferring it from the model's `id`. Anthropic might add more lines, so don't treat the set of values as fixed.
+
+Each model's `capabilities` object includes `thinking.types.disabled`, which reports whether the model accepts `thinking: {type: "disabled"}`, the setting that [turns thinking off](../04-API-Reference/Guides/build-with-claude-thinking.md#turning-thinking-off). `supported` is `false` when the model rejects `"disabled"` with a 400 error, and `true` on a model that doesn't support thinking. Even when `supported` is `true`, the API can still reject a `"disabled"` request for another reason. One such reason is an [effort](../04-API-Reference/Guides/build-with-claude-effort.md) level that the model doesn't allow with thinking off.
+
+Each model's `capabilities` object also includes `thinking.types.between_tools`, which reports whether the model accepts `thinking: {type: "between_tools"}`, the setting that [turns off up-front thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#turning-thinking-off). `supported` is `false` when the model rejects `"between_tools"` with a 400 error. Even when `supported` is `true`, the API can still reject a `"between_tools"` request for another reason, such as an [effort](../04-API-Reference/Guides/build-with-claude-effort.md) level that the model doesn't allow with `"between_tools"`. For Claude Sonnet 5.5, for example, the Models API reports `thinking.types.between_tools.supported` as `true` and `thinking.types.disabled.supported` as `false`.
+
+Each model's `capabilities` object also includes `server_tools`, which reports whether the model accepts the [web search](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md) and [code execution](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) tools. It doesn't cover other server tools, such as web fetch. `server_tools.web_search.supported` and `server_tools.code_execution.supported` are `true` when the model accepts at least one version of that tool, not necessarily every version. `server_tools.supported` is `true` when the model accepts at least one of the two tools. Even when a tool is supported, your organization's settings can still cause a request that uses it to fail. For example, an administrator can [disable web search](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md#how-to-use-web-search).
+
+The top-level `code_execution` capability is a different check. It reports whether code that Claude runs in the code execution tool can call the request's other tools, as in [programmatic tool calling](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md). For Claude Haiku 4.5, for example, the Models API reports `server_tools.code_execution.supported` as `true` and `code_execution.supported` as `false`.
+
 ## Prompt and output performance
 
 Current Claude models excel in:
 
 - **Performance:** Top-tier results in reasoning, coding, multilingual tasks, long-context handling, honesty, and image processing. See [Prompting best practices](../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md) for general and model-specific prompting guidance.
 - **Engaging responses:** Claude models are ideal for applications that require rich, human-like interactions. If you prefer more concise responses, adjust your prompts to guide the model toward the desired output length. Refer to the [prompt engineering guides](../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) for details.
-- **Output quality:** When migrating from a previous model generation, you may notice larger improvements in overall performance. If you're on Claude Opus 5 or earlier, see [Migrating to Claude Opus 5.5](models-opus-5-5-migration-guide.md).
+- **Output quality:** When migrating from a previous model generation, you may notice larger improvements in overall performance. If you're on Claude Opus 5 or earlier, see the [Claude Opus 5.5 migration guide](models-opus-5-5-migration-guide.md).
 
 ## Get started with Claude
 
@@ -126,7 +136,7 @@ Lifecycle status and retirement commitments for every model.
 
 
 
-[Claude Console](../04-API-Reference/Other/usage-limits.md)
+[Claude Console](../04-API-Reference/Other/playground.md)
 
 Craft and test prompts directly in your browser.
 

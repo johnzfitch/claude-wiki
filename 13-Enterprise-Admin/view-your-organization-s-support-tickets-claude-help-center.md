@@ -61,7 +61,7 @@ If there are multiple organizations tied to your company, the organization names
 
 ### The portal won't load or redirects to a login page.
 
-Sign in at **[claude.ai](http://claude.ai)** or **[platform.claude.com](../04-API-Reference/Other/usage-limits.md)** first, then open the portal through the support messenger. Authenticating directly from the portal isn't supported.
+Sign in at **[claude.ai](http://claude.ai)** or **[platform.claude.com](../04-API-Reference/Other/playground.md)** first, then open the portal through the support messenger. Authenticating directly from the portal isn't supported.
 
 ------------------------------------------------------------------------
 
@@ -81,4 +81,4 @@ It's likely associated with a different organization (try switching organization
 
 ### Can I open a new ticket from the portal?
 
-Not directly. Use the chat messenger in Claude or the Console, and tickets opened there appear in the portal automatically. Learn more about **[how to get support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**.
+Not directly. Use the chat messenger in Claude or the Console, and tickets opened there appear in the portal automatically. Learn more about **[how to get support](../15-Claude-AI-Features/how-to-get-support.md)**.

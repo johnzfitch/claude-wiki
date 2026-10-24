@@ -1,8 +1,8 @@
 ---
 title: "Claude for Microsoft 365 | Claude by Anthropic"
-source_url: "https://www.claude.com/claude-for-excel"
+source_url: "https://www.claude.com/claude-for-powerpoint"
 category: "14-Connectors"
-fetched_at: "2026-10-10T06:27:29Z"
+fetched_at: "2026-10-23T06:28:35Z"
 tags: ["connectors", "enterprise", "security"]
 ---
 
@@ -146,7 +146,7 @@ Context carries from Outlook to Word to Excel to PowerPoint. Change one thing, a
 
 ### Deploy through your preferred cloud
 
-Connect through Microsoft Foundry, Amazon Bedrock, or Google Cloud Vertex AI credentials.
+Connect through Microsoft Foundry, Amazon Bedrock, or Gemini Enterprise Agent Platform credentials.
 
 ### Bring any document into the conversation
 
@@ -176,7 +176,7 @@ Claude for Excel, PowerPoint, and Word are generally available on all paid Claud
 
 ### Can I connect through my cloud provider?
 
-Yes. Claude for Microsoft 365 is available on Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Foundry.
+Yes. Claude for Microsoft 365 is available on Amazon Bedrock, Gemini Enterprise Agent Platform, and Microsoft Foundry.
 
 ### Does Claude preserve my formatting and templates?
 
@@ -199,7 +199,8 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -217,12 +218,12 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -255,7 +256,7 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -273,6 +274,7 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -288,7 +290,7 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -323,7 +325,8 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -341,12 +344,12 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -379,7 +382,7 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -397,6 +400,7 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -412,7 +416,7 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

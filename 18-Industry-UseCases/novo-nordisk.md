@@ -2,7 +2,7 @@
 title: "Novo Nordisk Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/novo-nordisk"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:54Z"
+fetched_at: "2026-10-23T06:29:44Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -45,7 +45,7 @@ For pharmaceutical companies, the path from drug discovery to patient access is 
   
 The pinnacle of this process is the clinical study report (CSR), which summarizes drug trial results in a document that can be up to 300 pages long. Producing a CSR was a grueling multi-month cycle of writing, reviews, rewrites, and approvals. Staff writers averaged only 2.3 CSRs per year, and the manual process remained prone to errors and subjective interpretation.
 
-The stakes couldn't have been higher. Each day of delay in bringing a new medicine to market can cost pharmaceutical companies up to \$15 million in potential revenue. More importantly, patients with diabetes, obesity, and other chronic conditions continue waiting for treatments that could transform their lives.
+The stakes couldn’t have been higher. Each day of delay in bringing a new medicine to market can cost pharmaceutical companies up to \$15 million in potential revenue. More importantly, patients with diabetes, obesity, and other chronic conditions continue waiting for treatments that could transform their lives.
 
 ## How Novo uses Claude to transform their R&D processes
 
@@ -59,17 +59,17 @@ The time saved by NovoScribe was immediate and substantial. “Claude has helped
 
 Review-to-approval cycles for these automated CSRs have also decreased significantly as reviewers became increasingly satisfied with clinical interpretation and overall output quality. For new trials, the team can now produce a complete study booklet and patient guide in under a minute — materials that previously required months of back-and-forth work with external agencies.  
   
-Technical setup for these use cases varied. Adapting the RAG configuration for patient booklets took minimal time, while integrating legacy systems for device protocols required several months of development to ingest unstructured data. "In a highly regulated industry, we can't just throw our data and information into a large language model and hope for the best," Jowiya said. “Our conversations with Anthropic really guided in the ways we can securely use Claude for planning, for strategic tasks, for code generation.” In fact, he adds, Claude has already solved one of his team’s biggest headaches: extracting data from historical research documents.
+Technical setup for these use cases varied. Adapting the RAG configuration for patient booklets took minimal time, while integrating legacy systems for device protocols required several months of development to ingest unstructured data. “In a highly regulated industry, we can’t just throw our data and information into a large language model and hope for the best,” Jowiya said. “Our conversations with Anthropic really guided in the ways we can securely use Claude for planning, for strategic tasks, for code generation.” In fact, he adds, Claude has already solved one of his team’s biggest headaches: extracting data from historical research documents.
 
 ## Using Claude Code to accelerate development and empower non-technical teams
 
 Adopting Claude Code has fundamentally changed product development at Novo Nordisk. Now, even non-technical team members can prototype ideas – including Jowiya, who has a PhD in molecular biology but not much programming experience. When he has an idea, he says, Claude Code lets him quickly generate a POC using natural language, versus having to sit down and translate that into technical features and tickets he hands off to the development team.
 
-"It allows our scientific domain experts, people like myself and my director Louise, to have a much bigger impact on how things are developed," Jowiya says.
+“It allows our scientific domain experts, people like myself and my director Louise, to have a much bigger impact on how things are developed,” Jowiya says.
 
-The ability for any team member to spin up a prototype in hours instead of days or weeks has been a strategic catalyst for a relatively small development team of 11 people: now, any member can be a product developer, he explains. "Claude Code lets us do experiments easily, make decisions fast, and iterate quickly to get products out."
+The ability for any team member to spin up a prototype in hours instead of days or weeks has been a strategic catalyst for a relatively small development team of 11 people: now, any member can be a product developer, he explains. “Claude Code lets us do experiments easily, make decisions fast, and iterate quickly to get products out.”
 
-This agility has allowed the team to maintain its small size while dramatically expanding capabilities – avoiding the need to scale up headcount and preserving the team's ability to move quickly without the overhead of traditional agile ceremonies.
+This agility has allowed the team to maintain its small size while dramatically expanding capabilities – avoiding the need to scale up headcount and preserving the team’s ability to move quickly without the overhead of traditional agile ceremonies.
 
 ## The Outcome
 
@@ -77,11 +77,11 @@ Today, NovoScribe represents a shift in how Novo Nordisk approaches document cre
 
 The results speak for themselves: documentation that once took entire departments now requires single users. Review cycles have been cut in half. Most importantly, medicines are reaching patients faster than ever before.
 
-The company continues expanding Claude's application across the organization, with pilots underway in medical affairs and plans for broader deployment. They are using Claude Code to expand NovoScribe's current capabilities, with the goal of automating the entire process of producing Common Technical Documents (CTDs), the comprehensive regulatory submissions required for drug approval.
+The company continues expanding Claude’s application across the organization, with pilots underway in medical affairs and plans for broader deployment. They are using Claude Code to expand NovoScribe’s current capabilities, with the goal of automating the entire process of producing Common Technical Documents (CTDs), the comprehensive regulatory submissions required for drug approval.
 
-Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to extract deeper insights from clinical trials and modernize their data infrastructure. The partnership with Anthropic has fundamentally changed how the company thinks about AI's role in pharmaceutical development.
+Looking ahead, Novo Nordisk is exploring Claude’s potential for data analysis to extract deeper insights from clinical trials and modernize their data infrastructure. The partnership with Anthropic has fundamentally changed how the company thinks about AI’s role in pharmaceutical development.
 
-"We've consistently been one of the first movers when it comes to document and content automation in pharma development," said Louise Lind Skov, Director Content Digitalisation. "Our work with Anthropic and Claude has set a new standard — we're not just automating tasks, we're transforming how medicines get from discovery to the patients who need them."
+“We’ve consistently been one of the first movers when it comes to document and content automation in pharma development,” said Louise Lind Skov, Director Content Digitalisation. “Our work with Anthropic and Claude has set a new standard — we’re not just automating tasks, we’re transforming how medicines get from discovery to the patients who need them.”
 
 ## Related stories
 
@@ -106,7 +106,8 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -124,12 +125,12 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -162,7 +163,7 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -180,6 +181,7 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -195,7 +197,7 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -230,7 +232,8 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -248,12 +251,12 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -286,7 +289,7 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -304,6 +307,7 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -319,7 +323,7 @@ Looking ahead, Novo Nordisk is exploring Claude's potential for data analysis to
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

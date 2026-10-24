@@ -2,7 +2,7 @@
 title: "MCP Fetch Server"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/fetch/README.md"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-08-19T06:29:43Z"
+fetched_at: "2026-10-20T06:40:35Z"
 tags: ["mcp"]
 ---
 
@@ -14,10 +14,12 @@ A Model Context Protocol server that provides web content fetching capabilities.
 
 Source: https://github.com/modelcontextprotocol/servers/tree/main/src/fetch
 
-Requires MCP Python SDK 1.x (`mcp>=1.29.0,<2`). SDK 2.0 renamed APIs this server uses. The port to v2 is in progress.
+Requires MCP Python SDK 2.x (`mcp>=2.3,<3`).
 
 > [!CAUTION]
 > This server can access local/internal IP addresses and may represent a security risk. Exercise caution when using this MCP server to ensure this does not expose any sensitive data.
+>
+> By default the server refuses to fetch private, loopback, link-local and other non-public addresses, including cloud metadata endpoints such as `169.254.169.254`, and checks every redirect hop the same way. The `--allow-private-ips` argument turns this guard off; see [Customization - Private addresses](#customization---private-addresses). The guard checks the addresses a hostname resolves to before each request, so it does not protect against DNS rebinding between that check and the connection, and a hostname the server cannot resolve itself (one only a proxy can resolve) is not checked.
 
 The fetch tool will truncate the response, but by using the `start_index` argument, you can specify where to start the content extraction. This lets models read a webpage in chunks, until they find the information they need.
 
@@ -28,6 +30,7 @@ The fetch tool will truncate the response, but by using the `start_index` argume
     - `max_length` (integer, optional): Maximum number of characters to return (default: 5000)
     - `start_index` (integer, optional): Start content from this character index (default: 0)
     - `raw` (boolean, optional): Get raw content without markdown conversion (default: false)
+    - Annotations: `readOnlyHint: true`, `destructiveHint: false`, `idempotentHint: true`, `openWorldHint: true` (it only reads, and it reaches arbitrary hosts on the internet)
 
 ### Prompts
 
@@ -35,6 +38,18 @@ The fetch tool will truncate the response, but by using the `start_index` argume
   - Fetch a URL and extract its contents as markdown
   - Arguments:
     - `url` (string, required): URL to fetch
+
+### Errors
+
+- A failed fetch (a robots.txt refusal, an unreachable page, an HTTP error status, a refused private address, an unusable proxy setting) and arguments that do not match the tool's schema are returned as a tool result with `isError: true`, whose text starts `Error executing tool fetch:` and says what went wrong, so the model can read it and decide what to do.
+- Calling a tool the server does not have is a JSON-RPC protocol error, `-32602` (`Unknown tool: <name>`), as the specification requires. So is getting a prompt it does not have (`Unknown prompt: <name>`), or the `fetch` prompt without its `url` (`URL is required`).
+- When the `fetch` prompt's fetch fails, the prompt still returns: its message holds the reason the fetch failed.
+
+The server is built on the MCP Python SDK's high-level `MCPServer`: the tool and the prompt are decorated functions, and their type hints and field descriptions are the input schema and the prompt's arguments.
+
+### Protocol versions
+
+The server speaks both eras of the Model Context Protocol over stdio, with nothing to configure: a **2026-07-28** client (discovered with `server/discover`, no session) and a **2025-11-25** client (the `initialize` handshake). The client's first request decides which. Tools and prompts behave the same in both. Methods the 2026-07-28 specification removes, such as `ping`, are answered only on a 2025-11-25 connection.
 
 ## Installation
 
@@ -164,6 +179,17 @@ By default, the server will obey a websites robots.txt file if the request came 
 the request was user initiated (via a prompt). This can be disabled by adding the argument `--ignore-robots-txt` to the
 `args` list in the configuration.
 
+### Customization - Private addresses
+
+By default, the server refuses any request, including a redirect hop or a robots.txt fetch, whose host resolves to an
+address that is not globally routable: loopback (`127.0.0.0/8`, `::1`), private (`10.0.0.0/8`, `172.16.0.0/12`,
+`192.168.0.0/16`, `fc00::/7`), link-local (`169.254.0.0/16`, `fe80::/10`), shared address space (`100.64.0.0/10`),
+multicast, unspecified, documentation and the other IANA special-purpose ranges. A hostname is refused if any one of its addresses is in those ranges.
+The client receives an error naming the refused address.
+
+To fetch from local or internal hosts (a development server, an intranet page), add the argument
+`--allow-private-ips` to the `args` list in the configuration.
+
 ### Customization - User-agent
 
 By default, depending on if the request came from the model (via a tool), or was user initiated (via a prompt), the
@@ -181,6 +207,11 @@ This can be customized by adding the argument `--user-agent=YourUserAgent` to th
 ### Customization - Proxy
 
 The server can be configured to use a proxy by using the `--proxy-url` argument.
+
+Without `--proxy-url`, the server uses the proxy in the standard `HTTP_PROXY`, `HTTPS_PROXY` and `ALL_PROXY`
+environment variables (honoring `NO_PROXY`). Both `http(s)://` and SOCKS5 proxies are supported (SOCKS support is
+installed with the server). A `socks://` proxy URL, as many desktop proxy settings export it, is treated as
+`socks5://`. A proxy setting the server cannot use makes each fetch fail with a tool error that says so.
 
 ## Windows Configuration
 
@@ -239,14 +270,33 @@ cd path/to/servers/src/fetch
 npx @modelcontextprotocol/inspector uv run mcp-server-fetch
 ```
 
+## Development
+
+From `src/fetch`:
+
+```
+uv sync --frozen --all-extras --dev
+uv run --frozen pytest
+```
+
+The tests drive `serve()` through an MCP `ClientSession` in-process (and, in `tests/test_eras.py`, through a `Client` as a 2026-07-28 and as a 2025-11-25 client), with HTTP mocked, so they need no network. The HTML extraction tests need Node.js on `PATH` (readabilipy uses Readability.js when Node is present and a pure-Python fallback when it is not).
+
+Coverage, measured per file with branch coverage:
+
+```
+uv run --frozen pytest --cov --cov-report=term-missing --cov-report=json
+```
+
+This writes `coverage.json` (git-ignored). The command reports coverage but does not enforce a threshold; the target is at least 90% of lines and 90% of branches for every file under `src/mcp_server_fetch`.
+
 ## Contributing
 
-We encourage contributions to help expand and improve mcp-server-fetch. Whether you want to add new tools, enhance existing functionality, or improve documentation, your input is valuable.
+We encourage contributions to help improve mcp-server-fetch. Bug reports, ideas for new tools, enhancements to existing functionality, and documentation improvements are all valuable.
 
 For examples of other MCP servers and implementation patterns, see:
 https://github.com/modelcontextprotocol/servers
 
-Pull requests are welcome! Feel free to contribute new ideas, bug fixes, or enhancements to make mcp-server-fetch even more powerful and useful.
+Contributions arrive as **issues, not pull requests**: the repository maintainers do the implementation. Open an issue with the [bug report or feature request form](https://github.com/modelcontextprotocol/servers/issues/new/choose), and if you have already prototyped a change, share the prompt you used rather than a diff. See [CONTRIBUTING.md](https://github.com/modelcontextprotocol/servers/blob/main/CONTRIBUTING.md) for the full policy.
 
 ## License
 

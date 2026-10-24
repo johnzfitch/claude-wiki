@@ -2,7 +2,7 @@
 title: "Workato Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/workato"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:30Z"
+fetched_at: "2026-10-23T06:29:47Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 
@@ -42,7 +42,7 @@ Created by customers in 8 months, with 150+ servers created in the last month al
 
 ## The problem
 
-Enterprise AI projects often stall before they deliver value. Teams want to connect Claude to their business systems (Salesforce for customer data, ServiceNow for IT tickets, Workday for employee information), but the path from proof-of-concept to production is riddled with obstacles. Multiple application-specific integrations overwhelm context windows, open source connectors don't meet security requirements, and there's no clear way to give users access to corporate data without exposing credentials or creating compliance risks.
+Enterprise AI projects often stall before they deliver value. Teams want to connect Claude to their business systems (Salesforce for customer data, ServiceNow for IT tickets, Workday for employee information), but the path from proof-of-concept to production is riddled with obstacles. Multiple application-specific integrations overwhelm context windows, open source connectors don’t meet security requirements, and there’s no clear way to give users access to corporate data without exposing credentials or creating compliance risks.
 
 The governance challenge is particularly acute for enterprises. Organizations need policy-driven access controls, audit trails, and the ability to manage hundreds of agent connections across business units—all while maintaining security and compliance standards.
 
@@ -50,31 +50,31 @@ SaaS platforms face parallel challenges. Building agent connectivity infrastruct
 
 ## Choosing Claude
 
-The selection of Claude as the foundation for these workflows was driven by performance and trust. "We've found Claude to be exceptional at maintaining context across complex workflows," said Adam Seligman, Workato's Chief Technology Officer. "It's one of the few models we trust to handle sensitive, enterprise-grade actions safely—especially with financial approval and working with our Workato Enterprise MCP servers."
+The selection of Claude as the foundation for these workflows was driven by performance and trust. “We’ve found Claude to be exceptional at maintaining context across complex workflows,” said Adam Seligman, Workato’s Chief Technology Officer. “It’s one of the few models we trust to handle sensitive, enterprise-grade actions safely—especially with financial approval and working with our Workato Enterprise MCP servers.”
 
-The team has observed Claude's ability to generate and interpret structured outputs like diagrams, mockups, and summaries, noting that large projects can cause other models to time out or lag. One approach that has proven particularly effective: creating specialized MCP servers for specific business functions (like a Customer Success server that efficiently accesses four linked applications), which maximizes Claude's performance while minimizing token usage.
+The team has observed Claude’s ability to generate and interpret structured outputs like diagrams, mockups, and summaries, noting that large projects can cause other models to time out or lag. One approach that has proven particularly effective: creating specialized MCP servers for specific business functions (like a Customer Success server that efficiently accesses four linked applications), which maximizes Claude’s performance while minimizing token usage.
 
 ## Claude and Workato enable secure enterprise AI agents
 
-Workato Enterprise MCP provides fully managed, pre-built connections between Claude and critical business systems. Instead of overwhelming Claude's context window with multiple application-specific integrations, Workato provides streamlined, composable MCP servers that efficiently access business data. The platform handles authentication, governance, and infrastructure so enterprises can move from pilot to production without building custom integrations.
+Workato Enterprise MCP provides fully managed, pre-built connections between Claude and critical business systems. Instead of overwhelming Claude’s context window with multiple application-specific integrations, Workato provides streamlined, composable MCP servers that efficiently access business data. The platform handles authentication, governance, and infrastructure so enterprises can move from pilot to production without building custom integrations.
 
 Workato customers are connecting Claude to their business systems across every major function. Sales and revenue operations teams use Claude to summarize account activity, update CRM records, and prepare quotes and proposals in real time. IT service management teams deploy Claude-powered agents that handle service tickets and perform basic diagnostics before escalating to humans, significantly reducing response times. Finance teams validate invoice data and move approved transactions into their ERP, saving hours of manual data entry. HR departments manage routine requests like PTO approvals, onboarding steps, and employee data lookups.
 
-"MCP is quickly becoming the standard for how AI works with corporate applications. With Workato Enterprise MCP, organizations can instantly connect AI to business capabilities in a secure way from day one," said Laurent Farci, Chief Information Officer at .monks. "Workato already orchestrates critical processes across our business—from sales opportunity management to employee onboarding and IT project management. With Enterprise MCP, we can now transform our business processes into AI-ready services at speed."
+“MCP is quickly becoming the standard for how AI works with corporate applications. With Workato Enterprise MCP, organizations can instantly connect AI to business capabilities in a secure way from day one,” said Laurent Farci, Chief Information Officer at .monks. “Workato already orchestrates critical processes across our business—from sales opportunity management to employee onboarding and IT project management. With Enterprise MCP, we can now transform our business processes into AI-ready services at speed.”
 
 ## The outcome
 
 Internally, Workato has become one of its own most enthusiastic adopters—and the impact of MCP is measurable. After connecting Claude to internal business systems through MCP, employee adoption of Claude increased by more than 700%, with usage spiking dramatically following the activation of MCP servers for Gong, Salesforce, and internal data systems.
 
-"Claude Sonnet and Claude Code have really changed the way every employee works, from more seamlessly engaging customers to how we deliver new products," Seligman explained. The company has built specialized MCP servers for specific roles—like a Customer Success MCP server that provides efficient access across four different linked applications—demonstrating the same patterns they're seeing with customers.
+“Claude Sonnet and Claude Code have really changed the way every employee works, from more seamlessly engaging customers to how we deliver new products,” Seligman explained. The company has built specialized MCP servers for specific roles—like a Customer Success MCP server that provides efficient access across four different linked applications—demonstrating the same patterns they’re seeing with customers.
 
 Customer adoption has accelerated rapidly, with customers creating over 800 MCP servers in just eight months. The growth trajectory was explosive: 150+ servers were created in the last month alone, demonstrating surging enterprise demand for AI-to-business connectivity.
 
-"MCP is the universal bridge between AI and enterprise action—providing secure, governed, and instant access to business capabilities," said Angela Stewart, Vice President of Enterprise Solutions at Nasdaq. "Workato is leading the charge in MCP by creating a standard for organizations to turn their systems, data, and processes into AI-ready services."
+“MCP is the universal bridge between AI and enterprise action—providing secure, governed, and instant access to business capabilities,” said Angela Stewart, Vice President of Enterprise Solutions at Nasdaq. “Workato is leading the charge in MCP by creating a standard for organizations to turn their systems, data, and processes into AI-ready services.”
 
-These customer results mirror what Workato has experienced internally across multiple teams. The company's own sales team provides one compelling example: deal preparation time dropped from 3-4 hours to 45 minutes for comprehensive customer syntheses including analysis, strategy, dashboards, and demo videos. Research that required 30 minutes of manual system checks per deal inquiry now happens in real time through Claude's access to business systems. Similar efficiency gains have emerged across other functions, with teams creating sophisticated outputs that previously required specialized tools or manual effort.
+These customer results mirror what Workato has experienced internally across multiple teams. The company’s own sales team provides one compelling example: deal preparation time dropped from 3-4 hours to 45 minutes for comprehensive customer syntheses including analysis, strategy, dashboards, and demo videos. Research that required 30 minutes of manual system checks per deal inquiry now happens in real time through Claude’s access to business systems. Similar efficiency gains have emerged across other functions, with teams creating sophisticated outputs that previously required specialized tools or manual effort.
 
-Looking ahead, Workato is expanding how Claude and other AI agents can interact with their platform. The roadmap includes enabling Workato's own AI agents (Genies) to consume MCP servers and be exposed as MCP servers themselves, creating composable architectures where specialized agents become building blocks for complex workflows.
+Looking ahead, Workato is expanding how Claude and other AI agents can interact with their platform. The roadmap includes enabling Workato’s own AI agents (Genies) to consume MCP servers and be exposed as MCP servers themselves, creating composable architectures where specialized agents become building blocks for complex workflows.
 
 Enterprise governance is already built in: verified user access with role-based controls, rate limiting, and full recipe lifecycle management ensure Claude can operate safely at scale. The goal: making AI agents powered by Claude a natural extension of how enterprises already orchestrate their operations.
 
@@ -102,7 +102,8 @@ Enterprise governance is already built in: verified user access with role-based 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -120,12 +121,12 @@ Enterprise governance is already built in: verified user access with role-based 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -158,7 +159,7 @@ Enterprise governance is already built in: verified user access with role-based 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -176,6 +177,7 @@ Enterprise governance is already built in: verified user access with role-based 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -191,7 +193,7 @@ Enterprise governance is already built in: verified user access with role-based 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -226,7 +228,8 @@ Enterprise governance is already built in: verified user access with role-based 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -244,12 +247,12 @@ Enterprise governance is already built in: verified user access with role-based 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -282,7 +285,7 @@ Enterprise governance is already built in: verified user access with role-based 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -300,6 +303,7 @@ Enterprise governance is already built in: verified user access with role-based 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -315,7 +319,7 @@ Enterprise governance is already built in: verified user access with role-based 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

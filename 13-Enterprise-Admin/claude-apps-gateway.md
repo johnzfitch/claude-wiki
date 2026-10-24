@@ -2,7 +2,7 @@
 title: "Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-apps-gateway"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:10Z"
+fetched_at: "2026-10-23T06:28:15Z"
 tags: ["bedrock", "claude-code", "enterprise"]
 ---
 
@@ -15,6 +15,7 @@ tags: ["bedrock", "claude-code", "enterprise"]
   - [Steps](#steps)
 - [Connect developers](#connect-developers)
   - [Set the gateway URL](#set-the-gateway-url)
+  - [Set the gateway URL in user settings](#set-the-gateway-url-in-user-settings)
   - [Allow a gateway on public address space you own](#allow-a-gateway-on-public-address-space-you-own)
   - [Deliver policy to Claude Desktop sessions](#deliver-policy-to-claude-desktop-sessions)
   - [Which machines need the opt-in](#which-machines-need-the-opt-in)
@@ -23,6 +24,7 @@ tags: ["bedrock", "claude-code", "enterprise"]
   - [Deploy the locks](#deploy-the-locks)
   - [Lock behavior across sources](#lock-behavior-across-sources)
   - [Settings the locks don’t cover](#settings-the-locks-don%E2%80%99t-cover)
+  - [How hook and skill keys in parent settings take effect](#how-hook-and-skill-keys-in-parent-settings-take-effect)
   - [Connect Claude Desktop](#connect-claude-desktop)
   - [CI pipelines and remote machines](#ci-pipelines-and-remote-machines)
   - [What’s enforced on developers](#whats-enforced-on-developers)
@@ -40,7 +42,7 @@ Run Claude Code through Amazon Bedrock, Claude Platform on AWS, Google Cloud, or
 
 Copy pageCopy page
 
-The Claude apps gateway is designed for organizations that must, or prefer to, route inference through their own cloud provider, for example to meet [data residency](claude-apps-gateway-deploy.md#compliance-posture) requirements. If you don’t have this requirement, and want access to other features such as SCIM provisioning or Claude Code on web and mobile, Claude Enterprise may be a better fit. See the [feature availability](../02-Claude-Code-CLI/feature-availability.md) page for a full comparison of all deployment methods.
+The Claude apps gateway is designed for organizations that must, or prefer to, route inference through their own cloud provider, for example to meet [data residency](claude-apps-gateway-deploy.md#compliance-posture) requirements. If you don’t have this requirement, and want access to other features such as SCIM provisioning or Claude Code on web and mobile, Claude Enterprise may be a better fit. See the [feature availability](../02-Claude-Code-CLI/feature-availability.md) page for a full comparison of all deployment methods.Claude Code uses one sign-in at a time: a gateway sign-in takes the place of a Claude for Teams or Enterprise login. Gateway sessions don’t fetch the [server-managed settings](server-managed-settings.md) you set in the claude.ai admin console, so deliver them from the gateway’s [`managed` block](claude-apps-gateway-config.md#managed). Leave `forceLoginMethod` and `forceLoginOrgUUID` out of that block, or [some signed-in sessions exit at startup](claude-apps-gateway-config.md#client-side-managed-settings). See [Availability and limitations](#availability-and-limitations) for what gateway sessions lose.
 
 Claude apps gateway is a self-hosted service that sits between your developers’ Claude Code clients and your model provider. Developers sign in with your corporate identity provider (IdP) instead of holding API keys or cloud credentials. The gateway holds the upstream credential, enforces model access and [managed settings](managed-settings.md) by IdP group, and relays usage telemetry to your own observability stack. It is included in the `claude` binary, so the same executable that runs Claude Code on a laptop runs the gateway server with `claude gateway --config gateway.yaml`. This page covers:
 
@@ -56,7 +58,7 @@ Companion pages go deeper. The [configuration reference](claude-apps-gateway-con
 
 Why Claude apps gateway
 
-The [gateway overview](gateways.md) covers what a gateway does and why you’d run one. Claude apps gateway is Anthropic’s own gateway, built into the `claude` binary and tested alongside each Claude Code release, so it forwards the headers and request fields Claude Code sends without operators maintaining a separate allowlist. Once deployed it gives you:
+The [gateway overview](gateways.md) covers what a gateway does and why you’d run one. Claude apps gateway is Anthropic’s own gateway, built into the `claude` binary and tested alongside each Claude Code release, so it forwards the `anthropic-beta` values and request fields Claude Code sends without operators maintaining a separate allowlist. Once deployed it gives you:
 
 - **Credentials**: the upstream API key or cloud credential lives only in your infrastructure. Developers authenticate with corporate SSO and receive short-lived bearer tokens, so offboarding happens in your IdP. Deprovision a user and their gateway access expires within the session lifetime, one hour by default.
 - **Access control**: your IdP groups map to model allowlists and [managed settings](managed-settings.md) policies. The gateway enforces model access server-side, rejecting requests for non-granted models, and selects each group’s managed settings policy, which the CLI applies at the [managed settings tier](../02-Claude-Code-CLI/settings.md#settings-precedence). Different teams get different models, tools, and permissions, and a developer can’t override what their policy locks.
@@ -74,6 +76,8 @@ For which Claude Code features work through the gateway and what the server itse
 Other gateway implementations
 
 If you already run an LLM gateway or API gateway that meets your needs, keep using it; [Other LLM gateways](llm-gateway.md) covers configuring Claude Code against it. The [gateway compatibility guide](llm-gateway-protocol.md) documents what Claude Code expects from any gateway: the endpoints it calls, the headers and body fields to forward, and what stops working when they’re stripped. A running Claude apps gateway also serves its own protocol reference at `GET /protocol`, which describes the endpoints it exposes to Claude Code clients: SSO sign-in, inference, managed settings delivery, model discovery, and telemetry. Fetch it with `curl https://claude-gateway.internal.example.com/protocol` from any deployed gateway, such as the one the [quickstart](#quickstart) below produces. Breaking changes to the protocol are announced in advance, but indefinite backwards compatibility isn’t guaranteed.
+
+A gateway sign-in token identifies the developer who approved the sign-in, not the program that uses it. Claude Code signs in without a client ID or secret of its own, so a gateway has no way to verify which program is signing in. Any client can set `User-Agent` and other request fields, so use them for routing or metrics, not as proof that a request comes from Claude Code.
 
 
 [​](#quickstart)
@@ -275,7 +279,7 @@ This last step happens on a developer machine, not the server. Set `forceLoginMe
 
 Connect developers
 
-Developers connect from their own laptops with one browser sign-in, using their corporate work account. They don’t need a claude.ai account, an API key, or a subscription, because requests to the model go through the gateway using the organization’s upstream credential. Connection is driven by the [client-side managed settings](claude-apps-gateway-config.md#client-side-managed-settings) you push via MDM, so there is no manual setup on the developer side; this section covers what the admin configures. The CLI fingerprints the gateway’s TLS leaf certificate on first connect and pins it per hostname. It checks that pin again during sign-in, on silent session refreshes, and on managed-settings fetches, while inference requests use standard TLS validation without the pin. Requests routed through an HTTPS proxy skip the pin check, so add the gateway host to `NO_PROXY` to keep them direct. Publish the expected SHA-256 fingerprint alongside the gateway URL so developers have something to compare against. The `/login` prompt shows the first 16 characters of the fingerprint as lowercase hexadecimal with no colons. To print the full fingerprint in that form from the certificate file, run:
+Developers connect from their own laptops with one browser sign-in, using their corporate work account. They don’t need a claude.ai account, an API key, or a subscription, because requests to the model go through the gateway using the organization’s upstream credential. Connection is driven by the [client-side managed settings](claude-apps-gateway-config.md#client-side-managed-settings) you push via MDM, and this section covers what the admin configures. The CLI fingerprints the gateway’s TLS leaf certificate on first connect and pins it per hostname. It checks that pin again during sign-in, on silent session refreshes, and on managed-settings fetches, while inference requests use standard TLS validation without the pin. Requests routed through an HTTPS proxy skip the pin check, so add the gateway host to `NO_PROXY` to keep them direct. Publish the expected SHA-256 fingerprint alongside the gateway URL so developers have something to compare against. The `/login` prompt shows the first 16 characters of the fingerprint as lowercase hexadecimal with no colons. To print the full fingerprint in that form from the certificate file, run:
 
 ```python
 openssl x509 -noout -fingerprint -sha256 -in cert.pem | cut -d= -f2 | tr -d : | tr 'A-F' 'a-f'
@@ -288,7 +292,7 @@ When the certificate rotates, every developer sees the trust prompt again, so tr
 
 Set the gateway URL
 
-Three keys go in the per-OS [managed settings file](managed-settings.md#delivery-mechanisms) you deploy via MDM or directly on disk. `forceLoginMethod` and `forceLoginGatewayUrl` open `/login` directly on the **Cloud gateway** screen with the URL filled in, and `parentSettingsBehavior: "merge"` lets Claude Desktop deliver the gateway’s egress allowlist to the Claude Code sessions it launches, explained in [Deliver policy to Claude Desktop sessions](#deliver-policy-to-claude-desktop-sessions):
+Three keys go in the per-OS [managed settings file](managed-settings.md#delivery-mechanisms) you deploy via MDM or directly on disk. For a machine with no managed settings, see [Set the gateway URL in user settings](#set-the-gateway-url-in-user-settings) instead. `forceLoginMethod` and `forceLoginGatewayUrl` open `/login` directly on the **Cloud gateway** screen with the URL filled in, and `parentSettingsBehavior: "merge"` lets Claude Desktop deliver the gateway’s egress allowlist to the Claude Code sessions it launches, explained in [Deliver policy to Claude Desktop sessions](#deliver-policy-to-claude-desktop-sessions):
 
 ```python
 {
@@ -298,7 +302,26 @@ Three keys go in the per-OS [managed settings file](managed-settings.md#delivery
 }
 ```
 
-The developer presses Enter to connect. The [first-connect TLS fingerprint prompt](#connect-developers) still appears. Once the file is on a machine, a developer who hasn’t completed the gateway sign-in sees one of the messages described under [Administrator policy requires a Cloud gateway sign-in](../02-Claude-Code-CLI/errors.md#administrator-policy-requires-a-cloud-gateway-sign-in). Developers who select a cloud provider through an environment variable such as `CLAUDE_CODE_USE_BEDROCK` don’t need the gateway sign-in. A developer can’t set this up manually. The login picker has no gateway option, and `forceLoginGatewayUrl` is ignored in a developer’s own settings files. `forceLoginMethod` alone, without a URL, leaves the developer at a “Contact your IT administrator” message. The login keys belong in the file you push to machines, not in the gateway’s `managed.policies[].cli` block, which only reaches clients that are already connected.
+The developer presses Enter to connect. The [first-connect TLS fingerprint prompt](#connect-developers) still appears. Once the file is on a machine, a developer who hasn’t completed the gateway sign-in sees one of the messages described under [Administrator policy requires a Cloud gateway sign-in](../02-Claude-Code-CLI/errors.md#administrator-policy-requires-a-cloud-gateway-sign-in). Developers who select a cloud provider through an environment variable such as `CLAUDE_CODE_USE_BEDROCK` don’t need the gateway sign-in. The login picker has no gateway option, and in managed settings `forceLoginMethod` alone, without a URL, leaves the developer at a “Contact your IT administrator” message. The login keys belong in the file you push to machines, not in the gateway’s `managed.policies[].cli` block, which only reaches clients that are already connected.
+
+
+[​](#set-the-gateway-url-in-user-settings)
+
+Set the gateway URL in user settings
+
+On machines with no managed settings, have each developer add `forceLoginMethod` and `forceLoginGatewayUrl` to their own user settings file, `~/.claude/settings.json`. This requires Claude Code v2.1.295 or later on the developer machine. This example names a gateway at `claude-gateway.internal.example.com`:
+
+```python
+{
+  "forceLoginMethod": "gateway",
+  "forceLoginGatewayUrl": "https://claude-gateway.internal.example.com"
+}
+```
+
+When the developer runs `/login` at the Claude Code prompt, the **Cloud gateway** screen opens on that address and they press Enter to connect. The [first-connect TLS fingerprint prompt](#connect-developers) still appears. These limits apply to keys set this way:
+
+- **User settings only**: Claude Code reads the two keys from `~/.claude/settings.json`, not from a project’s `.claude/settings.json` or `.claude/settings.local.json`.
+- **Managed settings turn them off**: once an administrator’s settings reach the machine through a managed settings file, a macOS plist or Windows HKLM policy, or a [policy helper](../02-Claude-Code-CLI/settings-reference.md#policyhelper), Claude Code ignores a gateway named in user settings.
 
 
 [​](#allow-a-gateway-on-public-address-space-you-own)
@@ -444,6 +467,23 @@ These parent-supplied settings pass the filter even with all five locks set:
 Under the default first-wins setting, an admin value blocks the parent’s only when it sits in the highest-priority admin source, except for `allowedMcpServers` while the [MCP server lock](#lock-behavior-across-sources) is on. Under the `managedSourcesBehavior` merge opt-in, [how Claude Code combines managed sources](managed-settings.md#how-claude-code-combines-managed-sources) says which source’s value applies instead.
 
 
+[​](#how-hook-and-skill-keys-in-parent-settings-take-effect)
+
+How hook and skill keys in parent settings take effect
+
+If you pass `disableAllHooks: true` as a parent setting through the Agent SDK’s `managedSettings` option, not every hook stops. Your [SDK hook callbacks](../05-Agent-SDK/agent-sdk-hooks.md) still run, and so do the administrator’s hooks, which your application can’t switch off. On a machine where an administrator deploys managed settings, Claude Code ignores parent settings unless the administrator [lets an embedding host add policy](managed-settings.md#let-an-embedding-host-add-policy).
+
+| What you pass                                                                                | What happens                                                                                                                                                                                                                                                               |
+|:---------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `disableAllHooks: true`                                                                      | Treated as `allowManagedHooksOnly: true`, so the hooks listed as [blocked under `allowManagedHooksOnly`](../02-Claude-Code-CLI/settings-reference.md#what-runs-under-allowmanagedhooksonly) stop, and so do hooks in the SDK’s [`settings` option](../05-Agent-SDK/agent-sdk-typescript.md#options). |
+| [`disableSkillShellExecution: true`](../02-Claude-Code-CLI/settings-reference.md#disableskillshellexecution) | Takes effect.                                                                                                                                                                                                                                                              |
+| `allowedHttpHookUrls: []`                                                                    | Takes effect unless the administrator defines `hooks` or enables a plugin. No HTTP hook runs, except for URLs another settings source lists.                                                                                                                               |
+| `httpHookAllowedEnvVars: []`                                                                 | Takes effect unless the administrator defines `hooks` or enables a plugin. HTTP hook headers can include only environment variables another settings source lists.                                                                                                         |
+| `allowedHttpHookUrls` or `httpHookAllowedEnvVars` with entries                               | Claude Code ignores it, since merging would widen an administrator’s list. Use the SDK `settings` option instead.                                                                                                                                                          |
+
+Passing these keys in `managedSettings` requires Claude Code v2.1.309 or later, or TypeScript Agent SDK v0.3.309 or later.
+
+
 [​](#connect-claude-desktop)
 
 Connect Claude Desktop
@@ -455,7 +495,7 @@ Connect Claude Desktop
 
 CI pipelines and remote machines
 
-There is no service-token flow for unattended pipelines. Gateway sign-in always runs the browser device flow, so a CI job with no developer to approve the sign-in can’t authenticate; configure those against your provider directly. Once a developer has signed in, each Claude Code session on that machine uses the gateway session, including non-interactive `claude -p` runs and sessions started by the Agent SDK. Claude Code applies the [gateway policy](claude-apps-gateway-config.md#managed) to each of them. The device flow separates the polling CLI from the approving browser, so a remote development box with no display still works: the developer runs `/login` over SSH on the remote machine and opens the verification link in the browser on their laptop.
+There is no service-token flow for unattended pipelines. Gateway sign-in always runs the browser device flow, so a CI job with no developer to approve the sign-in can’t authenticate; configure those against your provider directly. Deploy `forceLoginMethod` and `forceLoginGatewayUrl` to developer machines and leave them off CI runners. On a machine whose managed settings set them, a session that authenticates with `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, or `apiKeyHelper` [exits at startup](../02-Claude-Code-CLI/errors.md#administrator-policy-requires-a-cloud-gateway-sign-in). Once a developer has signed in, each Claude Code session on that machine uses the gateway session, including non-interactive `claude -p` runs and sessions started by the Agent SDK. Claude Code applies the [gateway policy](claude-apps-gateway-config.md#managed) to each of them. The device flow separates the polling CLI from the approving browser, so a remote development box with no display still works: the developer runs `/login` over SSH on the remote machine and opens the verification link in the browser on their laptop.
 
 
 [​](#whats-enforced-on-developers)
@@ -506,7 +546,7 @@ The table covers which Claude Code features work when developers connect through
 | [`/design-sync`](../02-Claude-Code-CLI/commands.md#all-commands) and `/design-login`                                                       | Not available         | Both need claude.ai, which the CLI doesn’t contact on gateway sessions, so neither command appears there                                                                                                                                                                                                                                                                                                                                                             |
 | Features that need feature-flag fetching, such as `/import` and `claude import`                                            | Not available         | The CLI skips the flag fetch on gateway sessions. [Features that need feature-flag fetching](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching) lists what that turns off                                                                                                                                                                                                                                                                                   |
 | Standard prompt caching                                                                                                    | Available             | The gateway forwards `cache_control` breakpoints to every upstream. [Where the cache lives](../02-Claude-Code-CLI/prompt-caching.md#where-the-cache-lives) covers which blocks the CLI marks, including the system context it appends mid-conversation                                                                                                                                                                                                                               |
-| 1-hour cache TTL                                                                                                           | Not available         | The CLI omits the extended-cache-ttl beta on gateway sessions, because not every upstream the gateway can route to supports the 1-hour TTL, so prompt caching through the gateway uses the 5-minute TTL; see the beta-header note above                                                                                                                                                                                                                              |
+| 1-hour cache TTL                                                                                                           | Available with opt-in | The CLI uses the 5-minute TTL on gateway sessions by default. To request the 1-hour TTL, set it [in a policy](claude-apps-gateway-config.md#one-hour-prompt-cache). Set it only if your upstreams offer the 1-hour TTL for every model the gateway serves, because the request fails if an upstream rejects the TTL                                                                                                                                            |
 | Auto mode                                                                                                                  | Available             | Follows the [third-party provider rules](../02-Claude-Code-CLI/permission-modes.md#enable-auto-mode-on-bedrock-agent-platform-or-foundry): only the models eligible on third-party providers can use it. Before v2.1.207, auto mode on gateway sessions required setting `CLAUDE_CODE_ENABLE_AUTO_MODE=1`, deliverable through the managed policy `env` block                                                                                                                        |
 | First-party-only optimizations such as global cache scope and token-efficient tools                                        | Not available         | The CLI doesn’t enable them on gateway sessions; see the beta-header note above                                                                                                                                                                                                                                                                                                                                                                                      |
 | OTLP/gRPC                                                                                                                  | Not supported         | OTLP over HTTP only                                                                                                                                                                                                                                                                                                                                                                                                                                                  |

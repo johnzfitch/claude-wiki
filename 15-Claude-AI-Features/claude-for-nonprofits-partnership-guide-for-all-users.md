@@ -2,7 +2,7 @@
 title: "Claude for nonprofits partnership guide for all users · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923901-claude-for-nonprofits-partnership-guide-for-all-users"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:07Z"
+fetched_at: "2026-10-23T06:28:59Z"
 tags: ["claude-ai"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Model Safety Bug Bounty Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12119250-model-safety-bug-bounty-program"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:24:28Z"
+fetched_at: "2026-10-23T06:28:54Z"
 tags: ["safety"]
 ---
 
@@ -43,7 +43,7 @@ This program is scoped to jailbreaks on our Constitutional Classifiers. For tech
 
 ## How to Apply
 
-You can apply to join our Program [here](https://docs.google.com/forms/d/e/1FAIpQLSf3IuyunFH1Rbz_9Bpt2kGBfwSW5QQ1TBkeAzNZrtCP-hRvNA/viewform). We review applications on a rolling basis. If accepted, you will receive an invite via HackerOne. IIf you do not already have a HackerOne account, please create one before applying to the Program so we can invite you directly on the platform. You must use your @wearehackerone.com email alias to create a [Claude Console account](../04-API-Reference/Other/usage-limits.md).
+You can apply to join our Program [here](https://docs.google.com/forms/d/e/1FAIpQLSf3IuyunFH1Rbz_9Bpt2kGBfwSW5QQ1TBkeAzNZrtCP-hRvNA/viewform). We review applications on a rolling basis. If accepted, you will receive an invite via HackerOne. IIf you do not already have a HackerOne account, please create one before applying to the Program so we can invite you directly on the platform. You must use your @wearehackerone.com email alias to create a [Claude Console account](../04-API-Reference/Other/playground.md).
 
 ## Disclosure Guidelines & Confidentiality Obligations
 

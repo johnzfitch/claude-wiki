@@ -2,7 +2,7 @@
 title: "Claude Code on Amazon Bedrock - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/amazon-bedrock"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:27:23Z"
+fetched_at: "2026-10-20T06:38:29Z"
 tags: ["bedrock", "claude-code"]
 ---
 
@@ -170,7 +170,7 @@ aws sso login --profile=your-profile-name
 export AWS_PROFILE=your-profile-name
 ```
 
-Claude Code requests role credentials from the IAM Identity Center region named by the profile’s `sso_region`, which doesn’t need to match the region you run Amazon Bedrock in. In v2.1.207, the Amazon Bedrock region overrode `sso_region`, so a profile whose IAM Identity Center instance is in a different region failed to authenticate with a `Session token not found or invalid` error.
+Claude Code requests role credentials from the IAM Identity Center region named by the profile’s `sso_region`, which doesn’t need to match the region you run Amazon Bedrock in.
 
 
 [​](#use-aws-management-console-credentials)
@@ -208,7 +208,7 @@ When `AWS_BEARER_TOKEN_BEDROCK` is set, Claude Code authenticates with the key a
 
 Credential caching and resolution timeout
 
-Claude Code resolves the AWS default credential provider chain once and keeps the resolved credentials in memory. It reuses them until five minutes before they expire, or for one hour when they carry no expiration, so an SSO-backed profile requests credentials from IAM Identity Center about once per credential lifetime. A credential error from the API clears the cache, and the retry resolves fresh credentials. Requires Claude Code v2.1.207 or later. The cache covers every credential method listed at the start of this step except an Amazon Bedrock API key, which doesn’t use the provider chain. To resolve the chain on every request instead, set [`CLAUDE_CODE_SKIP_AWS_CRED_CACHE=1`](env-vars.md). The resolve that fills the cache times out after 60 seconds. If a step in the chain stalls, for example a `credential_process` helper that waits for input it can’t receive, the request fails with [`AWS default-chain credential resolve timed out`](errors.md#aws-default-chain-credential-resolve-timed-out). If your chain runs an interactive sign-in that legitimately needs longer, such as browser-based SSO with MFA through a wrapper like `aws-vault`, raise the limit in milliseconds with [`CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS`](env-vars.md). With `CLAUDE_CODE_SKIP_AWS_CRED_CACHE=1` set, each API request resolves the chain without this limit. Except when you authenticate with an Amazon Bedrock API key, the [setup wizard](#sign-in-with-bedrock) applies the same limit to each AWS call it makes while verifying your credentials, and to the credential lookup before each model check. During credential verification, a check that exceeds it fails with [`Timed out after 60s waiting for AWS`](errors.md#bedrock-setup-verification-timed-out-waiting-for-aws).
+Claude Code resolves the AWS default credential provider chain once and keeps the resolved credentials in memory. It reuses them until five minutes before they expire, or for one hour when they carry no expiration, so an SSO-backed profile requests credentials from IAM Identity Center about once per credential lifetime. A credential error from the API clears the cache, and the retry resolves fresh credentials. The cache covers every credential method listed at the start of this step except an Amazon Bedrock API key, which doesn’t use the provider chain. To resolve the chain on every request instead, set [`CLAUDE_CODE_SKIP_AWS_CRED_CACHE=1`](env-vars.md). The resolve that fills the cache times out after 60 seconds. If a step in the chain stalls, for example a `credential_process` helper that waits for input it can’t receive, the request fails with [`AWS default-chain credential resolve timed out`](errors.md#aws-default-chain-credential-resolve-timed-out). If your chain runs an interactive sign-in that legitimately needs longer, such as browser-based SSO with MFA through a wrapper like `aws-vault`, raise the limit in milliseconds with [`CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS`](env-vars.md). With `CLAUDE_CODE_SKIP_AWS_CRED_CACHE=1` set, each API request resolves the chain without this limit. Except when you authenticate with an Amazon Bedrock API key, the [setup wizard](#sign-in-with-bedrock) applies the same limit to each AWS call it makes while verifying your credentials, and to the credential lookup before each model check. During credential verification, a check that exceeds it fails with [`Timed out after 60s waiting for AWS`](errors.md#bedrock-setup-verification-timed-out-waiting-for-aws).
 
 
 [​](#advanced-credential-configuration)
@@ -248,7 +248,7 @@ Before running the `awsAuthRefresh` command, Claude Code makes an STS `GetCaller
 }
 ```
 
-The flat output from `aws configure export-credentials --format process` is also accepted, with the same keys at the top level instead of nested under `Credentials`. `Expiration` is optional. When the command returns a valid ISO 8601 `Expiration`, Claude Code caches the credentials until five minutes before that time. Without it, credentials are cached for one hour. When you configure `awsCredentialExport` without `awsAuthRefresh`, Claude Code uses the exported credentials directly and doesn’t re-resolve the AWS default credential provider chain at startup. Requires Claude Code v2.1.206 or later.
+The flat output from `aws configure export-credentials --format process` is also accepted, with the same keys at the top level instead of nested under `Credentials`. `Expiration` is optional. When the command returns a valid ISO 8601 `Expiration`, Claude Code caches the credentials until five minutes before that time. Without it, credentials are cached for one hour. When you configure `awsCredentialExport` without `awsAuthRefresh`, Claude Code uses the exported credentials directly and doesn’t re-resolve the AWS default credential provider chain at startup.
 
 
 [​](#3-configure-claude-code)
@@ -318,9 +318,9 @@ Background tasks such as session title generation use the small/fast model, norm
 - When you select a primary model with `--model`, `ANTHROPIC_MODEL`, or the `model` setting, background tasks use that model. When Claude Code starts the session on the model you set with [`ANTHROPIC_DEFAULT_MODEL`](model-config.md#set-a-default-model-for-new-sessions), background tasks use that model too. Setting `ANTHROPIC_DEFAULT_OPUS_MODEL` without `ANTHROPIC_DEFAULT_SONNET_MODEL` also counts as a selection, because the built-in Sonnet model may not be enabled in an account that steers its own Opus.
 - To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a model ID that is available in your account.
 
-Opus models have a higher per-token price than Sonnet models, so a deployment that doesn’t pin a primary model is billed at the Opus rate once it updates to v2.1.207 or later. To keep Sonnet 4.5 as the primary model, set `ANTHROPIC_MODEL` to its full model ID. A deployment that steers the default with `ANTHROPIC_DEFAULT_SONNET_MODEL` and doesn’t set `ANTHROPIC_DEFAULT_OPUS_MODEL` keeps its steered Sonnet model as the default.
+Opus models have a higher per-token price than Sonnet models, so if you don’t pin a primary model, you’re billed at the Opus rate. To use Sonnet 4.5 as the primary model, set `ANTHROPIC_MODEL` to its full model ID. A deployment that steers the default with `ANTHROPIC_DEFAULT_SONNET_MODEL` and doesn’t set `ANTHROPIC_DEFAULT_OPUS_MODEL` keeps its steered Sonnet model as the default.
 
-Before v2.1.280, the primary model on Amazon Bedrock defaulted to Opus 5 and the `opus` alias resolved to Opus 5 from v2.1.219. On v2.1.207 through v2.1.218, the primary model on Amazon Bedrock defaulted to Opus 4.8 and the `opus` alias resolved to Opus 4.8. Before v2.1.207, the primary model defaulted to Sonnet 4.5, the `opus` alias resolved to Opus 4.6, and background tasks always used the primary model. To customize models further, use one of these methods:
+Before v2.1.280, the primary model on Amazon Bedrock defaulted to Opus 5 and the `opus` alias resolved to Opus 5 from v2.1.219. On v2.1.207 through v2.1.218, the primary model on Amazon Bedrock defaulted to Opus 4.8 and the `opus` alias resolved to Opus 4.8. To customize models further, use one of these methods:
 
 ```python
 # Using inference profile ID

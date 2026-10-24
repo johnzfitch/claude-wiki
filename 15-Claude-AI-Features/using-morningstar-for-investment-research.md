@@ -2,7 +2,7 @@
 title: "Using Morningstar for investment research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220057-using-morningstar-for-investment-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-08T06:25:06Z"
+fetched_at: "2026-10-23T06:28:55Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai", "search"]
 
 Integrate Morningstar's investment research capabilities into Claude for financial metrics, analyst research, and thematic investment analysis.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 

@@ -2,7 +2,7 @@
 title: "Rotate Tunnel Token - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/mcp_tunnels/rotate_token"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:06Z"
+fetched_at: "2026-10-20T06:38:37Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fmcp_tunnels%2Frotate_token)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fmcp_tunnels%2Frotate_token)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 
 List Tunnels Deprecated
@@ -147,9 +147,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -220,13 +222,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -234,9 +238,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -245,11 +249,17 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [MCP Tunnels](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels)
 
 # Rotate Tunnel Token
+
+Copy page
+
+
+
+cURL
 
 Deprecated
 
@@ -273,7 +283,17 @@ ID of the Tunnel.
 
 
 
-"anthropic-beta": array of [AnthropicBeta](../Endpoints/http-beta.md#anthropic_beta)
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
+
+
+"anthropic-beta": array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -482,6 +502,10 @@ string
 
 
 "spend-limit-reads-2026-09-26"
+
+
+
+"telemetry-destinations-2026-08-11"
 
 
 

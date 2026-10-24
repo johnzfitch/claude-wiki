@@ -2,13 +2,11 @@
 title: "Purchase and manage seats on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:25:13Z"
+fetched_at: "2026-10-23T06:29:03Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # Purchase and manage seats on Enterprise plans
-
-September 2, 2026
 
 
 This article covers how to add seats, manage your seat allocation, and handle member access on Enterprise plans. For pricing and billing details, see **[How am I billed for my Enterprise plan?](https://support.claude.com/en/articles/11526368-usage-based-enterprise-plans)**
@@ -34,6 +32,18 @@ For information on adding and removing members from your organization, see **[Ma
 Usage-based Enterprise plans use a single seat type: the **Enterprise seat**, priced per user per month (billed annually). This seat includes access to Claude on web, desktop, and mobile, as well as Claude Code.
 
 Enterprise plans require a minimum of 20 seats.
+
+------------------------------------------------------------------------
+
+## Who can use a seat
+
+Each Enterprise seat is assigned to one named individual, and only that person may use it. This applies to every Enterprise seat type, including legacy Chat, Chat + Claude Code, Standard, and Premium seats. This means:
+
+- Only the assigned user may sign in to the account. Users can't share login credentials or let others use their account.
+
+- Users can't use another user's account to get around their own spend limits or usage limits.
+
+Reassigning a seat is meant for normal team changes, such as a user joining, leaving, or changing roles. It isn't designed for rotating one seat among several active users. To give someone else access, assign them their own seat.
 
 ------------------------------------------------------------------------
 
@@ -174,6 +184,8 @@ Some Enterprise organizations are on older seat-based plans with a different bil
 ### Seat types
 
 [TABLE]
+
+**Note:** Only Admins and above can see each user’s seat type, shown in the **Tier** column in **[Organization settings \> Members](https://claude.ai/admin-settings/member)**. Other users can’t see their own seat type anywhere in Claude. If you need to confirm whether your seat is Standard or Premium, ask an Owner or Admin in your organization.
 
 ### Reassign users between seat types
 

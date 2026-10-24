@@ -2,7 +2,7 @@
 title: "Deploy self-hosted workers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-03T06:32:01Z"
+fetched_at: "2026-10-19T06:28:06Z"
 tags: ["api", "hooks"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "hooks"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fself-hosted-sandboxes-workers)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fself-hosted-sandboxes-workers)
 
 
 
@@ -36,11 +36,11 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
@@ -48,7 +48,7 @@ Configure agent environment
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -58,7 +58,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -84,9 +88,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Self-hosted sandboxes
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Deploy self-hosted workers
 
@@ -99,14 +111,6 @@ Choose how self-hosted sandbox workers claim work and where sessions run: always
 Copy page
 
 
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 The [quickstart](managed-agents-self-hosted-sandboxes.md#quickstart) runs one `ant` CLI worker that polls continuously and runs every session in one process. This page covers the other ways to run a worker and how to choose between them.
 
@@ -138,17 +142,9 @@ See [Self-hosted worker reference](managed-agents-self-hosted-sandboxes-referenc
 
 ## Run an always-on worker
 
-Both workers authenticate with the [environment key](managed-agents-self-hosted-sandboxes.md#run-your-first-session) from the quickstart.
+Start a worker that polls the queue continuously. It authenticates with the [environment key](managed-agents-self-hosted-sandboxes.md#run-your-first-session) from the quickstart:
 
-With the `ant` CLI:
-
-```python
-ant beta:worker poll --workdir /workspace
-```
-
-
-
-With the SDK, `EnvironmentWorker` does the same work:
+CLI
 
 Python
 
@@ -163,6 +159,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -231,6 +229,8 @@ asyncio.run(main())
     Java
     PHP
     Ruby
+
+    Python
 
     
 
@@ -314,7 +314,7 @@ A poller on the host claims work and calls your script once per work item. The s
 
     ``` shiki
     FROM your-base-image
-    ARG ANT_VERSION=1.37.0
+    ARG ANT_VERSION=1.42.0
     ARG TARGETARCH
     RUN ARCH=$([ "$TARGETARCH" = "arm64" ] && echo arm64 || echo amd64) && \
         curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${ANT_VERSION}/ant_${ANT_VERSION}_linux_${ARCH}.tar.gz" \
@@ -398,6 +398,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -467,6 +469,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -521,6 +525,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

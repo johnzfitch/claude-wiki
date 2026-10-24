@@ -2,7 +2,7 @@
 title: "Stream responses in real-time - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/streaming-output"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-10T06:24:22Z"
+fetched_at: "2026-10-21T06:28:26Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -360,7 +360,7 @@ for await (const message of query({
 
 Known limitations
 
-- **Structured output**: with partial messages enabled, the JSON streams as a tool call’s unvalidated `input_json_delta` chunks, and only the validated result reaches the final `ResultMessage.structured_output`. See [structured outputs](agent-sdk-structured-outputs.md) for details.
+- **Structured output**: with partial messages enabled, the JSON streams as a tool call’s unvalidated `input_json_delta` chunks, and only the validated result reaches the final `ResultMessage.structured_output`. [Recognize the StructuredOutput tool call](agent-sdk-structured-outputs.md#recognize-the-structuredoutput-tool-call) covers how that call appears in your stream.
 
 
 [​](#next-steps)

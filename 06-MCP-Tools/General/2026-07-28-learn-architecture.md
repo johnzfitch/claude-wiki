@@ -1,8 +1,8 @@
 ---
 title: "Architecture overview - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture"
+source_url: "https://modelcontextprotocol.io/docs/draft/learn/architecture"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:27:28Z"
+fetched_at: "2026-10-21T06:29:04Z"
 tags: ["mcp"]
 ---
 
@@ -99,7 +99,7 @@ The data layer implements a [JSON-RPC 2.0](https://www.jsonrpc.org/) based excha
 
 - **Discovery**: Lets clients query a server’s supported protocol versions, capabilities, and identity through the `server/discover` request
 - **Server features**: Enables servers to provide core functionality including tools for AI actions, resources for context data, and prompts for interaction templates from and to the client
-- **Client features**: Enables servers to elicit input from the user. Sampling is [deprecated](../Spec/2026-07-28-deprecated.md) as of protocol version `2026-07-28`.
+- **Client features**: Enables servers to elicit input from the user. Sampling is [deprecated](../Spec/draft-deprecated.md) as of protocol version `2026-07-28`.
 - **Utility features**: Supports additional capabilities like notifications for real-time updates and progress tracking for long-running operations
 
 
@@ -134,7 +134,7 @@ stateless protocol
 
 capabilities
 
-relevant to that request in its `_meta` field, so the server can process each request on its own. Clients should also identify themselves in the same field unless configured not to. Servers advertise their supported versions and capabilities through the mandatory [`server/discover`](../Spec/2026-07-28-server-discover.md) request, which clients may send before any other request. Detailed information can be found in the [specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#statelessness), and the [example](#example) showcases the per-request metadata and the discovery sequence.
+relevant to that request in its `_meta` field, so the server can process each request on its own. Clients should also identify themselves in the same field unless configured not to. Servers advertise their supported versions and capabilities through the mandatory [`server/discover`](../Spec/2026-07-28-server-discover.md) request, which clients may send before any other request. Detailed information can be found in the [specification](https://modelcontextprotocol.io/specification/draft/basic/index#statelessness), and the [example](#example) showcases the per-request metadata and the discovery sequence.
 
 
 [​](#primitives)
@@ -151,7 +151,7 @@ Each primitive type has associated methods for discovery (`*/list`), retrieval (
 
 - **Elicitation**: Allows servers to request additional information from users. This is useful when server authors want to get more information from the user, or ask for confirmation of an action. Servers request user input with the `elicitation/create` method.
 
-Elicitation requests are delivered through the [Multi Round-Trip Requests](../Spec/2026-07-28-basic-patterns-mrtr.md) pattern, explained in the [elicitation overview](draft-learn-client-concepts.md#elicitation). **Deprecated**: The following client primitives are deprecated as of protocol version `2026-07-28`.
+Elicitation requests are delivered through the [Multi Round-Trip Requests](../Spec/draft-basic-patterns-mrtr.md) pattern, explained in the [elicitation overview](draft-learn-client-concepts.md#elicitation). **Deprecated**: The following client primitives are deprecated as of protocol version `2026-07-28`.
 
 - **Sampling**: Allows servers to request language model completions from the client’s AI application. This is useful when server authors want access to a language model, but want to stay model-independent and not include a language model SDK in their MCP server. Servers request completions with the `sampling/createMessage` method, also delivered through the Multi Round-Trip Requests pattern. New implementations should integrate directly with LLM provider APIs.
 - **Logging**: Enables servers to send log messages to clients for debugging and monitoring purposes. New implementations should log to `stderr` (stdio transport) or use OpenTelemetry.

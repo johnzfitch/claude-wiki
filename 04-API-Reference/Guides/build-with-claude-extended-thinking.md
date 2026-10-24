@@ -2,7 +2,7 @@
 title: "Extended thinking - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/extended-thinking"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:15Z"
+fetched_at: "2026-10-20T06:40:11Z"
 tags: ["api", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "prompting"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fextended-thinking)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fextended-thinking)
 
 
 
@@ -40,7 +40,7 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
@@ -48,7 +48,7 @@ Model capabilities
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -80,7 +80,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Thinking
 
@@ -98,7 +98,7 @@ Configure manual extended thinking with a fixed budget_tokens budget on Claude m
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 
 
@@ -139,6 +139,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -193,9 +195,9 @@ When you are ready to move off manual budgets, see [Migrating to adaptive thinki
 
 ## Interleaved thinking in manual mode
 
-Interleaved thinking lets Claude think between tool calls within a single assistant turn, reasoning about each tool result before deciding what to do next. For the concept, the turn structure, and how it behaves on adaptive-thinking models, see [interleaved thinking](build-with-claude-thinking.md#interleaved-thinking) in the thinking overview. This section covers how to enable it when you use manual `type: "enabled"` thinking.
+Interleaved thinking lets Claude think between tool calls within a single assistant turn, reasoning about each tool result before determining what to do next. For the concept, the turn structure, and how it behaves on adaptive-thinking models, see [interleaved thinking](build-with-claude-thinking.md#interleaved-thinking) in the thinking overview. This section covers how to enable it when you use manual `type: "enabled"` thinking.
 
-On Claude Opus 4.5, Claude Sonnet 4.5, and earlier Claude 4 models, add the `interleaved-thinking-2025-05-14` [beta header](../Endpoints/beta-headers.md) to your API request.
+On Claude Opus 4.5, Claude Sonnet 4.5 (deprecated), and earlier Claude 4 models, add the `interleaved-thinking-2025-05-14` [beta header](../Endpoints/beta-headers.md) to your API request.
 
 The 4.6 generation splits in manual mode:
 
@@ -256,12 +258,12 @@ Most thinking behavior is mode neutral and documented once on the [Thinking](bui
 
 ## Migrating to adaptive thinking
 
-If your model supports only extended thinking (Claude Sonnet 4.5, Claude Opus 4.5, Claude Haiku 4.5, and earlier Claude 4 models), no action is needed now: adaptive thinking is not available there, and `type: "adaptive"` [returns a 400 error](build-with-claude-thinking-troubleshooting.md#error-thinking-type-adaptive). Keep `budget_tokens` until you move to a model that supports adaptive thinking, then apply the mapping that follows.
+If your model supports only extended thinking (Claude Sonnet 4.5 (deprecated), Claude Opus 4.5, Claude Haiku 4.5, and earlier Claude 4 models), no action is needed now: adaptive thinking is not available there, and `type: "adaptive"` [returns a 400 error](build-with-claude-thinking-troubleshooting.md#error-thinking-type-adaptive). Keep `budget_tokens` until you move to a model that supports adaptive thinking, then apply the mapping that follows.
 
 You need to migrate off `type: "enabled"` if:
 
 - You use Claude Opus 4.6 or Claude Sonnet 4.6, where `budget_tokens` is deprecated.
-- You use Claude 4.7 or a later model, such as Claude Opus 5.5, Claude Sonnet 5, Claude Sonnet 5.5, or Claude Fable 5.1, where `type: "enabled"` returns a 400 error.
+- You use Claude 4.7 or a later model, such as Claude Opus 5.5, Claude Sonnet 5, Claude Sonnet 5.5, Claude Fable 5.1, or Claude Haiku 5.5, where `type: "enabled"` returns a 400 error.
 
 The mapping is small: remove `budget_tokens`, set `thinking: {type: "adaptive"}`, and control reasoning depth with `output_config: {effort: ...}` instead of a token budget.
 
@@ -295,9 +297,9 @@ becomes:
 
 
 
-`effort: "high"` matches the API default; it appears here only to show where the depth control now lives, and omitting it produces identical behavior.
+`effort: "high"` is the default on Claude Sonnet 4.6, so omitting it here produces identical behavior; it appears only to show where the depth control lives in adaptive mode. Claude Opus 5.5 and Claude Haiku 5.5 default to `"medium"`, and other models that support effort default to `"high"` (see [Effort levels](build-with-claude-effort.md#effort-levels)).
 
-Expect a behavioral difference, not just a syntax change. With a fixed budget, Claude thinks on every request. With adaptive thinking, Claude decides whether and how much to think on each request, and at lower [effort](build-with-claude-effort.md) settings it may skip thinking entirely on easy inputs. You can also remove the `interleaved-thinking-2025-05-14` beta header after migrating: adaptive thinking interleaves automatically, and the Claude API ignores the header on these models. Thinking block preservation changes too: Claude Opus 4.5 and models numbered 4.6 and higher keep prior turns' thinking blocks in context and bill them as input, where Claude Sonnet 4.5, Claude Haiku 4.5, and earlier models stripped them; see [thinking block preservation by model](build-with-claude-thinking.md#thinking-block-preservation-by-model).
+Expect a behavioral difference, not just a syntax change. With a fixed budget, Claude thinks on every request. With adaptive thinking, Claude determines whether and how much to think on each request, and at lower [effort](build-with-claude-effort.md) settings it may skip thinking entirely on easy inputs. You can also remove the `interleaved-thinking-2025-05-14` beta header after migrating: adaptive thinking interleaves automatically, and the Claude API ignores the header on these models. Thinking block preservation changes too: Claude Opus 4.5 and models numbered 4.6 and higher keep prior turns' thinking blocks in context and bill them as input, where Claude Sonnet 4.5 (deprecated), Claude Haiku 4.5, and earlier models stripped them; see [thinking block preservation by model](build-with-claude-thinking.md#thinking-block-preservation-by-model).
 
 Switching modes is a thinking-configuration change, so the first request after the switch invalidates cache breakpoints, as described in [Prompt caching in manual mode](#extended-thinking-with-prompt-caching).
 
@@ -313,7 +315,7 @@ Learn how thinking works: blocks, display, streaming, and tool use.
 
 [Steering thinking](build-with-claude-thinking-steering-and-cost.md)
 
-Let Claude decide when and how much to think on each request.
+Let Claude determine when and how much to think on each request.
 
 
 

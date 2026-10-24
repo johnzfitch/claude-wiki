@@ -2,7 +2,7 @@
 title: "Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:51Z"
+fetched_at: "2026-10-23T06:29:14Z"
 tags: ["enterprise", "rag"]
 ---
 
@@ -155,7 +155,7 @@ The table shows what your BAA covers in an organization that has enabled HIPAA b
 
 [TABLE]
 
-Data retention periods within a HIPAA-Enabled API Organization are described in Anthropic’s **[public documentation](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md)**.
+Data retention periods within a HIPAA-Enabled API Organization are described in Anthropic’s **[public documentation](../04-API-Reference/Other/manage-claude-api-and-data-retention.md)**.
 
 ### Messages API features
 

@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodels%2Fwhats-new-sonnet-5)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodels%2Fwhats-new-sonnet-5)
 
 
 
@@ -34,7 +34,7 @@ Models
 
 [Models overview](about-claude-models-overview.md)[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Choosing a model](about-claude-models-choosing-a-model.md)[Optimizing for cost and intelligence](about-claude-models-optimizing-for-cost-and-intelligence.md)[Introducing Claude Fable 5 and Claude Mythos 5](about-claude-models-introducing-claude-fable-5-and-claude-mythos-5.md)[What's new in Claude Sonnet 5](about-claude-models-whats-new-sonnet-5.md)[What's new in Claude Opus 5](about-claude-models-whats-new-opus-5.md)[Upgrade between model versions](about-claude-models-migration-guide.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[System prompts](release-notes-system-prompts.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
 
-[](../04-API-Reference/Other/usage-limits.md)
+[](../04-API-Reference/Other/playground.md)
 
 Console
 
@@ -184,7 +184,7 @@ At launch, Claude Sonnet 5 is available on:
 - **Google Cloud:** available through [Claude on Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md).
 - **Microsoft Foundry:** available through [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md).
 
-Claude Sonnet 5 supports [zero data retention](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md) for organizations with ZDR agreements.
+Claude Sonnet 5 supports [zero data retention](../04-API-Reference/Other/manage-claude-api-and-data-retention.md) for organizations with ZDR agreements.
 
 
 

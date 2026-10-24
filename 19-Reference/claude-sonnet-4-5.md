@@ -2,19 +2,52 @@
 title: "Introducing Claude Sonnet 4.5 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-sonnet-4-5"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:42:15Z"
+fetched_at: "2026-10-21T06:30:06Z"
 tags: ["agents", "news-research", "sdk", "search"]
 ---
 
 # Introducing Claude Sonnet 4.5
 
-Sep 29, 2025
+- [01Frontier intelligence](#frontier-intelligence)
+- [02Our most aligned model yet](#our-most-aligned-model-yet)
+- [03The Claude Agent SDK](#the-claude-agent-sdk)
+- [04Bonus research preview](#bonus-research-preview)
+- [05Further information](#further-information)
+
+- Published
+
+  Sep 29, 2025
+
+- Category
+
+  [Models](models.md)
+
+- Topics
+
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Computer use](https://www.anthropic.com/search?topic=computer-use)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+
+  See more...
+
+Related articles
+
+- Product
+
+  Feb 23, 2026
+
+  [The making of Claude Code](https://www.anthropic.com/features/making-of-claude-code)
+
+[View more](https://www.anthropic.com/search?topic=claude-sonnet)
 
 Claude Sonnet 4.5 is the best coding model in the world. It's the strongest model for building complex agents. It’s the best model at using computers. And it shows substantial gains in reasoning and math.
 
 Code is everywhere. It runs every application, spreadsheet, and software tool you use. Being able to use those tools and reason through hard problems is how modern work gets done.
 
-Claude Sonnet 4.5 makes this possible. We're releasing it along with a set of major upgrades to our products. In [Claude Code](enabling-claude-code-to-work-more-autonomously.md), we've added checkpoints—one of our most requested features—that save your progress and allow you to roll back instantly to a previous state. We've refreshed the terminal interface and shipped a [native VS Code extension](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code). We've added a new [context editing feature and memory tool](context-management.md) to the Claude API that lets agents run even longer and handle even greater complexity. In the Claude [apps](https://claude.ai/redirect/website.v1.0e8bf6f4-9a31-4703-a09f-a8ae5e62c75f/download), we've brought code execution and [file creation](create-files.md) (spreadsheets, slides, and documents) directly into the conversation. And we've made the [Claude for Chrome](claude-for-chrome.md) extension available to Max users who joined the waitlist last month.
+Claude Sonnet 4.5 makes this possible. We're releasing it along with a set of major upgrades to our products. In [Claude Code](enabling-claude-code-to-work-more-autonomously.md), we've added checkpoints—one of our most requested features—that save your progress and allow you to roll back instantly to a previous state. We've refreshed the terminal interface and shipped a [native VS Code extension](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code). We've added a new [context editing feature and memory tool](context-management.md) to the Claude API that lets agents run even longer and handle even greater complexity. In the Claude [apps](https://claude.ai/download), we've brought code execution and [file creation](create-files.md) (spreadsheets, slides, and documents) directly into the conversation. And we've made the [Claude for Chrome](claude-for-chrome.md) extension available to Max users who joined the waitlist last month.
 
 We're also giving developers the building blocks we use ourselves to make Claude Code. We're calling this the [Claude Agent SDK](https://anthropic.com/engineering/building-agents-with-the-claude-agent-sdk). The infrastructure that powers our frontier products—and allows them to reach their full potential—is now yours to build with.
 
@@ -42,72 +75,89 @@ STEM
 
 The model’s capabilities are also reflected in the experiences of early customers:
 
-> **We're seeing state-of-the-art coding performance from Claude Sonnet 4.5**, with significant improvements on longer horizon tasks. It reinforces why many developers using Cursor choose Claude for solving their most complex problems.
->
-> Michael Truell  
-> CEO
+> “We're seeing state-of-the-art coding performance from Claude Sonnet 4.5, with significant improvements on longer horizon tasks. It reinforces why many developers using Cursor choose Claude for solving their most complex problems.”
 
-> **Claude Sonnet 4.5 amplifies GitHub Copilot's core strengths**. Our initial evals show significant improvements in multi-step reasoning and code comprehension—enabling Copilot's agentic experiences to handle complex, codebase-spanning tasks better.
->
-> Mario Rodriguez  
-> Chief Product Officer
+Michael Truell
 
-> **Claude Sonnet 4.5 is excellent at software development tasks**, learning our codebase patterns to deliver precise implementations. It handles everything from debugging to architecture with deep contextual understanding, transforming our development velocity.
->
-> Eric Wendelin  
-> Tech Lead, GenAI for Developer Productivity
+CEO
 
-> Claude Sonnet 4.5 **reduced average vulnerability intake time for our Hai security agents by 44% while improving accuracy by 25%**, helping us reduce risk for businesses with confidence.
->
-> Nidhi Aggarwal  
-> Chief Product Officer
+> “Claude Sonnet 4.5 amplifies GitHub Copilot's core strengths. Our initial evals show significant improvements in multi-step reasoning and code comprehension—enabling Copilot's agentic experiences to handle complex, codebase-spanning tasks better.”
 
-> **Claude Sonnet 4.5 is state of the art on the most complex litigation tasks.** For example, analyzing full briefing cycles and conducting research to synthesize excellent first drafts of an opinion for judges, or interrogating entire litigation records to create detailed summary judgment analysis.
->
-> Pablo Arredondo  
-> Vice President, CoCounsel
+Mario Rodriguez
 
-> Claude Sonnet 4.5's edit capabilities are exceptional — **we went from 9% error rate on Sonnet 4 to 0% on our internal code editing benchmark**. Higher tool success at lower cost is a major leap for agentic coding. Claude Sonnet 4.5 balances creativity and control perfectly.
->
-> Michele Catasta  
-> President
+Chief Product Officer
 
-> Claude Sonnet 4.5 delivers impressive gains on our most complex, long-context tasks—from engineering in our codebase to in-product features and research. **It's noticeably more intelligent and a big leap forward**, helping us push what 240M+ users can design with Canva.
->
-> Danny Wu  
-> Head of AI Products
+> “Claude Sonnet 4.5 is excellent at software development tasks, learning our codebase patterns to deliver precise implementations. It handles everything from debugging to architecture with deep contextual understanding, transforming our development velocity.”
 
-> **Claude Sonnet 4.5 has noticeably improved Figma Make in early testing**, making it easier to prompt and iterate. Teams can explore and validate their ideas with more functional prototypes and smoother interactions, while still getting the design quality Figma is known for.
->
-> David Kossnick  
-> Head of AI Products
+Eric Wendelin
 
-> **Sonnet 4.5 represents a new generation of coding models**. It's surprisingly efficient at maximizing actions per context window through parallel tool execution, for example running multiple bash commands at once.
->
-> Jeff Wang  
-> CEO
+Tech Lead, GenAI for Developer Productivity
 
-> For Devin, Claude Sonnet 4.5 increased planning performance by 18% and end-to-end eval scores by 12%—**the biggest jump we've seen since the release of Claude Sonnet 3.6**. It excels at testing its own code, enabling Devin to run longer, handle harder tasks, and deliver production-ready code.
->
-> Scott Wu  
-> Co-Founder and CEO
+> “Claude Sonnet 4.5 reduced average vulnerability intake time for our Hai security agents by 44% while improving accuracy by 25%, helping us reduce risk for businesses with confidence.”
 
-> **Claude Sonnet 4.5 shows strong promise for red teaming**, generating creative attack scenarios that accelerate how we study attacker tradecraft. These insights strengthen our defenses across endpoints, identity, cloud, data, SaaS, and AI workloads.
->
-> Sven Krasser  
-> Sr. Vice President for Data Science and Chief Scientist
+Nidhi Aggarwal
 
-> Claude Sonnet 4.5 resets our expectations—**it handles 30+ hours of autonomous coding**, freeing our engineers to tackle months of complex architectural work in dramatically less time while maintaining coherence across massive codebases.
->
-> Sean Ward  
-> CEO and Co-Founder
+Chief Product Officer
 
-> For complex financial analysis—risk, structured products, portfolio screening—Claude Sonnet 4.5 with thinking **delivers investment-grade insights that require less human review**. When depth matters more than speed, it's a meaningful step forward for institutional finance.
->
-> Stian Kirkeberg  
-> Head of AI and Machine Learning
+> “Claude Sonnet 4.5 is state of the art on the most complex litigation tasks. For example, analyzing full briefing cycles and conducting research to synthesize excellent first drafts of an opinion for judges, or interrogating entire litigation records to create detailed summary judgment analysis.”
 
-01 / 13
+Pablo Arredondo
+
+Vice President, CoCounsel
+
+> “Claude Sonnet 4.5's edit capabilities are exceptional — we went from 9% error rate on Sonnet 4 to 0% on our internal code editing benchmark. Higher tool success at lower cost is a major leap for agentic coding. Claude Sonnet 4.5 balances creativity and control perfectly.”
+
+Michele Catasta
+
+President
+
+> “Claude Sonnet 4.5 delivers impressive gains on our most complex, long-context tasks—from engineering in our codebase to in-product features and research. It's noticeably more intelligent and a big leap forward, helping us push what 240M+ users can design with Canva.”
+
+Danny Wu
+
+Head of AI Products
+
+> “Claude Sonnet 4.5 has noticeably improved Figma Make in early testing, making it easier to prompt and iterate. Teams can explore and validate their ideas with more functional prototypes and smoother interactions, while still getting the design quality Figma is known for.”
+
+David Kossnick
+
+Head of AI Products
+
+> “Sonnet 4.5 represents a new generation of coding models. It's surprisingly efficient at maximizing actions per context window through parallel tool execution, for example running multiple bash commands at once. ”
+
+Jeff Wang
+
+CEO
+
+> “For Devin, Claude Sonnet 4.5 increased planning performance by 18% and end-to-end eval scores by 12%—the biggest jump we've seen since the release of Claude Sonnet 3.6. It excels at testing its own code, enabling Devin to run longer, handle harder tasks, and deliver production-ready code.”
+
+Scott Wu
+
+Co-Founder and CEO
+
+> “Claude Sonnet 4.5 shows strong promise for red teaming, generating creative attack scenarios that accelerate how we study attacker tradecraft. These insights strengthen our defenses across endpoints, identity, cloud, data, SaaS, and AI workloads.”
+
+Sven Krasser
+
+Sr. Vice President for Data Science and Chief Scientist
+
+> “Claude Sonnet 4.5 resets our expectations—it handles 30+ hours of autonomous coding, freeing our engineers to tackle months of complex architectural work in dramatically less time while maintaining coherence across massive codebases.”
+
+Sean Ward
+
+CEO and Co-Founder
+
+> “For complex financial analysis—risk, structured products, portfolio screening—Claude Sonnet 4.5 with thinking delivers investment-grade insights that require less human review. When depth matters more than speed, it's a meaningful step forward for institutional finance.”
+
+Stian Kirkeberg
+
+Head of AI and Machine Learning
+
+01
+
+/
+
+13
 
 ## Our most aligned model yet
 
@@ -117,7 +167,7 @@ You can read a detailed set of safety and alignment evaluations, which for the f
 
 Claude Sonnet 4.5 is being released under our AI Safety Level 3 (ASL-3) protections, as per [our framework](announcing-our-updated-responsible-scaling-policy.md) that matches model capabilities with appropriate safeguards. These safeguards include filters called classifiers that aim to detect potentially dangerous inputs and outputs—in particular those related to chemical, biological, radiological, and nuclear (CBRN) weapons.
 
-These classifiers might sometimes inadvertently flag normal content. We’ve made it easy for users to continue any interrupted conversations with Sonnet 4, a model that poses a lower CBRN risk. We've already made significant progress in reducing these false positives, reducing them by a factor of ten since [we originally described them](constitutional-classifiers.md), and a factor of two since Claude Opus 4 was released in May. We’re continuing to make progress in making the classifiers more discerning¹.
+These classifiers might sometimes inadvertently flag normal content. We’ve made it easy for users to continue any interrupted conversations with Sonnet 4, a model that poses a lower CBRN risk. We've already made significant progress in reducing these false positives, reducing them by a factor of ten since [we originally described them](constitutional-classifiers.md), and a factor of two since Claude Opus 4 was released in May. We’re continuing to make progress in making the classifiers more discerning^([1](#footnote-1)).
 
 ## The Claude Agent SDK
 
@@ -129,25 +179,21 @@ We built Claude Code because the tool we wanted didn’t exist yet. The Agent SD
 
 ## Bonus research preview
 
-We’re releasing a temporary research preview alongside Claude Sonnet 4.5, called "[Imagine with Claude](https://claude.ai/redirect/website.v1.0e8bf6f4-9a31-4703-a09f-a8ae5e62c75f/imagine)".
+We’re releasing a temporary research preview alongside Claude Sonnet 4.5, called "[Imagine with Claude](https://claude.ai/imagine)".
 
 In this experiment, Claude generates software on the fly. No functionality is predetermined; no code is prewritten. What you see is Claude creating in real time, responding and adapting to your requests as you interact.
 
 It's a fun demonstration showing what Claude Sonnet 4.5 can do—a way to see what's possible when you combine a capable model with the right infrastructure.
 
-"Imagine with Claude" is available to Max subscribers for the next five days. We encourage you to try it out on [claude.ai/imagine](https://claude.ai/redirect/website.v1.0e8bf6f4-9a31-4703-a09f-a8ae5e62c75f/imagine).
+"Imagine with Claude" is available to Max subscribers for the next five days. We encourage you to try it out on [claude.ai/imagine](https://claude.ai/imagine).
 
 ## Further information
 
 We recommend upgrading to Claude Sonnet 4.5 for all uses. Whether you’re using Claude through our apps, our API, or Claude Code, Sonnet 4.5 is a drop-in replacement that provides much improved performance for the same price. Claude Code updates are available to all users. [Claude Developer Platform](https://claude.com/platform/api) updates, including the Claude Agent SDK, are available to all developers. Code execution and file creation are available on all paid plans in the Claude apps.
 
-For complete technical details and evaluation results, see our [system card](../15-Claude-AI-Features/claude-sonnet-4-5-system-card.md), [model page](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md), and [documentation](https://docs.claude.com/en/docs/about-claude/models/overview). For more information, explore our [engineering](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk) [posts](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and research post on [cybersecurity](https://red.anthropic.com/2025/ai-for-cyber-defenders).
+For complete technical details and evaluation results, see our [system card](../15-Claude-AI-Features/claude-sonnet-4-5-system-card.md), [model page](../15-Claude-AI-Features/claude-sonnet.md), and [documentation](https://docs.claude.com/en/docs/about-claude/models/overview). For more information, explore our [engineering](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk) [posts](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and research post on [cybersecurity](https://red.anthropic.com/2025/ai-for-cyber-defenders).
 
-#### Footnotes
-
-*1**:** Customers in the cybersecurity and biological research industries can work with their account teams to join our allowlist in the meantime.*  
-  
-**Methodology**
+### Methodology
 
 - **SWE-bench Verified**: All Claude results were reported using a simple scaffold with two tools—bash and file editing via string replacements. We report 77.2%, which was averaged over 10 trials, no test-time compute, and 200K thinking budget on the full 500-problem SWE-bench Verified dataset.
   - The score reported uses a minor prompt addition: "You should use tools as much as possible, ideally more than 100 times. You should also implement your own tests first before attempting the problem."
@@ -165,118 +211,6 @@ For complete technical details and evaluation results, see our [system card](../
 - **Finance Agent**: All scores reported were run and published by [Vals AI](https://vals.ai) on their public leaderboard. All Claude model results reported are with extended thinking (up to 64K) and Sonnet 4.5 is reported with interleaved thinking on.
 - All OpenAI scores reported from their [GPT-5 post](https://openai.com/index/introducing-gpt-5/), [GPT-5 for developers post](https://openai.com/index/introducing-gpt-5-for-developers/), [GPT-5 system card](https://cdn.openai.com/gpt-5-system-card.pdf) (SWE-bench Verified reported using n=500), [Terminal Bench leaderboard](https://www.tbench.ai/) (using Terminus 2), and public [Vals AI](http://vals.ai) leaderboard. All Gemini scores reported from their [model web page](https://deepmind.google/models/gemini/pro/), [Terminal Bench leaderboard](https://www.tbench.ai/) (using Terminus 1), and public [Vals AI](https://vals.ai) leaderboard.
 
+## Footnotes
 
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+01Customers in the cybersecurity and biological research industries can work with their account teams to join our allowlist in the meantime.[](#footnote-ref-1)

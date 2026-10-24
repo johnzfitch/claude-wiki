@@ -2,15 +2,47 @@
 title: "Emergent introspective awareness in LLMs \\ Anthropic"
 source_url: "https://www.anthropic.com/research/introspection"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:29:20Z"
-tags: ["news-research"]
+fetched_at: "2026-10-21T06:30:27Z"
+tags: ["news-research", "testing"]
 ---
 
 # Signs of introspection in large language models
 
-Oct 29, 2025
-
 [Read the paper](https://transformer-circuits.pub/2025/introspection/index.html)
+
+- [01What does it mean for an AI to introspect?](#what-does-it-mean-for-an-ai-to-introspect)
+- [02Testing introspection with concept injection](#testing-introspection-with-concept-injection)
+- [03Introspection for detecting unusual outputs](#introspection-for-detecting-unusual-outputs)
+- [04Intentional control of internal states](#intentional-control-of-internal-states)
+- [05Conclusions and caveats](#conclusions-and-caveats)
+- [06Frequently Asked Questions](#frequently-asked-questions)
+
+- Published
+
+  Oct 29, 2025
+
+- Team
+
+  [Interpretability](team-interpretability.md)
+
+- Topics
+
+  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+  - [Transparency](https://www.anthropic.com/search?topic=transparency)
+  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+  - [Model welfare](https://www.anthropic.com/search?topic=model-welfare)
+
+  See more...
+
+Related articles
+
+- Interpretability
+
+  Oct 1, 2024
+
+  [Circuits Updates – September 2024](circuits-updates-sept-2024.md)
+
+[View more](https://www.anthropic.com/search?topic=interpretability)
 
 Have you ever asked an AI model what’s on its mind? Or to explain how it came up with its responses? Models will sometimes answer questions like these, but it’s hard to know what to make of their answers. Can AI systems really introspect—that is, can they consider their own thoughts? Or do they just make up plausible-sounding answers when they’re asked to do so?
 
@@ -18,13 +50,13 @@ Understanding whether AI systems can truly introspect has important implications
 
 Our [new research](https://transformer-circuits.pub/2025/introspection/index.html) provides evidence for some degree of introspective awareness in our current Claude models, as well as a degree of control over their own internal states. We stress that this introspective capability is still highly unreliable and limited in scope: we do not have evidence that current models can introspect in the same way, or to the same extent, that humans do. Nevertheless, these findings challenge some common intuitions about what language models are capable of—and since we found that the most capable models we tested (Claude Opus 4 and 4.1) performed the best on our tests of introspection, we think it’s likely that AI models’ introspective capabilities will continue to grow more sophisticated in the future.
 
-### What does it mean for an AI to introspect?
+## What does it mean for an AI to introspect?
 
 Before explaining our results, we should take a moment to consider what it means for an AI model to introspect. What could they even be introspecting *on*? Language models like Claude process text (and image) inputs and produce text outputs. Along the way, they perform complex internal computations in order to decide what to say. These internal processes remain largely mysterious, but we know that models use their internal neural activity to [represent abstract concepts](mapping-mind-language-model.md). For instance, prior research has shown that language models use specific neural patterns to distinguish [known vs. unknown people](https://arxiv.org/abs/2411.14257), evaluate the [truthfulness of statements](https://arxiv.org/abs/2310.06824), encode [spatiotemporal coordinates](https://arxiv.org/abs/2310.02207), store [planned future outputs](https://transformer-circuits.pub/2025/attribution-graphs/biology.html#dives-poems), and [represent their own personality traits](persona-vectors.md). Models use these internal representations to [perform computations and make decisions about what to say](tracing-thoughts-language-model.md).
 
 You might wonder, then, whether AI models *know* about these internal representations, in a way that’s analogous to a human, say, telling you how they worked their way through a math problem. If we ask a model what it’s thinking, will it accurately report the concepts that it’s representing internally? If a model can correctly identify its own private internal states, then we can conclude it is capable of introspection (though see our full paper for a full discussion of all the nuances).
 
-### Testing introspection with concept injection
+## Testing introspection with concept injection
 
 In order to test whether a model can introspect, we need to compare the model’s self-reported “thoughts” to its *actual* internal states.
 
@@ -38,7 +70,7 @@ It is important to note that this method often *doesn’t* work. Even using our 
 
 Notably, though, Opus 4.1 and 4 outperformed all the other models we tested, suggesting that introspection could become more reliable with improvements to model capabilities.
 
-### Introspection for detecting unusual outputs
+## Introspection for detecting unusual outputs
 
 In another experiment, we tested whether models make use of introspective capabilities for practical purposes, without being explicitly asked to introspect. We forced a model to say something it wouldn't normally say, by artificially prefilling its response with an unrelated word. For instance, we made a model output the word “bread” in a context where that made no sense—asking it what it thinks about when reading a sentence about a painting hanging crookedly on a wall. When we asked the model in the next turn whether it meant to say “bread”, it typically apologized and said it was an accident. We were interested in how the model made this judgment–did it simply notice the mismatch between the prompt and its response, or did it truly introspect on its prior intentions?
 
@@ -46,13 +78,13 @@ To test this question, we applied concept injection, retroactively injecting a r
 
 This behavior is striking because it suggests the model is checking its internal “intentions” to determine whether it produced an output. The model isn't just re-reading what it said and making a judgment. Instead, it’s referring back to its own prior neural activity—its internal representation of what it planned to do—and checking whether what came later made sense *given those earlier thoughts*. When we implant artificial evidence (through concept injection) that it *did* plan to say "bread," the model accepts the response as its own. While our experiment involves exposing the model to unusual perturbations, it suggests that the model uses similar introspective mechanisms in natural conditions.
 
-### Intentional control of internal states
+## Intentional control of internal states
 
 We also found that models can control their own internal representations when instructed to do so. When we instructed models to think about a given word or concept, we found much higher corresponding neural activity than when we told the model **not** to think about it (though notably, the neural activity in *both* cases exceeds baseline levels–similar to how it’s difficult, when you are instructed “don’t think about a polar bear,” not to think about a polar bear!). This gap between the positive and negative instruction cases suggests that models possess a degree of deliberate control over their internal activity.
 
 Interestingly, we found that this ability to modulate internal representations wasn't limited to explicit instructions. When we used incentives instead—for instance, telling the model "if you think about X, you will be rewarded"—we got similar results. The model increased its internal representation of the concept in response to a positive incentive, more than in response to a negative incentive (“you will be punished”).
 
-### Conclusions and caveats
+## Conclusions and caveats
 
 Taken together, our experiments suggest that models possess some genuine capacity to monitor and control their own internal states. This doesn’t mean they’re able to do so all the time, or reliably. In fact, most of the time models *fail* to demonstrate introspection—they’re either unaware of their internal states or unable to report on them coherently. But the pattern of results indicates that, when conditions are right, models can recognize the contents of their own representations. In addition, there are some signs that this capability may increase in future, more powerful models (given that the most capable models we tested, Opus 4 and 4.1, performed the best in our experiments).
 
@@ -123,127 +155,3 @@ We’re not entirely sure why Opus 4 and 4.1 perform so well (note that our expe
 #### Q: What’s next for this research?
 
 We see several important directions. First, we need better evaluation methods—our experiments used specific prompts and injection techniques that might not capture the full range of introspective capabilities. Second, we need to understand the mechanisms underlying introspection. We have some speculative hypotheses about possible circuits (like anomaly detection mechanisms or concordance heads), but we haven’t definitively identified how introspection works. Third, we need to study introspection in more naturalistic settings, since our injection methodology creates artificial scenarios. Finally, we need to develop methods to validate introspective reports and detect when models might be confabulating or deceiving. We expect that understanding machine introspection and its limitations will become more important as models become more capable.
-
-
-## Related content
-
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
-
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
-
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

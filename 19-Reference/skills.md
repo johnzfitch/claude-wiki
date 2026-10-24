@@ -2,42 +2,28 @@
 title: "Introducing Agent Skills | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/skills"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:12:00Z"
+fetched_at: "2026-10-21T06:29:57Z"
 tags: ["agents", "news-research", "skills"]
 ---
 
 # Introducing Agent Skills
 
+- 
 
+  Category[Announcements](https://www.anthropic.com/resources/product-announcements)
+- 
+
+  ProductClaude Platform
+- 
+
+  DateOctober 16, 2025
+- 
+
+  Reading time4 min
 - 
 
 
-  [Product announcements](https://claude.com/blog/category/announcements)
-
-- 
-
-
-  Claude Platform
-
-- 
-
-
-  October 16, 2025
-
-- 
-
-
-  5
-
-  min
-
-- 
-
-
-  [Copy link](#)
-  https://claude.com/blog/skills
-
-***Update:*** *We've added* [*organization-wide management for skills*](https://www.anthropic.com/blog/organization-skills-and-directory)*, a* [*directory*](../04-API-Reference/Other/partners-mcp.md) *featuring partner-built skills, and published* [*Agent Skills*](https://agentskills.io) *as an open standard for cross-platform portability. (December 18, 2025)*
+***Update:** We've added [organization-wide management for skills](https://www.anthropic.com/resources/articles/organization-skills-and-directory), a [directory](../04-API-Reference/Other/partners-mcp.md) featuring partner-built skills, and published [Agent Skills](https://agentskills.io) as an open standard for cross-platform portability. (December 18, 2025)*
 
 Claude can now use *Skills* to improve how it performs specific tasks. Skills are folders that include instructions, scripts, and resources that Claude can load when needed.
 
@@ -81,28 +67,47 @@ Developers can also easily create, view, and upgrade skill versions through the 
 Explore the [documentation](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) , our [skills cookbook](https://platform.claude.com/cookbook/skills-notebooks-01-skills-introduction), or [Anthropic Academy](https://www.anthropic.com/learn/build-with-claude) to learn more.
 
 
-Skills teaches Claude how to work with Box content. Users can transform stored files into PowerPoint presentations, Excel spreadsheets, and Word documents that follow their organization's standards—saving hours of effort.
-
-Yashodha Bhavnani, Head of AI
-
-Canva plans to leverage Skills to customize agents and expand what they can do. This unlocks new ways to bring Canva deeper into agentic workflows—helping teams capture their unique context and create stunning, high-quality designs effortlessly.
+> “Canva plans to leverage Skills to customize agents and expand what they can do. This unlocks new ways to bring Canva deeper into agentic workflows—helping teams capture their unique context and create stunning, high-quality designs effortlessly.”
 
 Anwar Haneef, GM & Head of Ecosystem
 
-With Skills, Claude works seamlessly with Notion - taking users from questions to action faster. Less prompt wrangling on complex tasks, more predictable results.
+> “With Skills, Claude works seamlessly with Notion - taking users from questions to action faster. Less prompt wrangling on complex tasks, more predictable results.”
 
 MJ Felix, Product Manager
 
-Skills streamline our management accounting and finance workflows. Claude processes multiple spreadsheets, catches critical anomalies, and generates reports using our procedures. What once took a day, we can now accomplish in an hour.
+> “Skills streamline our management accounting and finance workflows. Claude processes multiple spreadsheets, catches critical anomalies, and generates reports using our procedures. What once took a day, we can now accomplish in an hour.”
 
 Yusuke Kaji, General Manager AI
 
-[Prev](#)
+> “Skills teaches Claude how to work with Box content. Users can transform stored files into PowerPoint presentations, Excel spreadsheets, and Word documents that follow their organization's standards—saving hours of effort.”
 
-Prev
+Yashodha Bhavnani, Head of AI
 
-0/5
+> “Canva plans to leverage Skills to customize agents and expand what they can do. This unlocks new ways to bring Canva deeper into agentic workflows—helping teams capture their unique context and create stunning, high-quality designs effortlessly.”
 
+Anwar Haneef, GM & Head of Ecosystem
+
+> “With Skills, Claude works seamlessly with Notion - taking users from questions to action faster. Less prompt wrangling on complex tasks, more predictable results.”
+
+MJ Felix, Product Manager
+
+> “Skills streamline our management accounting and finance workflows. Claude processes multiple spreadsheets, catches critical anomalies, and generates reports using our procedures. What once took a day, we can now accomplish in an hour.”
+
+Yusuke Kaji, General Manager AI
+
+> “Skills teaches Claude how to work with Box content. Users can transform stored files into PowerPoint presentations, Excel spreadsheets, and Word documents that follow their organization's standards—saving hours of effort.”
+
+Yashodha Bhavnani, Head of AI
+
+> “Canva plans to leverage Skills to customize agents and expand what they can do. This unlocks new ways to bring Canva deeper into agentic workflows—helping teams capture their unique context and create stunning, high-quality designs effortlessly.”
+
+Anwar Haneef, GM & Head of Ecosystem
+
+> “With Skills, Claude works seamlessly with Notion - taking users from questions to action faster. Less prompt wrangling on complex tasks, more predictable results.”
+
+MJ Felix, Product Manager
+
+1/4
 
 ### **Claude Code**
 
@@ -119,4 +124,45 @@ Skills extend Claude Code with your team's expertise and workflows. Install skil
 
 We're working toward simplified skill creation workflows and enterprise-wide deployment capabilities, making it easier for organizations to distribute skills across teams.
 
-Keep in mind, this feature gives Claude access to execute code. While powerful, it means being mindful about which skills you use—stick to trusted sources to keep your data safe. [Learn more](https://www.anthropic.com/99-Other/using-skills-in-claude-a1bdb5a95a.md#h_2746475e70).
+Keep in mind, this feature gives Claude access to execute code. While powerful, it means being mindful about which skills you use—stick to trusted sources to keep your data safe. [Learn more](../02-Claude-Code-CLI/using-skills-in-claude.md#h_2746475e70).
+
+## Related articles
+
+Explore more product news and best practices for teams building with Claude.
+
+
+ArticleOct 15, 2026
+
+### Code Review is now generally available
+
+Catch more bugs before they reach production.
+
+Claude Code
+
+
+ArticleOct 8, 2026
+
+### Build live dashboards and animate explainers with Claude 
+
+Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
+
+Claude appsClaude Design
+
+2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+
+
+ArticleOct 7, 2026
+
+### Claude Haiku 5.5
+
+Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
+
+(opens in new tab)[](https://www.anthropic.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
+
+ArticleOct 6, 2026
+
+### Claude now works with Google Docs, Sheets, and Slides
+
+Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
+
+Claude Enterprise

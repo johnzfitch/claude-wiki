@@ -1,8 +1,8 @@
 ---
 title: "Authorization Security Considerations - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/security-considerations"
+source_url: "https://modelcontextprotocol.io/specification/draft/basic/authorization/security-considerations"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-09T06:27:39Z"
+fetched_at: "2026-10-21T06:29:16Z"
 tags: ["authorization", "mcp", "mcp-spec", "security"]
 ---
 
@@ -91,7 +91,7 @@ An attacker may craft malicious redirect URIs to direct users to phishing sites.
 
 Client ID Metadata Document Security
 
-When implementing [Client ID Metadata Documents](2026-07-28-basic-authorization-client-registration.md#client-id-metadata-documents), authorization servers **MUST** consider the security implications detailed in [OAuth Client ID Metadata Document, Section 6](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-00#name-security-considerations). Key considerations include:
+When implementing [Client ID Metadata Documents](draft-basic-authorization-client-registration.md#client-id-metadata-documents), authorization servers **MUST** consider the security implications detailed in [OAuth Client ID Metadata Document, Section 6](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-00#name-security-considerations). Key considerations include:
 
 
 [​](#authorization-server-abuse-protection)
@@ -123,7 +123,7 @@ Authorization servers **MAY** implement domain-based trust policies for acceptin
 
 Confused Deputy Problem
 
-Attackers can exploit MCP servers acting as intermediaries to third-party APIs, leading to [confused deputy vulnerabilities](../General/draft-tutorials-security-security-best-practices.md#confused-deputy-problem). By using stolen authorization codes, they can obtain access tokens without user consent. MCP proxy servers using static client IDs **MUST** obtain user consent for each [dynamically registered client](2026-07-28-basic-authorization-client-registration.md#dynamic-client-registration) before forwarding to third-party authorization servers (which may require additional consent).
+Attackers can exploit MCP servers acting as intermediaries to third-party APIs, leading to [confused deputy vulnerabilities](../General/draft-tutorials-security-security-best-practices.md#confused-deputy-problem). By using stolen authorization codes, they can obtain access tokens without user consent. MCP proxy servers using static client IDs **MUST** obtain user consent for each [dynamically registered client](draft-basic-authorization-client-registration.md#dynamic-client-registration) before forwarding to third-party authorization servers (which may require additional consent).
 
 
 [​](#access-token-privilege-restriction)

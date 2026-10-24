@@ -1,8 +1,8 @@
 ---
 title: "Claude Team plan for scientists | Claude by Anthropic"
-source_url: "https://www.claude.com/programs/team-plan-for-scientists"
+source_url: "https://www.claude.com/programs/claude-team-plan-for-research-labs"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:26:34Z"
+fetched_at: "2026-10-20T06:41:56Z"
 tags: ["claude-ai", "enterprise", "search", "security"]
 ---
 
@@ -334,6 +334,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
@@ -372,7 +373,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -405,7 +406,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -458,6 +459,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
@@ -496,7 +498,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -529,7 +531,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

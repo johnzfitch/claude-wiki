@@ -2,7 +2,7 @@
 title: "Exceptions to our Usage Policy | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9528712-exceptions-to-our-usage-policy"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:41Z"
+fetched_at: "2026-10-23T06:29:20Z"
 tags: ["safety"]
 ---
 

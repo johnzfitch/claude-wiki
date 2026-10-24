@@ -2,7 +2,7 @@
 title: "Claude Haiku 4.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/haiku-4-5/overview"
 category: "20-Models"
-fetched_at: "2026-10-04T08:32:55Z"
+fetched_at: "2026-10-20T06:40:36Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fhaiku-4-5%2Foverview)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fhaiku-4-5%2Foverview)
 
 
 
@@ -40,13 +40,13 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
-
-[Overview](models-haiku-4-5-overview.md)[Migration guide](models-haiku-4-5-migration-guide.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
 Legacy models
+
+[Claude Fable 5](models-fable-5-overview.md)[Claude Opus 5](models-opus-5-overview.md)[Claude Sonnet 5](models-sonnet-5-overview.md)[Claude Opus 4.8](models-opus-4-8-overview.md)[Claude Opus 4.7](models-opus-4-7-overview.md)[Claude Opus 4.6](models-opus-4-6-overview.md)[Claude Sonnet 4.6](models-sonnet-4-6-overview.md)[Claude Opus 4.5](models-opus-4-5-overview.md)[Claude Sonnet 4.5](models-sonnet-4-5-overview.md)[Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
 Guides
 
@@ -54,17 +54,21 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
-[Models & pricing](about-claude-models-overview.md)Models
+
 
-# Claude Haiku 4.5Latest
+Although Claude Haiku 4.5 is still available, you should consider migrating to Claude Haiku 5.5.
 
-The fastest model with near-frontier intelligence
+[See Claude Haiku 5.5](models-haiku-5-5-overview.md)
+
+[Models & pricing](about-claude-models-overview.md)Legacy models
+
+# Claude Haiku 4.5Legacy
 
 Copy page
 
@@ -72,13 +76,13 @@ The fastest model with near-frontier intelligence
 
 claude-haiku-4-5-20251001
 
-[Try in playground](../04-API-Reference/Other/playground.md)
+[Migrate to Claude Haiku 5.5](models-haiku-5-5-migration-guide.md)
 
 Copy page
 
 
 
-[Announcement(opens in new tab)](../19-Reference/claude-haiku-4-5.md)[Migration guide](models-haiku-4-5-migration-guide.md)
+[Announcement(opens in new tab)](../19-Reference/claude-haiku-4-5.md)
 
 Context window  
 200Ktokens
@@ -92,7 +96,7 @@ Input pricing
 Output pricing  
 \$5/ MTok
 
-## How it compares
+## How it compares to the current lineup
 
 [TABLE]
 
@@ -157,9 +161,6 @@ Extended
 [Default effort](../04-API-Reference/Guides/build-with-claude-effort.md)  
 Not supported
 
-Comparative latency  
-Fastest
-
 Input → output  
 Text and images → text
 
@@ -172,7 +173,7 @@ Jul 2025
 ### Availability
 
 [Status](about-claude-model-deprecations.md)  
-Active (latest)
+Active (legacy)
 
 Released  
 October 15, 2025
@@ -191,23 +192,21 @@ Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-i
 
 ## Resources
 
+[Migrate to Claude Haiku 5.5](models-haiku-5-5-migration-guide.md)
+
+What changes when moving from Claude Haiku 4.5 to Claude Haiku 5.5.
+
+
+
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
+
+The current Haiku model: overview, specs, and resources.
+
 
 
 [Extended thinking](../04-API-Reference/Guides/build-with-claude-extended-thinking.md)
 
 Claude Haiku 4.5 supports manual extended thinking with `budget_tokens`.
-
-
-
-[Choosing a model](about-claude-models-choosing-a-model.md)
-
-When to start efficiency-first with Haiku and when to reach for a larger model.
-
-
-
-[Reduce latency](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Techniques that pair well with the fastest model in the lineup.
 
 ## Reference
 

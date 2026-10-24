@@ -2,7 +2,7 @@
 title: "Subscribe to webhooks - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/webhooks"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:32:54Z"
+fetched_at: "2026-10-20T06:38:00Z"
 tags: ["api", "hooks"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "hooks"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fwebhooks)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fwebhooks)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Delegate work to your agent
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Subscribe to webhooks
 
@@ -97,14 +109,6 @@ Get notified when major events happen without polling.
 Copy page
 
 
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 Sessions are long-running interactions. While most real-time interactions happen through the [SSE event stream](managed-agents-events-and-streaming.md), webhooks notify you of major state changes.
 
@@ -126,25 +130,90 @@ Environment events
 
 Memory store events
 
+Session events
+
 Some of these events are named differently from the matching events on the session's [event stream](managed-agents-events-and-streaming.md). For example, the stream's `session.status_idle` and `session.status_running` correspond to the `session.status_idled` and `session.status_run_started` webhook events.
 
-| Event                              | Trigger                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `session.status_run_started`       | Agent execution started. This triggers at every session status transition to `running`.                                                                                                                                                                                                                                                                                                                                                                       |
-| `session.status_idled`             | Agent awaiting input, for example, a tool permission approval or a new user message.                                                                                                                                                                                                                                                                                                                                                                          |
-| `session.budget_reached`           | The session reached its [budget](managed-agents-budgets.md) and paused. Fires at most once for each budget value you set; changing the budget arms it again.                                                                                                                                                                                                                                                                                            |
-| `session.status_rescheduled`       | A transient error occurred and the session is retrying automatically.                                                                                                                                                                                                                                                                                                                                                                                         |
-| `session.status_terminated`        | The session terminated, either because of an unrecoverable error or because it was archived.                                                                                                                                                                                                                                                                                                                                                                  |
-| `session.thread_created`           | New [multiagent thread](managed-agents-multiagent-orchestration.md) opened: an additional agent called by the coordinator is starting work, or the session's [advisor](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) is being consulted.                                                                                                                                                                                |
-| `session.thread_idled`             | An agent in a [multiagent interaction](managed-agents-multiagent-orchestration.md) is waiting for input.                                                                                                                                                                                                                                                                                                                                                |
-| `session.thread_terminated`        | A [multiagent thread](managed-agents-multiagent-orchestration.md) terminated, either because the thread was archived or because it exhausted its retries. A coordinator-spawned child that finishes its work goes `idle`, not `terminated` (an advisor thread terminates once its consultation completes). Fires for child threads only; the primary thread's end, including archiving the whole session, surfaces only as `session.status_terminated`. |
-| `session.outcome_evaluation_ended` | [Outcome evaluation](managed-agents-define-outcomes.md) for a single iteration completed.                                                                                                                                                                                                                                                                                                                                                               |
-| `session.updated`                  | Session properties changed (for example, its name or configuration was updated).                                                                                                                                                                                                                                                                                                                                                                              |
-| `session.deleted`                  | Session permanently deleted. There is no object left to fetch, so treat the event itself as final.                                                                                                                                                                                                                                                                                                                                                            |
+| Event                              | Trigger                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `session.status_run_started`       | Agent execution started. This triggers at every session status transition to `running`.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `session.status_idled`             | Agent awaiting input, for example, a tool permission approval or a new user message.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `session.budget_reached`           | The session reached its [budget](managed-agents-budgets.md) and paused. Fires at most once for each budget value you set; changing the budget arms it again.                                                                                                                                                                                                                                                                                                                                                               |
+| `session.status_rescheduled`       | A transient error occurred and the session is retrying automatically.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `session.status_terminated`        | The session terminated, either because of an unrecoverable error or because it was archived.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `session.thread_created`           | New [multiagent thread](managed-agents-session-threads.md) opened: an additional agent called by the agent that the session runs is starting work, or the session's [advisor](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) is being consulted. It also fires for each thread of a [workflow run](managed-agents-workflow-runs.md#a-runs-threads), and so do the other two thread events in this table.                                                                              |
+| `session.thread_idled`             | An agent in a [multiagent interaction](managed-agents-session-threads.md) is waiting for input.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `session.thread_terminated`        | A [multiagent thread](managed-agents-session-threads.md) terminated, either because the thread was archived or because it exhausted its retries. A subagent that finishes its work goes `idle`, not `terminated` (an advisor thread terminates once its consultation completes, and a workflow run's threads terminate when the server archives them, by the end of the run). Fires for child threads only; the primary thread's end, including archiving the whole session, surfaces only as `session.status_terminated`. |
+| `session.outcome_evaluation_ended` | [Outcome evaluation](managed-agents-define-outcomes.md) for a single iteration completed.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `session.updated`                  | Session properties changed (for example, its name or configuration was updated).                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `session.deleted`                  | Session permanently deleted. There is no object left to fetch, so treat the event itself as final.                                                                                                                                                                                                                                                                                                                                                                                                                               |
+
+Vault events
+
+| Event                             | Trigger                                                                                                                                                                 |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `vault.created`                   | Vault created.                                                                                                                                                          |
+| `vault.archived`                  | Vault archived. A `vault_credential.archived` event is also emitted for each underlying credential.                                                                     |
+| `vault.deleted`                   | Vault deleted. A `vault_credential.deleted` event is also emitted for each underlying credential. There is no object left to fetch, so treat the event itself as final. |
+| `vault_credential.created`        | Credential created.                                                                                                                                                     |
+| `vault_credential.archived`       | Credential archived, either directly or as a result of vault archival.                                                                                                  |
+| `vault_credential.deleted`        | Credential deleted, either directly or as a result of vault deletion. There is no object left to fetch, so treat the event itself as final.                             |
+| `vault_credential.refresh_failed` | An `mcp_oauth` credential cannot be refreshed (invalid refresh token, or irrecoverable error from the OAuth server).                                                    |
+
+Agent events
+
+These events track the lifecycle of the agent resources in your workspace, and are distinct from the agent events delivered on a session's event stream.
+
+| Event            | Trigger                                                                                                                                                              |
+|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent.created`  | Agent created.                                                                                                                                                       |
+| `agent.updated`  | A [new version of the agent](managed-agents-agent-setup.md#update-an-agent) was published. Updates that do not create a new version do not trigger this event. |
+| `agent.archived` | Agent archived.                                                                                                                                                      |
+| `agent.deleted`  | Agent permanently deleted. There is no object left to fetch, so treat the event itself as final.                                                                     |
+
+Deployment events
+
+| Event                 | Trigger                                                                                                                                                                                                                                                                                                                                 |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `deployment.created`  | [Scheduled deployment](managed-agents-scheduled-deployments.md) created.                                                                                                                                                                                                                                                          |
+| `deployment.updated`  | Deployment properties changed (for example, its schedule was updated).                                                                                                                                                                                                                                                                  |
+| `deployment.paused`   | Deployment paused, either by request or automatically when a scheduled run fails with an unrecoverable error, such as an archived subagent or an archived environment. Recoverable failures, including rate limits, don't pause the deployment. See [Failure behavior](managed-agents-scheduled-deployments.md#failure-behavior). |
+| `deployment.unpaused` | Deployment unpaused, resuming its schedule.                                                                                                                                                                                                                                                                                             |
+| `deployment.archived` | Deployment archived, either directly or because its agent was archived. If the agent is deleted instead, a scheduled deployment is archived at its next scheduled run; a deployment without a schedule is not archived automatically.                                                                                                   |
+| `deployment.deleted`  | Deployment permanently deleted. There is no object left to fetch, so treat the event itself as final.                                                                                                                                                                                                                                   |
+
+Deployment run events
+
+| Event                      | Trigger                                                                                                                                                                                                                                                                                                                                        |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `deployment_run.started`   | A scheduled run started. Only scheduled runs emit `deployment_run` events; [manual runs](managed-agents-scheduled-deployments.md#trigger-a-manual-run) do not.                                                                                                                                                                           |
+| `deployment_run.succeeded` | A scheduled run created its session. The event carries the same `data.id` (the run ID) as the run's `deployment_run.started` event. To follow the session's work, subscribe to its session events (the Session events tab), or fetch the [deployment run](managed-agents-scheduled-deployments.md#deployment-runs) for its `session_id`. |
+| `deployment_run.failed`    | A scheduled run did not create a session. The event carries the same `data.id` as the run's `deployment_run.started` event. Fetch the [deployment run](managed-agents-scheduled-deployments.md#deployment-runs) for the error details.                                                                                                   |
+
+Environment events
+
+| Event                  | Trigger                                                                                                                                         |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| `environment.created`  | Environment created.                                                                                                                            |
+| `environment.updated`  | Environment updated with at least one changed field. A no-op update emits nothing.                                                              |
+| `environment.archived` | Environment archived. Re-archiving an already-archived environment emits nothing.                                                               |
+| `environment.deleted`  | Environment deleted, including delete of an already-archived environment. There is no object left to fetch, so treat the event itself as final. |
+
+An environment's [work items](managed-agents-self-hosted-sandboxes.md) emit no webhook events.
+
+Memory store events
+
+| Event                   | Trigger                                                                                                                                                                                                                                                                                             |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `memory_store.created`  | Memory store created, either by you or by an Anthropic-operated process that clones one of your existing stores.                                                                                                                                                                                    |
+| `memory_store.archived` | Memory store archived. Re-archiving an already-archived store emits nothing.                                                                                                                                                                                                                        |
+| `memory_store.deleted`  | Memory store deleted, including delete of an already-archived store. Deleting a store cascades to its memories and memory versions without emitting per-memory events; the single `memory_store.deleted` event is the signal. There is no object left to fetch, so treat the event itself as final. |
+
+Individual [memories](managed-agents-memory.md) and memory versions emit no webhook events.
 
 ## Register an endpoint
 
-Visit **Manage \> Webhooks** in the [Claude Console](https://platform.claude.com/settings/workspaces/default/webhooks).
+In the Claude Console, go to the [Webhooks](https://platform.claude.com/settings/workspaces/default/webhooks) page (`platform.claude.com/settings/workspaces/default/webhooks`). Each endpoint belongs to one workspace. Select the workspace you want in the workspace picker in the sidebar.
 
 A webhook endpoint consists of:
 
@@ -171,6 +240,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -235,6 +306,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

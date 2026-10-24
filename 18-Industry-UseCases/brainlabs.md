@@ -2,7 +2,7 @@
 title: "Brainlabs Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/brainlabs"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:06Z"
+fetched_at: "2026-10-23T06:29:27Z"
 tags: ["agents", "case-studies", "enterprise", "security", "skills"]
 ---
 
@@ -37,17 +37,17 @@ in North America
 - A library of roughly 400 skills authored by employees in four weeks
 - A Cowork deployment reaching about 1,000 employees across the agency
 - A Notion-based repository of Cowork skills that non-developers can use directly
-- A Claude-powered "skills auditor" that reviews skills to find more efficiencies and consolidate the growing library
+- A Claude-powered “skills auditor” that reviews skills to find more efficiencies and consolidate the growing library
 - A Managed Agents setup inside Notion that triggers Claude when work changes state
-- A "suggest a skill" process so any employee can propose a new automation
+- A “suggest a skill” process so any employee can propose a new automation
 
 ## The challenge
 
 ## Scaling repeatable work across a large agency
 
-An agency at Brainlabs's size produces a steady cadence of campaign work with dozens of recurring workflows. The company's roughly 1,000 strategists, media planners, data scientists, and creative leads spend significant chunks of their day on repeatable work: drafting creative briefs, QA-ing media plans, pulling client reporting, summarizing campaign data. Across that many people, every team rebuilding the same things by hand starts to add up fast.
+An agency at Brainlabs’s size produces a steady cadence of campaign work with dozens of recurring workflows. The company’s roughly 1,000 strategists, media planners, data scientists, and creative leads spend significant chunks of their day on repeatable work: drafting creative briefs, QA-ing media plans, pulling client reporting, summarizing campaign data. Across that many people, every team rebuilding the same things by hand starts to add up fast.
 
-For Brainlabs's CTO Ben Vincent, the principle was simple. "If you're doing something more than three times, you should try to automate it," Vincent said. The company's CEO Dan Gilbert wanted that principle applied across the whole business, not just the engineering org. The original target was to have Claude live across the entire workforce in a week.
+For Brainlabs’s CTO Ben Vincent, the principle was simple. “If you’re doing something more than three times, you should try to automate it,” Vincent said. The company’s CEO Dan Gilbert wanted that principle applied across the whole business, not just the engineering org. The original target was to have Claude live across the entire workforce in a week.
 
 How to create Skills
 
@@ -63,7 +63,7 @@ Brainlabs treated Cowork as the foundation, and skills as the layer on top. Over
 
 For skills, Brainlabs needed an authoring layer the same audience could actually use. The company made Notion the home for its org-wide skills library: employees store skills directly inside Notion, where the company’s knowledge base, meeting notes, and team workflows already sit. Notion packages each Skill and pushes it to GitHub for revision, while the Notion page stays as the source of truth.
 
-"We've made all of them open,” Vincent said. “Anyone in the company can go in and read the details of any skill.” A "suggest a skill" process gave any employee a way to propose a new automation without going through engineering, and an org-wide skills guideline set the bar for quality. The rollout to get Claude live across the whole company took four weeks, during which time roughly 400 skills landed in the library.
+“We’ve made all of them open,” Vincent said. “Anyone in the company can go in and read the details of any skill.” A “suggest a skill” process gave any employee a way to propose a new automation without going through engineering, and an org-wide skills guideline set the bar for quality. The rollout to get Claude live across the whole company took four weeks, during which time roughly 400 skills landed in the library.
 
 The library spans the agency’s full range of work. Two examples Brainlabs has invested in heavily: an SEO audit skill, refined across thousands of iterations from the SEO team and built on a context layer drawn from over a decade of agency work; and a brand skill that produces presentation decks, social graphics, and one-pagers that stay on-brand without a designer in the loop. The audit skills alone number in the dozens, each with its own context layer.
 
@@ -71,7 +71,7 @@ Keeping the quality bar high as the library grew into the hundreds required a se
 
 Security and governance were handled the same way, cautiously, and in stages. Data stays isolated by design: a Skill only pulls what the person running it is already authorized to access. Every skill also has a designated owner who reviews and approves changes before it goes live, so quality and access controls keep pace as the library grows.  
   
-The newest addition sits on top of all of this. Brainlabs is one of the early customers running Managed Agents inside Notion. "We use actions. We get them to look at the Notion boards, and when something is happening it fires off to Claude," Vincent said. One example is a task agent called Get Stuff Done that works tickets on a Kanban-style board: a Notion agent tags a task with “Claude” when it judges the work complex enough, and the managed agent picks it up from there, drawing on the company’s skills library and connectors to Slack, Google Calendar, and other platforms to produce outputs like PowerPoints and research documents.
+The newest addition sits on top of all of this. Brainlabs is one of the early customers running Managed Agents inside Notion. “We use actions. We get them to look at the Notion boards, and when something is happening it fires off to Claude,” Vincent said. One example is a task agent called Get Stuff Done that works tickets on a Kanban-style board: a Notion agent tags a task with “Claude” when it judges the work complex enough, and the managed agent picks it up from there, drawing on the company’s skills library and connectors to Slack, Google Calendar, and other platforms to produce outputs like PowerPoints and research documents.
 
 The team has put the agent to work on its own projects, including managing the Cowork rollout itself. The team is also evaluating the Claude Agent SDK for more complex server-side agents that would sit alongside the Notion-hosted ones.
 
@@ -85,15 +85,15 @@ Where do Skills fit in the Claude stack alongside prompts, Projects, MCP, and su
 
 ## ~400 skills in four weeks, with agents on top
 
-Four weeks after the rollout began, Brainlabs employees had authored roughly 400 skills covering everything from presentation-building to client reporting, with the library still growing as more people determined which parts of their own work fit the "more than three times" rule. Cowork sits underneath all of it, with about 1,000 employees handing off recurring tasks inside the tools they already use and picking up finished work on the other side. "We're automating all the mundane tasks so employees can do the more strategic things," Vincent added.
+Four weeks after the rollout began, Brainlabs employees had authored roughly 400 skills covering everything from presentation-building to client reporting, with the library still growing as more people determined which parts of their own work fit the “more than three times” rule. Cowork sits underneath all of it, with about 1,000 employees handing off recurring tasks inside the tools they already use and picking up finished work on the other side. “We’re automating all the mundane tasks so employees can do the more strategic things,” Vincent added.
 
-For Dan Gilbert, Brainlabs’s Global CEO, the biggest gains have been in the depth and consistency of the work itself. SEO audits used to vary in quality depending on which strategist ran them. The SEO audit skill changed that. “It’s one skill, refined across thousands of iterations from our SEO team, that captures the full universe of what to look for and what good looks like,” Gilbert said. “It doesn’t rely on what any one strategist happens to remember on the day.” Client reporting saw the same shift. “The strategists in the loop spend their hours on judgement, prioritization, and client strategy instead of mechanical assembly,” Gilbert added. For clients, this lands as a different service, not a faster one, with real-time coverage and expanded capability that wasn't possible before.
+For Dan Gilbert, Brainlabs’s Global CEO, the biggest gains have been in the depth and consistency of the work itself. SEO audits used to vary in quality depending on which strategist ran them. The SEO audit skill changed that. “It’s one skill, refined across thousands of iterations from our SEO team, that captures the full universe of what to look for and what good looks like,” Gilbert said. “It doesn’t rely on what any one strategist happens to remember on the day.” Client reporting saw the same shift. “The strategists in the loop spend their hours on judgement, prioritization, and client strategy instead of mechanical assembly,” Gilbert added. For clients, this lands as a different service, not a faster one, with real-time coverage and expanded capability that wasn’t possible before.
 
 Writing tasks see the same lift agency-wide, which matters because writing is a daily part of almost everyone’s job at Brainlabs. Cowork is preloaded with the company’s style guide and each person’s individual writing style, so drafts come out around 80% of the way there in Brainlabs’s voice rather than starting from a blank page. “That’s a real quality lift, especially for people whose core job isn’t writing,” Gilbert said.
 
 Vincent uses Cowork as his own ideation tool. “I have a bunch of random ideas that I never have the time to explore,” Vincent explained. “Now I can write the idea down in Cowork, and Claude will go investigate, build me a document, and I have all the information I need.” With Managed Agents now firing inside Notion when work changes state, Brainlabs is seeing what proactive, not just reactive, automation looks like inside a working agency.
 
-For Vincent, this is the foundation, not the finish line. "I think it's going to go so far beyond where we are now," Vincent said. "We're going to have a bunch of agents hosted in a variety of places, which will expand our team's capabilities for the deep strategic work that grows our clients' businesses.”
+For Vincent, this is the foundation, not the finish line. “I think it’s going to go so far beyond where we are now,” Vincent said. “We’re going to have a bunch of agents hosted in a variety of places, which will expand our team’s capabilities for the deep strategic work that grows our clients’ businesses.”
 
 ## Related stories
 
@@ -118,7 +118,8 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -136,12 +137,12 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -174,7 +175,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -192,6 +193,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -207,7 +209,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -242,7 +244,8 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -260,12 +263,12 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -298,7 +301,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -316,6 +319,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -331,7 +335,7 @@ For Vincent, this is the foundation, not the finish line. "I think it's going to
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

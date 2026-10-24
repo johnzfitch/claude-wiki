@@ -2,7 +2,7 @@
 title: "Use Claude with Android apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-10T06:24:27Z"
+fetched_at: "2026-10-23T06:28:52Z"
 tags: ["desktop"]
 ---
 

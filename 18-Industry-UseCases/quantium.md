@@ -2,7 +2,7 @@
 title: "Quantium Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/quantium"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:57Z"
+fetched_at: "2026-10-23T06:29:51Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -40,17 +40,17 @@ With Claude, Quantium saw the following impact:
 - Teams deliver higher quality work more quickly
 - Leadership coaching scaled across the organization
 
-## Quantium's AI evolution
+## Quantium’s AI evolution
 
-For over twenty years, Quantium has helped the world's leading businesses solve their biggest strategic challenges through data analytics and AI. Quantium is putting best-in-class Gen AI tools in the hands of their team members to amplify two decades of expertise in solving complex business problems.
+For over twenty years, Quantium has helped the world’s leading businesses solve their biggest strategic challenges through data analytics and AI. Quantium is putting best-in-class Gen AI tools in the hands of their team members to amplify two decades of expertise in solving complex business problems.
 
-Last year, Quantium launched its 'ALL IN on AI' strategy – a company-wide commitment to put AI at the center of everything they do. The strategy goes beyond building AI into products and solutions. It means having every team member use AI daily in their work, training team members to get the most out of AI, and setting clear goals for AI adoption. Most importantly, it means creating an environment where the brightest minds in data and AI can innovate with these new tools in order to free up time for more strategic work.
+Last year, Quantium launched its ‘ALL IN on AI’ strategy – a company-wide commitment to put AI at the center of everything they do. The strategy goes beyond building AI into products and solutions. It means having every team member use AI daily in their work, training team members to get the most out of AI, and setting clear goals for AI adoption. Most importantly, it means creating an environment where the brightest minds in data and AI can innovate with these new tools in order to free up time for more strategic work.
 
-"Clients partner with us to turn data into decisions that matter," says Adam Driussi, Co-founder and CEO of Quantium. "For over two decades, we've used AI to extract real value from data. When generative AI emerged, we recognized it would completely reshape how businesses operate and make decisions. That's why we've embedded AI into every role at Quantium. It's not a separate initiative; it's how we work. This hands-on experience means we're not theorizing about AI with our clients – we're sharing practical insights from our own transformation."
+“Clients partner with us to turn data into decisions that matter,” says Adam Driussi, Co-founder and CEO of Quantium. “For over two decades, we’ve used AI to extract real value from data. When generative AI emerged, we recognized it would completely reshape how businesses operate and make decisions. That’s why we’ve embedded AI into every role at Quantium. It’s not a separate initiative; it’s how we work. This hands-on experience means we’re not theorizing about AI with our clients – we’re sharing practical insights from our own transformation.”
 
 ## Finding the right AI partner
 
-Quantium's search for an enterprise AI platform demanded exceptional standards. Its teams tackle diverse challenges – from strategic consulting to advanced analytics and software development. Any AI partner needed to match this range of expertise while meeting strict requirements for security and ethics.
+Quantium’s search for an enterprise AI platform demanded exceptional standards. Its teams tackle diverse challenges – from strategic consulting to advanced analytics and software development. Any AI partner needed to match this range of expertise while meeting strict requirements for security and ethics.
 
 Claude Enterprise stood out by offering:
 
@@ -60,31 +60,31 @@ Claude Enterprise stood out by offering:
 - Strong commitment to responsible AI development
 - Versatility across business and technical work
 
-"Claude combines industry-leading powerful analytical capabilities with careful attention to security and ethics," says Ben Chan, Chief Operating Officer at Quantium. "It processes complex information quickly while protecting sensitive data. The alignment between Anthropic's focus on responsible AI development and our own ethical standards was crucial in our decision."
+“Claude combines industry-leading powerful analytical capabilities with careful attention to security and ethics,” says Ben Chan, Chief Operating Officer at Quantium. “It processes complex information quickly while protecting sensitive data. The alignment between Anthropic’s focus on responsible AI development and our own ethical standards was crucial in our decision.”
 
 ## Implementation and impact
 
 Quantium developed a practical implementation strategy focused on clear guidelines and hands-on training:
 
-1.  Clear vision and expectation: Set "every person, every day, powered by AI" as the standard, with leaders actively demonstrating useful AI applications
+1.  Clear vision and expectation: Set “every person, every day, powered by AI” as the standard, with leaders actively demonstrating useful AI applications
 2.  Practical guardrails: Created guidelines that enable rather than restrict AI use
 3.  Skills development: Introduced a capability program that blended hands-on practice with educational programs and tutorials
 4.  Use case development: Encouraged each business unit to develop specific AI applications to improve core workflows, encouraging teams to experiment and innovate within their domains
 
 The results have already started to transform how teams across Quantium work:
 
-- **Coding:** Quantium's technical teams have embraced Claude for coding tasks with remarkable results. Top-performing teams now have the majority of their code written by AI, with tasks that previously took days now being completed in hours. The adoption is rapidly expanding across teams, with Quantium targeting AI-driven development for the vast majority of all coding work. The quality and speed of code production continue to improve dramatically, setting new standards for engineering efficiency and innovation across Quantium's technical teams.
+- **Coding:** Quantium’s technical teams have embraced Claude for coding tasks with remarkable results. Top-performing teams now have the majority of their code written by AI, with tasks that previously took days now being completed in hours. The adoption is rapidly expanding across teams, with Quantium targeting AI-driven development for the vast majority of all coding work. The quality and speed of code production continue to improve dramatically, setting new standards for engineering efficiency and innovation across Quantium’s technical teams.
 - **Writing and analysis**: AI has transformed how team members handle complex documentation. For example, the team built an AI system to help write business proposals and bid responses, cutting the work time by up to 90%.
 - **Training development**: Claude has made creating training materials much faster. When developing a new leadership program, the team used AI to help plan the curriculum and create content. This cut the development time from 64 days to 32 days, while still maintaining high quality standards.
 - **Leadership coaching**: Quantium has created digital twins of their leadership team to scale coaching capability throughout the organization. These AI twins provide consistent, high-quality feedback to team members before presenting work to executives, helping team members improve their work while enabling senior leaders to scale their coaching.
 
-"What's been incredible is seeing how Claude has fundamentally changed our approach to coaching and development," says Chan. "Teams are getting more frequent, consistent feedback, and our leaders can focus on deeper strategic conversations instead of basic review cycles."
+“What’s been incredible is seeing how Claude has fundamentally changed our approach to coaching and development,” says Chan. “Teams are getting more frequent, consistent feedback, and our leaders can focus on deeper strategic conversations instead of basic review cycles.”
 
 ## Building for the future
 
-Quantium's approach pairs talented people with sophisticated AI tools and technologies – creating an environment where data scientists and analysts can tackle increasingly complex client challenges. By pairing Claude's capabilities with decades of expertise in AI and analytics, Quantium is setting new standards for what businesses can achieve in the age of AI.
+Quantium’s approach pairs talented people with sophisticated AI tools and technologies – creating an environment where data scientists and analysts can tackle increasingly complex client challenges. By pairing Claude’s capabilities with decades of expertise in AI and analytics, Quantium is setting new standards for what businesses can achieve in the age of AI.
 
-"Claude has fundamentally changed how we approach complex problems," says Driussi. "The combination of our deep analytical expertise with powerful AI capabilities lets us tackle more ambitious challenges. Our teams can explore solutions in ways that weren't feasible before. We're now taking these practical insights to our enterprise clients globally, helping them move beyond AI experimentation to create genuine competitive advantage that will determine which businesses thrive in the coming decade."
+“Claude has fundamentally changed how we approach complex problems,” says Driussi. “The combination of our deep analytical expertise with powerful AI capabilities lets us tackle more ambitious challenges. Our teams can explore solutions in ways that weren’t feasible before. We’re now taking these practical insights to our enterprise clients globally, helping them move beyond AI experimentation to create genuine competitive advantage that will determine which businesses thrive in the coming decade.”
 
 ## Related stories
 
@@ -109,7 +109,8 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -127,12 +128,12 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -165,7 +166,7 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -183,6 +184,7 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -198,7 +200,7 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -233,7 +235,8 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -251,12 +254,12 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -289,7 +292,7 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -307,6 +310,7 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -322,7 +326,7 @@ Quantium's approach pairs talented people with sophisticated AI tools and techno
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

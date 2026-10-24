@@ -2,13 +2,11 @@
 title: "Claude Code usage analytics | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12157520-claude-code-usage-analytics"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:06Z"
+fetched_at: "2026-10-23T06:29:13Z"
 tags: ["claude-code", "safety"]
 ---
 
 # Claude Code usage analytics
-
-July 1, 2026
 
 
 This feature allows Console users and owners of Team and Enterprise plans to monitor how their organization uses Claude Code, tracking productivity metrics and adoption patterns across teams.
@@ -35,13 +33,9 @@ Claude Code usage analytics are available to:
 
 ### API Console users
 
-1.  Log in to your **[Claude Console account](../04-API-Reference/Other/usage-limits.md)**.
+1.  Log in to your **[Claude Console account](../04-API-Reference/Other/playground.md)**.
 
-2.  Expand the left side panel.
-
-3.  Click “Claude Code” under **Analytics**.
-
-4.  View Claude Code usage analytics on **[Settings \> Claude Code](../04-API-Reference/Other/playground.md)**.
+2.  Go to the **Claude Code** page (platform.claude.com/claude-code).
 
 ------------------------------------------------------------------------
 
@@ -86,7 +80,7 @@ Every formula used on this tab is shown inline. Click any input to adjust it to 
 
 Contribution metrics are a new feature in public beta that helps Team and Enterprise organizations measure how Claude Code affects engineering velocity. By connecting to your organization's GitHub account, these metrics track code shipping activity with and without Claude Code, so you can see where it's making a difference.
 
-Contribution metrics require GitHub Cloud and are not available to Console users at this time.
+Contribution metrics require GitHub Cloud. They aren't available to Console users or to organizations with zero data retention (ZDR) enabled for Claude Code.
 
 For a more in-depth look at contribution metrics, see **[our Claude Code docs](../13-Enterprise-Admin/analytics.md#enable-contribution-metrics)**.
 

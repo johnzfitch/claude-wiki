@@ -2,7 +2,7 @@
 title: "Define your agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/agent-setup"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:09Z"
+fetched_at: "2026-10-20T06:40:21Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fagent-setup)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fagent-setup)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Define your agent
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Define your agent
 
@@ -98,37 +110,29 @@ Create a reusable, versioned agent configuration.
 
 
 
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
-
 An agent is a reusable, versioned configuration that defines persona and capabilities. It bundles the model, system prompt, tools, MCP servers, and skills that shape how Claude behaves during a session.
 
 Create the agent once as a reusable resource and reference it by ID each time you [start a session](managed-agents-sessions.md). Agents are versioned and easier to manage across many sessions.
 
 ## Agent configuration fields
 
-| Field         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`        | Required. A human-readable name for the agent.                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `model`       | Required. The Claude [model](../../20-Models/about-claude-models-overview.md) that powers the agent. Accepts a model ID string or an object, for example `{"id": "claude-opus-5"}`. Claude 4.5 and later models are supported. The object form also accepts `speed`, `effort`, and `inference_geo` fields; see the tips under [Create an agent](#create-an-agent), [Effort levels](../Guides/build-with-claude-effort.md#effort-levels), and [Pin the inference geo](#pin-the-inference-geo). |
-| `system`      | A [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role) that defines the agent's behavior and persona. The system prompt is distinct from [user messages](managed-agents-reference.md#event-types), which should describe the work to be done.                                                                                                                                                   |
-| `tools`       | The tools available to the agent. Combines [pre-built agent tools](managed-agents-tools.md), [MCP tools](managed-agents-mcp-connector.md), and [custom tools](managed-agents-tools.md#custom-tools).                                                                                                                                                                                                                                             |
-| `mcp_servers` | [MCP servers](managed-agents-mcp-connector.md) that provide standardized third-party capabilities.                                                                                                                                                                                                                                                                                                                                                           |
-| `skills`      | [Skills](managed-agents-skills.md) that supply domain-specific context with progressive disclosure.                                                                                                                                                                                                                                                                                                                                                          |
-| `multiagent`  | A coordinator declaration listing the agents this agent can delegate to. See [Multiagent orchestration](managed-agents-multiagent-orchestration.md).                                                                                                                                                                                                                                                                                                         |
-| `description` | A description of what the agent does.                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `metadata`    | Arbitrary key-value pairs for your own tracking.                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Field         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `name`        | Required. A human-readable name for the agent.                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `model`       | Required. The Claude [model](../../20-Models/about-claude-models-overview.md) that powers the agent. Accepts a model ID string or an object, for example `{"id": "claude-opus-5-5"}`. Claude 4.5 and later models are supported. The object form also accepts `speed`, `effort`, and `inference_geo` fields; see the tips under [Create an agent](#create-an-agent), [Effort levels](../Guides/build-with-claude-effort.md#effort-levels), and [Pin the inference geo](#pin-the-inference-geo). |
+| `system`      | A [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role) that defines the agent's behavior and persona. The system prompt is distinct from [user messages](managed-agents-reference.md#event-types), which should describe the work to be done.                                                                                                                                                     |
+| `tools`       | The tools available to the agent. Combines [pre-built agent tools](managed-agents-tools.md), [MCP tools](managed-agents-mcp-connector.md), and [custom tools](managed-agents-tools.md#custom-tools).                                                                                                                                                                                                                                               |
+| `mcp_servers` | [MCP servers](managed-agents-mcp-connector.md) that provide standardized third-party capabilities.                                                                                                                                                                                                                                                                                                                                                             |
+| `skills`      | [Skills](managed-agents-skills.md) that supply domain-specific context with progressive disclosure.                                                                                                                                                                                                                                                                                                                                                            |
+| `multiagent`  | Lets the agent hand work to other agents, as subagents or in [dynamic workflows](managed-agents-multiagent-orchestration.md#dynamic-workflows), and optionally consult an [advisor](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) model. With the `multiagent_20261001` type, dynamic workflows are on unless you disable them. See [Multiagent orchestration](managed-agents-multiagent-orchestration.md).              |
+| `description` | A description of what the agent does.                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `metadata`    | Arbitrary key-value pairs for your own tracking.                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 You can also override `model`, `system`, `tools`, `mcp_servers`, and `skills` for a single session without changing the agent. A `model` override replaces the agent's `model` object in full, so the agent's own `effort` isn't carried over. To run the session at a specific effort level, set `effort` inside the override's `model` object. See [Override agent configuration for a session](managed-agents-sessions.md#override-agent-configuration-for-a-session).
 
 ## Create an agent
 
-The following example defines a coding agent that uses Claude Opus 5 with access to the pre-built agent toolset. The toolset lets the agent write code, read files, search the web, and more. See the [agent tools reference](managed-agents-tools.md) for the full list of supported tools.
+The following example defines a coding agent that uses the newest Claude Opus model with access to the pre-built agent toolset. The toolset lets the agent write code, read files, search the web, and more. See the [agent tools reference](managed-agents-tools.md) for the full list of supported tools.
 
 The examples use curl, the `ant` CLI, or one of the SDKs. If you haven't set one up, the [quickstart](managed-agents-quickstart.md#install-the-cli) covers installation and client setup.
 
@@ -149,6 +153,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -184,7 +190,7 @@ The response echoes your configuration and adds `id`, `type`, `version`, `create
   "name": "Coding Assistant",
   "model": {
     "id": "claude-opus-5-5",
-    "effort": { "type": "high" },
+    "effort": { "type": "medium" },
     "speed": "standard"
   },
   "system": "You are a helpful coding agent.",
@@ -214,17 +220,17 @@ The `default_config` on the toolset shows its default [permission policy](manage
 
 
 
-To use Claude Opus 5.5, Claude Opus 5, or Claude Opus 4.8 with [fast mode](../Guides/build-with-claude-fast-mode.md), pass `model` as an object, for example: `{"id": "claude-opus-5", "speed": "fast"}`. See the fast mode page's [supported models](../Guides/build-with-claude-fast-mode.md#supported-models).
+To use Claude Opus 5.5, Claude Opus 5, or Claude Opus 4.8 with [fast mode](../Guides/build-with-claude-fast-mode.md), pass `model` as an object, for example: `{"id": "claude-opus-5-5", "speed": "fast"}`. See the fast mode page's [supported models](../Guides/build-with-claude-fast-mode.md#supported-models).
 
 
 
-To set the model's effort level, pass `model` as an object, for example: `{"id": "claude-opus-5", "effort": "high"}`. The `effort` field accepts a level string (`low`, `medium`, `high`, `xhigh`, or `max`) or an object such as `{"type": "high"}`. See [Effort levels](../Guides/build-with-claude-effort.md#effort-levels) for what each level does.
+To set the model's effort level, pass `model` as an object, for example: `{"id": "claude-opus-5-5", "effort": "high"}`. The `effort` field accepts a level string (`low`, `medium`, `high`, `xhigh`, or `max`) or an object such as `{"type": "high"}`. See [Effort levels](../Guides/build-with-claude-effort.md#effort-levels) for what each level does.
 
 ### Pin the inference geo
 
 Like `speed` and `effort`, `inference_geo` is set through the object form of `model`: pass `model` as an object and set `inference_geo` alongside `id`. The field accepts `"us"` or `"global"`. When it's unset, each model request follows the workspace's default inference geo at the time it's served. See [Data residency](manage-claude-data-residency.md) for the workspace-level geo controls and pricing.
 
-The following example pins an agent to US inference and prints the `inference_geo` value from the agent's `model` object:
+The following example pins an agent to US inference. The response carries the `inference_geo` value in the agent's `model` object:
 
 cURL
 
@@ -243,6 +249,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -269,7 +277,7 @@ You are a helpful assistant.
 
 An `inference_geo` pin is validated against the workspace's [`allowed_inference_geos`](manage-claude-data-residency.md#workspace-level-restrictions) when the agent is saved, when a session is created from it, and on every turn the session serves. If the workspace allowlist narrows so a pin is no longer allowed, new sessions can't be created from the agent and running sessions refuse further turns; pins are never exempted, because workspaces rely on them for compliance and data residency.
 
-Setting `inference_geo` on a model that doesn't support geographic inference pinning returns a 400 error; see [Model availability](manage-claude-data-residency.md#model-availability) for the models that do. In a `multiagent` configuration, the coordinator's pin and every roster member's must all be set to the same value or all be unset; see [Multiagent orchestration](managed-agents-multiagent-orchestration.md). To change or clear the pin later, update the agent's `model` object; supplying `model` without `inference_geo` clears it, as described under [Update semantics](#update-semantics).
+Setting `inference_geo` on a model that doesn't support geographic inference pinning returns a 400 error; see [Model availability](manage-claude-data-residency.md#model-availability) for the models that do. In a `multiagent` configuration, the agent's pin and the pin of every agent listed in the `predefined_agents` list of `subagents` or `workflows` must all be set to the same value or all be unset; see [Multiagent orchestration](managed-agents-multiagent-orchestration.md). To change or clear the pin later, update the agent's `model` object; supplying `model` without `inference_geo` clears it, as described under [Update semantics](#update-semantics).
 
 ## Update an agent
 
@@ -294,6 +302,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -322,19 +332,33 @@ The preceding example supplies `version` from the create response, so the update
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-updated_agent=$(curl -fsSL "https://api.anthropic.com/v1/agents/$AGENT_ID" \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -H "anthropic-beta: managed-agents-2026-04-01" \
-  -H "content-type: application/json" \
-  -d '{
-    "description": "Writes and reviews code."
-  }')
+unconditional_agent = client.beta.agents.update(
+    agent.id,
+    description="Writes and reviews code.",
+)
 
-echo "New version: $(jq -r '.version' <<< "$updated_agent")"
+print(f"New version: {unconditional_agent.version}")
 ```
 
 ### Update semantics
@@ -343,17 +367,69 @@ echo "New version: $(jq -r '.version' <<< "$updated_agent")"
 
 - **Omitted fields are preserved.** You only need to include the fields you want to change.
 
-- **Scalar fields** (`model`, `system`, `name`, `description`) are replaced with the new value. `system` and `description` can be cleared by passing `null`. `model` and `name` are mandatory and cannot be cleared. Within a `model` object you supply, `effort` is the sole exception: if the model `id` is unchanged, omitting `effort` leaves the stored effort level unchanged. If you change the model `id`, an omitted `effort` resets to the new model's default. Other `model` fields are replaced along with the object: supplying `model` without `inference_geo` clears the agent's inference geo pin.
+- **Scalar fields** (`model`, `system`, `name`, `description`) are replaced with the new value. `system` and `description` can be cleared by passing `None`. `model` and `name` are mandatory and cannot be cleared. Within a `model` object you supply, `effort` is the sole exception: if the model `id` is unchanged, omitting `effort` leaves the stored effort level unchanged. If you change the model `id`, an omitted `effort` resets to the new model's default. Other `model` fields are replaced along with the object: supplying `model` without `inference_geo` clears the agent's inference geo pin.
 
-- **Array fields** (`tools`, `mcp_servers`, `skills`) are fully replaced by the new array. To clear an array field entirely, pass `null` or an empty array.
+- **Array fields** (`tools`, `mcp_servers`, `skills`) are fully replaced by the new array. To clear an array field entirely, pass `None` or an empty array.
 
-- **`multiagent`** is replaced as a whole, including its `agents` roster. Pass `null` to clear it.
+- **`multiagent`** is merged into the stored block level by level when the update keeps the `multiagent_20261001` type. A setting that you omit keeps its stored value, and a `predefined_agents` list that you send replaces the stored list. Any other update that sends `multiagent` replaces the stored block as a whole, and the settings that it omits take their defaults. Pass `multiagent=None` to clear the whole block. Inside the block, `null` resets a setting to its default, so setting `workflows` to `null` turns dynamic workflows on. See [Turn on dynamic workflows](managed-agents-multiagent-orchestration.md#turn-on-dynamic-workflows).
 
 - **Metadata** is merged at the key level. Keys you provide are added or updated. Keys you omit are preserved. To delete a specific key, set its value to `null`.
 
 - **No-op detection.** If the update produces no change relative to the current version, no new version is created and the existing version is returned.
 
-- **Coordinator rosters are not updated.** Coordinators that reference this agent in their `multiagent.agents` roster keep the version that was pinned when the coordinator was created or last updated, even if the reference omits `version`. To delegate to the new version, [update the coordinator](managed-agents-multiagent-orchestration.md#configure-the-coordinator) so its roster references it.
+- **Other agents' `predefined_agents` lists are not updated.** Agents that list this agent in the `predefined_agents` list of `subagents` or `workflows` keep the version that was pinned when they were created or when an update last sent that list, even if the reference omits `version`. To delegate to the new version, [update the agent that lists it](managed-agents-multiagent-orchestration.md#list-the-subagents) so that the list references the new version.
+
+The following update clears the description, deletes the `team` key from `metadata`, and sets `workflows` to `null`, which turns dynamic workflows on:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+CLI
+
+
+
+```python
+ant apply code-reviewer.md
+```
+
+code-reviewer.md
+
+
+
+
+
+```python
+---
+name: Code Reviewer
+model: claude-opus-5-5
+tools:
+  - type: agent_toolset_20260401
+metadata:
+  owner: docs
+multiagent:
+  type: multiagent_20261001
+  workflows: null
+---
+
+You are a helpful coding agent.
+```
+
+The file no longer has `description` or the `team` key, so `ant apply` sends `null` for them. Deleting a setting inside `multiagent` keeps its stored value, so the file sets `workflows` to `null`.
 
 ## Agent lifecycle
 
@@ -385,6 +461,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -413,6 +491,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

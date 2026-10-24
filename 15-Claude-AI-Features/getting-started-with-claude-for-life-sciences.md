@@ -2,7 +2,7 @@
 title: "Getting Started with Claude for Life Sciences · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-08T06:25:02Z"
+fetched_at: "2026-10-23T06:28:56Z"
 tags: ["claude-ai", "connectors", "search"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai", "connectors", "search"]
 
 Learn what Claude for Life Sciences offers and how to access the connectors and tools that support research, clinical operations, and regulatory workflows.
 
-4 minClaude.ai
+4 minClaude
 
 [Open Claude](https://claude.ai/new)
 

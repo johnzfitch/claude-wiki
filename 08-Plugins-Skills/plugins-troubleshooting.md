@@ -2,7 +2,7 @@
 title: "Troubleshoot plugins - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/troubleshooting"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-10T06:27:49Z"
+fetched_at: "2026-10-23T06:28:23Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -23,6 +23,7 @@ tags: ["claude-code", "plugins"]
   - [Path does not exist: \<path\>](#path-does-not-exist)
   - [Marketplace file not found at \<path\>/.claude-plugin/marketplace.json](#marketplace-file-not-found-at-claude-plugin-marketplace-json)
   - [Cannot add marketplace "\<name\>": Claude Code cannot install plugins from a marketplace with this name](#cannot-install-plugins-from-a-marketplace-with-this-name)
+  - [Cannot add marketplace "\<name\>": Claude Code reserves this name and cannot register a marketplace under it](#claude-code-reserves-this-name)
   - [SSH authentication failed or HTTPS authentication failed](#ssh-authentication-failed-or-https-authentication-failed)
   - [SSH host key is not in your known_hosts file](#ssh-host-key-is-not-in-your-known-hosts-file)
   - [Command 'git' not found or is in an unsafe location](#command-git-not-found-or-is-in-an-unsafe-location)
@@ -61,6 +62,7 @@ tags: ["claude-code", "plugins"]
   - [Disabled in ~/.claude/settings.json but still loads](#a-plugin-you-disabled-still-loads)
   - [Plugin "\<name\>" is enabled in project settings but isn't installed here](#plugin-is-enabled-in-project-settings-but-isnt-installed-here)
   - [A plugin stays installed after plugin uninstall on Windows](#a-plugin-stays-installed-after-plugin-uninstall-on-windows)
+  - [A plugin installed from a git repository shows version unknown](#a-plugin-installed-from-a-git-repository-shows-version-unknown)
   - [Failed to load hooks from \<path\> and hooks that don’t fire](#failed-to-load-hooks-from-and-hooks-that-dont-fire)
   - [Hooks fail to load](#hooks-fail-to-load)
   - [hook error notices in the transcript](#hook-error-notices-in-the-transcript)
@@ -135,7 +137,7 @@ Find where `/plugin` runs
 
 You typed `/plugin` somewhere other than a Claude Code terminal session, and Claude replied with this line instead of opening anything. You get this reply in a session that has no terminal to draw the `/plugin` panel in: [non-interactive mode](../02-Claude-Code-CLI/headless.md) with `claude -p`, the Agent SDK, the Claude desktop app’s Code tab, the VS Code extension panel, and the browser at claude.ai/code. In the VS Code extension panel, only a `/plugin` line with something after it, such as `/plugin install <plugin>@<marketplace>`, gets this reply. `/plugin` or `/plugins` typed alone opens the **Manage plugins** dialog. Install the plugin from the surface you’re on instead:
 
-- **Claude desktop app, local or SSH session**: click the **+** button next to the prompt, then **Plugins**, then **Add plugin** to open the [plugin browser](../16-Mobile-Desktop/desktop.md#install-plugins)
+- **Claude desktop app, local or SSH session**: use the **Desktop app** tab under [Install a plugin](discover-plugins.md#install-a-plugin)
 - **VS Code extension**: use the **VS Code** tab under [Install a plugin](discover-plugins.md#install-a-plugin)
 - **Claude Code on the web, or a desktop cloud session**: a cloud session has no plugin browser. See the **Cloud session** tab under [Install a plugin](discover-plugins.md#install-a-plugin) for what a cloud session loads
 - **A terminal you have access to**: run `claude` and type `/plugin` there, or run `claude plugin install <plugin>@<marketplace>` in your shell without starting a session
@@ -317,6 +319,24 @@ Give the marketplace a name that fits that rule, then add it again:
 - **Someone else hosts it**: ask the owner to change the name
 
 Before v2.1.295, Claude Code reported the add in this example as successful.
+
+
+[​](#claude-code-reserves-this-name)
+
+`Cannot add marketplace "<name>": Claude Code reserves this name and cannot register a marketplace under it`
+
+You added a marketplace, and the [`name`](plugins-marketplace-reference.md#top-level-fields) in its `marketplace.json` is one of the member names that every JavaScript object has, such as `constructor`, `toString`, or `valueOf`. Claude Code reserves those names, so it refuses the add and registers nothing. [Reserved names](plugins-marketplace-reference.md#reserved-names) lists them. In this example, the marketplace is named `constructor`:
+
+```python
+Cannot add marketplace "constructor": Claude Code reserves this name and cannot register a marketplace under it. The name is set by "name" in the marketplace's marketplace.json; ask its maintainer to change it.
+```
+
+If a settings file declares the marketplace under [`extraKnownMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#extraknownmarketplaces), Claude Code’s attempt to add it at startup fails the same way, and the message appears on the **Errors** tab in `/plugin`. Give the marketplace another name, then add it again:
+
+- **You own the marketplace**: change `name` in `marketplace.json`
+- **Someone else hosts it**: ask the owner to change the name
+
+Before v2.1.296, adding such a marketplace failed with an internal error in place of this message.
 
 
 [​](#ssh-authentication-failed-or-https-authentication-failed)
@@ -684,17 +704,18 @@ A plugin that declares dependencies can fail to install, or install and stay dis
 
 The table lists each message and its fix. To declare dependencies as an author, see [Plugin dependencies](plugins-dependencies.md).
 
-| Message                                                                                         | Meaning                                                                                           | How to resolve                                                                                                                                                                                                                                                      |
-|:------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Dependency "<dep>" is not installed`                                                           | A declared dependency isn’t installed.                                                            | Install it in your shell with `claude plugin install <dep>@<marketplace>`, or uninstall the plugin. If the dependency’s marketplace isn’t registered yet, add it and run `/reload-plugins` in your session, which installs the missing dependencies it can resolve. |
-| `Dependency "<dep>" is disabled`                                                                | The dependency is installed but turned off.                                                       | Enable the dependency, or uninstall the plugin that needs it.                                                                                                                                                                                                       |
-| `Requires "<dep>" <range>, installed <version>`                                                 | The installed dependency’s version is outside the plugin’s declared range.                        | Update the dependency to a version in the range, or uninstall the plugin.                                                                                                                                                                                           |
-| `<Plugin or Dependency> "<name>" has conflicting version requirements`                          | No version satisfies every range that pins it. The message lists the ranges.                      | Uninstall or update one of the conflicting plugins, or ask the upstream author to widen its constraint.                                                                                                                                                             |
-| `... has version requirements too complex to intersect` or `has an invalid version requirement` | A range isn’t valid semver, or the combined ranges can’t be intersected.                          | Fix the invalid range or simplify long `||` chains.                                                                                                                                                                                                                 |
-| `... has no git tag satisfying <range>`                                                         | The dependency’s repository has no `<name>--v*` tag in the range.                                 | Check that the upstream tags releases with that convention, or relax the range.                                                                                                                                                                                     |
-| `Dependency "<dep>" (required by <plugin>) is in <marketplace>, which is not in the allowlist`  | The dependency is in a different marketplace, and cross-marketplace resolution is off by default. | Install the dependency yourself at the same scope, in your shell with `claude plugin install <dep>@<marketplace>` plus the `--scope` you’re installing the plugin at, then retry.                                                                                   |
+| Message                                                                                                                                                            | Meaning                                                                                                                                                                                                            | How to resolve                                                                                                                                                                                                                                                      |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Dependency "<dep>" is not installed`                                                                                                                              | A declared dependency isn’t installed.                                                                                                                                                                             | Install it in your shell with `claude plugin install <dep>@<marketplace>`, or uninstall the plugin. If the dependency’s marketplace isn’t registered yet, add it and run `/reload-plugins` in your session, which installs the missing dependencies it can resolve. |
+| `"<name>@synced" is loaded from your claude.ai account but meets a marketplace dependency only for other claude.ai plugins`, inside the `is not installed` message | The dependency names a marketplace, and a plugin of that name is loaded from your claude.ai account. The plugin that declares the dependency doesn’t load from claude.ai, so the claude.ai plugin doesn’t meet it. | In your shell, run `claude plugin install <dep>@<marketplace>` to install the dependency from its marketplace. The marketplace copy then loads instead of the claude.ai one.                                                                                        |
+| `Dependency "<dep>" is disabled`                                                                                                                                   | The dependency is installed but turned off.                                                                                                                                                                        | Enable the dependency, or uninstall the plugin that needs it.                                                                                                                                                                                                       |
+| `Requires "<dep>" <range>, installed <version>`                                                                                                                    | The installed dependency’s version is outside the plugin’s declared range.                                                                                                                                         | Update the dependency to a version in the range, or uninstall the plugin.                                                                                                                                                                                           |
+| `<Plugin or Dependency> "<name>" has conflicting version requirements`                                                                                             | No version satisfies every range that pins it. The message lists the ranges.                                                                                                                                       | Uninstall or update one of the conflicting plugins, or ask the upstream author to widen its constraint.                                                                                                                                                             |
+| `... has version requirements too complex to intersect` or `has an invalid version requirement`                                                                    | A range isn’t valid semver, or the combined ranges can’t be intersected.                                                                                                                                           | Fix the invalid range or simplify long `||` chains.                                                                                                                                                                                                                 |
+| `... has no git tag satisfying <range>`                                                                                                                            | The dependency’s repository has no `<name>--v*` tag in the range.                                                                                                                                                  | Check that the upstream tags releases with that convention, or relax the range.                                                                                                                                                                                     |
+| `Dependency "<dep>" (required by <plugin>) is in <marketplace>, which is not in the allowlist`                                                                     | The dependency is in a different marketplace, and cross-marketplace resolution is off by default.                                                                                                                  | Install the dependency yourself at the same scope, in your shell with `claude plugin install <dep>@<marketplace>` plus the `--scope` you’re installing the plugin at, then retry.                                                                                   |
 
-To see these programmatically, run `claude plugin list --json` in your shell. Plugins with problems carry an `errors` field with the messages and an `errorDetails` field with a `type` for each: the first two rows are `dependency-unsatisfied` and the third is `dependency-version-unsatisfied`.
+To see these programmatically, run `claude plugin list --json` in your shell. Plugins with problems carry an `errors` field with the messages and an `errorDetails` field with a `type` for each: the first three rows are `dependency-unsatisfied` and the fourth is `dependency-version-unsatisfied`.
 
 
 [​](#plugin-installed-but-not-working)
@@ -857,6 +878,61 @@ claude plugin uninstall <name>@<marketplace> --scope project
 Then run `claude plugin list --json` again to confirm that the row is gone. Before v2.1.295, the second run fails with `Plugin "<name>" is not installed in project scope`. Run `claude update`, then run the uninstall again.
 
 
+[​](#a-plugin-installed-from-a-git-repository-shows-version-unknown)
+
+A plugin installed from a git repository shows version `unknown`
+
+`Version: unknown` in `claude plugin list` can mean Claude Code couldn’t read the commit it uses as a git-sourced plugin’s version. The plugin may have its own repository or be inside a git-hosted marketplace. Run these commands in your shell, replacing `formatter@my-marketplace` with the plugin’s `name@marketplace` line from `claude plugin list`:
+
+1
+
+Update Claude Code
+
+[Update Claude Code](../01-Getting-Started/setup.md#update-claude-code) to v2.1.302 or later, which clones in a format it can read the commit from:
+
+```python
+claude update
+```
+
+2
+
+Update the marketplace
+
+Update Claude Code’s copy of the marketplace, which holds the commit for plugins inside the marketplace repository:
+
+```python
+claude plugin marketplace update my-marketplace
+```
+
+3
+
+Update the plugin
+
+Update the plugin to rewrite its recorded version:
+
+```python
+claude plugin update formatter@my-marketplace
+```
+
+4
+
+Check the version
+
+Check the `Version:` line for a value such as a [12-character commit ID](plugins-loading.md#how-claude-code-computes-the-version):
+
+```python
+claude plugin list
+```
+
+`claude plugin update` [changes one scope’s block per run](plugins-cli-reference.md#which-scope-the-command-updates). For a block still showing `unknown`, rerun it with that block’s `Scope:` value:
+
+```python
+claude plugin update formatter@my-marketplace --scope project
+```
+
+If the block still shows `unknown` after the rerun, see [Get more help](../02-Claude-Code-CLI/troubleshooting.md#get-more-help).
+
+
 [​](#failed-to-load-hooks-from-and-hooks-that-dont-fire)
 
 `Failed to load hooks from <path>` and hooks that don’t fire
@@ -872,6 +948,7 @@ The **Errors** tab shows one of these messages:
 
 - **`Failed to load hooks from <path>: <reason>`**: `hooks/hooks.json` isn’t valid JSON or fails the hooks schema. The reason names the parse or validation error. Fix the file. To catch a JSON syntax problem in `hooks/hooks.json` before you publish the plugin, run `claude plugin validate <plugin-directory>` in your shell
 - **`hooks path not found: <path>`**: the manifest’s `hooks` field names a file that doesn’t exist at that path relative to the plugin root. Fix the path or add the file
+- **`hooks path escapes plugin directory: <path>`**: see [Path escapes plugin directory](../02-Claude-Code-CLI/errors.md#path-escapes-plugin-directory)
 
 
 [​](#hook-error-notices-in-the-transcript)
@@ -892,7 +969,7 @@ A hook that exits with code 2 [blocks the action it ran for](../07-Hooks/hooks.m
 
 Hook loads but never fires
 
-If a hook loads without error but never fires, check its definition and then watch it run:
+If a hook loads without error but never fires, first run `/plugin` in your session and open the plugin’s details. A note there that begins `Its hooks.json hooks do not run` means another enabled plugin with the same name registered its hooks instead, and [Hooks when two enabled plugins share a name](plugins-loading.md#hooks-when-two-enabled-plugins-share-a-name) says which copy that is and how to switch. Otherwise, check the hook’s definition and then watch it run:
 
 1
 
@@ -959,7 +1036,11 @@ The plugin includes the server as an [MCPB bundle](plugins-components.md#include
 
 Server is configured but never connects
 
-Run `/mcp` to see the server’s status. When the server is healthy, `/mcp` lists it as connected. To read the error the server printed while starting, run `claude --debug` and open the log at `~/.claude/debug/<session-id>.txt`. The `--debug` flag doesn’t print to the terminal. A server entry in `.mcp.json` that fails the schema doesn’t appear in the **Errors** tab. Claude Code drops that server and records `Invalid MCP server config for <server> in <path>` only in that debug log. To find the entry without loading the plugin, run `claude plugin validate` in your shell on the plugin directory, which reports it as an error. Before v2.1.281, `claude plugin validate` didn’t check `.mcp.json`.
+Run `/mcp` to see the server’s status. When the server is healthy, `/mcp` lists it as connected. To read the error the server printed while starting, run `claude --debug` and open the log at `~/.claude/debug/<session-id>.txt`. The `--debug` flag doesn’t print to the terminal.
+
+When a connection to a [plugin’s stdio server](../06-MCP-Tools/General/mcp.md#plugin-provided-mcp-servers) failed less than 15 minutes before you ran `claude --debug`, Claude Code [doesn’t start the server](../02-Claude-Code-CLI/errors.md#skipping-connection-recent-failure-cached). In the new session, select **Reconnect** from the server’s menu in `/mcp` to start it, then open the log.
+
+A server entry in `.mcp.json` that fails the schema doesn’t appear in the **Errors** tab. Claude Code drops that server and records `Invalid MCP server config for <server> in <path>` only in that debug log. To find the entry without loading the plugin, run `claude plugin validate` in your shell on the plugin directory, which reports it as an error. Before v2.1.281, `claude plugin validate` didn’t check `.mcp.json`.
 
 
 [​](#server-works-with-plugin-dir-but-fails-after-install)
@@ -1011,7 +1092,11 @@ You’re developing a plugin and loading it with `--plugin-dir` or installing it
 
 `commands path not found: <path>`
 
-The **Errors** tab shows `commands path not found: <absolute path>` with the guidance `Check that the path in your manifest or marketplace config is correct`. The same message appears for `skills`, `agents`, and `hooks`. Claude Code resolved a path from your `plugin.json` or marketplace entry against the plugin root and found nothing there. The path in the message is the absolute path it checked, so compare it with what’s on disk. Fix the path or create the directory, then run `/reload-plugins`. Paths in the manifest are relative to the plugin root and start with `./`. A path that resolves outside the plugin root is reported as `<component> path escapes plugin directory` instead and is dropped.
+The **Errors** tab shows `commands path not found: <absolute path>` with the guidance `Check that the path in your manifest or marketplace config is correct`. The same message appears for `skills`, `agents`, and `hooks`. Claude Code resolved a path from your `plugin.json` or marketplace entry against the plugin root and found nothing there. The path in the message is the absolute path it checked, so compare it with what’s on disk. Fix the path or create the directory, then run `/reload-plugins`.
+
+Before v2.1.299, this message could appear at startup on a row labeled with a tag such as `synced[0]`. That row is for a plugin [synced from claude.ai](plugins-loading.md#synced-plugins). It appeared when another Claude Code session on your machine had updated the plugin moments before and moved its files. To load the plugin, restart Claude Code. To keep the message from appearing for this reason, update to v2.1.299 or later.
+
+Paths in the manifest are relative to the plugin root and start with `./`. A path that resolves outside the plugin root is reported as `<component> path escapes plugin directory` instead and is dropped.
 
 
 [​](#plugin-dir-loads-a-plugin-with-no-components)

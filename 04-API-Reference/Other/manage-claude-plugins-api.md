@@ -2,7 +2,7 @@
 title: "Plugins API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/plugins-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-09T06:28:07Z"
+fetched_at: "2026-10-17T06:26:29Z"
 tags: ["api", "plugins"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "plugins"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fplugins-api)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fplugins-api)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Organization
 
@@ -129,6 +131,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -351,6 +355,8 @@ Upload every tagged build from CI, and let the pipeline decide when a build is s
     PHP
     Ruby
 
+    Python
+
     
 
     ``` shiki
@@ -448,6 +454,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -483,6 +491,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -552,6 +562,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -608,6 +620,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -640,6 +654,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -726,6 +742,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -772,6 +790,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -807,6 +827,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -886,6 +908,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -923,6 +947,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -965,6 +991,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -1002,6 +1030,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -1053,6 +1083,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -1101,6 +1133,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -1185,6 +1219,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -1221,6 +1257,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -1255,6 +1293,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -1297,6 +1337,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -1373,6 +1415,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

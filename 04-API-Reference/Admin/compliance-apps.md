@@ -2,7 +2,7 @@
 title: "Apps - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:48Z"
+fetched_at: "2026-10-20T06:37:32Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -217,7 +219,11 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -225,9 +231,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -241,6 +247,10 @@ To enable the Compliance API, see the setup guide.
 2.  [Compliance API](../Endpoints/http-compliance.md)
 
 # Apps
+
+Copy page
+
+
 
 #### Apps[Chats](https://platform.claude.com/docs/en/api/http/compliance/apps/chats)
 
@@ -405,3 +415,29 @@ List remote sessions (Cowork sessions that run in Anthropic-managed cloud enviro
 GET/v1/compliance/apps/sessions/remote/{claude_remote_session_id}/messages
 
 Retrieve one remote session's transcript: user prompts, assistant responses, and tool calls and results. Thinking blocks and images are not included.
+
+#### AppsCode[Artifacts](https://platform.claude.com/docs/en/api/http/compliance/apps/code/artifacts)
+
+##### [List Code Artifacts](https://platform.claude.com/docs/en/api/http/compliance/apps/code/artifacts/list)
+
+GET/v1/compliance/apps/code/artifacts
+
+List Claude Code Artifacts owned by organizations under the parent organization.
+
+##### [Download Code Artifact Version Content](https://platform.claude.com/docs/en/api/http/compliance/apps/code/artifacts/retrieve_version)
+
+GET/v1/compliance/apps/code/artifacts/{artifact_id}/versions/{version_id}
+
+Streams the content of one version of a Claude Code Artifact as the response body.
+
+##### [Download Code Artifact Content](https://platform.claude.com/docs/en/api/http/compliance/apps/code/artifacts/download)
+
+GET/v1/compliance/apps/code/artifacts/{artifact_id}/content
+
+Streams an Artifact's current content as the response body. For a Claude Doc, that is the Doc's text as a ZIP archive of Word files, one per text tab, and the request must set `multi_file_format=zip`. For any other Artifact, it is the latest version, as `GET /v1/compliance/apps/code/artifacts/{artifact_id}/versions/{version_id}` returns it.
+
+##### [Delete Code Artifact](https://platform.claude.com/docs/en/api/http/compliance/apps/code/artifacts/delete)
+
+DELETE/v1/compliance/apps/code/artifacts/{artifact_id}
+
+Permanently deletes a Code Artifact and all its versions. This is a destructive operation that cannot be undone. A 200 response means the deletion is initiated and the Artifact is claimed; content removal completes asynchronously.

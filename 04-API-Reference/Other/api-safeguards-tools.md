@@ -2,11 +2,13 @@
 title: "API Safeguards Tools | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9199617-api-safeguards-tools"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:25:38Z"
+fetched_at: "2026-10-23T06:29:18Z"
 tags: ["api"]
 ---
 
 # API Safeguards Tools
+
+September 14, 2026
 
 
 Whether you are just starting the process of setting up safeguards for your API deployment of Claude, or your deployment is already running, here are some strategies to consider when building your own AI safety program. These suggestions are designed to help you comply with our **[Terms of Service](https://www.anthropic.com/legal/commercial-terms)** and **[Usage Policy](https://www.anthropic.com/legal/aup)**, which prohibit certain uses of Claude. Failure to comply with the **[Terms](https://www.anthropic.com/legal/commercial-terms)** and **[Usage Policy](https://www.anthropic.com/legal/aup)** may result in suspension or termination of your access to the services.

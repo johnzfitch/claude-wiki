@@ -2,7 +2,7 @@
 title: "Use Claude Code with your Pro or Max plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:27:59Z"
+fetched_at: "2026-10-23T06:28:49Z"
 tags: ["billing", "claude-code"]
 ---
 
@@ -57,7 +57,7 @@ If you're not seeing the option to authenticate with your preferred account, fol
 
 4.  Run `claude` and select the correct account to use Claude Code.
 
-**Important:** If you have an ANTHROPIC_API_KEY environment variable set on your system, Claude Code will use this API key for authentication instead of your Claude subscription (Pro, Max, Team, or Enterprise plans), resulting in API usage charges rather than using your subscription's included usage. See this article for more information: **[Managing API key environment variables in Claude Code](https://support.claude.com/en/articles/12304248-managing-api-key-environment-variables-in-claude-code).**
+**Important:** If you have an ANTHROPIC_API_KEY environment variable set on your system, Claude Code will use this API key for authentication instead of your Claude subscription (Pro, Max, Team, or Enterprise plans), resulting in API usage charges rather than using your subscription's included usage. See this article for more information: **[Managing API key environment variables in Claude Code](../02-Claude-Code-CLI/managing-api-key-environment-variables-in-claude-code.md).**
 
 ## Use Claude Code in your IDE
 
@@ -70,6 +70,8 @@ To install and set up the extension for your IDE, see **[Platforms and integrati
 ## What happens when you hit usage limits
 
 Both Pro and Max plans have a five-hour session limit and a weekly limit. Max plans also have a separate weekly limit for Fable. These limits are shared across Claude and Claude Code, meaning all activity in both tools counts against the same limits. To help you monitor your usage, you’ll see warning messages as you approach any limit.
+
+If you reach your five-hour session limit while Claude Code is partway through a response, Claude Code may keep working briefly so it can finish the step in progress instead of stopping mid-step. While this happens, you’ll see “Usage limit reached · wrapping up” in Claude Code. This wrap-up allowance is small and capped, and the usage counts toward your weekly limit. It applies only to a response that’s already in progress, not to a new message you send after reaching your limit. On the Pro plan, it applies up to once per weekly usage period. On the Max plan, it can apply each time you reach a five-hour session limit, within your weekly limit. It’s rolling out gradually, so it may not be available on your account yet. Learn more about the **[Claude Code wrap-up allowance](../02-Claude-Code-CLI/claude-code-wrap-up-allowance-claude-help-center.md)**.
 
 When you reach your usage limits, you can select from a few options based on your needs:
 

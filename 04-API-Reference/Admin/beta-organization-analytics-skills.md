@@ -1,8 +1,8 @@
 ---
 title: "Skills - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/skills"
+source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/skills"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:00Z"
+fetched_at: "2026-10-20T06:37:12Z"
 tags: ["api", "skills"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "skills"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fskills)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fskills)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -155,9 +155,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -228,13 +230,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -242,9 +246,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,13 +257,19 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
 
 # Skills
 
-##### [Get Skill Usage](http-beta-organization-analytics-skills-list.md)
+Copy page
+
+
+
+cURL
+
+##### [Get Skill Usage](platform-claude-com-http-beta-organization-analytics-skills-list.md)
 
 GET/v1/organizations/analytics/skills
 

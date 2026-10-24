@@ -2,7 +2,7 @@
 title: "Claude Fable 5 one-time free credits promotion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15862783"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:20Z"
+fetched_at: "2026-10-23T06:29:13Z"
 tags: ["billing"]
 ---
 
@@ -15,7 +15,7 @@ September 1, 2026
 
 ***This promotion applies to Pro plans and standard seats on Team plans.*** When the Claude Fable 5 weekly usage promotion ends on July 19, 2026 at 11:59:59 PM PT, Fable 5 will still be available to you but moves from your plan's weekly usage limits to pay-as-you-go usage credits.
 
-To make the change easier, we're giving eligible subscribers free one-time promotional credits. The free credits are standard usage credits, so they're not limited to Fable 5. You can use them on any model, and they can be used if you have reached your plan limit. Learn more about **[usage credits](manage-usage-credits-for-paid-claude-plans-claude-help-center.md)**.
+To make the change easier, we're giving eligible subscribers free one-time promotional credits. The free credits are standard usage credits, so they're not limited to Fable 5. You can use them on any model, and they can be used if you have reached your plan limit. Learn more about **[usage credits](https://support.claude.com/en/articles/12429409)**.
 
 This article explains what the credits are, who's eligible, how to claim them, and when they expire.
 

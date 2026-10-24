@@ -2,7 +2,7 @@
 title: "Organizations - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:54Z"
+fetched_at: "2026-10-20T06:39:50Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -204,6 +206,8 @@ Organizations
 
 Users
 
+User Preferences
+
 Roles
 
 Settings
@@ -215,13 +219,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -229,9 +235,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -245,6 +251,10 @@ To enable the Compliance API, see the setup guide.
 2.  [Compliance API](../Endpoints/http-compliance.md)
 
 # Organizations
+
+Copy page
+
+
 
 ##### [List organizations](https://platform.claude.com/docs/en/api/http/compliance/organizations/list)
 
@@ -287,6 +297,14 @@ Unique identifier for the organization (UUID format)
 GET/v1/compliance/organizations/{org_uuid}/users
 
 List current user members of an organization.
+
+#### Organizations[User Preferences](https://platform.claude.com/docs/en/api/http/compliance/organizations/user_preferences)
+
+##### [List organization members' personal preferences](https://platform.claude.com/docs/en/api/http/compliance/organizations/user_preferences/list)
+
+GET/v1/compliance/organizations/{org_uuid}/user_preferences
+
+List the personal preferences of an organization's current members.
 
 #### Organizations[Roles](https://platform.claude.com/docs/en/api/http/compliance/organizations/roles)
 

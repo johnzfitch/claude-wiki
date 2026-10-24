@@ -2,7 +2,7 @@
 title: "Factory Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/factory"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:46Z"
+fetched_at: "2026-10-23T06:29:39Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 
@@ -38,17 +38,17 @@ Factory uses Claude to power autonomous droids that streamline software developm
 
 ## Automating labor-intensive coding tasks
 
-Factory, founded in 2023, is on a mission to bring autonomy to software engineering. The company builds AI-powered systems called "Droids" that automate labor-intensive tasks throughout the software development lifecycle. These Droids can handle everything from code review and documentation to end-to-end coding tasks like refactors, migrations, and feature requests.
+Factory, founded in 2023, is on a mission to bring autonomy to software engineering. The company builds AI-powered systems called “Droids” that automate labor-intensive tasks throughout the software development lifecycle. These Droids can handle everything from code review and documentation to end-to-end coding tasks like refactors, migrations, and feature requests.
 
-"As software is built and companies grow, organizational structure and engineering practices become inconsistent. It leads to bottlenecks and slowdowns," explains Eno Reyes, CTO and Co-Founder at Factory. "There really wasn't any one tool or system that could handle the ambiguity required to navigate the entire software lifecycle, especially one that scaled with the organization."
+“As software is built and companies grow, organizational structure and engineering practices become inconsistent. It leads to bottlenecks and slowdowns,” explains Eno Reyes, CTO and Co-Founder at Factory. “There really wasn’t any one tool or system that could handle the ambiguity required to navigate the entire software lifecycle, especially one that scaled with the organization.”
 
-Factory's solution is to create autonomous systems that can understand and navigate the complexities of large-scale software development. Their Droids use AI to analyze codebases, make decisions, and execute tasks with minimal human intervention.
+Factory’s solution is to create autonomous systems that can understand and navigate the complexities of large-scale software development. Their Droids use AI to analyze codebases, make decisions, and execute tasks with minimal human intervention.
 
 ## Building agentic AI systems with Claude
 
 To create these autonomous systems, Factory needed AI models capable of complex reasoning, planning, and decision-making. They found their solution in the Claude 3 model family.
 
-"We're trying to model human cognition," says Reyes. "We need systems that are agentic in nature. They have to have planning, subgoal decomposition, reflection on failure, refinement of tasks as they act. They need memory, both short-term and long-term. They need to be able to retrieve information and use tools. Anthropic and Claude have consistently delivered what we need to get there."
+“We’re trying to model human cognition,” says Reyes. “We need systems that are agentic in nature. They have to have planning, subgoal decomposition, reflection on failure, refinement of tasks as they act. They need memory, both short-term and long-term. They need to be able to retrieve information and use tools. Anthropic and Claude have consistently delivered what we need to get there.”
 
 Factory uses Claude 3 Opus for tasks requiring heavy reasoning and complex decision-making. For high-volume tasks that still require good reasoning but need to be very fast, they employ Claude 3 Haiku. This combination allows Factory to create AI systems that can handle the ambiguity and complexity inherent in large-scale software development.
 
@@ -58,15 +58,15 @@ Factory uses Claude 3 Opus for tasks requiring heavy reasoning and complex decis
 
 ## Streamlining development for enterprise customers
 
-Factory's Droids are already making a significant impact for their enterprise customers. The company typically works with organizations that have hundreds to thousands of engineers.
+Factory’s Droids are already making a significant impact for their enterprise customers. The company typically works with organizations that have hundreds to thousands of engineers.
 
 One of their key products is the Review Droid, which automates the code review process. When deployed, it analyzes pull requests, provides contextualization, leaves inline comments, and helps other reviewers understand the changes. Another product, the Code Droid, can take a ticket from a project management system like Jira or Linear, work on the task, and create a pull request to implement the requested feature or fix.
 
-Both of these Droids, which are powered by Claude, dramatically reduce the time engineers spend on routine tasks—enabling engineers to focus on higher-level problem-solving and new opportunities. Factory estimates that across all their customers, they've saved approximately 550,000 hours of development time. On average, each organization saves about 2,300 hours, which translates to a 20% reduction in development cycle time.
+Both of these Droids, which are powered by Claude, dramatically reduce the time engineers spend on routine tasks—enabling engineers to focus on higher-level problem-solving and new opportunities. Factory estimates that across all their customers, they’ve saved approximately 550,000 hours of development time. On average, each organization saves about 2,300 hours, which translates to a 20% reduction in development cycle time.
 
 ## Pushing the boundaries of AI in software development
 
-Factory's use of Claude goes beyond simple task automation. They're developing sophisticated systems that can handle complex, multi-step processes in software development.
+Factory’s use of Claude goes beyond simple task automation. They’re developing sophisticated systems that can handle complex, multi-step processes in software development.
 
 This focus allows Factory to create AI systems that can handle the immense complexity and variability of real-world software development tasks. Their systems can plan, break down problems into sub-steps, and make decisions at each stage of the process.
 
@@ -101,7 +101,8 @@ With their innovative use of LLMs and their focus on solving real-world problems
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -119,12 +120,12 @@ With their innovative use of LLMs and their focus on solving real-world problems
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -157,7 +158,7 @@ With their innovative use of LLMs and their focus on solving real-world problems
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -175,6 +176,7 @@ With their innovative use of LLMs and their focus on solving real-world problems
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -190,7 +192,7 @@ With their innovative use of LLMs and their focus on solving real-world problems
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -225,7 +227,8 @@ With their innovative use of LLMs and their focus on solving real-world problems
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -243,12 +246,12 @@ With their innovative use of LLMs and their focus on solving real-world problems
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -281,7 +284,7 @@ With their innovative use of LLMs and their focus on solving real-world problems
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -299,6 +302,7 @@ With their innovative use of LLMs and their focus on solving real-world problems
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -314,7 +318,7 @@ With their innovative use of LLMs and their focus on solving real-world problems
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

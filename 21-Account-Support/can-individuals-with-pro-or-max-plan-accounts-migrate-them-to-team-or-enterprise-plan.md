@@ -2,7 +2,7 @@
 title: "Move your personal Claude account to a Team or Enterprise organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267400-move-your-personal-claude-account-to-a-team-or-enterprise-organization"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:25:31Z"
+fetched_at: "2026-10-23T06:29:22Z"
 tags: ["account", "enterprise"]
 ---
 
@@ -152,6 +152,6 @@ If you want to close your personal account without moving any of your work into 
 
 1.  **[Cancel your individual paid plan](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md)** if applicable.
 
-2.  **[Export your data](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** while you still have access.
+2.  **[Export your data](../22-Safety-Policy/how-can-i-export-my-claude-data.md)** while you still have access.
 
 3.  Navigate to **[Settings \> Account](https://claude.ai/settings/account)** and click "Delete" to **[delete your account](https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account)**.

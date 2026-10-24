@@ -2,7 +2,7 @@
 title: "Transports Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/transports"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-08-26T06:27:35Z"
+fetched_at: "2026-10-21T06:29:01Z"
 tags: ["mcp", "mcp-community"]
 ---
 
@@ -84,8 +84,7 @@ Out of Scope
 Related Groups
 
 - **[SDK WG](community-working-groups-sdk.md)**: Official SDKs implement transport changes; the groups coordinate on feasibility, reference implementations, and rollout sequencing.
-- **[Agents WG](community-working-groups-agents.md)**: The Agents WG owns Tasks and durable execution; the groups coordinate where these depend on multi-round-trip requests, request association, stateless operation, or binding behavior.
-- **[Triggers and Events WG](community-working-groups-triggers-events.md)**: Event callbacks, subscriptions, and application-level delivery semantics are owned by that group; Transports owns binding-specific carriage and guarantees.
+- **[Tasks and Events WG](community-working-groups-tasks-events.md)**: The Tasks and Events WG owns Tasks and durable execution; the groups coordinate where these depend on multi-round-trip requests, request association, stateless operation, or binding behavior. Event callbacks, subscriptions, and application-level delivery semantics are owned by that group; Transports owns binding-specific carriage and guarantees.
 - **[Auth IG](community-interest-groups-auth.md)** and **[Security IG](community-interest-groups-security.md)**: The groups coordinate on credential carriage and transport wire security while authorization mechanics and broader security requirements remain with the respective IGs.
 
 

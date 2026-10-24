@@ -2,7 +2,7 @@
 title: "Epilepsy Foundation Q&A | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/epilepsy-foundation-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:46Z"
+fetched_at: "2026-10-23T06:29:39Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -37,9 +37,9 @@ The Epilepsy Foundation turns years of expert content into a personal epilepsy a
 
 [Read more](epilepsy-foundation.md)
 
-[The Epilepsy Foundation](https://www.epilepsy.com/) is a nonprofit serving people with epilepsy across the United States, with a mission to ensure that no one faces epilepsy alone. Its public assistant, Sage, is a Claude-powered AI epilepsy assistant that answers only from the Foundation's medically reviewed content. In addition to the assistant, the Foundation has built Claude into how its own teams work. David-Alexandre Jost, its Chief Technology and Innovations Officer, spoke with Anthropic about writing grants, understanding what the community needs at scale, and what he thinks AI should and shouldn't do at a mission-driven nonprofit.
+[The Epilepsy Foundation](https://www.epilepsy.com/) is a nonprofit serving people with epilepsy across the United States, with a mission to ensure that no one faces epilepsy alone. Its public assistant, Sage, is a Claude-powered AI epilepsy assistant that answers only from the Foundation’s medically reviewed content. In addition to the assistant, the Foundation has built Claude into how its own teams work. David-Alexandre Jost, its Chief Technology and Innovations Officer, spoke with Anthropic about writing grants, understanding what the community needs at scale, and what he thinks AI should and shouldn’t do at a mission-driven nonprofit.
 
-## Anthropic: Sage only answers from content your editorial board has vetted, and it tells someone when it doesn't have an answer rather than guessing. That's a deliberate stance on what AI should do. Where does it come from?
+## Anthropic: Sage only answers from content your editorial board has vetted, and it tells someone when it doesn’t have an answer rather than guessing. That’s a deliberate stance on what AI should do. Where does it come from?
 
 **David-Alexandre Jost, Epilepsy Foundation:** We made a decision early on to have authoritative content from the start. There is a lot of unreliable information out there. People who are scared go looking for a cure or a treatment and end up on forums and sites no one has checked. So on epilepsy.com, nothing gets published until our editorial board and our marketing team have approved it, and that is exactly why we could ground Sage in that knowledge base. That grounding is the difference between Sage and someone just opening any AI chatbot and prompting it. What surprised us is how far that grounding goes. Sage started showing behaviors we never programmed, and when we dug deeper, we noticed they were baked into the content we had ingested. Our lifestyle articles offer real recommendations, such as how to handle a situation at school or how to make the most of a few minutes with your neurologist. Sage learned to offer that kind of guidance on its own. We do not have to prompt everything into the agent. A lot of it is already in the knowledge base we built.
 
@@ -49,7 +49,7 @@ The Epilepsy Foundation turns years of expert content into a personal epilepsy a
 
 ## Anthropic: What has that weekly read shown you about how people actually use Sage?
 
-**Jost:** What stood out is how many of our power users treat Sage as a diary. They want it to *remember*. A lot of people in our community live with cognitive challenges, so a conversation from a few days ago can be genuinely hard to recall, and if Sage can hold onto those details, that matters to them. Right now it can't, because every session starts fresh. That one insight is driving the next version. Our next iteration of this product is Sage Next, which adds authentication and long-term memory, so it can carry something a person shared weeks ago into a later conversation, and even flag a medication risk they might have forgotten to raise with their neurologist.
+**Jost:** What stood out is how many of our power users treat Sage as a diary. They want it to *remember*. A lot of people in our community live with cognitive challenges, so a conversation from a few days ago can be genuinely hard to recall, and if Sage can hold onto those details, that matters to them. Right now it can’t, because every session starts fresh. That one insight is driving the next version. Our next iteration of this product is Sage Next, which adds authentication and long-term memory, so it can carry something a person shared weeks ago into a later conversation, and even flag a medication risk they might have forgotten to raise with their neurologist.
 
 ## Anthropic: You bring that same grounding instinct to your own work. The clearest example is the grant you wrote for AWS Imagine. Walk us through it.
 
@@ -59,9 +59,9 @@ The Epilepsy Foundation turns years of expert content into a personal epilepsy a
 
 **Jost:** The internal rollout of Claude is a trial to see how it fits for adoption across the organization. On the IT side we already have the governance to support it. Where I want to take it next is broader AI fluency. We are planning to use the courses available for nonprofits and teach our core and development teams how to build context in Projects, share that context, and work more collaboratively rather than everyone starting from scratch. The goal is a way of working where you can be confident that what you create with AI is accurate and good enough to share with the community. That is the future I see for the organization: everyone building on the same shared context, whether that is a grant, a piece of content, or the next version of Sage.
 
-## Anthropic: You're also making this case beyond the Foundation, at conferences. What are you arguing for?
+## Anthropic: You’re also making this case beyond the Foundation, at conferences. What are you arguing for?
 
-**Jost:** We just submitted an abstract to the American Epilepsy Society. If it's accepted, we'll be on a panel in December on how empathy is required when you have a conversational chatbot like Sage, and how important it is to ground it in content you own, with a team behind it that can do the editorial process. I'm also hoping to be on a panel at another conference on the technical side: how you audit the iterative process to get a better chatbot out there, with observability.
+**Jost:** We just submitted an abstract to the American Epilepsy Society. If it’s accepted, we’ll be on a panel in December on how empathy is required when you have a conversational chatbot like Sage, and how important it is to ground it in content you own, with a team behind it that can do the editorial process. I’m also hoping to be on a panel at another conference on the technical side: how you audit the iterative process to get a better chatbot out there, with observability.
 
 Beneficial Deployments
 
@@ -73,7 +73,7 @@ Accelerate the work that matters most
 
 **Jost:** It goes back to why we built our foundation on AWS in the first place. We created an environment that can comply with HIPAA and other requirements, where we decide what personal or health information gets shared and what does not, how it is stored, and whether developers or researchers can access it. That is already baked into the system. For us, it comes down to governance: we know how to store this information, and we know how to share it based on the policies we have set.
 
-## Anthropic: Across grants, analysis, and everything you're rolling out, what's the principle you keep coming back to?
+## Anthropic: Across grants, analysis, and everything you’re rolling out, what’s the principle you keep coming back to?
 
 **Jost:** Ground it in what you can stand behind, and keep humans in the loop. Everything we have built with Claude, from Sage to the way I write a grant, starts from content and context we trust. Get that right, and the tools compound. The same context that helped me write one grant in a day can help across the organization once people know how to use it. That is what I want for us: an organization where AI helps us do more of the work that matters, and where we stay confident that what we put in front of our community is valuable and accurate.
 
@@ -86,10 +86,10 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
@@ -106,7 +106,8 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -124,12 +125,12 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -162,7 +163,7 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -180,6 +181,7 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -195,7 +197,7 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -230,7 +232,8 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -248,12 +251,12 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -286,7 +289,7 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -304,6 +307,7 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -319,7 +323,7 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "How people use Claude for support, advice, and companionship \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-people-use-claude-for-support-advice-and-companionship"
 category: "19-Reference"
-fetched_at: "2026-10-10T06:25:46Z"
+fetched_at: "2026-10-20T06:38:41Z"
 tags: ["news-research"]
 ---
 
@@ -132,23 +132,23 @@ We provide more details in the [PDF Appendix](https://www-cdn.anthropic.com/bd37
 
 ## Related content
 
-### 2026 Usage Policy update
+### Investing in the public benefit
 
-We’re publishing a new version of our Usage Policy. In this post, we summarize the changes we’ve made.
+We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.
 
-[Read more](2026-usage-policy-update.md)
+[Read more](public-benefit-fund.md)
 
-### Building on our commitment to American scientific discovery
+### An update on independent evaluators
 
-Anthropic is committing \$150 million over three years to the Genesis Mission, a federal initiative to accelerate scientific and technological discovery through AI.
+To evaluate the safety of our systems, Anthropic is giving employee-like access to a team from METR, a nonprofit that evaluates frontier AI models, and we're in early discussions with several other organizations, including Hugging Face.
 
-[Read more](genesis-mission-commitment.md)
+[Read more](an-update-on-independent-evaluators.md)
 
-### Introducing the Anthropic Cyber Mission
+### Preparing for the 2026 US midterms
 
-We’re launching the Anthropic Cyber Mission, a long-term commitment to securing the systems everyone depends on.
+Earlier this year, we shared an update on our election safeguards. Here, we outline how we’ve continued to strengthen these safeguards ahead of this year’s US midterms.
 
-[Read more](anthropic-cyber-mission.md)
+[Read more](2026-us-midterms.md)
 
 [](https://www.anthropic.com/)
 
@@ -163,6 +163,7 @@ We’re launching the Anthropic Cyber Mission, a long-term commitment to securin
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Claude in Chrome](https://claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -209,7 +210,7 @@ We’re launching the Anthropic Cyber Mission, a long-term commitment to securin
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 
@@ -232,12 +233,12 @@ We’re launching the Anthropic Cyber Mission, a long-term commitment to securin
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ### Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Status](https://status.anthropic.com/)
 - [Support center](https://support.claude.com/en/)
 

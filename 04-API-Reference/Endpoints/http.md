@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp)
 
 
 
@@ -219,7 +219,7 @@ Claude Code
 
 [Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -229,9 +229,9 @@ cURL
 
 # HTTP API reference
 
-#### [Completions](http-completions.md)
+#### [Completions](platform-claude-com-http-completions.md)
 
-##### [Create a Text Completion](http-completions-create.md)
+##### [Create a Text Completion](platform-claude-com-http-completions-create.md)
 
 POST/v1/complete
 

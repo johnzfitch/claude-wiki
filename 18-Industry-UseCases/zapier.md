@@ -2,7 +2,7 @@
 title: "Zapier Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/zapier"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:05Z"
+fetched_at: "2026-10-23T06:30:13Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -34,7 +34,7 @@ Zapier, the leading AI orchestration platform, uses Claude to drive [company-wid
 
 Key results:
 
-- [89% AI adoption across all employees](https://zapier.com/blog/how-zapier-rolled-out-ai/)—highest in the company's history
+- [89% AI adoption across all employees](https://zapier.com/blog/how-zapier-rolled-out-ai/)—highest in the company’s history
 - 800+ AI agents deployed internally, exceeding their employee count
 - 10x year-over-year growth in Anthropic app usage
 
@@ -42,40 +42,40 @@ Key results:
 
 For over a decade, Zapier has empowered non-technical users to create automation workflows for repetitive tasks. This foundation of democratizing technology positioned them to embrace generative AI both internally and for their customers.
 
-"Zapier, at its core, is about enabling non-technical people to build things they didn't think possible," said Reid Robinson, Lead Product Manager of AI at Zapier. "We've always had that mentality of helping people become builders, and see opportunities to build robots for themselves, their company, and their customers."
+“Zapier, at its core, is about enabling non-technical people to build things they didn’t think possible,” said Reid Robinson, Lead Product Manager of AI at Zapier. “We’ve always had that mentality of helping people become builders, and see opportunities to build robots for themselves, their company, and their customers.”
 
 Zapier needed AI tools that could match their distributed work style, while maintaining their high standards for automation and efficiency as a fully remote company operating across global time zones with 8,000 app integrations to manage.
 
 ## Selecting Claude for strategic intelligence
 
-Zapier's path to Claude began with grassroots adoption. Before any company-wide rollout, dozens of employees, particularly on the Marketing team, were already using Claude for personal productivity. “Many teams were very vocal about wanting access," Robinson said. "They were very happy to finally get access to Claude."
+Zapier’s path to Claude began with grassroots adoption. Before any company-wide rollout, dozens of employees, particularly on the Marketing team, were already using Claude for personal productivity. “Many teams were very vocal about wanting access,” Robinson said. “They were very happy to finally get access to Claude.”
 
-Claude's artifacts, features, and sophisticated reasoning capabilities set it apart. Robinson explained, "Artifacts were one of the first things I'd seen that could bring ideas to life so quickly and simply." Equally important was Claude's integration with Model Context Protocol (MCP), invaluable for Zapier's complex technical environment. "Claude's ability to work with MCP servers is incredibly powerful," Robinson said, noting how it enables seamless connections across their internal tools and data sources. For example, Zapier team members have been enjoying using the Zapier MCP in Claude to search Slack by keyword.
+Claude’s artifacts, features, and sophisticated reasoning capabilities set it apart. Robinson explained, “Artifacts were one of the first things I’d seen that could bring ideas to life so quickly and simply.” Equally important was Claude’s integration with Model Context Protocol (MCP), invaluable for Zapier’s complex technical environment. “Claude’s ability to work with MCP servers is incredibly powerful,” Robinson said, noting how it enables seamless connections across their internal tools and data sources. For example, Zapier team members have been enjoying using the Zapier MCP in Claude to search Slack by keyword.
 
 ## How Claude transforms daily operations
 
-Claude powers productivity across Zapier's distributed teams through several key applications:
+Claude powers productivity across Zapier’s distributed teams through several key applications:
 
-- **Content creation and marketing**: The product marketing team leverages Claude extensively for customer-facing content, from blog posts to social media and keynote presentations. They've built automated workflows where Claude drafts content, saves it to Google Docs, and notifies team members in Slack for review.
+- **Content creation and marketing**: The product marketing team leverages Claude extensively for customer-facing content, from blog posts to social media and keynote presentations. They’ve built automated workflows where Claude drafts content, saves it to Google Docs, and notifies team members in Slack for review.
 - **Engineering and development**: Engineering teams rapidly adopted Claude Code for everything from code generation to automated merge requests. Their CTO built a system where adding an emoji to a Slack thread triggers Claude to analyze the context, generate code, and create a merge request for team review—all within minutes.
-- **Strategic planning and research**: Robinson uses Claude with Zapier's MCP integration for strategic intelligence gathering. In preparing for industry events, he asks Claude to research attendees using Zapier's CRM and web search capabilities, which provide instant context about customers and prospects he wouldn't know otherwise.
+- **Strategic planning and research**: Robinson uses Claude with Zapier’s MCP integration for strategic intelligence gathering. In preparing for industry events, he asks Claude to research attendees using Zapier’s CRM and web search capabilities, which provide instant context about customers and prospects he wouldn’t know otherwise.
 - **Customer research and design**: Zapier Design teams use Claude artifacts to rapidly prototype during customer interviews, showing design concepts in real-time that would normally take weeks to develop. This enables immediate feedback and iteration during conversations with potential users.
 
 ## The impact of AI-first culture
 
-Zapier's commitment to AI adoption has transformed their distributed teams' operations. In March 2023, the company implemented a "Code Red" strategy, pausing normal business operations for a company-wide AI hackathon that generated 150 ideas and 60+ submissions from their 360-person team.
+Zapier’s commitment to AI adoption has transformed their distributed teams’ operations. In March 2023, the company implemented a “Code Red” strategy, pausing normal business operations for a company-wide AI hackathon that generated 150 ideas and 60+ submissions from their 360-person team.
 
-This cultural shift enabled teams to move faster and work more strategically. Instead of scheduling follow-ups for next week, teams now suggest meeting later the same day. As CEO Wade Foster puts it, "Those little gains compound. They build speed, energy, and trust.”
+This cultural shift enabled teams to move faster and work more strategically. Instead of scheduling follow-ups for next week, teams now suggest meeting later the same day. As CEO Wade Foster puts it, “Those little gains compound. They build speed, energy, and trust.”
 
-The transformation extends beyond individual productivity to organizational capabilities. Robinson describes their approach as asking "What would you do if you could run Claude in your sleep?" This mindset has led to sophisticated agent-based workflows where Claude operates autonomously across multiple systems, handling everything from content generation to customer research.
+The transformation extends beyond individual productivity to organizational capabilities. Robinson describes their approach as asking “What would you do if you could run Claude in your sleep?” This mindset has led to sophisticated agent-based workflows where Claude operates autonomously across multiple systems, handling everything from content generation to customer research.
 
-For Zapier’s customers, this philosophy has translated into increasingly valuable tools: the Anthropic integration on Zapier now processes 10 times more tasks than last year, as users build workflows that leverage Claude's capabilities for their own businesses.
+For Zapier’s customers, this philosophy has translated into increasingly valuable tools: the Anthropic integration on Zapier now processes 10 times more tasks than last year, as users build workflows that leverage Claude’s capabilities for their own businesses.
 
 ## Building the future of work
 
-Looking ahead, Robinson sees AI as a powerful tool for anyone wanting to start a business. He says, "AI makes it much easier to turn ideas into reality." He's excited about how AI can help people without technical backgrounds build their own companies and create new things. Where technical skills were once a barrier, AI is opening doors for a new wave of entrepreneurs.
+Looking ahead, Robinson sees AI as a powerful tool for anyone wanting to start a business. He says, “AI makes it much easier to turn ideas into reality.” He’s excited about how AI can help people without technical backgrounds build their own companies and create new things. Where technical skills were once a barrier, AI is opening doors for a new wave of entrepreneurs.
 
-Zapier continues to push the boundaries of what's possible with their MCP platform strategy. They are creating internal servers that help Claude navigate their codebase and building team-specific tools for areas like developer experience and design. They're also exploring how Claude can power more sophisticated customer-facing agents through their platform. With Claude as their strategic partner, Zapier is making this vision a reality for their distributed team and millions of customers worldwide.
+Zapier continues to push the boundaries of what’s possible with their MCP platform strategy. They are creating internal servers that help Claude navigate their codebase and building team-specific tools for areas like developer experience and design. They’re also exploring how Claude can power more sophisticated customer-facing agents through their platform. With Claude as their strategic partner, Zapier is making this vision a reality for their distributed team and millions of customers worldwide.
 
 ## Related stories
 
@@ -100,7 +100,8 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -118,12 +119,12 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -156,7 +157,7 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -174,6 +175,7 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -189,7 +191,7 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -224,7 +226,8 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -242,12 +245,12 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -280,7 +283,7 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -298,6 +301,7 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -313,7 +317,7 @@ Zapier continues to push the boundaries of what's possible with their MCP platfo
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

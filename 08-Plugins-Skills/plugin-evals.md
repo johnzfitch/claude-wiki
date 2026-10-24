@@ -2,7 +2,7 @@
 title: "Test plugins with evals - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugin-evals"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-09T06:27:09Z"
+fetched_at: "2026-10-15T06:26:40Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -49,6 +49,7 @@ tags: ["claude-code", "plugins"]
   - [”plugin eval is currently unavailable”](#%E2%80%9Dplugin-eval-is-currently-unavailable%E2%80%9D)
   - [”is not a trusted plugin directory, and this run cannot stop to ask you about it”](#%E2%80%9Dis-not-a-trusted-plugin-directory-and-this-run-cannot-stop-to-ask-you-about-it%E2%80%9D)
   - [“is too old for claude plugin eval”](#git-is-too-old-for-claude-plugin-eval)
+  - [“cannot be evaluated where sessions load it”](#cannot-be-evaluated-where-sessions-load-it)
   - [”No eval cases found”](#%E2%80%9Dno-eval-cases-found%E2%80%9D)
   - [The baseline arm shows no plugin, or delta is zero](#the-baseline-arm-shows-no-plugin-or-delta-is-zero)
   - [”Agent type ’…’ not found” for one of your plugin’s agents](#%E2%80%9Dagent-type-%E2%80%99%E2%80%A6%E2%80%99-not-found%E2%80%9D-for-one-of-your-plugin%E2%80%99s-agents)
@@ -58,6 +59,7 @@ tags: ["claude-code", "plugins"]
   - [The run exits 1 but the results look fine](#the-run-exits-1-but-the-results-look-fine)
   - [--json output path must end in .json](#json-output-path-must-end-in-json)
   - [A grader shows passed: false under a run that scored 1.0](#a-grader-shows-passed-false-under-a-run-that-scored-1-0)
+  - [“ended on an API error and scored 0 without grading”](#runs-ended-on-an-api-error)
   - [Runs fail with a usage-limit or rate-limit error partway through](#runs-fail-with-a-usage-limit-or-rate-limit-error-partway-through)
   - [“mock call budget exceeded”](#mock-call-budget-exceeded)
   - [Runs time out or hit the turn cap](#runs-time-out-or-hit-the-turn-cap)
@@ -474,13 +476,13 @@ claude plugin eval . \
 
 The job’s exit code tells you what happened:
 
-| Exit code | Meaning                                                                                                                                                                                                        |
-|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0         | Every case scored at or above `--threshold` and every case file loaded                                                                                                                                         |
-| 1         | A case scored below the threshold, a case file failed to load, no cases were found, a run couldn’t be started, the plugin directory isn’t trusted and `--trust-plugin` wasn’t passed, or an option was invalid |
-| 2         | Partial run: the `--max-cost-usd` ceiling was hit, or your credential was rejected before or at the first run. `results.json` is still written with `partial: true` and the reason                             |
-| 130       | Interrupted. Partial results are written                                                                                                                                                                       |
-| 143       | Terminated, such as by a CI timeout                                                                                                                                                                            |
+| Exit code | Meaning                                                                                                                                                                                                                                                                                                                                   |
+|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 0         | The suite passed: every case scored at or above `--threshold` and nothing else failed the run                                                                                                                                                                                                                                             |
+| 1         | A case scored below the threshold, a case file failed to load, no cases were found, a run couldn’t be started, or a run [ended on an API error](#runs-ended-on-an-api-error). Also returned when the plugin directory isn’t trusted and `--trust-plugin` wasn’t passed, an option was invalid, or the `--json` result couldn’t be written |
+| 2         | Partial run: the `--max-cost-usd` ceiling was hit, or your credential was rejected before or at the first run. `results.json` is still written with `partial: true` and the reason                                                                                                                                                        |
+| 130       | Interrupted. Partial results are written                                                                                                                                                                                                                                                                                                  |
+| 143       | Terminated, such as by a CI timeout                                                                                                                                                                                                                                                                                                       |
 
 The with-minus-without delta is reported but never changes the exit code, and neither do problems writing or publishing the HTML report. To see why a case scored low, run it locally without `--json` so the per-run progress and grader lines print. A CI runner also needs these in place:
 
@@ -520,19 +522,19 @@ JSON result
 
 `aggregate-result.json`, and `--json` output, is a versioned document with `schemaVersion: 1` for CI scripts to parse. Field names are camelCase and new fields are added without renaming existing ones, so write your script to ignore fields it doesn’t recognize. These are the fields a gating script usually reads. The document also carries the suite configuration, every grader definition, and per-run grader results with explanations and evidence:
 
-| Field                                             | Meaning                                                                                                                                                                                                                               |
-|:--------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `partial`, `partialReason`                        | `true` with `cost_ceiling`, `interrupted`, or `auth_failed` when the suite didn’t finish. Leave partial results out of trend charts                                                                                                   |
-| `aggregates.overallScore`                         | Mean case score across the suite                                                                                                                                                                                                      |
-| `aggregates.casesPassed`, `aggregates.casesTotal` | Cases at or above `--threshold`, and the total                                                                                                                                                                                        |
-| `aggregates.meanDelta`                            | Mean `Δ` across cases, under the two-arm mode                                                                                                                                                                                         |
-| `cases[].name`                                    | Case name                                                                                                                                                                                                                             |
-| `cases[].aggregates.score`                        | Mean with-arm run score for the case                                                                                                                                                                                                  |
-| `cases[].aggregates.delta`                        | With-arm score minus without-arm score. Omitted when the case ran one arm or the arms aren’t comparable                                                                                                                               |
-| `cases[].arms.with[].error`                       | `null`, or why a run ended abnormally, such as `timed out after 300s`. A run that started but ended badly is still graded on what it produced, so a non-null error doesn’t imply score 0                                              |
-| `cases[].arms.with[].aborted`                     | Present when a [mock](#mock-mcp-servers) stopped the run through `expect:`, `abort_when`, or the [agent-mock call budget](#mock-call-budget-exceeded), with `server`, `tool`, and `reason`. The run scores 0 and `error` stays `null` |
-| `cases[].arms.with[].skippedPaidGraders`          | `true` when the cost ceiling skipped this run’s judge graders, so its score isn’t comparable                                                                                                                                          |
-| `costUsd`, `durationSeconds`, `claudeVersion`     | Estimated cost at list price including judge calls, wall-clock seconds, and the Claude Code version that ran the suite                                                                                                                |
+| Field                                             | Meaning                                                                                                                                                                                                                                                               |
+|:--------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `partial`, `partialReason`                        | `true` with `cost_ceiling`, `interrupted`, or `auth_failed` when the suite didn’t finish. Leave partial results out of trend charts                                                                                                                                   |
+| `aggregates.overallScore`                         | Mean case score across the suite                                                                                                                                                                                                                                      |
+| `aggregates.casesPassed`, `aggregates.casesTotal` | Cases at or above `--threshold`, and the total                                                                                                                                                                                                                        |
+| `aggregates.meanDelta`                            | Mean `Δ` across cases, under the two-arm mode                                                                                                                                                                                                                         |
+| `cases[].name`                                    | Case name                                                                                                                                                                                                                                                             |
+| `cases[].aggregates.score`                        | Mean with-arm run score for the case                                                                                                                                                                                                                                  |
+| `cases[].aggregates.delta`                        | With-arm score minus without-arm score. Omitted when the case ran one arm or the arms aren’t comparable                                                                                                                                                               |
+| `cases[].arms.with[].error`                       | `null`, or why a run ended abnormally, such as `timed out after 300s`. Some of these runs are still graded on what they produced, so a non-null error doesn’t imply score 0. A run that [ended on an API error](#runs-ended-on-an-api-error) scores 0 without grading |
+| `cases[].arms.with[].aborted`                     | Present when a [mock](#mock-mcp-servers) stopped the run through `expect:`, `abort_when`, or the [agent-mock call budget](#mock-call-budget-exceeded), with `server`, `tool`, and `reason`. The run scores 0 and `error` stays `null`                                 |
+| `cases[].arms.with[].skippedPaidGraders`          | `true` when the cost ceiling skipped this run’s judge graders, so its score isn’t comparable                                                                                                                                                                          |
+| `costUsd`, `durationSeconds`, `claudeVersion`     | Estimated cost at list price including judge calls, wall-clock seconds, and the Claude Code version that ran the suite                                                                                                                                                |
 
 
 [​](#security)
@@ -755,6 +757,19 @@ git 2.30 is too old for claude plugin eval: it ignores the environment configura
 For each run, Claude Code switches off git hooks, credential helpers, and other programs a repository’s git configuration can start. It does so through environment configuration that git reads only from version 2.31. An older git ignores that configuration, so the suite stops rather than scoring runs where those programs could execute. Install git 2.31 or later and run the suite again. Before v2.1.283, `claude plugin eval` didn’t check the git version, and on an older git the suite ran with those programs left on.
 
 
+[​](#cannot-be-evaluated-where-sessions-load-it)
+
+“cannot be evaluated where sessions load it”
+
+You ran `claude plugin eval` in your shell with the name of a plugin installed from a marketplace you [added from a local path](plugins-loading.md#in-place-and-copied-plugins). No session could load the plugin from that marketplace now, so the command refuses with this message and exits with code 1.
+
+```python
+Error: formatter@my-marketplace cannot be evaluated where sessions load it: no session could load it now. Its marketplace is a folder whose catalog could not be read, or lists it no more. Check the marketplace with `claude plugin marketplace list`, or pass ./<dir> to evaluate a directory.
+```
+
+The sentence after `no session could load it now.` names what failed. Run `claude plugin marketplace list` in your shell and fix what the message names. For example, restore the marketplace directory or put the plugin’s entry back in its catalog. To evaluate the plugin’s source without the marketplace, pass its directory as the target, such as `claude plugin eval ./plugins/formatter`.
+
+
 [​](#”no-eval-cases-found”)
 
 ”No eval cases found”
@@ -803,7 +818,7 @@ Anything beyond the read-only set needs your grant, such as `--allow-tools Bash 
 
 The run exits 1 but the results look fine
 
-The default `--threshold` is 1.0, so the command exits 1 when any case scores below perfect. Set a threshold that matches the score you require. Exit 1 also covers a case file that failed to load, which is reported on stderr above the table.
+When every case scored at or above `--threshold` and the command still exits 1, a line on stderr names the cause, even under `--json`. For example, a case file failed to load, or runs [ended on an API error](#runs-ended-on-an-api-error). For the other causes, see the [exit codes](#run-evals-in-ci). The default `--threshold` is 1.0, so the command exits 1 when any case scores below perfect. Set a threshold that matches the score you require.
 
 
 [​](#json-output-path-must-end-in-json)
@@ -820,11 +835,23 @@ A grader shows passed: false under a run that scored 1.0
 That grader is excluded from the score by design in a two-arm run, and its `scored` field is `false`. See [Score against the no-plugin baseline](#compare-against-a-no-plugin-baseline).
 
 
+[​](#runs-ended-on-an-api-error)
+
+“ended on an API error and scored 0 without grading”
+
+This stderr warning means the API answered at least one run’s last request with an HTTP error, such as a rate limit or a plan usage limit. Such a run scores 0 with no grader results, and the command exits non-zero whatever the scores and `--threshold` are. To fix it, find each affected run’s error and resolve the cause it reports, then run the suite again:
+
+- **Without `--json`**: the error is at the end of the run’s progress line, after `error:`
+- **Under `--json`**: the error is in the [JSON result](#json-result), at `cases[].arms.with[].error` or `cases[].arms.without[].error`
+
+The count includes [baseline](#the-no-plugin-baseline) runs too. Their scores never decide whether a case passes, so every case can pass while the command still fails. In a two-arm run, the affected case’s `W/OUT` and `Δ` print as `—`. For a usage or rate limit, see [Runs fail with a usage-limit or rate-limit error](#runs-fail-with-a-usage-limit-or-rate-limit-error-partway-through). Before v2.1.299, such a run was graded on what it had produced.
+
+
 [​](#runs-fail-with-a-usage-limit-or-rate-limit-error-partway-through)
 
 Runs fail with a usage-limit or rate-limit error partway through
 
-If your account reaches its plan’s usage limit or an API rate limit while a suite is running, each later run ends with that error, is graded on what it produced, and usually scores 0. The suite still finishes and isn’t marked `partial`, so the result can look like a regression. Check the `NOTES` column or `cases[].arms.with[].error` in the JSON for the limit message before trusting the scores, then re-run after the limit resets, with `--runs 1` or a `--case` filter if you need to stay under it.
+Runs that end with a usage-limit or rate-limit error [score 0 without grading](#runs-ended-on-an-api-error), and the command exits non-zero. The suite still finishes and isn’t marked `partial`. Re-run after the limit resets, with `--runs 1` or a `--case` filter if you need to stay under it.
 
 
 [​](#mock-call-budget-exceeded)

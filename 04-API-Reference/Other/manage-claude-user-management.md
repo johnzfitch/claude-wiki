@@ -2,7 +2,7 @@
 title: "User management - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/user-management"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:07Z"
+fetched_at: "2026-10-20T06:40:19Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fuser-management)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fuser-management)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Organization
 
@@ -89,6 +91,7 @@ The Admin API is a single set of endpoints under `https://api.anthropic.com/v1/o
 | [Members](#members) and [invites](#invites)                                                                                                                                                                                                       | Available; see the [Admin API guide](manage-claude-admin-api.md)         | Available (this page)                                                                                                                           |
 | [Groups](#groups)                                                                                                                                                                                                                                 | Not available                                                                  | Available (this page)                                                                                                                           |
 | [Custom roles](#custom-roles)                                                                                                                                                                                                                     | Not available                                                                  | Available, read-only (this page)                                                                                                                |
+| [Plugins](manage-claude-plugins-api.md)                                                                                                                                                                                                     | Not available                                                                  | Available in beta                                                                                                                               |
 | [Spend limits](manage-claude-spend-limits-api.md)                                                                                                                                                                                           | Not available                                                                  | Available                                                                                                                                       |
 | Usage and cost reports                                                                                                                                                                                                                            | Available; see the [Usage and Cost API](manage-claude-usage-cost-api.md) | Available through the [Claude Enterprise Analytics API](manage-claude-analytics-api.md#get-access-to-the-claude-enterprise-analytics-api) |
 | [Workspaces](manage-claude-workspaces.md), [API keys](manage-claude-admin-api.md#api-keys), [rate limits](manage-claude-rate-limits-api.md), and the other endpoints in the [Admin API guide](manage-claude-admin-api.md) | Available                                                                      | Not available                                                                                                                                   |
@@ -99,7 +102,7 @@ Members and invites are the same endpoints for both organization types; this pag
 
 **Scoped Admin API key required**
 
-These endpoints require an Admin API key with the `read:members` scope (member and invite `GET` endpoints, and all custom-role endpoints; there is no separate role scope), the `write:members` scope (member and invite `POST` and `DELETE` endpoints), the `read:rbac_groups` scope (group `GET` endpoints), or the `write:rbac_groups` scope (group `POST` and `DELETE` endpoints). A key carrying the `read:org_audit` scope (a read-only scope for security-audit integrations) can also call every `GET` endpoint on this page and the [Compliance API](manage-claude-compliance-api.md) read endpoints. See [Create an Admin API key](manage-claude-admin-api-keys.md#create-a-key-for-a-claude-enterprise-organization) for where your primary owner creates one and which scopes to select. Pass the key in the `x-api-key` header on every request, together with the [`anthropic-version`](../Endpoints/versioning.md) header.
+These endpoints require an Admin API key with the `read:members` scope (member and invite `GET` endpoints, and all custom-role endpoints; there is no separate role scope), the `write:members` scope (member and invite `POST` and `DELETE` endpoints), the `read:rbac_groups` scope (group `GET` endpoints), or the `write:rbac_groups` scope (group `POST` and `DELETE` endpoints). Assigning the `managed` role, or groups on an invite, requires `write:rbac_groups` in addition to `write:members`. A key carrying the `read:org_audit` scope (a read-only scope for security-audit integrations) can also call every `GET` endpoint on this page and the [Compliance API](manage-claude-compliance-api.md) read endpoints. See [Create an Admin API key](manage-claude-admin-api-keys.md#create-a-key-for-a-claude-enterprise-organization) for where your primary owner creates one and which scopes to select. Pass the key in the `x-api-key` header on every request, together with the [`anthropic-version`](../Endpoints/versioning.md) header.
 
 ## Overview
 
@@ -111,16 +114,39 @@ Custom roles and their group attachments are managed in [claude.ai organization 
 
 ## Quick start
 
+Set the `ANTHROPIC_API_KEY` environment variable to your Admin API key. The examples on this page read the key from it. The SDK and the `ant` CLI send the `x-api-key` and `anthropic-version` headers for you.
+
 List the organization's members, newest first:
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/users?limit=20" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+users = client.organization.users.list(limit=20)
+
+for user in users:
+    print(f"{user.id}: {user.email} ({user.role})")
 ```
 
 ```python
@@ -157,7 +183,7 @@ Every member has exactly one organization role. Reads return the member's role a
 | `membership_admin` | A member who can manage the organization's members.                                       |
 | `primary_owner`    | The organization's primary owner. There is exactly one.                                   |
 
-The API can assign only the `user` and `managed` roles, on invite creation and on role updates. The administrative roles (`owner`, `membership_admin`, and `primary_owner`) are assigned in claude.ai organization settings, and members holding them cannot be modified or removed through this API.
+The API can assign only the `user` and `managed` roles, on invite creation and on role updates. Assigning `managed` requires the `write:rbac_groups` scope in addition to `write:members`, because a managed member's permissions come from the custom roles attached to their groups. The administrative roles (`owner`, `membership_admin`, and `primary_owner`) are assigned in claude.ai organization settings, and members holding them cannot be modified or removed through this API.
 
 ### Members and invites
 
@@ -181,6 +207,8 @@ Admin API endpoints share a per-organization limit of **100 requests per minute*
 
 Member and invite lists use ID-based pagination: pass `limit` (default 20, max 1000) plus at most one of `before_id` or `after_id`, and page using the `first_id` and `last_id` fields of each response until `has_more` is `false`. Group and custom-role lists use an **opaque cursor** instead: the response's `next_page` value is passed unchanged as the `page` parameter on the next request, until `next_page` is `null`.
 
+When you iterate over the results, the SDK fetches more pages for you, so `limit` sets the page size, not the total. In the CLI, `--limit` sets the total number of results for member and invite lists. For group and role lists, it sets the page size.
+
 ## Error responses
 
 Error responses follow the standard shape documented in [Errors](../Endpoints/errors.md).
@@ -191,66 +219,148 @@ Error responses follow the standard shape documented in [Errors](../Endpoints/er
 
 `GET /v1/organizations/users` returns the organization's members, most recently added first. Filter by `email` to look up a specific member; the match is case-insensitive and tolerates common variants of the same address (for example, `jane+hiring@example.com` matches `jane@example.com`). Requires the `read:members` scope.
 
-For complete parameter details and response schemas, see [List users](../Admin/beta-organization-users-list.md) in the API reference.
+For complete parameter details and response schemas, see [List users](../Endpoints/organization-users-list.md) in the API reference.
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/users?email=jane@example.com" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+users = client.organization.users.list(email="jane@example.com")
+
+for user in users:
+    print(f"{user.id}: {user.email} ({user.role})")
 ```
 
 ### Get a member
 
 `GET /v1/organizations/users/{user_id}` returns one member by ID. Requires the `read:members` scope.
 
-For complete parameter details and response schemas, see [Get user](../Admin/beta-organization-users-retrieve.md) in the API reference.
+For complete parameter details and response schemas, see [Get user](../Endpoints/organization-users-retrieve.md) in the API reference.
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/users/user_01AbCdEfGhIjKlMnOpQrSt" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+user = client.organization.users.retrieve("user_01AbCdEfGhIjKlMnOpQrSt")
+
+print(f"id: {user.id}")
+print(f"email: {user.email}")
+print(f"role: {user.role}")
 ```
 
 ### Change a member's role
 
-`POST /v1/organizations/users/{user_id}` sets the member's role to `user` or `managed`. Members holding an administrative role (`owner`, `membership_admin`, or `primary_owner`) cannot be changed through this endpoint, and administrative roles cannot be assigned; both return 400 and are managed in claude.ai organization settings. If your organization's identity provider manages roles (advanced SSO or advanced SCIM provisioning), role updates return 400. Requires the `write:members` scope.
+`POST /v1/organizations/users/{user_id}` sets the member's role to `user` or `managed`. Members holding an administrative role (`owner`, `membership_admin`, or `primary_owner`) cannot be changed through this endpoint, and administrative roles cannot be assigned; both return 400 and are managed in claude.ai organization settings. If your organization's identity provider manages roles (advanced SSO or advanced SCIM provisioning), role updates return 400. Requires the `write:members` scope, plus `write:rbac_groups` when changing the role to `managed`.
 
-For complete parameter details and response schemas, see [Update user](../Admin/platform-claude-com-beta-organization-users-update.md) in the API reference.
+For complete parameter details and response schemas, see [Update user](../Endpoints/organization-users-update.md) in the API reference.
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl -X POST "https://api.anthropic.com/v1/organizations/users/user_01AbCdEfGhIjKlMnOpQrSt" \
-  -H "content-type: application/json" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -d '{"role": "managed"}'
+client = anthropic.Anthropic()
+
+user = client.organization.users.update("user_01AbCdEfGhIjKlMnOpQrSt", role="managed")
+
+print(f"id: {user.id}")
+print(f"role: {user.role}")
 ```
 
 ### Remove a member
 
 `DELETE /v1/organizations/users/{user_id}` removes the member from the organization, returning any purchased seat they occupied to the organization's pool. Members holding an administrative role cannot be removed through this endpoint, and if your identity provider manages membership (SCIM), removals return 400. Requires the `write:members` scope.
 
-For complete parameter details and response schemas, see [Remove user](../Admin/platform-claude-com-beta-organization-users-remove.md) in the API reference.
+For complete parameter details and response schemas, see [Remove user](../Endpoints/organization-users-remove.md) in the API reference.
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl -X DELETE "https://api.anthropic.com/v1/organizations/users/user_01AbCdEfGhIjKlMnOpQrSt" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+removed_user = client.organization.users.remove("user_01AbCdEfGhIjKlMnOpQrSt")
+
+print(f"id: {removed_user.id}")
 ```
 
 ```python
@@ -266,28 +376,49 @@ curl -X DELETE "https://api.anthropic.com/v1/organizations/users/user_01AbCdEfGh
 
 ### Create an invite
 
-`POST /v1/organizations/invites` sends an invitation email and returns the invite with a server-assigned `expires_at`. `role` must be `user` or `managed`. If a pending invite already exists for the email address, or the address already belongs to a member, the request returns 400 naming the existing resource. Organizations whose identity provider provisions users automatically (JIT or SCIM) cannot create invites through the API. Requires the `write:members` scope.
+`POST /v1/organizations/invites` sends an invitation email and returns the invite with a server-assigned `expires_at`. `role` must be `user` or `managed`. If a pending invite already exists for the email address, or the address already belongs to a member, the request returns 400 naming the existing resource. Organizations whose identity provider provisions users automatically (JIT or SCIM) cannot create invites through the API. Requires the `write:members` scope, plus `write:rbac_groups` when `role` is `managed`.
 
-On plans that draw members from a finite seat pool, the invite automatically takes a seat from the lowest tier that has availability; the API does not take a tier parameter. If no seat is free, the request fails with a 400 error rather than purchasing a seat. Add seats through the organization's plan management and retry.
+On plans that draw members from a finite seat pool, the invite automatically takes a seat from the lowest tier that has availability. The API does not take a tier parameter. If no seat is free, the request fails with a 400 error rather than purchasing a seat. Add seats through the organization's plan management and retry.
 
 The optional `rbac_group_ids` field lists groups (by `rbac_group_`-prefixed ID) to assign to the member when they accept. Passing a non-empty `rbac_group_ids` additionally requires the key to carry the `write:rbac_groups` scope, because group assignment can grant the permissions attached to the group's roles.
 
-For complete parameter details and response schemas, see [Create invite](../Admin/platform-claude-com-beta-organization-invites-create.md) in the API reference.
+For complete parameter details and response schemas, see [Create invite](../Endpoints/organization-invites-create.md) in the API reference.
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl -X POST "https://api.anthropic.com/v1/organizations/invites" \
-  -H "content-type: application/json" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -d '{
-    "email": "newhire@example.com",
-    "role": "managed",
-    "rbac_group_ids": ["rbac_group_01UvWxYzAbCdEfGhIjKlMn"]
-  }'
+client = anthropic.Anthropic()
+
+invite = client.organization.invites.create(
+    email="newhire@example.com",
+    role="managed",
+    rbac_group_ids=["rbac_group_01UvWxYzAbCdEfGhIjKlMn"],
+)
+
+print(f"id: {invite.id}")
+print(f"email: {invite.email}")
+print(f"status: {invite.status}")
+print(f"expires_at: {invite.expires_at}")
 ```
 
 ```python
@@ -310,48 +441,111 @@ curl -X POST "https://api.anthropic.com/v1/organizations/invites" \
 
 `GET /v1/organizations/invites` returns the organization's invites, most recent first, across the `pending`, `accepted`, and `expired` states; there is no status filter. Requires the `read:members` scope.
 
-For complete parameter details and response schemas, see [List invites](../Admin/beta-organization-invites-list.md) in the API reference.
+For complete parameter details and response schemas, see [List invites](../Endpoints/organization-invites-list.md) in the API reference.
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/invites?limit=20" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+invites = client.organization.invites.list(limit=20)
+
+for invite in invites:
+    print(f"{invite.id}: {invite.email} ({invite.status})")
 ```
 
 ### Get an invite
 
 `GET /v1/organizations/invites/{invite_id}` returns one invite by ID. Requires the `read:members` scope.
 
-For complete parameter details and response schemas, see [Get invite](../Admin/beta-organization-invites-retrieve.md) in the API reference.
+For complete parameter details and response schemas, see [Get invite](../Endpoints/organization-invites-retrieve.md) in the API reference.
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/invites/invite_01QrStUvWxYzAbCdEfGhIj" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+invite = client.organization.invites.retrieve("invite_01QrStUvWxYzAbCdEfGhIj")
+
+print(f"id: {invite.id}")
+print(f"email: {invite.email}")
+print(f"status: {invite.status}")
 ```
 
 ### Withdraw an invite
 
 `DELETE /v1/organizations/invites/{invite_id}` withdraws a `pending` invite, deactivating the link in the invitation email. Withdrawing an `accepted` invite returns 400 (remove the member instead); withdrawing an `expired` invite returns 400. Requires the `write:members` scope.
 
-For complete parameter details and response schemas, see [Delete invite](../Admin/platform-claude-com-beta-organization-invites-delete.md) in the API reference.
+For complete parameter details and response schemas, see [Delete invite](../Endpoints/organization-invites-delete.md) in the API reference.
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl -X DELETE "https://api.anthropic.com/v1/organizations/invites/invite_01QrStUvWxYzAbCdEfGhIj" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+deleted_invite = client.organization.invites.delete("invite_01QrStUvWxYzAbCdEfGhIj")
+
+print(f"id: {deleted_invite.id}")
 ```
 
 ## Groups
@@ -366,12 +560,33 @@ For complete parameter details and response schemas, see [List groups](../Admin/
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/rbac_groups?limit=20" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+groups = client.beta.organization.rbac_groups.list(limit=20)
+
+for group in groups:
+    print(f"{group.id}: {group.name} ({group.source_type})")
 ```
 
 ```python
@@ -403,12 +618,36 @@ For complete parameter details and response schemas, see [Get group](../Admin/be
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_group_01UvWxYzAbCdEfGhIjKlMn" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+group = client.beta.organization.rbac_groups.retrieve(
+    "rbac_group_01UvWxYzAbCdEfGhIjKlMn"
+)
+
+print(f"id: {group.id}")
+print(f"name: {group.name}")
+print(f"source_type: {group.source_type}")
 ```
 
 ### Create a group
@@ -419,14 +658,33 @@ For complete parameter details and response schemas, see [Create group](../Admin
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl -X POST "https://api.anthropic.com/v1/organizations/rbac_groups" \
-  -H "content-type: application/json" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -d '{"name": "Engineering"}'
+client = anthropic.Anthropic()
+
+group = client.beta.organization.rbac_groups.create(name="Engineering")
+
+print(f"id: {group.id}")
+print(f"name: {group.name}")
 ```
 
 ```python
@@ -452,14 +710,35 @@ For complete parameter details and response schemas, see [Update group](../Admin
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl -X POST "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_group_01UvWxYzAbCdEfGhIjKlMn" \
-  -H "content-type: application/json" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -d '{"name": "Platform Engineering"}'
+client = anthropic.Anthropic()
+
+group = client.beta.organization.rbac_groups.update(
+    "rbac_group_01UvWxYzAbCdEfGhIjKlMn", name="Platform Engineering"
+)
+
+print(f"id: {group.id}")
+print(f"name: {group.name}")
 ```
 
 ### Delete a group
@@ -470,12 +749,34 @@ For complete parameter details and response schemas, see [Delete group](../Admin
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl -X DELETE "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_group_01UvWxYzAbCdEfGhIjKlMn" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+deleted_group = client.beta.organization.rbac_groups.delete(
+    "rbac_group_01UvWxYzAbCdEfGhIjKlMn"
+)
+
+print(f"id: {deleted_group.id}")
 ```
 
 ```python
@@ -495,12 +796,35 @@ For complete parameter details and response schemas, see [List group members](..
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_group_01UvWxYzAbCdEfGhIjKlMn/members?limit=100" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+members = client.beta.organization.rbac_groups.members.list(
+    "rbac_group_01UvWxYzAbCdEfGhIjKlMn", limit=100
+)
+
+for member in members:
+    print(f"{member.user_id}: {member.email}")
 ```
 
 ```python
@@ -530,14 +854,35 @@ For complete parameter details and response schemas, see [Add group member](../A
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl -X POST "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_group_01UvWxYzAbCdEfGhIjKlMn/members" \
-  -H "content-type: application/json" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -d '{"user_id": "user_01AbCdEfGhIjKlMnOpQrSt"}'
+client = anthropic.Anthropic()
+
+member = client.beta.organization.rbac_groups.members.add(
+    "rbac_group_01UvWxYzAbCdEfGhIjKlMn", user_id="user_01AbCdEfGhIjKlMnOpQrSt"
+)
+
+print(f"user_id: {member.user_id}")
+print(f"email: {member.email}")
 ```
 
 ```python
@@ -561,12 +906,34 @@ For complete parameter details and response schemas, see [Remove group member](.
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl -X DELETE "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_group_01UvWxYzAbCdEfGhIjKlMn/members/user_01AbCdEfGhIjKlMnOpQrSt" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+removed_member = client.beta.organization.rbac_groups.members.remove(
+    "user_01AbCdEfGhIjKlMnOpQrSt", rbac_group_id="rbac_group_01UvWxYzAbCdEfGhIjKlMn"
+)
+
+print(f"user_id: {removed_member.user_id}")
 ```
 
 ```python
@@ -584,6 +951,8 @@ curl -X DELETE "https://api.anthropic.com/v1/organizations/rbac_groups/rbac_grou
 
 Custom roles are read-only through the API: these endpoints catalog your organization's custom roles (defined in [claude.ai organization settings](https://claude.ai/admin-settings) or provisioned by Anthropic) and the permissions each role grants. Custom-role reads use the `read:members` scope (there is no separate role scope) and work with an organization-level key: unlike the group endpoints, they do not require a key created for all linked organizations, and the catalog returned is your organization's own.
 
+Read a role's name from its `display_name` field. The deprecated `name` field is still returned, always equal to `display_name`. For a role provisioned by Anthropic, `display_name` can differ from the label claude.ai shows, and Anthropic might change the name. To keep a lasting reference to a role, store its `id`.
+
 ### List roles
 
 `GET /v1/organizations/rbac_roles` returns your organization's custom roles. Requires the `read:members` scope.
@@ -592,12 +961,33 @@ For complete parameter details and response schemas, see [List roles](../Admin/b
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/rbac_roles?limit=20" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+roles = client.beta.organization.rbac_roles.list(limit=20)
+
+for role in roles:
+    print(f"{role.id}: {role.display_name}")
 ```
 
 ```python
@@ -606,6 +996,7 @@ curl "https://api.anthropic.com/v1/organizations/rbac_roles?limit=20" \
     {
       "type": "rbac_role",
       "id": "rbac_role_01CdEfGhIjKlMnOpQrStUv",
+      "display_name": "Engineering base",
       "name": "Engineering base",
       "created_at": "2026-03-18T10:01:42Z",
       "updated_at": "2026-05-02T08:55:09Z"
@@ -626,12 +1017,33 @@ For complete parameter details and response schemas, see [Get role](../Admin/bet
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/rbac_roles/rbac_role_01CdEfGhIjKlMnOpQrStUv" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+role = client.beta.organization.rbac_roles.retrieve("rbac_role_01CdEfGhIjKlMnOpQrStUv")
+
+print(f"id: {role.id}")
+print(f"display_name: {role.display_name}")
 ```
 
 ### List a role's permissions
@@ -644,12 +1056,35 @@ For complete parameter details and response schemas, see [List role permissions]
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
 
 
 ```python
-curl "https://api.anthropic.com/v1/organizations/rbac_roles/rbac_role_01CdEfGhIjKlMnOpQrStUv/permissions?limit=20" \
-  -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-  -H "anthropic-version: 2023-06-01"
+client = anthropic.Anthropic()
+
+permissions = client.beta.organization.rbac_roles.permissions.list(
+    "rbac_role_01CdEfGhIjKlMnOpQrStUv", limit=20
+)
+
+for permission in permissions:
+    print(permission.action)
 ```
 
 ```python
@@ -687,13 +1122,26 @@ curl "https://api.anthropic.com/v1/organizations/rbac_roles/rbac_role_01CdEfGhIj
 1.  Look up the member by email:
 
     cURL
+    CLI
+    Python
+    TypeScript
+    C#
+    Go
+    Java
+    PHP
+    Ruby
+
+    Python
 
     
 
     ``` shiki
-    curl "https://api.anthropic.com/v1/organizations/users?email=departing@example.com" \
-      -H "x-api-key: $ANTHROPIC_ADMIN_KEY" \
-      -H "anthropic-version: 2023-06-01"
+    client = anthropic.Anthropic()
+
+    users = client.organization.users.list(email="departing@example.com")
+
+    for user in users:
+        print(f"{user.id}: {user.email} ({user.role})")
     ```
 
 2.  Remove them with `DELETE /v1/organizations/users/{user_id}`, using the `id` from the response. Their seat, if any, returns to the pool.

@@ -2,7 +2,7 @@
 title: "Stop reasons and fallback - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:16Z"
+fetched_at: "2026-10-20T06:40:13Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fhandling-stop-reasons)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fhandling-stop-reasons)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Building with Claude
 
@@ -163,6 +163,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -204,6 +206,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -273,6 +277,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -324,6 +330,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -345,6 +353,8 @@ if response.stop_reason == "max_tokens":
 
 If Claude's response is cut off because it hit the `max_tokens` limit, and the truncated response contains an incomplete tool use block, you'll need to retry the request with a higher `max_tokens` value to get the full tool use.
 
+cURL
+
 CLI
 
 Python
@@ -360,6 +370,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -399,6 +411,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -440,6 +454,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -561,6 +577,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -611,6 +629,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -629,11 +649,11 @@ if response.stop_reason == "refusal":
 
 
 
-If you encounter `refusal` stop reasons frequently while using Claude Sonnet 4.5 or Claude Opus 4.1 (the latter [retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md)), you can try updating your API calls to use Haiku 4.5 (`claude-haiku-4-5-20251001`), which has different usage restrictions. Learn more about [understanding Sonnet 4.5's API safety filters](https://support.claude.com/en/articles/12449294-understanding-sonnet-4-5-s-api-safety-filters).
+If you encounter `refusal` stop reasons frequently while using Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) or Claude Opus 4.1 (the latter [retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md)), you can try updating your API calls to use Haiku 4.5 (`claude-haiku-4-5-20251001`), which has different usage restrictions. Learn more about [understanding Sonnet 4.5's API safety filters](https://support.claude.com/en/articles/12449294-understanding-sonnet-4-5-s-api-safety-filters).
 
 On a refusal, the `stop_details` object identifies the policy category that triggered it. The categories and the full refusal response shape are covered on [Refusals and fallback](build-with-claude-refusals-and-fallback.md#refusal-response). `stop_details` is `null` for all stop reasons other than `refusal`.
 
-A refused request on Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5 can usually be served by retrying on another Claude model. [Refusals and fallback](build-with-claude-refusals-and-fallback.md) shows how to set up that retry, server-side or in your client. If you build the retry yourself from Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5, [fallback credit](build-with-claude-fallback-credit.md) covers how to avoid paying the prompt-cache cost twice.
+A refused request on Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, or Claude Haiku 5.5 can usually be served by retrying on another Claude model. [Refusals and fallback](build-with-claude-refusals-and-fallback.md) shows how to set up that retry, server-side or in your client. Claude Haiku 5.5 has no server-side fallback, so set up its retry [in your client](build-with-claude-refusals-and-fallback.md#client-side-fallback). If you build the retry yourself from Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5, [fallback credit](build-with-claude-fallback-credit.md) covers how to avoid paying the prompt-cache cost twice.
 
 ### model_context_window_exceeded
 
@@ -641,7 +661,7 @@ Claude stopped because it reached the model's context window limit. This lets yo
 
 
 
-This stop reason is currently typed only in the SDK's `beta` namespace, so the following examples call `client.beta.messages` and use the `Beta`-prefixed types. On Sonnet 4.5 and newer models the API returns this value without a beta header. For earlier models, add the `model-context-window-exceeded-2025-08-26` beta header to enable it.
+This stop reason is currently typed only in the SDK's `beta` namespace, so the following examples call `client.beta.messages` and use the `Beta`-prefixed types. On Sonnet 4.5 (deprecated) and newer models the API returns this value without a beta header. For earlier models, add the `model-context-window-exceeded-2025-08-26` beta header to enable it.
 
 cURL
 
@@ -660,6 +680,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -698,6 +720,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -740,6 +764,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -771,6 +797,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -841,6 +869,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -892,6 +922,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -930,6 +962,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -970,6 +1004,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -1017,6 +1053,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

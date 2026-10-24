@@ -2,7 +2,7 @@
 title: "Session budgets - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/budgets"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-08T06:25:16Z"
+fetched_at: "2026-10-23T06:28:39Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fbudgets)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fbudgets)
 
 
 
@@ -40,7 +40,7 @@ Define your agent
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -80,11 +84,19 @@ MCP
 
 Claude on cloud platforms
 
-[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Delegate work to your agent
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Session budgets
 
@@ -98,15 +110,7 @@ Cap a session's spend with a hard dollar budget enforced at public list rates.
 
 
 
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
-
-A session budget is an optional hard spend ceiling you set when you [create a session](managed-agents-sessions.md). The platform continuously prices everything the session consumes at public list rates (the session's **list cost**) and stops issuing new model requests once that cost reaches the budget. The request in flight when the cap is crossed still finishes, so the final list cost can land [a fraction past the budget](#when-a-session-reaches-its-budget). A session at its budget pauses and goes [idle](managed-agents-session-operations.md#session-statuses) rather than terminating; changing or removing the budget resumes its work automatically. Deployments accept the same budget and apply it to each session they start; see [Budgets on deployments](#budgets-on-deployments).
+A session budget is an optional hard spend ceiling you set when you [create a session](managed-agents-sessions.md). The platform continuously prices everything the session consumes at public list rates (the session's **list cost**) and stops issuing new model requests once that cost reaches the budget. The request in flight when the cap is crossed still completes, so the final list cost can land [a fraction past the budget](#when-a-session-reaches-its-budget). A session at its budget pauses and goes [idle](managed-agents-session-operations.md#session-statuses) rather than terminating; changing or removing the budget resumes the work that the budget paused. Deployments accept the same budget and apply it to each session they start; see [Budgets on deployments](#budgets-on-deployments).
 
 ## Set a budget at session creation
 
@@ -130,6 +134,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -147,7 +153,7 @@ print(session.id, session.budget.max_list_cost.amount)  # sesn_01... 125
 The `budget` object has two fields:
 
 - `type` is always `"limit"`.
-- `max_list_cost` is the cap itself: `amount` is a whole number of US cents written as a string with no leading zeros (`"125"` is \$1.25 and `"50"` is 50 cents) and must be greater than zero. Decimal forms such as `"25.00"` are rejected. The amount is a string rather than a number so no float rounding is ever applied to it. `currency` is an uppercase ISO-4217 currency code; `USD` is the only supported currency.
+- `max_list_cost` is the cap itself: `amount` is a whole number of US cents written as a string with no leading zeros (`"125"` is \$1.25 USD and `"50"` is 50 cents) and must be greater than zero. Decimal forms such as `"25.00"` are rejected. The amount is a string rather than a number so no float rounding is ever applied to it. `currency` is an uppercase ISO-4217 currency code; `USD` is the only supported currency.
 
 A budget can only be attached when the session is created. Adding a budget to an existing session that doesn't have one is rejected with a 400 error. A budgeted session's cap can be [changed](#change-the-budget) or [removed](#remove-the-budget) at any time.
 
@@ -156,8 +162,8 @@ A budget can only be attached when the session is created. Adding a budget to an
 The platform prices what the session consumes, continuously, at public list rates:
 
 - **Model tokens**, at each served model's list price
-- **Web searches**, at \$10 per 1,000 searches
-- **Session running time**, at \$0.08 per hour
+- **Web searches**, at \$10 USD per 1,000 searches
+- **Session running time**, at \$0.08 USD per hour
 
 This running dollar total is the session's **list cost**, and it is what the budget compares against. List cost is not your contracted price: if your organization has negotiated discounts, the session reaches its cap when the list-price total does, and your billed spend might be lower than the cap.
 
@@ -165,13 +171,15 @@ Enforcement uses the exact, unrounded list cost. The `list_cost` figures reporte
 
 ## When a session reaches its budget
 
-The cap is enforced between model requests, not mid-request. Before each model request, the platform checks the session's consumed list cost, and once that total reaches the cap every thread pauses before its next request. The request that carried the total past the cap was admitted while the session was still under it and runs to completion, so a paused session's recorded `list_cost` reads at or a fraction past `max_list_cost`: a session capped at `"50"` (50 cents) can pause with a `list_cost` of `"53"`. This is expected, not a billing error, and the overshoot is bounded by one model request per thread. Treat the budget as a bound on new work rather than an exact stopping point, and size the cap with that one-request margin in mind.
+The cap is enforced between model requests, not mid-request. Before each model request, the platform checks the session's consumed list cost, and once that total reaches the cap every thread pauses before its next request. The request that carried the total past the cap was admitted while the session was still under it and runs to completion, so a paused session's recorded `list_cost` reads at or a fraction past `max_list_cost`: a session capped at `"50"` (50 cents) can pause with a `list_cost` of `"53"`. This is expected, not a billing error. Model spend past the cap is at most the cost of one model request for each thread. The tool calls in that request's response still run, and their web searches and running time also count toward list cost. Treat the budget as a bound on new work rather than an exact stopping point, and size the cap with that margin in mind.
 
 A session that reaches its budget goes idle with a `stop_reason` of `budget_reached`; it is not terminated, and its history and sandbox are preserved like any other idle session's. On the [event stream](managed-agents-events-and-streaming.md) you'll see, in order:
 
 1.  A `session.thread_status_idle` event with a `stop_reason` of `budget_reached` as each thread pauses.
 2.  A [`session.usage`](#monitor-spend) event with the session's cumulative usage and list cost.
 3.  A `session.status_idle` event with a `stop_reason` of `budget_reached`. The usage event always immediately precedes this idle event.
+
+If [workflow runs](managed-agents-workflow-runs.md#budgets-and-limits) are open, each one that isn't already idle also gets a `workflow_run.status_idle` event.
 
 A thread whose final request both crosses the cap and completes its turn reports `end_turn` on its own `session.thread_status_idle` event while the session still reports `budget_reached`; treat the session-level `stop_reason` as the signal that the session paused at its budget.
 
@@ -186,11 +194,15 @@ While the session is at or over its budget, it accepts only events that settle w
 
 Any event that would start new work, such as `user.message`, is rejected with a 400 error naming this list. Settled results are recorded without triggering a new model request; the session stays paused at its budget.
 
-A `user.interrupt` sent while the session is paused at its budget (all threads paused at the cap) is accepted and ignored: it does not appear in the event list and changes nothing. Change or remove the budget to continue.
+A `user.interrupt` sent while the session is paused at its budget (all threads paused at the cap) is accepted, and it does not appear in the event list. It stops no thread, because every thread is already paused. Change or remove the budget to continue.
+
+If the session has open workflow runs, the interrupt can pause them, as an interrupt at any other time can. A run that an interrupt paused doesn't resume when you change or remove the budget. To continue it, change or remove the budget, then send a `user.message` asking the agent to continue its runs. See [Interrupt a session with runs open](managed-agents-workflow-runs.md#interrupt-a-session-with-runs-open).
 
 ## Resume a session at its budget
 
-Change or remove the budget with a session update. An accepted update resumes the session's paused work automatically; no further client action is needed.
+Change or remove the budget with a session update. An accepted update automatically resumes the work that the budget paused; no further client action is needed.
+
+Each [workflow run](managed-agents-workflow-runs.md#budgets-and-limits) that the budget paused also gets a `workflow_run.status_running` event. A run that an interrupt paused, even an interrupt sent while the session was at its budget, stays paused and gets no `workflow_run.status_running` event from the update. To continue it, send a `user.message` asking the agent to continue its runs. See [Interrupt a session with runs open](managed-agents-workflow-runs.md#interrupt-a-session-with-runs-open).
 
 ### Change the budget
 
@@ -214,6 +226,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -229,7 +243,7 @@ print(updated_session.budget.max_list_cost.amount)  # 500
 
 ### Remove the budget
 
-Set `budget` to `null` to remove the cap entirely. The session's paused work resumes, and the resulting `session.updated` event carries `budget` set to `null`.
+Pass `budget=None` to remove the cap entirely. The work that the budget paused resumes, and the resulting `session.updated` event carries `budget` set to `null`.
 
 cURL
 
@@ -249,6 +263,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -262,15 +278,15 @@ Removing a session's budget is one-way: a session whose budget has been removed 
 
 ## Monitor spend
 
-The session object carries its `budget` and a `usage` object with the tracked spend: `usage.list_cost` is the session's consumed list cost, and `usage.active_seconds` is the running time its runtime cost is priced on. On a session paused at `budget_reached`, expect `usage.list_cost` to read at or a fraction past `max_list_cost`: the [request that crossed the cap](#when-a-session-reaches-its-budget) finished before the pause. Session-level `active_seconds` counts overlapping activity from concurrent threads once. Thread retrieval responses carry the same two fields on the thread's own `usage`, priced per thread. Per-thread figures are rounded independently and exclude the session's running-time cost, so they don't sum exactly to the session's `list_cost`; the session figure is the one the budget is enforced against.
+The session object carries its `budget` and a `usage` object with the tracked spend: `usage.list_cost` is the session's consumed list cost, and `usage.active_seconds` is the running time its runtime cost is priced on. On a session paused at `budget_reached`, expect `usage.list_cost` to read at or a fraction past `max_list_cost`: the [request that crossed the cap](#when-a-session-reaches-its-budget) completed before the pause. Session-level `active_seconds` counts overlapping activity from concurrent threads once. Thread retrieval responses carry the same two fields on the thread's own `usage`, priced for each thread. Per-thread figures are rounded independently and exclude the session's running-time cost, so they don't sum exactly to the session's `list_cost`; the session figure is the one the budget is enforced against.
 
-The `session.usage` event is a snapshot of the session's cumulative usage and tracked list cost. It carries the session's token totals, `list_cost`, `active_seconds`, `server_tool_use` request counts (`web_search_requests`, priced into list cost per request, and `web_fetch_requests`, which reads `0` because web fetch requests carry no per-request charge and aren't metered), and an echo of the session's `budget`, or `null` when the session has none. It appears in the events list and the session stream. The session emits one immediately before it goes idle, whatever the stop reason, so a session that reaches its budget always emits one immediately before the budget-reached idle event.
+The `session.usage` event is a snapshot of the session's cumulative usage and tracked list cost. It carries the session's token totals, `list_cost`, `active_seconds`, `server_tool_use` request counts (`web_search_requests`, priced into list cost per request, and `web_fetch_requests`, which reads `0` because web fetch requests carry no per-request charge and aren't metered), and the session's `budget` if the session has one. It appears in the events list and the session stream. The session emits one immediately before it goes idle, whatever the stop reason, so a session that reaches its budget always emits one immediately before the budget-reached idle event.
 
 To read usage from the stream and the session object, see [Track usage](managed-agents-session-observability.md#track-usage).
 
 ## Budgets in multiagent sessions
 
-A [multiagent](managed-agents-multiagent-orchestration.md) session has a single budget shared across all of its threads; there are no per-thread caps. Each thread's consumption is priced at its own served model, and threads pause independently as the shared cap is reached. [Advisor](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) consultations count against the same budget, priced at the advisor model's rates. One thread can pause at `budget_reached` while another finishes its in-flight request.
+A [multiagent](managed-agents-multiagent-orchestration.md) session has a single budget shared across all of its threads; there are no per-thread caps. Each thread's consumption is priced at its own served model, and threads pause independently as the shared cap is reached. [Advisor](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) consultations count against the same budget, priced at the advisor model's rates. One thread can pause at `budget_reached` while another completes its in-flight request.
 
 A pending ask outranks the cap: a session with one thread waiting on `requires_action` and another paused at `budget_reached` reports `requires_action` at the session level. The pending request still needs an answer, and answering it is a [settle event](#events-accepted-at-the-cap) the budget doesn't block.
 
@@ -289,11 +305,11 @@ A [deployment](managed-agents-scheduled-deployments.md) accepts the same `budget
 
 
 
-The cap is copied onto each session the deployment starts, so it bounds each run separately rather than the deployment's cumulative spend. Changing the deployment's budget applies to sessions the deployment starts afterward, not to sessions already running. Unlike a session, a deployment's budget can be cleared with `null` and set again later. See [Set a budget on each run](managed-agents-scheduled-deployments.md#set-a-budget-on-each-run).
+The cap is copied onto each session the deployment starts, so it bounds each run separately rather than the deployment's cumulative spend. Changing the deployment's budget applies to sessions the deployment starts afterward, not to sessions already running. Unlike a session, a deployment's budget can be cleared with `budget=None` and set again later. See [Set a budget on each run](managed-agents-scheduled-deployments.md#set-a-budget-on-each-run).
 
 ## Models without a list price
 
-A budget can only track consumption the platform can price. Creating a budgeted session whose agent, or any agent or advisor on its [multiagent roster](managed-agents-multiagent-orchestration.md), uses a model with no public list price is rejected with a 400 error stating that no list price is available for the model.
+A budget can only track consumption the platform can price. Creating a budgeted session whose agent, or any agent listed in the `predefined_agents` list of `subagents` or `workflows`, or the advisor set in its [multiagent configuration](managed-agents-multiagent-orchestration.md), uses a model with no public list price is rejected with a 400 error stating that no list price is available for the model.
 
 If a budgeted session's usage comes to include a model with no list price, the budget can no longer measure the session's spend: the session can pause with a `stop_reason` of `budget_reached`, and changing the budget is rejected. Remove the budget to resume the session.
 

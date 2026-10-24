@@ -2,7 +2,7 @@
 title: "Ping Identity SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917902-ping-identity-sso-setup"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:39Z"
+fetched_at: "2026-10-23T06:29:05Z"
 tags: ["enterprise"]
 ---
 
@@ -85,10 +85,10 @@ PingFederate configurations vary significantly by version and deployment. The ge
 
 4.  For SCIM (Enterprise plans and eligible Console organizations only), configure an outbound provisioning channel targeting the SCIM endpoint from the WorkOS setup flow.
 
-Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** for PingFederate-specific guidance.
+Contact **[our Support team](https://support.claude.com/en/articles/9015913)** for PingFederate-specific guidance.
 
 ------------------------------------------------------------------------
 
 ## Need help?
 
-See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your Ping environment details.
+See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](https://support.claude.com/en/articles/9015913)** with your Ping environment details.

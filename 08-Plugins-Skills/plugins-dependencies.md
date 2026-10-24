@@ -2,7 +2,7 @@
 title: "Plugin dependencies - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/dependencies"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-25T06:29:08Z"
+fetched_at: "2026-10-14T06:26:23Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -20,6 +20,7 @@ tags: ["claude-code", "plugins"]
   - [How a constraint resolves against tags](#how-a-constraint-resolves-against-tags)
   - [Confirm the resolved version](#confirm-the-resolved-version)
   - [Combine constraints from several plugins](#combine-constraints-from-several-plugins)
+  - [Dependencies when your plugin loads from claude.ai](#dependencies-when-your-plugin-loads-from-claude-ai)
 - [See also](#see-also)
 
 Create plugins
@@ -219,7 +220,7 @@ When a user installs a plugin that declares `{ "name": "secrets-vault", "version
 - **Plugin with its own repository**: the install fails with a message containing `Dependency "secrets-vault@your-marketplace" has no git tag satisfying`.
 - **Plugin referenced by a relative path**: the install uses the marketplace’s current copy instead, and the constraint is checked when the plugin loads. If that copy is outside the range, the dependent plugin stays disabled and `claude plugin list` shows `Requires "secrets-vault@your-marketplace" ~2.1.0, installed 3.0.0`.
 
-For a plugin the marketplace references by a relative path, a marketplace you added as a local folder path also resolves constraints against that folder’s git tags, when the folder is a git repository. This requires Claude Code v2.1.196 or later. A local folder that isn’t a git repository has no tags, so Claude Code installs the dependency from the folder’s current contents instead.
+For a plugin the marketplace references by a relative path, a marketplace you added as a local folder path also resolves constraints against that folder’s git tags, when the folder is a git repository. A local folder that isn’t a git repository has no tags, so Claude Code installs the dependency from the folder’s current contents instead.
 
 
 [​](#confirm-the-resolved-version)
@@ -242,6 +243,18 @@ When several installed plugins constrain the same dependency, the dependency res
 | `=2.1.0`          | none              | The dependency stays at `2.1.0`. Auto-update skips newer versions while plugin A is installed.                                  |
 
 Auto-update fetches a constrained dependency at the highest git tag that satisfies every installed plugin’s range, rather than at the marketplace’s latest version. If the installed plugins’ ranges don’t overlap, auto-update leaves that dependency at its current version, and the `/plugin` **Errors** tab shows an entry naming the constraining plugin. If they overlap but no tag falls in the range, auto-update fetches the marketplace’s current copy and skips the update when that copy’s `version` falls outside any installed plugin’s range. When a user uninstalls the last plugin that constrains a dependency, the dependency is no longer constrained to a version range and resumes tracking its marketplace entry on the next update.
+
+
+[​](#dependencies-when-your-plugin-loads-from-claude-ai)
+
+Dependencies when your plugin loads from claude.ai
+
+When a user turns your plugin on for their claude.ai account, Claude Code loads it as `<name>@synced`, [with no marketplace](plugins-loading.md#synced-plugins). For that copy of your plugin, Claude Code counts a dependency entry that names a marketplace as met when the user has either of these:
+
+- **The dependency from its marketplace**: installed from the marketplace your entry names, and enabled. Claude Code checks a `version` range in your entry against the installed copy’s version.
+- **A claude.ai plugin of the same name**: enabled from their claude.ai account. Claude Code checks a `version` range in your entry against that plugin’s `version`, and a plugin that states no `version` passes the check.
+
+If you tell users to turn your plugin on from claude.ai, tell them to turn the dependency on there too, or to install it from its marketplace. A claude.ai plugin meets the entry only when your plugin also loads from claude.ai.
 
 
 [​](#see-also)

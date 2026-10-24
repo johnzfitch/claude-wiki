@@ -2,13 +2,46 @@
 title: "Project Fetch: Can Claude train a robot dog? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-fetch-robot-dog"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:17Z"
+fetched_at: "2026-10-21T06:30:07Z"
 tags: ["news-research"]
 ---
 
-# Project Fetch: Can Claude train a robot dog?
+# **Project Fetch: **Can Claude train a robot dog?
 
-Nov 12, 2025
+- [01Introduction](#introduction)
+- [02What were we doing?](#what-were-we-doing)
+- [03Results](#results)
+- [04Outtakes](#outtakes)
+- [05Limitations](#limitations)
+- [06Reflection](#reflection)
+
+- Published
+
+  Nov 12, 2025
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Robotics](https://www.anthropic.com/search?topic=robotics)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Productivity](https://www.anthropic.com/search?topic=productivity)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  Jul 9, 2026
+
+  [Claude plays robotics](claude-plays-robotics.md)
+
+[View more](https://www.anthropic.com/search?topic=robotics)
 
 *How could frontier AI models like Claude reach beyond computers and affect the physical world? One path is through robots. We ran an experiment to see how much Claude helped Anthropic staff perform complex tasks with a robot dog.*
 
@@ -35,15 +68,15 @@ In that experiment, AI’s interaction with the real world was mediated by human
 
 One way of understanding and tracking the capabilities of AI models is to run an “uplift” study. These experiments randomly divide participants into two groups—one with access to AI and one without—and measure the difference in task performance between them (we’ve used this methodology extensively in our work on AI and [biological risk](https://red.anthropic.com/2025/biorisk/)). The difference between the groups is the “uplift”—the advantage (if any) provided by AI. Measuring uplift tells us about the present ability of AI to augment human performance. It’s also suggestive of the future domains in which AI will be able to successfully perform tasks on its own.
 
-To run our experiment, we recruited eight Anthropic researchers and engineers, none of whom had extensive prior experience with robots.¹ We randomly selected four to be on “Team Claude” and four to be on “Team Claude-less.” Then, we asked each team to operate a quadruped robodog in three increasingly difficult phases. In all phases, the core task they were being evaluated against was simple: get the robodog to fetch a beach ball.
+To run our experiment, we recruited eight Anthropic researchers and engineers, none of whom had extensive prior experience with robots.^([1](#footnote-1)) We randomly selected four to be on “Team Claude” and four to be on “Team Claude-less.” Then, we asked each team to operate a quadruped robodog in three increasingly difficult phases. In all phases, the core task they were being evaluated against was simple: get the robodog to fetch a beach ball.
 
 We do not expect robotic fetch to prove so economically valuable that it shows up as a task on a future version of our [Anthropic Economic Index](https://www.anthropic.com/economic-index). So why are we doing this?
 
-First, it builds on our previous research. One of the evaluations we use to assess the ability of Claude to contribute to AI R&D is a test of its ability to train a machine learning model that could be used to control a quadruped robot. We’ve previously evaluated the resulting algorithm using simulations, which have shown that Claude is not yet at the point where it can handle this task truly autonomously.² This meant that this task was well suited to a trial that combined AI with human help. We could also be confident our experiment would be useful to repeat in the future: there is still a lot of room for models to improve on robotics.
+First, it builds on our previous research. One of the evaluations we use to assess the ability of Claude to contribute to AI R&D is a test of its ability to train a machine learning model that could be used to control a quadruped robot. We’ve previously evaluated the resulting algorithm using simulations, which have shown that Claude is not yet at the point where it can handle this task truly autonomously.^([2](#footnote-2)) This meant that this task was well suited to a trial that combined AI with human help. We could also be confident our experiment would be useful to repeat in the future: there is still a lot of room for models to improve on robotics.
 
 Another reason is practical. It’s hard to pull our colleagues away from work for more than a day, so we needed a task that was difficult enough to fill that time, but not so difficult that teams would make minimal progress and we would be unable to detect uplift even if it were there. Beach ball retrieval, especially the more difficult variants, met these criteria.
 
-In Phase One, teams had to use the manufacturer-provided controller to make their robodog bring the ball back to a patch of fake grass. This was purely to give the teams a feel for the hardware and what it could do: we didn’t expect any uplift here.³
+In Phase One, teams had to use the manufacturer-provided controller to make their robodog bring the ball back to a patch of fake grass. This was purely to give the teams a feel for the hardware and what it could do: we didn’t expect any uplift here.^([3](#footnote-3))
 
 Phase Two required teams to put down their controllers. They had to connect their own computers to the robodog, access data from its onboard sensors (video and lidar), develop their own software program for moving the robot around, and then use that to retrieve the ball. This is where we expected Claude might begin to provide an advantage.
 
@@ -85,7 +118,7 @@ To those of us observing the experiment, there was a clear difference in team �
 
 This was understandable. After all, Team Claude-less was nearly rammed by Team Claude’s robodog. They reached the lunch break without successfully connecting to their own robodog. Morale on Team Claude was generally steadier, although they grew frustrated at the end of the day as it became clear that despite their progress they would run out of time before completing Phase Three.
 
-To supplement the qualitative vibe-based impressions, we used Claude to analyze the audio transcripts of each team (all team members were recorded as part of the [video](https://youtu.be/NGOAUJtdk-4) we made about this experiment). Claude wrote a dictionary-based text analysis program similar to standard approaches in the psychology literature.⁴ This allowed us to track the proportion of words spoken by each team that were indicative of negative and positive emotion (or confusion), and to estimate how often each team asked questions.
+To supplement the qualitative vibe-based impressions, we used Claude to analyze the audio transcripts of each team (all team members were recorded as part of the [video](https://youtu.be/NGOAUJtdk-4) we made about this experiment). Claude wrote a dictionary-based text analysis program similar to standard approaches in the psychology literature.^([4](#footnote-4)) This allowed us to track the proportion of words spoken by each team that were indicative of negative and positive emotion (or confusion), and to estimate how often each team asked questions.
 
 The quantitative analysis mostly confirmed our observations (see Figure 3). Throughout the experiment, Team Claude-less’s dialogue was more negative. That said, the disappointment of Team Claude at failing to complete Phase Three, and the excitement of Team Claude-less at getting some things working, meant that the difference in net emotional expression between the two teams (positive words minus negative words) was not statistically significant.
 
@@ -131,138 +164,14 @@ But the idea of powerful, intelligent, and autonomous AI systems using some of t
 
 The dogs are in their kennels at the moment. But we’ll let them out again soon, and keep you posted on what we find.
 
-#### Footnotes
+## Footnotes
 
-1\. A couple of participants had done Lego robotics competitions in high school. We are willing to accept the minimal degree to which this may confound the results.
+01A couple of participants had done Lego robotics competitions in high school. We are willing to accept the minimal degree to which this may confound the results.[](#footnote-ref-1)
 
-2\. See p. 114 of the [Claude 4 System Card](https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf).
+02See p. 114 of the [Claude 4 System Card](https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf).[](#footnote-ref-2)
 
-3\. Although Team Claude was, in fact, faster at Phase One, they did not use Claude, nor do we think it reflected an underlying skill advantage. Instead, they happened to get the one standalone controller that came with the robot, whereas Team Claude-less had to download an app on their phone.
+03Although Team Claude was, in fact, faster at Phase One, they did not use Claude, nor do we think it reflected an underlying skill advantage. Instead, they happened to get the one standalone controller that came with the robot, whereas Team Claude-less had to download an app on their phone.[](#footnote-ref-3)
 
-4\. See Pennebaker, J. W., & Francis, M. E. (1996). [Cognitive, emotional, and language processes in disclosure](https://psycnet.apa.org/record/1996-06871-002). *Cognition & Emotion*, 10(6), 601-626 and Tausczik, Y. R., & Pennebaker, J. W. (2010). [The psychological meaning of words: LIWC and computerized text analysis methods](https://psycnet.apa.org/record/2010-04445-003). *Journal of Language and Social Psychology*, 29(1), 24-54.
+04See Pennebaker, J. W., & Francis, M. E. (1996). [Cognitive, emotional, and language processes in disclosure](https://psycnet.apa.org/record/1996-06871-002). *Cognition & Emotion*, 10(6), 601-626 and Tausczik, Y. R., & Pennebaker, J. W. (2010). [The psychological meaning of words: LIWC and computerized text analysis methods](https://psycnet.apa.org/record/2010-04445-003). *Journal of Language and Social Psychology*, 29(1), 24-54.[](#footnote-ref-4)
 
-5\. Team Claude-less exhibited more negative emotion (*p* = 0.0017) and the size of the effect was large (*d* = 2.16). The difference in net emotional expression was not statistically significant (*p* = 0.2703). Statistical comparisons of negative emotion and net emotional expression between teams were conducted using the non-parametric Mann-Whitney *U* test, which tests for differences in distributions between two independent groups without assuming normality. *p*-values were calculated using a two-sided alternative hypothesis based on the rank-sum statistic and its asymptotic normal approximation. Effect sizes were quantified using Cohen's *d*, calculated as the difference between group means divided by the pooled standard deviation.
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+05Team Claude-less exhibited more negative emotion (*p* = 0.0017) and the size of the effect was large (*d* = 2.16). The difference in net emotional expression was not statistically significant (*p* = 0.2703). Statistical comparisons of negative emotion and net emotional expression between teams were conducted using the non-parametric Mann-Whitney *U* test, which tests for differences in distributions between two independent groups without assuming normality. *p*-values were calculated using a two-sided alternative hypothesis based on the rank-sum statistic and its asymptotic normal approximation. Effect sizes were quantified using Cohen's *d*, calculated as the difference between group means divided by the pooled standard deviation.

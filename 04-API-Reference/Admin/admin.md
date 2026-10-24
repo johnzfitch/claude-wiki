@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization)
 
 
 
@@ -215,7 +215,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -224,11 +224,11 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
 
 # Organization
 
-##### [Get Current Organization](beta-organization-retrieve.md)
+##### [Get Current Organization](http-beta-organization-retrieve.md)
 
 GET/v1/organizations/me
 
@@ -756,7 +756,7 @@ Deprecated
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
-#### Organization[Analytics](http-beta-organization-analytics.md)
+#### Organization[Analytics](platform-claude-com-http-beta-organization-analytics.md)
 
 ##### [Get Activity Summaries](http-beta-organization-analytics-retrieve-summaries.md)
 
@@ -792,25 +792,25 @@ Get cost in USD over time across a date range.
 
 Get per-user cost in USD across a date range.
 
-#### OrganizationAnalytics[Users](http-beta-organization-analytics-users.md)
+#### OrganizationAnalytics[Users](platform-claude-com-http-beta-organization-analytics-users.md)
 
-##### [List User Activity](http-beta-organization-analytics-users-list.md)
+##### [List User Activity](platform-claude-com-http-beta-organization-analytics-users-list.md)
 
 GET/v1/organizations/analytics/users
 
 Get per-user activity for a given day, with cursor-based pagination.
 
-#### OrganizationAnalytics[Skills](beta-organization-analytics-skills.md)
+#### OrganizationAnalytics[Skills](http-beta-organization-analytics-skills.md)
 
-##### [Get Skill Usage](http-beta-organization-analytics-skills-list.md)
+##### [Get Skill Usage](platform-claude-com-http-beta-organization-analytics-skills-list.md)
 
 GET/v1/organizations/analytics/skills
 
 Get per-skill usage for a given day, with cursor-based pagination.
 
-#### OrganizationAnalytics[Connectors](beta-organization-analytics-connectors.md)
+#### OrganizationAnalytics[Connectors](http-beta-organization-analytics-connectors.md)
 
-##### [Get Connector Usage](http-beta-organization-analytics-connectors-list.md)
+##### [Get Connector Usage](platform-claude-com-http-beta-organization-analytics-connectors-list.md)
 
 GET/v1/organizations/analytics/connectors
 
@@ -824,17 +824,17 @@ Get per-connector usage for a given day, with cursor-based pagination.
 
 Get per-project activity for a given day, with cursor-based pagination.
 
-#### OrganizationAnalytics[Plugins](http-beta-organization-analytics-plugins.md)
+#### OrganizationAnalytics[Plugins](platform-claude-com-http-beta-organization-analytics-plugins.md)
 
-##### [Get Plugin Usage](http-beta-organization-analytics-plugins-list.md)
+##### [Get Plugin Usage](platform-claude-com-http-beta-organization-analytics-plugins-list.md)
 
 GET/v1/organizations/analytics/plugins
 
 Get per-plugin install + invocation usage for a given day, with pagination.
 
-#### OrganizationAnalytics[Artifacts](beta-organization-analytics-artifacts.md)
+#### OrganizationAnalytics[Artifacts](http-beta-organization-analytics-artifacts.md)
 
-##### [Get Artifact Activity](http-beta-organization-analytics-artifacts-list.md)
+##### [Get Artifact Activity](platform-claude-com-http-beta-organization-analytics-artifacts-list.md)
 
 GET/v1/organizations/analytics/artifacts
 

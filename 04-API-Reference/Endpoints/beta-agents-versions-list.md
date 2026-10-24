@@ -2,7 +2,7 @@
 title: "List Agent Versions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/agents/versions/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:47Z"
+fetched_at: "2026-10-20T06:38:19Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fagents%2Fversions%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fagents%2Fversions%2Flist)
 
 
 
@@ -140,7 +140,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -150,9 +150,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -223,13 +225,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -237,9 +241,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -248,11 +252,17 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Agents](https://platform.claude.com/docs/en/api/http/beta/agents)
 4.  [Versions](https://platform.claude.com/docs/en/api/http/beta/agents/versions)
 
 # List Agent Versions
+
+Copy page
+
+
+
+cURL
 
 GET/v1/agents/{agent_id}/versions
 
@@ -288,11 +298,21 @@ Opaque pagination cursor.
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -500,6 +520,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -514,7 +538,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-data: array of [BetaManagedAgentsAgent](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_agent) { type: "agent", id, archived_at, 12 more }
+data: array of [BetaManagedAgentsAgent](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_agent) { type: "agent", id, archived_at, 13 more }
 
 
 
@@ -554,6 +578,46 @@ description: string or null
 
 
 
+execution_identity: [BetaManagedAgentsExecutionIdentity](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_execution_identity)
+
+
+
+Execution principal for runs of this agent. Always present; `{"type": "service_account"}` when runs carry no customer-named principal.
+
+One of the following:
+
+
+
+BetaManagedAgentsAWSRoleExecutionIdentity object{ type: "aws_role", role_arn }
+
+
+
+An AWS IAM role principal as returned in API responses.
+
+type: "aws_role"
+
+
+
+role_arn: string
+
+
+
+The IAM role's ARN.
+
+
+
+BetaManagedAgentsServiceAccountExecutionIdentity object{ type: "service_account" }
+
+
+
+The Anthropic-managed service account as returned in API responses.
+
+type: "service_account"
+
+
+
+
+
 mcp_servers: array of [BetaManagedAgentsMCPServerURLDefinition](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_mcp_server_url_definition) { type: "url", name, url }
 
 
@@ -584,11 +648,29 @@ Model identifier and configuration.
 
 
 
-multiagent: [BetaManagedAgentsMultiagent](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_multiagent) { type: "coordinator", agents } or null
+multiagent: [BetaManagedAgentsMultiagent](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_multiagent) or null
 
 
 
 Multiagent orchestration configuration. Null when the agent is single-threaded.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentCoordinator object{ type: "coordinator", agents }
+
+
+
+Resolved coordinator topology with a concrete agent roster.
+
+
+
+BetaManagedAgentsMultiagent20261001 object{ type: "multiagent_20261001", advisor, subagents, workflows }
+
+
+
+Resolved multiagent configuration with three members, each enabled or disabled on its own.
 
 name: string
 
@@ -757,6 +839,9 @@ Response 200
       "archived_at": null,
       "created_at": "2026-03-15T10:00:00Z",
       "description": "A general-purpose starter agent.",
+      "execution_identity": {
+        "type": "service_account"
+      },
       "mcp_servers": [
         {
           "name": "example-mcp",
@@ -768,7 +853,7 @@ Response 200
         "foo": "bar"
       },
       "model": {
-        "id": "claude-opus-5",
+        "id": "claude-opus-5-5",
         "effort": {
           "type": "low"
         },
@@ -776,14 +861,36 @@ Response 200
         "speed": "standard"
       },
       "multiagent": {
-        "agents": [
-          {
-            "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
-            "type": "agent",
-            "version": 1
-          }
-        ],
-        "type": "coordinator"
+        "advisor": {
+          "type": "disabled"
+        },
+        "subagents": {
+          "inline_agents": {
+            "type": "enabled"
+          },
+          "predefined_agents": [
+            {
+              "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
+              "type": "agent",
+              "version": 1
+            }
+          ],
+          "type": "enabled"
+        },
+        "type": "multiagent_20261001",
+        "workflows": {
+          "inline_agents": {
+            "type": "enabled"
+          },
+          "predefined_agents": [
+            {
+              "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
+              "type": "agent",
+              "version": 1
+            }
+          ],
+          "type": "enabled"
+        }
       },
       "name": "My First Agent",
       "skills": [
@@ -793,7 +900,7 @@ Response 200
           "version": "1"
         },
         {
-          "skill_id": "skill_011CZkZFNu9hAbo3jZPRgTlx",
+          "skill_id": "skill_011CZkZFNu9hAbo3jZPRgTmx",
           "type": "custom",
           "version": "2"
         }
@@ -843,6 +950,9 @@ Response 200
       "archived_at": null,
       "created_at": "2026-03-15T10:00:00Z",
       "description": "A general-purpose starter agent.",
+      "execution_identity": {
+        "type": "service_account"
+      },
       "mcp_servers": [
         {
           "name": "example-mcp",
@@ -854,7 +964,7 @@ Response 200
         "foo": "bar"
       },
       "model": {
-        "id": "claude-opus-5",
+        "id": "claude-opus-5-5",
         "effort": {
           "type": "low"
         },
@@ -862,14 +972,36 @@ Response 200
         "speed": "standard"
       },
       "multiagent": {
-        "agents": [
-          {
-            "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
-            "type": "agent",
-            "version": 1
-          }
-        ],
-        "type": "coordinator"
+        "advisor": {
+          "type": "disabled"
+        },
+        "subagents": {
+          "inline_agents": {
+            "type": "enabled"
+          },
+          "predefined_agents": [
+            {
+              "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
+              "type": "agent",
+              "version": 1
+            }
+          ],
+          "type": "enabled"
+        },
+        "type": "multiagent_20261001",
+        "workflows": {
+          "inline_agents": {
+            "type": "enabled"
+          },
+          "predefined_agents": [
+            {
+              "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
+              "type": "agent",
+              "version": 1
+            }
+          ],
+          "type": "enabled"
+        }
       },
       "name": "My First Agent",
       "skills": [
@@ -879,7 +1011,7 @@ Response 200
           "version": "1"
         },
         {
-          "skill_id": "skill_011CZkZFNu9hAbo3jZPRgTlx",
+          "skill_id": "skill_011CZkZFNu9hAbo3jZPRgTmx",
           "type": "custom",
           "version": "2"
         }

@@ -2,7 +2,7 @@
 title: "Public links for shared chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16762437-public-links-for-shared-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:22Z"
+fetched_at: "2026-10-23T06:29:32Z"
 tags: ["claude-ai", "search"]
 ---
 

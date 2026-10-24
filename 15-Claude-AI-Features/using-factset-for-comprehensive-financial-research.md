@@ -2,7 +2,7 @@
 title: "Using FactSet for comprehensive financial research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:03Z"
+fetched_at: "2026-10-23T06:28:54Z"
 tags: ["claude-ai", "search"]
 ---
 

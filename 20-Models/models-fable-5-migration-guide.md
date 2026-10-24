@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5%2Fmigration-guide)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5%2Fmigration-guide)
 
 
 
@@ -30,7 +30,7 @@ tags: ["models"]
 
 SearchCtrlK
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 Documentation
 
@@ -70,7 +70,7 @@ The baseline settings shared by `claude-fable-5` and `claude-mythos-5`:
 - **Prefill:** Prefilling the assistant message returns a 400 error. Use system prompt instructions instead.
 - **Context window and output:** A [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) by default, and up to 128k output tokens per request.
 - **Pricing:** \$10 USD per million input tokens and \$50 USD per million output tokens. See [Claude pricing](../17-Billing-Plans/about-claude-pricing.md).
-- **Data retention:** Both models require 30-day data retention and are not available under zero data retention (ZDR) arrangements unless expressly authorized by Anthropic. Both are designated Covered Models. On the Claude API, a request to Claude Fable 5 from an organization whose data retention configuration does not meet this requirement returns a 400 `invalid_request_error`. Organizations with a ZDR arrangement should contact their Anthropic account team to discuss data retention configuration, or configure data retention per workspace. See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements) for per-platform details.
+- **Data retention:** Both models require 30-day data retention and are not available under zero data retention (ZDR) arrangements unless expressly authorized by Anthropic. Both are designated Covered Models. On the Claude API, a request to Claude Fable 5 from an organization whose data retention configuration does not meet this requirement returns a 400 `invalid_request_error`. Organizations with a ZDR arrangement should contact their Anthropic account team to discuss data retention configuration, or configure data retention per workspace. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements) for per-platform details.
 
 Where the two models diverge:
 
@@ -196,14 +196,14 @@ model = "claude-mythos-5"  # After
 
 3.  **Priority Tier:** [Priority Tier](../04-API-Reference/Endpoints/service-tiers.md#supported-models) is not supported on Claude Opus 5, so no existing traffic is affected. If your organization has a Priority Tier commitment, Claude Fable 5 supports it; Claude Mythos 5 does not.
 
-4.  **Data retention:** Claude Fable 5 and Claude Mythos 5 require 30-day data retention and are not available under zero data retention (ZDR) arrangements unless expressly authorized by Anthropic. Both are designated Covered Models. See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+4.  **Data retention:** Claude Fable 5 and Claude Mythos 5 require 30-day data retention and are not available under zero data retention (ZDR) arrangements unless expressly authorized by Anthropic. Both are designated Covered Models. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 ### Migration checklist
 
 - Update the model name from `claude-opus-5` to `claude-fable-5` (or `claude-mythos-5`).
 - Remove any `thinking: {type: "disabled"}` configuration; it returns a 400 error on `claude-fable-5` and `claude-mythos-5`. Use lower [effort](../04-API-Reference/Guides/build-with-claude-effort.md) levels to control token spend instead, and revisit `max_tokens` for workloads that ran with thinking disabled on Claude Opus 5.
 - If those workloads read content by position, such as `content[0].text`, update them to select content blocks by `type`: `thinking` blocks now arrive before `text` blocks. Pass `thinking` blocks back complete and unmodified in tool-use loops; modified blocks return a 400 error.
-- If your organization has a zero data retention (ZDR) arrangement, confirm eligibility before migrating: these models are not available under ZDR unless expressly authorized by Anthropic. See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+- If your organization has a zero data retention (ZDR) arrangement, confirm eligibility before migrating: these models are not available under ZDR unless expressly authorized by Anthropic. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 - Re-baseline cost on your own workloads. Token counts are roughly unchanged; per-token pricing differs, and workloads that ran with thinking disabled now produce thinking tokens, which are billed as output tokens.
 
 ## Migrating to Claude Mythos 5 and Claude Fable 5 from Claude Opus 4.8
@@ -303,7 +303,7 @@ The items in this section describe the API and behavior differences worth checki
 
 ### Migration checklist
 
-- If your organization has a zero data retention (ZDR) arrangement, confirm eligibility before migrating. `claude-fable-5` and `claude-mythos-5` require 30-day data retention and are not available under ZDR unless expressly authorized by Anthropic. On the Claude API, requests to `claude-fable-5` that don't meet this requirement return a 400 `invalid_request_error`. Claude Opus 4.8 is available under ZDR. See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+- If your organization has a zero data retention (ZDR) arrangement, confirm eligibility before migrating. `claude-fable-5` and `claude-mythos-5` require 30-day data retention and are not available under ZDR unless expressly authorized by Anthropic. On the Claude API, requests to `claude-fable-5` that don't meet this requirement return a 400 `invalid_request_error`. Claude Opus 4.8 is available under ZDR. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 - Update the model name from `claude-opus-4-8` to `claude-fable-5` (or `claude-mythos-5`).
 - Remove any `thinking: {type: "disabled"}` configuration. Disabling thinking returns an error on `claude-fable-5` and `claude-mythos-5`, and requests without a `thinking` field run with adaptive thinking.
 - Update response parsing that reads content by position, such as `content[0].text`: with adaptive thinking always on, `thinking` blocks arrive before `text` blocks. Select content blocks by `type` instead, and pass `thinking` blocks back complete and unmodified in tool-use loops; modified blocks return a 400 error. See [Preserving thinking blocks](../04-API-Reference/Guides/build-with-claude-thinking.md#preserving-thinking-blocks).

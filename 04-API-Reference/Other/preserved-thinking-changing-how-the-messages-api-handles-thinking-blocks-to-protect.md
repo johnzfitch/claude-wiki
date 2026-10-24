@@ -1,8 +1,8 @@
 ---
 title: "Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/16761192"
+source_url: "https://support.claude.com/en/articles/16761192-preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect-against-distillation"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:28:22Z"
+fetched_at: "2026-10-23T06:29:12Z"
 tags: ["api"]
 ---
 
@@ -49,7 +49,7 @@ Here are the resources to help guide you through this update:
 
 Check each page for availability on Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Foundry.
 
-If the guidance above doesn't cover your use case, please **[reach out to our support team](../../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**. If you work with an account team, you can also reach out to them for support with updating more complex integrations.
+If the guidance above doesn't cover your use case, please **[reach out to our support team](https://support.claude.com/en/articles/9015913)**. If you work with an account team, you can also reach out to them for support with updating more complex integrations.
 
 There are additional benefits to keeping thinking blocks consistent: it means that the API can reuse cached prompts more often, which reduces costs and response time.
 

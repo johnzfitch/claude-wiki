@@ -2,7 +2,7 @@
 title: "Shopify Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/shopify"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:21Z"
+fetched_at: "2026-10-23T06:29:49Z"
 tags: ["case-studies", "claude-code", "enterprise", "rag", "security"]
 ---
 
@@ -20,13 +20,13 @@ They built Sidekick, an AI-enabled commerce assistant, to make it easier for mer
 
 ## A look at Claude on Google Cloud for conversational commerce
 
-Claude's advanced reasoning capabilities paired with Google Cloud's infrastructure helps ensure that merchants have access to expert-level guidance around the clock. Google Cloud hosts multiple Anthropic models, which helps ensure Sidekick remains available 24/7. The combination delivers sophisticated multi-step analysis while maintaining the sub-second response times essential for natural conversation. "The reasoning capabilities are great and the trade-off between latency and quality is the perfect sweet spot for us," said Andrew McNamara, Director of Applied AI at Shopify.
+Claude’s advanced reasoning capabilities paired with Google Cloud’s infrastructure helps ensure that merchants have access to expert-level guidance around the clock. Google Cloud hosts multiple Anthropic models, which helps ensure Sidekick remains available 24/7. The combination delivers sophisticated multi-step analysis while maintaining the sub-second response times essential for natural conversation. “The reasoning capabilities are great and the trade-off between latency and quality is the perfect sweet spot for us,” said Andrew McNamara, Director of Applied AI at Shopify.
 
 ## The merchant support challenge
 
-Shopify serves everyone from first-time business owners launching their first store to enterprises managing complex operations. Each group arrives with unique backgrounds and challenges. Some need guidance beginning with basic setup, while others need the ability to run sophisticated analytics queries that typically require deep knowledge of Shopify's query language ([ShopifyQL](https://shopify.dev/docs/api/shopifyql)).
+Shopify serves everyone from first-time business owners launching their first store to enterprises managing complex operations. Each group arrives with unique backgrounds and challenges. Some need guidance beginning with basic setup, while others need the ability to run sophisticated analytics queries that typically require deep knowledge of Shopify’s query language ([ShopifyQL](https://shopify.dev/docs/api/shopifyql)).
 
-These diverse needs require technology that can meet merchants where they are. "A lot of merchants would have to really learn how to use ShopifyQL and get pretty deep into it to get insights they needed," McNamara explained. This created a significant barrier between merchants and the data-driven decisions that could transform their businesses. That’s where Sidekick comes in.
+These diverse needs require technology that can meet merchants where they are. “A lot of merchants would have to really learn how to use ShopifyQL and get pretty deep into it to get insights they needed,” McNamara explained. This created a significant barrier between merchants and the data-driven decisions that could transform their businesses. That’s where Sidekick comes in.
 
 ## How Sidekick leverages Claude
 
@@ -40,29 +40,29 @@ Sidekick acts as an always-available partner that helps merchants succeed:
 
 ## Sidekick transforms merchant empowerment
 
-When merchants log into their dashboard, they discover a knowledgeable partner who understands their business. McNamara describes Sidekick as "a co-founder" that merchants can lean on, particularly valuable for small shops just getting into commerce, who typically have only one employee. Sidekick now leverages Claude Sonnet 4.5 to orchestrate complex reasoning chains that would typically require technical expertise.
+When merchants log into their dashboard, they discover a knowledgeable partner who understands their business. McNamara describes Sidekick as “a co-founder” that merchants can lean on, particularly valuable for small shops just getting into commerce, who typically have only one employee. Sidekick now leverages Claude Sonnet 4.5 to orchestrate complex reasoning chains that would typically require technical expertise.
 
-"Merchants are getting huge unlocks from analytics," McNamara noted. "Now they just ask Sidekick and it can combine other aspects of Shopify—look up certain products, write analytics queries, then use that information to write an even better or more contextual analytics query." This agentic loop continuously pulls in relevant context to craft the perfect response.
+“Merchants are getting huge unlocks from analytics,” McNamara noted. “Now they just ask Sidekick and it can combine other aspects of Shopify—look up certain products, write analytics queries, then use that information to write an even better or more contextual analytics query.” This agentic loop continuously pulls in relevant context to craft the perfect response.
 
 The transformation extends beyond analytics. “There’s been a lot of merchants that we’ve talked to that say Sidekick ‘feels like a lifeline for small businesses’ and helps them ‘come out on top’” McNamara shared. These merchants aren’t just reaching their first sale faster—they’re building sustainable businesses with AI-powered expertise from day one.
 
-When a merchant asks a question requiring multiple pieces of information, Sidekick orchestrates parallel and sequential tool calls, each benefiting from Google Cloud's reduced latency. Every hundred milliseconds saved per tool call compounds into natural, flowing conversations that keep merchants productive.
+When a merchant asks a question requiring multiple pieces of information, Sidekick orchestrates parallel and sequential tool calls, each benefiting from Google Cloud’s reduced latency. Every hundred milliseconds saved per tool call compounds into natural, flowing conversations that keep merchants productive.
 
 ## The outcome
 
 Sidekick has fundamentally changed how merchants run and scale their businesses. Complex data analysis that once required technical training now happens through natural conversation. New entrepreneurs can achieve their first sales in days rather than weeks.
 
-"Resiliency and uptime are so critical," McNamara emphasized. "If we're delaying a merchant's first sale because Sidekick isn't there for them, we take that very seriously." The strong combination of Claude's capabilities and Google Cloud's infrastructure is critical toward ensuring Sidekick maintains the availability merchants depend on while continuously improving through rapid model updates.
+“Resiliency and uptime are so critical,” McNamara emphasized. “If we’re delaying a merchant’s first sale because Sidekick isn’t there for them, we take that very seriously.” The strong combination of Claude’s capabilities and Google Cloud’s infrastructure is critical toward ensuring Sidekick maintains the availability merchants depend on while continuously improving through rapid model updates.
 
-For millions of merchants worldwide, Sidekick represents more than technological progress—it's the trusted partner they never had, available any time to help them build their business.
+For millions of merchants worldwide, Sidekick represents more than technological progress—it’s the trusted partner they never had, available any time to help them build their business.
 
 ## How Shopify uses Claude Code reflexively
 
 While Sidekick transforms the merchant experience, Claude Code is a key driver shaping how Shopify employees build and deploy internal tools. The entire organization has [embraced reflexive AI usage](https://x.com/tobi/status/1909251946235437514?lang=en), with engineers and non-engineers alike creating sophisticated applications in minutes rather than days.
 
-"Claude Code has transformed how we build internal tools at Shopify," McNamara explained. "It's pretty heavily used across the company because it integrates directly with our platform for standing up tools. The speed is just crazy—I can build things so much faster now." This integration has helped democratize tool creation across the company—employees who aren't front-end developers can now build professional interfaces and workflows that previously required specialized expertise.
+“Claude Code has transformed how we build internal tools at Shopify,” McNamara explained. “It’s pretty heavily used across the company because it integrates directly with our platform for standing up tools. The speed is just crazy—I can build things so much faster now.” This integration has helped democratize tool creation across the company—employees who aren’t front-end developers can now build professional interfaces and workflows that previously required specialized expertise.
 
-As McNamara adds, observed, "Everyone is way more efficient just from using these models—not just in terms of coding but also content creation, email writing, and countless other use cases."
+As McNamara adds, observed, “Everyone is way more efficient just from using these models—not just in terms of coding but also content creation, email writing, and countless other use cases.”
 
 ## Related stories
 
@@ -70,13 +70,13 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 ### Reversia translates e-commerce stores across 110+ languages with Claude
 
 
-### Inside Rakuten's plan to turn every employee into a builder with Claude Managed Agents
+### Inside Rakuten’s plan to turn every employee into a builder with Claude Managed Agents
 
 
 ### Rakuten accelerates development with Claude Code
 
 
-### L'Oréal advances conversational analytics with Claude
+### L’Oréal advances conversational analytics with Claude
 
 [](https://www.claude.com/)
 
@@ -87,7 +87,8 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -105,12 +106,12 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -143,7 +144,7 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -161,6 +162,7 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -176,7 +178,7 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -211,7 +213,8 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -229,12 +232,12 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -267,7 +270,7 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -285,6 +288,7 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -300,7 +304,7 @@ As McNamara adds, observed, "Everyone is way more efficient just from using thes
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

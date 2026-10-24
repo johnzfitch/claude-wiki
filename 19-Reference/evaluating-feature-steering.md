@@ -1,14 +1,47 @@
 ---
-title: "Evaluating feature steering: A case study in mitigating social biases \\ Anthropic"
+title: "Evaluating feature steering \\ Anthropic"
 source_url: "https://www.anthropic.com/research/evaluating-feature-steering"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:12:12Z"
+fetched_at: "2026-10-21T06:30:40Z"
 tags: ["news-research"]
 ---
 
-# Evaluating feature steering: A case study in mitigating social biases
+# **Evaluating feature steering: **A case study in mitigating social biases
 
-Oct 25, 2024
+- [01Methods](#methods)
+- [02Results](#results)
+- [03Limitations](#limitations)
+- [04Lessons learned](#lessons-learned)
+- [05Future work](#future-work)
+- [06Conclusion](#conclusion)
+- [07Appendices](#appendices)
+
+- Published
+
+  Oct 25, 2024
+
+- Team
+
+  [Societal Impacts](team-societal-impacts.md)
+
+- Topics
+
+  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+
+  See more...
+
+Related articles
+
+- Interpretability
+
+  Oct 16, 2024
+
+  [Using dictionary learning features as classifiers](features-as-classifiers.md)
+
+[View more](https://www.anthropic.com/search?topic=interpretability)
 
 A few months ago, we published an interpretability [paper](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html) demonstrating our ability to learn [interpretable features](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html#assessing-interp) that correspond to various concepts (e.g., [famous individuals](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html#feature-survey-categories-people), types of [computer code](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html#feature-survey-categories-code), etc.) represented in [Claude 3 Sonnet](claude-3-family.md). To verify our feature interpretations, we ran qualitative [feature steering](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html#assessing-tour-influence) experiments, where we artificially dialed up and down various features to see if they changed model outputs in intuitive ways. The results were promising – for example, turning up a feature that responded to mentions of the Golden Gate Bridge made the model talk about the Golden Gate Bridge. Such examples led us to hypothesize that feature steering might be a promising way to modify model outputs in specific interpretable ways.
 
@@ -113,22 +146,6 @@ Our results suggest that feature steering may be an effective way to mitigate so
 
 Our evaluation of feature steering in Claude 3 Sonnet revealed both promising initial results as well as limitations of the technique. Encouragingly, our experiments revealed a “sweet spot” where feature steering can influence model outputs while not significantly degrading capabilities. We even found two features which significantly mitigated social biases across nine social dimensions (according to the BBQ benchmark) *without sacrificing* model capabilities as much. However, we also discovered that a steering vector’s effects can be more complex than its activating contexts suggest, meaning that careful evaluations would be necessary before deploying feature steered models in practice. By sharing our preliminary findings, we hope to inspire further research on steering methods that could lead to safer and more reliable model outputs.
 
-## Bibtex
-
-If you’d like to cite this post you can use the following Bibtex key:
-
-@online{durmus2024steering,  
-author = {Esin Durmus and Alex Tamkin and Jack Clark and Jerry Wei and Jonathan Marcus and Joshua Batson and Kunal Handa and Liane Lovitt and Meg Tong and Miles McCain and Oliver Rausch and Saffron Huang and Sam Bowman and Stuart Ritchie and Tom Henighan and Deep Ganguli},  
-title = {Evaluating Feature Steering: A Case Study in Mitigating Social Biases},  
-date = {2024-10-25},  
-year = {2024},  
-url = {https://anthropic.com/research/evaluating-feature-steering},  
-}
-
-## Acknowledgements
-
-Esin Durmus and Deep Ganguli designed the experiments and wrote the blog post. Esin Durmus executed all the experiments, made the figures, and wrote the first drafts of the post. Jonathan Marcus and Oliver Rausch built the feature steering API we used for our experiments. We thank Jerry Wei and Meg Tong for sharing code that we adapted for our work here. We thank Alex Tamkin, Jack Clark, Joshua Batson, Kunal Handa, Liane Lovitt, Miles McCain, Saffron Huang, Sam Bowman, Stuart Ritchie, and Tom Henighan for their detailed feedback, technical advice, and writing suggestions.
-
 ## Appendices
 
 Appendices are available [at this link](https://assets.anthropic.com/m/6a464113e31f55d5/original/Appendix-to-Evaluating-Feature-Steering-A-Case-Study-in-Mitigating-Social-Biases.pdf). They include:
@@ -138,122 +155,20 @@ Appendices are available [at this link](https://assets.anthropic.com/m/6a464113e
 - Appendix 3: Additional results (Figures A1-A6);
 - Appendix 4: How does feature steering compare to prompting? (Tables A3-A8).
 
+## Authors & Acknowledgments
 
-## Related content
+### Acknowledgements
 
-### Discovering cryptographic weaknesses with Claude
+Esin Durmus and Deep Ganguli designed the experiments and wrote the blog post. Esin Durmus executed all the experiments, made the figures, and wrote the first drafts of the post. Jonathan Marcus and Oliver Rausch built the feature steering API we used for our experiments. We thank Jerry Wei and Meg Tong for sharing code that we adapted for our work here. We thank Alex Tamkin, Jack Clark, Joshua Batson, Kunal Handa, Liane Lovitt, Miles McCain, Saffron Huang, Sam Bowman, Stuart Ritchie, and Tom Henighan for their detailed feedback, technical advice, and writing suggestions.
 
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
+### Citation
 
-[Read more](discovering-cryptographic-weaknesses.md)
+Copy
 
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+``` CodeBlock-module-scss-module__PbWBnq__code
+@online{durmus2024steering,
+author = {Esin Durmus and Alex Tamkin and Jack Clark and Jerry Wei and Jonathan Marcus and Joshua Batson and Kunal Handa and Liane Lovitt and Meg Tong and Miles McCain and Oliver Rausch and Saffron Huang and Sam Bowman and Stuart Ritchie and Tom Henighan and Deep Ganguli},
+title = {Evaluating Feature Steering: A Case Study in Mitigating Social Biases},
+date = {2024-10-25},
+year = {2024},
+url = {https://anthropic.com/research/evaluating-feature-steering},

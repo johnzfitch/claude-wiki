@@ -2,7 +2,7 @@
 title: "Dreams - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/dreams"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:16Z"
+fetched_at: "2026-10-20T06:37:01Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdreams)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdreams)
 
 
 
@@ -135,7 +135,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -145,9 +145,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -218,13 +220,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -232,9 +236,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -243,9 +247,15 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 
 # Dreams
+
+Copy page
+
+
+
+cURL
 
 ##### [Create a Dream](https://platform.claude.com/docs/en/api/http/beta/dreams/create)
 
@@ -669,7 +679,7 @@ formatint32
 
 
 
-BetaDreamingError = [BetaInvalidRequestError](http-beta.md#beta_invalid_request_error) or [BetaAuthenticationError](http-beta.md#beta_authentication_error) or [BetaBillingError](http-beta.md#beta_billing_error) or 7 more
+BetaDreamingError = [BetaInvalidRequestError](platform-claude-com-http-beta.md#beta_invalid_request_error) or [BetaAuthenticationError](platform-claude-com-http-beta.md#beta_authentication_error) or [BetaBillingError](platform-claude-com-http-beta.md#beta_billing_error) or 7 more
 
 
 

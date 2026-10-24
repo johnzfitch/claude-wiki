@@ -2,13 +2,40 @@
 title: "The case for targeted regulation \\ Anthropic"
 source_url: "https://www.anthropic.com/news/the-case-for-targeted-regulation"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:10:51Z"
+fetched_at: "2026-10-21T06:29:58Z"
 tags: ["news-research"]
 ---
 
 # The case for targeted regulation
 
-Oct 31, 2024
+- Published
+
+  Oct 31, 2024
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
+  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+  - [Transparency](https://www.anthropic.com/search?topic=transparency)
+
+  See more...
+
+Related articles
+
+- Policy
+
+  Dec 19, 2025
+
+  [Sharing our compliance framework for California's Transparency in Frontier AI Act](compliance-framework-sb53.md)
+
+[View more](https://www.anthropic.com/search?topic=legal-guardrails)
 
 Increasingly powerful AI systems have the potential to [accelerate scientific progress](https://darioamodei.com/machines-of-loving-grace), unlock new medical treatments, and grow the economy. But along with the remarkable new capabilities of these AIs come significant risks. **Governments should urgently take action on AI policy in the next eighteen months. The window for proactive risk prevention is closing fast.**
 
@@ -16,7 +43,7 @@ Judicious, narrowly-targeted regulation can allow us to get the best of both wor
 
 In this post, we suggest some principles for how governments can meaningfully reduce catastrophic risks while supporting innovation in AI’s thriving scientific and commercial sectors.
 
-## Urgency
+### Urgency
 
 In the last year, AI systems have grown dramatically better at math, graduate-level reasoning, and computer coding, along with many other capabilities. Inside AI companies, we see continued progress on as-yet undisclosed systems and results. These advances offer many positive applications. But progress in these same broad capabilities also brings with it the potential for destructive applications, either from the misuse of AI in domains such as cybersecurity or biology, or from the accidental or autonomous behavior of the AI system itself.
 
@@ -30,7 +57,7 @@ AI systems have progressed dramatically in their understanding of the sciences i
 
 About a year ago, we warned that frontier models might pose real risks in the cyber and CBRN domains within 2-3 years. Based on the progress described above, we believe we are now substantially closer to such risks. Surgical, careful regulation will soon be needed.
 
-## A year of Anthropic’s Responsible Scaling Policy
+### A year of Anthropic’s Responsible Scaling Policy
 
 Grappling with the catastrophic risks of AI systems is rife with uncertainty. We see the initial glimmers of risks that could become serious in the near future, but we don’t know exactly when the real dangers will arrive. We want to make the critical preparations well in advance.
 
@@ -50,7 +77,7 @@ Our Responsible Scaling Policy isn’t perfect, but as we’ve repeatedly deploy
 
 RSP-like mechanisms are an efficient, practical way of dealing with the serious risks of AI systems, and should be adopted voluntarily across the industry. However, enforceable regulation is also important, because society will demand reassurance that AI companies are keeping to their promises.
 
-## Responsible Scaling Policies and AI regulation
+### Responsible Scaling Policies and AI regulation
 
 RSPs are not intended as a substitute for regulation, but as a prototype for it. Based on our experience with RSPs, we believe there are three elements that are key for effective AI regulation:
 
@@ -60,13 +87,13 @@ RSPs are not intended as a substitute for regulation, but as a prototype for it.
 
 There are many different approaches that could meet these three criteria; we’re not wedded to any one in particular. Instead, we’re pragmatically interested in finding a reasonable proposal that a critical mass of stakeholders can get behind.
 
-## The importance of getting this right - and soon
+### The importance of getting this right - and soon
 
 It is critical over the next year that policymakers, the AI industry, safety advocates, civil society, and lawmakers work together to develop an effective regulatory framework that meets the conditions above and is agreeable to a wide range of stakeholders. In the US, this will ideally happen at the federal level, though urgency may demand it is instead developed by individual states. The same applies to other governments around the world who are simultaneously considering AI regulation.
 
 This regulatory framework won’t be perfect, and we are conscious that effective regulations are very hard to design. But getting this right is essential to realizing AI’s benefits and addressing its risks.
 
-## FAQ:
+### FAQ:
 
 Below, we address some questions we’ve heard from those who are either skeptical of any AI regulation, or who think it should take a different form. Some of them expand on points we made in the post above.
 
@@ -93,119 +120,3 @@ A: It is critical that the burden of AI regulations is proportionate and tailore
 *Q: Won’t regulation harm the open source ecosystem?*
 
 A: Our view is that regulation of frontier models should focus on empirically measured risks, not on whether a system is open-or closed-weights. Regulation should thus intrinsically neither favor nor disfavor open-weights models, except to the extent that uniform, empirically rigorous tests show them to present greater or less risk. If there are unique risks associated with open weights models—for instance, their ability to be arbitrarily finetuned onto new datasets—then regulation should be designed to incentivize developers to address those risks, just as with closed-weights models.
-
-  
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

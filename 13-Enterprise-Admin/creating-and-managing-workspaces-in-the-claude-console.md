@@ -1,14 +1,12 @@
 ---
-title: "Creating and managing Workspaces in the Claude Console | Claude Help Center"
+title: "Create and manage Workspaces in the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9796807-creating-and-managing-workspaces-in-the-claude-console"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:25:41Z"
+fetched_at: "2026-10-23T06:29:24Z"
 tags: ["api", "enterprise"]
 ---
 
-# Creating and managing Workspaces in the Claude Console
-
-June 30, 2026
+# Create and manage Workspaces in the Claude Console
 
 
 This guide will walk you through the process of creating, editing, and managing Workspaces in your Claude Console organization.
@@ -23,21 +21,21 @@ If you need to create a fully separate organization with its own members, billin
 
 **Note:** Only Organization Admins can create new Workspaces.
 
-1.  Log in to your [Claude Console account](https://platform.claude.com/login).
+1.  Log in to your **[Claude Console account](https://platform.claude.com/login)**.
 
-2.  Navigate to the **Workspaces** section by clicking on "Settings" in the top level menu and selecting “Workspaces” from the left side bar ([Settings \> Workspaces](../04-API-Reference/Other/playground.md)).
+2.  Go to the **Workspaces** page (platform.claude.com/settings/workspaces).
 
-3.  Click the "Add Workspace" button near the top right of the page.
+3.  Click "Create workspace." The **Create workspace** page opens (platform.claude.com/settings/workspaces/new).
 
-4.  In the modal that appears, enter a name for your new Workspace, and select a color assignment. This color assignment will be used to help visually identify your workspace in the Claude Console.
+4.  Enter a name for your new Workspace, and select a color. The color helps you identify your Workspace in the Claude Console.
 
-5.  Click "Create" to finalize the new Workspace.
+5.  Click "Create workspace" to finalize the new Workspace.
 
 Your new Workspace will now appear in the list of Workspaces.
 
 **Note:** You are limited to 100 workspaces per organization.
 
-## Editing Workspace Settings
+## Edit Workspace settings
 
 1.  From the **Workspaces** list, click on the ellipsis next to the Workspace you want to edit.
 
@@ -51,45 +49,45 @@ Your new Workspace will now appear in the list of Workspaces.
 
 4.  After making your changes, click "Save" to apply them.
 
-**Note:** The default Workspace is not editable and cannot be removed.
+**Note:** You can’t rename the default Workspace or change its color, and you can’t archive or delete it.
 
-## Adding members to a Workspace
+## Add members to a Workspace
 
-**Note:** You must add members to your Console organization by following [these instructions](../04-API-Reference/Other/inviting-members-to-the-claude-console.md) before you can add them to a Workspace.
+**Note:** You must add members to your Console organization by following **[these instructions](../04-API-Reference/Other/inviting-members-to-the-claude-console.md)** before you can add them to a Workspace.
 
-1.  Navigate to the desired Workspace's details page by clicking on it from the Workspaces list.
+1.  Go to the **Members** page (platform.claude.com/settings/members).
 
-2.  Click on the “Members” tab.
+2.  Click "Add to workspace."
 
-3.  Click on “Add to Workspace” near the top right of the page.
+3.  Select the Workspace, the organization member to add, and their Workspace role.
 
-4.  Choose the individual you’d like to add from the list of your organization’s members.
-
-5.  Assign a Workspace role for this member.
-
-6.  Confirm your selections by clicking “Add to Workspace."
+4.  Click "Add to workspace" to confirm.
 
 **Note:** Organization Admins are automatically added as Workspace Admin to every Workspace. Organization Billing role holders are automatically granted ability to see cost, usage, and limit values for all Workspaces, but can be upgraded to the Organization Admin role.
 
-## Deleting members from a Workspace
+## Delete members from a Workspace
 
-Click the trash can icon next to the member to remove them from your Workspace.
+1.  Go to the **Members** page (platform.claude.com/settings/members) and select the Workspace from the **Workspace** dropdown menu. If the menu shows "All," removing a member removes them from your organization instead.
+
+2.  At the end of the member's row, open the "More actions" menu (three dots) and select "Remove member."
+
+3.  Click "Remove" to confirm.
 
 **Note:** Organization members with Admin and Billing roles are automatically granted permissions on all Workspaces and cannot be removed from Workspaces.
 
-## Managing API Keys in a Workspace
+## Manage API Keys in a Workspace
 
-1.  Navigate to the desired Workspace's details page by clicking on it from the **Workspaces** list.
+1.  Go to the **API keys** page (platform.claude.com/settings/keys).
 
-2.  Click on the "API Keys" tab.
+2.  Select the Workspace from the **Workspace** dropdown menu to list only its keys.
 
 3.  To create a new API key for this Workspace:
 
-    - Click "Create Key"
+    - Click "Create key"
 
     - Give the key a descriptive name
 
-    - Click "Create Key"
+    - Click "Create key"
 
 4.  To revoke an existing API key:
 
@@ -97,7 +95,7 @@ Click the trash can icon next to the member to remove them from your Workspace.
 
     - Click the ellipsis next to it
 
-    - Select "Disable API Key" or “Delete API Key”
+    - Select "Disable API key" or “Delete API key”
 
       - **Note:** Deleting an API key is a permanent action and cannot be undone.
 
@@ -105,40 +103,38 @@ Click the trash can icon next to the member to remove them from your Workspace.
 
 **Note:** API keys are tied to the Workspace they're created in and cannot be moved between Workspaces.
 
-## Setting Workspace Rate Limits
+## Set Workspace rate limits
 
-1.  Navigate to the desired Workspace's details page by clicking on it from the **Workspaces** list.
+1.  Go to the **Rate limits** page (platform.claude.com/usage/limits) and select the Workspace from the **Workspace** dropdown menu.
 
-2.  Click on the "Limits" tab.
+2.  Click "Edit" next to a model to set its limits.
 
-3.  Set a limit for each model tier and limit type by clicking on the pencil icon next to each option.
+3.  Set a limit for each model tier and limit type by clicking "Edit" next to each option.
 
-4.  Workspace Spend Limits can be reset to the organization rate limit by clicking the “Refresh” icon next to the rate limit you previously set for the Workspace.
+4.  Workspace limits can be reset to the organization rate limit by selecting a model, leaving all the fields blank in the **Edit workspace rate limits** modal, and clicking "Save."
 
-**Note:** Anthropic always evaluates all applicable limiters -- at the Workspace and Organization level -- for every request. In other words, if the Workspace limits are unset, Organization limits still apply.
+**Note:** Anthropic always evaluates all applicable limiters—at the Workspace and Organization level—for every request. In other words, if the Workspace limits are unset, Organization limits still apply.
 
-## Setting Workspace Spend Limits or Notifications
+## Set Workspace spend limits or notifications
 
-1.  Navigate to the desired Workspace's details page by clicking on it from the **Workspaces** list.
+1.  Go to the **Workspaces** page (platform.claude.com/settings/workspaces) and select the Workspace.
 
-2.  Click on the "Limits" tab.
+2.  In the panel that opens, click "Spend limits."
 
 3.  Choose one of the following:
 
-    - Select “Change Limit” to set a specific spend limit for this Workspace.
+    - Select "Change limit" under **Monthly limit** to set a specific spend limit for this Workspace.
 
-      - **Note:** You can only set a spend limit that is lower than your organization’s limit. If unset, your spend limit defaults to the organization’s limit.
+      - **Note:** You can only set a spend limit that is lower than your organization’s limit. If unset, your spend limit defaults to the organization’s limit. You can’t set a spend limit for the default Workspace.
 
-    - Select “Add notification” to set up an email notification when the Workspace spend reaches a specific amount.
+    - Select "+ Add notification" under **Email notification** to set up an email notification when the Workspace spend reaches a specific amount.
 
 
-## Viewing Workspace Usage and Costs
+## View Workspace usage and costs
 
-1.  Navigate to the [Usage or Cost Reports](../22-Safety-Policy/cost-and-usage-reporting-in-the-claude-console.md).
+Go to the **Usage** page (platform.claude.com/usage) or the **Cost** page (platform.claude.com/cost).
 
-2.  Choose to view by an individual Workspace, or by “All Workspaces”.
-
-## Archiving a Workspace
+## Archive a Workspace
 
 If you no longer need a Workspace but want to retain its historical data:
 
@@ -150,19 +146,13 @@ If you no longer need a Workspace but want to retain its historical data:
 
 **Note:** Archiving a Workspace will archive all API keys in the Workspace. This action cannot be undone.
 
-## Managing the Default Workspace
+## Manage the Default Workspace
 
-Every organization has a default Workspace that cannot be renamed, archived, or deleted. To view API keys associated with the default Workspace:
-
-1.  Navigate to the **Workspaces** list.
-
-2.  Click on "Default" in the list.
-
-**Note:** You can view your default Workspace’s limits from the [Limits settings](../04-API-Reference/Other/playground.md).
+Go to the **API keys** page (platform.claude.com/settings/keys) and select "Default" from the **Workspace** dropdown menu.
 
 ------------------------------------------------------------------------
 
-## Creating a separate Console organization
+## Create a separate Console organization
 
 A single email address can create only one Console organization. If you've already created an organization with your email, signing up again routes you back to that organization instead of starting a new one. You can still be invited to other organizations and switch between them on the same email, but you can only create one yourself.
 
@@ -176,7 +166,7 @@ To create a new organization, sign up with a work email address that isn't alrea
 
 The person who will own the new organization should complete these steps. Whoever signs up becomes the organization's Primary Owner.
 
-1.  Go to **[Claude Console](../04-API-Reference/Other/usage-limits.md)**.
+1.  Go to **[Claude Console](../04-API-Reference/Other/playground.md)**.
 
 2.  Sign up with a work email address using Google or Microsoft single sign-on (SSO), or an email and password.
 
@@ -188,8 +178,8 @@ The new organization is created automatically with a default Workspace, and the 
 
 ### After setup
 
-From **Settings \> Organization**, the Primary Owner can:
+The Primary Owner can:
 
-- Invite members and assign roles (such as Admin, Billing, and Developer) under "Members."
+- Invite members and assign roles (such as Admin, Billing, and Developer) on the **Members** page (platform.claude.com/settings/members).
 
-- Add a payment method in billing settings.
+- Add a payment method on the **Billing** page (platform.claude.com/settings/billing).

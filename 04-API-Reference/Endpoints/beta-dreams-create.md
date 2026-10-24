@@ -2,7 +2,7 @@
 title: "Create a Dream - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/dreams/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:51Z"
+fetched_at: "2026-10-20T06:38:22Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdreams%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdreams%2Fcreate)
 
 
 
@@ -135,7 +135,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -145,9 +145,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -218,13 +220,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -232,9 +236,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -243,10 +247,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Dreams](https://platform.claude.com/docs/en/api/http/beta/dreams)
 
 # Create a Dream
+
+Copy page
+
+
+
+cURL
 
 POST/v1/dreams
 
@@ -260,11 +270,21 @@ See the [Dreams guide](../Other/managed-agents-dreams.md#create-a-dream) to lear
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `dreaming-2026-04-21` in this header.
 
 One of the following:
 
@@ -469,6 +489,10 @@ string
 
 
 "spend-limit-reads-2026-09-26"
+
+
+
+"telemetry-destinations-2026-08-11"
 
 
 

@@ -2,7 +2,7 @@
 title: "Zapia Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/zapia"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:04Z"
+fetched_at: "2026-10-23T06:29:59Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,7 +41,7 @@ By using Claude on Google Cloud, Zapia:
 - Generated over 90% positive user feedback
 - Handles hundreds of thousands of messages per hour
 
-## Bringing AI-powered commerce to Latin America's messaging culture
+## Bringing AI-powered commerce to Latin America’s messaging culture
 
 In Latin America, messaging apps are central to daily life and commerce. Over 70% of consumer transactions involve WhatsApp, with buyers messaging sellers directly to ask questions and negotiate purchases. While convenient, this creates inefficiencies as businesses struggle to keep up with high message volumes.
 
@@ -49,24 +49,24 @@ BrainLogic, a startup building cutting-edge GenAI-first products for Latin Ameri
 
 ## Choosing Claude on Google Cloud
 
-Claude's robust multilingual support and advanced reasoning capabilities combined with Google Cloud's scalability, flexibility, and reliability, made it the ideal solution for BrainLogic's AI-driven platform.
+Claude’s robust multilingual support and advanced reasoning capabilities combined with Google Cloud’s scalability, flexibility, and reliability, made it the ideal solution for BrainLogic’s AI-driven platform.
 
-Localization was a crucial requirement for Zapia's success. While other large language models could engage in general conversations, they lacked Claude's nuanced understanding of Latin American cultures, dialects, and commerce norms. "Claude understands the particularities of each region and speaks differently to a user in Uruguay versus Colombia," said Nicolás Loeff, CTO of BrainLogic.
+Localization was a crucial requirement for Zapia’s success. While other large language models could engage in general conversations, they lacked Claude’s nuanced understanding of Latin American cultures, dialects, and commerce norms. “Claude understands the particularities of each region and speaks differently to a user in Uruguay versus Colombia,” said Nicolás Loeff, CTO of BrainLogic.
 
-The implementation process was smooth and efficient. "Integrating Claude into our platform was quick, required minimal prompt engineering and had high-quality outputs," noted Juan Olloniego, Head of Engineering at BrainLogic. "It took us a couple of days plus testing. So it worked out of the box."
+The implementation process was smooth and efficient. “Integrating Claude into our platform was quick, required minimal prompt engineering and had high-quality outputs,” noted Juan Olloniego, Head of Engineering at BrainLogic. “It took us a couple of days plus testing. So it worked out of the box.”
 
-Google Cloud was also key to Zapia's rapid growth, providing a scalable, reliable infrastructure. Loeff said, "We built functionality on top of Google Cloud services specific to our use cases. It was super simple to start." The team used services like Cloud Run, Cloud Firestore, and Google Cloud to quickly develop and scale their AI-powered platform to its 2.5 million — and growing — users.
+Google Cloud was also key to Zapia’s rapid growth, providing a scalable, reliable infrastructure. Loeff said, “We built functionality on top of Google Cloud services specific to our use cases. It was super simple to start.” The team used services like Cloud Run, Cloud Firestore, and Google Cloud to quickly develop and scale their AI-powered platform to its 2.5 million — and growing — users.
 
-Google Cloud helped BrainLogic deploy and manage Claude models easily. Olloniego noted, "Having Claude on Google Cloud makes it faster to call other APIs and services." The integrated observability and monitoring tools helped the lean engineering team maintain high performance as usage scaled rapidly.
+Google Cloud helped BrainLogic deploy and manage Claude models easily. Olloniego noted, “Having Claude on Google Cloud makes it faster to call other APIs and services.” The integrated observability and monitoring tools helped the lean engineering team maintain high performance as usage scaled rapidly.
 
 ## How Zapia uses Claude to power their AI assistant
 
 Zapia uses Claude for various capabilities:
 
-- **Product discovery and recommendations:** Users can ask Zapia natural language questions about products they're interested in. Claude analyzes the query, accesses product databases, and provides personalized recommendations.
+- **Product discovery and recommendations:** Users can ask Zapia natural language questions about products they’re interested in. Claude analyzes the query, accesses product databases, and provides personalized recommendations.
 - **Purchase assistance:** Zapia can guide users through the purchase process, answering questions and facilitating transactions directly in messaging apps.
 - **Customer support:** Claude enables Zapia to handle various customer service inquiries, only escalating to human agents when necessary.
-- **Local business search:** Users can ask Zapia to find nearby businesses or services. Claude uses BrainLogic's database of millions of Latin American business WhatsApp numbers to connect users directly.
+- **Local business search:** Users can ask Zapia to find nearby businesses or services. Claude uses BrainLogic’s database of millions of Latin American business WhatsApp numbers to connect users directly.
 
 Zapia can also help with many other localized tasks like schoolwork using regional curricula, and providing entertainment recommendations and news summaries.
 
@@ -74,19 +74,19 @@ Zapia can also help with many other localized tasks like schoolwork using region
 
 Zapia has achieved significant growth and user engagement using Claude on Google Cloud. Zapia demonstrates its impact on Latin American commerce and communication with 2.5 million users in its first year and handling hundreds of thousands of messages per hour.
 
-The AI-powered experience has resonated with Latin American users who prefer chat-based interactions for business and personal matters, resulting in over 90% positive user feedback. "Users like the quick responses from Zapia," said Nicolás Loeff, CTO of BrainLogic. "In general, sentiment has been very positive."
+The AI-powered experience has resonated with Latin American users who prefer chat-based interactions for business and personal matters, resulting in over 90% positive user feedback. “Users like the quick responses from Zapia,” said Nicolás Loeff, CTO of BrainLogic. “In general, sentiment has been very positive.”
 
 ## Cost-effective performance with Claude Haiku
 
-Zapia uses Claude Haiku, the smallest and fastest model in the Claude family, to handle most of its traffic, providing quick responses while controlling costs. "The smaller models like Haiku handle almost 99% of the traffic," Loeff explained. "We spend a lot of energy trying to handle as much traffic as possible in each layer to control costs."
+Zapia uses Claude Haiku, the smallest and fastest model in the Claude family, to handle most of its traffic, providing quick responses while controlling costs. “The smaller models like Haiku handle almost 99% of the traffic,” Loeff explained. “We spend a lot of energy trying to handle as much traffic as possible in each layer to control costs.”
 
-The team was impressed by Haiku's performance. Olloniego noted, "The reasoning is high quality for Haiku. We didn't expect smaller models to perform so close to the larger ones."
+The team was impressed by Haiku’s performance. Olloniego noted, “The reasoning is high quality for Haiku. We didn’t expect smaller models to perform so close to the larger ones.”
 
 ## Empowering Latin American commerce with AI
 
-BrainLogic sees Zapia as the start of AI's impact on commerce in Latin America. They aim to make Zapia a vital commerce companion for millions in the region by using Claude's evolving capabilities on Google Cloud. Loeff explains, "AI will help people in remote regions without access to most services but with a cell phone connection. They can talk to a personal AI assistant about their problems and get responses in their own dialect and cultural context."
+BrainLogic sees Zapia as the start of AI’s impact on commerce in Latin America. They aim to make Zapia a vital commerce companion for millions in the region by using Claude’s evolving capabilities on Google Cloud. Loeff explains, “AI will help people in remote regions without access to most services but with a cell phone connection. They can talk to a personal AI assistant about their problems and get responses in their own dialect and cultural context.”
 
-Looking ahead, Zapia is poised to play a crucial role in Latin America's technological advancement. Loeff concludes, “It will empower local artisans in remote villages and ambitious digital entrepreneurs alike. AI has the potential to democratize high-quality services across Latin America, regardless of location or economic status. It's a tool that helps everyone."
+Looking ahead, Zapia is poised to play a crucial role in Latin America’s technological advancement. Loeff concludes, “It will empower local artisans in remote villages and ambitious digital entrepreneurs alike. AI has the potential to democratize high-quality services across Latin America, regardless of location or economic status. It’s a tool that helps everyone.”
 
 ## Related stories
 
@@ -94,7 +94,7 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 ### Reversia translates e-commerce stores across 110+ languages with Claude
 
 
-### Inside Rakuten's plan to turn every employee into a builder with Claude Managed Agents
+### Inside Rakuten’s plan to turn every employee into a builder with Claude Managed Agents
 
 
 ### Rakuten accelerates development with Claude Code
@@ -111,7 +111,8 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -129,12 +130,12 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -167,7 +168,7 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -185,6 +186,7 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -200,7 +202,7 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -235,7 +237,8 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -253,12 +256,12 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -291,7 +294,7 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -309,6 +312,7 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -324,7 +328,7 @@ Looking ahead, Zapia is poised to play a crucial role in Latin America's technol
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

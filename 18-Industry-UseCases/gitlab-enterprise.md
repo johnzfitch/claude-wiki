@@ -2,7 +2,7 @@
 title: "GitLab Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/gitlab-enterprise"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:14Z"
+fetched_at: "2026-10-23T06:29:33Z"
 tags: ["case-studies", "enterprise", "git", "security"]
 ---
 
@@ -40,21 +40,21 @@ GitLab, the leading AI-powered DevSecOps platform, adopted Claude for Work to em
 
 ## Empowering teams across GitLab with Claude
 
-GitLab saw AI's potential to transform their product offerings through the Anthropic API and their internal processes with the [Claude Enterprise plan](../17-Billing-Plans/pricing-enterprise.md).
+GitLab saw AI’s potential to transform their product offerings through the Anthropic API and their internal processes with the [Claude Enterprise plan](../17-Billing-Plans/pricing-enterprise.md).
 
-Taylor McCaslin, product lead for AI and ML tech at GitLab, is focused on putting Claude’s AI capabilities in the hands of team members across departments, from engineering to marketing. McCaslin says, "By using the same Claude models internally that we offer externally, we're better able to build AI solutions that we trust and use ourselves."
+Taylor McCaslin, product lead for AI and ML tech at GitLab, is focused on putting Claude’s AI capabilities in the hands of team members across departments, from engineering to marketing. McCaslin says, “By using the same Claude models internally that we offer externally, we’re better able to build AI solutions that we trust and use ourselves.”
 
 ## Choosing Claude
 
-GitLab was impressed with Anthropic's commitment to data privacy and user protections. "We agree with Anthropic's focus on alignment, trust, and safety, that all felt incredibly aligned and ready for business at scale," McCaslin notes.
+GitLab was impressed with Anthropic’s commitment to data privacy and user protections. “We agree with Anthropic’s focus on alignment, trust, and safety, that all felt incredibly aligned and ready for business at scale,” McCaslin notes.
 
 After initially integrating Anthropic’s API to add Claude to their product offerings, GitLab has steadily expanded its use across the organization. The company recently adopted Claude for Work, bringing AI capabilities to internal GitLab team members across a variety of functions. Features like SSO have greatly streamlined this process, making it easier and more secure to control team member access to Claude.
 
-Claude's advanced capabilities and human-like communication style influenced GitLab's decision to adopt the Claude Enterprise plan. One of Claude's key advantages is its expanded context window, which allows for more natural and context-aware conversations. McCaslin emphasizes, "It's a game-changer. I can have extensive conversations with Claude while maintaining the context of the entire chat."
+Claude’s advanced capabilities and human-like communication style influenced GitLab’s decision to adopt the Claude Enterprise plan. One of Claude’s key advantages is its expanded context window, which allows for more natural and context-aware conversations. McCaslin emphasizes, “It’s a game-changer. I can have extensive conversations with Claude while maintaining the context of the entire chat.”
 
 ## Streamlining workflows across departments
 
-GitLab has discovered a wide range of use cases for Claude across various departments, improving how teams collaborate and work. As McCaslin shares, "We are finding endless use cases for Claude. It's the most utilized new tool I've seen."
+GitLab has discovered a wide range of use cases for Claude across various departments, improving how teams collaborate and work. As McCaslin shares, “We are finding endless use cases for Claude. It’s the most utilized new tool I’ve seen.”
 
 GitLab team members reported using Claude for Work across use cases, including writing, brainstorming, research, and problem-solving. These use cases support more specific workflows across the organization:
 
@@ -66,17 +66,17 @@ GitLab team members reported using Claude for Work across use cases, including w
 
 ## Transformative impact and productivity gains
 
-The impact of Claude extends beyond individual use cases, fostering a culture of efficiency, empowerment, and collaboration. "Everyone who uses Claude emphasizes that it enhances productivity. That is consistent across the board,” says McCaslin.
+The impact of Claude extends beyond individual use cases, fostering a culture of efficiency, empowerment, and collaboration. “Everyone who uses Claude emphasizes that it enhances productivity. That is consistent across the board,” says McCaslin.
 
 GitLab team members are taking on more complex tasks, using Claude as an extension of their capabilities. McCaslin shares, “Claude offers our team members a tool that feels like an extension of their work and expertise, allowing us to take on more complex tasks and deliver greater impact while ensuring GitLab’s IP remains private and protected.”
 
-The ability to share specific chats has also fostered a collaborative environment around AI use. Team members are eager to share their experiences and discoveries with their colleagues. "There's a variety of people sharing links to chats to show the cool things they've done. The collaboration aspect is very powerful," McCaslin notes.
+The ability to share specific chats has also fostered a collaborative environment around AI use. Team members are eager to share their experiences and discoveries with their colleagues. “There’s a variety of people sharing links to chats to show the cool things they’ve done. The collaboration aspect is very powerful,” McCaslin notes.
 
 ## Looking to the future
 
 GitLab is eager to integrate Claude into its products further through the Anthropic API and drive adoption of Claude AI internally, spurring innovation and adding value for customers and team members alike.
 
-McCaslin sees the partnership between GitLab and Anthropic as a key driver of this future. "We continue to be impressed," McCaslin says. "Anthropic is a leader on the model development front, particularly at the speed of releasing models. The models are constantly getting better, faster, and cheaper. Together, we're not just adapting to the AI revolution - we're leading it."
+McCaslin sees the partnership between GitLab and Anthropic as a key driver of this future. “We continue to be impressed,” McCaslin says. “Anthropic is a leader on the model development front, particularly at the speed of releasing models. The models are constantly getting better, faster, and cheaper. Together, we’re not just adapting to the AI revolution - we’re leading it.”
 
 ## Related stories
 
@@ -101,7 +101,8 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -119,12 +120,12 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -157,7 +158,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -175,6 +176,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -190,7 +192,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -225,7 +227,8 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -243,12 +246,12 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -281,7 +284,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -299,6 +302,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -314,7 +318,7 @@ McCaslin sees the partnership between GitLab and Anthropic as a key driver of th
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

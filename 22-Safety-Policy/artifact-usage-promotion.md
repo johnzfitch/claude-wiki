@@ -2,7 +2,7 @@
 title: "Artifact usage promotion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17274727-artifact-usage-promotion"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:32Z"
+fetched_at: "2026-10-16T06:25:21Z"
 tags: ["safety"]
 ---
 

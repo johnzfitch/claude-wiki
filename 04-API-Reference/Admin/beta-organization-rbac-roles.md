@@ -2,7 +2,7 @@
 title: "RBAC Roles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_roles"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:33Z"
+fetched_at: "2026-10-20T06:37:16Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_roles)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_roles)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -138,9 +138,11 @@ RBAC Roles
 
 Permissions
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -211,13 +213,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -225,9 +229,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -236,10 +240,16 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 
 # RBAC Roles
+
+Copy page
+
+
+
+cURL
 
 ##### [List RBAC Roles](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_roles/list)
 
@@ -257,7 +267,7 @@ Retrieve an RBAC Role by ID.
 
 
 
-BetaRBACRole object{ type: "rbac_role", id, created_at, 2 more }
+BetaRBACRole object{ type: "rbac_role", id, created_at, 3 more }
 
 
 
@@ -289,11 +299,11 @@ RFC 3339 datetime string indicating when the RBAC Role was created.
 
 formatdate-time
 
-name: string
+display_name: string
 
 
 
-Name of the RBAC Role.
+Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
 
 
 
@@ -304,6 +314,16 @@ updated_at: string
 RFC 3339 datetime string indicating when the RBAC Role was last updated.
 
 formatdate-time
+
+
+
+name: string⁠Deprecated
+
+
+
+Deprecated: use `display_name` instead. Name of the RBAC Role; always the same value as `display_name`.
+
+Use \`display_name\` instead; \`name\` always has the same value.
 
 #### RBAC Roles[Permissions](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_roles/permissions)
 

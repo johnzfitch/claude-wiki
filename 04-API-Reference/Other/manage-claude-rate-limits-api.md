@@ -2,7 +2,7 @@
 title: "Rate Limits API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/rate-limits-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:39Z"
+fetched_at: "2026-10-20T06:40:27Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Frate-limits-api)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Frate-limits-api)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Monitoring
 
@@ -76,7 +78,7 @@ Programmatically query your organization's API rate limits with the Rate Limits 
 
 
 
-**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
+**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.
 
 The Rate Limits API provides programmatic access to the rate limits configured for your organization and its workspaces. This is the same information shown on the [Rate limits](playground.md) page in the Claude Console.
 
@@ -90,7 +92,7 @@ Use this API to:
 
 **Admin API credentials required.** These endpoints are part of the Admin API. You can access them using an [Admin API key](manage-claude-admin-api-keys.md), an OAuth token with the `org:admin` scope, or a personal or service account key that isn't scoped to a workspace; workspace API keys don't work. See [Authentication](manage-claude-admin-api.md#authentication) for details.
 
-The SDK and CLI examples on this page construct the default client, which reads the Admin API key from the `ANTHROPIC_API_KEY` environment variable. The SDKs expose these endpoints as `client.beta.organization.rate_limits` and `client.beta.organization.workspaces.rate_limits`; the Python, TypeScript, C#, Go, and Java list methods return an iterator that follows `next_page` for you, while the PHP, Ruby, and curl examples read one page.
+The SDK and CLI examples on this page construct the default client, which reads the Admin API key from the `ANTHROPIC_API_KEY` environment variable. The SDKs expose these endpoints as `client.organization.rate_limits` and `client.organization.workspaces.rate_limits`; the Python, TypeScript, C#, Go, and Java list methods return an iterator that follows `next_page` for you, while the PHP, Ruby, and curl examples read one page.
 
 ## Quick start
 
@@ -114,12 +116,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-rate_limits = client.beta.organization.rate_limits.list()
+rate_limits = client.organization.rate_limits.list()
 
 for entry in rate_limits:
     models = f" ({', '.join(entry.models)})" if entry.models else ""
@@ -140,8 +144,9 @@ The `/v1/organizations/rate_limits` endpoint returns the rate limits applied at 
 - **`group_type`:** Deprecated in favor of the `type` inside `group`. It's still returned, always equals that value, and has no removal date. The `group_type` query parameter isn't deprecated. See [Filtering by group type](#filtering-by-group-type) for the list of values.
 - **`models` list:** For `model_group` entries, the `models` field lists every model ID and alias that counts against that group's limits. Use this list to look up which group any model string falls under. For other group types, `models` is `null`.
 - **`limits` list:** Each group carries a list of `{type, value}` pairs. The `type` field identifies the limiter (such as `requests_per_minute`, `input_tokens_per_minute`, or `output_tokens_per_minute`) and `value` is the configured limit. See [Rate limits](../Endpoints/rate-limits.md) for how each limiter is measured and enforced.
+- **`source` on workspace limits:** On the workspace endpoint, every limit value also carries `source`, which says where `value` comes from: `{"type": "workspace"}` for an override stored on the workspace, or `{"type": "organization"}` for a value inherited from the organization. By default, the workspace endpoint returns overrides only, so `source.type` is always `workspace` there; inherited values appear when you pass `include_inherited=true`. See [Workspace rate limits](#workspace-rate-limits).
 
-For complete parameter details and response schemas, see the [Organization Rate Limits API reference](../Admin/beta-organization-rate-limits-list.md).
+For complete parameter details and response schemas, see the [Organization Rate Limits API reference](../Endpoints/organization-rate-limits-list.md).
 
 ### List all organization rate limits
 
@@ -163,12 +168,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-rate_limits = client.beta.organization.rate_limits.list()
+rate_limits = client.organization.rate_limits.list()
 
 for entry in rate_limits:
     models = f" ({', '.join(entry.models)})" if entry.models else ""
@@ -252,12 +259,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-rate_limits = client.beta.organization.rate_limits.list(model="claude-opus-5")
+rate_limits = client.organization.rate_limits.list(model="claude-opus-5-5")
 
 for entry in rate_limits:
     models = f" ({', '.join(entry.models)})" if entry.models else ""
@@ -270,19 +279,19 @@ If the model string doesn't match any group, the endpoint returns a 404 error. T
 
 ## Workspace rate limits
 
-The `/v1/organizations/workspaces/{workspace_id}/rate_limits` endpoint returns the rate limit overrides configured for a single workspace.
+The `/v1/organizations/workspaces/{workspace_id}/rate_limits` endpoint returns the rate limit overrides configured for a single workspace. To also see the values the workspace inherits, pass `include_inherited=true` (see [Include inherited values](#include-inherited-values)).
 
-The response only includes overrides, so anything missing from it is inherited from the organization:
+By default, the response only includes overrides, so anything missing from it is inherited from the organization:
 
 - A group that is absent from `data` has no workspace override at all. The workspace inherits the organization-level limits for that group (it is not unlimited).
 - Within a group that is present, a limiter type that is absent from `limits[]` has no workspace override for that limiter. The workspace inherits the organization value for it.
-- For each limiter that is present, `org_limit` is the organization-level value for the same limiter, or `null` if the organization has no configured limit for that limiter type.
+- For each limiter that is present, `org_limit` is the organization-level value for the same limiter, or `null` if the organization has no configured limit for that limiter type, and `source` is `{"type": "workspace"}`.
 
-For complete parameter details and response schemas, see the [Workspace Rate Limits API reference](../Admin/beta-organization-workspaces-rate-limits-list.md).
+For complete parameter details and response schemas, see the [Workspace Rate Limits API reference](../Endpoints/organization-workspaces-rate-limits-list.md).
 
 
 
-To retrieve your organization's workspace IDs, use the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint, or find them in the [Claude Console](playground.md). The default workspace cannot have rate limit overrides, so it has no entry on this endpoint; use the organization endpoint to read its limits.
+To retrieve your organization's workspace IDs, use the [List Workspaces](../Endpoints/organization-workspaces-list.md) endpoint, or find them in the [Claude Console](playground.md). The default workspace cannot have rate limit overrides, and this endpoint returns a 404 error for it, with or without `include_inherited`; use the organization endpoint to read its limits.
 
 cURL
 
@@ -302,12 +311,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-rate_limits = client.beta.organization.workspaces.rate_limits.list(
+rate_limits = client.organization.workspaces.rate_limits.list(
     "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
 )
 
@@ -331,8 +342,18 @@ for entry in rate_limits:
       },
       "models": ["claude-opus-5-5"],
       "limits": [
-        { "type": "requests_per_minute", "value": 1000, "org_limit": 4000 },
-        { "type": "input_tokens_per_minute", "value": 500000, "org_limit": 10000000 }
+        {
+          "type": "requests_per_minute",
+          "value": 1000,
+          "org_limit": 4000,
+          "source": { "type": "workspace" }
+        },
+        {
+          "type": "input_tokens_per_minute",
+          "value": 500000,
+          "org_limit": 10000000,
+          "source": { "type": "workspace" }
+        }
       ]
     },
     {
@@ -351,8 +372,153 @@ for entry in rate_limits:
         "claude-opus-4-8"
       ],
       "limits": [
-        { "type": "requests_per_minute", "value": 1000, "org_limit": 4000 },
-        { "type": "input_tokens_per_minute", "value": 500000, "org_limit": 10000000 }
+        {
+          "type": "requests_per_minute",
+          "value": 1000,
+          "org_limit": 4000,
+          "source": { "type": "workspace" }
+        },
+        {
+          "type": "input_tokens_per_minute",
+          "value": 500000,
+          "org_limit": 10000000,
+          "source": { "type": "workspace" }
+        }
+      ]
+    }
+  ],
+  "next_page": null
+}
+```
+
+
+
+### Include inherited values
+
+To read a workspace's applicable limits in one request, add the optional `include_inherited` query parameter. It defaults to `false`; a value that isn't a Boolean returns a 400 error. With `include_inherited=true`:
+
+- `data` has one entry for each group that applies to the workspace and has an organization-level value, even if the workspace overrides none of it. A model group applies when the workspace can access at least one of its models.
+- Each entry's `limits[]` lists every limiter type the organization has a value for on that group, plus any type the workspace overrides. Each type appears once, with the workspace's override where one is stored and the organization's value otherwise, so one entry can mix the two.
+- Each value's `source` tells them apart: `{"type": "workspace"}` is a stored override, and `{"type": "organization"}` is an inherited value, where `value` equals `org_limit`.
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
+
+
+```python
+client = anthropic.Anthropic()
+
+rate_limits = client.organization.workspaces.rate_limits.list(
+    "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
+    include_inherited=True,
+)
+
+for entry in rate_limits:
+    models = f" ({', '.join(entry.models)})" if entry.models else ""
+    print(f"{entry.group.type}{models}")
+    for limit in entry.limits:
+        print(f"  {limit.type}: {limit.value} ({limit.source.type})")
+```
+
+```python
+{
+  "data": [
+    {
+      "type": "workspace_rate_limit",
+      "group_type": "model_group",
+      "group": {
+        "type": "model_group",
+        "id": "rlg_01Hq7YkP3mZ9dTwRx4cVbN2s",
+        "display_name": "Claude Opus 5.5"
+      },
+      "models": ["claude-opus-5-5"],
+      "limits": [
+        {
+          "type": "requests_per_minute",
+          "value": 1000,
+          "org_limit": 4000,
+          "source": { "type": "workspace" }
+        },
+        {
+          "type": "input_tokens_per_minute",
+          "value": 500000,
+          "org_limit": 10000000,
+          "source": { "type": "workspace" }
+        },
+        {
+          "type": "output_tokens_per_minute",
+          "value": 800000,
+          "org_limit": 800000,
+          "source": { "type": "organization" }
+        }
+      ]
+    },
+    {
+      "type": "workspace_rate_limit",
+      "group_type": "model_group",
+      "group": {
+        "type": "model_group",
+        "id": "rlg_01Kd5wMv8nSq2LcXy6tRfJ4b",
+        "display_name": "Claude Opus 4.x"
+      },
+      "models": [
+        "claude-opus-4-5",
+        "claude-opus-4-5-20251101",
+        "claude-opus-4-6",
+        "claude-opus-4-7",
+        "claude-opus-4-8"
+      ],
+      "limits": [
+        {
+          "type": "requests_per_minute",
+          "value": 1000,
+          "org_limit": 4000,
+          "source": { "type": "workspace" }
+        },
+        {
+          "type": "input_tokens_per_minute",
+          "value": 500000,
+          "org_limit": 10000000,
+          "source": { "type": "workspace" }
+        },
+        {
+          "type": "output_tokens_per_minute",
+          "value": 800000,
+          "org_limit": 800000,
+          "source": { "type": "organization" }
+        }
+      ]
+    },
+    {
+      "type": "workspace_rate_limit",
+      "group_type": "batch",
+      "group": { "type": "batch", "id": "rlg_01Wn3pBz6kCg9vHtQ7mLxD5a" },
+      "models": null,
+      "limits": [
+        {
+          "type": "enqueued_batch_requests",
+          "value": 500000,
+          "org_limit": 500000,
+          "source": { "type": "organization" }
+        }
       ]
     }
   ],
@@ -384,12 +550,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-rate_limits = client.beta.organization.rate_limits.list(group_type="batch")
+rate_limits = client.organization.rate_limits.list(group_type="batch")
 
 for entry in rate_limits:
     models = f" ({', '.join(entry.models)})" if entry.models else ""
@@ -412,16 +580,16 @@ Every model ID and alias that counts against the group, including dated IDs (suc
 
 ### What does it mean if a group is missing from the workspace response?
 
-The workspace has no override for that group and inherits the organization-level limit. Query the organization endpoint to see the inherited values.
+By default, the workspace response lists only overrides, so a missing group has no workspace override and inherits the organization-level limit. Pass `include_inherited=true` to see inherited values on the workspace endpoint, or query the organization endpoint. With `include_inherited=true`, a group is missing only when it doesn't apply to the workspace or the organization has no limit set for it.
 
 ### Can I update rate limits with this API?
 
-No. To set workspace rate limits, open the workspace in the [Claude Console](playground.md) and use the **Rate limits** tab.
+No. To set workspace rate limits, go to the [Rate limits](playground.md) page in the Claude Console, select the workspace from the **Workspace** dropdown menu, and click **Edit** next to a model.
 
 ## See also
 
 - [Rate limits](../Endpoints/rate-limits.md)
 - [Admin API](manage-claude-admin-api.md)
-- [Admin API reference](../Admin/http-beta-organization.md)
+- [Admin API reference](../Endpoints/organization.md)
 - [Workspaces](manage-claude-workspaces.md)
 - [Usage and Cost API](manage-claude-usage-cost-api.md)

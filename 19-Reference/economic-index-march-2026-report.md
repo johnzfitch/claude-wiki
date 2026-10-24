@@ -2,29 +2,60 @@
 title: "Anthropic Economic Index report: Learning curves \\ Anthropic"
 source_url: "https://www.anthropic.com/research/economic-index-march-2026-report"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:44:06Z"
+fetched_at: "2026-10-21T06:30:44Z"
 tags: ["news-research"]
 ---
 
-# Anthropic Economic Index report: Learning curves
-
-Mar 24, 2026
+# **Anthropic Economic Index report: **Learning curves
 
 [Read in PDF](https://cdn.sanity.io/files/4zrzovbb/website/4053bf3440c0c85b8852052770c5b4cf882689c3.pdf)
+
+- [01What has changed since our last report](#what-has-changed-since-our-last-report-2)
+- [02Learning to use AI](#learning-to-use-ai)
+- [03Discussion](#discussion)
+- [04Appendix](#appendix)
+
+- Published
+
+  Mar 24, 2026
+
+- Team
+
+  [Economics](team-economics.md)
+
+- Topics
+
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Productivity](https://www.anthropic.com/search?topic=productivity)
+  - [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
+
+  See more...
+
+Related articles
+
+- Economics
+
+  Apr 22, 2026
+
+  [Announcing the Anthropic Economic Index Survey](economic-index-survey-announcement.md)
+
+[View more](https://www.anthropic.com/search?topic=economic-index)
 
 The Anthropic Economic Index uses our privacy-preserving data analysis [system](clio.md) to track how Claude is being used across the economy. It’s part of our effort to understand the economic impacts of AI as early as possible, so that researchers and policymakers have adequate time to prepare.
 
 This latest report studies Claude usage in February 2026, building on the economic primitives framework introduced in our [previous report](anthropic-economic-index-january-2026-report.md) (which used data from November 2025). Our sample covers February 5 to February 12, three months following the release of Claude Opus 4.5 and coincident with the release of Claude Opus 4.6.
 
-We first document how usage has changed relative to our previous reports: the rate of augmentation, collaborative interaction where the AI complements the user’s abilities, increased slightly in both Claude.ai and API traffic. In Claude.ai, usage diversified, with the top 10 tasks accounting for a smaller share of usage last month than in November 2025. As a result of this diversification, the average conversation in Claude.ai had a slightly lower-wage task [than](https://cdn.sanity.io/files/4zrzovbb/website/f065d6e6f92c65df8244042c83d48872ea308c3a.pdf) in previous reports.
+We first document how usage has changed relative to our previous reports: the rate of augmentation, collaborative interaction where the AI complements the user’s abilities, increased slightly in both Claude.ai and API traffic. In Claude.ai, usage diversified, with the top 10 tasks accounting for a smaller share of usage last month than in November 2025. As a result of this diversification, the average conversation in Claude.ai had a slightly lower-wage task [than](https://www-cdn.anthropic.com/files/4zrzovbb/website/f065d6e6f92c65df8244042c83d48872ea308c3a.pdf) in previous reports.
 
 We then focus on an important determinant of Claude’s impact on the labor market and the broader economy: learning curves in Claude adoption. We present evidence that high-tenure users have developed habits and strategies that allow them to better harness Claude’s capabilities. Indeed, we document that more experienced users not only attempt higher-value tasks, but are also more likely to elicit successful responses in their conversations.
 
-#### **What has changed since our last report**
+#### What has changed since our last report
 
 In the first chapter, we revisit findings from our previous [Economic Index report](https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf), published in January 2026. We find that:
 
-- **Use cases on Claude.ai diversified.** Coding tasks continue to migrate from augmentative usage in Claude.ai to more automated workflows in our first-party API traffic.¹ In this report, Claude.ai usage was less concentrated: the top 10 tasks made up 19% of all traffic in February, down from 24% in November. That said, almost all tasks in this sample appeared in at least one of our previous samples. About 49% of jobs have seen at least a quarter of their tasks performed using Claude.
+- **Use cases on Claude.ai diversified.** Coding tasks continue to migrate from augmentative usage in Claude.ai to more automated workflows in our first-party API traffic.^([1](#footnote-1)) In this report, Claude.ai usage was less concentrated: the top 10 tasks made up 19% of all traffic in February, down from 24% in November. That said, almost all tasks in this sample appeared in at least one of our previous samples. About 49% of jobs have seen at least a quarter of their tasks performed using Claude.
 - **Claude adoption broadened to lower-wage tasks.** As use cases have diversified, the average economic value of work done on Claude—as measured by US wages paid to workers in the associated occupations—has decreased slightly. This is caused, mechanically, by a rise in personal queries around sports, product comparisons, and home maintenance. The pattern is consistent with a standard “adoption curve” story, in which early-adopters favor specific high-value uses like coding, and later adopters take on a much wider range of tasks.
 - **Inequality in global usage has persisted.** Usage remains heavily concentrated: the top 20 countries account for 48% of all per-capita usage, up from 45%, underscoring a persistent gap in global adoption. However, Claude usage per capita continued to converge within the United States: the share of usage accounted for by the 10 highest usage states decreased from 40% to 38% since our last report.
 
@@ -43,29 +74,29 @@ In our second chapter we investigate how users appear to shape the value that th
 
 ### Diversification of use cases in Claude.ai
 
-We first look at the kinds of tasks that Claude is asked to perform. We use our [privacy-preserving system](https://arxiv.org/abs/2412.13678), which allows us to describe behavior at an aggregated level without revealing the content of individual transcripts. We sample 1 million conversations from both [Claude.ai,](https://cdn.sanity.io/files/4zrzovbb/website/f065d6e6f92c65df8244042c83d48872ea308c3a.pdf) our consumer-facing web product, and our first-party API, the developer-facing interface for integrating Claude into products and workflows.²
+We first look at the kinds of tasks that Claude is asked to perform. We use our [privacy-preserving system](https://arxiv.org/abs/2412.13678), which allows us to describe behavior at an aggregated level without revealing the content of individual transcripts. We sample 1 million conversations from both [Claude.ai,](https://www-cdn.anthropic.com/files/4zrzovbb/website/f065d6e6f92c65df8244042c83d48872ea308c3a.pdf) our consumer-facing web product, and our first-party API, the developer-facing interface for integrating Claude into products and workflows.^([2](#footnote-2))
 
-Coding remains the most common use on our platforms, with tasks associated with Computer and Mathematical occupations accounting for 35% of conversations on Claude.ai (see [Appendix](https://cdn.sanity.io/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf)).³ However, between November 2025 and February 2026, use cases on Claude.ai became less concentrated: the top 10 most common O\*NET tasks went from 24% of conversations to just 19% (Figure 1.1).
+Coding remains the most common use on our platforms, with tasks associated with Computer and Mathematical occupations accounting for 35% of conversations on Claude.ai (see [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf)).^([3](#footnote-3)) However, between November 2025 and February 2026, use cases on Claude.ai became less concentrated: the top 10 most common O\*NET tasks went from 24% of conversations to just 19% (Figure 1.1).
 
 This decline in concentration partly reflects coding tasks migrating from Claude.ai to our first-party API, where Claude Code has grown to represent a large share of sampled traffic. Claude Code’s agentic architecture splits coding work into smaller API calls, which are labeled as distinct tasks. So while coding’s overall share of API traffic has grown, it is spread across many task categories rather than concentrated in a few. As a result, task concentration in the API remained roughly flat despite the influx of coding activity.
 
-This migration of code out of Claude.ai is not the only factor driving decreased concentration. Part of the drop is due to changes in the mix of use cases between the two periods. Coursework fell from 19% to 12% of conversations, while personal use rose from 35% to 42% of conversations. Some of the drop in coursework can be explained by academic calendars in countries where students were on winter break during our sample period.⁴ At the same time, increasing signups beginning around February brought more casual AI users.
+This migration of code out of Claude.ai is not the only factor driving decreased concentration. Part of the drop is due to changes in the mix of use cases between the two periods. Coursework fell from 19% to 12% of conversations, while personal use rose from 35% to 42% of conversations. Some of the drop in coursework can be explained by academic calendars in countries where students were on winter break during our sample period.^([4](#footnote-4)) At the same time, increasing signups beginning around February brought more casual AI users.
 
-While the spread of Claude's work tasks became more diverse, almost all of these had been seen before in our data. In our previous report, we noted that 49% of jobs had seen at least a quarter of their tasks performed using Claude. In this data pull, that cumulative estimate barely changed ([Appendix](https://cdn.sanity.io/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf) Figure A.2). Our data from this report showed many fewer novel O\*NET tasks than in our previous report.
+While the spread of Claude's work tasks became more diverse, almost all of these had been seen before in our data. In our previous report, we noted that 49% of jobs had seen at least a quarter of their tasks performed using Claude. In this data pull, that cumulative estimate barely changed ([Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf) Figure A.2). Our data from this report showed many fewer novel O\*NET tasks than in our previous report.
 
-Since our first report, we have classified conversations into one of five interaction types—directive, feedback loop, task iteration, validation, and learning—which we group into two broader categories: automation and augmentation.⁵ Figure 1.3 shows that augmentation in Claude.ai increased slightly. This was driven by small bumps in validation and learning patterns. In [Appendix](https://cdn.sanity.io/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf) Figure A.3, we show that automation decreased sharply in the 1P API data.
+Since our first report, we have classified conversations into one of five interaction types—directive, feedback loop, task iteration, validation, and learning—which we group into two broader categories: automation and augmentation.^([5](#footnote-5)) Figure 1.3 shows that augmentation in Claude.ai increased slightly. This was driven by small bumps in validation and learning patterns. In [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf) Figure A.3, we show that automation decreased sharply in the 1P API data.
 
-Our API platform continued to gain a relatively higher share of Computer and Mathematical tasks (usage shares by job categories are shown in the [Appendix](https://cdn.sanity.io/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf)). Since August 2025, the share of tasks in this category has increased by 14% in the API and decreased by 18% in Claude.ai. As we note in our report on [labor market impacts](labor-market-impacts.md), we expect that this migration from Claude.ai to the API may signal more imminent transformation of work for the associated jobs. The increase in tasks associated with Management occupations in Claude.ai, which went from 3 to 5% of its traffic, comes from a mix of both analytical tasks (e.g., preparing an investment memo) and responding to customer questions.
+Our API platform continued to gain a relatively higher share of Computer and Mathematical tasks (usage shares by job categories are shown in the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf)). Since August 2025, the share of tasks in this category has increased by 14% in the API and decreased by 18% in Claude.ai. As we note in our report on [labor market impacts](labor-market-impacts.md), we expect that this migration from Claude.ai to the API may signal more imminent transformation of work for the associated jobs. The increase in tasks associated with Management occupations in Claude.ai, which went from 3 to 5% of its traffic, comes from a mix of both analytical tasks (e.g., preparing an investment memo) and responding to customer questions.
 
-Another way to measure the change in the mix of tasks done on Claude is to look at the change in the average value of tasks, which we define as the average hourly wage of US workers who perform that task (Figure 1.4).⁶ This estimate of the value of tasks in Claude.ai has dropped slightly from \$49.3 to \$47.9 mostly due to an increase in simple factual questions (e.g., sports outcomes, weather) and a decrease in coding as it shifts to the API. As mentioned in our [previous report](anthropic-economic-index-january-2026-report.md), the tasks we see on Claude tend to require higher education. The plot shows that these tasks also tend to earn higher wages than the US national average.
+Another way to measure the change in the mix of tasks done on Claude is to look at the change in the average value of tasks, which we define as the average hourly wage of US workers who perform that task (Figure 1.4).^([6](#footnote-6)) This estimate of the value of tasks in Claude.ai has dropped slightly from \$49.3 to \$47.9 mostly due to an increase in simple factual questions (e.g., sports outcomes, weather) and a decrease in coding as it shifts to the API. As mentioned in our [previous report](anthropic-economic-index-january-2026-report.md), the tasks we see on Claude tend to require higher education. The plot shows that these tasks also tend to earn higher wages than the US national average.
 
 While slight, changes in several primitives between the previous and current report capture similar declines in task complexity on Claude.ai. The average years of education required for the human inputs declined from 12.2 to 11.9 years, users granted more autonomy to the AI, and the time required for the human to do the task alone fell by about 2 minutes. One change goes ostensibly in the opposite direction: the tasks performed by Claude were judged to be slightly less possible for a human without access to AI.
 
 ### Emergent automation patterns
 
-As tasks migrate to the API, they may become more exposed to automation. API workflows are far more likely to be directive, with less need for a human in the loop. In a [previous report](https://cdn.sanity.io/files/4zrzovbb/website/a42bc3fc08283562f08fd8bdee8f6f9a3d506e87.pdf), we highlighted that customer service tasks, including, for example, automated support for payment and billing issues, are prevalent in the API data. These contributed to a higher observed exposure for Customer Service Representatives—Claude was recorded doing a high share of their tasks in automated workflows, so these jobs may be more likely to change as AI diffuses.
+As tasks migrate to the API, they may become more exposed to automation. API workflows are far more likely to be directive, with less need for a human in the loop. In a [previous report](https://www-cdn.anthropic.com/files/4zrzovbb/website/a42bc3fc08283562f08fd8bdee8f6f9a3d506e87.pdf), we highlighted that customer service tasks, including, for example, automated support for payment and billing issues, are prevalent in the API data. These contributed to a higher observed exposure for Customer Service Representatives—Claude was recorded doing a high share of their tasks in automated workflows, so these jobs may be more likely to change as AI diffuses.
 
-We highlight two API workflows that appeared more frequently in February as compared to three months prior, with their shares at least doubling in our latest sample:⁷
+We highlight two API workflows that appeared more frequently in February as compared to three months prior, with their shares at least doubling in our latest sample:^([7](#footnote-7))
 
 - **Business sales & outreach automation:** sales enablement generation, B2B lead qualification research, customer data enrichment, cold-email drafting.
 - **Automated trading & market ops:** monitor markets or positions, propose specific investments, inform traders of market conditions, and related tasks.
@@ -74,7 +105,7 @@ We highlight two API workflows that appeared more frequently in February as comp
 
 In our previous report, we noted that the Anthropic AI Usage Index (AUI), which adjusts usage by a geography’s working-age population, was converging rapidly across US states: states with initially lower usage per capita showed faster adoption.
 
-The left panel of Figure 1.6 shows that this convergence continued in our most recent data, but at a slower pace. From August 2025 to February 2026, the share of per-person usage going to the top five states has decreased from 30 to 24%. The Gini coefficient has fallen since August 2025, though the pace of convergence has slowed. When we update our estimates from the [previous report](https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf), we find that at this rate states would arrive at roughly equal usage per capita in 5–9 years, rather than 2–5.⁸
+The left panel of Figure 1.6 shows that this convergence continued in our most recent data, but at a slower pace. From August 2025 to February 2026, the share of per-person usage going to the top five states has decreased from 30 to 24%. The Gini coefficient has fallen since August 2025, though the pace of convergence has slowed. When we update our estimates from the [previous report](https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf), we find that at this rate states would arrive at roughly equal usage per capita in 5–9 years, rather than 2–5.^([8](#footnote-8))
 
 Across countries (right panel), the pattern is reversed: usage has become slightly more concentrated, with the Gini rising over the same period. The countries using Claude the most (per capita) now account for a larger share of overall usage, with the top 20 countries going from 45 to 48% of usage adjusted for population.
 
@@ -96,9 +127,9 @@ Figure 2.2 below shows this in a more granular way. When users perform tasks ass
 
 ### Learning curves
 
-The first Claude model was released in March 2023. Since then, the userbase on both Claude.ai and the API has grown rapidly. Our latest sample contains a mix of users, some of whom signed up for the very first Claude release, and some of whom signed up just the day before we measured their usage. How does one’s tenure with Claude shape their experience with it?⁹
+The first Claude model was released in March 2023. Since then, the userbase on both Claude.ai and the API has grown rapidly. Our latest sample contains a mix of users, some of whom signed up for the very first Claude release, and some of whom signed up just the day before we measured their usage. How does one’s tenure with Claude shape their experience with it?^([9](#footnote-9))
 
-Table 2.1 shows differences between low tenure and high tenure users, where the latter group is defined as having signed up for Claude at least 6 months ago and the low tenure users are everyone else.¹⁰ High tenure users are more likely to use Claude to iterate on their work, and much less likely to delegate greater responsibility through directive use patterns. They are 7 percentage points more likely to be using Claude for work, and use Claude for tasks that tend to require higher levels of education. Finally, their usage is less concentrated in certain tasks. The top 10 O\*NET tasks account for a slightly lower (20.7% compared to 22.2%) share of usage for the high tenure group.
+Table 2.1 shows differences between low tenure and high tenure users, where the latter group is defined as having signed up for Claude at least 6 months ago and the low tenure users are everyone else.^([10](#footnote-10)) High tenure users are more likely to use Claude to iterate on their work, and much less likely to delegate greater responsibility through directive use patterns. They are 7 percentage points more likely to be using Claude for work, and use Claude for tasks that tend to require higher levels of education. Finally, their usage is less concentrated in certain tasks. The top 10 O\*NET tasks account for a slightly lower (20.7% compared to 22.2%) share of usage for the high tenure group.
 
 Below, we dig more into two of the primitives discussed above: the human years of schooling associated with each conversation, and the share of transcripts devoted to personal use.
 
@@ -108,7 +139,7 @@ Several factors could account for these patterns in the user base of a rapidly a
 
 The findings mirror what we saw in our Economic Primitives report: lower-income, less educated countries paradoxically showing more complex use in some cases. The earliest adopters often have high-value, technical use cases. In poorer countries with much lower adoption, these early adopters still dominate the user base.
 
-More casual usage emerges when AI has diffused to a broader share of the population. Indeed, among request clusters, tasks with highest mean tenure included: AI research, git operations, revising manuscripts, and startup fundraising. The tasks with the lowest average tenure have more simple workflows like writing haikus, checking sports scores, and suggesting food for a party.¹¹
+More casual usage emerges when AI has diffused to a broader share of the population. Indeed, among request clusters, tasks with highest mean tenure included: AI research, git operations, revising manuscripts, and startup fundraising. The tasks with the lowest average tenure have more simple workflows like writing haikus, checking sports scores, and suggesting food for a party.^([11](#footnote-11))
 
 #### Experience effects
 
@@ -139,176 +170,56 @@ These observed differences in success rates could deepen inequalities in the lab
 
 ## Appendix
 
-Available [here.](https://cdn.sanity.io/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf)
+Available [here.](https://www-cdn.anthropic.com/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf)
 
-#### Data availability
+### Data availability
 
 Data from this report is available [here](https://huggingface.co/datasets/Anthropic/EconomicIndex).
 
-## Authors and acknowledgements
+## Footnotes
 
-#### First author block\*:
+01"First-party API" or 1P API refers to developer traffic routed directly through Anthropic's own programming interface, which is distinct from both Anthropic's consumer-facing Claude.ai application and third-party platforms such as Amazon Bedrock or Google Cloud Vertex.[](#footnote-ref-1)
 
-Maxim Massenkoff, Eva Lyubich, Peter McCrory
+02This includes data from Claude Code.[](#footnote-ref-2)
+
+03This number uses 2019 O\*NET-SOC codes, while previous reports use the 2010 vintage.[](#footnote-ref-3)
+
+04The drop in coursework conversations was 5 percentage points in countries where the school term was active and 12 percentage points in the countries where most students were on break.[](#footnote-ref-4)
+
+05See the Appendix for definitions of the interaction types.[](#footnote-ref-5)
+
+06For example, the task “Compute moisture or salt content, percentages of ingredients, formulas, or other product factors, using mathematical and chemical procedures.” is done only by Food Science Technicians, who have an average wage of \$26.15, so this is the value of that task. The data source for this exercise is the [May 2024 BLS Occupational Employment and Wage Statistics (OEWS) Tables](https://www.bls.gov/oes/tables.htm). When multiple workers do the same task, we average their wages weighting by employment and the fraction of time spent on that task.[](#footnote-ref-6)
+
+07To find the emerging patterns, we filtered for O\*NET tasks that (i) appeared at least 300 times in the current data and (ii) showed at least 2x growth compared to the previous report.[](#footnote-ref-7)
+
+08The range is given to reflect the different estimates from running the model in our [previous report](https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf) with (5 years) or without (9 years) weights.[](#footnote-ref-8)
+
+09In this analysis, we use log-level data to estimate the models with the same privacy thresholds. See the Appendix for more on the methodology.[](#footnote-ref-9)
+
+10These results are similar however we define high tenure.[](#footnote-ref-10)
+
+11Our sampling period overlapped with the release of our Super Bowl advertisements, which brought many first-time users.[](#footnote-ref-11)
+
+## Authors & Acknowledgments
+
+### Contributors
+
+Maxim Massenkoff\*, Eva Lyubich\*, Peter McCrory\*, Ruth Appel, Ryan Heller
 
 *\*Lead authors of the report*
 
-#### Second author block:
-
-Ruth Appel, Ryan Heller
-
-#### Acknowledgements
+### Acknowledgements
 
 Tim Belonax, Keir Bradwell, Andy Braden, Dexter Callender III, Miriam Chaum, Madison Clark, Evan Frondorf, Deep Ganguli, Kunal Handa, Hanah Ho, Owen Kaye-Kauderer, Jennifer Martinez, Miles McCain, Jared Mueller, Kelsey Nanan, Tyler Neylon, Dianne Penn, Sarah Pollack, Ankur Rathi, David Saunders, Michael Stern, Alex Tamkin, Kim Withee, Jack Clark
 
-#### Citation
+### Citation
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 @online{anthropic2026aeiv5,
         author = {Maxim Massenkoff and Eva Lyubich and Peter McCrory and Ruth Appel and Ryan Heller},
         title = {Anthropic Economic Index report: Learning curves},
         date = {2026-03-24},
         year = {2026},
         url = {https://www.anthropic.com/research/economic-index-march-2026-report},
-}
-```
-
-Copy
-
-#### Footnotes
-
-1.  "First-party API" or 1P API refers to developer traffic routed directly through Anthropic's own programming interface, which is distinct from both Anthropic's consumer-facing Claude.ai application and third-party platforms such as Amazon Bedrock or Google Cloud Vertex.
-2.  This includes data from Claude Code.
-3.  This number uses 2019 O\*NET-SOC codes, while previous reports use the 2010 vintage.
-4.  The drop in coursework conversations was 5 percentage points in countries where the school term was active and 12 percentage points in the countries where most students were on break.
-5.  See the Appendix for definitions of the interaction types.
-6.  For example, the task “Compute moisture or salt content, percentages of ingredients, formulas, or other product factors, using mathematical and chemical procedures.” is done only by Food Science Technicians, who have an average wage of \$26.15, so this is the value of that task. The data source for this exercise is the [May 2024 BLS Occupational Employment and Wage Statistics (OEWS) Tables](https://www.bls.gov/oes/tables.htm). When multiple workers do the same task, we average their wages weighting by employment and the fraction of time spent on that task.
-7.  To find the emerging patterns, we filtered for O\*NET tasks that (i) appeared at least 300 times in the current data and (ii) showed at least 2x growth compared to the previous report.
-8.  The range is given to reflect the different estimates from running the model in our [previous report](https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf) with (5 years) or without (9 years) weights.
-9.  In this analysis, we use log-level data to estimate the models with the same privacy thresholds. See the Appendix for more on the methodology.
-10. These results are similar however we define high tenure.
-11. Our sampling period overlapped with the release of our Super Bowl advertisements, which brought many first-time users.
-
-
-## Related content
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

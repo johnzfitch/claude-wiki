@@ -2,7 +2,7 @@
 title: "Web search tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:32:44Z"
+fetched_at: "2026-10-20T06:38:16Z"
 tags: ["api", "prompting", "search"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "prompting", "search"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fweb-search-tool)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fweb-search-tool)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Tools
 
@@ -96,7 +96,7 @@ Give Claude access to current web content with cited sources, optional dynamic f
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 The web search tool gives Claude direct access to real-time web content, allowing it to answer questions with up-to-date information beyond its knowledge cutoff. The response includes citations for sources drawn from search results.
 
@@ -117,6 +117,8 @@ For [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), web search is 
 For web search's Zero Data Retention eligibility and the related `allowed_callers` configuration, see [Server tools](agents-and-tools-tool-use-server-tools.md#zdr-and-allowed-callers).
 
 For model support, see the [Tool reference](agents-and-tools-tool-use-tool-reference.md).
+
+To check whether a model accepts web search before you send a request, read its `capabilities.server_tools.web_search.supported` value from the Models API. [Using the Models API](../../20-Models/about-claude-models-overview.md#using-the-models-api) describes the field.
 
 ## How web search works
 
@@ -176,6 +178,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -201,7 +205,7 @@ print(response)
 
 Web search is enabled for your organization unless an administrator has disabled it in the [Claude Console](../Other/playground.md), where they can also restrict which domains it searches. If it's disabled, a request that includes the tool fails with a 400 `invalid_request_error` that says web search is not enabled, rather than an [error code](#errors) inside a search result.
 
-These organization-level settings in the Claude Console apply to Messages API requests only. [Claude Managed Agents](../Other/managed-agents-overview.md) sessions use only the per-tool `allowed_domains` and `blocked_domains` lists on the agent toolset; see [Restrict web search and web fetch domains](../Other/managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
+These organization-level settings in the Claude Console apply to Messages API requests only. [Claude Managed Agents](../Other/managed-agents-overview.md) sessions use the per-tool `allowed_domains` and `blocked_domains` lists on the agent toolset instead; see [Restrict web search and web fetch domains](../Other/managed-agents-tools-web-restrictions.md). For a session in a cloud environment with `limited` networking, the environment's `allowed_hosts` also applies to `web_search` and `web_fetch`; see [Networking](../Other/managed-agents-environments.md#networking). The per-tool lists restrict these tools further, within the hosts that `allowed_hosts` allows.
 
 Provide the web search tool in your API request:
 
@@ -222,6 +226,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -285,7 +291,7 @@ Provide `allowed_domains` or `blocked_domains`, not both. If a request includes 
 
 For the full domain filtering rules, see [Domain filtering](agents-and-tools-tool-use-server-tools.md#domain-filtering) in the Server tools guide.
 
-On [Claude Managed Agents](../Other/managed-agents-overview.md), set these fields on the `web_search` entry of the agent toolset; see [Restrict web search and web fetch domains](../Other/managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
+On [Claude Managed Agents](../Other/managed-agents-overview.md), set these fields on the `web_search` entry of the agent toolset; see [Restrict web search and web fetch domains](../Other/managed-agents-tools-web-restrictions.md).
 
 ### Localization
 
@@ -297,7 +303,7 @@ The `user_location` parameter allows you to localize search results based on a u
 - `country`: The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code. The API rejects unsupported country codes with a 400 error.
 - `timezone`: The [IANA timezone ID](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
-On Claude Managed Agents, the `web_search` entry of the agent toolset accepts a `user_location` object with the same fields. The API rejects an unsupported `country` code with a 400 error when you create or update the agent, or when you create or update a session that supplies the setting. See [Restrict web search and web fetch domains](../Other/managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
+On Claude Managed Agents, the `web_search` entry of the agent toolset accepts a `user_location` object with the same fields. The API rejects an unsupported `country` code with a 400 error when you create or update the agent, or when you create or update a session that supplies the setting. See the [web tool settings](../Other/managed-agents-tools-web-restrictions.md#settings).
 
 ### Response inclusion
 

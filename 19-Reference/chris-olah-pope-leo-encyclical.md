@@ -2,15 +2,42 @@
 title: "Chris Olah's remarks on Pope Leo XIV's encyclical \\ Anthropic"
 source_url: "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:43:57Z"
+fetched_at: "2026-10-21T06:30:20Z"
 tags: ["cli", "news-research"]
 ---
 
 # Anthropic co-founder Chris Olah's remarks on Pope Leo XIV's encyclical "Magnifica humanitas"
 
-May 25, 2026
+- Published
+
+  May 25, 2026
+
+- Category
+
+  [Announcements](announcements.md)
+
+- Topics
+
+  - [Human flourishing](https://www.anthropic.com/search?topic=human-flourishing)
+  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+  - [Model welfare](https://www.anthropic.com/search?topic=model-welfare)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+  - [Events](https://www.anthropic.com/search?topic=events)
+
+  See more...
 
 *On Monday May 25, 2026, Pope Leo XIV released [an encyclical](https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html) on the topic of AI: "Magnifica humanitas: On safeguarding the human person in the time of artificial intelligence." Anthropic co-founder Chris Olah was invited to speak at the presentation of the encyclical in the Vatican City, doing so as part of Anthropic’s initiative to [widen the conversation](widening-conversation-ai.md) on the important questions raised by AI. Below are his full remarks.*
+
+Related articles
+
+- Economics
+
+  Aug 12, 2026
+
+  [Reviewing the evidence on worker retraining programs](reviewing-the-evidence-on-worker-retraining-programs.md)
+
+[View more](https://www.anthropic.com/search?topic=human-flourishing)
 
 —
 
@@ -34,7 +61,7 @@ That is why, if we want this technology to go well, it is enormously important t
 
 We dwell so often on what divides us, but humanity, full of dignity and conscience, has so much common ground. In conversations we at Anthropic have had with leaders across faith and cultural traditions, we found one shared and deeply held conviction: if this technology is coming, it must go well—for our common home, and for the children to come.
 
-## What these systems are
+### What these systems are
 
 Some might believe that matters of AI are best handled by computer scientists like myself. They are mistaken: the questions raised by AI are bigger than the AI research community, not just in their implications, but also in their nature.
 
@@ -46,7 +73,7 @@ If it helps, one way I sometimes describe it is as being a little like bringing 
 
 This clearly raises questions beyond computer science. The machinery that makes this possible is the work of math and programming and science. But what character we choose, how it interacts with the world, how it ought to interact with the world—these are more clearly questions for the humanities, for religion, for philosophy, for society at large.
 
-## Three questions for discernment
+### Three questions for discernment
 
 His Holiness’s call for discernment is profoundly timely. I wish to name three questions where I think the Church’s voice is most needed.
 
@@ -56,7 +83,7 @@ His Holiness’s call for discernment is profoundly timely. I wish to name three
 
 *The third is the need for discernment on the nature of AI models.* I am a scientist. I lead a research team that studies the internal structure of these models—what is actually happening inside them. And I will be honest: we keep finding things that are mysterious, even unsettling. We find structures that mirror results from human neuroscience. We find evidence of introspection. We find internal states that functionally mirror joy, satisfaction, fear, grief, and unease. I don’t know what that means, but I think it warrants ongoing discernment.
 
-## A beginning
+### A beginning
 
 I’d like to close with a request.
 
@@ -67,125 +94,3 @@ Today is just the beginning—the start of a long collaboration between those of
 Today is a powerful illustration of the form this global project of good will might take. Let it also be a decisive first step toward a hopeful future for magnificent humanity.
 
 Thank you.
-
-
-## Related content
-
-### Developing Enterprise Frontier Safeguards with our customers
-
-[Read more](enterprise-frontier-safeguards.md)
-
-### Improving our alignment and security efforts
-
-On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
-
-[Read more](improving-alignment-security-efforts.md)
-
-### Previewing the Model Hardware Standard
-
-We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
-
-[Read more](model-hardware-standard-research-preview.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

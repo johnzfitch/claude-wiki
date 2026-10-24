@@ -2,7 +2,7 @@
 title: "Get Chat Project Usage - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/apps/chat/projects/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-10T06:24:54Z"
+fetched_at: "2026-10-18T06:27:04Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fapps%2Fchat%2Fprojects%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fapps%2Fchat%2Fprojects%2Flist)
 
 
 
@@ -163,6 +163,8 @@ Plugins
 
 Plugin Marketplaces
 
+Telemetry Destinations
+
 
 Skills
 
@@ -232,13 +234,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -248,7 +252,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -257,14 +261,20 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
 5.  [Apps](https://platform.claude.com/docs/en/api/http/beta/organization/analytics/apps)
 6.  [Chat](https://platform.claude.com/docs/en/api/http/beta/organization/analytics/apps/chat)
 7.  [Projects](http-beta-organization-analytics-apps-chat-projects.md)
 
 # Get Chat Project Usage
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/analytics/apps/chat/projects
 
@@ -392,7 +402,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-data: array of [BetaAnalyticsProjectActivity](http-beta-organization-analytics.md#beta_analytics_project_activity) { distinct_user_count, message_count, project_id, 8 more }
+data: array of [BetaAnalyticsProjectActivity](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_project_activity) { distinct_user_count, message_count, project_id, 8 more }
 
 
 
@@ -432,7 +442,7 @@ formatdate-time
 
 
 
-created_by: optional [BetaAnalyticsUser](http-beta-organization-analytics.md#beta_analytics_user) { type: "user", id, email_address } or null
+created_by: optional [BetaAnalyticsUser](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_user) { type: "user", id, email_address } or null
 
 
 

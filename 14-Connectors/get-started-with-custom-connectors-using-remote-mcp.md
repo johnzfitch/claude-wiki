@@ -2,7 +2,7 @@
 title: "Get started with custom connectors using remote MCP | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp"
 category: "14-Connectors"
-fetched_at: "2026-10-10T06:27:59Z"
+fetched_at: "2026-10-23T06:28:50Z"
 tags: ["connectors", "mcp", "security"]
 ---
 
@@ -215,4 +215,4 @@ When using research with custom connectors:
 
 - Be mindful of the impact of Claude sending a large number of requests to your connectors.
 
-See **[Use research on Claude](https://support.claude.com/en/articles/11088861-using-research-on-claude)** for more information about this feature.
+See **[Use research on Claude](../15-Claude-AI-Features/using-research-on-claude.md)** for more information about this feature.

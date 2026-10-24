@@ -2,7 +2,7 @@
 title: "Navigating the Claude desktop app · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/navigating-the-claude-desktop-app"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-09T06:26:39Z"
+fetched_at: "2026-10-23T06:28:18Z"
 tags: ["desktop"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["desktop"]
 
 Learn what changes when you use Claude in the desktop app, and what it can do across your computer and tools.
 
-6 minClaude.ai
+6 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -77,7 +77,7 @@ Once Claude can see a folder, you can ask Claude to:
 - *Sort a cluttered Downloads folder into clearly named subfolders.*
 - *Each month, add the new invoices to that same spreadsheet, building a running record.*
 
-A task like that can later [run on a schedule(opens in new tab)](../15-Claude-AI-Features/schedule-recurring-tasks-in-cowork.md).
+A task like that can later [run on a schedule(opens in new tab)](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork).
 
 ### Apps[](#apps)
 
@@ -127,7 +127,7 @@ Things to ask:
 
 
 
-By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork).
+By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md).
 
 ### Record a skill[](#record-a-skill)
 

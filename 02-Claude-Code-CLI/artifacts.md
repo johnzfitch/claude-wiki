@@ -2,7 +2,7 @@
 title: "Share session output as artifacts - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/artifacts"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:26:44Z"
+fetched_at: "2026-10-22T06:29:18Z"
 tags: ["claude-code"]
 ---
 
@@ -15,6 +15,7 @@ tags: ["claude-code"]
 - [Update an artifact](#update-an-artifact)
 - [Find an artifact again](#find-an-artifact-again)
 - [Share an artifact](#share-an-artifact)
+  - [Link to a specific view](#link-to-a-specific-view)
   - [Let someone edit with you](#let-someone-edit-with-you)
 - [Read an artifact shared with you](#read-an-artifact-shared-with-you)
 - [Collect comments on an artifact](#collect-comments-on-an-artifact)
@@ -115,16 +116,16 @@ When Claude Code asks before publishing
 
 A new artifact that Claude publishes in response to a prompt you type goes through without a permission prompt or classifier review. In these cases Claude Code asks you first, or in [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) has the classifier review the publish:
 
-| When                                                                                                                                                               | What Claude Code does                                                                     |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|
-| The session is in [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode)                                                                    | Asks before the first publish of each artifact                                            |
-| The publish declares runtime capabilities for the page, such as [connector calls](#pull-live-data-with-mcp-connectors) or [file downloads](#offer-a-file-download) | Asks before that publish                                                                  |
-| You shared the artifact publicly                                                                                                                                   | Asks once per conversation before changing it                                             |
-| You turned [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) off                                                                 | Asks before the first publish of each artifact                                            |
-| Claude publishes in a turn that a [scheduled task](scheduled-tasks.md) firing in your session started, rather than a prompt you typed                        | Asks before the first publish of each artifact                                            |
-| Claude can’t read the file without your approval                                                                                                                   | Asks before publishing it. An allow rule for the `Artifact` tool doesn’t skip this prompt |
+| When                                                                                                                                                                                       | What Claude Code does                                                                                                                              |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
+| The session is in [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode)                                                                                            | Asks before the first publish of each artifact                                                                                                     |
+| The publish declares runtime capabilities for the page, such as [connector calls](#pull-live-data-with-mcp-connectors) or [file downloads](#offer-a-file-download)                         | Asks before that publish                                                                                                                           |
+| You shared the artifact publicly                                                                                                                                                           | Asks once per conversation before changing it                                                                                                      |
+| Claude publishes in a turn that a [session-scoped scheduled task](scheduled-tasks.md) firing in your session started, rather than a prompt you typed                                 | Asks before the first publish of each artifact                                                                                                     |
+| Claude can’t read the file without your approval                                                                                                                                           | Asks before publishing it. An allow rule for the `Artifact` tool doesn’t skip this prompt                                                          |
+| In [Manual](permission-modes.md) or `acceptEdits` mode, Claude makes a small change to an artifact’s file it can’t edit without your approval, such as a project file in Manual mode | Asks before publishing the change. You’re asked even if an allow rule covers the `Artifact` tool, because the edit to the file needs your approval |
 
-Claude reads files in your session’s [working directories](permissions.md#working-directories), and in the temporary directory it writes pages to, without asking. To let Claude publish from another folder without the prompt, add the folder as a working directory with [`--add-dir`](cli-reference.md#cli-flags) at launch or `/add-dir` during the session.
+To let Claude read a file outside your [working directories](permissions.md#working-directories) without your approval, add its folder as a working directory with [`--add-dir`](cli-reference.md#cli-flags) at launch or `/add-dir` during the session. Claude already reads files in those directories, and in the temporary directory it writes pages to, without asking. If a publish prompt includes a sentence such as `Also makes 1 edit to that file on disk.`, Claude is changing the artifact’s file and publishing it in one step. When you approve the prompt, Claude Code publishes the page, then writes the change to your file.
 
 
 [​](#update-an-artifact)
@@ -148,13 +149,14 @@ Update https://claude.ai/code/artifact/5fbea6f3-... with today's numbers.
 
 Find an artifact again
 
-Run `/artifacts` in Claude Code to list the artifacts you own and the ones shared with you. The current session’s artifacts come first, under **This session**. Requires Claude Code v2.1.208 or later. Select an artifact, then press one of these keys:
+Run `/artifacts` in Claude Code to list the artifacts you own and the ones shared with you. The current session’s artifacts come first, under **This session**. Select an artifact, then press one of these keys:
 
 - **`Enter`**: opens it in your browser when it’s already attached to the current session, and attaches it when it isn’t. Before v2.1.216, `Enter` opened it in your browser
 - **`o`**: opens it in your browser
 - **`c`**: copies its link
+- **`d`**: outside a [cloud session](claude-code-on-the-web.md), permanently deletes an artifact you own after you confirm. Its link stops working for everyone, including you
 
-Claude Code reads the list from your claude.ai account, so it works in a new session and after `/clear`, when the link has scrolled out of the terminal.
+Claude Code reads the list from your claude.ai account, so `/artifacts` works in a new session and after `/clear`, when an artifact’s link has scrolled out of the terminal.
 
 
 [​](#share-an-artifact)
@@ -165,6 +167,19 @@ A new artifact is visible only to you. To share it, open the artifact in your br
 
 - **Within your organization**: on Team and Enterprise plans, grant access to specific people in your organization, or to everyone in it. Viewers sign in to claude.ai as members of your organization to see the page.
 - **Publicly**: share a link that anyone on the internet can open, with no claude.ai sign-in required. On Team and Enterprise plans, public sharing is off until an Owner [enables it for the organization](#control-public-sharing).
+
+
+[​](#link-to-a-specific-view)
+
+Link to a specific view
+
+If a page has several views, such as tabs or sections, you can link to one of them directly. Ask Claude for the links:
+
+```python
+Give me a link to each tab of the deploy failures dashboard.
+```
+
+Each link is the artifact’s link with an anchor on the end, such as `#overview`.
 
 
 [​](#let-someone-edit-with-you)
@@ -183,7 +198,7 @@ When someone shares an artifact with you, you can have Claude read it: give Clau
 - **Cloud session without network access**: for a [cloud environment](cloud-environments.md#access-levels), that’s the **None** level. In [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode), the classifier can approve instead; in a [Cowork](../15-Claude-AI-Features/product-cowork.md) session, the approval is yours alone.
 - **Another organization’s public artifact**: Claude Code asks you first, even in auto mode. Where Claude Code can’t ask you, such as in `bypassPermissions` mode, Claude can’t read the artifact. Claude can read these artifacts only while [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) is on.
 - **Unconfirmed owner or network setting**: when Claude Code can’t confirm who made the artifact, or can’t confirm a cloud session’s network setting, it asks, and your approval covers that one request.
-- **Plan mode, or feature-flag fetching turned off**: in [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode), or if you turned [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) off, Claude Code asks before the Artifact tool reads an artifact someone else in your organization made.
+- **Plan mode**: in [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode), Claude Code asks before the Artifact tool reads an artifact someone else in your organization made.
 
 When Claude reads the artifact with WebFetch, WebFetch’s own [prompting rules](tools-reference.md#webfetch-tool-behavior) still apply.
 
@@ -216,7 +231,7 @@ Let Claude reply to comments on its own
 
 After your session publishes an artifact, Claude Code watches that artifact for comments. When someone who can edit the artifact sends a comment to Claude, it reaches your session right away, and Claude can read the thread and reply without you asking. You need Claude Code v2.1.228 or later. If you turned [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) off, Claude Code doesn’t watch for comments. Your [permission mode](permission-modes.md) decides what Claude does when a sent comment arrives:
 
-- **Claude replies on its own**: when your permission mode lets Claude post the reply without asking you, Claude reads the thread and replies, and edits the artifact when the comment asks for a change. You see `Auto-replied to comment thread on Artifact: <name>` or `Auto-edited Artifact: <name> in response to a comment thread`.
+- **Claude replies on its own**: if you’re in a permission mode that lets Claude post the reply without asking you, Claude reads the thread and replies. You see `Auto-replied to comment thread on Artifact: <name>`.
 - **Claude waits for you**: outside plan mode, when posting the reply would need your approval, you see `Comments are waiting on Artifact: <name>`. Claude then asks you for approval to read the thread, and again to post the reply.
 - **Claude pauses in plan mode**: you see `Comments are waiting on Artifact: <name>`, and Claude doesn’t reply until you leave plan mode and ask it to read and reply.
 
@@ -363,7 +378,7 @@ Claude treats your design system as higher precedence than its own choices, and 
 
 Start from a Slides, Design, or Docs template
 
-Instead of building a page from scratch, Claude can start an artifact from one of the templates on your claude.ai account: [Claude Slides](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md#h_11d5a9a5fa) for a presentation, [Claude Design](../15-Claude-AI-Features/get-started-with-claude-design.md) for a visual design, or [Claude Docs](../15-Claude-AI-Features/get-started-with-claude-docs.md) for a document other people will read and edit. Each opens in its own editor on claude.ai, where you and your teammates change it directly or ask Claude to, and export it to formats such as PowerPoint, PDF, or Word. To start from a template, describe what you want, such as “turn the migration notes into a deck for Thursday’s review” or “write this plan up as a doc for the team”. Claude picks the matching template, fills it from your request and from what the session already has, and gives you the link. For a deck or a design you can also run `/slides` or `/design` with a brief.
+Instead of building a page from scratch, Claude can start an artifact from one of the templates on your claude.ai account: [Claude Slides](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_11d5a9a5fa) for a presentation, [Claude Design](../15-Claude-AI-Features/get-started-with-claude-design.md) for a visual design, or [Claude Docs](https://support.claude.com/en/articles/16923645-get-started-with-claude-docs) for a document other people will read and edit. Each opens in its own editor on claude.ai, where you and your teammates change it directly or ask Claude to, and export it to formats such as PowerPoint, PDF, or Word. To start from a template, describe what you want, such as “turn the migration notes into a deck for Thursday’s review” or “write this plan up as a doc for the team”. Claude picks the matching template, fills it from your request and from what the session already has, and gives you the link. For a deck or a design you can also run `/slides` or `/design` with a brief.
 
 Templates are in beta. They’re on by default on Pro, Max, and Team plans. On Enterprise plans, an Owner [turns each template on](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md) under **Organization settings \> Artifacts**. If your organization has the Slides template turned off, `/slides` doesn’t appear; if it has the Design template turned off, `/design` doesn’t draft designs. Both commands require Claude Code v2.1.265 or later and a session where [artifacts are available](#availability).
 
@@ -512,13 +527,13 @@ List and delete artifacts with the Compliance API
 
 The [Compliance API](https://docs.claude.com/en/api/compliance) provides endpoints to list an organization’s artifacts, retrieve a specific version’s content, and delete an artifact:
 
-| Method   | Endpoint                                                            |
-|:---------|:--------------------------------------------------------------------|
-| `GET`    | `/v1/compliance/code/artifacts`                                     |
-| `GET`    | `/v1/compliance/code/artifacts/{artifact_id}/versions/{version_id}` |
-| `DELETE` | `/v1/compliance/code/artifacts/{artifact_id}`                       |
+| Method   | Endpoint                                                                 |
+|:---------|:-------------------------------------------------------------------------|
+| `GET`    | `/v1/compliance/apps/code/artifacts`                                     |
+| `GET`    | `/v1/compliance/apps/code/artifacts/{artifact_id}/versions/{version_id}` |
+| `DELETE` | `/v1/compliance/apps/code/artifacts/{artifact_id}`                       |
 
-For the request and response schemas, see the [Compliance API reference](https://docs.claude.com/en/api/compliance/code/artifacts).
+For the request and response schemas, see the [Compliance API reference](../04-API-Reference/Admin/compliance-apps-code-artifacts.md).
 
 
 [​](#related-resources)

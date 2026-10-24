@@ -2,7 +2,7 @@
 title: "Observability with OpenTelemetry - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/observability"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-29T06:29:26Z"
+fetched_at: "2026-10-23T06:28:14Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -36,6 +36,8 @@ When you run agents in production, you need visibility into what they did:
 - where failures occurred
 
 The Agent SDK can export this data as OpenTelemetry traces, metrics, and log events to any backend that accepts the OpenTelemetry Protocol (OTLP), whether a hosted observability platform or a self-hosted collector. This guide explains how the SDK emits telemetry, how to configure the export, and how to tag and filter the data once it reaches your backend. To read token usage and cost directly from the SDK response stream instead of exporting to a backend, see [Track cost and usage](agent-sdk-cost-tracking.md).
+
+For the Claude API or Managed Agents, see [OpenTelemetry for the Claude API](../04-API-Reference/Other/manage-claude-opentelemetry.md).
 
 
 [​](#how-telemetry-flows-from-the-sdk)
@@ -248,7 +250,14 @@ const options = {
 };
 ```
 
-With end-user identity attached, the `tool_decision`, `tool_result`, `mcp_server_connection`, and `permission_mode_changed` events, which export as log records named with a `claude_code.` prefix, become a per-user audit trail you can forward to a Security Information and Event Management (SIEM) platform. See [Audit security events](../13-Enterprise-Admin/monitoring-usage.md#audit-security-events) in the Monitoring reference for the full list of security-relevant events and the attributes each one carries.
+After you attach end-user identity, these events become a per-user audit trail you can forward to a Security Information and Event Management (SIEM) platform:
+
+- `tool_decision` and `tool_result`: each tool call, whether it was allowed or denied, and its result
+- `safety_event`: which check refused a tool call or required a permission prompt for it, such as a permission rule or the auto mode classifier. Some calls [have no safety event](../13-Enterprise-Admin/monitoring-usage.md#calls-without-a-safety-event). Requires Claude Code v2.1.307 or later
+- `mcp_server_connection`: MCP server connections and connection failures
+- `permission_mode_changed`: permission mode changes
+
+These events export as log records named with a `claude_code.` prefix, such as `claude_code.safety_event`. See [Audit security events](../13-Enterprise-Admin/monitoring-usage.md#audit-security-events) in the Monitoring reference for the full list of security-relevant events and the attributes each one carries.
 
 
 [​](#control-sensitive-data-in-exports)
@@ -260,7 +269,7 @@ Telemetry is structural by default. Durations, model names, and tool names are r
 | Variable                  | Adds                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `OTEL_LOG_USER_PROMPTS=1` | Prompt text on `claude_code.user_prompt` events and on the `claude_code.interaction` span                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `OTEL_LOG_TOOL_DETAILS=1` | Tool input arguments such as file paths, shell commands, and search patterns on `claude_code.tool_result` events, and real agent, skill, plugin, and MCP server names on the [cost and token metrics](../13-Enterprise-Admin/monitoring-usage.md#cost-counter)                                                                                                                                                                                                                                                                                                                                                    |
+| `OTEL_LOG_TOOL_DETAILS=1` | Tool input arguments such as file paths, shell commands, and search patterns on `claude_code.tool_result` events, and real agent, skill, plugin, and MCP server names on the [cost and token metrics](../13-Enterprise-Admin/monitoring-usage.md#cost-counter). The built-in rule the auto mode classifier named when it blocked a call, as [`classifier_category`](../13-Enterprise-Admin/monitoring-usage.md#tool-decision-event) on `claude_code.tool_decision` and `claude_code.safety_event` events                                                                                                                           |
 | `OTEL_LOG_TOOL_CONTENT=1` | A [`tool.output` span event](../13-Enterprise-Admin/monitoring-usage.md#tool-output-span-event) on `claude_code.tool` with file contents, Bash output, and what MCP tools, WebFetch, and WebSearch return, truncated at 60 KB by default, configurable via `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH`, which requires Claude Code v2.1.214 or later. Results from MCP tools, WebFetch, and WebSearch require Claude Code v2.1.283 or later. Requires [tracing](#read-agent-traces) to be enabled. Span attributes carry tool content under [their own gates](../13-Enterprise-Admin/monitoring-usage.md#new-context-gates)              |
 | `OTEL_LOG_RAW_API_BODIES` | Full Anthropic Messages API request and response JSON as `claude_code.api_request_body` and `claude_code.api_response_body` log events. Set to `1` for inline bodies truncated at 60 KB by default, or `file:<dir>` for untruncated bodies on disk with a `body_ref` path in the event. `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` configures the inline truncation limit, and requires Claude Code v2.1.214 or later. Bodies include the entire conversation history and have extended-thinking content redacted. Enabling this implies consent to everything the three variables above would reveal |
 

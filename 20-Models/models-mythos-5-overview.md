@@ -2,7 +2,7 @@
 title: "Claude Mythos 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/mythos-5/overview"
 category: "20-Models"
-fetched_at: "2026-10-04T08:33:46Z"
+fetched_at: "2026-10-20T06:39:42Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fmythos-5%2Foverview)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fmythos-5%2Foverview)
 
 
 
@@ -40,7 +40,7 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -54,15 +54,15 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)Specialized models
 
-# Claude Mythos 5Invite only
+# Claude Mythos 5Verification required
 
 Most capable model for cybersecurity and biology research
 
@@ -72,13 +72,13 @@ Most capable model for cybersecurity and biology research
 
 claude-mythos-5
 
-[Project Glasswing](../22-Safety-Policy/glasswing.md)
+[How refusals and fallback work](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md)
 
 Copy page
 
 
 
-[Announcement(opens in new tab)](../19-Reference/claude-fable-5-mythos-5.md)[What’s new](models-fable-5-introducing-claude-fable-5-and-claude-mythos-5.md)[Migration guide](models-fable-5-1-migration-guide.md#migrating-from-claude-mythos-5-to-claude-mythos-5-1)
+[Announcement(opens in new tab)](../19-Reference/claude-fable-5-mythos-5.md)[Migration guide](models-fable-5-1-migration-guide.md#migrating-from-claude-mythos-5-to-claude-mythos-5-1)
 
 Context window  
 1Mtokens
@@ -94,7 +94,7 @@ Output pricing
 
 
 
-Claude Mythos 5 is offered separately, by invitation only, as part of Project Glasswing. It shares Claude Fable 5’s specifications and pricing. For access, contact your Anthropic, AWS, or Google Cloud account team.
+Claude Mythos 5 is available only to organizations verified through Anthropic’s verification programs, such as the [Cyber Verification Program(opens in new tab)](https://support.claude.com/en/articles/14604842). It has the same specifications and pricing as Claude Fable 5. To request access, apply to the program that covers your use case.
 
 [See Claude Fable 5](models-fable-5-overview.md)
 
@@ -166,7 +166,7 @@ Jan 2026
 ### Availability
 
 [Status](about-claude-model-deprecations.md)  
-Active (invite only)
+Active (verification required)
 
 Released  
 June 9, 2026

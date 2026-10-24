@@ -2,9 +2,89 @@
 title: "Customer stories | Claude by Anthropic"
 source_url: "https://www.claude.com/customers"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:48Z"
+fetched_at: "2026-10-23T06:29:28Z"
 tags: ["case-studies"]
 ---
+
+# Customer stories
+
+[Skip to stories](#countOnHero-skip)
+
+\$1.9 trillion a year counts on Stripe Stripe counts on Claude
+
+Over 75,000 organizations count on Palo Alto Networks Palo Alto Networks counts on Claude
+
+\$1.9 trillion
+
+a year
+
+counts
+
+on
+
+Stripe
+
+counts
+
+on
+
+Claude
+
+\$1.9 trillion
+
+a year
+
+counts
+
+on
+
+Stripe
+
+counts
+
+on
+
+Claude
+
+Over 75,000
+
+organizations
+
+count
+
+on
+
+Palo Alto Networks
+
+counts
+
+on
+
+Claude
+
+Over 75,000
+
+organizations
+
+count
+
+on
+
+Palo Alto Networks
+
+counts
+
+on
+
+Claude
+
+[Read customer story Stripe](stripe.md)
+
+## Count on Claude
+
+Hear from the teams who choose Claude for the work they have to get right.
+
+[Contact sales](https://www.claude.com/contact-sales)[Try Claude](https://claude.ai/)
 
 # Meet the teams building what’s next
 
@@ -35,6 +115,10 @@ Customer story
 HubSpot reclaims time for creativity with Claude
 
 [Read story](hubspot.md)
+
+## Browse more customer stories
+
+Explore more organizations putting Claude to work. Filter by industry, product, company size or region.
 
 Filter and sort
 
@@ -201,3 +285,9 @@ List
 ### How League went all in on Claude in a regulated industry
 
 View more
+
+## Count on Claude
+
+Hear from the teams who choose Claude for the work they have to get right.
+
+[Contact sales](https://www.claude.com/contact-sales)[Try Claude](https://claude.ai/)

@@ -2,7 +2,7 @@
 title: "Plugin commands reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/cli-reference"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-09T06:27:19Z"
+fetched_at: "2026-10-22T06:29:27Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -81,7 +81,7 @@ Run `claude plugin <subcommand>` from your shell or a script, outside a Claude C
 
 plugin init
 
-Scaffold a new plugin at `~/.claude/skills/<name>/`. It loads in your next session as `<name>@skills-dir` with no install step. `new` is an alias for `init`. For the create, test, and edit workflow that begins with this command, see [Create a plugin](plugins-create.md).
+Scaffold a new plugin at `~/.claude/skills/<name>/`. Unless your administrator has [blocked skills-directory plugins](plugins-loading.md#skills-directory-plugins-blocked-by-managed-settings), it loads in your next session as `<name>@skills-dir` with no install step. `new` is an alias for `init`. For the create, test, and edit workflow that begins with this command, see [Create a plugin](plugins-create.md).
 
 ```python
 claude plugin init <name> [options]
@@ -107,7 +107,7 @@ Claude Code validates what it wrote and prints `Created plugin "my-helper" at ~/
 
 - An unknown `--with` value
 - An existing scaffold at the target without `--force`
-- A managed setting that blocks skills-directory plugins
+- A managed marketplace allowlist without the `skills-dir` source, or a blocklist that names it. The message is [`Plugins from ~/.claude/skills/ are blocked by your organization's managed settings`](plugins-troubleshooting.md#plugins-from-claude-skills-are-blocked-by-your-organizations-managed-s).
 
 
 [​](#plugin-install)
@@ -428,7 +428,17 @@ Claude Code prints the plugin’s name, version, description, and source, then t
 - **`Projected token cost`**: the always-on tokens the plugin adds to every session
 - **`Per-component (rounded)`**: always-on and on-invoke estimates for each skill, agent, and command. Omitted when the plugin has none
 
-For what the two cost figures mean, see [Measure plugin cost and usage](plugins-measure.md). For a plugin that isn’t loaded, Claude Code prints `` Plugin "formatter" not found. Run `claude plugin list` to see installed plugins, or pass --plugin-dir <path> to load one from disk. `` and exits `1`.
+For what the two cost figures mean, see [Measure plugin cost and usage](plugins-measure.md). For a plugin that isn’t loaded, Claude Code prints this message and exits `1`:
+
+```python
+Plugin "formatter" not found. Run `claude plugin list` to see installed plugins, or pass --plugin-dir <path> to load one from disk.
+```
+
+An ID that ends in `@builtin` names one of the [plugins built into Claude Code](plugins-mods-overview.md#mods-built-into-claude-code). If you pass such an ID and Claude Code doesn’t find that plugin, the message reads instead:
+
+```python
+Plugin "<name>@builtin" not found. Built-in plugins don't appear in `claude plugin list`. To see the ones available in a session, run /plugin in Claude Code and open the Installed tab.
+```
 
 
 [​](#plugin-configure)
@@ -524,13 +534,13 @@ Put the target before `--tag`, `--allow-tools`, and `--json`. Each of these opti
 
 The exit code reports how the run ended. To act on it in a pipeline, see [Run evals in CI](plugin-evals.md#run-evals-in-ci).
 
-| Exit code | Meaning                                                        |
-|:----------|:---------------------------------------------------------------|
-| `0`       | Every case meets the threshold                                 |
-| `1`       | A failing case, a load error, or an untrusted plugin directory |
-| `2`       | A partial run                                                  |
-| `130`     | Interrupted                                                    |
-| `143`     | Terminated                                                     |
+| Exit code | Meaning                                                                                                                                                                                                                                   |
+|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `0`       | The suite passed: every case meets the threshold and nothing else failed the run                                                                                                                                                          |
+| `1`       | A failing case, a load error, an untrusted plugin directory, a run that [ended on an API error](plugin-evals.md#runs-ended-on-an-api-error), or another cause listed under [Run evals in CI](plugin-evals.md#run-evals-in-ci) |
+| `2`       | A partial run                                                                                                                                                                                                                             |
+| `130`     | Interrupted                                                                                                                                                                                                                               |
+| `143`     | Terminated                                                                                                                                                                                                                                |
 
 
 [​](#plugin-eval-init)

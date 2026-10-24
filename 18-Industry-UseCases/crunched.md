@@ -2,7 +2,7 @@
 title: "Crunched Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/crunched"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:44Z"
+fetched_at: "2026-10-23T06:29:37Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -43,31 +43,31 @@ For core workflows of a \$100M real estate transaction analysis including tenant
 
 Consulting and finance professionals working on high-stakes deals face a persistent challenge: Excel modeling is manual, error-prone, and slow. Private equity associates spend days building financial models from investment memorandums under tight deadlines. Investment banking analysts waste iteration cycles when VPs catch linking errors and logical flaws in first-pass reviews. Consultants building market sizing models or business cases need granular, verifiable assumptions but lack time to gather and structure data from multiple sources.
 
-Philip Borge and Michael Sakowski built Crunched after spending 10,000+ hours in Excel at McKinsey's private equity practice experiencing these exact problems. For the top 1% of Excel users worldwide, models are either the main deliverable or the backbone of every presentation. These professionals needed speed and accuracy to complete more deals, dive deeper into analysis, and deliver outputs their clients could trust.
+Philip Borge and Michael Sakowski built Crunched after spending 10,000+ hours in Excel at McKinsey’s private equity practice experiencing these exact problems. For the top 1% of Excel users worldwide, models are either the main deliverable or the backbone of every presentation. These professionals needed speed and accuracy to complete more deals, dive deeper into analysis, and deliver outputs their clients could trust.
 
-"Excel modeling is too slow and too error-prone," said Borge, CEO and co-founder. "We were solving our own problem, and we knew millions of other finance and consulting professionals faced the same challenges."
+“Excel modeling is too slow and too error-prone,” said Borge, CEO and co-founder. “We were solving our own problem, and we knew millions of other finance and consulting professionals faced the same challenges.”
 
 ## Claude enables high-speed, accurate modeling for power users
 
 Crunched needed an AI foundation that could handle complex Excel models—workbooks with 50+ tabs and thousands of formulas—while maintaining accuracy on finance-specific calculations like DCF and LBO modeling. Before Sonnet 4.5, they built a sophisticated context searching and management system, their core differentiator, that gathers precisely the right information for each task, enabling accurate operations on workbooks of any size.
 
-Sonnet 4.5 dramatically extended what that system could do. The model's parallel tool calling lets Crunched gather context from multiple workbook locations simultaneously, while its extended context window allows the system to process more information at once, reducing the risk of missing critical dependencies. Low latency enables the real-time iteration speed that power users demand. "Sonnet 4.5 is the best booster of our context searching system—it increased its range by a lot," said Sakowski.
+Sonnet 4.5 dramatically extended what that system could do. The model’s parallel tool calling lets Crunched gather context from multiple workbook locations simultaneously, while its extended context window allows the system to process more information at once, reducing the risk of missing critical dependencies. Low latency enables the real-time iteration speed that power users demand. “Sonnet 4.5 is the best booster of our context searching system—it increased its range by a lot,” said Sakowski.
 
-Crunched builds financial and Excel-specific knowledge on top of Claude's foundation, augmenting the model with deep domain expertise in Excel modeling best practices, finance methodologies, and consulting frameworks. This includes proprietary logic and a dedicated system for detecting finance-specific errors that generalist Excel AI solutions on the market wouldn't catch—like logic of net working capital estimations, missing add-backs in cashflow calculations, or mislinked revenue assumptions across tabs. They evaluated multiple LLMs before choosing Claude for its combination of speed, accuracy on quantitative tasks, and reliable performance on complex, multi-step financial modeling workflows.
+Crunched builds financial and Excel-specific knowledge on top of Claude’s foundation, augmenting the model with deep domain expertise in Excel modeling best practices, finance methodologies, and consulting frameworks. This includes proprietary logic and a dedicated system for detecting finance-specific errors that generalist Excel AI solutions on the market wouldn’t catch—like logic of net working capital estimations, missing add-backs in cashflow calculations, or mislinked revenue assumptions across tabs. They evaluated multiple LLMs before choosing Claude for its combination of speed, accuracy on quantitative tasks, and reliable performance on complex, multi-step financial modeling workflows.
 
 ## Crunched brings AI-powered Excel analysis to finance workflows
 
-Backed by First Round Capital, Y Combinator, 20VC and others, Crunched took a different approach to AI implementation. While generalist AI tools are increasingly adding spreadsheet capabilities, Crunched is purpose-built for the top 1% of Excel power users in investment banking, private equity, and consulting—combining Claude's foundation with proprietary solutions and forward-deployed tailoring to each firm's specific modeling and data integration needs.
+Backed by First Round Capital, Y Combinator, 20VC and others, Crunched took a different approach to AI implementation. While generalist AI tools are increasingly adding spreadsheet capabilities, Crunched is purpose-built for the top 1% of Excel power users in investment banking, private equity, and consulting—combining Claude’s foundation with proprietary solutions and forward-deployed tailoring to each firm’s specific modeling and data integration needs.
 
-"Driving Excel productivity is not only about building models from scratch" Sakowski explained. "Professionals aren't asking AI to create another DCF template—they already have those. They need help solving firm-specific pain points one at a time to drive productivity."
+“Driving Excel productivity is not only about building models from scratch” Sakowski explained. “Professionals aren’t asking AI to create another DCF template—they already have those. They need help solving firm-specific pain points one at a time to drive productivity.”
 
 The forward-deployed model means Crunched solves concrete problems. For understanding and error-checking models, Crunched analyzes models of any size, identifying everything from linking mistakes to logical flaws and methodology errors specific to finance. Customers use the error-check as a review layer between analysts and VPs, where Crunched handles the first-pass model review. This saves iteration cycles, reduces embarrassing moments for analysts, and gives VPs higher confidence in the work they receive.
 
-For financial model building and editing, Crunched fills out templates, links into input sheets, in addition to building out valuation models, business cases and analyses from scratch. When a private equity associate receives a counterpart's model and needs to link a "management scenario" into their own LBO model, Crunched handles it. When a consultant needs a fully-linked market model sizing the total addressable market for online beauty products in Florida, Crunched builds it with granular assumptions, verifiable rationales, and clickable links.
+For financial model building and editing, Crunched fills out templates, links into input sheets, in addition to building out valuation models, business cases and analyses from scratch. When a private equity associate receives a counterpart’s model and needs to link a “management scenario” into their own LBO model, Crunched handles it. When a consultant needs a fully-linked market model sizing the total addressable market for online beauty products in Florida, Crunched builds it with granular assumptions, verifiable rationales, and clickable links.
 
-"Anthropic allowed us to be more specific in the workflows we tailor to, delivering higher time savings on tasks like building business case projections across all three financial statements for private companies based on Crunched's own research and uploaded investment presentations," Sakowski said.
+“Anthropic allowed us to be more specific in the workflows we tailor to, delivering higher time savings on tasks like building business case projections across all three financial statements for private companies based on Crunched’s own research and uploaded investment presentations,” Sakowski said.
 
-For data gathering, Crunched pulls information from PDFs, images, web sources, and customer-specific external and internal databases. A private equity associate can upload an information memorandum and build an LBO with granular drivers and assumptions tailored to the specific case, arriving well-prepared for a first meeting. A consultant tasked with reviewing a business model can have Crunched scan all assumptions and assess whether they're optimistic, realistic, or pessimistic, complete with rationales and verifiable links to sources.
+For data gathering, Crunched pulls information from PDFs, images, web sources, and customer-specific external and internal databases. A private equity associate can upload an information memorandum and build an LBO with granular drivers and assumptions tailored to the specific case, arriving well-prepared for a first meeting. A consultant tasked with reviewing a business model can have Crunched scan all assumptions and assess whether they’re optimistic, realistic, or pessimistic, complete with rationales and verifiable links to sources.
 
 ## The outcome
 
@@ -77,11 +77,11 @@ For an investment banking team, first-pass model reviews that typically required
 
 For one real estate investor, the impact was immediate and measurable. A deal-specific task combining automated model building and web-based company research dropped from 10 hours to 1 hour—a 10x speed improvement.
 
-Transactions happen under tight deadlines with finite resources. Senior dealmakers constantly identify analyses that would be valuable but remain too expensive given time and capacity constraints—the transaction size often doesn't justify allocating more associates to a deal.
+Transactions happen under tight deadlines with finite resources. Senior dealmakers constantly identify analyses that would be valuable but remain too expensive given time and capacity constraints—the transaction size often doesn’t justify allocating more associates to a deal.
 
 With Claude Opus 4.5, Crunched enables this economically useful work that was previously cost-prohibitive. The pattern extends across project and deal types. Private equity teams bring full analytical rigor to early-stage deals that previously only received deep analysis at later stages. Investment bankers run additional scenarios that strengthen client recommendations. The ability to economically pursue inherently valuable analyses earlier and more comprehensively resonates with senior dealmakers across finance and consulting.
 
-“We're fundamentally changing how power users work in Excel," Borge said, "Automating all grunt work, one pain point at a time, tailoring Crunched to each firms' specific needs."
+“We’re fundamentally changing how power users work in Excel,” Borge said, “Automating all grunt work, one pain point at a time, tailoring Crunched to each firms’ specific needs.”
 
 ## Related stories
 
@@ -106,7 +106,8 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -124,12 +125,12 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -162,7 +163,7 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -180,6 +181,7 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -195,7 +197,7 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -230,7 +232,8 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -248,12 +251,12 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -286,7 +289,7 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -304,6 +307,7 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -319,7 +323,7 @@ With Claude Opus 4.5, Crunched enables this economically useful work that was pr
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

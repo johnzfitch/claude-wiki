@@ -2,7 +2,7 @@
 title: "Prompting Claude Fable 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-10-04T08:33:29Z"
+fetched_at: "2026-10-20T06:40:06Z"
 tags: ["agents", "prompting", "subagents"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "prompting", "subagents"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fprompt-engineering%2Fprompting-claude-fable-5)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fprompt-engineering%2Fprompting-claude-fable-5)
 
 
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -50,7 +50,7 @@ Reference
 
 [Glossary](../04-API-Reference/About/about-claude-glossary.md)[Additional resources](../04-API-Reference/About/about-claude-additional-resources.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)Prompt engineering
 
@@ -66,7 +66,7 @@ Behavioral differences and prompting patterns for Claude Fable 5 and Claude Myth
 
 
 
-This guide covers the prompting and scaffolding patterns specific to Claude Fable 5 and Claude Mythos 5. For the model's capabilities, API changes, pricing, and availability, see [Introducing Claude Fable 5 and Claude Mythos 5](../20-Models/models-fable-5-introducing-claude-fable-5-and-claude-mythos-5.md). For techniques that apply across all current Claude models, see [Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md).
+This guide covers the prompting and scaffolding patterns specific to Claude Fable 5 and Claude Mythos 5. For the model's specifications, pricing, and availability, see [Claude Fable 5](../20-Models/models-fable-5-overview.md). For techniques that apply across all current Claude models, see [Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md).
 
 Claude Fable 5 takes on problems that were previously too complex, long-running, or ambiguous for prior models, and is particularly effective at end-to-end work that takes a person hours, days, or weeks to complete. The teams seeing the best outcomes apply Claude Fable 5 to their hardest unsolved problems; testing it only on simpler workloads tends to undersell its capability range. It also performs reliably on more straightforward tasks.
 
@@ -74,7 +74,7 @@ Claude Fable 5 has several behavioral differences from Claude Opus 4.8 that may 
 
 
 
-For API parameter changes specific to Claude Fable 5 and Claude Mythos 5 (adaptive thinking only, summarized-only thinking output, no extended thinking budgets, the `refusal` stop reason and fallback handling), see [Introducing Claude Fable 5 and Claude Mythos 5](../20-Models/models-fable-5-introducing-claude-fable-5-and-claude-mythos-5.md).
+For how thinking works on Claude Fable 5 and Claude Mythos 5 (adaptive thinking only, summarized-only thinking output, no extended thinking budgets), see [Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#configuring-thinking). For the `refusal` stop reason and fallback handling, see [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md).
 
 Claude Fable 5 runs safety classifiers that target offensive cybersecurity techniques (such as building exploits, malware, or attack tooling), biology and life sciences content (such as lab methods or molecular mechanisms), and extraction of the model's summarized thinking. Benign cybersecurity work and beneficial life sciences tasks may also trigger these safeguards. To re-route declined requests automatically, configure [server-side or client-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md) to Claude Opus 4.8.
 

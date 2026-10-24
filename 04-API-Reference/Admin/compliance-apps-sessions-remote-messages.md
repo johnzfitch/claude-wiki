@@ -2,7 +2,7 @@
 title: "Messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions/remote/messages"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-07T06:23:41Z"
+fetched_at: "2026-10-22T06:29:45Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fsessions%2Fremote%2Fmessages)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fsessions%2Fremote%2Fmessages)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,13 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
+
+Webhooks
 
 
 Skills
@@ -150,6 +154,29 @@ Skills
 Delete Skill
 
 Versions
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Delete User Profile
+
+
+Create Enrollment URL
+
+Action URLs
 
 
 Tunnels
@@ -173,24 +200,6 @@ Tunnels
 Rotate Tunnel Token
 
 Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
 
 
 Compliance API
@@ -229,17 +238,21 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
+[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[AWS IAM actions](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[Migrating to API version 2026-10-21](../Endpoints/migration-2026-10-21.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -249,6 +262,12 @@ To enable the Compliance API, see the setup guide.
 
 
 
+API version 2023-06-01
+
+
+
+This page documents API version 2023-06-01. [See this page for the newer version, 2026-10-21](compliance-apps-sessions-remote-messages.md), or read [what changed in 2026-10-21](../Endpoints/migration-2026-10-21.md).
+
 1.  [API reference](../Endpoints/http.md)
 2.  [Compliance API](../Endpoints/http-compliance.md)
 3.  [Apps](https://platform.claude.com/docs/en/api/http/compliance/apps)
@@ -256,6 +275,12 @@ To enable the Compliance API, see the setup guide.
 5.  [Remote](https://platform.claude.com/docs/en/api/http/compliance/apps/sessions/remote)
 
 # Messages
+
+Copy page
+
+
+
+API version 2023-06-01
 
 ##### [Retrieve remote session messages](https://platform.claude.com/docs/en/api/http/compliance/apps/sessions/remote/messages/list)
 

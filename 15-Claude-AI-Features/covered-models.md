@@ -2,7 +2,7 @@
 title: "Covered Models | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15425695-covered-models"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:20Z"
+fetched_at: "2026-10-23T06:29:08Z"
 tags: ["claude-ai", "enterprise"]
 ---
 

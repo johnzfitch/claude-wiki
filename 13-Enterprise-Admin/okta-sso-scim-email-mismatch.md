@@ -2,7 +2,7 @@
 title: "Okta SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917840-okta-sso-scim-email-mismatch"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:25:15Z"
+fetched_at: "2026-10-23T06:29:24Z"
 tags: ["enterprise"]
 ---
 
@@ -101,7 +101,7 @@ The safest fix is to use `user.email` for both SCIM and SSO, as this field conta
 
 After correcting the attribute mapping and completing the full sync:
 
-- **Rogue free accounts:** If organization creation wasn't restricted before the fix, some people may have created free personal Claude accounts. Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** for removal.
+- **Rogue free accounts:** If organization creation wasn't restricted before the fix, some people may have created free personal Claude accounts. Contact **[our Support team](https://support.claude.com/en/articles/9015913)** for removal.
 
 - **Ghost accounts (wrong-email seats):** The originally provisioned accounts with the incorrect email may still exist in your organization, occupying seats that can never be used. Contact our Support team for deprovisioning.
 
@@ -135,7 +135,7 @@ After completing the fix and any cleanup:
 
 ## When to contact Support
 
-Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your organization's domain, the affected person's email, and attribute mapping screenshots when:
+Contact **[our Support team](https://support.claude.com/en/articles/9015913)** with your organization's domain, the affected person's email, and attribute mapping screenshots when:
 
 - SCIM and SSO attributes appear identical but people still cannot access their seats.
 

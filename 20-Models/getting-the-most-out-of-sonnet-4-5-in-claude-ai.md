@@ -74,7 +74,7 @@ By the way, if you want to learn more about best practices for working with AI m
 
 As you work with Sonnet 4.5 you may notice a few other differences from past models. These “personality quirks” are steerable based on your prompting and personal preferences.
 
-- **Sonnet 4.5 is more direct** — it gets straight to the point with less unnecessary commentary, and gives you factual progress updates rather than overly enthusiastic status reports. If you prefer a different tone (more detailed explanations, more enthusiasm, or step-by-step narration of its work), just tell Claude how you'd like it to communicate, or add it to your [personal preferences](../15-Claude-AI-Features/understanding-claude-s-personalization-features.md) in settings. **‍**
+- **Sonnet 4.5 is more direct** — it gets straight to the point with less unnecessary commentary, and gives you factual progress updates rather than overly enthusiastic status reports. If you prefer a different tone (more detailed explanations, more enthusiasm, or step-by-step narration of its work), just tell Claude how you'd like it to communicate, or add it to your [personal preferences](../15-Claude-AI-Features/understanding-claude-s-personalization-features-claude-help-center.md) in settings. **‍**
 - **Sonnet 4.5 asks more questions —** this version of Claude is more likely to ask clarifying questions when it's unsure about your task. You can chat with it to refine your ask, or simply tell it to attempt the task if you don’t want to engage. **‍**
 - **Sonnet 4.5 can do more, faster** — when researching a topic or gathering information, Claude can search for several things simultaneously rather than one at a time. If Claude's speed feels overwhelming or you prefer a more step-by-step approach, simply tell it "work on one thing at a time" in your instructions.
 
@@ -485,7 +485,7 @@ Claude Platform
 
 - Console login
 
-  [Console login](../04-API-Reference/Other/usage-limits.md)
+  [Console login](../04-API-Reference/Other/playground.md)
   Console login
 
 Resources

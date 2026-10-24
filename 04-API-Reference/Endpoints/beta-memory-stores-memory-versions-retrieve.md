@@ -2,7 +2,7 @@
 title: "Retrieve a memory version - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:31:48Z"
+fetched_at: "2026-10-20T06:39:26Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Fmemory_versions%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Fmemory_versions%2Fretrieve)
 
 
 
@@ -151,7 +151,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -161,9 +161,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -234,13 +236,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -248,9 +252,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -259,11 +263,17 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Memory Stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores)
 4.  [Memory Versions](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions)
 
 # Retrieve a memory version
+
+Copy page
+
+
+
+cURL
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
 
@@ -311,11 +321,21 @@ Return the object with `content` populated. On list endpoints, `view=full` caps 
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -520,6 +540,10 @@ string
 
 
 "spend-limit-reads-2026-09-26"
+
+
+
+"telemetry-destinations-2026-08-11"
 
 
 

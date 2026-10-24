@@ -2,7 +2,7 @@
 title: "Get Skill Version - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/skills/versions/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-07T06:24:05Z"
+fetched_at: "2026-10-22T06:29:41Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fskills%2Fversions%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fskills%2Fversions%2Fretrieve)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,13 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
+
+Webhooks
 
 
 Skills
@@ -167,6 +171,29 @@ Versions
 Delete Skill Version
 
 
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Delete User Profile
+
+
+Create Enrollment URL
+
+Action URLs
+
+
 Tunnels
 
 
@@ -190,24 +217,6 @@ Tunnels
 Certificates
 
 
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
 Compliance API
 
 Activities
@@ -218,29 +227,37 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
+[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[AWS IAM actions](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[Migrating to API version 2026-10-21](migration-2026-10-21.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
 
 
+API version 2023-06-01
+
 cURL
+
+
+
+This page documents API version 2023-06-01. [See this page for the newer version, 2026-10-21](skills-versions-retrieve.md), or read [what changed in 2026-10-21](migration-2026-10-21.md).
 
 
 
@@ -251,6 +268,14 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [Versions](https://platform.claude.com/docs/en/api/http/skills/versions)
 
 # Get Skill Version
+
+Copy page
+
+
+
+API version 2023-06-01
+
+cURL
 
 GET/v1/skills/{skill_id}/versions/{version}
 
@@ -279,6 +304,16 @@ Identifies the skill version: a version ID, or the literal `latest` for the skil
 Requests carrying the `skills-2025-10-02` beta header address versions by their Unix epoch timestamp instead (e.g., "1759178010641129").
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 
 

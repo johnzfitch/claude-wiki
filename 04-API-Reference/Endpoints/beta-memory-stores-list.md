@@ -2,7 +2,7 @@
 title: "List memory stores - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:22Z"
+fetched_at: "2026-10-20T06:37:06Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Flist)
 
 
 
@@ -142,7 +142,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -152,9 +152,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -225,13 +227,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -239,9 +243,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -250,10 +254,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Memory Stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores)
 
 # List memory stores
+
+Copy page
+
+
+
+cURL
 
 GET/v1/memory_stores
 
@@ -307,11 +317,21 @@ Opaque pagination cursor (a `page_...` value). Pass the `next_page` value from a
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `agent-memory-2026-07-22` or `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -519,6 +539,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -624,19 +648,17 @@ Response 200
 {
   "data": [
     {
-      "id": "id",
-      "archived_at": "2019-12-27T18:11:19.117Z",
-      "created_at": "2019-12-27T18:11:19.117Z",
-      "description": "description",
-      "metadata": {
-        "foo": "string"
-      },
-      "name": "name",
+      "id": "memstore_01Wf3kQ8tZxB2mVr7HcJ4aNd",
+      "archived_at": null,
+      "created_at": "2026-03-15T10:00:00Z",
+      "description": "Per-user preferences and project context.",
+      "metadata": {},
+      "name": "User Preferences",
       "type": "memory_store",
-      "updated_at": "2019-12-27T18:11:19.117Z"
+      "updated_at": "2026-03-15T10:00:00Z"
     }
   ],
-  "next_page": "next_page"
+  "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="
 }
 ```
 
@@ -650,13 +672,14 @@ Response 200
 {
   "data": [
     {
-      "id": "id",
-      "archived_at": "2019-12-27T18:11:19.117Z",
-      "created_at": "2019-12-27T18:11:19.117Z",
-      "description": "description",
-      "metadata": {
-        "foo": "string"
-      },
-      "name": "name",
+      "id": "memstore_01Wf3kQ8tZxB2mVr7HcJ4aNd",
+      "archived_at": null,
+      "created_at": "2026-03-15T10:00:00Z",
+      "description": "Per-user preferences and project context.",
+      "metadata": {},
+      "name": "User Preferences",
       "type": "memory_store",
-      "updated_at": "2019-12-27T18:11:19.117Z"
+      "updated_at": "2026-03-15T10:00:00Z"
+    }
+  ],
+  "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="

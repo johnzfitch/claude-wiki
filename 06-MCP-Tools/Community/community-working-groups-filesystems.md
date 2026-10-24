@@ -2,7 +2,7 @@
 title: "Filesystems Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/filesystems"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-09-19T06:28:50Z"
+fetched_at: "2026-10-21T06:29:00Z"
 tags: ["mcp", "mcp-community"]
 ---
 
@@ -80,7 +80,7 @@ Related Groups
 
 - **File Uploads WG.** Both groups transfer content to a server. Coordination needed on where an upload-oriented flow ends and a resource write operation begins.
 - **[Skills Over MCP WG](community-working-groups-skills-over-mcp.md).** The published [Skills extension](../Extensions/extensions-skills-overview.md) uses Resources for file reads and defines optional directory reading. It does not depend on filesystem write operations; coordinate on future resource operations that affect skills.
-- **Agents WG.** Multi-agent and job orchestration systems are the motivating consumers of a shared write path.
+- **Agents IG.** Multi-agent and job orchestration systems are the motivating consumers of a shared write path.
 
 
 [​](#leadership)

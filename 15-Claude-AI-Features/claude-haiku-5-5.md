@@ -2,7 +2,7 @@
 title: "Introducing Claude Haiku 5.5 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-haiku-5-5"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:34Z"
+fetched_at: "2026-10-20T06:41:17Z"
 tags: ["claude-ai"]
 ---
 
@@ -157,6 +157,7 @@ For developers, we’re also **updating our Claude Python and TypeScript SDKs to
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Claude in Chrome](https://claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -203,7 +204,7 @@ For developers, we’re also **updating our Claude Python and TypeScript SDKs to
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 
@@ -226,12 +227,12 @@ For developers, we’re also **updating our Claude Python and TypeScript SDKs to
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ### Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Status](https://status.anthropic.com/)
 - [Support center](https://support.claude.com/en/)
 

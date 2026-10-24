@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 The cheapest, fastest, and most capable small model we've ever released.
 
-[Try Claude](https://claude.ai/)[Get API access](../04-API-Reference/Other/usage-limits.md)
+[Try Claude](https://claude.ai/)[Get API access](../04-API-Reference/Other/playground.md)
 
 ## Announcements
 
@@ -183,7 +183,7 @@ On the Claude Platform, Haiku 5.5 costs \$0.10 per million input tokens and \$0.
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 
@@ -206,7 +206,7 @@ On the Claude Platform, Haiku 5.5 costs \$0.10 per million input tokens and \$0.
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ### Help and security

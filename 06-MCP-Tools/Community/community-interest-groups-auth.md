@@ -2,7 +2,7 @@
 title: "Authorization Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/auth"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-08-26T06:27:45Z"
+fetched_at: "2026-10-21T06:28:34Z"
 tags: ["authorization", "mcp", "mcp-community"]
 ---
 
@@ -88,7 +88,7 @@ Related Groups
 
 - **[Security IG](community-interest-groups-security.md)**: token-audience confusion, issuer validation, and account-linking risks sit at the boundary between the two groups
 - **[Transports WG](community-working-groups-transports.md)**: authorization is currently specified at the HTTP transport level; changes to transports affect where credentials are carried
-- **Agents WG**: delegated/on-behalf-of access and consent for multi-agent chains overlap heavily with agentic use cases
+- **Agents IG**: delegated/on-behalf-of access and consent for multi-agent chains overlap heavily with agentic use cases
 - **[Server Card WG](community-working-groups-server-card.md) / [Registry](community-working-groups-registry.md)**: client and server identity, discovery metadata, and trust establishment intersect with how authorization servers and resource servers are located and verified
 - **SDK Maintainers**: SDKs ship the auth client implementations; IG findings should inform cross-SDK auth ergonomics and defaults
 

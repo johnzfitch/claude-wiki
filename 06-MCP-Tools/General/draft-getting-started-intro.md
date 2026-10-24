@@ -1,8 +1,8 @@
 ---
 title: "What is the Model Context Protocol (MCP)? - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/draft/getting-started/intro"
+source_url: "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:27:33Z"
+fetched_at: "2026-10-21T06:29:02Z"
 tags: ["cli", "mcp", "security"]
 ---
 

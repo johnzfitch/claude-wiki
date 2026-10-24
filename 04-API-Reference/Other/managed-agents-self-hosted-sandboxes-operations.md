@@ -2,7 +2,7 @@
 title: "Monitor and troubleshoot self-hosted workers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-operations"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-03T06:31:36Z"
+fetched_at: "2026-10-19T06:28:04Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fself-hosted-sandboxes-operations)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fself-hosted-sandboxes-operations)
 
 
 
@@ -36,11 +36,11 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
@@ -48,7 +48,7 @@ Configure agent environment
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -58,7 +58,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -84,9 +88,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Self-hosted sandboxes
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Monitor and troubleshoot self-hosted workers
 
@@ -99,14 +111,6 @@ Read queue depth, stop sessions and workers without losing work, and fix common 
 Copy page
 
 
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 The monitoring calls on this page run from your monitoring or operations tooling, authenticated with your Claude API key. The worker helpers handle the claim and keep-alive loop, so you don't call those endpoints directly.
 
@@ -122,7 +126,7 @@ These endpoints accept either your organization API key or the environment key. 
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | `depth`            | Items waiting to be claimed.                                                                                                                                    | Scale your worker fleet or alert on backlog.                                                          |
 | `pending`          | Items claimed by a worker but not yet acknowledged. The worker helpers acknowledge each item before processing it, so this stays near zero in normal operation. | Detect a worker that stalled between claiming and acknowledging: alert on a sustained non-zero value. |
-| `oldest_queued_at` | Timestamp of the oldest item still in the queue, either waiting to be claimed or claimed but not yet acknowledged. `null` when there is none.                   | See how long the oldest item has waited.                                                              |
+| `oldest_queued_at` | Timestamp of the oldest item still in the queue, either waiting to be claimed or claimed but not yet acknowledged. `None` when there is no such item.           | See how long the oldest item has waited.                                                              |
 | `workers_polling`  | Workers that have polled in the last 30 seconds.                                                                                                                | Alert on liveness.                                                                                    |
 
 cURL
@@ -142,6 +146,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -196,6 +202,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -246,12 +254,12 @@ The worker logs mount and background sync failures rather than reporting them to
 
 If the worker cannot mount a memory store when it claims a session, it fails the work item. The session emits no error event and stays idle.
 
-| Symptom                                                                                                                                 | Cause                                                                                                                                                                                | Fix                                                                                                                                                                                                                         |
-|-----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| The worker log contains `the work item carried no sessions token` (in Go, the `ErrSessionMemoryNoToken` error) and the work item fails. | The work item's per-session `secret` did not reach the worker. Either your code did not forward it, or memory stores on self-hosted sandboxes are not enabled for your organization. | [Forward the work item's secret](managed-agents-self-hosted-sandboxes-workers.md#forward-the-work-items-secret). If the worker polls and runs sessions in one process and still logs this, contact support.           |
-| The worker log contains `something already exists at the memory store's path`.                                                          | A directory left over from a previous session, usually one whose worker was killed before its teardown ran.                                                                          | Remove the leftover directory that the log line names. Edits in it that had not synced are lost.                                                                                                                            |
-| The worker log contains `cannot create the memory store's folder` and `the worker host must make this mount path writable`.             | The user the worker runs as cannot create directories under `/mnt/memory`.                                                                                                           | Create `/mnt/memory` and `chown` it to that user. See [Prepare the host](managed-agents-self-hosted-sandboxes-memory.md#prepare-the-host).                                                                            |
-| The session sits `idle` with a `requires_action` stop reason and no error event shortly after a worker claimed it.                      | The worker failed the work item because it could not mount a memory store, for one of the preceding reasons.                                                                         | Fix the cause on the host, then send a [`user.interrupt`](managed-agents-events-and-streaming.md#integrating-events) event. The session's work is queued again, and the next worker that claims it retries the mount. |
+| Symptom                                                                                                                                 | Cause                                                                                                                                                                                | Fix                                                                                                                                                                                                                          |
+|-----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| The worker log contains `the work item carried no sessions token` (in Go, the `ErrSessionMemoryNoToken` error) and the work item fails. | The work item's per-session `secret` did not reach the worker. Either your code did not forward it, or memory stores on self-hosted sandboxes are not enabled for your organization. | [Forward the work item's secret](managed-agents-self-hosted-sandboxes-workers.md#forward-the-work-items-secret). If the worker polls and runs sessions in one process and still logs this, contact support.            |
+| The worker log contains `something already exists at the memory store's path`.                                                          | A directory left over from a previous session, usually one whose worker was killed before its teardown ran.                                                                          | Remove the leftover directory that the log line names. Edits in it that had not synced are lost.                                                                                                                             |
+| The worker log contains `cannot create the memory store's folder` and `the worker host must make this mount path writable`.             | The user the worker runs as cannot create directories under `/mnt/memory`.                                                                                                           | Create `/mnt/memory` and `chown` it to that user. See [Prepare the host](managed-agents-self-hosted-sandboxes-memory.md#prepare-the-host).                                                                             |
+| The session sits `idle` with a `requires_action` stop reason and no error event shortly after a worker claimed it.                      | The worker failed the work item because it could not mount a memory store, for one of the preceding reasons.                                                                         | Fix the cause on the host, then send a [`user.interrupt`](managed-agents-events-and-streaming.md#interrupt-the-agent) event. The session's work is queued again, and the next worker that claims it retries the mount. |
 
 ### A custom tool call never returns
 

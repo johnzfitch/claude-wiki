@@ -2,15 +2,48 @@
 title: "Economic Index: Uneven AI adoption \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:29:20Z"
+fetched_at: "2026-10-21T06:30:19Z"
 tags: ["api", "enterprise", "news-research"]
 ---
 
-# Anthropic Economic Index report: Uneven geographic and enterprise AI adoption
-
-Sep 15, 2025
+# **Anthropic Economic Index report: **Uneven geographic and enterprise AI adoption
 
 [Download PDF](https://assets.anthropic.com/m/218c82b858610fac/original/Economic-Index.pdf)
+
+- [01Introduction](#introduction)
+- [02Chapter 1: Claude.ai usage over time](#chapter-1-claudeai-usage-over-time)
+- [03 Chapter 2: Claude usage across the United States and the globe](#-chapter-2-claude-usage-across-the-united-states-and-the-globe)
+- [04Chapter 3: API enterprise deployment of Claude](#chapter-3-api-enterprise-deployment-of-claude)
+- [05Concluding remarks](#concluding-remarks)
+
+- Published
+
+  Sep 15, 2025
+
+- Team
+
+  [Economics](team-economics.md)
+
+- Topics
+
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
+  - [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
+
+  See more...
+
+Related articles
+
+- Economics
+
+  Jul 14, 2026
+
+  [How Canada uses Claude: Findings from the Anthropic Economic Index](how-canada-uses-claude.md)
+
+[View more](https://www.anthropic.com/search?topic=economic-index)
 
 ## Introduction
 
@@ -80,7 +113,6 @@ Key questions we hope this data will help others to investigate include:
 
 5\. Kremer, Willis, You, 2022 *Converging to Convergence* present evidence of growth convergence in recent decades. See Jones, Jones, and Aghion, 2017 *Artificial Intelligence and Economic Growth* for discussion of growth implications AI-powered automation of innovation.
 
-  
 ## Chapter 1: Claude.ai usage over time
 
 ### Overview
@@ -142,7 +174,6 @@ Most strikingly, the data point toward increased delegation of tasks to AI syste
 
 5\. Nelson and Phelps, 1966 *Investment in Humans, Technological Diffusion, and Economic Growth* is a classic reference for the value of education in equipping workers to adapt to change. See also Goldin and Katz, 2008 *The Race between Education and Technology*. We thank Anton Korinek for the observation that AI itself might accelerate the diffusion and economic impact of AI to the extent that it plays the role that skilled workers played in the past in figuring out how to effectively wield new technologies in novel settings.
 
-  
 ##  Chapter 2: Claude usage across the United States and the globe
 
 ### Overview
@@ -161,7 +192,7 @@ Even more striking: mature markets tend to use AI more collaboratively, while em
 
 Claude adoption overall is highly geographically concentrated. In terms of total global usage, the United States accounts for the highest share (21.6%), with the next highest usage countries showing significantly lower shares (India at 7.2%, Brazil at 3.7%, see Figure 2.1). However, this concentration is affected by the population size of each country^(**3**) – larger countries may have larger usage shares purely because of their population size.
 
-#### **Per capita usage of Claude is concentrated in technologically advanced countries**
+#### Per capita usage of Claude is concentrated in technologically advanced countries
 
 To account for differences in population size, we analyze usage adjusted for the working-age population, introducing a new measure called the Anthropic AI Usage Index (AUI): For each geography, we calculate its share of Claude usage, and its share of the working-age population (ages 15-64). We then calculate the AUI by dividing these shares:
 
@@ -171,7 +202,7 @@ The results reveal a striking pattern of concentration among small, technologica
 
 Next, we create per capita usage tiers based on the AUI. We look at countries with at least 200 conversations in our random sample of 1 million conversations, and set thresholds for different usage tiers-based quartiles, i.e. *Leading* (top 25%), *Upper Middle* (50-75%), *Lower Middle* (25%-75%) and *Emerging* (bottom 25%). We then assign countries, even if they have fewer than 200 observations, to a tier based on their AUI. We assign countries for which we have population data, but no usage in our sample, to a *Minimal* tier.^(**4**) Figure 2.3 illustrates the Anthropic AI Usage Index tiers across the globe, Table 2.1 shows an overview of the tiers and country examples.
 
-### **Zooming into leading and emerging countries in terms of per capita usage**
+### Zooming into leading and emerging countries in terms of per capita usage
 
 This concentration in advanced economies with limited population sizes reflects their established patterns as technology pioneers. For example, both Israel and Singapore rank highly in the [Global Innovation Index](https://www.wipo.int/web-publications/global-innovation-index-2024/en/gii-2024-at-a-glance.html)—a measure of how innovative different economies across the globe are—suggesting that general investments in information technology position economies well for rapid adoption of frontier AI. Overall, these economies can leverage their educated workforces, robust digital infrastructure, and innovation-friendly policies to create fertile conditions for AI.
 
@@ -197,14 +228,13 @@ This narrative becomes more complex, however, when we adjust for the population 
 
 We document a similar, but weaker correlation than at the global level between Claude adoption and income per capita across US states. Income differences explain less than half the variation in cross-state adoption rates. Despite this weaker correlation, we find that Claude adoption rises faster with income: Each 1% increase in state GDP per capita is associated with a 1.8% increase in the AI Usage Index.
 
-
 ### Task usage patterns across countries
 
 We observe notable variation in how Claude is used in different countries. As in past reports, we analyze these trends using two different approaches. First, we classify conversations into tasks according to O\*NET, a US taxonomy that maps specific tasks to occupations and occupation groups (e.g., a task involving software debugging would fall into the Computer and Mathematical occupation group).
 
 Second, we use Claude to construct a bottom-up taxonomy of user requests on Claude.ai, which provides insight into usage patterns that do not fit neatly into existing taxonomies. For example, the request cluster “help write and improve cover letters for job applications” (lowest level) feeds into the higher-level cluster “help with job applications, resumes, and career documents” (middle level), which in turn feeds into the cluster “help with job applications, resumes, and career advancement” (highest level). These two complementary approaches allow us to both report results aligned with standard labor statistics, and provide flexibility to capture tasks that standard taxonomies miss.
 
-#### **Higher per capita Claude usage is associated with more diverse task usage**
+#### Higher per capita Claude usage is associated with more diverse task usage
 
 When analyzing O\*NET tasks aggregated at the highest level (in terms of the Standard Occupation Classification occupation groups they belong to), we notice strong variation across countries. While the overall pattern is noisy–especially for countries with fewer observations–Figure 2.7 suggests that as we progress from lower to higher per capita Claude adoption, usage shifts away from tasks in the Computer and Mathematical occupation group (e.g., programming) to more diverse tasks in areas such as education, office and administrative uses, and arts. We also see increased usage in the life, physical and social sciences.
 
@@ -226,7 +256,7 @@ For example, California shows disproportionate use for IT-related requests, digi
 
 Within the US, D.C. leads in terms of per capita Claude usage, with a disproportionate focus on document editing, information provision and job applications across both the O\*NET task classification and bottom-up categorization (see Figure 2.10). For example, help with job applications is 1.84x as common in DC as in the US overall. Our [interactive dashboard](https://www.anthropic.com/economic-index#us-usage) allows everyone to explore the full range of variation and patterns across US states.
 
-### **Geographic patterns in human-AI collaboration**
+### Geographic patterns in human-AI collaboration
 
 While previous sections examined *what* tasks people use Claude for, an equally revealing pattern emerges in *how* they interact with it. Here, we use the same augmentation and automation collaboration patterns as defined in Chapter 1.
 
@@ -260,14 +290,13 @@ The geographic patterns of AI adoption—where it is used, for which tasks, and 
 
 9\. To isolate the relationship between automation preference and Claude usage accounting for task composition differences, we do the following: First, we calculate each country’s expected automation percentage by taking a weighted average. For each O\*NET task (e.g., coding, writing, or analysis), we multiply that task's share of the country's usage by the global automation rate for that task type (the percentage of that task that Claude completes via directive/feedback loop patterns globally). Summing these gives us the expected values for each country's automation percentage given the country’s specific task mix. We then regress both the actual automation % and AUI on this expected automation %. The residuals from these regressions represent the variation in each variable that cannot be explained by task composition. By examining the relationship between these residuals (known as partial regression analysis), we can determine whether countries that have higher AI usage than their task mix would predict tend also to have higher-than-predicted automation.
 
-  
 ## Chapter 3: API enterprise deployment of Claude
 
 ### Overview
 
 Whether frontier AI capabilities make us more productive, reshape labor markets, and accelerate growth will depend on when and how firms choose to deploy AI. Even when businesses recognize the potential of AI, profitably adopting it may require costly restructuring of production processes, training new workers, and other sunk-cost investments to facilitate effective deployment.^(**1**)
 
-To understand business adoption patterns of AI, we turn to a new data source: Anthropic's first-party (1P) API customers—again relying on [privacy-preserving methods](clio.md).^(**2**) Our API allows customers to integrate Claude directly into their own products and applications, and charges by the token used, rather than a flat subscription fee. This represents a fundamentally different product experience to [Claude.ai](http://claude.ai/redirect/website.v1.6a0ce887-8c71-48d9-8d18-ff998070f92c), which we focused on in the previous two chapters.
+To understand business adoption patterns of AI, we turn to a new data source: Anthropic's first-party (1P) API customers—again relying on [privacy-preserving methods](clio.md).^(**2**) Our API allows customers to integrate Claude directly into their own products and applications, and charges by the token used, rather than a flat subscription fee. This represents a fundamentally different product experience to [Claude.ai](http://claude.ai), which we focused on in the previous two chapters.
 
 Institutional inertia, alongside fixed costs of adoption, suggests that early examples of enterprise use of AI is likely to be concentrated among specialized tasks where deployment is easy, capabilities are robust, and the economic benefits from adoption are high.
 
@@ -371,7 +400,7 @@ Businesses looking to adopt AI effectively may need to restructure how they orga
 
 3\. Note that this is a different measure of adoption than in the introduction to this report. Reported adoption by consumers and employees of AI reached 40% in 2024 whereas when measured at the firm-level, nine out of ten businesses in the US report not using AI.
 
-4\. The Business Trends and Outlook Survey (BTOS), published by the Census Bureau, is a reputable barometer of AI adoption by firms in the US. The survey question we use to measure AI adoption is “In the last two weeks, did this business use Artificial Intelligence (AI) in producing goods or services? (Examples of AI: machine learning, natural language processing, virtual agents, voice recognition, etc.)”. See Crane, Green, and Soto 2025, *Measuring AI Uptake in the Workplace* for a comparison of BTOS with other measures of overall AI adoption among firms.
+4\. The Business Trends and Outlook Survey (BTOS), published by the Census Bureau, is a reputable barometer of AI adoption by firms in the US. The survey question we use to measure AI adoption is “In the last two weeks, did this business use Artificial Intelligence (AI) in producing goods or services? (Examples of AI: machine learning, natural language processing, virtual agents, voice recognition, etc.)”. See Crane, Green, and Soto 2025*,* *Measuring AI Uptake in the Workplace* for a comparison of BTOS with other measures of overall AI adoption among firms.
 
 5\. The Gini coefficient is a measure used to quantify inequality within a distribution, such as the distribution of task usage. It ranges from 0 to 1, where 0 represents perfect equality (every task has exactly the same usage share) and 1 represents perfect inequality (where one task accounts for all usage, and every other task has none).
 
@@ -393,7 +422,6 @@ Businesses looking to adopt AI effectively may need to restructure how they orga
 
 14\. For example, see Ide and Talamaś, 2025, *Artificial Intelligence in the Knowledge Economy*.
 
-  
 ## Concluding remarks
 
 This third iteration of the Anthropic Economic Index report captures AI adoption at a critical juncture. Existing capabilities of Claude and other frontier AI systems are already poised to transform economic activity, given how broadly applicable the technology is. Rapidly advancing AI capabilities only reinforce the conclusion that immense change is on the horizon.And yet early AI adoption is strikingly uneven. Usage currently clusters in a small set of tasks, with strong geographic variation that is highly correlated with income—particularly across countries. Such concentration reflects where AI capabilities, ease of deployment, and economic value align: coding and data analysis have high usage, while tasks requiring dispersed context or complex regulatory navigation are further behind.
@@ -410,11 +438,11 @@ By making this data public, we hope to enable others to investigate questions we
 
 History shows that the patterns of technological adoption aren’t fixed: they shift as the technologies mature, as complementary innovations emerge, and as societies make deliberate choices about their deployment. The patterns of highly concentrated use that we observe today may yet evolve towards a broader distribution—one that captures more of AI’s productivity-enhancing potential, accelerates innovation in lagging sectors, and enables new forms of economic value creation. We are still in the early stages of this AI-driven economic transformation. The actions that policymakers, business leaders and the public take now will shape the years to come. We’ll continue tracking these patterns as AI capabilities advance, and provide empirical grounding for navigating one of the most significant economic transitions of our time.
 
-1\. Brynjolfsson, Chandar, and Chen 2025, *Canaries in the Coal Mine? Six Facts about the RecentEmployment Effects of Artificial Intelligence* documents clear evidence that entry-level workers with high AI exposure have had relatively worse employment prospects since late 2022. Setting aside questions of causality, the straightforward interpretation is that this is due to AI substituting for work previously done by early-career workers. An alternative interpretation is presented by Gans 2025, *If AI and workers were strong complements, what would we see?*: That relatively faster employment growth for experienced workers reflects AI making such workers more productive and thus in high demand. Whether AI compliments or substitutes work is perhaps the most important question that we hope our data will help answer.  
+1\. Brynjolfsson, Chandar, and Chen 2025, *Canaries in the Coal Mine? Six Facts about the RecentEmployment Effects of Artificial Intelligence* documents clear evidence that entry-level workers with high AI exposure have had relatively worse employment prospects since late 2022. Setting aside questions of causality, the straightforward interpretation is that this is due to AI substituting for work previously done by early-career workers. An alternative interpretation is presented by Gans 2025, *If AI and workers were strong complements, what would we see?*: That relatively faster employment growth for experienced workers reflects AI making such workers more productive and thus in high demand. Whether AI compliments or substitutes work is perhaps the most important question that we hope our data will help answer.
 
-## Authors and Acknowledgments
+## Authors & Acknowledgments
 
-#### **Authors**
+### Contributors
 
 Ruth Appel\*, Peter McCrory\*, Alex Tamkin\*
 
@@ -422,13 +450,15 @@ Miles McCain, Tyler Neylon, Michael Stern
 
 *\*Lead authors. Contributed equally to this report*
 
-#### **Acknowledgements**
+### Acknowledgements
 
 Helpful comments, discussions, and other assistance: Alex Sanchez, Andrew Ho, Ankur Rathi, Asa Kittner, Ben Merkel, Bianca Lindner, Biran Shah, Carl De Torres, Cecilia Callas, Daisy McGregor, Dario Amodei, Deep Ganguli, Dexter Callender III, Esin Durmus, Evan Frondorf, Heather Whitney, Jack Clark, Jakob Kerr, Janel Thamkul, Jared Kaplan, Jared Mueller, Jennifer Martinez, Kaileen Kelly, Kamya Jagadish, Katie Streu, Keir Bradwell, Kelsey Nanan, Kevin Troy, Kim O'Rourke, Kunal Handa, Landon Goldberg, Linsey Fields, Lisa Cohen, Lisa Rager, Maria Gonzalez, Mengyi Xu, Michael Sellitto, Mike Schiraldi, Olivia Chen, Paola Renteria, Rebecca Jacobs, Rebecca Lee, Ronan Davy, Ryan Donegan, Saffron Huang, Sarah Heck, Stuart Ritchie, Sylvie Carr, Tim Belonax, Tina Chin, Zoe Richards
 
-#### **Citation**
+### Citation
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 @online{appelmccrorytamkin2025geoapi,
 
 author = {Ruth Appel and Peter McCrory and Alex Tamkin and Michael Stern and Miles McCain and Tyler Neylon},
@@ -440,132 +470,3 @@ date = {2025-09-15},
 year = {2025},
 
 url = {www.anthropic.com/research/anthropic-economic-index-september-2025-report},
-
-}
-```
-
-Copy
-
-  
-## Related content
-
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
-
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
-
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

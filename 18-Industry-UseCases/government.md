@@ -2,7 +2,7 @@
 title: "Claude for Government | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/government"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:10Z"
+fetched_at: "2026-10-23T06:30:19Z"
 tags: ["authorization", "case-studies", "enterprise", "security"]
 ---
 
@@ -239,9 +239,9 @@ Claude Enterprise includes SSO, domain capture, SCIM provisioning, role-based pe
 
 ### Does the Department of War’s supply chain risk designation affect our use of Claude?
 
-In March 2026, the Department of War (DoW, also referred to as the Department of Defense) designated Anthropic a supply chain risk. That designation applies only to the use of Claude as a direct part of DoW contracts and subcontracts. It does not apply to other federal agencies, to state or local governments, or to commercial use. For DoW contractors, it does not limit their use of Claude outside their covered DoW work.
+In March 2026, the Department of War (DoW, also referred to as the Department of Defense) designated Anthropic a supply chain risk. That designation, as currently in effect following the court’s orders, applies to the use of Claude as a direct part of DoW contracts and subcontracts. It does not apply to other federal agencies, to state or local governments, or to commercial use. For DoW contractors, it does not limit their use of Claude outside their covered DoW work.
 
-Anthropic is challenging the designation in court. On August 27, 2026, a federal court in the Northern District of California ruled that one supply chain risk designation was unlawful. A separate designation is still being challenged in the D.C. Circuit. Microsoft, Google, and Amazon have each confirmed that Claude remains available to their customers for work outside the DoW.
+Anthropic is challenging the designation in court. On August 27, 2026, a federal court in the Northern District of California ruled that one supply chain risk designation was unlawful. On September 25, 2026, the D.C. Circuit, in a 2-1 decision, upheld a separate designation and denied our petition for review; we are evaluating next steps. Claude remains available to commercial and non-DoW customers, including through our cloud partners.
 
 Learn more: [Where things stand with the Department of War.](../19-Reference/where-stand-department-war.md)
 
@@ -351,7 +351,8 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -369,12 +370,12 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -407,7 +408,7 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -425,6 +426,7 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -440,7 +442,7 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -475,7 +477,8 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -493,12 +496,12 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -531,7 +534,7 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -549,6 +552,7 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -564,7 +568,7 @@ Trusted AI that supports your mission. Talk to our public sector team about the 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

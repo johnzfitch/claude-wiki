@@ -2,7 +2,7 @@
 title: "Deploy MCP tunnels with Helm - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-helm"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:32:38Z"
+fetched_at: "2026-10-20T06:39:05Z"
 tags: ["api", "mcp"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "mcp"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fmcp-tunnels%2Fdeploy-helm)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fmcp-tunnels%2Fdeploy-helm)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -80,7 +80,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)MCP tunnels
 
@@ -185,6 +185,8 @@ The Install steps that follow note where to add the corresponding route.
 With programmatic access
 
 Without programmatic access
+
+With programmatic access
 
 The setup component exchanges the cluster's projected ServiceAccount token through your federation rule, fetches the tunnel token, generates a CA and server certificate, and registers the CA with Anthropic. A daily CronJob renews the server certificate as needed, so you don't handle any secrets by hand.
 
@@ -293,7 +295,7 @@ The setup component exchanges the cluster's projected ServiceAccount token throu
 
     The setup component runs as a Helm pre-install hook Job, so `helm install` blocks until it completes. On success Helm deletes the Job automatically. If `helm install` fails with a hook error, see [Setup component authentication failures](agents-and-tools-mcp-tunnels-troubleshooting.md#setup-component-authentication-failures).
 
-    When `tunnel.id` is empty, the setup component creates the tunnel in the workspace your federation rule targets (the organization's default workspace unless you set `api.wif.workspaceId`) and stores its ID and domain in the `mcp-tunnel` Secret. Find the domain you'll need for [verification](#verify-the-deployment) on the tunnel's detail page in the Console under **Manage \> MCP tunnels**, or read it from the Secret:
+    When `tunnel.id` is empty, the setup component creates the tunnel in the workspace your federation rule targets (the organization's default workspace unless you set `api.wif.workspaceId`) and stores its ID and domain in the `mcp-tunnel` Secret. Find the domain you'll need for [verification](#verify-the-deployment) on the tunnel's detail page, which you open from the [MCP tunnels](https://platform.claude.com/settings/workspaces/default/mcp-tunnels) page (`platform.claude.com/settings/workspaces/default/mcp-tunnels`) in the Console. In the workspace picker in the sidebar, select the workspace that holds the tunnel. You can also read the domain from the Secret:
 
     ``` shiki
     kubectl -n mcp-tunnel get secret mcp-tunnel \
@@ -306,6 +308,154 @@ The setup component exchanges the cluster's projected ServiceAccount token throu
 
     
     The `api.wif.*` values are identifiers, not secrets, so storing them in Helm release-history Secrets is not a risk. The sensitive data at rest is the `mcp-tunnel` Secret the setup component creates, which holds the tunnel token and TLS private keys. Apply your organization's standard practices for protecting Kubernetes Secrets to this namespace.
+
+Without programmatic access
+
+In this mode (`setup.enabled: false`) the chart makes no API calls; the setup component does not run and there is no cert-renew CronJob. Use this path if you'd rather not set up Workload Identity Federation.
+
+1.  1
+
+    ### Get the tunnel token and domain
+
+    [Create the tunnel](agents-and-tools-mcp-tunnels-console.md#create-a-tunnel) and [get the tunnel token from the Console](agents-and-tools-mcp-tunnels-console.md#get-the-connection-details).
+
+    
+    Record the tunnel domain from the detail page. You'll set it as `gateway.config.tunnel_domain`.
+
+2.  2
+
+    ### Generate a CA and server certificate
+
+    The proxy listens on plain WebSocket, with [inner TLS](agents-and-tools-mcp-tunnels-concepts.md#components) carried inside that stream using the certificate you generate here. The server certificate's SAN must include `*.<tunnel-domain>` per the [certificate requirements](agents-and-tools-mcp-tunnels-reference.md#certificate-requirements).
+
+    ``` shiki
+    export TUNNEL_DOMAIN=YOUR_TUNNEL_DOMAIN_HERE
+    mkdir -p mcp-tunnel/data
+    cd mcp-tunnel
+
+    # Self-signed CA. Explicit extensions so it satisfies the certificate
+    # requirements regardless of distro openssl.cnf defaults.
+    openssl req -x509 -newkey rsa:2048 -nodes \
+      -keyout data/ca.key -out data/ca.crt \
+      -days 3650 -subj "/CN=mcp-tunnel-ca" \
+      -addext "basicConstraints=critical,CA:TRUE" \
+      -addext "keyUsage=critical,keyCertSign,cRLSign" \
+      -addext "subjectKeyIdentifier=hash"
+
+    # Extension file for the server certificate. Using -extfile (instead of
+    # -copy_extensions, which is OpenSSL 3.0+ only) keeps this working on
+    # OpenSSL 1.1.x.
+    cat > data/tls.ext <<EOF
+    subjectAltName = DNS:${TUNNEL_DOMAIN},DNS:*.${TUNNEL_DOMAIN}
+    authorityKeyIdentifier = keyid,issuer
+    extendedKeyUsage = serverAuth
+    EOF
+
+    # Server certificate signed by the CA
+    openssl req -newkey rsa:2048 -nodes \
+      -keyout data/tls.key -out /tmp/server.csr \
+      -subj "/CN=${TUNNEL_DOMAIN}"
+    openssl x509 -req -in /tmp/server.csr \
+      -CA data/ca.crt -CAkey data/ca.key -CAcreateserial \
+      -out data/tls.crt -days 90 \
+      -extfile data/tls.ext
+    ```
+
+    
+
+    [Register `data/ca.crt` in the Console](agents-and-tools-mcp-tunnels-console.md#add-a-ca-certificate). Keep `data/ca.key` somewhere durable and secure; you'll need it to sign a fresh server certificate at renewal time.
+
+3.  3
+
+    ### Create the two Secrets
+
+    The chart reads specific keys; the Secret names are configurable but the keys are not. The following namespace-creation command is a no-op if the namespace already exists (for example, from the [sample MCP server](#optional-use-a-sample-mcp-server) step).
+
+    ``` shiki
+    kubectl create namespace mcp-tunnel --dry-run=client -o yaml | kubectl apply -f -
+    kubectl -n mcp-tunnel create secret generic mcp-tunnel-token \
+      --from-literal=tunnel-token='eyJ...'
+    kubectl -n mcp-tunnel create secret generic mcp-tunnel-cert \
+      --from-file=tls.crt=data/tls.crt \
+      --from-file=tls.key=data/tls.key
+    ```
+
+    
+
+4.  4
+
+    ### Fetch the default values
+
+    ``` shiki
+    helm show values \
+      oci://us-docker.pkg.dev/anthropic-public-registry/charts/mcp-tunnel \
+      --version 2.0.2 > values.yaml
+    ```
+
+    
+
+5.  5
+
+    ### Configure values for manual provisioning
+
+    Edit `values.yaml` and set the following keys:
+
+    values.yaml
+
+    
+
+    ``` shiki
+    setup:
+      enabled: false
+
+    external:
+      tunnelTokenSecretName: mcp-tunnel-token   # must contain key: tunnel-token
+      serverCertSecretName: mcp-tunnel-cert     # must contain keys: tls.crt, tls.key
+
+    gateway:
+      config:
+        # Required when setup.enabled is false. Replace the placeholder with
+        # the $TUNNEL_DOMAIN value you exported earlier. When setup.enabled
+        # is true the chart injects this from the Secret as a -tunnel-domain
+        # flag instead.
+        tunnel_domain: YOUR_TUNNEL_DOMAIN_HERE
+        routes:
+          docs: http://docs-mcp.internal:8080
+          search: http://search-mcp.internal:8080
+    ```
+
+    Some managed Kubernetes distributions allocate the Service CIDR outside the standard private ranges; if your routes target in-cluster Services, add `gateway.config.upstream.allowed_ips` here per [Upstream IP validation](agents-and-tools-mcp-tunnels-troubleshooting.md#upstream-ip-validation).
+
+    
+    If you're using the [sample MCP server](#optional-use-a-sample-mcp-server), set `routes` to `echo: http://hello-mcp:9000` instead.
+
+6.  6
+
+    ### Review the rendered manifests
+
+    ``` shiki
+    helm template mcp-tunnel \
+      oci://us-docker.pkg.dev/anthropic-public-registry/charts/mcp-tunnel \
+      --version 2.0.2 \
+      -n mcp-tunnel \
+      -f values.yaml > rendered.yaml
+    ```
+
+    
+
+7.  7
+
+    ### Install
+
+    ``` shiki
+    helm install mcp-tunnel \
+      oci://us-docker.pkg.dev/anthropic-public-registry/charts/mcp-tunnel \
+      --version 2.0.2 \
+      --namespace mcp-tunnel --create-namespace \
+      -f values.yaml
+    ```
+
+    
 
 ## Verify the deployment
 

@@ -2,7 +2,7 @@
 title: "List chats - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/chats/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:14Z"
+fetched_at: "2026-10-20T06:39:47Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -229,7 +231,11 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -237,9 +243,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -255,6 +261,10 @@ To enable the Compliance API, see the setup guide.
 4.  [Chats](https://platform.claude.com/docs/en/api/http/compliance/apps/chats)
 
 # List chats
+
+Copy page
+
+
 
 GET/v1/compliance/apps/chats
 
@@ -428,6 +438,16 @@ maxItems10
 
 ##### Headers
 
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
 "x-api-key": optional string
 
 
@@ -484,7 +504,7 @@ name: string
 
 
 
-Chat name/title
+Chat name. Empty when `deleted_at` is set.
 
 organization_uuid: string
 

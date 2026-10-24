@@ -2,7 +2,7 @@
 title: "Set up Claude for Intune | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17203415-set-up-claude-for-intune"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:23Z"
+fetched_at: "2026-10-23T06:29:13Z"
 tags: ["claude-ai"]
 ---
 
@@ -53,62 +53,74 @@ Before employees can sign in, an admin in your Microsoft Entra tenant needs to g
 
 **Grant admin consent.** A tenant admin opens the following URL, replacing {organization} with your tenant ID or domain: `https://login.microsoftonline.com/{organization}/adminconsent?client_id=bb747f0e-002b-4882-9960-916fe00a2b90`
 
-To confirm it worked, in the Microsoft Entra admin center go to Enterprise applications, open "Claude for Intune (Public)", and select "Permissions." **Microsoft Mobile Application Management** should be listed on the "Admin consent" tab. If it isn't, select "Grant admin consent" on that page.
+To confirm it worked, in the Microsoft Entra admin center go to Enterprise applications, open "Claude for Intune (Public)", and select Permissions. "Microsoft Mobile Application Management" should be listed on the "Admin consent" tab. If it isn't, select "Grant admin consent" on that page.
 
-**Note:** Signing in at claude.ai with "Continue with Microsoft" does not grant this consent.
+**Note:** Employees signing in to Claude for Intune with "Continue with Microsoft" does not grant this consent; an Entra admin has to grant it.
 
 If employees are signed out within a few seconds of signing in, this step has most likely not been completed. After granting admin consent, ask them to delete Claude for Intune, reinstall it, and sign in again.
 
-To require app protection at sign-in, target the Conditional Access rule at “All resources” with Grant = Require app protection policy. A rule that names only Office 365 or Claude SSO does not cover Claude for Intune. Microsoft Authenticator must be installed on the device.
+To require app protection at sign-in, target the Conditional Access rule at "All resources" with Grant = Require app protection policy. A rule that names only Office 365 or Claude SSO does not cover Claude for Intune. Microsoft Authenticator must be installed on the device.
 
 ## Add Claude for Intune in the Microsoft Intune admin center
 
-### 1. Add Claude for Intune to your managed apps and make it available to BYOD devices.
+### 1. Install Claude for Intune on employees’ devices
 
-1.  In the Microsoft Intune admin center, select “Apps” from the left side navigation panel:
+How employees get Claude for Intune depends on how their iPhone or iPad is managed:
 
+- **Personal devices not enrolled in Intune (app protection only):** You don’t need to add or assign the app in Intune. Employees install Claude for Intune from the App Store (it appears there as "**[Claude Intune](https://apps.apple.com/us/app/claude-intune/id6812855318)**") and sign in with "Continue with Microsoft." Your app-protection policy (step 2) applies after they sign in.
 
-2.  Under Platforms, select “iOS/iPadOS”:
+  - Optional: to also list it in Company Portal, add it as an iOS store app and assign the user group as "Available with or without enrollment."
 
+- **Devices enrolled with Apple User Enrollment:** Employees install Claude for Intune from the App Store themselves. Intune can’t install an app added as an "iOS store app" on these devices, and Company Portal shows "This device needs to be managed before you can install apps."
 
-3.  Click “+ Create.” For the App type, select the “iOS store app,” and click the “Select” button on the bottom:
+- **Company-owned devices enrolled in Intune:** Add Claude for Intune as an iOS store app and assign it to a user or device group using the steps below. Employees install it from Company Portal, or you can make the assignment Required to push it to their devices.
 
+To add Claude for Intune for enrolled company-owned devices:
 
-4.  Search “Claude for Intune” and click the “Select" button on the bottom.
-
-5.  In **App Information**, set **Minimum operating system** to iOS 18, then click the “Next” button:
-
-
-6.  For **Assignments**, add a group of users to make it available in their device’s Company Portal:
+1.  In the Microsoft Intune admin center, select "Apps" from the left side navigation panel:
 
 
-7.  Click “Next,” review and create.
-
-8.  Users have to download the app from Company Portal on their devices for access.
-
-### 2. Apply an app-protection policy to Claude for Intune.
-
-1.  In the Microsoft Intune admin center, select “Apps” from the left side navigation panel:
+2.  Under Platforms, select "iOS/iPadOS":
 
 
-2.  Under **Manage apps**, select “Protection”:
+3.  Click "+ Create." For the App type, select the "iOS store app," and click the "Select" button on the bottom:
 
 
-3.  Click “+ Create” and then select “iOS/iPadOS”:
+4.  Search "Claude for Intune" and click the "Select" button on the bottom.
+
+5.  In **App Information**, set **Minimum operating system** to iOS 18, then click the "Next" button:
 
 
-4.  Enter Name in the **Basics** tab, then click “Next” to **Apps**. Set **Target policy to** “Selected apps.” Click “+ Select custom apps”:
+6.  For **Assignments**, add the groups that should get the app: under Required to install it automatically, or under Available for enrolled devices so employees can install it from Company Portal. You can use user groups or device groups.
 
 
-5.  Type in the bundle ID `com.anthropic.claudeforintune`. Select it so it appears under **Selected Apps** before clicking “Select”:
+7.  Click "Next," review and create.
+
+8.  If you assigned the app as Required, it installs automatically; if Available, employees install it from Company Portal.
+
+### 2. Apply an app-protection policy to Claude for Intune
+
+1.  In the Microsoft Intune admin center, select "Apps" from the left side navigation panel:
 
 
-6.  In Apps, confirm the bundle ID now appears under **Custom apps** before clicking “Next”:
+2.  Under **Manage apps**, select "Protection":
+
+
+3.  Click "+ Create" and then select "iOS/iPadOS":
+
+
+4.  Enter Name in the **Basics** tab, then click "Next" to **Apps**. Set **Target policy to** "Selected apps." Click "+ Select custom apps":
+
+
+5.  Type in the bundle ID `com.anthropic.claudeforintune`. Select it so it appears under **Selected Apps** before clicking "Select":
+
+
+6.  In Apps, confirm the bundle ID now appears under **Custom apps** before clicking "Next":
 
 
 7.  Configure the Data protection, Access requirements, and Conditional launch settings as needed.
 
-8.  In the **Assignments** tab, add a user group to assign the policy to them.
+8.  In the **Assignments** tab, assign the policy to a user group that includes everyone who will use Claude for Intune—app-protection policies can only target user groups, not device groups. Make sure it also applies to unmanaged devices: don't limit it to Intune-managed devices with the device-type setting or an assignment filter, or employees on personal phones get signed out right after signing in*.*
 
 9.  Review and create.
 
@@ -126,6 +138,6 @@ Claude for Intune doesn't yet appear in Microsoft's list of protected apps, so y
 
 1.  Follow the steps in **[Apply an app-protection policy to Claude for Intune](#h_5fda0300e8).**
 
-2.  When you select apps, choose “Select custom apps” and enter the bundle ID `com.anthropic.claudeforintune`.
+2.  When you select apps, choose "Select custom apps" and enter the bundle ID `com.anthropic.claudeforintune`.
 
-After Microsoft adds Claude for Intune to its protected apps list, you'll select it from the list of public apps instead of using “Select custom apps.”
+After Microsoft adds Claude for Intune to its protected apps list, you'll select it from the list of public apps instead of using "Select custom apps."

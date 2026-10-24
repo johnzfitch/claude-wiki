@@ -2,7 +2,7 @@
 title: "Adapt to new model personas after deprecations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 category: "20-Models"
-fetched_at: "2026-10-10T06:24:32Z"
+fetched_at: "2026-10-23T06:28:57Z"
 tags: ["models"]
 ---
 
@@ -21,7 +21,7 @@ Below are a set of strategies and recommendations for adapting to model transiti
 
 - **[Enabling memory and allowing Claude to search past chats](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)** can help new models to learn and immediately adapt to your preferences and communication style.
 
-- **[Projects](../22-Safety-Policy/how-can-i-create-and-manage-projects.md)** offer another means of personalization, and can include custom instructions for Claude as well as custom context, which again can help new models understand and adapt to your needs and preferences.
+- **[Projects](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)** offer another means of personalization, and can include custom instructions for Claude as well as custom context, which again can help new models understand and adapt to your needs and preferences.
 
 - Using these personalization strategies can be thought of as giving feedback to new models. If you find that a new model is more or less talkative than you’d prefer, or has a different tone, you can shape the model’s behavior within a conversation, within a project, or across your entire account using the strategies above. If you’re not sure how to describe the qualities you’re looking for, you can ask Claude to review some of the conversations you’ve most appreciated and to craft instructions for itself based on those.
 

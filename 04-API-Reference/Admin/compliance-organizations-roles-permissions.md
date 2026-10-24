@@ -2,7 +2,7 @@
 title: "Permissions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/roles/permissions"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:55Z"
+fetched_at: "2026-10-20T06:39:51Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations%2Froles%2Fpermissions)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations%2Froles%2Fpermissions)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -204,6 +206,8 @@ Organizations
 
 Users
 
+User Preferences
+
 Roles
 
 
@@ -226,13 +230,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -240,9 +246,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -258,6 +264,10 @@ To enable the Compliance API, see the setup guide.
 4.  [Roles](https://platform.claude.com/docs/en/api/http/compliance/organizations/roles)
 
 # Permissions
+
+Copy page
+
+
 
 ##### [List Compliance Role Permissions](https://platform.claude.com/docs/en/api/http/compliance/organizations/roles/permissions/list)
 

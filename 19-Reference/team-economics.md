@@ -2,196 +2,278 @@
 title: "Economics \\ Anthropic"
 source_url: "https://www.anthropic.com/research/team/economics"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:46:20Z"
-tags: ["news-research"]
+fetched_at: "2026-10-23T06:29:30Z"
+tags: ["agents", "news-research"]
 ---
 
-# Economics
+# The Economics team studies and monitors the impact of AI systems on individuals, firms, and economies. We publish and fund research that helps policymakers and the public understand and prepare for the transformations ahead.
 
-The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity. Through rigorous data collection and analysis, we track AI's real-world economic effects and publish research that helps policymakers, businesses, and the public understand and prepare for the changes ahead.
+Economic Futures Program  
+[Learn more](https://www.anthropic.com/economic-futures)
 
-Research teams:[Alignment](team-alignment.md)[Economics](team-economics.md)[Interpretability](team-interpretability.md)[Societal Impacts](team-societal-impacts.md)[Frontier Red Team](team-frontier-red-team.md)
+The Anthropic Institute  
+[Visit](https://www.anthropic.com/institute)
 
-### What We Do
+Economic Index  
+[View data](https://www.anthropic.com/economic-index)
 
-We build the empirical foundation for understanding AI's economic impact. Our flagship Anthropic Economic Index tracks how AI tools are actually being used around the world and across every sector of the economy—moving beyond speculation to measure adoption patterns as they unfold. Alongside our index reports, we produce novel research that studies the implications of AI usage and diffusion—as tracked in the index—for workers, for firms, and for the broader economy.
+### Our mission
 
-### Why It Matters
+We build the foundation for understanding AI’s economic impact. The Anthropic Economic Index tracks how AI tools are being used around the world and across every sector of the economy. Alongside regular Economic Index reports, we produce novel research that studies the economic implications of AI, and fund ambitious external research.
 
-Economic transitions create both opportunity and disruption. The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and helps society navigate this transition in ways that are broadly beneficial.
+### Producing reliable data to guide policy
+
+The speed of AI development means the stakes are unusually high. We need reliable data to inform the decisions that workers, employers, and policymakers make about the future. Our research provides evidence to address uncertainty and help society navigate this transition.
 
 
-## Scenarios for our Economic Future
+[Economics](team-economics.md)
 
+Sep 9, 2026
+
+
+## Scenarios for our economic future
 
 Anthropic’s Economics team is sharing a new model of how AI may affect economic growth, jobs, wages, and more by 2030. The model lets you explore the scenarios, tell us what you think will happen, and see how your answers compare to +10,000 Americans.
 
+[Read more](https://www.anthropic.com/institute/econ-scenarios)
 
-EconomicsJun 26, 2026
+[Economics](team-economics.md)
 
-#### Anthropic Economic Index report: Cadences
-
-In our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?
-
-
-EconomicsMar 24, 2026
-
-#### Anthropic Economic Index report: Learning curves
-
-Anthropic's fifth Economic Index report studies Claude usage in February 2026, building on the economic primitives framework introduced in our previous report.
+Sep 30, 2026
 
 
-EconomicsApr 22, 2026
+## What work can robots do?
 
-#### What 81,000 people told us about the economics of AI
+We built an index of how well today’s robots can perform US job tasks. Robots can already do three-quarters of physical tasks, mostly in limited settings, but are cost-competitive for just 0.3% of them.
 
-Our recent survey study with 81,000 Claude users provides a way to connect people’s economic concerns with what we’ve quantified in Claude traffic.
+[Read more](what-work-can-robots-do.md)
+
+[Economics](team-economics.md)
+
+Sep 24, 2026
 
 
-EconomicsMar 5, 2026
+## Project Swap: What happens when agents trade for us?
 
-#### Labor market impacts of AI: A new measure and early evidence
+To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes.
 
-In this paper, we present a new framework for understanding AI’s labor market impacts, and test it against early data.
+[Read more](project-swap.md)
 
-## Publications
+01
 
-Search
+/
 
-DateCategoryTitle
+03
 
-  Aug 12, 2026Economics
+25
 
-  Reviewing the evidence on worker retraining programs
-  Jul 14, 2026Economics
+ARTICLES
 
-  How Canada uses Claude: Findings from the Anthropic Economic Index
-  Jun 26, 2026Economics
+Most recent
 
-  Anthropic Economic Index report: Cadences
-  Jun 16, 2026Economics
+Grid view
 
-  Agentic coding and persistent returns to expertise
-  May 27, 2026Economics
+- 
+- 
+- 
+- 
+- 
+- 
 
-  Coding agents in the social sciences
-  Apr 22, 2026Economics
+Oct 16, 2026
 
-  Announcing the Anthropic Economic Index Survey
-  Apr 22, 2026Economics
+### [Working at the frontier shapes expectations for the future](expectations-for-the-future.md)
 
-  What 81,000 people told us about the economics of AI
-  Mar 31, 2026Economics
+Oct 16, 2026
 
-  How Australia uses Claude: Findings from the Anthropic Economic Index
-  Mar 24, 2026Economics
+### [How employment is changing at Anthropic](employment-at-anthropic.md)
 
-  Anthropic Economic Index report: Learning curves
-  Mar 5, 2026Economics
+Oct 16, 2026
 
-  Labor market impacts of AI: A new measure and early evidence
+### [The AI expectations gap](ai-expectations-gap.md)
 
-[See more](#)
+Sep 30, 2026
 
-[](https://www.anthropic.com/)
+### [What work can robots do?](what-work-can-robots-do.md)
 
-### Products
+Sep 24, 2026
 
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
+### [Project Swap: What happens when agents trade for us?](project-swap.md)
 
-### Models
+Sep 9, 2026
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/research/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/research/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/research/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
+### [Scenarios for our economic future](https://www.anthropic.com/institute/econ-scenarios)
 
-### Solutions
+Aug 12, 2026
 
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
+### [Reviewing the evidence on worker retraining programs](reviewing-the-evidence-on-worker-retraining-programs.md)
 
-### Claude Platform
+Jul 14, 2026
 
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+### [How Canada uses Claude: Findings from the Anthropic Economic Index](how-canada-uses-claude.md)
 
-### Resources
+Jun 26, 2026
 
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
+### [Anthropic Economic Index report: Cadences](economic-index-june-2026-report.md)
 
-### Programs
+Jun 16, 2026
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+### [Agentic coding and persistent returns to expertise](claude-code-expertise.md)
 
-### Help and security
+Apr 22, 2026
 
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
+### [What 81,000 people told us about the economics of AI](81k-economics.md)
 
-### Company
+Apr 22, 2026
 
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+### [Announcing the Anthropic Economic Index Survey](economic-index-survey-announcement.md)
+
+Mar 31, 2026
+
+### [How Australia uses Claude: Findings from the Anthropic Economic Index](how-australia-uses-claude.md)
+
+Mar 24, 2026
+
+### [Anthropic Economic Index report: Learning curves](economic-index-march-2026-report.md)
+
+Mar 18, 2026
+
+### [What 81,000 people want from AI](https://www.anthropic.com/features/81k-interviews)
+
+Mar 5, 2026
+
+### [Labor market impacts of AI: A new measure and early evidence](labor-market-impacts.md)
+
+Feb 16, 2026
+
+### [India Country Brief: The Anthropic Economic Index](india-brief-economic-index.md)
+
+Jan 15, 2026
+
+### [Anthropic Economic Index report: Economic primitives](anthropic-economic-index-january-2026-report.md)
+
+Jan 15, 2026
+
+### [Anthropic Economic Index: New building blocks for understanding AI use](economic-index-primitives.md)
+
+Nov 25, 2025
+
+### [Estimating AI productivity gains from Claude conversations](estimating-productivity-gains.md)
+
+Oct 14, 2025
+
+### [Preparing for AI’s economic impact: exploring policy responses](economic-policy-responses.md)
+
+Sep 15, 2025
+
+### [Anthropic Economic Index: Tracking AI’s role in the US and global economy](economic-index-geography.md)
+
+Sep 15, 2025
+
+### [Anthropic Economic Index report: Uneven geographic and enterprise AI adoption](anthropic-economic-index-september-2025-report.md)
+
+Apr 28, 2025
+
+### [Anthropic Economic Index: AI’s impact on software development](impact-software-development.md)
+
+See more
+
+## Explore work from other teams
+
+
+### Alignment
+
+47 posts
+
+Works to understand the risks of AI models and develop ways to ensure future ones remain helpful, honest, and harmless.
+
+
+### Engineering
+
+27 posts
+
+Builds the infrastructure and systems that make Claude reliable and trustworthy.
+
+
+### Frontier Red Team
+
+34 posts
+
+Stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next.
+
+
+### Interpretability
+
+35 posts
+
+Studies how large language models work internally as a foundation for AI safety.
+
+
+### Societal Impacts
+
+24 posts
+
+Studies how AI affects people, both individually and collectively.
+
+
+### Science
+
+18 posts
+
+Explores how AI can increase the pace of scientific progress through both research and collaborations.
+
+
+### Economics
+
+25 posts
+
+Studies and monitors the impact of AI systems on individuals, firms, and economies.
+
+
+### Alignment
+
+47 posts
+
+Works to understand the risks of AI models and develop ways to ensure future ones remain helpful, honest, and harmless.
+
+
+### Engineering
+
+27 posts
+
+Builds the infrastructure and systems that make Claude reliable and trustworthy.
+
+
+### Frontier Red Team
+
+34 posts
+
+Stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next.
+
+
+### Interpretability
+
+35 posts
+
+Studies how large language models work internally as a foundation for AI safety.
+
+
+### Societal Impacts
+
+24 posts
+
+Studies how AI affects people, both individually and collectively.
+
+
+### Science
+
+18 posts
+
+Explores how AI can increase the pace of scientific progress through both research and collaborations.
+
+
+### Economics
+
+25 posts
+
+Studies and monitors the impact of AI systems on individuals, firms, and economies.

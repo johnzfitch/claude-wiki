@@ -2,7 +2,7 @@
 title: "Roadmap - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/development/roadmap"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-08-23T06:25:48Z"
+fetched_at: "2026-10-21T06:28:35Z"
 tags: ["mcp"]
 ---
 
@@ -52,8 +52,8 @@ Priority Areas
 
 Core Maintainers: [**Caitie McCaffrey**](https://github.com/CaitieM20), [**Clare Liguori**](https://github.com/clareliguori), [**Peter Alexander**](https://github.com/pja-ant) Agentic workloads need [messaging patterns](../Spec/2026-07-28-basic-patterns.md) beyond request and response: work that runs for minutes, servers that push, results that stream, and a way to steer work mid-flight. MCP has grown a set of concepts for this, including [Tasks](../Extensions/extensions-tasks-overview.md), [`subscriptions/listen`](../Spec/2026-07-28-basic-patterns-subscriptions.md), and [progress notifications](../Spec/draft-basic-patterns-progress.md), spread across multiple Working Groups. The risk is three answers to “the server isn’t done yet” that don’t share a lifecycle, a cancellation model, or an error surface. We want them to compose. **This roadmap period:**
 
-- **Server-initiated events**: [Triggers & Events WG](../Community/community-working-groups-triggers-events.md). Channels and subscriptions for push delivery, including webhooks. As we take on asynchronous workloads through Tasks and other events, we need extensions that let servers tell clients when work has finished, without relying purely on expensive client-side polling.
-- **A composition review**: [Agents](../Community/community-working-groups-agents.md), Transports, and [Triggers & Events](../Community/community-working-groups-triggers-events.md) WGs. Primitives in the making, such as Tasks and Triggers, need to compose cleanly with each other and fit concrete use cases.
+- **Server-initiated events**: [Tasks & Events WG](../Community/community-working-groups-tasks-events.md). Channels and subscriptions for push delivery, including webhooks. As we take on asynchronous workloads through Tasks and other events, we need extensions that let servers tell clients when work has finished, without relying purely on expensive client-side polling.
+- **A composition review**: [Tasks & Events](../Community/community-working-groups-tasks-events.md) and Transports WGs, with the [Agents](../Community/community-interest-groups-agents.md) IG. Primitives in the making, such as Tasks and Triggers, need to compose cleanly with each other and fit concrete use cases.
 
 Beyond these, we expect continued work on Tasks ([SEP-2663](../SEPs/seps-2663-tasks-extension.md)) toward eventual inclusion of the extension in the core protocol.
 

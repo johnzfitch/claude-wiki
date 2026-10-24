@@ -2,7 +2,7 @@
 title: "Decagon Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/decagon"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:45Z"
+fetched_at: "2026-10-23T06:29:53Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -36,30 +36,30 @@ With Claude, Decagon:
 
 - Reduced over-inferencing rates by 70%
 - Powers support for both B2B and B2C companies across multiple industries - from consumer platforms like Eventbrite to business software like Rippling
-- Sees higher customer satisfaction due to Claude's ability to follow complex instructions and policies exactly
+- Sees higher customer satisfaction due to Claude’s ability to follow complex instructions and policies exactly
 - Decreased their own customer support volume, freeing up times and resources for growing their business
 
-## Delivering AI-powered support that doesn't feel like AI
+## Delivering AI-powered support that doesn’t feel like AI
 
-Decagon addresses a critical challenge for enterprises: providing affordable, high-quality, personalized customer support. Traditional automated systems frustrate customers with irrelevant help articles or generic responses. As Ashwin Sreenivas, CTO and co-founder of Decagon, explains, "Most automated solutions either point you to a generic help article or give you a list of steps to follow. Even recent AI-powered tools feel impersonal and put the burden on the customer to do all the work. We saw an opportunity to create something that truly acts like a skilled support agent - understanding your specific situation and taking care of everything for you."
+Decagon addresses a critical challenge for enterprises: providing affordable, high-quality, personalized customer support. Traditional automated systems frustrate customers with irrelevant help articles or generic responses. As Ashwin Sreenivas, CTO and co-founder of Decagon, explains, “Most automated solutions either point you to a generic help article or give you a list of steps to follow. Even recent AI-powered tools feel impersonal and put the burden on the customer to do all the work. We saw an opportunity to create something that truly acts like a skilled support agent - understanding your specific situation and taking care of everything for you.”
 
 ## Proven excellence in navigating business logic and enterprise security
 
-After evaluating various AI models, Decagon selected Claude for its ability to digest and act on complex instructions and for its enterprise-grade security. "Claude is uniquely skilled at understanding and following intricate, multi-step processes with high accuracy," says Sreenivas. "It can navigate the nuanced business logic of each company's support processes, while catching potential errors before they happen."
+After evaluating various AI models, Decagon selected Claude for its ability to digest and act on complex instructions and for its enterprise-grade security. “Claude is uniquely skilled at understanding and following intricate, multi-step processes with high accuracy,” says Sreenivas. “It can navigate the nuanced business logic of each company’s support processes, while catching potential errors before they happen.”
 
 ## Flexible, reliable AI that customers use a million different ways
 
-Thanks to Claude, Decagon's customers are deploying AI agents that adhere to their policies and practices with remarkable accuracy, representing their brand voice with high fidelity in every interaction. Substack, a self-publishing platform, uses agents to assist writers with platform-specific questions, troubleshoot publishing issues, and explain monetization options. Rippling, a back-office platform for small businesses, replaced their automated decision-tree logic with a Claude-powered agent to guide clients through complex HR and payroll processes while ensuring compliance with local regulations.
+Thanks to Claude, Decagon’s customers are deploying AI agents that adhere to their policies and practices with remarkable accuracy, representing their brand voice with high fidelity in every interaction. Substack, a self-publishing platform, uses agents to assist writers with platform-specific questions, troubleshoot publishing issues, and explain monetization options. Rippling, a back-office platform for small businesses, replaced their automated decision-tree logic with a Claude-powered agent to guide clients through complex HR and payroll processes while ensuring compliance with local regulations.
 
-With Claude, end-users resolve issues without human intervention in most cases. Sreenivas explains, "It's not just about answering questions - our AI agents actually complete tasks for customers. Rather than giving instructions for a refund, the agent checks your eligibility, processes the refund through the payment system, and handles all the steps a human agent would have done. From the customer's perspective, it's as good as talking to a skilled support representative."
+With Claude, end-users resolve issues without human intervention in most cases. Sreenivas explains, “It’s not just about answering questions - our AI agents actually complete tasks for customers. Rather than giving instructions for a refund, the agent checks your eligibility, processes the refund through the payment system, and handles all the steps a human agent would have done. From the customer’s perspective, it’s as good as talking to a skilled support representative.”
 
 ## The future of personalized support across the customer journey
 
-Decagon sees AI-powered support as the start of a broader revolution in customer experience. Sreenivas says, "We're in the business of understanding how organizations want to interface with their customers. Once we understand that core DNA, we can help scale it across every touchpoint." Beyond basic support, Decagon envisions AI agents that proactively guide customers to success, educate prospects, seamlessly handle sales qualification, and accelerate onboarding. By automating routine interactions, these AI solutions enable employees to focus on building relationships and growing the business.
+Decagon sees AI-powered support as the start of a broader revolution in customer experience. Sreenivas says, “We’re in the business of understanding how organizations want to interface with their customers. Once we understand that core DNA, we can help scale it across every touchpoint.” Beyond basic support, Decagon envisions AI agents that proactively guide customers to success, educate prospects, seamlessly handle sales qualification, and accelerate onboarding. By automating routine interactions, these AI solutions enable employees to focus on building relationships and growing the business.
 
-Looking ahead, Sreenivas envisions a future of universal personalized service, saying "For consumers, the impact will be transformative. Everyone will have access to hyper-personalized, on-demand support - even at 2AM on Christmas morning. For businesses, it's a game-changer because they can finally give all customers a white-glove experience without breaking the bank. And for support agents, it's a positive shift. They can move away from repetitive questions and focus on what humans excel at - building relationships and solving complex problems that require empathy and nuanced understanding."
+Looking ahead, Sreenivas envisions a future of universal personalized service, saying “For consumers, the impact will be transformative. Everyone will have access to hyper-personalized, on-demand support - even at 2AM on Christmas morning. For businesses, it’s a game-changer because they can finally give all customers a white-glove experience without breaking the bank. And for support agents, it’s a positive shift. They can move away from repetitive questions and focus on what humans excel at - building relationships and solving complex problems that require empathy and nuanced understanding.”
 
-With Claude's help, Decagon is working to make this vision a reality for businesses of all sizes across diverse industries. By combining Claude's advanced capabilities with their deep understanding of customer interactions, they're not just improving support - they're transforming how businesses and customers connect, one conversation at a time.
+With Claude’s help, Decagon is working to make this vision a reality for businesses of all sizes across diverse industries. By combining Claude’s advanced capabilities with their deep understanding of customer interactions, they’re not just improving support - they’re transforming how businesses and customers connect, one conversation at a time.
 
 ## Related stories
 
@@ -84,7 +84,8 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -102,12 +103,12 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -140,7 +141,7 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -158,6 +159,7 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -173,7 +175,7 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -208,7 +210,8 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -226,12 +229,12 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -264,7 +267,7 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -282,6 +285,7 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -297,7 +301,7 @@ With Claude's help, Decagon is working to make this vision a reality for busines
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Bito Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/bito"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:41Z"
+fetched_at: "2026-10-23T06:29:33Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,35 +41,35 @@ With Claude, Bito:
 
 ## Pioneering how developers integrate AI into their workflows
 
-When Bito launched their AI-powered developer agents in 2023, they were early pioneers bringing large language models into code-writing environments. Amar Goel, CEO and Co-Founder of Bito, explains, "When we started building Bito, our main objective was to seamlessly integrate AI into software developers' everyday workflows, increasing productivity and efficiency in writing excellent, clean code."
+When Bito launched their AI-powered developer agents in 2023, they were early pioneers bringing large language models into code-writing environments. Amar Goel, CEO and Co-Founder of Bito, explains, “When we started building Bito, our main objective was to seamlessly integrate AI into software developers’ everyday workflows, increasing productivity and efficiency in writing excellent, clean code.”
 
-Bito's mission was to enhance software team operations. Their first innovation was an AI Code Review Agent that "completes a detailed code review like a human," followed by more advanced tools like Bito Wingman, "a coding agent that understands complex commands and acts on your behalf," according to Goel. The challenge was creating a solution that provided developers with real-time contextual support while maintaining high security standards—a tool for code generation, error handling, and architectural advice.
+Bito’s mission was to enhance software team operations. Their first innovation was an AI Code Review Agent that “completes a detailed code review like a human,” followed by more advanced tools like Bito Wingman, “a coding agent that understands complex commands and acts on your behalf,” according to Goel. The challenge was creating a solution that provided developers with real-time contextual support while maintaining high security standards—a tool for code generation, error handling, and architectural advice.
 
 ## Choosing Claude for superior reasoning and coding capabilities
 
-After evaluating various AI models, Bito selected Claude. Goel said, "We chose Claude for its superior understanding of complex technical queries and safe handling of sensitive data. Its ability to understand and generate executable code set it apart from other LLMs." Three key capabilities made Claude the perfect match for Bito's requirements: its powerful reasoning abilities that provide incredible agentic capabilities to Wingman, superior context management for navigating large codebases and interconnected files, and a robust approach to data protection that ensures no customer code is stored and no customer code is used for training models.
+After evaluating various AI models, Bito selected Claude. Goel said, “We chose Claude for its superior understanding of complex technical queries and safe handling of sensitive data. Its ability to understand and generate executable code set it apart from other LLMs.” Three key capabilities made Claude the perfect match for Bito’s requirements: its powerful reasoning abilities that provide incredible agentic capabilities to Wingman, superior context management for navigating large codebases and interconnected files, and a robust approach to data protection that ensures no customer code is stored and no customer code is used for training models.
 
-Thanks to Anthropic's developer-friendly infrastructure, the implementation process was smooth. Goel explained, "Integrating Claude in Bito Wingman was seamless due to Anthropic's well-structured API and documentation. The extended context window enabled Bito’s AI Code Review Agent and Wingman to analyze entire code files and complex pull request diffs, providing detailed suggestions and architectural insights."
+Thanks to Anthropic’s developer-friendly infrastructure, the implementation process was smooth. Goel explained, “Integrating Claude in Bito Wingman was seamless due to Anthropic’s well-structured API and documentation. The extended context window enabled Bito’s AI Code Review Agent and Wingman to analyze entire code files and complex pull request diffs, providing detailed suggestions and architectural insights.”
 
-## How Claude powers Bito's developer productivity solutions
+## How Claude powers Bito’s developer productivity solutions
 
 Bito uses Claude to transform engineering team workflows across their tools, including:
 
-- **AI Code Review Agent**: Bito transforms code review by leveraging Claude's extensive context window to analyze diffs, file relationships, and architectural patterns within pull requests. The system provides semantic feedback on code quality, identifies anti-patterns, and flags potential security flaws, with suggestions delivered as comments within the pull request and the engineering teams' Git workflows.
+- **AI Code Review Agent**: Bito transforms code review by leveraging Claude’s extensive context window to analyze diffs, file relationships, and architectural patterns within pull requests. The system provides semantic feedback on code quality, identifies anti-patterns, and flags potential security flaws, with suggestions delivered as comments within the pull request and the engineering teams’ Git workflows.
 - **Bito Wingman**: This coding agent takes meaningful action across the development ecosystem. Developers interact with a coding agent that can execute complicated commands and take action. From integrations with Jira and Confluence, Wingman can retrieve and understand scoped tasks then write or refactor code before compiling, reviewing, and testing. Claude 3.7 Sonnet provides this advanced reasoning capabilities.
-- **IDE Extensions**: Bito integrates Claude's capabilities into popular development environments like VS Code and JetBrains, ensuring AI assistance is available where developers need it without disrupting established workflows.
+- **IDE Extensions**: Bito integrates Claude’s capabilities into popular development environments like VS Code and JetBrains, ensuring AI assistance is available where developers need it without disrupting established workflows.
 
 ## Transforming software development for teams worldwide
 
-Bito's Claude-powered tools have transformed engineering workflows with measurable results. Goel confirms that based on feedback from companies like PubMatic, Gainsight, and Privado, "Bito's AI tooling boosts pull request cycles to be 89% faster — 1/10th the time from open to merge — with 34% fewer regressions." The impact extends beyond technical efficiency to financial returns, with teams reporting a "\$14 return per \$1 spent on AI developer tooling" while recovering "1 full work day per sprint" previously lost to tedious review processes.
+Bito’s Claude-powered tools have transformed engineering workflows with measurable results. Goel confirms that based on feedback from companies like PubMatic, Gainsight, and Privado, “Bito’s AI tooling boosts pull request cycles to be 89% faster — 1/10th the time from open to merge — with 34% fewer regressions.” The impact extends beyond technical efficiency to financial returns, with teams reporting a “\$14 return per \$1 spent on AI developer tooling” while recovering “1 full work day per sprint” previously lost to tedious review processes.
 
-Bito delivers exceptional value for mission-critical applications. On-Board Data Systems (OBDS), which develops aircraft software, has seen remarkable results. In its first month developing software for aircraft with Bito, OBDS's engineering teams found 473 issues across 136,500 lines of reviewed code. OBDS's team accepted 22% of Bito's suggestions without modification. The impact extends to Bito, whose internal product development has accelerated significantly. One employee compared the experience to "using Tesla Autopilot for the first time. It's a remarkable improvement to the status quo."
+Bito delivers exceptional value for mission-critical applications. On-Board Data Systems (OBDS), which develops aircraft software, has seen remarkable results. In its first month developing software for aircraft with Bito, OBDS’s engineering teams found 473 issues across 136,500 lines of reviewed code. OBDS’s team accepted 22% of Bito’s suggestions without modification. The impact extends to Bito, whose internal product development has accelerated significantly. One employee compared the experience to “using Tesla Autopilot for the first time. It’s a remarkable improvement to the status quo.”
 
 ## Building the future of software development with AI
 
-Bito envisions AI transforming the coding experience. Goel said, "Bito Wingman pushes the boundaries of 'coding' in 2025," highlighting the shift from assistive tools to agentic systems acting on developers' behalf. This vision centers on tools that don't just augment existing workflows but pioneer new approaches to software creation.
+Bito envisions AI transforming the coding experience. Goel said, “Bito Wingman pushes the boundaries of ‘coding’ in 2025,” highlighting the shift from assistive tools to agentic systems acting on developers’ behalf. This vision centers on tools that don’t just augment existing workflows but pioneer new approaches to software creation.
 
-The ongoing partnership with Anthropic is crucial to this transformation. Goel said, "Anthropic's innovation and platform accessibility are crucial to Bito's mission to redefine developer productivity." Together, Bito and Anthropic aim to refine Claude's capabilities for software development, building a future where AI and human developers collaborate seamlessly to create better software faster than ever before.
+The ongoing partnership with Anthropic is crucial to this transformation. Goel said, “Anthropic’s innovation and platform accessibility are crucial to Bito’s mission to redefine developer productivity.” Together, Bito and Anthropic aim to refine Claude’s capabilities for software development, building a future where AI and human developers collaborate seamlessly to create better software faster than ever before.
 
 ## Related stories
 
@@ -94,7 +94,8 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -112,12 +113,12 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -150,7 +151,7 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -168,6 +169,7 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -183,7 +185,7 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -218,7 +220,8 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -236,12 +239,12 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -274,7 +277,7 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -292,6 +295,7 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -307,7 +311,7 @@ The ongoing partnership with Anthropic is crucial to this transformation. Goel s
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

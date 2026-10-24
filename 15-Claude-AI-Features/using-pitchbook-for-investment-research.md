@@ -2,7 +2,7 @@
 title: "Using PitchBook for investment research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-09T06:28:18Z"
+fetched_at: "2026-10-23T06:28:58Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai", "search"]
 
 Set up and use PitchBook Premium's integration with Claude for accessing private capital market data, company profiles, investor information, and deal details.
 
-10 minClaude.ai
+10 minClaude
 
 [Open Claude](https://claude.ai/new)
 

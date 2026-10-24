@@ -2,7 +2,7 @@
 title: "Manage model access for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15694740-manage-model-access-for-your-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:46Z"
+fetched_at: "2026-10-23T06:29:10Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -66,7 +66,7 @@ Effort limits determine how much computation members can apply per response on e
 
 4.  Click "Save."
 
-If any custom role has an effort cap higher than the new organization cap for that model, the role's cap is lowered to match. Members see only effort levels at or below the organization cap in their model menu. Available effort levels differ depending on the model, and some models don't support effort level settings at all. For an explanation of each level, see **[Change the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
+If any custom role has an effort cap higher than the new organization cap for that model, the role's cap is lowered to match. Members see only effort levels at or below the organization cap in their model menu. Available effort levels differ depending on the model, and some models don't support effort level settings at all. For an explanation of each level, see **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
@@ -102,7 +102,7 @@ Effort limits determine how much computation members on a role can apply per res
 5.  Click "Save" to save your changes.
 
 
-Members on the role see only effort levels at or below the cap in their model menu. Note that available effort levels differ depending on the model, and some models don’t support effort level settings at all. For an explanation of each level, see **[Change the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
+Members on the role see only effort levels at or below the cap in their model menu. Note that available effort levels differ depending on the model, and some models don’t support effort level settings at all. For an explanation of each level, see **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
@@ -142,4 +142,4 @@ Model access settings are enforced across these products:
 
 If your organization also configures Claude Code through `managed-settings.json`, the `availableModels` setting and model access work together. In Claude Code CLI and IDE, members see only models that appear in `availableModels` *and* are enabled by their model access settings—a model removed by either one is unavailable.
 
-Managed settings for models apply only to Claude Code CLI and IDE, not to Claude Code on web or desktop. For consistent behavior across all Claude Code surfaces, we recommend using model access settings alone. For more on managed settings, see **[Claude Code settings](../02-Claude-Code-CLI/settings.md#settings-files)**.
+Managed settings for models apply only to local Claude Code sessions in your terminal or IDE, not to cloud sessions or to Claude Code in Claude Desktop. For consistent behavior across all Claude Code surfaces, we recommend using model access settings alone. For more on managed settings, see **[Claude Code settings](../02-Claude-Code-CLI/settings.md#settings-files)**.

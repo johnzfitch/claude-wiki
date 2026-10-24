@@ -2,7 +2,7 @@
 title: "Super Teacher Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/super-teacher"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:02Z"
+fetched_at: "2026-10-23T06:30:10Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,29 +41,29 @@ With Claude, Super Teacher:
 
 ## Meeting the challenges of AI-powered education
 
-"Creating an AI tutor requires two key components: building a platform for automated instruction at scale, and developing educational content for that platform," said Tim Novikoff, founder of Super Teacher. To meet their safety bar, their team needed to ensure that no code or content reached children without explicit human review and approval. The team needed a solution to rapidly produce engaging lessons and interactive games while maintaining these standards.
+“Creating an AI tutor requires two key components: building a platform for automated instruction at scale, and developing educational content for that platform,” said Tim Novikoff, founder of Super Teacher. To meet their safety bar, their team needed to ensure that no code or content reached children without explicit human review and approval. The team needed a solution to rapidly produce engaging lessons and interactive games while maintaining these standards.
 
 ## Choosing Claude for safety and performance
 
-Super Teacher evaluated AI models from Google Research, Meta, OpenAI, and others through regular internal hackathons. Novikoff said, "According to our engineers, Claude consistently outperformed other models. With Anthropic's strong reputation for AI safety and focus on delivering real value over hype, we decided to go all-in with them." This emphasis on safety and performance was crucial for Super Teacher's work with young students, where reliability and trust are paramount. The team was also impressed by how quickly they could implement Claude, with Novikoff noting that "getting started with Claude took us less than a day."
+Super Teacher evaluated AI models from Google Research, Meta, OpenAI, and others through regular internal hackathons. Novikoff said, “According to our engineers, Claude consistently outperformed other models. With Anthropic’s strong reputation for AI safety and focus on delivering real value over hype, we decided to go all-in with them.” This emphasis on safety and performance was crucial for Super Teacher’s work with young students, where reliability and trust are paramount. The team was also impressed by how quickly they could implement Claude, with Novikoff noting that “getting started with Claude took us less than a day.”
 
 ## How Claude transforms educational development
 
-"Claude lets our engineers focus on high-level development, while our content creators can concentrate on the most fulfilling aspects of their jobs rather than routine tasks," said Novikoff. "This frees our content creators—former elementary school teachers—to enhance AI-generated content with vibrant graphics, music, sound effects, and age-appropriate humor, which is the type of work they love to do."
+“Claude lets our engineers focus on high-level development, while our content creators can concentrate on the most fulfilling aspects of their jobs rather than routine tasks,” said Novikoff. “This frees our content creators—former elementary school teachers—to enhance AI-generated content with vibrant graphics, music, sound effects, and age-appropriate humor, which is the type of work they love to do.”
 
-Super Teacher uses Claude in two distinct ways. For software development, Claude generates initial code for educational games and interactive components, which undergoes human engineer review before deployment. For content creation, Claude provides first drafts of lessons that experienced teachers transform into engaging learning experiences. Novikoff emphasized their commitment to quality and safety by saying, "No code goes into production without explicit human review and approval."
+Super Teacher uses Claude in two distinct ways. For software development, Claude generates initial code for educational games and interactive components, which undergoes human engineer review before deployment. For content creation, Claude provides first drafts of lessons that experienced teachers transform into engaging learning experiences. Novikoff emphasized their commitment to quality and safety by saying, “No code goes into production without explicit human review and approval.”
 
 ## Delivering measurable impact for schools
 
-The impact on development speed has transformed how Super Teacher builds educational tools. In one memorable example, an engineer needed to create a spelling game similar to one he had previously built years ago. Novikoff said, "Instead of spending weeks coding from scratch, the engineer described what he needed to Claude. Within hours, the game was 80% complete. This kind of acceleration allows us to focus on enhancing the educational experience rather than on the basic implementation."
+The impact on development speed has transformed how Super Teacher builds educational tools. In one memorable example, an engineer needed to create a spelling game similar to one he had previously built years ago. Novikoff said, “Instead of spending weeks coding from scratch, the engineer described what he needed to Claude. Within hours, the game was 80% complete. This kind of acceleration allows us to focus on enhancing the educational experience rather than on the basic implementation.”
 
-The efficiency gains extend beyond individual projects. Super Teacher has created and maintains over 1,000 lessons across their platform while adhering to strict safety standards. "We take no risks with children, or their data and privacy," said Novikoff. "Claude helps make our engineering team and lesson creators more productive without compromising our commitment to safety and quality."
+The efficiency gains extend beyond individual projects. Super Teacher has created and maintains over 1,000 lessons across their platform while adhering to strict safety standards. “We take no risks with children, or their data and privacy,” said Novikoff. “Claude helps make our engineering team and lesson creators more productive without compromising our commitment to safety and quality.”
 
 ## Building the future of AI-enhanced education
 
-"Our goal with AI is the same as our goal with everything: serving children with high quality private tutoring at home, and differentiated instruction in the classroom," said Novikoff. "AI is simply a tool to help us achieve this mission." While other companies sometimes chase hype, haphazardly incorporating AI in ways that backfire when it comes to how children are served, Super Teacher remains focused on using Claude to create real educational value.
+“Our goal with AI is the same as our goal with everything: serving children with high quality private tutoring at home, and differentiated instruction in the classroom,” said Novikoff. “AI is simply a tool to help us achieve this mission.” While other companies sometimes chase hype, haphazardly incorporating AI in ways that backfire when it comes to how children are served, Super Teacher remains focused on using Claude to create real educational value.
 
-The company is now collaborating with Anthropic to transform how AI serves education. Novikoff concludes, "We're looking forward to working with Anthropic to build an AI tutor that will fulfill the true promise of this technology—not just generating headlines, but delivering meaningful educational experiences that help every child succeed."
+The company is now collaborating with Anthropic to transform how AI serves education. Novikoff concludes, “We’re looking forward to working with Anthropic to build an AI tutor that will fulfill the true promise of this technology—not just generating headlines, but delivering meaningful educational experiences that help every child succeed.”
 
 ## Related stories
 
@@ -88,7 +88,8 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -106,12 +107,12 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -144,7 +145,7 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -162,6 +163,7 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -177,7 +179,7 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -212,7 +214,8 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -230,12 +233,12 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -268,7 +271,7 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -286,6 +289,7 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -301,7 +305,7 @@ The company is now collaborating with Anthropic to transform how AI serves educa
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

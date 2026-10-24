@@ -2,7 +2,7 @@
 title: "Claude in Slack: Tag @Claude in any thread | Claude by Anthropic"
 source_url: "https://www.claude.com/product/tag"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:29:08Z"
+fetched_at: "2026-10-23T06:29:57Z"
 tags: ["claude-ai", "enterprise", "prompting", "security", "slack"]
 ---
 
@@ -12,7 +12,7 @@ tags: ["claude-ai", "enterprise", "prompting", "security", "slack"]
 
 [Add to Slack (opens in new tab)](https://api.anthropic.com/integrations/v1/slack/install)[Read documentation (opens in new tab)](https://www.claude.com/docs/claude-tag/overview)
 
-Available in beta for Claude Enterprise and Team customers in Slack.
+Available for Claude Enterprise and Team customers in Slack.
 
 > “Claude Tag doesn’t just do the work — it challenges our thinking, provokes better questions, and elevates our judgement rather than replacing it. And we still feel very much in control throughout.”
 
@@ -144,7 +144,7 @@ Ask @Claude to query your data and it posts results like metrics, benchmarks, an
 
 ### Build from the thread
 
-Turn a bug report into a draft PR from the context is in the thread without ever leaving Slack. Get more done without switching tabs.
+Turn a bug report into a draft PR from the context in the thread without ever leaving Slack. Get more done without switching tabs.
 
 ## Prompt
 
@@ -166,9 +166,9 @@ See what @Claude can do for your team.
 
 The longer Claude works with your team, the more it understands how your organization thinks, how decisions get made, and who owns what.
 
-### Memory across threads and days
+### Memory across threads and days within a channel
 
-Context can draw on previous conversations and memory. What happened in Monday's standup is still there on Thursday, without anyone repeating it.
+Context can draw on previous conversations and channel-scoped memory. What happened in Monday's standup can still be referenced on Thursday, without anyone repeating it.
 
 ### A shared resource in your channel
 
@@ -242,7 +242,7 @@ Producing customer-ready collateral, compiling weekly issue reports, and running
 
 ## @Claude connects to your tools
 
-Configure any tool with an API using Agent Identity. Claude can query, act, and report back in the thread where the work is happening.
+Configure tools with an API using Agent Identity. Claude can query, act, and report back in the thread where the work is happening.
 
 [Read more](https://www.claude.com/resources/articles/agent-identity-access-model)
 
@@ -291,7 +291,8 @@ Claude now works alongside your team, under its own account, in the places you a
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -309,12 +310,12 @@ Claude now works alongside your team, under its own account, in the places you a
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -347,7 +348,7 @@ Claude now works alongside your team, under its own account, in the places you a
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -365,6 +366,7 @@ Claude now works alongside your team, under its own account, in the places you a
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -380,7 +382,7 @@ Claude now works alongside your team, under its own account, in the places you a
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -415,7 +417,8 @@ Claude now works alongside your team, under its own account, in the places you a
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -433,12 +436,12 @@ Claude now works alongside your team, under its own account, in the places you a
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -471,7 +474,7 @@ Claude now works alongside your team, under its own account, in the places you a
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -489,6 +492,7 @@ Claude now works alongside your team, under its own account, in the places you a
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -504,7 +508,7 @@ Claude now works alongside your team, under its own account, in the places you a
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

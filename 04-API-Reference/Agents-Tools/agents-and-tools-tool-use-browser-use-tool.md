@@ -2,7 +2,7 @@
 title: "Browser use tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-05T06:37:44Z"
+fetched_at: "2026-10-21T06:29:21Z"
 tags: ["api", "security"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "security"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fbrowser-use-tool)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fbrowser-use-tool)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,9 +78,17 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Tools
+
+Browser use tool
+
+[ZDR](../Other/manage-claude-api-and-data-retention.md)
+
+Eligible
+
+excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 # Browser use tool
 
@@ -94,13 +102,9 @@ Let Claude navigate, read, and interact with webpages in your own browser enviro
 
 
 
-Browser use tool
+
 
-[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
-
-Eligible
-
-excludes [Covered Models](../Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+**Start with the SDK toolsets:** The Python and TypeScript SDKs have a browser toolset class, in beta. Start from [a partner's integration](agents-and-tools-tool-use-browser-use-sdk.md#partner-integrations), or see [Browser and computer use with the SDK toolsets](agents-and-tools-tool-use-browser-use-sdk.md). Use this page as the tool reference, or when you handle the tool calls yourself.
 
 The browser use tool lets Claude navigate, read, and interact with webpages in a browser that your application runs. Claude works with the page both through its structure (the accessibility tree, elements, forms, and tabs) and through screenshots and viewport coordinates.
 
@@ -131,6 +135,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -281,6 +287,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -312,7 +320,11 @@ def capture_screenshot() -> list[ImageBlockParam]:
     return [
         {
             "type": "image",
-            "source": {"type": "base64", "media_type": "image/png", "data": PLACEHOLDER_PNG},
+            "source": {
+                "type": "base64",
+                "media_type": "image/png",
+                "data": PLACEHOLDER_PNG,
+            },
         }
     ]
 
@@ -347,6 +359,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -932,7 +946,7 @@ The API validates the toolset entry and every member `tool_use` and `tool_result
 
 Browser use follows the standard [tool use pricing](agents-and-tools-tool-use-overview.md#pricing). When using the browser use tool:
 
-**Toolset definition overhead:** Declaring `browser_toolset_20260801` with its default members adds about 6,600 input tokens to a request (about 6,610 on Claude Fable 5, Claude Mythos 5, Claude Opus 5, and Claude Opus 4.8, and about 6,670 on Claude Sonnet 5), which covers the member tool definitions and the tool use system prompt. Enabling all four optional members adds about 880 tokens, and disabling members with `configs` reduces the count. The exact count for a request is reported in the response `usage`, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
+**Toolset definition overhead:** Declaring `browser_toolset_20260801` with its default members adds about 6,600 input tokens to a request (about 6,670 on Claude Sonnet 5 and about 6,610 on the other supported models), which covers the member tool definitions and the tool use system prompt. Enabling all four optional members adds about 880 tokens, and disabling members with `configs` reduces the count. The exact count for a request is reported in the response `usage`, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
 
 **Additional token consumption:**
 
@@ -943,9 +957,15 @@ Browser use follows the standard [tool use pricing](agents-and-tools-tool-use-ov
 
 If you also use the computer use tool, bash tool, text editor tool, or your own tools alongside browser use, those tools have their own token costs as documented on their respective pages.
 
-The browser session, downloads, and uploaded files stay in your environment; the screenshots, page text, and tab state you return are part of your API request content and follow the standard retention policy, or your ZDR arrangement if you have one. The browser use tool is ZDR eligible; see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md) for retention periods and eligibility across features.
+The browser session, downloads, and uploaded files stay in your environment; the screenshots, page text, and tab state you return are part of your API request content and follow the standard retention policy, or your ZDR arrangement if you have one. The browser use tool is ZDR eligible; see [API and data retention](../Other/manage-claude-api-and-data-retention.md) for retention periods and eligibility across features.
 
 ## Next steps
+
+
+
+[Browser and computer use with the SDK toolsets](agents-and-tools-tool-use-browser-use-sdk.md)
+
+Start from a partner's driver, or write your own in Python or TypeScript. The SDK runs the loop and the checks you configure.
 
 
 
@@ -972,6 +992,7 @@ Supported models
 - Mythos 5 and 5.1
 - Opus 4.8, 5, and 5.5
 - Sonnet 5 and 5.5
+- Haiku 5.5
 
 Supported platforms  
 - Claude API

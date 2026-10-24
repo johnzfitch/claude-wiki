@@ -2,7 +2,7 @@
 title: "Claude Security | Claude by Anthropic"
 source_url: "https://www.claude.com/product/claude-security"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:29:08Z"
+fetched_at: "2026-10-23T06:29:57Z"
 tags: ["claude-ai", "enterprise", "security"]
 ---
 
@@ -10,27 +10,27 @@ tags: ["claude-ai", "enterprise", "security"]
 
 From scan to fix, done seamlessly
 
-Claude scans your codebase with Claude Mythos 5.1, validates findings, and suggests patches you can review and approve. Available in public beta for Claude Enterprise.
+Claude scans your codebase with Claude Mythos, validates findings, and suggests patches you can review and approve. Available in public beta for Claude Enterprise.
 
 [Contact sales](https://www.claude.com/contact-sales)[Read the tutorial](https://academy.claude.com/tutorials/getting-started-with-claude-security)
 
 ## How teams use Claude Security
 
-Claude reasons through your code like a skilled security researcher. It understands context, traces data flows, and catches vulnerabilities that pattern-matching tools miss. Then it suggests a fix.
+Claude reasons through your code like a skilled security researcher. It understands context, traces data flows, and catches vulnerabilities that pattern-matching tools miss. Then it suggests and tracks fixes.
 
-### Scan your code in parallel
+### Keep up with your code
 
-Claude Security understands context, traces data flows across files, and identifies complex, multi-component vulnerability patterns that traditional scanners might not detect.
+Claude runs a deep first scan, then keeps scanning as your code changes. It traces data flows across files and repositories to find vulnerabilities traditional scanners might not detect.
 
 ### Validate findings
 
-Every finding goes through an adversarial verification pass. Claude challenges its own results before surfacing them. More real issues get reported, and fewer false positives waste analyst time.
+Every finding passes adversarial verification before it reaches your team. A threat model your team can edit decides what’s worth flagging.
 
-### Review and patch
+### Review, fix, and track
 
-Claude detects issues and proposes fixes. Every finding includes a recommended patch for teams to review and approve. Fix vulnerabilities quickly rather than adding them to a growing backlog.
+Every finding includes a recommended patch for your team to review and approve. Claude marks it fixed once the fix ships, so vulnerabilities get closed instead of piling up in a backlog.
 
-Claude Security Plugin for Claude Code now in beta.
+The Claude Security Plugin for Claude Code is now in beta
 
 Scan, validate, and patch directly inside Claude Code while keeping all code inside your environment.
 
@@ -48,13 +48,13 @@ Suggested fixes that maintain your code's structure and style
 
 ### Fits your existing workflow
 
-Push findings via webhooks to Slack or Jira, export for audit, and schedule recurring scans
+Get findings into your tools through webhooks and the API, then review and resolve them without leaving Claude Code
 
 ### Full remediation control
 
 Teams stay in control, with every patch requiring human review and approval
 
-### Powered by Claude Mythos 5.1
+### Powered by Claude Mythos
 
 Scan your codebase with our most cyber-capable model
 
@@ -92,11 +92,11 @@ The [Claude Security plugin](../02-Claude-Code-CLI/claude-security.md) is now av
 
 ### What Mythos access does this give me?
 
-Claude Security scans now run on Claude Mythos 5.1 for all Enterprise customers. You get Mythos-quality vulnerability findings without needing direct access to the model.
+Claude Security is powered by our full family of models, including Claude Mythos, with no Cyber Verification Program access required.
 
-Connect a GitHub repository and Claude Security scans it with Claude Mythos 5.1. Validated findings come back with confidence ratings and suggested patches, which you can open in Claude Code on the web and fix using the models available in your account.
+Create a project, connect your repositories, and Claude Security scans them using our most capable models for cyber, including Claude Mythos models. Validated findings come back with severity ratings and suggested fixes, which you can open in Claude Code and fix using the models available in your account.
 
-*Scans powered by Claude Mythos 5.1 are only available in the Claude Security app on Claude.ai. The Claude Security plugin for Claude Code only uses the models available in your Claude Code account.*
+*Scans powered by Claude Mythos models are only available in the Claude Security app on Claude.ai. The Claude Security plugin for Claude Code uses the models available in your Claude Code account.*
 
 ### What are the security risks I should know about?
 
@@ -112,11 +112,13 @@ Traditional tools often use rule-based pattern matching, which catches known vul
 
 ### Does Claude Security work with my existing security tools?
 
-Yes. Claude Security is built to feed into the tools your team already uses. Send findings to Slack, Jira, or any ticketing system via webhooks, or export results as CSV or Markdown for tracking and audit. Documented dismissals carry forward, so triage decisions made in Claude Security stay visible wherever your team works.
+Yes. The Claude Security API lets you pull findings into your ticketing, vulnerability management, and reporting tools. You can also resolve or reopen them from there. Webhooks notify your systems when you receive a new finding.
 
-### Can I scan part of a repository, or run scans on a schedule?
+Claude Security is also available as an MCP connector in Claude and Claude Code, so an engineer can pull up a finding, start the fix, and mark it resolved in the same session.
 
-Yes to both. You can scope a scan to a specific directory, and you can configure scheduled scans for ongoing coverage without manual kickoffs.
+### Do I need to schedule scans?
+
+No. Choose the branch and scope for each repository, and Claude runs a deep baseline scan. After that it keeps scanning changes regularly based on their risk and complexity, so your findings stay close to the current state of your code.
 
 [](https://www.claude.com/)
 
@@ -127,7 +129,8 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -145,12 +148,12 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -183,7 +186,7 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -201,6 +204,7 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -216,7 +220,7 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -251,7 +255,8 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -269,12 +274,12 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -307,7 +312,7 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -325,6 +330,7 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -340,7 +346,7 @@ Yes to both. You can scope a scan to a specific directory, and you can configure
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

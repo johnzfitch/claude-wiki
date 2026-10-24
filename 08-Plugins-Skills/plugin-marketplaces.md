@@ -2,7 +2,7 @@
 title: "Create a marketplace - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugin-marketplaces"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-10T06:27:46Z"
+fetched_at: "2026-10-23T06:28:22Z"
 tags: ["claude-code", "plugins"]
 ---
 

@@ -2,7 +2,7 @@
 title: "CLI quickstart - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/quickstart"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:33Z"
+fetched_at: "2026-10-20T06:40:20Z"
 tags: ["api", "authentication", "cli"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication", "cli"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fquickstart)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fquickstart)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
@@ -78,8 +78,47 @@ curl (Linux/WSL)
 
 Go
 
+Homebrew (macOS)
+
 ```python
 brew install anthropics/tap/ant
+```
+
+
+
+curl (Linux/WSL)
+
+For Linux environments, download the release binary directly.
+
+```python
+VERSION=1.42.0
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+case $(uname -m) in
+  x86_64) ARCH=amd64 ;;
+  aarch64) ARCH=arm64 ;;
+esac
+curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${VERSION}/ant_${VERSION}_${OS}_${ARCH}.tar.gz" \
+  | sudo tar -xz -C /usr/local/bin ant
+```
+
+
+
+You can find all releases on the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases).
+
+Go
+
+You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+
+```python
+go install github.com/anthropics/anthropic-cli/cmd/ant@latest
+```
+
+
+
+The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn't already:
+
+```python
+export PATH="$PATH:$(go env GOPATH)/bin"
 ```
 
 
@@ -156,9 +195,37 @@ fish
 
 PowerShell
 
+zsh
+
 ```python
 ant @completion zsh > "${fpath[1]}/_ant"
 # Restart your shell or run: autoload -U compinit && compinit
+```
+
+
+
+bash
+
+```python
+ant @completion bash > /etc/bash_completion.d/ant
+```
+
+
+
+fish
+
+```python
+ant @completion fish > ~/.config/fish/completions/ant.fish
+```
+
+
+
+PowerShell
+
+```python
+ant @completion powershell | Out-String | Invoke-Expression
+# To persist across sessions:
+# ant @completion powershell >> $PROFILE
 ```
 
 

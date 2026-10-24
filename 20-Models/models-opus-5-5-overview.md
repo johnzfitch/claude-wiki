@@ -2,7 +2,7 @@
 title: "Claude Opus 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-5-5/overview"
 category: "20-Models"
-fetched_at: "2026-10-08T06:24:52Z"
+fetched_at: "2026-10-22T06:29:50Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fopus-5-5%2Foverview)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fopus-5-5%2Foverview)
 
 
 
@@ -58,7 +58,7 @@ Lifecycle and reference
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)Models
 
@@ -205,7 +205,7 @@ Behavioral differences and prompting patterns specific to Claude Opus 5.5.
 
 [Effort](../04-API-Reference/Guides/build-with-claude-effort.md)
 
-The control for thinking depth, latency, and cost. Choose a level per workload.
+The control for thinking depth, latency, and cost. Choose a level for each workload.
 
 
 
@@ -217,7 +217,7 @@ How adaptive thinking works and how thinking blocks are preserved.
 
 [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md)
 
-Lower-latency Claude Opus 5.5 on the Claude API (research preview), priced separately.
+Lower-latency Claude Opus 5.5 on the Claude API, priced separately.
 
 ## Reference
 

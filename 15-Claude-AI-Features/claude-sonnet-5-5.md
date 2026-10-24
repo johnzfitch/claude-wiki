@@ -2,7 +2,7 @@
 title: "Introducing Claude Sonnet 5.5 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-sonnet-5-5"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:34Z"
+fetched_at: "2026-10-20T06:41:17Z"
 tags: ["claude-ai"]
 ---
 
@@ -29,7 +29,7 @@ Sonnet 5.5 improves over Sonnet 5 on:
 
 **Collaboration.** Like Opus 5.5, Sonnet 5.5 writes more clearly than our previous generation of models; early testers described it as a better partner for collaboration than Sonnet 5. Its speed also makes it well suited to fast iteration on less complex tasks.
 
-**Cost.** Sonnet 5.5 is priced the same as Sonnet 5 at \$2 per million input tokens, \$10 per million output tokens, and \$0.20 per million tokens for cache reads, but it typically needs far fewer tokens to do the same work. In our testing, it costs up to 30% less per task than its predecessor.
+**Cost.** Sonnet 5.5 is priced the same as Sonnet 5 at \$2 per million input tokens and \$10 per million output tokens, but it typically needs far fewer tokens to do the same work. Cache reads cost \$0.10 per million tokens, half of Sonnet 5's \$0.20. In our testing, it costs up to 30% less per task than its predecessor.
 
 **Speed.** Sonnet 5.5 generates outputs 30%+ faster than Sonnet 5, making it our fastest Sonnet model to date.
 
@@ -206,7 +206,7 @@ Pricing
 |                     |                       |                 |
 |---------------------|-----------------------|-----------------|
 | Price per 1M tokens | **Claude Sonnet 5.5** | Claude Opus 5.5 |
-| Cache reads         | \$0.20                | \$0.20          |
+| Cache reads         | \$0.10                | \$0.20          |
 | Cache writes        | \$2.50                | \$5             |
 | Input tokens        | \$2                   | \$4             |
 | Output tokens       | \$10                  | \$20            |
@@ -265,7 +265,7 @@ As we described in our [recent alignment assessment](../19-Reference/alignment-a
 
 ### Safeguards
 
-**Cybersecurity.** Sonnet 5.5’s cyber capabilities are a large improvement over Sonnet 5’s, so we’re deploying it with safeguards similar to those on Opus 5.5. Users can still find and fix bugs in their code as part of routine software development, but higher-risk cybersecurity tasks will visibly fall back to Sonnet 5. Soon, cyberdefenders will be able to apply to our expanded [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) for tiered access to more advanced capabilities on Sonnet 5.5, Opus 5.5, and Claude Mythos models.
+**Cybersecurity.** Sonnet 5.5’s cyber capabilities are a large improvement over Sonnet 5’s, so we’re deploying it with safeguards similar to those on Opus 5.5. Users can still find and fix bugs in their code as part of routine software development, but higher-risk cybersecurity tasks will visibly fall back to Sonnet 5. Soon, cyberdefenders will be able to apply to our expanded [Cyber Verification Program](../21-Account-Support/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for tiered access to more advanced capabilities on Sonnet 5.5, Opus 5.5, and Claude Mythos models.
 
 **Biology.** Sonnet 5.5 uses the same set of biology safeguards as Sonnet 5. These target harmful requests; most research, education, and clinical work is unaffected, though some microbiology and virology requests may be flagged in error. Organizations can apply to our [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md) for access to safeguards designed for the full breadth of biology-related work.
 
@@ -300,6 +300,7 @@ Claude Sonnet 5.5 is now available on all platforms, including Amazon Web Servic
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Claude in Chrome](https://claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -346,7 +347,7 @@ Claude Sonnet 5.5 is now available on all platforms, including Amazon Web Servic
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 
@@ -369,12 +370,12 @@ Claude Sonnet 5.5 is now available on all platforms, including Amazon Web Servic
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ### Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Status](https://status.anthropic.com/)
 - [Support center](https://support.claude.com/en/)
 

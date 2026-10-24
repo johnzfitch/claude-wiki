@@ -2,7 +2,7 @@
 title: "Manage pooled group budgets on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17005973-manage-pooled-group-budgets-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:23Z"
+fetched_at: "2026-10-23T06:29:33Z"
 tags: ["billing", "enterprise"]
 ---
 

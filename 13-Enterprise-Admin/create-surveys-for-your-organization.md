@@ -2,7 +2,7 @@
 title: "Create surveys for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16764057-create-surveys-for-your-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:25:23Z"
+fetched_at: "2026-10-23T06:29:14Z"
 tags: ["enterprise"]
 ---
 

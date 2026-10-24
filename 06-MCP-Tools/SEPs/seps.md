@@ -2,7 +2,7 @@
 title: "Specification Enhancement Proposals (SEPs) - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps"
 category: "06-MCP-Tools/SEPs"
-fetched_at: "2026-10-07T06:23:23Z"
+fetched_at: "2026-10-18T06:26:50Z"
 tags: ["mcp", "mcp-seps"]
 ---
 
@@ -31,7 +31,7 @@ Learn how to submit your own Specification Enhancement Proposal
 
 Summary
 
-- **Final**: 42
+- **Final**: 43
 
 
 [​](#all-seps)

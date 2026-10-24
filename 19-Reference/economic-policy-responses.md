@@ -2,15 +2,47 @@
 title: "Preparing for AI's economic impact \\ Anthropic"
 source_url: "https://www.anthropic.com/research/economic-policy-responses"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:29:01Z"
+fetched_at: "2026-10-21T06:30:24Z"
 tags: ["news-research"]
 ---
 
-# Preparing for AI’s economic impact: exploring policy responses
+# **Preparing for AI’s economic impact: **exploring policy responses
 
-Oct 14, 2025
+- [01Matching policies to scenarios](#matching-policies-to-scenarios)
+- [02Policies for nearly all scenarios](#policies-for-nearly-all-scenarios)
+- [03Policy ideas for moderate scenarios](#policy-ideas-for-moderate-scenarios)
+- [04Policy ideas for fast-moving scenarios](#policy-ideas-for-fast-moving-scenarios)
+- [05Continuing the conversation](#continuing-the-conversation)
+
+- Published
+
+  Oct 14, 2025
+
+- Team
+
+  [Economics](team-economics.md)
+
+- Topics
+
+  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [Education](https://www.anthropic.com/search?topic=education)
+
+  See more...
 
 *How will the arrival of [powerful AI systems](anthropic-s-recommendations-ostp-u-s-ai-action-plan.md) change the structure of the economy? We are uncertain, and so are external experts. But as AI systems continue to improve, and are adopted at an ever-larger scale, it’s crucial there is more discussion about the tools policymakers could use to respond to AI's economic impacts—whatever their nature. To help with this, we’re sharing several economic policy ideas that merit further study.*
+
+Related articles
+
+- Economics
+
+  Aug 12, 2026
+
+  [Reviewing the evidence on worker retraining programs](reviewing-the-evidence-on-worker-retraining-programs.md)
+
+[View more](https://www.anthropic.com/search?topic=economic-futures)
 
 Since launching the [Anthropic Economic Index](https://www.anthropic.com/economic-index), we've observed an important shift in AI use. Users are becoming [increasingly likely to delegate full tasks to Claude](anthropic-economic-index-september-2025-report.md), “collaborating” with Claude less. As AI models continue to work independently for longer periods of time, and as more employers adopt AI to improve their productivity, we expect this trend to accelerate. The implications for the workforce are uncertain.
 
@@ -22,7 +54,7 @@ Below, we briefly explore nine of these categories of ideas, covering workforce 
 
 While we don’t know what the optimal policies will prove to be, we’re committed to sharing ideas in the open, and to being transparent about the economic effects of advanced AI.
 
-## **Matching policies to scenarios**
+## Matching policies to scenarios
 
 The rate, scale, and form of AI's economic effects will determine the policy responses that are necessary across the world. Accordingly, we've organized these initial ideas into three broad categories:
 
@@ -30,13 +62,13 @@ The rate, scale, and form of AI's economic effects will determine the policy res
 
 **Policy ideas for scenarios with moderate acceleration**, where AI leads to measurable wage declines and job losses for large portions of the workforce. Here, more substantial fiscal support for displaced workers might be needed. To [offset negative externalities](https://www.nber.org/papers/w30154) imposed on displaced workers from rapid automation, taxes on automation might be considered in this scenario.
 
-**Policy ideas for faster-moving scenarios,** potentially involving dramatic job losses and worsening inequality. These proposals are much more ambitious, and are designed to respond to a starkly different economic picture. So far, ideas include using sovereign wealth funds to give citizens stakes in AI revenues, and finding new ways to generate government revenue.  
-  
+**Policy ideas for faster-moving scenarios,** potentially involving dramatic job losses and worsening inequality. These proposals are much more ambitious, and are designed to respond to a starkly different economic picture. So far, ideas include using sovereign wealth funds to give citizens stakes in AI revenues, and finding new ways to generate government revenue.
+
 The proposals below don’t necessarily represent Anthropic's own policy positions. But we’re excited by the breadth of proposals we’ve received, and we hope they encourage further research and debate.
 
-## **Policies for nearly all scenarios**
+## Policies for nearly all scenarios
 
-### **1. Invest in upskilling through workforce training grants**
+### 1. Invest in upskilling through workforce training grants
 
 At our DC Symposium, Abigail Ball, Executive Director of [American Compass](https://americancompass.org/about/), presented the [Workforce Training Grant](https://americancompass.org/the-workforce-training-grant/)—a proposal she developed with colleague Oren Cass to direct public resources toward on-the-job training.
 
@@ -44,7 +76,7 @@ Under this model, governments would provide substantial annual subsidies (Ball a
 
 American Compass proposes redirecting existing higher education subsidies to fund this program. But a range of other funding mechanisms might also deserve consideration—including the possibility of using taxes on AI consumption to support workforce development initiatives.
 
-### **2. Reform tax incentives for worker retention and retraining**
+### 2. Reform tax incentives for worker retention and retraining
 
 Tax policy can, on the margin, incentivize employers to retrain and retain employees rather than reducing headcount.
 
@@ -52,7 +84,7 @@ Revana Sharfuddin of the [Mercatus Center](https://www.mercatus.org/) argues tha
 
 These changes would aim to reduce the cost of retraining relative to the cost of layoffs, helping those workers whose positions might otherwise be on the margins of workforce reduction decisions.
 
-### **3. Close corporate tax loopholes**
+### 3. Close corporate tax loopholes
 
 Tax policy expert [David Gamage](https://law.missouri.edu/directory/david-gamage/) has outlined reforms designed to prevent AI transformation from straining government budgets. Several of his proposals involve closing the “partnership gap” that allows large businesses to avoid entity-level taxes, and modernizing tax allocation to combat profit shifting and [better capture value](https://www.taxnotes.com/featured-analysis/reforming-state-corporate-income-taxes-can-yield-billions/2020/06/04/2cklk) from digital and intangibles-based business models.
 
@@ -60,7 +92,7 @@ The second reform would allocate business taxes based on customer locations thro
 
 Gamage argues that "governments that act first will solve their fiscal challenges and better position residents to thrive in an AI economy. Those that wait will face resource constraints when flexibility is most needed."
 
-### **4. Accelerate permits and approvals for AI infrastructure**
+### 4. Accelerate permits and approvals for AI infrastructure
 
 Anthropic has consistently advocated for [reforming permitting and power procurement processes in the United States](build-ai-in-america.md) and allied nations. Accelerating these processes is needed to develop the infrastructure to train and deploy frontier AI—that is, large-scale data centers, transmission infrastructure, and power generation facilities. Reforms will also unlock investment, economic growth, and job creation in the places where AI is built. Failing to accelerate AI infrastructure development will slow productivity and job growth, and it could introduce national security risks from vital AI infrastructure moving offshore.
 
@@ -70,9 +102,9 @@ Concrete steps to address these challenges include reforms to the National Envir
 
 As [Tyler Cowen](https://www.mercatus.org/scholars/tyler-cowen), faculty director of the Mercatus Center and member of our Economic Advisory Council, notes: "I am all for permitting reform—the energy sector included."
 
-## **Policy ideas for moderate scenarios**
+## Policy ideas for moderate scenarios
 
-### **5. Establish trade adjustment assistance for AI displacement**
+### 5. Establish trade adjustment assistance for AI displacement
 
 Several economists are exploring how the [Trade Adjustment Assistance (TAA) model](https://www.dol.gov/agencies/eta/tradeact/about) – in which affected workers are given opportunities to obtain new skills, or receive other support – might be adapted for labor market disruptions in an era of powerful AI. [Ioana Marinescu](https://sp2.upenn.edu/person/ioana-e-marinescu/) of the University of Pennsylvania, a member of our Economic Advisory Council, views TAA-like "AI insurance" as a mechanism "to support those who lose jobs due to AI."
 
@@ -80,7 +112,7 @@ Along these lines, [Suchet Mittal](https://www.linkedin.com/in/suchet-mittal?min
 
 Mittal and Manning note that if such a program needed to expand in the future, it could potentially be funded through taxes on AI-driven revenues from firms above a certain high level of market capitalization, creating a direct mechanism for the AI sector to support workers displaced by the technology.
 
-### **6. Implement taxes on compute or token generation**
+### 6. Implement taxes on compute or token generation
 
 University of Virginia economists Lee Lockwood and Anton Korinek (a member of our [Economic Advisory Council](introducing-the-anthropic-economic-advisory-council.md)) propose [studying of a range of taxes](https://www.nber.org/research/videos/2025-economics-transformative-ai-workshop-public-finance-age-ai-primer) on “token generation, robots, robot services, and digital services.”
 
@@ -90,15 +122,15 @@ Korinek and Lockwood argue that, if the economy reaches a stage where powerful A
 
 We believe taxes in this broader category deserve serious study, even though they would directly impact Anthropic's revenue and profitability. These taxes could provide crucial revenue for vital fiscal programs—including several others discussed in this post.
 
-## **Policy ideas for fast-moving scenarios**
+## Policy ideas for fast-moving scenarios
 
-### **7. Create national sovereign wealth funds with stakes in AI**
+### 7. Create national sovereign wealth funds with stakes in AI
 
 A growing set of proposals aims to give citizens and governments greater stakes in AI's economic returns. Sovereign wealth funds could enable states to acquire positions in AI-related assets. In scenarios where the AI sector captures an outsized share of economic wealth, government investment could both shape the sector's behavior and "[distribute AI-derived wealth more equitably](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5343934)."
 
 Writing for the Centre for British Progress, Emma Casey, Emma Rockall, and Helena Roy have proposed a related concept for the United Kingdom: [an AI Bond](https://britishprogress.org/uk-day-one/designing-an-ai-bond-for-growth-and-shared-prosper). The AI Bond would aim to ensure adequate investment in "the AI stack" to capture AI's benefits and then distribute its returns more evenly across Britain—even as AI research roles concentrate in a few cities, like London.
 
-### **8. Adopt or modernize value-added taxes**
+### 8. Adopt or modernize value-added taxes
 
 Six out of the G7 countries have national value-added taxes (VATs), as do 37 out of 38 OECD countries. The United States is the exception.
 
@@ -106,13 +138,13 @@ As AI transforms the economy, labor's share of the production of value might dec
 
 "Value-added taxes are non-distortionary and to an extent, self-enforcing," notes John Horton of MIT's Sloan School of Management, a member of our Economic Advisory Council.
 
-### **9. Implement new revenue structures to account for AI’s growing share of the economy**
+### 9. Implement new revenue structures to account for AI’s growing share of the economy
 
 If AI is responsible for a large share of economic output (causing labor’s share to decline), governments might require new revenue streams to complement income tax. Another of David Gamage’s proposals is exploring a "low-rate business wealth tax" as a complement to income taxes. His reasoning: "Income taxes face accounting manipulation; wealth taxes face asset valuation challenges. Using both makes the system harder to avoid" for highly profitable enterprises.
 
 Gamage analogizes this system to the fee structures that certain asset managers charge clients: "the wealth tax functions as a management fee for providing legal infrastructure protecting accumulated capital, while the income tax serves as a performance fee for profits generated in state markets." This idea represents one way that governments might adapt to changes in the value of human labor, although we think there are many more ideas to be explored in this area.
 
-## **Continuing the conversation**
+## Continuing the conversation
 
 Earlier this fall, Anthropic announced a \$10 million commitment to scale up the Economic Futures Program. This investment will support rigorous empirical research on AI's economic impacts and policy ideas, as well as expand our Symposia series—beginning with an event in London this November, which follows our September event in DC.
 
@@ -121,127 +153,3 @@ None of the ideas outlined here represent definitive recommendations. They are s
 What's clear, though, is that proactive engagement between researchers, policymakers, and the AI industry is essential. By exploring these options now—before we know the shape of AI’s economic effects—we can better prepare for a range of possible futures, and ensure that workers and communities are well-placed to benefit from the full potential of AI.
 
 *Most of the policy ideas discussed in this post have emerged from proposals from or conversations with members of Anthropic's Economic Advisory Council, participants in our Economic Futures Symposia, and independent researchers. They do not all necessarily represent Anthropic's policy positions.*
-
-
-## Related content
-
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
-
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
-
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

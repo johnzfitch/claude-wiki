@@ -2,7 +2,7 @@
 title: "Provision and manage skills for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13119606-provisioning-and-managing-skills-for-your-organization"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:08Z"
+fetched_at: "2026-10-23T06:29:00Z"
 tags: ["claude-ai", "plugins", "skills"]
 ---
 
@@ -85,7 +85,7 @@ Users can submit a skill or plugin they've built to your organization's library 
 
     - **Requires review:** Users can submit skills and plugins, and an owner must approve each one before it's published.When submitting, the user proposes how the item is offered. You can accept or change that when you approve.
 
-    - **Open:** Skills and plugins that users submit are published to the organization library without review, and are available to everyone in your organization to install. Users can't choose a different offering. On Enterprise plans with **[Skill and plugin security scanning](get-started-with-skill-and-plugin-scanning-claude-help-center.md)** on, a new item isn't listed for others until it passes the scan, which usually takes a few minutes.
+    - **Open:** Skills and plugins that users submit are published to the organization library without review, and are available to everyone in your organization to install. Users can't choose a different offering. On Enterprise plans with **[Skill and plugin security scanning](https://support.claude.com/en/articles/15927065)** on, a new item isn't listed for others until it passes the scan, which usually takes a few minutes.
 
     - **Off:** Users don't see the "Publish to org" button. Owners can still add skills and plugins to the organization directly.
 
@@ -131,7 +131,7 @@ Keep these points in mind when reviewing:
 
 - **Possible duplicate hints are a note, not a block.** Only reviewers see them. They don't stop you from approving a submission, and the person who submitted it doesn't see them. No setup is needed. Duplicate checks don't run for organizations with HIPAA, zero data retention, FERPA, or customer-managed keys.
 
-- **For Enterprise plans, submitted versions are scanned.** For Enterprise plans with **Skill and plugin security scanning** enabled, each version is checked for malicious content automatically. A submission that fails the scan can't be approved until the author fixes it and submits again. Learn more about **[skill and plugin scanning](get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
+- **For Enterprise plans, submitted versions are scanned.** For Enterprise plans with **Skill and plugin security scanning** enabled, each version is checked for malicious content automatically. A submission that fails the scan can't be approved until the author fixes it and submits again. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
 
 ### Manage published skills and plugins
 
@@ -247,7 +247,7 @@ Here's what your users see:
 
 - A skill or plugin with malicious content is blocked and can't be used.
 
-A blocked skill can't be overridden by the user who uploaded it, and can't be approved for the organization at this time. Scanning isn't available for organizations using customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA configurations. Learn more about **[skill and plugin scanning](get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
+A blocked skill can't be overridden by the user who uploaded it, and can't be approved for the organization at this time. Scanning isn't available for organizations using customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA configurations. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
 
 ------------------------------------------------------------------------
 

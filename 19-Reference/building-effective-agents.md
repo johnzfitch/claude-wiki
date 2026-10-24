@@ -1,16 +1,48 @@
 ---
-title: "Building Effective AI Agents \\ Anthropic"
+title: "Building effective AI agents \\ Anthropic"
 source_url: "https://www.anthropic.com/news/building-effective-agents"
 category: "19-Reference"
-fetched_at: "2026-10-10T06:25:44Z"
+fetched_at: "2026-10-23T06:29:20Z"
 tags: ["agents", "news-research", "prompting"]
 ---
 
 # Building effective agents
 
-Published Dec 19, 2024
+- [01What are agents?](#what-are-agents)
+- [02When (and when not) to use agents](#when-and-when-not-to-use-agents)
+- [03When and how to use frameworks](#when-and-how-to-use-frameworks)
+- [04Building blocks, workflows, and agents](#building-blocks-workflows-and-agents)
+- [05Combining and customizing these patterns](#combining-and-customizing-these-patterns)
+- [06Summary](#summary)
+- [07Appendix 1: Agents in practice](#appendix-1-agents-in-practice)
+- [08Appendix 2: Prompt engineering your tools](#appendix-2-prompt-engineering-your-tools)
 
-We've worked with dozens of teams building LLM agents across industries. Consistently, the most successful implementations use simple, composable patterns rather than complex frameworks.
+- Published
+
+  Dec 19, 2024
+
+- Team
+
+  [Engineering](https://www.anthropic.com/engineering)
+
+- Topics
+
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Tool use](https://www.anthropic.com/search?topic=tool-use)
+  - [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+
+  See more...
+
+Related articles
+
+- Announcements
+
+  May 18, 2026
+
+  [Anthropic acquires Stainless](anthropic-acquires-stainless.md)
+
+[View more](https://www.anthropic.com/search?topic=agents)
 
 *Note: Much of the tooling landscape described in this post has changed since December 2024. For our current approach, see [**how we built Claude Managed Agents**](https://www.anthropic.com/engineering/managed-agents)* *and the [**Managed Agents documentation**.](../04-API-Reference/Other/managed-agents-overview.md)*  
   
@@ -155,10 +187,6 @@ When implementing agents, we try to follow three core principles:
 
 Frameworks can help you get started quickly, but don't hesitate to reduce abstraction layers and build with basic components as you move to production. By following these principles, you can create agents that are not only powerful but also reliable, maintainable, and trusted by their users.
 
-### Acknowledgements
-
-Written by Erik S. and Barry Zhang. This work draws upon our experiences building agents at Anthropic and the valuable insights shared by our customers, for which we're deeply grateful.
-
 ## Appendix 1: Agents in practice
 
 Our work with customers has revealed two particularly promising applications for AI agents that demonstrate the practical value of the patterns discussed above. Both applications illustrate how agents add the most value for tasks that require both conversation and action, have clear success criteria, enable feedback loops, and integrate meaningful human oversight.
@@ -205,3 +233,9 @@ One rule of thumb is to think about how much effort goes into human-computer int
 - [Poka-yoke](https://en.wikipedia.org/wiki/Poka-yoke) your tools. Change the arguments so that it is harder to make mistakes.
 
 While building our agent for [SWE-bench](swe-bench-sonnet.md), we actually spent more time optimizing our tools than the overall prompt. For example, we found that the model would make mistakes with tools using relative filepaths after the agent had moved out of the root directory. To fix this, we changed the tool to always require absolute filepaths—and we found that the model used this method flawlessly.
+
+## Authors & Acknowledgments
+
+### Acknowledgements
+
+Written by Erik S. and Barry Zhang. This work draws upon our experiences building agents at Anthropic and the valuable insights shared by our customers, for which we're deeply grateful.

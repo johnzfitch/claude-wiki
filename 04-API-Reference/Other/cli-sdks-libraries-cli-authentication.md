@@ -2,7 +2,7 @@
 title: "CLI authentication options - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:00Z"
+fetched_at: "2026-10-20T06:40:11Z"
 tags: ["api", "authentication", "cli"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication", "cli"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fauthentication)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fauthentication)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
@@ -83,7 +83,7 @@ ant auth login --workspace-id wrkspc_01...
 
 # If the named profile you pass with --profile doesn't exist,
 # a new named profile will be created with that name.
-ant auth login --profile <profile-name>
+ant auth login --profile work
 ```
 
 During the browser flow, you select an organization and then a [workspace](manage-claude-workspaces.md). The issued token is [scoped to that workspace](manage-claude-workspaces.md#api-keys-and-resource-scoping), so the CLI can only see resources that belong to it. Pass `--workspace-id` to bind directly and skip the picker. To work in more than one workspace, see [Switch between workspaces](#switch-between-workspaces).
@@ -119,6 +119,8 @@ bash
 
 Windows
 
+zsh
+
 ```python
 echo 'export ANTHROPIC_API_KEY=sk-ant-api03-...' >> ~/.zshrc
 source ~/.zshrc
@@ -126,7 +128,26 @@ source ~/.zshrc
 
 
 
-To override the key for a single invocation, pass `--api-key`. To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url`.
+bash
+
+```python
+echo 'export ANTHROPIC_API_KEY=sk-ant-api03-...' >> ~/.bashrc
+source ~/.bashrc
+```
+
+
+
+Windows
+
+```python
+setx ANTHROPIC_API_KEY "sk-ant-api03-..."
+```
+
+
+
+Open a new terminal for the change to take effect.
+
+To override the key for a single invocation, pass [`--api-key-stdin`](cli-sdks-libraries-cli-using.md#global-flags) and pipe the key to the command. To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url`.
 
 If you are using an API key scoped to multiple workspaces, such as a [personal or service account key](manage-claude-authentication.md#key-types), you must [specify the workspace](manage-claude-authentication.md#select-a-workspace) to run your command in. Do this by setting an `ANTHROPIC_WORKSPACE_ID` environment variable, which the CLI reads automatically, or by using the [`--workspace-id` flag](cli-sdks-libraries-cli-using.md#global-flags). The value must be a `wrkspc_...` ID.
 

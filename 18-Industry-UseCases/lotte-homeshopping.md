@@ -2,7 +2,7 @@
 title: "Lotte Homeshopping Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/lotte-homeshopping"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:52Z"
+fetched_at: "2026-10-23T06:29:46Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -40,19 +40,19 @@ With Claude, Lotte Homeshopping:
 
 ## Meeting the challenges of complex QA processes
 
-As one of Korea's top home shopping operators, Lotte Homeshopping specializes in quickly sourcing trendy merchandise and delivering it to customers. However, they faced significant delays in their product launch process due to communication bottlenecks between QA teams and product partners. Before any product could go live, partners needed to verify test reports, documentation, and regulatory compliance markings, creating a time-consuming back-and-forth through multiple channels.
+As one of Korea’s top home shopping operators, Lotte Homeshopping specializes in quickly sourcing trendy merchandise and delivering it to customers. However, they faced significant delays in their product launch process due to communication bottlenecks between QA teams and product partners. Before any product could go live, partners needed to verify test reports, documentation, and regulatory compliance markings, creating a time-consuming back-and-forth through multiple channels.
 
-"The communication between our QA team and partners was delaying our launch timeline," explained Oh Ju-young from Lotte Homeshopping. "We conducted tests and POCs with several chatbot providers and were quite disappointed. Sendbird's accuracy and flexibility, paired with Claude, solved the problems others couldn't."
+“The communication between our QA team and partners was delaying our launch timeline,” explained Oh Ju-young from Lotte Homeshopping. “We conducted tests and POCs with several chatbot providers and were quite disappointed. Sendbird’s accuracy and flexibility, paired with Claude, solved the problems others couldn’t.”
 
 ## Why Lotte Homeshopping chose Claude through Sendbird
 
-After evaluating numerous solutions over several months, including testing various platforms and AI providers, Lotte Homeshopping selected a combined solution: Claude, Anthropic's powerful AI model, deployed through Sendbird, a messaging platform that provides the necessary infrastructure and security. This integration allows Claude's intelligence to power their conversational experiences while Sendbird handles the messaging infrastructure, security, and delivery mechanisms. The combination offered three key strengths:
+After evaluating numerous solutions over several months, including testing various platforms and AI providers, Lotte Homeshopping selected a combined solution: Claude, Anthropic’s powerful AI model, deployed through Sendbird, a messaging platform that provides the necessary infrastructure and security. This integration allows Claude’s intelligence to power their conversational experiences while Sendbird handles the messaging infrastructure, security, and delivery mechanisms. The combination offered three key strengths:
 
 - **Superior accuracy and judgment**: QA work demands a high level of judgment and accuracy when reviewing documentation and product specifications. Claude consistently demonstrated the precision Lotte Homeshopping required for their detailed quality assessment processes.
 - **Comprehensive access management**: The solution effectively handled partner access controls while ensuring complete data validation for each product, a critical requirement for their security framework.
 - **Future-proof scalability**: The platform provided clear pathways to support expanding AI services as Lotte Homeshopping grew its implementation across departments.
 
-"Unlike other AI services, Sendbird comes with built-in features like two-factor authentication and message filtering by default, allowing us to seamlessly implement the service while meeting the high-security standards required by a large enterprise like ours," said Oh Ju-young.
+“Unlike other AI services, Sendbird comes with built-in features like two-factor authentication and message filtering by default, allowing us to seamlessly implement the service while meeting the high-security standards required by a large enterprise like ours,” said Oh Ju-young.
 
 ## How Claude powers Moni for partner support
 
@@ -65,21 +65,21 @@ In October 2024, Lotte Homeshopping launched its AI assistant Moni, which initia
 
 ## Transforming partner experiences and operational efficiency
 
-The implementation of Claude through Moni has improved Lotte Homeshopping's operations and partner relationships. A comprehensive survey of fashion partners revealed reduced product launch timelines and increased partner satisfaction.
+The implementation of Claude through Moni has improved Lotte Homeshopping’s operations and partner relationships. A comprehensive survey of fashion partners revealed reduced product launch timelines and increased partner satisfaction.
 
-"Claude gives us the accuracy and judgment our QA demands, and Sendbird makes it easy to integrate and deploy as an enterprise-ready AI application. Together, they're an ideal solution," shared Oh Ju-young.
+“Claude gives us the accuracy and judgment our QA demands, and Sendbird makes it easy to integrate and deploy as an enterprise-ready AI application. Together, they’re an ideal solution,” shared Oh Ju-young.
 
 This automation has freed the QA team to focus on complex cases while ensuring partners receive accurate, consistent information without delays.
 
-Building on this success, Lotte Homeshopping has expanded Moni to additional product categories, including home appliances and discretionary items, as of January 2025. The company is also integrating automated verification systems for regulatory requirements like KC certification (Korea's product safety standard).
+Building on this success, Lotte Homeshopping has expanded Moni to additional product categories, including home appliances and discretionary items, as of January 2025. The company is also integrating automated verification systems for regulatory requirements like KC certification (Korea’s product safety standard).
 
 ## Building the future of AI-enhanced retail operations
 
 Lotte Homeshopping is moving beyond traditional retail automation with an expansive vision for AI integration. While Moni currently handles partner inquiries and test validation, the company is creating a future where AI drives complete quality processes from beginning to end.
 
-"We're transforming AI from a support tool to the primary engine of our quality systems," explained Oh Ju-young. "What begins in QA will soon enhance everything from broadcast production to customer service."
+“We’re transforming AI from a support tool to the primary engine of our quality systems,” explained Oh Ju-young. “What begins in QA will soon enhance everything from broadcast production to customer service.”
 
-This bold expansion leverages Claude's intelligence and Sendbird's infrastructure to reimagine retail operations across the enterprise. Oh Ju-young concluded, "We're just beginning to explore the possibilities. The combination of Claude and Sendbird is opening doors we hadn't even considered before."
+This bold expansion leverages Claude’s intelligence and Sendbird’s infrastructure to reimagine retail operations across the enterprise. Oh Ju-young concluded, “We’re just beginning to explore the possibilities. The combination of Claude and Sendbird is opening doors we hadn’t even considered before.”
 
 ## Related stories
 
@@ -87,7 +87,7 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 ### Reversia translates e-commerce stores across 110+ languages with Claude
 
 
-### Inside Rakuten's plan to turn every employee into a builder with Claude Managed Agents
+### Inside Rakuten’s plan to turn every employee into a builder with Claude Managed Agents
 
 
 ### Rakuten accelerates development with Claude Code
@@ -104,7 +104,8 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -122,12 +123,12 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -160,7 +161,7 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -178,6 +179,7 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -193,7 +195,7 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -228,7 +230,8 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -246,12 +249,12 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -284,7 +287,7 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -302,6 +305,7 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -317,7 +321,7 @@ This bold expansion leverages Claude's intelligence and Sendbird's infrastructur
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

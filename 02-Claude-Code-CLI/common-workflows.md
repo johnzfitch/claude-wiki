@@ -2,7 +2,7 @@
 title: "Common workflows - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/common-workflows"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:27:15Z"
+fetched_at: "2026-10-22T06:29:22Z"
 tags: ["claude-code", "git"]
 ---
 
@@ -487,6 +487,11 @@ Tips:
 - Directory references show file listings, not contents
 - You can reference multiple files in a single message (for example, “@file1.js and @file2.js”)
 
+To stop `@` references from including file contents and directory listings, set [`CLAUDE_CODE_DISABLE_FILE_MENTIONS`](env-vars.md#variables) to `1` in your shell or in the [`env` block](env-vars.md#set-variables-in-settings-files) of user settings or [managed settings](../13-Enterprise-Admin/managed-settings.md). Claude then receives the paths you referenced with a note to read them using its file tools. The variable requires Claude Code v2.1.299 or later, and Claude Code ignores it in project and local settings. Your [`PreToolUse` hooks](../07-Hooks/hooks.md#pretooluse) don’t run when Claude Code includes a file you reference with `@`, because it makes no tool call. If you rely on those hooks to control what Claude reads, block specific paths or stop `@` references from including files:
+
+- **Block specific paths**: add a [`Read` deny rule](permissions.md#read-and-edit) for them. Claude Code doesn’t include a file that the rule matches.
+- **Stop `@` references from including files**: set `CLAUDE_CODE_DISABLE_FILE_MENTIONS=1`, which stops `@` file and directory references in your messages from including content, even for paths your hooks don’t check. Your matching hooks then run before Claude opens a referenced path with a tool such as `Read`.
+
 ------------------------------------------------------------------------
 
 
@@ -498,7 +503,7 @@ Suppose you want Claude to handle a task automatically on a recurring basis, lik
 
 | Option                                                      | Where it runs                       | Best for                                                                                                                                                                                                 |
 |:------------------------------------------------------------|:------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Routines](web-scheduled-tasks.md)                               | Cloud, Anthropic-managed by default | Tasks that should run even when your computer is off. Can also trigger on API calls or GitHub events in addition to a schedule. Configure at [claude.ai/code/routines](https://claude.ai/code/routines). |
+| [Cloud scheduled tasks](web-scheduled-tasks.md)                  | Cloud, Anthropic-managed by default | Tasks that should run even when your computer is off. Can also trigger on API calls or GitHub events in addition to a schedule. Configure at [claude.ai/code/routines](https://claude.ai/code/routines). |
 | [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md) | Your machine, via the desktop app   | Tasks that need direct access to local files, tools, or uncommitted changes.                                                                                                                             |
 | [GitHub Actions](github-actions.md)                   | Your CI pipeline                    | Tasks tied to repo events like opened PRs, or cron schedules that should live alongside your workflow config.                                                                                            |
 | [`/loop`](scheduled-tasks.md)                         | The current CLI session             | Quick polling while a session is open. `--resume` and `--continue` restore unexpired fixed-interval loops.                                                                                               |

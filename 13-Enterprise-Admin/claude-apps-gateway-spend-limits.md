@@ -2,7 +2,7 @@
 title: "Claude apps gateway spend limits - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-apps-gateway-spend-limits"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-03T06:31:46Z"
+fetched_at: "2026-10-22T06:29:20Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -12,6 +12,7 @@ tags: ["claude-code", "enterprise"]
   - [Authenticate to the admin API](#authenticate-to-the-admin-api)
 - [How enforcement works](#how-enforcement-works)
   - [How requests are priced](#how-requests-are-priced)
+  - [Long-prompt rates](#long-prompt-rates)
   - [Postgres availability](#postgres-availability)
   - [Usage warnings in Claude Code](#usage-warnings-in-claude-code)
 - [Admin API reference](#admin-api-reference)
@@ -94,6 +95,13 @@ After each response, a usage meter reads the token counts and adds the cost to t
 4.  The unknown-model tier of \$5/\$25 per million input/output tokens, so an ID the meter can’t place is never free. The gateway warns at boot and once per ID at runtime when it uses this tier.
 
 Whichever rate applies, the meter then multiplies the amount by [`pricing.multiplier`](claude-apps-gateway-config.md#pricing), default `1`. Client aborts are billed too. When a stream ends without the upstream’s final usage frame, the meter bills a floor estimate of about four characters per output token for the text already sent to the client, so aborting requests early doesn’t evade a cap.
+
+
+[​](#long-prompt-rates)
+
+Long-prompt rates
+
+The list price for [Claude Haiku 5.5](../20-Models/models-haiku-5-5-overview.md) has a [higher rate for prompts over a token threshold](../02-Claude-Code-CLI/model-config.md#haiku-5-5-context-window-and-pricing). When Haiku 5.5 serves a request whose prompt exceeds the threshold, a gateway server running Claude Code v2.1.293 or later prices the whole request at that rate. The meter counts input tokens, cache reads, and cache writes toward that threshold. If one of your `pricing.overrides` rows matches the request, that row’s rates apply at any prompt length.
 
 
 [​](#postgres-availability)

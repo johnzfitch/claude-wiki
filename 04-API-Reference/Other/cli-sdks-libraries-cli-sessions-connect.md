@@ -2,7 +2,7 @@
 title: "Connect to a Managed Agents session from your terminal - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-09T06:28:01Z"
+fetched_at: "2026-10-17T06:26:13Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fsessions-connect)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fsessions-connect)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
@@ -84,7 +84,7 @@ Press Ctrl+C to detach. The session keeps running, and connecting again loads it
 
 ## Follow and steer the session
 
-The terminal view shows the conversation live: messages and tool calls, with each call's duration and outcome. A status bar shows whether the session is running, idle, or waiting for your approval. In [multiagent](managed-agents-multiagent-orchestration.md) sessions, the view follows the session's primary thread, which includes the messages the coordinator exchanges with the agents it delegates to.
+The terminal view shows the conversation live: messages and tool calls, with each call's duration and outcome. A status bar shows whether the session is running, idle, or waiting for your approval. In [multiagent](managed-agents-multiagent-orchestration.md) sessions, the view follows the session's primary thread, which includes the messages exchanged between the agent that the session runs and the agents it delegates to.
 
 | Key                | Action                                                                                                                     |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------|

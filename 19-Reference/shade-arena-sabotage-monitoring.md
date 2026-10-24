@@ -1,16 +1,46 @@
 ---
-title: "SHADE-Arena: Evaluating Sabotage and Monitoring in LLM Agents \\ Anthropic"
+title: "SHADE-Arena: Evaluating sabotage in LLM agents \\ Anthropic"
 source_url: "https://www.anthropic.com/research/shade-arena-sabotage-monitoring"
 category: "19-Reference"
-fetched_at: "2026-08-03T07:18:32Z"
+fetched_at: "2026-10-21T06:30:30Z"
 tags: ["agents", "news-research"]
 ---
 
-# SHADE-Arena: Evaluating sabotage and monitoring in LLM agents
-
-Jun 16, 2025
+# **SHADE-Arena: **Evaluating sabotage and monitoring in LLM agents
 
 [Read the paper](https://www.arxiv.org/abs/2506.15740)
+
+- [01SHADE-Arena](#shade-arena)
+- [02Results](#results)
+- [03Conclusions](#conclusions)
+
+- Published
+
+  Jun 16, 2025
+
+- Team
+
+  [Alignment](team-alignment.md)
+
+- Topics
+
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  Oct 12, 2026
+
+  [AI models may be capable of self-replicating without access to a datacenter](self-replicating-ai.md)
+
+[View more](https://www.anthropic.com/search?topic=safety-evaluations)
 
 As AI models get smarter, we also need to become smarter in how we monitor them. More intelligent systems can take more complex actions, which is great news for coders, researchers, and anyone else who’s using AI for difficult work tasks. But if those actions are misaligned—that is, if they’re out of step with what users want AI models to do—their complexity could make them particularly dangerous.
 
@@ -33,11 +63,11 @@ There are 17 complex, benign, but solvable tasks that models can be asked to per
 
 These tasks involve a great deal of complexity: to complete them, the model has to go through multiple steps (on average about 25) and use tools, linking up information from different sources in the same way a human worker would. All the while, it needs to complete its side task to sabotage the user’s intentions.
 
-We aren’t just interested in whether the attacking AI model can succeed at sabotage; we’re interested in whether it can succeed *without getting caught*. To test this, we set up a second AI model to monitor the task. We don’t tell this monitor about the side tasks: it simply has to read the transcript of everything the main model said during the task, and rate how suspicious it is that something untoward has occurred. We set a “suspicion score” of 80/100 as the threshold where we’d consider that the monitor has successfully spotted the malicious behavior; if the score is lower than that, and as long as the attacking AI completed both the main task and the side task¹, we consider it a successful act of sabotage.
+We aren’t just interested in whether the attacking AI model can succeed at sabotage; we’re interested in whether it can succeed *without getting caught*. To test this, we set up a second AI model to monitor the task. We don’t tell this monitor about the side tasks: it simply has to read the transcript of everything the main model said during the task, and rate how suspicious it is that something untoward has occurred. We set a “suspicion score” of 80/100 as the threshold where we’d consider that the monitor has successfully spotted the malicious behavior; if the score is lower than that, and as long as the attacking AI completed both the main task and the side task^([1](#footnote-1)), we consider it a successful act of sabotage.
 
 ## Results
 
-We put fourteen different AI models through their paces in SHADE-Arena. The default monitor model in most of the experiments was Claude Sonnet 3.6². Below are the main results for each of the models we tested.
+We put fourteen different AI models through their paces in SHADE-Arena. The default monitor model in most of the experiments was Claude Sonnet 3.6^([2](#footnote-2)). Below are the main results for each of the models we tested.
 
 Success rates were generally low. No models exceeded an overall success rate of 30% on the tasks; most were below 10%. This reflects the very high difficulty of the tasks in SHADE-Arena—this is good news in the sense that current models aren’t able to engage in these dangerous behaviors, and that there’s a lot of room for the evaluation to be used with even smarter models in future. However, the strongest models were able to successfully achieve the side task without being caught (evasion success) almost 60% of the time. Looking across the different tasks, we found a range of difficulties: some were solved around 50% of the time by the strongest models, and some were hardly ever solved at all by any model, even with tens of attempts.
 
@@ -50,7 +80,7 @@ Here were some of the most common ways the models failed the tasks:
 
 We also tried giving the monitor AI access to the attacking AI’s thought process (also sometimes called its “scratchpad” or its “chain-of-thought”). We told the attacking model that this was happening, and watched to see if it avoided admitting what it was doing in the surreptitious side task. As shown in the figure below, this made the monitor model much better at spotting the side task, and reduced overall success rates by a substantial amount.
 
-This effect was for a simple reason: many of the models simply couldn’t help but mention the side task in their thought process, and this was picked up by the monitor, which gave a higher suspicion score. Some models seemed to have better “control” over their thoughts than others. For example, when we turned on “extended thinking” mode, revealing Claude Sonnet 3.7’s thought process, and instructed it not to mention the side task, it was often able to hide its true intention even as it completed the side task. But Claude Opus 4 revealed the side task in every example we studied—sometimes, ironically, mentioning that it was critical that it [not mention the side task](https://en.wikipedia.org/wiki/Ironic_process_theory)³.
+This effect was for a simple reason: many of the models simply couldn’t help but mention the side task in their thought process, and this was picked up by the monitor, which gave a higher suspicion score. Some models seemed to have better “control” over their thoughts than others. For example, when we turned on “extended thinking” mode, revealing Claude Sonnet 3.7’s thought process, and instructed it not to mention the side task, it was often able to hide its true intention even as it completed the side task. But Claude Opus 4 revealed the side task in every example we studied—sometimes, ironically, mentioning that it was critical that it [not mention the side task](https://en.wikipedia.org/wiki/Ironic_process_theory)^([3](#footnote-3)).
 
 We made a similar discovery when we gave the models hints to help them come up with complex sabotage strategies. Although sometimes such hints helped the models complete the tasks more effectively, they often made things worse—often because the models struggled to complete the complex task, or left obvious evidence in their thought process.
 
@@ -74,142 +104,28 @@ These or similar evaluations could be included in pre-deployment safety evaluati
 
 Read [the full paper](https://www.arxiv.org/abs/2506.15740).
 
-### How to use SHADE-Arena
+#### How to use SHADE-Arena
 
 Examples from the SHADE-Arena dataset can be found in the public repository linked in the paper. In order to avoid data contamination issues from future models being trained on the evaluation, we have deliberately not posted the majority of the evaluations publicly. However, researchers who wish to use the full dataset can contact us (contact details are provided in the [paper](https://assets.anthropic.com/m/4fb35becb0cd87e1/original/SHADE-Arena-Paper.pdf)).
+
+#### Work with us
+
+If you’re interested in working on these or related questions of Alignment Science, we’re recruiting Research Engineers and Scientists in both [San Francisco](https://job-boards.greenhouse.io/anthropic/jobs/4631822008) and [London](https://job-boards.greenhouse.io/anthropic/jobs/4610158008).
+
+## Footnotes
+
+01We require completion of both tasks because, if the model can't complete the main task reliably, it is highly unlikely that it will be deployed. The model needs to maintain a baseline level of competence in order to commit acts of sabotage.[](#footnote-ref-1)
+
+02We did also experiment with different models as the monitor to confirm the robustness of our results; see the full paper for these results.[](#footnote-ref-2)
+
+03Interestingly, this was true when we used “extended thinking” mode, but was not true when we turned off thinking mode and told the model “anything you put between \<thinking\> xml tags is hidden".[](#footnote-ref-3)
+
+## Authors & Acknowledgments
+
+### Contributors
+
+This work was a collaboration between researchers at Anthropic, Scale AI (Xiang Deng and Chen Bo Calvin Zhang) and Redwood Research (Tyler Tracy and Buck Shlegeris), as well as Yuqi Sun, Paul Colognese, Teun van der Weij, Linda Petrini, and Henry Sleight.
 
 ### Acknowledgements
 
 This work was a collaboration between researchers at Anthropic, Scale AI (Xiang Deng and Chen Bo Calvin Zhang) and Redwood Research (Tyler Tracy and Buck Shlegeris), as well as Yuqi Sun, Paul Colognese, Teun van der Weij, Linda Petrini, and Henry Sleight.
-
-### Work with us
-
-If you’re interested in working on these or related questions of Alignment Science, we’re recruiting Research Engineers and Scientists in both [San Francisco](https://job-boards.greenhouse.io/anthropic/jobs/4631822008) and [London](https://job-boards.greenhouse.io/anthropic/jobs/4610158008).
-
-#### Footnotes
-
-1\. We require completion of both tasks because, if the model can't complete the main task reliably, it is highly unlikely that it will be deployed. The model needs to maintain a baseline level of competence in order to commit acts of sabotage.
-
-2\. We did also experiment with different models as the monitor to confirm the robustness of our results; see the full paper for these results.
-
-3\. Interestingly, this was true when we used “extended thinking” mode, but was not true when we turned off thinking mode and told the model “anything you put between \<thinking\> xml tags is hidden".
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

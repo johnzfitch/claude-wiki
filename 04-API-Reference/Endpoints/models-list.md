@@ -2,7 +2,7 @@
 title: "List Models - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/models/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:48Z"
+fetched_at: "2026-10-20T06:39:56Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmodels%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmodels%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -229,12 +233,18 @@ cURL
 
 
 
-A beta version of this method exists and may have additional functionality. [View the beta version](http-beta-models-list.md).
+A beta version of this method exists and may have additional functionality. [View the beta version](platform-claude-com-http-beta-models-list.md).
 
 1.  [API reference](http.md)
 2.  [Models](https://platform.claude.com/docs/en/api/http/models)
 
 # List Models
+
+Copy page
+
+
+
+cURL
 
 GET/v1/models
 
@@ -258,6 +268,30 @@ ID of the object to use as a cursor for pagination. When provided, returns the p
 
 
 
+lifecycle: optional array of "active" or "deprecated" or "retired"
+
+
+
+Filter the list to models in any of the given lifecycle stages (`active`, `deprecated`, or `retired`). Up to 3 values. When omitted, the list contains the `active` and `deprecated` models; `retired` models appear only when `retired` is requested explicitly.
+
+maxItems3
+
+One of the following:
+
+"active"
+
+
+
+"deprecated"
+
+
+
+"retired"
+
+
+
+
+
 limit: optional number
 
 
@@ -276,6 +310,16 @@ maximum1000
 
 
 
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
 "anthropic-workspace-id": optional string
 
 
@@ -286,7 +330,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)⁠Deprecated
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)⁠Deprecated
 
 
 
@@ -500,11 +544,15 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 ##### Returns
 
 
 
-data: array of [ModelInfo](https://platform.claude.com/docs/en/api/http/models#model_info) { type: "model", id, capabilities, 4 more }
+data: array of [ModelInfo](https://platform.claude.com/docs/en/api/http/models#model_info) { type: "model", id, capabilities, 8 more }
 
 
 
@@ -528,7 +576,7 @@ Unique model identifier.
 
 
 
-capabilities: [ModelCapabilities](https://platform.claude.com/docs/en/api/http/models#model_capabilities) { batch, citations, code_execution, 6 more } or null
+capabilities: [ModelCapabilities](https://platform.claude.com/docs/en/api/http/models#model_capabilities) { batch, citations, code_execution, 7 more } or null
 
 
 
@@ -544,11 +592,79 @@ RFC 3339 datetime string representing the time at which the model was released. 
 
 formatdate-time
 
+
+
+deprecated_at: string or null
+
+
+
+RFC 3339 datetime string representing the time of the model's most recent deprecation. Populated for `deprecated` and `retired` models; `null` while the model is `active`.
+
+formatdate-time
+
 display_name: string
 
 
 
 A human-readable name for the model.
+
+
+
+lifecycle: "active" or "deprecated" or "retired"
+
+
+
+The model's current lifecycle stage.
+
+- `active`: The model is available for use, open to new adopters, and not scheduled for retirement.
+- `deprecated`: The model remains callable for organizations with existing access, but is headed for retirement and closed to new adopters.
+- `retired`: The model is no longer available for use; inference requests naming it fail. It remains in the catalogue as the historical record of its retirement.
+
+defaultactive
+
+One of the following:
+
+"active"
+
+
+
+"deprecated"
+
+
+
+"retired"
+
+
+
+
+
+line: [ModelLine](https://platform.claude.com/docs/en/api/http/models#model_line) or null
+
+
+
+The model line this model belongs to, such as `opus` for both Claude Opus 4.5 and Claude Opus 4.6. More lines may be added. `null` when the model belongs to no line; do not infer a line from the `id`.
+
+One of the following:
+
+"haiku"
+
+
+
+"sonnet"
+
+
+
+"opus"
+
+
+
+"fable"
+
+
+
+"mythos"
+
+
 
 max_input_tokens: number or null
 
@@ -561,6 +677,16 @@ max_tokens: number or null
 
 
 Maximum value for the `max_tokens` parameter when using this model.
+
+
+
+retires_at: string or null
+
+
+
+RFC 3339 datetime string representing the model's currently scheduled retirement date. The schedule can be revised until retirement occurs; `null` while the model is `active` or while no retirement is scheduled. A past date on a `deprecated` model means retirement is overdue, not that it has occurred: `lifecycle` is the retirement signal.
+
+formatdate-time
 
 first_id: string or null
 
@@ -600,7 +726,7 @@ Response 200
 {
   "data": [
     {
-      "id": "claude-opus-5",
+      "id": "claude-opus-5-5",
       "capabilities": {
         "batch": {
           "supported": true
@@ -647,6 +773,15 @@ Response 200
         "pdf_input": {
           "supported": true
         },
+        "server_tools": {
+          "code_execution": {
+            "supported": true
+          },
+          "supported": true,
+          "web_search": {
+            "supported": true
+          }
+        },
         "structured_outputs": {
           "supported": true
         },
@@ -656,16 +791,26 @@ Response 200
             "adaptive": {
               "supported": true
             },
+            "between_tools": {
+              "supported": true
+            },
+            "disabled": {
+              "supported": true
+            },
             "enabled": {
               "supported": true
             }
           }
         }
       },
-      "created_at": "2026-07-24T00:00:00Z",
-      "display_name": "Claude Opus 5",
+      "created_at": "2026-09-21T00:00:00Z",
+      "deprecated_at": "2019-12-27T18:11:19.117Z",
+      "display_name": "Claude Opus 5.5",
+      "lifecycle": "active",
+      "line": "haiku",
       "max_input_tokens": 0,
       "max_tokens": 0,
+      "retires_at": "2019-12-27T18:11:19.117Z",
       "type": "model"
     }
   ],
@@ -685,7 +830,7 @@ Response 200
 {
   "data": [
     {
-      "id": "claude-opus-5",
+      "id": "claude-opus-5-5",
       "capabilities": {
         "batch": {
           "supported": true
@@ -732,6 +877,15 @@ Response 200
         "pdf_input": {
           "supported": true
         },
+        "server_tools": {
+          "code_execution": {
+            "supported": true
+          },
+          "supported": true,
+          "web_search": {
+            "supported": true
+          }
+        },
         "structured_outputs": {
           "supported": true
         },
@@ -741,11 +895,23 @@ Response 200
             "adaptive": {
               "supported": true
             },
+            "between_tools": {
+              "supported": true
+            },
+            "disabled": {
+              "supported": true
+            },
             "enabled": {
               "supported": true
             }
           }
         }
       },
-      "created_at": "2026-07-24T00:00:00Z",
-      "display_name": "Claude Opus 5",
+      "created_at": "2026-09-21T00:00:00Z",
+      "deprecated_at": "2019-12-27T18:11:19.117Z",
+      "display_name": "Claude Opus 5.5",
+      "lifecycle": "active",
+      "line": "haiku",
+      "max_input_tokens": 0,
+      "max_tokens": 0,
+      "retires_at": "2019-12-27T18:11:19.117Z",

@@ -1,14 +1,47 @@
 ---
-title: "Anthropic Economic Index: Insights from Claude 3.7 Sonnet \\ Anthropic"
+title: "Economic Index: Insights from Claude 3.7 Sonnet \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-insights-from-claude-sonnet-3-7"
 category: "19-Reference"
-fetched_at: "2026-09-12T06:31:17Z"
+fetched_at: "2026-10-21T06:30:35Z"
 tags: ["news-research"]
 ---
 
-# Anthropic Economic Index: Insights from Claude 3.7 Sonnet
+# **Anthropic Economic Index: **Insights from Claude 3.7 Sonnet
 
-Mar 27, 2025
+- [01What’s changed since the launch of Claude 3.7 Sonnet?](#whats-changed-since-the-launch-of-claude-37-sonnet)
+- [02How are people using extended thinking mode?](#how-are-people-using-extended-thinking-mode)
+- [03How does augmentation vs. automation vary by task and occupation?](#how-does-augmentation-vs-automation-vary-by-task-and-occupation)
+- [04A bottom-up taxonomy of usage on Claude.ai](#a-bottom-up-taxonomy-of-usage-on-claudeai)
+- [05Conclusion](#conclusion)
+- [06Work with us](#work-with-us)
+- [07Appendix](#appendix)
+- [08Additional methodological details](#additional-methodological-details)
+
+- Published
+
+  Mar 27, 2025
+
+- Team
+
+  [Societal Impacts](team-societal-impacts.md)
+
+- Topics
+
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+
+  See more...
+
+Related articles
+
+- Jun 26, 2026
+
+  [Economic Index](https://www.anthropic.com/economic-index)
+
+[View more](https://www.anthropic.com/search?topic=economic-index)
 
 Last month, we launched the [Anthropic Economic Index](https://www.anthropic.com/economic-index)—a new initiative where we’re regularly releasing data and research aimed at understanding AI's effects on labor markets and the economy over time.
 
@@ -34,7 +67,7 @@ As a reminder, our privacy-preserving analysis tool, [Clio](clio.md), maps each 
 
 When looking at the breakdown of these 1 million conversations, we see that the proportion of usage in several occupational categories has increased modestly, including coding, education and the sciences. While this increase in coding usage was expected due to Claude 3.7 Sonnet’s improved scores on coding benchmarks, the increase in these other categories could reflect either ongoing diffusion of AI throughout the economy, novel applications of coding to those domains, or unexpected capability improvements in the model.
 
-##  How are people using extended thinking mode?
+## How are people using extended thinking mode?
 
 Claude 3.7 Sonnet features a new “extended thinking” mode which, when activated by the user, enables the model to think for longer when answering more complex questions.
 
@@ -44,14 +77,12 @@ While these early usage patterns reveal insights about when people choose to use
 
 ## How does augmentation vs. automation vary by task and occupation?
 
-In our last report, we analyzed how AI usage varied between *augmentative* uses, like learning or iterating on an output, and *automative* uses, like asking the model to directly complete a task or debug errors. Our analysis shows the balance of augmentation and automation is essentially unchanged in our new data, with augmentation still comprising 57% of usage. However, we did see some change in *types* of automation and augmentation uses—for example, we saw *learning* interactions, where the user asks Claude for information or explanation about different topics, rise from ~23% to ~28%.  
+In our last report, we analyzed how AI usage varied between *augmentative* uses, like learning or iterating on an output, and *automative* uses, like asking the model to directly complete a task or debug errors. Our analysis shows the balance of augmentation and automation is essentially unchanged in our new data, with augmentation still comprising 57% of usage. However, we did see some change in *types* of automation and augmentation uses—for example, we saw *learning* interactions, where the user asks Claude for information or explanation about different topics, rise from ~23% to ~28%.
 
-  
 We received a number of requests via our [researcher input form](https://docs.google.com/forms/d/e/1FAIpQLSfDEdY-mT5lcXPaDSv-0Ci1rSXGlbIJierxkUbNB7_07-kddw/viewform) to release automation and augmentation data at the level of tasks and occupations. We do just that in this report, providing this data on our [Hugging Face page](https://huggingface.co/datasets/Anthropic/EconomicIndex/).
 
 When splitting the data by high-level occupational categories, we find some categories are highly augmentative; for example, Community and Social Service tasks, which includes education and guidance counseling, approach 75% augmentation. At the other end of the extreme, tasks associated with production or computer and mathematical occupations, we see the balance skew closer to 50-50%. We don’t see any occupational categories where automation dominates.
 
-  
 Getting more granular, we can also look at specific occupations within these occupational categories, as well as tasks associated with that occupation. For example, tasks associated with copywriters and editors show the highest amount of *task iteration*, where the user iterates on various writing and editing tasks with the model. By contrast, tasks associated with Translators and Interpreters show among the highest amounts of *directive* behavior—where the model is used for translating documents with minimal human involvement. Note that the O\*NET descriptions may not be optimally representative of what Claude is being used for—for example, while we see usage in the occupation “fine artists, including painters, sculptors, and illustrators,” Claude is probably used far more for creating digital art than for painting or sculpture.
 
 ## A bottom-up taxonomy of usage on Claude.ai
@@ -89,7 +120,7 @@ We also recompute the “depth of task usage” plot from our original paper. We
 
 ### Full change across occupational categories
 
-###  Results for other interaction modes
+### Results for other interaction modes
 
 ## Additional methodological details
 
@@ -97,127 +128,3 @@ While we mainly follow the methodology of our original report, we make a few cha
 
 - In contrast to our last report, we do not filter based on whether conversations are relevant to an occupational category. Instead, we simply filter out conversations that flagged our safety classifiers. We find these approaches lead to similar results as our original analysis, while preserving more data that we can release via our bottom-up taxonomy of usage.
 - We use Claude 3.7 Sonnet in place of all cases where we previously used Claude 3.5 Sonnet. We found that using our newer model increased the accuracy of classifications according to the internal benchmarks we use to assess Clio’s accuracy.
-
-
-## Related content
-
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
-
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
-
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

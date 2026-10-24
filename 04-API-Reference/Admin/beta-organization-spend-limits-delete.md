@@ -2,7 +2,7 @@
 title: "Delete Spend Limit - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits/delete"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:31Z"
+fetched_at: "2026-10-20T06:39:27Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fspend_limits%2Fdelete)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fspend_limits%2Fdelete)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -146,9 +146,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -219,13 +221,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -233,9 +237,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -244,17 +248,23 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits)
 
 # Delete Spend Limit
+
+Copy page
+
+
+
+cURL
 
 DELETE/v1/organizations/spend_limits/{spend_limit_id}
 
 Delete a spend limit.
 
-For a Claude Enterprise organization, this deletes a per-user override, and the member falls back to any inherited spend limit at that period. Its seat-tier, group, and organization-level rows cannot be deleted via this endpoint. A Claude Console organization deletes its organization and workspace limits. Deleting them through the API is in an early access preview.
+For a Claude Enterprise organization, this deletes a per-user override, and the member falls back to any inherited spend limit at that period. Its seat-tier, group, and organization-level rows cannot be deleted via this endpoint. A Claude Console organization deletes its organization and workspace limits, but not its `usage_tier` limit. Deleting organization and workspace limits through the API is in an early access preview.
 
 ##### Path parameters
 
@@ -263,6 +273,18 @@ spend_limit_id: string
 
 
 ID of the Spend Limit.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 ##### Returns
 

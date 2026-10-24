@@ -2,7 +2,7 @@
 title: "Thinking - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/thinking"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:22Z"
+fetched_at: "2026-10-20T06:39:24Z"
 tags: ["api", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "prompting"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fthinking)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fthinking)
 
 
 
@@ -40,7 +40,7 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
@@ -48,7 +48,7 @@ Model capabilities
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -80,7 +80,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Thinking
 
@@ -98,7 +98,7 @@ Understand how Claude's thinking works: turn it on, read thinking output, steer 
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 A model that answers in a single pass has to get everything right on the first try: no scratch work, no checking, no changing course halfway through. For a proof, a tricky bug, or a long agentic task, the first approach is often not the best one.
 
@@ -139,9 +139,10 @@ If Claude uses tools, thinking can also appear between tool calls. See [Thinking
 On most models, thinking is on by default or one parameter away. The following table shows what each model does with each `thinking` value a request can send. A 400 error means the API rejects the request, and [Troubleshooting thinking](build-with-claude-thinking-troubleshooting.md) has each error and its fix.
 
 | Model                 | No `thinking` field | `"adaptive"`      | `"enabled"` with `budget_tokens` | `"between_tools"`                               | `"disabled"`                           |
-|:----------------------|:--------------------|:------------------|:---------------------------------|:------------------------------------------------|:---------------------------------------|
+|-----------------------|---------------------|-------------------|----------------------------------|-------------------------------------------------|----------------------------------------|
 | Claude Opus 5.5       | Adaptive thinking   | Adaptive thinking | 400 error                        | 400 error                                       | 400 error                              |
 | Claude Sonnet 5.5     | Adaptive thinking   | Adaptive thinking | 400 error                        | Up-front thinking off at `high` effort or below | 400 error                              |
+| Claude Haiku 5.5      | Adaptive thinking   | Adaptive thinking | 400 error                        | 400 error                                       | Thinking off at `high` effort or below |
 | Claude Fable 5.1      | Adaptive thinking   | Adaptive thinking | 400 error                        | 400 error                                       | 400 error                              |
 | Claude Mythos 5.1     | Adaptive thinking   | Adaptive thinking | 400 error                        | 400 error                                       | 400 error                              |
 | Claude Fable 5        | Adaptive thinking   | Adaptive thinking | 400 error                        | 400 error                                       | 400 error                              |
@@ -159,9 +160,9 @@ On most models, thinking is on by default or one parameter away. The following t
 
 In the table, "at `high` effort or below" means the request works at `low`, `medium`, and `high` effort and returns a 400 error at `xhigh` or `max`.
 
-On Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, and Claude Mythos Preview, thinking is already on and needs no configuration. `display` defaults to `"omitted"` on these models, so the thinking text is hidden until you opt in. Opt in with `thinking: {"type": "adaptive", "display": "summarized"}`, which is exactly the following request with the [model string](../../20-Models/about-claude-models-overview.md) swapped.
+On Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Mythos Preview, and Claude Haiku 5.5, thinking is already on and needs no configuration. `display` defaults to `"omitted"` on these models, so the thinking text is hidden until you opt in. Opt in with `thinking: {"type": "adaptive", "display": "summarized"}`, as the following examples do.
 
-On Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, and Claude Sonnet 4.6, thinking is off until you set `thinking: {type: "adaptive"}`, which lets Claude decide when and how deeply to think based on the request. The following examples do that, set `display: "summarized"` so the thinking text is visible, and use a roomy `max_tokens`:
+On Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, and Claude Sonnet 4.6, thinking is off until you set `thinking: {type: "adaptive"}`, which lets Claude determine when and how deeply to think based on the request. The same request, with the [model string](../../20-Models/about-claude-models-overview.md) swapped, turns it on there. The following examples set `display: "summarized"` so the thinking text is visible, and use a roomy `max_tokens`:
 
 cURL
 
@@ -181,13 +182,15 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
 response = client.messages.create(
-    model="claude-opus-4-8",
+    model="claude-opus-5-5",
     max_tokens=16000,
     thinking={"type": "adaptive", "display": "summarized"},
     messages=[
@@ -206,7 +209,7 @@ for block in response.content:
             print(f"\nResponse: {block.text}")
 ```
 
-Running the example prints the summarized thinking, then the answer:
+The response carries the summarized thinking, then the answer:
 
 Output
 
@@ -248,6 +251,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -265,7 +270,11 @@ Claude Opus 5 also has thinking on by default and accepts `thinking: {type: "dis
 
 Claude Sonnet 5.5 also has thinking on by default, and it rejects `thinking: {type: "disabled"}` with a 400 error. To turn off up-front thinking, send `thinking: {type: "between_tools"}` instead. It's the lowest thinking setting on Claude Sonnet 5.5, and it's accepted at [effort](build-with-claude-effort.md) `high` or below. The model still returns its [progress updates between tool calls](#progress-updates). Without tools, the response contains only text, as with `disabled` on Claude Sonnet 5. See [Running without up-front thinking](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md#running-without-up-front-thinking) for prompting guidance.
 
+Claude Haiku 5.5 also has thinking on by default and accepts `thinking: {type: "disabled"}` at [effort](build-with-claude-effort.md) `high` or below. At `xhigh` or `max` effort, that combination returns a 400 error. To get less thinking, lower the effort level first. With thinking off, the model can skip a tool call it needs when you also request JSON output. A [per-message `output_config.effort`](build-with-claude-effort.md#change-effort-mid-conversation-beta) that differs from the level in effect also returns a 400 error while thinking is off. See [Use effort to control thinking](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md#use-effort-to-control-thinking) and [Use adaptive thinking with JSON output and your own tools](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md#json-output-with-your-own-tools).
+
 Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5.5, and Claude Mythos Preview reject `thinking: {type: "disabled"}`. Thinking can't be turned off on these models.
+
+To check whether a model accepts `"disabled"` or `"between_tools"` before you send a request, read its `capabilities.thinking.types.disabled.supported` or `capabilities.thinking.types.between_tools.supported` value from the Models API. [Using the Models API](../../20-Models/about-claude-models-overview.md#using-the-models-api) describes both fields.
 
 If your model supports only extended thinking (see the [per-model configuration table](build-with-claude-thinking-troubleshooting.md#supported-models)), configure it with `type: "enabled"` and a `budget_tokens` value instead. The [Extended thinking](build-with-claude-extended-thinking.md) page covers that configuration. And if any thinking configuration comes back with a 400 error, [Troubleshooting thinking](build-with-claude-thinking-troubleshooting.md) matches each error message to its fix.
 
@@ -276,7 +285,7 @@ If your model supports only extended thinking (see the [per-model configuration 
 The `display` field on the thinking configuration controls how thinking content is returned in API responses. `display` works in both modes: set it alongside `type: "adaptive"` or `type: "enabled"`. It accepts these values:
 
 - `"summarized"`: thinking blocks contain [summarized thinking](#summarized-thinking) text, a readable summary of Claude's reasoning. This is the default on Claude Opus 4.6, Claude Sonnet 4.6, and earlier models.
-- `"omitted"`: thinking blocks are returned with an empty `thinking` field. The `signature` field still carries the encrypted full thinking for multi-turn continuity (see [Thinking encryption](#thinking-encryption)). This is the default on Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Opus 4.8, Claude Opus 4.7, and [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md).
+- `"omitted"`: thinking blocks are returned with an empty `thinking` field. The `signature` field still carries the encrypted full thinking for multi-turn continuity (see [Thinking encryption](#thinking-encryption)). This is the default on Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Opus 4.8, Claude Opus 4.7, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), and Claude Haiku 5.5.
 - `"updates"` (beta): reasoning blocks are returned with an empty `thinking` field, as with `"omitted"`, and the short [progress updates](#progress-updates) some models write between tool calls come back as readable text. Requires the beta header `thinking-display-updates-2026-08-18`.
 
 Set `display: "omitted"` when your application doesn't surface thinking content to users. The primary benefit is faster time-to-first-text-token when streaming: the server skips streaming thinking tokens entirely and delivers only the signature, so the final text response begins streaming sooner.
@@ -307,7 +316,7 @@ Keep the following in mind when working with omitted thinking:
 
 - You're still charged for the full thinking tokens. Omitting reduces latency, not cost.
 - If you pass thinking blocks back in multi-turn conversations, pass them unchanged. The server decrypts the `signature` to reconstruct the original thinking for prompt construction (see [Preserving thinking blocks](#preserving-thinking-blocks)). Any text you place in the `thinking` field of a round-tripped omitted block is ignored.
-- `display` is invalid with `thinking.type: "disabled"` (there is nothing to display).
+- `display` is invalid with `thinking.type: "disabled"` (there is nothing to display) and with `thinking.type: "between_tools"` (Claude Sonnet 5.5 only), which accepts no other field. With `between_tools`, progress updates still come back with summary text, as they do under `display: "updates"` (see [Progress updates](#progress-updates)).
 - When using `thinking.type: "adaptive"` and the model skips thinking for a simple request, no thinking block is produced regardless of `display`.
 - When streaming with `display: "omitted"`, no thinking text is streamed. Each thinking block streams a `thinking_delta` with an empty `thinking` string, then its `signature_delta`. With `display: "updates"`, only [progress-update blocks](#progress-updates) stream `thinking_delta` events that carry text. See [Streaming thinking](#streaming-thinking) for the event sequence.
 
@@ -357,13 +366,15 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
 with client.messages.stream(
-    model="claude-opus-4-8",
+    model="claude-opus-5-5",
     max_tokens=16000,
     thinking={"type": "adaptive", "display": "summarized"},
     messages=[
@@ -396,7 +407,7 @@ Output
 
 ```python
 event: message_start
-data: {"type": "message_start", "message": {"id": "msg_01...", "type": "message", "role": "assistant", "content": [], "model": "claude-opus-4-8", "stop_reason": null, "stop_sequence": null}}
+data: {"type": "message_start", "message": {"id": "msg_01...", "type": "message", "role": "assistant", "content": [], "model": "claude-opus-5-5", "stop_reason": null, "stop_sequence": null}}
 
 event: content_block_start
 data: {"type": "content_block_start", "index": 0, "content_block": {"type": "thinking", "thinking": "", "signature": ""}}
@@ -506,7 +517,7 @@ With the two controls separated this way, pick the one that matches your goal:
 
 Thinking works alongside [tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md), letting Claude reason through tool selection and process tool results. Two constraints apply:
 
-1.  **Tool choice limitation (manual mode):** tool use with manual extended thinking (`thinking: {type: "enabled"}`) only supports `tool_choice: {"type": "auto"}` (the default) or `tool_choice: {"type": "none"}`. Using `tool_choice: {"type": "any"}` or `tool_choice: {"type": "tool", "name": "..."}` results in an error because these options force tool use, which is incompatible with manual extended thinking. Adaptive thinking, including on models where thinking is on by default, supports forced tool use, except on Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 (see [Response prefill and forced tool use](#limits-and-feature-compatibility)).
+1.  **Tool choice limitation (manual mode):** tool use with manual extended thinking (`thinking: {type: "enabled"}`) only supports `tool_choice: {"type": "auto"}` (the default) or `tool_choice: {"type": "none"}`. Using `tool_choice: {"type": "any"}` or `tool_choice: {"type": "tool", "name": "..."}` results in an error because these options force tool use, which is incompatible with manual extended thinking. Adaptive thinking, including on models where thinking is on by default, supports forced tool use, except on Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 (see [Response prefill and forced tool use](#limits-and-feature-compatibility)). Where forced tool use is accepted, the response starts with the tool call and has no `thinking` block.
 2.  **Preserving thinking blocks:** when you return tool results, you must pass the thinking blocks from the assistant message back to the API, complete and unmodified. See [Preserving thinking blocks](#preserving-thinking-blocks).
 
 **A tool-use loop is one assistant turn.** From the model's perspective, an assistant turn doesn't complete until Claude finishes its full response, which may include multiple tool calls and results. This whole sequence is a single assistant turn:
@@ -566,7 +577,7 @@ For a complete two-turn walkthrough with code in every SDK, see [Thinking in too
 
 Interleaved thinking lets Claude think between tool calls, reasoning about each tool result before acting on it. With interleaved thinking, Claude can:
 
-- Reason about the results of a tool call before deciding what to do next
+- Reason about the results of a tool call before determining what to do next
 - Chain multiple tool calls with reasoning steps in between
 - Make more nuanced decisions based on intermediate results
 
@@ -594,7 +605,7 @@ What a progress-update block contains depends on [`display`](#controlling-thinki
 
 On Claude Sonnet 5.5, the lowest thinking setting is `thinking: {type: "between_tools"}`. It turns off up-front thinking, and each progress update comes back with its summary text, as it would under `display: "updates"`. `between_tools` is accepted only at [effort](build-with-claude-effort.md) `high` or below. At `xhigh` or `max`, a request with it returns a 400 error. `between_tools` takes no other field: `display`, `budget_tokens`, or `block_binding` sent with it returns a 400 error. The setting needs no beta header and works on every platform that offers Claude Sonnet 5.5. Pass the blocks back unchanged: a progress-update block you send back gives the model the full note it wrote, not the summary.
 
-Use `display: "updates"` for an agent interface that keeps reasoning hidden and shows the user a status line at each step. Under it, any `thinking` block with non-empty text is a progress update, so render those and nothing else. It's in beta and requires the beta header `thinking-display-updates-2026-08-18` (on Amazon Bedrock, Google Cloud, and Microsoft Foundry, pass the beta value as described in [Beta headers](../Endpoints/beta-headers.md)). Without it, the value is rejected with the same 400 `invalid_request_error` as an unknown `display` value.
+Use `display: "updates"` for an agent interface that keeps reasoning hidden and shows the user a status line at each step. Under it, any `thinking` block with non-empty text is a progress update, so render those and nothing else. It's in beta and requires the beta header `thinking-display-updates-2026-08-18` (to send it on Amazon Bedrock, Google Cloud, or Microsoft Foundry, see [Beta features on other platforms](../Endpoints/beta-headers.md#beta-features-on-other-platforms)). Without it, the value is rejected with the same 400 `invalid_request_error` as an unknown `display` value.
 
 ```python
 {
@@ -668,7 +679,7 @@ Keep the following in mind when working with progress updates:
 
 Whether thinking blocks from previous assistant turns stay in context by default depends on the model:
 
-- **Keep all prior turns:** Claude Opus 4.5 and later Opus models, Claude Sonnet 4.6 and later Sonnet models, Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, and Claude Mythos Preview.
+- **Keep all prior turns:** Claude Opus 4.5 and later Opus models, Claude Sonnet 4.6 and later Sonnet models, Claude Haiku 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, and Claude Mythos Preview.
 - **Keep the last turn only:** earlier Opus and Sonnet models, and all Haiku models through Claude Haiku 4.5. When you pass older thinking blocks back, the API strips them automatically. You don't need to remove them yourself.
 
 Preservation brings two benefits:
@@ -678,16 +689,16 @@ Preservation brings two benefits:
 
 The tradeoff is context usage: long conversations consume more context space on keep-all models, because retained thinking blocks count as input like any other conversation history (see [Thinking and the context window](#thinking-and-the-context-window)). The behavior is automatic in both regimes. No code changes or beta headers are required, and you should keep passing complete, unmodified thinking blocks back as described in [Preserving thinking blocks](#preserving-thinking-blocks). To override the default in either direction, use [thinking block clearing](build-with-claude-context-editing.md#thinking-block-clearing).
 
-**Switching models mid-conversation.** Keep passing thinking blocks back unchanged when you switch models, for example after a [classifier refusal fallback](build-with-claude-refusals-and-fallback.md). A thinking block is readable only by the model that produced it and certain other models, and the API ignores or drops the blocks the target model can't read. On Claude Fable 5.1 and Claude Mythos 5.1 the direction matters: they read every earlier model's thinking blocks and no earlier model reads theirs, so switching up to them keeps the conversation's reasoning and switching down drops it (see [how dropped blocks are billed and reported](build-with-claude-preserved-thinking.md#switching-models)). Claude Opus 5.5 reads Claude Opus 5's thinking blocks and those of earlier Opus, Sonnet, and Haiku models, but not those of the Claude Fable and Claude Mythos models; on the Claude API, Claude Fable 5.1 and Claude Mythos 5.1 read Claude Opus 5.5's blocks. A switch from Claude Opus 5.5 up to Claude Fable 5.1 on the Claude API keeps the earlier turns' reasoning; a switch from Claude Fable 5.1 to Claude Opus 5.5 drops it. Claude Sonnet 5.5 reads thinking blocks from Claude Sonnet 5, Claude Opus 4.8, Claude Haiku 4.5, and earlier models, but not from Claude Opus 5, Claude Opus 5.5, or any Claude Fable or Claude Mythos model. On the Claude API and Google Cloud, Claude Opus 5.5 reads Claude Sonnet 5.5's blocks and no other model does: a switch from Claude Sonnet 5.5 up to Claude Opus 5.5 on the Claude API and Google Cloud keeps the earlier turns' reasoning, and any other switch away from Claude Sonnet 5.5 drops it. Strip prior `thinking` and `redacted_thinking` blocks yourself only to save input tokens on models that ignore rather than drop them, and never when redeeming a [fallback credit](build-with-claude-fallback-credit.md), which requires the body unchanged.
+**Switching models mid-conversation.** Keep passing thinking blocks back unchanged when you switch models, for example after a [classifier refusal fallback](build-with-claude-refusals-and-fallback.md). A thinking block is readable only by the model that produced it and certain other models, and the API ignores or drops the blocks the target model can't read. On Claude Fable 5.1 and Claude Mythos 5.1 the direction matters: they read earlier models' thinking blocks, and only the two of them read each other's, so switching to them keeps the conversation's reasoning and switching from them to any other model drops it (see [how dropped blocks are billed and reported](build-with-claude-preserved-thinking.md#switching-models)). Claude Opus 5.5 reads Claude Opus 5's thinking blocks and those of earlier Opus, Sonnet, and Haiku models, and, on the Claude API and Google Cloud, of Claude Haiku 5.5, but not those of the Claude Fable and Claude Mythos models; on the Claude API, Claude Fable 5.1 and Claude Mythos 5.1 read Claude Opus 5.5's blocks. A switch from Claude Opus 5.5 up to Claude Fable 5.1 on the Claude API keeps the earlier turns' reasoning; a switch from Claude Fable 5.1 to Claude Opus 5.5 drops it. Claude Sonnet 5.5 reads thinking blocks from Claude Sonnet 5, Claude Opus 4.8, Claude Haiku 4.5, and earlier models, and, on the Claude API and Google Cloud, from Claude Haiku 5.5, but not from Claude Opus 5, Claude Opus 5.5, or any Claude Fable or Claude Mythos model. On the Claude API and Google Cloud, Claude Opus 5.5 reads Claude Sonnet 5.5's blocks and no other model does: a switch from Claude Sonnet 5.5 up to Claude Opus 5.5 on the Claude API and Google Cloud keeps the earlier turns' reasoning, and any other switch away from Claude Sonnet 5.5 drops it. Claude Haiku 5.5 reads thinking blocks from Claude Sonnet 5, Claude Opus 4.8, Claude Haiku 4.5, and earlier models, but not from Claude Opus 5, Claude Opus 5.5, Claude Sonnet 5.5, or any Claude Fable or Claude Mythos model. On the Claude API and Google Cloud, Claude Opus 5.5 and Claude Sonnet 5.5 read Claude Haiku 5.5's blocks and no other model does. Strip prior `thinking` and `redacted_thinking` blocks yourself only to save input tokens on models that ignore rather than drop them, and never when redeeming a [fallback credit](build-with-claude-fallback-credit.md), which requires the body unchanged.
 
 ## Preserved thinking
 
-[Preserved thinking](build-with-claude-preserved-thinking.md) decides whether the model can use a thinking block that you send back from an earlier turn. Starting with Claude Fable 5.1, the API checks the `signature` of every `thinking` or `redacted_thinking` block in a request for two things:
+[Preserved thinking](build-with-claude-preserved-thinking.md) determines whether the model can use a thinking block that you send back from an earlier turn. Starting with Claude Fable 5.1, the API checks the `signature` of every `thinking` or `redacted_thinking` block in a request for two things:
 
 - **The model that produced it.** Each model reads its own thinking blocks and those of a fixed set of other models. Claude Fable 5.1 reads blocks from Claude Opus 5 and, on the Claude API, from Claude Opus 5.5; neither Claude Opus 5 nor Claude Opus 5.5 reads blocks from Claude Fable 5.1. The API drops a block the current model can't read, without an error and without billing it. See [Switching models mid-conversation](build-with-claude-preserved-thinking.md#switching-models).
 - **Everything sent before it.** A block stays valid only while the top-level `system` prompt, the `tools`, and the messages before it are unchanged. If any of them changes, that block and every later thinking block are invalid, and the API rejects the request with a 400 error or drops the invalid blocks, whichever you choose. See [Keeping the prefix unchanged](build-with-claude-preserved-thinking.md#prefix-check).
 
-Claude Sonnet 5.5's thinking blocks are also tied to the account that produced them. See [Thinking blocks stay with the account that produced them](build-with-claude-preserved-thinking.md#account-bound-thinking) for where the API enforces this.
+Thinking blocks from Claude Sonnet 5.5 and Claude Haiku 5.5 are also tied to the account that produced them. See [Thinking blocks stay with the account that produced them](build-with-claude-preserved-thinking.md#account-bound-thinking) for where the API enforces this.
 
 The model check applies to every account. The API enforces the prefix check by default for accounts created on or after August 31, 2026, 00:00 UTC. On older accounts it enforces the check only on requests that set `thinking.block_binding.prefix_mismatch_behavior`. Make your integration append-only regardless of your account's age, so the same code works on every account, including newer accounts enforced by default.
 
@@ -769,7 +780,7 @@ Keep the following in mind when working with signatures:
 - When [streaming responses](#streaming-thinking), the signature arrives as a `signature_delta` inside a `content_block_delta` event just before the `content_block_stop` event.
 - `signature` values are significantly longer in Claude 4 and later models than in previous models.
 - The `signature` field is opaque: don't interpret or parse it.
-- `signature` values are compatible across platforms (the Claude API, [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md), and [Google Cloud](build-with-claude-claude-on-vertex-ai.md)). Values generated on one platform work on another.
+- `signature` values are compatible across platforms (the Claude API, [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md), and [Google Cloud](build-with-claude-claude-on-vertex-ai.md)). Values generated on one platform work on another, except that thinking blocks from Claude Sonnet 5.5 and Claude Haiku 5.5 work only in the account that produced them or in an account linked to it. See [Thinking blocks stay with the account that produced them](build-with-claude-preserved-thinking.md#account-bound-thinking).
 
 ## Redacted thinking blocks
 
@@ -798,11 +809,11 @@ If your code filters content blocks by type (for example, `block.type == "thinki
 
 ### Sampling parameters
 
-On Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Mythos Preview, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5.5, and Claude Sonnet 5, non-default `temperature`, `top_p`, or `top_k` values return a 400 error on every request, regardless of whether thinking is used. On older models, the restriction applies only while thinking is on: `temperature` and `top_k` are incompatible with thinking, and `top_p` is allowed at values between 0.95 and 1.
+On Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Mythos Preview, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Haiku 5.5, non-default `temperature`, `top_p`, or `top_k` values return a 400 error on every request, regardless of whether thinking is used. On these models, the `top_p` default is `0.99`, so a `top_p` of `1` returns a 400 error, and so does a request that includes both `temperature` and `top_p`, even at their defaults. See [Remove sampling parameters](../../20-Models/models-haiku-5-5-migration-guide.md#remove-sampling-parameters). On older models, the restriction applies only while thinking is on: `temperature` and `top_k` are incompatible with thinking, and `top_p` is allowed at values between 0.95 and 1.
 
 ### Response prefill and forced tool use
 
-You can't prefill the assistant response while thinking is on. Forced tool use (`tool_choice: {"type": "any"}` or `{"type": "tool", ...}`) is incompatible with manual extended thinking but works with adaptive thinking. The exceptions are Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, which reject forced tool use on every request with a 400 error. On those models, use `tool_choice: {"type": "auto"}` with [strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) or [structured outputs](build-with-claude-structured-outputs.md) instead. See [Thinking with tool use](#thinking-with-tool-use).
+Claude 4.6 and later models and Claude Mythos Preview reject a prefilled final assistant turn with a 400 error, whether or not thinking is on (see [Prefill not supported](../Endpoints/errors.md#prefill-not-supported)). On earlier models, you can't prefill the assistant response while thinking is on. Forced tool use (`tool_choice: {"type": "any"}` or `{"type": "tool", ...}`) is incompatible with manual extended thinking but works with adaptive thinking. The exceptions are Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, which reject forced tool use on every request with a 400 error. On those models, use `tool_choice: {"type": "auto"}` with [strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) or [structured outputs](build-with-claude-structured-outputs.md) instead. Where forced tool use is accepted, the response starts with the tool call and has no `thinking` block. To let the model think before it calls a tool, use `tool_choice: {"type": "auto"}` and say in the prompt when to use the tool. See [Thinking with tool use](#thinking-with-tool-use).
 
 ### Output limits
 
@@ -825,6 +836,7 @@ Each model accepts `max_tokens` up to the ceiling listed here. On the [Message B
 | Claude Sonnet 5       | 128K              | 300K                 |
 | Claude Sonnet 4.6     | 128K              | 300K                 |
 | Claude Sonnet 4.5     | 64K               | Not available        |
+| Claude Haiku 5.5      | 128K              | 300K                 |
 | Claude Haiku 4.5      | 64K               | Not available        |
 
 See the [models overview](../../20-Models/about-claude-models-overview.md) for limits on legacy models.

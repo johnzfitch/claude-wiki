@@ -2,7 +2,7 @@
 title: "Give Claude custom tools - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/custom-tools"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-06T06:23:32Z"
+fetched_at: "2026-10-20T06:37:43Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -197,7 +197,7 @@ The [`get_precipitation_chance` tool below](#add-more-tools) shows both patterns
 
 Call a custom tool
 
-Pass the MCP server you created to `query` via the `mcpServers` option. The key in `mcpServers` becomes the `{server_name}` segment in each tool’s fully qualified name: `mcp__{server_name}__{tool_name}`. List that name in `allowedTools` so the tool runs without a permission prompt. These snippets reuse the `weatherServer` from the [weather tool example](#weather-tool-example) to ask Claude what the weather is in a specific location.
+Pass the MCP server you created to `query` via the `mcpServers` option, and list each tool’s [fully qualified name](agent-sdk-mcp.md#tool-naming-convention) in `allowedTools` so the tool runs without a permission prompt. That name is `mcp__{server_name}__{tool_name}`, where `{server_name}` is the key you give the server in `mcpServers`. If the key contains characters such as `.` or spaces, replace them with `_` when you write `{server_name}`. These snippets reuse the `weatherServer` from the [weather tool example](#weather-tool-example) to ask Claude what the weather is in a specific location.
 
 Python
 

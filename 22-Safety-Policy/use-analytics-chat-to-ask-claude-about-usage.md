@@ -2,7 +2,7 @@
 title: "Use analytics chat to ask Claude about usage | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14729354-use-analytics-chat-to-ask-claude-about-usage"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:24Z"
+fetched_at: "2026-10-23T06:29:08Z"
 tags: ["safety"]
 ---
 
@@ -151,7 +151,7 @@ Queries can take up to two minutes for large organizations. If one repeatedly fa
 
 ### Data looks out of date
 
-Check the date shown on the result. The underlying data typically lags by one to two days. If it’s more than two days behind, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+Check the date shown on the result. The underlying data typically lags by one to two days. If it’s more than two days behind, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md)**.
 
 ### The Analytics Chat tab is missing
 

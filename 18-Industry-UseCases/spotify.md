@@ -2,7 +2,7 @@
 title: "Spotify Claude Agent SDK case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/spotify"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:01Z"
+fetched_at: "2026-10-23T06:30:09Z"
 tags: ["agents", "case-studies", "enterprise", "sdk", "security"]
 ---
 
@@ -40,7 +40,7 @@ Introducing Claude Code
 
 See Claude Code in action—from concept to commit in one seamless workflow.
 
-[**Spotify**](https://www.spotify.com), the world's most popular audio streaming subscription service, serves more than 713 million users across 180+ markets with access to over 100 million tracks, 7 million podcast titles, and 350,000 audiobooks.
+[**Spotify**](https://www.spotify.com), the world’s most popular audio streaming subscription service, serves more than 713 million users across 180+ markets with access to over 100 million tracks, 7 million podcast titles, and 350,000 audiobooks.
 
 ## With Claude Agent SDK, Spotify:
 
@@ -55,11 +55,11 @@ Spotify has a massive codebase that requires constant upkeep: language moderniza
 
 To tame its sprawling software ecosystem, Spotify relies on Backstage, its homegrown [internal developer portal](https://backstage.spotify.com/discover/backstage-101) (IDP). By standardizing how components are built and ensuring clear ownership, Backstage provides a more consistent, predictable engineering environment for both your developers and your tools: You can’t safely automate what you don’t understand.
 
-That foundation enabled Spotify’s first major step toward large-scale, automated code changes. In 2022, the company introduced Fleet Management, a framework for applying code changes across dozens, hundreds, or thousands of repositories at once. To date, around half of Spotify's pull requests are being driven through this system.
+That foundation enabled Spotify’s first major step toward large-scale, automated code changes. In 2022, the company introduced Fleet Management, a framework for applying code changes across dozens, hundreds, or thousands of repositories at once. To date, around half of Spotify’s pull requests are being driven through this system.
 
 But Fleet Management had a ceiling. Each transformation required engineers to write deterministic scripts using abstract syntax tree (AST) manipulation or regex patterns. This approach demanded specialized expertise, which limited most automated changes to simple modifications. Complex semantic migrations—the kind that require understanding context and making judgment calls—remained manual, labor-intensive work.
 
-Spotify needed a way to automate sophisticated code changes that traditional scripting couldn't handle: transformations that required understanding the meaning of code, not just its structure.
+Spotify needed a way to automate sophisticated code changes that traditional scripting couldn’t handle: transformations that required understanding the meaning of code, not just its structure.
 
 ## Claude Agent SDK enables autonomous, high-quality migrations
 
@@ -67,11 +67,11 @@ Spotify integrated Claude Agent SDK into their Fleet Management infrastructure i
 
 ## From text instructions to production code
 
-The shift from AST manipulation to natural language instructions changed what's possible. Engineers who previously needed specialized scripting expertise can now describe transformations in plain text and let Claude Code execute them across the fleet. For large-scale migrations, prompts are version-controlled in Git. Spotify's internal orchestration then triggers the Claude Code agent to execute transformations across repositories. For individual tasks, engineers interact with an internal Slack bot that triggers the agent in the background.
+The shift from AST manipulation to natural language instructions changed what’s possible. Engineers who previously needed specialized scripting expertise can now describe transformations in plain text and let Claude Code execute them across the fleet. For large-scale migrations, prompts are version-controlled in Git. Spotify’s internal orchestration then triggers the Claude Code agent to execute transformations across repositories. For individual tasks, engineers interact with an internal Slack bot that triggers the agent in the background.
 
-"Our engineers are now able to execute fleet-wide migrations at a pace that simply wasn't possible before,” says Max Charas, Senior Staff Engineer at Spotify. “It's a promising sign of how AI can reduce the complexity of maintaining large code bases and a clear signal of how AI is reshaping development velocity.”
+“Our engineers are now able to execute fleet-wide migrations at a pace that simply wasn’t possible before,” says Max Charas, Senior Staff Engineer at Spotify. “It’s a promising sign of how AI can reduce the complexity of maintaining large code bases and a clear signal of how AI is reshaping development velocity.”
 
-Throughout the process, Spotify’s engineering team collaborated with Anthropic’s Applied AI team to ensure best practices. The architecture was a great fit due to Spotify's focus being automated background coding over interactive development, eliminating the need for custom user interfaces. Plus, Claude Code's flexible hooks system allowed extensive customization, enabling deterministic pre- and post-agent actions that seamlessly integrated with Spotify’s existing workflows.
+Throughout the process, Spotify’s engineering team collaborated with Anthropic’s Applied AI team to ensure best practices. The architecture was a great fit due to Spotify’s focus being automated background coding over interactive development, eliminating the need for custom user interfaces. Plus, Claude Code’s flexible hooks system allowed extensive customization, enabling deterministic pre- and post-agent actions that seamlessly integrated with Spotify’s existing workflows.
 
 “Claude has consistently delivered the strongest performance for large-scale code transformation work, which is why it has become our model of choice over the past six months,” said Niklas Gustavsson, Chief Architect and VP of Engineering at Spotify. “As we raise the bar again, we’ve adopted Sonnet 4.5 as our new default, because it currently leads on the metrics that matter for fleet-wide engineering at scale.”
 
@@ -79,13 +79,13 @@ The team selected Claude Code specifically because it proved easy to prompt, eff
 
 ## The outcome
 
-Hundreds of engineers now interact with the background coding agent at Spotify. The agent is already generating more than 650 monthly pull requests merged into production, saving engineers up to 90% of the time they'd spend writing migrations manually.
+Hundreds of engineers now interact with the background coding agent at Spotify. The agent is already generating more than 650 monthly pull requests merged into production, saving engineers up to 90% of the time they’d spend writing migrations manually.
 
 Platform teams are now starting to take on projects that previously were too costly and complex to undertake. One example includes a tech standardization effort enforcing explicit [context](https://grpc.github.io/grpc-java/javadoc/io/grpc/Context.html) propagation for all Java gRPC services throughout the company. This is a complex and breaking change that in many cases would take several hours and deep gRPC knowledge to implement per service. Now Claude has automated a majority of the implementation and engineers only have to review. The opportunity ahead, the team notes, is less about raw tooling and more about capability building — helping engineers learn to craft prompts that make AI a force multiplier in their workflow.
 
 Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Integration infrastructure is expected to enhance both success rates and code quality. Additionally, Spotify plans to extend the background coding agent to macOS and iOS codebases, aiming to accelerate client engineering velocity.
 
-"The engineering teams at Spotify and Anthropic share a similar approach to building great products", said Charas. "We're eager to explore how we can push the boundaries together, using AI to help our teams move faster and ship even higher-quality products."
+“The engineering teams at Spotify and Anthropic share a similar approach to building great products”, said Charas. “We’re eager to explore how we can push the boundaries together, using AI to help our teams move faster and ship even higher-quality products.”
 
 ## Related stories
 
@@ -110,7 +110,8 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -128,12 +129,12 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -166,7 +167,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -184,6 +185,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -199,7 +201,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -234,7 +236,8 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -252,12 +255,12 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -290,7 +293,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -308,6 +311,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -323,7 +327,7 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

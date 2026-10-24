@@ -2,7 +2,7 @@
 title: "Apollo Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/apollo"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:38Z"
+fetched_at: "2026-10-23T06:29:47Z"
 tags: ["api", "case-studies", "enterprise", "security", "testing"]
 ---
 
@@ -45,48 +45,48 @@ Apollo helps thousands of sales teams convert prospects more effectively by comb
 
 Sales engagement platforms have long helped companies find, engage, and convert prospects. However, scaling personalization without sacrificing quality remains elusive. Apollo faced this challenge head-on, supporting thousands of customers from startups to enterprise teams needing genuine and relevant outreach, not generic and impersonal.
 
-With the emergence of large language models, Apollo recognized an opportunity to transform how sales teams communicate. Tyler Phillips, AI Product Lead at Apollo, explained, "When LLMs came on the scene, it unlocked three things for us: Improving the underlying data layer for better lead discovery, enabling smarter prospect research, and fundamentally enhancing the quality of sales messaging.”
+With the emergence of large language models, Apollo recognized an opportunity to transform how sales teams communicate. Tyler Phillips, AI Product Lead at Apollo, explained, “When LLMs came on the scene, it unlocked three things for us: Improving the underlying data layer for better lead discovery, enabling smarter prospect research, and fundamentally enhancing the quality of sales messaging.”
 
-Early experiments with other AI models fell short. Competing LLM providers offered AI capabilities, but Phillips noted that "the technology can be very powerful, but it's not very accessible." For Apollo's user base, who "don't want to spend all day thinking about outbound," the writing quality of initial AI implementations wasn't there.
+Early experiments with other AI models fell short. Competing LLM providers offered AI capabilities, but Phillips noted that “the technology can be very powerful, but it’s not very accessible.” For Apollo’s user base, who “don’t want to spend all day thinking about outbound,” the writing quality of initial AI implementations wasn’t there.
 
 ## Testing reveals Claude as the superior writing model
 
-Apollo's path to Claude started with a systematic evaluation. Phillips, who personally chose Claude for his own writing, designed a rigorous test to identify the best model for their platform.
+Apollo’s path to Claude started with a systematic evaluation. Phillips, who personally chose Claude for his own writing, designed a rigorous test to identify the best model for their platform.
 
-"We conducted a blind test, evaluating models across four metrics: accuracy, clarity, relevance, and tone," Phillips said. Despite initial concerns about costs due to their high messaging volume, the results were decisive.
+“We conducted a blind test, evaluating models across four metrics: accuracy, clarity, relevance, and tone,” Phillips said. Despite initial concerns about costs due to their high messaging volume, the results were decisive.
 
-Claude 3.5 Haiku emerged as the clear winner, achieving a 76% preference rate among Apollo users—significantly outperforming competitors. "Haiku had the highest preference rate by far," Phillips explained. The impact wasn't just theoretical. "When we deployed it in production, we saw a drastic retention spike, from 20% to 23%, solely driven by the model change."
+Claude 3.5 Haiku emerged as the clear winner, achieving a 76% preference rate among Apollo users—significantly outperforming competitors. “Haiku had the highest preference rate by far,” Phillips explained. The impact wasn’t just theoretical. “When we deployed it in production, we saw a drastic retention spike, from 20% to 23%, solely driven by the model change.”
 
 ## Building intelligent sales workflows powered by Claude
 
-Apollo's integration of Claude goes beyond simple message generation. The implementation weaves multiple data sources together, creating personalized outbound messages that resonate with prospects.
+Apollo’s integration of Claude goes beyond simple message generation. The implementation weaves multiple data sources together, creating personalized outbound messages that resonate with prospects.
 
 Claude powers several critical components:
 
-- **AI Copywriter Model**: Claude 3.5 Haiku generates all AI-driven outbound messages, from personalized emails to follow-up sequences. When users click to create a message, Claude crafts compelling copy tailored to each prospect's industry, role, and interests.
-- **Signal Aggregation**: Claude combines data from Apollo's database with external signals like recent news, company events, and hiring patterns. This creates messages referencing timely, relevant information about each prospect.
-- **Voice and Tone Matching**: Claude learns each salesperson's unique writing style and adapts all generated content to match their authentic voice and preferred tone by analyzing samples of users' past successful emails.
-- **Messaging Templates**: All of Apollo's pre-built sales templates use Claude for dynamic content generation. Whether using a cold outreach template or a re-engagement sequence, Claude ensures each message feels personalized rather than templated.
+- **AI Copywriter Model**: Claude 3.5 Haiku generates all AI-driven outbound messages, from personalized emails to follow-up sequences. When users click to create a message, Claude crafts compelling copy tailored to each prospect’s industry, role, and interests.
+- **Signal Aggregation**: Claude combines data from Apollo’s database with external signals like recent news, company events, and hiring patterns. This creates messages referencing timely, relevant information about each prospect.
+- **Voice and Tone Matching**: Claude learns each salesperson’s unique writing style and adapts all generated content to match their authentic voice and preferred tone by analyzing samples of users’ past successful emails.
+- **Messaging Templates**: All of Apollo’s pre-built sales templates use Claude for dynamic content generation. Whether using a cold outreach template or a re-engagement sequence, Claude ensures each message feels personalized rather than templated.
 
-"We use external tools to pull signals and our internal data, then Claude aggregates them to generate messages in your tone and voice, relevant to the target persona," Phillips said. "It functions as our intelligent aggregation model."
+“We use external tools to pull signals and our internal data, then Claude aggregates them to generate messages in your tone and voice, relevant to the target persona,” Phillips said. “It functions as our intelligent aggregation model.”
 
 ## Driving measurable impact for sales teams
 
-Claude's AI messaging directly impacts Apollo's performance metrics. Apollo customers using Claude-powered AI messaging book more meetings than those who don't.
+Claude’s AI messaging directly impacts Apollo’s performance metrics. Apollo customers using Claude-powered AI messaging book more meetings than those who don’t.
 
-"Sales reps using Claude power-up messaging book 1.35x more meetings than reps using traditional email methods," Phillips reported.
+“Sales reps using Claude power-up messaging book 1.35x more meetings than reps using traditional email methods,” Phillips reported.
 
-Sales representatives report significant efficiency gains across the board. Dan Vovan at FLO EV Charging found "Apollo's email creation tool cut my writing time by 80%." Conner Eagleton at Qualytics saw similar results: "Apollo's AI prospecting tools cut my prospecting time by almost 40%."
+Sales representatives report significant efficiency gains across the board. Dan Vovan at FLO EV Charging found “Apollo’s email creation tool cut my writing time by 80%.” Conner Eagleton at Qualytics saw similar results: “Apollo’s AI prospecting tools cut my prospecting time by almost 40%.”
 
-The impact extends beyond efficiency. Jesse D'Agostino from Growth Marketing Firm captured the broader benefit: "Apollo.io's AI Copywriter tool has saved me countless hours by actually writing emails that get responses. My engagement rates jumped about 20% with key accounts since implementing these tools."
+The impact extends beyond efficiency. Jesse D’Agostino from Growth Marketing Firm captured the broader benefit: “Apollo.io’s AI Copywriter tool has saved me countless hours by actually writing emails that get responses. My engagement rates jumped about 20% with key accounts since implementing these tools.”
 
 ## Envisioning an AI-enhanced sales future
 
-The future Apollo envisions keeps humans at the center. "I believe in human plus AI versus replacing humans," Phillips said. "We're creating a cohesive end-to-end experience where Claude acts as your teammate."
+The future Apollo envisions keeps humans at the center. “I believe in human plus AI versus replacing humans,” Phillips said. “We’re creating a cohesive end-to-end experience where Claude acts as your teammate.”
 
-The company is pushing beyond simple automation toward genuine assistance. Their next frontier involves building an agentic system that can execute actions through Apollo's APIs, answer product questions, and guide users through complex workflows.
+The company is pushing beyond simple automation toward genuine assistance. Their next frontier involves building an agentic system that can execute actions through Apollo’s APIs, answer product questions, and guide users through complex workflows.
 
-While others race toward automation, Apollo doubles down on augmentation—making sales professionals more effective without replacing the human insight that drives successful selling. With Claude, they're bringing sophisticated writing capabilities to tens of thousands of sales professionals who need to scale personalized communication without losing the personal touch.
+While others race toward automation, Apollo doubles down on augmentation—making sales professionals more effective without replacing the human insight that drives successful selling. With Claude, they’re bringing sophisticated writing capabilities to tens of thousands of sales professionals who need to scale personalized communication without losing the personal touch.
 
 ## Related stories
 
@@ -111,7 +111,8 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -129,12 +130,12 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -167,7 +168,7 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -185,6 +186,7 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -200,7 +202,7 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -235,7 +237,8 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -253,12 +256,12 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -291,7 +294,7 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -309,6 +312,7 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -324,7 +328,7 @@ While others race toward automation, Apollo doubles down on augmentation—makin
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

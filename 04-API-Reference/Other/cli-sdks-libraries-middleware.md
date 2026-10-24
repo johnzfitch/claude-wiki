@@ -2,7 +2,7 @@
 title: "SDK middleware - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/middleware"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:32:40Z"
+fetched_at: "2026-10-20T06:37:49Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "cli", "sdk"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fmiddleware)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fmiddleware)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
@@ -84,6 +84,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -115,4 +117,4 @@ The SDK also accepts a custom HTTP client (for proxy configuration, custom TLS, 
 
 ## Built-in middleware
 
-The SDK ships a refusal-fallback middleware that automatically retries requests Claude Fable 5 declines on a fallback model. See [Detect and retry on a fallback model](../Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback) for setup and per-language examples.
+The SDK ships a refusal-fallback middleware that automatically retries a request Claude declines (`stop_reason: "refusal"`) on a fallback model. [Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md) lists the models whose safety classifiers can decline requests, and [Detect and retry on a fallback model](../Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback) covers setup and per-language examples.

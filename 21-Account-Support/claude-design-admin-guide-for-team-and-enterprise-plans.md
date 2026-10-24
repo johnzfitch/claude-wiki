@@ -2,11 +2,13 @@
 title: "Claude Design admin guide for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:28:17Z"
+fetched_at: "2026-10-23T06:29:07Z"
 tags: ["account", "enterprise"]
 ---
 
 # Claude Design admin guide for Team and Enterprise plans
+
+Updated today
 
 
 Claude Design lets your team create on-brand designs, prototypes, and interactive microsites through conversation with Claude. Presentations now have their own tool, Claude Slides.
@@ -37,7 +39,7 @@ To turn on the **Design** template, see the instructions in **[Artifacts admin g
 
 On Enterprise plans, you can control access to standalone Claude Design with **[custom roles](https://support.claude.com/en/articles/13930452)**.
 
-**Important:** Standalone Claude Design closes on \[placeholder: close date for Team and Enterprise plans\]. Before then, check that **Artifacts** and **Design systems** are on in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**, so users can migrate their design systems. On Enterprise plans, **Design systems** is off by default. Learn more in **[Migrate from standalone Claude Design to Claude](../15-Claude-AI-Features/migrate-from-standalone-claude-design-to-claude-claude-help-center.md)**.
+**Important:** Standalone Claude Design closes on December 14, 2026. Before then, check that **Artifacts** and **Design systems** are on in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**, so users can move their projects and design systems. On Enterprise plans, **Design systems** is off by default. If your organization has a retention period that covers artifacts, a project or design system that moves, or has already moved, to Claude can be permanently deleted if nobody opens it for that period. Learn more in [**Move from standalone Claude Design to Claude**](../15-Claude-AI-Features/migrate-from-standalone-claude-design-to-claude-claude-help-center.md) and **[Configure custom data retention controls for Enterprise plans](https://support.claude.com/en/articles/10440198)**.
 
 Before you turn on broad access, read through the rollout approach below. Turning on Claude Design without a design system in place means your team gets functional but generic output.
 
@@ -55,7 +57,7 @@ For best results, we recommend pulling in designers across both brand and produc
 
 ### What they’ll do
 
-1.  Create your organization in Claude Design (see **[Set up your design system in Claude Design](set-up-your-design-system-in-claude-design.md)**).
+1.  Create your organization in Claude Design (see **[Set up your design system in Claude Design](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design)**).
 
 2.  Complete the onboarding flow.
 

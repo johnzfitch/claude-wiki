@@ -2,7 +2,7 @@
 title: "Claude Code for Enterprise | Claude by Anthropic"
 source_url: "https://www.claude.com/product/claude-code/enterprise"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:32Z"
+fetched_at: "2026-10-23T06:29:50Z"
 tags: ["claude-ai", "claude-code", "enterprise", "security"]
 ---
 
@@ -128,9 +128,9 @@ Terminal, desktop, any IDE, Slack, or web. Claude Code fits into your team's exi
 
 Claude searches your whole codebase, not just the open file. That full context is what enables [legacy codebase migration (opens in new tab)](../18-Industry-UseCases/code-modernization.md), debugging across files, and meaningful code reviews.
 
-### Built on the best models
+### Built on leading models
 
-Claude consistently leads coding benchmarks. As our models improve, your team gets the benefit automatically with no workflow changes, no migrations, and no retraining.
+Claude consistently is a leader on coding benchmarks. As our models improve, your team gets the benefit automatically with no workflow changes, no migrations, and no retraining.
 
 2026 Agentic Coding Trends Report
 
@@ -181,7 +181,7 @@ Read more about Anthropic's safety and compliance in our [Trust Center](https://
 - 
   Encrypted everywhere
 
-  TLS 1.3 in transit, AES-256 at rest. All data encrypted end-to-end with your keys if needed.
+  TLS 1.3 in transit, AES-256 at rest. Our platform leverages encryption for data protection.
 
 ## Solve problems that slow developers down
 
@@ -270,11 +270,11 @@ Already using Amazon Bedrock, Google Vertex AI, or Microsoft Foundry?
 
 ### Is Claude Code secure?
 
-Yes. Claude Code runs locally in your terminal and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
+Claude Code is designed with security in mind. When used in your terminal, Claude Code runs locally and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
 
 ### How does Claude Code integrate with our existing security infrastructure?
 
-Claude Code deploys through AWS Bedrock, Google Vertex AI, or Azure, integrating with your existing IAM, CloudTrail logging, and VPC configurations. All data stays within your control and complies with SOC 2 Type II standards.
+Claude Code deploys through Amazon Bedrock, Gemini Enterprise Agent Platform, or Microsoft Foundry, integrating with your existing IAM, CloudTrail logging, and VPC configurations. Claude Code is designed for all data to stay within your control and comply with SOC 2 Type II standards.
 
 ### Can we enforce organization-wide coding standards?
 
@@ -294,7 +294,7 @@ We do not train Claude on your Enterprise data. Your code, conversations, and pr
 
 ### What are the deployment options?
 
-Deploy through Anthropic Cloud (SaaS), Amazon Bedrock, Google Cloud's Vertex AI, and Microsoft Foundry. Enterprise teams can use VPC isolation and private endpoints for maximum security.
+Deploy through Anthropic Cloud (SaaS), Amazon Bedrock, Gemini Enterprise Agent Platform, and Microsoft Foundry. Enterprise teams can use VPC isolation and private endpoints for increased security.
 
 2x
 

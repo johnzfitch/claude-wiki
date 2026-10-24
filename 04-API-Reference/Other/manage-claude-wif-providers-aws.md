@@ -2,7 +2,7 @@
 title: "Use WIF with AWS - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/wif-providers/aws"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:33Z"
+fetched_at: "2026-10-20T06:39:34Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-providers%2Faws)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-providers%2Faws)
 
 
 
@@ -46,9 +46,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -60,7 +62,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Identity providers
 
@@ -142,7 +144,7 @@ The AWS STS `GetWebIdentityToken` API returns an OIDC token signed by AWS that a
 
 ### Configure Anthropic
 
-In the Claude Console, open **Settings → Workload identity**, click **Connect workload**, and select the **AWS** tile. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
+In the Claude Console, go to the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`), click **Connect workload**, and select the **AWS** tile. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
 
 The wizard creates these resources for you. Use the following values whether you enter them in the wizard or send them to the [Admin API](manage-claude-wif-admin-api.md):
 
@@ -181,7 +183,7 @@ Be as specific as the workload allows. Match the exact role ARN, and only broade
 
 ### Acquire and use the token
 
-Call `GetWebIdentityToken` with `https://api.anthropic.com` as the audience, then pass the result to the SDK's federation credentials. Because `identity_token_provider` takes a callable, the SDK re-invokes STS on each refresh.
+Call `GetWebIdentityToken` with `https://api.anthropic.com` as the audience, then pass the result to the SDK's federation credentials through `identity_token_provider`. Except in Java (see the comment in that example), that option takes a token provider, so the SDK re-invokes STS on each refresh.
 
 
 
@@ -204,6 +206,8 @@ CLI
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -261,17 +265,19 @@ JWT=$(aws sts get-web-identity-token \
 
 curl -sS https://api.anthropic.com/v1/oauth/token \
   -H "content-type: application/json" \
-  -d "{
-    \"grant_type\": \"urn:ietf:params:oauth:grant-type:jwt-bearer\",
-    \"assertion\": \"$JWT\",
-    \"federation_rule_id\": \"fdrl_...\",
-    \"organization_id\": \"00000000-0000-0000-0000-000000000000\",
-    \"service_account_id\": \"svac_...\",
-    \"workspace_id\": \"wrkspc_...\"
-  }" | jq
+  --data @- <<JSON
+{
+  "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+  "assertion": "$JWT",
+  "federation_rule_id": "fdrl_...",
+  "organization_id": "00000000-0000-0000-0000-000000000000",
+  "service_account_id": "svac_...",
+  "workspace_id": "wrkspc_..."
+}
+JSON
 ```
 
-A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange); the most common AWS-side cause is an `iss` mismatch (the per-account STS issuer URL must match the registered `issuer_url` exactly).
+A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) in the Claude Console for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange); the most common AWS-side cause is an `iss` mismatch (the per-account STS issuer URL must match the registered `issuer_url` exactly).
 
 ## Use EKS projected service-account tokens
 
@@ -382,7 +388,7 @@ This path additionally requires an EKS cluster with an [IAM OIDC provider enable
 
 ### Configure Anthropic
 
-In the Claude Console, open **Settings → Workload identity**, click **Connect workload**, and select the **AWS** tile. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
+In the Claude Console, go to the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`), click **Connect workload**, and select the **AWS** tile. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
 
 The wizard creates these resources for you. Use the following values whether you enter them in the wizard or send them to the [Admin API](manage-claude-wif-admin-api.md):
 
@@ -441,6 +447,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -486,17 +494,19 @@ JWT=$(cat "$ANTHROPIC_IDENTITY_TOKEN_FILE")
 
 curl -sS https://api.anthropic.com/v1/oauth/token \
   -H "content-type: application/json" \
-  -d "{
-    \"grant_type\": \"urn:ietf:params:oauth:grant-type:jwt-bearer\",
-    \"assertion\": \"$JWT\",
-    \"federation_rule_id\": \"$ANTHROPIC_FEDERATION_RULE_ID\",
-    \"organization_id\": \"$ANTHROPIC_ORGANIZATION_ID\",
-    \"service_account_id\": \"$ANTHROPIC_SERVICE_ACCOUNT_ID\",
-    \"workspace_id\": \"$ANTHROPIC_WORKSPACE_ID\"
-  }" | jq
+  --data @- <<JSON
+{
+  "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+  "assertion": "$JWT",
+  "federation_rule_id": "$ANTHROPIC_FEDERATION_RULE_ID",
+  "organization_id": "$ANTHROPIC_ORGANIZATION_ID",
+  "service_account_id": "$ANTHROPIC_SERVICE_ACCOUNT_ID",
+  "workspace_id": "$ANTHROPIC_WORKSPACE_ID"
+}
+JSON
 ```
 
-A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange); the most common EKS-side cause is the projected token's `aud` not matching the rule (project a token with `audience: https://api.anthropic.com`, not the IRSA default `sts.amazonaws.com`).
+A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) in the Claude Console for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange); the most common EKS-side cause is the projected token's `aud` not matching the rule (project a token with `audience: https://api.anthropic.com`, not the IRSA default `sts.amazonaws.com`).
 
 ## Scope your rule
 

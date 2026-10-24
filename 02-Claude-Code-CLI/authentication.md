@@ -2,13 +2,14 @@
 title: "Authentication - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/authentication"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:27:07Z"
+fetched_at: "2026-10-22T06:28:02Z"
 tags: ["authentication", "claude-code"]
 ---
 
 ## On this page
 
 - [Log in to Claude Code](#log-in-to-claude-code)
+  - [Login prompt still appears after an earlier sign-in](#login-prompt-still-appears-after-an-earlier-sign-in)
   - [Log in with multiple accounts](#log-in-with-multiple-accounts)
 - [Set up team authentication](#set-up-team-authentication)
   - [Claude for Teams or Enterprise](#claude-for-teams-or-enterprise)
@@ -40,7 +41,12 @@ Claude Code supports multiple authentication methods depending on your setup. In
 
 Log in to Claude Code
 
-After [installing Claude Code](../01-Getting-Started/setup.md#install-claude-code), run `claude` in your terminal. On first launch, Claude Code opens a browser window for you to log in. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. If the browser doesn’t open automatically, press `c` to copy the login URL to your clipboard, then paste it into your browser. If your browser shows a login code instead of redirecting back after you sign in, paste it into the terminal at the `Paste code here if prompted` prompt. This happens when the browser can’t reach Claude Code’s local callback server, which is common in WSL2, SSH sessions, and containers. When login completes, the terminal shows `Login successful` and prompts you to press `Enter` to continue. You can authenticate with any of these account types:
+After [installing Claude Code](../01-Getting-Started/setup.md#install-claude-code), run `claude` in your terminal. Claude Code opens a browser window for you to log in on first launch, except in cases such as these, where it can skip the login prompt:
+
+- **API key**: you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it
+- **Earlier sign-in**: you ran [`claude auth login`](cli-reference.md#cli-commands) in your shell before your first session, or you rebuilt a dev container that keeps your credentials in a [volume](devcontainer.md#persist-authentication-and-settings-across-rebuilds). If you see the login prompt anyway, [check what can cause it](#login-prompt-still-appears-after-an-earlier-sign-in).
+
+If the browser doesn’t open automatically, press `c` to copy the login URL to your clipboard, then paste it into your browser. If your browser shows a login code instead of redirecting back after you sign in, paste it into the terminal at the `Paste code here if prompted` prompt. This happens when the browser can’t reach Claude Code’s local callback server, which is common in WSL2, SSH sessions, and containers. When login completes, the terminal shows `Login successful` and prompts you to press `Enter` to continue. You can authenticate with any of these account types:
 
 - **Claude Pro or Max subscription**: log in with your claude.ai account. Subscribe at [claude.com/pricing](../17-Billing-Plans/pricing.md).
 - **Claude for Teams or Enterprise**: log in with the claude.ai account your team admin invited you to.
@@ -49,6 +55,18 @@ After [installing Claude Code](../01-Getting-Started/setup.md#install-claude-cod
 - **Cloud gateway**: if your organization runs a self-hosted [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), sign in with corporate SSO through `/login`. The gateway-issued token is the session’s only credential.
 
 Admins can direct which login method developers use and require claude.ai logins to belong to a specific organization; see [Restrict login to your organization](#restrict-login-to-your-organization). To log out and re-authenticate, type `/logout` at the Claude Code prompt. Logging out also resets your first-launch setup state, so the next time you run `claude` it walks you through login and setup again. If you’re having trouble logging in, see [authentication troubleshooting](troubleshoot-install.md#login-and-authentication).
+
+
+[​](#login-prompt-still-appears-after-an-earlier-sign-in)
+
+Login prompt still appears after an earlier sign-in
+
+If you signed in earlier and first-launch setup shows the login prompt instead of [skipping it](#log-in-to-claude-code), check for causes such as these:
+
+- **Expired sign-in**: your earlier sign-in expired and Claude Code can’t refresh it. Log in again at the prompt.
+- **Login restricted to an organization**: an administrator set [`forceLoginOrgUUID`](settings-reference.md#forceloginorguuid) in managed settings to [require logins from specific organizations](#restrict-login-to-your-organization). The prompt appears whether or not your account belongs to one of them. Log in with an account in a required organization. If you don’t have one, ask your administrator to add you.
+- **Required login method**: your sign-in isn’t the kind that [`forceLoginMethod`](settings-reference.md#forceloginmethod) in a settings file requires. With `"claudeai"`, an API key from an earlier Claude Console login doesn’t count as an existing sign-in. With `"console"`, a claude.ai account doesn’t. Log in with the kind of account that setting names.
+- **Older version**: before v2.1.290, the prompt appeared during setup whether or not you were signed in. [Update Claude Code](../01-Getting-Started/setup.md#update-claude-code) to skip it.
 
 
 [​](#log-in-with-multiple-accounts)
@@ -124,7 +142,7 @@ Add users
 
 You can add users through either method:
 
-- Bulk invite users from within the Console: Settings -\> Members -\> Invite
+- Bulk invite users from the Console’s Members page at [platform.claude.com/settings/members](../04-API-Reference/Other/playground.md): click **Invite**
 - [Set up SSO](../21-Account-Support/setting-up-single-sign-on-sso.md)
 
 3
@@ -157,7 +175,7 @@ You can sign in to your Console account without creating an API key, even when y
 - **Sign in with your Console account**, labeled `(recommended)`: Claude Code keeps the OAuth token from that sign-in and stores it as an [Anthropic profile](#anthropic-profiles-and-federation-credentials). It creates no API key
 - **Create an API key**, labeled `(legacy)`: Claude Code creates a Console API key for you and stores it with your other credentials
 
-In practice, the profile stores an OAuth login while an API key is a static credential: Claude Code refreshes the profile’s login automatically, and when refresh fails, requests fail with [Anthropic profile login expired](errors.md#anthropic-profile-login-expired) until you sign in again. You don’t get the choice on every machine. Claude Code creates an API key without asking in these cases:
+In practice, the profile stores an OAuth login while an API key is a static credential. Claude Code refreshes the profile’s login automatically, and when refresh fails, requests fail with an [expired profile login error](errors.md#anthropic-profile-login-expired) until you sign in again. You don’t get the choice on every machine. Claude Code creates an API key without asking in these cases:
 
 - You run against a cloud provider, such as [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](third-party-integrations.md) or [Claude Platform on AWS](claude-platform-on-aws.md)
 - Any settings file sets [`forceLoginOrgUUID`](#restrict-login-to-your-organization), or sets `forceLoginMethod` to `"claudeai"` or `"console"`
@@ -273,7 +291,7 @@ When multiple credentials are present, Claude Code chooses one in this order:
 
 1.  Cloud provider credentials, when `CLAUDE_CODE_USE_BEDROCK`, `CLAUDE_CODE_USE_VERTEX`, or `CLAUDE_CODE_USE_FOUNDRY` is set. See [third-party integrations](third-party-integrations.md) for setup.
 2.  `ANTHROPIC_AUTH_TOKEN` environment variable. Sent as the `Authorization: Bearer` header. Use this when routing through an [LLM gateway or proxy](../13-Enterprise-Admin/llm-gateway.md) that authenticates with bearer tokens rather than Anthropic API keys.
-3.  `ANTHROPIC_API_KEY` environment variable. Sent as the `X-Api-Key` header. Use this for direct Anthropic API access with a key from the [Claude Console](../04-API-Reference/Other/usage-limits.md). In interactive mode, you are prompted once to approve or decline the key, and your choice is remembered. To change it later, use the “Use custom API key” toggle in `/config`. The toggle only appears while `ANTHROPIC_API_KEY` is set in your environment. In non-interactive mode (`-p`), the key is always used when present.
+3.  `ANTHROPIC_API_KEY` environment variable. Sent as the `X-Api-Key` header. Use this for direct Anthropic API access with a key from the [Claude Console](../04-API-Reference/Other/playground.md). In interactive mode, you are prompted once to approve or decline the key, and your choice is remembered. To change it later, use the “Use custom API key” toggle in `/config`. The toggle only appears while `ANTHROPIC_API_KEY` is set in your environment. In non-interactive mode (`-p`), the key is always used when present.
 4.  [`apiKeyHelper`](settings-reference.md#apikeyhelper) script output. Use this for dynamic or rotating credentials, such as short-lived tokens fetched from a vault.
 5.  `CLAUDE_CODE_OAUTH_TOKEN` environment variable. A long-lived OAuth token generated by [`claude setup-token`](#generate-a-long-lived-token). Use this for CI pipelines and scripts where browser login isn’t available. If you run `/login` while the variable is set, Claude Code switches the current session to the new login, but reads the variable again in every new session until you remove it from your shell profile or the `env` block of a [settings file](settings.md).
 6.  Anthropic profile and federation credentials, the credentials that the `ant` CLI and Workload Identity Federation use. A profile that `ant auth login` wrote ranks here only when you name it in `ANTHROPIC_PROFILE`; otherwise it ranks below `/login`. See [Anthropic profiles and federation credentials](#anthropic-profiles-and-federation-credentials).
@@ -294,7 +312,7 @@ A profile is a named credential configuration file in your [Anthropic configurat
 | Federation variables | `ANTHROPIC_FEDERATION_RULE_ID` and `ANTHROPIC_ORGANIZATION_ID`, both set                                                                                                 | Above                                                                                                                 |
 | Active profile       | The [`active_config` file](../04-API-Reference/Other/manage-claude-wif-reference.md#active-profile) in your configuration directory, or a profile named `default` | Above when its auth mode is `oidc_federation`; below a working `/login` credential when its auth mode is `user_oauth` |
 
-For the federation variables, Claude Code also reads the other variables in the [WIF reference](../04-API-Reference/Other/manage-claude-wif-reference.md#environment-variables), such as `ANTHROPIC_IDENTITY_TOKEN_FILE`, when it exchanges your identity token. For the profile file format, see the [WIF reference](../04-API-Reference/Other/manage-claude-wif-reference.md#profile-configuration-file). To confirm which source Claude Code chose, run `/status`. A `Profile` row names the source in place of the `Login method` row. When the profile is the credential in use, `Organization` and `Email` rows show its account. When a `user_oauth` profile’s login has expired and Claude Code can’t renew it, requests fail with [Anthropic profile login expired](errors.md#anthropic-profile-login-expired). Features that need your claude.ai login, such as [claude.ai connectors](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai) and [`/schedule`](web-scheduled-tasks.md), aren’t available while one of these sources is selected. To stop Claude Code from selecting a source:
+For the federation variables, Claude Code also reads the other variables in the [WIF reference](../04-API-Reference/Other/manage-claude-wif-reference.md#environment-variables), such as `ANTHROPIC_IDENTITY_TOKEN_FILE`, when it exchanges your identity token. For the profile file format, see the [WIF reference](../04-API-Reference/Other/manage-claude-wif-reference.md#profile-configuration-file). To confirm which source Claude Code chose, run `/status`. A `Profile` row names the source in place of the `Login method` row. When the profile is the credential in use, `Organization` and `Email` rows show its account. When a `user_oauth` profile’s login has expired and Claude Code can’t renew it, requests fail with an [expired profile login error](errors.md#anthropic-profile-login-expired). Features that need your claude.ai login, such as [claude.ai connectors](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai) and [`/schedule`](web-scheduled-tasks.md), aren’t available while one of these sources is selected. To stop Claude Code from selecting a source:
 
 - **Named profile or federation variables**: unset `ANTHROPIC_PROFILE`, or unset either federation variable
 - **Active profile**: run `/logout` for a `user_oauth` profile whose current credential you wrote by [signing in to a Console account without an API key](#sign-in-without-an-api-key), run `ant auth logout` for one whose current credential `ant auth login` wrote, or delete the profile’s file from `configs/` in your configuration directory for either auth mode

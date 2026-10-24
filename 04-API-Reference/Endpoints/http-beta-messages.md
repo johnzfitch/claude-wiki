@@ -1,8 +1,8 @@
 ---
 title: "Messages - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/messages"
+source_url: "https://platform.claude.com/docs/en/api/beta/messages"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:38Z"
+fetched_at: "2026-10-20T06:39:18Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Fmessages)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmessages)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,9 +232,15 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 
 # Messages
+
+Copy page
+
+
+
+cURL
 
 ##### [Create a Message](http-beta-messages-create.md)
 
@@ -238,7 +248,7 @@ cURL
 
 Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.
 
-##### [Count tokens in a Message](http-beta-messages-count-tokens.md)
+##### [Count tokens in a Message](platform-claude-com-http-beta-messages-count-tokens.md)
 
 POST/v1/messages/count_tokens
 
@@ -578,7 +588,7 @@ defaultbash_code_execution_result
 
 
 
-content: array of [BetaBashCodeExecutionOutputBlock](http-beta-messages.md#beta_bash_code_execution_output_block) { type: "bash_code_execution_output", file_id }
+content: array of [BetaBashCodeExecutionOutputBlock](platform-claude-com-http-beta-messages.md#beta_bash_code_execution_output_block) { type: "bash_code_execution_output", file_id }
 
 
 
@@ -618,7 +628,7 @@ type: "bash_code_execution_result"
 
 
 
-content: array of [BetaBashCodeExecutionOutputBlockParam](http-beta-messages.md#beta_bash_code_execution_output_block_param) { type: "bash_code_execution_output", file_id }
+content: array of [BetaBashCodeExecutionOutputBlockParam](platform-claude-com-http-beta-messages.md#beta_bash_code_execution_output_block_param) { type: "bash_code_execution_output", file_id }
 
 
 
@@ -736,6 +746,66 @@ One of the following:
 
 
 
+BetaBrowserClickTarget = [BetaBrowserCoordinateTarget](platform-claude-com-http-beta-messages.md#beta_browser_coordinate_target) or [BetaBrowserRefTarget](platform-claude-com-http-beta-messages.md#beta_browser_ref_target)
+
+
+
+Where to act: either a viewport coordinate or an element reference.
+
+One of the following:
+
+
+
+BetaBrowserCoordinateTarget object{ type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+
+
+BetaBrowserRefTarget object{ type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+
+
 BetaBrowserCloseTabConfig object{ defer_loading, enabled }
 
 
@@ -753,6 +823,58 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserCloseTabInput object{ tab_id }
+
+
+
+Close the tab with the given tab_id.
+
+tab_id: string
+
+
+
+The tab to close.
+
+
+
+BetaBrowserCloseTabToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaBrowserCoordinateTarget object{ type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
 
 
 
@@ -776,6 +898,20 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserDoubleClickInput object{ target, modifiers, tab_id }
+
+
+
+Double left-click at a viewport coordinate or on an element by reference.
+
+
+
+BetaBrowserDoubleClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserFileUploadConfig object{ defer_loading, enabled }
 
 
@@ -793,6 +929,64 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserFileUploadInput object{ target, document_ids, paths, tab_id }
+
+
+
+Set the value of a file-input element to one or more files. The target must be an element reference; at least one of paths or document_ids is required.
+
+
+
+target: [BetaBrowserRefTarget](platform-claude-com-http-beta-messages.md#beta_browser_ref_target) { type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+
+
+document_ids: optional array of string or null
+
+
+
+References to files the harness has staged, for deployments where the browser executor cannot read the caller's filesystem.
+
+minItems1
+
+
+
+paths: optional array of string or null
+
+
+
+File paths on the browser executor's filesystem.
+
+minItems1
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserFileUploadToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -816,6 +1010,32 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserFindInput object{ query, tab_id }
+
+
+
+Find elements matching a natural-language description (e.g. "search bar", "add to cart button") and return up to 20 matches with element references.
+
+query: string
+
+
+
+Natural-language description of the element(s) to find.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserFindToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserFormInputConfig object{ defer_loading, enabled }
 
 
@@ -833,6 +1053,86 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserFormInputInput object{ target, value, tab_id }
+
+
+
+Set the value of a form element (input, textarea, select, checkbox). Use a boolean for checkboxes, an option value or text for selects.
+
+
+
+target: [BetaBrowserRefTarget](platform-claude-com-http-beta-messages.md#beta_browser_ref_target) { type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+
+
+value: [BetaBrowserFormInputValue](platform-claude-com-http-beta-messages.md#beta_browser_form_input_value)
+
+
+
+The value to set.
+
+One of the following:
+
+string
+
+
+
+number
+
+
+
+boolean
+
+
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserFormInputToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaBrowserFormInputValue = string or number or boolean
+
+
+
+One of the following:
+
+string
+
+
+
+number
+
+
+
+boolean
+
+
 
 
 
@@ -856,6 +1156,26 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserGetPageTextInput object{ tab_id }
+
+
+
+Return the page's visible text content as plain text, prioritizing article content. Suited to articles, documentation, and other text-heavy pages.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserGetPageTextToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserHoldKeyConfig object{ defer_loading, enabled }
 
 
@@ -873,6 +1193,44 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserHoldKeyInput object{ duration, text, tab_id }
+
+
+
+Hold a key or key chord down for a duration, then release it. Uses the same key names and "+" chord syntax as the key action.
+
+
+
+duration: number
+
+
+
+Seconds to hold the key down (maximum 30).
+
+minimum0
+
+maximum30
+
+text: string
+
+
+
+The key or chord to hold.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserHoldKeyToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -896,6 +1254,20 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserHoverInput object{ target, tab_id }
+
+
+
+Move the cursor to a coordinate or element without clicking.
+
+
+
+BetaBrowserHoverToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserJavascriptExecConfig object{ defer_loading, enabled }
 
 
@@ -916,6 +1288,32 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserJavascriptExecInput object{ text, tab_id }
+
+
+
+Execute JavaScript in the page context and return the value of the last expression. The code runs with access to the DOM, `window`, and page variables. Write the expression you want evaluated — do NOT use `return`.
+
+text: string
+
+
+
+JavaScript to execute in the page context.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserJavascriptExecToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserKeyConfig object{ defer_loading, enabled }
 
 
@@ -933,6 +1331,44 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserKeyInput object{ text, repeat, tab_id }
+
+
+
+Press a key or key chord. Use "+" to combine modifiers with a key (e.g. "ctrl+a", "cmd+shift+p") and space to sequence presses (e.g. "Backspace Backspace Delete"). Common names like "Return", "Tab", "Escape", "BackSpace" are supported.
+
+text: string
+
+
+
+The key, chord, or space-separated sequence to press.
+
+
+
+repeat: optional number or null
+
+
+
+Number of times to repeat. Default 1.
+
+minimum1
+
+maximum100
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserKeyToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -976,6 +1412,34 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserLeftClickDragInput object{ from, target, tab_id }
+
+
+
+Press at `from`, drag to `target`, release. Both must be coordinate targets.
+
+
+
+BetaBrowserLeftClickDragToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaBrowserLeftClickInput object{ target, modifiers, tab_id }
+
+
+
+Left-click at a viewport coordinate or on an element by reference.
+
+
+
+BetaBrowserLeftClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserLeftMouseDownConfig object{ defer_loading, enabled }
 
 
@@ -993,6 +1457,58 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserLeftMouseDownInput object{ target, tab_id }
+
+
+
+Press and hold the left mouse button at a viewport coordinate. Pair with left_mouse_up to perform a custom drag.
+
+
+
+target: [BetaBrowserCoordinateTarget](platform-claude-com-http-beta-messages.md#beta_browser_coordinate_target) { type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserLeftMouseDownToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -1016,6 +1532,58 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserLeftMouseUpInput object{ target, tab_id }
+
+
+
+Release the left mouse button at a viewport coordinate.
+
+
+
+target: [BetaBrowserCoordinateTarget](platform-claude-com-http-beta-messages.md#beta_browser_coordinate_target) { type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserLeftMouseUpToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserListTabsConfig object{ defer_loading, enabled }
 
 
@@ -1033,6 +1601,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+BetaBrowserListTabsInput object{  }
+
+
+
+List all open tabs with each tab's tab_id, title, and URL.
+
+
+
+BetaBrowserListTabsToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -1056,6 +1636,20 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserMiddleClickInput object{ target, modifiers, tab_id }
+
+
+
+Middle-click at a viewport coordinate or on an element by reference.
+
+
+
+BetaBrowserMiddleClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserMouseMoveConfig object{ defer_loading, enabled }
 
 
@@ -1073,6 +1667,58 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserMouseMoveInput object{ target, tab_id }
+
+
+
+Move the pointer to a viewport coordinate without clicking.
+
+
+
+target: [BetaBrowserCoordinateTarget](platform-claude-com-http-beta-messages.md#beta_browser_coordinate_target) { type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserMouseMoveToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -1096,6 +1742,32 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserNavigateInput object{ url, tab_id }
+
+
+
+Navigate to a URL, or go back/forward/reload in history. The protocol may be omitted (defaults to https://).
+
+url: string
+
+
+
+The URL to navigate to, or "back" / "forward" / "reload" for history navigation.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserNavigateToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserNewTabConfig object{ defer_loading, enabled }
 
 
@@ -1113,6 +1785,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+BetaBrowserNewTabInput object{  }
+
+
+
+Open a new empty tab and return its tab_id.
+
+
+
+BetaBrowserNewTabToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -1136,6 +1820,26 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserReadConsoleInput object{ tab_id }
+
+
+
+Return console output (log entries, errors, warnings) accumulated since the driver attached to the tab and since the last read, one line per entry. An empty result does not mean no traffic for a tab that predates attach.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserReadConsoleToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserReadNetworkConfig object{ defer_loading, enabled }
 
 
@@ -1153,6 +1857,26 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserReadNetworkInput object{ tab_id }
+
+
+
+Return the network requests (method, URL, status, MIME type, timing) recorded since the driver attached to the tab and since the last read, one line per entry. An empty result does not mean no traffic for a tab that predates attach.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserReadNetworkToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -1176,6 +1900,94 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserReadPageFilter = "all" or "interactive"
+
+
+
+One of the following:
+
+"all"
+
+
+
+"interactive"
+
+
+
+
+
+BetaBrowserReadPageInput object{ depth, filter, ref, tab_id }
+
+
+
+Return a structured accessibility tree of the page (or the subtree rooted at `ref`), with element references like \[ref_7\] that can be used as targets on later actions. Output is capped at 50,000 characters — narrow with `ref` or a smaller `depth` when exceeded.
+
+
+
+depth: optional number or null
+
+
+
+Maximum tree depth. Default 15.
+
+minimum1
+
+
+
+filter: optional [BetaBrowserReadPageFilter](platform-claude-com-http-beta-messages.md#beta_browser_read_page_filter) or null
+
+
+
+Which elements to include. Omitted: every visible element. "interactive": interactive elements only. "all": additionally includes off-viewport elements.
+
+One of the following:
+
+"all"
+
+
+
+"interactive"
+
+
+
+ref: optional string or null
+
+
+
+Element reference to read a subtree from. Omit to read from the page root.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserReadPageToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaBrowserRefTarget object{ type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+
+
 BetaBrowserRightClickConfig object{ defer_loading, enabled }
 
 
@@ -1193,6 +2005,20 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserRightClickInput object{ target, modifiers, tab_id }
+
+
+
+Right-click at a viewport coordinate or on an element by reference.
+
+
+
+BetaBrowserRightClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -1216,6 +2042,26 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserScreenshotInput object{ tab_id }
+
+
+
+Capture the current browser viewport.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserScreenshotToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserScrollConfig object{ defer_loading, enabled }
 
 
@@ -1233,6 +2079,112 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserScrollDirection = "up" or "down" or "left" or "right"
+
+
+
+One of the following:
+
+"up"
+
+
+
+"down"
+
+
+
+"left"
+
+
+
+"right"
+
+
+
+
+
+BetaBrowserScrollInput object{ scroll_direction, target, scroll_amount, tab_id }
+
+
+
+Scroll at a viewport position. `target` must be a coordinate target.
+
+
+
+scroll_direction: [BetaBrowserScrollDirection](platform-claude-com-http-beta-messages.md#beta_browser_scroll_direction)
+
+
+
+One of the following:
+
+"up"
+
+
+
+"down"
+
+
+
+"left"
+
+
+
+"right"
+
+
+
+
+
+target: [BetaBrowserCoordinateTarget](platform-claude-com-http-beta-messages.md#beta_browser_coordinate_target) { type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+
+
+scroll_amount: optional number or null
+
+
+
+Scroll-wheel notches (1–10). Default 3.
+
+minimum1
+
+maximum10
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
 
 
 
@@ -1256,6 +2208,50 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserScrollToInput object{ target, tab_id }
+
+
+
+Scroll an element into view.
+
+
+
+target: [BetaBrowserRefTarget](platform-claude-com-http-beta-messages.md#beta_browser_ref_target) { type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserScrollToToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaBrowserScrollToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserStateBlockParam object{ type: "browser_state", tabs, cache_control, state_changes }
 
 
@@ -1266,7 +2262,7 @@ At most one per `tool_result`, only on a non-error result answering a browser to
 
 
 
-BetaBrowserStateChange = [BetaBrowserStateChangeTabOpened](http-beta-messages.md#beta_browser_state_change_tab_opened) or [BetaBrowserStateChangeDownloadStarted](http-beta-messages.md#beta_browser_state_change_download_started) or [BetaBrowserStateChangeDownloadCompleted](http-beta-messages.md#beta_browser_state_change_download_completed) or [BetaBrowserStateChangeDownloadFailed](http-beta-messages.md#beta_browser_state_change_download_failed)
+BetaBrowserStateChange = [BetaBrowserStateChangeTabOpened](platform-claude-com-http-beta-messages.md#beta_browser_state_change_tab_opened) or [BetaBrowserStateChangeDownloadStarted](platform-claude-com-http-beta-messages.md#beta_browser_state_change_download_started) or [BetaBrowserStateChangeDownloadCompleted](platform-claude-com-http-beta-messages.md#beta_browser_state_change_download_completed) or [BetaBrowserStateChangeDownloadFailed](platform-claude-com-http-beta-messages.md#beta_browser_state_change_download_failed)
 
 
 
@@ -1524,6 +2520,34 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserSwitchTabInput object{ tab_id }
+
+
+
+Make the tab with the given tab_id the active tab — the tab that actions without a tab_id apply to.
+
+tab_id: string
+
+
+
+The tab to switch to.
+
+
+
+BetaBrowserSwitchTabToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaBrowserToolUseBlock = [BetaBrowserNavigateToolUseBlock](platform-claude-com-http-beta-messages.md#beta_browser_navigate_tool_use_block) or [BetaBrowserListTabsToolUseBlock](platform-claude-com-http-beta-messages.md#beta_browser_list_tabs_tool_use_block) or [BetaBrowserNewTabToolUseBlock](platform-claude-com-http-beta-messages.md#beta_browser_new_tab_tool_use_block) or 28 more
+
+
+
+One of the following:
+
+
+
 BetaBrowserToolset20260801 object{ type: "browser_toolset_20260801", cache_control, configs }
 
 
@@ -1560,6 +2584,20 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserTripleClickInput object{ target, modifiers, tab_id }
+
+
+
+Triple left-click at a viewport coordinate or on an element by reference (typically selects a line or paragraph).
+
+
+
+BetaBrowserTripleClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserTypeConfig object{ defer_loading, enabled }
 
 
@@ -1577,6 +2615,32 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserTypeInput object{ text, tab_id }
+
+
+
+Type a literal string at the current focus.
+
+text: string
+
+
+
+The text to type.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserTypeToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -1600,6 +2664,38 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaBrowserWaitInput object{ duration, tab_id }
+
+
+
+Pause for the given duration.
+
+
+
+duration: number
+
+
+
+Seconds to wait (maximum 30).
+
+minimum0
+
+maximum30
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserWaitToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaBrowserZoomConfig object{ defer_loading, enabled }
 
 
@@ -1617,6 +2713,38 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaBrowserZoomInput object{ region, tab_id }
+
+
+
+Return a cropped screenshot of the given viewport region, scaled up for closer inspection — useful for small icons, buttons, or text. Coordinates are in the same viewport-pixel space as a full screenshot.
+
+
+
+region: array of number
+
+
+
+\[x0, y0, x1, y1\] in viewport pixels.
+
+minItems4
+
+maxItems4
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BetaBrowserZoomToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -1739,7 +2867,7 @@ defaultprevious_message_not_found
 
 
 
-BetaCacheMissReason = [BetaCacheMissModelChanged](http-beta-messages.md#beta_cache_miss_model_changed) or [BetaCacheMissSystemChanged](http-beta-messages.md#beta_cache_miss_system_changed) or [BetaCacheMissToolsChanged](http-beta-messages.md#beta_cache_miss_tools_changed) or 3 more
+BetaCacheMissReason = [BetaCacheMissModelChanged](platform-claude-com-http-beta-messages.md#beta_cache_miss_model_changed) or [BetaCacheMissSystemChanged](platform-claude-com-http-beta-messages.md#beta_cache_miss_system_changed) or [BetaCacheMissToolsChanged](platform-claude-com-http-beta-messages.md#beta_cache_miss_tools_changed) or 3 more
 
 
 
@@ -2333,7 +3461,7 @@ type: "clear_thinking_20251015"
 
 
 
-keep: optional [BetaThinkingTurns](http-beta-messages.md#beta_thinking_turns) or [BetaAllThinkingTurns](http-beta-messages.md#beta_all_thinking_turns) or "all"
+keep: optional [BetaThinkingTurns](platform-claude-com-http-beta-messages.md#beta_thinking_turns) or [BetaAllThinkingTurns](platform-claude-com-http-beta-messages.md#beta_all_thinking_turns) or "all"
 
 
 
@@ -2499,7 +3627,7 @@ defaultcode_execution_result
 
 
 
-content: array of [BetaCodeExecutionOutputBlock](http-beta-messages.md#beta_code_execution_output_block) { type: "code_execution_output", file_id }
+content: array of [BetaCodeExecutionOutputBlock](platform-claude-com-http-beta-messages.md#beta_code_execution_output_block) { type: "code_execution_output", file_id }
 
 
 
@@ -2539,7 +3667,7 @@ type: "code_execution_result"
 
 
 
-content: array of [BetaCodeExecutionOutputBlockParam](http-beta-messages.md#beta_code_execution_output_block_param) { type: "code_execution_output", file_id }
+content: array of [BetaCodeExecutionOutputBlockParam](platform-claude-com-http-beta-messages.md#beta_code_execution_output_block_param) { type: "code_execution_output", file_id }
 
 
 
@@ -2607,7 +3735,7 @@ defaultcode_execution_tool_result
 
 
 
-content: [BetaCodeExecutionToolResultBlockContent](http-beta-messages.md#beta_code_execution_tool_result_block_content)
+content: [BetaCodeExecutionToolResultBlockContent](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_block_content)
 
 
 
@@ -2623,7 +3751,7 @@ pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
 
 
 
-BetaCodeExecutionToolResultBlockContent = [BetaCodeExecutionToolResultError](http-beta-messages.md#beta_code_execution_tool_result_error) or [BetaCodeExecutionResultBlock](http-beta-messages.md#beta_code_execution_result_block) or [BetaEncryptedCodeExecutionResultBlock](http-beta-messages.md#beta_encrypted_code_execution_result_block)
+BetaCodeExecutionToolResultBlockContent = [BetaCodeExecutionToolResultError](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_error) or [BetaCodeExecutionResultBlock](platform-claude-com-http-beta-messages.md#beta_code_execution_result_block) or [BetaEncryptedCodeExecutionResultBlock](platform-claude-com-http-beta-messages.md#beta_encrypted_code_execution_result_block)
 
 
 
@@ -2641,7 +3769,7 @@ type: "code_execution_tool_result"
 
 
 
-content: [BetaCodeExecutionToolResultBlockParamContent](http-beta-messages.md#beta_code_execution_tool_result_block_param_content)
+content: [BetaCodeExecutionToolResultBlockParamContent](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_block_param_content)
 
 
 
@@ -2657,7 +3785,7 @@ pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -2694,7 +3822,7 @@ One of the following:
 
 
 
-BetaCodeExecutionToolResultBlockParamContent = [BetaCodeExecutionToolResultErrorParam](http-beta-messages.md#beta_code_execution_tool_result_error_param) or [BetaCodeExecutionResultBlockParam](http-beta-messages.md#beta_code_execution_result_block_param) or [BetaEncryptedCodeExecutionResultBlockParam](http-beta-messages.md#beta_encrypted_code_execution_result_block_param)
+BetaCodeExecutionToolResultBlockParamContent = [BetaCodeExecutionToolResultErrorParam](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_error_param) or [BetaCodeExecutionResultBlockParam](platform-claude-com-http-beta-messages.md#beta_code_execution_result_block_param) or [BetaEncryptedCodeExecutionResultBlockParam](platform-claude-com-http-beta-messages.md#beta_encrypted_code_execution_result_block_param)
 
 
 
@@ -2716,7 +3844,7 @@ defaultcode_execution_tool_result_error
 
 
 
-error_code: [BetaCodeExecutionToolResultErrorCode](http-beta-messages.md#beta_code_execution_tool_result_error_code)
+error_code: [BetaCodeExecutionToolResultErrorCode](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_error_code)
 
 
 
@@ -2774,7 +3902,7 @@ type: "code_execution_tool_result_error"
 
 
 
-error_code: [BetaCodeExecutionToolResultErrorCode](http-beta-messages.md#beta_code_execution_tool_result_error_code)
+error_code: [BetaCodeExecutionToolResultErrorCode](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_error_code)
 
 
 
@@ -2822,7 +3950,7 @@ Whether to pause after compaction and return the compaction block to the user.
 
 
 
-trigger: optional [BetaInputTokensTrigger](http-beta-messages.md#beta_input_tokens_trigger) { type: "input_tokens", value } or null
+trigger: optional [BetaInputTokensTrigger](platform-claude-com-http-beta-messages.md#beta_input_tokens_trigger) { type: "input_tokens", value } or null
 
 
 
@@ -2930,7 +4058,7 @@ defaultcompaction
 
 
 
-cache_creation: [BetaCacheCreation](http-beta-messages.md#beta_cache_creation) { ephemeral_1h_input_tokens, ephemeral_5m_input_tokens } or null
+cache_creation: [BetaCacheCreation](platform-claude-com-http-beta-messages.md#beta_cache_creation) { ephemeral_1h_input_tokens, ephemeral_5m_input_tokens } or null
 
 
 
@@ -3024,6 +4152,18 @@ enabled: optional boolean or null
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
 
+BetaComputerCursorPositionInput object{  }
+
+
+
+Get the current (x, y) pixel coordinate of the cursor.
+
+
+
+BetaComputerCursorPositionToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
 
 
 BetaComputerDoubleClickConfig object{ defer_loading, enabled }
@@ -3043,6 +4183,38 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaComputerDoubleClickInput object{ coordinate, text }
+
+
+
+Double-click the left mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+BetaComputerDoubleClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -3066,6 +4238,36 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaComputerHoldKeyInput object{ duration, text }
+
+
+
+Hold down a key or key-combination for a specified duration. Uses the same key syntax as `key`.
+
+
+
+duration: number
+
+
+
+Duration to hold the key, in seconds.
+
+maximum300
+
+text: string
+
+
+
+The key or key-combination to hold.
+
+
+
+BetaComputerHoldKeyToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaComputerKeyConfig object{ defer_loading, enabled }
 
 
@@ -3083,6 +4285,38 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaComputerKeyInput object{ text, repeat }
+
+
+
+Press a key or key-combination on the keyboard. Use "+" to combine modifiers with a key (e.g. "ctrl+s", "alt+Tab", "ctrl+shift+Escape"). Key names are case-insensitive; common names like "Return", "Tab", "Escape", "Up", "Down", "Left", "Right", "Home", "End", "Page_Up", "Page_Down", "Delete", "BackSpace" are supported.
+
+text: string
+
+
+
+The key or key-combination to press.
+
+
+
+repeat: optional number or null
+
+
+
+Number of times to repeat the key press. Default is 1.
+
+minimum1
+
+maximum100
+
+
+
+BetaComputerKeyToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -3126,6 +4360,82 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaComputerLeftClickDragInput object{ coordinate, start_coordinate, text }
+
+
+
+Click and drag the cursor from `start_coordinate` to `coordinate`.
+
+
+
+coordinate: array of number
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+
+
+start_coordinate: array of number
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+BetaComputerLeftClickDragToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaComputerLeftClickInput object{ coordinate, text }
+
+
+
+Click the left mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+BetaComputerLeftClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaComputerLeftMouseDownConfig object{ defer_loading, enabled }
 
 
@@ -3143,6 +4453,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+BetaComputerLeftMouseDownInput object{  }
+
+
+
+Press and hold the left mouse button at the current cursor position.
+
+
+
+BetaComputerLeftMouseDownToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -3163,6 +4485,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+BetaComputerLeftMouseUpInput object{  }
+
+
+
+Release the left mouse button.
+
+
+
+BetaComputerLeftMouseUpToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -3186,6 +4520,38 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaComputerMiddleClickInput object{ coordinate, text }
+
+
+
+Click the middle mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+BetaComputerMiddleClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaComputerMouseMoveConfig object{ defer_loading, enabled }
 
 
@@ -3203,6 +4569,32 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaComputerMouseMoveInput object{ coordinate }
+
+
+
+Move the cursor to a specified (x, y) pixel coordinate. Use this ONLY to hover without clicking; otherwise use a click action directly.
+
+
+
+coordinate: array of number
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+
+
+BetaComputerMouseMoveToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -3226,6 +4618,38 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaComputerRightClickInput object{ coordinate, text }
+
+
+
+Click the right mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+BetaComputerRightClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaComputerScreenshotConfig object{ defer_loading, enabled }
 
 
@@ -3243,6 +4667,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+BetaComputerScreenshotInput object{  }
+
+
+
+Take a screenshot of the screen.
+
+
+
+BetaComputerScreenshotToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -3263,6 +4699,100 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaComputerScrollDirection = "up" or "down" or "left" or "right"
+
+
+
+One of the following:
+
+"up"
+
+
+
+"down"
+
+
+
+"left"
+
+
+
+"right"
+
+
+
+
+
+BetaComputerScrollInput object{ scroll_amount, scroll_direction, coordinate, text }
+
+
+
+Scroll the screen at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted. Do NOT use PageUp/PageDown to scroll.
+
+scroll_amount: number
+
+
+
+Number of 'clicks' of the scroll wheel.
+
+
+
+scroll_direction: [BetaComputerScrollDirection](platform-claude-com-http-beta-messages.md#beta_computer_scroll_direction)
+
+
+
+One of the following:
+
+"up"
+
+
+
+"down"
+
+
+
+"left"
+
+
+
+"right"
+
+
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+BetaComputerScrollToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
+BetaComputerToolUseBlock = [BetaComputerKeyToolUseBlock](platform-claude-com-http-beta-messages.md#beta_computer_key_tool_use_block) or [BetaComputerHoldKeyToolUseBlock](platform-claude-com-http-beta-messages.md#beta_computer_hold_key_tool_use_block) or [BetaComputerTypeToolUseBlock](platform-claude-com-http-beta-messages.md#beta_computer_type_tool_use_block) or 14 more
+
+
+
+One of the following:
 
 
 
@@ -3302,6 +4832,38 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaComputerTripleClickInput object{ coordinate, text }
+
+
+
+Triple-click the left mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+BetaComputerTripleClickToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaComputerTypeConfig object{ defer_loading, enabled }
 
 
@@ -3319,6 +4881,26 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaComputerTypeInput object{ text }
+
+
+
+Type a string of text on the keyboard.
+
+text: string
+
+
+
+The text to type.
+
+
+
+BetaComputerTypeToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -3342,6 +4924,30 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BetaComputerWaitInput object{ duration }
+
+
+
+Wait for a specified duration.
+
+
+
+duration: number
+
+
+
+Duration to wait, in seconds.
+
+maximum300
+
+
+
+BetaComputerWaitToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
+
+
+
 BetaComputerZoomConfig object{ defer_loading, enabled }
 
 
@@ -3359,6 +4965,32 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BetaComputerZoomInput object{ region }
+
+
+
+Take a screenshot of a rectangular region. Region coordinates are in the full-screenshot space (not physical display pixels). The crop is scaled up to fill the image budget so fine details become legible.
+
+
+
+region: array of number
+
+
+
+(x0, y0, x1, y1): The region to capture.
+
+minItems4
+
+maxItems4
+
+
+
+BetaComputerZoomToolUseBlock object{ type: "tool_use", id, input, 3 more }
+
+
 
 
 
@@ -3386,7 +5018,7 @@ formatdate-time
 
 
 
-skills: array of [BetaContainerSkill](http-beta-messages.md#beta_container_skill) { type, skill_id, version } or null
+skills: array of [BetaContainerSkill](platform-claude-com-http-beta-messages.md#beta_container_skill) { type, skill_id, version } or null
 
 
 
@@ -3450,7 +5082,7 @@ Container id
 
 
 
-skills: optional array of [BetaSkillParams](http-beta-messages.md#beta_skill_params) { type, skill_id, version } or null
+skills: optional array of [BetaSkillParams](platform-claude-com-http-beta-messages.md#beta_skill_params) { type, skill_id, version } or null
 
 
 
@@ -3588,7 +5220,7 @@ file_id: string
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -3625,7 +5257,7 @@ One of the following:
 
 
 
-BetaContentBlock = [BetaTextBlock](http-beta-messages.md#beta_text_block) or [BetaThinkingBlock](http-beta-messages.md#beta_thinking_block) or [BetaRedactedThinkingBlock](http-beta-messages.md#beta_redacted_thinking_block) or 15 more
+BetaContentBlock = [BetaTextBlock](platform-claude-com-http-beta-messages.md#beta_text_block) or [BetaThinkingBlock](platform-claude-com-http-beta-messages.md#beta_thinking_block) or [BetaRedactedThinkingBlock](platform-claude-com-http-beta-messages.md#beta_redacted_thinking_block) or 15 more
 
 
 
@@ -3633,7 +5265,7 @@ One of the following:
 
 
 
-BetaContentBlockParam = [BetaTextBlockParam](http-beta-messages.md#beta_text_block_param) or [BetaImageBlockParam](http-beta-messages.md#beta_image_block_param) or [BetaRequestDocumentBlock](http-beta-messages.md#beta_request_document_block) or 21 more
+BetaContentBlockParam = [BetaTextBlockParam](platform-claude-com-http-beta-messages.md#beta_text_block_param) or [BetaImageBlockParam](platform-claude-com-http-beta-messages.md#beta_image_block_param) or [BetaRequestDocumentBlock](platform-claude-com-http-beta-messages.md#beta_request_document_block) or 21 more
 
 
 
@@ -3651,7 +5283,7 @@ type: "content"
 
 
 
-content: string or array of [BetaContentBlockSourceContent](http-beta-messages.md#beta_content_block_source_content)
+content: string or array of [BetaContentBlockSourceContent](platform-claude-com-http-beta-messages.md#beta_content_block_source_content)
 
 
 
@@ -3663,7 +5295,7 @@ string
 
 
 
-BetaContentBlockSourceContent = array of [BetaContentBlockSourceContent](http-beta-messages.md#beta_content_block_source_content)
+BetaContentBlockSourceContent = array of [BetaContentBlockSourceContent](platform-claude-com-http-beta-messages.md#beta_content_block_source_content)
 
 
 
@@ -3683,7 +5315,7 @@ BetaImageBlockParam object{ type: "image", source, cache_control, transformation
 
 
 
-BetaContentBlockSourceContent = [BetaTextBlockParam](http-beta-messages.md#beta_text_block_param) or [BetaImageBlockParam](http-beta-messages.md#beta_image_block_param)
+BetaContentBlockSourceContent = [BetaTextBlockParam](platform-claude-com-http-beta-messages.md#beta_text_block_param) or [BetaImageBlockParam](platform-claude-com-http-beta-messages.md#beta_image_block_param)
 
 
 
@@ -3735,7 +5367,7 @@ Request-level diagnostics: why the prompt cache could not fully reuse the prefix
 
 
 
-cache_miss_reason: [BetaCacheMissReason](http-beta-messages.md#beta_cache_miss_reason) or null
+cache_miss_reason: [BetaCacheMissReason](platform-claude-com-http-beta-messages.md#beta_cache_miss_reason) or null
 
 
 
@@ -3797,7 +5429,7 @@ defaultencrypted_code_execution_result
 
 
 
-content: array of [BetaCodeExecutionOutputBlock](http-beta-messages.md#beta_code_execution_output_block) { type: "code_execution_output", file_id }
+content: array of [BetaCodeExecutionOutputBlock](platform-claude-com-http-beta-messages.md#beta_code_execution_output_block) { type: "code_execution_output", file_id }
 
 
 
@@ -3839,7 +5471,7 @@ type: "encrypted_code_execution_result"
 
 
 
-content: array of [BetaCodeExecutionOutputBlockParam](http-beta-messages.md#beta_code_execution_output_block_param) { type: "code_execution_output", file_id }
+content: array of [BetaCodeExecutionOutputBlockParam](platform-claude-com-http-beta-messages.md#beta_code_execution_output_block_param) { type: "code_execution_output", file_id }
 
 
 
@@ -3893,7 +5525,7 @@ type: "fallback"
 
 
 
-from: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
+from: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
@@ -3901,7 +5533,7 @@ Identifies one hop of a fallback transition.
 
 
 
-to: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
+to: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
@@ -3987,7 +5619,7 @@ Outcome of the `fallback_credit_token` presented on this request.
 
 
 
-status: [BetaFallbackCreditRedeemed](http-beta-messages.md#beta_fallback_credit_redeemed) or [BetaFallbackCreditNotApplied](http-beta-messages.md#beta_fallback_credit_not_applied)
+status: [BetaFallbackCreditRedeemed](platform-claude-com-http-beta-messages.md#beta_fallback_credit_redeemed) or [BetaFallbackCreditNotApplied](platform-claude-com-http-beta-messages.md#beta_fallback_credit_not_applied)
 
 
 
@@ -4115,11 +5747,11 @@ The request could be related to an area that was determined as harmful. Benign w
 
 
 
-BetaFallbacksParam = array of [BetaFallbackParam](http-beta-messages.md#beta_fallback_param) or "default"
+BetaFallbacksParam = array of [BetaFallbackParam](platform-claude-com-http-beta-messages.md#beta_fallback_param) or "default"
 
 
 
-Opt-in server-side retry on one or more substitute models when the requested model declines for policy reasons. Tried in order: if the first entry also declines, the second is tried, and so on. The string "default" requests the requested model's server-defined default fallback configuration.
+Opt-in server-side retry on one or more substitute models when the requested model declines for policy reasons. Tried in order: if the first entry also declines, the second is tried, and so on. Some models don't support fallbacks; on those models, a list of fallback models returns a 400 error. See [Server-side fallback](../Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback). The string "default" requests the requested model's server-defined default fallback configuration. On a model that doesn't support fallbacks, the request runs on the requested model alone, so a declined request stays declined.
 
 One of the following:
 
@@ -4239,7 +5871,7 @@ minimum1
 
 
 
-BetaInputTransformation = [BetaThinkingDroppedInputTransformation](http-beta-messages.md#beta_thinking_dropped_input_transformation) or [BetaThinkingMismatchAllowedInputTransformation](http-beta-messages.md#beta_thinking_mismatch_allowed_input_transformation)
+BetaInputTransformation = [BetaThinkingDroppedInputTransformation](platform-claude-com-http-beta-messages.md#beta_thinking_dropped_input_transformation) or [BetaThinkingMismatchAllowedInputTransformation](platform-claude-com-http-beta-messages.md#beta_thinking_mismatch_allowed_input_transformation)
 
 
 
@@ -4249,7 +5881,7 @@ One of the following:
 
 
 
-BetaIterationsUsage = array of [BetaMessageIterationUsage](http-beta-messages.md#beta_message_iteration_usage) or [BetaCompactionIterationUsage](http-beta-messages.md#beta_compaction_iteration_usage) or [BetaAdvisorMessageIterationUsage](http-beta-messages.md#beta_advisor_message_iteration_usage) or [BetaFallbackMessageIterationUsage](http-beta-messages.md#beta_fallback_message_iteration_usage)
+BetaIterationsUsage = array of [BetaMessageIterationUsage](platform-claude-com-http-beta-messages.md#beta_message_iteration_usage) or [BetaCompactionIterationUsage](platform-claude-com-http-beta-messages.md#beta_compaction_iteration_usage) or [BetaAdvisorMessageIterationUsage](platform-claude-com-http-beta-messages.md#beta_advisor_message_iteration_usage) or [BetaFallbackMessageIterationUsage](platform-claude-com-http-beta-messages.md#beta_fallback_message_iteration_usage)
 
 
 
@@ -4257,7 +5889,6 @@ Per-iteration token usage breakdown.
 
 Each entry represents one sampling iteration, with its own input/output token counts and cache statistics, discriminated by `type`. For `message` entries (model sampling iterations, such as the turns of a server-side tool use loop), this allows you to:
 
-- Determine which iterations exceeded long context thresholds (\>=200k tokens)
 - Calculate the context window size from the last `message` entry
 - Understand token accumulation across server-side tool use loops
 
@@ -4355,7 +5986,7 @@ mcp_server_name: string
 
 
 
-tools: array of [BetaMCPTool](http-beta-messages.md#beta_mcp_tool) { input_schema, name, description }
+tools: array of [BetaMCPTool](platform-claude-com-http-beta-messages.md#beta_mcp_tool) { input_schema, name, description }
 
 
 
@@ -4397,7 +6028,7 @@ maxLength255
 
 
 
-tools: array of [BetaMCPToolParam](http-beta-messages.md#beta_mcp_tool_param) { input_schema, name, description }
+tools: array of [BetaMCPToolParam](platform-claude-com-http-beta-messages.md#beta_mcp_tool_param) { input_schema, name, description }
 
 
 
@@ -4523,7 +6154,7 @@ BetaMemoryTool20250818 object{ type: "memory_20250818", name, allowed_callers, 4
 
 
 
-BetaMemoryTool20250818Command = [BetaMemoryTool20250818ViewCommand](http-beta-messages.md#beta_memory_tool_20250818_view_command) or [BetaMemoryTool20250818CreateCommand](http-beta-messages.md#beta_memory_tool_20250818_create_command) or [BetaMemoryTool20250818StrReplaceCommand](http-beta-messages.md#beta_memory_tool_20250818_str_replace_command) or 3 more
+BetaMemoryTool20250818Command = [BetaMemoryTool20250818ViewCommand](platform-claude-com-http-beta-messages.md#beta_memory_tool_20250818_view_command) or [BetaMemoryTool20250818CreateCommand](platform-claude-com-http-beta-messages.md#beta_memory_tool_20250818_create_command) or [BetaMemoryTool20250818StrReplaceCommand](platform-claude-com-http-beta-messages.md#beta_memory_tool_20250818_str_replace_command) or 3 more
 
 
 
@@ -4747,7 +6378,7 @@ BetaMessageTokensCount object{ context_management, input_tokens }
 
 
 
-context_management: [BetaCountTokensContextManagementResponse](http-beta-messages.md#beta_count_tokens_context_management_response) { original_input_tokens } or null
+context_management: [BetaCountTokensContextManagementResponse](platform-claude-com-http-beta-messages.md#beta_count_tokens_context_management_response) { original_input_tokens } or null
 
 
 
@@ -4829,7 +6460,7 @@ media_type: "text/plain"
 
 
 
-BetaRawContentBlockDelta = [BetaTextDelta](http-beta-messages.md#beta_text_delta) or [BetaInputJSONDelta](http-beta-messages.md#beta_input_json_delta) or [BetaCitationsDelta](http-beta-messages.md#beta_citations_delta) or 3 more
+BetaRawContentBlockDelta = [BetaTextDelta](platform-claude-com-http-beta-messages.md#beta_text_delta) or [BetaInputJSONDelta](platform-claude-com-http-beta-messages.md#beta_input_json_delta) or [BetaCitationsDelta](platform-claude-com-http-beta-messages.md#beta_citations_delta) or 3 more
 
 
 
@@ -4851,7 +6482,7 @@ defaultcontent_block_delta
 
 
 
-delta: [BetaRawContentBlockDelta](http-beta-messages.md#beta_raw_content_block_delta)
+delta: [BetaRawContentBlockDelta](platform-claude-com-http-beta-messages.md#beta_raw_content_block_delta)
 
 
 
@@ -4907,7 +6538,7 @@ defaultmessage_start
 
 
 
-message: [BetaMessage](http-beta-messages.md#beta_message) { type: "message", id, container, 10 more }
+message: [BetaMessage](platform-claude-com-http-beta-messages.md#beta_message) { type: "message", id, container, 10 more }
 
 
 
@@ -4927,7 +6558,7 @@ defaultmessage_stop
 
 
 
-BetaRawMessageStreamEvent = [BetaRawMessageStartEvent](http-beta-messages.md#beta_raw_message_start_event) or [BetaRawMessageDeltaEvent](http-beta-messages.md#beta_raw_message_delta_event) or [BetaRawMessageStopEvent](http-beta-messages.md#beta_raw_message_stop_event) or 3 more
+BetaRawMessageStreamEvent = [BetaRawMessageStartEvent](platform-claude-com-http-beta-messages.md#beta_raw_message_start_event) or [BetaRawMessageDeltaEvent](platform-claude-com-http-beta-messages.md#beta_raw_message_delta_event) or [BetaRawMessageStopEvent](platform-claude-com-http-beta-messages.md#beta_raw_message_stop_event) or 3 more
 
 
 
@@ -5027,7 +6658,7 @@ authorization_token: optional string or null
 
 
 
-tool_configuration: optional [BetaRequestMCPServerToolConfiguration](http-beta-messages.md#beta_request_mcp_server_tool_configuration) { allowed_tools, enabled } or null
+tool_configuration: optional [BetaRequestMCPServerToolConfiguration](platform-claude-com-http-beta-messages.md#beta_request_mcp_server_tool_configuration) { allowed_tools, enabled } or null
 
 
 
@@ -5177,7 +6808,7 @@ An entry of a `compaction` block's `tool_changes`: a tool of the request's `tool
 
 
 
-BetaResponseToolUnion = [BetaResponseTool](http-beta-messages.md#beta_response_tool) or [BetaToolBash20241022](http-beta-messages.md#beta_tool_bash_20241022) or [BetaToolBash20250124](http-beta-messages.md#beta_tool_bash_20250124) or 25 more
+BetaResponseToolUnion = [BetaResponseTool](platform-claude-com-http-beta-messages.md#beta_response_tool) or [BetaToolBash20241022](platform-claude-com-http-beta-messages.md#beta_tool_bash_20241022) or [BetaToolBash20250124](platform-claude-com-http-beta-messages.md#beta_tool_bash_20250124) or 25 more
 
 
 
@@ -5459,7 +7090,7 @@ BetaTextBlockParam object{ type: "text", text, cache_control, citations }
 
 
 
-BetaTextCitation = [BetaCitationCharLocation](http-beta-messages.md#beta_citation_char_location) or [BetaCitationPageLocation](http-beta-messages.md#beta_citation_page_location) or [BetaCitationContentBlockLocation](http-beta-messages.md#beta_citation_content_block_location) or 2 more
+BetaTextCitation = [BetaCitationCharLocation](platform-claude-com-http-beta-messages.md#beta_citation_char_location) or [BetaCitationPageLocation](platform-claude-com-http-beta-messages.md#beta_citation_page_location) or [BetaCitationContentBlockLocation](platform-claude-com-http-beta-messages.md#beta_citation_content_block_location) or 2 more
 
 
 
@@ -5467,7 +7098,7 @@ One of the following:
 
 
 
-BetaTextCitationParam = [BetaCitationCharLocationParam](http-beta-messages.md#beta_citation_char_location_param) or [BetaCitationPageLocationParam](http-beta-messages.md#beta_citation_page_location_param) or [BetaCitationContentBlockLocationParam](http-beta-messages.md#beta_citation_content_block_location_param) or 2 more
+BetaTextCitationParam = [BetaCitationCharLocationParam](platform-claude-com-http-beta-messages.md#beta_citation_char_location_param) or [BetaCitationPageLocationParam](platform-claude-com-http-beta-messages.md#beta_citation_page_location_param) or [BetaCitationContentBlockLocationParam](platform-claude-com-http-beta-messages.md#beta_citation_content_block_location_param) or 2 more
 
 
 
@@ -5825,7 +7456,7 @@ Controls for block binding: what happens when a thinking block this request send
 
 
 
-prefix_mismatch_behavior: optional [BetaThinkingPrefixMismatchBehavior](http-beta-messages.md#beta_thinking_prefix_mismatch_behavior) or null
+prefix_mismatch_behavior: optional [BetaThinkingPrefixMismatchBehavior](platform-claude-com-http-beta-messages.md#beta_thinking_prefix_mismatch_behavior) or null
 
 
 
@@ -5879,7 +7510,7 @@ type: "adaptive"
 
 
 
-block_binding: optional [BetaThinkingBlockBinding](http-beta-messages.md#beta_thinking_block_binding) { prefix_mismatch_behavior } or null
+block_binding: optional [BetaThinkingBlockBinding](platform-claude-com-http-beta-messages.md#beta_thinking_block_binding) { prefix_mismatch_behavior } or null
 
 
 
@@ -5887,7 +7518,7 @@ Controls for block binding: what happens when a thinking block this request send
 
 
 
-prefix_mismatch_behavior: optional [BetaThinkingPrefixMismatchBehavior](http-beta-messages.md#beta_thinking_prefix_mismatch_behavior) or null
+prefix_mismatch_behavior: optional [BetaThinkingPrefixMismatchBehavior](platform-claude-com-http-beta-messages.md#beta_thinking_prefix_mismatch_behavior) or null
 
 
 
@@ -5909,7 +7540,7 @@ display: optional "summarized" or "omitted" or "updates" or null
 
 
 
-Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. The default depends on the model; see [Controlling thinking display](../Guides/build-with-claude-thinking.md#controlling-thinking-display).
 
 One of the following:
 
@@ -5953,15 +7584,15 @@ BetaThinkingConfigEnabled object{ type: "enabled", budget_tokens, block_binding,
 
 
 
-BetaThinkingConfigParam = [BetaThinkingConfigEnabled](http-beta-messages.md#beta_thinking_config_enabled) or [BetaThinkingConfigDisabled](http-beta-messages.md#beta_thinking_config_disabled) or [BetaThinkingConfigBetweenTools](http-beta-messages.md#beta_thinking_config_between_tools) or [BetaThinkingConfigAdaptive](http-beta-messages.md#beta_thinking_config_adaptive)
+BetaThinkingConfigParam = [BetaThinkingConfigEnabled](platform-claude-com-http-beta-messages.md#beta_thinking_config_enabled) or [BetaThinkingConfigDisabled](platform-claude-com-http-beta-messages.md#beta_thinking_config_disabled) or [BetaThinkingConfigBetweenTools](platform-claude-com-http-beta-messages.md#beta_thinking_config_between_tools) or [BetaThinkingConfigAdaptive](platform-claude-com-http-beta-messages.md#beta_thinking_config_adaptive)
 
 
 
-Configuration for enabling Claude's extended thinking.
+Configuration for Claude's thinking.
 
-When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.
+With `{"type": "adaptive"}`, Claude decides when and how much to think. With `{"type": "enabled"}` (manual extended thinking), you set a `budget_tokens` of at least 1,024. Thinking tokens count toward your `max_tokens` limit.
 
-See [extended thinking](../Guides/build-with-claude-extended-thinking.md) for details.
+Which `type` values are accepted, and what happens when you omit `thinking`, depend on the model. See [thinking](../Guides/build-with-claude-thinking.md#configuring-thinking) for each model's behavior.
 
 One of the following:
 
@@ -6229,7 +7860,7 @@ defaulttool_definition
 
 
 
-definition: [BetaResponseToolUnion](http-beta-messages.md#beta_response_tool_union)
+definition: [BetaResponseToolUnion](platform-claude-com-http-beta-messages.md#beta_response_tool_union)
 
 
 
@@ -6249,7 +7880,7 @@ type: "tool_definition"
 
 
 
-definition: [BetaToolUnion](http-beta-messages.md#beta_tool_union)
+definition: [BetaToolUnion](platform-claude-com-http-beta-messages.md#beta_tool_union)
 
 
 
@@ -6277,7 +7908,7 @@ pattern^\[a-zA-Z0-9\_-\]{1,128}\$
 
 
 
-BetaToolChoice = [BetaToolChoiceAuto](http-beta-messages.md#beta_tool_choice_auto) or [BetaToolChoiceAny](http-beta-messages.md#beta_tool_choice_any) or [BetaToolChoiceTool](http-beta-messages.md#beta_tool_choice_tool) or [BetaToolChoiceNone](http-beta-messages.md#beta_tool_choice_none)
+BetaToolChoice = [BetaToolChoiceAuto](platform-claude-com-http-beta-messages.md#beta_tool_choice_auto) or [BetaToolChoiceAny](platform-claude-com-http-beta-messages.md#beta_tool_choice_any) or [BetaToolChoiceTool](platform-claude-com-http-beta-messages.md#beta_tool_choice_tool) or [BetaToolChoiceNone](platform-claude-com-http-beta-messages.md#beta_tool_choice_none)
 
 
 
@@ -6439,7 +8070,7 @@ pattern^\[a-zA-Z0-9\_-\]{1,256}\$
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -6600,7 +8231,7 @@ defaulttool_search_tool_search_result
 
 
 
-tool_references: array of [BetaToolReferenceBlock](http-beta-messages.md#beta_tool_reference_block) { type: "tool_reference", tool_name }
+tool_references: array of [BetaToolReferenceBlock](platform-claude-com-http-beta-messages.md#beta_tool_reference_block) { type: "tool_reference", tool_name }
 
 
 
@@ -6656,7 +8287,7 @@ BetaToolTextEditor20250728 object{ type: "text_editor_20250728", name, allowed_c
 
 
 
-BetaToolUnion = [BetaTool](http-beta-messages.md#beta_tool) or [BetaToolBash20241022](http-beta-messages.md#beta_tool_bash_20241022) or [BetaToolBash20250124](http-beta-messages.md#beta_tool_bash_20250124) or 25 more
+BetaToolUnion = [BetaTool](platform-claude-com-http-beta-messages.md#beta_tool) or [BetaToolBash20241022](platform-claude-com-http-beta-messages.md#beta_tool_bash_20241022) or [BetaToolBash20250124](platform-claude-com-http-beta-messages.md#beta_tool_bash_20250124) or 25 more
 
 
 
@@ -6673,6 +8304,66 @@ BetaToolUseBlock object{ type: "tool_use", id, input, 3 more }
 BetaToolUseBlockParam object{ type: "tool_use", id, input, 4 more }
 
 
+
+
+
+BetaToolUseCaller = [BetaDirectCaller](platform-claude-com-http-beta-messages.md#beta_direct_caller) or [BetaServerToolCaller](platform-claude-com-http-beta-messages.md#beta_server_tool_caller) or [BetaServerToolCaller20260120](platform-claude-com-http-beta-messages.md#beta_server_tool_caller_20260120)
+
+
+
+Which party invoked the tool call: the model directly, or a server tool on its behalf.
+
+One of the following:
+
+
+
+BetaDirectCaller object{ type: "direct" }
+
+
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+
+
+
+
+BetaServerToolCaller object{ type: "code_execution_20250825", tool_id }
+
+
+
+Tool invocation generated by a server-side tool.
+
+type: "code_execution_20250825"
+
+
+
+
+
+tool_id: string
+
+
+
+pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
+
+
+
+BetaServerToolCaller20260120 object{ type: "code_execution_20260120", tool_id }
+
+
+
+type: "code_execution_20260120"
+
+
+
+
+
+tool_id: string
+
+
+
+pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
 
 
 
@@ -6709,6 +8400,14 @@ value: number
 
 
 minimum1
+
+
+
+BetaToolsetToolUseBlock = [BetaBrowserToolUseBlock](platform-claude-com-http-beta-messages.md#beta_browser_tool_use_block) or [BetaComputerToolUseBlock](platform-claude-com-http-beta-messages.md#beta_computer_tool_use_block) or [BetaToolUseBlock](platform-claude-com-http-beta-messages.md#beta_tool_use_block)
+
+
+
+One of the following:
 
 
 
@@ -6818,7 +8517,7 @@ defaultweb_fetch_result
 
 
 
-content: [BetaDocumentBlock](http-beta-messages.md#beta_document_block) { type: "document", citations, source, title }
+content: [BetaDocumentBlock](platform-claude-com-http-beta-messages.md#beta_document_block) { type: "document", citations, source, title }
 
 
 
@@ -6846,7 +8545,7 @@ type: "web_fetch_result"
 
 
 
-content: [BetaRequestDocumentBlock](http-beta-messages.md#beta_request_document_block) { type: "document", source, cache_control, 3 more }
+content: [BetaRequestDocumentBlock](platform-claude-com-http-beta-messages.md#beta_request_document_block) { type: "document", source, cache_control, 3 more }
 
 
 
@@ -6916,7 +8615,7 @@ defaultweb_fetch_tool_result_error
 
 
 
-error_code: [BetaWebFetchToolResultErrorCode](http-beta-messages.md#beta_web_fetch_tool_result_error_code)
+error_code: [BetaWebFetchToolResultErrorCode](platform-claude-com-http-beta-messages.md#beta_web_fetch_tool_result_error_code)
 
 
 
@@ -6974,7 +8673,7 @@ type: "web_fetch_tool_result_error"
 
 
 
-error_code: [BetaWebFetchToolResultErrorCode](http-beta-messages.md#beta_web_fetch_tool_result_error_code)
+error_code: [BetaWebFetchToolResultErrorCode](platform-claude-com-http-beta-messages.md#beta_web_fetch_tool_result_error_code)
 
 
 
@@ -7094,7 +8793,7 @@ type: "except"
 
 
 
-tools: array of [BetaWebFetchURLSourceToolReference](http-beta-messages.md#beta_web_fetch_url_source_tool_reference) { type: "tool_reference", name }
+tools: array of [BetaWebFetchURLSourceToolReference](platform-claude-com-http-beta-messages.md#beta_web_fetch_url_source_tool_reference) { type: "tool_reference", name }
 
 
 
@@ -7132,7 +8831,7 @@ type: "only"
 
 
 
-tools: array of [BetaWebFetchURLSourceToolReference](http-beta-messages.md#beta_web_fetch_url_source_tool_reference) { type: "tool_reference", name }
+tools: array of [BetaWebFetchURLSourceToolReference](platform-claude-com-http-beta-messages.md#beta_web_fetch_url_source_tool_reference) { type: "tool_reference", name }
 
 
 
@@ -7256,7 +8955,7 @@ type: "web_search_tool_result_error"
 
 
 
-error_code: [BetaWebSearchToolResultErrorCode](http-beta-messages.md#beta_web_search_tool_result_error_code)
+error_code: [BetaWebSearchToolResultErrorCode](platform-claude-com-http-beta-messages.md#beta_web_search_tool_result_error_code)
 
 
 
@@ -7294,7 +8993,7 @@ BetaWebSearchToolResultBlock object{ type: "web_search_tool_result", content, to
 
 
 
-BetaWebSearchToolResultBlockContent = [BetaWebSearchToolResultError](http-beta-messages.md#beta_web_search_tool_result_error) or array of [BetaWebSearchResultBlock](http-beta-messages.md#beta_web_search_result_block)
+BetaWebSearchToolResultBlockContent = [BetaWebSearchToolResultError](platform-claude-com-http-beta-messages.md#beta_web_search_tool_result_error) or array of [BetaWebSearchResultBlock](platform-claude-com-http-beta-messages.md#beta_web_search_result_block)
 
 
 
@@ -7308,7 +9007,7 @@ BetaWebSearchToolResultBlockParam object{ type: "web_search_tool_result", conten
 
 
 
-BetaWebSearchToolResultBlockParamContent = array of [BetaWebSearchResultBlockParam](http-beta-messages.md#beta_web_search_result_block_param) or [BetaWebSearchToolRequestError](http-beta-messages.md#beta_web_search_tool_request_error)
+BetaWebSearchToolResultBlockParamContent = array of [BetaWebSearchResultBlockParam](platform-claude-com-http-beta-messages.md#beta_web_search_result_block_param) or [BetaWebSearchToolRequestError](platform-claude-com-http-beta-messages.md#beta_web_search_tool_request_error)
 
 
 
@@ -7330,7 +9029,7 @@ defaultweb_search_tool_result_error
 
 
 
-error_code: [BetaWebSearchToolResultErrorCode](http-beta-messages.md#beta_web_search_tool_result_error_code)
+error_code: [BetaWebSearchToolResultErrorCode](platform-claude-com-http-beta-messages.md#beta_web_search_tool_result_error_code)
 
 
 

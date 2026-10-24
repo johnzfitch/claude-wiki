@@ -2,7 +2,7 @@
 title: "Checkpointing - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/checkpointing"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:14Z"
+fetched_at: "2026-10-23T06:28:38Z"
 tags: ["claude-code"]
 ---
 
@@ -11,6 +11,7 @@ tags: ["claude-code"]
 - [How checkpoints work](#how-checkpoints-work)
   - [Automatic tracking](#automatic-tracking)
   - [Rewind and summarize](#rewind-and-summarize)
+  - [Rewound messages can return if you exit before your next prompt](#rewound-messages-can-return-if-you-exit-before-your-next-prompt)
   - [Rewind past a cleared conversation](#rewind-past-a-cleared-conversation)
   - [Guide a summary](#guide-a-summary)
 - [Common use cases](#common-use-cases)
@@ -75,6 +76,13 @@ The rewind menu lists the prompts you sent during the session. Select the point 
 The two code restore options appear only when the selected checkpoint has tracked file changes to revert. If no file edits were captured after that point, the menu offers only **Restore conversation**, the summarize options, and **Never mind**. After restoring the conversation or choosing Summarize from here, the original prompt from the selected message is restored into the input field so you can re-send or edit it. Choosing Summarize up to here leaves you at the end of the conversation with the input empty. With either summarize option, a **Summarized conversation** marker appears in the conversation where the compressed messages were.
 
 
+[​](#rewound-messages-can-return-if-you-exit-before-your-next-prompt)
+
+Rewound messages can return if you exit before your next prompt
+
+To remove the returned messages again, run `/rewind` in the session and select the same prompt, then **Restore conversation**. Before you exit, send Claude a prompt, because Claude Code saves the rewound conversation together with that prompt. Files you restored stay as the rewind left them.
+
+
 [​](#rewind-past-a-cleared-conversation)
 
 Rewind past a cleared conversation
@@ -112,15 +120,7 @@ Limitations
 
 Bash command changes not tracked
 
-Checkpointing does not track files modified by Bash commands. For example, if Claude Code runs:
-
-```python
-rm file.txt
-mv old.txt new.txt
-cp source.txt dest.txt
-```
-
-These file modifications cannot be undone through rewind. Only direct file edits made through Claude’s file editing tools are tracked.
+Once Claude has edited a file with its file editing tools in your conversation, `/rewind` undoes changes that Bash commands make to that file afterward. A file that only Bash commands changed isn’t tracked and stays as it is. To revert it, use version control, such as Git. Under each prompt, the rewind menu counts changes to files Claude had already edited, whatever made them. A prompt where a shell command changed such a file lists file changes too.
 
 
 [​](#subagent-edits-not-restored)
@@ -130,7 +130,7 @@ Subagent edits not restored
 A [subagent](../09-Agents-Patterns/sub-agents.md) makes edits with Claude’s file editing tools, but Claude Code usually doesn’t capture those edits in your session’s checkpoints. Whether rewinding restores them depends on how the subagent runs:
 
 - **Foreground forked skill**: a [skill with `context: fork`](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent) that runs in the foreground edits your working tree during your own turn, so rewinding restores its edits as usual. Set `background: false` to run a fork in the foreground; a few situations, [listed on the skills page](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent), run it there regardless of the setting.
-- **Any other subagent**: rewinding doesn’t restore the edits. Use git to revert them. This includes a forked skill that runs in the background, the default, and a background [`/code-review --fix`](code-review.md) run.
+- **Any other subagent**: rewinding restores only the files Claude had already edited in your conversation. The subagent’s edits to other files stay, so use version control, such as Git, to revert them. This includes a forked skill that runs in the background, the default, and a background [`/code-review --fix`](code-review-local.md) run.
 
 
 [​](#external-changes-not-tracked)
@@ -144,7 +144,7 @@ Checkpointing only tracks files that have been edited within the current session
 
 Messages sent mid-turn not checkpointed
 
-When a message you [queue while Claude works](interactive-mode.md#queue-messages-while-claude-works) reaches Claude within the running turn, it joins that turn instead of starting a new one. The message appears in the conversation, but Claude Code doesn’t create a checkpoint for it. A queued message that Claude Code sends as part of a new turn gets a checkpoint as usual, including when several queued messages [share that turn](interactive-mode.md#when-claude-code-sends-what-you-queued). To undo the edits Claude made after such a message, rewind to the prompt that started the turn. That rewinds the whole turn, including the work Claude did before your message arrived.
+In the rewind menu, a message you [typed while Claude was still working](interactive-mode.md#queue-messages-while-claude-works) can be marked **No code restore**. Claude read that message before its turn ended. [Checkpoints are taken for prompts that start a turn](#how-checkpoints-work), so this message has none of its own. The edits Claude made after reading it count toward the prompt that started the turn. You don’t need to do anything about the message itself. To undo the file changes from that part of the session, select the prompt that started the turn and choose **Restore code** or **Restore code and conversation**. That reverts Claude’s file edits from the whole turn, including the ones from before your message arrived. Selecting the marked message still offers **Restore conversation**, which rewinds the conversation to it and leaves your files as they are.
 
 
 [​](#symlinked-and-hard-linked-paths-not-restored)

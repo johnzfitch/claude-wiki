@@ -2,7 +2,7 @@
 title: "Manage resources as code with ant apply - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/apply"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-05T06:37:55Z"
+fetched_at: "2026-10-21T06:29:40Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fapply)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fapply)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
@@ -177,19 +177,31 @@ You can declaratively define the other resources as files as well. A file holds 
 
 Any resource except a skill can be written as YAML, JSON, or Markdown. In Markdown, the frontmatter is the body and the prose fills the kind's text field: an agent's `system`, an environment's or memory store's `description`, a deployment's first message. A vault has no text field, so `ant apply` refuses a vault Markdown file that has prose.
 
-Resources refer to each other by path. Wherever the API expects another resource's ID, write the relative path to that resource's file instead. In this project, the reviewer agent lists `../skills/pr-summary` under `skills`, the lead agent lists `./reviewer.md` in its roster, and the deployment names its agent, environment, and memory store by path. `ant apply` creates them in dependency order and fills in the real IDs. The project has six files:
+Resources refer to each other by path. Wherever the API expects another resource's ID, write the relative path to that resource's file instead. In this project, the reviewer agent lists `../skills/pr-summary` under `skills`, the agent in `agents/lead.md` lists `./reviewer.md` under `multiagent.subagents.predefined_agents`, and the deployment names its agent, environment, and memory store by path. `ant apply` creates them in dependency order and fills in the real IDs. A path under `multiagent.subagents.predefined_agents` or `multiagent.workflows.predefined_agents` needs CLI version 1.40.0 or later. The project has six files:
 
-agents/reviewer.md
+agents
 
-agents/lead.md
+reviewer.md
 
-skills/pr-summary/SKILL.md
+lead.md
 
-environments/cloud.yaml
+skills
 
-memory_stores/review-notes.yaml
+pr-summary
 
-deployments/nightly.md
+SKILL.md
+
+environments
+
+cloud.yaml
+
+memory_stores
+
+review-notes.yaml
+
+deployments
+
+nightly.md
 
 agents/reviewer.md
 
@@ -217,9 +229,11 @@ You review pull requests for correctness, security, and readability.
 name: Engineering lead
 model: claude-opus-5-5
 multiagent:
-  type: coordinator
-  agents:
-    - ./reviewer.md
+  type: multiagent_20261001
+  subagents:
+    type: enabled
+    predefined_agents:
+      - ./reviewer.md
 ---
 
 You coordinate engineering work. Delegate code review to the reviewer.

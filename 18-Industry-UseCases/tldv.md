@@ -2,7 +2,7 @@
 title: "tl;dv Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/tldv"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:03Z"
+fetched_at: "2026-10-23T06:30:11Z"
 tags: ["api", "case-studies", "enterprise", "git", "security"]
 ---
 
@@ -45,13 +45,13 @@ In the wake of the 2020 remote work boom, tl;dv emerged as a solution to the gro
 
 ## Enter Claude: Advanced AI to improve the user experience
 
-That's when tl;dv turned to Claude to power their next generation of meeting intelligence.
+That’s when tl;dv turned to Claude to power their next generation of meeting intelligence.
 
-"At first, our platform helped make meetings more efficient by automating follow-up resources. When we incorporated Claude into our platform, we were able to synthesize insights across multiple meetings, delivering actionable recommendations and driving tangible business outcomes for our customers,” said Raphael Allstadt, Co-founder and CEO. “With Claude, our platform evolved from a meeting recap tool to a powerful intelligence engine."
+“At first, our platform helped make meetings more efficient by automating follow-up resources. When we incorporated Claude into our platform, we were able to synthesize insights across multiple meetings, delivering actionable recommendations and driving tangible business outcomes for our customers,” said Raphael Allstadt, Co-founder and CEO. “With Claude, our platform evolved from a meeting recap tool to a powerful intelligence engine.”
 
 ## Immediate impact: 50% increase in speed and reliability
 
-The impact of Claude on tl;dv's product was immediate and profound. Users experienced a 50% increase in summary generation speed, allowing them to access key meeting insights faster than ever before. This rapid "time to aha moment" significantly boosted customer satisfaction.
+The impact of Claude on tl;dv’s product was immediate and profound. Users experienced a 50% increase in summary generation speed, allowing them to access key meeting insights faster than ever before. This rapid “time to aha moment” significantly boosted customer satisfaction.
 
 > Anthropic is the undisputed winner for us because Claude allows us to serve our users without any interruptions or delays. We see consistently fast response times, high uptime, and excellent documentation and SDKs.
 
@@ -59,19 +59,19 @@ The impact of Claude on tl;dv's product was immediate and profound. Users experi
 
 ## Providing customers with advanced analysis and actionable insights
 
-But speed was just the beginning. Claude's advanced analysis capabilities enabled tl;dv to offer deeper, more actionable insights from meeting data. Instead of simple summaries, customers now received customized reports identifying trends across weeks worth of meetings at once and providing concrete recommendations. This depth of analysis transformed tl;dv from a basic transcription service into an indispensable business intelligence tool.
+But speed was just the beginning. Claude’s advanced analysis capabilities enabled tl;dv to offer deeper, more actionable insights from meeting data. Instead of simple summaries, customers now received customized reports identifying trends across weeks worth of meetings at once and providing concrete recommendations. This depth of analysis transformed tl;dv from a basic transcription service into an indispensable business intelligence tool.
 
 ## New Claude-powered features
 
-Perhaps the most exciting development was tl;dv's ability to create innovative features powered by Claude. Their automated sales playbook monitoring system, a first of its kind, analyzes sales calls against defined or custom methodologies like MEDDIC. Sales managers can now track team performance across up to 30 meetings at once, identify areas for improvement, and provide data-driven coaching, all through an intuitive dashboard.
+Perhaps the most exciting development was tl;dv’s ability to create innovative features powered by Claude. Their automated sales playbook monitoring system, a first of its kind, analyzes sales calls against defined or custom methodologies like MEDDIC. Sales managers can now track team performance across up to 30 meetings at once, identify areas for improvement, and provide data-driven coaching, all through an intuitive dashboard.
 
-"Sales teams have shown significant interest in this application of AI for a critical sales workflow, as it allows them to scale coaching in ways that would have taken hours of manual effort before," said Allstadt.
+“Sales teams have shown significant interest in this application of AI for a critical sales workflow, as it allows them to scale coaching in ways that would have taken hours of manual effort before,” said Allstadt.
 
 ## A better user experience with AI
 
-The improved quality and consistency of Claude's output also allowed tl;dv to integrate AI-generated insights into more sophisticated user interfaces, including graphs and dashboards.
+The improved quality and consistency of Claude’s output also allowed tl;dv to integrate AI-generated insights into more sophisticated user interfaces, including graphs and dashboards.
 
-"Reliability and consistency really matter for the Product Team. Embedding AI into more sophisticated User Interfaces requires the AI to deliver consistent, well-formatted results. Anthropic is the only AI that satisfies our requirements," said Aranzazu del Castillo Figueruelo, Designer and Researcher at tl;dv.
+“Reliability and consistency really matter for the Product Team. Embedding AI into more sophisticated User Interfaces requires the AI to deliver consistent, well-formatted results. Anthropic is the only AI that satisfies our requirements,” said Aranzazu del Castillo Figueruelo, Designer and Researcher at tl;dv.
 
 ## ROI and business impact
 
@@ -83,13 +83,13 @@ The business impact of these improvements was substantial. These figures reflect
 
 ## Looking to the future: Using Claude to revolutionize knowledge transfer
 
-Looking ahead, tl;dv is excited about leveraging Claude's expanding capabilities, particularly longer context windows for more comprehensive multi-meeting analysis, going from 30 to hundreds of meetings analyzed at once. Allstadt envisions a future where AI revolutionizes how organizations onboard and transfer knowledge.
+Looking ahead, tl;dv is excited about leveraging Claude’s expanding capabilities, particularly longer context windows for more comprehensive multi-meeting analysis, going from 30 to hundreds of meetings analyzed at once. Allstadt envisions a future where AI revolutionizes how organizations onboard and transfer knowledge.
 
-> Imagine joining a new company: With a few summaries, you're up to speed on everything you need to know. Or you take over a customer account and instantly understand the full context as if you've been serving them for years. That's the future we're building with Anthropic.
+> Imagine joining a new company: With a few summaries, you’re up to speed on everything you need to know. Or you take over a customer account and instantly understand the full context as if you’ve been serving them for years. That’s the future we’re building with Anthropic.
 
 — Raphael Allstadt, Co-founder and CEO
 
-By integrating Claude, tl;dv has not only enhanced its core product but has also positioned itself at the forefront of AI-driven meeting intelligence. As virtual meetings continue to be a crucial part of business operations, tl;dv's Claude-powered platform stands ready to turn countless hours of conversation into actionable, business-driving insights.
+By integrating Claude, tl;dv has not only enhanced its core product but has also positioned itself at the forefront of AI-driven meeting intelligence. As virtual meetings continue to be a crucial part of business operations, tl;dv’s Claude-powered platform stands ready to turn countless hours of conversation into actionable, business-driving insights.
 
 ## Related stories
 
@@ -114,7 +114,8 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -132,12 +133,12 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -170,7 +171,7 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -188,6 +189,7 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -203,7 +205,7 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -238,7 +240,8 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -256,12 +259,12 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -294,7 +297,7 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -312,6 +315,7 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -327,7 +331,7 @@ By integrating Claude, tl;dv has not only enhanced its core product but has also
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

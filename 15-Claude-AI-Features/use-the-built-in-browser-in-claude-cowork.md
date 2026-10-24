@@ -2,14 +2,14 @@
 title: "Use the built-in browser in Claude Cowork | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607400-use-the-built-in-browser-in-claude-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:21Z"
+fetched_at: "2026-10-23T06:29:11Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
 # Use the built-in browser in Claude Cowork
 
 
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that’s a quick answer or a task. This is rolling out gradually to Pro and Max plans, and it’s in beta for Enterprise plans, where an admin turns it on as **Chat and Cowork unified (beta)**. If your message box no longer shows “Chat” and “Cowork” options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**. For Enterprise owners, see **[Set up and manage the new unified Claude experience for your Enterprise organization](../13-Enterprise-Admin/set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization.md)**.
 
 Claude Cowork has a browser built into the Claude Desktop app. This article explains how the built-in browser works, how it differs from Claude in Chrome, and how to choose which one Claude uses.
 
@@ -43,7 +43,7 @@ Cowork can use the web in two ways:
 
 - **Built-in browser.** Claude works in its own browser in the side panel. Nothing to install, and it doesn't touch your tabs or logins. Use it when you want to hand off the web part of a task and keep working.
 
-- **Claude in Chrome.** Claude works in your own Chrome browser through the Claude in Chrome extension, on the page you're already on, with the accounts you're already signed in to. Use it when the work is on a page in front of you. Learn more in **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173)**.
+- **Claude in Chrome.** Claude works in your own Chrome browser through the Claude in Chrome extension, on the page you're already on, with the accounts you're already signed in to. Use it when the work is on a page in front of you. Learn more in **[Get started with Claude in Chrome](get-started-with-claude-in-chrome-claude-help-center.md)**.
 
 If you already use Claude in Chrome, it stays your default for web tasks in Cowork. If you don't have the extension, or you're new to browser use in Cowork, Claude uses the built-in browser once it's available to you.
 
@@ -75,7 +75,7 @@ The built-in browser runs the same safeguards as Claude in Chrome:
 
 Any AI agent that acts in a browser can be targeted by prompt injection, where instructions hidden in a webpage try to redirect Claude. These safeguards reduce that risk but can't remove it. Start with sites you trust, stay close to tasks with real consequences, and stop the task if something looks off.
 
-Learn more in **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** and **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
+Learn more in **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** and **[Use Claude Cowork safely](use-claude-cowork-safely-claude-help-center.md)**.
 
 **Important:** We strongly advise against using the built-in browser or Claude in Chrome to manage or take actions involving sensitive information, such as financial accounts, medical information, or other people's personal data.
 

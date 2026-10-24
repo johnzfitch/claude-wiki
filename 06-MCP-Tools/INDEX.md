@@ -1,9 +1,10 @@
 # Model Context Protocol (MCP)
 
-319 pages. The full text of every page is in [llms.txt](llms.txt).
+323 pages. The full text of every page is in [llms.txt](llms.txt).
 
 ## Community
 
+- [Agents Charter - Model Context Protocol](Community/community-interest-groups-agents.md) — Charter for the MCP Agents Interest Group.
 - [Agents Charter - Model Context Protocol](Community/community-working-groups-agents.md) — Charter for the MCP Agents Working Group.
 - [Antitrust Policy - Model Context Protocol](Community/community-antitrust.md) — MCP Project Antitrust Policy for participants and contributors
 - [Authorization Charter - Model Context Protocol](Community/community-interest-groups-auth.md) — Charter for the MCP Authorization Interest Group.
@@ -18,11 +19,13 @@
 - [Filesystems Charter - Model Context Protocol](Community/community-working-groups-filesystems.md) — Charter for the MCP Filesystems Working Group.
 - [Financial Services Charter - Model Context Protocol](Community/community-interest-groups-financial-services.md) — Charter for the MCP Financial Services Interest Group.
 - [Governance and Stewardship - Model Context Protocol](Community/community-governance.md) — Learn about the Model Context Protocol’s governance structure and how to participate in the community
+- [Governance Working Group Charter - Model Context Protocol](Community/community-working-groups-governance.md) — Charter for the MCP Governance Working Group.
 - [Group Charter Template - Model Context Protocol](Community/community-charter-template.md) — Template for MCP Working Group and Interest Group charters.
 - [Infrastructure Charter - Model Context Protocol](Community/community-working-groups-infrastructure.md) — Charter for the MCP Infrastructure Working Group.
 - [Inspector V2 Working Group Charter - Model Context Protocol](Community/community-working-groups-inspector-v2.md) — Charter for the Inspector V2 Working Group, a Working Group of the Model Context Protocol community.
 - [Interceptors Charter - Model Context Protocol](Community/community-working-groups-interceptors.md) — Charter for the MCP Interceptors Working Group.
 - [Primitive Grouping Charter - Model Context Protocol](Community/community-interest-groups-primitive-grouping.md) — Charter for the MCP Primitive Grouping Interest Group.
+- [Progressive Disclosure Charter - Model Context Protocol](Community/community-working-groups-progressive-disclosure.md) — Charter for the MCP Progressive Disclosure Working Group.
 - [Registry Charter - Model Context Protocol](Community/community-working-groups-registry.md) — Charter for the MCP Registry Working Group.
 - [Scientific Computing Charter - Model Context Protocol](Community/community-interest-groups-scientific-computing.md) — Charter for the MCP Scientific Computing Interest Group.
 - [SDK Tiering System - Model Context Protocol](Community/community-sdk-tiers.md) — Feature completeness, protocol support, and maintenance commitment levels for Model Context Protocol SDKs
@@ -32,6 +35,7 @@
 - [SEP Guidelines - Model Context Protocol](Community/community-sep-guidelines.md) — Specification Enhancement Proposal (SEP) guidelines for proposing changes to the Model Context Protocol
 - [Server Card Charter - Model Context Protocol](Community/community-working-groups-server-card.md) — Charter for the MCP Server Card Working Group.
 - [Skills Over MCP Charter - Model Context Protocol](Community/community-working-groups-skills-over-mcp.md) — Charter for the MCP Skills Over MCP Working Group.
+- [Tasks and Events Charter - Model Context Protocol](Community/community-working-groups-tasks-events.md) — Charter for the MCP Tasks and Events Working Group.
 - [Tool Annotations Charter - Model Context Protocol](Community/community-interest-groups-tool-annotations.md) — Charter for the MCP Tool Annotations Interest Group.
 - [Transports Charter - Model Context Protocol](Community/community-working-groups-transports.md) — Charter for the MCP Transports Working Group.
 - [Triggers and Events Charter - Model Context Protocol](Community/community-working-groups-triggers-events.md) — Charter for the MCP Triggers and Events Working Group.

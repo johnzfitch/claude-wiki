@@ -2,13 +2,13 @@
 title: "Claude in Chrome permissions guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:09Z"
+fetched_at: "2026-10-23T06:28:58Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
 # Claude in Chrome permissions guide
 
-August 12, 2026
+Updated today
 
 
 This guide explains how to control what Claude can access and do when using Claude in Chrome. Understanding permissions helps you balance productivity with security.
@@ -42,13 +42,13 @@ Claude creates a plan from your prompt, which you can approve before Claude star
 
 Note that Claude will only use the websites listed in the plan, so you’ll need to manually approve any additional access requests.
 
-Claude clarifies which sites it’s planning to access and the actions it will take upfront, allowing you to review the proposed plan and ensure it’s correct before starting. You can also click "Make changes" to reject the current proposal, then prompt Claude again to make any necessary changes. Once you click "Approve plan," Claude will be able to act independently within the outlined parameters, but will still check with you before other sensitive actions, like downloading a file or entering sensitive information into a page. Claude will not deviate from the stated plan without requesting your permission first. There are certain actions that Claude cannot take for your security, such as making purchases, creating accounts, bypassing bot authorizations, executing trades, permanently deleting files, or taking certain actions that may indicate a prompt injection risk (see **[Prohibited actions](claude-in-chrome-permissions-guide.md#h_e199f8f523)**).
+Claude clarifies which sites it’s planning to access and the actions it will take upfront, allowing you to review the proposed plan and ensure it’s correct before starting. You can also click "Make changes" to reject the current proposal, then prompt Claude again to make any necessary changes. Once you click "Approve plan," Claude will be able to act independently within the outlined parameters, but will still check with you before other sensitive actions, like downloading a file or entering sensitive information into a page. Claude will not deviate from the stated plan without requesting your permission first. There are certain actions that Claude cannot take for your security, such as making purchases, creating accounts, bypassing bot authorizations, executing trades, permanently deleting files, or taking certain actions that may indicate a prompt injection risk (see **[Prohibited actions](#h_e199f8f523)**).
 
 ### In the Cowork side panel
 
 Claude doesn't create a plan for you to approve before starting. Claude may ask you a question or two to clarify what you want, then begins work and asks for your approval before each action. You review each request and choose Allow all for this website, Allow this time only, or Deny.
 
-Claude still checks with you before sensitive actions like downloading a file or entering sensitive information into a page, and some actions are blocked regardless of mode. See **[Actions requiring explicit permission](claude-in-chrome-permissions-guide.md#h_b209fa12fc)** and **[Prohibited actions](claude-in-chrome-permissions-guide.md#h_e199f8f523)** below.
+Claude still checks with you before sensitive actions like downloading a file or entering sensitive information into a page, and some actions are blocked regardless of mode. See **[Actions requiring explicit permission](#h_b209fa12fc)** and **[Prohibited actions](#h_e199f8f523)** below.
 
 ------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ When you choose "Automatically approve," Claude keeps working without stopping t
 
 We tested Claude's safety check extensively before releasing it, including working with outside security experts who tried to sneak dangerous actions past it. It gives you the speed of letting Claude work without interruptions, with a layer of protection that "Skip all approvals" doesn't have: every action still gets reviewed before it happens. *Of course, no defense is perfect and no mode replaces your judgment. For work with real consequences—money, messages sent as you, important files—stay close and review what Claude does or consider switching back to "Manually approve."*
 
-You'll see fewer prompts than in "Manually approve," but the safety checks still run in the background. Because Claude does this extra checking for you, **auto mode consumes more of your usage limit than the other modes**.
+You'll see fewer prompts than in "Manually approve," but the safety checks still run in the background.
 
 ------------------------------------------------------------------------
 

@@ -2,7 +2,7 @@
 title: "Claude Cowork | Claude by Anthropic"
 source_url: "https://www.claude.com/product/cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:26:33Z"
+fetched_at: "2026-10-23T06:29:50Z"
 tags: ["claude-ai", "enterprise", "plugins", "security"]
 ---
 
@@ -14,7 +14,7 @@ Claude Cowork completes tasks you can steer from anywhere. Give it a goal, and i
 
 [Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Talk to sales](https://www.claude.com/contact-sales)
 
-Works with a paid plan. Rolling out on web, mobile (beta). Not on a paid plan? [Upgrade now](../17-Billing-Plans/pricing.md)
+Works with a paid plan. Rolling out on web, mobile. Not on a paid plan? [Upgrade now](../17-Billing-Plans/pricing.md)
 
 ## Core capabilities
 
@@ -26,7 +26,7 @@ Works directly in folders and tools you choose, and runs your task to deliver wo
 
 ### Say what, not how
 
-Tell Claude what you need, not how. It opens browsers for web tasks and takes over your screen only when it has to. You’re always in control.
+Tell Claude what you need, not how. It opens browsers for web tasks and takes over your screen only when it has to.
 
 ### See the work as it happens
 
@@ -50,7 +50,7 @@ When a task requires opening a site, reading a page, or filling a form, Claude o
 
 - No installation needed.
 - Separate from your own browser, logins, and tabs.
-- Sign in once for every session, or import cookies to say signed in to your browser (Chrome, Edge, and Firefox on macOS; Firefox on Windows and Linux).
+- Sign in once for every session, or import cookies to stay signed in to your browser (Chrome, Edge, and Firefox on macOS; Firefox on Windows and Linux).
 
 Available in the Cowork desktop app on Pro, Max, and Team plans. Enterprise admins manage it in Organization settings → Cowork.
 
@@ -87,7 +87,7 @@ Hand off recurring close work. Point Claude at the folder of regional exports an
 
 ### Get a first-pass review of every contract at once
 
-Hand off first-pass contract review. Point Claude at the folder of inbound agreements and your playbook, and come back to a memo per contract with every departure cited to the clause, and the gaps your playbook doesn't cover marked for you.
+Hand off first-pass contract review. Point Claude at the folder of inbound agreements and your playbook, and come back to a memo per contract with each departure it identifies cited to the clause, and the gaps your playbook doesn't cover marked for you for your review.
 
 ### Analyze every objection you’ve heard this quarter, in one place
 
@@ -198,7 +198,7 @@ Claude Cowork takes real actions on your files and in connected tools. Enterpris
 
 ### You decide what Claude can access
 
-You choose the folders and tools. Claude can't reach anything else. Deleting anything needs your approval.
+You choose the folders and tools. Claude is designed to work only within what you choose. Deleting anything needs your approval.
 
 [Learn more (opens in new tab)](https://support.claude.com/en/articles/13364135-use-cowork-safely)
 
@@ -214,7 +214,7 @@ Admins set access by team, manage spend limits, and control tool permissions by 
 
 ### Runs where your data lives
 
-Use a Claude account or your own cloud provider: [Amazon Bedrock](../04-API-Reference/Other/partners-claude-on-aws.md), [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md), or [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md).
+Use a Claude account or your own cloud provider: Access Claude through [Amazon Bedrock](../04-API-Reference/Other/partners-claude-on-aws.md), [Gemini Enterprise Agent Platform](../04-API-Reference/Other/partners-google-cloud.md), or [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md).
 
 > “Our biggest operational pain point wasn't access to information; it was that it was scattered across many tools. Cowork hasn't changed what we do but it has changed how we do it.”
 
@@ -328,7 +328,7 @@ Claude Cowork is included in your Enterprise plan. Admin controls, usage analyti
 
 ### What is Claude Cowork?
 
-Cowork is where you hand Claude real work. It runs on desktop, with web and mobile in beta. Claude works in the files and tools you choose and completes multi-step tasks from start to finish. You define the goal. Claude figures out how to get there.
+Cowork is where you hand Claude real work. It runs on desktop, with web and mobile. Claude works in the files and tools you choose and completes multi-step tasks from start to finish. You define the goal. Claude figures out how to get there.
 
 ### What’s the difference between Claude Cowork and Chat?
 
@@ -336,7 +336,7 @@ In regular chat, Claude responds to your messages but can't access your files di
 
 ### What's the difference between Claude Cowork and Claude Code?
 
-Claude Code is built for software engineering — writing, debugging, and shipping code. It's available in the terminal, in the desktop app, in IDEs like VS Code and JetBrains, and via Claude Tag.
+Claude Code is built for software engineering — writing, debugging, and shipping code. It's available as a terminal tool, desktop app, web interface, and mobile app, with integrations for GitHub and popular IDEs like VS Code and JetBrains.
 
 Cowork is built for non-coding knowledge work — research, analysis, document creation, and other multi-step tasks. It uses the same agentic approach as Claude Code.
 
@@ -348,7 +348,7 @@ Yes. Start a task from your phone, and Claude keeps working in the cloud even wh
 
 Computer use lets Claude interact directly with your screen to open apps, navigate your browser, or run tools. Claude reaches for your connectors and integrations first, falls back to your browser when needed, and only uses your screen as a last resort. This matters because using a direct integration is faster and more precise than navigating through the screen.
 
-When Claude does interact with your screen, it asks permission before accessing each application. You see what it's doing and can stop it at any step. Computer use is in research preview for both Cowork and Claude Code.
+When Claude does interact with your screen, it is designed to ask permission before accessing each application. You can see what it's doing and can stop it at any step. Computer use is in research preview for both Cowork and Claude Code.
 
 ### What kind of files can Claude Cowork read, create, edit, and analyze?
 
@@ -374,7 +374,7 @@ Yes. Admins can toggle Claude Cowork off for their organization anytime in [Admi
 
 ### Do I need the desktop app?
 
-No. Cowork runs on web and mobile in beta.
+No. Cowork runs on web and mobile.
 
 The desktop app adds what web and mobile can't reach: the folders and applications on your own computer. If that's where your work lives, start there.
 
@@ -405,7 +405,8 @@ Download the desktop app and hand off your first task in minutes.
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -423,12 +424,12 @@ Download the desktop app and hand off your first task in minutes.
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -461,7 +462,7 @@ Download the desktop app and hand off your first task in minutes.
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -479,6 +480,7 @@ Download the desktop app and hand off your first task in minutes.
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -494,7 +496,7 @@ Download the desktop app and hand off your first task in minutes.
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -529,7 +531,8 @@ Download the desktop app and hand off your first task in minutes.
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -547,12 +550,12 @@ Download the desktop app and hand off your first task in minutes.
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -585,7 +588,7 @@ Download the desktop app and hand off your first task in minutes.
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -603,6 +606,7 @@ Download the desktop app and hand off your first task in minutes.
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -618,7 +622,7 @@ Download the desktop app and hand off your first task in minutes.
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

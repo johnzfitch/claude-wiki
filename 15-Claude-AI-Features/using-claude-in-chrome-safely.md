@@ -2,7 +2,7 @@
 title: "Use Claude in Chrome safely | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:07Z"
+fetched_at: "2026-10-23T06:28:59Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -15,7 +15,7 @@ Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise
 
 Claude in Chrome allows Claude to interact directly with websites on your behalf, which is guarded by our safety classifiers but still carries inherent risks. Understanding these risks helps you use the extension safely.
 
-**Note:** If you're using Claude in Chrome through Claude Cowork, Cowork's own risks and safeguards also apply. See **[Use Claude Cowork safely](use-claude-cowork-safely.md)**.
+**Note:** If you're using Claude in Chrome through Claude Cowork, Cowork's own risks and safeguards also apply. See **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135-use-claude-cowork-safely)**.
 
 ## Understanding the risks
 
@@ -69,7 +69,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 Claude asks for permission before accessing financial sites.
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#deabadbbacadbfb8bbaaa79ebfb0aab6acb1aeb7bdf0bdb1b3).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#cbbeb8aeb9b8aaadaebfb28baaa5bfa3b9a4bba2a8e5a8a4a6).
 
 ------------------------------------------------------------------------
 

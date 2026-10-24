@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 Hybrid reasoning model built for serious coding and AI agents, featuring a 1M context window
 
-[Try Claude](https://claude.ai/)[Get API access](../04-API-Reference/Other/usage-limits.md)
+[Try Claude](https://claude.ai/)[Get API access](../04-API-Reference/Other/playground.md)
 
 ## Announcements
 
@@ -281,7 +281,7 @@ Pricing depends on how you want to use Opus 5. To learn more, check out our [pri
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 

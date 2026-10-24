@@ -2,7 +2,7 @@
 title: "Set Plugin Installation Setting - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugins/installation_settings/set"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-09T06:27:46Z"
+fetched_at: "2026-10-17T06:25:28Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fplugins%2Finstallation_settings%2Fset)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fplugins%2Finstallation_settings%2Fset)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,7 +130,7 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
 
 Create Plugin
@@ -162,7 +162,9 @@ Installation Settings
 
 Shares
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -233,13 +235,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -247,9 +251,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -258,12 +262,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Plugins](https://platform.claude.com/docs/en/api/http/beta/organization/plugins)
 5.  [Installation Settings](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings)
 
 # Set Plugin Installation Setting
+
+Copy page
+
+
+
+cURL
 
 POST/v1/organizations/plugins/{plugin_id}/installation_settings/{target}
 
@@ -297,7 +307,7 @@ The target whose setting is written: the literal `organization` for the Plugin's
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/http-beta.md#anthropic_beta)
+"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -506,6 +516,10 @@ string
 
 
 "spend-limit-reads-2026-09-26"
+
+
+
+"telemetry-destinations-2026-08-11"
 
 
 

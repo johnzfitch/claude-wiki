@@ -2,13 +2,11 @@
 title: "Set up single sign-on (SSO) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:28:09Z"
-tags: ["account"]
+fetched_at: "2026-10-23T06:29:01Z"
+tags: ["account", "cli"]
 ---
 
 # Set up single sign-on (SSO)
-
-September 2, 2026
 
 
 Single sign-on is available for Team plans, Enterprise plans, and Console organizations.
@@ -153,29 +151,33 @@ For more control over provisioning, see **[Set up JIT or SCIM provisioning](http
 
 ------------------------------------------------------------------------
 
-## Updating your SSO certificate
+## Update your SSO certificate or client secret
 
-When your Identity Provider's X.509 signing certificate expires or is rotated, you'll need to update it in Claude or Console to maintain SSO functionality.
+When your Identity Provider’s X.509 signing certificate (SAML) or client secret (OpenID Connect) expires or is rotated, you’ll need to update it in Claude or Console to maintain SSO functionality.
 
 1.  Navigate to your settings:
 
     - For Team and Enterprise plans: **[claude.ai/admin-settings/organization](https://claude.ai/admin-settings/organization)**
 
-    - For Claude Console: **[platform.claude.com/settings/identity](../04-API-Reference/Other/playground.md)**
+    - For Claude Console: **[platform.claude.com/settings/identity](https://platform.claude.com/settings/identity)**
 
 2.  In the **Authentication** section, click “Manage SSO.”
 
-3.  Find the **Metadata configuration** section and click “Edit.”
+3.  Update the credential for your connection type:
 
-4.  Update your certificate information and save your changes.
+    1.  **SAML:** Find the **Metadata configuration** section, click “Edit,” and update your certificate information.
+
+    2.  **OpenID Connect:** Replace the expired client secret with the new one from your Identity Provider. OpenID Connect connections don’t use a certificate.
+
+4.  Save your changes.
 
 5.  Click "Test sign-in" on the same page to confirm everything is working.
 
-**Important:** If **Require SSO** is turned on and your certificate has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update the certificate. To avoid this, note your certificate’s expiry date in your Identity Provider and rotate it ahead of time.
+**Important:** If **Require SSO** is turned on and your certificate or client secret has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](https://support.claude.com/en/articles/9015913)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update it. To avoid this, note the expiry date of your certificate or client secret in your Identity Provider and rotate it ahead of time.
 
 ------------------------------------------------------------------------
 
-## Turning off SSO
+## Turn off SSO
 
 You can toggle **Require SSO for Claude** or **Require SSO for Console** off at any time. This will make SSO optional for all users.
 
@@ -183,4 +185,4 @@ To fully disconnect SSO, click “Manage SSO” then “Reset connection.” Thi
 
 ## Locked out of admin access?
 
-If none of your Owners or Admins can sign in (for example, after a certificate expiry, an Identity Provider change, or a group mapping that removed your administrators), contact Support from an Owner’s or Primary Owner’s email address. We’ll verify your ownership of the organization and help you regain access so you can correct the configuration.
+If none of your Owners or Admins can sign in (for example, after a certificate or client secret expiry, an Identity Provider change, or a group mapping that removed your administrators), contact Support from an Owner’s or Primary Owner’s email address. We’ll verify your ownership of the organization and help you regain access so you can correct the configuration.

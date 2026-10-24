@@ -2,7 +2,7 @@
 title: "Fountain Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/fountain"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:02Z"
+fetched_at: "2026-10-23T06:29:37Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -44,7 +44,7 @@ With Claude, Fountain:
 
 Companies across retail, logistics, hospitality, and healthcare face unprecedented challenges managing their frontline workforce. Traditional hiring processes struggle with the volume and speed required to staff these operations, while manual screening, onboarding and support tasks consume massive HR resources.
 
-"Fountain set out to reduce the manual effort required to screen, onboard, and support high volumes of frontline workers," explained Salim Jernite, Chief Product Officer at Fountain.
+“Fountain set out to reduce the manual effort required to screen, onboard, and support high volumes of frontline workers,” explained Salim Jernite, Chief Product Officer at Fountain.
 
 “Our goal was to automate tedious tasks that were too nuanced for rules-based systems, such as evaluating candidate fit, interpreting worker feedback, and resolving support issues, all while ensuring compliance and accuracy.”
 
@@ -52,39 +52,39 @@ Companies across retail, logistics, hospitality, and healthcare face unprecedent
 
 After evaluating multiple AI models, Fountain selected Claude as the foundation for their AI-native strategy.
 
-”Claude models stood out to us because they align with how we think about trustworthy AI in frontline work," said Will Jensen, Senior Director of Strategic Projects. The team was particularly impressed by Claude's reliable reasoning and low hallucination rates, naturally helpful tone, and high context capacity for processing long hiring histories.
+“Claude models stood out to us because they align with how we think about trustworthy AI in frontline work,” said Will Jensen, Senior Director of Strategic Projects. The team was particularly impressed by Claude’s reliable reasoning and low hallucination rates, naturally helpful tone, and high context capacity for processing long hiring histories.
 
-Equally important was the alignment on responsible AI deployment. "Anthropic's values around alignment and trust also closely match our own—to provide human-centered AI, with built-in safeguards to protect against discriminatory hiring practices and ensure compliance," noted Jernite.
+Equally important was the alignment on responsible AI deployment. “Anthropic’s values around alignment and trust also closely match our own—to provide human-centered AI, with built-in safeguards to protect against discriminatory hiring practices and ensure compliance,” noted Jernite.
 
-"Claude's reasoning ability and accuracy gave us confidence to go deeper into what was possible within the frontline and HR space," explained Jensen. This confidence enabled Fountain to evolve from their proven platform to create a breakthrough full agentic AI architecture.
+“Claude’s reasoning ability and accuracy gave us confidence to go deeper into what was possible within the frontline and HR space,” explained Jensen. This confidence enabled Fountain to evolve from their proven platform to create a breakthrough full agentic AI architecture.
 
 ## How Claude transforms frontline operations
 
-Claude powers Fountain's AI-native platform through three key capabilities: Fountain Copilot, AI Recruiter, and Agent Studio - the ability for customers to build and test their own bespoke agents using any Claude model.
+Claude powers Fountain’s AI-native platform through three key capabilities: Fountain Copilot, AI Recruiter, and Agent Studio - the ability for customers to build and test their own bespoke agents using any Claude model.
 
 Fountain Copilot serves as the orchestration agent, allowing users to set up, operate, optimize and support their frontline operations through natural language, while Claude coordinates actions across specialized agents. Claude also powers automated candidate screening that reviews applications, matches criteria, and routes candidates based on fit. Finally, Claude models are used within customer-generated agents in the Fountain Agent Studio, allowing users to build additional agentic capabilities with Sonnet and Opus.
 
-"Implementation was fast and straightforward. We were able to get a working prototype live within a couple weeks and quickly expand to production use shortly after," noted Jensen. "Claude's performance reduced the need for complex prompt engineering or fallback systems."
+“Implementation was fast and straightforward. We were able to get a working prototype live within a couple weeks and quickly expand to production use shortly after,” noted Jensen. “Claude’s performance reduced the need for complex prompt engineering or fallback systems.”
 
 ## Delivering measurable impact for customers and workers
 
-The collaboration between Fountain and Anthropic have yielded significant results across Fountain's customer base.
+The collaboration between Fountain and Anthropic have yielded significant results across Fountain’s customer base.
 
-"Claude enables real-time candidate screening, automated document generation, and sentiment analysis at a scale that wasn't possible before," explained Jernite. One logistics customer used Fountain's Claude-powered agents to fully staff a new fulfillment center in under 72 hours, something that previously took over a week. Another customer reported a 30% drop in HR support tickets after enabling the AI assistant.
+“Claude enables real-time candidate screening, automated document generation, and sentiment analysis at a scale that wasn’t possible before,” explained Jernite. One logistics customer used Fountain’s Claude-powered agents to fully staff a new fulfillment center in under 72 hours, something that previously took over a week. Another customer reported a 30% drop in HR support tickets after enabling the AI assistant.
 
 The benefits extend beyond operational metrics to worker preference.
 
-"Our reports show that frontline applicants and workers prefer our AI tooling as well, with the majority of applicants opting to speak with our AI Recruiter instead of a human," shared Jensen. The AI interface works at any hour with no time constraints, allowing applicants to complete the screening process at their own convenience.
+“Our reports show that frontline applicants and workers prefer our AI tooling as well, with the majority of applicants opting to speak with our AI Recruiter instead of a human,” shared Jensen. The AI interface works at any hour with no time constraints, allowing applicants to complete the screening process at their own convenience.
 
 Internally, development velocity has accelerated dramatically.
 
-"Our team, partnering with Anthropic, is using AI tools like Claude Code to develop products and features at a much faster pace, to the extent that we're able to launch production-ready features in days instead of weeks," said Jernite.
+“Our team, partnering with Anthropic, is using AI tools like Claude Code to develop products and features at a much faster pace, to the extent that we’re able to launch production-ready features in days instead of weeks,” said Jernite.
 
 ## Building the future of autonomous frontline operations
 
-Fountain envisions a future where AI operates autonomously to handle complete workflows. They're developing fully autonomous hiring agents that can reason across systems and take action on behalf of HR teams, along with an Agent Studio that gives customers the ability to create and deploy their own task-specific agents built on top of Claude.
+Fountain envisions a future where AI operates autonomously to handle complete workflows. They’re developing fully autonomous hiring agents that can reason across systems and take action on behalf of HR teams, along with an Agent Studio that gives customers the ability to create and deploy their own task-specific agents built on top of Claude.
 
-"We see Anthropic as a core partner in co-developing the next generation of our platform," noted Jernite. "As we continue building the agentic Frontline OS and Copilot, Claude models will power the intelligence layer behind every agent, workflow, and insight." Together, they aim to move from assistance to autonomy, proving that agentic AI can unlock real-world outcomes for the world's 2.7 billion frontline workers.
+“We see Anthropic as a core partner in co-developing the next generation of our platform,” noted Jernite. “As we continue building the agentic Frontline OS and Copilot, Claude models will power the intelligence layer behind every agent, workflow, and insight.” Together, they aim to move from assistance to autonomy, proving that agentic AI can unlock real-world outcomes for the world’s 2.7 billion frontline workers.
 
 ## Related stories
 
@@ -106,7 +106,8 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -124,12 +125,12 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -162,7 +163,7 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -180,6 +181,7 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -195,7 +197,7 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -230,7 +232,8 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -248,12 +251,12 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -286,7 +289,7 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -304,6 +307,7 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -319,7 +323,7 @@ Fountain envisions a future where AI operates autonomously to handle complete wo
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Persist sessions to external storage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/session-storage"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-16T06:24:21Z"
+fetched_at: "2026-10-11T06:34:52Z"
 tags: ["agents", "claude-code", "rag", "sdk"]
 ---
 
@@ -386,7 +386,7 @@ The following TypeScript SDK functions accept a `sessionStore` option and operat
 - [`renameSession()`](agent-sdk-typescript.md#renamesession)
 - [`tagSession()`](agent-sdk-typescript.md#tagsession)
 - [`deleteSession()`](agent-sdk-typescript.md)
-- [`forkSession()`](agent-sdk-typescript.md)
+- [`forkSession()`](agent-sdk-typescript.md#forksession)
 - [`listSubagents()`](agent-sdk-typescript.md)
 - [`getSubagentMessages()`](agent-sdk-typescript.md)
 

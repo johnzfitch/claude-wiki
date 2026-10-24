@@ -1,14 +1,12 @@
 ---
 title: "Set up Claude for Teachers for your school or district | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/16559896"
+source_url: "https://support.claude.com/en/articles/16559896-set-up-claude-for-teachers-for-your-school-or-district"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:21Z"
+fetched_at: "2026-10-23T06:29:10Z"
 tags: ["claude-ai"]
 ---
 
 # Set up Claude for Teachers for your school or district
-
-August 28, 2026
 
 
 **[Claude for Teachers](../18-Industry-UseCases/teachers.md)** is free for verified US K-12 educators, whether you sign up as an individual teacher or your school or district sets up an organization for everyone. Qualifying teachers or organizations that sign up by June 30, 2027 get a full year of free access.
@@ -27,13 +25,13 @@ Your organization gets one set of **[K-12 terms and a data processing agreement]
 
 US K-12 schools and districts qualify. The person applying must be authorized to set up technology for the school or district, and must apply with a school or district email address.
 
-**Important:** Only one application can be open per email domain at a time, so coordinate within your district so the right person applies. This should be an administrator who can accept the K-12 terms on behalf of all district staff. If you have any issues with your application, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+**Important:** Only one application can be open per email domain at a time, so coordinate within your district so the right person applies. This should be an administrator who can accept the K-12 terms on behalf of all district staff. If you have any issues with your application, **[contact Support](how-to-get-support.md)**.
 
 ## Set up your organization
 
 You'll need your school or district email, a document showing your role (such as an employee ID), access to your domain's DNS records, and access to your identity provider.
 
-1.  **Apply and accept the K-12 terms**. Go to [**claude.ai/k12districts**](https://claude.ai/k12districts), confirm you're authorized, and accept the **[US K-12 Terms of Service](https://www.anthropic.com/legal/k12-terms)**, **[US K-12 Public Sector Addendum](http://anthropic.com/legal/k12-addendum),** and **[US K-12 Data Processing Agreement](https://www.anthropic.com/legal/k12-dpa)**.
+1.  **Apply and accept the K-12 terms**. Go to **[claude.ai/k12districts](https://claude.ai/k12districts)**, confirm you're authorized, and accept the **[US K-12 Terms of Service](https://www.anthropic.com/legal/k12-terms)**, **[US K-12 Public Sector Addendum](https://anthropic.com/legal/k12-addendum),** and **[US K-12 Data Processing Agreement](https://www.anthropic.com/legal/k12-dpa)**.
 
 2.  **Verify your school or district.** Our partner Goodstack confirms your affiliation. When approved, you'll get an email link to your new organization.
 
@@ -51,4 +49,4 @@ For the full set of admin articles, see the **[Admin management](https://support
 
 ## Get help
 
-For setup questions, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Districts working with an Anthropic account team can also reach out to their contact for procurement paperwork, security reviews, or multi-organization setups.
+For setup questions, **[contact Support](how-to-get-support.md)**. Districts working with an Anthropic account team can also reach out to their contact for procurement paperwork, security reviews, or multi-organization setups.

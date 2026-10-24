@@ -2,7 +2,7 @@
 title: "Tahoe Lead Removal Project Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/tahoe-lead-removal-project"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:24Z"
+fetched_at: "2026-10-23T06:29:51Z"
 tags: ["case-studies", "enterprise", "search", "security"]
 ---
 
@@ -46,32 +46,32 @@ When residents discovered six miles of decommissioned lead telecommunications ca
 
 The Tahoe Lead Removal Project needed to understand the historical context of these cables, navigate regulatory frameworks across seven agencies, build a deep understanding of the environmental considerations, and present a compelling case for removal.
 
-Critical information existed in historical Bell Systems documents from the 1920s, but the technical papers presented a formidable barrier. "These technical papers are incredibly dense, and the language used isn't intuitive to modern readers," explained project organizer Evan Dreyer. "We're talking about extremely long and complex documents where I was essentially looking for a needle in a haystack."
+Critical information existed in historical Bell Systems documents from the 1920s, but the technical papers presented a formidable barrier. “These technical papers are incredibly dense, and the language used isn’t intuitive to modern readers,” explained project organizer Evan Dreyer. “We’re talking about extremely long and complex documents where I was essentially looking for a needle in a haystack.”
 
-Instead of confrontation, the project adopted a collaborative philosophy focused on orienting all involved parties on a productive path forward. As their mission statement emphasized: "We don't blame AT&T, and they are not a villain in this situation. In reviewing the old Bell Labs Technical Journals, we developed a deep respect for the incredible technological innovation these cables represented at the time."
+Instead of confrontation, the project adopted a collaborative philosophy focused on orienting all involved parties on a productive path forward. As their mission statement emphasized: “We don’t blame AT&T, and they are not a villain in this situation. In reviewing the old Bell Labs Technical Journals, we developed a deep respect for the incredible technological innovation these cables represented at the time.”
 
 ## Selecting Claude for comprehensive document analysis
 
-The team chose Claude for its ability to process large volumes of technical content and provide reliable analysis for stakeholder communications. "When I tried other models, the quality was much lower, especially when it came to report creation. It wasn't even close," Dreyer reports.
+The team chose Claude for its ability to process large volumes of technical content and provide reliable analysis for stakeholder communications. “When I tried other models, the quality was much lower, especially when it came to report creation. It wasn’t even close,” Dreyer reports.
 
-Claude's document processing capabilities were essential for understanding the cables' origins and building an objective case for removal. "Claude enabled me to conduct almost all our research by analyzing Bell's historical papers on submarine telephone lines," said Dreyer. "Projects were also key, helping me upload multiple papers and compare/crosscheck/demonstrate how Bell Labs thinking changed over time. I used Artifacts to present an objective analysis of this work on our website."
+Claude’s document processing capabilities were essential for understanding the cables’ origins and building an objective case for removal. “Claude enabled me to conduct almost all our research by analyzing Bell’s historical papers on submarine telephone lines,” said Dreyer. “Projects were also key, helping me upload multiple papers and compare/crosscheck/demonstrate how Bell Labs thinking changed over time. I used Artifacts to present an objective analysis of this work on our website.”
 
-This historical perspective was crucial for the project's collaborative approach. Rather than attacking past decisions, the team could present the removal as completing a technological transition that began decades ago. "We needed to maintain complete objectivity in our analysis since any inaccuracies could expose us to legal challenges," said Dreyer. "Claude's capabilities were transformative for creating defensible, fact-based research."
+This historical perspective was crucial for the project’s collaborative approach. Rather than attacking past decisions, the team could present the removal as completing a technological transition that began decades ago. “We needed to maintain complete objectivity in our analysis since any inaccuracies could expose us to legal challenges,” said Dreyer. “Claude’s capabilities were transformative for creating defensible, fact-based research.”
 
 ## Accelerating research and community engagement through AI
 
-Claude transformed the Tahoe Lead Removal Project's approach to technical analysis and community mobilization, enabling rapid progress across multiple fronts:
+Claude transformed the Tahoe Lead Removal Project’s approach to technical analysis and community mobilization, enabling rapid progress across multiple fronts:
 
 - **Historical research:** Claude processed Bell Systems technical papers from the 1920s, extracting information about cable design, choice of materials, and original environmental considerations
 - **Legal document analysis:** Claude helped review complex and convoluted legal filings from both sides, allowing the team to understand arguments and differences in opinion without having to draw their own conclusions or be overly influenced by partisan writing
 - **Regulatory preparation:** The AI helped synthesize requirements from seven different agencies into comprehensive permit applications, demonstrating removal feasibility
 - **Community education:** Claude helped translate complex technical information into accessible materials for public engagement and petition drives
 
-"Claude helped us decode bureaucracy across 7 agencies, lawsuits, and environmental reports," said Dreyer. "This was so complex and convoluted across so many disparate sources - but we had one constant tool that allowed us to analyze everything, and move fast in doing so."
+“Claude helped us decode bureaucracy across 7 agencies, lawsuits, and environmental reports,” said Dreyer. “This was so complex and convoluted across so many disparate sources - but we had one constant tool that allowed us to analyze everything, and move fast in doing so.”
 
 ## Building bridges through informed advocacy
 
-Claude's technical analysis enabled the Tahoe Lead Removal Project to achieve what seemed impossible—convincing a major corporation to voluntarily remove environmental hazards after decades of inaction. Using Claude to rapidly analyze complex historical Bell Systems documents and prepare comprehensive permit applications—work that would have taken months manually and been prohibitively expensive to hire professionals for—the project gathered 832 petition signatures demonstrating broad community support.
+Claude’s technical analysis enabled the Tahoe Lead Removal Project to achieve what seemed impossible—convincing a major corporation to voluntarily remove environmental hazards after decades of inaction. Using Claude to rapidly analyze complex historical Bell Systems documents and prepare comprehensive permit applications—work that would have taken months manually and been prohibitively expensive to hire professionals for—the project gathered 832 petition signatures demonstrating broad community support.
 
 In September 2024, just days after receiving their first regulatory authorization, AT&T announced plans to proceed with removal. Two months later, the company completed the physical removal of over six miles of lead cable in less than two weeks—ending a 70-year environmental issue.
 
@@ -81,17 +81,17 @@ By using Claude to transform dense 1920s technical papers into actionable insigh
 
 The success of the Tahoe Lead Removal Project with Claude points to a shift in how communities can tackle environmental challenges. By democratizing access to sophisticated technical analysis, AI tools like Claude enable grassroots groups to engage with the same level of expertise that was once exclusive to well-funded organizations.
 
-"Claude transforms your ability to quickly develop expertise on complex issues," said Dreyer. "For those curious about environmental challenges, these AI tools make sophisticated analysis accessible." This capability allows communities to move beyond emotional appeals to data-driven advocacy, transforming them from protesters into informed stakeholders who can propose viable solutions.
+“Claude transforms your ability to quickly develop expertise on complex issues,” said Dreyer. “For those curious about environmental challenges, these AI tools make sophisticated analysis accessible.” This capability allows communities to move beyond emotional appeals to data-driven advocacy, transforming them from protesters into informed stakeholders who can propose viable solutions.
 
-The project's methodology—using Claude to synthesize historical documents, regulatory requirements, and technical specifications—creates a replicable framework for other communities. "Instead of getting mad, get involved," said Dreyer. When communities can match corporate expertise with AI-enabled research, environmental challenges become opportunities for collaborative problem-solving rather than prolonged adversarial battles.
+The project’s methodology—using Claude to synthesize historical documents, regulatory requirements, and technical specifications—creates a replicable framework for other communities. “Instead of getting mad, get involved,” said Dreyer. When communities can match corporate expertise with AI-enabled research, environmental challenges become opportunities for collaborative problem-solving rather than prolonged adversarial battles.
 
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
@@ -108,7 +108,8 @@ The project's methodology—using Claude to synthesize historical documents, reg
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -126,12 +127,12 @@ The project's methodology—using Claude to synthesize historical documents, reg
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -164,7 +165,7 @@ The project's methodology—using Claude to synthesize historical documents, reg
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -182,6 +183,7 @@ The project's methodology—using Claude to synthesize historical documents, reg
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -197,7 +199,7 @@ The project's methodology—using Claude to synthesize historical documents, reg
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -232,7 +234,8 @@ The project's methodology—using Claude to synthesize historical documents, reg
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -250,12 +253,12 @@ The project's methodology—using Claude to synthesize historical documents, reg
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -288,7 +291,7 @@ The project's methodology—using Claude to synthesize historical documents, reg
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -306,6 +309,7 @@ The project's methodology—using Claude to synthesize historical documents, reg
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -321,7 +325,7 @@ The project's methodology—using Claude to synthesize historical documents, reg
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

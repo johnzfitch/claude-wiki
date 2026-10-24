@@ -2,7 +2,7 @@
 title: "Week 33 · August 10–14, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w33"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-30T06:31:00Z"
+fetched_at: "2026-10-16T06:24:42Z"
 tags: ["claude-code"]
 ---
 
@@ -68,7 +68,7 @@ On Linux and WSL, set [`CLAUDE_CODE_TOOL_MEMORY_LIMIT`](tools-reference.md#memor
 
 The task-tracking tools, such as `TaskCreate`, `TaskUpdate`, and `TodoWrite`, are [no longer available on Opus 4.8, Sonnet 5, Fable 5, Mythos 5, and later models in those families](tools-reference.md#task-tool-availability); set `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` to re-enable them
 
-[`/code-review`](code-review.md#review-a-diff-locally) at high, xhigh, and max effort now runs in a background agent like the other levels
+[`/code-review`](code-review-local.md) at high, xhigh, and max effort now runs in a background agent like the other levels
 
 [`/plugin install plugin@marketplace`](../08-Plugins-Skills/discover-plugins.md#install-a-plugin) refreshes the marketplace first, so newly published plugins install without a manual marketplace update
 

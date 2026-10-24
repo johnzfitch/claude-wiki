@@ -2,7 +2,7 @@
 title: "Set organization instructions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14546867-set-organization-instructions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:25:17Z"
+fetched_at: "2026-10-23T06:29:27Z"
 tags: ["enterprise"]
 ---
 
@@ -73,6 +73,6 @@ To remove instructions entirely, clear the text area and click “Save changes.�
 
 **Domain context.** “Our team works in healthcare claims processing. When users mention ‘claims,’ they’re referring to insurance claims, not legal claims.”
 
-**Referral guidance.** “When users ask about HR policies, direct them to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#0c647e4c6d6f6169226f6361) rather than giving specific policy advice.”
+**Referral guidance.** “When users ask about HR policies, direct them to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#7e160c3e1f1d131b501d1113) rather than giving specific policy advice.”
 
 **Data handling reminders.** “Don’t include customer names, account numbers, or other personally identifiable information in responses or generated artifacts.”

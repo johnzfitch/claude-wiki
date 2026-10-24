@@ -2,7 +2,7 @@
 title: "Debugging - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/tools/debugging"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-08-02T05:39:25Z"
+fetched_at: "2026-10-11T06:35:05Z"
 tags: ["mcp"]
 ---
 
@@ -204,7 +204,7 @@ When servers fail to connect:
 
 Debugging in Claude Desktop
 
-Claude Desktop is one of many MCP clients. It is available on macOS and Windows.
+Claude Desktop is one of many MCP clients. It is available on macOS, Windows, and Linux.
 
 
 [​](#checking-server-status)

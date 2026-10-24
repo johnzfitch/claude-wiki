@@ -2,15 +2,54 @@
 title: "An alignment assessment of recent cybersecurity incidents \\ Anthropic"
 source_url: "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
 category: "19-Reference"
-fetched_at: "2026-09-18T06:37:12Z"
+fetched_at: "2026-10-21T06:30:18Z"
 tags: ["news-research", "search", "security"]
 ---
 
 # An alignment assessment of recent cybersecurity incidents
 
-Sep 9, 2026
+- [01Introduction](#introduction)
+- [02Alignment assessment summary](#alignment-assessment-summary)
+- [03Methods](#methods)
+- [04Claude Mythos 5 uploads a malicious PyPI package](#claude-mythos-5-uploads-a-malicious-pypi-package)
+- [05An internal research model breaks into third-party systems](#an-internal-research-model-breaks-into-third-party-systems)
+- [06Claude Opus 4.7 attacks a real target](#claude-opus-47-attacks-a-real-target)
+- [07An early checkpoint of Claude Opus 4.6 attacks third-party systems](#an-early-checkpoint-of-claude-opus-46-attacks-third-party-systems)
+- [08Newer models improve on Claude Mythos 5](#newer-models-improve-on-claude-mythos-5)
+- [09Which monitors would have caught this behavior?](#which-monitors-would-have-caught-this-behavior)
+- [10Analysis of biased reasoning and possible training causes](#analysis-of-biased-reasoning-and-possible-training-causes)
+- [11Discussion](#discussion)
 
-## **Introduction**
+- Published
+
+  Sep 9, 2026
+
+- Team
+
+  [Alignment](team-alignment.md)
+
+- Topics
+
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Transparency](https://www.anthropic.com/search?topic=transparency)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [Training](https://www.anthropic.com/search?topic=training)
+
+  See more...
+
+Related articles
+
+- Alignment
+
+  Oct 9, 2026
+
+  [Investigating unintended model actions in our evaluations and internal use](investigating-unintended-model-actions.md)
+
+[View more](https://www.anthropic.com/search?topic=alignment)
+
+## Introduction
 
 We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems. We described three of these incidents [on July 30](investigating-incidents-cybersecurity-evals.md); we identified these after a scan of roughly 141,000 transcripts in which we believed Claude could have obtained internet access during a cyber evaluation. Given the volume of transcripts and our desire to disclose incidents quickly, our scan relied on an agentic search. This missed a set of transcripts that also turned out to have internet access; we identified these in August while assembling transcripts to share with METR. We scanned these transcripts and identified a fourth incident, from January 2026, involving an early version of Claude Opus 4.6. We have notified all affected parties.
 
@@ -22,7 +61,7 @@ We have signed an agreement with METR to conduct an independent investigation of
 
 Our investigation identified two recurring alignment issues, present at varying levels of severity across the incidents: *biased reasoning*, in which Claude tended to disregard or misinterpret evidence that it was operating on the real internet, and *recklessness*, or a willingness to take harmful actions in the narrow pursuit of a task. We’ve described milder forms of these behaviors in previous [system](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) [cards](https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf), but we consider these cases to be more serious instances than the behavior reported in these system cards.
 
-We are most concerned by the misalignment present in the incident involving Claude Mythos 5, in which the model went to extensive lengths to upload a malicious package to PyPI, the public repository from which most Python software is installed. Although the model repeatedly stated in its chain of thought (CoT) that it believed it was operating in a simulation, the environment offered clear evidence that it was on the real internet, and the actions it took were consistent with the model knowing this. When we made targeted modifications to the transcript to make it clearer that the model was not in a simulation, Claude Mythos 5 still took offensive actions, despite acknowledging a greater possibility of real-world harm. We are releasing this transcript publicly so others can build on our analysis ([GitHub](https://github.com/anthropics/mythos-5-incident-transcript), [PDF](https://cdn.sanity.io/files/4zrzovbb/website/8359003bfb12a2f01ce84ad3df1d3a3e2f15a8eb.pdf)).
+We are most concerned by the misalignment present in the incident involving Claude Mythos 5, in which the model went to extensive lengths to upload a malicious package to PyPI, the public repository from which most Python software is installed. Although the model repeatedly stated in its chain of thought (CoT) that it believed it was operating in a simulation, the environment offered clear evidence that it was on the real internet, and the actions it took were consistent with the model knowing this. When we made targeted modifications to the transcript to make it clearer that the model was not in a simulation, Claude Mythos 5 still took offensive actions, despite acknowledging a greater possibility of real-world harm. We are releasing this transcript publicly so others can build on our analysis ([GitHub](https://github.com/anthropics/mythos-5-incident-transcript), [PDF](https://www-cdn.anthropic.com/files/4zrzovbb/website/8359003bfb12a2f01ce84ad3df1d3a3e2f15a8eb.pdf)).
 
 To be clear about our assessment of the severity of these incidents: while Claude’s actions were misaligned, they remained within a narrow scope—the models never deviated from attempting to solve the exercises they were given, and, in some cases, they attempted to stop the task. All incidents included a single Claude instance; at no point did Claude attempt to coordinate with other agents. Claude also never attempted to conceal evidence of its actions. We believe the misaligned behaviors present in these incidents are unlikely to arise in ordinary use, where Claude is not being instructed to conduct a cyberattack. Were these behaviors to arise, the safeguards we ship with our production models, including cyber classifiers and those in Claude Code auto mode, would add a layer of defense these incidents lacked.
 
@@ -55,7 +94,7 @@ We have previously identified both forms of misalignment in our models and descr
 
 The remainder of this post focuses on the first three incidents, which we previously reported; all of the main analyses and experiments refer to these incidents. We have not yet investigated the incident involving an early version of Claude Opus 4.6 at the same depth, because we identified it much more recently, and because it involves an early checkpoint of an older model, which was trained with a significantly different environment mix. From a preliminary assessment, we do not consider the fourth incident to be more severe than the three incidents we assessed in depth. METR will investigate this incident alongside the other three.
 
-#### **Claude Mythos 5**
+#### Claude Mythos 5
 
 We are especially concerned by the misalignment present in the Claude Mythos 5 transcript, in which the model uploaded a malicious package to PyPI. In doing so, Mythos 5 behaved recklessly despite considerable evidence that it was connected to the real internet. Once online, the model attempted to use credentials for online payment processors and to find cryptocurrency to pay for a phone number, which it needed to register an email address. When this failed, it found a free, disposable email provider whose domain PyPI had not blocked, registered an account, published three versions of a malicious package, and used credentials leaked by one of the 15 systems that installed the package to access a real security vendor’s database.
 
@@ -63,15 +102,15 @@ Claude Mythos 5 repeatedly stated in its CoT that it was in a simulation. Howeve
 
 We also saw evidence that Claude Mythos 5’s professed belief that it was acting in a simulation arose from biased reasoning. For example, separate instances of Mythos 5, when shown each tool call output from the incident in isolation without the preceding context, were much more likely to read these outputs as evidence of a real system than Mythos 5 itself was during the incident. Though the model sometimes acknowledged that its actions might have real-world consequences when asked follow-up questions, its responses were inconsistent and influenced by biasing factors. For instance, it was more willing to admit possible harm when told its responses to questions about possible harm would not be visible to an outside observer. Interpretability analyses weakly suggested that, in some cases, the model’s outward statements might be inconsistent with, or more confident than, its internal state.
 
-#### **Internal research model**
+#### Internal research model
 
 The internal research model (roughly equal to Mythos 5 in capabilities) started its transcript by spending a significant amount of time testing whether the internet it could reach was real, but it drew the wrong conclusion—namely, that it was operating on a full replica of the entire internet. Most of the evidence it gathered pointed to the fact that it was engaging with the real internet, so its reading of that evidence appears biased towards continuing the task and believing it to be simulated. However, the model did eventually realize that its simulation hypothesis was false. Immediately following this realization, the model stopped its attack (although subsequent resampling experiments suggest that this de-escalation may have been a lucky outcome, as the model continued attacking the target on most other trajectories). Unlike Claude Mythos 5, this internal model was also willing to acknowledge its biased reasoning when questioned.
 
-#### **Claude Opus 4.7**
+#### Claude Opus 4.7
 
 In contrast to Claude Mythos 5, Claude Opus 4.7 correctly recognized in its reasoning that its target was a real company. However, it assumed that the real company was in scope for the task because it was reachable from the exercise network and shared a name with the exercise’s fictional target. Opus 4.7 almost never questioned this assumption or tried to test it, and it went on to attack a system it believed was real, which was reckless. However, we also found that Opus 4.7 is responsive to questions of authorization: when we resampled parts of the transcript from Opus 4.7 with added clues indicating that the attack had not been authorized, the rate at which it proceeded with the attack dropped significantly.
 
-#### **Replication and monitoring**
+#### Replication and monitoring
 
 To study the behaviors in these incidents more systematically, and on a wider range of models, we built evaluations that recreate elements of our incidents—as well as other cybersecurity incidents recently disclosed by other companies—and tested whether the models reproduced the most concerning behaviors. These evaluations include a misconfigured CTF task whose only solution lies outside the stated scope, tasks that cannot be completed without probing or breaking the sandbox boundary, and a situation inspired by parts of the attack chain from the OpenAI-Hugging Face incident. As in the real incidents, Claude Mythos 5 is the most willing of the models we tested to act against out-of-scope parties or leave its sandbox. For example, it was willing to commit a severely harmful action in the CTF replication roughly 80% of the time. In contrast, Claude Opus 5 and Claude Mythos 5.1 engaged in these behaviors roughly 30% of the time—a lower rate, but still not zero, though uncertainty about our evaluation setup makes it difficult to know how concerning this is.
 
@@ -87,25 +126,25 @@ Taken together, our assessment is that these incidents are serious. Our producti
 
 The assessments that follow are based on a number of different techniques. We describe each of these briefly below.
 
-#### **Reading thinking blocks**
+#### Reading thinking blocks
 
 Our primary method of analysis is to read the actions the model took and the explanations it provided in its CoT. This allows us to understand the reasons Claude gave for the actions it took. In these transcripts, models alternate between CoT reasoning and taking actions via tool calls (without any intervening human turns); when analyzing thinking blocks, we number them by the action following that thinking block (e.g., the CoT for action 100 refers to a model’s reasoning between action 99 and action 100).
 
 *Limitations:* Language models do not always verbalize everything they are thinking in their CoT (as shown in the evaluations in the [Claude Mythos 5 system card](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) and in [Betley et al., 2026](https://arxiv.org/pdf/2607.14345)), so this is a [useful but imperfect tool](https://arxiv.org/abs/2507.11473).
 
-#### **Asking follow-up questions**
+#### Asking follow-up questions
 
 When asked follow-up questions, models sometimes reveal information that differs from what they spontaneously verbalized while performing a task. To run these tests, we truncate an incident transcript at some intermediate point of interest, insert a human message asking the model a question about the situation, and sample the model’s response to that question—that is, we simulate what would happen if a human had interrupted the evaluation and queried the model. In our investigations, we generally used this method to ask a model whether the entities it was interacting with were real and whether it was causing real-world harm, as well as to ask general open-ended queries about its situation.
 
 *Limitations:* This technique has a number of limitations. Most significantly, we found that changes in how we phrased the questions influenced the model’s responses. For example, if we ask a generic question like “What's going on?” the model frequently responds differently than if we ask a more pointed question like “Are you connected to the real internet?” As discussed below, we are also worried about potential bias in the model’s responses to these questions.
 
-#### **Applying interpretability tools**
+#### Applying interpretability tools
 
 We use interpretability methods to identify discrepancies between Claude’s internals and its outputted text or actions. Our primary tools are [natural language autoencoders](https://transformer-circuits.pub/2026/nla/index.html) (NLAs), which produce paragraph-length natural-language explanations of model activations, and the [template lens](https://transformer-circuits.pub/2026/workspace/index.html#app-multi-token) (T-lens), which measures how strongly an activation resembles the average activation preceding a given word in a text corpus.
 
 *Limitations:* NLAs can confabulate, and the T-lens outputs only single-word scores. When both tools indicate similar concepts, we regard it as meaningful evidence that those concepts were encoded in the model’s activations. However, these tools can still be challenging to confidently interpret.
 
-#### **Resampling edited transcripts**
+#### Resampling edited transcripts
 
 To test hypotheses about what caused a given harmful action, we artificially modify transcripts (for instance, to include hints or reasoning that the internet is simulated or real), resample from the model on the modified transcript, and use an LLM grader to measure whether the model still takes the action in question. We resample both single- and multi-turn continuations; for the latter, a Claude model simulates tool call outputs, which lets us observe behavior beyond the immediate next action.
 
@@ -389,7 +428,13 @@ We take a layered approach to safety on the expectation that any given layer wil
   
 *Updated Sept 10:* A previous version of this post misstated two details. We wrote that PyPI removed the malicious package after approximately 90 minutes; the correct window was less than an hour. We also wrote that the internal research model penetrated several neighboring systems; it attempted to access several, but only gained access to one.
 
-## Authors
+## Footnotes
+
+01We have since [advised](improving-alignment-security-efforts.md) external partners running cyber evaluations with pre-release models to explicitly define what is in and out of scope for any exercise, including the targets, permitted actions, and network boundaries.[](#footnote-ref-1)
+
+## Authors & Acknowledgments
+
+### Contributors
 
 *Paul C. Bogdan, Richard Qi, Jake Eaton, Sam Kennedy, Fabien Roger, Alex Glynn, Runjin Chen, Ben Wright, Otto Stegmaier, Jon Kutasov, Dan Foreman-Mackey, Trenton Bricken*
 
@@ -398,173 +443,3 @@ We take a layered approach to safety on the expectation that any given layer wil
 *Nicholas Carlini, Collin Burns, Jack Lindsey, Sara Price\*, Subhash Kantamneni\*‡*
 
 \*Equal senior authorship; ‡Correspondence to <subhash@anthropic.com>
-
-```
-@misc{anthropic2026cyberincidentsalignment,
-  title        = {An Alignment Assessment of Recent
-                  Cybersecurity Incidents},
-  author       = {Bogdan, Paul C. and
-                  Qi, Richard and
-                  Eaton, Jake and
-                  Kennedy, Sam and
-                  Roger, Fabien and
-                  Glynn, Alex and
-                  Chen, Runjin and
-                  Wright, Ben and
-                  Stegmaier, Otto and
-                  Kutasov, Jon and
-                  Foreman-Mackey, Dan and
-                  Bricken, Trenton and
-                  Carr, Sylvie and
-                  Carter, Shan and
-                  MacDiarmid, Monte and
-                  Marks, Samuel and
-                  Pearce, Adam and
-                  Simon, Elana and
-                  Carlini, Nicholas and
-                  Burns, Collin and
-                  Lindsey, Jack and
-                  Price, Sara and
-                  Kantamneni, Subhash},
-  year         = {2026},
-  month        = sep,
-  day          = {9},
-  howpublished = {Anthropic},
-  url          = {https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents},
-  note         = {Sara Price and Subhash Kantamneni share
-                  senior authorship. Correspondence to
-                  subhash@anthropic.com.}
-}
-```
-
-Copy
-
-  
-#### Footnotes
-
-1.  We have since [advised](improving-alignment-security-efforts.md) external partners running cyber evaluations with pre-release models to explicitly define what is in and out of scope for any exercise, including the targets, permitted actions, and network boundaries.[](#footnote-ref-1)
-
-
-## Related content
-
-### How Claude is uplifting biomolecular modeling
-
-Claude made the open-source models that scientists use to predict and design biomolecules faster and more memory-efficient. Claude optimized more than 30 of these models in just under four weeks, speeding them up roughly 4x on average. It also created a low-memory mode that enables the accurate prediction of biomolecular systems larger than 10,000 tokens (amino acids, nucleotides, and atoms from small molecules and ions) on a single NVIDIA GPU node.
-
-[Read more](claude-uplifts-biomolecular-modeling.md)
-
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
-
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
-
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

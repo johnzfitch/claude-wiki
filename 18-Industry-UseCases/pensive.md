@@ -2,7 +2,7 @@
 title: "Pensive Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/pensive"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:16Z"
+fetched_at: "2026-10-23T06:29:50Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -42,19 +42,19 @@ With Claude, Pensive delivers measurable results:
 
 ## Meeting the challenges of modern higher education
 
-Yoonseok Yang founded Pensive during his undergraduate years at UC Berkeley after experiencing the limitations of large university settings firsthand. Yang said, "UC Berkeley is a huge public school where the student-to-teaching assistant ratio and support are limited compared to private or smaller schools." This experience highlighted how difficult it is for students to get personalized help in large educational environments.
+Yoonseok Yang founded Pensive during his undergraduate years at UC Berkeley after experiencing the limitations of large university settings firsthand. Yang said, “UC Berkeley is a huge public school where the student-to-teaching assistant ratio and support are limited compared to private or smaller schools.” This experience highlighted how difficult it is for students to get personalized help in large educational environments.
 
-Pensive aims to build an AI Teaching Assistant (AI TA) that supports a team of human TAs and provides personalized learning experiences to students. Seeing many AI tools for students being acknowledged as cheating tools by instructors, Yang wanted to build an AI TA that advances students’ critical thinking skills. Yang said, "We wanted to become an AI TA endorsed by institutions and loved by educators rather than being viewed as a cheating tool." This approach led to partnerships with instructors at top institutions like Columbia University, Harvey Mudd, and even Yang's alma mater, UC Berkeley.
+Pensive aims to build an AI Teaching Assistant (AI TA) that supports a team of human TAs and provides personalized learning experiences to students. Seeing many AI tools for students being acknowledged as cheating tools by instructors, Yang wanted to build an AI TA that advances students’ critical thinking skills. Yang said, “We wanted to become an AI TA endorsed by institutions and loved by educators rather than being viewed as a cheating tool.” This approach led to partnerships with instructors at top institutions like Columbia University, Harvey Mudd, and even Yang’s alma mater, UC Berkeley.
 
 ## Why Pensive chose Claude for their AI teaching assistant
 
 After evaluating multiple AI models, Pensive now uses Claude for the majority of their product features based on its performance in educational contexts.
 
-"Claude is consistently the most accurate and reliable model in quality and cost," said Yang. Switching to Claude 3.5 Sonnet showed 20% increase in grading accuracy and 15% increase in accuracy converting PDFs to interactive worksheets, which is used to build an accurate AI tutoring experience.
+“Claude is consistently the most accurate and reliable model in quality and cost,” said Yang. Switching to Claude 3.5 Sonnet showed 20% increase in grading accuracy and 15% increase in accuracy converting PDFs to interactive worksheets, which is used to build an accurate AI tutoring experience.
 
-Beyond performance metrics, Claude's instruction-following capabilities were essential for maintaining academic integrity. Yang noted, "Claude models follow instructions better than other models." This matters for enforcing educational policies, like requiring students to show their work before receiving help.
+Beyond performance metrics, Claude’s instruction-following capabilities were essential for maintaining academic integrity. Yang noted, “Claude models follow instructions better than other models.” This matters for enforcing educational policies, like requiring students to show their work before receiving help.
 
-Pensive's platform includes instructor-controlled AI policy settings. "Instructors can require students to explain their thought process before getting hints," explained Yang. When enabled, Claude enforces these policies reliably. "If students press the hint button repeatedly without explaining their approach, Claude insists they show their work first," said Yang. This feature ensures students develop critical thinking skills—addressing a key concern for educators adopting AI tools.
+Pensive’s platform includes instructor-controlled AI policy settings. “Instructors can require students to explain their thought process before getting hints,” explained Yang. When enabled, Claude enforces these policies reliably. “If students press the hint button repeatedly without explaining their approach, Claude insists they show their work first,” said Yang. This feature ensures students develop critical thinking skills—addressing a key concern for educators adopting AI tools.
 
 ## How Claude powers personalized education at scale
 
@@ -68,7 +68,7 @@ With Claude, Pensive is able to offer instructors:
 - Interactive PDF transformation, converting static assignments into dynamic worksheets
 - Customizable AI policies that enforce academic integrity standards
 
-The AI grader calibration process is innovative. Yang says, "Often instructors start grading without a clear rubric." Pensive's system processes all submissions, clusters them by common mistakes, and presents representative samples with preliminary AI grades. Instructors modify the rubric and provide feedback, effectively teaching the AI to grade like they would.
+The AI grader calibration process is innovative. Yang says, “Often instructors start grading without a clear rubric.” Pensive’s system processes all submissions, clusters them by common mistakes, and presents representative samples with preliminary AI grades. Instructors modify the rubric and provide feedback, effectively teaching the AI to grade like they would.
 
 By bringing in Pensive as the official AI Teaching Assistant for the course, instructors can provide the following benefits to students:
 
@@ -78,21 +78,21 @@ By bringing in Pensive as the official AI Teaching Assistant for the course, ins
 
 ## Transforming education with measurable results
 
-Pensive's Claude-powered platform has improved outcomes for both sides of the educational equation.
+Pensive’s Claude-powered platform has improved outcomes for both sides of the educational equation.
 
-For instructors, Pensive transforms course management. It saves time—instructors now grade hundreds of student exams in half the time—and provides unprecedented insight into learning patterns. "Pensive allows instructors to see each group's activity and where they're getting stuck," said Yang. "This enables targeted intervention exactly where students need assistance." This visibility helps instructors identify struggling students who might otherwise remain silent and focus their teaching energy where it matters most.
+For instructors, Pensive transforms course management. It saves time—instructors now grade hundreds of student exams in half the time—and provides unprecedented insight into learning patterns. “Pensive allows instructors to see each group’s activity and where they’re getting stuck,” said Yang. “This enables targeted intervention exactly where students need assistance.” This visibility helps instructors identify struggling students who might otherwise remain silent and focus their teaching energy where it matters most.
 
-The impact for students is also clear: a 7% increase in midterm scores in large intro CS courses and a fivefold increase in questions during discussion sections. "Students appreciate being able to ask questions 24/7," said Yang. "With the AI tutor, they get immediate help instead of waiting for their turn to ask questions of the TA."
+The impact for students is also clear: a 7% increase in midterm scores in large intro CS courses and a fivefold increase in questions during discussion sections. “Students appreciate being able to ask questions 24/7,” said Yang. “With the AI tutor, they get immediate help instead of waiting for their turn to ask questions of the TA.”
 
 Yang recently published a paper in SIGCSE 2025, a top conference in CS Education, with UC Berkeley researchers showcasing the results of deploying Pensive AI TA in a CS1 course at UC Berkeley with 800 students. “Pensive significantly increased student satisfaction, collaboration, and question volume,” said Yang.
 
 ## Building the future of AI-enhanced education
 
-Pensive envisions AI teaching assistants as integral partners in higher education. Yang emphasized their aim to "supplement areas human TAs can't cover—answering questions at 2 AM or quickly grading hundreds of submissions."
+Pensive envisions AI teaching assistants as integral partners in higher education. Yang emphasized their aim to “supplement areas human TAs can’t cover—answering questions at 2 AM or quickly grading hundreds of submissions.”
 
-Pensive aims to build a comprehensive learning record system. Yang explained, "The best tutor should understand a student's complete assessment history." This would enable personalized guidance based on each student's demonstrated strengths and weaknesses.
+Pensive aims to build a comprehensive learning record system. Yang explained, “The best tutor should understand a student’s complete assessment history.” This would enable personalized guidance based on each student’s demonstrated strengths and weaknesses.
 
-Pensive is creating a future where AI enhances education without replacing essential learning skills with Anthropic's partnership. "We view AI as a powerful technology that amplifies human creativity and motivation," said Yang. "Our mission is to design AI systems that advance students' critical thinking, not do the work for them."
+Pensive is creating a future where AI enhances education without replacing essential learning skills with Anthropic’s partnership. “We view AI as a powerful technology that amplifies human creativity and motivation,” said Yang. “Our mission is to design AI systems that advance students’ critical thinking, not do the work for them.”
 
 ## Related stories
 
@@ -117,7 +117,8 @@ Pensive is creating a future where AI enhances education without replacing essen
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -135,12 +136,12 @@ Pensive is creating a future where AI enhances education without replacing essen
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -173,7 +174,7 @@ Pensive is creating a future where AI enhances education without replacing essen
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -191,6 +192,7 @@ Pensive is creating a future where AI enhances education without replacing essen
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -206,7 +208,7 @@ Pensive is creating a future where AI enhances education without replacing essen
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -241,7 +243,8 @@ Pensive is creating a future where AI enhances education without replacing essen
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -259,12 +262,12 @@ Pensive is creating a future where AI enhances education without replacing essen
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -297,7 +300,7 @@ Pensive is creating a future where AI enhances education without replacing essen
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -315,6 +318,7 @@ Pensive is creating a future where AI enhances education without replacing essen
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -330,7 +334,7 @@ Pensive is creating a future where AI enhances education without replacing essen
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

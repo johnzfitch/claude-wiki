@@ -2,7 +2,7 @@
 title: "Biomni Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/biomni"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:06Z"
+fetched_at: "2026-10-23T06:29:27Z"
 tags: ["api", "case-studies", "enterprise", "search", "security"]
 ---
 
@@ -38,23 +38,23 @@ Biomni enables researchers to automate complex biomedical workflows—from liter
 - Achieves human-level performance on LAB-bench DbQA and SeqQA benchmarks
 - Designs cloning experiments validated as equivalent to a 5+ year expert work in blind testing
 - Automates joint analysis of large-scale scRNA-seq and scATAC-seq data to generate novel hypotheses
-- Reaches state-of-the-art performance on Humanity's Last Exam and 8 biomedical tasks
+- Reaches state-of-the-art performance on Humanity’s Last Exam and 8 biomedical tasks
 
 ## Biomedical research hits the complexity ceiling
 
 Modern biomedical research generates overwhelming amounts of data. A single genomics experiment can produce thousands of files. Literature searches span millions of papers across dozens of subspecialties. Researchers need expertise in computational tools, statistical methods, and domain knowledge—all while racing to make discoveries that could save lives.
 
-Stanford researchers behind Biomni saw their colleagues spending 80% of their time on repetitive tasks: searching literature, preprocessing data, and adapting protocols. Critical insights remained buried in unexplored datasets simply because humans couldn't process the volume. They realized the field needed more than incremental improvements—it needed an AI agent that could handle the full spectrum of research tasks autonomously.
+Stanford researchers behind Biomni saw their colleagues spending 80% of their time on repetitive tasks: searching literature, preprocessing data, and adapting protocols. Critical insights remained buried in unexplored datasets simply because humans couldn’t process the volume. They realized the field needed more than incremental improvements—it needed an AI agent that could handle the full spectrum of research tasks autonomously.
 
 ## Selecting Claude for scientific precision
 
-After extensive evaluation of AI models, the Biomni team chose Claude for its unique combination of scientific capabilities. "Claude demonstrated the best performance across our benchmarks, particularly in scientific and biological knowledge, coding ability, and agentic workflows," said Huang.
+After extensive evaluation of AI models, the Biomni team chose Claude for its unique combination of scientific capabilities. “Claude demonstrated the best performance across our benchmarks, particularly in scientific and biological knowledge, coding ability, and agentic workflows,” said Huang.
 
-The decision came down to three critical factors. First, Claude's deep understanding of biology set it apart from competitors. "When we tested identical tasks across different models, Claude showed superior understanding of biological concepts," Huang explained. "It clearly has extensive biological knowledge embedded in its training."
+The decision came down to three critical factors. First, Claude’s deep understanding of biology set it apart from competitors. “When we tested identical tasks across different models, Claude showed superior understanding of biological concepts,” Huang explained. “It clearly has extensive biological knowledge embedded in its training.”
 
-Second, Claude's 200,000 token context window proved essential for handling the massive scale of biomedical data. While other models truncated information and lost critical details, Claude processed entire genomic analyses, multi-gigabyte datasets, and thousand-page studies without missing crucial connections.
+Second, Claude’s 200,000 token context window proved essential for handling the massive scale of biomedical data. While other models truncated information and lost critical details, Claude processed entire genomic analyses, multi-gigabyte datasets, and thousand-page studies without missing crucial connections.
 
-Finally, Claude demonstrated true scientific reasoning capabilities—synthesizing findings across disciplines, generating testable hypotheses, and identifying patterns that human researchers might miss. This combination of knowledge, capacity, and reasoning made Claude the clear choice for powering Biomni's ambitious vision.
+Finally, Claude demonstrated true scientific reasoning capabilities—synthesizing findings across disciplines, generating testable hypotheses, and identifying patterns that human researchers might miss. This combination of knowledge, capacity, and reasoning made Claude the clear choice for powering Biomni’s ambitious vision.
 
 ## How Claude powers autonomous research
 
@@ -68,23 +68,23 @@ Biomni leverages Claude through their generalist agent architecture:
 
 ## Transforming how science gets done
 
-Biomni's impact extends beyond time savings. By handling routine analysis, the system frees researchers to focus on creative problem-solving and experimental design. A single scientist can now pursue multiple research threads that previously required entire teams.
+Biomni’s impact extends beyond time savings. By handling routine analysis, the system frees researchers to focus on creative problem-solving and experimental design. A single scientist can now pursue multiple research threads that previously required entire teams.
 
-The 100x speedup in bioinformatics analysis changes what's economically feasible. Researchers can now test hypotheses that would have taken months of setup in just hours. One team discovered novel transcription factors regulating skeletal lineages—a finding that emerged from Biomni's comprehensive analysis of massive single-cell datasets. For resource-limited labs, Biomni democratizes access to cutting-edge analytical capabilities. Researchers compete on ideas rather than computational resources or team size.
+The 100x speedup in bioinformatics analysis changes what’s economically feasible. Researchers can now test hypotheses that would have taken months of setup in just hours. One team discovered novel transcription factors regulating skeletal lineages—a finding that emerged from Biomni’s comprehensive analysis of massive single-cell datasets. For resource-limited labs, Biomni democratizes access to cutting-edge analytical capabilities. Researchers compete on ideas rather than computational resources or team size.
 
 ## Building the future of AI-augmented science
 
 The Biomni team envisions AI agents as true research partners. As biomedical data grows exponentially, human researchers need AI that can navigate vast knowledge landscapes, surface unexpected connections, and accelerate the path from hypothesis to discovery. Biomni is designed with flexible autonomy—scientists can choose how much control they retain, from co-pilot mode to fully automated execution, depending on the task and their preferences.
 
-Their collaboration with Anthropic continues to push boundaries. With each improvement in Claude's capabilities, Biomni expands what's possible in automated research. Thanks to the collaboration with Anthropic, Biomni is now freely accessible to scientists around the world at biomni.stanford.edu. Biologists everywhere can start delegating their research tasks to Biomni today. Together, they're working toward a future where AI amplifies human scientific creativity, enabling discoveries that improve health outcomes worldwide.
+Their collaboration with Anthropic continues to push boundaries. With each improvement in Claude’s capabilities, Biomni expands what’s possible in automated research. Thanks to the collaboration with Anthropic, Biomni is now freely accessible to scientists around the world at biomni.stanford.edu. Biologists everywhere can start delegating their research tasks to Biomni today. Together, they’re working toward a future where AI amplifies human scientific creativity, enabling discoveries that improve health outcomes worldwide.
 
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### How can a medical lab keep patients at the center of its work while the caseload keeps growing?
@@ -101,7 +101,8 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -119,12 +120,12 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -157,7 +158,7 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -175,6 +176,7 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -190,7 +192,7 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -225,7 +227,8 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -243,12 +246,12 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -281,7 +284,7 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -299,6 +302,7 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -314,7 +318,7 @@ Their collaboration with Anthropic continues to push boundaries. With each impro
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

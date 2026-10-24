@@ -2,7 +2,7 @@
 title: "Using Moody's for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:06Z"
+fetched_at: "2026-10-23T06:28:58Z"
 tags: ["claude-ai"]
 ---
 

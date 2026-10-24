@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fusage_report%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fusage_report%2Flist)
 
 
 
@@ -244,7 +244,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,9 +253,9 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
 5.  [Usage Report](http-beta-organization-analytics-usage-report.md)
 
 # Get Token Usage Over Time
@@ -304,7 +304,7 @@ One of the following:
 
 
 
-claude_tag_categories: optional array of [BetaAnalyticsClaudeTagCategory](http-beta-organization-analytics.md#beta_analytics_claude_tag_category)
+claude_tag_categories: optional array of [BetaAnalyticsClaudeTagCategory](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_claude_tag_category)
 
 
 
@@ -346,7 +346,7 @@ maxItems100
 
 
 
-context_windows: optional array of [BetaAnalyticsContextWindow](http-beta-organization-analytics.md#beta_analytics_context_window)
+context_windows: optional array of [BetaAnalyticsContextWindow](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_context_window)
 
 
 
@@ -424,7 +424,7 @@ One of the following:
 
 
 
-inference_geos: optional array of [BetaAnalyticsInferenceGeoFilter](http-beta-organization-analytics.md#beta_analytics_inference_geo_filter)
+inference_geos: optional array of [BetaAnalyticsInferenceGeoFilter](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_inference_geo_filter)
 
 
 
@@ -474,7 +474,7 @@ Opaque cursor from a previous response's `next_page` field.
 
 
 
-products: optional array of [BetaAnalyticsProductFilter](http-beta-organization-analytics.md#beta_analytics_product_filter)
+products: optional array of [BetaAnalyticsProductFilter](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_product_filter)
 
 
 
@@ -566,7 +566,7 @@ maxItems100
 
 
 
-data: array of [BetaAnalyticsUsageReportTimeBucket](http-beta-organization-analytics.md#beta_analytics_usage_report_time_bucket) { ending_at, results, starting_at }
+data: array of [BetaAnalyticsUsageReportTimeBucket](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_usage_report_time_bucket) { ending_at, results, starting_at }
 
 
 
@@ -584,7 +584,7 @@ formatdate-time
 
 
 
-results: array of [BetaAnalyticsUsageBucketedResult](http-beta-organization-analytics.md#beta_analytics_usage_bucketed_result) { cache_creation, cache_read_input_tokens, claude_tag_category, 12 more }
+results: array of [BetaAnalyticsUsageBucketedResult](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_usage_bucketed_result) { cache_creation, cache_read_input_tokens, claude_tag_category, 12 more }
 
 
 
@@ -592,7 +592,7 @@ Rows for this time bucket. Empty when the bucket has no data; otherwise a single
 
 
 
-cache_creation: [BetaCacheCreation](../Endpoints/http-beta-messages.md#beta_cache_creation) { ephemeral_1h_input_tokens, ephemeral_5m_input_tokens }
+cache_creation: [BetaCacheCreation](../Endpoints/platform-claude-com-http-beta-messages.md#beta_cache_creation) { ephemeral_1h_input_tokens, ephemeral_5m_input_tokens }
 
 
 
@@ -630,7 +630,7 @@ The number of input tokens read from the cache.
 
 
 
-claude_tag_category: [BetaAnalyticsClaudeTagCategory](http-beta-organization-analytics.md#beta_analytics_claude_tag_category) or null
+claude_tag_category: [BetaAnalyticsClaudeTagCategory](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_claude_tag_category) or null
 
 
 
@@ -666,7 +666,7 @@ Slack user ID (for example `U0123ABCDEF`) of the member the Claude Tag (Claude i
 
 
 
-context_window: [BetaAnalyticsContextWindow](http-beta-organization-analytics.md#beta_analytics_context_window) or null
+context_window: [BetaAnalyticsContextWindow](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_context_window) or null
 
 
 
@@ -732,7 +732,7 @@ Number of API requests in this row's scope. For sandbox / code-execution events,
 
 
 
-server_tool_use: [BetaAnalyticsServerToolUse](http-beta-organization-analytics.md#beta_analytics_server_tool_use) { web_search_requests }
+server_tool_use: [BetaAnalyticsServerToolUse](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_server_tool_use) { web_search_requests }
 
 
 

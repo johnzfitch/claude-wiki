@@ -2,7 +2,7 @@
 title: "Use Claude Cowork on web, desktop, and mobile | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-10T06:25:21Z"
+fetched_at: "2026-10-23T06:29:08Z"
 tags: ["desktop", "mobile"]
 ---
 
@@ -13,7 +13,7 @@ Claude Cowork is available on desktop, web, mobile, and in the Claude in Chrome 
 
 Claude Cowork runs in the cloud on Pro and Max plans. It’s in beta on web and mobile for Team plans, and on Enterprise plans where an admin has enabled it. Cowork is also available in the Claude in Chrome side panel on Max and Team plans, on Pro plans as it rolls out, and on Enterprise plans where an admin has enabled it. See **[Claude in Chrome admin controls](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md#h_bdb63199e1)** for enablement steps.
 
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that's a quick answer or a task. This is rolling out gradually to Pro and Max plans, with more plans to follow. If you're on a Pro or Max plan and your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
+**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that’s a quick answer or a task. This is rolling out gradually to Pro and Max plans, and it’s in beta for Enterprise plans, where an admin turns it on as **Chat and Cowork unified (beta)**. If your message box no longer shows “Chat” and “Cowork” options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**. For Enterprise owners, see **[Set up and manage the new unified Claude experience for your Enterprise organization](../13-Enterprise-Admin/set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization.md)**.
 
 ------------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ When using Cowork in the cloud, Claude's work runs on Anthropic's servers instea
 
 There’s no setting to choose where a task runs on Pro and Max plans.
 
-For details on how cloud and local sessions are isolated and what each can access, see **[Claude Cowork architecture overview](https://support.claude.com/en/articles/14479288)**. For safety guidance, see **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
+For details on how cloud and local sessions are isolated and what each can access, see **[Claude Cowork architecture overview](../15-Claude-AI-Features/claude-cowork-architecture-overview-claude-help-center.md)**. For safety guidance, see **[Use Claude Cowork safely](../15-Claude-AI-Features/use-claude-cowork-safely-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
@@ -91,7 +91,7 @@ A few notes on the table:
 
 - \*Local file access, local connectors, browser use, and computer use from web and mobile work through the Claude Desktop app. A cloud session can read and write files in folders you've connected on your computer only while the desktop app is open on that computer and the session was started on desktop or is a scheduled task. If the app is closed, the session keeps running but can't reach your local files.
 
-- Projects are available on every surface. From a project you can start a chat or a Cowork session, and Claude uses the project's knowledge as context. Projects tied to a local folder support Cowork sessions on desktop only, and Cowork won't change a project's contents, so add anything you want to keep to the project yourself. For more information, see **[Organize your tasks with projects in Claude Cowork](../15-Claude-AI-Features/organize-your-tasks-with-projects-in-claude-cowork-claude-help-center.md)** and **[Use live artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
+- Projects are available on every surface. From a project you can start a chat or a Cowork session, and Claude uses the project's knowledge as context. Projects tied to a local folder support Cowork sessions on desktop only, and Cowork won't change a project's contents, so add anything you want to keep to the project yourself. For more information, see **[Organize your tasks with projects in Claude Cowork](https://support.claude.com/en/articles/14116274)** and **[Use live artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
 
 - Artifacts created on or after August 19, 2026 are available on the desktop app and web. Live artifacts created before that date are available on the desktop app only. For more information, see **[Use artifacts in Claude Cowork](https://support.claude.com/en/articles/14729249)**.
 

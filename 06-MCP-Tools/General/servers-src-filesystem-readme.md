@@ -2,13 +2,15 @@
 title: "MCP Filesystem Server"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/filesystem/README.md"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-05-19T21:39:56Z"
+fetched_at: "2026-10-20T06:40:43Z"
 tags: ["api", "desktop", "mcp"]
 ---
 
 # Filesystem MCP Server
 
 Node.js server implementing Model Context Protocol (MCP) for filesystem operations.
+
+Published on npm as [`@modelcontextprotocol/server-filesystem`](https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem).
 
 ## Features
 
@@ -17,26 +19,29 @@ Node.js server implementing Model Context Protocol (MCP) for filesystem operatio
 - Move files/directories
 - Search files
 - Get file metadata
-- Dynamic directory access control via [Roots](../Tutorials/learn-client-concepts.md#roots)
+- Directory access control from command-line arguments, with [Roots](../Tutorials/learn-client-concepts.md#roots) as a deprecated, 2025-era convenience
+- Serves both protocol eras on stdio: 2026-07-28 clients (`server/discover`, no handshake) and 2025-era clients (`initialize`)
 
 ## Directory Access Control
 
-The server uses a flexible directory access control system. Directories can be specified via command-line arguments or dynamically via [Roots](../Tutorials/learn-client-concepts.md#roots).
+The server may touch only its **allowed directories**. Pass them on the command line. A 2025-era client that supports [Roots](../Tutorials/learn-client-concepts.md#roots) can also replace them at runtime, but Roots is [deprecated as of protocol version 2026-07-28](../Spec/2026-07-28-deprecated.md) and a 2026-07-28 connection cannot use it.
 
-### Method 1: Command-line Arguments
+### Method 1: Command-line Arguments (Recommended)
 Specify Allowed directories when starting the server:
 ```bash
 mcp-server-filesystem /path/to/dir1 /path/to/dir2
 ```
 
-### Method 2: MCP Roots (Recommended)
-MCP clients that support [Roots](../Tutorials/learn-client-concepts.md#roots) can dynamically update the Allowed directories. 
+This is the only method that works on every protocol version, so it is the one to use.
+
+### Method 2: MCP Roots (Deprecated, 2025-era clients only)
+A client that connects with a 2025-era protocol version (the `initialize` handshake) and supports [Roots](../Tutorials/learn-client-concepts.md#roots) can dynamically update the Allowed directories.
 
 Roots notified by Client to Server, completely replace any server-side Allowed directories when provided.
 
-**Important**: If server starts without command-line arguments AND client doesn't support roots protocol (or provides empty roots), the server will throw an error during initialization.
+**Important**: If server starts without command-line arguments AND a 2025-era client doesn't support roots protocol, the server fails at initialization: it logs the reason to stderr, closes the connection and exits with status 1. A client that supports roots but provides none (or none that are valid) keeps the connection, with no allowed directories until it sends `roots/list_changed` with valid roots.
 
-This is the recommended method, as this enables runtime directory updates via `roots/list_changed` notifications without server restart, providing a more flexible and modern integration experience.
+The 2026-07-28 protocol has no `initialize` handshake and no server-to-client `roots/list` request, so a 2026-07-28 client's roots are never asked for: the command-line directories are the whole allow-list. A server started with none answers every tool call on such a connection with an error saying so.
 
 ### How It Works
 
@@ -46,27 +51,32 @@ The server's directory access control follows this flow:
    - Server starts with directories from command-line arguments (if provided)
    - If no arguments provided, server starts with empty allowed directories
 
-2. **Client Connection & Initialization**
-   - Client connects and sends `initialize` request with capabilities
-   - Server checks if client supports roots protocol (`capabilities.roots`)
+2. **Client Connection**
+   - The client's first message picks the protocol era of the connection
+   - A **2026-07-28** client sends `server/discover` (or any request carrying the per-request `_meta` envelope): the server uses the command-line directories, and steps 3 and 4 do not apply
+   - A **2025-era** client sends `initialize` with its capabilities, and the server checks whether it supports roots (`capabilities.roots`)
    
-3. **Roots Protocol Handling** (if client supports roots)
+3. **Roots Protocol Handling** (2025-era clients that support roots)
    - **On initialization**: Server requests roots from client via `roots/list`
    - Client responds with its configured roots
    - Server replaces ALL allowed directories with client's roots
+   - Tool calls that arrive before the initial roots are loaded wait for them, so they are checked against the client's roots
    - **On runtime updates**: Client can send `notifications/roots/list_changed`
    - Server requests updated roots and replaces allowed directories again
+   - Tool calls that arrive while an update is being fetched wait for it, so none runs against a root the client has just withdrawn
+   - Once the client's roots are in force, an update with no valid roots revokes access: every path is refused ("Access denied - no allowed directories") until the client exposes a root again. Before any root has been in force, such an update keeps the command-line directories
 
-4. **Fallback Behavior** (if client doesn't support roots)
+4. **Fallback Behavior** (2025-era clients that don't support roots)
    - Server continues using command-line directories only
    - No dynamic updates possible
+   - With no command-line directories either, the server logs an error, closes the connection and exits with status 1
 
 5. **Access Control**
    - All filesystem operations are restricted to allowed directories
    - Use `list_allowed_directories` tool to see current directories
    - Server requires at least ONE allowed directory to operate
 
-**Note**: The server will only allow operations within directories specified either via `args` or via Roots.
+**Note**: The server will only allow operations within directories specified either via `args` or, for a 2025-era client, via Roots.
 
 
 ## API
@@ -83,10 +93,12 @@ The server's directory access control follows this flow:
   - Cannot specify both `head` and `tail` simultaneously
 
 - **read_media_file**
-  - Read an image or audio file
+  - Read a file and return it as a base64-encoded content block with its MIME type
   - Inputs:
     - `path` (string)
-  - Streams the file and returns base64 data with the corresponding MIME type
+  - Streams the file and returns base64 data with the corresponding MIME type. Image and
+    audio files are returned as `image`/`audio` content; any other file type is returned as
+    an embedded `resource` (a valid MCP content block for arbitrary binary data)
 
 - **read_multiple_files**
   - Read multiple files simultaneously
@@ -98,6 +110,10 @@ The server's directory access control follows this flow:
   - Inputs:
     - `path` (string): File location
     - `content` (string): File content
+  - An existing file is overwritten in place, so it keeps its inode, creation
+    time, hard links and permissions (`edit_file` writes the same way). The
+    overwrite is not crash-atomic: a crash mid-write can leave the file partly
+    written. A read-only file is refused rather than replaced
 
 - **edit_file**
   - Make selective edits using advanced pattern matching and formatting
@@ -105,7 +121,8 @@ The server's directory access control follows this flow:
     - Line-based and multi-line content matching
     - Whitespace normalization with indentation preservation
     - Multiple simultaneous edits with correct positioning
-    - Indentation style detection and preservation
+    - Indentation style detection and preservation: when only whitespace differs, each replacement line takes the indentation of the line it replaces
+    - Preserves the file's line endings (LF or CRLF)
     - Git-style diff output with context
     - Preview changes with dry run mode
   - Inputs:
@@ -184,12 +201,13 @@ The server's directory access control follows this flow:
 
 ### Tool annotations (MCP hints)
 
-This server sets [MCP ToolAnnotations](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/filesystem/Spec-Archive/spec-2025-03-26-tools-model-context-protocol.md#toolannotations)
+This server sets [MCP ToolAnnotations](../Spec-Archive/2025-03-26-server-tools.md#toolannotations)
 on each tool so clients can:
 
 - Distinguish **read‑only** tools from write‑capable tools.
 - Understand which write operations are **idempotent** (safe to retry with the same arguments).
 - Highlight operations that may be **destructive** (overwriting or heavily mutating data).
+- Signal that a tool does **not** reach an open or external world (every filesystem tool sets `openWorldHint: false`).
 
 The mapping for filesystem tools is:
 
@@ -209,7 +227,11 @@ The mapping for filesystem tools is:
 | `edit_file`                 | `false`      | `false`        | `true`          | Re‑applying edits can fail or double‑apply      |
 | `move_file`                 | `false`      | `false`        | `true`          | Deletes source file                             |
 
-> Note: `idempotentHint` and `destructiveHint` are meaningful only when `readOnlyHint` is `false`, as defined by the MCP spec.
+> Note: `idempotentHint` and `destructiveHint` are meaningful only when `readOnlyHint` is `false`, as defined by the MCP spec. Every tool also sets `openWorldHint: false` — this server only accesses the local filesystem within its allowed directories, never an open or external world.
+
+## Requirements
+
+Node.js 24 or later, when the server runs through `npx` or from source.
 
 ## Usage with Claude Desktop
 Add this to your `claude_desktop_config.json`:

@@ -2,7 +2,7 @@
 title: "Artemis Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/artemis"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:39Z"
+fetched_at: "2026-10-23T06:29:32Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -47,11 +47,11 @@ creating a flywheel between engineering velocity and product capability
 
 ## The gap between threats and defenses
 
-AI-powered threats can now run from initial access to data exfiltration with minimal human intervention, outpacing an entire generation of defensive technology. Traditional security stacks, built on static rule sets and manual investigation workflows, weren't built for this.
+AI-powered threats can now run from initial access to data exfiltration with minimal human intervention, outpacing an entire generation of defensive technology. Traditional security stacks, built on static rule sets and manual investigation workflows, weren’t built for this.
 
 The problem runs deep. A skilled detection engineer in any security organization might write a few rules per week, each requiring intimate knowledge of the log source, the attack technique, and careful tuning to minimize false positives. When new SaaS tools get adopted or configurations change, those rules fall behind. And when a detection *does* fire, what follows is hours of manual work: copying IP addresses into threat intelligence tools, pulling cloud logs, cross-referencing across disconnected systems. Most alerts turn out to be benign.
 
-"You can't bolt intelligence onto a fundamentally static architecture," says Dan Shiebler, co-founder and CTO, at Artemis. "You have to start over, with AI as the reasoning engine, not an add-on."
+“You can’t bolt intelligence onto a fundamentally static architecture,” says Dan Shiebler, co-founder and CTO, at Artemis. “You have to start over, with AI as the reasoning engine, not an add-on.”
 
 How security teams use Claude
 
@@ -65,7 +65,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 Artemis evaluated multiple model providers before building its platform on Claude, using Opus 4.7, Sonnet 4.6, and Haiku 4.5 within the platform. Security workflows demand something specific: following complex multi-step instructions with precision, reasoning across large volumes of evidence, and producing structured output where every conclusion cites specific supporting data.
 
-"The depth of Claude's reasoning capability, combined with Anthropic's commitment to safety and the enterprise trust of Amazon Bedrock, has been a fundamental piece in how we designed Artemis' platform," says Shachar Hirshberg, co-founder and CEO at Artemis. Every customer runs in a SOC2-compliant dedicated single-tenant environment. Customer data is never shared across tenants and is never used to train models.
+“The depth of Claude’s reasoning capability, combined with Anthropic’s commitment to safety and the enterprise trust of Amazon Bedrock, has been a fundamental piece in how we designed Artemis’ platform,” says Shachar Hirshberg, co-founder and CEO at Artemis. Every customer runs in a SOC2-compliant dedicated single-tenant environment. Customer data is never shared across tenants and is never used to train models.
 
 Claude on Amazon Bedrock
 
@@ -75,22 +75,22 @@ Build innovative AI applications with safer systems from Anthropic, supported by
 
 ## How Artemis uses Claude to protect customers
 
-Rather than applying generic rules, Claude-powered agents build a living model of each customer's environment: every entity, asset, behavioral baseline, and cross-source relationship. That context is what makes detections effective. When a new event arrives, Artemis evaluates it against the full context of the user, system, and organization, not just a static set of rules. Integration takes less than an hour, and customers begin receiving environment-specific intelligence within minutes of connecting their first data source.
+Rather than applying generic rules, Claude-powered agents build a living model of each customer’s environment: every entity, asset, behavioral baseline, and cross-source relationship. That context is what makes detections effective. When a new event arrives, Artemis evaluates it against the full context of the user, system, and organization, not just a static set of rules. Integration takes less than an hour, and customers begin receiving environment-specific intelligence within minutes of connecting their first data source.
 
-When a detection fires, Claude-powered investigation agents take over: formulating hypotheses, querying across log sources, correlating signals, and producing reports with severity assessments and clear chains of reasoning. Deep domain expertise for each log type (Okta, AWS CloudTrail, Entra ID, Crowdstrike) is encoded into each investigation, regardless of which analyst is on shift. Before Artemis, one enterprise customer's security team averaged two hours per investigation. The same cases now produce structured, evidence-cited reports and response actions in less than five minutes. A global financial services customer went from initial integration to over a hundred environment-specific detections within the first week, covering credential access, lateral movement, and persistence techniques their previous tool missed entirely.
+When a detection fires, Claude-powered investigation agents take over: formulating hypotheses, querying across log sources, correlating signals, and producing reports with severity assessments and clear chains of reasoning. Deep domain expertise for each log type (Okta, AWS CloudTrail, Entra ID, Crowdstrike) is encoded into each investigation, regardless of which analyst is on shift. Before Artemis, one enterprise customer’s security team averaged two hours per investigation. The same cases now produce structured, evidence-cited reports and response actions in less than five minutes. A global financial services customer went from initial integration to over a hundred environment-specific detections within the first week, covering credential access, lateral movement, and persistence techniques their previous tool missed entirely.
 
-"The investigation backlog for our customers didn't shrink. It disappeared," says Hirshberg. "We help them go from triaging a fraction of alerts, hoping the ones we skipped were benign, to having every single alert investigated with the same analytical rigor. We also use Artemis internally to protect the company."
+“The investigation backlog for our customers didn’t shrink. It disappeared,” says Hirshberg. “We help them go from triaging a fraction of alerts, hoping the ones we skipped were benign, to having every single alert investigated with the same analytical rigor. We also use Artemis internally to protect the company.”
 
 Analysts can also query their security data in English, asking to see suspicious commercial VPN usage across their organization, then follow up to review a detailed report, maintaining context across the interaction. They can build new detections through conversation and investigate specific alerts without having to know SPL, SQL, KQL, or any other domain specific language.
 
 ## Looking to the future
 
-What's less visible but equally important: Artemis uses Claude not just in the product, but to build the product. 100% of the engineers work with Claude Code as a core part of their development workflow. Over 300 custom Claude skills encode the team's operational playbook, from creating new detectors to managing infrastructure and reviewing code. Internal tools become product features. The engineering team ships faster the more it builds.
+What’s less visible but equally important: Artemis uses Claude not just in the product, but to build the product. 100% of the engineers work with Claude Code as a core part of their development workflow. Over 300 custom Claude skills encode the team’s operational playbook, from creating new detectors to managing infrastructure and reviewing code. Internal tools become product features. The engineering team ships faster the more it builds.
 
 ## Related stories
 
 
-### Vega's cyber defense platform returns 67% of analysts' time with Claude
+### Vega’s cyber defense platform returns 67% of analysts’ time with Claude
 
 
 ### Cyera on making Claude Cowork the front door to 40 tools
@@ -110,7 +110,8 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -128,12 +129,12 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -166,7 +167,7 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -184,6 +185,7 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -199,7 +201,7 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -234,7 +236,8 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -252,12 +255,12 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -290,7 +293,7 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -308,6 +311,7 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -323,7 +327,7 @@ What's less visible but equally important: Artemis uses Claude not just in the p
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

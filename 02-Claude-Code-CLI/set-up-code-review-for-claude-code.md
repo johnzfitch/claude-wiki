@@ -2,20 +2,18 @@
 title: "Set up Code Review for Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14233555-set-up-code-review-for-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:25:16Z"
+fetched_at: "2026-10-23T06:29:26Z"
 tags: ["claude-code"]
 ---
 
 # Set up Code Review for Claude Code
-
-September 2, 2026
 
 
 Code Review analyzes your GitHub pull requests and posts findings as inline comments on the lines of code where it found issues. A fleet of specialized agents examine the code changes in the context of your full codebase, looking for logic errors, security vulnerabilities, broken edge cases, and regressions.
 
 This article covers how to enable Code Review, configure review triggers, customize what gets flagged, and troubleshoot common setup issues.
 
-**Note:** Code Review is in research preview and available on Team and Enterprise plans. It isn’t available for organizations with zero data retention enabled. Code Review usage is billed separately through usage credits and doesn’t count against your plan’s included usage.
+**Note:** Code Review is available on Team and Enterprise plans. It isn’t available for organizations with zero data retention enabled. Code Review usage is billed separately through usage credits and doesn’t count against your plan’s included usage.
 
 ------------------------------------------------------------------------
 
@@ -163,7 +161,7 @@ If you’ve installed the Claude GitHub App but your repositories don’t appear
 
 3.  Try disconnecting and reconnecting your GitHub account in Claude. Go to **[Customize \> Connectors](https://claude.ai/customize/connectors)**, disconnect GitHub, and connect it again. Which repositories the App can access is managed on GitHub's side, covered in step 1.
 
-4.  If the issue persists, **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** with your organization name and GitHub organization name so we can investigate.
+4.  If the issue persists, **[contact our Support team](../15-Claude-AI-Features/how-to-get-support.md)** with your organization name and GitHub organization name so we can investigate.
 
 ### Code Review doesn’t start on a new PR
 
@@ -189,7 +187,7 @@ Common GHES setup issues:
 
 - **"Public cannot be private" error during setup:** Your GHES hostname must resolve to a publicly routable IP address. Code Review reaches your server over the internet, so internal or private network addresses won't work. Update DNS or your network configuration so the hostname resolves to a public IP, then retry.
 
-- **GitHub Enterprise Cloud with Data Residency is a different product.** Data Residency tenants (hostnames matching `*.ghe.com`) aren't supported by Code Review. Only self-hosted GitHub Enterprise Server and standard github.com repositories are supported.
+- **GitHub Enterprise Cloud with Data Residency is a different product.** GitHub Enterprise Cloud with data residency (.ghe.com) is also supported. An Owner follows the GitHub Enterprise Server admin setup and enters the `ghe.com` hostname.
 
 ------------------------------------------------------------------------
 

@@ -2,15 +2,47 @@
 title: "Responsible Scaling Policy Version 3.0 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/responsible-scaling-policy-v3"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:10:50Z"
+fetched_at: "2026-10-21T06:30:31Z"
 tags: ["news-research"]
 ---
 
-# Anthropic’s Responsible Scaling Policy: Version 3.0
-
-Feb 24, 2026
+# **Anthropic’s Responsible Scaling Policy: **Version 3.0
 
 [Read the Responsible Scaling Policy](https://anthropic.com/responsible-scaling-policy/rsp-v3-0)
+
+- [01The original RSP and our theory of change](#the-original-rsp-and-our-theory-of-change)
+- [02Assessing our theory of change](#assessing-our-theory-of-change)
+- [03Updating our Responsible Scaling Policy](#updating-our-responsible-scaling-policy)
+- [04Conclusion](#conclusion)
+
+- Published
+
+  Feb 24, 2026
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+  - [Race to the top](https://www.anthropic.com/search?topic=race-to-the-top)
+  - [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [Transparency](https://www.anthropic.com/search?topic=transparency)
+  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+
+  See more...
+
+Related articles
+
+- Policy
+
+  Dec 19, 2025
+
+  [Sharing our compliance framework for California's Transparency in Frontier AI Act](compliance-framework-sb53.md)
+
+[View more](https://www.anthropic.com/search?topic=responsible-scaling-policy)
 
 We’re releasing the third version of our Responsible Scaling Policy (RSP), the voluntary framework we use to mitigate catastrophic risks from AI systems.
 
@@ -39,7 +71,7 @@ The following is a rough description of our “theory of change”—that is, th
 
 Two and a half years later, our honest assessment is that some parts of this theory of change have played out as we hoped, but others have not. The following are the areas in which the RSP has been successful:
 
-- Our RSP **did** incentivize us to develop stronger safeguards. For example, in order to comply with our ASL-3 deployment standard (which is primarily about risks from chemical and biological weapons from threat actors with relatively modest resources and expertise), we developed increasingly sophisticated and accurate methods (specifically, [input and output classifiers](research-constitutional-classifiers.md)) to block content of concern.
+- Our RSP **did** incentivize us to develop stronger safeguards. For example, in order to comply with our ASL-3 deployment standard (which is primarily about risks from chemical and biological weapons from threat actors with relatively modest resources and expertise), we developed increasingly sophisticated and accurate methods (specifically, [input and output classifiers](constitutional-classifiers.md)) to block content of concern.
 - More broadly, the overall implementation of the ASL-3 standard **did** prove feasible. We [activated ASL-3 safeguards](activating-asl3-protections.md) for relevant models in May 2025 and have been working to improve them ever since.
 - Our RSP **did** encourage other AI companies to adopt somewhat similar standards: within a few months of announcing our RSP, both [OpenAI](https://cdn.openai.com/openai-preparedness-framework-beta.pdf) and [Google DeepMind](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/introducing-the-frontier-safety-framework/fsf-technical-report.pdf) adopted broadly similar frameworks. Some companies have also [implemented](https://cdn.openai.com/gpt-5-system-card.pdf) bioweapon-related classifiers in a similar vein to our ASL-3 defenses. The principles behind these voluntary standards, including those in the RSP, have helped to inform the development of early AI policy. We’ve seen governments around the world (for example in California with [SB 53](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53), in New York with the [RAISE Act](https://www.nysenate.gov/legislation/bills/2025/A6453/amendment/A), and with the EU AI Act’s [Codes of Practice](https://artificialintelligenceact.eu/article/56/)) start to require frontier AI developers to create and publish frameworks for assessing and managing catastrophic risks—requirements Anthropic addresses through public documentation including its [Frontier Compliance Framework](https://trust.anthropic.com/resources?s=eorilovp4wxk38nxbi7k3&name=anthropic-frontier-compliance-framework). Encouraging these kinds of rigorous transparency frameworks for the industry was exactly what our RSP had set out to do.
 
@@ -85,7 +117,7 @@ Read the [Frontier Safety Roadmap](https://anthropic.com/responsible-scaling-pol
 
 Risk Reports are another way in which we’re improving upon what worked well about our previous RSP. We found that producing a proto-Risk Report, our [Safeguards Report](https://www-cdn.anthropic.com/dc4cb293c77da3ca5e3398bdeef75ee17b42b73f.pdf) from May 2025, was useful for our internal understanding and the public communication of the risks. Risk Reports extend this to a more systematic, comprehensive practice.
 
-Risk Reports will provide detailed information on the safety profile of our models at the time of publication. They will go beyond describing model capabilities to explain how capabilities, threat models (the specific ways that models might pose threats), and active risk mitigations fit together, and provide an assessment of the overall level of risk. Risk Reports will be published online (with some redactions¹) every 3-6 months.
+Risk Reports will provide detailed information on the safety profile of our models at the time of publication. They will go beyond describing model capabilities to explain how capabilities, threat models (the specific ways that models might pose threats), and active risk mitigations fit together, and provide an assessment of the overall level of risk. Risk Reports will be published online (with some redactions^([1](#footnote-1))) every 3-6 months.
 
 The new RSP also requires external review of Risk Reports in certain circumstances. We will appoint expert third-party reviewers who are deeply familiar with AI safety research, are incentivized to be open and honest about Anthropic’s safety position, and are free of major conflicts of interest. They will have unredacted or minimally-redacted access to the Risk Report and will subject our reasoning, analysis, and decision-making to a comprehensive public review. Although our current models do not yet require external review, we are already running pilots and working toward this goal.
 
@@ -99,122 +131,6 @@ The Responsible Scaling Policy was always planned to be a living document: a pol
 
 In that same spirit of pragmatism we will continue to revise and refine our RSP, and our methods of evaluating and mitigating risks, as the technology evolves.
 
-#### Footnotes
+## Footnotes
 
-1\. As we discuss in the RSP, we will aim to minimize redactions to the public version of the Risk Report. Reasons we may nonetheless have to redact some of the text include legal compliance, intellectual property protection, public safety, and privacy.
-
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+01As we discuss in the RSP, we will aim to minimize redactions to the public version of the Risk Report. Reasons we may nonetheless have to redact some of the text include legal compliance, intellectual property protection, public safety, and privacy.[](#footnote-ref-1)

@@ -2,7 +2,7 @@
 title: "Adalat AI Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/adalat-ai"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:03Z"
+fetched_at: "2026-10-23T06:29:24Z"
 tags: ["api", "case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -70,7 +70,7 @@ Adalat AI evaluated multiple models before selecting Claude Sonnet 4.5 and Haiku
 
 ## The solution: Claude Code for engineering speed, Claude’s API for accessible justice
 
-Adalat AI turned to Claude on two fronts: Claude Code to accelerate internal engineering, and the Claude API to power a national WhatsApp helpline that puts court case information directly into litigants' hands.
+Adalat AI turned to Claude on two fronts: Claude Code to accelerate internal engineering, and the Claude API to power a national WhatsApp helpline that puts court case information directly into litigants’ hands.
 
 **A national helpline on WhatsApp.** The WhatsApp chatbot, built on the Claude API, is India’s first AI-powered national case information helpline. Anyone in the country can search for their court case, check its status, review case history, see the next hearing date, and download orders—through a platform more than 500 million people in India already use daily.
 
@@ -84,11 +84,11 @@ Claude’s critical role is summarization and translation. Court orders are ofte
 
 ## The results: Faster engineering, accessible justice at national scale
 
-With Claude Code, Adalat AI's engineering teams are seeing between 50 and 200% productivity gains. "For a philanthropy-funded nonprofit, that's an extraordinary multiplier on donor dollars,” Bhattacharya said.
+With Claude Code, Adalat AI’s engineering teams are seeing between 50 and 200% productivity gains. “For a philanthropy-funded nonprofit, that’s an extraordinary multiplier on donor dollars,” Bhattacharya said.
 
 The rapid prototyping team, which is shipping multiple new product lines simultaneously, is seeing gains of up to 200%, moving at the pace of a team three times its size. The core platform and engineering teams, which maintain and actively develop the product running in 20% of all courts in India every day, are seeing around 50% gains, consistently delivering output equivalent to a team 50% larger.
 
-"Claude Code has been an absolute revolution internally,” says Bhattacharya. “As a nonprofit you're constrained in how many engineers you can hire, and the fact that you can boost productivity per engineer versus hiring more engineers is a huge resource optimization."
+“Claude Code has been an absolute revolution internally,” says Bhattacharya. “As a nonprofit you’re constrained in how many engineers you can hire, and the fact that you can boost productivity per engineer versus hiring more engineers is a huge resource optimization.”
 
 Combined with test-driven development practices, the result is a more robust codebase with fewer issues reaching production. Bug resolution dropped from half-day investigations to under two hours. The Claude API integration for the chatbot was implemented in 2 days, with the first working prototype operational within 1 week.
 
@@ -102,10 +102,10 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
@@ -122,7 +122,8 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -140,12 +141,12 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -178,7 +179,7 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -196,6 +197,7 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -211,7 +213,7 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -246,7 +248,8 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -264,12 +267,12 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -302,7 +305,7 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -320,6 +323,7 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -335,7 +339,7 @@ Looking ahead, Adalat AI plans to expand language support to 10 or more Indian l
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

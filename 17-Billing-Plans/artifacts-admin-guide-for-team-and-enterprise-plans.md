@@ -2,11 +2,13 @@
 title: "Artifacts admin guide for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:25:24Z"
+fetched_at: "2026-10-23T06:29:15Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Artifacts admin guide for Team and Enterprise plans
+
+Updated today
 
 
 This guide is for Owners and Primary Owners of Team and Enterprise plans, and explains how to turn on artifacts for your organization, choose which templates users can start from, control who has access, and manage whether or not artifacts can be shared outside your organization.
@@ -49,7 +51,9 @@ Templates are the starting points users pick when they create an artifact.
 
 ### Standalone Claude Design at claude.ai/design
 
-Standalone Claude Design at **claude.ai/design** closes on December 14, 2026. Until then, it has its own setting in **[Organization settings \> Claude Design](https://claude.ai/admin-settings/claude-design)**, separate from the **Design** template. Users' existing projects stay at **claude.ai/design** until it closes, and up to 60 of them also appear in the **Artifacts** tab. To let users migrate their design systems, keep **Artifacts** and **Design systems** on. Learn more in **[Migrate from standalone Claude Design to Claude](../15-Claude-AI-Features/migrate-from-standalone-claude-design-to-claude-claude-help-center.md)**.
+Standalone Claude Design at **claude.ai/design** closes on December 14, 2026. Until then, it has its own setting in **[Organization settings \> Claude Design](https://claude.ai/admin-settings/claude-design)**, separate from the **Design** template. Users' existing projects stay at **claude.ai/design** until it closes, and up to 60 of them also appear in the **Artifacts** tab.
+
+Moving projects to Claude is rolling out gradually to paid plans, and a project or design system that moves to Claude becomes an artifact. To let users move their projects and move their design systems, keep **Artifacts** and **Design systems** on for your organization. On Enterprise plans with custom roles, each user's role needs them too. Learn more in **[Move from standalone Claude Design to Claude](../15-Claude-AI-Features/migrate-from-standalone-claude-design-to-claude-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
@@ -113,7 +117,7 @@ Some artifacts can't leave your organization even with these settings on:
 
 People need a Claude account to open any artifact except a legacy artifact published from chat.
 
-Learn more about **[sharing artifacts](../15-Claude-AI-Features/discovering-publishing-customizing-and-sharing-artifacts.md)**.
+Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
 
 ------------------------------------------------------------------------
 
@@ -145,7 +149,7 @@ The capabilities that cover artifacts are:
 
 [TABLE]
 
-Users outside those groups can still open, comment on, and use artifacts shared with them.
+Users without the **Artifacts** capability can still open artifacts shared with them, comment on them, and change their data, at the sharing level they were given, up to Contributor. Contributor lets someone use an artifact, save what they enter in it, and comment, without editing the artifact itself. A user without the capability who was shared as an Editor gets Contributor access at most. They can't create, edit, publish, or share artifacts.
 
 Learn more about **[managing custom roles on Enterprise plans](https://support.claude.com/en/articles/13930452)** and **[setting up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458)**.
 
@@ -163,7 +167,7 @@ To share someone else’s design system with everyone, an Owner or Primary Owner
 
 On Enterprise plans, custom roles control who can create design systems. Turn **Design systems** on or off under **Artifacts** in a role’s **Capabilities** tab.
 
-Design systems migrated from standalone Claude Design can arrive already shared with everyone. Published design systems that weren’t private there are shared with everyone in your organization, and if your organization’s default design system migrates, it becomes the default in Artifacts too, unless you’ve already set one.
+Design systems moved from standalone Claude Design can arrive already shared with everyone. Published design systems that weren’t private there are shared with everyone in your organization, and if your organization’s default design system moves, it becomes the default in Artifacts too, unless you’ve already set one.
 
 **In standalone Claude Design**
 
@@ -187,7 +191,7 @@ Everyone else can still create, edit, and use any published design system. If a 
 
 4.  Set each user's role to “Custom.”
 
-Learn more about **[setting up your design system](https://support.claude.com/en/articles/14604397)**.
+Learn more about **[setting up your design system](../21-Account-Support/set-up-your-design-system-in-claude-design-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
@@ -216,6 +220,8 @@ Learn more about **[viewing usage analytics for Team and Enterprise plans](https
 When users create designs and docs, they may upload design assets, brand guidelines, screenshots, and other materials.
 
 - Uploaded assets are stored persistently, and fall under the same **[data retention and deletion policies](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)** as other Anthropic products for organizations.
+
+- A custom retention period set on an Enterprise plan can cover artifacts, including projects and design systems moved from standalone Claude Design. An artifact can be permanently deleted if nobody opens it for that period. For a moved project or design system, the period starts on the day of the move and restarts when someone opens or edits the artifact. Learn more in **[Configure custom data retention controls for Enterprise plans](https://support.claude.com/en/articles/10440198)**.
 
 - Claude Design doesn't currently support data residency requirements.
 
@@ -261,4 +267,4 @@ The **Claude Design Admin** permission applies only in the standalone Claude Des
 
 ### Can users export what they make?
 
-Yes. For more information, refer to **[View and export](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md#h_71205f2c4b)** in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
+Yes. For more information, refer to **[View and export](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them#h_71205f2c4b)** in **[What are artifacts and how do I use them?](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md)**

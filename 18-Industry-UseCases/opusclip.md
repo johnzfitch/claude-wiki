@@ -2,7 +2,7 @@
 title: "OpusClip Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/opusclip"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:21Z"
+fetched_at: "2026-10-23T06:30:03Z"
 tags: ["case-studies", "claude-code", "cli", "enterprise", "security"]
 ---
 
@@ -30,7 +30,7 @@ up from 5–10% manual review
 
 surfaced from a single customer insight
 
-[OpusClip](https://www.opus.pro/) is an AI video clipping platform used by more than 16 million creators and media companies to turn long-form content into short-form social video. Six months ago, no one on OpusClip's B2B revenue team had written production code. Today, using Claude Code, the ten-person team builds and maintains its own call intelligence, renewal automation, and customer dashboards.
+[OpusClip](https://www.opus.pro/) is an AI video clipping platform used by more than 16 million creators and media companies to turn long-form content into short-form social video. Six months ago, no one on OpusClip’s B2B revenue team had written production code. Today, using Claude Code, the ten-person team builds and maintains its own call intelligence, renewal automation, and customer dashboards.
 
 ## With Claude Code, OpusClip:
 
@@ -44,11 +44,11 @@ surfaced from a single customer insight
 
 ## Sellers stretched thin, context scattered everywhere
 
-OpusClip's B2B team was growing fast and running into familiar pain. Franz-Josef Schrepf, Head of Enterprise Revenue and Partnerships, managed six sales and customer success reps but had visibility into only a fraction of their work. "I could sit in on maybe two or three calls per week," Schrepf said. "The rest was invisible unless someone wrote up call notes, which were unreliable and often missed the most important details."
+OpusClip’s B2B team was growing fast and running into familiar pain. Franz-Josef Schrepf, Head of Enterprise Revenue and Partnerships, managed six sales and customer success reps but had visibility into only a fraction of their work. “I could sit in on maybe two or three calls per week,” Schrepf said. “The rest was invisible unless someone wrote up call notes, which were unreliable and often missed the most important details.”
 
 With so few calls observed, the vast majority of rep performance went unreviewed. Renewal prep meant hours of manual work per account: screenshotting dashboards, downloading contracts, pulling transcripts, copying notes. Context was scattered across five or six tools. Patterns predicting churn existed in the sales data, but no one had the bandwidth to quantify them.
 
-By September 2025, Schrepf had spec'd out a GTM software stack to address these gaps: revenue intelligence, sales engagement, data enrichment, signal providers, CRM middleware. Combined, the tools would have cost six figures and taken months to roll out, with significant overlap between vendors. In October, Schrepf started experimenting with Claude Code.
+By September 2025, Schrepf had spec’d out a GTM software stack to address these gaps: revenue intelligence, sales engagement, data enrichment, signal providers, CRM middleware. Combined, the tools would have cost six figures and taken months to roll out, with significant overlap between vendors. In October, Schrepf started experimenting with Claude Code.
 
 Claude Code
 
@@ -60,11 +60,11 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## Selecting Claude Code for GTM engineering
 
-OpusClip's engineering team was already using Claude Code, but no one had brought it to the GTM side of the business. When Schrepf saw what was possible, the software procurement conversation shifted. “Claude Code made more sense for us than buying more software,” said Blake Umlauf, GTM Engineer. “For a small team like ours, it lets us move quickly and build lightweight tools, creating workflows that fit the way we work."
+OpusClip’s engineering team was already using Claude Code, but no one had brought it to the GTM side of the business. When Schrepf saw what was possible, the software procurement conversation shifted. “Claude Code made more sense for us than buying more software,” said Blake Umlauf, GTM Engineer. “For a small team like ours, it lets us move quickly and build lightweight tools, creating workflows that fit the way we work.”
 
-For Umlauf, what made Claude Code work as a building tool was how it handled existing code. "It actually read my existing scripts before writing new ones," he said. “It behaved like a teammate who'd read the repo, not a stranger pasting snippets."
+For Umlauf, what made Claude Code work as a building tool was how it handled existing code. “It actually read my existing scripts before writing new ones,” he said. “It behaved like a teammate who’d read the repo, not a stranger pasting snippets.”
 
-What tipped the decision was what happened when the team started feeding call transcripts into Claude Code. It surfaced a conversation where the customer had tried to upgrade their plan six times in two weeks but kept getting routed incorrectly by OpusClip's support chatbot. The customer signed a \$20K annual plan that same day, and once the routing issue was fixed, the channel generated more than \$200K in additional pipeline.
+What tipped the decision was what happened when the team started feeding call transcripts into Claude Code. It surfaced a conversation where the customer had tried to upgrade their plan six times in two weeks but kept getting routed incorrectly by OpusClip’s support chatbot. The customer signed a \$20K annual plan that same day, and once the routing issue was fixed, the channel generated more than \$200K in additional pipeline.
 
 ## From call transcripts to cross-functional intelligence
 
@@ -74,7 +74,7 @@ The move from Claude Opus 4.5 to 4.6 made a practical difference: the larger con
 
 Now, feature requests surface with exact customer quotes and deal sizes attached, automatically mapped to Linear tickets. Competitive intelligence reaches product marketing from calls they were never on. The BDR team gets ICP patterns distilled from conversations they didn’t have.
 
-“Claude will feed back the top 10 decisions I need to make this week, flag topics for my 1-on-1s with team members, and surface cross-functional updates,” Schrepf said. "Suddenly the dots between sales, product, marketing, and CS connected themselves."
+“Claude will feed back the top 10 decisions I need to make this week, flag topics for my 1-on-1s with team members, and surface cross-functional updates,” Schrepf said. “Suddenly the dots between sales, product, marketing, and CS connected themselves.”
 
 The team also used Claude Code to build an ROI calculator for live sales calls. Schrepf fed the transcripts from internal meetings to Claude Code and asked it to design the calculator. Within 60 minutes, it produced a spreadsheet calculator the sales team now uses daily, detailed enough to build a business case but simple enough for customers to experiment with. It unblocked five deals in the first month.
 
@@ -90,13 +90,13 @@ Claude can now use Skills—folders with instructions, scripts, and resources—
 
 ## Revenue leaders writing production workflows
 
-The tools the GTM team built weren't handed down from engineering. "I'm a revenue leader, not an engineer," Schrepf said. "I've never written production code. But after a few weeks with Claude Code, I was building workflows that my team uses daily."
+The tools the GTM team built weren’t handed down from engineering. “I’m a revenue leader, not an engineer,” Schrepf said. “I’ve never written production code. But after a few weeks with Claude Code, I was building workflows that my team uses daily.”
 
 The shift extended across the team. Umlauf went from BDR to GTM Engineer and is now the most engaged person on the team. Revenue Operations manager Patrick Donnelly automated manual renewal prep and now focuses on customer health scoring and pipeline automation. The shared GitHub repo of skills now doubles as onboarding. New team members clone it on day one and immediately have access to /renewal-analysis, /morning-brief, /call-coaching, and every workflow the team has built. The tool teaches the process as it runs it.
 
 ## What’s next
 
-OpusClip's next step is moving from on-demand workflows to proactive ones: agents that flag risks and surface insights continuously, rather than waiting for a slash command or a scheduled report. The team is actively building toward three use cases: an agent that triages inbound campaign replies by classifying intent and drafting responses in each AE’s voice; a pre-call research agent that listens for new calendar events and drops a brief into the meeting 12 hours before it happens; and a CSM account-health watcher that monitors usage, support, and CRM data continuously and surfaces churn risk or expansion opportunity before either side has asked. "We've already validated the workflows," Schrepf said. "Now we want them running continuously."
+OpusClip’s next step is moving from on-demand workflows to proactive ones: agents that flag risks and surface insights continuously, rather than waiting for a slash command or a scheduled report. The team is actively building toward three use cases: an agent that triages inbound campaign replies by classifying intent and drafting responses in each AE’s voice; a pre-call research agent that listens for new calendar events and drops a brief into the meeting 12 hours before it happens; and a CSM account-health watcher that monitors usage, support, and CRM data continuously and surfaces churn risk or expansion opportunity before either side has asked. “We’ve already validated the workflows,” Schrepf said. “Now we want them running continuously.”
 
 ## Related stories
 
@@ -121,7 +121,8 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -139,12 +140,12 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -177,7 +178,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -195,6 +196,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -210,7 +212,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -245,7 +247,8 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -263,12 +266,12 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -301,7 +304,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -319,6 +322,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -334,7 +338,7 @@ OpusClip's next step is moving from on-demand workflows to proactive ones: agent
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

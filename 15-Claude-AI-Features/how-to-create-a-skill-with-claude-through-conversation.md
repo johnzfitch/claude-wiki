@@ -2,7 +2,7 @@
 title: "How to create a skill with Claude through conversation · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:07Z"
+fetched_at: "2026-10-23T06:28:57Z"
 tags: ["claude-ai", "skills"]
 ---
 

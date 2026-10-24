@@ -2,7 +2,7 @@
 title: "Connect to local MCP servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-11-25/develop/connect-local-servers"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-08-02T05:39:18Z"
+fetched_at: "2026-10-11T06:34:53Z"
 tags: ["mcp"]
 ---
 
@@ -43,7 +43,7 @@ Before starting this tutorial, ensure you have the following installed on your s
 
 Claude Desktop
 
-Download and install [Claude Desktop](https://claude.ai/download) for your operating system. Claude Desktop is available for macOS and Windows. If you already have Claude Desktop installed, verify you’re running the latest version by clicking the Claude menu and selecting “Check for Updates…”
+Download and install [Claude Desktop](https://claude.ai/download) for your operating system. Claude Desktop is available for macOS, Windows, and Linux. If you already have Claude Desktop installed, verify you’re running the latest version by clicking the Claude menu and selecting “Check for Updates…”
 
 
 [​](#node-js)
@@ -156,7 +156,11 @@ Replace `username` with your actual computer username. The paths listed in the `
 
 Restart Claude Desktop
 
-After saving the configuration file, completely quit Claude Desktop and restart it. The application needs to restart to load the new configuration and start the MCP server.Upon successful restart, click the “Add files, connectors and more” indicator in the bottom-left corner of the conversation input box:
+After saving the configuration file, completely quit Claude Desktop and restart it. The application needs to restart to load the new configuration and start the MCP server.
+
+Upon successful restart, click the “Add files, connectors and more” indicator
+
+in the bottom-left corner of the conversation input box:
 
 Click on this indicator, then scroll over “Connectors” and click “Manage connectors”. Select “filesystem” from the connector list to view the the Filesystem Server’s available tools:
 
@@ -249,7 +253,7 @@ None of this is working. What do I do?
 
 Please refer to our [debugging guide](2025-11-25-tools-debugging.md) for better debugging tools and more detailed guidance.
 
-ENOENT error and \`\${APPDATA}\` in paths on Windows
+ENOENT error and `${APPDATA}` in paths on Windows
 
 If your configured server fails to load, and you see within its logs an error referring to `${APPDATA}` within a path, you may need to add the expanded value of `%APPDATA%` to your `env` key in `claude_desktop_config.json`:
 

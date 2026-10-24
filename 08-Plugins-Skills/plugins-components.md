@@ -2,7 +2,7 @@
 title: "Add components to a plugin - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/components"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-08T06:24:57Z"
+fetched_at: "2026-10-22T06:28:06Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -191,8 +191,9 @@ Frontmatter fields in plugin agents
 
 A plugin agent’s frontmatter follows these rules:
 
-- **Supported fields**: `name`, `description`, `model`, `effort`, `maxTurns`, `tools`, `disallowedTools`, `skills`, `memory`, `background`, `omitClaudeMd`, `isolation`, `color`, and the `cacheTtl` key of `experimental`. The only valid `isolation` value is `"worktree"`. See [supported frontmatter fields](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields) for what each one does
+- **Supported fields**: `name`, `description`, `model`, `effort`, `maxTurns`, `autoCompactWindow`, `tools`, `disallowedTools`, `skills`, `memory`, `background`, `omitClaudeMd`, `isolation`, `color`, and the `cacheTtl` key of `experimental`. The only valid `isolation` value is `"worktree"`. See [supported frontmatter fields](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields) for what each one does
 - **Ignored fields**: `permissionMode`, `hooks`, `mcpServers`, and `initialPrompt`. An agent file can’t add hooks or MCP servers on its own, so add those as plugin [hooks](#hooks) and [MCP servers](#mcp-servers) instead
+- **A `name` longer than 256 characters**: Claude Code ignores it and names the agent after its file, as it does when the field is missing
 - **Frontmatter that doesn’t parse**: the agent still loads with every field ignored. It’s named after the file, and its description reads `Agent from my-plugin plugin`. Run [`claude plugin validate`](plugins-cli-reference.md#plugin-validate) in your shell to find these files
 
 For what each field does and the precedence rules, see [Subagents](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields).
@@ -224,7 +225,7 @@ hooks/hooks.json
 }
 ```
 
-Save the script at `scripts/format.sh` and make it executable. Load the plugin and ask Claude to edit a file. A `PostToolUse` hook that exits 0 shows nothing in the transcript, so confirm it ran with [debug logging](../07-Hooks/hooks.md#debug-hooks) or by what the script itself changes. Hooks in `hooks/hooks.json` and in the `hooks` manifest key both load. For every event and its payload, see [Hook events](../07-Hooks/hooks.md#hook-events). To write hooks as JavaScript functions that run inside Claude Code and can draw in its interface, list a module file under a `modules` key in the same `hooks/hooks.json`. A plugin with one is a mod. See [Create a mod](plugins-mods-create.md).
+Save the script at `scripts/format.sh` and make it executable. Load the plugin and ask Claude to edit a file. A `PostToolUse` hook that exits 0 shows nothing in the transcript, so confirm it ran with [debug logging](../07-Hooks/hooks.md#debug-hooks) or by what the script itself changes. Hooks in `hooks/hooks.json` and in the `hooks` manifest key both load. For every event and its payload, see [Hook events](../07-Hooks/hooks.md#hook-events). When another enabled plugin has the same name, one of the two registers its `hooks/hooks.json` hooks and the other’s are left out. See [Hooks when two enabled plugins share a name](plugins-loading.md#hooks-when-two-enabled-plugins-share-a-name) for which one, and for the note in `/plugin` that tells you. To write hooks as JavaScript functions that run inside Claude Code and can draw in its interface, list a module file under a `modules` key in the same `hooks/hooks.json`. A plugin with one is a mod. See [Create a mod](plugins-mods-create.md).
 
 
 [​](#when-plugin-hooks-fire)
@@ -341,7 +342,7 @@ The `lspServers` manifest key takes the same map inline, a path to a JSON file, 
 
 Executables
 
-Files in `bin/` at the plugin root are on the `PATH` of the Bash tool’s shell while the plugin is enabled, so Claude can run them as bare commands. Add an executable script:
+Files in `bin/` at the plugin root are on the `PATH` of the Bash tool’s shell while the plugin is enabled, so Claude can run them as bare commands. A command that Claude runs with the [PowerShell tool](../02-Claude-Code-CLI/tools-reference.md#powershell-tool) outside the [sandbox](../02-Claude-Code-CLI/sandboxing.md) finds them on its `PATH` too, and a sandboxed PowerShell command doesn’t. Add an executable script:
 
 bin/hello-plugin
 

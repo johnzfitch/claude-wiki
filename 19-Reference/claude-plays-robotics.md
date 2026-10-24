@@ -2,13 +2,48 @@
 title: "How Claude performs on robotics tasks \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-plays-robotics"
 category: "19-Reference"
-fetched_at: "2026-08-27T09:25:47Z"
+fetched_at: "2026-10-21T06:30:21Z"
 tags: ["news-research"]
 ---
 
 # Claude plays robotics
 
-Jul 9, 2026
+- [01Summary of findings](#summary-of-findings)
+- [02Simple settings](#simple-settings)
+- [03Direct control is bad, but improving](#direct-control-is-bad-but-improving)
+- [04Tools bridge some of the gap](#tools-bridge-some-of-the-gap)
+- [05What’s the bottleneck?](#whats-the-bottleneck)
+- [06Conclusion](#conclusion)
+- [07Appendix](#appendix)
+- [08Latency](#latency)
+
+- Published
+
+  Jul 9, 2026
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Robotics](https://www.anthropic.com/search?topic=robotics)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+  - [Tool use](https://www.anthropic.com/search?topic=tool-use)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+
+  See more...
+
+Related articles
+
+- Models
+
+  Feb 17, 2026
+
+  [Introducing Claude Sonnet 4.6](claude-sonnet-4-6.md)
+
+[View more](https://www.anthropic.com/search?topic=robotics)
 
 *Shmuel Berman, Michael Ilie, Jia Deng, and Daniel Freeman*
 
@@ -92,20 +127,53 @@ To test high-level locomotion, we let the model control the quadruped robot thro
 
 We built a suite of eleven navigation and spatial-reasoning tasks ranging from simple goal-seeking (find_x: walk to the table with the blue X) through search, mazes, and waypoint sequences, to tasks that explicitly probe self-monitoring (drift_detection: notice that your commands are being silently corrupted) and spatial mental-model building (explore_report: roam an arena, then answer layout questions from memory). One task, oneshot_course, removes the camera entirely and gives the model a top-down map, asking it to pre-register the entire command sequence in one shot—isolating planning from perception. Each task is scored on success or normalized progress, and we report a composite over all eleven, scaled between 0 and 100 (Appendix).
 
-|                 |                                                                                                                                                  |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Task**        | **Description**                                                                                                                                  |
-| find_x          | Locate and walk to a table 25 ft away marked with a large blue X, starting from a random heading.                                                |
-| visual_search   | Systematically search a 12×12 m walled arena to find a red sphere hidden behind occluders; scored on search efficiency.                          |
-| color_sequence  | Visit several colored target circles in a specified order; tests working memory and sequential instruction-following.                            |
-| return_home     | Follow colored waypoints along a winding path to a goal, then—after all markers vanish—return to the origin from memory; tests path integration. |
-| procedural_maze | Navigate a procedurally generated maze using only the forward camera, no map.                                                                    |
-| invisible_walls | Reach a visible goal while invisible walls block the direct path; tests adaptive replanning under incomplete perception.                         |
-| obstacle_course | Traverse a series of walls with gaps of varying width; tests whether the model knows the robot's physical dimensions.                            |
-| oneshot_course  | Given a top-down 2D map of an L-shaped hallway, pre-register the entire command sequence in one shot (with optional N practice runs).            |
-| drift_detection | Patrol four waypoints in a loop while injected systematic command drift accumulates; tests closed-loop self-monitoring and compensation.         |
-| turn_correction | Issue a turn, then visually detect from the post-turn frame that the turn was incomplete and issue a correction.                                 |
-| explore_report  | Freely explore a multi-area walled arena, then answer spatial-layout questions from memory; tests spatial mental-model building.                 |
+**Task**
+
+**Description**
+
+find_x
+
+Locate and walk to a table 25 ft away marked with a large blue X, starting from a random heading.
+
+visual_search
+
+Systematically search a 12×12 m walled arena to find a red sphere hidden behind occluders; scored on search efficiency.
+
+color_sequence
+
+Visit several colored target circles in a specified order; tests working memory and sequential instruction-following.
+
+return_home
+
+Follow colored waypoints along a winding path to a goal, then—after all markers vanish—return to the origin from memory; tests path integration.
+
+procedural_maze
+
+Navigate a procedurally generated maze using only the forward camera, no map.
+
+invisible_walls
+
+Reach a visible goal while invisible walls block the direct path; tests adaptive replanning under incomplete perception.
+
+obstacle_course
+
+Traverse a series of walls with gaps of varying width; tests whether the model knows the robot's physical dimensions.
+
+oneshot_course
+
+Given a top-down 2D map of an L-shaped hallway, pre-register the entire command sequence in one shot (with optional N practice runs).
+
+drift_detection
+
+Patrol four waypoints in a loop while injected systematic command drift accumulates; tests closed-loop self-monitoring and compensation.
+
+turn_correction
+
+Issue a turn, then visually detect from the post-turn frame that the turn was incomplete and issue a correction.
+
+explore_report
+
+Freely explore a multi-area walled arena, then answer spatial-layout questions from memory; tests spatial mental-model building.
 
 Table of all 11 tasks in high-level locomotion composite eval
 
@@ -227,20 +295,77 @@ This appendix summarizes the practical details behind the evaluations: which mod
 
 We evaluated twelve models across five providers, with four of them through OpenRouter. To keep the evaluation harness the same across providers, we wrote a small adapter for each backend. The adapter handled model-specific API calls, but the robot tasks, prompts, and scoring code stayed the same.
 
-|                        |                         |                    |
-|------------------------|-------------------------|--------------------|
-| **Model**              | **Provider**            | **Adapter**        |
-| Claude Opus 4.7        | Anthropic               | `claude_agent_sdk` |
-| Claude Opus 4.6        | Anthropic               | `claude_agent_sdk` |
-| Claude Mythos Preview  | Anthropic               | `claude_agent_sdk` |
-| Claude Opus 4.5        | Anthropic               | `claude_agent_sdk` |
-| Claude Opus 4.1 / 4    | Anthropic               | `claude_agent_sdk` |
-| GPT-5.4                | OpenAI via OpenRouter   | `openrouter`       |
-| GPT-5.1                | OpenAI via OpenRouter   | `openrouter`       |
-| Gemini 3.1 Pro Preview | Google via OpenRouter   | `openrouter`       |
-| Gemini 2.5 Pro         | Google via OpenRouter   | `openrouter`       |
-| Kimi K2.6              | Moonshot via OpenRouter | `openrouter`       |
-| Qwen 3.6+              | Alibaba via OpenRouter  | `openrouter`       |
+**Model**
+
+**Provider**
+
+**Adapter**
+
+Claude Opus 4.7
+
+Anthropic
+
+`claude_agent_sdk`
+
+Claude Opus 4.6
+
+Anthropic
+
+`claude_agent_sdk`
+
+Claude Mythos Preview
+
+Anthropic
+
+`claude_agent_sdk`
+
+Claude Opus 4.5
+
+Anthropic
+
+`claude_agent_sdk`
+
+Claude Opus 4.1 / 4
+
+Anthropic
+
+`claude_agent_sdk`
+
+GPT-5.4
+
+OpenAI via OpenRouter
+
+`openrouter`
+
+GPT-5.1
+
+OpenAI via OpenRouter
+
+`openrouter`
+
+Gemini 3.1 Pro Preview
+
+Google via OpenRouter
+
+`openrouter`
+
+Gemini 2.5 Pro
+
+Google via OpenRouter
+
+`openrouter`
+
+Kimi K2.6
+
+Moonshot via OpenRouter
+
+`openrouter`
+
+Qwen 3.6+
+
+Alibaba via OpenRouter
+
+`openrouter`
 
 A few implementation details matter for reproducibility:
 
@@ -252,16 +377,47 @@ A few implementation details matter for reproducibility:
 
 A “cell” means one model evaluated on one experiment setting. Most cells used 35 trials, but some settings used more when the task was noisier or when we needed tighter estimates.
 
-|                               |                                                                                                   |                                                                                                  |
-|-------------------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| **Trials per model and cell** | **Cells**                                                                                         | **Why**                                                                                          |
-| 35 trials                     | Classic control direct/code cells, locomotion direct/code cells, RL cells, and Hopper code+vision | Enough to compare broad trends while staying within compute limits                               |
-| 50 trials                     | A subset of Mythos Preview and Opus 4.7 reruns                                                    | Used where close generational comparisons needed tighter estimates                               |
-| 200 trials                    | LIBERO-40 direct, LIBERO-40 VLA+LLM, LIBERO-40 context truncation                                 | LIBERO-40 has 40 tasks × 5 seeds, giving more stable aggregate success rates                     |
-| 50 trials                     | LIBERO tool ablations                                                                             | 10-task subset x 5 seeds                                                                         |
-| 36 trials                     | Three Novel VLA                                                                                   | 3 tasks × 12 seeds. Because this is small, we report confidence intervals                        |
-| 100 trials                    | High-level locomotion suite                                                                       | Used for each model and condition across the eleven-task suite and six perceptual-aid conditions |
-|                               |                                                                                                   |                                                                                                  |
+**Trials per model and cell**
+
+**Cells**
+
+**Why**
+
+35 trials
+
+Classic control direct/code cells, locomotion direct/code cells, RL cells, and Hopper code+vision
+
+Enough to compare broad trends while staying within compute limits
+
+50 trials
+
+A subset of Mythos Preview and Opus 4.7 reruns
+
+Used where close generational comparisons needed tighter estimates
+
+200 trials
+
+LIBERO-40 direct, LIBERO-40 VLA+LLM, LIBERO-40 context truncation
+
+LIBERO-40 has 40 tasks × 5 seeds, giving more stable aggregate success rates
+
+50 trials
+
+LIBERO tool ablations
+
+10-task subset x 5 seeds
+
+36 trials
+
+Three Novel VLA
+
+3 tasks × 12 seeds. Because this is small, we report confidence intervals
+
+100 trials
+
+High-level locomotion suite
+
+Used for each model and condition across the eleven-task suite and six perceptual-aid conditions
 
 ### Prompts
 
@@ -297,37 +453,70 @@ The reinforcement learning interface used the live PPO training path in `envapi/
 
 The model was allowed to define the reward function, policy network, and training schedule. It could then call training and deployment tools.
 
-**Environment**
+#### Environment
 
 We used a GPU-backed batched MuJoCo environment called `BatchedEnvWarp`. This let the model train over several simulation copies in parallel.
 
-**Default training settings**
+#### Default training settings
 
 The model could change these settings within guardrails, but the defaults were:
 
-|                                |                        |
-|--------------------------------|------------------------|
-| **Setting**                    | **Default**            |
-| Rollout length per environment | `n_steps = 256`        |
-| Batch size                     | `batch_size = 64`      |
-| Training epochs per update     | `n_epochs = 4`         |
-| Discount factor                | `gamma = 0.99`         |
-| GAE lambda                     | `gae_lambda = 0.95`    |
-| PPO clip range                 | `clip_range = 0.2`     |
-| Learning rate                  | `learning_rate = 3e-4` |
-| Entropy coefficient            | `ent_coef = 0.01`      |
-| Value loss coefficient         | `vf_coef = 0.5`        |
-| Max gradient norm              | `max_grad_norm = 0.5`  |
-| Optimizer                      | Adam                   |
+**Setting**
 
-**Limits and safeguards**
+**Default**
+
+Rollout length per environment
+
+`n_steps = 256`
+
+Batch size
+
+`batch_size = 64`
+
+Training epochs per update
+
+`n_epochs = 4`
+
+Discount factor
+
+`gamma = 0.99`
+
+GAE lambda
+
+`gae_lambda = 0.95`
+
+PPO clip range
+
+`clip_range = 0.2`
+
+Learning rate
+
+`learning_rate = 3e-4`
+
+Entropy coefficient
+
+`ent_coef = 0.01`
+
+Value loss coefficient
+
+`vf_coef = 0.5`
+
+Max gradient norm
+
+`max_grad_norm = 0.5`
+
+Optimizer
+
+Adam
+
+#### Limits and safeguards
 
 - The harness exposed up to 32 parallel environments by default.
 - The policy network was capped at 200,000 parameters.
 - A single training call could not consume more than one third of the session.
 - The system reserved the final 120 seconds for policy deployment.
 
-**RL cells**
+#### RL cells
 
 The RL path was used for:
 
@@ -343,7 +532,7 @@ Classic-control RL cells had a 1.5-hour timeout. Humanoid and quadruped RL cells
 
 When vision was enabled, the harness sent JPEG-encoded RGB frames to the model.
 
-**Image format**
+#### Image format
 
 Frames were rendered off-screen in MuJoCo and encoded as JPEGs. Each provider received images in its native format:
 
@@ -351,11 +540,11 @@ Frames were rendered off-screen in MuJoCo and encoded as JPEGs. Each provider re
 - OpenAI-style `image_url` with data URIs
 - Gemini inline image parts
 
-**Frames per turn**
+#### Frames per turn
 
 The default harness setting allows three frames per turn, but all published cells used one frame per turn.
 
-**Keeping prior frames**
+#### Keeping prior frames
 
 All published vision cells kept prior frames in context. This was required for Claude Agent SDK runs with vision, because that SDK path did not support deleting older images turn by turn.
 
@@ -392,130 +581,3 @@ All scripts disabled legacy Claude model remapping, loaded the project virtual e
 ### Reproducibility
 
 The code, once released, will be in `github.com/safety-research/embody`, the public mirror of the repository. The command for each evaluation cell is listed in `EXPERIMENTS.md`, and scoring is documented in `METRICS.md`.
-
-
-## Related content
-
-### Enabling independent research on how people use Claude
-
-Earlier this year, we ran a pilot giving external researchers access to aggregate, real-world Claude usage data. Three research groups designed their own studies for Anthropic Insights, our privacy-preserving analysis tool. In this post, we share high-level results from those studies and what we learned running this pilot.
-
-[Read more](enabling-independent-research.md)
-
-### How Claude is accelerating protein design and analytical chemistry
-
-In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
-
-[Read more](claude-accelerates-protein-design.md)
-
-### Patterns and problems in emerging multiagent systems
-
-Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.
-
-[Read more](multiagent-systems.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

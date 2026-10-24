@@ -2,7 +2,7 @@
 title: "Model deprecations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/model-deprecations"
 category: "20-Models"
-fetched_at: "2026-10-04T08:31:23Z"
+fetched_at: "2026-10-20T06:38:45Z"
 tags: ["api", "models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodel-deprecations)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodel-deprecations)
 
 
 
@@ -40,7 +40,7 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -52,11 +52,11 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)Lifecycle and reference
 
@@ -155,6 +155,7 @@ Current and recently retired models are listed in the following table with their
 | claude-sonnet-4-5-20250929 | Deprecated    | September 30, 2026 | November 30, 2026                  |
 | claude-sonnet-4-20250514   | Retired       | April 14, 2026     | June 15, 2026                      |
 | claude-3-7-sonnet-20250219 | Retired       | October 28, 2025   | February 19, 2026                  |
+| claude-haiku-5-5           | Active        | N/A                | Not sooner than October 7, 2027    |
 | claude-haiku-4-5-20251001  | Active        | N/A                | Not sooner than October 15, 2026   |
 | claude-3-5-haiku-20241022  | Retired       | December 19, 2025  | February 19, 2026                  |
 | claude-3-haiku-20240307    | Retired       | February 19, 2026  | April 20, 2026                     |
@@ -193,7 +194,7 @@ On April 14, 2026, Anthropic notified developers using Claude Sonnet 4 and Claud
 
 | Retirement date | Deprecated model           | Recommended replacement |
 |:----------------|:---------------------------|:------------------------|
-| June 15, 2026   | `claude-sonnet-4-20250514` | `claude-sonnet-4-6`     |
+| June 15, 2026   | `claude-sonnet-4-20250514` | `claude-sonnet-5-5`     |
 | June 15, 2026   | `claude-opus-4-20250514`   | `claude-opus-4-8`       |
 
 ### 2026-02-19: Claude Haiku 3 model
@@ -230,7 +231,7 @@ On October 28, 2025, Anthropic notified developers using Claude Sonnet 3.7 model
 
 | Retirement date   | Deprecated model             | Recommended replacement |
 |:------------------|:-----------------------------|:------------------------|
-| February 19, 2026 | `claude-3-7-sonnet-20250219` | `claude-sonnet-4-6`     |
+| February 19, 2026 | `claude-3-7-sonnet-20250219` | `claude-sonnet-5-5`     |
 
 ### 2025-08-13: Claude Sonnet 3.5 models
 
@@ -242,8 +243,8 @@ On August 13, 2025, Anthropic notified developers using Claude Sonnet 3.5 models
 
 | Retirement date  | Deprecated model             | Recommended replacement |
 |:-----------------|:-----------------------------|:------------------------|
-| October 28, 2025 | `claude-3-5-sonnet-20240620` | `claude-sonnet-4-6`     |
-| October 28, 2025 | `claude-3-5-sonnet-20241022` | `claude-sonnet-4-6`     |
+| October 28, 2025 | `claude-3-5-sonnet-20240620` | `claude-sonnet-5-5`     |
+| October 28, 2025 | `claude-3-5-sonnet-20241022` | `claude-sonnet-5-5`     |
 
 ### 2025-06-30: Claude Opus 3 model
 
@@ -269,7 +270,7 @@ On January 21, 2025, Anthropic notified developers using Claude 2, Claude 2.1, a
 |:----------------|:---------------------------|:------------------------|
 | July 21, 2025   | `claude-2.0`               | `claude-opus-4-8`       |
 | July 21, 2025   | `claude-2.1`               | `claude-opus-4-8`       |
-| July 21, 2025   | `claude-3-sonnet-20240229` | `claude-sonnet-4-6`     |
+| July 21, 2025   | `claude-3-sonnet-20240229` | `claude-sonnet-5-5`     |
 
 ### 2024-09-04: Claude 1 and Instant models
 
@@ -293,8 +294,8 @@ On September 4, 2024, Anthropic notified developers using Claude 1 and Instant m
 
 Anthropic occasionally deprecates request parameters that no longer apply to current models. How the API treats a deprecated parameter depends on the model, as the following table shows. Most SDKs keep deprecated parameters in their request types so existing code continues to type-check. The Python SDK (v1.0 and later) removes `temperature`, `top_p`, and `top_k`, so passing them raises a `TypeError`.
 
-| Parameter                       | Status                                 | Behavior                                                                                                                                         | Recommended replacement                                                                                                          |
-|---------------------------------|----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `temperature`, `top_p`, `top_k` | Deprecated (Claude Opus 4.7 and later) | Returns a 400 error when set to a non-default value on Claude 4.7 and later models and [Claude Mythos Preview](../22-Safety-Policy/glasswing.md). | Omit and use [prompting](../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md) to guide model behavior. |
+| Parameter                       | Status                                   | Behavior                                                                                                                                         | Recommended replacement                                                                                                          |
+|---------------------------------|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `temperature`, `top_p`, `top_k` | Deprecated (Claude 4.7 and later models) | Returns a 400 error when set to a non-default value on Claude 4.7 and later models and [Claude Mythos Preview](../22-Safety-Policy/glasswing.md). | Omit and use [prompting](../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md) to guide model behavior. |
 
 For migration steps, see the [migration guide](about-claude-models-migration-guide.md).

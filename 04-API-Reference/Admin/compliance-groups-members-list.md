@@ -2,7 +2,7 @@
 title: "List Compliance Group Members - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/groups/members/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:31Z"
+fetched_at: "2026-10-20T06:39:08Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fgroups%2Fmembers%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fgroups%2Fmembers%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -214,13 +216,15 @@ Members
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -228,9 +232,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -246,6 +250,10 @@ To enable the Compliance API, see the setup guide.
 4.  [Members](https://platform.claude.com/docs/en/api/http/compliance/groups/members)
 
 # List Compliance Group Members
+
+Copy page
+
+
 
 GET/v1/compliance/groups/{group_id}/members
 
@@ -282,6 +290,16 @@ page: optional string
 Opaque pagination token from a previous response's `next_page` field. Pass this to retrieve the next page of results. Clients should treat this value as an opaque string and not attempt to parse or interpret its contents, as the format may change without notice.
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 "x-api-key": optional string
 

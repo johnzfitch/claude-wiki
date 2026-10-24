@@ -2,7 +2,7 @@
 title: "Claude Science (beta) | Claude by Anthropic"
 source_url: "https://www.claude.com/product/claude-science"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:26:07Z"
+fetched_at: "2026-10-23T06:30:16Z"
 tags: ["claude-ai", "enterprise", "search", "security"]
 ---
 
@@ -25,7 +25,7 @@ Download now
 
 ### Rich scientific artifacts, fully reproducible
 
-View proteins, structures, and molecules natively, with every result reproducible and traced to its code.
+View proteins, structures, and molecules natively, with every result designed to be reproducible and traced to their code.
 
 Interactive demo — open this page on a larger screen to try it
 
@@ -217,7 +217,7 @@ No. Claude Science is a public beta app, not a model. It uses the same Claude mo
 
 ### What can the Claude Science app do that a general AI assistant can’t?
 
-General AI assistants can discuss biology, but they can’t run a pipeline, navigate scientific databases, orchestrate cluster jobs, or keep track of what happened in a previous session. Claude Science manages compute environments per specialist, and saves full provenance on every result. The app ships with analysis specialists for genomics, single-cell, proteomics, structural biology, cheminformatics, and more. It can connect natively to 60+ scientific databases and domain-specific open models. Claude Science uses the skills in NVIDIA’s [BioNeMo Agent Toolkit (opens in new tab)](https://nvidianews.nvidia.com/news/nvidia-launches-bionemo-agent-toolkit-giving-ai-agents-the-tools-to-accelerate-scientific-discovery) to connect natively to the life sciences models and libraries in [BioNeMo (opens in new tab)](https://github.com/NVIDIA-BioNeMo), including Evo 2, Boltz-2, and OpenFold3.
+General AI assistants can discuss biology, but they typically can’t run a pipeline, navigate scientific databases, orchestrate cluster jobs, or keep track of what happened in a previous session. Claude Science manages compute environments per specialist, and saves full provenance on every result. The app ships with analysis specialists for genomics, single-cell, proteomics, structural biology, cheminformatics, and more. It can connect natively to 60+ scientific databases and domain-specific open models. Claude Science uses the skills in NVIDIA’s [BioNeMo Agent Toolkit (opens in new tab)](https://nvidianews.nvidia.com/news/nvidia-launches-bionemo-agent-toolkit-giving-ai-agents-the-tools-to-accelerate-scientific-discovery) to connect natively to the life sciences models and libraries in [BioNeMo (opens in new tab)](https://github.com/NVIDIA-BioNeMo), including Evo 2, Boltz-2, and OpenFold3.
 
 ### What about the pipelines and code I already have?
 
@@ -229,7 +229,7 @@ No. The Claude Science app is the workbench where specialized tools work togethe
 
 ### Is my research data private?
 
-The Claude Science app runs on your infrastructure; raw datasets and compute stay local; content included in prompts and model responses is processed by Anthropic under standard retention. Contact sales to discuss your team's specific needs.
+The Claude Science app runs on your infrastructure; raw datasets and compute stay on the machines, clusters, or cloud accounts you choose; content included in prompts and model responses is processed by Anthropic under standard retention. Contact sales to discuss your team's specific needs.
 
 ### Where does the Claude Science app run?
 
@@ -237,15 +237,15 @@ Install the app wherever your data lives: your laptop, a lab Linux box, an HPC l
 
 ### What does ‘provenance’ mean?
 
-Every artifact the Claude Science app produces includes the exact code that generated it, the environment it ran in, a plain-language description of what was done, and the conversation that led there. Results are reproducible months later, by anyone on your team. A background reviewer also flags any claim it can’t trace to evidence before results surface.
+Every artifact the Claude Science app produces includes the exact code that generated it, the environment it ran in, a plain-language description of what was done, and the conversation that led there. Results are designed to be reproducible months later, by anyone on your team. A background reviewer also works to flag any claim it can’t trace to evidence before results surface.
 
 ### Is this available now?
 
-Yes. The Claude Science app is in beta for macOS, Windows, and Linux on Pro, Max, Team, and Enterprise plans. Team and Enterprise users need their admin to enable it first.
+Yes. The Claude Science app is in beta for macOS, Windows, and Linux on Pro, Max, Team, and Enterprise plans. Team and Enterprise users need their admin to enable it first, except on the Claude Team plan for Scientists, where it’s on by default.
 
 ### Is there a discount for academic or nonprofit groups?
 
-Yes. The discounted [Claude Team plan for scientists](programs-claude-team-plan-for-research-labs.md) includes access to the Claude Science app, and is available to active scientists at academic and nonprofit research institutions around the world. Eligibility is verified through the group's principal investigator.
+Yes. The discounted [Claude Team plan for scientists](programs-team-plan-for-scientists.md) includes access to the Claude Science app, and is available to active scientists at academic and nonprofit research institutions around the world. Eligibility is verified through the group's principal investigator.
 
 If you are a for-profit company, contract research organization, or industry R&D team, please see our [Team and Enterprise plans](../17-Billing-Plans/pricing.md#team-&-enterprise).
 
@@ -266,7 +266,8 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -284,12 +285,12 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -322,7 +323,7 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -340,6 +341,7 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -355,7 +357,7 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -390,7 +392,8 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -408,12 +411,12 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -446,7 +449,7 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -464,6 +467,7 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -479,7 +483,7 @@ Start with the [documentation (opens in new tab)](https://claude.com/docs/claude
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

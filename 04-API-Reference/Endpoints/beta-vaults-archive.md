@@ -1,8 +1,8 @@
 ---
-title: "Archive Vault - Claude API Reference"
+title: "Archive a Vault - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/vaults/archive"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:08Z"
+fetched_at: "2026-10-20T06:39:40Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults%2Farchive)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults%2Farchive)
 
 
 
@@ -62,22 +62,22 @@ Deployment Runs
 Vaults
 
 
-Create Vault
+Create a Vault
 
 
 List Vaults
 
 
-Get Vault
+Retrieve a Vault
 
 
-Update Vault
+Update a Vault
 
 
-Delete Vault
+Delete a Vault
 
 
-Archive Vault
+Archive a Vault
 
 Credentials
 
@@ -140,7 +140,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -150,9 +150,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -223,13 +225,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -237,9 +241,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -248,14 +252,20 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Vaults](https://platform.claude.com/docs/en/api/http/beta/vaults)
 
-# Archive Vault
+# Archive a Vault
+
+Copy page
+
+
+
+cURL
 
 POST/v1/vaults/{vault_id}/archive
 
-Archive Vault
+Archive a Vault
 
 ##### Path parameters
 
@@ -269,11 +279,21 @@ Unique identifier of the vault to archive.
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -481,6 +501,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -509,7 +533,7 @@ id: string
 
 
 
-Unique identifier for the vault.
+The unique ID of the vault (`vlt_...`).
 
 
 
@@ -553,7 +577,7 @@ A timestamp in RFC 3339 format
 
 formatdate-time
 
-Archive Vault
+Archive a Vault
 
 cURL
 

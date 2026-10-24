@@ -2,15 +2,46 @@
 title: "Alignment faking in large language models \\ Anthropic"
 source_url: "https://www.anthropic.com/research/alignment-faking"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:12Z"
+fetched_at: "2026-10-21T06:30:39Z"
 tags: ["news-research"]
 ---
 
 # Alignment faking in large language models
 
-Dec 18, 2024
-
 [Read the paper](https://arxiv.org/abs/2412.14093)
+
+- [01Experimental setup](#experimental-setup)
+- [02Further analyses](#further-analyses)
+- [03Caveats](#caveats)
+- [04Conclusion](#conclusion)
+
+- Published
+
+  Dec 18, 2024
+
+- Team
+
+  [Alignment](team-alignment.md)
+
+- Topics
+
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Training](https://www.anthropic.com/search?topic=training)
+  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+
+  See more...
+
+Related articles
+
+- Alignment
+
+  Apr 3, 2025
+
+  [Reasoning models don't always say what they think](reasoning-models-dont-say-think.md)
+
+[View more](https://www.anthropic.com/search?topic=alignment)
 
 Most of us have encountered situations where someone appears to share our views or values, but is in fact only pretending to do so—a behavior that we might call “alignment faking”. Alignment faking occurs in literature: Consider the character of Iago in Shakespeare’s *Othello*, who acts as if he’s the eponymous character’s loyal friend while subverting and undermining him. It occurs in real life: Consider a politician who claims to support a particular cause in order to get elected, only to drop it as soon as they’re in office.
 
@@ -18,7 +49,7 @@ Could AI models also display alignment faking? When models are trained using rei
 
 This is a serious question for AI safety. As AI models become more capable and widely-used, we need to be able to rely on safety training, which nudges models away from harmful behaviors. If models can engage in alignment faking, it makes it harder to trust the outcomes of that safety training. A model might behave as though its preferences have been changed by the training—but might have been faking alignment all along, with its initial, contradictory preferences “locked in”.
 
-A [new paper](https://arxiv.org/abs/2412.14093) from Anthropic’s Alignment Science team, in collaboration with [Redwood Research](https://www.redwoodresearch.org/), provides the first empirical example of a large language model engaging in alignment faking without having been explicitly—or even, as we argue in our paper, implicitly¹—trained or instructed to do so.
+A [new paper](https://arxiv.org/abs/2412.14093) from Anthropic’s Alignment Science team, in collaboration with [Redwood Research](https://www.redwoodresearch.org/), provides the first empirical example of a large language model engaging in alignment faking without having been explicitly—or even, as we argue in our paper, implicitly^([1](#footnote-1))—trained or instructed to do so.
 
 ## Experimental setup
 
@@ -72,140 +103,22 @@ As with other research by our Alignment Science team (such as our work on [jailb
 
 Read the [full paper at this link](https://arxiv.org/abs/2412.14093).
 
-## Career opportunities at Anthropic
+### Career opportunities at Anthropic
 
 If you’re interested in working on questions like alignment faking, or on related questions of Alignment Science, we’d be interested in your application. You can find details on an open role on our team [at this link](https://boards.greenhouse.io/anthropic/jobs/4009165008). Alternatively, if you’re a researcher who wants to transition into AI Safety research, you might also consider applying for our Anthropic Fellows program. Details are [at this link](https://alignment.anthropic.com/2024/anthropic-fellows-program/); applications close on January 20, 2025.
 
-## Acknowledgements
+### Policy memo
+
+We prepared a [two-page memo for policymakers](https://assets.anthropic.com/m/52eab1f8cf3f04a6/original/Alignment-Faking-Policy-Memo.pdf) describing our results on alignment faking.
+
+## Footnotes
+
+01See Section 8.1 in the [full paper](https://assets.anthropic.com/m/983c85a201a962f/original/Alignment-Faking-in-Large-Language-Models-full-paper.pdf).[](#footnote-ref-1)
+
+## Authors & Acknowledgments
+
+### Acknowledgements
 
 This research was a collaboration between Anthropic’s Alignment Science team and [Redwood Research](https://www.redwoodresearch.org/). We are very grateful to the four independent reviewers for their comments and suggestions (see [this link](https://assets.anthropic.com/m/24c8d0a3a7d0a1f1/original/Alignment-Faking-in-Large-Language-Models-reviews.pdf) for all reviews).
 
 *UPDATE 20 December 2024: The full paper is now hosted on arXiv, and all links in this post have been updated to [that version](https://arxiv.org/abs/2412.14093). We also added a link to the Policy Memo.*
-
-## Policy memo
-
-We prepared a [two-page memo for policymakers](https://assets.anthropic.com/m/52eab1f8cf3f04a6/original/Alignment-Faking-Policy-Memo.pdf) describing our results on alignment faking.
-
-#### Footnotes
-
-1\. See Section 8.1 in the [full paper](https://assets.anthropic.com/m/983c85a201a962f/original/Alignment-Faking-in-Large-Language-Models-full-paper.pdf).
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

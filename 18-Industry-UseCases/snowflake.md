@@ -2,7 +2,7 @@
 title: "Snowflake Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/snowflake"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:59Z"
+fetched_at: "2026-10-23T06:29:54Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -44,13 +44,13 @@ Modern enterprises collect massive amounts of data, but extracting insights ofte
 
 ## Choosing Claude for intelligence and security
 
-After evaluating multiple AI models, Snowflake integrated Claude into Cortex Analyst for its exceptional performance in reasoning and coding. Arun Agarwal, Lead Product Marketing Manager for Cortex AI at Snowflake, said, "Anthropic's Claude models are raising the industry bar for intelligence. Claude 3.5 Sonnet impressed us with its advanced reasoning capabilities, strong knowledge retention, and high coding proficiency — giving us confidence in its ability to power enterprise-grade applications for our customers.”
+After evaluating multiple AI models, Snowflake integrated Claude into Cortex Analyst for its exceptional performance in reasoning and coding. Arun Agarwal, Lead Product Marketing Manager for Cortex AI at Snowflake, said, “Anthropic’s Claude models are raising the industry bar for intelligence. Claude 3.5 Sonnet impressed us with its advanced reasoning capabilities, strong knowledge retention, and high coding proficiency — giving us confidence in its ability to power enterprise-grade applications for our customers.”
 
 Security played a crucial role in the decision. Snowflake prioritizes security and privacy, and Anthropic is dedicated to building secure and reliable AI — creating strong alignment in their approach. With Claude now running inside Snowflake’s security perimeter, Snowflake customers can build and deploy AI applications while keeping their data governed. The integration allows customers to access Claude using familiar SQL, Python, and REST API interfaces, helping with easy adoption. By combining Snowflake’s secure, governed data access with Anthropic’s commitment to AI safety, customers can confidently use AI with privacy and security control.
 
 ## Transforming data access through AI
 
-Snowflake's customers can use the Cortex AI platform to interact with their data. Claude enhances the performance of these interactions.
+Snowflake’s customers can use the Cortex AI platform to interact with their data. Claude enhances the performance of these interactions.
 
 With Cortex Analyst, Snowflake enables its customers to:
 
@@ -62,17 +62,17 @@ With Cortex Analyst, Snowflake enables its customers to:
 
 ## Delivering measurable impact
 
-"Our partnership with Anthropic represents a massive leap forward in expanding on our promise to provide thousands of global customers with easy, efficient, and trusted AI for a holistic set of enterprise use cases," said Christian Kleinerman, EVP of Product at Snowflake. "By bringing Anthropic's industry-leading models to customers' enterprise data where it already lives, within the security and governance boundaries of the AI Data Cloud, we will unleash new ways for businesses to harness this data."
+“Our partnership with Anthropic represents a massive leap forward in expanding on our promise to provide thousands of global customers with easy, efficient, and trusted AI for a holistic set of enterprise use cases,” said Christian Kleinerman, EVP of Product at Snowflake. “By bringing Anthropic’s industry-leading models to customers’ enterprise data where it already lives, within the security and governance boundaries of the AI Data Cloud, we will unleash new ways for businesses to harness this data.”
 
-The integration of Claude is helping organizations extract value from their data, enabling teams to move from manual SQL queries to automated natural language insights. For data teams, this could mean faster analysis and broader access to insights. For business users, it could open up possibilities for data exploration without technical barriers. "Being able to access world-class AI models, all within our trusted Snowflake environment, has been instrumental in giving our team the freedom to explore AI use cases without worrying about the safety of our data," said Jake Hannan, Head of Data at Sigma.
+The integration of Claude is helping organizations extract value from their data, enabling teams to move from manual SQL queries to automated natural language insights. For data teams, this could mean faster analysis and broader access to insights. For business users, it could open up possibilities for data exploration without technical barriers. “Being able to access world-class AI models, all within our trusted Snowflake environment, has been instrumental in giving our team the freedom to explore AI use cases without worrying about the safety of our data,” said Jake Hannan, Head of Data at Sigma.
 
-Composable customer data platform provider Simon Data has seen particularly compelling results, using Claude to uncover previously hidden patterns and relationships in their data while maintaining strict governance standards. "As a composable CDP leader, generative AI is key to our ability to easily extract unknown or untapped value of customer data in Snowflake. Gaining access to Anthropic's industry-leading Claude 3.5 models within Snowflake Cortex AI empowers us to more quickly unlock value for our shared clients in a way that is secure and governed," said Jason Davis, CEO and Co-Founder of Simon Data.
+Composable customer data platform provider Simon Data has seen particularly compelling results, using Claude to uncover previously hidden patterns and relationships in their data while maintaining strict governance standards. “As a composable CDP leader, generative AI is key to our ability to easily extract unknown or untapped value of customer data in Snowflake. Gaining access to Anthropic’s industry-leading Claude 3.5 models within Snowflake Cortex AI empowers us to more quickly unlock value for our shared clients in a way that is secure and governed,” said Jason Davis, CEO and Co-Founder of Simon Data.
 
 ## Building the future of enterprise data
 
-Snowflake aims to transform how organizations interact with their data—moving from code-based queries to natural conversations that unlock insights for everyone. Harshal Pimpalkhute, Principal Product Manager for Cortex AI at Snowflake, said, "By combining Claude's reasoning, planning, and problem-solving with Snowflake's platform trusted by over 10,000 organizations worldwide, enterprises can unlock their data's potential with [Cortex Agents](https://www.snowflake.com/en/blog/ai-data-agents-snowflake-cortex/) and large-scale data processing."
+Snowflake aims to transform how organizations interact with their data—moving from code-based queries to natural conversations that unlock insights for everyone. Harshal Pimpalkhute, Principal Product Manager for Cortex AI at Snowflake, said, “By combining Claude’s reasoning, planning, and problem-solving with Snowflake’s platform trusted by over 10,000 organizations worldwide, enterprises can unlock their data’s potential with [Cortex Agents](https://www.snowflake.com/en/blog/ai-data-agents-snowflake-cortex/) and large-scale data processing.”
 
-This partnership represents more than just technological advancement. By combining Claude's advanced capabilities with Snowflake's trusted platform, customers are creating a future where data insights aren't confined to technical specialists. Instead, every employee can engage with their organization's data naturally and confidently, unlocking new possibilities for innovation, decision-making, and growth. Together, Snowflake and Anthropic are democratizing data intelligence and, as AI technology advances, extending its benefits across [every level of the enterprise](../17-Billing-Plans/pricing-enterprise.md).
+This partnership represents more than just technological advancement. By combining Claude’s advanced capabilities with Snowflake’s trusted platform, customers are creating a future where data insights aren’t confined to technical specialists. Instead, every employee can engage with their organization’s data naturally and confidently, unlocking new possibilities for innovation, decision-making, and growth. Together, Snowflake and Anthropic are democratizing data intelligence and, as AI technology advances, extending its benefits across [every level of the enterprise](../17-Billing-Plans/pricing-enterprise.md).
 
 ## Related stories
 
@@ -97,7 +97,8 @@ This partnership represents more than just technological advancement. By combini
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -115,12 +116,12 @@ This partnership represents more than just technological advancement. By combini
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -153,7 +154,7 @@ This partnership represents more than just technological advancement. By combini
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -171,6 +172,7 @@ This partnership represents more than just technological advancement. By combini
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -186,7 +188,7 @@ This partnership represents more than just technological advancement. By combini
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -221,7 +223,8 @@ This partnership represents more than just technological advancement. By combini
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -239,12 +242,12 @@ This partnership represents more than just technological advancement. By combini
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -277,7 +280,7 @@ This partnership represents more than just technological advancement. By combini
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -295,6 +298,7 @@ This partnership represents more than just technological advancement. By combini
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -310,7 +314,7 @@ This partnership represents more than just technological advancement. By combini
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

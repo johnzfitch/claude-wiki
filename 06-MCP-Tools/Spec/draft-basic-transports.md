@@ -1,8 +1,8 @@
 ---
 title: "Overview - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/draft/basic/transports"
+source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-09T06:27:46Z"
+fetched_at: "2026-10-21T06:29:13Z"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -25,7 +25,7 @@ Copy pageCopy page
 This page defines what a transport must provide to carry MCP messages, the standard transport bindings, and the requirements for defining new ones. Protocol semantics are identical on every transport. A transport is a **binding**: it defines how messages are framed and delivered, how request metadata is carried, and how cancellation and termination are signaled. It does not define what the messages mean: the [message patterns](2026-07-28-basic-patterns.md) are part of the core protocol and are the same on every binding. The binding pages specify the standard transports:
 
 1.  [stdio](2026-07-28-basic-transports-stdio.md): newline-delimited messages over the standard streams of a client-launched subprocess.
-2.  [Streamable HTTP](draft-basic-transports-streamable-http.md): each message is an HTTP POST to a single MCP endpoint; replies arrive as a JSON object or a request-scoped SSE stream.
+2.  [Streamable HTTP](2026-07-28-basic-transports-streamable-http.md): each message is an HTTP POST to a single MCP endpoint; replies arrive as a JSON object or a request-scoped SSE stream.
 
 It is also possible for clients and servers to implement [custom transports](#custom-transports).
 
@@ -41,7 +41,7 @@ MCP uses JSON-RPC to encode messages. JSON-RPC messages **MUST** be UTF-8 encode
 
 Request Metadata
 
-All protocol metadata travels in the message body: every request carries its protocol version and client capabilities in [`_meta.io.modelcontextprotocol/*`](https://modelcontextprotocol.io/specification/draft/basic/index#meta) fields. A binding **MAY** additionally mirror selected body fields into envelope metadata. The Streamable HTTP transport mirrors them into [HTTP headers](draft-basic-transports-streamable-http.md#request-metadata) so that intermediaries can route and inspect requests without parsing the body. The body remains the source of truth; bindings that mirror metadata define how mismatches are rejected.
+All protocol metadata travels in the message body: every request carries its protocol version and client capabilities in [`_meta.io.modelcontextprotocol/*`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta) fields. A binding **MAY** additionally mirror selected body fields into envelope metadata. The Streamable HTTP transport mirrors them into [HTTP headers](2026-07-28-basic-transports-streamable-http.md#request-metadata) so that intermediaries can route and inspect requests without parsing the body. The body remains the source of truth; bindings that mirror metadata define how mismatches are rejected.
 
 
 [​](#cancellation)
@@ -62,4 +62,4 @@ Clients and servers **MAY** implement additional custom transport mechanisms to 
 
 Backward Compatibility
 
-Earlier protocol revisions established a connection-scoped session with an `initialize` handshake and allowed servers to initiate JSON-RPC requests. Clients and servers that interoperate with those revisions detect the counterpart’s era and fall back as described in [Versioning: Backward Compatibility](draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions), which includes a compatibility matrix for implementors. Each binding page describes its transport-specific detection mechanics.
+Earlier protocol revisions established a connection-scoped session with an `initialize` handshake and allowed servers to initiate JSON-RPC requests. Clients and servers that interoperate with those revisions detect the counterpart’s era and fall back as described in [Versioning: Backward Compatibility](2026-07-28-basic-versioning.md#backward-compatibility-with-initialization-based-versions), which includes a compatibility matrix for implementors. Each binding page describes its transport-specific detection mechanics.

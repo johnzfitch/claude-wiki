@@ -2,7 +2,7 @@
 title: "Humach Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/humach"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:05Z"
+fetched_at: "2026-10-23T06:29:39Z"
 tags: ["api", "case-studies", "enterprise", "git", "security"]
 ---
 
@@ -51,14 +51,14 @@ To address these challenges, Humach partnered with Innovative Solutions, an Amaz
 
 Humach and Innovative Solutions chose Claude in Amazon Bedrock for several key reasons:
 
-1.  Versatility: Claude's ability to handle multiple use cases within a single model family was a significant advantage. Kelly Uhlrich, COO at Humach, emphasized the importance of a unified solution for customer experience management without relying on multiple vendors.
+1.  Versatility: Claude’s ability to handle multiple use cases within a single model family was a significant advantage. Kelly Uhlrich, COO at Humach, emphasized the importance of a unified solution for customer experience management without relying on multiple vendors.
 2.  Accuracy: Claude demonstrated superior responsiveness and output quality compared to other models, ensuring high-quality customer interactions.
-3.  Integration: Claude's availability in Amazon Bedrock simplified deployment and management, allowing seamless integration with Humach's existing AWS infrastructure.
+3.  Integration: Claude’s availability in Amazon Bedrock simplified deployment and management, allowing seamless integration with Humach’s existing AWS infrastructure.
 4.  Cost-effectiveness: By using a single model family for multiple tasks, Humach avoided integrating disparate solutions, saving time and resources in implementation and maintenance.
 
-## How Claude powers Humach's comprehensive CX solution
+## How Claude powers Humach’s comprehensive CX solution
 
-Innovative Solutions collaborated with Humach to develop a Custom Language Model (CLM) framework for Humach-specific and customer-specific interactions. This solution, powered by Claude in Amazon Bedrock, integrates various AI functionalities into Humach's mAI Pilot platform:
+Innovative Solutions collaborated with Humach to develop a Custom Language Model (CLM) framework for Humach-specific and customer-specific interactions. This solution, powered by Claude in Amazon Bedrock, integrates various AI functionalities into Humach’s mAI Pilot platform:
 
 - Digital Voice Agent: Enables natural language interactions with customers through voice channels, providing quick and accurate responses.
 - Live Agent Assistance: Helps human agents by summarizing information and providing relevant knowledge during customer interactions.
@@ -70,21 +70,21 @@ This solution allows Humach to offer a fully integrated, AI-powered CX platform 
 
 ## Transforming customer service efficiency and quality
 
-The collaboration between Humach and Innovative Solutions, leveraging Claude in Amazon Bedrock, has significantly improved Humach's customer service operations. The solution has led to a 15-20% increase in operational efficiency through optimized Custom Language Model responses. Additionally, Humach has automated about 20% of calls through customer adoption of AI-powered self-service options.
+The collaboration between Humach and Innovative Solutions, leveraging Claude in Amazon Bedrock, has significantly improved Humach’s customer service operations. The solution has led to a 15-20% increase in operational efficiency through optimized Custom Language Model responses. Additionally, Humach has automated about 20% of calls through customer adoption of AI-powered self-service options.
 
-Claude's assistance has also transformed human agents' work. By quickly summarizing relevant information and providing context-aware suggestions, Claude helps agents resolve customer issues faster and more accurately. This improves customer satisfaction and enhances job satisfaction for agents by reducing repetitive tasks and allowing them to focus on complex, high-value interactions.
+Claude’s assistance has also transformed human agents’ work. By quickly summarizing relevant information and providing context-aware suggestions, Claude helps agents resolve customer issues faster and more accurately. This improves customer satisfaction and enhances job satisfaction for agents by reducing repetitive tasks and allowing them to focus on complex, high-value interactions.
 
-The impact extends to Humach's clients as well. The AI-powered platform provides self-service knowledge that enhances customer satisfaction and empowers users to find answers quickly and efficiently without having to speak to a live agent. This solution enables Humach's clients to deliver superior customer experiences while optimizing operational costs.
+The impact extends to Humach’s clients as well. The AI-powered platform provides self-service knowledge that enhances customer satisfaction and empowers users to find answers quickly and efficiently without having to speak to a live agent. This solution enables Humach’s clients to deliver superior customer experiences while optimizing operational costs.
 
 ## Looking forward: The future of AI in customer experience
 
 As Humach innovates in the CX space, they see AI playing a crucial role in shaping the future of customer interactions. Bruce Sharpe envisions a world where AI-powered digital workers handle complex tasks based on natural language requests, eliminating the need for elaborate, predefined workflows.
 
-"Think of it as an individual persona that you can send information or requests to, and it does it on your behalf," explains Sharpe. This vision aligns with Humach's commitment to blending human expertise with advanced AI capabilities.
+“Think of it as an individual persona that you can send information or requests to, and it does it on your behalf,” explains Sharpe. This vision aligns with Humach’s commitment to blending human expertise with advanced AI capabilities.
 
 Humach plans to expand its use of Claude and other AI technologies to enhance its mAI Pilot platform. They’re exploring advanced features like AI-powered testing and evaluation of their own systems, deeper sentiment analysis, and sophisticated content generation.
 
-By partnering with Anthropic and leveraging Claude's capabilities, Humach aims to stay at the forefront of CX innovation. They see Claude as a key enabler in their mission to provide more personalized, efficient, and satisfying customer experiences while empowering human agents to focus on high-value interactions.
+By partnering with Anthropic and leveraging Claude’s capabilities, Humach aims to stay at the forefront of CX innovation. They see Claude as a key enabler in their mission to provide more personalized, efficient, and satisfying customer experiences while empowering human agents to focus on high-value interactions.
 
 ## Related stories
 
@@ -109,7 +109,8 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -127,12 +128,12 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -165,7 +166,7 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -183,6 +184,7 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -198,7 +200,7 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -233,7 +235,8 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -251,12 +254,12 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -289,7 +292,7 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -307,6 +310,7 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -322,7 +326,7 @@ By partnering with Anthropic and leveraging Claude's capabilities, Humach aims t
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

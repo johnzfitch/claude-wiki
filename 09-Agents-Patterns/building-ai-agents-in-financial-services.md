@@ -2,7 +2,7 @@
 title: "Building AI agents for financial services | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/building-ai-agents-in-financial-services"
 category: "09-Agents-Patterns"
-fetched_at: "2026-10-10T06:24:16Z"
+fetched_at: "2026-10-23T06:28:33Z"
 tags: ["agents"]
 ---
 
@@ -202,40 +202,40 @@ Learn more about how organizations like Visa, Citi, and NBIM are transforming t
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleOct 8, 2026
+ArticleOct 22, 2026
 
-### Building effective agent automations
+### Building agents: When to fold subagents into your main agent loop
 
-A reference implementation walkthrough for a scheduled Claude Managed Agents automation, with the config files and six rules for avoiding common failure modes.
-
-Claude Platform
-
-(opens in new tab)[](https://claude.dev/blog/automating-eval-design-and-hillclimbing/)
-
-ArticleOct 7, 2026
-
-### Automating eval design and hillclimbing with Claude
-
-Principles for designing evals and hillclimbing against them without fooling yourself, and how the claude-api skill's build-eval and hillclimb commands put them to work.
+When building agents in Claude Platform, using fewer subagents in favor of progressively disclosed context and tools can improve quality while reducing cost and latency. Here’s when and how to migrate.
 
 Claude Platform
 
-(opens in new tab)[](https://claude.dev/blog/claude-code-in-the-cloud/)
 
-ArticleOct 6, 2026
+ArticleOct 19, 2026
 
-### Claude Code in the cloud: a field guide to cloud sessions
+### Redesigning source control at Anthropic
 
-What changes when Claude Code runs on its own machine, the workflows where that pays off, and how to connect GitHub on the first try.
+As merges to Anthropic's monorepo grew from about 2,500 to more than 30,000 a day, source control became the biggest development bottleneck. Here is how the team built Scion, an in-house version control system designed for always-online agents, and migrated off git in five months.
 
 Claude Code
 
-(opens in new tab)[](https://www.claude.com/resources/articles/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk)
+(opens in new tab)[](https://www.claude.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day)
 
-ArticleOct 5, 2026
+ArticleOct 16, 2026
 
-### How Cresta turned CX expertise into an agent builder on the Claude Agent SDK
+### How an Anthropic BDR in Japan runs his day with Claude Managed Agents
 
-See how Cresta built Conductor, an agent that builds other agents, on the Claude Agent SDK, and how the team evaluates it with every new Claude model.
+How one business development representative clears his inbound queue and drafts bilingual customer emails with Claude Managed Agents and Claude Tag.
 
-Claude Platform
+Claude Managed Agents
+
+
+ArticleOct 16, 2026
+
+### How the Claude Code team does code review
+
+How do you review code at the volume agents produce it? The Claude Code team shares its review process, from Claude verifying its own work to risk-tiered human approval, plus a checklist for adopting it.
+
+Claude Code
+
+(opens in new tab)

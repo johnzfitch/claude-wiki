@@ -2,7 +2,7 @@
 title: "Wiz Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/wiz"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:03Z"
+fetched_at: "2026-10-23T06:29:58Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -51,11 +51,11 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 
 ## The challenge: Parsing PDF files at scale
 
-Wiz's entire codebase is written in Go, a programming language known for its memory safety and security properties. But for one critical task—parsing PDF files—no adequate Go library existed. The PDF specification is decades old, with hundreds of different implementations across applications and devices, making comprehensive parsing extremely complex. As Liron Levin, a software engineer on the DSPM team, explained: “If you go to Reddit or any other blog, you will see tons of questions like ‘how do I solve this in Go?’ and they will tell you, you can’t.”
+Wiz’s entire codebase is written in Go, a programming language known for its memory safety and security properties. But for one critical task—parsing PDF files—no adequate Go library existed. The PDF specification is decades old, with hundreds of different implementations across applications and devices, making comprehensive parsing extremely complex. As Liron Levin, a software engineer on the DSPM team, explained: “If you go to Reddit or any other blog, you will see tons of questions like ‘how do I solve this in Go?’ and they will tell you, you can’t.”
 
 The only reliable solution was pypdf, a Python library with over 20 years of development and more than 50,000 lines of code. But running Python inside a Go environment meant wrapping it in a resource-intensive sandbox—essentially a mini virtual machine—that hurt performance and couldn’t run everywhere. Some environments used the sandboxed Python approach; others relied on incomplete Go packages. The result was inconsistency: different tools producing different results for the same file.
 
-“We had a large discrepancy,” Levin said. “It made the code more complicated, and I never felt safe just running it. I wanted to fix this for two years, but the manual effort to port 50,000 lines of a 20-year-old Python library to Go would have taken two to three months of a highly specialized engineer's time. No product manager would ever prioritize that." The project stayed on the backlog.
+“We had a large discrepancy,” Levin said. “It made the code more complicated, and I never felt safe just running it. I wanted to fix this for two years, but the manual effort to port 50,000 lines of a 20-year-old Python library to Go would have taken two to three months of a highly specialized engineer’s time. No product manager would ever prioritize that.” The project stayed on the backlog.
 
 ## The solution: From experiment to production in 20 hours
 
@@ -67,7 +67,7 @@ Levin tried the migration on a Saturday. Within one hour of prompting, the basic
 
 Claude Code migrated the 50,000-line Python library into an 18,413-line Go codebase in roughly 20 hours—10 hours of active development and 10 hours of testing. Liran Benodis, the DSPM team lead, put it simply: “This project would never have happened without Claude Code. The amount of effort and time that we would have needed to invest—we just wouldn’t do it.”
 
-But migrating the code was only part of the challenge. When Levin deployed the new library to production with a feature flag, 99% of results matched the original—but the remaining 1% required debugging against real customer data. Since this sensitive data had to remain on-premises, Levin developed what his team calls 'polymorphic zero-knowledge debugging.' He would ask Claude Code to generate a diagnostic tool that extracts only structural, non-sensitive information about a problematic file, run that tool in a secure sandbox environment, and feed the redacted output back to Claude.
+But migrating the code was only part of the challenge. When Levin deployed the new library to production with a feature flag, 99% of results matched the original—but the remaining 1% required debugging against real customer data. Since this sensitive data had to remain on-premises, Levin developed what his team calls ‘polymorphic zero-knowledge debugging.’ He would ask Claude Code to generate a diagnostic tool that extracts only structural, non-sensitive information about a problematic file, run that tool in a secure sandbox environment, and feed the redacted output back to Claude.
 
 Through five to ten iterations per file, Claude could identify and fix bugs without ever seeing customer data. The team resolved 20 to 30 distinct issues this way.
 
@@ -83,7 +83,7 @@ Levin then completed a second migration: converting fastText, a 20,000-line C++ 
 
 Wiz’s engineers now consult Claude Code before reaching out to colleagues, use it to plan and execute new features, and review code with it as a standard part of their workflow. Some developers have moved away from traditional IDEs entirely, working primarily through Claude Code. The team has also built custom MCP connectors for their monitoring systems, enabling Claude Code to help detect and debug issues in production and test environments.
 
-Benodis sees the current mission as embedding Claude Code into every part of the development process. The team is also building an agent powered by Claude that monitors code in production, detects bugs and anomalies, and surfaces issues before they escalate. Individual developers now run multiple Claude Code instances simultaneously, each working on separate features in parallel. “It can't get any better than this,” said Levin. “It makes things that were impossible, possible.”
+Benodis sees the current mission as embedding Claude Code into every part of the development process. The team is also building an agent powered by Claude that monitors code in production, detects bugs and anomalies, and surfaces issues before they escalate. Individual developers now run multiple Claude Code instances simultaneously, each working on separate features in parallel. “It can’t get any better than this,” said Levin. “It makes things that were impossible, possible.”
 
 
 Claude Code on the web
@@ -115,7 +115,8 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -133,12 +134,12 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -171,7 +172,7 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -189,6 +190,7 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -204,7 +206,7 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -239,7 +241,8 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -257,12 +260,12 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -295,7 +298,7 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -313,6 +316,7 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -328,7 +332,7 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

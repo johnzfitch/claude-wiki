@@ -2,7 +2,7 @@
 title: "Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17161993-why-claude-switched-models-in-your-conversation-with-sonnet-5-5"
 category: "20-Models"
-fetched_at: "2026-10-10T06:25:32Z"
+fetched_at: "2026-10-23T06:29:12Z"
 tags: ["billing", "models", "security"]
 ---
 
@@ -127,4 +127,4 @@ Read our blog to learn more about **[Claude Sonnet 5.5](../15-Claude-AI-Features
 
 Our safeguards are built to match the capabilities of a model.
 
-For how safeguards work on Claude Opus 5.5, see **[Why Claude switched models in your conversation with Opus 5 or Opus 5.5](../15-Claude-AI-Features/why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5-claude-help-center.md)**. For Claude Fable 5.1, see **[Why Claude switched models in your conversation with Fable 5 or Fable 5.1](../15-Claude-AI-Features/why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1-claude-help.md)**.
+For how safeguards work on Claude Opus 5.5, see **[Why Claude switched models in your conversation with Opus 5 or Opus 5.5](https://support.claude.com/en/articles/16049681)**. For Claude Fable 5.1, see **[Why Claude switched models in your conversation with Fable 5 or Fable 5.1](https://support.claude.com/en/articles/15363606)**.

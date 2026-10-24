@@ -2,7 +2,7 @@
 title: "Delete Code Artifact - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/code/artifacts/delete"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:53Z"
+fetched_at: "2026-10-12T06:42:46Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fcode%2Fartifacts%2Fdelete)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fcode%2Fartifacts%2Fdelete)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,9 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
 
 
 Skills
@@ -220,7 +220,7 @@ Artifacts
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
 
 Support & configuration
 
@@ -228,9 +228,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -247,6 +247,10 @@ To enable the Compliance API, see the setup guide.
 
 # Delete Code Artifact
 
+Copy page
+
+
+
 DELETE/v1/compliance/apps/code/artifacts/{artifact_id}
 
 Permanently deletes a Code Artifact and all its versions. This is a destructive operation that cannot be undone. A 200 response means the deletion is initiated and the Artifact is claimed; content removal completes asynchronously.
@@ -262,6 +266,16 @@ artifact_id: string
 The Artifact ID (tagged ID, e.g., cart_abc123)
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 "x-api-key": optional string
 

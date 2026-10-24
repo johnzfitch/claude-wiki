@@ -2,14 +2,14 @@
 title: "Use Claude Code (local mode) and Claude Cowork (local mode) on a HIPAA-ready Enterprise plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17318731-use-claude-code-local-mode-and-claude-cowork-local-mode-on-a-hipaa-ready-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:25:25Z"
+fetched_at: "2026-10-23T06:29:16Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
 # Use Claude Code (local mode) and Claude Cowork (local mode) on a HIPAA-ready Enterprise plan
 
 
-The HIPAA configuration is an organization setting on Enterprise plans. It brings local Claude Code and Claude Cowork sessions, as opposed to cloud sessions such as Claude Code on the web, under your Business Associate Agreement (BAA) with Anthropic. This article calls them Claude Code (local mode) and Cowork (local mode). They run in one of these places:
+The HIPAA configuration is an organization setting on Enterprise plans. It brings local Claude Code and Claude Cowork sessions under your Business Associate Agreement (BAA) with Anthropic. Cloud sessions, including Claude Code sessions in the cloud and Cowork in the cloud, aren't covered. This article calls them Claude Code (local mode) and Cowork (local mode). They run in one of these places:
 
 - Claude Code in the terminal
 
@@ -19,7 +19,7 @@ The HIPAA configuration is an organization setting on Enterprise plans. It bring
 
 With the configuration applied, members can use both products with protected health information (PHI), on the conditions in **[Check what your BAA covers](#h_eba343b314)**. Applying it also turns off certain features across your organization.
 
-Available on Enterprise plans only. Only the Primary Owner can apply the HIPAA configuration.
+Available on Enterprise plans with an Anthropic account team. Only the Primary Owner can apply the HIPAA configuration.
 
 This article is for the Primary Owner, who applies the configuration, and for any Owner who helps decide whether to apply it, prepare for it, and confirm it.
 
@@ -55,15 +55,15 @@ Keep PHI out of these products and features. Your BAA doesn't cover them, even w
 
 - Connectors, MCP servers, plugins, desktop extensions, Claude in Chrome, and skills, including after an Owner turns them on
 
-- Cloud and remote features such as Claude Code on the web, which the configuration makes unavailable
+- Cloud and remote features such as Claude Code cloud sessions, which the configuration makes unavailable
 
 Ask your IT team to **[deploy managed settings](../02-Claude-Code-CLI/hipaa-setup.md#deploy-managed-settings)**, a policy file on each computer that directs members to sign in with a Claude Enterprise account and refuses cloud providers and gateways. For a full list of Eligible Services, please review the **[Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide)** and **[Business Associate Agreements (BAA) for Commercial Customers](../13-Enterprise-Admin/business-associate-agreements-baa-for-commercial-customers.md)**.
 
 ## Ask Anthropic to turn on the HIPAA configuration
 
-You apply the configuration with the "Apply HIPAA configuration" button in **Organization settings \> Data and privacy**. The button is grayed out until Anthropic turns it on for your organization. Ask your Anthropic account team to turn it on.
+You apply the configuration with the "Apply HIPAA configuration" button in **Organization settings \> Data and privacy**. The button is grayed out until Anthropic turns it on for your organization. Ask your Anthropic account team to turn it on. The HIPAA configuration is only available to organizations with an Anthropic account team at this time. Anthropic Support can’t turn it on for your organization.
 
-If your organization doesn't have an account team, you can't apply the configuration. See **[Coverage until you apply the configuration](#h_415ff36247)** and **[Business Associate Agreements (BAA) for Commercial Customers](../13-Enterprise-Admin/business-associate-agreements-baa-for-commercial-customers.md)** for what your BAA covers if you haven't applied it.
+See **[Coverage until you apply the configuration](#h_415ff36247)** and **[Business Associate Agreements (BAA) for Commercial Customers](../13-Enterprise-Admin/business-associate-agreements-baa-for-commercial-customers.md)** for what your BAA covers if you haven't applied it.
 
 ### Coverage until you apply the configuration
 
@@ -117,7 +117,7 @@ To apply the configuration, you must be the Primary Owner and have a verified em
 
 The configuration applies to your existing Claude Enterprise organization, the same one your members use for chat, not to a separate account. It applies to Claude Code and Cowork together, and to every member.
 
-**Warning:** When you apply the HIPAA configuration, certain features start turning off across your organization as soon as you confirm. An Owner can turn some features back on, but cloud features such as Claude Code on the web stay unavailable.
+**Warning:** When you apply the HIPAA configuration, certain features start turning off across your organization as soon as you confirm. An Owner can turn some features back on, but cloud features such as Claude Code cloud sessions stay unavailable.
 
 To apply the configuration:
 
@@ -175,8 +175,8 @@ These tools show what happens in Claude Code (local mode) and Cowork (local mode
 
 - **OpenTelemetry:** You can send events from both products to your own monitoring tools. The data you export is your organization's responsibility. Set the destination for Cowork in **Organization settings \> Data and privacy \> Monitoring**. Your IT team sets the destination for Claude Code in **[managed settings](../13-Enterprise-Admin/monitoring-usage.md#administrator-configuration)**.
 
-**Important:** By default, Cowork's OpenTelemetry events include prompt text, Claude's responses, and tool inputs, so PHI in a session may reach your monitoring tools. No organization setting turns that content off. Your IT team turns it off on each computer, as described in **[Content capture](https://claude.com/docs/cowork/monitoring#content-capture)**.
+**Important:** Cowork's OpenTelemetry events can include prompt text, Claude's responses, and tool inputs, so PHI in a session may reach your monitoring tools. Current versions of Claude Desktop only send metadata unless content capture is turned on, but some older versions send content such as prompt text and tool inputs by default. No organization setting turns that content off. Ask your IT team to set `otlpContentCapture` to `[]` so that every version that supports the policy sends metadata only, as described in **[Content capture](https://claude.com/docs/cowork/monitoring#content-capture)**. Metadata still includes the paths of connected folders, user email addresses, and API error messages, and an API error message can sometimes repeat part of the request. If these can contain PHI, filter or redact them at your collector.
 
 ## Get help
 
-For questions about the BAA, the Implementation Guide for HIPAA Entities, or the configuration, contact your Anthropic account team. Do not include PHI in a support request.
+For questions about the BAA, the Implementation Guide for HIPAA Entities, or the configuration, contact your Anthropic account team. If your organization doesn’t have an account team, contact **[our Support team](../15-Claude-AI-Features/how-to-get-support.md)**. Do not include PHI in a support request.

@@ -2,7 +2,7 @@
 title: "Models - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/models"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:00Z"
+fetched_at: "2026-10-20T06:38:31Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmodels)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmodels)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,17 +232,23 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 
 # Models
 
-##### [List Models](http-beta-models-list.md)
+Copy page
+
+
+
+cURL
+
+##### [List Models](platform-claude-com-http-beta-models-list.md)
 
 GET/v1/models
 
 List available models.
 
-##### [Get a Model](http-beta-models-retrieve.md)
+##### [Get a Model](platform-claude-com-http-beta-models-retrieve.md)
 
 GET/v1/models/{model_id}
 
@@ -270,7 +280,7 @@ Compaction capability details: whether the model accepts the top-level `compacti
 
 
 
-summarize: [BetaCapabilitySupport](http-beta-models.md#beta_capability_support) { supported }
+summarize: [BetaCapabilitySupport](platform-claude-com-http-beta-models.md#beta_capability_support) { supported }
 
 
 
@@ -298,7 +308,7 @@ Context management capability details.
 
 
 
-clear_thinking_20251015: [BetaCapabilitySupport](http-beta-models.md#beta_capability_support) { supported } or null
+clear_thinking_20251015: [BetaCapabilitySupport](platform-claude-com-http-beta-models.md#beta_capability_support) { supported } or null
 
 
 
@@ -312,7 +322,7 @@ Whether this capability is supported by the model.
 
 
 
-clear_tool_uses_20250919: [BetaCapabilitySupport](http-beta-models.md#beta_capability_support) { supported } or null
+clear_tool_uses_20250919: [BetaCapabilitySupport](platform-claude-com-http-beta-models.md#beta_capability_support) { supported } or null
 
 
 
@@ -326,7 +336,7 @@ Whether this capability is supported by the model.
 
 
 
-compact_20260112: [BetaCapabilitySupport](http-beta-models.md#beta_capability_support) { supported } or null
+compact_20260112: [BetaCapabilitySupport](platform-claude-com-http-beta-models.md#beta_capability_support) { supported } or null
 
 
 
@@ -354,7 +364,7 @@ Effort (reasoning_effort) capability details.
 
 
 
-BetaModelCapabilities object{ batch, citations, code_execution, 7 more }
+BetaModelCapabilities object{ batch, citations, code_execution, 8 more }
 
 
 
@@ -362,9 +372,81 @@ Model capability information.
 
 
 
-BetaModelInfo object{ type: "model", id, allowed_fallback_models, 5 more }
+BetaModelInfo object{ type: "model", id, allowed_fallback_models, 9 more }
 
 
+
+
+
+BetaModelLine = "haiku" or "sonnet" or "opus" or 2 more
+
+
+
+A Claude model line, such as `opus` or `sonnet`. More lines may be added as new values.
+
+One of the following:
+
+"haiku"
+
+
+
+"sonnet"
+
+
+
+"opus"
+
+
+
+"fable"
+
+
+
+"mythos"
+
+
+
+
+
+BetaServerToolsCapability object{ code_execution, supported, web_search }
+
+
+
+Web search and code execution tool support, with one entry per tool.
+
+
+
+code_execution: [BetaCapabilitySupport](platform-claude-com-http-beta-models.md#beta_capability_support) { supported }
+
+
+
+Whether the model supports the code execution tool: true when the model supports at least one version of the tool, not necessarily every version.
+
+supported: boolean
+
+
+
+Whether this capability is supported by the model.
+
+supported: boolean
+
+
+
+Whether this capability is supported by the model.
+
+
+
+web_search: [BetaCapabilitySupport](platform-claude-com-http-beta-models.md#beta_capability_support) { supported }
+
+
+
+Whether the model supports the web search tool: true when the model supports at least one version of the tool, not necessarily every version.
+
+supported: boolean
+
+
+
+Whether this capability is supported by the model.
 
 
 
@@ -382,7 +464,7 @@ Whether this capability is supported by the model.
 
 
 
-types: [BetaThinkingTypes](http-beta-models.md#beta_thinking_types) { adaptive, enabled }
+types: [BetaThinkingTypes](platform-claude-com-http-beta-models.md#beta_thinking_types) { adaptive, between_tools, disabled, enabled }
 
 
 
@@ -390,64 +472,8 @@ Supported thinking type configurations.
 
 
 
-adaptive: [BetaCapabilitySupport](http-beta-models.md#beta_capability_support) { supported }
+BetaThinkingTypes object{ adaptive, between_tools, disabled, enabled }
 
 
 
-Whether the model supports thinking with type 'adaptive' (auto).
-
-supported: boolean
-
-
-
-Whether this capability is supported by the model.
-
-
-
-enabled: [BetaCapabilitySupport](http-beta-models.md#beta_capability_support) { supported }
-
-
-
-Whether the model supports thinking with type 'enabled'.
-
-supported: boolean
-
-
-
-Whether this capability is supported by the model.
-
-
-
-BetaThinkingTypes object{ adaptive, enabled }
-
-
-
-Supported thinking type configurations.
-
-
-
-adaptive: [BetaCapabilitySupport](http-beta-models.md#beta_capability_support) { supported }
-
-
-
-Whether the model supports thinking with type 'adaptive' (auto).
-
-supported: boolean
-
-
-
-Whether this capability is supported by the model.
-
-
-
-enabled: [BetaCapabilitySupport](http-beta-models.md#beta_capability_support) { supported }
-
-
-
-Whether the model supports thinking with type 'enabled'.
-
-supported: boolean
-
-
-
-Whether this capability is supported by the model.
+Which `thinking.type` values the model accepts on requests. Read each key on its own: for example, `enabled` can be false while `disabled` is true.

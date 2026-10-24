@@ -2,7 +2,7 @@
 title: "List Effective Spend Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits/effective/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-10T06:24:57Z"
+fetched_at: "2026-10-18T06:27:07Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fspend_limits%2Feffective%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fspend_limits%2Feffective%2Flist)
 
 
 
@@ -153,6 +153,8 @@ Plugins
 
 Plugin Marketplaces
 
+Telemetry Destinations
+
 
 Skills
 
@@ -222,13 +224,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -238,7 +242,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -247,18 +251,24 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits)
 5.  [Effective](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/effective)
 
 # List Effective Spend Limits
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/spend_limits/effective
 
 List each member's effective spend limit and period-to-date spend.
 
-Returns one row per (member, period) the member resolves a spend limit for, with the `source` scope the spend limit was inherited from. Paginates by member, so a member's periods never split across pages. Listing Claude Console limits is in an early access preview. To request access, contact your Anthropic account team.
+Returns one row per (member, period) the member resolves a spend limit for, with the `source` scope the spend limit was inherited from. Paginates by member, so a member's periods never split across pages. Supported for Claude Enterprise organizations only, not for Claude Console organizations.
 
 ##### Query parameters
 
@@ -452,7 +462,7 @@ The member's spend so far in the current period, as a non-negative decimal strin
 
 
 
-scope: [BetaSpendLimitUserScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_user_scope) or [BetaSpendLimitSeatTierScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_seat_tier_scope) or [BetaSpendLimitRBACGroupScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_rbac_group_scope) or 3 more
+scope: [BetaSpendLimitUserScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_user_scope) or [BetaSpendLimitSeatTierScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_seat_tier_scope) or [BetaSpendLimitRBACGroupScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_rbac_group_scope) or 4 more
 
 
 
@@ -576,7 +586,25 @@ Tagged ID of the workspace the spend limit applies to.
 
 
 
-source: [BetaSpendLimitUserScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_user_scope) or [BetaSpendLimitSeatTierScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_seat_tier_scope) or [BetaSpendLimitRBACGroupScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_rbac_group_scope) or 3 more
+BetaSpendLimitUsageTierScope object{ type: "usage_tier" }
+
+
+
+Scope of the monthly spend cap Anthropic sets for a Claude Console organization from its usage tier, or a higher cap Anthropic granted the organization. Read-only; its `created_at` and `updated_at` are the organization's creation time, so `amount` can change while `updated_at` stays the same.
+
+
+
+type: "usage_tier"
+
+
+
+Scope type. Always `usage_tier` for this scope.
+
+defaultusage_tier
+
+
+
+source: [BetaSpendLimitUserScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_user_scope) or [BetaSpendLimitSeatTierScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_seat_tier_scope) or [BetaSpendLimitRBACGroupScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_rbac_group_scope) or 4 more
 
 
 
@@ -697,6 +725,24 @@ workspace_id: string
 
 
 Tagged ID of the workspace the spend limit applies to.
+
+
+
+BetaSpendLimitUsageTierScope object{ type: "usage_tier" }
+
+
+
+Scope of the monthly spend cap Anthropic sets for a Claude Console organization from its usage tier, or a higher cap Anthropic granted the organization. Read-only; its `created_at` and `updated_at` are the organization's creation time, so `amount` can change while `updated_at` stays the same.
+
+
+
+type: "usage_tier"
+
+
+
+Scope type. Always `usage_tier` for this scope.
+
+defaultusage_tier
 
 spend_limit_id: string
 

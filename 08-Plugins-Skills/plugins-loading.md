@@ -2,7 +2,7 @@
 title: "Plugin loading reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/loading"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-04T08:31:21Z"
+fetched_at: "2026-10-22T06:29:28Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -13,7 +13,11 @@ tags: ["claude-code", "plugins"]
 - [Find where a plugin came from](#find-where-a-plugin-came-from)
   - [Entry name and manifest name](#entry-name-and-manifest-name)
   - [Plugins shared through a repository](#plugins-shared-through-a-repository)
+  - [Trust check and component limits for repository plugins](#trust-check-and-component-limits-for-repository-plugins)
+  - [Check why a repository plugin didn’t load](#check-why-a-repository-plugin-didnt-load)
+  - [Skills-directory plugins blocked by managed settings](#skills-directory-plugins-blocked-by-managed-settings)
   - [Plugins synced from claude.ai](#synced-plugins)
+  - [Sync timing in cloud Cowork sessions](#sync-timing-in-cloud-cowork-sessions)
   - [Sync timing in terminal sessions](#sync-timing-in-terminal-sessions)
   - [Sign-in requirements for terminal sync](#sign-in-requirements-for-terminal-sync)
   - [Control which synced plugins load](#control-which-synced-plugins-load)
@@ -35,6 +39,7 @@ tags: ["claude-code", "plugins"]
   - [Which marketplaces and plugins auto-update](#which-marketplaces-and-plugins-auto-update)
   - [When a command source re-runs](#when-a-command-source-re-runs)
 - [Name conflicts](#name-conflicts)
+  - [Hooks when two enabled plugins share a name](#hooks-when-two-enabled-plugins-share-a-name)
   - [Keep a session-only plugin from loading](#keep-a-session-only-plugin-from-loading)
 - [Next steps](#next-steps)
 
@@ -61,6 +66,7 @@ Start with [Check which stage a plugin reached](#check-which-stage-a-plugin-reac
 - An update changed nothing: [Versions and updates](#versions-and-updates)
 - You’re looking at the files under `~/.claude/plugins/`: [Find plugins on disk](#find-plugins-on-disk)
 - A `--plugin-dir` plugin didn’t load, or a same-named plugin loaded instead: [Name conflicts](#name-conflicts)
+- A plugin under `~/.claude/skills/` or `.claude/skills/` didn’t load, and no error says why: [Skills-directory plugins blocked by managed settings](#skills-directory-plugins-blocked-by-managed-settings)
 
 
 [​](#check-which-stage-a-plugin-reached)
@@ -119,13 +125,47 @@ A marketplace plugin has two names, and they can differ:
 
 Plugins shared through a repository
 
-To share a plugin through a repository, list it under `enabledPlugins` in `.claude/settings.json` or place it under `.claude/skills/`. Claude Code doesn’t scan a project’s `.claude/plugins/` directory. A cloud session doesn’t add the marketplaces a repository lists under [`extraKnownMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#extraknownmarketplaces), because that requires the workspace trust dialog, which a cloud session never shows. A project-scope skills-directory plugin loads only from the `.claude/skills/` of the session’s [primary working directory](../02-Claude-Code-CLI/permissions.md#working-directories), and only after you accept the [workspace trust dialog](../02-Claude-Code-CLI/permissions.md#what-runs-before-you-trust-a-folder) for that folder. It doesn’t [search parent directories up to the repository root](skills.md#discovery-from-parent-and-nested-directories) the way plain skills and commands do. If you launch from a subdirectory, a plugin at the repository root doesn’t load. Launch from the repository root instead, or [move the session there with `/cd`](../02-Claude-Code-CLI/permissions.md#move-the-session-to-another-directory) on v2.1.246 or later. A project-scope plugin is checked into the repository and reaches every collaborator who clones it. Because that content comes from the repository rather than from you, it loads only after the same trust check that applies to project allow rules in `.claude/settings.json`. Trusting a parent folder or running with `-p` isn’t enough. Components that run code are restricted further:
+To share a plugin through a repository, list it under `enabledPlugins` in `.claude/settings.json` or place it under `.claude/skills/`. Claude Code doesn’t scan a project’s `.claude/plugins/` directory. A cloud session doesn’t add the marketplaces a repository lists under [`extraKnownMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#extraknownmarketplaces), because that requires the workspace trust dialog, which a cloud session never shows.
+
+
+[​](#trust-check-and-component-limits-for-repository-plugins)
+
+Trust check and component limits for repository plugins
+
+A project-scope plugin is checked into the repository and reaches every collaborator who clones it. Because that content comes from the repository rather than from you, it loads only after the same trust check that applies to project allow rules in `.claude/settings.json`. Trusting a parent folder or running with `-p` isn’t enough. Components that run code are restricted further:
 
 - MCP servers it declares go through the [same per-server approval](../06-MCP-Tools/General/mcp.md) as a project `.mcp.json`
 - MCP servers it declares as an [MCP bundle](plugins-reference.md#mcpservers), a `.mcpb` or `.dxt` file, or from a file outside the plugin directory are skipped. Declare them inline or in a `.mcp.json` inside the plugin directory
 - [Background monitors](plugins-components.md#monitors) do not load
 
-Personal-scope plugins have none of these restrictions. For how to write `--plugin-dir` and skills-directory plugins, see [Create plugins](plugins-create.md).
+Neither the trust check nor these component limits apply to a plugin under your own `~/.claude/skills/`. For how to write `--plugin-dir` and skills-directory plugins, see [Create plugins](plugins-create.md).
+
+
+[​](#check-why-a-repository-plugin-didnt-load)
+
+Check why a repository plugin didn’t load
+
+If a plugin in your repository’s `.claude/skills/` doesn’t load, check for these causes:
+
+- **In a subdirectory**: a plugin at the repository root doesn’t load. Claude Code reads the `.claude/skills/` of the session’s [primary working directory](../02-Claude-Code-CLI/permissions.md#working-directories) and, unlike plain skills and commands, doesn’t [search parent directories](skills.md#discovery-from-parent-and-nested-directories) for plugins. Launch from the repository root instead, or [move the session there with `/cd`](../02-Claude-Code-CLI/permissions.md#move-the-session-to-another-directory) on v2.1.246 or later
+- **From the desktop app, in a worktree**: the plugin loads from the main checkout’s `.claude/skills/` rather than the worktree’s. See [What worktrees share with the main checkout](../02-Claude-Code-CLI/worktrees.md#what-worktrees-share-with-the-main-checkout)
+- **In a folder you haven’t trusted**: the plugin loads only after you accept the [workspace trust dialog](../02-Claude-Code-CLI/permissions.md#what-runs-before-you-trust-a-folder) for that folder
+- **In an organization that manages Claude Code**: see [Skills-directory plugins blocked by managed settings](#skills-directory-plugins-blocked-by-managed-settings)
+
+
+[​](#skills-directory-plugins-blocked-by-managed-settings)
+
+Skills-directory plugins blocked by managed settings
+
+If a plugin folder in `~/.claude/skills/` or a project’s `.claude/skills/` didn’t load and you see no error, your administrator may have blocked it through [managed settings](../13-Enterprise-Admin/managed-settings.md). These folders come from you or your repository rather than from a marketplace, so Claude Code skips them when your administrator sets one of these restrictions:
+
+- **Customization locked to plugins**: [`strictPluginOnlyCustomization`](../02-Claude-Code-CLI/settings-reference.md#strictpluginonlycustomization) set to `true` or to an array naming one or more kinds of customization to lock. The whole plugin is skipped when any one kind is locked, such as `mcp`, whichever components it has.
+- **Marketplace sources restricted**: a [`strictKnownMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#strictknownmarketplaces) allowlist without a `{ "source": "skills-dir" }` entry, or a [`blockedMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#blockedmarketplaces) list with one.
+
+`/plugin` and `claude plugin list` show no plugin and no error for a skipped folder. Its `/<name>:<skill>` commands and agents are missing, as are its hooks and MCP servers. Unless skills are among the locked kinds, a `SKILL.md` at the folder’s root still loads as a plain skill. In that case `/<name>` keeps working, and the `/plugin` **Installed** tab lists that skill under **Skills**.
+
+- **Confirm the cause**: run `/status` in a Claude Code session. If the `Setting sources` line lists `Enterprise managed settings`, ask your administrator whether one of these settings applies to you. If it doesn’t, see [Check why a repository plugin didn’t load](#check-why-a-repository-plugin-didnt-load) for other causes.
+- **Load the whole plugin**: add it to a [marketplace](plugin-marketplaces.md#create-a-marketplace) your organization allows and install it from there. To load it for one session instead, start `claude` from your shell with [`--plugin-dir`](plugins-cli-reference.md#flags-that-load-a-plugin-for-one-session) and the folder’s path, which works unless your administrator has also turned off that flag.
 
 
 [​](#synced-plugins)
@@ -138,11 +178,18 @@ A plugin you turn on for your claude.ai account also loads in Claude Code, along
 - **Terminal sessions**: each time you start Claude Code, it syncs once in the background, downloading new and updated plugins and removing the ones that you or your organization turned off. Syncing in terminal sessions requires Claude Code v2.1.273 or later
 
 
+[​](#sync-timing-in-cloud-cowork-sessions)
+
+Sync timing in cloud Cowork sessions
+
+If you turn a plugin on or off for your claude.ai account during a Cowork session that runs in the cloud, keep working in that session. If nothing has changed after a few messages, start a new session.
+
+
 [​](#sync-timing-in-terminal-sessions)
 
 Sync timing in terminal sessions
 
-Because the terminal sync runs in the background, it can finish after your session has started. When it adds, updates, or removes a synced plugin in an interactive session, you see `Plugins changed. Run /reload-plugins to activate.` Run `/reload-plugins` to load the change in that session, or leave it for the next time you start Claude Code. If you enable a plugin on claude.ai while a session is running, the plugin downloads the next time you start Claude Code.
+Because the terminal sync runs in the background, it can finish after your session has started. When it adds, updates, or removes a synced plugin in an interactive session, you see `Plugins changed. Run /reload-plugins to activate.` Run `/reload-plugins` to load the change in that session, or leave it for the next time you start Claude Code. If you turn a plugin on or off for your claude.ai account during a terminal session, Claude Code downloads or removes it the next time you start Claude Code.
 
 
 [​](#sign-in-requirements-for-terminal-sync)
@@ -415,6 +462,13 @@ When enabled plugins from different origins share a manifest name, this order de
 5.  A plugin [synced from claude.ai](#synced-plugins). When an enabled plugin from any other origin matches its name, Claude Code loads that plugin and reports the synced copy as not loaded. To use the claude.ai copy instead, disable your own copy
 
 Because the order compares manifest names, a `--plugin-dir` plugin named `hello-plugin` replaces `hello@example-marketplace` when that plugin’s manifest also says `"name": "hello-plugin"`.
+
+
+[​](#hooks-when-two-enabled-plugins-share-a-name)
+
+Hooks when two enabled plugins share a name
+
+When you install and enable two plugins with the same manifest name from different marketplaces, both appear as enabled in `/plugin`, but the hooks of one of them are left out. One plugin per name registers the hooks in its `hooks/hooks.json`, and one plugin per name loads a [hooks module](plugins-mods-overview.md). When your organization’s managed settings turn on one of the copies, that copy holds the name. Otherwise the copy Claude Code loads first holds it. To see which copy holds the name, run `/plugin` in your session and open the **Errors** tab. A note there for the copy whose hooks were left out names the copy that holds the name, and the left-out copy’s details show the same note. For `hooks/hooks.json` hooks the note begins `Its hooks.json hooks do not run`, and for a hooks module it begins `Its hooks module does not load`. The note requires Claude Code v2.1.296 or later. To run the left-out copy’s hooks instead, disable or uninstall the copy that holds the name, then run `/reload-plugins` in your session. The reload registers the remaining copy’s hooks and clears the note. When the copy that holds the name is one your managed settings turn on, you can’t disable it, and the other copy’s hooks stay off while both are installed.
 
 
 [​](#keep-a-session-only-plugin-from-loading)

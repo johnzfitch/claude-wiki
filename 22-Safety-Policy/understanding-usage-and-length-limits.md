@@ -2,7 +2,7 @@
 title: "How do usage and length limits work? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:04Z"
+fetched_at: "2026-10-23T06:28:51Z"
 tags: ["safety"]
 ---
 
@@ -19,7 +19,7 @@ Your usage is affected by several factors, including the length and complexity o
 
 Note that your usage of all different Claude product surfaces (claude.ai, Claude Code, Claude Desktop) counts towards the same usage limit.
 
-Learn more about **[changing the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
+Learn more about **[changing the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings-claude-help-center.md)**.
 
 ## How can I get unlimited usage?
 
@@ -73,4 +73,4 @@ While you can't increase the fixed context window size for your plan, you can us
 
 The main distinction is that usage limits control *how much* you can use Claude across all your conversations, while length limits control *how long* any single conversation can become. Usage limits are about quantity over time, while length limits are about the depth and complexity of individual conversations.
 
-If you hit your session limit or weekly limit, you can wait for it to reset or upgrade your plan. With usage credits enabled, your work continues on usage credits instead of stopping. If you hit a length limit, you can start a new conversation or use **[features like projects](../15-Claude-AI-Features/what-are-projects.md)** to work with larger amounts of information more efficiently.
+If you hit your session limit or weekly limit, you can wait for it to reset or upgrade your plan. If you upgrade, your new plan’s limits apply right away. With usage credits enabled, your work continues on usage credits instead of stopping. If you hit a length limit, you can start a new conversation or use **[features like projects](../15-Claude-AI-Features/what-are-projects.md)** to work with larger amounts of information more efficiently.

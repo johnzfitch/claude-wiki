@@ -2,7 +2,7 @@
 title: "Parcha Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/parcha"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:21Z"
+fetched_at: "2026-10-23T06:30:04Z"
 tags: ["agents", "api", "case-studies", "enterprise", "sdk", "security"]
 ---
 
@@ -30,11 +30,11 @@ Bank-grade certification achieved
 
 Tools built with Claude models pass the most challenging model governance evaluations in the industry
 
-*"The world's leading fintechs and banks use Parcha to scale their customer due diligence processes with AI. But one of the challenges we've always faced is how to scale our product to capture all the unique workflows of every fintech or bank, which has limited the types of customers we could serve. By adding the Agent SDK to our platform, our product can now adapt to each of our customers' unique needs on the fly, without the need to use a complex workflow editor, which means we can unlock more use cases and customers than ever before."*
+*“The world’s leading fintechs and banks use Parcha to scale their customer due diligence processes with AI. But one of the challenges we’ve always faced is how to scale our product to capture all the unique workflows of every fintech or bank, which has limited the types of customers we could serve. By adding the Agent SDK to our platform, our product can now adapt to each of our customers’ unique needs on the fly, without the need to use a complex workflow editor, which means we can unlock more use cases and customers than ever before.”*
 
 —Miguel Rios Berrios, CTO
 
-Parcha empowers banks and fintechs to onboard customers efficiently with stronger compliance. The company serves some of the world's largest fintech companies, including Airwallex, Pipe, Flutterwave, and Alloy, helping them navigate complex regulatory requirements while maintaining rapid growth.
+Parcha empowers banks and fintechs to onboard customers efficiently with stronger compliance. The company serves some of the world’s largest fintech companies, including Airwallex, Pipe, Flutterwave, and Alloy, helping them navigate complex regulatory requirements while maintaining rapid growth.
 
 ## With Claude, Parcha:
 
@@ -46,35 +46,35 @@ Parcha empowers banks and fintechs to onboard customers efficiently with stronge
 
 Financial institutions face a paradox: they all need to monitor transactions and conduct customer due diligence, but each does it differently. Traditional approaches led engineering teams to build rigid workflows for specific customers that were nearly impossible to adapt for others. Parcha had spent two years developing their own workflow engine, but needed to make it work more naturally and flexibly across their entire customer base.
 
-Beyond their enterprise clients, Parcha recognized that compliance analysts at every institution spend hours conducting open-source research on businesses and individuals using Google—work that's time-consuming, unauditable, and difficult to standardize.
+Beyond their enterprise clients, Parcha recognized that compliance analysts at every institution spend hours conducting open-source research on businesses and individuals using Google—work that’s time-consuming, unauditable, and difficult to standardize.
 
 ## Why Claude Agent SDK
 
-After two years building with Claude models, Parcha selected the Agent SDK based on proven results and deep familiarity with its capabilities. "Our bank-grade compliant tools are built and certified using Claude models, passing some of the most challenging model governance evaluations in the industry," Miguel Rios Berrios, CTO, explains. The team chose Claude specifically for its extended reasoning capabilities and reliability—critical factors for compliance applications where errors have regulatory consequences.
+After two years building with Claude models, Parcha selected the Agent SDK based on proven results and deep familiarity with its capabilities. “Our bank-grade compliant tools are built and certified using Claude models, passing some of the most challenging model governance evaluations in the industry,” Miguel Rios Berrios, CTO, explains. The team chose Claude specifically for its extended reasoning capabilities and reliability—critical factors for compliance applications where errors have regulatory consequences.
 
-The Agent SDK allowed Parcha's existing product to gain new flexibility. Rather than building separate workflows for each customer's unique requirements, the Agent SDK enables their product to adapt dynamically on the fly.
+The Agent SDK allowed Parcha’s existing product to gain new flexibility. Rather than building separate workflows for each customer’s unique requirements, the Agent SDK enables their product to adapt dynamically on the fly.
 
 ## Building adaptive compliance systems
 
-"Before the Agent SDK, a significant part of our energy was spent on dealing with edge cases and building rigid workflows that, while they solved the problem for most of our current customers, were very hard to generalize to a broader set of use cases," the team explains.
+“Before the Agent SDK, a significant part of our energy was spent on dealing with edge cases and building rigid workflows that, while they solved the problem for most of our current customers, were very hard to generalize to a broader set of use cases,” the team explains.
 
-With the Agent SDK as a key component of their agentic engine, Parcha's engineers now focus on building tools and LLM applications that solve real problems while strengthening regulatory programs. Transaction monitoring illustrates the shift: every bank needs to monitor transactions, but the criteria vary wildly. One institution flags transactions over \$10,000 to certain countries, while another monitors velocity patterns or merchant categories. Previously, each variation required custom code. Now, Parcha's Agent SDK-powered system adapts to these requirements through configuration, not reconstruction.
+With the Agent SDK as a key component of their agentic engine, Parcha’s engineers now focus on building tools and LLM applications that solve real problems while strengthening regulatory programs. Transaction monitoring illustrates the shift: every bank needs to monitor transactions, but the criteria vary wildly. One institution flags transactions over \$10,000 to certain countries, while another monitors velocity patterns or merchant categories. Previously, each variation required custom code. Now, Parcha’s Agent SDK-powered system adapts to these requirements through configuration, not reconstruction.
 
 Parcha built a service extending Agent SDK functionality to any fintech standard operating procedure. The system monitors transactions across multiple dimensions, evaluates counterparties through complex decision trees, performs in-depth analysis of businesses and individuals with bank-grade accuracy, and handles varying compliance requirements without rebuilding core systems.
 
 ## Universal agent for compliance analysts
 
-Parcha's enterprise solution required lengthy sales cycles, deep integrations, and custom implementations for each institution. When the team started using the Agent SDK for their own engineering workflows, they realized this agentic framework could power customer-facing compliance workflows that reach analysts directly.
+Parcha’s enterprise solution required lengthy sales cycles, deep integrations, and custom implementations for each institution. When the team started using the Agent SDK for their own engineering workflows, they realized this agentic framework could power customer-facing compliance workflows that reach analysts directly.
 
-With the Agent SDK, Parcha developed a fully agentic open-source intelligence research product in just two weeks—essentially "Perplexity for AML compliance." "The Agent SDK unlocked this capability—we literally would not have built this product without it," Miguel notes. "It allows us to reach every compliance person with a solution out of the box, in the same way that coding agents put power into every engineer's hands."
+With the Agent SDK, Parcha developed a fully agentic open-source intelligence research product in just two weeks—essentially “Perplexity for AML compliance.” “The Agent SDK unlocked this capability—we literally would not have built this product without it,” Miguel notes. “It allows us to reach every compliance person with a solution out of the box, in the same way that coding agents put power into every engineer’s hands.”
 
 ## The outcome
 
-Parcha delivers workflows that adapt to each financial institution's unique requirements while maintaining rigorous standards. Compliance processes that previously required months of custom development now deploy rapidly with institution-specific configurations. Engineering teams have shifted their focus—no more edge cases, no more rigid workflows.
+Parcha delivers workflows that adapt to each financial institution’s unique requirements while maintaining rigorous standards. Compliance processes that previously required months of custom development now deploy rapidly with institution-specific configurations. Engineering teams have shifted their focus—no more edge cases, no more rigid workflows.
 
-For Parcha's clients, this means faster onboarding, stronger security, and the ability to innovate without regulatory friction. By enabling their product to adapt dynamically to each customer's unique due diligence process, Parcha can serve more types of customers in a more self-serve way.
+For Parcha’s clients, this means faster onboarding, stronger security, and the ability to innovate without regulatory friction. By enabling their product to adapt dynamically to each customer’s unique due diligence process, Parcha can serve more types of customers in a more self-serve way.
 
-"We look forward to working with Anthropic on changing how large fintechs and banks use AI to modernize and automate their operations," Miguel says. By building on the Agent SDK's capabilities, Parcha aims to enable banks to scale faster, serve customers more effectively, and continue accelerating innovation in financial services.
+“We look forward to working with Anthropic on changing how large fintechs and banks use AI to modernize and automate their operations,” Miguel says. By building on the Agent SDK’s capabilities, Parcha aims to enable banks to scale faster, serve customers more effectively, and continue accelerating innovation in financial services.
 
 ## Related stories
 
@@ -85,7 +85,7 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 ### Pictet turns weeks of work into hours with Claude Code
 
 
-### How Satispay's engineers write 75% of their code with Claude
+### How Satispay’s engineers write 75% of their code with Claude
 
 
 ### OffDeal powers every stage of M&A advisory with one Claude-based agent
@@ -99,7 +99,8 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -117,12 +118,12 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -155,7 +156,7 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -173,6 +174,7 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -188,7 +190,7 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -223,7 +225,8 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -241,12 +244,12 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -279,7 +282,7 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -297,6 +300,7 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -312,7 +316,7 @@ For Parcha's clients, this means faster onboarding, stronger security, and the a
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

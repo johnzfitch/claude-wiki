@@ -2,7 +2,7 @@
 title: "Credentials - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:48Z"
+fetched_at: "2026-10-20T06:38:53Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults%2Fcredentials)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults%2Fcredentials)
 
 
 
@@ -62,45 +62,45 @@ Deployment Runs
 Vaults
 
 
-Create Vault
+Create a Vault
 
 
 List Vaults
 
 
-Get Vault
+Retrieve a Vault
 
 
-Update Vault
+Update a Vault
 
 
-Delete Vault
+Delete a Vault
 
 
-Archive Vault
+Archive a Vault
 
 Credentials
 
 
-Create Credential
+Create a Credential
 
 
 List Credentials
 
 
-Get Credential
+Retrieve a Credential
 
 
-Update Credential
+Update a Credential
 
 
-Delete Credential
+Delete a Credential
 
 
-Archive Credential
+Archive a Credential
 
 
-Validate Credential
+Validate an MCP OAuth Credential
 
 Memory Stores
 
@@ -161,7 +161,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -171,9 +171,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -244,13 +246,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -258,9 +262,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -269,12 +273,18 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Vaults](https://platform.claude.com/docs/en/api/http/beta/vaults)
 
 # Credentials
 
-##### [Create Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/create)
+Copy page
+
+
+
+cURL
+
+##### [Create a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/create)
 
 POST/v1/vaults/{vault_id}/credentials
 
@@ -282,23 +292,23 @@ cURL
 
 GET/v1/vaults/{vault_id}/credentials
 
-##### [Get Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/retrieve)
+##### [Retrieve a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/retrieve)
 
 GET/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Update Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/update)
+##### [Update a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/update)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Delete Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/delete)
+##### [Delete a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/delete)
 
 DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Archive Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/archive)
+##### [Archive a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/archive)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
 
-##### [Validate Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
+##### [Validate an MCP OAuth Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate
 
@@ -344,11 +354,15 @@ type: "limited"
 
 
 
+
+
 allowed_hosts: array of string
 
 
 
-Hostnames on which the secret will be substituted. Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.`-prefixed wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses are not accepted. At most 16 entries.
+The destination hosts of the outbound requests that the credential's secret is substituted into.
+
+Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.` wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses aren't accepted. The list can have up to 16 entries.
 
 
 
@@ -378,13 +392,13 @@ The credential successfully authenticated against its MCP server.
 
 
 
-The probe reached the MCP server and was rejected, and a refresh (if attempted) did not recover it.
+The probe reached the MCP server and the server rejected the credential, or no access token is stored. A refresh, if one was tried, didn't recover it. Usually the end user needs to authorize again.
 
 "unknown"
 
 
 
-The probe could not determine validity — for example, a transport error or a successful refresh that was not re-probed.
+The probe couldn't tell whether the credential works, for example because of a network error or because a refresh succeeded but the new access token wasn't tested. Validate the credential again to find out.
 
 
 
@@ -402,7 +416,7 @@ id: string
 
 
 
-Unique identifier of the deleted credential.
+The unique ID of the deleted credential (`vcrd_...`).
 
 
 
@@ -474,7 +488,11 @@ BetaManagedAgentsInjectionLocationUpdateParams object{ body, header }
 
 
 
-Updated injection location.
+Changes which parts of an outbound request the secret is substituted into. A location you leave out keeps its current setting.
+
+After the change, at least one location must be enabled.
+
+See [Authenticate with vaults](../Other/managed-agents-vaults.md#add-a-credential) to learn more about injection locations.
 
 body: optional boolean
 
@@ -500,11 +518,15 @@ type: "limited"
 
 
 
+
+
 allowed_hosts: array of string
 
 
 
-Hostnames on which the secret will be substituted. Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.`-prefixed wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses are not accepted. At most 16 entries.
+The destination hosts of the outbound requests that the credential's secret is substituted into.
+
+Each entry is a bare hostname (`api.example.com`), an IPv4 address (`192.0.2.1`), or a `*.` wildcard (`*.example.com`). URLs, ports, paths, and IPv6 addresses aren't accepted. The list can have up to 16 entries.
 
 
 
@@ -518,11 +540,15 @@ type: "limited"
 
 
 
+
+
 allowed_hosts: array of string
 
 
 
-Hostnames on which the secret will be substituted. An entry matches the request host exactly; a `*.`-prefixed entry matches any subdomain of the named domain but not the domain itself.
+The destination hosts of the outbound requests that the credential's secret is substituted into.
+
+An entry matches the request host exactly. An entry such as `*.example.com` matches any subdomain of `example.com` but not `example.com` itself.
 
 
 
@@ -548,7 +574,7 @@ expires_at: optional string or null
 
 
 
-A timestamp in RFC 3339 format
+When the credential's access token expires, in RFC 3339. Absent if the expiry isn't known.
 
 formatdate-time
 
@@ -578,7 +604,7 @@ access_token: string
 
 
 
-OAuth access token.
+The OAuth access token to send to the MCP server.
 
 minLength1
 
@@ -602,7 +628,9 @@ expires_at: optional string or null
 
 
 
-A timestamp in RFC 3339 format
+When `access_token` expires, in RFC 3339.
+
+Must be in the future.
 
 formatdate-time
 
@@ -656,7 +684,7 @@ access_token: optional string or null
 
 
 
-Updated OAuth access token.
+The new OAuth access token to replace the stored one.
 
 minLength1
 
@@ -668,7 +696,11 @@ expires_at: optional string or null
 
 
 
-A timestamp in RFC 3339 format
+When the credential's access token expires, in RFC 3339. Leave it out to keep the stored expiry.
+
+If you send a new `access_token`, send its `expires_at` too, or the new token keeps the old expiry.
+
+Must be in the future.
 
 formatdate-time
 
@@ -694,7 +726,7 @@ http_response: [BetaManagedAgentsRefreshHTTPResponse](https://platform.claude.co
 
 
 
-The captured HTTP error response. Null when no HTTP response was received (timeout, DNS, TLS).
+The HTTP error response from the MCP server, or `null` if the MCP server didn't return one for the failing step, for example after a timeout or a DNS or TLS failure.
 
 body: string
 
@@ -880,7 +912,7 @@ token: string
 
 
 
-Static bearer token value.
+The static bearer token to send to the MCP server, such as an API key or personal access token.
 
 minLength1
 
@@ -916,7 +948,7 @@ token: optional string or null
 
 
 
-Updated static bearer token value.
+The new static bearer token to replace the stored one.
 
 minLength1
 
@@ -940,7 +972,7 @@ client_secret: string
 
 
 
-OAuth client secret.
+The OAuth client secret, sent to `token_endpoint` with HTTP Basic authentication.
 
 minLength1
 
@@ -976,7 +1008,9 @@ client_secret: optional string or null
 
 
 
-Updated OAuth client secret.
+A new OAuth client secret to replace the stored one.
+
+The credential must already use `client_secret_basic` or `client_secret_post`. It keeps its current `token_endpoint_auth` type, even if the `type` sent with this secret is the other one.
 
 minLength1
 
@@ -1024,7 +1058,7 @@ client_secret: string
 
 
 
-OAuth client secret.
+The OAuth client secret, sent to `token_endpoint` in the POST body.
 
 minLength1
 
@@ -1060,7 +1094,9 @@ client_secret: optional string or null
 
 
 
-Updated OAuth client secret.
+A new OAuth client secret to replace the stored one.
+
+The credential must already use `client_secret_basic` or `client_secret_post`. It keeps its current `token_endpoint_auth` type, even if the `type` sent with this secret is the other one.
 
 minLength1
 

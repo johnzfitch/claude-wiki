@@ -2,19 +2,52 @@
 title: "Measuring political bias in Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/news/political-even-handedness"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:28:59Z"
+fetched_at: "2026-10-23T06:29:45Z"
 tags: ["news-research"]
 ---
 
 # Measuring political bias in Claude
 
-Nov 13, 2025
+- [01Why even-handedness matters](#why-even-handedness-matters)
+- [02Ideal behaviors](#ideal-behaviors)
+- [03Training Claude to be even-handed](#training-claude-to-be-even-handed)
+- [04Evaluating Claude and other leading models](#evaluating-claude-and-other-leading-models)
+- [05Conclusions and caveats](#conclusions-and-caveats)
 
-- *We work to train Claude to be politically even-handed in its responses. We want it to treat opposing political viewpoints with equal depth, engagement, and quality of analysis, without bias towards or against any particular ideological position.*
-- *"Political even-handedness" is the lens through which we train and evaluate for bias in Claude. In this post, we share the ideal behavior we intend our models to have in political discussions along with training Claude to have character traits that help it remain even-handed.*
-- *We've developed a new automated evaluation method to test for even-handedness and report results from testing six models with this measure, using thousands of prompts across hundreds of political stances.*
-- *According to this evaluation, Claude Sonnet 4.5 is more even-handed than GPT-5 and Llama 4, and performs similarly to Grok 4 and Gemini 2.5 Pro. Our most capable models continue to maintain a high level of even-handedness.*
-- *We’re open-sourcing this new evaluation so that AI developers can reproduce our findings, run further tests, and work towards even better measures of political even-handedness.*
+- Published
+
+  Nov 13, 2025
+
+- Team
+
+  [Societal Impacts](team-societal-impacts.md)
+
+- Topics
+
+  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+  - [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
+  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+  - [Open source](https://www.anthropic.com/search?topic=open-source)
+  - [Training](https://www.anthropic.com/search?topic=training)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+
+  See more...
+
+Related articles
+
+- Societal Impacts
+
+  Jul 13, 2026
+
+  [Claude’s values across models and languages](claude-values-models-languages.md)
+
+[View more](https://www.anthropic.com/search?topic=bias-and-fairness)
+
+- We work to train Claude to be politically even-handed in its responses. We want it to treat opposing political viewpoints with equal depth, engagement, and quality of analysis, without bias towards or against any particular ideological position.
+- "Political even-handedness" is the lens through which we train and evaluate for bias in Claude. In this post, we share the ideal behavior we intend our models to have in political discussions along with training Claude to have character traits that help it remain even-handed.
+- We've developed a new automated evaluation method to test for even-handedness and report results from testing six models with this measure, using thousands of prompts across hundreds of political stances.
+- According to this evaluation, Claude Sonnet 4.5 is more even-handed than GPT-5 and Llama 4, and performs similarly to Grok 4 and Gemini 2.5 Pro. Our most capable models continue to maintain a high level of even-handedness.
+- We’re open-sourcing this new evaluation so that AI developers can reproduce our findings, run further tests, and work towards even better measures of political even-handedness.
 
 We want Claude to be seen as fair and trustworthy by people across the political spectrum, and to be unbiased and even-handed in its approach to political topics.
 
@@ -28,7 +61,7 @@ If AI models unfairly advantage certain views—perhaps by overtly or subtly arg
 
 ## Ideal behaviors
 
-On our own platforms, we want Claude to take an even-handed approach when it comes to politics:¹
+On our own platforms, we want Claude to take an even-handed approach when it comes to politics:^([1](#footnote-1))
 
 - Claude should avoid giving users unsolicited political opinions and should err on the side of providing balanced information on political questions;
 - Claude should maintain factual accuracy and comprehensiveness when asked about any topic;
@@ -37,7 +70,7 @@ On our own platforms, we want Claude to take an even-handed approach when it com
 - Claude should adopt neutral terminology over politically-loaded terminology where possible;
 - Claude should engage respectfully with a range of perspectives, and generally avoid unsolicited judgment or persuasion.
 
-One concrete way that we try to influence Claude to adhere to these principles is to use our system prompt—the set of overarching instructions that the model sees before the start of any conversation on [Claude.ai](http://claude.ai/redirect/website.v1.1bb32936-591e-4db7-bf20-d56be42ac67e). We regularly update Claude’s system prompt; the most recent update includes instructions for it to adhere to the behaviors in the list above. This is not a foolproof method: Claude may still produce responses inconsistent with the descriptions in the list above, but we’ve found that the system prompt can make a substantial difference to Claude’s responses. The exact language in the system prompt can be read in full [here](https://docs.claude.com/en/release-notes/system-prompts?ref=blog.promptlayer.com).
+One concrete way that we try to influence Claude to adhere to these principles is to use our system prompt—the set of overarching instructions that the model sees before the start of any conversation on [Claude.ai](http://claude.ai). We regularly update Claude’s system prompt; the most recent update includes instructions for it to adhere to the behaviors in the list above. This is not a foolproof method: Claude may still produce responses inconsistent with the descriptions in the list above, but we’ve found that the system prompt can make a substantial difference to Claude’s responses. The exact language in the system prompt can be read in full [here](https://docs.claude.com/en/release-notes/system-prompts?ref=blog.promptlayer.com).
 
 ## Training Claude to be even-handed
 
@@ -83,7 +116,7 @@ In this case, instead of human raters, we used Claude Sonnet 4.5 as an automated
 
   
 *Models and evaluation set*  
-We tested our most capable models, Claude Sonnet 4.5 and Claude Opus 4.1. These were both configured to have “extended thinking” mode off (that is, they were set to their default mode). These models included our latest [Claude.ai](http://claude.ai/redirect/website.v1.1bb32936-591e-4db7-bf20-d56be42ac67e) system prompt.
+We tested our most capable models, Claude Sonnet 4.5 and Claude Opus 4.1. These were both configured to have “extended thinking” mode off (that is, they were set to their default mode). These models included our latest [Claude.ai](http://claude.ai) system prompt.
 
 We also compared our models to a selection of those from other providers. The comparator models were: [GPT-5](https://openai.com/index/introducing-gpt-5/) (OpenAI) in low reasoning mode without system prompt; [Gemini 2.5 Pro](https://deepmind.google/models/gemini/pro/) (Google DeepMind) with lowest thinking configuration without system prompt; [Grok 4](https://x.ai/news/grok-4) (xAI) with thinking on and with its [system prompt](https://github.com/xai-org/grok-prompts/blob/main/grok4_system_turn_prompt_v8.j2); and [Llama 4](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) Maverick (Meta) with its [system prompt](https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/).
 
@@ -93,7 +126,7 @@ We tested the models using 1,350 pairs of prompts across 9 task types and 150 to
 
 ### Results
 
-**Even-handedness**
+#### Even-handedness
 
 Claude Opus 4.1 and Claude Sonnet 4.5 had scores of 95% and 94%, respectively, on the even-handedness measure. Gemini 2.5 Pro (97%) and Grok 4 (96%) had nominally higher scores, but the differences were very small, indicating similar levels of even-handedness across these four models. GPT-5 (89%) and particularly Llama 4 (66%) showed lower levels of even-handedness in this analysis.
 
@@ -107,7 +140,7 @@ A higher percentage of responses including opposing perspectives indicates that 
 
 Conversely, a lower refusal rate in these contexts indicates a greater willingness to engage. Claude models show consistently low refusal rates, with Opus 4.1 slightly higher than Sonnet 4.5 (5% versus 3%). Grok 4 showed near-zero refusals, whereas Llama 4 had the highest refusal rate among all models tested (9%).
 
-**Tests using other models as graders**
+#### Tests using other models as graders
 
 As noted above, we conducted a validity check where we ran similar analyses using models other than Claude Sonnet 4.5 as the grader.
 
@@ -133,7 +166,7 @@ There is no agreed-upon definition of political bias, and no consensus on how to
 
 A shared standard for measuring political bias will benefit the entire AI industry and its customers. We look forward to working with colleagues across the industry to try to create one.
 
-### **Open-source evaluation**
+### Open-source evaluation
 
 You can read the implementation details and download the dataset and grader prompts to run our Paired Prompts analysis at [this GitHub link](https://github.com/anthropics/political-neutrality-eval).
 
@@ -141,134 +174,12 @@ You can read the implementation details and download the dataset and grader prom
 
 Using OpenAI’s GPT-5 grader, we ran tests on a subsample of prompts for additional validity of the automated Claude graders. The results are shown in the Appendix, [available here.](https://assets.anthropic.com/m/6d60bab0580089e2/original/Appendix-to-Measuring-political-bias-in-Claude.pdf)
 
-#### Footnotes
-
-1\. Note that API users aren’t required to follow these standards, and can configure Claude to reflect their own values and perspectives (as long as their use complies with our [Usage Policy](https://www.anthropic.com/legal/aup)).
-
-### **Change log**
+### Change log
 
 November 24, 2025
 
 - We corrected the percentage of responses in which Sonnet 4.5 acknowledged opposing viewpoints from 28% to 35%, and updated the illustration to reflect the correction.
 
+## Footnotes
 
-## Related content
-
-### Developing Enterprise Frontier Safeguards with our customers
-
-[Read more](enterprise-frontier-safeguards.md)
-
-### Improving our alignment and security efforts
-
-On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
-
-[Read more](improving-alignment-security-efforts.md)
-
-### Previewing the Model Hardware Standard
-
-We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
-
-[Read more](model-hardware-standard-research-preview.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+01Note that API users aren’t required to follow these standards, and can configure Claude to reflect their own values and perspectives (as long as their use complies with our [Usage Policy](https://www.anthropic.com/legal/aup)).[](#footnote-ref-1)

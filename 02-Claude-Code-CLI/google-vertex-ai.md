@@ -2,7 +2,7 @@
 title: "Claude Code on Google Cloud's Agent Platform - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/google-vertex-ai"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:26:48Z"
+fetched_at: "2026-10-14T06:25:57Z"
 tags: ["agents", "claude-code"]
 ---
 
@@ -178,7 +178,7 @@ Most model versions have a corresponding `VERTEX_REGION_CLAUDE_*` variable. See 
 [Prompt caching](prompt-caching.md) is enabled automatically. To disable it, set `DISABLE_PROMPT_CACHING=1`. To request a 1-hour cache TTL instead of the 5-minute default, set `ENABLE_PROMPT_CACHING_1H=1`; cache writes with a 1-hour TTL are billed at a higher rate. To set different TTLs for your main conversation and for the requests Claude Code makes outside it, [choose the TTL yourself](prompt-caching.md#choose-the-ttl-yourself). To raise your rate limits, contact Google Cloud support. When using Google Cloud’s Agent Platform, the `/logout` command is unavailable since authentication is handled through Google Cloud credentials. Claude Code decides between [MCP tool search](../06-MCP-Tools/General/mcp.md#scale-with-mcp-tool-search) and upfront loading by model generation:
 
 - **Claude Opus 4.5, Sonnet 4.5, Haiku 4.5, and later**: Claude Code enables tool search by default.
-- **Earlier models, including all Claude 3.x models**: Claude Code loads MCP tool definitions upfront, because their Agent Platform serving stacks reject the required beta header. Setting `ENABLE_TOOL_SEARCH=true` doesn’t override this.
+- **Earlier models**: Claude Code loads MCP tool definitions upfront, because their Agent Platform serving stacks reject the required beta header. Setting `ENABLE_TOOL_SEARCH=true` doesn’t override this.
 
 Set `ENABLE_TOOL_SEARCH=false` to disable tool search on every model. Before v2.1.221, Claude Code disabled tool search for all models on Google Cloud’s Agent Platform unless you set `ENABLE_TOOL_SEARCH=true`.
 
@@ -209,9 +209,9 @@ Background tasks such as session title generation use the small/fast model, norm
 - When you select a primary model with `--model`, `ANTHROPIC_MODEL`, or the `model` setting, background tasks use that model. When Claude Code starts the session on the model you set with [`ANTHROPIC_DEFAULT_MODEL`](model-config.md#set-a-default-model-for-new-sessions), background tasks use that model too. Setting `ANTHROPIC_DEFAULT_OPUS_MODEL` without `ANTHROPIC_DEFAULT_SONNET_MODEL` also counts as a selection, because the built-in Sonnet model may not be enabled in a project that steers its own Opus.
 - To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a model ID that is available in your project.
 
-Opus models have a higher per-token price than Sonnet models, so a deployment that doesn’t pin a primary model is billed at the Opus rate once it updates to v2.1.207 or later. To keep Sonnet 4.5 as the primary model, set `ANTHROPIC_MODEL` to its full model ID. A deployment that steers the default with `ANTHROPIC_DEFAULT_SONNET_MODEL` and doesn’t set `ANTHROPIC_DEFAULT_OPUS_MODEL` keeps its steered Sonnet model as the default.
+Opus models have a higher per-token price than Sonnet models, so if you don’t pin a primary model, you’re billed at the Opus rate. To use Sonnet 4.5 as the primary model, set `ANTHROPIC_MODEL` to its full model ID. A deployment that steers the default with `ANTHROPIC_DEFAULT_SONNET_MODEL` and doesn’t set `ANTHROPIC_DEFAULT_OPUS_MODEL` keeps its steered Sonnet model as the default.
 
-Before v2.1.280, the primary model on Google Cloud’s Agent Platform defaulted to Opus 5 and the `opus` alias resolved to Opus 5 from v2.1.219. On v2.1.207 through v2.1.218, the primary model on Google Cloud’s Agent Platform defaulted to Opus 4.8 and the `opus` alias resolved to Opus 4.8. Before v2.1.207, the primary model defaulted to Sonnet 4.5, the `opus` alias resolved to Opus 4.6, and background tasks always used the primary model. To customize models further:
+Before v2.1.280, the primary model on Google Cloud’s Agent Platform defaulted to Opus 5 and the `opus` alias resolved to Opus 5 from v2.1.219. On v2.1.207 through v2.1.218, the primary model on Google Cloud’s Agent Platform defaulted to Opus 4.8 and the `opus` alias resolved to Opus 4.8. To customize models further:
 
 ```python
 export ANTHROPIC_MODEL='claude-opus-4-8'

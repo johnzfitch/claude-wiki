@@ -2,7 +2,7 @@
 title: "Steering thinking - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:49Z"
+fetched_at: "2026-10-20T06:40:08Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fthinking-steering-and-cost)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fthinking-steering-and-cost)
 
 
 
@@ -40,7 +40,7 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
@@ -48,7 +48,7 @@ Model capabilities
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -80,7 +80,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Thinking
 
@@ -98,17 +98,17 @@ Steer how often and how deeply Claude thinks with effort levels, system prompt g
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
-Claude's thinking is adaptive: the model evaluates each request and decides for itself whether to think and how much. You set an intent, optionally specify the effort, and the model allocates reasoning where it judges reasoning will help.
+Claude's thinking is adaptive: the model evaluates each request and determines whether to think and how much. You set an intent, optionally specify the effort, and the model allocates reasoning where it judges reasoning will help.
 
 This makes thinking a strong fit for workloads that mix trivial and complex requests, and for long-horizon agentic workflows where the right amount of reasoning varies from step to step.
 
-To learn how to turn thinking on, how to read thinking output, and about [thinking output on Claude Fable 5 and Claude Mythos 5](build-with-claude-thinking.md#thinking-output-on-claude-fable-5-and-claude-mythos-5), see the [Thinking](build-with-claude-thinking.md) overview. This page covers how Claude decides when to think, how to steer that decision, and the caching, cost, and pricing mechanics that follow from it.
+To learn how to turn thinking on, how to read thinking output, and about [thinking output on Claude Fable 5 and Claude Mythos 5](build-with-claude-thinking.md#thinking-output-on-claude-fable-5-and-claude-mythos-5), see the [Thinking](build-with-claude-thinking.md) overview. This page covers how Claude determines when to think, how to steer thinking, and the caching, cost, and pricing mechanics that follow from it.
 
-## How Claude decides when to think
+## How Claude determines when to think
 
-Thinking is optional for the model. On each request, Claude weighs the complexity of the input and decides whether deeper reasoning would improve the answer. A simple factual question may get a direct response with no thinking block at all; a multistep math problem or a tricky debugging task triggers deeper reasoning.
+Thinking is optional for the model. On each request, Claude weighs the complexity of the input and determines whether deeper reasoning would improve the answer. A simple factual question may get a direct response with no thinking block at all; a multistep math problem or a tricky debugging task triggers deeper reasoning.
 
 The decision happens per request. The same conversation can contain turns with and without thinking, and a turn where Claude chose not to think contains no thinking block. Don't build application logic that assumes every assistant turn starts with one.
 
@@ -116,7 +116,7 @@ The primary control over this decision is the [effort](build-with-claude-effort.
 
 If you want Claude to think less often, lower the effort level before reaching for prompt-based steering.
 
-Thinking also interleaves with tool use automatically: Claude can think between tool calls, reflecting on each tool result before deciding what to do next ([interleaved thinking](build-with-claude-thinking.md#interleaved-thinking)). You don't need a beta header or any additional configuration for this.
+Thinking also interleaves with tool use automatically: Claude can think between tool calls, reflecting on each tool result before determining what to do next ([interleaved thinking](build-with-claude-thinking.md#interleaved-thinking)). You don't need a beta header or any additional configuration for this.
 
 For the full picture of how the thinking configuration and the effort parameter interact, see [Thinking and effort](build-with-claude-thinking.md#thinking-and-effort).
 
@@ -129,21 +129,25 @@ Use the two levers together in this order:
 1.  Set the effort level that matches your workload's default balance of quality and latency.
 2.  Add prompt guidance only if Claude's triggering still doesn't match your needs at that level.
 
+
+
+To get less thinking on Claude Sonnet 5.5 and Claude Haiku 5.5, lower the effort level. Asking Claude Sonnet 5.5 in the system prompt to think less doesn't reliably reduce its thinking, and in Anthropic's testing, telling Claude Haiku 5.5 in the prompt to answer directly didn't stop it from thinking. See [Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md#calibrate-effort) and [Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md#use-effort-to-control-thinking).
+
 For broader prompting guidance with thinking, see [leverage thinking and interleaved thinking capabilities](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#leverage-thinking-and-interleaved-thinking-capabilities).
 
 ### Effort levels
 
 Effort is the primary steering lever for thinking. Each level sets a different default for how often Claude thinks and how deeply:
 
-| Effort level                          | Thinking behavior                                                                                |
-|:--------------------------------------|:-------------------------------------------------------------------------------------------------|
-| `max`                                 | Claude thinks the most readily and at the greatest depth, with no constraint on thinking length. |
-| `xhigh`                               | Claude thinks more readily and at greater depth than at `high`, suited to extended exploration.  |
-| `high` (default on most models)       | Claude thinks on most requests that benefit from it. Provides deep reasoning on complex tasks.   |
-| `medium` (default on Claude Opus 5.5) | Claude uses moderate thinking. May skip thinking for simple queries.                             |
-| `low`                                 | Claude minimizes thinking. Skips thinking for simple tasks where speed matters most.             |
+| Effort level                                               | Thinking behavior                                                                                |
+|:-----------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
+| `max`                                                      | Claude thinks the most readily and at the greatest depth, with no constraint on thinking length. |
+| `xhigh`                                                    | Claude thinks more readily and at greater depth than at `high`, suited to extended exploration.  |
+| `high` (default on most models)                            | Claude thinks on most requests that benefit from it. Provides deep reasoning on complex tasks.   |
+| `medium` (default on Claude Opus 5.5 and Claude Haiku 5.5) | Claude uses moderate thinking. May skip thinking for simple queries.                             |
+| `low`                                                      | Claude minimizes thinking. Skips thinking for simple tasks where speed matters most.             |
 
-At every level, Claude decides per request whether to think. In a tool-use loop, the first request after new user input typically carries most of the reasoning, and follow-up requests that only process tool results can skip thinking, including at `xhigh` and `max`. Thinking per request also tends to decrease as a conversation grows longer. No level guarantees a thinking block on every request.
+At every level, Claude determines per request whether to think. In a tool-use loop, the first request after new user input typically carries most of the reasoning, and follow-up requests that only process tool results can skip thinking, including at `xhigh` and `max`. Thinking per request also tends to decrease as a conversation grows longer. No level guarantees a thinking block on every request.
 
 This table describes how each level changes thinking behavior. For guidance on which level to choose for a given workload, including per-model recommendations, see [When to adjust the effort parameter](build-with-claude-effort.md#when-to-adjust-the-effort-parameter) on the effort page.
 
@@ -186,9 +190,11 @@ Steering effectiveness can be sensitive to exact wording. If one phrasing doesn'
 
 ### Per-message steering
 
-You can also steer thinking on a per-message basis from the user turn, independently of the system prompt. Appending `"Please think hard before responding."` to a user message encourages Claude to think on that turn; `"Answer directly without deliberating."` suppresses it.
+You can also steer thinking on a per-message basis from the user turn, independently of the system prompt. Appending `"Please think hard before responding."` to a user message encourages Claude to think on that turn; `"Answer directly without deliberating."` discourages it.
 
-Per-message steering is useful when only some requests in a conversation warrant extended reasoning. An agent harness, for example, can append the encouraging phrase on planning steps and the suppressing phrase on routine confirmations, without touching the system prompt or changing any request parameters between turns.
+Per-message steering is useful when only some requests in a conversation warrant extended reasoning. An agent harness, for example, can append the encouraging phrase on planning steps and the discouraging phrase on routine confirmations, without touching the system prompt or changing any request parameters between turns.
+
+On Claude Haiku 5.5, the discouraging phrase doesn't reliably reduce thinking. On the Claude API and Google Cloud, run routine turns on that model with less thinking by using a [per-message effort change](build-with-claude-effort.md#change-effort-mid-conversation-beta) (beta) instead, which also keeps the prompt cache.
 
 ### Verify steering on your workload
 
@@ -218,7 +224,7 @@ The relaxation is about validation, not about what you should send. When you hav
 
 Consecutive requests that keep the same thinking configuration and effort level preserve prompt caching; see [Thinking and prompt caching](build-with-claude-thinking.md#thinking-and-prompt-caching) for the full rules. The resolved effort value is rendered into the prompt, so changing it between requests invalidates cache breakpoints, just as changing the legacy [`budget_tokens`](build-with-claude-extended-thinking.md#extended-thinking-with-prompt-caching) parameter does on models that use it. Setting `effort` explicitly to the model's default is equivalent to omitting it and does not break the cache.
 
-The practical consequence: pick a thinking configuration and an effort level per conversation and keep them. If some turns need more or less thinking, steer with [per-message prompting](#tuning-thinking-behavior): guidance appended to the newest user message leaves earlier cache breakpoints intact, where a configuration or effort change does not.
+The practical consequence: pick a thinking configuration and a top-level effort level per conversation and keep them. If some turns need more or less thinking, use a [per-message effort change](build-with-claude-effort.md#change-effort-mid-conversation-beta) (beta) on models that support it, or steer with [per-message prompting](#tuning-thinking-behavior). Both leave earlier cache breakpoints intact, where a change to the thinking configuration or the top-level effort level does not.
 
 The following example demonstrates the invalidation with a multi-turn script you can run yourself:
 
@@ -241,6 +247,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 ```python
 import requests

@@ -2,7 +2,7 @@
 title: "User Profiles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/user_profiles"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:19Z"
+fetched_at: "2026-10-20T06:39:46Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fuser_profiles)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fuser_profiles)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,27 +232,33 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 
 # User Profiles
 
-##### [Create User Profile](http-beta-user-profiles-create.md)
+Copy page
+
+
+
+cURL
+
+##### [Create User Profile](platform-claude-com-http-beta-user-profiles-create.md)
 
 POST/v1/user_profiles
 
-##### [List User Profiles](http-beta-user-profiles-list.md)
+##### [List User Profiles](platform-claude-com-http-beta-user-profiles-list.md)
 
 GET/v1/user_profiles
 
-##### [Get User Profile](http-beta-user-profiles-retrieve.md)
+##### [Get User Profile](platform-claude-com-http-beta-user-profiles-retrieve.md)
 
 GET/v1/user_profiles/{user_profile_id}
 
-##### [Update User Profile](http-beta-user-profiles-update.md)
+##### [Update User Profile](platform-claude-com-http-beta-user-profiles-update.md)
 
 POST/v1/user_profiles/{user_profile_id}
 
-##### [Create Enrollment URL](http-beta-user-profiles-create-enrollment-url.md)
+##### [Create Enrollment URL](platform-claude-com-http-beta-user-profiles-create-enrollment-url.md)
 
 POST/v1/user_profiles/{user_profile_id}/enrollment_url
 

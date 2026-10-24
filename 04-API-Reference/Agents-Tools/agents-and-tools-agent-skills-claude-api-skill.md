@@ -2,7 +2,7 @@
 title: "Claude API skill - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/claude-api-skill"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:32:05Z"
+fetched_at: "2026-10-20T06:38:08Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fagent-skills%2Fclaude-api-skill)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fagent-skills%2Fclaude-api-skill)
 
 
 
@@ -34,7 +34,7 @@ Claude API skill
 
 [Overview](agents-and-tools-agent-skills-claude-api-skill.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Claude API skill
 
@@ -72,7 +72,7 @@ When triggered, the skill equips Claude with:
 - **Streaming patterns:** Implementation details for building chat UIs and handling incremental display
 - **Batch processing:** Offline batch processing at 50% cost
 - **Prompt caching:** Prefix-stability design, breakpoint placement, and silent-invalidator audit
-- **Model migration:** Step-by-step guidance for migrating to newer Claude models (including the breaking changes and behavior shifts on [Claude Opus 5.5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), and [Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md))
+- **Model migration:** Step-by-step guidance for migrating to newer Claude models (including the breaking changes and behavior shifts on [Claude Opus 5.5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), [Claude Haiku 5.5](../../20-Models/models-haiku-5-5-migration-guide.md), and [Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md))
 - **Preserved thinking migration:** Finding, measuring, and fixing the history edits that invalidate `thinking` blocks, available through the `/claude-api preserved-thinking-migration` subcommand
 - **Current model information:** Model IDs, context window sizes, and pricing
 - **Common pitfalls:** Detailed guidance on avoiding frequent mistakes when integrating with the API
@@ -123,9 +123,13 @@ The skill ships with [Claude Code](../../02-Claude-Code-CLI/code-home.md) and re
 
 You can also invoke it directly:
 
-``` block
-/claude-api
-```
+Claude Code
+
+Use this skill in Claude Code
+
+Run in
+
+`❯``/claude-api`
 
 
 
@@ -141,7 +145,19 @@ npx skills add https://github.com/anthropics/skills --skill claude-api
 
 
 
-Or install it as a [Claude Code plugin](../../08-Plugins-Skills/plugins.md):
+Or ask Claude Code to install it as a [Claude Code plugin](../../08-Plugins-Skills/plugins.md):
+
+Claude Code
+
+Let Claude Code install this for you
+
+Run in
+
+`❯``Install the claude-api plugin from the anthropics/skills plugin marketplace`
+
+
+
+### Manual install commands
 
 ``` block
 /plugin marketplace add anthropics/skills
@@ -152,20 +168,37 @@ Or install it as a [Claude Code plugin](../../08-Plugins-Skills/plugins.md):
 
 ## Migrating to a newer Claude model
 
-The Claude API skill can perform Claude model migrations across a code base. Invoke it directly with `/claude-api migrate`:
+The Claude API skill can perform Claude model migrations across a code base. Invoke it directly with the `migrate` subcommand:
 
-```python
-/claude-api migrate this project to claude-opus-5-5
-```
+Claude Code
+
+Let Claude Code migrate your code for you
+
+Run in
+
+`❯``/claude-api`` migrate this project to the latest Claude Opus model`
 
 
 
 You can also pass a specific scope up front to skip the scope-confirmation question:
 
-```python
-/claude-api migrate everything under src/ to claude-opus-5-5
-/claude-api migrate apps/api.py and apps/worker.py to claude-opus-5-5
-```
+Claude Code
+
+Let Claude Code migrate your code for you
+
+Run in
+
+`❯``/claude-api`` migrate everything under src/ to the latest Claude Opus model`
+
+
+
+Claude Code
+
+Let Claude Code migrate your code for you
+
+Run in
+
+`❯``/claude-api`` migrate apps/api.py and apps/worker.py to the latest Claude Opus model`
 
 
 
@@ -185,15 +218,19 @@ The skill handles:
 
 As it edits, the skill explains each change and its motivation inline. On completion, it produces a checklist of items that require manual verification (typically integration tests, length-control prompt tuning, and cost/rate-limit re-baselining).
 
-For the full list of model-specific changes the skill applies, see [Migrating to Claude Opus 5.5 from Claude Opus 5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8), [Migrating to Claude Sonnet 5.5 from Claude Sonnet 5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), and [Migrating to Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md).
+For the full list of model-specific changes the skill applies, see [Migrating to Claude Opus 5.5 from Claude Opus 5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8), [Migrating to Claude Sonnet 5.5 from Claude Sonnet 5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), [Claude Haiku 5.5 migration guide](../../20-Models/models-haiku-5-5-migration-guide.md), and [Claude Fable 5.1 and Claude Mythos 5.1 migration guide](../../20-Models/models-fable-5-1-migration-guide.md).
 
 ## Checking an integration for preserved thinking
 
 [Preserved thinking](../Guides/build-with-claude-preserved-thinking.md) keeps a `thinking` block valid only while the `system` prompt, `tools`, and messages before it stay unchanged. To find and fix the places where your code edits that history, open the repository that builds your requests and invoke the `preserved-thinking-migration` subcommand:
 
-```python
-/claude-api preserved-thinking-migration
-```
+Claude Code
+
+Let Claude Code check your code for you
+
+Run in
+
+`❯``/claude-api`` preserved-thinking-migration`
 
 
 
@@ -213,9 +250,13 @@ The test requests and replays are real Messages API requests, billed at the mode
 
 To scaffold a new Managed Agent from scratch, invoke the `managed-agents-onboard` subcommand:
 
-```python
-/claude-api managed-agents-onboard
-```
+Claude Code
+
+Let Claude Code set up your agent for you
+
+Run in
+
+`❯``/claude-api`` managed-agents-onboard`
 
 
 
@@ -229,25 +270,37 @@ Here are examples of tasks the skill helps Claude handle:
 
 **Building a chat application:**
 
-``` block
-Build a streaming chat UI with the Claude API in TypeScript
-```
+Claude Code
+
+Let Claude Code build this for you
+
+Run in
+
+`❯``Build a streaming chat UI with the Claude API in TypeScript`
 
 
 
 **Migrating an existing project:**
 
-```python
-/claude-api migrate this codebase to claude-opus-5-5 and re-tune effort
-```
+Claude Code
+
+Let Claude Code migrate your code for you
+
+Run in
+
+`❯``/claude-api`` migrate this code base to the latest Claude Opus model and re-tune effort`
 
 
 
 **Onboarding a new Managed Agent:**
 
-```python
-/claude-api managed-agents-onboard
-```
+Claude Code
+
+Let Claude Code set up your agent for you
+
+Run in
+
+`❯``/claude-api`` managed-agents-onboard`
 
 
 

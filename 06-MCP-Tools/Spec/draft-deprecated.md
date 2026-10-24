@@ -2,7 +2,7 @@
 title: "Deprecated Features - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/deprecated"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-09T06:27:47Z"
+fetched_at: "2026-10-21T06:28:58Z"
 tags: ["mcp", "mcp-spec"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Agents - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/agents"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:13Z"
+fetched_at: "2026-10-20T06:36:58Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fagents)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fagents)
 
 
 
@@ -137,7 +137,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -147,9 +147,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -220,13 +222,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -234,9 +238,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -245,9 +249,15 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 
 # Agents
+
+Copy page
+
+
+
+cURL
 
 ##### [Create Agent](https://platform.claude.com/docs/en/api/http/beta/agents/create)
 
@@ -291,7 +301,7 @@ The advisor model id.
 
 
 
-BetaManagedAgentsAgent object{ type: "agent", id, archived_at, 12 more }
+BetaManagedAgentsAgent object{ type: "agent", id, archived_at, 13 more }
 
 
 
@@ -613,6 +623,46 @@ type: "auto"
 
 
 
+BetaManagedAgentsAWSRoleExecutionIdentity object{ type: "aws_role", role_arn }
+
+
+
+An AWS IAM role principal as returned in API responses.
+
+type: "aws_role"
+
+
+
+role_arn: string
+
+
+
+The IAM role's ARN.
+
+
+
+BetaManagedAgentsAWSRoleExecutionIdentityParams object{ type: "aws_role", role_arn }
+
+
+
+An AWS IAM role principal.
+
+type: "aws_role"
+
+
+
+
+
+role_arn: string
+
+
+
+The IAM role's ARN, e.g. "arn:aws:iam::123456789012:role/my-agent-runner". Maximum 2048 characters.
+
+maxLength2048
+
+
+
 BetaManagedAgentsBashToolConfig object{ type: "bash", enabled, name, permission_policy }
 
 
@@ -875,6 +925,90 @@ type: "xhigh"
 
 
 
+BetaManagedAgentsExecutionIdentity = [BetaManagedAgentsAWSRoleExecutionIdentity](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_aws_role_execution_identity) or [BetaManagedAgentsServiceAccountExecutionIdentity](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_service_account_execution_identity)
+
+
+
+Execution principal for runs of this agent as returned in API responses.
+
+One of the following:
+
+
+
+BetaManagedAgentsAWSRoleExecutionIdentity object{ type: "aws_role", role_arn }
+
+
+
+An AWS IAM role principal as returned in API responses.
+
+type: "aws_role"
+
+
+
+role_arn: string
+
+
+
+The IAM role's ARN.
+
+
+
+BetaManagedAgentsServiceAccountExecutionIdentity object{ type: "service_account" }
+
+
+
+The Anthropic-managed service account as returned in API responses.
+
+type: "service_account"
+
+
+
+
+
+BetaManagedAgentsExecutionIdentityParams = [BetaManagedAgentsAWSRoleExecutionIdentityParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_aws_role_execution_identity_params) or [BetaManagedAgentsServiceAccountExecutionIdentityParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_service_account_execution_identity_params)
+
+
+
+Execution principal for runs of this agent: `service_account` (the default) or `aws_role`.
+
+One of the following:
+
+
+
+BetaManagedAgentsAWSRoleExecutionIdentityParams object{ type: "aws_role", role_arn }
+
+
+
+An AWS IAM role principal.
+
+type: "aws_role"
+
+
+
+
+
+role_arn: string
+
+
+
+The IAM role's ARN, e.g. "arn:aws:iam::123456789012:role/my-agent-runner". Maximum 2048 characters.
+
+maxLength2048
+
+
+
+BetaManagedAgentsServiceAccountExecutionIdentityParams object{ type: "service_account" }
+
+
+
+The Anthropic-managed service account — the default execution principal. Carries no identifier.
+
+type: "service_account"
+
+
+
+
+
 BetaManagedAgentsGlobToolConfig object{ type: "glob", enabled, name, permission_policy }
 
 
@@ -973,7 +1107,7 @@ Configuration for tools from an MCP server defined in `mcp_servers`.
 
 
 
-BetaManagedAgentsModel = "claude-sonnet-5-5" or "claude-opus-5-5" or "claude-fable-5-1" or 13 more or string
+BetaManagedAgentsModel = "claude-haiku-5-5" or "claude-sonnet-5-5" or "claude-opus-5-5" or 14 more or string
 
 
 
@@ -1001,6 +1135,158 @@ An object that defines additional configuration control over model use
 
 
 
+BetaManagedAgentsMultiagentAdvisor = [BetaManagedAgentsMultiagentAdvisorEnabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_advisor_enabled) or [BetaManagedAgentsMultiagentAdvisorDisabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_advisor_disabled)
+
+
+
+Whether the session's primary thread can consult an advisor model.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentAdvisorEnabled object{ type: "enabled", model }
+
+
+
+The session's primary thread can consult `model` mid-turn.
+
+type: "enabled"
+
+
+
+model: string
+
+
+
+The advisor model id.
+
+
+
+BetaManagedAgentsMultiagentAdvisorDisabled object{ type: "disabled" }
+
+
+
+The agent has no advisor.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentAdvisorDisabled object{ type: "disabled" }
+
+
+
+The agent has no advisor.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentAdvisorDisabledParams object{ type: "disabled" }
+
+
+
+The agent has no advisor.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentAdvisorEnabled object{ type: "enabled", model }
+
+
+
+The session's primary thread can consult `model` mid-turn.
+
+type: "enabled"
+
+
+
+model: string
+
+
+
+The advisor model id.
+
+
+
+BetaManagedAgentsMultiagentAdvisorEnabledParams object{ type: "enabled", model }
+
+
+
+The session's primary thread can consult `model` mid-turn.
+
+type: "enabled"
+
+
+
+
+
+model: string
+
+
+
+A Claude model id. The model must be permitted as an advisor for this agent's model.
+
+minLength1
+
+maxLength256
+
+
+
+BetaManagedAgentsMultiagentAdvisorParams = [BetaManagedAgentsMultiagentAdvisorEnabledParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_advisor_enabled_params) or [BetaManagedAgentsMultiagentAdvisorDisabledParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_advisor_disabled_params)
+
+
+
+Whether the session's primary thread can consult an advisor model.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentAdvisorEnabledParams object{ type: "enabled", model }
+
+
+
+The session's primary thread can consult `model` mid-turn.
+
+type: "enabled"
+
+
+
+
+
+model: string
+
+
+
+A Claude model id. The model must be permitted as an advisor for this agent's model.
+
+minLength1
+
+maxLength256
+
+
+
+BetaManagedAgentsMultiagentAdvisorDisabledParams object{ type: "disabled" }
+
+
+
+The agent has no advisor.
+
+type: "disabled"
+
+
+
+
+
 BetaManagedAgentsMultiagentCoordinator object{ type: "coordinator", agents }
 
 
@@ -1017,6 +1303,170 @@ A coordinator topology: the session's primary thread orchestrates work by spawni
 
 
 
+BetaManagedAgentsMultiagentInlineAgents = [BetaManagedAgentsMultiagentInlineAgentsEnabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_inline_agents_enabled) or [BetaManagedAgentsMultiagentInlineAgentsDisabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_inline_agents_disabled)
+
+
+
+Whether the agent can define inline agents. The agent defines an inline agent itself, in a workflow run's plan or when it spawns a session thread, and the inline agent is not saved.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsEnabled object{ type: "enabled" }
+
+
+
+The agent can define inline agents.
+
+type: "enabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsDisabled object{ type: "disabled" }
+
+
+
+The agent cannot define inline agents.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsDisabled object{ type: "disabled" }
+
+
+
+The agent cannot define inline agents.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsDisabledParams object{ type: "disabled" }
+
+
+
+The agent cannot define inline agents.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsEnabled object{ type: "enabled" }
+
+
+
+The agent can define inline agents.
+
+type: "enabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsEnabledParams object{ type: "enabled" }
+
+
+
+The agent can define inline agents.
+
+type: "enabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsParams = [BetaManagedAgentsMultiagentInlineAgentsEnabledParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_inline_agents_enabled_params) or [BetaManagedAgentsMultiagentInlineAgentsDisabledParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_inline_agents_disabled_params)
+
+
+
+Whether the agent can define inline agents. The agent defines an inline agent itself, in a workflow run's plan or when it spawns a session thread, and the inline agent is not saved.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsEnabledParams object{ type: "enabled" }
+
+
+
+The agent can define inline agents.
+
+type: "enabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentInlineAgentsDisabledParams object{ type: "disabled" }
+
+
+
+The agent cannot define inline agents.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentPredefinedAgentParams = string or [BetaManagedAgentsAgentParams](https://platform.claude.com/docs/en/api/http/beta/sessions#beta_managed_agents_agent_params) or [BetaManagedAgentsMultiagentSelfParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_self_params)
+
+
+
+One agent in a `predefined_agents` list. It is an agent ID string, an `agent` reference with an optional `version`, or `self` for the agent that owns this configuration.
+
+One of the following:
+
+string
+
+
+
+
+
+BetaManagedAgentsAgentParams object{ type: "agent", id, version }
+
+
+
+Specification for an Agent. Provide a specific `version` or use the short-form `agent="agent_id"` for the most recent version
+
+type: "agent"
+
+
+
+
+
+id: string
+
+
+
+The `agent` ID.
+
+minLength1
+
+maxLength128
+
+
+
+version: optional number
+
+
+
+The specific `agent` version to use. Omit to use the latest version. Must be at least 1 if specified.
+
+formatint32
+
+
+
 BetaManagedAgentsMultiagentSelfParams object{ type: "self" }
 
 
@@ -1026,6 +1476,234 @@ Sentinel roster entry meaning "the agent that owns this configuration". Resolved
 type: "self"
 
 
+
+
+
+BetaManagedAgentsMultiagentSelfParams object{ type: "self" }
+
+
+
+Sentinel roster entry meaning "the agent that owns this configuration". Resolved server-side to a concrete agent reference.
+
+type: "self"
+
+
+
+
+
+BetaManagedAgentsMultiagentSubagents = [BetaManagedAgentsMultiagentSubagentsEnabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_subagents_enabled) or [BetaManagedAgentsMultiagentSubagentsDisabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_subagents_disabled)
+
+
+
+Whether the agent can spawn session threads.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentSubagentsEnabled object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can spawn session threads.
+
+
+
+BetaManagedAgentsMultiagentSubagentsDisabled object{ type: "disabled" }
+
+
+
+The agent cannot spawn session threads.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentSubagentsDisabled object{ type: "disabled" }
+
+
+
+The agent cannot spawn session threads.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentSubagentsDisabledParams object{ type: "disabled" }
+
+
+
+The agent cannot spawn session threads.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentSubagentsEnabled object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can spawn session threads.
+
+
+
+BetaManagedAgentsMultiagentSubagentsEnabledParams object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can spawn session threads. Each thread runs a predefined agent, which is a saved agent in `predefined_agents`, or an inline agent, which the agent defines when it spawns the thread and which is not saved. If `inline_agents` is disabled, `predefined_agents` must name at least one agent.
+
+
+
+BetaManagedAgentsMultiagentSubagentsParams = [BetaManagedAgentsMultiagentSubagentsEnabledParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_subagents_enabled_params) or [BetaManagedAgentsMultiagentSubagentsDisabledParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_subagents_disabled_params)
+
+
+
+Whether the agent can spawn session threads.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentSubagentsEnabledParams object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can spawn session threads. Each thread runs a predefined agent, which is a saved agent in `predefined_agents`, or an inline agent, which the agent defines when it spawns the thread and which is not saved. If `inline_agents` is disabled, `predefined_agents` must name at least one agent.
+
+
+
+BetaManagedAgentsMultiagentSubagentsDisabledParams object{ type: "disabled" }
+
+
+
+The agent cannot spawn session threads.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentWorkflows = [BetaManagedAgentsMultiagentWorkflowsEnabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_workflows_enabled) or [BetaManagedAgentsMultiagentWorkflowsDisabled](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_workflows_disabled)
+
+
+
+Whether the agent can start workflow runs.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentWorkflowsEnabled object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can start workflow runs.
+
+
+
+BetaManagedAgentsMultiagentWorkflowsDisabled object{ type: "disabled" }
+
+
+
+The agent cannot start workflow runs.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentWorkflowsDisabled object{ type: "disabled" }
+
+
+
+The agent cannot start workflow runs.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentWorkflowsDisabledParams object{ type: "disabled" }
+
+
+
+The agent cannot start workflow runs.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagentWorkflowsEnabled object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can start workflow runs.
+
+
+
+BetaManagedAgentsMultiagentWorkflowsEnabledParams object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can start workflow runs. Each run follows a plan, a program that the agent writes. A plan can use predefined agents, which are the saved agents in `predefined_agents`, and inline agents, which it defines itself and which are not saved. If `inline_agents` is disabled, `predefined_agents` must name at least one agent.
+
+
+
+BetaManagedAgentsMultiagentWorkflowsParams = [BetaManagedAgentsMultiagentWorkflowsEnabledParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_workflows_enabled_params) or [BetaManagedAgentsMultiagentWorkflowsDisabledParams](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_multiagent_workflows_disabled_params)
+
+
+
+Whether the agent can start workflow runs.
+
+One of the following:
+
+
+
+BetaManagedAgentsMultiagentWorkflowsEnabledParams object{ type: "enabled", inline_agents, predefined_agents }
+
+
+
+The agent can start workflow runs. Each run follows a plan, a program that the agent writes. A plan can use predefined agents, which are the saved agents in `predefined_agents`, and inline agents, which it defines itself and which are not saved. If `inline_agents` is disabled, `predefined_agents` must name at least one agent.
+
+
+
+BetaManagedAgentsMultiagentWorkflowsDisabledParams object{ type: "disabled" }
+
+
+
+The agent cannot start workflow runs.
+
+type: "disabled"
+
+
+
+
+
+BetaManagedAgentsMultiagent20261001 object{ type: "multiagent_20261001", advisor, subagents, workflows }
+
+
+
+Resolved multiagent configuration with three members, each enabled or disabled on its own.
+
+
+
+BetaManagedAgentsMultiagent20261001Params object{ type: "multiagent_20261001", advisor, subagents, workflows }
+
+
+
+Multiagent configuration with three members, each enabled or disabled on its own. On an update, if the agent's stored `multiagent` also has type `multiagent_20261001`, this configuration is merged into the stored one, level by level, instead of replacing it. A key that the update omits keeps its stored value. A key sent as null takes its default, on create as well, so `"workflows": null` enables workflows. An object sent with a `type` other than the stored one replaces the stored object, and the keys that it omits take their defaults. A `predefined_agents` list that is sent replaces the stored list. Every object that is sent needs its `type`, and an enabled `advisor` needs its `model`. Other validation applies to the merged result.
 
 
 
@@ -1045,7 +1723,31 @@ Configuration override for the read tool.
 
 
 
-BetaManagedAgentsSessionThreadAgent object{ type: "agent", id, description, 7 more }
+BetaManagedAgentsServiceAccountExecutionIdentity object{ type: "service_account" }
+
+
+
+The Anthropic-managed service account as returned in API responses.
+
+type: "service_account"
+
+
+
+
+
+BetaManagedAgentsServiceAccountExecutionIdentityParams object{ type: "service_account" }
+
+
+
+The Anthropic-managed service account — the default execution principal. Carries no identifier.
+
+type: "service_account"
+
+
+
+
+
+BetaManagedAgentsSessionThreadAgent object{ type: "agent", id, description, 8 more }
 
 
 
@@ -1153,7 +1855,7 @@ maxLength255
 
 
 
-BetaManagedAgentsWebFetchToolConfig object{ type: "web_fetch", enabled, name, 4 more }
+BetaManagedAgentsWebFetchToolConfig object{ type: "web_fetch", enabled, name, 5 more }
 
 
 
@@ -1161,11 +1863,315 @@ Configuration for the web_fetch tool.
 
 
 
-BetaManagedAgentsWebFetchToolConfigParams object{ type: "web_fetch", name, allowed_domains, 4 more }
+BetaManagedAgentsWebFetchToolConfigParams object{ type: "web_fetch", name, allowed_domains, 5 more }
 
 
 
 Configuration override for the web_fetch tool.
+
+
+
+BetaManagedAgentsWebFetchURLSourceAll object{ type: "all" }
+
+
+
+Every URL from this source may be fetched. This is the default.
+
+type: "all"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSourceExcept object{ type: "except", tools }
+
+
+
+Every tool's results contribute URLs that may be fetched, except the named tools' results.
+
+type: "except"
+
+
+
+
+
+tools: array of [BetaManagedAgentsWebFetchURLSourceToolReference](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_tool_reference) { type: "tool_reference", name }
+
+
+
+The tools whose results do not contribute. Between 1 and 128 entries, each with a different name. An empty list is rejected; use "all" to leave out no tool's results.
+
+type: "tool_reference"
+
+
+
+Must be "tool_reference".
+
+
+
+name: string
+
+
+
+Name of the tool. Compared exactly, so upper and lower case letters are different.
+
+minLength1
+
+maxLength128
+
+
+
+BetaManagedAgentsWebFetchURLSourceNone object{ type: "none" }
+
+
+
+This source contributes no URLs that may be fetched.
+
+type: "none"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSourceOnly object{ type: "only", tools }
+
+
+
+Only the named tools' results contribute URLs that may be fetched.
+
+type: "only"
+
+
+
+
+
+tools: array of [BetaManagedAgentsWebFetchURLSourceToolReference](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_tool_reference) { type: "tool_reference", name }
+
+
+
+The tools whose results contribute. Between 1 and 128 entries, each with a different name. An empty list is rejected; use "none" to allow no tool's results.
+
+type: "tool_reference"
+
+
+
+Must be "tool_reference".
+
+
+
+name: string
+
+
+
+Name of the tool. Compared exactly, so upper and lower case letters are different.
+
+minLength1
+
+maxLength128
+
+
+
+BetaManagedAgentsWebFetchURLSourceShorthand = "all" or "none"
+
+
+
+String form of a url_sources value that has no field other than its type: "all" means {"type": "all"} and "none" means {"type": "none"}.
+
+One of the following:
+
+"all"
+
+
+
+"none"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSourceToolFilter = [BetaManagedAgentsWebFetchURLSourceAll](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_all) or [BetaManagedAgentsWebFetchURLSourceNone](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_none) or [BetaManagedAgentsWebFetchURLSourceOnly](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_only) or [BetaManagedAgentsWebFetchURLSourceExcept](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_except)
+
+
+
+Which tools' results contribute URLs that may be fetched.
+
+One of the following:
+
+
+
+BetaManagedAgentsWebFetchURLSourceToolFilterParams = [BetaManagedAgentsWebFetchURLSourceShorthand](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_shorthand) or [BetaManagedAgentsWebFetchURLSourceToolFilter](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_tool_filter)
+
+
+
+Which tools' results contribute URLs that may be fetched. Accepts the string "all" or "none", or an object whose type is "all", "none", "only" or "except". Responses use the object form.
+
+One of the following:
+
+
+
+BetaManagedAgentsWebFetchURLSourceShorthand = "all" or "none"
+
+
+
+String form of a url_sources value that has no field other than its type: "all" means {"type": "all"} and "none" means {"type": "none"}.
+
+One of the following:
+
+"all"
+
+
+
+"none"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSourceToolFilter = [BetaManagedAgentsWebFetchURLSourceAll](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_all) or [BetaManagedAgentsWebFetchURLSourceNone](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_none) or [BetaManagedAgentsWebFetchURLSourceOnly](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_only) or [BetaManagedAgentsWebFetchURLSourceExcept](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_except)
+
+
+
+Which tools' results contribute URLs that may be fetched.
+
+One of the following:
+
+
+
+BetaManagedAgentsWebFetchURLSourceToolReference object{ type: "tool_reference", name }
+
+
+
+Names one tool in an only or except list.
+
+type: "tool_reference"
+
+
+
+Must be "tool_reference".
+
+
+
+name: string
+
+
+
+Name of the tool. Compared exactly, so upper and lower case letters are different.
+
+minLength1
+
+maxLength128
+
+
+
+BetaManagedAgentsWebFetchURLSourceUserInput = [BetaManagedAgentsWebFetchURLSourceAll](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_all) or [BetaManagedAgentsWebFetchURLSourceNone](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_none)
+
+
+
+Whether URLs in the text of user messages may be fetched.
+
+One of the following:
+
+
+
+BetaManagedAgentsWebFetchURLSourceAll object{ type: "all" }
+
+
+
+Every URL from this source may be fetched. This is the default.
+
+type: "all"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSourceNone object{ type: "none" }
+
+
+
+This source contributes no URLs that may be fetched.
+
+type: "none"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSourceUserInputParams = [BetaManagedAgentsWebFetchURLSourceShorthand](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_shorthand) or [BetaManagedAgentsWebFetchURLSourceUserInput](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_user_input)
+
+
+
+Whether URLs in the text of user messages may be fetched. Accepts the string "all" or "none", or the object {"type": "all"} or {"type": "none"}. Responses use the object form.
+
+One of the following:
+
+
+
+BetaManagedAgentsWebFetchURLSourceShorthand = "all" or "none"
+
+
+
+String form of a url_sources value that has no field other than its type: "all" means {"type": "all"} and "none" means {"type": "none"}.
+
+One of the following:
+
+"all"
+
+
+
+"none"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSourceUserInput = [BetaManagedAgentsWebFetchURLSourceAll](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_all) or [BetaManagedAgentsWebFetchURLSourceNone](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_web_fetch_url_source_none)
+
+
+
+Whether URLs in the text of user messages may be fetched.
+
+One of the following:
+
+
+
+BetaManagedAgentsWebFetchURLSourceAll object{ type: "all" }
+
+
+
+Every URL from this source may be fetched. This is the default.
+
+type: "all"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSourceNone object{ type: "none" }
+
+
+
+This source contributes no URLs that may be fetched.
+
+type: "none"
+
+
+
+
+
+BetaManagedAgentsWebFetchURLSources object{ client_tool_results, server_tool_results, user_input }
+
+
+
+Which sources contribute URLs the web_fetch tool may fetch. A key that is null was not set and allows every URL from that source.
+
+
+
+BetaManagedAgentsWebFetchURLSourcesParams object{ client_tool_results, server_tool_results, user_input }
+
+
+
+Which sources contribute URLs the web_fetch tool may fetch. When web_fetch is limited to URLs the conversation has already shown the model (in a user message, a custom tool's result, or an earlier web_search or web_fetch result), each key narrows one of those sources and defaults to "all". Setting all three keys to "none" is rejected.
 
 
 

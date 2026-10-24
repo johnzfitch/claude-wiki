@@ -2,7 +2,7 @@
 title: "Authentication - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/authentication"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:37Z"
+fetched_at: "2026-10-20T06:40:24Z"
 tags: ["api", "authentication"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fauthentication)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fauthentication)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)First steps
 
@@ -126,7 +126,7 @@ Workspace API keys still work but should be considered legacy; identity-backed k
 
 ### Create and use a key
 
-- **Create a key:** Go to [Settings → API keys](playground.md) in the Claude Console and click **Create key**. Name the key and choose an [expiration](#key-expiration). Set **Linked account** to yourself for a personal key, or to a service account for a key shared across multiple users. You can also scope the key to a specific workspace, which lets you skip setting a workspace ID manually in future requests.
+- **Create a key:** In the Claude Console, go to the [API keys](playground.md) page (`platform.claude.com/settings/keys`) and click **Create key**. Name the key and choose an [expiration](#key-expiration). Set **Linked account** to yourself for a personal key, or to a service account for a key shared across multiple users. You can also scope the key to a specific workspace, which lets you skip setting a workspace ID manually in future requests.
 - **Use the key:** Send it as `Authorization: Bearer <key>` on direct HTTP requests, or set the `ANTHROPIC_API_KEY` environment variable and the [client SDKs](cli-sdks-libraries-overview.md) pick it up automatically.
 
 ```python
@@ -140,7 +140,7 @@ content-type: application/json
 
 The legacy `x-api-key: YOUR_API_KEY` header is still supported in place of `Authorization`.
 
-Store API keys in a secrets manager, rotate them periodically, and disable or delete any key you suspect has leaked. On the [API keys page](playground.md), **Disable** is reversible (the Admin API reports the key's `status` as `"inactive"`, and **Re-enable** returns it to `"active"`), while **Delete** is permanent: the key is archived and still appears in [List API Keys](../Admin/beta-organization-api-keys-list.md) with `status: "archived"`. Expired keys can only be deleted. You can also set an [expiration](#key-expiration) when you create a key to limit how long a leaked credential stays usable.
+Store API keys in a secrets manager, rotate them periodically, and disable or delete any key you suspect has leaked. On the [API keys page](playground.md) in the Claude Console, **Disable** is reversible (the Admin API reports the key's `status` as `"inactive"`, and **Re-enable** returns it to `"active"`), while **Delete** is permanent: the key is archived and still appears in [List API Keys](../Endpoints/organization-api-keys-list.md) with `status: "archived"`. Expired keys can only be deleted. You can also set an [expiration](#key-expiration) when you create a key to limit how long a leaked credential stays usable.
 
 cURL
 
@@ -159,6 +159,8 @@ PHP
 Ruby
 
 CLI
+
+Python
 
 
 
@@ -176,7 +178,7 @@ If your API key isn't scoped to a workspace, you must specify the workspace ID i
 
 The [Admin API](manage-claude-admin-api.md) accepts a personal key or service account key only if the key isn't scoped to a specific workspace.
 
-You can find a workspace's ID in the **ID** column of [Settings → Workspaces](playground.md) in the Claude Console, or by calling the [List Workspaces](../Admin/beta-organization-workspaces-list.md) endpoint. List Workspaces includes the Default Workspace only when you pass `include_default=true`; its ID is also in the `anthropic-workspace-id` [response header](manage-claude-workspaces.md#identify-the-workspace-behind-an-api-response) of any request that runs there.
+You can find a workspace's ID in the **ID** column on the [Workspaces](playground.md) page (`platform.claude.com/settings/workspaces`) in the Claude Console, or by calling the [List Workspaces](../Endpoints/organization-workspaces-list.md) endpoint. List Workspaces includes the Default Workspace only when you pass `include_default=true`; its ID is also in the `anthropic-workspace-id` [response header](manage-claude-workspaces.md#identify-the-workspace-behind-an-api-response) of any request that runs there.
 
 cURL
 
@@ -195,6 +197,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -246,7 +250,7 @@ Anthropic emails the key's creator as the expiration approaches: 7 days before e
 
 After a key expires, requests made with it return a `401 authentication_error`. Create a new key to restore access; expired keys cannot be reactivated.
 
-The Console API keys table shows each key's expiration, and the Admin API reports each key's `expires_at` timestamp on the [List API Keys](../Admin/beta-organization-api-keys-list.md) and [Retrieve API Key](../Admin/beta-organization-api-keys-retrieve.md) endpoints, so you can audit and rotate keys before they expire. The field is `null` for keys without an expiration.
+The Console API keys table shows each key's expiration, and the Admin API reports each key's `expires_at` timestamp on the [List API Keys](../Endpoints/organization-api-keys-list.md) and [Retrieve API Key](../Endpoints/organization-api-keys-retrieve.md) endpoints, so you can audit and rotate keys before they expire. The field is `null` for keys without an expiration.
 
 Expiration limits the lifetime of a leaked credential, but it is not a substitute for secret hygiene. Regardless of expiration, store keys in a secrets manager and disable or delete any key you suspect has leaked.
 
@@ -259,10 +263,10 @@ See [Workload Identity Federation](manage-claude-wif-reference.md) for details o
 To replace a workspace key with a personal or service account key:
 
 1.  **Decide the key type.** Your own tooling should use a personal key. A shared or unattended workload should use a service account key.
-2.  **Create a service account** if necessary. You may have to ask an organization admin to create one in [Settings → Service accounts](https://platform.claude.com/settings/service-accounts) and add it to the relevant workspace.
+2.  **Create a service account** if necessary. You may have to ask an organization admin to create one on the [Service accounts](https://platform.claude.com/settings/service-accounts) page (`platform.claude.com/settings/service-accounts`) in the Claude Console and add it to the relevant workspace.
 3.  **Create the new key.** Create it specifically for the integration's workspace unless multiple workspaces are needed.
 4.  **Deploy the new key.** Replace the old key wherever the integration reads it, typically the `ANTHROPIC_API_KEY` environment variable or a secrets manager entry. For a multi-workspace key, also send the `anthropic-workspace-id` header as shown in [Select a workspace](#select-a-workspace).
-5.  **Delete the old key.** Confirm that requests succeed, then delete the workspace key on the [API keys page](playground.md).
+5.  **Delete the old key.** Confirm that requests succeed, then delete the workspace key on the [API keys page](playground.md) in the Claude Console.
 
 ## Workload Identity Federation
 

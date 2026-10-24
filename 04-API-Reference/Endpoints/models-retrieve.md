@@ -2,7 +2,7 @@
 title: "Get a Model - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/models/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:22Z"
+fetched_at: "2026-10-20T06:40:07Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmodels%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmodels%2Fretrieve)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -229,12 +233,18 @@ cURL
 
 
 
-A beta version of this method exists and may have additional functionality. [View the beta version](http-beta-models-retrieve.md).
+A beta version of this method exists and may have additional functionality. [View the beta version](platform-claude-com-http-beta-models-retrieve.md).
 
 1.  [API reference](http.md)
 2.  [Models](https://platform.claude.com/docs/en/api/http/models)
 
 # Get a Model
+
+Copy page
+
+
+
+cURL
 
 GET/v1/models/{model_id}
 
@@ -254,6 +264,16 @@ Model identifier or alias.
 
 
 
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
 "anthropic-workspace-id": optional string
 
 
@@ -264,7 +284,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)⁠Deprecated
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)⁠Deprecated
 
 
 
@@ -478,67 +498,17 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 ##### Returns
 
 
 
-ModelInfo object{ type: "model", id, capabilities, 4 more }
+ModelInfo object{ type: "model", id, capabilities, 8 more }
 
 
-
-
-
-type: "model"
-
-
-
-Object type.
-
-For Models, this is always `"model"`.
-
-defaultmodel
-
-id: string
-
-
-
-Unique model identifier.
-
-
-
-capabilities: [ModelCapabilities](https://platform.claude.com/docs/en/api/http/models#model_capabilities) { batch, citations, code_execution, 6 more } or null
-
-
-
-Object mapping capability names to their support details. Keys are always present for all known capabilities.
-
-
-
-created_at: string
-
-
-
-RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
-
-formatdate-time
-
-display_name: string
-
-
-
-A human-readable name for the model.
-
-max_input_tokens: number or null
-
-
-
-Maximum input context window size in tokens for this model.
-
-max_tokens: number or null
-
-
-
-Maximum value for the `max_tokens` parameter when using this model.
 
 Get a Model
 
@@ -558,7 +528,7 @@ Response 200
 
 ```python
 {
-  "id": "claude-opus-5",
+  "id": "claude-opus-5-5",
   "capabilities": {
     "batch": {
       "supported": true
@@ -605,6 +575,15 @@ Response 200
     "pdf_input": {
       "supported": true
     },
+    "server_tools": {
+      "code_execution": {
+        "supported": true
+      },
+      "supported": true,
+      "web_search": {
+        "supported": true
+      }
+    },
     "structured_outputs": {
       "supported": true
     },
@@ -614,16 +593,26 @@ Response 200
         "adaptive": {
           "supported": true
         },
+        "between_tools": {
+          "supported": true
+        },
+        "disabled": {
+          "supported": true
+        },
         "enabled": {
           "supported": true
         }
       }
     }
   },
-  "created_at": "2026-07-24T00:00:00Z",
-  "display_name": "Claude Opus 5",
+  "created_at": "2026-09-21T00:00:00Z",
+  "deprecated_at": "2019-12-27T18:11:19.117Z",
+  "display_name": "Claude Opus 5.5",
+  "lifecycle": "active",
+  "line": "haiku",
   "max_input_tokens": 0,
   "max_tokens": 0,
+  "retires_at": "2019-12-27T18:11:19.117Z",
   "type": "model"
 }
 ```
@@ -636,7 +625,7 @@ Response 200
 
 ```python
 {
-  "id": "claude-opus-5",
+  "id": "claude-opus-5-5",
   "capabilities": {
     "batch": {
       "supported": true
@@ -683,6 +672,15 @@ Response 200
     "pdf_input": {
       "supported": true
     },
+    "server_tools": {
+      "code_execution": {
+        "supported": true
+      },
+      "supported": true,
+      "web_search": {
+        "supported": true
+      }
+    },
     "structured_outputs": {
       "supported": true
     },
@@ -692,11 +690,23 @@ Response 200
         "adaptive": {
           "supported": true
         },
+        "between_tools": {
+          "supported": true
+        },
+        "disabled": {
+          "supported": true
+        },
         "enabled": {
           "supported": true
         }
       }
     }
   },
-  "created_at": "2026-07-24T00:00:00Z",
-  "display_name": "Claude Opus 5",
+  "created_at": "2026-09-21T00:00:00Z",
+  "deprecated_at": "2019-12-27T18:11:19.117Z",
+  "display_name": "Claude Opus 5.5",
+  "lifecycle": "active",
+  "line": "haiku",
+  "max_input_tokens": 0,
+  "max_tokens": 0,
+  "retires_at": "2019-12-27T18:11:19.117Z",

@@ -2,7 +2,7 @@
 title: "Epic Systems Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/epic-systems"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:01Z"
+fetched_at: "2026-10-23T06:29:36Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -48,9 +48,9 @@ Seth sat down with Jonathan Dahlberg, head of Anthropic’s applied AI team, to 
 
 **Jonathan Dahlberg, Anthropic: How did AI adoption spread across Epic, internally?**
 
-**Seth Hain, Epic:** It was a very natural progression, because we gave everyone at Epic the ability to explore AI. Pockets of learning would develop. It would often start with an individual, and then their teammates and neighbors. We're famously an in-person company, and a key part of that is the natural interactions in the break room or hallway—quick ideas traded back and forth. The excitement of something you build over the weekend and show to a colleague generates momentum. We ended up creating internal tools to help people see who was using AI and what they were doing with it, so others could adopt it quickly and try more.
+**Seth Hain, Epic:** It was a very natural progression, because we gave everyone at Epic the ability to explore AI. Pockets of learning would develop. It would often start with an individual, and then their teammates and neighbors. We’re famously an in-person company, and a key part of that is the natural interactions in the break room or hallway—quick ideas traded back and forth. The excitement of something you build over the weekend and show to a colleague generates momentum. We ended up creating internal tools to help people see who was using AI and what they were doing with it, so others could adopt it quickly and try more.
 
-And the pace kept picking up. When you're using AI personally, you end up having moments of surprise—when you realize what the AI is now capable of. Over the last five or six years, those moments started coming faster and faster, building on each other. Both the core models and the agentic tooling—the layer above the models—are improving. Because we gave everyone the ability to explore AI, everyone saw this happen.
+And the pace kept picking up. When you’re using AI personally, you end up having moments of surprise—when you realize what the AI is now capable of. Over the last five or six years, those moments started coming faster and faster, building on each other. Both the core models and the agentic tooling—the layer above the models—are improving. Because we gave everyone the ability to explore AI, everyone saw this happen.
 
 **Dahlberg: Over half of your Claude Code usage is from non-developers. What surprised you about that?**
 
@@ -123,7 +123,8 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -141,12 +142,12 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -179,7 +180,7 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -197,6 +198,7 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -212,7 +214,7 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -247,7 +249,8 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -265,12 +268,12 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -303,7 +306,7 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -321,6 +324,7 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -336,7 +340,7 @@ Beyond that, we’re building medical event models internally at Epic—AI train
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

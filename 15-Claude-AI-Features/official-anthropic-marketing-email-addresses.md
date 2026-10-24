@@ -2,7 +2,7 @@
 title: "Official Anthropic marketing email addresses | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10416553-official-anthropic-marketing-email-addresses"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:24:22Z"
+fetched_at: "2026-10-23T06:29:07Z"
 tags: ["claude-ai"]
 ---
 
@@ -13,20 +13,20 @@ August 24, 2026
 
 To help you identify legitimate marketing communications from Anthropic, all our marketing emails are sent from addresses ending in anthropic.com or claude.com. Below are the official email addresses we use for marketing communications:
 
-- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#5521303438153038343c397b343b213d273a253c367b363a38)
+- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#f28697939fb2979f939b9edc939c869a809d829b91dc919d9f)
 
-- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#4120312801242c20282d6f202f3529332e3128226f222e2c)
+- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#6405140d240109050d084a050a100c160b140d074a070b09)
 
-- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#c3adacb7aaa0a683a6aea2aaafeda2adb7abb1acb3aaa0eda0acae)
+- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#2e40415a474d4b6e4b434f4742004f405a465c415e474d004d4143)
 
-- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#d3b2bda7bba1bca3bab0fea7b6b2be93beb2babffdb2bda7bba1bca3bab0fdb0bcbe)
+- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#c5a4abb1adb7aab5aca6e8b1a0a4a885a8a4aca9eba4abb1adb7aab5aca6eba6aaa8)
 
-- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#0b786a676e784b666a6267256a657f6379647b626825686466)
+- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#9be8faf7fee8dbf6faf2f7b5faf5eff3e9f4ebf2f8b5f8f4f6)
 
-- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#d3bdbcfea1b6a3bfaa93b6beb2babffdb0bfb2a6b7b6fdb0bcbe)
+- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#442a2b69362134283d042129252d286a2728253120216a272b29)
 
-- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#9ff1f0b2edfaeff3e6dfedfaecfafeedfcf7b1fef1ebf7edf0eff6fcb1fcf0f2)
+- [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#1b757436697e6b77625b697e687e7a697873357a756f7369746b727835787476)
 
 Please note that these addresses are outbound only with unmonitored inboxes.
 
-Concerned about an email you received? Visit our **[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)** guide to understand your options for further assistance.
+Concerned about an email you received? Visit our **[How to get support](how-to-get-support.md)** guide to understand your options for further assistance.

@@ -2,7 +2,7 @@
 title: "Jetbrains Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/jetbrains-2"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:51Z"
+fetched_at: "2026-10-23T06:29:44Z"
 tags: ["agents", "case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -14,15 +14,15 @@ tags: ["agents", "case-studies", "claude-code", "enterprise", "security"]
 
 JetBrains, the company behind IntelliJ IDEA, PyCharm, and other IDEs trusted by 15+ million developers worldwide, has integrated Claude Agent as their first third-party coding agent available directly inside the IDE—no additional plugins or subscriptions required.
 
-Using Anthropic's Claude Agent SDK—the same technology that powers Claude Code—JetBrains is pioneering an open, multi-agent approach to developer tooling. Claude Agent gives developers frontier agentic coding capabilities within the workflows they already know and love
+Using Anthropic’s Claude Agent SDK—the same technology that powers Claude Code—JetBrains is pioneering an open, multi-agent approach to developer tooling. Claude Agent gives developers frontier agentic coding capabilities within the workflows they already know and love
 
 ## The Strategy Move Toward Multi-Agent Choice
 
-Since launching Junie, their first-party coding agent powered by Claude in April 2025, JetBrains observed strong developer demand for an open AI ecosystem. Internal benchmarks consistently showed Claude's superior performance in code generation, documentation, and refactoring tasks. As Claude Code gained traction as a leading standalone agent, the path forward became clear.
+Since launching Junie, their first-party coding agent powered by Claude in April 2025, JetBrains observed strong developer demand for an open AI ecosystem. Internal benchmarks consistently showed Claude’s superior performance in code generation, documentation, and refactoring tasks. As Claude Code gained traction as a leading standalone agent, the path forward became clear.
 
-"Claude Code has earned broad recognition among professional developers," said Denis Shiryaev, Group Product Manager at JetBrains. "We’re excited to build off Anthropic’s Agent SDK to power our Claude Agent, and to make this natively available to our developers. Developers can now use the power of Claude’s agentic capabilities, the same ones that make Claude Code so effective, to accomplish high-value tasks directly inside Jetbrains. This brings the power of JetBrains and Claude to the next level together.”
+“Claude Code has earned broad recognition among professional developers,” said Denis Shiryaev, Group Product Manager at JetBrains. “We’re excited to build off Anthropic’s Agent SDK to power our Claude Agent, and to make this natively available to our developers. Developers can now use the power of Claude’s agentic capabilities, the same ones that make Claude Code so effective, to accomplish high-value tasks directly inside Jetbrains. This brings the power of JetBrains and Claude to the next level together.”
 
-The integration aligns with JetBrains' philosophy of leveraging the best innovations, whether developed internally or with Anthropic, to ensure developers have access to best-in-class tools and the power of choice.
+The integration aligns with JetBrains’ philosophy of leveraging the best innovations, whether developed internally or with Anthropic, to ensure developers have access to best-in-class tools and the power of choice.
 
 ## Seamless Integration
 
@@ -30,15 +30,15 @@ Claude Agent is included in the JetBrains AI subscription, at no extra cost, alo
 
 Key advantages:
 
-- **Native IDE access:** Claude Agent operates directly within JetBrains' AI Chat interface, accessing IDE functionality through the JetBrains MCP server. Developers can navigate codebases, execute searches, and apply refactorings without switching contexts
+- **Native IDE access:** Claude Agent operates directly within JetBrains’ AI Chat interface, accessing IDE functionality through the JetBrains MCP server. Developers can navigate codebases, execute searches, and apply refactorings without switching contexts
 - **No deployment overhead:** No separate plugins to install, authentication flows, or standalone tools to manage
 - **Unified experience:** All AI assistance appears in a single chat interface via JetBrains AI Assistant, streamlining workflows
 
 ## An Open Ecosystem Vision
 
-The Claude Agent integration represents JetBrains' first step toward an open AI ecosystem within their IDEs—giving developers real choice.
+The Claude Agent integration represents JetBrains’ first step toward an open AI ecosystem within their IDEs—giving developers real choice.
 
-"This is just the beginning of opening up our AI ecosystem," Melnikov explained. "Developers will have the freedom to work with various agents, all seamlessly integrated into their IDE. No extra plugins to install. No extra subscriptions to manage."
+“This is just the beginning of opening up our AI ecosystem,” Melnikov explained. “Developers will have the freedom to work with various agents, all seamlessly integrated into their IDE. No extra plugins to install. No extra subscriptions to manage.”
 
 This approach acknowledges that different developers have different preferences and different tasks may call for different AI capabilities. By supporting multiple agents within a consistent interface, JetBrains lets developers optimize their workflows without sacrificing the integrated experience their IDEs are known for.
 
@@ -46,7 +46,7 @@ This approach acknowledges that different developers have different preferences 
 
 By building atop the Claude Agent SDK, JetBrains leverages the same foundational building blocks that make Claude Code effective– context management, file operations, tool calls and code execution–-all now native within the JetBrains IDEs that developers love.
 
-JetBrain's launch of Claude Agent represents more than a product integration. It demonstrates how Claude Code's success can extend into open, multi-agent developer ecosystems. As JetBrains continues expanding their AI ecosystem, they’re taking a leadership role in defining the future of AI-powered software development.
+JetBrain’s launch of Claude Agent represents more than a product integration. It demonstrates how Claude Code’s success can extend into open, multi-agent developer ecosystems. As JetBrains continues expanding their AI ecosystem, they’re taking a leadership role in defining the future of AI-powered software development.
 
 ## Related stories
 
@@ -71,7 +71,8 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -89,12 +90,12 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -127,7 +128,7 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -145,6 +146,7 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -160,7 +162,7 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -195,7 +197,8 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -213,12 +216,12 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -251,7 +254,7 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -269,6 +272,7 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -284,7 +288,7 @@ JetBrain's launch of Claude Agent represents more than a product integration. It
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

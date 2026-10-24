@@ -22,7 +22,7 @@ tags: ["api", "models", "security"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fsonnet-5%2Fwhats-new-sonnet-5)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fsonnet-5%2Fwhats-new-sonnet-5)
 
 
 
@@ -58,7 +58,7 @@ Lifecycle and reference
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)Claude Sonnet 5
 
@@ -170,7 +170,7 @@ At launch, Claude Sonnet 5 is available on:
 - **Google Cloud:** available through [Claude on Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md).
 - **Microsoft Foundry:** available through [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md).
 
-Claude Sonnet 5 supports [zero data retention](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md) for organizations with ZDR agreements.
+Claude Sonnet 5 supports [zero data retention](../04-API-Reference/Other/manage-claude-api-and-data-retention.md) for organizations with ZDR agreements.
 
 ## Migration guide
 

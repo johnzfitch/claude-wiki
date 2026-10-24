@@ -1,18 +1,47 @@
 ---
-title: "Claude SWE-Bench Performance \\ Anthropic"
+title: "Claude SWE-Bench performance \\ Anthropic"
 source_url: "https://www.anthropic.com/research/swe-bench-sonnet"
 category: "19-Reference"
-fetched_at: "2026-08-03T07:17:50Z"
+fetched_at: "2026-10-21T06:30:45Z"
 tags: ["agents", "news-research"]
 ---
 
 # Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet
 
-Published Jan 06, 2025
+- [01Achieving state-of-the-art](#achieving-state-of-the-art)
+- [02Results](#results)
+- [03Examples of agent behavior](#examples-of-agent-behavior)
+- [04Challenges](#challenges)
 
-SWE-bench is an AI evaluation benchmark that assesses a model's ability to complete real-world software engineering tasks.
+- Published
+
+  Jan 6, 2025
+
+- Team
+
+  [Engineering](https://www.anthropic.com/engineering)
+
+- Topics
+
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Tool use](https://www.anthropic.com/search?topic=tool-use)
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+
+  See more...
 
 *Our latest model, the upgraded [Claude 3.5 Sonnet](3-5-models-and-computer-use.md), achieved 49% on SWE-bench Verified, a software engineering evaluation, beating the previous state-of-the-art model's 45%. This post explains the "agent" we built around the model, and is intended to help developers get the best possible performance out of Claude 3.5 Sonnet.*
+
+Related articles
+
+- Engineering
+
+  Feb 5, 2026
+
+  [Quantifying infrastructure noise in agentic coding evals](infrastructure-noise.md)
+
+[View more](https://www.anthropic.com/search?topic=benchmarks)
 
 [SWE-bench](https://www.swebench.com/) is an AI evaluation benchmark that assesses a model's ability to complete real-world software engineering tasks. Specifically, it tests how the model can resolve GitHub issues from popular open-source Python repositories. For each task in the benchmark, the AI model is given a set up Python environment and the checkout (a local working copy) of the repository from just before the issue was resolved. The model then needs to understand, modify, and test the code before submitting its proposed solution.
 
@@ -38,7 +67,9 @@ The prompt outlines a suggested approach for the model, but it’s not overly lo
 
 The following code shows the prompt from our agent scaffold:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 <uploaded_files>
 {location}
 </uploaded_files>
@@ -63,13 +94,13 @@ Follow these steps to resolve the issue:
 Your thinking should be thorough and so it's fine if it's very long.
 ```
 
-Copy
-
 The model's first tool executes Bash commands. The schema is simple, taking only the command to be run in the environment. However, the description of the tool carries more weight. It includes more detailed instructions for the model, including escaping inputs, lack of internet access, and how to run commands in the background.
 
 Next, we show the spec for the Bash Tool:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 {
    "name": "bash",
    "description": "Run commands in a bash shell\n
@@ -93,15 +124,15 @@ Next, we show the spec for the Bash Tool:
 }
 ```
 
-Copy
-
 The model's second tool (the Edit Tool) is much more complex, and contains everything the model needs for viewing, creating, and editing files. Again, our tool description contains detailed information for the model about how to use the tool.
 
 We put a lot of effort into the descriptions and specs for these tools across a wide variety of agentic tasks. We tested them to uncover any ways that the model might misunderstand the spec, or the possible pitfalls of using the tools, then edited the descriptions to preempt these problems. We believe that much more attention should go into designing tool interfaces for models, in the same way that a large amount of attention goes into designing tool interfaces for humans.
 
 The following code shows the description for our Edit Tool:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 {
    "name": "str_replace_editor",
    "description": "Custom editing tool for viewing, creating and editing files\n
@@ -118,15 +149,15 @@ Notes for using the `str_replace` command:\n
 ...
 ```
 
-Copy
-
 One way we improved performance was to "error-proof" our tools. For instance, sometimes models could mess up relative file paths after the agent had moved out of the root directory. To prevent this, we simply made the tool always require an absolute path.
 
 We experimented with several different strategies for specifying edits to existing files and had the highest reliability with string replacement, where the model specifies \`old_str\` to replace with \`new_str\` in the given file. The replacement will only occur if there is exactly one match of \`old_str\`. If there are more or fewer matches, the model is shown an appropriate error message for it to retry.
 
 The spec for our Edit Tool is shown below:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 ...
    "input_schema": {
        "type": "object",
@@ -169,16 +200,29 @@ The spec for our Edit Tool is shown below:
 }
 ```
 
-Copy
-
 ## Results
 
 In general, the upgraded Claude 3.5 Sonnet demonstrates higher reasoning, coding, and mathematical abilities than our prior models, and the [previous state-of-the-art](https://solverai.com/) model. It also demonstrates improved agentic capabilities: the tools and scaffolding help put those improved abilities to their best use.
 
-|                          |                             |               |                         |               |
-|--------------------------|-----------------------------|---------------|-------------------------|---------------|
-| Model                    | **Claude 3.5 Sonnet (new)** | Previous SOTA | Claude 3.5 Sonnet (old) | Claude 3 Opus |
-| SWE-bench Verified score | 49%                         | 45%           | 33%                     | 22%           |
+Model
+
+**Claude 3.5 Sonnet (new)**
+
+Previous SOTA
+
+Claude 3.5 Sonnet (old)
+
+Claude 3 Opus
+
+SWE-bench Verified score
+
+49%
+
+45%
+
+33%
+
+22%
 
 Scores on SWE-bench Verified for some of our models, all using this agent scaffold.
 
@@ -190,7 +234,9 @@ The code blocks below will walk through a typical case of the Sonnet 3.5 solving
 
 In this first block, you can see part of the initial prompt given to the model, with \`{pr_description}\` filled in with the real value from a SWE-bench task. Importantly, this task contains steps to reproduce the issue, which will give the model a valuable starting point to investigate.
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 <uploaded_files>
 /repo
 </uploaded_files>
@@ -222,11 +268,11 @@ TypeError: __init__() got an unexpected keyword argument 'store_cv_values'
 lm.RidgeClassifierCV actually has no parameter store_cv_values, even though some attributes depends on it.
 ```
 
-Copy
-
 The model responds and first uses the Edit Tool to view the repository structure. You can see the model's text output and tool call arguments under THOUGHT and ACTION, and part of the tool's output under OBSERVATION:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 THOUGHT:
 I'll help you implement the changes to satisfy the PR description. Let's follow the steps you outlined.
 
@@ -255,11 +301,11 @@ Here's the files and directories up to 2 levels deep in /repo, excluding hidden 
 ...
 ```
 
-Copy
-
 Now that the model has a better understanding of the repository structure, it uses the Edit Tool to create a new script that it will use to reproduce the issue and test its fix:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 THOUGHT:
 Based on the repository structure, we'll need to modify the Ridge Classifier in the `sklearn/linear_model` directory.
 
@@ -287,11 +333,11 @@ OBSERVATION:
 File created successfully at: /repo/reproduce_error.py
 ```
 
-Copy
-
 The model then uses the Bash Tool to execute the script it wrote, and successfully reproduces the issue from the task:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 THOUGHT:
 Let's verify that we can reproduce the error:
 ACTION (bash):
@@ -305,11 +351,11 @@ Traceback (most recent call last):
 TypeError: __init__() got an unexpected keyword argument 'store_cv_values'
 ```
 
-Copy
-
 From here on, the model uses the Edit Tool to change the source code in the repository and reruns its script to verify whether the change has resolved the issue:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 THOUGHT:
 The error is reproducible. Looking at the code, I can see that the issue is that while the `RidgeClassifierCV` class inherits from `_BaseRidgeCV`, it fails to pass the `store_cv_values` parameter from its constructor through to the base class constructor.
 
@@ -339,8 +385,6 @@ new_str:
         self.class_weight = class_weight
 ```
 
-Copy
-
 In this particular example, the model worked for 12 steps before deciding that it was ready to submit. The task's tests then ran successfully, verifying that the model's solution addressed the problem. Some tasks took more than 100 turns before the model submitted its solution; in others, the model kept trying until it ran out of context.
 
 From reviewing attempts from the updated Claude 3.5 Sonnet compared to older models, updated 3.5 Sonnet self-corrects more often. It also shows an ability to try several different solutions, rather than getting stuck making the same mistake over and over.
@@ -356,6 +400,8 @@ SWE-bench Verified is a powerful evaluation, but it’s also more complex to run
 
 The upgraded Claude 3.5 Sonnet achieved 49% on SWE-bench Verified, beating the previous state-of-the-art (45%), with a simple prompt and two general purpose tools. We feel confident that developers building with the new Claude 3.5 Sonnet will quickly find new, better ways to improve SWE-bench scores over what we've initially demonstrated here.
 
-## Acknowledgements
+## Authors & Acknowledgments
+
+### Acknowledgements
 
 Erik Schluntz optimized the SWE-bench agent and wrote this blog post. Simon Biggs, Dawn Drain, and Eric Christiansen helped implement the benchmark. Shauna Kravec, Dawn Drain, Felipe Rosso, Nova DasSarma, Ven Chandrasekaran, and many others contributed to training Claude 3.5 Sonnet to be excellent at agentic coding.

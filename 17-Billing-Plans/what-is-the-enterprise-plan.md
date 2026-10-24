@@ -2,7 +2,7 @@
 title: "What is the Enterprise plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:24:57Z"
+fetched_at: "2026-10-23T06:29:42Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 

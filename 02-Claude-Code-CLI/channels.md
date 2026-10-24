@@ -2,7 +2,7 @@
 title: "Push events into a running session with channels - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/channels"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:39Z"
+fetched_at: "2026-10-20T06:37:47Z"
 tags: ["claude-code"]
 ---
 
@@ -66,7 +66,7 @@ Start Claude Code by running `claude` in your terminal, then enter this at its p
 If the install fails, match the message Claude Code reports:
 
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
-- The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
+- `Plugin "<name>" not found in marketplace "claude-plugins-official"`: your local copy of the marketplace catalog may be out of date. Refresh it with `/plugin marketplace update claude-plugins-official`, then retry the install. If the retry prints the same message, see [Plugin not found in marketplace](../08-Plugins-Skills/plugins-troubleshooting.md#plugin-not-found-in-marketplace).
 
 When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to make the plugin’s configure command available.
 
@@ -154,7 +154,7 @@ Start Claude Code by running `claude` in your terminal, then enter this at its p
 If the install fails, match the message Claude Code reports:
 
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
-- The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
+- `Plugin "<name>" not found in marketplace "claude-plugins-official"`: your local copy of the marketplace catalog may be out of date. Refresh it with `/plugin marketplace update claude-plugins-official`, then retry the install. If the retry prints the same message, see [Plugin not found in marketplace](../08-Plugins-Skills/plugins-troubleshooting.md#plugin-not-found-in-marketplace).
 
 When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to make the plugin’s configure command available.
 
@@ -221,7 +221,7 @@ Start Claude Code by running `claude` in your terminal, then enter this at its p
 If the install fails, match the message Claude Code reports:
 
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
-- The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
+- `Plugin "<name>" not found in marketplace "claude-plugins-official"`: your local copy of the marketplace catalog may be out of date. Refresh it with `/plugin marketplace update claude-plugins-official`, then retry the install. If the retry prints the same message, see [Plugin not found in marketplace](../08-Plugins-Skills/plugins-troubleshooting.md#plugin-not-found-in-marketplace).
 
 When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.If the install summary reports `Run /reload-plugins to apply.`, you don’t need to act on it here, because restarting in the next step picks up the plugin.
 
@@ -279,7 +279,7 @@ Start Claude Code by running `claude` in your terminal, then enter the install c
 If the install fails, match the message Claude Code reports:
 
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
-- The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
+- `Plugin "<name>" not found in marketplace "claude-plugins-official"`: your local copy of the marketplace catalog may be out of date. Refresh it with `/plugin marketplace update claude-plugins-official`, then retry the install. If the retry prints the same message, see [Plugin not found in marketplace](../08-Plugins-Skills/plugins-troubleshooting.md#plugin-not-found-in-marketplace).
 
 When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.If the install summary reports `Run /reload-plugins to apply.`, you don’t need to act on it here, because restarting in the next step picks up the plugin.
 
@@ -406,4 +406,4 @@ Once you have a channel running, explore these related features:
 
 - [Build your own channel](channels-reference.md) for systems that don’t have plugins yet
 - [Remote Control](remote-control.md) to drive a local session from your phone instead of forwarding events into it
-- [Scheduled tasks](scheduled-tasks.md) to poll on a timer instead of reacting to pushed events
+- [Session-scoped scheduled tasks](scheduled-tasks.md) to poll on a timer instead of reacting to pushed events

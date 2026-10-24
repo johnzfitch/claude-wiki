@@ -2,7 +2,7 @@
 title: "Share and unshare chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10593882-sharing-and-unsharing-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:01Z"
+fetched_at: "2026-10-23T06:28:48Z"
 tags: ["claude-ai"]
 ---
 

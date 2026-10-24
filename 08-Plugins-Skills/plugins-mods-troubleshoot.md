@@ -2,7 +2,7 @@
 title: "Troubleshoot a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/troubleshoot"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-10T06:24:15Z"
+fetched_at: "2026-10-23T06:28:43Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -20,6 +20,8 @@ tags: ["claude-code", "plugins"]
   - [hooks module did not load](#hooks-module-did-not-load)
   - [options do not fit plugin.json userConfig](#options-do-not-fit-plugin-json-userconfig)
   - [code nested too deep to scan: more than 2000 scopes](#code-nested-too-deep-to-scan-more-than-2000-scopes)
+  - [the engine ran out of stack linking the file and its imports](#the-engine-ran-out-of-stack-linking-the-file-and-its-imports)
+  - [the parser stopped or the engine ran out of stack loading the file](#the-parser-stopped-or-the-engine-ran-out-of-stack-loading-the-file)
   - [No mod loads in a directory you opened for the first time](#no-mod-loads-in-a-directory-you-opened-for-the-first-time)
   - [No installed plugin loads at all](#no-installed-plugin-loads-at-all)
   - [Claude Code stops asking to enable hot reloading](#claude-code-stops-asking-to-enable-hot-reloading)
@@ -28,18 +30,23 @@ tags: ["claude-code", "plugins"]
   - [no command.run hook answered it](#no-command-run-hook-answered-it)
   - [it crashed the hooks worker](#it-crashed-the-hooks-worker)
   - [its session.start ran again in a fresh copy](#its-session-start-ran-again-in-a-fresh-copy)
+  - [\$.agent.register refused: the hooks module that made the call is no longer loaded](#%24-agent-register-refused-the-hooks-module-that-made-the-call-is-no-longer-loaded)
   - [mods that run in the hooks worker are off for this session](#mods-that-run-in-the-hooks-worker-are-off-for-this-session)
 - [A tool call is denied](#a-tool-call-is-denied)
   - [a hook changed this call's input after the model wrote it](#a-hook-changed-this-calls-input-after-the-model-wrote-it)
   - [A message about the deny rules in your settings](#a-message-about-the-deny-rules-in-your-settings)
+- [A toast appears after a turn is stopped](#a-toast-appears-after-a-turn-is-stopped)
+  - [Stopped: type a message to continue; a mod cannot resume work after Stop](#stopped-type-a-message-to-continue)
 - [A drawing doesn’t appear or respond](#a-drawing-doesn%E2%80%99t-appear-or-respond)
+  - [Another mod’s band shows and yours doesn’t](#another-mods-band-shows-and-yours-doesnt)
   - [A pane or band is empty or shows Claude Code’s usual content](#a-pane-or-band-is-empty-or-shows-claude-code%E2%80%99s-usual-content)
   - [A ui.render line says threw while drawn](#a-ui-render-line-says-threw-while-drawn)
   - [the module failed without a message](#the-module-failed-without-a-message)
   - [\$.ui.open runs and no pane appears](#%24-ui-open-runs-and-no-pane-appears)
   - [A toast doesn’t appear](#a-toast-doesn%E2%80%99t-appear)
+  - [The band shows plugin panel hidden](#plugin-panel-hidden)
   - [Hotkeys do nothing](#hotkeys-do-nothing)
-  - [A drawing works in the terminal and not in the Desktop app](#a-drawing-works-in-the-terminal-and-not-in-the-desktop-app)
+  - [A drawing works in the terminal and not in the Desktop app or VS Code](#a-drawing-works-in-the-terminal-and-not-in-the-desktop-app-or-vs-code)
 - [An edit or a value is lost](#an-edit-or-a-value-is-lost)
   - [Your edits don’t take effect](#your-edits-don%E2%80%99t-take-effect)
   - [A value resets when the module reloads](#a-value-resets-when-the-module-reloads)
@@ -121,21 +128,21 @@ Refusal messages
 
 Each of these follows `hooks module`, the mod’s name, and `not loaded:` in the debug log.
 
-| Message starts with                                                                                                          | What it means                                                                                                       |
-|:-----------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
-| `hooks modules are turned off for installed plugins in this process: the rollout switch served off`                          | Anthropic has turned installed mods off remotely.                                                                   |
-| `hooks modules are turned off for installed plugins in this process: the rollout switch was saved off by an earlier session` | The session used a value an earlier session saved, which may be out of date. Start Claude Code again to refresh it. |
-| `disableAllHooks in managed settings`                                                                                        | Your organization turned off hooks from installed plugins                                                           |
-| `only managed plugins and built-in plugins run`                                                                              | `allowManagedHooksOnly` is set, or `disableAllHooks` is set in a settings file other than managed settings          |
-| `installed plugins that are not managed load no hooks module in this mode (--bare)`                                          | You started Claude Code with `--bare`                                                                               |
-| `another plugin of that name loads first`                                                                                    | Two plugins share a name. The managed one, or the one loaded first, is used.                                        |
+| Message starts with                                                                                                          | What it means                                                                                                                                                                      |
+|:-----------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `hooks modules are turned off for installed plugins in this process: the rollout switch served off`                          | Anthropic has turned installed mods off remotely.                                                                                                                                  |
+| `hooks modules are turned off for installed plugins in this process: the rollout switch was saved off by an earlier session` | The session used a value an earlier session saved, which may be out of date. Start Claude Code again to refresh it.                                                                |
+| `disableAllHooks in managed settings`                                                                                        | Your organization turned off hooks from installed plugins                                                                                                                          |
+| `only managed plugins and built-in plugins run`                                                                              | `allowManagedHooksOnly` is set, or `disableAllHooks` is set in a settings file other than managed settings                                                                         |
+| `installed plugins that are not managed load no hooks module in this mode (--bare)`                                          | You started Claude Code with `--bare`                                                                                                                                              |
+| `another plugin of that name loads first`                                                                                    | Another enabled plugin has the same name as your mod and [holds the name](plugins-loading.md#hooks-when-two-enabled-plugins-share-a-name), so your hooks module doesn’t load |
 
 
 [​](#messages-from-the-built-in-guard)
 
 Messages from the built-in guard
 
-On a machine with managed settings, or for a user signed in with a Team or Enterprise plan, the [built-in guard](plugins-mods-admin.md#know-what-happens-by-default) can refuse a mod or one of its answers. Each message names the option your organization’s administrator sets to change the rule.
+On a machine with managed settings, or in a session whose credential is a Team or Enterprise `/login`, the [built-in guard](plugins-mods-admin.md#know-what-happens-by-default) can refuse a mod or one of its answers. Each message names the option your organization’s administrator sets to change the rule.
 
 | Message contains                                                                       | What it means                                                                                                                            | Where it appears                                                                                                       |
 |:---------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------|
@@ -155,7 +162,7 @@ On a machine with managed settings, or for a user signed in with a Team or Enter
 
 `hooks module did not load`
 
-The line starts with the mod’s name, then `hooks module did not load:` and a reason, which gives the file and line when the problem is in your code. Claude Code couldn’t load the module, for example because its top-level code threw. Fix the error the reason names.
+The line starts with the mod’s name, then `hooks module did not load:` and a reason, which gives the file and line when the problem is in your code. Claude Code couldn’t load the module, for example because its top-level code threw. Fix the error the reason names. If the reason ends with `; the version loaded before is unloaded`, no version of the mod is running now. Once you fix the error, run [`/reload-plugins`](plugins-cli-reference.md#reload-plugins) in the session to load the mod again. If you installed the mod and didn’t write it, ask its author to fix the error.
 
 
 [​](#options-do-not-fit-plugin-json-userconfig)
@@ -170,6 +177,25 @@ The line starts with the mod’s name, then `hooks module did not load: options 
 `code nested too deep to scan: more than 2000 scopes`
 
 The line starts with the mod’s name, then `hooks module did not load:`, the file, and `code nested too deep to scan: more than 2000 scopes`. A file in a hooks module can’t nest scopes, such as functions, blocks, and loops, more than [2,000 deep](plugins-mods-reference.md#limits). [`claude plugin validate`](plugins-mods-create.md#check-what-claude-code-reads-from-your-mod) reports the same reason. Rewrite the code so its scopes nest less deeply.
+
+
+[​](#the-engine-ran-out-of-stack-linking-the-file-and-its-imports)
+
+`the engine ran out of stack linking the file and its imports`
+
+Code in the hooks module is nested too deeply, or its chain of imports is too long, for Claude Code to load it. The line starts with the mod’s name and `hooks module did not load:`, then gives a file’s name and this reason. Look through that file and the files reached through its imports for the most deeply nested part and rewrite it to nest less, or shorten the chain of imports. If you installed the mod and didn’t write it, ask its author to.
+
+
+[​](#the-parser-stopped-or-the-engine-ran-out-of-stack-loading-the-file)
+
+`the parser stopped` or `the engine ran out of stack loading the file`
+
+Code in one file of the hooks module is nested so deeply that Claude Code ran out of stack reading it. The line starts with the mod’s name and `hooks module did not load:`, then gives that file’s name and one of these reasons:
+
+- `code nested too deep to scan (the parser stopped: <message>)`
+- `the engine ran out of stack loading the file (code nested too deep): <message>`
+
+The reason gives no line number and doesn’t say what kind of code is nested, so look through the file yourself for its most deeply nested part. Rewrite that part to nest less. If you installed the mod and didn’t write it, ask its author to.
 
 
 [​](#no-mod-loads-in-a-directory-you-opened-for-the-first-time)
@@ -233,6 +259,13 @@ The line starts with the mod’s name, as in `first-mod was unloaded: it crashed
 The line starts with the mod’s name and names a `$.prompt.submit`, `$.command.run`, or `$.agent.spawn` call, as in `first-mod: its session.start ran again in a fresh copy; the $.prompt.submit call it had already made was not made again`. Claude Code loaded the mod’s module again, for example after the hooks worker crashed and was replaced, and the fresh copy’s [`session.start`](plugins-mods-reference.md#session) hook ran. The call the line names resolved with the result of its first run instead of running again, so your mod doesn’t submit the prompt, run the command, or start the subagent twice. The rest of the hook ran as usual. There’s nothing to fix. Before v2.1.292, the call ran a second time, so the prompt was submitted, the command run, or the subagent started twice.
 
 
+[​](#$-agent-register-refused-the-hooks-module-that-made-the-call-is-no-longer-loaded)
+
+`$.agent.register refused: the hooks module that made the call is no longer loaded`
+
+The line starts with your mod’s name, as in `first-mod: $.agent.register refused: the hooks module that made the call is no longer loaded (it was reloaded or removed)`, and the agent isn’t registered. Your mod was reloaded or unloaded before the call. A reload loads a fresh copy of the hooks module, and this call came from code still running in the old copy, such as a hook that hadn’t returned yet. If that hook doesn’t catch the rejection, it fails and Claude Code [skips it](#hook-skipped). To register the agent from the copy that stays loaded, make the call in your [`session.start`](plugins-mods-reference.md#session) hook, which runs again in each fresh copy after a reload.
+
+
 [​](#mods-that-run-in-the-hooks-worker-are-off-for-this-session)
 
 `mods that run in the hooks worker are off for this session`
@@ -261,11 +294,35 @@ A message about the deny rules in your settings
 `tried to lift a deny rule in your settings` and `the deny rules in your settings could not be checked for this call, so it is refused` both come from the built-in guard. Look them up in [Messages from the built-in guard](#messages-from-the-built-in-guard).
 
 
+[​](#a-toast-appears-after-a-turn-is-stopped)
+
+A toast appears after a turn is stopped
+
+
+[​](#stopped-type-a-message-to-continue)
+
+`Stopped: type a message to continue; a mod cannot resume work after Stop`
+
+This toast means that after you stopped the turn, for example with Esc, a mod tried to start work on its own and Claude Code didn’t let it. Nothing needs fixing. After your next message, mods can start work again and [some of that work comes back](plugins-mods-api.md#work-your-mod-started-before-the-interruption) on its own. If what you expected from the mod doesn’t come back, ask for it again or run the mod’s command again. If you wrote the mod, see [Calls and background work after the user interrupts a turn](plugins-mods-api.md#calls-and-background-work-after-the-user-interrupts-a-turn).
+
+
 [​](#a-drawing-doesn’t-appear-or-respond)
 
 A drawing doesn’t appear or respond
 
 The mod loaded, and its pane, band, toast, or controls don’t behave as you expect.
+
+
+[​](#another-mods-band-shows-and-yours-doesnt)
+
+Another mod’s band shows and yours doesn’t
+
+There is one band above the prompt, and every mod shares it. A mod that runs [before yours](plugins-mods-events.md#the-order-mods-run-in) replaces your band when it returns a tree without the result of `next(e)` in it. To show both bands, change that mod’s hook, or ask its author to:
+
+- **Keep the bands after it**: put the result of `await next(e)` among the children of a `Box` in its tree, as in the Band above the prompt tab of [Pick where to draw](plugins-mods-interface.md#pick-where-to-draw)
+- **Keep the tree valid**: don’t give that `Box`, or any `Box` around it, a `width`, `height`, `minWidth`, `minHeight`, `position`, `top`, `left`, `right`, `bottom`, `display`, or `overflow` prop
+
+To find that mod, [write a debug log](#read-the-debug-log) and search it for `answered ui.render without next()`. A line such as `other-mod (user) answered ui.render without next()` names a mod that returned its tree without calling `next(e)`. It doesn’t name the [render site](plugins-mods-reference.md#render-sites), so a pane-only mod can appear too. A mod that calls `next(e)` and drops the result gets no line, so check the hooks before yours too. After the change, you see nothing in the band if any of the mods returns a tree that doesn’t validate. To read the reason, look for a `ui.render (AbovePrompt) refused:` line in the transcript of a `--plugin-dir` session, or search the debug log for `does not validate`. With several mods in the band, neither line names a mod, so check each mod’s tree.
 
 
 [​](#a-pane-or-band-is-empty-or-shows-claude-code’s-usual-content)
@@ -311,18 +368,33 @@ Your mod calls [`$.ui.toast`](plugins-mods-api.md#show-something-without-startin
 Before v2.1.290, Claude Code dropped a toast raised within two seconds of the last one it showed for your mod, and the debug log line for the dropped toast said `within 2000ms of the last; dropped`.
 
 
+[​](#plugin-panel-hidden)
+
+The band shows `plugin panel hidden`
+
+The band is [collapsed](plugins-mods-interface.md#when-the-user-collapses-the-band). It collapses when you press Ctrl+X then Ctrl+A, or the keys you bound in their place, and in [fullscreen rendering](../02-Claude-Code-CLI/fullscreen.md) when you click the `[-]` on its first row. It stays collapsed until you expand it or start Claude Code again, and meanwhile no hotkey or `action` binding presses a button in it. To expand the band, press the keys the row names, Ctrl+X then Ctrl+A by default, or in fullscreen rendering click the row.
+
+
 [​](#hotkeys-do-nothing)
 
 Hotkeys do nothing
 
-Your pane doesn’t have keyboard focus. Press Ctrl+X then Tab, or click the pane. Open it with `focus: true` from a command.
+Your pane or band doesn’t have keyboard focus, your button is in a collapsed band, or the drawing is in the VS Code extension, where buttons have no hotkeys. Do the one that matches:
+
+- **No keyboard focus**: press Ctrl+X then Tab or, in [fullscreen rendering](../02-Claude-Code-CLI/fullscreen.md), click the pane or band. To have the pane take focus when it opens, open it with `focus: true` from a command.
+- **The button is in a collapsed band**: the band shows one dim row that starts with `▸ plugin panel hidden`. Press the keys the row names, Ctrl+X then Ctrl+A by default, to [expand it](#plugin-panel-hidden).
+- **In the VS Code extension**: click the button, or press Enter on it once it has focus
 
 
-[​](#a-drawing-works-in-the-terminal-and-not-in-the-desktop-app)
+[​](#a-drawing-works-in-the-terminal-and-not-in-the-desktop-app-or-vs-code)
 
-A drawing works in the terminal and not in the Desktop app
+A drawing works in the terminal and not in the Desktop app or VS Code
 
-The site or element isn’t available there. Check the [render sites](plugins-mods-reference.md#render-sites) and [elements](plugins-mods-reference.md#elements) tables.
+Either that app doesn’t draw the site or element, or the session is one where the VS Code extension draws nothing for mods. The mod’s other hooks still run. Check for these causes:
+
+- **The site or element isn’t drawn in that app**: look up your site in the [render sites](plugins-mods-reference.md#render-sites) table and your elements in the [elements](plugins-mods-reference.md#elements) table. For an element the app lacks, check `e.surface` in the hook and return a tree the app can draw.
+- **The VS Code extension is older than 2.1.299**: the chat panel draws for mods from [extension version](../03-IDE-Integrations/vs-code.md#install-the-extension) 2.1.299. Check the version in VS Code’s Extensions view and update the extension there.
+- **The extension is older than 2.1.304 and the session doesn’t fetch feature flags**: update the extension, or run `claude` in VS Code’s integrated terminal instead. Sessions on Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry skip the fetch. For the others that skip it, such as a [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md) session, see [Features that need feature-flag fetching](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching).
 
 
 [​](#an-edit-or-a-value-is-lost)

@@ -2,7 +2,7 @@
 title: "Using the PubMed Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-10-10T06:24:31Z"
+fetched_at: "2026-10-23T06:29:16Z"
 tags: ["api", "connectors", "mcp"]
 ---
 
@@ -275,7 +275,7 @@ All data comes from official NCBI sources, but may not reflect the most current/
 
 ## Need More Help?[](#need-more-help)
 
-If you're experiencing issues with the PubMed integration or have questions not covered here, please [contact Claude support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support) or visit our help center for additional troubleshooting guides.
+If you're experiencing issues with the PubMed integration or have questions not covered here, please [contact Claude support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md) or visit our help center for additional troubleshooting guides.
 
 - [What this integration provides](#what-this-integration-provides)
 - [Setting up the PubMed integration](#setting-up-the-pubmed-integration)

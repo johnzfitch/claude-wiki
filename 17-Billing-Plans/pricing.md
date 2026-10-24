@@ -2,8 +2,7 @@
 title: "Plans & pricing | Claude by Anthropic"
 source_url: "https://www.claude.com/pricing"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:26:06Z"
-last_modified: "Sat, 10 Oct 2026 06:23:07 GMT"
+fetched_at: "2026-10-23T06:30:02Z"
 tags: ["billing", "enterprise", "security"]
 ---
 
@@ -37,8 +36,6 @@ Free for everyone
 
 ### Pro
 
-Claude Code included
-
 For everyday work
 
 \$17
@@ -52,14 +49,13 @@ Everything in Free, plus:
 - More usage\*
 - Hand off and schedule tasks
 - Claude Dashboards (beta)
+- Claude Code
 - Claude Science
 - Projects
 - More Claude models
 - Claude in Chrome and Microsoft 365
 
 ### Max
-
-Claude Code included
 
 For people who work with Claude all day
 
@@ -161,7 +157,7 @@ For large businesses operating at scale
 
 Seat price + usage at API rates
 
-US\$20/seat/month, billed annually. Usage cost scales with model and task.
+US\$20/seat/month, billed annually, 20 seat minimum. Usage cost scales with model and task.
 
 All Team plan features, plus:
 
@@ -240,9 +236,9 @@ Enterprise (sales-assisted)
 
 ## Latest models
 
-[Contact sales](https://claude.com/contact-sales)[Start building (opens in new tab)](../04-API-Reference/Other/usage-limits.md)
+[Contact sales](https://claude.com/contact-sales)[Start building (opens in new tab)](../04-API-Reference/Other/playground.md)
 
-Save 50% with batch processing. [Learn more](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+Save 50% with batch processing. [Learn more](../04-API-Reference/Guides/build-with-claude-batch-processing.md)
 
 Batch processing
 
@@ -454,7 +450,7 @@ Output
 
 \$10 / MTok
 
-Save 50% with batch processing. [Learn more](https://docs.claude.com/en/docs/build-with-claude/batch-processing)
+Save 50% with batch processing. [Learn more](../04-API-Reference/Guides/build-with-claude-batch-processing.md)
 
 Batch processing
 
@@ -618,7 +614,7 @@ Output
 
 \$25 / MTok
 
-Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](https://docs.claude.com/en/docs/build-with-claude/prompt-caching#pricing).
+Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md#pricing).
 
 ## FAQ
 
@@ -644,7 +640,7 @@ Every plan has [usage limits](usage-limit-best-practices.md) that reset on a rol
 
 #### Is Claude Code included in my plan?
 
-[Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) is included in all paid plans. It shares the same usage limits as the rest of your plan, so your work in the terminal and your chats draw from one pool. For heavy coding sessions, you can also switch to pay-as-you-go API credits through a [Console account](../04-API-Reference/Other/usage-limits.md).
+[Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) is included in all paid plans. It shares the same usage limits as the rest of your plan, so your work in the terminal and your chats draw from one pool. For heavy coding sessions, you can also switch to pay-as-you-go API credits through a [Console account](../04-API-Reference/Other/playground.md).
 
 #### How much does the Claude Enterprise plan cost?
 
@@ -656,7 +652,7 @@ The [Claude Enterprise plan](pricing-enterprise.md) is built for large businesse
 
 Yes, annual plans are designed to cost less than monthly subscriptions. Annual subscriptions are available for Pro and Team plans. Enterprise plans are only available as annual subscriptions.
 
-When you choose to pay annually, you're billed once up front for the year. If you're already on a monthly plan, you can switch to annual in [Settings \> Billing](https://claude.ai/settings/billing), and any unused time is credited toward your first annual invoice. See the steps for [Pro](how-to-change-your-pro-plan-from-monthly-to-annual-billing.md) and [Team](https://support.claude.com/en/articles/12083917-change-your-team-plan-from-monthly-to-annual-billing).
+When you choose to pay annually, you're billed once up front for the year. If you're already on a monthly plan, you can switch to annual in [Settings \> Billing](https://claude.ai/settings/billing), and any unused time is credited toward your first annual invoice. See the steps for [Pro](how-to-change-your-pro-plan-from-monthly-to-annual-billing.md) and [Team](change-your-team-plan-from-monthly-to-annual-billing.md).
 
 #### Does Claude offer refunds?
 
@@ -666,7 +662,7 @@ Customers outside of Europe can follow this process to [request a refund](reques
 
 - Log in, open Get help from the menu, start a message, and choose Claude Refund Request to check your eligibility.
 - If you subscribed through the App Store, [Apple](https://support.apple.com/billing) handles the refund, so you'll request it from Apple.
-- If you subscribed through Google Play, [contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support) to check eligibility for an active subscription.
+- If you subscribed through Google Play, [contact our Support team](../15-Claude-AI-Features/how-to-get-support.md) to check eligibility for an active subscription.
 
 If you're in the European Economic Area and the United Kingdom, and within your 14-day withdrawal period, you can request a refund directly in the app.
 
@@ -696,7 +692,7 @@ You can cancel anytime, and your plan stays active until the end of your current
 - Team and self-serve Enterprise: an Owner or Primary Owner cancels under [Organization settings \> Billing](https://claude.ai/admin-settings/billing).
 - Sales-assisted Enterprise: Reach out to your Anthropic Contact or our Sales team to discuss cancellation.
 
-Canceling doesn't delete your data. Your chats, projects, and files stay with your account, though some features aren't available on the Free plan. For Pro and Max, your account moves to the Free plan once the period ends. For step-by-step help, see [how to cancel a Pro or Max plan](how-do-i-cancel-my-paid-claude-subscription.md) or [cancel a Team plan](https://support.claude.com/en/articles/9267323-cancel-your-organization-s-team-plan-subscription).
+Canceling doesn't delete your data. Your chats, projects, and files stay with your account, though some features aren't available on the Free plan. For Pro and Max, your account moves to the Free plan once the period ends. For step-by-step help, see [how to cancel a Pro or Max plan](how-do-i-cancel-my-paid-claude-subscription.md) or [cancel a Team plan](cancel-your-organization-s-team-plan-subscription.md).
 
 [](https://www.claude.com/)
 
@@ -707,7 +703,8 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -725,12 +722,12 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -763,7 +760,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -781,6 +778,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -796,7 +794,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -831,7 +829,8 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -849,12 +848,12 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -887,7 +886,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -905,6 +904,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -920,7 +920,7 @@ Canceling doesn't delete your data. Your chats, projects, and files stay with yo
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

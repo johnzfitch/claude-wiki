@@ -2,15 +2,47 @@
 title: "Reasoning models don't always say what they think \\ Anthropic"
 source_url: "https://www.anthropic.com/research/reasoning-models-dont-say-think"
 category: "19-Reference"
-fetched_at: "2026-08-03T07:19:22Z"
+fetched_at: "2026-10-21T06:30:07Z"
 tags: ["news-research", "testing"]
 ---
 
 # Reasoning models don't always say what they think
 
-Apr 3, 2025
-
 [Read the paper](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf)
+
+- [01Testing for faithfulness](#testing-for-faithfulness)
+- [02Can we improve faithfulness?](#can-we-improve-faithfulness)
+- [03Faithfulness and reward hacking](#faithfulness-and-reward-hacking)
+- [04Conclusions](#conclusions)
+
+- Published
+
+  Apr 3, 2025
+
+- Team
+
+  [Alignment](team-alignment.md)
+
+- Topics
+
+  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+  - [Training](https://www.anthropic.com/search?topic=training)
+
+  See more...
+
+Related articles
+
+- Alignment
+
+  Nov 21, 2025
+
+  [From shortcuts to sabotage: Natural emergent misalignment from reward hacking](emergent-misalignment-reward-hacking.md)
+
+[View more](https://www.anthropic.com/search?topic=reasoning)
 
 Since late last year, “reasoning models” have been everywhere. These are AI models—such as Claude 3.7 Sonnet—that *show their working*: as well as their eventual answer, you can read the (often fascinating and convoluted) way that they got there, in what’s called their “Chain-of-Thought”.
 
@@ -26,7 +58,7 @@ This poses a problem if we want to monitor the Chain-of-Thought for misaligned b
 
 ## Testing for faithfulness
 
-How do you test for faithfulness? Following [Turpin et al. (2023)](https://arxiv.org/abs/2305.04388), we subtly fed a model a hint about the answer to an evaluation question we asked it, and then checked to see if it “admitted” using the hint when it explained its reasoning if it used the hint (we did this for the reasoning models Claude 3.7 Sonnet from Anthropic and R1 from DeepSeek¹). Some of the hints were correct and some were deliberately incorrect; the point was to observe how the model responded when they were provided.
+How do you test for faithfulness? Following [Turpin et al. (2023)](https://arxiv.org/abs/2305.04388), we subtly fed a model a hint about the answer to an evaluation question we asked it, and then checked to see if it “admitted” using the hint when it explained its reasoning if it used the hint (we did this for the reasoning models Claude 3.7 Sonnet from Anthropic and R1 from DeepSeek^([1](#footnote-1))). Some of the hints were correct and some were deliberately incorrect; the point was to observe how the model responded when they were provided.
 
 Think of it like slipping a student a note saying “the answer is \[A\]” before an exam. If they write in their exam that they chose \[A\] at least in part because of the note, that’s good news: they’re being honest and faithful. But if they write down what they claim to be their reasoning process *without* mentioning the note, we might have a problem.
 
@@ -70,130 +102,10 @@ Overall, our results point to the fact that advanced reasoning models very often
 
 Read [the full paper](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf).
 
-## Work with us
+### Work with us
 
 If you’re interested in pursuing work on Alignment Science, including on Chain-of-Thought faithfulness, we’d be interested to see your application. We're recruiting [Research Scientists and Research Engineers](https://job-boards.greenhouse.io/anthropic/jobs/4009165008).
 
-#### Footnotes
+## Footnotes
 
-1\. We also ran further analyses on non-reasoning models, specifically Claude 3.5 Sonnet from Anthropic and V3 from DeepSeek. See the [full paper](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf) for these results.
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+01We also ran further analyses on non-reasoning models, specifically Claude 3.5 Sonnet from Anthropic and V3 from DeepSeek. See the [full paper](https://assets.anthropic.com/m/71876fabef0f0ed4/original/reasoning_models_paper.pdf) for these results.[](#footnote-ref-1)

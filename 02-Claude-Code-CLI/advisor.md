@@ -2,7 +2,7 @@
 title: "Escalate hard decisions with the advisor tool - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/advisor"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:24:31Z"
+fetched_at: "2026-10-21T06:28:16Z"
 tags: ["claude-code"]
 ---
 
@@ -109,7 +109,7 @@ Claude Code uses the flag instead of the `advisorModel` setting for that session
 - Your organization’s [`availableModels`](model-config.md#restrict-model-selection) allowlist excludes the requested model
 - You requested Fable and your account still requires the [usage-credits consent](#fable-advisor-and-usage-credits)
 
-If you start a [background session](../09-Agents-Patterns/agent-view.md) with `--advisor` and one of these applies, Claude Code starts the session without the advisor instead of exiting. If the requested model can act as an advisor but [ranks below](#choose-an-advisor-model) the session’s main model, Claude Code starts the session anyway. Outside background sessions, it also warns at launch that the model `cannot advise` the main model.
+If you start a [background session](../09-Agents-Patterns/agent-view.md) with `--advisor` and one of these applies, Claude Code starts the session without the advisor instead of exiting. If the model you pass can act as an advisor but [ranks below your main model](#choose-an-advisor-model), the session starts whether or not it’s a background session. Your main model then runs without the advisor.
 
 
 [​](#choose-an-advisor-model)

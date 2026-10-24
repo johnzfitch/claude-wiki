@@ -2,19 +2,49 @@
 title: "Investigating three incidents in our cybersecurity evaluations \\ Anthropic"
 source_url: "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:46:13Z"
+fetched_at: "2026-10-21T06:29:53Z"
 tags: ["evaluation", "news-research", "security"]
 ---
 
 # Investigating three real-world incidents in our cybersecurity evaluations
 
-Jul 30, 2026
+- [01Background on cyber evaluations](#background-on-cyber-evaluations)
+- [02What happened](#what-happened)
+- [03Our analysis of Claude’s behavior](#our-analysis-of-claudes-behavior)
+- [04How we’re responding](#how-were-responding)
 
-***In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained unauthorized access to the real systems of three different organizations.***
+- Published
 
-***Below we describe what happened, how it happened, and what we’re changing. We encourage other AI labs to perform similar reviews. This post reflects our current understanding; we'll update it if any details change.***
+  Jul 30, 2026
 
-****
+- Category
+
+  [Security](security.md)
+
+- Topics
+
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+  - [Transparency](https://www.anthropic.com/search?topic=transparency)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+
+  See more...
+
+*In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained unauthorized access to the real systems of three different organizations.*
+
+*Below we describe what happened, how it happened, and what we’re changing. We encourage other AI labs to perform similar reviews. This post reflects our current understanding; we'll update it if any details change.*
+
+Related articles
+
+- Alignment
+
+  Oct 9, 2026
+
+  [Investigating unintended model actions in our evaluations and internal use](investigating-unintended-model-actions.md)
+
+[View more](https://www.anthropic.com/search?topic=cybersecurity)
 
 On July 21, OpenAI [disclosed](https://openai.com/index/hugging-face-model-evaluation-security-incident/) that several of their models had broken out of an isolated test environment by exploiting a previously unknown (“zero-day”) vulnerability. The models went on to access the production infrastructure of Hugging Face, a platform for open-source machine learning models and AI datasets.
 
@@ -28,7 +58,7 @@ In all cases, Anthropic’s evaluation prompt specified to Claude that its envir
 
 Operating under the false belief that all accessible entities were intended to be in-scope for the exercise, Claude compromised the impacted organizations’ infrastructure using basic techniques, such as exploiting weak passwords and unauthenticated endpoints. It did not find or exploit any complex vulnerabilities, and in each case, Claude continued working to complete only the specific capture-the-flag task its evaluation had assigned. However, in some cases, our older model continued its attack even after getting evidence it was running on the open internet; our latest model stopped once it recognized it was on the internet. In none of these situations did Claude exfiltrate itself or deliberately attempt to escape its test environment.
 
-The incidents involved three different Claude models: Opus 4.7, Mythos 5, and an internal research test model.¹ The earliest incidents date to April. The models in each of these evaluations ran without the standard safeguards we deploy when we make the model generally available (that is, they did not have the classifiers and monitoring we usually implement to prevent misuse). The models did, however, have their model-specific safety training (that is, they were not the “helpful-only” versions of the models that we sometimes use in testing). All the evaluations described here run on dedicated infrastructure, which is separate from and has no access to Anthropic’s sensitive internal systems or customer data.
+The incidents involved three different Claude models: Opus 4.7, Mythos 5, and an internal research test model.^([1](#footnote-1)) The earliest incidents date to April. The models in each of these evaluations ran without the standard safeguards we deploy when we make the model generally available (that is, they did not have the classifiers and monitoring we usually implement to prevent misuse). The models did, however, have their model-specific safety training (that is, they were not the “helpful-only” versions of the models that we sometimes use in testing). All the evaluations described here run on dedicated infrastructure, which is separate from and has no access to Anthropic’s sensitive internal systems or customer data.
 
 We began our transcript review on Thursday, July 23, and stopped all cyber evaluations the same day after identifying transcripts where Claude may have accessed the internet. We identified all three incidents the next day. We notified our evaluation partner Irregular and the three affected organizations on Monday, July 27. The two organizations we were able to reach had not previously detected the activity or contacted us, and we are now working with them to remediate. We are continuing to reach out to the third.
 
@@ -36,15 +66,15 @@ We conducted this review in collaboration with [Irregular](https://www.irregular
 
 In what follows, we provide more details on each incident and how we’re responding moving forward.
 
-## **Background on cyber evaluations**
+## Background on cyber evaluations
 
 We regularly run cybersecurity evaluations that involve simulating real offensive cybersecurity challenges. These evaluations are a critical step in developing and releasing models—a nuanced understanding of model capabilities allows us to design appropriate safeguards and ultimately release models safely.
 
-We began running cybersecurity evaluations in February 2025 with Claude Sonnet 3.7 on [Cybench](https://cybench.github.io/), which consisted of 40 different capture-the-flag challenges. Over time, we’ve increased the number of benchmarks we use as new ones are released and model capabilities evolve. In the [Mythos 5 System Card](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf), for example, we included CyberGym and ExploitBench, benchmarks that evaluate the ability of language models to find novel vulnerabilities.² In most of these evaluations, the environments are not connected to the internet, and the model is told as much.
+We began running cybersecurity evaluations in February 2025 with Claude Sonnet 3.7 on [Cybench](https://cybench.github.io/), which consisted of 40 different capture-the-flag challenges. Over time, we’ve increased the number of benchmarks we use as new ones are released and model capabilities evolve. In the [Mythos 5 System Card](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf), for example, we included CyberGym and ExploitBench, benchmarks that evaluate the ability of language models to find novel vulnerabilities.^([2](#footnote-2)) In most of these evaluations, the environments are not connected to the internet, and the model is told as much.
 
 We frequently work with external partners who create and assist in running some of these cybersecurity evaluations. External partners offer environments and scenarios more diverse than we could build alone, and provide independent, third-party assessments of our models.
 
-## **What happened**
+## What happened
 
 Of the 141,006 evaluation runs we reviewed, we identified three separate incidents (involving six total runs, four of which impacted the same organization; the other two incidents each happened in independent evaluation runs). Each incident involved a different fictional capture-the-flag scenario—for example, in one, Claude played an employee of a made-up company, attacking that company’s internal systems inside a private test environment.
 
@@ -54,7 +84,7 @@ Several defense-in-depth measures, on both our side and our partner’s, could h
 
 Claude did what capture-the-flag exercises train cyber experts to do: look for ways to reach the flag. That search led it to discover that its machine could reach the internet, but having been told in the system prompt that there was no internet access, Claude believed everything it initially encountered was part of the simulation, and treated the real systems it found as pieces of the exercise. The three incidents involved three different models, and each responded differently once signs emerged that the targets were real, as we describe below.
 
-### **Incident 1**
+### Incident 1
 
 In one evaluation, the fictional target company chosen by our evaluation partner shared a name with an active website domain name. This evaluation container had unintended direct internet access, due to the misunderstanding discussed above.
 
@@ -62,7 +92,7 @@ In four runs of this evaluation, Claude ran into difficulty reaching its simulat
 
 This incident involved Claude Opus 4.7, and was the only case in which the model continued to attack a system after learning it was likely operating in a real environment. In all four of the runs, the model eventually recognized (as can be observed in its verbalized reasoning) that the system was real—in two cases, the model rationalized that the real company must be part of the exercise. However, none stopped the attack on that basis.
 
-### **Incident 2**
+### Incident 2
 
 In another evaluation, Claude found a document inside the fictional environment that appeared to be another made-up company’s setup instructions for new developers. Those instructions told employees to install a Python package from PyPI—the public registry where Python software is published—that did not actually exist.
 
@@ -78,13 +108,13 @@ This attack was carried out by Claude Mythos 5. Early in the run, Claude’s own
 
 It is our view that, regardless of what it believed about its environment, the lengths Claude went to in order to publish the PyPI package fall short of ideal behavior, and this is an area where we will focus more training.
 
-### **Incident 3**
+### Incident 3
 
 In this evaluation, when Claude was unable to reach its intended fictional target, it looked for alternatives online, scanning roughly 9,000 targets. It eventually found and compromised one company’s internet-facing application, using basic and well-known cyberattack techniques like reading credentials from an exposed debug page and SQL injection.
 
 This attack was carried out by an internal research test model. For most of the run, Claude treated the (real) hosts it reached as just parts of the exercise; it assumed them to be simulated and believed its actions were therefore harmless. However, later in the run, Claude realized that the compromised host sat in a cloud account with no connection to the capture-the-flag challenge. On its own, it concluded that the target was in fact real, and ceased its attack.
 
-## **Our analysis of Claude’s behavior**
+## Our analysis of Claude’s behavior
 
 In each of these cases, Claude was explicitly told by our prompt that it had no internet access. Through most of each run, as it encountered real-world systems, Claude assumed these to be parts of the exercise (though it sometimes recognized they were real production systems). And because a capture-the-flag scenario is by design an instruction to attack an external system, doing so was in line with the task Claude had been given.
 
@@ -94,7 +124,7 @@ These are three isolated incidents and were not part of a controlled, experiment
 
 We are also in dialogue with METR, an independent AI evaluation organization, to conduct a third-party review, including access to all transcripts and sampling access to the relevant models. In the meantime, within the next week, we will release a lightly redacted transcript in which Claude built a malicious PyPI package. To protect the organizations affected, we are unable to release more transcripts at this time, but will work to make these available once we are able.
 
-## **How we’re responding**
+## How we’re responding
 
 We draw several lessons from these incidents.
 
@@ -121,129 +151,8 @@ These facts give us cautious optimism that with tighter monitoring and controls 
   
 *Updated Aug 3:* Corrected the name of the evaluation in which the OpenAI/Hugging Face incident occurred.
 
-#### Footnotes
+## Footnotes
 
-1.  We routinely test internal research prototypes like this one. It is not planned for general release.
-2.  We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of ExploitGym.
+01We routinely test internal research prototypes like this one. It is not planned for general release.[](#footnote-ref-1)
 
-  
-## Related content
-
-### Developing Enterprise Frontier Safeguards with our customers
-
-[Read more](enterprise-frontier-safeguards.md)
-
-### Improving our alignment and security efforts
-
-On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
-
-[Read more](improving-alignment-security-efforts.md)
-
-### Previewing the Model Hardware Standard
-
-We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
-
-[Read more](model-hardware-standard-research-preview.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+02We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of ExploitGym.[](#footnote-ref-2)

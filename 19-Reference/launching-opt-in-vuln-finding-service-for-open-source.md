@@ -2,15 +2,44 @@
 title: "An opt-in vulnerability-finding service for open-source software \\ Anthropic"
 source_url: "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
 category: "19-Reference"
-fetched_at: "2026-10-10T06:25:47Z"
+fetched_at: "2026-10-22T06:30:49Z"
 tags: ["news-research"]
 ---
 
 # Launching an opt-in vulnerability-finding service for open-source software
 
-Oct 8, 2026
+- [01Our vulnerability scanner](#our-vulnerability-scanner)
+- [02Getting started](#getting-started)
+
+- Published
+
+  Oct 8, 2026
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Open source](https://www.anthropic.com/search?topic=open-source)
+  - [Beneficial Deployments](https://www.anthropic.com/search?topic=beneficial-deployments)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Access](https://www.anthropic.com/search?topic=access)
+
+  See more...
 
 *We’re launching [OSS Scanner](https://red.anthropic.com/oss-scanner), an opt-in vulnerability scanner for the open-source ecosystem informed by our experience using Claude to find vulnerabilities during [Project Glasswing](../22-Safety-Policy/glasswing.md). Projects that join will receive thorough, periodic security scans by our strongest models at no cost.*
+
+Related articles
+
+- Security
+
+  Oct 8, 2026
+
+  [Introducing the Anthropic Cyber Mission](anthropic-cyber-mission.md)
+
+[View more](https://www.anthropic.com/search?topic=cybersecurity)
 
 Language models have rapidly advanced in their ability to [discover vulnerabilities](mythos-preview.md), as we have [reported extensively](zero-days.md) on this blog. On [CyberGym](https://arxiv.org/abs/2506.02548), one academic vulnerability-finding benchmark, LLMs have gone from finding under 20% of vulnerabilities at the beginning of last year to finding over 85% this year. As a result, open source maintainers have gone from receiving [mostly slop](https://daniel.haxx.se/blog/2025/07/14/death-by-a-thousand-slops/) from LLMs to receiving [high-quality bug reports](https://lore.kernel.org/linux-media/CAHk-=wi4zC+Ze8e+p3tMv8TtG_80KzsZ1syL9anBtmEh5Z40vg@mail.gmail.com/).
 
@@ -43,136 +72,3 @@ To validate an early version of OSS Scanner, we asked the expert penetration tes
 Core maintainers of eligible projects can enroll by submitting a PR to [this GitHub repo](https://github.com/anthropics/oss-scanner) following the standard project template, with additional guidance provided in [our extended FAQ](https://red.anthropic.com/oss-scanner). Projects are eligible based on a similar set of criteria that OSS-Fuzz uses: briefly, projects should have a “critical impact on infrastructure and user security” and we will make decisions on a case-by-case basis.
 
 *Whether or not OSS Scanner is right for you, our new [Cyber Verification Program](cyber-verification-program.md) makes advanced cyber capabilities and reduced blocking classifiers available to qualifying security professionals. [Claude for OSS](https://claude.com/contact-sales/claude-for-oss) provides free Claude Max 20x subscriptions to help remediate vulnerabilities and improve OSS projects.*
-
-
-## Related content
-
-### Investigating unintended model actions in our evaluations and internal use
-
-This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude.
-
-[Read more](investigating-unintended-model-actions.md)
-
-### The missing map of the sky
-
-Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light.
-
-[Read more](the-missing-map-of-the-sky.md)
-
-### Claude-shaped science
-
-Guest author Prof. Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calculations in quantitative science, which he has been applying across scientific fields alongside experts.
-
-[Read more](claude-shaped-science.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Developer blog](https://claude.dev)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

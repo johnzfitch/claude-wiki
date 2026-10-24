@@ -2,7 +2,7 @@
 title: "Get started with Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/get-started"
 category: "01-Getting-Started"
-fetched_at: "2026-10-04T08:32:43Z"
+fetched_at: "2026-10-20T06:37:51Z"
 tags: ["api", "getting-started"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "getting-started"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fget-started)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fget-started)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
+[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
 
 [Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Messages](intro.md)First steps
 
@@ -96,7 +96,7 @@ Make your first API call to Claude and build a simple web search assistant.
 
 ## Prerequisites
 
-- A [Claude Console account](../04-API-Reference/Other/usage-limits.md)
+- A [Claude Console account](../04-API-Reference/Other/playground.md)
 - An [API key](../04-API-Reference/Other/get-api-key.md)
 
 ## Call the API
@@ -118,6 +118,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 1.  1
 

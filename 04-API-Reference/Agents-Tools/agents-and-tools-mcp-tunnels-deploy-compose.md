@@ -2,7 +2,7 @@
 title: "Deploy MCP tunnels with Docker Compose - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-compose"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:31:26Z"
+fetched_at: "2026-10-20T06:38:49Z"
 tags: ["api", "docker", "mcp"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "docker", "mcp"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fmcp-tunnels%2Fdeploy-compose)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fmcp-tunnels%2Fdeploy-compose)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -80,7 +80,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)MCP tunnels
 
@@ -108,7 +108,7 @@ You need:
 
 - **A tunnel.** With programmatic access, the [setup component](agents-and-tools-mcp-tunnels-concepts.md#components) creates one for you when you don't supply a tunnel ID; to attach to an existing tunnel instead, [create it in the Console](agents-and-tools-mcp-tunnels-console.md#create-a-tunnel) and record the tunnel ID (`tnl_...`). Manual provisioning always starts from a Console-created tunnel.
 - **A way for the host to authenticate to the Tunnels API.**
-  - **Programmatic access (recommended).** Turn on **Set up programmatic access** when creating the tunnel (or create the federation rule directly under **Settings \> Workload identity** if you're letting the setup component create the tunnel) so the setup component can authenticate through Workload Identity Federation. Record the federation rule ID (`fdrl_...`) and your organization ID.
+  - **Programmatic access (recommended).** Turn on **Set up programmatic access** when creating the tunnel so the setup component can authenticate through Workload Identity Federation. If you're letting the setup component create the tunnel, create the federation rule directly on the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`) in the Claude Console instead. Record the federation rule ID (`fdrl_...`) and your organization ID.
   - **Manual.** Skip programmatic access. You'll [get the tunnel token from the Console](agents-and-tools-mcp-tunnels-console.md#get-the-connection-details), generate a CA and server certificate yourself, and [register the CA in the Console](agents-and-tools-mcp-tunnels-console.md#add-a-ca-certificate).
 - **A host with Docker and Docker Compose** installed. The manual flow also requires `openssl` (1.1.1 or later).
 - **Outbound network connectivity** from the host to `api.anthropic.com` (443 TCP) and the [tunnel edge](agents-and-tools-mcp-tunnels-concepts.md#components) (7844 TCP and UDP). See the full [network requirements](agents-and-tools-mcp-tunnels-overview.md#network-requirements).
@@ -148,6 +148,8 @@ This guide provides one reference approach using Docker Compose. You are respons
 With programmatic access
 
 Without programmatic access
+
+With programmatic access
 
 This path requires the host to have an OIDC identity provider (such as a cloud VM metadata server or SPIFFE). If it doesn't, use the **Without programmatic access** tab instead.
 
@@ -331,6 +333,191 @@ The setup component uses Workload Identity Federation to fetch the tunnel token,
 
     ``` shiki
     export TUNNEL_TOKEN=$(sudo cat data/tunnel-token)
+    docker compose up -d
+    ```
+
+    
+
+Without programmatic access
+
+Use this flow if you didn't turn on **Set up programmatic access**, or for local development and testing. There is no `setup` service.
+
+1.  1
+
+    ### Get the tunnel token and domain from the Console
+
+    On the tunnel detail page, copy the **Domain** (it has the form `abcd1234.tunnel.anthropic.com`), then click the eye icon next to **Token** to fetch the tunnel token and use the copy icon to copy it.
+
+    Set both as shell variables for the rest of the guide:
+
+    ``` shiki
+    export TUNNEL_DOMAIN=YOUR_TUNNEL_DOMAIN_HERE
+    export TUNNEL_TOKEN='eyJ...'
+    ```
+
+    
+
+2.  2
+
+    ### Scaffold and generate certificates
+
+    ``` shiki
+    mkdir -p mcp-tunnel/{data,config}
+    cd mcp-tunnel
+    ```
+
+    
+
+    The proxy listens on `:8080` over plain WebSocket; the [inner TLS](agents-and-tools-mcp-tunnels-concepts.md#components) handshake happens **inside** that WebSocket stream using these certificates. Anthropic verifies the inner handshake against the CA you register in the Console. The server certificate's Subject Alternative Name (SAN) must include `*.<tunnel-domain>` per the [certificate requirements](agents-and-tools-mcp-tunnels-reference.md#certificate-requirements).
+
+    ``` shiki
+    # Self-signed CA. Explicit extensions so it satisfies the certificate
+    # requirements regardless of distro openssl.cnf defaults.
+    openssl req -x509 -newkey rsa:2048 -nodes \
+      -keyout data/ca.key -out data/ca.crt \
+      -days 3650 -subj "/CN=mcp-tunnel-ca" \
+      -addext "basicConstraints=critical,CA:TRUE" \
+      -addext "keyUsage=critical,keyCertSign,cRLSign" \
+      -addext "subjectKeyIdentifier=hash"
+
+    # Extension file for the server certificate. Using -extfile (instead of
+    # -copy_extensions, which is OpenSSL 3.0+ only) keeps this working on
+    # OpenSSL 1.1.x.
+    cat > data/tls.ext <<EOF
+    subjectAltName = DNS:${TUNNEL_DOMAIN},DNS:*.${TUNNEL_DOMAIN}
+    authorityKeyIdentifier = keyid,issuer
+    extendedKeyUsage = serverAuth
+    EOF
+
+    # Server certificate signed by the CA
+    openssl req -newkey rsa:2048 -nodes \
+      -keyout data/tls.key -out /tmp/server.csr \
+      -subj "/CN=${TUNNEL_DOMAIN}"
+    openssl x509 -req -in /tmp/server.csr \
+      -CA data/ca.crt -CAkey data/ca.key -CAcreateserial \
+      -out data/tls.crt -days 90 \
+      -extfile data/tls.ext
+
+    # Allow the non-root proxy container (UID 65532) to read the key from
+    # the bind mount. Without the world-read bit the container cannot open
+    # a host-owned file.
+    chmod 644 data/tls.key
+    ```
+
+    
+
+3.  3
+
+    ### Register the CA certificate in the Console
+
+    On the tunnel detail page, scroll to the **Certificates** section and click **Add certificate**. Upload `data/ca.crt` directly with **Choose file** (the modal accepts `.pem`, `.crt`, and `.cer`), or paste its contents:
+
+    ``` shiki
+    cat data/ca.crt
+    ```
+
+    
+
+    The **Needs certificate** badge next to the tunnel's name goes away once a certificate is registered. See [Add a CA certificate](agents-and-tools-mcp-tunnels-console.md#add-a-ca-certificate).
+
+4.  4
+
+    ### Write the proxy config
+
+    `tunnel_domain` is **required**: the proxy uses it to strip the domain suffix from incoming hostnames before looking up the subdomain in `routes`. `routes` is a flat map from subdomain to upstream URL, not a list.
+
+    ``` shiki
+    cat > config/mcp-proxy.yaml <<EOF
+    listen_addr: ":8080"
+    log_level: info
+    tunnel_domain: ${TUNNEL_DOMAIN}
+    tls:
+      cert_file: /data/tls.crt
+      key_file: /data/tls.key
+    routes:
+      echo: http://hello-mcp:9000
+    EOF
+    ```
+
+    
+
+    The `echo:` route targets the [sample MCP server](#optional-use-a-sample-mcp-server); replace it with (or add) your own routes. See the [proxy configuration](agents-and-tools-mcp-tunnels-reference.md#proxy-configuration) reference for all available fields.
+
+5.  5
+
+    ### Write docker-compose.yaml
+
+    The `network_mode: "service:mcp-proxy"` setting places [cloudflared](agents-and-tools-mcp-tunnels-concepts.md#components) in the proxy's network namespace so that `localhost:8080` inside the cloudflared container reaches the proxy. The `--url http://localhost:8080` flag gives cloudflared its forwarding target; without that flag, cloudflared has no route for incoming requests and returns a 503.
+
+    ``` shiki
+    cat > docker-compose.yaml <<'EOF'
+    services:
+      cloudflared:
+        image: cloudflare/cloudflared@sha256:6b599ca3e974349ead3286d178da61d291961182ec3fe9c505e1dd02c8ac31b0
+        # --url is required: no ingress rules are pushed in the manual flow,
+        # so without it cloudflared 503s every request.
+        command: tunnel --no-autoupdate run --url http://localhost:8080
+        environment:
+          - TUNNEL_TOKEN
+        # Share the proxy's netns so localhost:8080 reaches it.
+        network_mode: "service:mcp-proxy"
+        restart: unless-stopped
+        user: "65532:65532"
+        read_only: true
+        security_opt:
+          - no-new-privileges:true
+        cap_drop:
+          - ALL
+        stop_grace_period: 30s
+        logging:
+          options:
+            max-size: "10m"
+            max-file: "3"
+
+      mcp-proxy:
+        image: us-docker.pkg.dev/anthropic-public-registry/images/mcp-proxy@sha256:efb27b299d627e4134815663cb8896641eeaee025d734c0f695582b4df38f013
+        volumes:
+          - ./config/mcp-proxy.yaml:/etc/mcp-gateway/config.yaml:ro
+          - ./data:/data:ro
+        restart: unless-stopped
+        user: "65532:65532"
+        read_only: true
+        security_opt:
+          - no-new-privileges:true
+        cap_drop:
+          - ALL
+        stop_grace_period: 30s
+        logging:
+          options:
+            max-size: "10m"
+            max-file: "3"
+    EOF
+    ```
+
+    
+
+    If you're using the [sample MCP server](#optional-use-a-sample-mcp-server), append it as a service:
+
+    ``` shiki
+    cat >> docker-compose.yaml <<'EOF'
+
+      hello-mcp:
+        image: python:3.13-slim
+        working_dir: /app
+        volumes:
+          - ./hello_server.py:/app/hello_server.py:ro
+        command: sh -c "pip install --quiet mcp && python hello_server.py"
+        restart: unless-stopped
+    EOF
+    ```
+
+    
+
+6.  6
+
+    ### Start the deployment
+
+    ``` shiki
     docker compose up -d
     ```
 

@@ -351,7 +351,7 @@ Create an interactive artifact showing: portfolio summary with weighted returns 
 
 Open in Claude
 
-[Artifacts can be shared(opens in new tab)](https://support.claude.com/en/articles/9547008-share-artifacts) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
+[Artifacts can be shared(opens in new tab)](../15-Claude-AI-Features/share-artifacts.md) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
 
 ## Next Steps[](#next-steps)
 
@@ -364,6 +364,111 @@ Create an interactive artifact showing: portfolio summary with weighted returns 
 - [Workflow 1: Single Company Investment Memo](#workflow-1-single-company-investment-memo)
 - [Workflow 2: Competitive Analysis Presentation](#workflow-2-competitive-analysis-presentation)
 - [Workflow 3: Portfolio Performance Review](#workflow-3-portfolio-performance-review)
+
+---
+
+## Get started with Claude | Claude Help Center
+
+Source: https://support.claude.com/en/articles/8114491-get-started-with-claude
+Path: 01-Getting-Started/get-started-with-claude.md
+
+# Get started with Claude
+
+September 16, 2026
+
+
+## What is Claude?
+
+Claude is a large language model (LLM) built by Anthropic. It's trained to be a helpful, honest, and harmless assistant with a conversational tone.
+
+## How to access Claude
+
+You can access Claude through several platforms:
+
+- **Web**: Visit **[claude.ai](https://claude.ai/)** to chat with Claude in a web browser.
+
+- **Desktop**: **[Download Claude Desktop](https://claude.ai/download)** for Mac or Windows.
+
+- **Mobile**: Download Claude for iOS or Android to chat on your mobile device.
+
+## Supported locations
+
+You must be in one of our **[supported locations](../15-Claude-AI-Features/where-can-i-access-claude.md)** to access Claude.
+
+## Is there an age requirement to use Claude?
+
+You must be at least 18 years old to use our services.
+
+## How to talk to Claude
+
+### What is a prompt?
+
+You use **prompts** to communicate with Claude. The best approach is to speak to Claude like you would a coworker or friend - naturally and conversationally. Your prompts can range from simple questions to complex requests:
+
+- **Simple questions**: "How do I hang a picture frame in my room?"
+
+- **Complex requests**: Multi-step projects, analysis, creative writing, coding, or technical tasks.
+
+### Use the Claude chat interface
+
+Type your prompt into the chat interface and click the submit button to start a conversation with Claude. You can click the "+" button in the lower left or type "/" to view additional options and commands:
+
+
+------------------------------------------------------------------------
+
+## Understanding Claude's capabilities
+
+### Which model am I talking to?
+
+The model you're currently chatting with is displayed either below your text input (on web and desktop) or at the top of your screen (on mobile). You can click on the model you're using to open the model selector and switch to another available model.
+
+You can also choose how much effort Claude puts into each response and whether it uses extended thinking. Learn more about **[changing the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings-claude-help-center.md)**.
+
+### Can I chat with Claude in different languages?
+
+Claude has extensive training in English and performs well in many other common languages. It also has some ability to communicate in less common languages and has extensive knowledge of programming languages.
+
+For instructions to select a language in your settings, see **[How to use Claude in your preferred language](../15-Claude-AI-Features/how-to-use-claude-in-your-preferred-language.md).**
+
+### Are there any usage limits or limits on chat length?
+
+While using the free Claude plan, there is a session-based usage limit that will reset every five hours. Also, the number of messages you can send will vary based on demand, and we may impose other types of usage limits to ensure fair access to all users. Claude will notify you when you’ve reached your limit, or if your prompt exceeds the available context window.
+
+For more information about usage and length limits, refer to **[How do usage and length limits work?](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)**
+
+### How do I increase my usage limits?
+
+We also have several paid subscriptions that offer additional usage. For more information, refer to our **[Plans & Pricing page](../17-Billing-Plans/pricing.md)**.
+
+### Can I import my conversation history from another AI provider?
+
+No, it's not possible to import conversation history from another AI provider into Claude at this time. However, Free, Pro, and Max users can use the memory import feature to transfer memory from other AI providers into Claude. For more information, see **[Import and export your memory from Claude](https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude)**.
+
+------------------------------------------------------------------------
+
+## Tips for getting started
+
+1.  **Start simple**: Begin with straightforward questions to get familiar with how Claude responds.
+
+2.  **Be specific**: The more specific your request, the better Claude can assist you.
+
+3.  **Iterate**: Don't hesitate to refine your prompts or ask follow-up questions.
+
+4.  **Explore**: Try different types of tasks - from having Claude answer basic questions to using it as a collaboration partner for more involved projects.
+
+------------------------------------------------------------------------
+
+## Next steps
+
+Once you've started using Claude, you can:
+
+- **[Customize your appearance settings](../15-Claude-AI-Features/customizing-your-appearance-settings.md)**
+
+- **[Explore Claude’s personalization features](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features)**
+
+- Learn more about designing effective prompts in our **[prompt engineering documentation](../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)**.
+
+- For additional features and more usage, consider **[upgrading to a paid plan](../17-Billing-Plans/pricing.md)**.
 
 ---
 
@@ -388,7 +493,7 @@ Path: 01-Getting-Started/get-started.md
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fget-started)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fget-started)
 
 
 
@@ -406,13 +511,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
+[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
 
 [Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -444,7 +549,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Messages](intro.md)First steps
 
@@ -462,7 +567,7 @@ Make your first API call to Claude and build a simple web search assistant.
 
 ## Prerequisites
 
-- A [Claude Console account](../04-API-Reference/Other/usage-limits.md)
+- A [Claude Console account](../04-API-Reference/Other/playground.md)
 - An [API key](../04-API-Reference/Other/get-api-key.md)
 
 ## Call the API
@@ -484,6 +589,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 1.  1
 
@@ -609,7 +716,7 @@ Path: 01-Getting-Started/getting-started-with-claude-for-nonprofits.md
 
 Learn how to access Claude's nonprofit pricing, connect to fundraising and donor management tools, and get your team started.
 
-3 minClaude.ai
+3 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -670,7 +777,7 @@ The nonprofit discount remains active as long as your organization maintains its
 
 #### What if I already have a full-priced account?
 
-Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md).
 
 #### Is my data used for training?
 
@@ -678,7 +785,7 @@ Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-sett
 
 #### Can I get a tax exemption?
 
-Submit your tax exemption certificate through [support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support) to receive a refund and apply the exemption to future invoices.
+Submit your tax exemption certificate through [support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md) to receive a refund and apply the exemption to future invoices.
 
 #### What about organizations with fewer than five employees?
 
@@ -690,7 +797,7 @@ Visit the [use case library(opens in new tab)](https://support.claude.com/all?ki
 
 ## Troubleshooting[](#troubleshooting)
 
-- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support).
+- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md).
 - **Team plan option greyed out:** Make sure you're signed in to the correct account and have admin permissions
 - **Email domain questions:** All team members don't need the same domain. Learn about [allowed email domains(opens in new tab)](../21-Account-Support/account-management-faqs.md#h_b54c41c86c).
 - **Connecting tools:** Learn how to [browse and connect tools from the directory(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
@@ -701,109 +808,6 @@ Visit the [use case library(opens in new tab)](https://support.claude.com/all?ki
 - [Common nonprofit use cases](#common-nonprofit-use-cases)
 - [Frequently asked questions](#frequently-asked-questions)
 - [Troubleshooting](#troubleshooting)
-
----
-
-## Get started with Claude | Claude Help Center
-
-Source: https://support.claude.com/en/articles/8114491-getting-started-with-claude
-Path: 01-Getting-Started/getting-started-with-claude.md
-
-# Get started with Claude
-
-
-## What is Claude?
-
-Claude is a large language model (LLM) built by Anthropic. It's trained to be a helpful, honest, and harmless assistant with a conversational tone.
-
-## How to access Claude
-
-You can access Claude through several platforms:
-
-- **Web**: Visit **[claude.ai](https://claude.ai/)** to chat with Claude in a web browser.
-
-- **Desktop**: **[Download Claude Desktop](https://claude.ai/download)** for Mac or Windows.
-
-- **Mobile**: Download Claude for iOS or Android to chat on your mobile device.
-
-## Supported locations
-
-You must be in one of our **[supported locations](../15-Claude-AI-Features/where-can-i-access-claude.md)** to access Claude.
-
-## Is there an age requirement to use Claude?
-
-You must be at least 18 years old to use our services.
-
-## How to talk to Claude
-
-### What is a prompt?
-
-You use **prompts** to communicate with Claude. The best approach is to speak to Claude like you would a coworker or friend - naturally and conversationally. Your prompts can range from simple questions to complex requests:
-
-- **Simple questions**: "How do I hang a picture frame in my room?"
-
-- **Complex requests**: Multi-step projects, analysis, creative writing, coding, or technical tasks.
-
-### Use the Claude chat interface
-
-Type your prompt into the chat interface and click the submit button to start a conversation with Claude. You can click the "+" button in the lower left or type "/" to view additional options and commands:
-
-
-------------------------------------------------------------------------
-
-## Understanding Claude's capabilities
-
-### Which model am I talking to?
-
-The model you're currently chatting with is displayed either below your text input (on web and desktop) or at the top of your screen (on mobile). You can click on the model you're using to open the model selector and switch to another available model.
-
-You can also choose how much effort Claude puts into each response and whether it uses extended thinking. Learn more about **[changing the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
-
-### Can I chat with Claude in different languages?
-
-Claude has extensive training in English and performs well in many other common languages. It also has some ability to communicate in less common languages and has extensive knowledge of programming languages.
-
-For instructions to select a language in your settings, see **[How to use Claude in your preferred language](../15-Claude-AI-Features/how-to-use-claude-in-your-preferred-language.md).**
-
-### Are there any usage limits or limits on chat length?
-
-While using the free Claude plan, there is a session-based usage limit that will reset every five hours. Also, the number of messages you can send will vary based on demand, and we may impose other types of usage limits to ensure fair access to all users. Claude will notify you when you’ve reached your limit, or if your prompt exceeds the available context window.
-
-For more information about usage and length limits, refer to **[How do usage and length limits work?](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)**
-
-### How do I increase my usage limits?
-
-We also have several paid subscriptions that offer additional usage. For more information, refer to our **[Plans & Pricing page](../17-Billing-Plans/pricing.md)**.
-
-### Can I import my conversation history from another AI provider?
-
-No, it's not possible to import conversation history from another AI provider into Claude at this time. However, Free, Pro, and Max users can use the memory import feature to transfer memory from other AI providers into Claude. For more information, see **[Import and export your memory from Claude](https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude)**.
-
-------------------------------------------------------------------------
-
-## Tips for getting started
-
-1.  **Start simple**: Begin with straightforward questions to get familiar with how Claude responds.
-
-2.  **Be specific**: The more specific your request, the better Claude can assist you.
-
-3.  **Iterate**: Don't hesitate to refine your prompts or ask follow-up questions.
-
-4.  **Explore**: Try different types of tasks - from having Claude answer basic questions to using it as a collaboration partner for more involved projects.
-
-------------------------------------------------------------------------
-
-## Next steps
-
-Once you've started using Claude, you can:
-
-- **[Customize your appearance settings](../15-Claude-AI-Features/customizing-your-appearance-settings.md)**
-
-- **[Explore Claude’s personalization features](../15-Claude-AI-Features/understanding-claude-s-personalization-features.md)**
-
-- Learn more about designing effective prompts in our **[prompt engineering documentation](../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)**.
-
-- For additional features and more usage, consider **[upgrading to a paid plan](../17-Billing-Plans/pricing.md)**.
 
 ---
 
@@ -828,7 +832,7 @@ Path: 01-Getting-Started/intro.md
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fintro)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fintro)
 
 
 
@@ -846,13 +850,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
+[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
 
 [Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -884,7 +888,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 MessagesFirst steps
 
@@ -941,11 +945,13 @@ Everyday tasksWritingCost-efficient
 
 The best combination of speed and intelligence
 
-### [Haiku 4.5](../20-Models/models-haiku-4-5-overview.md)
+### [Haiku 5.5](../20-Models/models-haiku-5-5-overview.md)
+
+New
 
 FastestLowest costHigh volume
 
-The fastest model with near-frontier intelligence
+For high-volume, latency-sensitive tasks such as classification, extraction, and routing
 
 [Compare models](../20-Models/about-claude-models-overview.md)
 
@@ -991,7 +997,7 @@ Follow these steps to go from zero to a working Claude integration.
 
     ### Explore features and tools
 
-    Discover what Claude can do: extended thinking, web search, file handling, structured outputs, and more.
+    Discover what Claude can do: thinking, web search, file handling, structured outputs, and more.
 
     [Browse the features overview](../04-API-Reference/Guides/build-with-claude-overview.md)
 
@@ -1003,7 +1009,7 @@ Anthropic provides developer tools to help you build and scale applications with
 
 
 
-[Developer Console](../04-API-Reference/Other/usage-limits.md)
+[Claude Console](../04-API-Reference/Other/playground.md)
 
 Explore and understand the API in your browser with playground.
 
@@ -1096,7 +1102,7 @@ Make sure you have:
 
 - A terminal or command prompt open
 - A code project to work with
-- A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/usage-limits.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
+- A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/playground.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
 
 These cases are covered on other pages:
 
@@ -1175,7 +1181,7 @@ claude
 Replace `/path/to/your/project` with the path to the project you want to work on. Claude Code prompts you to log in on first use. For Claude subscription or Console accounts, follow the prompts to complete authentication in your browser. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. You can log in using any of these account types:
 
 - [Claude Pro, Max, Team, or Enterprise](../17-Billing-Plans/pricing.md) (recommended)
-- [Claude Console](../04-API-Reference/Other/usage-limits.md) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
+- [Claude Console](../04-API-Reference/Other/playground.md) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
 - [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](../02-Claude-Code-CLI/third-party-integrations.md) (enterprise cloud providers)
 - A self-hosted [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
 
@@ -1518,7 +1524,7 @@ Courses on working with AI, building with Claude, and the Model Context Protocol
 65 lessons · 8 quizzes·8 hr·Completion badge
 
 
-### Claude with Google Cloud's Vertex AI
+### Claude on Google Cloud
 
 66 lessons · 9 quizzes·8.5 hr·Completion badge
 
@@ -1533,7 +1539,7 @@ Path: 01-Getting-Started/resources-tutorials-imagine-with-claude-student-guide.m
 
 A guide for students. What the feature is, how to use it well, and what it can do for your coursework.
 
-10 minClaude.ai
+10 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -1547,7 +1553,7 @@ The visual streams in alongside the text and the conversation keeps going. You c
 
 ### What this is, practically[](#what-this-is-practically)
 
-- **Appears as part of Claude's answer** — in the flow of the conversation, not a side panel. If you've used [Artifacts(opens in new tab)](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md), this is the lighter version.
+- **Appears as part of Claude's answer** — in the flow of the conversation, not a side panel. If you've used [Artifacts(opens in new tab)](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them), this is the lighter version.
 - **Interactive, often.** Sliders, draggable points, buttons, interactive elements, and even sound.
 - **Built from what you gave it** — can use context from the conversation, files you uploaded, or what Claude knows about you.
 - **Diagrams, charts, tools** — not image generation.
@@ -1918,7 +1924,7 @@ Native installations automatically update in the background. You can [configure 
 
 Auto-updates
 
-Claude Code checks for updates on startup and periodically while running. Updates download and install in the background, then take effect the next time you start Claude Code. Run `claude doctor` to see the result of the most recent update attempt. On macOS and Linux, the native installer manages the launcher at `~/.local/bin/claude` as a symlink into `~/.local/share/claude/versions/`. If you replace that launcher with your own script or symlink, auto-update and `claude update` leave it in place: new versions still install under the `versions/` directory, and your launcher decides which version runs. Before v2.1.207, the auto-updater replaced a custom launcher at that path with its own symlink on every update. With a custom launcher, Claude Code also keeps every installed version on disk because it can’t tell which version the launcher needs. `claude doctor` reports a launcher that the native installer didn’t create. To let Claude Code manage the launcher again, remove `~/.local/bin/claude` and run `claude update`. If an npm global install can’t auto-update because the npm global directory isn’t writable, Claude Code shows a one-time notice at startup, and `claude doctor` lists the available fixes. See [permission errors during installation](../02-Claude-Code-CLI/troubleshoot-install.md#permission-errors-during-installation) for details.
+Claude Code checks for updates on startup and periodically while running. Updates download and install in the background, then take effect the next time you start Claude Code. Run `claude doctor` in your shell to see the result of the last update attempt Claude Code recorded. On a native installation, if it reports a failed attempt, see [`Auto-update failed` in the session footer](../02-Claude-Code-CLI/troubleshoot-install.md#auto-update-failed) for what to do next. On macOS and Linux, the native installer manages the launcher at `~/.local/bin/claude` as a symlink into `~/.local/share/claude/versions/`. If you replace that launcher with your own script or symlink, auto-update and `claude update` leave it in place: new versions still install under the `versions/` directory, and your launcher decides which version runs. With a custom launcher, Claude Code also keeps every installed version on disk because it can’t tell which version the launcher needs. `claude doctor` reports a launcher that the native installer didn’t create. To let Claude Code manage the launcher again, remove `~/.local/bin/claude` and run `claude update`. If an npm global install can’t auto-update because the npm global directory isn’t writable, Claude Code shows a one-time notice at startup, and `claude doctor` lists the available fixes. See [permission errors during installation](../02-Claude-Code-CLI/troubleshoot-install.md#permission-errors-during-installation) for details.
 
 Homebrew, WinGet, apt, dnf, and apk installations do not auto-update by default; see below to opt in for Homebrew and WinGet. To upgrade Homebrew manually, run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed. For WinGet, run `winget upgrade Anthropic.ClaudeCode`. For Linux package managers, see the upgrade commands in [Install with Linux package managers](#install-with-linux-package-managers).To have Claude Code run the upgrade command for you on Homebrew or WinGet, set [`CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE`](../02-Claude-Code-CLI/env-vars.md) to `1`. Claude Code then runs the upgrade in the background when a new version is available and shows a restart prompt on success. The upgrade targets only the Claude Code package and does not affect other software you have installed.On WinGet the upgrade may fail while Claude Code is running because Windows locks the executable. In that case Claude Code shows the manual command instead. apt, dnf, and apk continue to require a manual upgrade because those commands need elevated privileges.**Known issue:** Claude Code may notify you of updates before the new version is available in these package managers. If an upgrade fails, wait and try again later.Homebrew keeps old versions on disk after upgrades. Run `brew cleanup` periodically to reclaim disk space.
 

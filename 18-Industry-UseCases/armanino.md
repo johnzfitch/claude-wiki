@@ -2,7 +2,7 @@
 title: "Armanino Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/armanino"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:04Z"
+fetched_at: "2026-10-23T06:29:25Z"
 tags: ["api", "bedrock", "case-studies", "cli", "enterprise", "security"]
 ---
 
@@ -40,29 +40,29 @@ Armanino, one of the largest accounting firms in the United States, uses Claude 
 
 Armanino helps organizations solve their most complex audit, tax, and consulting challenges. Traditionally in the industry, these services have been highly manual, often leaving clients with limited visibility into the process. AJ Yawn, Partner in Charge for Product and Innovation at Armanino, is spearheading an initiative to change this paradigm.
 
-"We want to lead the industry on adopting AI for critical accounting workflows," shares AJ. His team of software engineers is building a platform that will put AI capabilities at the fingertips of everyone at the firm, from auditors to consultants.
+“We want to lead the industry on adopting AI for critical accounting workflows,” shares AJ. His team of software engineers is building a platform that will put AI capabilities at the fingertips of everyone at the firm, from auditors to consultants.
 
 ## Rapid innovation with Claude and Amazon Bedrock
 
 To support its ambitious AI goals, Armanino chose Claude on Amazon Bedrock. The firm had already built its modern server-less architecture on AWS, making Bedrock a natural fit for deploying AI applications.
 
-"Claude immediately stood out when we were looking at all of the models available on Bedrock," AJ explains. "The models in the Claude 3 model family felt like the first AI models that allow you to communicate like a human."
+“Claude immediately stood out when we were looking at all of the models available on Bedrock,” AJ explains. “The models in the Claude 3 model family felt like the first AI models that allow you to communicate like a human.”
 
-Maliq Lawrence, Product Manager at Armanino, led a formal evaluation of the models available on Bedrock. "Many of the other LLMs we’ve evaluated produce responses that are too robotic for our use cases—and would not meet our expectations for using in customer-facing workflows," Maliq notes. "Claude is different, it provides a really personalized feel."
+Maliq Lawrence, Product Manager at Armanino, led a formal evaluation of the models available on Bedrock. “Many of the other LLMs we’ve evaluated produce responses that are too robotic for our use cases—and would not meet our expectations for using in customer-facing workflows,” Maliq notes. “Claude is different, it provides a really personalized feel.”
 
 The product and engineering team found Claude easy to use, allowing them to quickly build, test, and deploy new capabilities. Their first AI-powered product, a tool for auditors to request documents from clients, took just two weeks to go from idea to live production.
 
-"It's insane how easy it is to power very complex use cases with Claude," AJ adds.
+“It’s insane how easy it is to power very complex use cases with Claude,” AJ adds.
 
 ## Streamlining audits and improving client communication
 
-Armanino's new AI-powered request tool streamlines a process that historically consumed significant time and caused stress for both auditors and clients.
+Armanino’s new AI-powered request tool streamlines a process that historically consumed significant time and caused stress for both auditors and clients.
 
 Previously, when clients sent incorrect documents, auditors had to manually write rejection emails, often requiring senior auditor review. This process took 10-15 minutes per rejected item, with 50-75 items typically rejected per audit. Multiplied across thousands of audits each year, this represented a substantial time sink and source of frustration.
 
-The new tool leverages Claude to automatically generate formal notes explaining why a document is incorrect and providing detailed guidance for clients. "We needed this Claude-powered experience to act like a seasoned auditor," AJ explains.
+The new tool leverages Claude to automatically generate formal notes explaining why a document is incorrect and providing detailed guidance for clients. “We needed this Claude-powered experience to act like a seasoned auditor,” AJ explains.
 
-"We're able to provide Claude a small prompt and it gives us a really nice personalized text, about three to four sentences, that delivers exactly what we need from the client in order to fulfill this request," Maliq adds.
+“We’re able to provide Claude a small prompt and it gives us a really nice personalized text, about three to four sentences, that delivers exactly what we need from the client in order to fulfill this request,” Maliq adds.
 
 ## Significant time savings and improved confidence
 
@@ -77,7 +77,7 @@ Even with their first Claude-powered use case, the team was able to generate sub
 
 ## Looking to the future
 
-Armanino's AI lab is already at work on new features to support testing and documentation workflows. "This is really just the start for us," says AJ.
+Armanino’s AI lab is already at work on new features to support testing and documentation workflows. “This is really just the start for us,” says AJ.
 
 With its innovative use of Claude and focus on solving real-world problems for both staff and clients, Armanino is well-positioned to lead the accounting industry into the AI-powered future.
 
@@ -108,7 +108,8 @@ With its innovative use of Claude and focus on solving real-world problems for b
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -126,12 +127,12 @@ With its innovative use of Claude and focus on solving real-world problems for b
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -164,7 +165,7 @@ With its innovative use of Claude and focus on solving real-world problems for b
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -182,6 +183,7 @@ With its innovative use of Claude and focus on solving real-world problems for b
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -197,7 +199,7 @@ With its innovative use of Claude and focus on solving real-world problems for b
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -232,7 +234,8 @@ With its innovative use of Claude and focus on solving real-world problems for b
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -250,12 +253,12 @@ With its innovative use of Claude and focus on solving real-world problems for b
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -288,7 +291,7 @@ With its innovative use of Claude and focus on solving real-world problems for b
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -306,6 +309,7 @@ With its innovative use of Claude and focus on solving real-world problems for b
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -321,7 +325,7 @@ With its innovative use of Claude and focus on solving real-world problems for b
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

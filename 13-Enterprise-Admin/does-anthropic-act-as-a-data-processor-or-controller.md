@@ -2,16 +2,14 @@
 title: "Does Anthropic Act as a Data Processor or Controller? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267385-does-anthropic-act-as-a-data-processor-or-controller"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:25:39Z"
+fetched_at: "2026-10-23T06:29:19Z"
 tags: ["enterprise"]
 ---
 
 # Does Anthropic Act as a Data Processor or Controller?
 
-March 16, 2026
 
-
-*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see* *[here](https://privacy.claude.com/en/collections/10663362-consumers).*
+*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see [here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
 When a commercial customer creates a Claude for Work account (Team or Enterprise plan), under our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) the customer is the "Controller" of the data submitted by its Users. This means:
 
@@ -31,6 +29,6 @@ For more details on our data practices, please see the:
 
 - [Anthropic Privacy Center](https://privacy.claude.com/en/collections/10663361-commercial-customers)
 
-- [Anthropic Trust Center](http://trust.anthropic.com)
+- [Anthropic Trust Center](https://trust.anthropic.com)
 
 - [Anthropic Privacy Policy](https://www.anthropic.com/legal/privacy)

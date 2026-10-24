@@ -2,7 +2,7 @@
 title: "Browser and computer use with the SDK toolsets - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-08T06:24:45Z"
+fetched_at: "2026-10-23T06:28:37Z"
 tags: ["api", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "sdk"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fbrowser-use-sdk)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fbrowser-use-sdk)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -76,9 +76,11 @@ MCP
 
 Claude on cloud platforms
 
-[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-overview.md)
+
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Tools
 
@@ -94,46 +96,269 @@ Run the browser use tool or the computer use tool from the Python or TypeScript 
 
 
 
-The Python and TypeScript SDKs include a class for the [browser use tool](agents-and-tools-tool-use-browser-use-tool.md) and a class for the [computer use tool](agents-and-tools-tool-use-computer-use-tool.md). You subclass one and write one method per member tool, such as `navigate` or `left_click`, against your own browser or desktop automation. The SDK routes each call, runs the policies you pass, asks your approval callback, and builds each `tool_result`.
+With the browser and computer toolsets in the Python and TypeScript SDKs, you can build an agent that works in a web browser or on a desktop. It can use applications with no programmatic interface. Through the [browser use tool](agents-and-tools-tool-use-browser-use-tool.md), Claude navigates, reads, and interacts with webpages. Through the [computer use tool](agents-and-tools-tool-use-computer-use-tool.md), Claude receives screenshots of a desktop and uses the mouse and keyboard.
 
-Most of this page uses the browser class. [Computer toolset](#computer-toolset) covers the computer class and what differs for it.
+The SDK connects Claude to your browser or desktop. It runs the checks you configure, such as a URL policy for `navigate` or an approval callback. It sends each call that passes to your driver and builds the `tool_result` from what the driver returns. The [tool runner](agents-and-tools-tool-use-tool-runner.md) can run the agentic loop for you.
 
-The SDK doesn't include a browser, a desktop, a ready-made driver, or a URL policy. The [minimal CDP example](https://github.com/anthropics/claude-quickstarts/tree/main/browser-toolset) is in the claude-quickstarts repository, in Python and TypeScript. It controls Chromium through the Chrome DevTools Protocol (CDP), and it isn't production code.
+You supply the driver, which operates the browser or desktop. Start from a [provider's driver](#use-a-driver-from-a-provider). With one, an agent takes a few lines of code. If none fits, write your own with a browser automation library such as Playwright.
+
+Most of this page is about the browser toolset. [Computer toolset](#computer-toolset) covers what differs.
+
+Writing your own driver is an advanced case, covered in [Implement a driver](#implement-a-driver). The claude-quickstarts repository also has an [example browser driver](https://github.com/anthropics/claude-quickstarts/tree/main/browser-toolset) in Python and TypeScript. It controls Chromium through the Chrome DevTools Protocol (CDP), and it isn't production code.
 
 
 
-The browser toolset class is in beta and available in the [Python SDK](https://github.com/anthropics/anthropic-sdk-python/blob/main/browser-toolset.md) and the [TypeScript SDK](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/browser-toolset.md). The computer toolset class is in beta in the same SDKs, which have a [Python computer toolset guide](https://github.com/anthropics/anthropic-sdk-python/blob/main/computer-toolset.md) and a [TypeScript computer toolset guide](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/computer-toolset.md). Each class runs with the [tool runner](agents-and-tools-tool-use-tool-runner.md) or in a loop you write.
+The browser toolset class is in beta and available in the [Python SDK](https://github.com/anthropics/anthropic-sdk-python/blob/main/browser-toolset.md) and the [TypeScript SDK](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/browser-toolset.md). The computer toolset class is in beta in the same SDKs, which have a [Python computer toolset guide](https://github.com/anthropics/anthropic-sdk-python/blob/main/computer-toolset.md) and a [TypeScript computer toolset guide](https://github.com/anthropics/anthropic-sdk-typescript/blob/main/computer-toolset.md).
 
-## Partner integrations
+## Use a driver from a provider
 
-Browser Use, Browserbase, Daytona, and E2B publish their own integrations with the SDK toolsets.
-
-### Browser Use
-
-- [Browser Use docs](https://docs.browser-use.com/open-source/customize/integrations/toolsets-for-claude)
-- [Browser Use quickstart](https://github.com/browser-use/browser-use/tree/main/examples/integrations/toolsets-for-claude)
-
-### Browserbase
-
-- [Browserbase Stagehand docs](https://docs.stagehand.dev/v4/integrations/agent-frameworks/claude-cua-toolset-quickstart)
-- [Browserbase toolset](https://github.com/browserbase/claude-cua-toolset)
-
-### Daytona
-
-- [Daytona guide](https://www.daytona.io/docs/en/guides/claude/claude-draws-daytona-sandbox/)
-
-### E2B
-
-- [E2B docs](https://docs.e2b.dev/agents/claude-toolsets)
-- [E2B example](https://github.com/e2b-dev/e2b-cookbook/tree/main/examples/anthropic-computer-use-orangehrm-js)
-
-## Quick start
-
-A driver is your subclass of `BetaAbstractBrowserToolset20260801`. This one implements `navigate`, `screenshot`, and `left_click`, plus `_browser_state`, the state report that every driver needs. In the example, `backend` stands for your own wrapper around a browser automation library, such as Playwright. The URL policy is an example. [Write a URL policy](#write-a-url-policy) explains it.
+With a driver from a provider, such as one under [Partner integrations](#partner-integrations), you can build an agent in a few lines of code. The provider in this example is made up. Replace `example_browser_provider` and `ExampleBrowser` with a real provider's package and driver class, and set them up as the provider's docs describe.
 
 Python
 
 TypeScript
+
+Python
+
+
+
+```python
+from anthropic import Anthropic
+from example_browser_provider import ExampleBrowser  # made-up provider
+
+client = Anthropic()
+with ExampleBrowser() as browser:
+    runner = client.beta.messages.tool_runner(
+        model="claude-opus-5-5",
+        max_tokens=1024,
+        tools=[browser],
+        messages=[
+            {"role": "user", "content": "Open example.com and tell me its heading."}
+        ],
+    )
+    for message in runner:
+        print(message)
+```
+
+Pass the driver instance itself as the `tools` entry. The runner never closes the toolset, so one instance can serve several runs. Close it when you're done.
+
+To write your own driver, see [Implement a driver](#implement-a-driver).
+
+## Partner integrations
+
+Browser Use, Browserbase, Daytona, and E2B publish their own drivers for the SDK toolsets.
+
+[Browser Use](https://docs.browser-use.com/open-source/customize/integrations/toolsets-for-claude)
+
+Browser Use driver for the browser toolset.
+
+[Browserbase](https://docs.stagehand.dev/v4/integrations/agent-frameworks/claude-cua-toolset-quickstart)
+
+Browserbase Stagehand driver for the browser toolset.
+
+[Daytona](https://www.daytona.io/docs/en/guides/claude/claude-draws-daytona-sandbox/)
+
+Daytona driver for the computer toolset.
+
+[E2B](https://docs.e2b.dev/agents/claude-toolsets)
+
+E2B drivers for the browser and computer toolsets.
+
+Partner code is also available on GitHub: the [Browser Use quickstart](https://github.com/browser-use/browser-use/tree/main/examples/integrations/toolsets-for-claude), the [Browserbase toolset](https://github.com/browserbase/claude-cua-toolset), and the [E2B example](https://github.com/e2b-dev/e2b-cookbook/tree/main/examples/anthropic-computer-use-orangehrm-js).
+
+
+
+Do these two things before you run a driver against anything but a throwaway browser:
+
+- [Write a URL policy](#write-a-url-policy). Without one, the SDK checks no URL. For a browser that a provider hosts, also read [Remote and hosted browsers](#remote-and-hosted-browsers).
+- Use a browser profile that isn't signed in to any account whose data or actions you wouldn't hand to Claude. See [Isolate the browser host](#isolate-the-browser-host).
+
+[Run the toolset safely](#run-the-toolset-safely) covers the rest.
+
+## Customize a driver
+
+The examples in this section use `MyBrowser`, the driver from the [advanced example](#quick-start) later on this page.
+
+### Enable or disable members
+
+`configs` takes the per-member settings described under [Configure the toolset](agents-and-tools-tool-use-browser-use-tool.md#configure-the-toolset). List only the members you change:
+
+Python
+
+TypeScript
+
+Python
+
+
+
+```python
+# A MyBrowser that also implements read_console
+browser = MyBrowser(
+    backend, configs={"read_console": {"enabled": True}, "navigate": {"enabled": False}}
+)
+```
+
+The SDK refuses a call to a disabled member before your code runs. Enabling a member your class doesn't implement is a configuration error, unless the class overrides `execute`.
+
+### Add before and after hooks
+
+Override `execute` and call the parent's `execute`. Code before that call runs after the [URL policy](#write-a-url-policy), the [file policy](#confine-uploads-and-downloads), and [`confirm`](#gate-consequential-members), and it can change the input. The SDK doesn't check the changed input again. Code after the call receives the result, and it can change the result. Raise `ToolError` (throw it in TypeScript) to refuse the call.
+
+Overriding `execute` changes which members Claude is offered. The SDK counts every member as implemented, so Claude is offered every member that's on by default. The `MyBrowser` in the [advanced example](#quick-start) serves three members, so the following `TracedBrowser` offers Claude members it can't serve. Turn those members off with `configs` before you use it.
+
+Python
+
+TypeScript
+
+Python
+
+
+
+```python
+import time
+
+
+class TracedBrowser(MyBrowser):
+    def execute(self, context, name, input):
+        started = time.monotonic()
+        result = super().execute(context, name, input)
+        elapsed_ms = (time.monotonic() - started) * 1000
+        call_id = context.tool_use.id if context.tool_use else "-"
+        log.info("%s %s %.0fms", call_id, name, elapsed_ms)
+        return redact(result) if name == "get_page_text" else result
+```
+
+## Implement a driver
+
+A driver is your subclass of `BetaAbstractBrowserToolset20260801`. In it, override the members your browser supports. A member you don't implement is sent to the API as disabled. If Claude calls it anyway, the SDK returns an error, and the run continues. Overriding `execute` changes which members are sent as disabled ([Add before and after hooks](#add-before-and-after-hooks)). Each member receives the call context and the member's input as a typed object, such as `BetaBrowserNavigateInput`. The input types come from `anthropic.types.beta`. [Member tools](agents-and-tools-tool-use-browser-use-tool.md#member-tools) lists each input's fields.
+
+In TypeScript, spell the `type` member `type_`, and write members as methods, not arrow-function fields, because the SDK finds them on the prototype.
+
+### Return results
+
+What a member returns determines what Claude reads. A successful result ends with a `browser_state` block built from your state report. An error result carries no block.
+
+| Member                                                                                  | Returns                                                                                              | Claude reads                                                                                |
+|:----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
+| `screenshot`, `zoom`                                                                    | `BetaScreenshotResult`                                                                               | One image block                                                                             |
+| `navigate`                                                                              | `BetaBrowserNavigateResult`                                                                          | `Navigated to {url} — {title} (HTTP {status})`                                              |
+| `new_tab`, `switch_tab`, `list_tabs`, `close_tab`                                       | A tab entry (`new_tab`, `switch_tab`), a list of tab entries (`list_tabs`), or nothing (`close_tab`) | The `browser_state` block alone                                                             |
+| `read_page`, `get_page_text`, `find`, `read_console`, `read_network`, `javascript_exec` | A string                                                                                             | The string, or `(empty)` for an empty string                                                |
+| Every other member                                                                      | Nothing, or one line of text                                                                         | A short confirmation, such as `Clicked.`, then the returned line in a text block of its own |
+
+### Report browser state
+
+The SDK calls `_browser_state` after each call that returns a result, including refused and failed calls. Return every open tab, and what changed since the last report:
+
+- Opened tabs and download events
+- A `BetaNavigationRefused` for each navigation your [request hook](#intercept-requests-in-the-driver) blocked
+- A `BetaDialogDismissed` for each native dialog your driver dismissed
+
+Put all of these in `state_changes`. A refused navigation is `anthropic.tools.browser.BetaNavigationRefused()`, and a dismissed dialog is `anthropic.tools.browser.BetaDialogDismissed(kind=..., message=...)`.
+
+The last two aren't API state changes. The SDK reports them to Claude as text outside the `browser_state` block: one line for all refused navigations, which doesn't include a URL, and a line for each of the first three dismissed dialogs, then a count of any others.
+
+When any tab is open, exactly one must be active. Every member that takes a `tab_id` must act on the tab it names. The API's limits on the report are listed under [Track tabs with `browser_state`](agents-and-tools-tool-use-browser-use-tool.md#track-tabs-and-page-state).
+
+Claude reads each tab's URL, each download's URL, and the URL that your `navigate` returns, as your driver wrote them. The SDK doesn't parse these URLs. It turns line breaks and other control characters into spaces, trims the ends, and cuts each URL at 4,096 characters. So a `data:` URL's contents, a `file:` URL's path, and a username or password in a URL all reach Claude.
+
+### Handle errors
+
+| Raised by a member or the SDK | Claude reads                             | The run   |
+|:------------------------------|:-----------------------------------------|:----------|
+| `ToolError`                   | Its message, as an error result          | Continues |
+| `ToolsetUsageError`           | Nothing                                  | Stops     |
+| Any other exception           | `ClassName: message`, as an error result | Continues |
+
+The SDK raises `ToolsetUsageError` for a configuration error, a misuse of the SDK during a call, or a call after `close`. It also raises one when `_browser_state` raises any exception, even a `ToolError`. The tool runner and `tool_result` don't catch it, so it reaches their caller.
+
+The SDK doesn't hide local paths in a member's error text, in the line an action such as `left_click` returns, in a failed download's error, or in a dismissed dialog's message.
+
+A `ToolError` from your URL policy, file policy, or `confirm` callable reaches Claude as written, so leave local paths out of its text. Catch exceptions in your members, and raise `ToolError` (throw it in TypeScript) with your own text.
+
+### Start calls while the response streams
+
+By default, the tool runner runs a turn's calls after Claude's response ends. With early start, it can start a browser or computer call while the response is still streaming.
+
+To turn it on, pass `stream=True` and `run_tools_eagerly=True` to the tool runner, as the [advanced example](#quick-start) does. With `stream`, each pass through your loop over the runner gives you a stream instead of a message.
+
+Early start changes when a call can start, not how the toolset runs it:
+
+- **The checks still run first:** The SDK calls your URL policy, your file policy, and `confirm` before a call runs. With early start, it can call `confirm` while the response is still streaming.
+- **Calls still run one at a time:** A toolset runs its calls in the order Claude wrote them. A failed call still stops that toolset's later calls in the turn.
+- **A call that has started can't be taken back:** If the response is then cut off, for example at `max_tokens`, or your loop stops early, the action still occurs, and Claude never reads its result.
+
+### Run without the tool runner
+
+Pass `browser` in `tools`, and answer each member call with `tool_result`. The browser use tool requires you to stop at the first failed call ([Batch actions](agents-and-tools-tool-use-browser-use-tool.md#batch-actions)).
+
+This loop uses `MyBrowser` and the URL policy from the [advanced example](#quick-start). After a failed call, it answers the turn's later calls without running them:
+
+Python
+
+TypeScript
+
+Python
+
+
+
+```python
+from anthropic.types.beta import BetaMessageParam, BetaToolResultBlockParam
+
+NOT_EXECUTED = "Not executed: an earlier action in this turn failed."
+MAX_TURNS = 10
+
+with MyBrowser(backend, url_policy=url_policy) as browser:
+    messages: list[BetaMessageParam] = [{"role": "user", "content": "Open example.com"}]
+    for _ in range(MAX_TURNS):
+        response = client.beta.messages.create(
+            model="claude-opus-5-5",
+            max_tokens=1024,
+            tools=[browser],
+            messages=messages,
+        )
+        messages.append({"role": "assistant", "content": response.content})
+        calls = [
+            block
+            for block in response.content
+            if block.type == "tool_use" and block.toolset_name == browser.toolset_name
+        ]
+        if not calls:
+            break
+        results: list[BetaToolResultBlockParam] = []
+        failed = False
+        for call in calls:
+            if failed:
+                # After a failed call, the rest of the turn is answered, not run.
+                results.append(
+                    {
+                        "type": "tool_result",
+                        "tool_use_id": call.id,
+                        "toolset_name": call.toolset_name,
+                        "content": NOT_EXECUTED,
+                        "is_error": True,
+                    }
+                )
+                continue
+            result = browser.tool_result(call)
+            failed = bool(result.get("is_error"))
+            results.append(result)
+        messages.append({"role": "user", "content": results})
+```
+
+Each answer to a skipped call carries `is_error`, the call's `toolset_name`, and the exact text that [Batch actions](agents-and-tools-tool-use-browser-use-tool.md#batch-actions) requires. The tool runner sends the same answer.
+
+## Advanced example: write your own driver
+
+This example puts the main parts of [Implement a driver](#implement-a-driver) into one driver, `MyBrowser`, and runs it with the tool runner and [early start](#start-calls-while-the-response-streams). `MyBrowser` implements `navigate`, `screenshot`, and `left_click`, plus `_browser_state`, the state report that every driver needs.
+
+`backend` stands for your own wrapper around a browser automation library, such as Playwright. The URL policy is an example. [Write a URL policy](#write-a-url-policy) explains it.
+
+Python
+
+TypeScript
+
+Python
 
 
 
@@ -250,183 +475,9 @@ with MyBrowser(backend, url_policy=url_policy) as browser:
         print(stream.get_final_message())
 ```
 
-Pass the driver instance itself as the `tools` entry. A member you don't implement is sent to the API as disabled. If Claude calls it anyway, the SDK returns an error, and the run continues. Overriding `execute` changes which members are sent as disabled ([Add before and after hooks](#add-before-and-after-hooks)). The runner never closes the toolset, so one instance can serve several runs. Close it when you're done.
-
-The example turns on early start. See [Start calls while the response streams](#start-calls-while-the-response-streams).
-
-
-
-Do these two things before you run a driver against anything but a throwaway browser:
-
-- [Write a URL policy](#write-a-url-policy), and block private network ranges and the cloud metadata address `169.254.169.254` with [egress rules on the container](#put-egress-policy-on-the-container). Without a URL policy, the SDK checks no URL. Egress rules outside the container don't see loopback, so a page can still reach anything listening in the browser's container.
-- Use a browser profile that isn't signed in to any account whose data or actions you wouldn't hand to Claude. See [Isolate the browser host](#isolate-the-browser-host).
-
-## Customize a driver
-
-### Enable or disable members
-
-`configs` takes the per-member settings described under [Configure the toolset](agents-and-tools-tool-use-browser-use-tool.md#configure-the-toolset). List only the members you change:
-
-Python
-
-TypeScript
-
-
-
-```python
-# A MyBrowser that also implements read_console
-browser = MyBrowser(
-    backend, configs={"read_console": {"enabled": True}, "navigate": {"enabled": False}}
-)
-```
-
-The SDK refuses a call to a disabled member before your code runs. Enabling a member your class doesn't implement is a configuration error, unless the class overrides `execute`.
-
-### Add before and after hooks
-
-Override `execute` and call the parent's `execute`. Code before that call runs after the [URL policy](#write-a-url-policy), the [file policy](#confine-uploads-and-downloads), and [`confirm`](#gate-consequential-members), and it can change the input. The SDK doesn't check the changed input again. Code after the call receives the result, and it can change the result. Raise `ToolError` (throw it in TypeScript) to refuse the call.
-
-Overriding `execute` changes which members Claude is offered. The SDK counts every member as implemented, so Claude is offered every member that's on by default. The quick start's `MyBrowser` serves three members, so the following `TracedBrowser` offers Claude members it can't serve. Turn those members off with `configs` before you use it.
-
-Python
-
-TypeScript
-
-
-
-```python
-import time
-
-
-class TracedBrowser(MyBrowser):
-    def execute(self, context, name, input):
-        started = time.monotonic()
-        result = super().execute(context, name, input)
-        elapsed_ms = (time.monotonic() - started) * 1000
-        call_id = context.tool_use.id if context.tool_use else "-"
-        log.info("%s %s %.0fms", call_id, name, elapsed_ms)
-        return redact(result) if name == "get_page_text" else result
-```
-
-## Implement a driver
-
-Override the members your browser supports. Each member receives the call context and the member's input as a typed object, such as `BetaBrowserNavigateInput`. The input types come from `anthropic.types.beta`. [Member tools](agents-and-tools-tool-use-browser-use-tool.md#member-tools) lists each input's fields.
-
-In TypeScript, write members as methods, not arrow-function fields, because the SDK finds them on the prototype. Spell the `type` member `type_` in TypeScript. In Python, it's `type`.
-
-### Return results
-
-What a member returns determines what Claude reads. A successful result ends with a `browser_state` block built from your state report. An error result carries no block.
-
-| Member                                                                                  | Returns                                                                                              | Claude reads                                                                                |
-|:----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
-| `screenshot`, `zoom`                                                                    | `BetaScreenshotResult`                                                                               | One image block                                                                             |
-| `navigate`                                                                              | `BetaBrowserNavigateResult`                                                                          | `Navigated to {url} — {title} (HTTP {status})`                                              |
-| `new_tab`, `switch_tab`, `list_tabs`, `close_tab`                                       | A tab entry (`new_tab`, `switch_tab`), a list of tab entries (`list_tabs`), or nothing (`close_tab`) | The `browser_state` block alone                                                             |
-| `read_page`, `get_page_text`, `find`, `read_console`, `read_network`, `javascript_exec` | A string                                                                                             | The string, or `(empty)` for an empty string                                                |
-| Every other member                                                                      | Nothing, or one line of text                                                                         | A short confirmation, such as `Clicked.`, then the returned line in a text block of its own |
-
-### Report browser state
-
-The SDK calls `_browser_state` after each call that returns a result, including refused and failed calls. Return every open tab, and what changed since the last report:
-
-- Opened tabs and download events.
-- A `BetaNavigationRefused` for each navigation your [request hook](#intercept-requests-in-the-driver) blocked.
-- A `BetaDialogDismissed` for each native dialog your driver dismissed.
-
-Put all of these in `state_changes`. In Python, `BetaNavigationRefused()` and `BetaDialogDismissed(kind=..., message=...)` come from `anthropic.tools.browser`. In TypeScript, they're `{ type: "navigation_refused" }` and `{ type: "dialog_dismissed", kind, message }`.
-
-The last two aren't API state changes. The SDK reports them to Claude as text outside the `browser_state` block: one line for all refused navigations, which doesn't name a URL, and a line for each of the first three dismissed dialogs, then a count of any others.
-
-When any tab is open, exactly one must be active. Every member that takes a `tab_id` must act on the tab it names. The API's limits on the report are listed under [Track tabs with `browser_state`](agents-and-tools-tool-use-browser-use-tool.md#track-tabs-and-page-state).
-
-Claude reads each tab's URL, each download's URL, and the URL that your `navigate` returns, as your driver wrote them. The SDK doesn't parse these URLs. It turns line breaks and other control characters into spaces, trims the ends, and cuts each URL at 4,096 characters. So a `data:` URL's contents, a `file:` URL's path, and a user name or password in a URL all reach Claude.
-
-### Handle errors
-
-| Raised by a member or the SDK | Claude reads                                                                         | The run   |
-|:------------------------------|:-------------------------------------------------------------------------------------|:----------|
-| `ToolError`                   | Its message, as an error result                                                      | Continues |
-| `ToolsetUsageError`           | Nothing                                                                              | Stops     |
-| Any other exception           | `ClassName: message` in Python or `Error: message` in TypeScript, as an error result | Continues |
-
-The SDK raises `ToolsetUsageError` for a configuration error, a misuse of the SDK during a call, or a call after `close`. It also raises one when `_browser_state` raises any exception, even a `ToolError`. The tool runner and `tool_result` don't catch it, so it reaches their caller.
-
-The SDK doesn't hide local paths in a member's error text, in the line an action such as `left_click` returns, in a failed download's error, or in a dismissed dialog's message.
-
-A `ToolError` from your URL policy, file policy, or `confirm` callable reaches Claude as written, so leave local paths out of its text. Catch exceptions in your members, and raise `ToolError` (throw it in TypeScript) with your own text.
-
-### Start calls while the response streams
-
-By default, the tool runner runs a turn's calls after Claude's response ends. With early start, it can start a browser or computer call while the response is still streaming.
-
-To turn it on, pass `stream=True` and `run_tools_eagerly=True` to the tool runner, as the quick start does. With `stream`, each pass through your loop over the runner gives you a stream instead of a message.
-
-Early start changes when a call can start, not how the toolset runs it:
-
-- **The checks still run first:** The SDK calls your URL policy, your file policy, and `confirm` before a call runs. With early start, it can call `confirm` while the response is still streaming.
-- **Calls still run one at a time:** A toolset runs its calls in the order Claude wrote them. A failed call still stops that toolset's later calls in the turn.
-- **A call that has started can't be taken back:** If the response is then cut off, for example at `max_tokens`, or your loop stops early, the action still happens, and Claude never reads its result.
-
-### Run without the tool runner
-
-Pass the instance in `tools` (`browser.toJSON()` in TypeScript), and answer each member call with `tool_result`. The browser use tool requires you to stop at the first failed call ([Batch actions](agents-and-tools-tool-use-browser-use-tool.md#batch-actions)). After a failed call, this loop answers the turn's later calls without running them:
-
-Python
-
-TypeScript
-
-
-
-```python
-from anthropic.types.beta import BetaMessageParam, BetaToolResultBlockParam
-
-NOT_EXECUTED = "Not executed: an earlier action in this turn failed."
-MAX_TURNS = 10
-
-with MyBrowser(backend, url_policy=url_policy) as browser:
-    messages: list[BetaMessageParam] = [{"role": "user", "content": "Open example.com"}]
-    for _ in range(MAX_TURNS):
-        response = client.beta.messages.create(
-            model="claude-opus-5-5",
-            max_tokens=1024,
-            tools=[browser],
-            messages=messages,
-        )
-        messages.append({"role": "assistant", "content": response.content})
-        calls = [
-            block
-            for block in response.content
-            if block.type == "tool_use" and block.toolset_name == browser.toolset_name
-        ]
-        if not calls:
-            break
-        results: list[BetaToolResultBlockParam] = []
-        failed = False
-        for call in calls:
-            if failed:
-                # After a failed call, the rest of the turn is answered, not run.
-                results.append(
-                    {
-                        "type": "tool_result",
-                        "tool_use_id": call.id,
-                        "toolset_name": call.toolset_name,
-                        "content": NOT_EXECUTED,
-                        "is_error": True,
-                    }
-                )
-                continue
-            result = browser.tool_result(call)
-            failed = bool(result.get("is_error"))
-            results.append(result)
-        messages.append({"role": "user", "content": results})
-```
-
-Each answer to a skipped call carries `is_error`, the call's `toolset_name`, and the exact text that [Batch actions](agents-and-tools-tool-use-browser-use-tool.md#batch-actions) requires. The tool runner sends the same answer.
-
 ## Run the toolset safely
 
-Claude's next action depends on the pages it reads. A page, or text injected into one, can try to reach internal services or pull files off the host. It can also try to trigger actions with real effects. Before you run a driver against anything but a throwaway browser, take these six steps:
+Claude's next action depends on the pages it reads. A page, or text injected into one, can attempt to reach internal services or pull files off the host. It can also attempt to trigger actions with real effects. Before you run a driver against anything but a throwaway browser, take these six steps:
 
 1.  [Write a URL policy](#write-a-url-policy) that refuses every `navigate` URL the task doesn't need.
 2.  [Intercept requests in the driver](#intercept-requests-in-the-driver), and check each request with the same rules.
@@ -447,7 +498,7 @@ Anthropic's prompt-injection classifiers, described under [Security consideratio
 
 Without a URL policy, the SDK checks no URL, and the API doesn't filter the URLs Claude opens. Even with a policy, a link Claude clicks or a redirect can take the browser to loopback (`localhost`, `127.0.0.1`), to link-local addresses such as the cloud metadata address `169.254.169.254`, and to private network ranges. [Egress rules on the container](#put-egress-policy-on-the-container) can block the link-local and private addresses. Rules enforced outside the container can't block loopback.
 
-The SDK doesn't check a URL's scheme, so your driver must refuse every scheme it doesn't mean to open, such as `javascript:`, `view-source:`, `data:`, and `file:`. Most drivers need only `http` and `https`. The example policy below allows only `http` and `https` URLs, plus `about:blank`.
+The SDK doesn't check a URL's scheme, so your driver must refuse every scheme that you don't intend it to open, such as `javascript:`, `view-source:`, `data:`, and `file:`. Most drivers need only `http` and `https`. The example policy later in this section allows only `http` and `https` URLs, plus `about:blank`.
 
 A `file:` URL lets Claude read files on the browser host. A `javascript:` URL runs script in the current page, even when `javascript_exec` is off. Egress rules don't stop either one.
 
@@ -455,11 +506,13 @@ A URL policy is a function that you pass as `url_policy`. You write the policy, 
 
 Return nothing to allow the URL. To refuse it, raise `ToolError` (throw it in TypeScript). Claude reads the error's message, and `navigate` doesn't run. The policy checks only the URL in each `navigate` call. It isn't a network control.
 
-This is the policy from the quick start. It allows `about:blank`, plus two sites and their subdomains over `http` and `https`:
+This is the policy from the [advanced example](#quick-start). It allows `about:blank`, plus two sites and their subdomains over `http` and `https`:
 
 Python
 
 TypeScript
+
+Python
 
 
 
@@ -504,20 +557,22 @@ The example isn't production grade. A production policy needs much more, in area
 - Links Claude clicks, forms it submits, redirects, and the requests a page makes on its own. Only your driver sees them. See [Intercept requests in the driver](#intercept-requests-in-the-driver).
 - Hostnames and URLs that come from page content, which an attacker can choose.
 - Parsing each URL the way the browser does, not finding the hostname with a plain string split.
-- URL schemes. The SDK doesn't check them, so refuse every scheme your driver doesn't mean to open.
+- URL schemes. The SDK doesn't check them, so refuse every scheme that you don't intend your driver to open.
 - Egress rules on the container, for what no URL check can see. See [Put egress policy on the container](#put-egress-policy-on-the-container).
 
 If you pass `url_policy=None`, the SDK refuses every `navigate` to a URL, so a `None` read from your configuration can't leave URLs unchecked by accident. In TypeScript, `undefined` leaves the option unset, the same as not passing it.
 
 ### Intercept requests in the driver
 
-The URL policy judges only the URL in a `navigate` call. A link Claude clicks, a form it submits, a redirect, or an image or script on an allowed page can still reach a host the policy would refuse. Use [egress rules](#put-egress-policy-on-the-container) to block those hosts.
+The URL policy checks only the URL in a `navigate` call. A link Claude clicks, a form it submits, a redirect, or an image or script on an allowed page can still reach a host the policy would refuse. Use [egress rules](#put-egress-policy-on-the-container) to block those hosts.
 
 A driver with request interception can also check those requests in its request hook, the function your automation library calls before each request. Call the function that your policy uses, so that you write the rules once:
 
 Python
 
 TypeScript
+
+Python
 
 
 
@@ -533,7 +588,7 @@ class MyBrowser(BetaAbstractBrowserToolset20260801):
         route.continue_()
 ```
 
-A request hook like this one doesn't see WebSocket handshakes, service-worker requests, or redirect hops. Block service workers. Check WebSocket handshakes and redirect hops with a hook that sees them. The example policy refuses `ws://` and `wss://` URLs, so change `ws://` to `http://` and `wss://` to `https://` before you pass a WebSocket URL to `is_allowed`.
+A request hook like this one doesn't see WebSocket handshakes, service-worker requests, or redirect hops. Block service workers. Check WebSocket handshakes and redirect hops with a hook that sees them. The example policy refuses `ws://` and `wss://` URLs, so change `ws://` to `http://` and `wss://` to `https://` before you pass a WebSocket URL to `is_allowed()`.
 
 ### Put egress policy on the container
 
@@ -547,11 +602,13 @@ Rules enforced outside the browser's container, such as a Kubernetes NetworkPoli
 
 ### Confine uploads and downloads
 
-`file_upload` is off by default. With no `file_policy`, the SDK refuses every upload that names a path or a [document ID](agents-and-tools-tool-use-browser-use-tool.md#upload-files). To enable uploads, pass a `BetaLocalFilePolicy` with one upload directory that holds only the task's files:
+`file_upload` is off by default. With no `file_policy`, the SDK refuses every upload that gives a path or a [document ID](agents-and-tools-tool-use-browser-use-tool.md#upload-files). To enable uploads, pass a `BetaLocalFilePolicy` with one upload directory that holds only the task's files:
 
 Python
 
 TypeScript
+
+Python
 
 
 
@@ -589,11 +646,13 @@ Set up downloads this way:
 
 Return `True` to run the call, or `False` to refuse it. When your callable asks a person, show them the member, the page's URL, and the call's input. First, escape every character outside printable ASCII in the URL and the input, because both can carry text from the page.
 
-This example asks about the two gated members through your own `ask_user` function, and approves the rest:
+This example asks about the two gated members through your own `ask_user()` function, and approves the rest:
 
 Python
 
 TypeScript
+
+Python
 
 
 
@@ -646,7 +705,7 @@ browser = MyBrowser(
 
 Each call to `make_confirm()` returns a callable with no approvals. Call it once for each toolset, and give each user their own toolset.
 
-An approval covers the page as the last state report showed it, and the page can change before the call runs. Purchases, sent messages, and accepted terms happen through ordinary members such as `left_click` and `type`, so `confirm` can't pick them out by name. To have a person approve them, ask about those members too.
+An approval covers the page as the last state report showed it, and the page can change before the call runs. Purchases, sent messages, and accepted terms go through ordinary members such as `left_click` and `type`, so `confirm` can't pick them out by name. To have a person approve them, ask about those members too.
 
 Don't enable `javascript_exec` unless [egress rules](#put-egress-policy-on-the-container) limit the browser's outbound connections to the hosts the task needs. A script can send the page's content to any address that the browser can reach.
 
@@ -677,7 +736,7 @@ With a hosted browser, the provider controls egress and host isolation. Your own
 
 The shipped path checks don't protect a remote browser. `BetaLocalFilePolicy` checks paths on the filesystem of the process that runs the SDK, and the browser reads and writes its own filesystem.
 
-The SDK can't detect that a browser is remote. So for a remote browser, keep `file_upload` off unless your driver checks upload paths where the browser runs, with a `BetaFilePolicy` of its own. A `BetaFilePolicy` vets each upload's paths and document IDs, and decides whether Claude sees a download's path.
+The SDK can't detect that a browser is remote. So for a remote browser, keep `file_upload` off unless your driver checks upload paths where the browser runs, with a `BetaFilePolicy` of its own. A `BetaFilePolicy` vets each upload's paths and document IDs, and determines whether Claude sees a download's path.
 
 Have a remote browser refuse downloads, unless its own host has the download setup from [Confine uploads and downloads](#confine-uploads-and-downloads).
 
@@ -685,24 +744,26 @@ Keep the provider's API key and the session's connection URL, which can contain 
 
 ## Computer toolset
 
-`BetaAbstractComputerToolset20260801` is the class for the [computer use tool](agents-and-tools-tool-use-computer-use-tool.md). You subclass it and write one method per tool, such as `screenshot` or `left_click`, against your own desktop automation. Your subclass is the driver. The SDK doesn't include a desktop or a ready-made driver. The [minimal VNC example](https://github.com/anthropics/claude-quickstarts/tree/main/computer-toolset) is in the claude-quickstarts repository, in Python and TypeScript. It controls a desktop over VNC, and it isn't production code.
+`BetaAbstractComputerToolset20260801` is the class for the [computer use tool](agents-and-tools-tool-use-computer-use-tool.md). A driver is a subclass with one method for each tool, such as `screenshot` or `left_click`. Start from a partner's driver under [Partner integrations](#partner-integrations). To write your own, the claude-quickstarts repository has a [minimal VNC example](https://github.com/anthropics/claude-quickstarts/tree/main/computer-toolset) in Python and TypeScript. It controls a desktop over VNC, and it isn't production code.
 
 The class takes `configs`, `confirm`, and `tool_configs`, and you pass them as you do for the browser class. [Customize a driver](#customize-a-driver), [Handle errors](#handle-errors), [Start calls while the response streams](#start-calls-while-the-response-streams), and [Run without the tool runner](#run-without-the-tool-runner) apply to it too, with these differences:
 
 - **Browser-only options:** The class has no [URL policy](#write-a-url-policy), no [file policy](#confine-uploads-and-downloads), and no [state report](#report-browser-state).
 - **`configs`:** Every tool you implement is on by default. The per-tool settings are listed under [Tool parameters](agents-and-tools-tool-use-computer-use-tool.md#tool-parameters).
 - **`confirm`:** If your class implements `type`, `key`, or `hold_key`, the constructor raises a configuration error unless you pass a `confirm` callable or turn those tools off with `configs`. A class that overrides `execute` counts as implementing all three.
-- **Skipped calls:** After a failed computer call, the tool runner answers the turn's later computer calls with `Not executed: an earlier computer action in this turn failed.` Browser calls get a different text. In a loop you write, answer the skipped computer calls with that exact text ([Batch actions](agents-and-tools-tool-use-computer-use-tool.md#batch-actions)).
+- **Skipped calls:** After a failed computer call, the tool runner answers the turn's later computer calls with `Not executed: an earlier computer action in this turn failed.` Browser calls get a different text. In a loop you write, answer the skipped computer calls with that exact text ([Batch actions in the computer use tool](agents-and-tools-tool-use-computer-use-tool.md#batch-actions)).
 - **`execute`:** In TypeScript, an `execute` override types `name` as `BetaComputerMemberName` and `input` as `BetaComputerMemberInput`. Both come from `@anthropic-ai/sdk/resources/beta`.
 - **Error text:** The SDK doesn't hide local paths in a computer tool's error text or in the text a tool returns. Claude reads both, cut at 4,096 characters. Catch exceptions in your tools, and raise `ToolError` (throw it in TypeScript) with your own text.
 
 ### Write a desktop driver
 
-This driver implements five of the 17 tools listed under [Available actions](agents-and-tools-tool-use-computer-use-tool.md#available-actions). A tool you don't implement is sent to the API as disabled, as [Quick start](#quick-start) explains. In the example, `display` stands for your own wrapper around whatever controls the desktop, such as a VNC client or `xdotool`, and `ask_user` stands for your own function that asks a person.
+This driver implements five of the 17 tools listed under [Available actions](agents-and-tools-tool-use-computer-use-tool.md#available-actions). A tool you don't implement is sent to the API as disabled, as [Implement a driver](#implement-a-driver) explains. In the example, `display` stands for your own wrapper around whatever controls the desktop, such as a VNC client or `xdotool`, and `ask_user()` stands for your own function that asks a person.
 
 Python
 
 TypeScript
+
+Python
 
 
 
@@ -797,6 +858,8 @@ Python
 
 TypeScript
 
+Python
+
 
 
 ```python
@@ -823,7 +886,7 @@ def to_screenshot(x: int, y: int) -> tuple[int, int]:
 to_display([640, 360])  # (1280, 720)
 ```
 
-Call `to_display` on each `coordinate` and `start_coordinate` before you act on it, and `to_screenshot` on the position that `cursor_position` reports. A click or scroll with no `coordinate` acts at the cursor, so it has nothing to convert. Scale a `zoom` `region` by the same factor. A `zoom` image doesn't change this: the next points Claude sends are still pixel positions in the full screenshot.
+Call `to_display()` on each `coordinate` and `start_coordinate` before you act on it, and `to_screenshot()` on the position that `cursor_position` reports. A click or scroll with no `coordinate` acts at the cursor, so it has nothing to convert. Scale a `zoom` `region` by the same factor. A `zoom` image doesn't change this: the next points Claude sends are still pixel positions in the full screenshot.
 
 The SDK never reads or resizes an image. The API rejects an image over the model's limits, which ends the run. Scale each screenshot and `zoom` image in the driver. See [Size screenshots to fit image limits](agents-and-tools-tool-use-computer-use-tool.md#handle-coordinate-scaling-for-higher-resolutions). On a long run, one request can hold more than 20 images, and the API then holds each one to a stricter limit. See [Manage screenshot history](agents-and-tools-tool-use-computer-use-tool.md#manage-screenshot-history).
 
@@ -831,7 +894,7 @@ The SDK never reads or resizes an image. The API rejects an image over the model
 
 Don't rely on the SDK to check a call's input. Have your driver check the fields it uses and refuse a call it can't run: raise `ToolError` (throw it in TypeScript). Claude reads the message and can send a corrected call.
 
-Neither SDK limits a `duration`, a `repeat` count, or a `scroll_amount`. Step 4 under [Run the computer toolset safely](#run-the-computer-toolset-safely) covers them.
+The SDK doesn't limit a `duration`, a `repeat` count, or a `scroll_amount`. Step 4 under [Run the computer toolset safely](#run-the-computer-toolset-safely) covers them.
 
 What a tool returns determines what Claude reads:
 
@@ -843,7 +906,7 @@ What a tool returns determines what Claude reads:
 
 ### Run the computer toolset safely
 
-What's on the screen steers Claude's next action. A page or a notification can try to make Claude type into the wrong window, or trigger an action with real effects.
+What's on the screen steers Claude's next action. A page or a notification can attempt to make Claude type into the wrong window, or trigger an action with real effects.
 
 
 
@@ -857,13 +920,15 @@ Before you run a driver against anything but a throwaway machine, take these fiv
 4.  Refuse input your desktop shouldn't honor, such as a point outside the screenshot, a `wait` of several minutes, or a very large `repeat` or `scroll_amount`. Raise `ToolError` (throw it in TypeScript) instead of moving the value into range.
 5.  Treat everything on the screen as untrusted, including window titles and clipboard text. Don't run it or pass it on unchecked.
 
-The SDK applies step 2 through the callable you pass. The other steps are up to your driver and your deployment. The precautions under [Security considerations](agents-and-tools-tool-use-computer-use-tool.md#security-considerations) apply as well.
+The SDK applies step 2 through the callable you pass. The other steps are up to your driver and your deployment. The precautions under [Security considerations for the computer use tool](agents-and-tools-tool-use-computer-use-tool.md#security-considerations) apply as well.
 
-The following `confirm` asks a person before any keyboard input, through your own `ask_user` function, and approves every other call. `context.member` is the tool's name. To have a person approve clicks too, set `ASK_FIRST` to `KEYBOARD | CLICKS`.
+The following `confirm` asks a person before any keyboard input, through your own `ask_user()` function, and approves every other call. `context.member` is the tool's name. To have a person approve clicks too, set `ASK_FIRST` to `KEYBOARD | CLICKS`.
 
 Python
 
 TypeScript
+
+Python
 
 
 
@@ -907,10 +972,12 @@ Python
 
 TypeScript
 
+Python
+
 
 
 ```python
-# MyBrowser, backend, and url_policy are from the quick start.
+# MyBrowser, backend, and url_policy are from the advanced example.
 # confirm is the function from "Run the computer toolset safely".
 with (
     MyBrowser(backend, url_policy=url_policy) as browser,
@@ -954,6 +1021,7 @@ You can't change an option after construction. The [Python browser toolset guide
 
 ## Limitations
 
+- **The SDK doesn't include a browser, a desktop, a ready-made driver, or a URL policy:** You supply them. See [Partner integrations](#partner-integrations), [Implement a driver](#implement-a-driver), and [Write a URL policy](#write-a-url-policy).
 - **The URL policy sees only `navigate` calls:** It doesn't see the requests a page makes, or pages that open any other way, such as from a link Claude clicks or a redirect. See [Intercept requests in the driver](#intercept-requests-in-the-driver).
 - **An approval is based on the last state report:** The page can change after that report. The SDK doesn't check the page again before the call runs.
 - **Calls on one toolset run one at a time:** You can't turn this off.

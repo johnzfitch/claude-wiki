@@ -2,17 +2,49 @@
 title: "Introducing Sonnet 4.6 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-sonnet-4-6"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:42Z"
+fetched_at: "2026-10-21T06:30:28Z"
 tags: ["news-research"]
 ---
 
 # Introducing Claude Sonnet 4.6
 
-Feb 17, 2026
+- [01Computer use](#computer-use)
+- [02Evaluating Claude Sonnet 4.6](#evaluating-claude-sonnet-46)
+- [03Product updates](#product-updates)
+- [04How to use Claude Sonnet 4.6](#how-to-use-claude-sonnet-46)
+
+- Published
+
+  Feb 17, 2026
+
+- Category
+
+  [Models](models.md)
+
+- Topics
+
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+  - [Computer use](https://www.anthropic.com/search?topic=computer-use)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+
+  See more...
+
+Related articles
+
+- Models
+
+  Sep 29, 2025
+
+  [Introducing Claude Sonnet 4.5](claude-sonnet-4-5.md)
+
+[View more](https://www.anthropic.com/search?topic=claude-sonnet)
 
 *Claude Sonnet 4.6 is our most capable Sonnet model yet*. It’s a full upgrade of the model’s skills across coding, computer use, long-context reasoning, agent planning, knowledge work, and design. Sonnet 4.6 also features a 1M token context window in beta.
 
-For those on our [Free and Pro plans](../17-Billing-Plans/pricing.md), Claude Sonnet 4.6 is now the default model in [claude.ai](https://claude.ai/redirect/website.v1.a6954ffe-33ae-47f0-82bb-b50bc957faf1) and [Claude Cowork](../15-Claude-AI-Features/product-cowork.md). [Pricing](../17-Billing-Plans/pricing.md#api) remains the same as Sonnet 4.5, starting at \$3/\$15 per million tokens.
+For those on our [Free and Pro plans](../17-Billing-Plans/pricing.md), Claude Sonnet 4.6 is now the default model in [claude.ai](https://claude.ai) and [Claude Cowork](../15-Claude-AI-Features/product-cowork.md). [Pricing](../17-Billing-Plans/pricing.md#api) remains the same as Sonnet 4.5, starting at \$3/\$15 per million tokens.
 
 Sonnet 4.6 brings much-improved coding skills to more of our users. Improvements in consistency, instruction following, and more have made developers with early access prefer Sonnet 4.6 to its predecessor by a wide margin. They often even prefer it to our smartest model from November 2025, Claude Opus 4.5.
 
@@ -30,7 +62,7 @@ Across sixteen months, our Sonnet models have made steady gains on OSWorld. The 
 
 The model certainly still lags behind the most skilled humans at using computers. But the rate of progress is remarkable nonetheless. It means that computer use is much more useful for a range of work tasks—and that substantially more capable models are within reach.
 
-At the same time, computer use poses risks: malicious actors can attempt to hijack the model by hiding instructions on websites in what’s known as a prompt injection attack. We’ve been working to improve our models’ resistance to prompt injections—our [safety evaluations](../15-Claude-AI-Features/claude-sonnet-4-6-system-card.md) show that Sonnet 4.6 is a major improvement compared to its predecessor, Sonnet 4.5, and performs similarly to Opus 4.6. You can find out more about how to mitigate prompt injections and other safety concerns in [our API docs](https://www.anthropic.com/04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks-19976860e0.md).
+At the same time, computer use poses risks: malicious actors can attempt to hijack the model by hiding instructions on websites in what’s known as a prompt injection attack. We’ve been working to improve our models’ resistance to prompt injections—our [safety evaluations](../15-Claude-AI-Features/claude-sonnet-4-6-system-card.md) show that Sonnet 4.6 is a major improvement compared to its predecessor, Sonnet 4.5, and performs similarly to Opus 4.6. You can find out more about how to mitigate prompt injections and other safety concerns in [our API docs](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md).
 
 ## Evaluating Claude Sonnet 4.6
 
@@ -46,88 +78,107 @@ Sonnet 4.6 developed an interesting new strategy: it invested heavily in capacit
 
 Early customers also reported broad improvements, with frontend code and financial analysis standing out. Customers independently described visual outputs from Sonnet 4.6 as notably more polished, with better layouts, animations, and design sensibility than those from previous models. Customers also needed fewer rounds of iteration to reach production-quality results.
 
-> Claude Sonnet 4.6 matches Opus 4.6 performance on OfficeQA, which measures how well a model can read enterprise documents (charts, PDFs, tables), pull the right facts, and reason from those facts. It’s a meaningful upgrade for document comprehension workloads.
->
-> Hanlin Tang  
-> CTO of Neural Networks, Databricks
+> “Claude Sonnet 4.6 matches Opus 4.6 performance on OfficeQA, which measures how well a model can read enterprise documents (charts, PDFs, tables), pull the right facts, and reason from those facts. It’s a meaningful upgrade for document comprehension workloads.”
 
-> The performance-to-cost ratio of Claude Sonnet 4.6 is extraordinary—it’s hard to overstate how fast Claude models have been evolving in recent months. Sonnet 4.6 outperforms on our orchestration evals, handles our most complex agentic workloads, and keeps improving the higher you push the effort settings.
->
-> Michele Catasta  
-> President, Replit
+Hanlin Tang
 
-> Claude Sonnet 4.6 is a notable improvement over Sonnet 4.5 across the board, including long-horizon tasks and more difficult problems.
->
-> Michael Truell  
-> Co-founder and CEO, Cursor
+CTO of Neural Networks, Databricks
 
-> Out of the gate, Claude Sonnet 4.6 is already excelling at complex code fixes, especially when searching across large codebases is essential. For teams running agentic coding at scale, we’re seeing strong resolution rates and the kind of consistency developers need.
->
-> Joe Binder  
-> VP of Product, GitHub
+> “The performance-to-cost ratio of Claude Sonnet 4.6 is extraordinary—it’s hard to overstate how fast Claude models have been evolving in recent months. Sonnet 4.6 outperforms on our orchestration evals, handles our most complex agentic workloads, and keeps improving the higher you push the effort settings.”
 
-> Claude Sonnet 4.6 has meaningfully closed the gap with Opus on bug detection, letting us run more reviewers in parallel, catch a wider variety of bugs, and do it all without increasing cost.
->
-> Scott Wu  
-> CEO, Cognition
+Michele Catasta
 
-> For the first time, Sonnet brings frontier-level reasoning in a smaller and more cost-effective form factor. It provides a viable alternative if you are a heavy Opus user.
->
-> Jeff Wang  
-> CEO, Windsurf
+President, Replit
 
-> Claude Sonnet 4.6 meaningfully improves the answer retrieval behind our core product—we saw a significant jump in answer match rate compared to Sonnet 4.5 in our Financial Services Benchmark, with better recall on the specific workflows our customers depend on.
->
-> Aabhas Sharma  
-> CTO, Hebbia
+> “Claude Sonnet 4.6 is a notable improvement over Sonnet 4.5 across the board, including long-horizon tasks and more difficult problems.”
 
-> Box evaluated how Claude Sonnet 4.6 performs when tested on deep reasoning and complex agentic tasks across real enterprise documents. It demonstrated significant improvements, outperforming Claude Sonnet 4.5 in heavy reasoning Q&A by 15 percentage points.
->
-> Ben Kus  
-> CTO, Box
+Michael Truell
 
-> Claude Sonnet 4.6 hit 94% on our insurance benchmark, making it the highest-performing model we’ve tested for computer use. This kind of accuracy is mission-critical to workflows like submission intake and first notice of loss.
->
-> Jamie Cuffe  
-> CEO, Pace
+Co-founder and CEO, Cursor
 
-> Claude Sonnet 4.6 delivers frontier-level results on complex app builds and bug-fixing. It’s becoming our go-to for the kind of deep codebase work that used to require more expensive models.
->
-> Eric Simons  
-> CEO, Bolt
+> “Out of the gate, Claude Sonnet 4.6 is already excelling at complex code fixes, especially when searching across large codebases is essential. For teams running agentic coding at scale, we’re seeing strong resolution rates and the kind of consistency developers need.”
 
-> Claude Sonnet 4.6 produced the best iOS code we’ve tested for Rakuten AI. Better spec compliance, better architecture, and it reached for modern tooling we didn’t ask for, all in one shot. The results genuinely surprised us.  
->
-> Yusuke Kaji  
-> General Manager, AI, Rakuten
+Joe Binder
 
-> Sonnet 4.6 is a significant leap forward on reasoning through difficult tasks. We find it especially strong on branched and multi-step tasks like contract routing, conditional template selection, and CRM coordination—exactly where our customers need strong model sense and reliability.
->
-> Wade Foster  
-> Co-founder and CEO, Zapier
+VP of Product, GitHub
 
-> We’ve been impressed by how accurately Claude Sonnet 4.6 handles complex computer use. It’s a clear improvement over anything else we’ve tested in our evals.
->
-> Will Harvey  
-> Co-founder, Convey
+> “Claude Sonnet 4.6 has meaningfully closed the gap with Opus on bug detection, letting us run more reviewers in parallel, catch a wider variety of bugs, and do it all without increasing cost.”
 
-> Claude Sonnet 4.6 has perfect design taste when building frontend pages and data reports, and it requires far less hand-holding to get there than anything we’ve tested before.
->
-> AJ Orbach  
-> Co-founder, Triple Whale
+Scott Wu
 
-> Claude Sonnet 4.6 was exceptionally responsive to direction — delivering precise figures and structured comparisons when asked, while also generating genuinely useful ideas on trial strategy and exhibit preparation.
->
-> Niko Grupen  
-> Head of Applied Research, Harvey
+CEO, Cognition
 
-01 / 15
+> “For the first time, Sonnet brings frontier-level reasoning in a smaller and more cost-effective form factor. It provides a viable alternative if you are a heavy Opus user.”
+
+Jeff Wang
+
+CEO, Windsurf
+
+> “Claude Sonnet 4.6 meaningfully improves the answer retrieval behind our core product—we saw a significant jump in answer match rate compared to Sonnet 4.5 in our Financial Services Benchmark, with better recall on the specific workflows our customers depend on.”
+
+Aabhas Sharma
+
+CTO, Hebbia
+
+> “Box evaluated how Claude Sonnet 4.6 performs when tested on deep reasoning and complex agentic tasks across real enterprise documents. It demonstrated significant improvements, outperforming Claude Sonnet 4.5 in heavy reasoning Q&A by 15 percentage points.”
+
+Ben Kus
+
+CTO, Box
+
+> “Claude Sonnet 4.6 hit 94% on our insurance benchmark, making it the highest-performing model we’ve tested for computer use. This kind of accuracy is mission-critical to workflows like submission intake and first notice of loss.”
+
+Jamie Cuffe
+
+CEO, Pace
+
+> “Claude Sonnet 4.6 delivers frontier-level results on complex app builds and bug-fixing. It’s becoming our go-to for the kind of deep codebase work that used to require more expensive models.”
+
+Eric Simons
+
+CEO, Bolt
+
+> “Claude Sonnet 4.6 produced the best iOS code we’ve tested for Rakuten AI. Better spec compliance, better architecture, and it reached for modern tooling we didn’t ask for, all in one shot. The results genuinely surprised us. ”
+
+Yusuke Kaji
+
+General Manager, AI, Rakuten
+
+> “Sonnet 4.6 is a significant leap forward on reasoning through difficult tasks. We find it especially strong on branched and multi-step tasks like contract routing, conditional template selection, and CRM coordination—exactly where our customers need strong model sense and reliability.”
+
+Wade Foster
+
+Co-founder and CEO, Zapier
+
+> “We’ve been impressed by how accurately Claude Sonnet 4.6 handles complex computer use. It’s a clear improvement over anything else we’ve tested in our evals.”
+
+Will Harvey
+
+Co-founder, Convey
+
+> “Claude Sonnet 4.6 has perfect design taste when building frontend pages and data reports, and it requires far less hand-holding to get there than anything we’ve tested before.”
+
+AJ Orbach
+
+Co-founder, Triple Whale
+
+> “Claude Sonnet 4.6 was exceptionally responsive to direction — delivering precise figures and structured comparisons when asked, while also generating genuinely useful ideas on trial strategy and exhibit preparation.”
+
+Niko Grupen
+
+Head of Applied Research, Harvey
+
+01
+
+/
+
+15
 
 ## Product updates
 
-On the Claude Platform, Sonnet 4.6 supports both [adaptive thinking](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-adaptive-thinking-2b96627d8d.md) and extended thinking, as well as [context compaction](https://www.anthropic.com/04-API-Reference/Guides/build-with-claude-compaction-47672e5bbf.md) in beta, which automatically summarizes older context as conversations approach limits, increasing effective context length.
+On the Claude Platform, Sonnet 4.6 supports both [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md) and extended thinking, as well as [context compaction](../04-API-Reference/Guides/build-with-claude-compaction.md) in beta, which automatically summarizes older context as conversations approach limits, increasing effective context length.
 
-On our API, Claude’s [web search](https://www.anthropic.com/04-API-Reference/api-web-search.md) and [fetch](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md) tools now automatically write and execute code to [filter and process search results](https://www.claude.com/blog/improved-web-search-with-dynamic-filtering), keeping only relevant content in context—improving both response quality and token efficiency. Additionally, [code execution](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md), [memory](https://www.anthropic.com/04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool-6d9391f81f.md), [programmatic tool calling](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md), [tool search](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md), and [tool use examples](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#providing-tool-use-examples) are now generally available.
+On our API, Claude’s [web search](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md) and [fetch](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md) tools now automatically write and execute code to [filter and process search results](https://www.claude.com/blog/improved-web-search-with-dynamic-filtering), keeping only relevant content in context—improving both response quality and token efficiency. Additionally, [code execution](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md), [memory](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md), [programmatic tool calling](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md), [tool search](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md), and [tool use examples](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#providing-tool-use-examples) are now generally available.
 
 Sonnet 4.6 offers strong performance at any thinking effort, even with extended thinking off. As part of your migration from Sonnet 4.5, we recommend exploring across the spectrum to find the ideal balance of speed and reliable performance, depending on what you’re building.
 
@@ -139,9 +190,9 @@ For [Claude in Excel](../15-Claude-AI-Features/using-claude-in-excel.md) users, 
 
 Claude Sonnet 4.6 is available now on all [Claude plans](../17-Billing-Plans/pricing.md), [Claude Cowork](../15-Claude-AI-Features/product-cowork.md), [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), our API, and all major cloud platforms. We’ve also upgraded our free tier to Sonnet 4.6 by default—it now includes file creation, connectors, skills, and compaction.
 
-If you’re a developer, you can get started quickly by using `claude-sonnet-4-6` via the [Claude API](../20-Models/about-claude-models-overview.md).  
+If you’re a developer, you can get started quickly by using `claude-sonnet-4-6` via the [Claude API](../20-Models/about-claude-models-overview.md).
 
-#### Footnotes
+## Footnotes
 
 - For GPT-5.2 and Gemini 3 Pro, we compared against the best reported model version available via API in the charts and table.
 - **OSWorld**: OSWorld tests a specific set of computer tasks in a controlled environment. It’s one of the best measures we have, but not a complete picture of real-world computer use. Real-world computer use is often messier and more ambiguous, and it carries higher stakes for errors. No benchmark fully captures that yet.
@@ -151,119 +202,3 @@ If you’re a developer, you can get started quickly by using `claude-sonnet-4-6
 - **BrowseComp**: Claude models were run with web search, web fetch, programmatic tool calling, context compaction triggered at 50k tokens up to 10M total tokens, max reasoning effort, and no thinking enabled.
 - **ARC-AGI-2:** Claude Sonnet 4.6 was run with max and high effort and a 120k thinking budget score. The score shown reflects max effort; with high effort, we achieve a score of 60.4%.
 - **MMMU-Pro**: We made two small updates to our MMMU-Pro implementation that have affected the score: 1) our previous implementation contained the prefix “Let’s think step-by-step,” which we have removed, and 2) we previously graded this multiple-choice eval by looking at on-policy token probabilities of the multiple-choice options; we now grade it using a separate model (Claude Sonnet 4).
-
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

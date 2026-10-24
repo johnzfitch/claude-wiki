@@ -2,7 +2,7 @@
 title: "Otter Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/otter"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:55Z"
+fetched_at: "2026-10-23T06:29:39Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -36,15 +36,15 @@ Last year, Otter announced it used its own model to summarize over 50 million me
 
 ## Capturing institutional knowledge
 
-Organizations worldwide face a critical challenge: how to transform the flood of daily conversations into lasting institutional knowledge. Richard Tasker, Director of Product Management at Otter, explained, "Otter is no longer just a transcriber. While being a system of record for conversations is great, it's evolving into an assistant that helps you do your job better and get work done faster."
+Organizations worldwide face a critical challenge: how to transform the flood of daily conversations into lasting institutional knowledge. Richard Tasker, Director of Product Management at Otter, explained, “Otter is no longer just a transcriber. While being a system of record for conversations is great, it’s evolving into an assistant that helps you do your job better and get work done faster.”
 
 ## Why Otter chose Claude
 
 After careful evaluation of performance, cost and security, Otter decided to switch from another large language model provider to Claude.
 
-Claude's 200k context window dramatically improved Otter's ability to process long meeting transcripts. Tasker explained that while testing with other models, the team "had to make compromises in our solution." Claude's larger context window eliminated these constraints.
+Claude’s 200k context window dramatically improved Otter’s ability to process long meeting transcripts. Tasker explained that while testing with other models, the team “had to make compromises in our solution.” Claude’s larger context window eliminated these constraints.
 
-Privacy and security requirements were also equally crucial. Tasker said, "The Anthropic team was really accommodating in working with us. One of our requirements was zero data retention with Anthropic, which they agreed to—that was key for us."
+Privacy and security requirements were also equally crucial. Tasker said, “The Anthropic team was really accommodating in working with us. One of our requirements was zero data retention with Anthropic, which they agreed to—that was key for us.”
 
 The combination of technical capabilities and competitive pricing made enterprise-wide deployment feasible. Despite the logistics of switching platforms, Otter completed the integration without delaying their launch. Otter leverages Claude for many new features as it allows for quick experimentation and offers us an easy way to gain customer feedback on whether a feature may be useful or not.
 
@@ -52,17 +52,17 @@ The combination of technical capabilities and competitive pricing made enterpris
 
 Claude powers features that transform how organizations capture and utilize their collective knowledge. It delivers value from individual users to enterprise teams.
 
-For individual users, Otter saves significant time in information retrieval and meeting follow-up. Product managers, researchers, and consultants can instantly surface insights from information-dense meetings through natural language queries. "Having meetings summarized and actions identified removes that legwork. You don't have to have that next meeting to recap what you discussed last time," explained Tasker.
+For individual users, Otter saves significant time in information retrieval and meeting follow-up. Product managers, researchers, and consultants can instantly surface insights from information-dense meetings through natural language queries. “Having meetings summarized and actions identified removes that legwork. You don’t have to have that next meeting to recap what you discussed last time,” explained Tasker.
 
-For sales teams, Otter automatically analyzes sales calls according to established methodologies and syncs insights directly to CRMs like Salesforce and HubSpot. This automation keeps revenue teams aligned without requiring manual documentation. "That's a huge time saver and also just the value of having your Salesforce or Hubspot CRM up to date with what's going on in the deal," said Tasker.
+For sales teams, Otter automatically analyzes sales calls according to established methodologies and syncs insights directly to CRMs like Salesforce and HubSpot. This automation keeps revenue teams aligned without requiring manual documentation. “That’s a huge time saver and also just the value of having your Salesforce or Hubspot CRM up to date with what’s going on in the deal,” said Tasker.
 
-At the organizational level, Otter breaks down traditional information silos by making their platform accessible across departments. Unlike specialized tools for specific teams due to cost constraints, Otter's competitive pricing enables company-wide deployment. Tasker adds, "The value is in having everybody using the same AI meeting note taker regardless of which virtual meeting platform is used," explaining how this is crucial to facilitating seamless information exchange and handoffs between teams.
+At the organizational level, Otter breaks down traditional information silos by making their platform accessible across departments. Unlike specialized tools for specific teams due to cost constraints, Otter’s competitive pricing enables company-wide deployment. Tasker adds, “The value is in having everybody using the same AI meeting note taker regardless of which virtual meeting platform is used,” explaining how this is crucial to facilitating seamless information exchange and handoffs between teams.
 
-Otter has become the living knowledge hub for all the organization’s meetings. Tasker shares, "Our institutional knowledge, our spoken knowledge, is inside of Otter." By continuously capturing critical context across teams and actively syncing real-time conversation insights to key business systems, Otter empowers organizations to stay current, learn from live interactions, and make better-informed decisions in the moment and moving forward.
+Otter has become the living knowledge hub for all the organization’s meetings. Tasker shares, “Our institutional knowledge, our spoken knowledge, is inside of Otter.” By continuously capturing critical context across teams and actively syncing real-time conversation insights to key business systems, Otter empowers organizations to stay current, learn from live interactions, and make better-informed decisions in the moment and moving forward.
 
 ## Looking forward
 
-Otter envisions intelligent AI meeting agents taking on increasingly sophisticated roles in workplace communication and collaboration. Tasker describes their vision: "When my avatar joins a meeting, it will know everything I know: every conversation, document, Slack message, and email." These avatars will be able to represent users in some meetings while humans focus on higher-value work. With Claude as a trusted technology partner, Otter continues to push the boundaries of how AI can enhance human communication and knowledge sharing.
+Otter envisions intelligent AI meeting agents taking on increasingly sophisticated roles in workplace communication and collaboration. Tasker describes their vision: “When my avatar joins a meeting, it will know everything I know: every conversation, document, Slack message, and email.” These avatars will be able to represent users in some meetings while humans focus on higher-value work. With Claude as a trusted technology partner, Otter continues to push the boundaries of how AI can enhance human communication and knowledge sharing.
 
 ## Related stories
 
@@ -87,7 +87,8 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -105,12 +106,12 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -143,7 +144,7 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -161,6 +162,7 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -176,7 +178,7 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -211,7 +213,8 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -229,12 +232,12 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -267,7 +270,7 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -285,6 +288,7 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -300,7 +304,7 @@ Otter envisions intelligent AI meeting agents taking on increasingly sophisticat
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

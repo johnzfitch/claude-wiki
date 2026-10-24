@@ -2,13 +2,43 @@
 title: "How scientists use Claude to accelerate research \\ Anthropic"
 source_url: "https://www.anthropic.com/news/accelerating-scientific-research"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:46:07Z"
+fetched_at: "2026-10-23T06:29:20Z"
 tags: ["agents", "news-research", "search", "testing"]
 ---
 
 # How scientists are using Claude to accelerate research and discovery
 
-Jan 15, 2026
+- [01Biomni: a general-purpose biomedical agent with access to hundreds of tools and databases](#biomni-a-general-purpose-biomedical-agent-with-access-to-hundreds-of-tools-and-databases)
+- [02Cheeseman Lab: automating the interpretation of large-scale gene knockout experiments](#cheeseman-lab-automating-the-interpretation-of-large-scale-gene-knockout-experiments)
+- [03Lundberg Lab: testing AI-led hypothesis generation for which genes to study](#lundberg-lab-testing-ai-led-hypothesis-generation-for-which-genes-to-study)
+
+- Published
+
+  Jan 15, 2026
+
+- Team
+
+  [Science](https://www.anthropic.com/science)
+
+- Topics
+
+  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+  - [Discovery](https://www.anthropic.com/search?topic=discovery)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
+  - [Agent Skills](https://www.anthropic.com/search?topic=agent-skills)
+
+  See more...
+
+Related articles
+
+- Science
+
+  Oct 20, 2026
+
+  [How Claude designed protein binders against scorpion neurotoxins](claude-scorpion-toxin-binder-design.md)
+
+[View more](https://www.anthropic.com/search?topic=life-sciences)
 
 Last October we launched Claude for Life Sciences—a suite of connectors and skills that made Claude a better scientific collaborator. Since then, [we've invested heavily in making Claude the most capable model for scientific work](healthcare-life-sciences.md#tab-media-0), with Opus 4.5 showing significant improvements in figure interpretation, computational biology, and protein understanding benchmarks. These advances, informed by our partnerships with researchers in academia and industry, reflect our commitment to understanding exactly how scientists are using AI to accelerate progress.
 
@@ -30,7 +60,7 @@ The genome scanning is (relatively) simple. It’s the process of analyzing and 
 
 This might sound too good to be true—can we be sure of the accuracy of this kind of AI analysis? The Biomni team has [validated](https://www.biorxiv.org/content/10.1101/2025.05.30.656746v1.full.pdf) the system through several case studies in different fields. In one, Biomni designed a molecular cloning experiment; in a blind evaluation, the protocol and design matched that of a postdoc with more than five years of experience. In another, Biomni analyzed the data from over 450 wearable data files from 30 different people (a mix of continuous glucose monitoring, temperature, and physical activity) in just 35 minutes—a task estimated to take a human expert three weeks. In a third, Biomni analyzed gene activity data from over 336,000 individual cells taken from human embryonic tissue. The system confirmed regulatory relationships scientists already knew about, but also identified new transcription factors—proteins that control when genes turn on and off—that researchers hadn’t previously connected to human embryonic development.
 
-Biomni isn’t a perfect system, which is why it includes guardrails to detect if Claude has gone off-track. Nor can it yet do everything out of the box. However, where it comes up short, experts can encode their methodology as a [skill](https://www.anthropic.com/04-API-Reference/Other/agent-skills.md)—teaching the agent how an expert might approach a problem, rather than letting it improvise. For example, when working with the Undiagnosed Diseases Network on rare disease diagnosis, the team found that Claude's default approach differed substantially from what a clinician would do. So they interviewed an expert, documented their diagnostic process step by step, and taught it to Claude. With that new, previously-tacit knowledge, the agent performed well.
+Biomni isn’t a perfect system, which is why it includes guardrails to detect if Claude has gone off-track. Nor can it yet do everything out of the box. However, where it comes up short, experts can encode their methodology as a [skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md)—teaching the agent how an expert might approach a problem, rather than letting it improvise. For example, when working with the Undiagnosed Diseases Network on rare disease diagnosis, the team found that Claude's default approach differed substantially from what a clinician would do. So they interviewed an expert, documented their diagnostic process step by step, and taught it to Claude. With that new, previously-tacit knowledge, the agent performed well.
 
 Biomni represents one approach: a general-purpose system that brings hundreds of tools under one roof. But other labs are building more specialized systems—targeting specific bottlenecks in their own research workflows.
 
@@ -77,125 +107,3 @@ In speaking with these labs, a common theme emerged: the usefulness of the tools
 As tools advance and AI models continue to grow more intelligent, we’re continuing to watch and learn from how scientific discovery develops along with them.
 
 *For more detail on the expanded Claude for Life Sciences capabilities, [see here](../18-Industry-UseCases/life-sciences.md), and our [tutorials here](https://claude.com/resources/tutorials-category/life-sciences). We’re also continuing to accept [applications](https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform) to our AI for Science program. Applications will be reviewed by our team, including subject matter experts in relevant fields.*
-
-
-## Related content
-
-### Developing Enterprise Frontier Safeguards with our customers
-
-[Read more](enterprise-frontier-safeguards.md)
-
-### Improving our alignment and security efforts
-
-On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
-
-[Read more](improving-alignment-security-efforts.md)
-
-### Previewing the Model Hardware Standard
-
-We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
-
-[Read more](model-hardware-standard-research-preview.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

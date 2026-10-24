@@ -2,13 +2,11 @@
 title: "Understanding your Claude API invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16608069-understanding-your-claude-api-invoices"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:25:23Z"
+fetched_at: "2026-10-23T06:29:31Z"
 tags: ["api", "billing"]
 ---
 
 # Understanding your Claude API invoices
-
-August 24, 2026
 
 
 This article explains the invoices and receipts you'll receive for Claude API and Console usage, where to find them, and how to read the line items on them.
@@ -29,13 +27,13 @@ Invoices are also available in the Console to users with the Admin or Billing ro
 
 1.  Log in to the Console with an Admin or Billing role.
 
-2.  Go to **[Console Settings \> Billing](playground.md)**.
+2.  Go to the **Billing** page (platform.claude.com/settings/billing) in the Console.
 
 3.  Find the **Invoice history** section.
 
 4.  Click "Download" to save the invoice directly, or click "View" to open it in a new Stripe tab and download it from there.
 
-Expired credit grants also appear in **Invoice history**, even though they aren't charges. For help accessing older receipts and invoices that aren't available in the Console, **[contact our Support team](../../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**.
+Expired credit grants also appear in **Invoice history**, even though they aren't charges. For help accessing older receipts and invoices that aren't available in the Console, **[contact our Support team](https://support.claude.com/en/articles/9015913)**.
 
 ## Read your invoice
 
@@ -49,7 +47,9 @@ Expired credit grants also appear in **Invoice history**, even though they aren'
 
 ## Billing details on your invoice
 
-The name, address, and tax information on an invoice come from your billing details at the time the invoice was issued. If you update your billing details, the changes apply to future invoices—issued invoices can't be modified. To update your details, go to **[Console Settings \> Billing](playground.md)**.
+The name, address, and tax information on an invoice come from your billing details at the time the invoice was issued. If you update your billing details, the changes apply to future invoices—issued invoices can't be modified. To update your details, go to the **Billing** page (platform.claude.com/settings/billing) in the Console.
+
+------------------------------------------------------------------------
 
 ## Frequently asked questions
 
@@ -63,4 +63,4 @@ Invoices below \$0.50 aren't charged on their own. The amount rolls forward and 
 
 ### Can you correct the details on an invoice I already received?
 
-No. Issued invoices can't be changed. Update your billing details in **[Console Settings \> Billing](playground.md)** and the changes will appear on future invoices.
+No. Issued invoices can't be changed. Update your billing details on the **Billing** page (platform.claude.com/settings/billing) in the Console and the changes will appear on future invoices.

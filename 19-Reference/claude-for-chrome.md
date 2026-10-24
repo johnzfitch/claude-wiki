@@ -2,7 +2,7 @@
 title: "Piloting Claude in Chrome | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/claude-for-chrome"
 category: "19-Reference"
-fetched_at: "2026-10-10T06:28:35Z"
+fetched_at: "2026-10-23T06:29:21Z"
 tags: ["news-research"]
 ---
 
@@ -89,7 +89,7 @@ For the pilot, we’re looking for trusted testers who are comfortable with Clau
 
 **If you’d like to take part, you can join the Claude in Chrome research preview waitlist at [claude.ai/chrome](http://claude.ai/chrome).** Once you have access, you can install the extension from the Chrome Web Store and authenticate with your Claude credentials.
 
-We recommend starting with trusted sites—always be mindful of the data that’s visible to Claude—and avoiding use of Claude in Chrome for sites that involve financial, legal, medical, or other types of sensitive information. You can find a detailed safety guide [in our Help Center](../15-Claude-AI-Features/getting-started-with-claude-for-chrome.md).
+We recommend starting with trusted sites—always be mindful of the data that’s visible to Claude—and avoiding use of Claude in Chrome for sites that involve financial, legal, medical, or other types of sensitive information. You can find a detailed safety guide [in our Help Center](https://support.anthropic.com/en/articles/12012173-getting-started-with-claude-for-chrome).
 
 We hope that you’ll share your feedback to help us continue to improve both the capabilities and safeguards for Claude in Chrome—and help us take an important step towards a fundamentally new way to integrate AI into our lives.
 
@@ -98,34 +98,33 @@ We hope that you’ll share your feedback to help us continue to improve both th
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleOct 8, 2026
+ArticleOct 22, 2026
 
-### Build live dashboards and animate explainers with Claude 
+### The full Claude Platform, available on Google Cloud
 
-Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
+Use Claude Models on Google Cloud (Anthropic managed) to access Claude Platform features with Google Cloud authentication, billing, and commitment retirement.
 
-Claude appsClaude Design
-
-2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+Claude Platform
 
 
-ArticleOct 7, 2026
+ArticleOct 21, 2026
 
-### Claude Haiku 5.5
+### HCLTech joins the Claude Partner Network as a Global Premier partner
 
-Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
-
-(opens in new tab)[](https://www.anthropic.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
-
-ArticleOct 6, 2026
-
-### Claude now works with Google Docs, Sheets, and Slides
-
-Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
-
-Claude Enterprise
+HCLTech will bring Claude into the solutions it provides for banks, hospitals, telecom companies, and manufacturers.
 
 
-ArticleOct 6, 2026
+ArticleOct 21, 2026
 
-### We’re expanding the Claude Startups program to help founders build
+### Introducing Claude Duet
+
+A research preview is available by waitlist today, starting with US Pro and Max subscribers.
+
+
+ArticleOct 21, 2026
+
+### Claude Security now scans continuously and tracks fixes
+
+Claude Security now keeps up with your repositories as code changes, tracks findings until they’re fixed, learns from the context your team adds, and connects to your tools through an API and MCP. Available in public beta for Claude Enterprise customers.
+
+Claude Security

@@ -2,7 +2,7 @@
 title: "Buy usage bundles | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14246112-buy-usage-bundles"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:28:15Z"
+fetched_at: "2026-10-23T06:29:06Z"
 tags: ["safety"]
 ---
 

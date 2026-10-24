@@ -2,13 +2,46 @@
 title: "LLMs and biorisk \\ Anthropic"
 source_url: "https://www.anthropic.com/research/biorisk"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:13Z"
+fetched_at: "2026-10-21T06:30:40Z"
 tags: ["news-research"]
 ---
 
 # Why do we take LLMs seriously as a potential source of biorisk?
 
-Sep 5, 2025
+- [01What does AI have to do with dangerous weapons at all?](#what-does-ai-have-to-do-with-dangerous-weapons-at-all)
+- [02Why focus on biorisk?](#why-focus-on-biorisk)
+- [03Don’t experts know more about biology than AI models?](#dont-experts-know-more-about-biology-than-ai-models)
+- [04Is an LLM’s knowledge useful in an applied scenario?](#is-an-llms-knowledge-useful-in-an-applied-scenario)
+- [05Ok, but we’ve been talking about information. How does this translate to an actual lab?](#ok-but-weve-been-talking-about-information-how-does-this-translate-to-an-actual-lab)
+- [06What can be done to address biorisk?](#what-can-be-done-to-address-biorisk)
+
+- Published
+
+  Sep 5, 2025
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+
+  See more...
+
+Related articles
+
+- Policy
+
+  Oct 15, 2024
+
+  [Announcing our updated Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
+
+[View more](https://www.anthropic.com/search?topic=cbrn-risks)
 
 Our work at Anthropic is animated by the potential for AI to advance scientific discovery—especially in biology and medicine—and improve the human condition. [Benchling](https://www.benchling.com/ai) is [using Claude](https://www.anthropic.com/customers/benchling) to help researchers structure data, ask better questions, generate insights faster, and spend more time on science. [Biomni](https://biomni.stanford.edu/) is [using Claude](https://www.anthropic.com/customers/biomni) to speed up bioinformatics analysis and even automate experimental design.
 
@@ -16,9 +49,9 @@ At the same time, AI is fundamentally a dual-use technology. A key tenet of our 
 
 When Anthropic released Claude Opus 4, we [activated AI Safety Level 3](activating-asl3-protections.md) (ASL-3) protections, which included deployment measures narrowly focused on preventing the model from assisting with certain tasks related to chemical, biological, radiological, and nuclear (CBRN) weapons development. As we noted at the time, this was a precautionary decision—improving model performance on our evaluations meant we could no longer confidently rule out the ability of our most advanced model to uplift people with basic STEM backgrounds if they were to try to develop such weapons. Because of our assessment of the potential consequences, a major initial focus of our evaluations and the corresponding safety measures was on biological weapons. In this post, we want to expand on our perspective on AI and biological risk (biorisk).
 
-It is striking—but not necessarily intuitive—that every safety framework released by frontier AI labs includes some reference to biorisk.^(\[1\]) After all, frontier large language models (LLMs) are generalists; they are not usually specialized for biological applications (unlike other foundation models, such as AlphaFold). And because of this generalist nature, there are numerous other security threats that could be prioritized. We understand why one might be skeptical of prioritizing biorisk when considering the security implications of AI. This post will engage with several questions that might be posed by such a skeptic.
+It is striking—but not necessarily intuitive—that every safety framework released by frontier AI labs includes some reference to biorisk.^([1](#footnote-1)) After all, frontier large language models (LLMs) are generalists; they are not usually specialized for biological applications (unlike other foundation models, such as AlphaFold). And because of this generalist nature, there are numerous other security threats that could be prioritized. We understand why one might be skeptical of prioritizing biorisk when considering the security implications of AI. This post will engage with several questions that might be posed by such a skeptic.
 
-**Our aim is not alarmism; discussions of AI and biorisk are firmly in the category of low-probability/high-impact scenarios.^(\[2\]) Rather, we want to establish why we believe that evaluating these risks and safeguarding against them is a critical element of responsible AI development.**
+**Our aim is not alarmism; discussions of AI and biorisk are firmly in the category of low-probability/high-impact scenarios.^([2](#footnote-2)) Rather, we want to establish why we believe that evaluating these risks and safeguarding against them is a critical element of responsible AI development.**
 
 ## What does AI have to do with dangerous weapons at all?
 
@@ -52,9 +85,9 @@ Moreover, the human baseline in this evaluation is based on scientists answering
 
 In considering the contribution of AI to biorisk, we need to know more than just how well it performs on a quiz. We need to look at evaluations that involve real people, and closely mirror our actual threat scenarios. Moreover, just as we benchmark AI knowledge by comparing it to experts, we need to measure AI utility by comparing it to the most easily accessible alternative—in this case, the internet.  
 
-To meet both of these criteria, we have conducted several controlled trials measuring AI’s ability to assist in the planning of a hypothetical bioweapons acquisition process. Participants were given up to two days to draft a comprehensive bioweapons acquisition plan. The control group only had access to basic internet resources, while the model-assisted group had additional access to Claude with safeguards removed. (In limited cases like this, it is important to provide trusted parties with access to the unsafeguarded version of the model in order to more accurately assess the maximum capabilities of the technology.) The resulting plans were graded by biodefense experts using a detailed rubric that assesses key steps of the acquisition pathway. Participants with access to Claude 4 models—especially Claude Opus 4—received much higher scores and developed plans with substantially fewer critical failures compared to the internet-only control group.  
+To meet both of these criteria, we have conducted several controlled trials measuring AI’s ability to assist in the planning of a hypothetical bioweapons acquisition process. Participants were given up to two days to draft a comprehensive bioweapons acquisition plan. The control group only had access to basic internet resources, while the model-assisted group had additional access to Claude with safeguards removed. (In limited cases like this, it is important to provide trusted parties with access to the unsafeguarded version of the model in order to more accurately assess the maximum capabilities of the technology.) The resulting plans were graded by biodefense experts using a detailed rubric that assesses key steps of the acquisition pathway. Participants with access to Claude 4 models—especially Claude Opus 4—received much higher scores and developed plans with substantially fewer critical failures compared to the internet-only control group.
 
-Text-based uplift trials like this are imperfect proxies for real-world scenarios—which involve additional factors like tacit knowledge, materials access, and actor persistence—but they demonstrate the underlying plausibility of AIs providing differentially superior assistance to a non-expert malicious actor.^(\[3\])
+Text-based uplift trials like this are imperfect proxies for real-world scenarios—which involve additional factors like tacit knowledge, materials access, and actor persistence—but they demonstrate the underlying plausibility of AIs providing differentially superior assistance to a non-expert malicious actor.^([3](#footnote-3))
 
 ## Ok, but we’ve been talking about information. How does this translate to an actual lab?
 
@@ -80,7 +113,7 @@ We believe it’s important to support transparency norms—like the push for de
 
 ### Deployment safeguards
 
-We have developed automated deployment safeguards based on our [constitutional classifiers](research-constitutional-classifiers.md) research. These classifier guards work by monitoring inputs and outputs in real time and blocking a narrow class of potentially harmful information. We apply this protection to models for which we cannot rule out their potential to meaningfully uplift threat actors; to date this is only the Claude Opus 4 family of models, which we did as a [precautionary measure](activating-asl3-protections.md). (For more details on our implementation of ASL-3 protections, see this [report](https://www-cdn.anthropic.com/807c59454757214bfd37592d6e048079cd7a7728.pdf).)
+We have developed automated deployment safeguards based on our [constitutional classifiers](constitutional-classifiers.md) research. These classifier guards work by monitoring inputs and outputs in real time and blocking a narrow class of potentially harmful information. We apply this protection to models for which we cannot rule out their potential to meaningfully uplift threat actors; to date this is only the Claude Opus 4 family of models, which we did as a [precautionary measure](activating-asl3-protections.md). (For more details on our implementation of ASL-3 protections, see this [report](https://www-cdn.anthropic.com/807c59454757214bfd37592d6e048079cd7a7728.pdf).)
 
 Across all models, our [Safeguards](building-safeguards-for-claude.md) team monitors activity on our platforms for signs of misuse, including dangerous applications of biology. This monitoring provides insight into patterns of misuse and helps us determine if and when to take enforcement action.
 
@@ -90,134 +123,10 @@ We are heartened to see investment in biosecurity as a key component of the new 
 
 The topic of AI and biorisk is rife with uncertainty—about threat actors, the capabilities of models, and how exactly those capabilities translate to risk. But we believe that a growing body of evidence about AI and the underlying gravity of biological threats mean that this is a topic to which AI developers and policymakers must attend. We will be sharing more about our work on biorisk to advance this critical conversation.
 
-#### Footnotes
+## Footnotes
 
-\[1\] This is based on a review of the published safety frameworks collected by METR at <https://metr.org/faisc> as of July 2025.
+01This is based on a review of the published safety frameworks collected by METR at <https://metr.org/faisc> as of July 2025.[](#footnote-ref-1)
 
-\[2\] Indeed, the magnitude of this risk (and even our ability to meaningfully estimate the magnitude) is a source of healthy debate within Anthropic.
+02Indeed, the magnitude of this risk (and even our ability to meaningfully estimate the magnitude) is a source of healthy debate within Anthropic.[](#footnote-ref-2)
 
-\[3\] These results provide an important update to previous research. An [experiment](https://www.rand.org/pubs/research_reports/RRA2977-2.html) conducted in 2023 with a similar research design found no statistically significant difference between biological weapons attack plans formulated with LLMs as opposed to only the internet. However, as the study authors noted at the time, “\[g\]iven the rapid evolution of AI, it is prudent to monitor future developments in LLM technology.” Frontier AI models are substantially better in mid-2025 than they were in late-2023, and our results demonstrate that they are now showing clearer warning signs of contributing to biorisk.
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+03These results provide an important update to previous research. An [experiment](https://www.rand.org/pubs/research_reports/RRA2977-2.html) conducted in 2023 with a similar research design found no statistically significant difference between biological weapons attack plans formulated with LLMs as opposed to only the internet. However, as the study authors noted at the time, “\[g\]iven the rapid evolution of AI, it is prudent to monitor future developments in LLM technology.” Frontier AI models are substantially better in mid-2025 than they were in late-2023, and our results demonstrate that they are now showing clearer warning signs of contributing to biorisk.[](#footnote-ref-3)

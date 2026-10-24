@@ -2,19 +2,50 @@
 title: "Introducing the Anthropic Economic Index \\ Anthropic"
 source_url: "https://www.anthropic.com/research/the-anthropic-economic-index"
 category: "19-Reference"
-fetched_at: "2026-09-12T06:31:45Z"
+fetched_at: "2026-10-21T06:30:53Z"
 tags: ["news-research", "search"]
 ---
 
 # The Anthropic Economic Index
 
-Feb 10, 2025
-
 [Read the paper](http://arxiv.org/abs/2503.04761)
+
+- [01Mapping AI usage across the labor market](#mapping-ai-usage-across-the-labor-market)
+- [02Results](#results)
+- [03Conclusions and future research](#conclusions-and-future-research)
+- [04Open data and call for input](#open-data-and-call-for-input)
+
+- Published
+
+  Feb 10, 2025
+
+- Team
+
+  [Economics](team-economics.md)
+
+- Topics
+
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Open source](https://www.anthropic.com/search?topic=open-source)
+  - [Productivity](https://www.anthropic.com/search?topic=productivity)
+
+  See more...
+
+Related articles
+
+- Economics
+
+  Apr 22, 2026
+
+  [Announcing the Anthropic Economic Index Survey](economic-index-survey-announcement.md)
+
+[View more](https://www.anthropic.com/search?topic=economic-index)
 
 In the coming years, AI systems will have a major impact on the ways people work. For that reason, we're launching the [Anthropic Economic Index](https://www.anthropic.com/economic-futures), an initiative aimed at understanding AI's effects on labor markets and the economy over time.
 
-The Index’s [initial report](http://arxiv.org/abs/2503.04761) provides first-of-its-kind data and analysis based on millions of anonymized conversations on [Claude.ai](http://claude.ai/redirect/website.v1.780d30da-901e-4245-9fb8-d997c3c790e0), revealing the clearest picture yet of how AI is being incorporated into real-world tasks across the modern economy.
+The Index’s [initial report](http://arxiv.org/abs/2503.04761) provides first-of-its-kind data and analysis based on millions of anonymized conversations on [Claude.ai](http://claude.ai), revealing the clearest picture yet of how AI is being incorporated into real-world tasks across the modern economy.
 
 We're also [open sourcing the dataset](https://huggingface.co/datasets/Anthropic/EconomicIndex/) used for this analysis, so researchers can build on and extend our findings. Developing policy responses to address the coming transformation in the labor market and its effects on employment and productivity will take a range of perspectives. To that end, we are also inviting economists, policy experts, and other researchers to [provide input](https://docs.google.com/forms/d/e/1FAIpQLSfDEdY-mT5lcXPaDSv-0Ci1rSXGlbIJierxkUbNB7_07-kddw/viewform?usp=dialog) on the Index.
 
@@ -30,15 +61,15 @@ See below for further details on our initial findings.
 
 Our [new paper](http://arxiv.org/abs/2503.04761) builds on a long line of research on the labor market impact of technologies, from the Spinning Jenny of the Industrial Revolution to the car-manufacturing robots of the present day. We focus on the ongoing impact of AI. We don’t survey people on their AI use, or attempt to forecast the future; instead, we have direct data on how AI is actually being used.
 
-### **Analyzing occupational tasks**
+### Analyzing occupational tasks
 
 Our research began with an important [insight from the economics literature](https://academic.oup.com/qje/article-abstract/118/4/1279/1925105): sometimes it makes sense to focus on *occupational tasks* rather than *occupations themselves*. Jobs often share certain tasks and skills in common: for example, visual pattern recognition is a task performed by designers, photographers, security screeners, and radiologists.
 
 Certain tasks lend themselves better to being automated or augmented by a new technology than others. We’d therefore expect AI to be adopted selectively for different tasks across different occupations, and that analyzing tasks—in addition to jobs as a whole—would give us a fuller picture of how AI is being integrated into the economy.
 
-### **Using Clio to match AI use to tasks**
+### Using Clio to match AI use to tasks
 
-This research was made possible by Claude insights and observations, or "[Clio](clio.md)", an automated analysis tool that allows us to analyze conversations with Claude while preserving user privacy¹. We used Clio on a dataset of approximately one million conversations with Claude (specifically, Free and Pro conversations on [Claude.ai](http://claude.ai/redirect/website.v1.780d30da-901e-4245-9fb8-d997c3c790e0)), and used it to organize the conversations by occupational task.
+This research was made possible by Claude insights and observations, or "[Clio](clio.md)", an automated analysis tool that allows us to analyze conversations with Claude while preserving user privacy^([1](#footnote-1)). We used Clio on a dataset of approximately one million conversations with Claude (specifically, Free and Pro conversations on [Claude.ai](http://claude.ai)), and used it to organize the conversations by occupational task.
 
 We chose tasks according to the classification made by the U.S. Department of Labor, which maintains a database of around 20,000 specific work-related tasks called the Occupational Information Network, or [O\*NET](https://www.onetonline.org/). Clio matched each conversation with the O\*NET task that best represented the role of the AI in the conversation (the process is summarized in the figure below). We then followed the O\*NET scheme for grouping the tasks into the occupations they best represented, and the occupations into a small set of overall categories: *education and library,* *business and financial,* and so on.
 
@@ -68,7 +99,7 @@ Our study provides a unique glimpse into how AI is changing the labor market. Bu
 
 - We can’t know for certain whether someone using Claude for a task was completing a task for work. Someone asking Claude for writing or editing advice *could* be doing so at work, but they could also be doing so for the novel they’re writing as a hobby.
 - Relatedly, we don’t know *how* the users were using the responses from Claude. Were they, for instance, copy-pasting code snippets? Were they fact-checking responses or accepting them uncritically? Some of what appears in our data to be automation could, in fact, be augmentation: for example, a user might ask Claude to write a full memo for them (which would appear as automation), but then edit it themselves afterwards (which would be augmentation).
-- We also only analyze data from [Claude.ai](http://claude.ai/redirect/website.v1.780d30da-901e-4245-9fb8-d997c3c790e0) Free and Pro plans, rather than API, Team, or Enterprise users. While Claude.ai data contains some non-work conversations, we used a language model to filter this data to only contain conversations relevant to an occupational task, which helps to mitigate this concern.
+- We also only analyze data from [Claude.ai](http://claude.ai) Free and Pro plans, rather than API, Team, or Enterprise users. While Claude.ai data contains some non-work conversations, we used a language model to filter this data to only contain conversations relevant to an occupational task, which helps to mitigate this concern.
 - The sheer number of different tasks means it is possible that Clio classified some conversations incorrectly (please see the full paper, in particular Appendix B, for details on how we validated the analysis);
 - Claude can’t generate images (except indirectly via code), and so some creative uses won’t be referenced in the data;
 - Given that Claude is advertised for use as a state-of-the-art coding model, we might expect coding to be overrepresented as a use case. For that reason, we don’t argue that the uses in our dataset are a representative sample of AI use in general.
@@ -91,138 +122,20 @@ The full dataset can be downloaded [here](https://huggingface.co/datasets/Anthro
 
 A form for researchers to provide feedback on our data and suggest new research directions is [here](https://docs.google.com/forms/d/e/1FAIpQLSfDEdY-mT5lcXPaDSv-0Ci1rSXGlbIJierxkUbNB7_07-kddw/viewform?usp=dialog).
 
-## Acknowledgements
-
-We appreciate the productive comments and discussion on early findings and drafts of the paper from Jonathon Hazell, Anders Humlum, Molly Kinder, Anton Korinek, Benjamin Krause, Michael Kremer, John List, Ethan Mollick, Lilach Mollick, Arjun Ramani, Will Rinehart, Robert Seamans, Michael Webb, and Chenzi Xu.
-
-## Work with us
+### Work with us
 
 If you’re interested in working at Anthropic to research the effects of AI on the labor market, we encourage you to apply for our Societal Impacts [Research Scientist](https://boards.greenhouse.io/anthropic/jobs/4524032008) and [Research Engineer](https://boards.greenhouse.io/anthropic/jobs/4251453008) roles.
 
-#### Footnotes
+## Footnotes
 
-¹Clio takes large numbers of conversations and aggregates them into higher-level categories for analysis. Importantly, for the preservation of user privacy it does so without human researchers being able to see the original conversations. You can read more about Clio [here](clio.md).
+01Clio takes large numbers of conversations and aggregates them into higher-level categories for analysis. Importantly, for the preservation of user privacy it does so without human researchers being able to see the original conversations. You can read more about Clio [here](clio.md).[](#footnote-ref-1)
 
+## Authors & Acknowledgments
 
-## Related content
+### Contributors
 
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
+We appreciate the productive comments and discussion on early findings and drafts of the paper from Jonathon Hazell, Anders Humlum, Molly Kinder, Anton Korinek, Benjamin Krause, Michael Kremer, John List, Ethan Mollick, Lilach Mollick, Arjun Ramani, Will Rinehart, Robert Seamans, Michael Webb, and Chenzi Xu.
 
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
+### Acknowledgements
 
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+We appreciate the productive comments and discussion on early findings and drafts of the paper from Jonathon Hazell, Anders Humlum, Molly Kinder, Anton Korinek, Benjamin Krause, Michael Kremer, John List, Ethan Mollick, Lilach Mollick, Arjun Ramani, Will Rinehart, Robert Seamans, Michael Webb, and Chenzi Xu.

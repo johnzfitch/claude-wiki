@@ -2,7 +2,7 @@
 title: "Configure your terminal for Claude Code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/terminal-config"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-26T06:38:14Z"
+fetched_at: "2026-10-20T06:36:47Z"
 tags: ["claude-code"]
 ---
 
@@ -12,6 +12,7 @@ tags: ["claude-code"]
 - [Enable Option key shortcuts on macOS](#enable-option-key-shortcuts-on-macos)
 - [Get a terminal bell or notification](#get-a-terminal-bell-or-notification)
   - [Play a sound with a Notification hook](#play-a-sound-with-a-notification-hook)
+- [See session status in your terminal](#see-session-status-in-your-terminal)
 - [Configure tmux](#configure-tmux)
 - [Fix Backspace deleting a whole word on Windows](#fix-backspace-deleting-a-whole-word-on-windows)
 - [Match the color theme](#match-the-color-theme)
@@ -81,7 +82,7 @@ Some Claude Code shortcuts use the Option key, such as Option+Enter for a newlin
 
 - VS Code
 
-Open Settings → Profiles → Keyboard and check “Use Option as Meta Key”.If you accepted Claude Code’s first-run terminal setup prompt, this is already done. That prompt runs `/terminal-setup` for you, which enables Option as Meta and turns off the audible bell in your Apple Terminal profile.In [screen reader mode](accessibility.md), `/terminal-setup` leaves the bell setting unchanged so the terminal bell stays audible. Before v2.1.211, `/terminal-setup` turned the bell off even in screen reader mode. If an earlier run turned the bell off, turn it back on under Settings → Profiles → Advanced → “Audible bell”.
+Open Settings → Profiles → Keyboard and check “Use Option as Meta Key”.If you accepted Claude Code’s first-run terminal setup prompt, this is already done. That prompt runs `/terminal-setup` for you, which enables Option as Meta and turns off the audible bell in your Apple Terminal profile.In [screen reader mode](accessibility.md), `/terminal-setup` leaves the bell setting unchanged so the terminal bell stays audible. If an earlier run turned the bell off, turn it back on under Settings → Profiles → Advanced → “Audible bell”.
 
 Open Settings → Profiles → Keys → General and set Left Option key and Right Option key to “Esc+”.Running `/terminal-setup` in iTerm2 enables “Applications in terminal may access clipboard” under Settings → General → Selection so the `/copy` command can write to your system clipboard. The command detects iTerm2 even when run from inside tmux. Restart iTerm2 for the change to take effect.
 
@@ -140,6 +141,18 @@ In any terminal you can configure a [Notification hook](../07-Hooks/hooks-guide.
   }
 }
 ```
+
+
+[​](#see-session-status-in-your-terminal)
+
+See session status in your terminal
+
+If your terminal implements the OSC 7501 Program Status Protocol, it can show whether each interactive Claude Code session is working, waiting on you, or done, which helps when you run long tasks or several sessions at once. There is nothing to turn on in Claude Code. To find out whether your terminal implements the protocol and where it shows the status, check its documentation. If it does and you see no status for a session, check for each of these causes:
+
+- **Claude Code version**: status reporting requires Claude Code v2.1.295 or later. Run `claude --version` in your shell to check.
+- **tmux**: inside tmux, Claude Code checks tmux for support instead of your terminal, and [`allow-passthrough`](#configure-tmux) has no effect on that. Start the session outside tmux.
+- **Background session**: a [background session](../09-Agents-Patterns/agent-view.md) doesn’t report its status to your terminal, even while you’re attached to it. Agent view shows its status instead.
+- **[`CLAUDE_CODE_DISABLE_TERMINAL_TITLE`](env-vars.md#variables)**: if you set this variable to `1`, Claude Code doesn’t check for support or report status. Unset it.
 
 
 [​](#configure-tmux)
@@ -293,15 +306,16 @@ Color added and removed code in file edits and reviews.
 
 Fullscreen mode
 
-Claude Code paints `userMessageBackground`, `bashMessageBackgroundColor`, and `memoryBackgroundColor` in both the default and fullscreen renderers. It uses `userMessageBackgroundHover` and `selectionBg` only in [fullscreen rendering mode](fullscreen.md).
+Claude Code uses `userMessageBackgroundHover`, `selectionBg`, and `composerSidebarBackground` only in [fullscreen rendering mode](fullscreen.md). It paints `userMessageBackground`, `bashMessageBackgroundColor`, and `memoryBackgroundColor` in both the default and fullscreen renderers.
 
-| Token                        | Controls                                                      |
-|:-----------------------------|:--------------------------------------------------------------|
-| `userMessageBackground`      | Background behind your messages in the transcript             |
-| `userMessageBackgroundHover` | Background behind a message while hovered or expanded         |
-| `bashMessageBackgroundColor` | Background behind `!` shell command entries in the transcript |
-| `memoryBackgroundColor`      | Background behind `#` memory entries in the transcript        |
-| `selectionBg`                | Background of text selected with the mouse                    |
+| Token                        | Controls                                                                                                                                                                               |
+|:-----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `userMessageBackground`      | Background behind your messages in the transcript                                                                                                                                      |
+| `userMessageBackgroundHover` | Background behind a message while hovered or expanded                                                                                                                                  |
+| `bashMessageBackgroundColor` | Background behind `!` shell command entries in the transcript                                                                                                                          |
+| `memoryBackgroundColor`      | Background behind `#` memory entries in the transcript                                                                                                                                 |
+| `selectionBg`                | Background of text selected with the mouse                                                                                                                                             |
+| `composerSidebarBackground`  | Background of the panel beside the conversation, such as the [diff panel](fullscreen.md#watch-your-changes-in-the-diff-panel) or a [mod’s pane](../08-Plugins-Skills/plugins-mods-interface.md) |
 
 
 [​](#usage-meter-and-speaker-labels)

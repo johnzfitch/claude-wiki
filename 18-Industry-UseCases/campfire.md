@@ -2,7 +2,7 @@
 title: "Campfire Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/campfire"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:54Z"
+fetched_at: "2026-10-23T06:29:32Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -45,9 +45,9 @@ Traditional accounting software had reached its limits with rule-based automatio
 
 ## Why Claude stands out for financial reasoning
 
-After evaluating multiple AI models, Campfire selected Claude for three key advantages. First, Claude demonstrated superior performance in their internal benchmarks. Second, Anthropic provided crucial technical support and implementation blueprints that accelerated product development. Finally, Anthropic's established trust in the industry was essential for Campfire's security-conscious accounting and finance customers.
+After evaluating multiple AI models, Campfire selected Claude for three key advantages. First, Claude demonstrated superior performance in their internal benchmarks. Second, Anthropic provided crucial technical support and implementation blueprints that accelerated product development. Finally, Anthropic’s established trust in the industry was essential for Campfire’s security-conscious accounting and finance customers.
 
-The engineering team at Campfire, led by CTO Paul Nichols, leveraged Claude's financial "recipes" API framework for rapid deployment. "Our engineering team found a lot of value in Anthropic's ‘[cookbook](https://github.com/anthropics)’ to build AI into our product," said John Glasgow, CEO and Founder of Campfire. This framework enabled Campfire to optimize their roadmap to save the largest number of customers the most amount of time.
+The engineering team at Campfire, led by CTO Paul Nichols, leveraged Claude’s financial “recipes” API framework for rapid deployment. “Our engineering team found a lot of value in Anthropic’s ‘[cookbook](https://github.com/anthropics)’ to build AI into our product,” said John Glasgow, CEO and Founder of Campfire. This framework enabled Campfire to optimize their roadmap to save the largest number of customers the most amount of time.
 
 ## How Claude transforms accounting workflows
 
@@ -59,17 +59,17 @@ Campfire integrated Claude to power key capabilities in their platform:
 
 ## Delivering measurable impact for accounting teams
 
-The impact on accounting teams has been profound and emotional. One customer said about Ember AI, "It helps us get more done with fewer headaches, and that’s everything in today’s “do-more-with-less” world.” Another customer was moved to tears when describing the bank reconciliation functionality as "life-changing," noting it eliminated what had previously consumed 80% of their bandwidth.
+The impact on accounting teams has been profound and emotional. One customer said about Ember AI, “It helps us get more done with fewer headaches, and that’s everything in today’s “do-more-with-less” world.” Another customer was moved to tears when describing the bank reconciliation functionality as “life-changing,” noting it eliminated what had previously consumed 80% of their bandwidth.
 
-Beyond individual features, Campfire has fundamentally changed how accounting teams work. Their customers have reduced close times by three days per month on average, while cutting time spent on bank reconciliations by 90%, and reporting by 50%. This efficiency extends internally—100% of Campfire's engineering team uses Claude to accelerate feature development and deployment.
+Beyond individual features, Campfire has fundamentally changed how accounting teams work. Their customers have reduced close times by three days per month on average, while cutting time spent on bank reconciliations by 90%, and reporting by 50%. This efficiency extends internally—100% of Campfire’s engineering team uses Claude to accelerate feature development and deployment.
 
-These improvements translate directly to business value for Campfire's customers. Teams can now automate complex accounting tasks, enhance data analysis through chat-based queries, streamline bank reconciliation, and execute accounting tasks via natural language—all while maintaining the accuracy and auditability required in professional accounting.
+These improvements translate directly to business value for Campfire’s customers. Teams can now automate complex accounting tasks, enhance data analysis through chat-based queries, streamline bank reconciliation, and execute accounting tasks via natural language—all while maintaining the accuracy and auditability required in professional accounting.
 
 ## Building the future of strategic accounting
 
 Campfire envisions a fundamental transformation of the accounting profession. Automation will eliminate tedious manual work, freeing accounting professionals to become true strategic partners to their businesses. Through their partnership with Anthropic, they’re revolutionizing accounting workflows by continuously finding new ways to make complex processes more efficient with Claude. Their roadmap extends beyond accounting, with plans to make Ember AI available to heads of departments of non-finance teams, such as sales, engineering, and marketing, through integrations with platforms like Slack, made possible because of its conversational interface.
 
-"Our ultimate goal is to elevate the accounting profession," said Glasgow. By automating routine and repetitive aspects of accounting work, Campfire aims to transform accountants from number-crunchers to strategic advisors focused on driving business growth and making high-impact financial decisions. With the power of generative AI, they're creating a future where accounting teams can dedicate their expertise to what they do best—providing the strategic insights that help businesses thrive.
+“Our ultimate goal is to elevate the accounting profession,” said Glasgow. By automating routine and repetitive aspects of accounting work, Campfire aims to transform accountants from number-crunchers to strategic advisors focused on driving business growth and making high-impact financial decisions. With the power of generative AI, they’re creating a future where accounting teams can dedicate their expertise to what they do best—providing the strategic insights that help businesses thrive.
 
 ## Related stories
 
@@ -80,7 +80,7 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 ### Pictet turns weeks of work into hours with Claude Code
 
 
-### How Satispay's engineers write 75% of their code with Claude
+### How Satispay’s engineers write 75% of their code with Claude
 
 
 ### OffDeal powers every stage of M&A advisory with one Claude-based agent
@@ -94,7 +94,8 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -112,12 +113,12 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -150,7 +151,7 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -168,6 +169,7 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -183,7 +185,7 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -218,7 +220,8 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -236,12 +239,12 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -274,7 +277,7 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -292,6 +295,7 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -307,7 +311,7 @@ Campfire envisions a fundamental transformation of the accounting profession. Au
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

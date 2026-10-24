@@ -2,7 +2,7 @@
 title: "Claude Fable 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/fable-5/overview"
 category: "20-Models"
-fetched_at: "2026-10-04T08:33:46Z"
+fetched_at: "2026-10-20T06:40:29Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5%2Foverview)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5%2Foverview)
 
 
 
@@ -40,13 +40,13 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
 Legacy models
 
-[Claude Fable 5](models-fable-5-overview.md)[Claude Opus 5](models-opus-5-overview.md)[Claude Sonnet 5](models-sonnet-5-overview.md)[Claude Opus 4.8](models-opus-4-8-overview.md)[Claude Opus 4.7](models-opus-4-7-overview.md)[Claude Opus 4.6](models-opus-4-6-overview.md)[Claude Sonnet 4.6](models-sonnet-4-6-overview.md)[Claude Opus 4.5](models-opus-4-5-overview.md)[Claude Sonnet 4.5](models-sonnet-4-5-overview.md)
+[Claude Fable 5](models-fable-5-overview.md)[Claude Opus 5](models-opus-5-overview.md)[Claude Sonnet 5](models-sonnet-5-overview.md)[Claude Opus 4.8](models-opus-4-8-overview.md)[Claude Opus 4.7](models-opus-4-7-overview.md)[Claude Opus 4.6](models-opus-4-6-overview.md)[Claude Sonnet 4.6](models-sonnet-4-6-overview.md)[Claude Opus 4.5](models-opus-4-5-overview.md)[Claude Sonnet 4.5](models-sonnet-4-5-overview.md)[Claude Haiku 4.5](models-haiku-4-5-overview.md)
 
 Guides
 
@@ -54,15 +54,15 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 
 
-Although Claude Fable 5 is still available, you should consider migrating to Claude Fable 5.1 for improved performance.
+Although Claude Fable 5 is still available, you should consider migrating to Claude Fable 5.1.
 
 [See Claude Fable 5.1](models-fable-5-1-overview.md)
 
@@ -82,7 +82,7 @@ claude-fable-5
 
 
 
-[Announcement(opens in new tab)](../19-Reference/claude-fable-5-mythos-5.md)[What’s new](models-fable-5-introducing-claude-fable-5-and-claude-mythos-5.md)
+[Announcement(opens in new tab)](../19-Reference/claude-fable-5-mythos-5.md)
 
 Context window  
 1Mtokens
@@ -98,7 +98,7 @@ Output pricing
 
 ## Fable vs. Mythos
 
-[Claude Mythos 5](models-mythos-5-overview.md) is offered separately, by invitation only, for defensive cybersecurity workflows as part of [Project Glasswing](../22-Safety-Policy/glasswing.md). It shares Claude Fable 5's specifications and pricing; Claude Fable 5 includes safety classifiers that can decline requests, and Claude Mythos 5 does not. For access, contact your Anthropic, AWS, or Google Cloud account team.
+[Claude Mythos 5](models-mythos-5-overview.md) is offered separately for defensive cybersecurity workflows and is available only to organizations verified through Anthropic's verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). It shares Claude Fable 5's specifications and pricing.
 
 ## How it compares to the current lineup
 
@@ -193,12 +193,6 @@ What changes when moving from Claude Fable 5 to Claude Fable 5.1.
 [Claude Fable 5.1](models-fable-5-1-overview.md)
 
 The current Fable model: overview, specs, and resources.
-
-
-
-[Introducing Claude Fable 5 and Claude Mythos 5](models-fable-5-introducing-claude-fable-5-and-claude-mythos-5.md)
-
-Capabilities, API changes, and availability for Claude Fable 5.
 
 
 

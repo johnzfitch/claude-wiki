@@ -1,25 +1,23 @@
 ---
-title: "Inviting members to the Claude Console | Claude Help Center"
+title: "Invite members to the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13443764-inviting-members-to-the-claude-console"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:24:37Z"
+fetched_at: "2026-10-23T06:29:03Z"
 tags: ["api"]
 ---
 
-# Inviting members to the Claude Console
-
-March 16, 2026
+# Invite members to the Claude Console
 
 
-The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: [Creating and managing Workspaces in the Claude Console](../../13-Enterprise-Admin/creating-and-managing-workspaces-in-the-claude-console.md).
+The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: **[Create and manage Workspaces in the Claude Console](https://support.claude.com/en/articles/9796807)**.
 
-**Note:** Only organization Admins can manage Console members and invitations. See [Claude Console Roles and Permissions](../../13-Enterprise-Admin/claude-console-roles-and-permissions.md).
+Only organization Admins can manage Console members and invitations. See **[Claude Console roles and permissions](../../13-Enterprise-Admin/claude-console-roles-and-permissions.md)**.
 
-## Inviting members to your Console organization
+## Invite members to your Console organization
 
 1.  Log in as a Admin.
 
-2.  Navigate to [Settings \> Members](playground.md).
+2.  Go to the **Members** page (platform.claude.com/settings/members).
 
 3.  Click the "+ Invite" button in the upper right corner of the page.
 
@@ -35,9 +33,9 @@ The instructions in this article apply to your overall Console organization. If 
 
 Yes, newly-invited members have three weeks to accept the invitation via email.
 
-## Revoking invitations to your Console organization
+## Revoke invitations to your Console organization
 
-1.  Locate the "Pending" member in [Settings \> Members](playground.md).
+1.  Locate the "Pending" member on the **Members** page (platform.claude.com/settings/members).
 
 2.  Click the trash can icon to the right of the listed user to revoke their invitation.
 

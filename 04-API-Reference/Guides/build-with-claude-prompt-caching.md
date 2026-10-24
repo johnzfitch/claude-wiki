@@ -2,7 +2,7 @@
 title: "Prompt caching - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:28Z"
+fetched_at: "2026-10-20T06:40:05Z"
 tags: ["api", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "prompting"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fprompt-caching)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fprompt-caching)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Context management
 
@@ -98,7 +98,7 @@ Prompt caching optimizes your API usage by allowing resuming from specific prefi
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 There are two ways to enable prompt caching:
 
@@ -124,6 +124,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -190,7 +192,7 @@ Prompt caching introduces a new pricing structure. The following table shows the
 
 *^(1 Cache hits and refreshes on Claude Fable 5.1 and Claude Mythos 5.1 are priced at 0.025x the base input price.)*
 
-*^(2 Cache hits and refreshes on Claude Opus 5.5 are priced at 0.05x the base input price.)*
+*^(2 Cache hits and refreshes on Claude Opus 5.5 and Claude Sonnet 5.5 are priced at 0.05x the base input price.)*
 
 *^(All other models use the standard 0.1x multiplier.)*
 
@@ -202,7 +204,7 @@ The previous table reflects the following pricing multipliers for prompt caching
 - 1-hour cache write tokens are 2 times the base input tokens price
 - Cache read tokens are 0.1 times the base input tokens price (see the table footnote for per-model exceptions)
 
-These multipliers stack with other pricing modifiers such as the Batch API discount and data residency. See [pricing](../../17-Billing-Plans/about-claude-pricing.md) for full details.
+These multipliers stack with other pricing modifiers such as the Batch API discount, [long context pricing](../../17-Billing-Plans/about-claude-pricing.md#long-context-pricing), and data residency. On a model priced by prompt length, cache reads and cache writes count toward a request's prompt length. See [pricing](../../17-Billing-Plans/about-claude-pricing.md) for full details.
 
 ------------------------------------------------------------------------
 
@@ -233,6 +235,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -373,7 +377,7 @@ You can define up to 4 cache breakpoints if you want to:
 **Cache breakpoints themselves don't add any cost.** You are only charged for:
 
 - **Cache writes:** When new content is written to the cache (25% more than base input tokens for 5-minute TTL)
-- **Cache reads:** When cached content is used (10% of base input token price, or 2.5% on Claude Fable 5.1 and Claude Mythos 5.1, and 5% on Claude Opus 5.5)
+- **Cache reads:** When cached content is used (10% of base input token price, or 2.5% on Claude Fable 5.1 and Claude Mythos 5.1, and 5% on Claude Opus 5.5 and Claude Sonnet 5.5)
 - **Regular input tokens:** For any uncached content
 
 Adding more `cache_control` breakpoints doesn't increase your costs; you still pay the same amount based on what content is actually cached and read. The breakpoints give you control over what sections can be cached independently.
@@ -386,12 +390,12 @@ Adding more `cache_control` breakpoints doesn't increase your costs; you still p
 
 On the Claude API, [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md), [Google Cloud](build-with-claude-claude-on-vertex-ai.md), and [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md), the minimum cacheable prompt length is:
 
-- 512 tokens for Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Fable 5, and [Claude Mythos 5](../../22-Safety-Policy/glasswing.md)
+- 512 tokens for Claude Fable 5.1, [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md), Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Fable 5, [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md), and Claude Haiku 5.5
 - 2,048 tokens for [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md) and Claude Opus 4.7
 - 4,096 tokens for Claude Opus 4.6 and Claude Opus 4.5
-- 1,024 tokens for Claude Opus 4.8, Claude Sonnet 5, Claude Sonnet 4.6, Claude Sonnet 4.5, Claude Opus 4.1 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md)), Claude Opus 4 ([retired, except on Google Cloud](../../20-Models/about-claude-model-deprecations.md)), and Claude Sonnet 4 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md))
+- 1,024 tokens for Claude Opus 4.8, Claude Sonnet 5, Claude Sonnet 4.6, Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)), Claude Opus 4.1 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md)), Claude Opus 4 ([retired, except on Google Cloud](../../20-Models/about-claude-model-deprecations.md)), and Claude Sonnet 4 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md))
 - 4,096 tokens for Claude Haiku 4.5
-- 2,048 tokens for Claude Haiku 3.5 ([retired, except on Bedrock and Google Cloud](../../20-Models/about-claude-model-deprecations.md))
+- 2,048 tokens for Claude Haiku 3.5 ([retired, except on Google Cloud](../../20-Models/about-claude-model-deprecations.md))
 
 These minimums apply on every platform where each model is available.
 
@@ -439,24 +443,24 @@ As described in [Structuring your prompt](#structuring-your-prompt), the cache f
 
 The following table shows which parts of the cache are invalidated by different types of changes. ✘ indicates that the cache is invalidated, while ✓ indicates that the cache remains valid.
 
-| What changes                                              | Tools cache    | System cache   | Messages cache | Impact                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|-----------------------------------------------------------|----------------|----------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Tool definitions**                                      | ✘              | ✘              | ✘              | Modifying tool definitions (names, descriptions, parameters) invalidates the entire cache                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **Web search toggle**                                     | ✓              | ✘              | ✘              | Enabling/disabling web search modifies the system prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **Citations toggle**                                      | ✓              | ✘              | ✘              | Enabling/disabling citations modifies the system prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Speed setting**                                         | ✓              | ✘              | ✘              | Switching between [`speed: "fast"` and standard speed](build-with-claude-fast-mode.md) invalidates system and message caches                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Tool choice**                                           | ✓              | ✓              | ✘              | Changes to `tool_choice` parameter only affect message blocks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Images**                                                | ✓              | ✓              | ✘              | Adding/removing images anywhere in the prompt affects message blocks                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| **Thinking parameters**                                   | Model-specific | Model-specific | ✘              | The thinking configuration (mode, and `budget_tokens` in extended mode) is rendered into the prompt, so changing it always invalidates message blocks; tool and system caches are also invalidated on models that render the configuration ahead of them. See [Thinking and prompt caching](build-with-claude-thinking.md#thinking-and-prompt-caching).                                                                                                                                                                                |
-| **Effort setting**                                        | Model-specific | Model-specific | ✘              | Changing the [`output_config.effort`](build-with-claude-effort.md) value always invalidates message blocks, with the same model-specific effect on tool and system caches as thinking parameters. Setting effort explicitly to the model's default is equivalent to omitting it and does not invalidate. On models that support [per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta), an effort change carried in a `role: "system"` message inside `messages` leaves the cached prefix intact. |
-| **Non-tool results passed to extended thinking requests** | ✓              | ✓              | Model-specific | On Opus 4.5+ and Sonnet 4.6+, thinking blocks are preserved by default, so the cache remains valid (✓). On earlier Opus/Sonnet models and all Haiku models, all previously-cached thinking blocks are stripped from context, and any messages that follow those thinking blocks are removed from the cache (✘). For more details, see [Caching with thinking blocks](#caching-with-thinking-blocks).                                                                                                                                         |
-| **Dropped thinking blocks**                               | ✓              | ✓              | ✘              | When the API drops a Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, or Claude Sonnet 5.5 thinking block that isn't [preserved](build-with-claude-thinking.md#preserved-thinking) on that request (for example, one you replay to a model that can't read it), the cached prefix changes from that block's position onward on that request. Blocks the receiving model can read, passed back unchanged, keep the cache intact.                                                                                                   |
+| What changes                                          | Tools cache    | System cache   | Messages cache | Impact                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|-------------------------------------------------------|----------------|----------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Tool definitions**                                  | ✘              | ✘              | ✘              | Modifying tool definitions (names, descriptions, parameters) invalidates the entire cache                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Web search toggle**                                 | ✓              | ✘              | ✘              | Enabling/disabling web search modifies the system prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Citations toggle**                                  | ✓              | ✘              | ✘              | Enabling/disabling citations modifies the system prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Speed setting**                                     | ✓              | ✘              | ✘              | Switching between [`speed: "fast"` and standard speed](build-with-claude-fast-mode.md) invalidates system and message caches                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Tool choice**                                       | ✓              | ✓              | ✘              | Changes to `tool_choice` parameter only affect message blocks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **Images**                                            | ✓              | ✓              | ✘              | Adding/removing images anywhere in the prompt affects message blocks                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Thinking parameters**                               | Model-specific | Model-specific | ✘              | The thinking configuration (mode, and `budget_tokens` in extended mode) is rendered into the prompt, so changing it always invalidates message blocks; tool and system caches are also invalidated on models that render the configuration ahead of them. See [Thinking and prompt caching](build-with-claude-thinking.md#thinking-and-prompt-caching).                                                                                                                                                                                |
+| **Effort setting**                                    | Model-specific | Model-specific | ✘              | Changing the [`output_config.effort`](build-with-claude-effort.md) value always invalidates message blocks, with the same model-specific effect on tool and system caches as thinking parameters. Setting effort explicitly to the model's default is equivalent to omitting it and does not invalidate. On models that support [per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta), an effort change carried in a `role: "system"` message inside `messages` leaves the cached prefix intact. |
+| **Non-tool results passed to requests with thinking** | ✓              | ✓              | Model-specific | On Opus 4.5+, Sonnet 4.6+, and Haiku 5.5, thinking blocks are preserved by default, so the cache remains valid (✓). On earlier Opus/Sonnet models and Haiku models through Claude Haiku 4.5, all previously-cached thinking blocks are stripped from context, and any messages that follow those thinking blocks are removed from the cache (✘). For more details, see [Caching with thinking blocks](#caching-with-thinking-blocks).                                                                                                        |
+| **Dropped thinking blocks**                           | ✓              | ✓              | ✘              | When the API drops a Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Sonnet 5.5, or Claude Haiku 5.5 thinking block that isn't [preserved](build-with-claude-thinking.md#preserved-thinking) on that request (for example, one you replay to a model that can't read it), the cached prefix changes from that block's position onward on that request. Blocks the receiving model can read, passed back unchanged, keep the cache intact.                                                                                 |
 
 On models that support [mid-conversation tool changes](build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes), the `inline-tools-2026-09-15` beta header lets you add a tool, or change a tool's definition, partway through a conversation without editing `tools`. Send the definition in a `tool_addition` block in a mid-conversation system message and leave `tools` exactly as you first sent it. The cached prefix still matches, so only the appended message is processed as new input. The one exception is a `tools` array with no non-deferred tool, where the first tool defined this way costs one full cache miss on that request. See [Define tools in a message](build-with-claude-mid-conversation-system-messages.md#define-tools-in-a-message-beta).
 
 
 
-On Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, [Claude Mythos 5](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 4.8, Claude Opus 5, and Claude Sonnet 5.5, you can add a new system instruction partway through a conversation without invalidating the system or message caches. Append a `{"role": "system"}` message to `messages` instead of editing the top-level `system` field, so the cached prefix stays unchanged. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. See [Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md).
+On Claude Fable 5.1, [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md), Claude Fable 5, [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md), Claude Opus 5.5, Claude Opus 4.8, Claude Opus 5, Claude Sonnet 5.5, and Claude Haiku 5.5, you can add a new system instruction partway through a conversation without invalidating the system or message caches. Append a `{"role": "system"}` message to `messages` instead of editing the top-level `system` field, so the cached prefix stays unchanged. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. See [Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md).
 
 ### Tracking cache performance
 
@@ -506,8 +510,8 @@ When using [thinking](build-with-claude-thinking.md) with prompt caching, thinki
 **Cache invalidation patterns:**
 
 - Cache remains valid when only tool results are provided as user messages
-- On Opus 4.5+ and Sonnet 4.6+, thinking blocks are preserved by default even when non-tool-result user content is added, so the cache remains valid
-- On earlier Opus/Sonnet models and all Haiku models, cache gets invalidated when non-tool-result user content is added, causing all previous thinking blocks to be stripped from context
+- On Opus 4.5+, Sonnet 4.6+, and Haiku 5.5, thinking blocks are preserved by default even when non-tool-result user content is added, so the cache remains valid
+- On earlier Opus/Sonnet models and Haiku models through Claude Haiku 4.5, cache gets invalidated when non-tool-result user content is added, causing all previous thinking blocks to be stripped from context
 - This caching behavior occurs even without explicit `cache_control` markers
 
 For more details on cache invalidation, see [What invalidates the cache](#what-invalidates-the-cache).
@@ -532,12 +536,12 @@ Assistant: [thinking_block_1] + [tool_use block 1],
 User: [tool_result_1, cache=True],
 Assistant: [thinking_block_2] + [text block 2],
 User: [Text response, cache=True]
-# On earlier Opus/Sonnet and all Haiku models, non-tool-result user block causes prior thinking blocks to be stripped; on Opus 4.5+/Sonnet 4.6+ they are kept
+# Depending on the model, this non-tool-result user block either keeps prior thinking blocks or strips them (see the next paragraph)
 ```
 
 
 
-On earlier Opus/Sonnet models and all Haiku models, all previous thinking blocks are removed from context at this point. On Opus 4.5+ and Sonnet 4.6+, prior thinking blocks are kept by default and remain part of the cached prefix.
+On earlier Opus/Sonnet models and Haiku models through Claude Haiku 4.5, all previous thinking blocks are removed from context at this point. On Opus 4.5+, Sonnet 4.6+, and Haiku 5.5, prior thinking blocks are kept by default and remain part of the cached prefix.
 
 For more detailed information, see [Thinking and prompt caching](build-with-claude-thinking.md#thinking-and-prompt-caching).
 
@@ -713,6 +717,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -800,6 +806,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -889,6 +897,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -992,6 +1002,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -1071,6 +1083,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -1209,7 +1223,7 @@ Prompt caching (both automatic and explicit) is ZDR eligible. Anthropic does not
 
 KV (key-value) cache representations and cryptographic hashes of cached content are held in memory only and are not stored at rest. Cached entries have a minimum lifetime of 5 minutes (standard) or 1 hour (extended), after which they are promptly, though not immediately, deleted. Cache entries are isolated between organizations and, on the Claude API, Claude Platform on AWS, and Microsoft Foundry, between workspaces within an organization.
 
-For ZDR eligibility across all features, see [API and data retention](build-with-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 ------------------------------------------------------------------------
 

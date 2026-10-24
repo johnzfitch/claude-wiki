@@ -1,12 +1,14 @@
 ---
 title: "Set up and manage the new unified Claude experience for your Enterprise organization | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/17444462-set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization"
+source_url: "https://support.claude.com/en/articles/17444462"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:50Z"
+fetched_at: "2026-10-23T06:29:16Z"
 tags: ["enterprise"]
 ---
 
 # Set up and manage the new unified Claude experience for your Enterprise organization
+
+Updated today
 
 
 The new unified Claude experience brings chat and Cowork together on web, desktop, and mobile. Members no longer choose between chat and Cowork before they start. Every conversation starts as a chat, and when a task needs to run code or work with files, Claude continues the same conversation in an isolated cloud sandbox managed by Anthropic, then returns the finished work for review.
@@ -27,7 +29,7 @@ The new unified Claude experience is in public beta for Claude Enterprise plans.
 
 4.  Work moves across devices. Members can start a task on the desktop app and pick it up on web or mobile.
 
-5.  Local access stays optional. Through the Claude desktop app, members can link their computers so Claude can work with local folders, local MCP servers, and applications. Your Remote control and device policies govern this.
+5.  Local access stays optional. Through the Claude desktop app, members can link their computers so Claude can work with local folders, local MCP servers, and applications. Your Computer access and device policies govern this.
 
 ------------------------------------------------------------------------
 
@@ -87,7 +89,7 @@ To learn how to create a role, see **[Set up role-based permissions on Enterpris
 
 3.  Start in your sandbox organization, if you have one, or with a pilot group through a role.
 
-4.  Review your network egress, connector, sharing, and remote control settings before you turn the experience on.
+4.  Review your network egress, connector, sharing, and Computer access settings before you turn the experience on.
 
 5.  Monitor usage and gather feedback for two to four weeks, then expand in waves.
 
@@ -105,13 +107,23 @@ For recommended Security settings and architecture, see **[Unified Claude and Co
 
 ## Data retention and deletion
 
-1.  Conversations. Conversations are kept until the member deletes them or according to your organization's custom data retention setting (30-day minimum). See **[custom data retention](https://support.claude.com/en/articles/10440198)**.
+1.  **Conversations.** Conversations are kept until the member deletes them or according to your organization's custom data retention setting if you’ve set one (minimum 30 days). See **[custom data retention](https://support.claude.com/en/articles/10440198)**. Conversations in a project follow the project’s retention period. The period is measured from the most recent activity in the conversation or in any cloud session Claude started from it, so a conversation isn’t deleted while one of its cloud sessions is in use.
 
-2.  Cloud sessions started from a conversation. When Claude starts a cloud session in a conversation, that session is deleted together with the conversation per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**: when a member deletes the conversation or its project, or when it reaches your custom retention period. The sandbox environment expires 30 days after it was created, and the conversation then continues in a fresh environment.
+2.  **Cloud sessions started from a conversation.** When a conversation is deleted, whether by a member, by deleting its project, or under your retention period, the cloud sessions Claude started in it are deleted too, including their transcripts.
 
-3.  Cloud sessions started outside a conversation. Cowork cloud sessions that a member starts on their own, whether or not they're in a project, and scheduled task runs don't belong to a conversation. Custom data retention doesn't cover them.
+3.  **Artifacts.** When a conversation is deleted under your retention period, the artifacts made in it aren't deleted with it. They follow the retention period that covers artifacts, if you have one. Research reports and artifacts in some older chats are the exception, and they're deleted with their conversation.
 
-4.  Once the new unified Claude experience is turned on, memory will no longer be deleted according to your organization’s custom data retention setting for the public beta. Memory deletion will be covered by custom data retention when the new unified Claude experience is generally available.
+4.  **Not deleted with a conversation.** Custom data retention doesn’t cover:
+
+    1.  Cowork cloud sessions a member starts directly, including in a project. These are kept until the member deletes them.
+
+    2.  Scheduled tasks and their runs, including tasks created from a conversation. These keep running after that conversation is deleted. To prevent this, turn off Scheduled tasks.
+
+    3.  Cowork history stored on a member’s computer.
+
+5.  **Memory during the public beta.** Memory isn’t covered by your retention setting during the beta. When you turn on the new experience, each member’s existing memory is copied into it, and memory from conversations that are later deleted can remain. If you turn the experience off, that memory is kept. We plan to apply your retention setting to memory, including memory created during the beta, at general availability, and will update this article.
+
+As with chat, we may retain content flagged by our trust and safety systems or as required by law. See **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**
 
 ------------------------------------------------------------------------
 
@@ -185,4 +197,4 @@ When on, org members can use only Sonnet and Haiku models in the new unified Cla
 
 1.  **ZDR, HIPAA, and CMEK.** The new unified Claude experience isn't available to organizations with zero data retention, the HIPAA-ready configuration, or customer-managed encryption keys. These organizations stay on their current configuration. HIPAA and CMEK support is expected after general availability.
 
-2.  **Per-role access for Remote control and scheduled tasks.** These are set for the whole organization, not per role.
+2.  **Per-role access for Computer access and scheduled tasks.** These are set for the whole organization, not per role.

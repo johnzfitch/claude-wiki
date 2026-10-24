@@ -2,7 +2,7 @@
 title: "Projects - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/apps/chat/projects"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-10T06:24:17Z"
+fetched_at: "2026-10-18T06:26:24Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fapps%2Fchat%2Fprojects)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fapps%2Fchat%2Fprojects)
 
 
 
@@ -163,6 +163,8 @@ Plugins
 
 Plugin Marketplaces
 
+Telemetry Destinations
+
 
 Skills
 
@@ -232,13 +234,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -248,7 +252,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -257,13 +261,19 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
 5.  [Apps](https://platform.claude.com/docs/en/api/http/beta/organization/analytics/apps)
 6.  [Chat](https://platform.claude.com/docs/en/api/http/beta/organization/analytics/apps/chat)
 
 # Projects
+
+Copy page
+
+
+
+cURL
 
 ##### [Get Chat Project Usage](http-beta-organization-analytics-apps-chat-projects-list.md)
 

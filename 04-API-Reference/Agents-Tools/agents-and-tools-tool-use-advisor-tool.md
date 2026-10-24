@@ -2,7 +2,7 @@
 title: "Advisor tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:32:00Z"
+fetched_at: "2026-10-20T06:36:52Z"
 tags: ["agents", "api", "billing", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api", "billing", "prompting"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fadvisor-tool)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fadvisor-tool)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Tools
 
@@ -100,7 +100,7 @@ This pattern fits long-horizon agentic workloads (coding agents, computer use, m
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 ## When to use it
 
@@ -137,6 +137,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -150,7 +152,7 @@ response = client.beta.messages.create(
         {
             "type": "advisor_20260301",
             "name": "advisor",
-            "model": "claude-opus-5",
+            "model": "claude-opus-5-5",
         }
     ],
     messages=[
@@ -164,7 +166,7 @@ response = client.beta.messages.create(
 print(response)
 ```
 
-The response `content` includes an `advisor_tool_result` block carrying the advisor's guidance. With `claude-opus-5` as the advisor, as in this quick start, the block's `content` field is an `advisor_redacted_result` variant (encrypted; the executor reads it server-side, but your client does not). To see the advice text directly in your response, use `claude-opus-4-8` as the advisor model instead, which returns the plaintext `advisor_result` variant. See [Result variants](#result-variants) for both shapes side by side and which advisor models return which, and [Model compatibility](#model-compatibility) for the full list of valid pairs.
+The response `content` includes an `advisor_tool_result` block carrying the advisor's guidance. With `claude-opus-5-5` as the advisor, as in this quick start, the block's `content` field is an `advisor_redacted_result` variant (encrypted; the executor reads it server-side, but your client does not). To see the advice text directly in your response, use `claude-opus-4-8` as the advisor model instead, which returns the plaintext `advisor_result` variant. See [Result variants](#result-variants) for both shapes side by side and which advisor models return which, and [Model compatibility](#model-compatibility) for the full list of valid pairs.
 
 ## How it works
 
@@ -191,7 +193,7 @@ The advisor tool also accepts the generic properties available on any tool defin
 
 ### Successful advisor call
 
-When the advisor is called, a `server_tool_use` block is followed by an `advisor_tool_result` block in the assistant's content. The following example shows the plaintext `advisor_result` variant returned by a Claude Opus 4.8 advisor. The [Quick start](#quick-start) uses Claude Opus 5, which returns the encrypted `advisor_redacted_result` variant instead; see [Result variants](#result-variants) for both shapes side by side.
+When the advisor is called, a `server_tool_use` block is followed by an `advisor_tool_result` block in the assistant's content. The following example shows the plaintext `advisor_result` variant returned by a Claude Opus 4.8 advisor. The [Quick start](#quick-start) uses Claude Opus 5.5, which returns the encrypted `advisor_redacted_result` variant instead; see [Result variants](#result-variants) for both shapes side by side.
 
 ```python
 {
@@ -238,7 +240,7 @@ The `advisor_tool_result.content` field is a discriminated union. For successful
 
 
 
-Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 advisors return the encrypted `advisor_redacted_result`. Every other advisor model in the [compatibility table](#model-compatibility) returns the plaintext `advisor_result`. To read the advice text in your own responses, use an advisor that returns plaintext, such as `claude-opus-4-8`, where your executor's row in the [compatibility table](#model-compatibility) lists one. Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 executors pair only with advisors that return the encrypted form, so on those executors the advice text isn't readable in the response.
+Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, Claude Mythos 5, and Claude Haiku 5.5 advisors return the encrypted `advisor_redacted_result`. Every other advisor model in the [compatibility table](#model-compatibility) returns the plaintext `advisor_result`. To read the advice text in your own responses, use an advisor that returns plaintext, such as `claude-opus-4-8`, where your executor's row in the [compatibility table](#model-compatibility) lists one. Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 executors pair only with advisors that return the encrypted form, so on those executors the advice text isn't readable in the response.
 
 Here is the same request sent twice, identical except for the advisor `model` in the tool definition, showing both variants.
 
@@ -257,7 +259,7 @@ With `"model": "claude-opus-4-8"`, the advice is plaintext:
 
 
 
-With `"model": "claude-opus-5"`, the advice is encrypted:
+With `"model": "claude-opus-5-5"`, the advice is encrypted:
 
 ```python
 {
@@ -311,7 +313,7 @@ Advisor rate limits draw from the same per-model bucket as direct calls to the a
 
 ## Multi-turn conversations
 
-Pass the full assistant content, including `advisor_tool_result` blocks, back to the API on subsequent turns. Round-trip the result blocks verbatim: with a Claude Opus 5 advisor the result block's `content` is the encrypted `advisor_redacted_result` variant, and the server decrypts it and renders the advice into the executor's prompt on the next turn (see [Result variants](#result-variants)). The mechanics are identical for any advisor model.
+Pass the full assistant content, including `advisor_tool_result` blocks, back to the API on subsequent turns. Round-trip the result blocks verbatim: with a Claude Opus 5.5 advisor the result block's `content` is the encrypted `advisor_redacted_result` variant, and the server decrypts it and renders the advice into the executor's prompt on the next turn (see [Result variants](#result-variants)). The mechanics are identical for any advisor model.
 
 Python
 
@@ -327,6 +329,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -336,7 +340,7 @@ tools = [
     {
         "type": "advisor_20260301",
         "name": "advisor",
-        "model": "claude-opus-5",
+        "model": "claude-opus-5-5",
     }
 ]
 
@@ -382,7 +386,7 @@ A response can end with `stop_reason: "pause_turn"` while an advisor call is sti
 
 ### Mid-conversation nudge for under-calling executors
 
-If a Haiku executor has not called the advisor in its first assistant turn, append a short reminder as an additional user message before the second assistant turn. In Anthropic's internal behavioral evaluation this raised task pass rates by roughly 7 percentage points on Haiku executors. On Sonnet executors, the plain-text nudge had no measurable effect in Anthropic's testing. The call-timing considerations that follow are especially relevant for Sonnet. Do not apply the nudge to Opus executors: On Opus it slightly lowered pass rates.
+If a Haiku executor has not called the advisor in its first assistant turn, append a short reminder as an additional user message before the second assistant turn. In Anthropic's internal behavioral evaluation on Claude Haiku 4.5 executors, this raised task pass rates by roughly 7 percentage points. On Sonnet executors, the plain-text nudge had no measurable effect in Anthropic's testing. The call-timing considerations that follow are especially relevant for Sonnet. Do not apply the nudge to Opus executors: On Opus it slightly lowered pass rates.
 
 With the default `NUDGE_TURN` of 2, the reminder typically arrives after the model has oriented on the task but before it has committed to an approach.
 
@@ -399,6 +403,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -428,7 +434,11 @@ def run_your_tools(content):
 
 
 tools = [
-    {"type": "advisor_20260301", "name": "advisor", "model": "claude-opus-5"},
+    {
+        "type": "advisor_20260301",
+        "name": "advisor",
+        "model": "claude-opus-5-5",
+    },
     # ... your other tools
 ]
 task = "Build a concurrent worker pool in Go with graceful shutdown."
@@ -437,7 +447,7 @@ advisor_called = False
 
 for turn in range(1, MAX_TURNS + 1):
     response = client.beta.messages.create(
-        model="claude-haiku-4-5",
+        model="claude-haiku-5-5",
         max_tokens=4096,
         betas=["advisor-tool-2026-03-01"],
         tools=tools,
@@ -448,10 +458,10 @@ for turn in range(1, MAX_TURNS + 1):
         block.type == "server_tool_use" and block.name == "advisor"
         for block in response.content
     )
-    if response.stop_reason == "end_turn":
-        break
     if response.stop_reason == "pause_turn":
         continue  # server tool pending; re-send to let the API complete it
+    if response.stop_reason != "tool_use":
+        break  # end_turn, or a stop such as max_tokens that needs handling (see below)
 
     results = run_your_tools(response.content)  # list of tool_result blocks
     if results:
@@ -461,11 +471,13 @@ for turn in range(1, MAX_TURNS + 1):
         messages.append({"role": "user", "content": NUDGE_TEXT})
 ```
 
-Append the nudge as its own user message after the tool results rather than as a sibling block in the same message. Consecutive user messages are valid. In Anthropic's testing on Haiku and Sonnet executors they behaved equivalently to a sibling block. The separate-message shape also keeps the reminder clearly distinct from tool output.
+The loop ends on any stop reason other than `tool_use` or `pause_turn`. If `max_tokens` cuts a response off, drop the truncated assistant turn from `messages` and [retry with a higher `max_tokens`](../Guides/build-with-claude-handling-stop-reasons.md#max-tokens). When that turn contains no `tool_use` block, you can instead keep it and [continue the response](../Guides/build-with-claude-handling-stop-reasons.md#ensuring-complete-responses) with a new user message. Re-sending the truncated assistant turn as the last message is a [prefill](../Endpoints/errors.md#prefill-not-supported), which Claude 4.6 and later models reject.
+
+Append the nudge as its own user message after the tool results rather than as a sibling block in the same message. Consecutive user messages are valid. In Anthropic's testing on Claude Haiku 4.5 and Sonnet executors they behaved equivalently to a sibling block. The separate-message shape also keeps the reminder clearly distinct from tool output.
 
 **Trade-offs:** The nudge raises the call rate, which can push trivially simple tasks into an unnecessary consult. If your workload mixes simple and complex tasks, consider raising `NUDGE_TURN` to 3 so two-turn tasks complete before the nudge fires, or gate the nudge on a task-complexity signal you already compute. If your system prompt already contains restraint language ("reserve the advisor for genuine uncertainty"), skip the nudge entirely, because the two instructions conflict.
 
-The plain-text nudge is highly salient on Haiku and Sonnet executors: 74 percent (Sonnet) to 98 percent (Haiku) of nudged attempts in Anthropic's testing called the advisor immediately at turn 2. If that lands before your executor has read the problem or gathered context, the resulting advisor call is low-context and can displace a better-timed later call. Measure your executor's baseline first-call turn before adding the nudge. If the executor already calls the advisor reliably and its first call typically lands at turn N, set `NUDGE_TURN` greater than N. In Anthropic's testing, a turn-2 nudge on workloads where the baseline first call was turn 7 or later correlated with a 3 to 4 percentage-point task-performance drop. On a browse workload where the baseline call rate was 86 percent, the same nudge raised engagement with no task-performance cost.
+The plain-text nudge is highly salient on Claude Haiku 4.5 and Sonnet executors: 74 percent (Sonnet) to 98 percent (Claude Haiku 4.5) of nudged attempts in Anthropic's testing called the advisor immediately at turn 2. If that lands before your executor has read the problem or gathered context, the resulting advisor call is low-context and can displace a better-timed later call. Measure your executor's baseline first-call turn before adding the nudge. If the executor already calls the advisor reliably and its first call typically lands at turn N, set `NUDGE_TURN` greater than N. In Anthropic's testing, a turn-2 nudge on workloads where the baseline first call was turn 7 or later correlated with a 3 to 4 percentage-point task-performance drop. On a browse workload where the baseline call rate was 86 percent, the same nudge raised engagement with no task-performance cost.
 
 To force a consult on a specific request instead of nudging, set `tool_choice` to `{"type": "tool", "name": "advisor"}`, subject to the constraints in [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). Forcing tool use cannot be combined with manual extended thinking (`thinking: {type: "enabled"}`): the API returns a `400 invalid_request_error` if you enable both. Adaptive thinking supports forced tool use. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 executors reject `tool_choice` types `tool` and `any`, so use the prompt nudge on those models instead.
 
@@ -500,7 +512,7 @@ Advisor calls run as a separate sub-inference billed at the advisor model's rate
       },
       {
         "type": "advisor_message",
-        "model": "claude-opus-5",
+        "model": "claude-opus-5-5",
         "input_tokens": 823,
         "cache_read_input_tokens": 0,
         "cache_creation_input_tokens": 0,
@@ -556,6 +568,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -563,7 +577,7 @@ tools = [
     {
         "type": "advisor_20260301",
         "name": "advisor",
-        "model": "claude-opus-5",
+        "model": "claude-opus-5-5",
         "caching": {"type": "ephemeral", "ttl": "5m"},
     }
 ]
@@ -577,7 +591,7 @@ The advisor's prompt on the Nth call is the (N-1)th call's prompt with one more 
 
 
 
-[`clear_thinking`](../Guides/build-with-claude-context-editing.md) with a `keep` value other than `"all"` shifts the advisor's quoted transcript each turn, causing advisor-side cache misses. This is a cost degradation only. Advice quality is unaffected. When extended thinking is enabled without explicit `clear_thinking` configuration, the API defaults to `keep: {type: "thinking_turns", value: 1}`, which triggers this behavior (the default on earlier Opus/Sonnet models and all Haiku models, whereas on Opus 4.5+ and Sonnet 4.6+ the default is to keep all turns). Set `keep: "all"` to preserve advisor cache stability.
+[`clear_thinking`](../Guides/build-with-claude-context-editing.md) with a `keep` value other than `"all"` shifts the advisor's quoted transcript each turn, causing advisor-side cache misses. This is a cost degradation only. Advice quality is unaffected. When thinking is on without explicit `clear_thinking` configuration, the API defaults to `keep: {type: "thinking_turns", value: 1}`, which triggers this behavior (the default on earlier Opus and Sonnet models and on Haiku models through Claude Haiku 4.5; on Claude Opus 4.5 and later Opus models, Claude Sonnet 4.6 and later Sonnet models, and Claude Haiku 5.5, the default is to keep all turns). Set `keep: "all"` to preserve advisor cache stability.
 
 ## Combining with other tools
 
@@ -597,6 +611,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -609,7 +625,7 @@ tools = [
     {
         "type": "advisor_20260301",
         "name": "advisor",
-        "model": "claude-opus-5",
+        "model": "claude-opus-5-5",
     },
     {
         "name": "run_bash",
@@ -758,6 +774,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -765,7 +783,7 @@ tools = [
     {
         "type": "advisor_20260301",
         "name": "advisor",
-        "model": "claude-opus-5",
+        "model": "claude-opus-5-5",
         "max_tokens": 2048,
     }
 ]
@@ -828,7 +846,7 @@ The advisor tool is available in beta on the Claude API and on [Claude Platform 
 
 ## Advisor on Claude Managed Agents
 
-[Claude Managed Agents](../Other/managed-agents-overview.md) sessions support an advisor as well, configured as part of the agent rather than as a tool definition: add a `{"type": "advisor", "model": ...}` entry to the agent's multiagent roster, and the session's primary thread can consult that model mid-turn. The roster entry takes no `max_uses`, `max_tokens`, or `caching` options, and advice is delivered as thread events on the session's event stream rather than as `advisor_tool_result` blocks in the response. See [Give the session an advisor](../Other/managed-agents-multiagent-orchestration.md#give-the-session-an-advisor).
+[Claude Managed Agents](../Other/managed-agents-overview.md) sessions support an advisor as well, configured as part of the agent rather than as a tool definition: set `"advisor": {"type": "enabled", "model": ...}` in the agent's `multiagent` block, and the session's primary thread can consult that model mid-turn. The setting takes no `max_uses`, `max_tokens`, or `caching` options, and advice is delivered as thread events on the session's event stream rather than as `advisor_tool_result` blocks in the response. See [Give the session an advisor](../Other/managed-agents-multiagent-orchestration.md#give-the-session-an-advisor).
 
 ## Next steps
 

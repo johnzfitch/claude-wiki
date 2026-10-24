@@ -2,7 +2,7 @@
 title: "Troubleshooting thinking - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/thinking-troubleshooting"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:31Z"
+fetched_at: "2026-10-20T06:40:18Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fthinking-troubleshooting)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fthinking-troubleshooting)
 
 
 
@@ -40,7 +40,7 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
@@ -48,7 +48,7 @@ Model capabilities
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -80,7 +80,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Thinking
 
@@ -98,7 +98,7 @@ Diagnose and fix the most common thinking failures: configuration 400 errors, em
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 This page covers the most common failures when configuring thinking or round-tripping thinking blocks (sending returned thinking blocks back in later requests). The first section maps each model to its supported thinking configurations and the ones it rejects; the sections after it each start from a symptom you observe, so you can match an error message or unexpected response directly to its cause and fix. To learn how thinking works, see the [Thinking](build-with-claude-thinking.md) overview.
 
@@ -111,7 +111,7 @@ Extended thinking (`thinking.type: "enabled"` with `budget_tokens`) is deprecate
 The table lists what each model supports, what it defaults to, and which `thinking.type` values it rejects with a 400 error; any value not listed as rejected is accepted. Only Claude Sonnet 5.5 accepts `"between_tools"`, and it takes that value in place of `"disabled"`.
 
 | Model                 | Thinking types                   | Default   | Rejected with 400          |
-|:----------------------|:---------------------------------|:----------|:---------------------------|
+|-----------------------|----------------------------------|-----------|----------------------------|
 | Claude Fable 5.1      | Adaptive only                    | Always on | `"enabled"`, `"disabled"`  |
 | Claude Mythos 5.1     | Adaptive only                    | Always on | `"enabled"`, `"disabled"`  |
 | Claude Fable 5        | Adaptive only                    | Always on | `"enabled"`, `"disabled"`  |
@@ -123,6 +123,7 @@ The table lists what each model supports, what it defaults to, and which `thinki
 | Claude Opus 4.7       | Adaptive only                    | Off       | `"enabled"`                |
 | Claude Sonnet 5.5     | Adaptive, `between_tools`³       | On        | `"enabled"`, `"disabled"`  |
 | Claude Sonnet 5       | Adaptive only                    | On        | `"enabled"`                |
+| Claude Haiku 5.5      | Adaptive only                    | On        | `"enabled"`, `"disabled"`² |
 | Claude Opus 4.6       | Adaptive, extended (deprecated)¹ | Off       | None                       |
 | Claude Sonnet 4.6     | Adaptive, extended (deprecated)¹ | Off       | None                       |
 | Claude Opus 4.5       | Extended only                    | Off       | `"adaptive"`               |
@@ -130,12 +131,12 @@ The table lists what each model supports, what it defaults to, and which `thinki
 | Claude Sonnet 4.5     | Extended only                    | Off       | `"adaptive"`               |
 
 *¹ `enabled` and `budget_tokens` still work on these models but are deprecated; use adaptive thinking instead.*  
-*² Claude Opus 5 accepts `"disabled"` at [effort](build-with-claude-effort.md) `high` or below; combining it with effort `xhigh` or `max` returns a 400 error. This restriction is enforced on each request.*  
+*² Claude Opus 5 and Claude Haiku 5.5 accept `"disabled"` at [effort](build-with-claude-effort.md) `high` or below; combining it with effort `xhigh` or `max` returns a 400 error. On Claude Opus 5, this restriction is enforced on each request. On Claude Haiku 5.5, a per-message effort that differs from the level in effect also returns a 400 error.*  
 *³ Claude Sonnet 5.5 accepts `"between_tools"` at effort `high` or below. Combining it with effort `xhigh` or `max` returns a 400 error, and so does a per-message effort that differs from the level in effect.*
 
-Models marked `Always on` cannot turn thinking off. Models marked `On` default to thinking. Claude Opus 5 and Claude Sonnet 5 accept `thinking: {type: "disabled"}`. On Claude Sonnet 5.5, send `thinking: {type: "between_tools"}` to turn off up-front thinking.
+Models marked `Always on` cannot turn thinking off. Models marked `On` default to thinking. Claude Opus 5, Claude Sonnet 5, and Claude Haiku 5.5 accept `thinking: {type: "disabled"}`. On Claude Sonnet 5.5, send `thinking: {type: "between_tools"}` to turn off up-front thinking.
 
-Earlier Claude 4 models (Claude Opus 4.1, Claude Sonnet 4, and Claude Opus 4) support extended thinking only. See [Model deprecations](../../20-Models/about-claude-model-deprecations.md) for their availability. Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 are not available under [zero data retention](build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements) unless expressly authorized by Anthropic.
+Earlier Claude 4 models (Claude Opus 4.1, Claude Sonnet 4, and Claude Opus 4) support extended thinking only. See [Model deprecations](../../20-Models/about-claude-model-deprecations.md) for their availability. Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 are not available under [zero data retention](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements) unless expressly authorized by Anthropic.
 
 ## A 400 error says `"thinking.type.enabled"` is not supported
 
@@ -173,7 +174,7 @@ This happens because thinking is always on for all of these models (see the [per
 
 Omit the `thinking` parameter; these models think without any configuration. If your goal was to keep thinking text out of responses, use `display: "omitted"` instead of disabling thinking; see [Controlling thinking display](build-with-claude-thinking.md#controlling-thinking-display).
 
-A 400 error on `"disabled"` can also occur on Claude Opus 5, which accepts `thinking: {type: "disabled"}` only at [effort](build-with-claude-effort.md) `high` or below: combining it with effort `xhigh` or `max` is rejected. Lower the effort level, or leave thinking on.
+A 400 error on `"disabled"` can also occur on Claude Opus 5 and Claude Haiku 5.5, which accept `thinking: {type: "disabled"}` only at [effort](build-with-claude-effort.md) `high` or below: combining it with effort `xhigh` or `max` is rejected. Lower the effort level, or set `thinking` to `{"type": "adaptive"}`.
 
 On Claude Sonnet 5.5, `thinking: {type: "disabled"}` returns a 400 error at every effort level. The message reads:
 
@@ -213,6 +214,8 @@ This happens because Claude Sonnet 5.5 accepts `between_tools` only at [effort](
 
 Lower the effort to `high` or below. To run at `xhigh` or `max`, use adaptive thinking: omit the `thinking` field or send `thinking: {"type": "adaptive"}`. That's what the message means by "enable thinking". Claude Sonnet 5.5 rejects `"enabled"` with a 400 error.
 
+Claude Haiku 5.5 returns the same message when a request sends `thinking: {type: "disabled"}` at effort `xhigh` or `max`. It accepts `"disabled"` only at `high` or below. Lower the effort, or set `thinking` to `{"type": "adaptive"}`.
+
 ## A 400 error says effort cannot change when thinking is disabled
 
 On Claude Sonnet 5.5, a request with `thinking: {type: "between_tools"}` whose [per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta) changes the level fails with a 400 error whose message reads:
@@ -225,7 +228,9 @@ messages.N: output_config.effort 'low' differs from the 'high' in effect before 
 
 The message says thinking is disabled because `between_tools` has no up-front thinking. With `between_tools`, effort can't change mid-conversation: a per-message `output_config.effort` that differs from the level in effect returns a 400 error. `messages.N` is the position of the message that set the new level.
 
-Remove that per-message effort, or set it to the level in effect. To vary effort per turn, use adaptive thinking, which is what the message means by "enable thinking".
+Remove that per-message effort, or set it to the level in effect. To vary effort per turn, use adaptive thinking: omit the `thinking` field or send `thinking: {"type": "adaptive"}`. That's what the message means by "enable thinking".
+
+Claude Haiku 5.5 returns the same message when a request with `thinking: {type: "disabled"}` sets a per-message effort that differs from the level in effect. Remove that per-message effort, or set `thinking` to `{"type": "adaptive"}` to vary effort per turn.
 
 ## A 400 error says adaptive thinking is not supported
 
@@ -257,7 +262,7 @@ Echo the assistant turn back verbatim, thinking blocks included. See [Preserving
 
 ## A 400 error says a thinking block signature is invalid
 
-A request to Claude Fable 5.1, Claude Opus 5.5, or Claude Sonnet 5.5 that replays earlier thinking blocks fails with a 400 `invalid_request_error` whose message reads:
+A request to Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, or Claude Haiku 5.5 that replays earlier thinking blocks fails with a 400 `invalid_request_error` whose message reads:
 
 ``` block
 messages.{i}.content.{j}: Invalid `signature` in `thinking` block. The block is bound to a different conversation. Remove the block, or set `thinking.block_binding.prefix_mismatch_behavior` to "drop_block".
@@ -271,9 +276,9 @@ The message usually ends with a sentence naming what changed: the `system` promp
 
 If the message stops after `` Invalid `signature` in `thinking` block ``, the signature itself didn't verify: it was truncated, altered, or sent back empty, and `prefix_mismatch_behavior` doesn't apply. Edited thinking text returns a different error. See [A 400 error says thinking blocks cannot be modified](#error-thinking-blocks-modified).
 
-On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, the API accepts a replayed thinking block only while the `system` prompt, `tools`, and messages that preceded it are unchanged. See [Keeping the prefix unchanged](build-with-claude-preserved-thinking.md#prefix-check). The error means something earlier in the conversation changed between requests: an edited, reordered, or removed turn, a per-turn reminder that was injected and later removed, a rebuilt `system` prompt or `tools` array, or client-side compaction that kept recent turns and their thinking verbatim. The check is enforced for new accounts created on or after August 31, 2026, and for any request that sets `thinking.block_binding.prefix_mismatch_behavior`. Server-side [compaction](build-with-claude-compaction.md) and [context editing](build-with-claude-context-editing.md) never trigger it.
+On Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, the API accepts a replayed thinking block only while the `system` prompt, `tools`, and messages that preceded it are unchanged. See [Keeping the prefix unchanged](build-with-claude-preserved-thinking.md#prefix-check). The error means something earlier in the conversation changed between requests: an edited, reordered, or removed turn, a per-turn reminder that was injected and later removed, a rebuilt `system` prompt or `tools` array, or client-side compaction that kept recent turns and their thinking verbatim. The check is enforced for new accounts created on or after August 31, 2026, and for any request that sets `thinking.block_binding.prefix_mismatch_behavior`. Server-side [compaction](build-with-claude-compaction.md) and [context editing](build-with-claude-context-editing.md) never trigger it.
 
-To fix it, keep the history append-only: pass earlier turns back exactly as sent and received, add instructions with a [mid-conversation system message](build-with-claude-mid-conversation-system-messages.md) instead of editing `system` or `tools`, and let server-side [context editing](build-with-claude-context-editing.md) or [compaction](build-with-claude-compaction.md) do any trimming. Retrying the same request body doesn't clear the error. To continue this request without the invalidated reasoning, send the `thinking-binding-controls-2026-08-01` beta header and set `thinking.block_binding.prefix_mismatch_behavior` to `"drop_block"`. Alternatively, strip every `thinking` and `redacted_thinking` block from the history (at minimum the named block and every one after it, in that turn and all later turns), leave each turn's other blocks in place, and retry once. On Claude Sonnet 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools`, keep the history append-only, or strip the thinking blocks from the edited turn on.
+To fix it, keep the history append-only: pass earlier turns back exactly as sent and received, add instructions with a [mid-conversation system message](build-with-claude-mid-conversation-system-messages.md) instead of editing `system` or `tools`, and let server-side [context editing](build-with-claude-context-editing.md) or [compaction](build-with-claude-compaction.md) do any trimming. Retrying the same request body doesn't clear the error. To continue this request without the invalidated reasoning, send the `thinking-binding-controls-2026-08-01` beta header and set `thinking.block_binding.prefix_mismatch_behavior` to `"drop_block"`. Alternatively, strip every `thinking` and `redacted_thinking` block from the history (at minimum the named block and every one after it, in that turn and all later turns), leave each turn's other blocks in place, and retry once. On Claude Sonnet 5.5 and Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools` on Claude Sonnet 5.5, or `thinking: {"type": "disabled"}` on Claude Haiku 5.5, keep the history append-only, or strip the thinking blocks from the edited turn on.
 
 A block from a model the target model can't read never produces this error: the API drops it and, under the beta header, reports it in `input_transformations`.
 
@@ -294,6 +299,8 @@ Some responses contain no `thinking` block at all, even though thinking is confi
 This is normal in adaptive mode: Claude skips thinking on requests it judges simple enough to answer directly.
 
 If you want thinking more often or more deeply, raise `effort` or steer with prompting; see [Steering how often Claude thinks](build-with-claude-thinking-steering-and-cost.md#tuning-thinking-behavior).
+
+A forced `tool_choice` (`{"type": "any"}` or a named tool) also returns no `thinking` block: the response starts with the tool call. To let the model think before it calls a tool, use `tool_choice: {"type": "auto"}` and say in the prompt when to use the tool.
 
 ## Tool calls or XML tags appear in the text output
 

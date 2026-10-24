@@ -2,7 +2,7 @@
 title: "Claude Haiku 5.5 system prompts - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-5-5"
 category: "20-Models"
-fetched_at: "2026-10-08T06:24:52Z"
+fetched_at: "2026-10-22T06:29:51Z"
 tags: ["models", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["models", "prompting"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Frelease-notes%2Fsystem-prompts%2Fclaude-haiku-5-5)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Frelease-notes%2Fsystem-prompts%2Fclaude-haiku-5-5)
 
 
 
@@ -58,7 +58,7 @@ Lifecycle and reference
 
 [Overview](release-notes-system-prompts-overview.md)[Claude Haiku 5.5](release-notes-system-prompts-claude-haiku-5-5.md)[Claude Sonnet 5.5](release-notes-system-prompts-claude-sonnet-5-5.md)[Claude Opus 5.5](release-notes-system-prompts-claude-opus-5-5.md)[Claude Fable 5.1](release-notes-system-prompts-claude-fable-5-1.md)[Claude Opus 5](release-notes-system-prompts-claude-opus-5.md)[Claude Sonnet 5](release-notes-system-prompts-claude-sonnet-5.md)[Claude Fable 5](release-notes-system-prompts-claude-fable-5.md)[Claude Opus 4.8](release-notes-system-prompts-claude-opus-4-8.md)[Claude Opus 4.7](release-notes-system-prompts-claude-opus-4-7.md)[Claude Sonnet 4.6](release-notes-system-prompts-claude-sonnet-4-6.md)[Claude Opus 4.6](release-notes-system-prompts-claude-opus-4-6.md)[Claude Opus 4.5](release-notes-system-prompts-claude-opus-4-5.md)[Claude Haiku 4.5](release-notes-system-prompts-claude-haiku-4-5.md)[Claude Sonnet 4.5](release-notes-system-prompts-claude-sonnet-4-5.md)[Claude Opus 4.1](release-notes-system-prompts-claude-opus-4-1.md)[Claude Opus 4](release-notes-system-prompts-claude-opus-4.md)[Claude Sonnet 4](release-notes-system-prompts-claude-sonnet-4.md)[Claude Sonnet 3.7](release-notes-system-prompts-claude-sonnet-3-7.md)[Claude Sonnet 3.5](release-notes-system-prompts-claude-sonnet-3-5.md)[Claude Haiku 3.5](release-notes-system-prompts-claude-haiku-3-5.md)[Claude Opus 3](release-notes-system-prompts-claude-opus-3.md)[Claude Haiku 3](release-notes-system-prompts-claude-haiku-3.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)System prompts
 
@@ -68,7 +68,7 @@ Lifecycle and reference
 
 
 
-See updates to the core system prompt for Claude Haiku 5.5 on [claude.ai](https://claude.ai) and the [Claude iOS app](https://anthropic.com/ios) and [Claude Android app](https://anthropic.com/android).
+See updates to the core system prompt for Claude Haiku 5.5 on [claude.ai](https://claude.ai), the [Claude iOS app](https://anthropic.com/ios), and the [Claude Android app](https://anthropic.com/android).
 
 Copy page
 

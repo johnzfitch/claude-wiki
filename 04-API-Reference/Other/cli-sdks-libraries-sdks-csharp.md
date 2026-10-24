@@ -2,7 +2,7 @@
 title: "C# SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/csharp"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:34Z"
+fetched_at: "2026-10-20T06:40:21Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "cli", "sdk"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fcsharp)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fcsharp)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
@@ -551,7 +551,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 1.  Changes to library internals that are technically public but not intended or documented for external use.
 2.  Changes that aren't expected to impact the vast majority of users in practice.
 
-Backward-compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
+Backward compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
 
 ## Additional resources
 

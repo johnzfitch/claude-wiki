@@ -2,7 +2,7 @@
 title: "Get started with Claude Dashboards | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17454700-get-started-with-claude-dashboards"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:26Z"
+fetched_at: "2026-10-23T06:29:14Z"
 tags: ["claude-ai"]
 ---
 
@@ -65,7 +65,7 @@ Say what you want to know, not just what to chart. "How do this month's signups 
 
 ## Share and send a dashboard
 
-Dashboards start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](discovering-publishing-customizing-and-sharing-artifacts.md)**.
+Dashboards start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
 
 ## Usage
 

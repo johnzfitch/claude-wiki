@@ -2,7 +2,7 @@
 title: "Can I use the Claude API for individual use? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8987200-can-i-use-the-claude-api-for-individual-use"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:25:37Z"
+fetched_at: "2026-10-23T06:29:17Z"
 tags: ["api"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Extend Claude Code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/features-overview"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-04T08:31:56Z"
+fetched_at: "2026-10-23T06:28:26Z"
 tags: ["agents", "claude-code", "hooks", "mcp", "plugins", "skills", "subagents"]
 ---
 
@@ -169,7 +169,7 @@ Both do work outside your main conversation. With subagents, Claude decides turn
 - **Subagents** are workers Claude spawns, each returning a summary to the conversation that spawned it
 - **[Dynamic workflows](workflows.md)** are scripts Claude writes that run many subagents in the background and return one result
 
-**Use a subagent** when you need a quick, focused worker: research a question, verify a claim, review a file. The subagent does the work and returns a summary, so your main conversation stays clean. Subagents that Claude named when it spawned them can also [message each other](../09-Agents-Patterns/sub-agents.md#what-loads-at-startup).**Use a dynamic workflow** when a job [outgrows a handful of subagents](workflows.md#when-to-use-a-workflow), or when you want the findings cross-checked before you see them, such as a codebase-wide audit, a large migration, or a plan drafted from several angles. To start one, [ask for a workflow in your prompt](workflows.md#ask-for-a-workflow-in-your-prompt).**To pass a finding from one of your sessions to another**, ask the first session’s Claude to send it. Claude delivers it with [cross-session messaging](cross-session-messaging.md). [Run agents in parallel](../09-Agents-Patterns/agents.md) compares the other ways to run more than one Claude at once, including sessions you hand off and check back on later.
+**Use a subagent** when you need a quick, focused worker: research a question, verify a claim, review a file. The subagent does the work and returns a summary, so your main conversation stays clean. Subagents that Claude [named](../09-Agents-Patterns/sub-agents.md#subagent-names) when it spawned them can also [message each other](../09-Agents-Patterns/sub-agents.md#what-loads-at-startup).**Use a dynamic workflow** when a job [outgrows a handful of subagents](workflows.md#when-to-use-a-workflow), or when you want the findings cross-checked before you see them, such as a codebase-wide audit, a large migration, or a plan drafted from several angles. To start one, [ask for a workflow in your prompt](workflows.md#ask-for-a-workflow-in-your-prompt).**To pass a finding from one of your sessions to another**, ask the first session’s Claude to send it. Claude delivers it with [cross-session messaging](cross-session-messaging.md). [Run agents in parallel](../09-Agents-Patterns/agents.md) compares the other ways to run more than one Claude at once, including sessions you hand off and check back on later.
 
 MCP connects Claude to external services. Skills extend what Claude knows, including how to use those services effectively.
 
@@ -187,7 +187,7 @@ Claude Code runs a hook at a lifecycle event; it loads a skill into context for 
 |------------------|----------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
 | **Runs**         | A shell command, HTTP request, MCP tool call, LLM prompt, or subagent                  | Instructions Claude reads and follows                                 |
 | **Triggered by** | [Lifecycle events](../07-Hooks/hooks.md#hook-events) such as `PostToolUse` or `SessionStart` | You typing `/<name>`, or Claude matching the description to your task |
-| **Determinism**  | Always fires on its event; the trigger is guaranteed                                   | Claude interprets the instructions; outcome can vary                  |
+| **Determinism**  | Fires on its event without Claude deciding                                             | Claude interprets the instructions; outcome can vary                  |
 | **Context cost** | Zero unless the hook returns output                                                    | Description loads each session; full content loads when used          |
 | **Best for**     | Linting after edits, blocking unsafe commands, logging, notifications                  | Workflows that need reasoning, reference material, multi-step tasks   |
 
@@ -235,7 +235,7 @@ Each feature has a different loading strategy and context cost:
 
 | Feature               | When it loads                                   | What loads                                                                                                                      | Context cost                                 |
 |-----------------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| **CLAUDE.md**         | Session start                                   | Full content                                                                                                                    | Every request                                |
+| **CLAUDE.md**         | Session start                                   | Full content of each file that loads at session start                                                                           | Every request                                |
 | **Output styles**     | Session start, and again when you switch styles | The active style’s full instructions; nothing for the Default style                                                             | Every request                                |
 | **Skills**            | Session start + when used                       | Descriptions at start, full content when used                                                                                   | Low (descriptions every request)\*           |
 | **MCP servers**       | Session start                                   | Tool names; full schemas on demand                                                                                              | Low until a tool is used                     |
@@ -264,7 +264,7 @@ Each feature loads at different points in your session. The tabs below explain w
 
 - Hooks
 
-**When:** Session start**What loads:** Full content of all CLAUDE.md files (managed, user, and project levels).**Inheritance:** Claude reads CLAUDE.md files from your working directory up to the root, and discovers nested ones in subdirectories as it accesses those files. See [How CLAUDE.md files load](memory.md#how-claude-md-files-load) for details.
+**When:** Session start**What loads:** Full content of each CLAUDE.md file that loads at session start (managed, user, and project levels).**Inheritance:** Claude reads CLAUDE.md files from your working directory up to the root, and discovers nested ones in subdirectories as it accesses those files. See [How CLAUDE.md files load](memory.md#how-claude-md-files-load) for details. If a nested CLAUDE.md is over its [per-file size limit](memory.md#claude-ignores-the-end-of-my-subdirectory-claude-md), Claude receives only the start of the file.
 
 Keep CLAUDE.md under 200 lines. Move reference material to skills, which load on demand. To get [trim proposals for a checked-in CLAUDE.md](memory.md#my-claude-md-is-too-large), run `/doctor`.
 
@@ -284,7 +284,7 @@ The LSP tool is inactive until you install a [code intelligence plugin](../08-Pl
 
 - The agent’s own system prompt, not the Claude Code system prompt
 - Full content of skills listed in the agent’s `skills:` field
-- CLAUDE.md and git status, except the built-in Explore and Plan agents [omit both](../09-Agents-Patterns/sub-agents.md#what-loads-at-startup), and an agent whose definition sets [`omitClaudeMd`](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields) skips the user, project, and local CLAUDE.md files
+- CLAUDE.md and git status. The built-in Explore and Plan agents [start with neither](../09-Agents-Patterns/sub-agents.md#what-loads-at-startup), and an agent whose definition sets [`omitClaudeMd`](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields) starts without the user, project, and local CLAUDE.md files.
 - Whatever context the lead agent passes in the prompt
 
 For a [fork](../09-Agents-Patterns/sub-agents.md#fork-the-current-conversation), Claude Code loads the parent’s conversation so far, system prompt, and tools instead.**Context cost:** Isolated from main session.

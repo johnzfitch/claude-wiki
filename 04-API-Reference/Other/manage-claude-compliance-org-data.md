@@ -2,7 +2,7 @@
 title: "List organizations, users, roles, groups, and settings - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-org-data"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:31Z"
+fetched_at: "2026-10-20T06:37:54Z"
 tags: ["api", "plugins"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "plugins"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-org-data)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-org-data)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Compliance API
 
@@ -80,7 +82,7 @@ To enable the Compliance API, see [Set up the Compliance API](manage-claude-comp
 
 
 
-**Required scope:** `read:compliance_org_data` on the Compliance Access Key. The user and group-member endpoints require `read:compliance_user_data` instead.
+**Required scope:** `read:compliance_org_data` on the Compliance Access Key. The user, user-preference, and group-member endpoints require `read:compliance_user_data` instead.
 
 Compliance Access Keys (`sk-ant-api01-...`) created in claude.ai are the only key type accepted; see [Set up the Compliance API](manage-claude-compliance-api-access.md) to provision one. Calls authenticated with an Admin API key (`sk-ant-admin01-...`) return [403 Forbidden](manage-claude-compliance-errors.md#403-forbidden).
 
@@ -155,10 +157,8 @@ cURL
 
 
 ```python
-org_uuid="91012d09-e48b-438e-a489-1bebfd8fa6f9"
-
 curl --fail-with-body -sS -G \
-  "https://api.anthropic.com/v1/compliance/organizations/$org_uuid/users" \
+  "https://api.anthropic.com/v1/compliance/organizations/91012d09-e48b-438e-a489-1bebfd8fa6f9/users" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   -H "anthropic-version: 2023-06-01" \
   --data-urlencode "limit=500"
@@ -188,6 +188,46 @@ The user IDs returned here are the same `user_...` identifiers accepted by the [
 
 A user only appears here while they are an active member of the organization. Removed users are dropped from the list immediately. Their historical activity remains queryable through the Activity Feed for the full retention window, indexed by the same `user_...` ID.
 
+## List user preferences
+
+The `GET /v1/compliance/organizations/{org_uuid}/user_preferences` endpoint returns the text that current members of one organization saved as **Instructions for Claude** in claude.ai (`conversation_preferences`) and as **Global instructions** in Cowork (`cowork_global_instructions`). Both are account-level settings, so the same text is returned under every organization a member belongs to. This endpoint is in beta.
+
+This endpoint requires `read:compliance_user_data`, not `read:compliance_org_data`; a call with a key that lacks `read:compliance_user_data` returns [403 Forbidden](manage-claude-compliance-errors.md#403-forbidden).
+
+By default, the response lists only members who have set at least one of the two values. Pass `include_unset=true` to list every current member, with `null` for each value that is not set. To return specific members only, pass up to 10 user IDs in `user_ids[]`. Results paginate with `limit` (default 20, maximum 100) and `page`. As on the [organization users endpoint](#list-organization-users), pass `next_page` back unchanged as `page`; also send the same `include_unset` and `user_ids[]` values with every page, or the call returns [400 Bad Request](manage-claude-compliance-errors.md#invalid-pagination-cursor). A page can hold fewer results than `limit`, or none, and still not be the last, so keep requesting pages until `next_page` is `null`.
+
+cURL
+
+
+
+```python
+curl --fail-with-body -sS \
+  "https://api.anthropic.com/v1/compliance/organizations/91012d09-e48b-438e-a489-1bebfd8fa6f9/user_preferences" \
+  -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
+  -H "anthropic-version: 2023-06-01"
+```
+
+Response
+
+
+
+```python
+{
+  "data": [
+    {
+      "user": {
+        "id": "user_01XyDMpzjS89pFZXqSFUBDr6",
+        "email_address": "priya@example.com"
+      },
+      "conversation_preferences": "Keep answers brief and cite sources.",
+      "cowork_global_instructions": null
+    }
+  ],
+  "has_more": false,
+  "next_page": null
+}
+```
+
 ## List roles
 
 The [List Compliance Roles](../Admin/compliance-organizations-roles-list.md) endpoint returns a paginated list of role records defined on one organization, and [Get Compliance Role](../Admin/compliance-organizations-roles-retrieve.md) returns one role by ID.
@@ -199,10 +239,8 @@ cURL
 
 
 ```python
-org_uuid="91012d09-e48b-438e-a489-1bebfd8fa6f9"
-
 curl --fail-with-body -sS \
-  "https://api.anthropic.com/v1/compliance/organizations/${org_uuid}/roles" \
+  "https://api.anthropic.com/v1/compliance/organizations/91012d09-e48b-438e-a489-1bebfd8fa6f9/roles" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   -H "anthropic-version: 2023-06-01"
 ```
@@ -279,10 +317,8 @@ cURL
 
 
 ```python
-group_id="rbac_group_01P9qRsTuVwXyZa2BcDeFgHjK"
-
 curl --fail-with-body -sS -G \
-  "https://api.anthropic.com/v1/compliance/groups/$group_id/members" \
+  "https://api.anthropic.com/v1/compliance/groups/rbac_group_01P9qRsTuVwXyZa2BcDeFgHjK/members" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   -H "anthropic-version: 2023-06-01"
 ```
@@ -323,10 +359,8 @@ cURL
 
 
 ```python
-org_uuid="91012d09-e48b-438e-a489-1bebfd8fa6f9"
-
 curl --fail-with-body -sS \
-  "https://api.anthropic.com/v1/compliance/organizations/$org_uuid/settings" \
+  "https://api.anthropic.com/v1/compliance/organizations/91012d09-e48b-438e-a489-1bebfd8fa6f9/settings" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   -H "anthropic-version: 2023-06-01"
 ```

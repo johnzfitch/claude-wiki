@@ -2,7 +2,7 @@
 title: "Assign a program to custom roles on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17118092-assign-a-program-to-custom-roles-on-enterprise-plans"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:28:23Z"
+fetched_at: "2026-10-23T06:29:13Z"
 tags: ["account", "enterprise"]
 ---
 

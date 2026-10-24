@@ -1,8 +1,8 @@
 ---
 title: "Create Enrollment URL - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/user_profiles/create_enrollment_url"
+source_url: "https://platform.claude.com/docs/en/api/beta/user_profiles/create_enrollment_url"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:15Z"
+fetched_at: "2026-10-20T06:37:28Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Fuser_profiles%2Fcreate_enrollment_url)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fuser_profiles%2Fcreate_enrollment_url)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,10 +232,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
-3.  [User Profiles](http-beta-user-profiles.md)
+2.  [Beta](platform-claude-com-http-beta.md)
+3.  [User Profiles](platform-claude-com-http-beta-user-profiles.md)
 
 # Create Enrollment URL
+
+Copy page
+
+
+
+cURL
 
 POST/v1/user_profiles/{user_profile_id}/enrollment_url
 
@@ -249,11 +259,21 @@ The ID of the user profile to create an enrollment URL for (`uprof_...`).
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.
 
 One of the following:
 
@@ -458,6 +478,10 @@ string
 
 
 "spend-limit-reads-2026-09-26"
+
+
+
+"telemetry-destinations-2026-08-11"
 
 
 

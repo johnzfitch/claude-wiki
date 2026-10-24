@@ -2,7 +2,7 @@
 title: "Visuals that appear as you study with Claude · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/imagine-with-claude-student-guide"
 category: "01-Getting-Started"
-fetched_at: "2026-10-08T06:24:42Z"
+fetched_at: "2026-10-23T06:28:13Z"
 tags: ["getting-started"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["getting-started"]
 
 A guide for students. What the feature is, how to use it well, and what it can do for your coursework.
 
-10 minClaude.ai
+10 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -24,7 +24,7 @@ The visual streams in alongside the text and the conversation keeps going. You c
 
 ### What this is, practically[](#what-this-is-practically)
 
-- **Appears as part of Claude's answer** — in the flow of the conversation, not a side panel. If you've used [Artifacts(opens in new tab)](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md), this is the lighter version.
+- **Appears as part of Claude's answer** — in the flow of the conversation, not a side panel. If you've used [Artifacts(opens in new tab)](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them), this is the lighter version.
 - **Interactive, often.** Sliders, draggable points, buttons, interactive elements, and even sound.
 - **Built from what you gave it** — can use context from the conversation, files you uploaded, or what Claude knows about you.
 - **Diagrams, charts, tools** — not image generation.

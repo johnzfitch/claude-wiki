@@ -2,7 +2,7 @@
 title: "Access Transparency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/access-transparency"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:28Z"
+fetched_at: "2026-10-20T06:39:29Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Faccess-transparency)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Faccess-transparency)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -60,7 +62,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Access Transparency
 
@@ -99,7 +101,7 @@ Anthropic personnel access customer content only under defined conditions. Acces
 
 ## What Access Transparency covers
 
-- **Covered content:** Access Transparency covers prompt and response content sent through the Claude Messages API or Claude Code sessions. Anthropic's [general ZDR documentation](../Guides/build-with-claude-api-and-data-retention.md) explains which APIs and features are covered by ZDR. The same APIs and features are covered by Access Transparency.
+- **Covered content:** Access Transparency covers prompt and response content sent through the Claude Messages API or Claude Code sessions. Anthropic's [general ZDR documentation](manage-claude-api-and-data-retention.md) explains which APIs and features are covered by ZDR. The same APIs and features are covered by Access Transparency.
 - **Manual views by Anthropic personnel:** Manual views of your covered content by Anthropic reviewers generate events.
 
 ## What Access Transparency does not cover
@@ -109,7 +111,7 @@ Anthropic personnel access customer content only under defined conditions. Acces
 - **Claude for Enterprise and Claude Apps:** claude.ai Enterprise seats, Claude for Work, Cowork, and Claude in Chrome are not covered.
 - **Claude consumer products:** Claude Free, Pro, or Max plans.
 - **Partner-operated platforms:** Amazon Bedrock and Google Cloud; refer to those platforms' transparency controls.
-- **Anything ZDR does not cover:** Products that are not covered by ZDR (for example, the Files API, Anthropic-hosted stateful applications, and the Batch API) are not covered by Access Transparency. See [ZDR documentation](../Guides/build-with-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) for additional details.
+- **Anything ZDR does not cover:** Products that are not covered by ZDR (for example, the Files API, Anthropic-hosted stateful applications, and the Batch API) are not covered by Access Transparency. See [ZDR documentation](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) for additional details.
 
 ## Getting started
 
@@ -331,7 +333,7 @@ Contact your Anthropic account representative.
 - [Verify Access Transparency events with the transparency log (beta)](manage-claude-access-transparency-log.md)
 - [Compliance API overview](manage-claude-compliance-api.md)
 - [Activity Feed](manage-claude-compliance-activity-feed.md)
-- [API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+- [API and data retention](manage-claude-api-and-data-retention.md)
 - [Customer-Managed Encryption Keys (CMEK)](manage-claude-cmek.md)
 - [Claude Code data usage](../../13-Enterprise-Admin/data-usage.md)
 - [Trust Center](https://trust.anthropic.com/resources)

@@ -2,7 +2,7 @@
 title: "Agent SDK reference - Python - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/python"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-10T06:24:45Z"
+fetched_at: "2026-10-22T06:29:12Z"
 tags: ["agents", "claude-code", "python", "sdk"]
 ---
 
@@ -42,6 +42,9 @@ tags: ["agents", "claude-code", "python", "sdk"]
   - [tag_session()](#tag_session)
   - [Parameters](#parameters-8)
   - [Example](#example-7)
+  - [fork_session()](#fork_session)
+  - [Parameters](#parameters-9)
+  - [Example](#example-8)
 - [Classes](#classes)
   - [ClaudeSDKClient](#claudesdkclient)
   - [Methods](#methods)
@@ -721,6 +724,56 @@ for session in list_sessions(directory="/path/to/project"):
 ```
 
 
+[​](#fork_session)
+
+`fork_session()`
+
+Copies a session’s transcript into a new session so you can take the conversation in another direction while the original stays unchanged. To branch from an earlier point in the conversation, pass `up_to_message_id`. Synchronous.
+
+```python
+def fork_session(
+    session_id: str,
+    directory: str | None = None,
+    up_to_message_id: str | None = None,
+    title: str | None = None,
+) -> ForkSessionResult
+```
+
+
+[​](#parameters-9)
+
+Parameters
+
+| Parameter          | Type         | Default  | Description                                                                                                                                                                            |
+|:-------------------|:-------------|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `session_id`       | `str`        | required | UUID of the session to fork                                                                                                                                                            |
+| `directory`        | `str | None` | `None`   | Project directory path. When omitted, searches all project directories                                                                                                                 |
+| `up_to_message_id` | `str | None` | `None`   | Copy the transcript up to and including the message with this UUID, such as a `uuid` from [`get_session_messages()`](#get_session_messages). When omitted, copies the whole transcript |
+| `title`            | `str | None` | `None`   | Title for the fork. When omitted, the SDK derives one from the original session, followed by `(fork)`                                                                                  |
+
+Returns a `ForkSessionResult` whose `session_id` is the new session’s UUID. Pass it as [`resume`](#claudeagentoptions) to continue the fork. The fork doesn’t include the original session’s [file checkpoints](agent-sdk-file-checkpointing.md), so you can’t rewind it to a checkpoint captured before the fork. `fork_session()` raises:
+
+- `ValueError`: `session_id` or `up_to_message_id` is not a valid UUID
+- `ValueError`: the session has no messages, or `up_to_message_id` matches no message in the transcript
+- `FileNotFoundError`: the session cannot be found
+
+
+[​](#example-8)
+
+Example
+
+Fork the most recent session under a new title, then resume the fork. The original session keeps its own history.
+
+```python
+from claude_agent_sdk import fork_session, list_sessions
+
+sessions = list_sessions(directory="/path/to/project", limit=1)
+if sessions:
+    forked = fork_session(sessions[0].session_id, title="Try the OAuth approach")
+    print(forked.session_id)  # pass as ClaudeAgentOptions(resume=...) to continue the fork
+```
+
+
 [​](#classes)
 
 Classes
@@ -757,24 +810,24 @@ class ClaudeSDKClient:
 
 Methods
 
-| Method                                    | Description                                                                                                                                                                                                                                                                                                                                                                   |
-|:------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `__init__(options)`                       | Initialize the client with optional configuration                                                                                                                                                                                                                                                                                                                             |
-| `connect(prompt)`                         | Connect to Claude with an optional initial prompt or message stream                                                                                                                                                                                                                                                                                                           |
-| `query(prompt, session_id)`               | Send a new request in streaming mode                                                                                                                                                                                                                                                                                                                                          |
-| `receive_messages()`                      | Receive all messages from Claude as an async iterator                                                                                                                                                                                                                                                                                                                         |
-| `receive_response()`                      | Receive messages until and including a ResultMessage                                                                                                                                                                                                                                                                                                                          |
-| `interrupt()`                             | Send interrupt signal (only works in streaming mode)                                                                                                                                                                                                                                                                                                                          |
-| `set_permission_mode(mode)`               | Change the permission mode for the current session                                                                                                                                                                                                                                                                                                                            |
-| `set_model(model)`                        | Change the model for the current session. Pass `None` to reset to [Claude Code’s default model](../02-Claude-Code-CLI/model-config.md)                                                                                                                                                                                                                                                        |
-| `rewind_files(user_message_id)`           | Restore files to their state at the specified user message. Requires `enable_file_checkpointing=True`. See [File checkpointing](agent-sdk-file-checkpointing.md)                                                                                                                                                                                                        |
-| `get_mcp_status()`                        | Get the status of all configured MCP servers. Returns [`McpStatusResponse`](#mcpstatusresponse)                                                                                                                                                                                                                                                                               |
-| `get_context_usage()`                     | Get a breakdown of context window usage by category, skill, and tool. The same data `/context` shows in an interactive session. Returns [`ContextUsageResponse`](#contextusageresponse). To compute the breakdown, Claude Code makes several token-counting API requests that don’t appear in the message stream; see [how these requests are handled](#contextusageresponse) |
-| `reconnect_mcp_server(server_name)`       | Retry connecting to an MCP server that failed or was disconnected                                                                                                                                                                                                                                                                                                             |
-| `toggle_mcp_server(server_name, enabled)` | Enable or disable an MCP server mid-session. Disabling a stdio, SSE, or HTTP server removes its tools                                                                                                                                                                                                                                                                         |
-| `stop_task(task_id)`                      | Stop a running background task. A [`TaskNotificationMessage`](#tasknotificationmessage) with status `"stopped"` follows in the message stream                                                                                                                                                                                                                                 |
-| `get_server_info()`                       | Get the server’s initialization info, including available commands and output styles                                                                                                                                                                                                                                                                                          |
-| `disconnect()`                            | Disconnect from Claude                                                                                                                                                                                                                                                                                                                                                        |
+| Method                                    | Description                                                                                                                                                                                                                                                                                                                                                                       |
+|:------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `__init__(options)`                       | Initialize the client with optional configuration                                                                                                                                                                                                                                                                                                                                 |
+| `connect(prompt)`                         | Connect to Claude with an optional initial prompt or message stream                                                                                                                                                                                                                                                                                                               |
+| `query(prompt, session_id)`               | Send a new request in streaming mode                                                                                                                                                                                                                                                                                                                                              |
+| `receive_messages()`                      | Receive all messages from Claude as an async iterator                                                                                                                                                                                                                                                                                                                             |
+| `receive_response()`                      | Receive messages until and including a ResultMessage                                                                                                                                                                                                                                                                                                                              |
+| `interrupt()`                             | Send interrupt signal (only works in streaming mode)                                                                                                                                                                                                                                                                                                                              |
+| `set_permission_mode(mode)`               | Change the permission mode for the current session                                                                                                                                                                                                                                                                                                                                |
+| `set_model(model)`                        | Change the model for the current session. Pass `None` to reset to [Claude Code’s default model](../02-Claude-Code-CLI/model-config.md). A session in `auto` mode [changes to `default` mode](agent-sdk-permissions.md#auto-mode-auto) if the new model doesn’t support auto mode                                                                                                            |
+| `rewind_files(user_message_id)`           | Restore files to their state at the specified user message. Requires `enable_file_checkpointing=True`. See [File checkpointing](agent-sdk-file-checkpointing.md)                                                                                                                                                                                                            |
+| `get_mcp_status()`                        | Get the status of all configured MCP servers. Returns [`McpStatusResponse`](#mcpstatusresponse)                                                                                                                                                                                                                                                                                   |
+| `get_context_usage()`                     | Get a breakdown of context window usage by category, skill, and tool. Includes the data `/context` shows in an interactive session. Returns [`ContextUsageResponse`](#contextusageresponse). To compute the breakdown, Claude Code makes several token-counting API requests that don’t appear in the message stream; see [how these requests are handled](#contextusageresponse) |
+| `reconnect_mcp_server(server_name)`       | Retry connecting to an MCP server that failed or was disconnected                                                                                                                                                                                                                                                                                                                 |
+| `toggle_mcp_server(server_name, enabled)` | Enable or disable an MCP server mid-session. Disabling a stdio, SSE, or HTTP server removes its tools                                                                                                                                                                                                                                                                             |
+| `stop_task(task_id)`                      | Stop a running background task. A [`TaskNotificationMessage`](#tasknotificationmessage) with status `"stopped"` follows in the message stream                                                                                                                                                                                                                                     |
+| `get_server_info()`                       | Get the server’s initialization info, including available commands and output styles                                                                                                                                                                                                                                                                                              |
+| `disconnect()`                            | Disconnect from Claude                                                                                                                                                                                                                                                                                                                                                            |
 
 
 [​](#context-manager-support)
@@ -1127,7 +1180,7 @@ class ClaudeAgentOptions:
 | Property                      | Type                                                                                      | Default                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |:------------------------------|:------------------------------------------------------------------------------------------|:-----------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `tools`                       | `list[str] | ToolsPreset | None`                                                          | `None`                             | Tools configuration. Use `{"type": "preset", "preset": "claude_code"}` for Claude Code’s default tools                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `allowed_tools`               | `list[str]`                                                                               | `[]`                               | Tools to auto-approve without prompting. This does not restrict Claude to only these tools. If you name one of the [task-tracking tools](agent-sdk-todo-tracking.md#model-availability) here, Claude Code also opts the session in. Other unlisted tools fall through to `permission_mode` and `can_use_tool`. Use `disallowed_tools` to block tools. See [Permissions](agent-sdk-permissions.md#allow-and-deny-rules)                                                                                                                                                                                                                                    |
+| `allowed_tools`               | `list[str]`                                                                               | `[]`                               | Tools to auto-approve without prompting, apart from reads from [network paths](../02-Claude-Code-CLI/permissions.md#network-paths). This does not restrict Claude to only these tools. If you name one of the [task-tracking tools](agent-sdk-todo-tracking.md#model-availability) here, Claude Code also opts the session in. Other unlisted tools fall through to `permission_mode` and `can_use_tool`. Use `disallowed_tools` to block tools. See [Permissions](agent-sdk-permissions.md#allow-and-deny-rules)                                                                                                                                                         |
 | `system_prompt`               | `str | SystemPromptPreset | SystemPromptCustom | SystemPromptFile | None`                 | `None`                             | System prompt configuration. Pass a string for a custom prompt, `{"type": "preset", "preset": "claude_code"}` for Claude Code’s system prompt with optional `"append"`, `{"type": "custom", "prompt": "..."}` for a custom prompt that can also set `"snapshot"`, or `{"type": "file", "path": "..."}` to load a large prompt from disk. See [`SystemPromptPreset`](#systempromptpreset), [`SystemPromptCustom`](#systempromptcustom), and [`SystemPromptFile`](#systempromptfile)                                                                                                                                                                                    |
 | `mcp_servers`                 | `dict[str, McpServerConfig] | str | Path`                                                 | `{}`                               | MCP server configurations or path to config file                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `strict_mcp_config`           | `bool`                                                                                    | `False`                            | When `True`, use only the servers passed in `mcp_servers` and ignore project `.mcp.json`, user settings, plugin-provided MCP servers, and [claude.ai connectors](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai). Maps to the CLI `--strict-mcp-config` flag                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -1195,7 +1248,7 @@ options = ClaudeAgentOptions(
 )
 ```
 
-- `API_TIMEOUT_MS`: per-request timeout on the Anthropic client, in milliseconds. Default `600000`. Applies to the main loop and all subagents.
+- [`API_TIMEOUT_MS`](../02-Claude-Code-CLI/env-vars.md): how long each request attempt can wait for response headers, in milliseconds. It doesn’t limit how long a streaming response runs after the headers arrive. Default `600000`. Applies to the main loop and all subagents.
 - `CLAUDE_CODE_MAX_RETRIES`: maximum API retries. Default `10`, capped at `15`. Each retry gets its own `API_TIMEOUT_MS` window. For unattended runs that need to wait through longer outages, set [`CLAUDE_CODE_RETRY_WATCHDOG=1`](../02-Claude-Code-CLI/errors.md#tune-retry-behavior): it retries transient capacity errors indefinitely and, on Claude Code v2.1.199 or later, raises the default for other transient errors to `300` and removes the cap on this variable.
 - `CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS`: stall watchdog for subagents. While the stream watchdog is on, the default is `CLAUDE_STREAM_IDLE_TIMEOUT_MS` plus 5 minutes, which comes to `600000` unless you raise that variable. With the stream watchdog off, the default is `600000`. Before v2.1.257, the default was always `600000`. The timer resets on each stream event. On a stall, Claude Code aborts the subagent and reports the stall to the parent. For a background subagent, it also marks the task failed and attaches any partial result.
 - `CLAUDE_ENABLE_STREAM_WATCHDOG` with `CLAUDE_STREAM_IDLE_TIMEOUT_MS`: stream watchdog that aborts the request when headers have arrived but the response body stops streaming. The watchdog is on by default for all providers; set `CLAUDE_ENABLE_STREAM_WATCHDOG=0` to disable it. `CLAUDE_STREAM_IDLE_TIMEOUT_MS` defaults to `300000` and is clamped to that minimum. After the abort, [Automatic retries](../02-Claude-Code-CLI/errors.md#automatic-retries) covers what Claude Code does, based on how far the response had progressed. While the watchdog waits out a response that a gateway behind `ANTHROPIC_BASE_URL` holds open with keep-alive pings, a host that sets `include_partial_messages` keeps receiving `ping` [`StreamEvent`](#streamevent) messages. Read those frames as liveness rather than timing the session out on silence. Before v2.1.257, the frames stopped 5 minutes after the last real stream event.
@@ -1857,7 +1910,7 @@ class McpServerStatus(TypedDict):
 
 `ContextUsageResponse`
 
-Response from [`ClaudeSDKClient.get_context_usage()`](#methods). This is the same payload Claude Code renders for the `/context` command in an interactive session, so alongside the token counts it carries display fields such as `color` and `gridRows` that Claude Code uses to draw the `/context` usage grid. Claude Code builds this payload by sending several requests to the [token-counting](../04-API-Reference/Guides/build-with-claude-token-counting.md) API. These requests don’t appear in the message stream, so cost tracking that reads the stream won’t see them. On the Anthropic API, token counting isn’t billed.
+Response from [`ClaudeSDKClient.get_context_usage()`](#methods). The response includes the payload Claude Code renders for the `/context` command in an interactive session. Alongside the token counts, that payload carries display fields such as `color` and `gridRows` that Claude Code uses to draw the `/context` usage grid. Claude Code builds this payload by sending several requests to the [token-counting](../04-API-Reference/Guides/build-with-claude-token-counting.md) API. These requests don’t appear in the message stream, so cost tracking that reads the stream won’t see them. On the Anthropic API, token counting isn’t billed.
 
 ```python
 class ContextUsageResponse(TypedDict):
@@ -2066,14 +2119,19 @@ class ResultMessage:
 
 The `subtype` field determines which other fields are populated. It is one of `"success"`, `"error_during_execution"`, `"error_max_turns"`, `"error_max_budget_usd"`, or `"error_max_structured_output_retries"`. The Python dataclass flattens all variants into one shape, so fields that don’t apply to the returned subtype are `None`. Several fields carry diagnostic detail about how the conversation ended:
 
-- `is_error`: `True` when the conversation ended in an error state. Always `True` on the `error_*` subtypes. On `subtype="success"` it is `True` when the final model request failed, meaning the agent loop completed but the last API call returned an error.
+- `is_error`: `True` when the conversation ended in an error state. Always `True` on the `error_*` subtypes. On `subtype="success"` it is `True` in three cases. Check `stop_reason` to tell them apart:
+  - `"refusal"`: the model declined to respond. Read the refusal text in `result`, or in the preceding `AssistantMessage` when `result` is empty.
+  - `"tool_deferred_unavailable"`: the [deferred tool](../07-Hooks/hooks.md#defer-a-tool-call-for-later) was no longer available when you resumed the session, for example because its MCP server wasn’t connected. In the two cases below, a prompt you send after resuming counts the same as one passed with the resume:
+    - No prompt: the call is still pending. Make the tool available and resume again without a prompt, and the call runs first.
+    - A prompt: Claude Code answers it without the tool’s result, and the deferred call is gone. Send a new prompt if you still need the tool called.
+  - Any other value: the turn ended on an error that Claude Code reported in place of a model response, such as an API error. Read `terminal_reason` for the cause, `result` for the message, and `api_error_status` for the HTTP status when the API returned one.
 - `api_error_status`: the HTTP status code of the terminating API error. `None` when the turn ended without one. Populated only on `subtype="success"`.
 - `result`: text of the final assistant message on `subtype="success"`, or `None` on the `error_*` subtypes. When `subtype="success"` and `is_error=True`, this holds the API error string if one is available but can be empty, so check `api_error_status` and the preceding `AssistantMessage` content for detail.
 - `errors`: loop-level error strings such as the max-turns message. Populated only on the `error_*` subtypes.
 - `terminal_reason`: why the query loop ended, such as `"completed"`, `"max_turns"`, `"api_error"`, `"aborted_streaming"`, or `"aborted_tools"`. A value of `"aborted_streaming"` or `"aborted_tools"` means the turn was aborted before completing. Common causes are [`interrupt()`](#claudesdkclient) and a permission callback returning [`PermissionResultDeny`](#permissionresultdeny) with `interrupt=True`. `None` on CLI versions that predate the field, on results from local commands such as `/voice` or `/usage`, which bypass the query loop, or on synthesized error results emitted when the session fails fatally. Mirrors the TypeScript SDK’s [`SDKResultMessage.terminal_reason`](agent-sdk-typescript.md#sdkresultmessage), which lists the full set of values.
 - `origin`: origin of the user message that triggered this turn. In [streaming input mode](agent-sdk-streaming-vs-single-mode.md), check this to tell the result of your own prompt, where `origin` is `None` or `{"kind": "human"}`, from the result of an injected turn such as a background-task notification. Requires Python Agent SDK 0.2.137 or later.
 
-The `usage` dict covers the main agent loop only and excludes subagent and other nested or auxiliary model calls. In [streaming input mode](agent-sdk-streaming-vs-single-mode.md), the values are per-turn. Prefer `model_usage` for token and cost accounting. The `usage` dict contains the following keys when present:
+When several background tasks finish close together, Claude Code can answer their notifications in one turn rather than one turn each. You still receive one `ResultMessage` per notification, in order, each with an `origin` whose `kind` is `"task-notification"`. All but the last have `num_turns` set to `0` and an empty `result`, and the last one carries the turn that answers them all. The `usage` dict covers the main agent loop only and excludes subagent and other nested or auxiliary model calls. In [streaming input mode](agent-sdk-streaming-vs-single-mode.md), the values are per-turn. Prefer `model_usage` for token and cost accounting. The `usage` dict contains the following keys when present:
 
 | Key                           | Type  | Description                                                                                                                                                                                        |
 |-------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2465,12 +2523,12 @@ class ResultError(ProcessError):
     errors: list[str]  # an empty list when the result message reported none
     result: str | None
     api_error_status: int | None
-    terminal_reason: str | None  # "max_turns", "api_error", ...; check this before subtype
+    terminal_reason: str | None  # "max_turns", "api_error", ...; check after data["stop_reason"], before subtype
     session_id: str | None
     data: dict[str, Any]  # the raw result message payload
 ```
 
-To tell failures apart, check `terminal_reason` before `subtype`. When the final request fails, such as on an API error, Claude Code reports `subtype` `"success"` with the cause in `terminal_reason`, for example `"api_error"`; when a limit you set ends the run, such as `max_turns` or `max_budget_usd`, it reports an `error_*` subtype.
+To tell failures apart, check `data["stop_reason"]` first, then `terminal_reason`, then `subtype`. A declined response has `stop_reason` `"refusal"`, usually with `subtype` `"success"`; its `terminal_reason` doesn’t single it out and can read `"completed"` or `"api_error"`. A failed final request has `subtype` `"success"` and its cause in `terminal_reason`, such as `"api_error"` for an API error. When the run hits a limit you set, such as `max_turns` or `max_budget_usd`, you get an `error_*` subtype.
 
 
 [​](#clijsondecodeerror)
@@ -3042,7 +3100,7 @@ Agent
     "subagent_type": str | None,  # The type of specialized agent to use
     "model": "sonnet" | "opus" | "haiku" | "fable" | None,  # Model override for this agent
     "effort": "low" | "medium" | "high" | "xhigh" | "max" | None,  # Reasoning effort for this agent
-    "run_in_background": bool | None,  # Agents run in the background by default; set to False to run synchronously
+    "run_in_background": bool | None,  # Default when omitted: your main agent's call runs the new agent in the background, and a subagent's call waits for it
     "name": str | None,  # Name for the spawned agent
     "team_name": str | None,  # Deprecated; ignored
     "mode": "acceptEdits" | "auto" | "bypassPermissions" | "default" | "dontAsk" | "plan" | None,  # Deprecated; ignored. The subagent inheritance rules decide a subagent's permission mode
@@ -3050,7 +3108,12 @@ Agent
 }
 ```
 
-Launches a new agent to handle complex, multi-step tasks autonomously. **Output (status: `"completed"`):**
+Launches a new agent to handle complex, multi-step tasks autonomously. When Claude leaves `run_in_background` out of an `Agent` call, by default your main agent doesn’t wait for the new agent and a subagent waits:
+
+- **From your main agent**: the new agent runs in the background, and the result has `status: "async_launched"`. To make your main agent wait for the new agent instead, see [Choose whether Claude waits for subagents](agent-sdk-subagents.md#choose-whether-claude-waits-for-subagents).
+- **From one of your subagents**: the calling subagent [waits for the new agent](../09-Agents-Patterns/sub-agents.md#let-subagents-spawn-their-own-subagents). The new agent runs in the background instead when its definition sets [`background`](#agentdefinition) to `True`, or when you [turn fork mode off](../09-Agents-Patterns/sub-agents.md#turn-fork-mode-on-or-off) by setting `CLAUDE_CODE_FORK_SUBAGENT` to `0`.
+
+Before Python SDK v0.2.169, agents that your subagents started also ran in the background by default. That release is the first to bundle Claude Code v2.1.302 or later. **Output (status: `"completed"`):**
 
 ```python
 {
@@ -3603,7 +3666,7 @@ TodoWrite
 
 **Tool name:** `TodoWrite`
 
-The following tools are available by default only on Claude 3.x models, Opus 4 through 4.7, Sonnet 4 through 4.6, and Haiku 4.5. On every other model, including model IDs Claude Code doesn’t recognize, they aren’t available unless you opt in:
+The following tools are available by default only on Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5, and earlier models. On every other model, including model IDs Claude Code doesn’t recognize, they aren’t available unless you opt in:
 
 - `TodoWrite`
 - `TaskCreate`
@@ -3988,10 +4051,12 @@ async def main():
             "Claude Code CLI not found. Try reinstalling: pip install --force-reinstall claude-agent-sdk"
         )
     # Catch ResultError before ProcessError, which it subclasses. Its message
-    # carries the error text. A failed final request, such as an API error,
-    # arrives with subtype "success", so branch on terminal_reason first.
+    # carries the error text. A refusal and a failed final request both usually
+    # arrive with subtype "success", so check stop_reason, then terminal_reason.
     except ResultError as e:
-        if e.terminal_reason == "api_error":
+        if e.data.get("stop_reason") == "refusal":
+            print(f"Model declined to respond: {e}")
+        elif e.terminal_reason == "api_error":
             print(f"API request failed: {e}")
         else:
             print(f"Query ended with an error result ({e.terminal_reason or e.subtype}): {e}")
@@ -4037,7 +4102,9 @@ class SandboxSettings(TypedDict, total=False):
 | `ignoreViolations`          | [`SandboxIgnoreViolations`](#sandboxignoreviolations) | `None`  | Configure which sandbox violations to ignore                                                                                                                                                                                                      |
 | `enableWeakerNestedSandbox` | `bool`                                                | `False` | Enable a weaker nested sandbox for compatibility                                                                                                                                                                                                  |
 
-The sandbox depends on platform support and, on Linux, tools like `bubblewrap` and `socat`. By default, when `enabled` is `True` but the sandbox can’t start, commands run unsandboxed with a warning on stderr. This default differs from the TypeScript SDK, where `failIfUnavailable` defaults to `true`.Set `"failIfUnavailable": True` in your sandbox settings to stop instead. The key isn’t declared on `SandboxSettings` yet, but the SDK forwards it to Claude Code, which honors it. `query()` then reports a `ResultMessage` with `subtype="error_during_execution"` and the reason in `errors`. Because this is a single-shot `query()` call, the SDK raises after yielding that error result, so wrap the loop in a try block to continue past it. See [Handle the result](agent-sdk-agent-loop.md#handle-the-result) for the error contract.
+The sandbox depends on platform support and, on Linux, tools like `bubblewrap` and `socat`. By default, when `enabled` is `True` but the sandbox can’t start, commands run unsandboxed with a warning on stderr. This default differs from the TypeScript SDK, where `failIfUnavailable` defaults to `true`.Set `"failIfUnavailable": True` in your sandbox settings to stop instead. The SDK forwards `failIfUnavailable` to Claude Code along with the declared `SandboxSettings` fields. `query()` then reports a `ResultMessage` with `subtype="error_during_execution"` and the reason in `errors`. Because this is a single-shot `query()` call, the SDK raises after yielding that error result, so wrap the loop in a try block to continue past it. See [Handle the result](agent-sdk-agent-loop.md#handle-the-result) for the error contract.
+
+To keep sandboxed commands from writing to a file, list its absolute path under [`denyWrite`](../02-Claude-Code-CLI/settings-reference.md#sandbox-filesystem-denywrite) in your sandbox settings, such as `"filesystem": {"denyWrite": ["/home/user/project/.env"]}`. The SDK forwards `filesystem` to Claude Code along with the declared `SandboxSettings` fields. Once the sandbox starts, it blocks writes to each absolute path you listed.
 
 
 [​](#example-usage)

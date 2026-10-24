@@ -2,7 +2,7 @@
 title: "Using agent memory - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/memory"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:37Z"
+fetched_at: "2026-10-20T06:40:25Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fmemory)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fmemory)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -58,7 +58,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -84,9 +88,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Build persistent memory
+
+Using agent memory
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+agent-memory-2026-07-22
 
 # Using agent memory
 
@@ -99,14 +111,6 @@ Give your agents persistent memory that survives across sessions using memory st
 Copy page
 
 
-
-Using agent memory
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-agent-memory-2026-07-22
 
 Each Managed Agents session starts with a fresh context by default. When a session ends, any state the agent built up is gone. Memory stores let the agent carry information across sessions: user preferences, project conventions, prior mistakes, and domain context.
 
@@ -145,6 +149,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -188,6 +194,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -204,7 +212,7 @@ Individual memories within the store are capped at 100 kB (~25k tokens). A store
 
 ## Attach a memory store to a session
 
-Memory stores are attached in the session's `resources[]` array when the [session is created](managed-agents-sessions.md#creating-a-session). Unlike file resources, memory stores can only be attached at session creation time; adding or removing one from a running session is not supported. You attach memory stores the same way for sessions on cloud and [self-hosted environments](managed-agents-self-hosted-sandboxes-memory.md); self-hosted environments accept only `memory_store` resources.
+Memory stores are attached in the session's `resources` array when the [session is created](managed-agents-sessions.md#creating-a-session). Unlike file resources, memory stores can only be attached at session creation time; adding or removing one from a running session is not supported. You attach memory stores the same way for sessions on cloud and [self-hosted environments](managed-agents-self-hosted-sandboxes-memory.md); self-hosted environments accept only `memory_store` resources.
 
 Optionally include `instructions` to provide session-specific guidance for how the agent should use this store. It is shown to the agent alongside the store's `name` and `description`, and is capped at 4,096 characters.
 
@@ -227,6 +235,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -298,6 +308,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -333,6 +345,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -366,6 +380,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -401,6 +417,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -435,6 +453,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -465,6 +485,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -509,6 +531,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -546,6 +570,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -582,6 +608,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -599,7 +627,7 @@ In addition to [`create`](../Endpoints/beta-memory-stores-create.md), memory sto
 
 ### List stores
 
-List stores in the workspace. Archived stores are excluded by default; pass `include_archived: true` to include them.
+List stores in the workspace. Archived stores are excluded by default; set `include_archived` to `true` to include them.
 
 cURL
 
@@ -618,6 +646,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -649,6 +679,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

@@ -1,8 +1,8 @@
 ---
 title: "List User Activity - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/users/list"
+source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/users/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:13Z"
+fetched_at: "2026-10-20T06:38:35Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fusers%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fusers%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -155,9 +155,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -228,13 +230,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -242,9 +246,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,12 +257,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
-5.  [Users](http-beta-organization-analytics-users.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
+5.  [Users](platform-claude-com-http-beta-organization-analytics-users.md)
 
 # List User Activity
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/analytics/users
 
@@ -294,7 +304,7 @@ filter: optional array of string
 
 
 
-Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `project_id`, `rbac_group_id`, `user_id`. Value forms: `project_id` takes a tagged project id (`claude_proj_...`) and scopes each member's row to their claude.ai chat activity within that project (it cannot be combined with `group_by[]` or an `rbac_group_id` filter); `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries.
+Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `project_id`, `rbac_group_id`, `user_id`. Value forms: `project_id` takes a tagged project id (`claude_proj_...`); `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. A `project_id` filter limits each member's row to their claude.ai chat activity in that project and cannot be combined with `group_by[]` or an `rbac_group_id` filter. On these rows, every count in `chat_cowork_unified_metrics.sessions` is 0, because sessions are not measured per project. On any day a member sent a chat message in Chat and Cowork unified, all of that member's project activity for the day is counted in `chat_cowork_unified_metrics.chat` instead of `chat_metrics`.
 
 maxItems100
 
@@ -360,17 +370,29 @@ UTC date in YYYY-MM-DD format. Start of a date range (inclusive). Enables rollup
 
 formatdate
 
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
 ##### Returns
 
 
 
-data: array of [BetaAnalyticsUserActivity](http-beta-organization-analytics.md#beta_analytics_user_activity) { chat_metrics, claude_code_metrics, cowork_metrics, 9 more }
+data: array of [BetaAnalyticsUserActivity](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_user_activity) { chat_metrics, claude_code_metrics, cowork_metrics, 10 more }
 
 
 
 
 
-chat_metrics: [BetaAnalyticsChatMetrics](http-beta-organization-analytics.md#beta_analytics_chat_metrics) { connectors_used_count, distinct_artifacts_created_count, distinct_connectors_used_count, 9 more }
+chat_metrics: [BetaAnalyticsChatMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_chat_metrics) { connectors_used_count, distinct_artifacts_created_count, distinct_connectors_used_count, 9 more }
 
 
 
@@ -378,7 +400,7 @@ Claude.ai activity metrics for a single user on a given day.
 
 
 
-claude_code_metrics: [BetaAnalyticsClaudeCodeMetrics](http-beta-organization-analytics.md#beta_analytics_claude_code_metrics) { core_metrics, tool_actions }
+claude_code_metrics: [BetaAnalyticsClaudeCodeMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_claude_code_metrics) { core_metrics, tool_actions }
 
 
 
@@ -386,7 +408,7 @@ Claude Code activity metrics for a single user on a given day.
 
 
 
-cowork_metrics: [BetaAnalyticsCoworkMetrics](http-beta-organization-analytics.md#beta_analytics_cowork_metrics) { action_count, artifacts_created_count, connectors_used_count, 14 more }
+cowork_metrics: [BetaAnalyticsCoworkMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_cowork_metrics) { action_count, artifacts_created_count, connectors_used_count, 14 more }
 
 
 
@@ -394,7 +416,7 @@ Cowork activity metrics for a single user on a given day.
 
 
 
-design_metrics: [BetaAnalyticsDesignMetrics](http-beta-organization-analytics.md#beta_analytics_design_metrics) { distinct_projects_created_count, distinct_projects_used_count, distinct_session_count, message_count }
+design_metrics: [BetaAnalyticsDesignMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_design_metrics) { distinct_projects_created_count, distinct_projects_used_count, distinct_session_count, message_count }
 
 
 
@@ -426,7 +448,7 @@ Number of messages sent in Claude Design sessions
 
 
 
-office_metrics: [BetaAnalyticsOfficeMetrics](http-beta-organization-analytics.md#beta_analytics_office_metrics) { excel, outlook, powerpoint, word }
+office_metrics: [BetaAnalyticsOfficeMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_office_metrics) { excel, outlook, powerpoint, word }
 
 
 
@@ -434,7 +456,7 @@ Office Agent activity metrics for a single user on a given day, broken out by Of
 
 
 
-science_metrics: [BetaAnalyticsScienceMetrics](http-beta-organization-analytics.md#beta_analytics_science_metrics) { delegation_count, distinct_session_count, message_count, 2 more }
+science_metrics: [BetaAnalyticsScienceMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_science_metrics) { delegation_count, distinct_session_count, message_count, 2 more }
 
 
 
@@ -476,6 +498,30 @@ web_search_count: number
 
 Number of web searches performed
 
+
+
+chat_cowork_unified_metrics: optional object{ chat, sessions } or null
+
+
+
+Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+
+
+
+chat: [BetaAnalyticsChatCoworkUnifiedChatMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_chat_cowork_unified_chat_metrics) { connectors_used_count, distinct_artifacts_created_count, distinct_connectors_used_count, 9 more }
+
+
+
+Chat activity recorded while members had Chat and Cowork unified turned on.
+
+
+
+sessions: [BetaAnalyticsChatCoworkUnifiedSessionsMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_chat_cowork_unified_sessions_metrics) { action_count, artifacts_created_count, connectors_used_count, 14 more }
+
+
+
+Cowork session activity recorded while members had Chat and Cowork unified turned on.
+
 distinct_user_count: optional number or null
 
 
@@ -506,7 +552,7 @@ Resolved RBAC group display name, alongside `rbac_group_id` when name resolution
 
 
 
-user: optional [BetaAnalyticsUser](http-beta-organization-analytics.md#beta_analytics_user) { type: "user", id, email_address } or null
+user: optional [BetaAnalyticsUser](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_user) { type: "user", id, email_address } or null
 
 
 
@@ -671,6 +717,41 @@ Response 200
         "skills_used_count": 0
       },
       "web_search_count": 0,
+      "chat_cowork_unified_metrics": {
+        "chat": {
+          "connectors_used_count": 0,
+          "distinct_artifacts_created_count": 0,
+          "distinct_connectors_used_count": 0,
+          "distinct_conversation_count": 0,
+          "distinct_files_uploaded_count": 0,
+          "distinct_projects_created_count": 0,
+          "distinct_projects_used_count": 0,
+          "distinct_shared_artifacts_viewed_count": 0,
+          "distinct_skills_used_count": 0,
+          "message_count": 0,
+          "shared_conversations_viewed_count": 0,
+          "thinking_message_count": 0
+        },
+        "sessions": {
+          "action_count": 0,
+          "artifacts_created_count": 0,
+          "connectors_used_count": 0,
+          "dispatch_turn_count": 0,
+          "distinct_connectors_used_count": 0,
+          "distinct_plugins_used_count": 0,
+          "distinct_session_count": 0,
+          "distinct_skills_used_count": 0,
+          "edit_tool_count": 0,
+          "file_edit_count": 0,
+          "message_count": 0,
+          "multi_edit_tool_count": 0,
+          "notebook_edit_tool_count": 0,
+          "plugins_used_count": 0,
+          "sessions_with_file_edits_count": 0,
+          "skills_used_count": 0,
+          "write_tool_count": 0
+        }
+      },
       "distinct_user_count": 0,
       "last_activity_date": "2019-12-27",
       "rbac_group_id": "rbac_group_id",
@@ -807,6 +888,41 @@ Response 200
         "skills_used_count": 0
       },
       "web_search_count": 0,
+      "chat_cowork_unified_metrics": {
+        "chat": {
+          "connectors_used_count": 0,
+          "distinct_artifacts_created_count": 0,
+          "distinct_connectors_used_count": 0,
+          "distinct_conversation_count": 0,
+          "distinct_files_uploaded_count": 0,
+          "distinct_projects_created_count": 0,
+          "distinct_projects_used_count": 0,
+          "distinct_shared_artifacts_viewed_count": 0,
+          "distinct_skills_used_count": 0,
+          "message_count": 0,
+          "shared_conversations_viewed_count": 0,
+          "thinking_message_count": 0
+        },
+        "sessions": {
+          "action_count": 0,
+          "artifacts_created_count": 0,
+          "connectors_used_count": 0,
+          "dispatch_turn_count": 0,
+          "distinct_connectors_used_count": 0,
+          "distinct_plugins_used_count": 0,
+          "distinct_session_count": 0,
+          "distinct_skills_used_count": 0,
+          "edit_tool_count": 0,
+          "file_edit_count": 0,
+          "message_count": 0,
+          "multi_edit_tool_count": 0,
+          "notebook_edit_tool_count": 0,
+          "plugins_used_count": 0,
+          "sessions_with_file_edits_count": 0,
+          "skills_used_count": 0,
+          "write_tool_count": 0
+        }
+      },
       "distinct_user_count": 0,
       "last_activity_date": "2019-12-27",
       "rbac_group_id": "rbac_group_id",

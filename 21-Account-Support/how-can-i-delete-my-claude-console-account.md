@@ -2,18 +2,16 @@
 title: "How can I delete my Claude Console account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10366376-how-can-i-delete-my-claude-console-account"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:25:00Z"
+fetched_at: "2026-10-23T06:28:47Z"
 tags: ["account"]
 ---
 
 # How can I delete my Claude Console account?
 
-March 16, 2026
-
-
-Only Console Admins can request deletion. See [Claude Console Roles and Permissions](../13-Enterprise-Admin/claude-console-roles-and-permissions.md) for a full overview of your role's capabilities.
 
 This article explains how a Claude Console Admin can delete their organization via Console settings. Note that deletion impacts all members of a Console organization.
+
+Only Console Admins can request deletion. For a full overview of your role's capabilities, see **[Claude Console roles and permissions](../13-Enterprise-Admin/claude-console-roles-and-permissions.md)**.
 
 ## Before deletion
 
@@ -27,7 +25,7 @@ This article explains how a Claude Console Admin can delete their organization v
 
 1.  Log in to your Console Admin account.
 
-2.  Navigate to [Settings \> Organization](../04-API-Reference/Other/playground.md).
+2.  Go to the **Organization** page (platform.claude.com/settings/organization).
 
 3.  Click the red “Delete organization” button.
 
@@ -37,22 +35,22 @@ This article explains how a Claude Console Admin can delete their organization v
 
 6.  You will see an “Organization deleted” confirmation in the upper right corner of your screen.
 
-## Frequently Asked Questions
+------------------------------------------------------------------------
+
+## Frequently asked questions
 
 ### I accidentally deleted my Console organization – what should I do?
 
-If you followed the steps above to delete your Console organization but want to revert this action, our Support team can restore your account data within seven days of deletion. Please [contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support) for further assistance.
+If you followed the steps above to delete your Console organization but want to revert this action, our Support team can restore your account data within seven days of deletion. Please **[contact Support](../15-Claude-AI-Features/how-to-get-support.md)** for further assistance.
 
 ### I have an outstanding balance; how can I delete my Console organization?
 
-If you have an outstanding balance, you will see a message during the deletion flow that prompts you to pay the balance first by routing you to [Settings \> Billing](../04-API-Reference/Other/playground.md).
-
+If you have an outstanding balance, you will see a message during the deletion flow that prompts you to pay the balance first by routing you to the **Billing** page (platform.claude.com/settings/billing).
 
 You must pay this outstanding balance before you’re able to move forward with the deletion process.
 
 ### I’m seeing a message about contacting the Support team when I try to delete my Console organization.
 
 There are some scenarios where you will need to contact our team to delete your account. If this is the case, it will be noted when you try to delete your organization:
-
 
 If you are seeing this message, this indicates that your Console organization cannot be deleted via the self-service pathway.

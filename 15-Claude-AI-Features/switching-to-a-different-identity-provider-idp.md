@@ -2,7 +2,7 @@
 title: "Switching to a different Identity Provider (IdP) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:15Z"
+fetched_at: "2026-10-23T06:29:02Z"
 tags: ["claude-ai"]
 ---
 

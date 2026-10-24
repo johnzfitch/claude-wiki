@@ -2,7 +2,7 @@
 title: "List Tunnel Certificates - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/mcp_tunnels/tunnel_certificates/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:07Z"
+fetched_at: "2026-10-20T06:38:38Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fmcp_tunnels%2Ftunnel_certificates%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fmcp_tunnels%2Ftunnel_certificates%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 
 List Tunnels Deprecated
@@ -159,9 +159,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -232,13 +234,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -246,9 +250,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -257,12 +261,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [MCP Tunnels](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels)
 5.  [Tunnel Certificates](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels/tunnel_certificates)
 
 # List Tunnel Certificates
+
+Copy page
+
+
+
+cURL
 
 Deprecated
 
@@ -318,7 +328,17 @@ A tunnel has at most two active certificates, so this list is not paginated.
 
 
 
-"anthropic-beta": array of [AnthropicBeta](../Endpoints/http-beta.md#anthropic_beta)
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
+
+
+"anthropic-beta": array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -527,6 +547,10 @@ string
 
 
 "spend-limit-reads-2026-09-26"
+
+
+
+"telemetry-destinations-2026-08-11"
 
 
 

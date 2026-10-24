@@ -2,7 +2,7 @@
 title: "Introducing Claude Opus 5.5 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-opus-5-5"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:34Z"
+fetched_at: "2026-10-20T06:38:38Z"
 tags: ["agents", "claude-ai"]
 ---
 
@@ -27,7 +27,7 @@ Here are some of the improvements you can expect from Opus 5.5:
 
 **Safety.** Opus 5.5 achieves the best scores of any model to date on our automated behavioral audit, our alignment suite that tests Claude across thousands of simulated scenarios. It is much less likely than recent models to take hard-to-reverse actions or act outside the boundaries it’s been given, and it’s more resistant than Opus 5 to prompt injection. We’ve also broadened our alignment testing to cover longer tasks, impossible tasks, and scenarios modeled on real incidents, though it still has limits. Full details of our evaluation are available in the [Opus 5.5 System Card](../19-Reference/this-system-card-describes-claude-opus-5-5-the-latest-opus-class-large.md).
 
-Because Opus 5.5 is comparable to Claude Mythos 5.1 in biology and cybersecurity, we’re deploying it with safeguards similar to those on Claude Fable 5.1. Vetted organizations can apply today to our [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md) to use Opus 5.5 for biology research. In the coming weeks we will also be expanding access to our [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet), and verified cybersecurity practitioners will be able to use Opus 5.5 for their work.
+Because Opus 5.5 is comparable to Claude Mythos 5.1 in biology and cybersecurity, we’re deploying it with safeguards similar to those on Claude Fable 5.1. Vetted organizations can apply today to our [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md) to use Opus 5.5 for biology research. In the coming weeks we will also be expanding access to our [Cyber Verification Program](../21-Account-Support/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md), and verified cybersecurity practitioners will be able to use Opus 5.5 for their work.
 
 **Cost and speed.** Opus 5.5 requires less compute to serve than Opus 5, and its pricing reflects that. Our tests show that at default settings it will cost 40% less than Opus 5 on typical workloads. Input and output tokens are \$4 and \$20 per million, 20% less than Opus 5. Cache reads (which make up the majority of agentic and coding work costs) are \$0.20 per million tokens, 60% less than Opus 5. Opus 5.5 also generates output more than 30% faster than Opus 5.
 
@@ -366,7 +366,7 @@ As our models grow more powerful, stricter safeguards are one way we prevent new
 
 **Cybersecurity.** Because Opus 5.5 has extremely strong cyber capabilities, we’re applying cybersecurity safeguards to Opus 5.5 that are similar to Fable 5.1’s. Users will be able to identify and fix bugs in their code as part of the routine software development lifecycle, but most cybersecurity tasks will be re-routed to Opus 4.8.
 
-For cyberdefenders, we’ll soon be expanding our [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) to include Opus 5.5. The new program will include three tiers for increasingly permissive trusted access, including access to Claude Mythos models. [Claude Security](../19-Reference/claude-code-security.md) is already available with access to Claude Mythos 5.1.
+For cyberdefenders, we’ll soon be expanding our [Cyber Verification Program](../21-Account-Support/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) to include Opus 5.5. The new program will include three tiers for increasingly permissive trusted access, including access to Claude Mythos models. [Claude Security](../19-Reference/claude-code-security.md) is already available with access to Claude Mythos 5.1.
 
 **Biology.** Opus 5.5 is highly capable in biology, exceeding Opus 5 and matching or beating Claude Mythos 5.1 across many areas of work. For example, Opus 5.5 achieved improvements on a long-horizon molecular prediction and design evaluation conducted in collaboration with Dyno Therapeutics, and expert red-teamers rated its scientific novelty as comparable to the best model they had tested.
 
@@ -376,7 +376,7 @@ For this reason, Opus 5.5 uses the same biology safeguards as Fable 5.1. To use 
 
 Distillation attacks, in which attackers use thousands of fake accounts to extract a model’s capabilities at industrial scale, create safety and national security risks. Distillation allows bad actors to create highly capable models without the safeguards we build into Claude. Our [September 2026 threat intelligence report](https://www.anthropic.com/threat-intelligence-report-september-2026) details the illicit distillation activity we’ve detected and disrupted so far.
 
-Opus 5.5 is launching with preserved thinking, the anti-distillation safeguard we introduced with Fable 5.1. It stops API users from editing Claude’s prior context in an attempt to extract Claude’s reasoning. It applies to Fable 5.1 and Opus 5.5 for API accounts created on or after August 31, 2026. Our [Help Center article](../04-API-Reference/Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md) explains the change, and our [preserved thinking docs](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) show how to test and update your integrations.
+Opus 5.5 is launching with preserved thinking, the anti-distillation safeguard we introduced with Fable 5.1. It stops API users from editing Claude’s prior context in an attempt to extract Claude’s reasoning. It applies to Fable 5.1 and Opus 5.5 for API accounts created on or after August 31, 2026. Our [Help Center article](https://support.claude.com/en/articles/16761192) explains the change, and our [preserved thinking docs](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) show how to test and update your integrations.
 
 ### Data retention and compliance
 
@@ -401,6 +401,7 @@ Claude Opus 5.5 is now available on all platforms, including Amazon Web Services
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Claude in Chrome](https://claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -447,7 +448,7 @@ Claude Opus 5.5 is now available on all platforms, including Amazon Web Services
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 
@@ -470,12 +471,12 @@ Claude Opus 5.5 is now available on all platforms, including Amazon Web Services
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ### Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Status](https://status.anthropic.com/)
 - [Support center](https://support.claude.com/en/)
 

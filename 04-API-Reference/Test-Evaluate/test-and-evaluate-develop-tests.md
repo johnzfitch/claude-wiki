@@ -2,7 +2,7 @@
 title: "Define success criteria and build evaluations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-10-04T08:33:52Z"
+fetched_at: "2026-10-20T06:38:06Z"
 tags: ["api", "evaluation"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "evaluation"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Ftest-and-evaluate%2Fdevelop-tests)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Ftest-and-evaluate%2Fdevelop-tests)
 
 
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -50,7 +50,7 @@ Reference
 
 [Glossary](../About/about-claude-glossary.md)[Additional resources](../About/about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](../About/about-claude-use-case-guides-overview.md)Test and evaluate
 
@@ -196,6 +196,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -219,7 +221,7 @@ client = anthropic.Anthropic()
 def get_completion(prompt: str):
     message = client.messages.create(
         model="claude-opus-5-5",
-        max_tokens=50,
+        max_tokens=1024,
         messages=[{"role": "user", "content": prompt}],
     )
     return next(block.text for block in message.content if block.type == "text")
@@ -231,7 +233,7 @@ def evaluate_exact_match(model_output, correct_answer):
 
 outputs = [
     get_completion(
-        f"Classify this as 'positive', 'negative', 'neutral', or 'mixed': {tweet['text']}"
+        f"Classify this as 'positive', 'negative', 'neutral', or 'mixed'. Output only the label: {tweet['text']}"
     )
     for tweet in tweets
 ]
@@ -261,6 +263,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -341,6 +345,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -411,6 +417,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -452,7 +460,7 @@ def evaluate_likert(model_output, target_tone):
     # Generally best practice to use a different model to evaluate than the model used to generate the evaluated output
     response = client.messages.create(
         model="claude-opus-5-5",
-        max_tokens=50,
+        max_tokens=1024,
         messages=[{"role": "user", "content": tone_prompt}],
     )
     return int(
@@ -490,6 +498,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -541,7 +551,7 @@ def evaluate_binary(model_output, query_contains_phi):
     # Generally best practice to use a different model to evaluate than the model used to generate the evaluated output
     response = client.messages.create(
         model="claude-opus-5-5",
-        max_tokens=50,
+        max_tokens=1024,
         messages=[{"role": "user", "content": binary_prompt}],
     )
     return (
@@ -584,6 +594,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -656,7 +668,7 @@ def evaluate_ordinal(model_output, conversation):
     # Generally best practice to use a different model to evaluate than the model used to generate the evaluated output
     response = client.messages.create(
         model="claude-opus-5-5",
-        max_tokens=50,
+        max_tokens=1024,
         messages=[{"role": "user", "content": ordinal_prompt}],
     )
     return int(
@@ -718,6 +730,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

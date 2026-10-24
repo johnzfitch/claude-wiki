@@ -2,7 +2,7 @@
 title: "Section Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/section"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:20Z"
+fetched_at: "2026-10-23T06:29:49Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -45,17 +45,17 @@ Section was founded nearly six years ago as a leadership training provider build
 
 In the last two years, Section has evolved to help companies build their AI transformation plans, upskill their workforce on AI, and redesign high-impact workflows to leverage AI.
 
-"AI is crashing into the workforce, but the workforce isn’t ready. According to our data, less than 10% of workers are AI-proficient," says Taylor Malmsheimer, COO at Section.
+“AI is crashing into the workforce, but the workforce isn’t ready. According to our data, less than 10% of workers are AI-proficient,” says Taylor Malmsheimer, COO at Section.
 
 ## Choosing Claude as a strategic thought partner
 
-Section's journey with Claude began with a spontaneous experiment. As Shove and Malmsheimer prepared for an upcoming board meeting in August 2023, they decided to test how AI might help. They uploaded their board materials to several AI platforms—asking each to role-play as a board member and provide potential questions and feedback.
+Section’s journey with Claude began with a spontaneous experiment. As Shove and Malmsheimer prepared for an upcoming board meeting in August 2023, they decided to test how AI might help. They uploaded their board materials to several AI platforms—asking each to role-play as a board member and provide potential questions and feedback.
 
-The results were eye-opening. "Claude blew us away," said Malmsheimer. After the board meeting, they compared their notes against Claude's predictions. "Claude identified 92% of the feedback the board brought up." This moment was a catalyst for Section, revealing AI's potential beyond simple automation to serve as a genuine strategic thought partner.
+The results were eye-opening. “Claude blew us away,” said Malmsheimer. After the board meeting, they compared their notes against Claude’s predictions. “Claude identified 92% of the feedback the board brought up.” This moment was a catalyst for Section, revealing AI’s potential beyond simple automation to serve as a genuine strategic thought partner.
 
-Claude stood out for its ability to engage in nuanced, strategic conversations. Malmsheimer said, "When I upload a document to ChatGPT versus Claude, Claude feels more true to how a business person would respond." While Section uses multiple AI models, they consistently turn to Claude as their strategic thought partner. The impact extends beyond metrics to boosting confidence. Malmsheimer shared, "I'm a relatively new executive. I haven't been in many board meetings. It's valuable to feel more prepared and confident going into those conversations."
+Claude stood out for its ability to engage in nuanced, strategic conversations. Malmsheimer said, “When I upload a document to ChatGPT versus Claude, Claude feels more true to how a business person would respond.” While Section uses multiple AI models, they consistently turn to Claude as their strategic thought partner. The impact extends beyond metrics to boosting confidence. Malmsheimer shared, “I’m a relatively new executive. I haven’t been in many board meetings. It’s valuable to feel more prepared and confident going into those conversations.”
 
-This experience transformed Section's view of AI's role in business. Malmsheimer explained, "Before that, most of the use cases we shared internally were on our operations team. They were great, but very much 'automated this process that took me forever.' As leaders developing IP, this was a moment of 'My God, this can be a partner in developing that IP, in this thinking and preparation.'"
+This experience transformed Section’s view of AI’s role in business. Malmsheimer explained, “Before that, most of the use cases we shared internally were on our operations team. They were great, but very much ‘automated this process that took me forever.’ As leaders developing IP, this was a moment of ‘My God, this can be a partner in developing that IP, in this thinking and preparation.’”
 
 ## Measuring ROI
 
@@ -65,7 +65,7 @@ Since then Section has rolled out Claude for teams to its 25-person team. Intern
 - The education team uses Claude to develop the framework and flow of presentation decks for live lectures in Section bootcamp programs
 - The leadership team uses Claude as a strategic thought partner, getting feedback on new initiatives and strategic plans
 
-Section's use of Claude has fundamentally changed the company's operations. Malmsheimer said, "If I took it away, there would be a clear impact on our productivity and efficiency." The ROI is clear—with half the team achieving at least a 10% productivity gain.
+Section’s use of Claude has fundamentally changed the company’s operations. Malmsheimer said, “If I took it away, there would be a clear impact on our productivity and efficiency.” The ROI is clear—with half the team achieving at least a 10% productivity gain.
 
 The company spends about \$20K per year on AI accounts for their 25-person team, including Claude. With half the team getting a 10% productivity gain already, they estimate they’re saving \$150-200K a year, or 1-2 headcount.
 
@@ -73,9 +73,9 @@ The company spends about \$20K per year on AI accounts for their 25-person team,
 
 ## Building the future of AI workforce transformation
 
-Section envisions transforming how organizations and individuals adapt to AI. Through their partnership with Anthropic, they're launching ProfAI, an AI-powered coach that delivers personalized, contextual learning at scale.
+Section envisions transforming how organizations and individuals adapt to AI. Through their partnership with Anthropic, they’re launching ProfAI, an AI-powered coach that delivers personalized, contextual learning at scale.
 
-"With AI, we've been able to recreate the value of a personal, 1-on-1 tutor for every single student," says Malmsheimer. While Section initially prototyped ProfAI with GPT-4, they ultimately chose Claude for its superior performance as a strategic thought partner. "We've found that Claude's feedback and tone better aligns with what we need to create an engaging user experience."
+“With AI, we’ve been able to recreate the value of a personal, 1-on-1 tutor for every single student,” says Malmsheimer. While Section initially prototyped ProfAI with GPT-4, they ultimately chose Claude for its superior performance as a strategic thought partner. “We’ve found that Claude’s feedback and tone better aligns with what we need to create an engaging user experience.”
 
 With plans to upskill 100,000 employees on AI this year and one million the next, Section and Anthropic are empowering a generation of confident workers to thrive in an AI-powered future.
 
@@ -102,7 +102,8 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -120,12 +121,12 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -158,7 +159,7 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -176,6 +177,7 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -191,7 +193,7 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -226,7 +228,8 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -244,12 +247,12 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -282,7 +285,7 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -300,6 +303,7 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -315,7 +319,7 @@ With plans to upskill 100,000 employees on AI this year and one million the next
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

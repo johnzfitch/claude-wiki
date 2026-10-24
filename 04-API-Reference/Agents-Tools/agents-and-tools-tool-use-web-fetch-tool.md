@@ -2,7 +2,7 @@
 title: "Web fetch tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:31:34Z"
+fetched_at: "2026-10-20T06:39:12Z"
 tags: ["api", "prompting", "search"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "prompting", "search"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fweb-fetch-tool)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fweb-fetch-tool)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Tools
 
@@ -96,7 +96,7 @@ Fetch and read content from specific URLs to augment Claude's context with live 
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 The web fetch tool allows Claude to retrieve full content from specified web pages and PDF documents.
 
@@ -118,7 +118,7 @@ For Zero Data Retention eligibility and the `allowed_callers` workaround, see [S
 
 Enabling the web fetch tool in environments where Claude processes untrusted input alongside sensitive data poses data exfiltration risks. Only use this tool in trusted environments or when handling non-sensitive data.
 
-To minimize exfiltration risks, Claude cannot fetch URLs that appear only in its own output. Claude can only fetch URLs that have previously appeared in the conversation: URLs in user messages, URLs in client-side tool results (even when a result echoes text that Claude generated), and URLs from previous web search or web fetch results (see [URL validation](#url-validation)). Claude also cannot fetch a URL that appears to contain a credential, such as an API key or a password, unless that credential appears in the system prompt or in the text of a user message.
+To minimize exfiltration risks, Claude cannot fetch URLs that appear only in its own output. Claude can only fetch URLs that have previously appeared in the conversation: URLs in user messages, URLs in client-side tool results, and URLs from previous web search or web fetch results (see [URL validation](#url-validation)). Claude also cannot fetch a URL that appears to contain a credential, such as an API key or a password, unless that credential appears in the system prompt or in the text of a user message.
 
 However, there is still residual risk that you should carefully consider when using this tool.
 
@@ -127,6 +127,7 @@ If data exfiltration is a concern, consider:
 - Disabling the web fetch tool entirely
 - Using the `max_uses` parameter to limit the number of requests
 - Using the `allowed_domains` parameter to restrict to known safe domains
+- Using the `url_sources` parameter to stop client-side tool results from counting as a source (see [URL sources](#url-sources))
 
 For model support, see the [Tool reference](agents-and-tools-tool-use-tool-reference.md).
 
@@ -189,6 +190,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -229,6 +232,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -271,6 +276,11 @@ JSON
   // Optional: Never fetch from these domains (cannot be combined with allowed_domains)
   "blocked_domains": ["private.example.com"],
 
+  // Optional: Don't fetch URLs that appear only in client-side tool results
+  "url_sources": {
+    "client_tool_results": { "type": "none" }
+  },
+
   // Optional: Enable citations for fetched content
   "citations": {
     "enabled": true
@@ -291,7 +301,7 @@ The `max_uses` parameter limits the number of web fetches performed. Failed fetc
 
 For domain filtering with `allowed_domains` and `blocked_domains`, see [Server tools](agents-and-tools-tool-use-server-tools.md#domain-filtering).
 
-On [Claude Managed Agents](../Other/managed-agents-overview.md), set these fields on the `web_fetch` entry of the agent toolset, where each listed domain must be a plain hostname with no path; see [Restrict web search and web fetch domains](../Other/managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
+On [Claude Managed Agents](../Other/managed-agents-overview.md), set these fields on the `web_fetch` entry of the agent toolset, where each listed domain must be a plain hostname with no path; see [Restrict web search and web fetch domains](../Other/managed-agents-tools-web-restrictions.md).
 
 ### Content limits
 
@@ -301,7 +311,7 @@ The `max_content_tokens` parameter limits the amount of content included in the 
 
 The `max_content_tokens` parameter limit is approximate. The actual number of input tokens used can vary by a small amount.
 
-On Claude Managed Agents, the `web_fetch` entry of the agent toolset also accepts `max_content_tokens`; see [Restrict web search and web fetch domains](../Other/managed-agents-tools.md#restrict-web-search-and-web-fetch-domains).
+On Claude Managed Agents, the `web_fetch` entry of the agent toolset also accepts `max_content_tokens`; see the [web tool settings](../Other/managed-agents-tools-web-restrictions.md#settings).
 
 ### Cache bypass
 
@@ -496,7 +506,7 @@ These are the possible error codes:
 - `invalid_tool_input`: Invalid tool input, such as a malformed URL or a non-HTTP(S) scheme
 - `url_too_long`: URL exceeds maximum length (250 characters)
 - `url_not_allowed`: URL blocked by domain filtering rules (including your organization's settings) or by Anthropic-side restrictions, such as private addresses, `robots.txt`, and URLs that appear to contain a credential you did not provide
-- `url_not_in_prior_context`: URL did not appear earlier in the conversation (see [URL validation](#url-validation))
+- `url_not_in_prior_context`: URL did not appear earlier in the conversation, or appeared only in sources that `url_sources` excludes (see [URL validation](#url-validation))
 - `url_not_accessible`: Failed to fetch content (HTTP error)
 - `too_many_requests`: Rate limit exceeded
 - `unsupported_content_type`: Content type not supported (only text, HTML, and PDF)
@@ -511,9 +521,57 @@ For security reasons, the web fetch tool can only fetch URLs that have previousl
 - URLs in client-side tool results
 - URLs from previous web search or web fetch results
 
-The tool cannot fetch URLs that appear only in Claude's own output or only in the system prompt. To make a URL from the system prompt fetchable, also include it in a user message. Results of other server-side tools, such as [code execution](agents-and-tools-tool-use-code-execution-tool.md), the [MCP connector](agents-and-tools-mcp-connector.md), or [tool search](agents-and-tools-tool-use-tool-search-tool.md), are not an allowed source either. Client-side tool results are an allowed source even when they echo text that Claude produced (for example, a command that prints its input, or an error message that quotes it).
+The tool cannot fetch URLs that appear only in Claude's own output or only in the system prompt. To make a URL from the system prompt fetchable, also include it in a user message. Results of other server-side tools, such as [code execution](agents-and-tools-tool-use-code-execution-tool.md), the [MCP connector](agents-and-tools-mcp-connector.md), or [tool search](agents-and-tools-tool-use-tool-search-tool.md), are not an allowed source either. By default, client-side tool results are an allowed source even when they echo text that Claude produced (for example, a command that prints its input, or an error message that quotes it).
 
 The tool also refuses a URL that appears to contain a credential, such as an API key or a password, unless that credential appears in the system prompt or in the text of a user message. A credential that appears only in a tool result does not count. The result is a `url_not_allowed` error. To fetch such a URL, include it in a user message.
+
+### URL sources
+
+
+
+Works with `web_fetch_20250910`, `web_fetch_20260209`, `web_fetch_20260309`, and `web_fetch_20260318`.
+
+The optional `url_sources` parameter lets you turn off any of the three allowed sources, or limit tool results to certain tools. It has one key per source, and each key defaults to `{"type": "all"}`:
+
+- `user_input`: URLs in user messages. Its `type` is `"all"` or `"none"`.
+- `client_tool_results`: URLs in client-side tool results. Its `type` is `"all"`, `"none"`, or an `"only"` or `"except"` filter that names tools, as in the following example.
+- `server_tool_results`: URLs from previous web search or web fetch results. It takes the same values, and its filters name `web_search` or `web_fetch`.
+
+For example, a tool that runs code Claude wrote returns whatever that code prints, including any URL Claude put in it. To stop that tool's results from counting as a source, name it in an `"except"` filter:
+
+```python
+{
+  "tools": [
+    {
+      "type": "web_fetch_20260318",
+      "name": "web_fetch",
+      "url_sources": {
+        "client_tool_results": {
+          "type": "except",
+          "tools": [{ "type": "tool_reference", "name": "run_code" }]
+        }
+      }
+    },
+    {
+      "name": "run_code",
+      "description": "Run Python code and return its output",
+      "input_schema": {
+        "type": "object",
+        "properties": { "code": { "type": "string" } },
+        "required": ["code"]
+      }
+    }
+  ]
+}
+```
+
+
+
+A filter lists tools as `tool_reference` objects. Each name must match a tool in the request's `tools` array: a client tool for `client_tool_results`, or a server tool for `server_tool_results`. Otherwise, the request fails with an error. Under `"except"`, a tool you add to `tools` later counts as a source. Under `"only"`, it doesn't.
+
+Client-side tools other than `run_code` can also return text Claude wrote, for example in an error message that quotes it. To exclude all client-side tool results, set `client_tool_results` to `{"type": "none"}`.
+
+If a URL appeared only in sources that `url_sources` excludes, fetching it returns the `url_not_in_prior_context` error.
 
 ## Combined search and fetch
 
@@ -536,6 +594,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

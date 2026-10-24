@@ -2,11 +2,12 @@
 title: "MCP Everything Server (Test)"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/README.md"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-05-19T21:39:56Z"
-tags: ["desktop", "git", "github", "mcp", "prompting"]
+fetched_at: "2026-10-20T06:38:08Z"
+tags: ["desktop", "mcp", "prompting"]
 ---
 
 # Everything MCP Server
+
 **[Architecture](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/architecture.md)
 | [Project Structure](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/structure.md)
 | [Startup Process](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/startup.md)
@@ -14,14 +15,26 @@ tags: ["desktop", "git", "github", "mcp", "prompting"]
 | [Extension Points](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/extension.md)
 | [How It Works](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/how-it-works.md)**
 
-
 This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.
 
 ## Tools, Resources, Prompts, and Other Features
 
 A complete list of the registered MCP primitives and other protocol features demonstrated can be found in the [Server Features](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/features.md) document.
 
-## Usage with Claude Desktop (uses [stdio Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#stdio))
+## Protocol versions
+
+The server serves both protocol eras, over stdio and Streamable HTTP, from one process:
+
+- **2026-07-28** clients connect with `server/discover`, send their protocol version, identity and capabilities with each request, and have no session. The server demonstrates the revision's new features for them: multi-round-trip requests (`input_required`) with `requestState`, `subscriptions/listen` change notifications, per-request log levels, cache hints (`ttlMs` / `cacheScope`), the tasks extension (`io.modelcontextprotocol/tasks`) under the `extensions` capability, and `x-mcp-header` with JSON Schema 2020-12 tool schemas.
+- **2025-era** clients connect with the `initialize` handshake, as before. Elicitation, sampling and roots are served to them from the same multi-round-trip handlers through the SDK's legacy shim.
+
+Roots, sampling and logging are deprecated as of 2026-07-28 and stay available, labelled deprecated. [Server Features](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/features.md) marks which era each feature belongs to.
+
+## Requirements
+
+Node.js 24 or later, when the server runs through `npx` or from source.
+
+## Usage with Claude Desktop (uses [stdio Transport](../Spec-Archive/2025-03-26-basic-transports.md#stdio))
 
 Add to your `claude_desktop_config.json`:
 
@@ -30,10 +43,7 @@ Add to your `claude_desktop_config.json`:
   "mcpServers": {
     "everything": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-everything"
-      ]
+      "args": ["-y", "@modelcontextprotocol/server-everything"]
     }
   }
 }
@@ -46,12 +56,7 @@ On Windows, use `cmd /c` to launch `npx`:
   "mcpServers": {
     "everything": {
       "command": "cmd",
-      "args": [
-        "/c",
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-everything"
-      ]
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-everything"]
     }
   }
 }
@@ -101,15 +106,7 @@ On Windows, use:
 }
 ```
 
-## Running from source with [HTTP+SSE Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2024-11-05-transports-model-context-protocol.md#http-with-sse) (deprecated as of [2025-03-26](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md))
-
-```shell
-cd src/everything
-npm install
-npm run start:sse
-```
-
-## Run from source with [Streamable HTTP Transport](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/Spec-Archive/spec-2025-03-26-transports-model-context-protocol.md#streamable-http)
+## Run from source with [Streamable HTTP Transport](../Spec-Archive/2025-03-26-basic-transports.md#streamable-http)
 
 ```shell
 cd src/everything
@@ -117,28 +114,50 @@ npm install
 npm run start:streamableHttp
 ```
 
+The endpoint is `http://localhost:3001/mcp` (`PORT` overrides the port). It serves 2026-07-28 clients statelessly and 2025-era clients with sessions, from the same URL.
+
+## Running from source with [HTTP+SSE Transport](../Spec-Archive/2024-11-05-basic-transports.md#http-with-sse) (deprecated as of [2025-03-26](../Spec-Archive/2025-03-26-basic-transports.md))
+
+```shell
+cd src/everything
+npm install
+npm run start:sse
+```
+
+The HTTP+SSE transport serves 2025-era clients only, and the server prints a deprecation warning when it starts. Prefer Streamable HTTP.
+
 ## Running as an installed package
-### Install 
+
+### Install
+
 ```shell
 npm install -g @modelcontextprotocol/server-everything@latest
-````
+```
 
 ### Run the default (stdio) server
+
 ```shell
 npx @modelcontextprotocol/server-everything
 ```
 
 ### Or specify stdio explicitly
+
 ```shell
 npx @modelcontextprotocol/server-everything stdio
 ```
 
-### Run the SSE server
+### Run the streamable HTTP server
+
+```shell
+npx @modelcontextprotocol/server-everything streamableHttp
+```
+
+### Run the SSE server (deprecated, 2025-era clients only)
+
 ```shell
 npx @modelcontextprotocol/server-everything sse
 ```
 
-### Run the streamable HTTP server
-```shell
-npx @modelcontextprotocol/server-everything streamableHttp
-```
+## License
+
+This MCP server is licensed under the MIT License. This means you are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. For more details, please see the LICENSE file in the project repository.

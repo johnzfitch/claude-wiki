@@ -2,7 +2,7 @@
 title: "Claude Fable models on your plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:25:26Z"
+fetched_at: "2026-10-23T06:29:29Z"
 tags: ["billing"]
 ---
 
@@ -57,7 +57,7 @@ On Max plans, premium seats on Team plans, and premium seats on seat-based Enter
 
 On Pro plans, standard seats on Team plans, and standard seats on seat-based Enterprise plans, Fable models run on pay-as-you-go usage credits from the start, since they aren’t included in your plan's usage limits.
 
-This works the same way across Claude on the web, Claude Mobile, Claude Desktop, Claude Cowork, and Claude Code. Learn more about **[usage credits](manage-usage-credits-for-paid-claude-plans-claude-help-center.md)**.
+This works the same way across Claude on the web, Claude Mobile, Claude Desktop, Claude Cowork, and Claude Code. Learn more about **[usage credits](https://support.claude.com/en/articles/12429409)**.
 
 ## Frequently asked questions
 

@@ -2,7 +2,7 @@
 title: "Use Claude Code with Chrome - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/chrome"
 category: "03-IDE-Integrations"
-fetched_at: "2026-10-10T06:24:32Z"
+fetched_at: "2026-10-21T06:28:24Z"
 tags: ["claude-code", "ide"]
 ---
 
@@ -138,7 +138,7 @@ Two managed MCP policies turn the prompt off:
 
 Enable Chrome by default
 
-To connect Chrome without passing `--chrome` each time, run `/chrome` in a CLI session and select **Enabled by default**. In the [VS Code extension](vs-code.md#automate-browser-tasks-with-chrome), type `/chrome` in the prompt box and turn on the **Enabled by default** switch. The two share one setting, so turning it on in either place turns it on for both the CLI and VS Code. With the setting on and Claude Code v2.1.287 or later, each VS Code session connects to your browser as it starts, so Claude can use it before you type `@browser`. On earlier versions, or with the setting off, a VS Code session connects when you type `@browser`. Claude Code starts normally when Chrome isn’t running. Before v2.1.211, startup could hang when Chrome integration was enabled but Chrome wasn’t running.
+To connect Chrome without passing `--chrome` each time, run `/chrome` in a CLI session and select **Enabled by default**. In the [VS Code extension](vs-code.md#automate-browser-tasks-with-chrome), type `/chrome` in the prompt box and turn on the **Enabled by default** switch. The two share one setting, so turning it on in either place turns it on for both the CLI and VS Code. With the setting on and Claude Code v2.1.287 or later, each VS Code session connects to your browser as it starts, so Claude can use it before you type `@browser`. On earlier versions, or with the setting off, a VS Code session connects when you type `@browser`. Claude Code starts normally when Chrome isn’t running.
 
 Enabling Chrome by default increases context usage since the browser tools and their instructions are always loaded. If you notice increased context consumption, turn the setting off and connect only when needed, with `--chrome` in the CLI or by typing [`@browser`](vs-code.md#automate-browser-tasks-with-chrome) in the VS Code prompt box.
 
@@ -219,7 +219,7 @@ Claude reads your local file, navigates the web interface, and enters the data f
 
 Upload files to web pages
 
-Claude can attach files from your machine to upload fields on a page. Claude Code reads the file and sends its contents to the browser, so uploads work in both local and remote sessions. Requires Claude Code v2.1.211 or later. This example attaches a log file to a form:
+Claude can attach files from your machine to upload fields on a page. Claude Code reads the file and sends its contents to the browser, so uploads work in both local and remote sessions. This example attaches a log file to a form:
 
 ```python
 Open the bug tracker at bugs.example.com, create a new issue,
@@ -301,7 +301,7 @@ Ask Claude to keep a screenshot as a file:
 Take a screenshot of the checkout page and save it to disk
 ```
 
-Claude saves the image to disk and reports the file path. Before v2.1.211, the screenshot tool’s `save_to_disk` option didn’t write a file.
+Claude saves the image to disk and reports the file path.
 
 
 [​](#troubleshooting)
@@ -404,7 +404,8 @@ These are the most frequently encountered errors and how to resolve them:
 | ”Browser extension is not connected”        | The extension isn’t installed and running in Chrome, the extension is signed in to a different claude.ai account or organization than Claude Code, or your organization’s IP allowlist rejects the connection to `bridge.claudeusercontent.com` | Check that the extension is signed in to the same claude.ai account and [organization](#extension-signed-in-to-a-different-organization) as Claude Code, restart Chrome and Claude Code, then run `/chrome` to reconnect. If your organization uses IP allowlisting and the error persists, see [Organization IP allowlists and proxy egress](../13-Enterprise-Admin/network-config.md#organization-ip-allowlists-and-proxy-egress) |
 | Extension shows “Not detected” in `/chrome` | Chrome extension is not installed or is disabled                                                                                                                                                                                                | Install or enable the extension in `chrome://extensions`                                                                                                                                                                                                                                                                                                                                                           |
 | ”No tab available”                          | Claude tried to act before a tab was ready                                                                                                                                                                                                      | Ask Claude to create a new tab and retry                                                                                                                                                                                                                                                                                                                                                                           |
-| ”Receiving end does not exist”              | Extension service worker went idle                                                                                                                                                                                                              | Run `/chrome` and select “Reconnect extension”                                                                                                                                                                                                                                                                                                                                                                     |
+| ”Receiving end does not exist”              | Extension service worker went idle                                                                                                                                                                                                              | Run `/chrome` and select “Reconnect extension"                                                                                                                                                                                                                                                                                                                                                                     |
+| "No browsers are connected”                 | Chrome isn’t open with the extension signed in to the same claude.ai account and organization as Claude Code, or Claude Code can’t reach `bridge.claudeusercontent.com`                                                                         | Confirm Chrome is open and the extension is signed in to the same claude.ai account and [organization](#extension-signed-in-to-a-different-organization) as Claude Code. If so, check that your network lets Claude Code reach `bridge.claudeusercontent.com`, listed under [Network access requirements](../13-Enterprise-Admin/network-config.md#network-access-requirements)                                                     |
 
 
 [​](#see-also)

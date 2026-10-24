@@ -2,7 +2,7 @@
 title: "Interface gallery for mods - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/gallery"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-08T06:24:36Z"
+fetched_at: "2026-10-21T06:28:53Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -156,7 +156,7 @@ Three elements put words on screen: `Text` for your own styling, `Markdown` for 
 
 `Text`
 
-`Text` draws a string with the styles you give it. This sample shows one line for each style:
+`Text` draws a string with the styles you give it. This sample shows plain text and eight styles, one on each line:
 
 ```python
 Box({
@@ -210,7 +210,7 @@ The terminal draws the URL as text after the label. Whether a click opens it dep
 
 Show code and changes
 
-`Code` draws source text with Claude Code’s own syntax colors, or a diff.
+`Code` draws source text with Claude Code’s own syntax colors, or a diff. In the VS Code extension, `Code` shows its `source` as plain text, with none of the colors, line numbers, or diff shading in these screenshots.
 
 
 [​](#code)
@@ -283,7 +283,7 @@ The border stretches to the width of the pane.
 
 Take input
 
-`Button`, `Input`, and `Select` are controls: the user moves between them with Tab and uses the one that has the focus. [Keyboard focus and hotkeys](plugins-mods-interface.md#know-which-keys-your-mod-can-receive) covers which keys reach them. Opening a pane with `focus: true` gives the pane keyboard focus. Typed letters reach an `Input` once it has the focus, so add `autoFocus: true` to a field that should take typing as soon as the pane opens.
+`Button`, `Input`, and `Select` are controls: the user moves between them with Tab and uses the one that has the focus. [Keyboard focus and hotkeys](plugins-mods-interface.md#know-which-keys-your-mod-can-receive) covers which keys reach them. Open a pane with `focus: true` to request keyboard focus for it. Typed letters reach an `Input` once it has the focus. To choose which field has the focus when the pane opens, see [Set a hotkey and the first focus](plugins-mods-interface.md#set-a-hotkey-and-the-first-focus).
 
 
 [​](#button)
@@ -389,7 +389,7 @@ A `Raster` rounds each color to a smaller palette, so `0x2e7d32` draws as `#3377
 
 `Svg`
 
-An `Svg` draws an SVG document in the Desktop app:
+An `Svg` draws an SVG document in the Desktop app and the VS Code extension:
 
 ```python
 Svg({
@@ -408,13 +408,20 @@ In the terminal, a pane that returns only an `Svg` opens empty. To draw somethin
 
 `Image` and `Client`
 
-Two more elements have no sample here. `Image` draws a PNG or raw pixels in the terminal. `Client` is a region that a second file of yours draws, for animation and pointer input. The [elements reference](plugins-mods-reference.md#elements) lists their props. Unless Claude Code detects that the terminal draws kitty graphics protocol images with Unicode placeholders, the user sees an `Image`’s `alt` text, dimmed, in place of the picture. Write `alt` text that stands on its own. Detection runs at startup: it succeeds in kitty 0.28 or later and in Ghostty, once the terminal answers Claude Code’s graphics query, and fails in these cases:
+Two more elements have no sample here. `Image` draws a PNG or raw pixels in the terminal. `Client` is a region that a second file of yours draws, for animation and pointer input. The [elements reference](plugins-mods-reference.md#elements) lists their props. An `Image` draws as a picture in these terminals:
 
-- **Other terminals**: any terminal that isn’t one of those two, or that doesn’t answer the query.
-- **tmux and screen**: a session running inside tmux or screen, in any terminal, kitty and Ghostty included.
+- kitty 0.28 or later
+- Ghostty
+- iTerm2 3.5 or later. Drawing in iTerm2 requires Claude Code v2.1.305 or later.
+
+In any other terminal, the user sees the `Image`’s `alt` text, dimmed, in place of the picture. Write `alt` text that stands on its own, because it also shows in these cases, among others:
+
+- **tmux and screen**: a session running inside tmux or screen, in any terminal.
 - **Background sessions**: every [background session](../09-Agents-Patterns/agent-view.md), whatever terminal it’s attached from.
+- **iTerm2 outside fullscreen rendering**: in iTerm2 the picture draws only under [fullscreen rendering](../02-Claude-Code-CLI/fullscreen.md), and not while [`CLAUDE_CODE_ALT_SCREEN_FULL_REPAINT`](../02-Claude-Code-CLI/env-vars.md) is set to `1`. To see the picture, run `/tui fullscreen` at the Claude Code prompt and leave that variable unset.
+- **A file path source in iTerm2**: iTerm2 draws an `Image` whose `source` prop holds `png` or `rgba` bytes, and shows the `alt` text for one whose `source` names a `file`. If your mod has iTerm2 users, pass the picture as base64 in `source.png` or `source.rgba` rather than as a path in `source.file`.
 
-If your mod’s users see the dimmed text in a terminal that does draw those placeholder images, they can set [`CLAUDE_CODE_FORCE_TERMINAL_IMAGES`](../02-Claude-Code-CLI/env-vars.md) to `1`, which skips detection. Inside tmux or screen that doesn’t help: the `alt` text goes away, and Claude Code sends the picture without wrapping it for tmux or screen passthrough.
+If your mod’s users see the dimmed text in a terminal that draws kitty graphics protocol images with Unicode placeholders, they can set [`CLAUDE_CODE_FORCE_TERMINAL_IMAGES`](../02-Claude-Code-CLI/env-vars.md) to `1`. Inside tmux or screen that doesn’t help: the `alt` text goes away, and Claude Code sends the picture without wrapping it for tmux or screen passthrough.
 
 
 [​](#see-where-a-mod-can-draw)

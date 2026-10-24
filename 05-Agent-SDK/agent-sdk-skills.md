@@ -2,7 +2,7 @@
 title: "Extend agents with skills - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/skills"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-06T06:23:10Z"
+fetched_at: "2026-10-23T06:28:21Z"
 tags: ["agents", "claude-code", "sdk", "skills"]
 ---
 
@@ -142,7 +142,13 @@ Near the start of the stream, the SDK yields a system message with subtype `init
 
 Allow only specific skills
 
-To let Claude invoke only specific skills, pass their names in the `skills` list. Names match the `name` field in `SKILL.md` or the skill’s directory name. Use `plugin:skill` for plugin-provided skills. The list takes exact skill names only. If an entry can’t work as an exact name, `query()` rejects the list before the session starts. See [Invalid skill name error](#invalid-skill-name-error) for the name rules and the error each SDK raises. The model doesn’t see unlisted skills and the Skill tool rejects them, while their files remain on disk and stay reachable through Read and Bash. Restricting the list doesn’t restrict [dispatch by name](#dispatch-commands-by-name). To let Claude invoke every discovered skill, pass `skills: "all"` rather than a wildcard.
+To let Claude invoke only specific skills, pass their names in the `skills` list:
+
+- **Your own skills**: the skill’s directory name
+- **Plugin skills**: `plugin:skill`
+- **Name clashes in `additionalDirectories` or `add_dirs`**: a skill in one of those directories gets a [prefixed name](../08-Plugins-Skills/skills.md#how-a-skill-gets-its-command-name) when its name clashes with an enterprise, personal, or project skill, or one in a directory added earlier. List it by that name. With a `verify` skill in `../api` and `../web`, added in that order, and no other `verify` skill, list them as `verify` and `web:verify`. Requires Claude Code v2.1.309 or later
+
+The list takes exact skill names only. If an entry can’t work as an exact name, `query()` rejects the list before the session starts. See [Invalid skill name error](#invalid-skill-name-error) for the name rules and the error each SDK raises. The model doesn’t see unlisted skills and the Skill tool rejects them, while their files remain on disk and stay reachable through Read and Bash. Restricting the list doesn’t restrict [dispatch by name](#dispatch-commands-by-name). To let Claude invoke every discovered skill, pass `skills: "all"` rather than a wildcard.
 
 
 [​](#commands-in-agent-sdk-sessions)
@@ -579,7 +585,7 @@ Next steps
 The [Claude Code skills guide](../08-Plugins-Skills/skills.md) covers authoring in depth. Its guidance applies to SDK sessions. Start with these sections:
 
 - [Frontmatter reference](../08-Plugins-Skills/skills.md#frontmatter-reference): every supported field
-- [Pass arguments to skills](../08-Plugins-Skills/skills.md#pass-arguments-to-skills): `$ARGUMENTS`, `$0`, `$1`, and skill stacking. The [full substitution table](../08-Plugins-Skills/skills.md#available-string-substitutions) adds named arguments and the `${CLAUDE_*}` variables
+- [Pass arguments to skills](../08-Plugins-Skills/skills.md#pass-arguments-to-skills): `$ARGUMENTS`, `$0`, and `$1`. The [full substitution table](../08-Plugins-Skills/skills.md#available-string-substitutions) adds named arguments and the `${CLAUDE_*}` variables
 - [Inject dynamic context](../08-Plugins-Skills/skills.md#inject-dynamic-context): `` !`command` `` lines that run before Claude sees the skill content
 - [Choose where skills load](../08-Plugins-Skills/skills.md#where-skills-live): every skill location, plugin namespacing, and which skill runs when two share a name
 

@@ -2,7 +2,7 @@
 title: "Kindora Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/kindora"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:51Z"
+fetched_at: "2026-10-23T06:29:44Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -43,9 +43,9 @@ The first challenge for a small nonprofit raising money is figuring out which fu
 
 ### Small nonprofits can’t find the right funders
 
-Steele spent a decade at a major tech company leading one of its largest philanthropy teams, overseeing nearly \$700M in total giving across the Americas. He knows the funder side of the equation well: program officers have specific priorities, and as Steele described it, they only "want to talk to you if you’re in my area of interest." Broad outreach rarely leads anywhere.
+Steele spent a decade at a major tech company leading one of its largest philanthropy teams, overseeing nearly \$700M in total giving across the Americas. He knows the funder side of the equation well: program officers have specific priorities, and as Steele described it, they only “want to talk to you if you’re in my area of interest.” Broad outreach rarely leads anywhere.
 
-In 2024 when Steele co-founded Outdoorithm Collective, a nonprofit connecting urban families with nature experiences, he found himself on the other side of the table with \$30,000 in the bank, dwindling fast, and hundreds of families waiting to go on trips. He went looking for prospecting tools and found them either prohibitively expensive or unhelpful. One platform he paid \$4,000 for returned 3,000 matches with no meaningful filtering. "Structuring unstructured information is AI’s superpower," Steele said. "How are you not using these models to make these matches?"
+In 2024 when Steele co-founded Outdoorithm Collective, a nonprofit connecting urban families with nature experiences, he found himself on the other side of the table with \$30,000 in the bank, dwindling fast, and hundreds of families waiting to go on trips. He went looking for prospecting tools and found them either prohibitively expensive or unhelpful. One platform he paid \$4,000 for returned 3,000 matches with no meaningful filtering. “Structuring unstructured information is AI’s superpower,” Steele said. “How are you not using these models to make these matches?”
 
 Kindora MCP Connector
 
@@ -63,7 +63,7 @@ The prospecting approach worked well enough that other nonprofit leaders started
 
 Steele and his co-founder Karibu Nyaggah, a business school classmate of 25 years, started building Kindora in April 2025. They hired a developer to help move the prototype toward a real product. In July 2025, Steele tried Claude Code, and the pace changed.
 
-"It just changed everything," Steele said. "We pushed 10 times more code than before, with fewer errors." Kindora launched its beta in August, and 50 nonprofits signed up in the first week. By the end of the beta period that fall, 200 had joined the platform.
+“It just changed everything,” Steele said. “We pushed 10 times more code than before, with fewer errors.” Kindora launched its beta in August, and 50 nonprofits signed up in the first week. By the end of the beta period that fall, 200 had joined the platform.
 
 ### Shipping features as fast as users can request them
 
@@ -71,7 +71,7 @@ Kindora runs three Claude models matched to different jobs inside the live produ
 
 Steele’s background is in chemical engineering and philanthropy, not software development. Claude Code closed that gap. Since December, he has handled all of Kindora’s development himself through Claude Code, shipping the product’s full feature set based directly on what users ask for. One of those requests came from Briana Baker, a founder in one of Kindora’s accelerator cohorts, who wanted to teach young people how to do fundraising pitches. That evening, Steele sat down with Claude Code at 9 PM. By 1:30 AM, he had a working interactive voice tool that acts as a program officer, asks challenging questions, and then uses Claude to analyze the transcript against a nonprofit sales training curriculum.
 
-"I couldn’t sleep because I was so excited," Steele said. He tested it himself, practicing a pitch to a real foundation. The voice tool pushed back on his nonprofit being early-stage, asked about impact measurement, and flagged where he had waited too long to lean into storytelling. The next morning, he showed it to the accelerator cohort and it was ready to use.
+“I couldn’t sleep because I was so excited,” Steele said. He tested it himself, practicing a pitch to a real foundation. The voice tool pushed back on his nonprofit being early-stage, asked about impact measurement, and flagged where he had waited too long to lean into storytelling. The next morning, he showed it to the accelerator cohort and it was ready to use.
 
 Nonprofits
 
@@ -87,17 +87,17 @@ Kindora now has 328 nonprofits on its platform, with monthly signups roughly dou
 
 Steele has also started using the platform to expand beyond grant prospecting. In March, Kindora piloted an individual donor engagement feature with Outdoorithm Collective. The tool assessed who in the founders’ network to target, and Claude generated the campaign outreach, raising \$101,000 in a single month.
 
-For Steele, the broader significance is about who gets to build technology. He has a chemical engineering degree, but he had never built web applications before starting to code with AI tools a few years ago. Claude Code made it possible for someone with deep domain expertise in philanthropy to build a product that serves that community directly. "If you have a little bit of computational thinking mindset, you can do this," he said.
+For Steele, the broader significance is about who gets to build technology. He has a chemical engineering degree, but he had never built web applications before starting to code with AI tools a few years ago. Claude Code made it possible for someone with deep domain expertise in philanthropy to build a product that serves that community directly. “If you have a little bit of computational thinking mindset, you can do this,” he said.
 
-The social impact sector, Steele argues, has the most to gain from AI but has been the slowest to engage. Kindora’s roadmap keeps expanding based on what nonprofit users ask for, and Steele sees the current moment as urgent. "There’s such a unique opportunity right now for people who understand their problem space, who understand their communities," he said. "The people who are closest to the problem have the best solutions. This window won’t be open forever."
+The social impact sector, Steele argues, has the most to gain from AI but has been the slowest to engage. Kindora’s roadmap keeps expanding based on what nonprofit users ask for, and Steele sees the current moment as urgent. “There’s such a unique opportunity right now for people who understand their problem space, who understand their communities,” he said. “The people who are closest to the problem have the best solutions. This window won’t be open forever.”
 
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
@@ -114,7 +114,8 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -132,12 +133,12 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -170,7 +171,7 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -188,6 +189,7 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -203,7 +205,7 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -238,7 +240,8 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -256,12 +259,12 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -294,7 +297,7 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -312,6 +315,7 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -327,7 +331,7 @@ The social impact sector, Steele argues, has the most to gain from AI but has be
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

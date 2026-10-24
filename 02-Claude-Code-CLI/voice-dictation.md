@@ -2,7 +2,7 @@
 title: "Voice dictation - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/voice-dictation"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:25Z"
+fetched_at: "2026-10-23T06:28:27Z"
 tags: ["claude-code"]
 ---
 
@@ -195,8 +195,10 @@ Common issues when voice dictation does not activate or record:
 - **Tapping `Space` types a space instead of recording in tap mode**: the first tap only starts recording when the prompt input is empty. Clear the input first, or check that you are in tap mode by running `/voice tap`.
 - **`No audio detected from microphone`**: recording started but captured silence. Confirm the correct input device is set as the system default and that its input level is not muted or near zero. On Windows, open Settings → System → Sound → Input and select your microphone. On macOS, open System Settings → Sound → Input.
 - **`Voice connection failed`**: your recording never reached the transcription service because the connection failed. Check your network and try again. A recording that captures no audio reports `No audio detected from microphone` instead of this message. Before v2.1.200, a silent microphone could report a connection failure, which suggested a network problem when the actual issue was the input device.
+- **`Dictation error: WebSocket error:` followed by a certificate error such as `unable to get local issuer certificate`**: see [Dictation or the Web tab fails behind a TLS-inspecting proxy](../03-IDE-Integrations/vs-code.md#dictation-or-the-web-tab-fails-behind-a-tls-inspecting-proxy) on the VS Code page.
 - **`Voice stream error: WebSocket upgrade rejected with HTTP <status>`**: a server refused your connection with the HTTP status shown, so this isn’t a network outage. A status in the 400 range usually means a stale sign-in, or a proxy or bot-protection service answering in place of the transcription service. Run `/login` to refresh your sign-in, and check for a VPN or proxy on your network path if the status persists. If you’re still recording when the rejection arrives, Claude Code retries a status outside the 400 range once before showing this message; it doesn’t retry a status in the 400 range. In v2.1.229 through v2.1.231, native builds didn’t show this message: Claude Code kept recording, the hold-mode footer still showed `listening…`, and it reported `Voice connection failed` after you stopped recording.
 - **`No speech detected`**: audio reached the transcription service but no words were recognized. Speak closer to the microphone, reduce background noise, and confirm your [dictation language](#change-the-dictation-language) matches the language you are speaking.
+- **`Dictation stopped: no speech recognized for 15 seconds` or `Dictation stopped at its 2-minute limit`**: in the VS Code extension, a recording ends after 15 seconds with no recognized words, or two minutes after it starts. If you were speaking during those 15 seconds, try the fixes for `No speech detected`. Words already recognized stay in the prompt box and aren’t sent. To add more, click the microphone button again.
 - **Transcription is garbled or in the wrong language**: dictation defaults to English. If you are dictating in another language, set it in `/config` first. See [Change the dictation language](#change-the-dictation-language).
 
 

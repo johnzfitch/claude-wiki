@@ -2,7 +2,7 @@
 title: "Introducing Claude Fable 5.1 and Claude Mythos 5.1 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-fable-and-mythos-5-1"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:34Z"
+fetched_at: "2026-10-20T06:38:38Z"
 tags: ["claude-ai", "search", "security"]
 ---
 
@@ -286,7 +286,7 @@ Estimated cost savings on genome-wide analyses
 
 Inference speedupEstimated cost savings on genome-wide analyses
 
-As our models’ scientific capabilities improve, our investment in scientific progress is also growing. Last week, we previewed the [Model Hardware Standard](../19-Reference/model-hardware-standard-research-preview.md), which allows Claude to directly and safely operate laboratory equipment. We’ve also recently [expanded our support for scientists](../19-Reference/expanding-support-for-scientists.md) through our [AI for Science program](../19-Reference/ai-for-science-program.md), which provides free credits to researchers working on high-impact scientific projects, and we are offering steeply discounted usage through our new [Claude Team plan for scientists](programs-claude-team-plan-for-research-labs.md).
+As our models’ scientific capabilities improve, our investment in scientific progress is also growing. Last week, we previewed the [Model Hardware Standard](../19-Reference/model-hardware-standard-research-preview.md), which allows Claude to directly and safely operate laboratory equipment. We’ve also recently [expanded our support for scientists](../19-Reference/expanding-support-for-scientists.md) through our [AI for Science program](../19-Reference/ai-for-science-program.md), which provides free credits to researchers working on high-impact scientific projects, and we are offering steeply discounted usage through our new [Claude Team plan for scientists](programs-team-plan-for-scientists.md).
 
 ## Safety, security, and alignment
 
@@ -318,7 +318,7 @@ As we [recently shared](../19-Reference/improving-fable-5-s-biology-safeguards.m
 
 With Fable 5.1, we’re updating our cybersecurity safeguards to be more precise. We’re also now allowing Fable 5.1 to be used for identifying software vulnerabilities—that is, to conduct the kind of defensive work that improves software security. As a result of these changes, Claude Code users can expect an average of around 60% fewer interventions per session from our cyber safeguards, relative to the previous safeguards on Fable 5. Our safeguards do, however, still redirect several kinds of dual-use cybersecurity tasks (tasks that might have helpful *or* harmful applications) to our Opus models. This includes penetration testing, exploit generation, and binary-based vulnerability scanning.
 
-**Anti-distillation mechanisms*.*** Distillation is a method used to extract the capabilities of advanced models. It is often employed on an industrial scale, using thousands of fake accounts. Distillation is a safety risk, since the distilled capabilities can subsequently be released without adequate safeguards. Fable 5.1 comes with strengthened mechanisms to make distillation attacks harder. For example, it is no longer possible for new API accounts (those created from today onwards) to manually edit Claude’s prior context in a multi-turn conversation while preserving the transcript of Claude’s prior thinking. This closes off a common, publicly documented distillation technique, which allowed distillers to illicitly extract Claude’s thinking. We’re rolling out the change gradually, to minimize disruption: existing accounts are not currently affected by this change, though it will apply to all users with future model releases. A small number of customers’ custom integrations will then be affected. Our [Help Center article](../04-API-Reference/Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md) explains more about this change and the adjustments that developers can make.
+**Anti-distillation mechanisms*.*** Distillation is a method used to extract the capabilities of advanced models. It is often employed on an industrial scale, using thousands of fake accounts. Distillation is a safety risk, since the distilled capabilities can subsequently be released without adequate safeguards. Fable 5.1 comes with strengthened mechanisms to make distillation attacks harder. For example, it is no longer possible for new API accounts (those created from today onwards) to manually edit Claude’s prior context in a multi-turn conversation while preserving the transcript of Claude’s prior thinking. This closes off a common, publicly documented distillation technique, which allowed distillers to illicitly extract Claude’s thinking. We’re rolling out the change gradually, to minimize disruption: existing accounts are not currently affected by this change, though it will apply to all users with future model releases. A small number of customers’ custom integrations will then be affected. Our [Help Center article](https://support.claude.com/en/articles/16761192) explains more about this change and the adjustments that developers can make.
 
 ## Trusted access for Claude Mythos 5.1
 
@@ -351,7 +351,7 @@ As discussed above, Claude Mythos 5.1 is available to vetted cyberdefenders and 
 
 ## Get started
 
-[Try Claude](https://claude.ai/)[Start building](../04-API-Reference/Other/usage-limits.md)
+[Try Claude](https://claude.ai/)[Start building](../04-API-Reference/Other/playground.md)
 
 ## Footnotes
 
@@ -392,6 +392,7 @@ As discussed above, Claude Mythos 5.1 is available to vetted cyberdefenders and 
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Claude in Chrome](https://claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
 - [Skills](https://www.claude.com/skills)
 - [Download app](https://claude.ai/download)
@@ -438,7 +439,7 @@ As discussed above, Claude Mythos 5.1 is available to vetted cyberdefenders and 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 
@@ -461,12 +462,12 @@ As discussed above, Claude Mythos 5.1 is available to vetted cyberdefenders and 
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ### Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Status](https://status.anthropic.com/)
 - [Support center](https://support.claude.com/en/)
 

@@ -2,7 +2,7 @@
 title: "What are customer-managed encryption keys (CMEK)? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15505325-what-are-customer-managed-encryption-keys-cmek"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:26Z"
+fetched_at: "2026-10-23T06:29:30Z"
 tags: ["safety"]
 ---
 

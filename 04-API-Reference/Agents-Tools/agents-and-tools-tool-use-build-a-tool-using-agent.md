@@ -2,7 +2,7 @@
 title: "Tutorial: Build a tool-using agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:32:08Z"
+fetched_at: "2026-10-20T06:36:54Z"
 tags: ["agents", "api", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api", "sdk"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fbuild-a-tool-using-agent)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fbuild-a-tool-using-agent)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Tools
 
@@ -125,6 +125,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -272,6 +274,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -313,7 +317,11 @@ tools = [
 
 def run_tool(name, tool_input):
     if name == "create_calendar_event":
-        return {"event_id": "evt_123", "status": "created", "title": tool_input["title"]}
+        return {
+            "event_id": "evt_123",
+            "status": "created",
+            "title": tool_input["title"],
+        }
     return {"error": f"Unknown tool: {name}"}
 
 
@@ -401,6 +409,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -453,9 +463,15 @@ tools = [
 
 def run_tool(name, tool_input):
     if name == "create_calendar_event":
-        return {"event_id": "evt_123", "status": "created", "title": tool_input["title"]}
+        return {
+            "event_id": "evt_123",
+            "status": "created",
+            "title": tool_input["title"],
+        }
     if name == "list_calendar_events":
-        return {"events": [{"title": "Existing meeting", "start": "14:00", "end": "15:00"}]}
+        return {
+            "events": [{"title": "Existing meeting", "start": "14:00", "end": "15:00"}]
+        }
     return {"error": f"Unknown tool: {name}"}
 
 
@@ -536,6 +552,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -590,16 +608,23 @@ def run_tool(name, tool_input):
     if name == "create_calendar_event":
         if "attendees" in tool_input and len(tool_input["attendees"]) > 10:
             raise ValueError("Too many attendees (max 10)")
-        return {"event_id": "evt_123", "status": "created", "title": tool_input["title"]}
+        return {
+            "event_id": "evt_123",
+            "status": "created",
+            "title": tool_input["title"],
+        }
     if name == "list_calendar_events":
-        return {"events": [{"title": "Existing meeting", "start": "14:00", "end": "15:00"}]}
+        return {
+            "events": [{"title": "Existing meeting", "start": "14:00", "end": "15:00"}]
+        }
     raise ValueError(f"Unknown tool: {name}")
 
 
 messages = [
     {
         "role": "user",
-        "content": "Schedule a one-hour all-hands on Monday, March 30, 2026 at 10am with everyone: " + ", ".join(f"user{i}@example.com" for i in range(15)),
+        "content": "Schedule a one-hour all-hands on Monday, March 30, 2026 at 10am with everyone: "
+        + ", ".join(f"user{i}@example.com" for i in range(15)),
     }
 ]
 
@@ -617,7 +642,11 @@ while response.stop_reason == "tool_use":
             try:
                 result = run_tool(block.name, block.input)
                 tool_results.append(
-                    {"type": "tool_result", "tool_use_id": block.id, "content": json.dumps(result)}
+                    {
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": json.dumps(result),
+                    }
                 )
             except Exception as exc:
                 # Signal failure so Claude can retry or ask for clarification.
@@ -660,7 +689,7 @@ The `is_error` flag is the only difference from a successful result. Claude sees
 
 Rings 2 through 4 wrote the same loop by hand: call the API, check `stop_reason`, run tools, append results, repeat. The Tool Runner does this for you. Define each tool as a function, pass the list to `client.beta.messages.tool_runner()`, and retrieve the final message once the loop completes. Error wrapping, result formatting, and conversation management are handled internally.
 
-Each SDK provides a helper that turns an ordinary function into a runnable tool and derives the input schema from its signature; the tabs below show the idiomatic form for each language.
+Each SDK provides a helper that turns an ordinary function into a runnable tool and derives the input schema from its signature; the following tabs show the idiomatic form for each language.
 
 cURL
 
@@ -679,6 +708,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -722,7 +753,9 @@ def list_calendar_events(date: str) -> str:
     Args:
         date: Date in YYYY-MM-DD format.
     """
-    return json.dumps({"events": [{"title": "Existing meeting", "start": "14:00", "end": "15:00"}]})
+    return json.dumps(
+        {"events": [{"title": "Existing meeting", "start": "14:00", "end": "15:00"}]}
+    )
 
 
 final_message = client.beta.messages.tool_runner(

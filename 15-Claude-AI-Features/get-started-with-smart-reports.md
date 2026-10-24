@@ -2,7 +2,7 @@
 title: "Get started with smart reports | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:24:48Z"
+fetched_at: "2026-10-23T06:29:11Z"
 tags: ["claude-ai"]
 ---
 
@@ -11,9 +11,13 @@ tags: ["claude-ai"]
 
 Smart reports analyze how a team uses Claude and report on the work getting done, what it costs, where sessions run into friction, and which repeated patterns are worth packaging as shared skills. This guide explains how smart reports work, what appears in a smart report, and how to create, share, and delete them.
 
-During beta, each organization can run up to 10 reports per month for free, and the limit resets on the first day of every calendar month. If you need more reports during beta, please reach out to your account team or submit a request in the smart report page once you've hit the 10 report limit.
+During beta, each organization can run up to 10 reports per month for free. Reports that are queued or in progress count toward this limit, and reports that fail don't.
 
-Smart reports are available in beta on Claude Enterprise plans and aren’t available for organizations using customer-managed encryption keys (CMEK) or HIPAA configurations. Smart reports are also unavailable for Claude Code for Claude Enterprise organizations that use zero data retention.
+When your organization reaches its limit, you can’t create new reports. The smart reports page shows the date your limit resets, which is the first day of the next calendar month. If you need more reports before then, contact your account team.
+
+Smart reports are available in beta on Claude Enterprise plans and are off by default, so they must be turned on in your organization's settings. They aren't available on Claude Free, Pro, Max, or Team plans, or for Claude Platform (API) organizations.
+
+Claude Enterprise organizations can't use smart reports if they use customer-managed encryption keys (CMEK), a HIPAA configuration, or a hybrid deployment that runs inference on their own cloud provider. If your organization uses zero data retention for Claude Code, smart reports cover chat and Claude Cowork and leave out Claude Code.
 
 **Important:** Smart reports help you understand adoption and plan your investment in Claude. They aren't designed and should not be used for evaluating individual performance or making employment decisions.
 
@@ -144,7 +148,7 @@ To create a smart report:
 
 11. Click "Create report."
 
-Generating a report takes a few hours. You’ll get an email when the report is ready, and reports also appear in the "Smart reports" list in **[Analytics \> Smart reports (beta)](https://claude.ai/analytics/insights)**.
+Reports usually take a few hours to generate, and they can take longer at busy times. You’ll get an email when the report is ready, and reports also appear in the "Smart reports" list in **[Analytics \> Smart reports (beta)](https://claude.ai/analytics/insights)**.
 
 ## Pass department and cost center via SCIM
 

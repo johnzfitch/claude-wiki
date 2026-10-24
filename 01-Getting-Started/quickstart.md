@@ -44,7 +44,7 @@ Make sure you have:
 
 - A terminal or command prompt open
 - A code project to work with
-- A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/usage-limits.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
+- A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/playground.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
 
 These cases are covered on other pages:
 
@@ -123,7 +123,7 @@ claude
 Replace `/path/to/your/project` with the path to the project you want to work on. Claude Code prompts you to log in on first use. For Claude subscription or Console accounts, follow the prompts to complete authentication in your browser. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. You can log in using any of these account types:
 
 - [Claude Pro, Max, Team, or Enterprise](../17-Billing-Plans/pricing.md) (recommended)
-- [Claude Console](../04-API-Reference/Other/usage-limits.md) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
+- [Claude Console](../04-API-Reference/Other/playground.md) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
 - [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](../02-Claude-Code-CLI/third-party-integrations.md) (enterprise cloud providers)
 - A self-hosted [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
 

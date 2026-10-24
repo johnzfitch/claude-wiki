@@ -2,15 +2,45 @@
 title: "Advancing Claude in healthcare and the life sciences \\ Anthropic"
 source_url: "https://www.anthropic.com/news/healthcare-life-sciences"
 category: "19-Reference"
-fetched_at: "2026-08-28T09:23:08Z"
+fetched_at: "2026-10-21T06:29:52Z"
 tags: ["news-research"]
 ---
 
 # Advancing Claude in healthcare and the life sciences
 
-Jan 11, 2026
-
 [Watch on-demand](https://anthropic.com/events/the-briefing-healthcare-and-life-sciences-virtual-event)
+
+- [01Introducing Claude for Healthcare](#introducing-claude-for-healthcare)
+- [02Expanding Claude for Life Sciences](#expanding-claude-for-life-sciences)
+- [03Getting started](#getting-started)
+
+- Published
+
+  Jan 11, 2026
+
+- Category
+
+  [Product](product.md)
+
+- Topics
+
+  - [Healthcare](https://www.anthropic.com/search?topic=healthcare)
+  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+  - [Model Context Protocol](https://www.anthropic.com/search?topic=model-context-protocol)
+  - [Agent Skills](https://www.anthropic.com/search?topic=agent-skills)
+  - [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
+
+  See more...
+
+Related articles
+
+- Partnerships
+
+  Jun 3, 2026
+
+  [Introducing the Services Track and Partner Hub of the Claude Partner Network](services-track-partner-hub.md)
+
+[View more](https://www.anthropic.com/search?topic=healthcare)
 
 In October, we announced [Claude for Life Sciences](claude-for-life-sciences.md), our latest step in making Claude a productive research partner for scientists and clinicians, and in helping Claude to support those in industry bringing new scientific advancements to the public.
 
@@ -24,15 +54,15 @@ Key life sciences tasks
 
 SpatialBench: Spatial biology analysis by LatchBio
 
-In addition, Opus 4.5 with extended thinking improves on earlier Claude models in producing correct answers on our suite of honesty evaluations, reflecting the progress we’ve made on factual hallucinations.¹
+In addition, Opus 4.5 with extended thinking improves on earlier Claude models in producing correct answers on our suite of honesty evaluations, reflecting the progress we’ve made on factual hallucinations.^([1](#footnote-1))
 
 With these model improvements and our new tools, Claude is now dramatically more useful for real-world healthcare and life sciences tasks. Ultimately, it’s those real-world outcomes that have motivated our work: these tools can be used to speed up prior authorization requests so that patients can get life saving care more quickly, can help with patient care coordination to reduce the pressures on clinicians' time, and help with regulatory submissions so that more life saving drugs can come to market faster. We discuss the practical ways that Claude can be used across these industries in more detail below.
 
-## **Introducing Claude for Healthcare**
+## Introducing Claude for Healthcare
 
-#### **What’s new**
+#### What’s new
 
-[Connectors](https://claude.ai/redirect/website.v1.3201368d-62fc-4866-9c9e-fae917c2da68/settings/connectors) are tools that allow users to give Claude access to other platforms directly. For payers and providers, we’ve added several connectors that make healthcare information easier to find, access, and understand. These allow Claude to pull information from industry-standard systems and databases, meaning that clinicians and administrators can save significant time finding the data and generating the reports they need.
+[Connectors](https://claude.ai/settings/connectors) are tools that allow users to give Claude access to other platforms directly. For payers and providers, we’ve added several connectors that make healthcare information easier to find, access, and understand. These allow Claude to pull information from industry-standard systems and databases, meaning that clinicians and administrators can save significant time finding the data and generating the reports they need.
 
 Claude can now connect to:
 
@@ -42,11 +72,11 @@ Claude can now connect to:
 
 Since HIPAA-compliant organizations can now use Claude for Enterprise, they can also access existing healthcare-related connectors, including **PubMed**, which provides access to more than 35 million pieces of biomedical literature and allows Claude to quickly surface the latest research, and produce up-to-date literature reviews.
 
-Finally, we’ve added two new [Agent Skills](https://www.anthropic.com/04-API-Reference/Other/agent-skills.md): **FHIR development** and a sample **prior authorization review** skill. FHIR is the modern standard for exchanging data between healthcare systems, and this skill helps to improve interoperability by enabling developers to connect them faster and with fewer errors.
+Finally, we’ve added two new [Agent Skills](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md): **FHIR development** and a sample **prior authorization review** skill. FHIR is the modern standard for exchanging data between healthcare systems, and this skill helps to improve interoperability by enabling developers to connect them faster and with fewer errors.
 
 The prior authorization skill provides a template that can be customized to organizations’ policies and work patterns, helping with cross-referencing between coverage requirements, clinical guidelines, patient records, and appeal documents.
 
-#### **Using Claude for healthcare tasks**
+#### Using Claude for healthcare tasks
 
 With these new tools, Claude can provide meaningful support for healthcare startups building new products, and for large enterprises looking to integrate AI more deeply into their operations. For example, Claude can:
 
@@ -58,7 +88,7 @@ With these new tools, Claude can provide meaningful support for healthcare start
 
 **Support healthcare startups developing new ideas.** On the Claude Developer Platform, startups can build new products that use Claude to reduce the time burden of healthcare administration—such as ambient scribing for clinical documentation, or tools to support chart reviews and clinical decisions.
 
-#### **Connecting personal health data**
+#### Connecting personal health data
 
 We’re also introducing integrations designed to make it easier for individuals to understand their health information and prepare for important medical conversations with clinicians.
 
@@ -70,9 +100,9 @@ These integrations are private by design. Users can choose exactly the informati
 
 Claude is designed to include contextual disclaimers, acknowledge its uncertainty, and direct users to healthcare professionals for personalized guidance.
 
-## **Expanding Claude for Life Sciences**
+## Expanding Claude for Life Sciences
 
-#### **What’s new**
+#### What’s new
 
 In our initial release, we focused on making Claude more powerful for preclinical research and development (including bioinformatics, and generating hypotheses and protocols). Now, we’re expanding our focus to the clinical trial operations and regulatory stages of the development chain. We’re adding connectors to:
 
@@ -90,7 +120,7 @@ Finally, we’re adding new Agent Skills for **scientific problem selection**, c
 
 See the clinical trial skill in action, below:
 
-#### **Using Claude in life sciences**
+#### Using Claude in life sciences
 
 With this new package of tools, Claude can support:
 
@@ -100,231 +130,128 @@ With this new package of tools, Claude can support:
 
 **Preparing regulatory submissions.** Claude can identify gaps in existing regulatory documents, draft responses to agencies’ queries, and navigate FDA guidelines.
 
-#### **Our customers and partners**
+#### Our customers and partners
 
 We’re working with a number of organizations in healthcare and the life sciences. A selection of our partners describe their experiences using Claude below:
 
-> We were drawn to [Anthropic's focus on AI safety](../18-Industry-UseCases/banner-health.md) and Claude's Constitutional AI approach to creating more helpful, harmless, and honest AI systems.
->
-> Mike Reagin  
-> Chief Technology Officer, Banner Health
+> “We were drawn to Anthropic's focus on AI safety and Claude's Constitutional AI approach to creating more helpful, harmless, and honest AI systems.”
 
-> We've consistently been one of the first movers when it comes to document and content automation in pharma development. [Our work with Anthropic and Claude](../18-Industry-UseCases/novo-nordisk.md) has set a new standard — we're not just automating tasks, we're transforming how medicines get from discovery to the patients who need them.
->
-> Louise Lind Skov  
-> Director Content Digitalisation, Novo Nordisk
+Mike Reagin
 
-> Safety is non-negotiable in healthcare. [Anthropic has been a clear leader](../18-Industry-UseCases/qualified-health.md) in building models with strong safety foundations.
->
-> Justin Norden  
-> MD and co-founder, Qualified Health
+Chief Technology Officer, Banner Health
 
-> By reducing manual burden, our partnership with Anthropic will empower our teams to focus more time on high-value scientific and strategic work, accelerating our path to patient impact.
->
-> Hisham Hamadeh  
-> Senior Vice President, Global Head of Data, Digital & AI, Genmab
+> “We've consistently been one of the first movers when it comes to document and content automation in pharma development. Our work with Anthropic and Claude has set a new standard — we're not just automating tasks, we're transforming how medicines get from discovery to the patients who need them.”
 
-> Claude is integral to Sanofi's AI transformation and is used by most Sanofians daily. We're seeing efficiency gains across the value-chain. This collaboration with Anthropic augments human expertise to deliver life-changing medicines faster and more efficiently to patients worldwide.
->
-> Emmanuel Frenehard  
-> Chief Digital Officer, Sanofi
+Louise Lind Skov
 
-> We chose Claude, powered by Anthropic, for the strength of its model and [its reputation for responsible AI](../18-Industry-UseCases/elation-health.md). That balance of performance plus trust was a decisive factor.
->
-> Kyna Fong  
-> CEO & Co-Founder, Elation Health
+Director Content Digitalisation, Novo Nordisk
 
-> Opus 4.5 is an incredible model and a great choice for computational biology. The model is excellent at coding, reasoning about biology, and understanding scientific figures.
->
-> Andrew White  
-> CTO, Edison Scientific
+> “Safety is non-negotiable in healthcare. Anthropic has been a clear leader in building models with strong safety foundations.”
 
-> Anthropic's models are unmatched in their reasoning capabilities and safety design.
->
-> Chris Mansi  
-> MD, CEO & Co-founder, Viz.ai
+Justin Norden
 
-> Claude has fundamentally changed what's possible in evidence generation. For the first time, our researchers can truly converse with our datasets.
->
-> Allison Candido  
-> Chief Technology Officer, Flatiron Health
+MD and co-founder, Qualified Health
 
-> Veeva AI is industry-specific agentic AI that leverages Veeva's deep applications, data, domain expertise, and Anthropic’s Claude. This unique combination allows us to bring the transformative promise of AI to life sciences at scale.
->
-> Andy Han  
-> Senior Vice President, Veeva AI
+> “By reducing manual burden, our partnership with Anthropic will empower our teams to focus more time on high-value scientific and strategic work, accelerating our path to patient impact.”
 
-> Claude's Agent SDK has unlocked a step-change in how we operate—converting rigid research processes into adaptive, compliant agents.
->
-> Dr. Thomas Kelly  
-> Co-Founder and CEO, Heidi Health
+Hisham Hamadeh
 
-> Claude Code has become a powerful accelerator for us at Schrödinger. For the projects where it fits best, Claude Code allows us to turn ideas into working code in minutes instead of hours, enabling us to move up to 10x faster in some cases. As we continue to work with Claude, we are excited to see how we can further transform the way we build and customize our software.
->
-> Pat Lorton  
-> EVP, Chief Technology Officer, and Chief Operating Officer, Schrödinger
+Senior Vice President, Global Head of Data, Digital & AI, Genmab
 
-> Claude handles the complex healthcare workflows our teams deal with daily—accurately and securely. Our engineers are shipping faster, our consultants are delivering insights with unprecedented speed. When you're serving 4,400+ healthcare organizations, that combination of capability and velocity is critical.
->
-> David Zito  
-> President Performance Services, Premier
+> “Claude is integral to Sanofi's AI transformation and is used by most Sanofians daily. We're seeing efficiency gains across the value-chain. This collaboration with Anthropic augments human expertise to deliver life-changing medicines faster and more efficiently to patients worldwide.”
 
-> For Commure’s Ambient AI, precision is the prerequisite for trust. Scaling to tens of millions of appointments requires exceptional performance and contextual understanding. With Claude’s suite of LLMs, we deliver the quality to automate clinical documentation at scale, saving clinicians millions of hours annually and returning their focus to patient care.
->
-> Dhruv Parthasarathy  
-> Chief Technology Officer, Commure
+Emmanuel Frenehard
 
-> Carta Healthcare's implementation of [Anthropic models via Amazon Bedrock](../18-Industry-UseCases/carta-healthcare.md) has allowed for rapid and secure deployment of the newest models. Unlocking our hybrid intelligence AI system that is turning into a complete re-invention of understanding a patient’s medical record for clinical data abstraction.
->
-> Andrew Crowder  
-> VP of Engineering, Carta Healthcare
+Chief Digital Officer, Sanofi
 
-> Claude lets us punch way above our weight in healthcare AI. It powers our clinical extraction engine, cuts implementation timelines, and gives our GTM team dev-level capabilities. The faster we build, the faster clinics get out of manual chart review and back to patients.
->
-> Zach Rosen  
-> CEO & Co-Founder, Brellium
+> “We chose Claude, powered by Anthropic, for the strength of its model and its reputation for responsible AI. That balance of performance plus trust was a decisive factor.”
 
-01 / 16
+Kyna Fong
+
+CEO & Co-Founder, Elation Health
+
+> “Opus 4.5 is an incredible model and a great choice for computational biology. The model is excellent at coding, reasoning about biology, and understanding scientific figures.”
+
+Andrew White
+
+CTO, Edison Scientific
+
+> “Anthropic's models are unmatched in their reasoning capabilities and safety design.”
+
+Chris Mansi
+
+MD, CEO & Co-founder, Viz.ai
+
+> “Claude has fundamentally changed what's possible in evidence generation. For the first time, our researchers can truly converse with our datasets.”
+
+Allison Candido
+
+Chief Technology Officer, Flatiron Health
+
+> “Veeva AI is industry-specific agentic AI that leverages Veeva's deep applications, data, domain expertise, and Anthropic’s Claude. This unique combination allows us to bring the transformative promise of AI to life sciences at scale.”
+
+Andy Han
+
+Senior Vice President, Veeva AI
+
+> “Claude's Agent SDK has unlocked a step-change in how we operate—converting rigid research processes into adaptive, compliant agents.”
+
+Dr. Thomas Kelly
+
+Co-Founder and CEO, Heidi Health
+
+> “Claude Code has become a powerful accelerator for us at Schrödinger. For the projects where it fits best, Claude Code allows us to turn ideas into working code in minutes instead of hours, enabling us to move up to 10x faster in some cases. As we continue to work with Claude, we are excited to see how we can further transform the way we build and customize our software.”
+
+Pat Lorton
+
+EVP, Chief Technology Officer, and Chief Operating Officer, Schrödinger
+
+> “Claude handles the complex healthcare workflows our teams deal with daily—accurately and securely. Our engineers are shipping faster, our consultants are delivering insights with unprecedented speed. When you're serving 4,400+ healthcare organizations, that combination of capability and velocity is critical.”
+
+David Zito
+
+President Performance Services, Premier
+
+> “For Commure’s Ambient AI, precision is the prerequisite for trust. Scaling to tens of millions of appointments requires exceptional performance and contextual understanding. With Claude’s suite of LLMs, we deliver the quality to automate clinical documentation at scale, saving clinicians millions of hours annually and returning their focus to patient care.”
+
+Dhruv Parthasarathy
+
+Chief Technology Officer, Commure
+
+> “Carta Healthcare's implementation of Anthropic models via Amazon Bedrock has allowed for rapid and secure deployment of the newest models. Unlocking our hybrid intelligence AI system that is turning into a complete re-invention of understanding a patient’s medical record for clinical data abstraction.”
+
+Andrew Crowder
+
+VP of Engineering, Carta Healthcare
+
+> “Claude lets us punch way above our weight in healthcare AI. It powers our clinical extraction engine, cuts implementation timelines, and gives our GTM team dev-level capabilities. The faster we build, the faster clinics get out of manual chart review and back to patients.”
+
+Zach Rosen
+
+CEO & Co-Founder, Brellium
+
+01
+
+/
+
+16
 
 Claude is the only frontier model available on all three leading cloud services: AWS, Google Cloud, and Microsoft.
 
 We’re also partnering with companies who specialize in helping organizations adopt AI for specialist work, including Accenture, Blank Metal, Caylent, Deloitte, Deepsense.ai, Firemind, KPMG, Provectus, PwC, OWT, Quantium, Slalom, Tribe AI, and Turing.
 
-## **Getting started**
+## Getting started
 
 To learn more about Claude for Healthcare, see [here](../18-Industry-UseCases/healthcare.md), or see our tutorial guides [here](https://claude.com/resources/tutorials-category/healthcare). For more detail on the expanded Claude for Life Sciences capabilities, see [here](../18-Industry-UseCases/life-sciences.md), and our tutorial guides [here](https://claude.com/resources/tutorials-category/life-sciences).
 
 Our new connectors and Agent Skills are generally available to all Claude subscribers, including Claude Pro, Max, Teams, and Enterprise.
 
-You can also [contact our sales team](https://www.claude.com/contact-sales%20) to discuss bringing Claude to your organization.
+You can also [*contact our sales team*](https://www.claude.com/contact-sales) to discuss bringing Claude to your organization.
 
-#### Footnotes
+## Footnotes
 
-*1: See the [Claude Opus 4.5 system card](https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf), pages 48-49.*
+*1: See the [Claude Opus 4.5 system card](https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf), pages 48-49.*[](#footnote-ref-1)
 
 **Changelog:**
 
 February 7, 2026: *Edited the introductory paragraph to clarify that HIPAA-ready products are specific to healthcare providers and payers. The personal health integrations for individual users are covered in the "Connecting personal health data" section.*
-
-
-## Related content
-
-### Previewing the Model Hardware Standard
-
-We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
-
-[Read more](model-hardware-standard-research-preview.md)
-
-### Expanding our support for scientists
-
-Starting today, 10,000 scientists around the world can get Claude at no cost to start. Verified principal investigators qualify for a Claude Team subscription plan and then add their research team to Standard seats for free, or Premium seats for \$15 per month, for up to a year.
-
-[Read more](expanding-support-for-scientists.md)
-
-### Funding better evaluations of AI’s impact on wellbeing
-
-We’re launching a \$5 million grant program to fund independent research into how AI impacts users’ wellbeing.
-
-[Read more](wellbeing-research-grants.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

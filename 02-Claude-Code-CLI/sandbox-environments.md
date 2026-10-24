@@ -2,7 +2,7 @@
 title: "Choose a sandbox environment - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/sandbox-environments"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:25:00Z"
+fetched_at: "2026-10-20T06:38:50Z"
 tags: ["claude-code"]
 ---
 
@@ -127,13 +127,19 @@ On Linux and WSL2, the runtime applies write grants only to paths that already e
 mkdir -p ~/.claude && { [ -f ~/.claude.json ] || echo '{}' > ~/.claude.json; }
 ```
 
-Once the settings file is in place, launch Claude Code with `npx` and pass `claude` as the command to wrap:
+Install the runtime globally, under a prefix outside every path you allow writes to:
 
 ```python
-npx @anthropic-ai/sandbox-runtime claude
+npm install -g @anthropic-ai/sandbox-runtime
 ```
 
-Claude Code starts inside the sandbox with the filesystem and network boundaries you configured. The same command works for sandboxing standalone MCP servers or other helper processes.
+Once the settings file is in place, launch Claude Code through the runtime from your project directory:
+
+```python
+srt claude
+```
+
+Claude Code starts inside the sandbox with the filesystem and network boundaries you configured. The same `srt` command works for sandboxing standalone MCP servers or other helper processes.
 
 
 [​](#what-the-runtime-blocks-on-its-own)

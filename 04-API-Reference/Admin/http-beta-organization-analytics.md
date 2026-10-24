@@ -2,7 +2,7 @@
 title: "Analytics - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:01Z"
+fetched_at: "2026-10-20T06:38:32Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -152,9 +152,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -225,13 +227,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -239,9 +243,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -250,10 +254,16 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 
 # Analytics
+
+Copy page
+
+
+
+cURL
 
 ##### Models
 
@@ -266,6 +276,22 @@ BetaAnalyticsArtifactActivity object{ artifact_type, artifacts_created_count, di
 Artifact-creation activity for one (`artifact_type`, `is_shared`) bucket on a given day.
 
 Artifacts form a small finite cube — the canonical MIME type (8 values incl. `other`) crossed with shared-vs-private — so the response is the full set of non-empty buckets, not a ranked/paginated list. Claude Code and Cowork artifacts report under `text/html` and are counted from 2026-08-17 onward; earlier days contain claude.ai chat artifacts only. With `group_by[]=product` / `user_id` / `rbac_group_id` each row is further split by the flat group keys and counts are scoped to that cut.
+
+
+
+BetaAnalyticsChatCoworkUnifiedChatMetrics object{ connectors_used_count, distinct_artifacts_created_count, distinct_connectors_used_count, 9 more }
+
+
+
+Chat activity recorded while members had Chat and Cowork unified turned on.
+
+
+
+BetaAnalyticsChatCoworkUnifiedSessionsMetrics object{ action_count, artifacts_created_count, connectors_used_count, 14 more }
+
+
+
+Cowork session activity recorded while members had Chat and Cowork unified turned on.
 
 
 
@@ -313,11 +339,39 @@ One of the following:
 
 
 
-BetaAnalyticsConnectorActivity object{ chat_metrics, claude_code_metrics, connector_name, 13 more }
+BetaAnalyticsConnectorActivity object{ chat_metrics, claude_code_metrics, connector_name, 14 more }
 
 
 
 Per-connector activity data for a given day.
+
+
+
+BetaAnalyticsConnectorChatCoworkUnifiedChatMetrics object{ distinct_conversation_connector_used_count }
+
+
+
+A connector's use in chat conversations recorded while members had Chat and Cowork unified turned on.
+
+distinct_conversation_connector_used_count: number or null
+
+
+
+Same measure as `chat_metrics.distinct_conversation_connector_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Approximate (HLL, typical error \<2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
+
+
+
+BetaAnalyticsConnectorChatCoworkUnifiedSessionsMetrics object{ distinct_session_connector_used_count }
+
+
+
+A connector's use in Cowork sessions recorded while members had Chat and Cowork unified turned on.
+
+distinct_session_connector_used_count: number or null
+
+
+
+Same measure as `cowork_metrics.distinct_session_connector_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Approximate (HLL, typical error \<2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
 
 
 
@@ -427,7 +481,7 @@ Number of distinct Claude Code sessions. On aggregated rows and in date-range mo
 
 
 
-lines_of_code: [BetaAnalyticsLinesOfCode](http-beta-organization-analytics.md#beta_analytics_lines_of_code) { added_count, removed_count }
+lines_of_code: [BetaAnalyticsLinesOfCode](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_lines_of_code) { added_count, removed_count }
 
 
 
@@ -623,13 +677,13 @@ Number of skill invocations
 
 
 
-BetaAnalyticsPluginActivity object{ claude_code_metrics, cowork_metrics, distinct_user_count, 8 more }
+BetaAnalyticsPluginActivity object{ claude_code_metrics, cowork_metrics, distinct_user_count, 9 more }
 
 
 
 Per-plugin install + invocation activity for a given day.
 
-With `group_by[]=user_id` / `rbac_group_id` / `product` (`cowork` / `claude_code` only on this endpoint) each row is one (plugin, user), (plugin, group), or (plugin, product) cut: the flat `user_id` / `rbac_group_id` / `product` keys carry the cut and the counts are scoped to it.
+With `group_by[]=user_id` / `rbac_group_id` / `product` (`cowork`, `claude_code` and `chat_cowork_unified` only on this endpoint) each row is one (plugin, user), (plugin, group), or (plugin, product) cut: the flat `user_id` / `rbac_group_id` / `product` keys carry the cut and the counts are scoped to it.
 
 
 
@@ -661,15 +715,19 @@ Number of distinct Cowork sessions in which the plugin was invoked. Null on aggr
 
 
 
-BetaAnalyticsProductFilter = "chat" or "claude-tag" or "claude_code" or 4 more
+BetaAnalyticsProductFilter = "chat" or "chat_cowork_unified" or "claude-tag" or 5 more
 
 
 
-Publicly documented product surfaces. `claude-tag` is Claude Tag, the Claude product in Slack.
+Publicly documented product surfaces. `claude-tag` is Claude Tag, the Claude product in Slack. `chat_cowork_unified` is Chat and Cowork unified, Cowork's features inside claude.ai chat: chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only on deployments that offer Chat and Cowork unified.
 
 One of the following:
 
 "chat"
+
+
+
+"chat_cowork_unified"
 
 
 
@@ -757,7 +815,7 @@ The number of web search requests made.
 
 
 
-BetaAnalyticsSingleDayActivitySummary object{ assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 26 more }
+BetaAnalyticsSingleDayActivitySummary object{ assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }
 
 
 
@@ -765,11 +823,39 @@ Per-day entry in the /summaries response.
 
 
 
-BetaAnalyticsSkillActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 14 more }
+BetaAnalyticsSkillActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 15 more }
 
 
 
 Per-skill activity data for a given day.
+
+
+
+BetaAnalyticsSkillChatCoworkUnifiedChatMetrics object{ distinct_conversation_skill_used_count }
+
+
+
+A skill's use in chat conversations recorded while members had Chat and Cowork unified turned on.
+
+distinct_conversation_skill_used_count: number or null
+
+
+
+Same measure as `chat_metrics.distinct_conversation_skill_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Approximate (HLL, typical error \<2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
+
+
+
+BetaAnalyticsSkillChatCoworkUnifiedSessionsMetrics object{ distinct_session_skill_used_count }
+
+
+
+A skill's use in Cowork sessions recorded while members had Chat and Cowork unified turned on.
+
+distinct_session_skill_used_count: number or null
+
+
+
+Same measure as `cowork_metrics.distinct_session_skill_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Approximate (HLL, typical error \<2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
 
 
 
@@ -941,7 +1027,7 @@ Email address of the user
 
 
 
-BetaAnalyticsUserActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 9 more }
+BetaAnalyticsUserActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 10 more }
 
 
 
@@ -997,9 +1083,9 @@ Deprecated: use `email_address`, which carries the same value.
 
 Get organization-wide activity summaries for a date range.
 
-#### Analytics[Users](http-beta-organization-analytics-users.md)
+#### Analytics[Users](platform-claude-com-http-beta-organization-analytics-users.md)
 
-##### [List User Activity](http-beta-organization-analytics-users-list.md)
+##### [List User Activity](platform-claude-com-http-beta-organization-analytics-users-list.md)
 
 GET/v1/organizations/analytics/users
 
@@ -1013,33 +1099,33 @@ Get per-user activity for a given day, with cursor-based pagination.
 
 Get per-project activity for a given day, with cursor-based pagination.
 
-#### Analytics[Connectors](beta-organization-analytics-connectors.md)
+#### Analytics[Connectors](http-beta-organization-analytics-connectors.md)
 
-##### [Get Connector Usage](http-beta-organization-analytics-connectors-list.md)
+##### [Get Connector Usage](platform-claude-com-http-beta-organization-analytics-connectors-list.md)
 
 GET/v1/organizations/analytics/connectors
 
 Get per-connector usage for a given day, with cursor-based pagination.
 
-#### Analytics[Plugins](http-beta-organization-analytics-plugins.md)
+#### Analytics[Plugins](platform-claude-com-http-beta-organization-analytics-plugins.md)
 
-##### [Get Plugin Usage](http-beta-organization-analytics-plugins-list.md)
+##### [Get Plugin Usage](platform-claude-com-http-beta-organization-analytics-plugins-list.md)
 
 GET/v1/organizations/analytics/plugins
 
 Get per-plugin install + invocation usage for a given day, with pagination.
 
-#### Analytics[Skills](beta-organization-analytics-skills.md)
+#### Analytics[Skills](http-beta-organization-analytics-skills.md)
 
-##### [Get Skill Usage](http-beta-organization-analytics-skills-list.md)
+##### [Get Skill Usage](platform-claude-com-http-beta-organization-analytics-skills-list.md)
 
 GET/v1/organizations/analytics/skills
 
 Get per-skill usage for a given day, with cursor-based pagination.
 
-#### Analytics[Artifacts](beta-organization-analytics-artifacts.md)
+#### Analytics[Artifacts](http-beta-organization-analytics-artifacts.md)
 
-##### [Get Artifact Activity](http-beta-organization-analytics-artifacts-list.md)
+##### [Get Artifact Activity](platform-claude-com-http-beta-organization-analytics-artifacts-list.md)
 
 GET/v1/organizations/analytics/artifacts
 

@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 Next generation of intelligence for the hardest knowledge work and coding problems.
 
-[Try Claude](https://claude.ai/)[Get API access](../04-API-Reference/Other/usage-limits.md)
+[Try Claude](https://claude.ai/)[Get API access](../04-API-Reference/Other/playground.md)
 
 ## Announcements
 
@@ -161,7 +161,7 @@ Claude Mythos 5.1 is available to vetted organizations through our trusted acces
 
 ### How does the fallback work?
 
-For most Claude applications, queries flagged by our cybersecurity safeguards automatically route to Opus 4.8 and biology safeguards route to Opus 5. API customers must configure their settings with our new Fallback API. [Learn more](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1-claude-help.md)
+For most Claude applications, queries flagged by our cybersecurity safeguards automatically route to Opus 4.8 and biology safeguards route to Opus 5. API customers must configure their settings with our new Fallback API. [Learn more](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md)
 
 ### How much does it cost to use Claude Fable 5.1?
 
@@ -223,7 +223,7 @@ Pricing depends on how you want to use Claude Fable 5.1. To learn more, check ou
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 

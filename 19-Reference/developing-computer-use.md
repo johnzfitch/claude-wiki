@@ -2,30 +2,56 @@
 title: "Developing a computer use model \\ Anthropic"
 source_url: "https://www.anthropic.com/news/developing-computer-use"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:32Z"
-tags: ["news-research", "search"]
+fetched_at: "2026-10-21T06:29:50Z"
+tags: ["news-research"]
 ---
 
 # Developing a computer use model
 
-Oct 22, 2024
+- Published
 
-- Update
-  Consumer Terms and Privacy Policy
+  Oct 22, 2024
 
-  Aug 28, 2025
+- Category
+
+  [Product](product.md)
+
+- Topics
+
+  - [Computer use](https://www.anthropic.com/search?topic=computer-use)
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+  - [Training](https://www.anthropic.com/search?topic=training)
+  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+
+  See more...
+
+Related articles
+
+- Models
+
+  Jun 30, 2026
+
+  [Introducing Claude Sonnet 5](claude-sonnet-5.md)
+
+[View more](https://www.anthropic.com/search?topic=computer-use)
+
+- UpdateAug 28, 2025
+
+  ### Consumer Terms and Privacy Policy
 
 Claude can now use computers. The [latest version of Claude 3.5 Sonnet](3-5-models-and-computer-use.md) can, when run through the appropriate software setup, follow a user’s commands to move a cursor around their computer’s screen, click on relevant locations, and input information via a virtual keyboard, emulating the way people interact with their own computer.
 
 We think this skill—which is currently in public beta—represents a significant breakthrough in AI progress. Below, we share some insights from the research that went into developing computer use models—and into making them safer.
 
-## Why computer use?
+### Why computer use?
 
 Why is this new capability important? A vast amount of modern work happens via computers. Enabling AIs to interact directly with computer software in the same way people do will unlock a huge range of applications that simply aren’t possible for the current generation of AI assistants.
 
 Over the last few years, many important milestones have been reached in the development of powerful AI—for example, the ability to perform complex logical reasoning and the ability to see and understand images. The next frontier is computer use: AI models that don’t have to interact via bespoke tools, but that instead are empowered to use essentially any piece of software as instructed.
 
-## The research process
+### The research process
 
 Our previous work on tool use and multimodality provided the groundwork for these new computer use skills. Operating computers involves the ability to see and interpret images—in this case, images of a computer screen. It also requires reasoning about how and when to carry out specific operations in response to what’s on the screen. Combining these abilities, we trained Claude to interpret what’s happening on a screen and then use the software tools available to carry out tasks.
 
@@ -37,7 +63,7 @@ Although the subsequent advances came quickly once we made the initial breakthro
 
 The research paid off. At present, Claude is state-of-the-art for models that use computers in the same way as a person does—that is, from looking at the screen and taking actions in response. On one evaluation created to test developers’ attempts to have models use computers, [OSWorld](https://os-world.github.io/), Claude currently gets 14.9%. That’s nowhere near human-level skill (which is generally 70-75%), but it’s far higher than the 7.7% obtained by the next-best AI model in the same category.
 
-## Making computer use safe
+### Making computer use safe
 
 Every advance in AI brings with it new safety challenges. Computer use is mainly a way of lowering the barrier to AI systems applying their existing cognitive skills, rather than fundamentally increasing those skills, so our chief concerns with computer use focus on present-day harms rather than future ones. We confirmed this by assessing whether computer use increases the risk of frontier threats as outlined in our [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md). We found that the updated Claude 3.5 Sonnet, including its new computer use skill, remains at AI Safety Level 2—that is, it doesn’t require a higher standard of safety and security measures than those we currently have in place.
 
@@ -49,7 +75,7 @@ Those using the computer-use version of Claude in our public beta should take th
 
 As with any AI capability, there’s also the potential for users to intentionally misuse Claude’s computer skills. Our teams have developed classifiers and other methods to flag and mitigate these kinds of abuses. Given the upcoming U.S. elections, we’re on high alert for attempted misuses that could be perceived as undermining public trust in electoral processes. While computer use is not sufficiently advanced or capable of operating at a scale that would present heightened risks relative to existing capabilities, we've put in place measures to monitor when Claude is asked to engage in election-related activity, as well as systems for nudging Claude away from activities like generating and posting content on social media, registering web domains, or interacting with government websites. We will continuously evaluate and iterate on these safety measures to balance Claude's capabilities with responsible use during the public beta.
 
-## The future of computer use
+### The future of computer use
 
 Computer use is a completely different approach to AI development. Up until now, LLM developers have *made tools fit the model*, producing custom environments where AIs use specially-designed tools to complete various tasks. Now, we can *make the model fit the tools*—Claude can fit into the computer environments we all use every day. Our goal is for Claude to take pre-existing pieces of computer software and simply use them as a person would.
 
@@ -60,119 +86,3 @@ Even while we were recording demonstrations of computer use for today’s launch
 We expect that computer use will rapidly improve to become faster, more reliable, and more useful for the tasks our users want to complete. It’ll also become much easier to implement for those with less software-development experience. At every stage, our researchers will be working closely with our safety teams to ensure that Claude’s new capabilities are accompanied by the appropriate safety measures.
 
 We invite developers who try computer use in our public beta to contact us with their feedback [using this form](https://docs.google.com/forms/d/e/1FAIpQLSeD3IqITWsuepB19SEv889HsBvN9WOi6HRblPrJNyA9G7q02w/viewform), so that our researchers can continue to improve the usefulness and safety of this new capability.
-
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

@@ -2,7 +2,7 @@
 title: "Workload Identity Federation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/workload-identity-federation"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:34Z"
+fetched_at: "2026-10-20T06:39:35Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fworkload-identity-federation)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fworkload-identity-federation)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Authentication
 
@@ -131,7 +133,7 @@ The **Connect workload** wizard creates all three resources (the issuer, the ser
 
     ### Open Connect workload
 
-    In the Claude Console, go to **Settings → Workload identity** and select **Connect workload**.
+    In the Claude Console, go to the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`) and select **Connect workload**.
 
 2.  2
 
@@ -157,7 +159,7 @@ The **Connect workload** wizard creates all three resources (the issuer, the ser
 
     The wizard creates the issuer, service account, and federation rule, then listens for a successful token exchange for 15 minutes. Trigger an exchange from your workload within that window (see [Authenticate from your workload](#authenticate-from-your-workload)) to confirm the setup works. If the window elapses, the resources persist; you can re-run the test from the federation rule's detail page. Note the rule's ID (`fdrl_...`) and the service account ID (`svac_...`) the wizard creates: your workload passes both, along with your organization ID (and your workspace ID when the rule covers more than one workspace), in every token-exchange request.
 
-To manage these resources programmatically, see [Manage WIF with the Admin API](manage-claude-wif-admin-api.md) for the curl walkthrough, or see the [Service accounts API reference](../Admin/beta-organization-service-accounts.md), [Federation issuers API reference](../Admin/beta-organization-federation-issuers.md), and [Federation rules API reference](../Admin/beta-organization-federation-rules.md) for complete parameter details and response schemas.
+To manage these resources programmatically, see [Manage WIF with the Admin API](manage-claude-wif-admin-api.md) for the curl walkthrough, or see the [Service accounts API reference](../Endpoints/organization-service-accounts.md), [Federation issuers API reference](../Endpoints/organization-federation-issuers.md), and [Federation rules API reference](../Endpoints/organization-federation-rules.md) for complete parameter details and response schemas.
 
 ## Authenticate from your workload
 
@@ -168,6 +170,8 @@ With federation configured, your workload exchanges its IdP-issued JWT for an An
 You can construct the client with explicit credentials or with no arguments. With no arguments, the SDK resolves credentials from environment variables or the active profile, as described under [Credential precedence](#credential-precedence). The zero-argument form is the recommended pattern for production workloads: ship the same container image everywhere and inject `ANTHROPIC_FEDERATION_RULE_ID`, `ANTHROPIC_ORGANIZATION_ID`, `ANTHROPIC_SERVICE_ACCOUNT_ID`, `ANTHROPIC_WORKSPACE_ID`, and `ANTHROPIC_IDENTITY_TOKEN_FILE` per environment.
 
 cURL
+
+CLI
 
 Python
 
@@ -182,6 +186,8 @@ C#
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -227,7 +233,7 @@ To switch an existing workload from a static API key to federation without downt
 1.  **Configure federation in parallel.** Complete the [setup walkthrough](#set-up-federation) and confirm the federation rule matches your workload's token. Leave the existing `ANTHROPIC_API_KEY` in place for now.
 2.  **Smoke-test which credential wins.** Run `ant auth status` from inside the workload (or inspect SDK debug logs). Because `ANTHROPIC_API_KEY` sits above the federation tiers in the precedence chain, the API key still wins at this stage.
 3.  **Unset `ANTHROPIC_API_KEY` everywhere it is injected.** Remove it from CI secrets, container environment, and shell profiles (see the preceding warning). Re-run `ant auth status` and confirm the federation source is now selected.
-4.  **Delete the API key.** Once the workload is running on the federated token, delete the key in the Claude Console under **Settings → API keys**.
+4.  **Delete the API key.** Once the workload is running on the federated token, delete the key on the [API keys](playground.md) page (`platform.claude.com/settings/keys`) in the Claude Console.
 
 ## Token lifetime and refresh
 
@@ -240,7 +246,7 @@ The SDK caches the token and refreshes it on a two-tier schedule modeled on `bot
 
 Because the SDK re-reads `ANTHROPIC_IDENTITY_TOKEN_FILE` on every exchange, it transparently picks up rotated projected tokens (Kubernetes service-account tokens, for example, rotate well before their `exp`).
 
-By default, identity tokens that carry a `jti` claim are single-use: each exchange must present a JWT that has not been exchanged before, and re-presenting one fails with the reason `jti_reused` on the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history). If your workload fetches its own tokens from your identity provider, mint a fresh JWT for each exchange instead of reusing a cached one (retry loops are the common culprit). The same applies to a token read from `ANTHROPIC_IDENTITY_TOKEN_FILE`: the SDK re-reads the file on every exchange, so the file must hold a new token before each refresh. A refresh that re-reads an unrotated token, or a restarted process that re-presents a token it already exchanged, is rejected the same way. Rotating the token well within the minted token's lifetime keeps the file ahead of the refresh schedule; if your token source cannot rotate that often, you can disable `check_jti` for that issuer as a last resort (this removes replay protection for every rule on the issuer). See [JWT verification](manage-claude-wif-reference.md#jwt-verification) for details.
+By default, identity tokens that carry a `jti` claim are single-use: each exchange must present a JWT that has not been exchanged before, and re-presenting one fails with the reason `jti_reused` on the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) in the Claude Console. If your workload fetches its own tokens from your identity provider, mint a fresh JWT for each exchange instead of reusing a cached one (retry loops are the common culprit). The same applies to a token read from `ANTHROPIC_IDENTITY_TOKEN_FILE`: the SDK re-reads the file on every exchange, so the file must hold a new token before each refresh. A refresh that re-reads an unrotated token, or a restarted process that re-presents a token it already exchanged, is rejected the same way. Rotating the token well within the minted token's lifetime keeps the file ahead of the refresh schedule; if your token source cannot rotate that often, you can disable `check_jti` for that issuer as a last resort (this removes replay protection for every rule on the issuer). See [JWT verification](manage-claude-wif-reference.md#jwt-verification) for details.
 
 ## Identity providers
 
@@ -271,7 +277,7 @@ Keyless CI authentication with the Actions OIDC token.
 
 [Kubernetes](manage-claude-wif-providers-kubernetes.md)
 
-Self-managed and on-premises clusters using projected service-account tokens.
+Self-managed and on-premise clusters using projected service-account tokens.
 
 [SPIFFE](manage-claude-wif-providers-spiffe.md)
 

@@ -2,7 +2,7 @@
 title: "Rogo Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/rogo"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:24Z"
+fetched_at: "2026-10-23T06:29:43Z"
 tags: ["api", "case-studies", "enterprise", "search", "security"]
 ---
 
@@ -40,9 +40,9 @@ Accelerate financial due diligence, modeling, and analysis with enterprise-grade
 
 ## Anthropic: What do most people get wrong about applying AI to finance?
 
-**Strib Walker, Rogo:** Finance demands very bespoke tools, and the difference between "looks right" and "is right" is enormous. A lot of what makes something “right” in finance is highly specific to the context. It varies by specialty, firm, industry, team, and even individual senior preferences. General models may understand standard financial line items from a 10-K, but they often miss nuances like which ratios matter most, which peers are appropriate, or how information should be presented. Those details are critical to professionals and can change the interpretation entirely.
+**Strib Walker, Rogo:** Finance demands very bespoke tools, and the difference between “looks right” and “is right” is enormous. A lot of what makes something “right” in finance is highly specific to the context. It varies by specialty, firm, industry, team, and even individual senior preferences. General models may understand standard financial line items from a 10-K, but they often miss nuances like which ratios matter most, which peers are appropriate, or how information should be presented. Those details are critical to professionals and can change the interpretation entirely.
 
-## Where does Claude fit into what you're building?
+## Where does Claude fit into what you’re building?
 
 **Walker:** What we do in plain terms is help institutions operationalize AI inside their firms. Claude Opus 4.7 and Sonnet 4.6 are integrated across the Rogo platform, where they power parts of the core research, analysis, and artifact-generation experience our customers rely on every day. Anthropic models are available through Felix, our agent orchestrator for end-to-end financial workflows. Felix takes on the kinds of multi-step assignments that define the work in finance: building decks, financial models, and documents from start to finish with the structure, formatting, and rigor the work demands. Claude is one of several frontier models Rogo draws on inside Felix.  
 
@@ -68,7 +68,7 @@ Success for us had three components: measurable improvement on our internal fina
 
 ## How do you evaluate which model to use for which task?
 
-**Walker:** We're a model-agnostic business. We run dedicated testing to evaluate each model's performance across core financial workflows, and we dynamically route tasks to the systems that perform best for a given job.
+**Walker:** We’re a model-agnostic business. We run dedicated testing to evaluate each model’s performance across core financial workflows, and we dynamically route tasks to the systems that perform best for a given job.
 
 Our evaluation framework goes beyond measuring raw financial intelligence. We place a strong emphasis on artifact creation, which is central to how financial work is actually consumed. Our internal testing assesses not only correctness but also the structure, clarity, and usability of generated outputs.
 
@@ -80,9 +80,9 @@ Our evaluation framework goes beyond measuring raw financial intelligence. We pl
 
 **Walker:** A big part of getting started with AI is operationalizing it effectively. Having strong underlying intelligence is important, but making it usable in real workflows takes time and effort. That means building processes, integrations, and validation layers around it.
 
-## What's next for Rogo?
+## What’s next for Rogo?
 
-**Walker:** We're extending Felix and the broader platform deeper into the work financial institutions actually do: not just material creation, but the full arc of a deal process, from origination through execution. Claude's strengths in long-context reasoning and artifact generation are a part of what makes that possible, and we expect the workflows we take on to get longer and more complex.
+**Walker:** We’re extending Felix and the broader platform deeper into the work financial institutions actually do: not just material creation, but the full arc of a deal process, from origination through execution. Claude’s strengths in long-context reasoning and artifact generation are a part of what makes that possible, and we expect the workflows we take on to get longer and more complex.
 
 Choosing the right Claude model
 
@@ -111,7 +111,8 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -129,12 +130,12 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -167,7 +168,7 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -185,6 +186,7 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -200,7 +202,7 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -235,7 +237,8 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -253,12 +256,12 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -291,7 +294,7 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -309,6 +312,7 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -324,7 +328,7 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

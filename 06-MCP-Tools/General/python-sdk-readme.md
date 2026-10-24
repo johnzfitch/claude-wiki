@@ -2,7 +2,7 @@
 title: "MCP Python SDK"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-01T06:31:52Z"
+fetched_at: "2026-10-13T06:30:27Z"
 tags: ["cli", "mcp", "python", "sdk"]
 ---
 
@@ -37,7 +37,7 @@ The [Model Context Protocol](https://modelcontextprotocol.io) lets you build ser
 
 ## Requirements
 
-Python 3.10+.
+Python 3.11+.
 
 ## Installation
 

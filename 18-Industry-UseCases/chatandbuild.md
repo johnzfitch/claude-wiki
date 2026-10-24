@@ -2,7 +2,7 @@
 title: "ChatAndBuild Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/chatandbuild"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:42Z"
+fetched_at: "2026-10-23T06:29:35Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -42,19 +42,19 @@ Breaking the barriers between human ambition and digital creation
 
 Before Claude, the AI development landscape was not easily accessible by all. Traditional platforms required extensive coding knowledge, limiting AI creation to technical specialists. Non-English speakers faced additional barriers with inconsistent language support. Meanwhile, users who invested time building AI expertise lost everything when switching platforms, trapped in a rental economy with no ownership of their digital intelligence.
 
-"We faced three seemingly impossible challenges," explained Christel Buchanan, Founder and CEO of ChatAndBuild. "How do you enable a grandmother in rural Thailand to build sophisticated AI applications using her native language with the same power as a Stanford CS graduate? How do you create AI agents that don't just respond but actually learn, remember, and grow more valuable over time? And how do you scale this to support millions of cognitive assets while maintaining safety and performance?"
+“We faced three seemingly impossible challenges,” explained Christel Buchanan, Founder and CEO of ChatAndBuild. “How do you enable a grandmother in rural Thailand to build sophisticated AI applications using her native language with the same power as a Stanford CS graduate? How do you create AI agents that don’t just respond but actually learn, remember, and grow more valuable over time? And how do you scale this to support millions of cognitive assets while maintaining safety and performance?”
 
-These weren't just technical hurdles; they represented problems requiring a reimagining of how humans interact with AI.
+These weren’t just technical hurdles; they represented problems requiring a reimagining of how humans interact with AI.
 
 ## Choosing Claude for universal language understanding and code generation
 
-ChatAndBuild's evaluation of AI models revealed Claude as the only solution capable of handling their revolutionary vision. After rigorous testing of every major AI model, Claude emerged with unique capabilities that aligned perfectly with ChatAndBuild's mission of democratizing AI development.
+ChatAndBuild’s evaluation of AI models revealed Claude as the only solution capable of handling their revolutionary vision. After rigorous testing of every major AI model, Claude emerged with unique capabilities that aligned perfectly with ChatAndBuild’s mission of democratizing AI development.
 
-"Choosing Claude wasn't just a technical decision. It was a strategic bet on the future of human-AI collaboration," Buchanan emphasized. "While other models struggled with multilingual consistency or generated brittle code, Claude delivered production-quality applications from natural language across 40+ languages."
+“Choosing Claude wasn’t just a technical decision. It was a strategic bet on the future of human-AI collaboration,” Buchanan emphasized. “While other models struggled with multilingual consistency or generated brittle code, Claude delivered production-quality applications from natural language across 40+ languages.”
 
 The selection also revealed an unexpected economic advantage. ChatAndBuild discovered that users working in dense languages like Japanese could express complex application requirements in 40-60% fewer tokens than English equivalents.
 
-"A Japanese user can express complex application requirements in significantly fewer tokens than the English equivalent," Buchanan noted. "What takes 200 tokens to describe in English might only require 80-100 tokens in Japanese due to the language's information density."
+“A Japanese user can express complex application requirements in significantly fewer tokens than the English equivalent,” Buchanan noted. “What takes 200 tokens to describe in English might only require 80-100 tokens in Japanese due to the language’s information density.”
 
 This linguistic efficiency creates a built-in economic advantage for non-English speakers. Better token utilization means longer conversation histories, more complex context, and richer agent training, all for the same cost.
 
@@ -62,15 +62,15 @@ This linguistic efficiency creates a built-in economic advantage for non-English
 
 The transformation ChatAndBuild has achieved with Claude extends far beyond individual success stories.
 
-"The most profound capability? We've made entrepreneurship accessible to anyone with domain expertise," Buchanan states. "A therapist can create and monetize therapeutic AI agents. A fitness trainer can build personalized workout applications. A financial analyst can create DeFi strategy agents. Claude transformed us from a development platform into an entrepreneurship enablement engine."
+“The most profound capability? We’ve made entrepreneurship accessible to anyone with domain expertise,” Buchanan states. “A therapist can create and monetize therapeutic AI agents. A fitness trainer can build personalized workout applications. A financial analyst can create DeFi strategy agents. Claude transformed us from a development platform into an entrepreneurship enablement engine.”
 
 The economic potential is significant. With 140,000 users who could sell AI agents they create, ChatAndBuild estimates this could generate \$84M in revenue in Year 1, growing to \$500M+ by Year 3. Each agent represents human expertise converted into appreciating digital assets.
 
 ## Architecting the future of the cognitive economy
 
-ChatAndBuild's vision extends far beyond current achievements. The company is developing a Language-Optimized AI Development Suite that will help developers automatically optimize their prompts and agent training across languages to maximize capability per token.
+ChatAndBuild’s vision extends far beyond current achievements. The company is developing a Language-Optimized AI Development Suite that will help developers automatically optimize their prompts and agent training across languages to maximize capability per token.
 
-"Linguistic diversity is becoming a competitive advantage, challenging English dominance in AI," Buchanan explained. "We're creating cognitive derivatives—financial instruments based on agent performance. Imagine AI agent futures markets, or insurance products for cognitive assets." As ChatAndBuild scales to millions of NFAs, they're pushing Claude's capabilities in novel directions: persistent learning, cross-agent collaboration, and complex reasoning chains.
+“Linguistic diversity is becoming a competitive advantage, challenging English dominance in AI,” Buchanan explained. “We’re creating cognitive derivatives—financial instruments based on agent performance. Imagine AI agent futures markets, or insurance products for cognitive assets.” As ChatAndBuild scales to millions of NFAs, they’re pushing Claude’s capabilities in novel directions: persistent learning, cross-agent collaboration, and complex reasoning chains.
 
 ## Related stories
 
@@ -95,7 +95,8 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -113,12 +114,12 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -151,7 +152,7 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -169,6 +170,7 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -184,7 +186,7 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -219,7 +221,8 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -237,12 +240,12 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -275,7 +278,7 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -293,6 +296,7 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -308,7 +312,7 @@ ChatAndBuild's vision extends far beyond current achievements. The company is de
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

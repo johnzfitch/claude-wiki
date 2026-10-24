@@ -2,7 +2,7 @@
 title: "What's new in Claude Sonnet 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/sonnet-5-5/whats-new-sonnet-5-5"
 category: "20-Models"
-fetched_at: "2026-10-07T06:23:44Z"
+fetched_at: "2026-10-22T06:29:51Z"
 tags: ["billing", "models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["billing", "models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fsonnet-5-5%2Fwhats-new-sonnet-5-5)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Fsonnet-5-5%2Fwhats-new-sonnet-5-5)
 
 
 
@@ -42,7 +42,7 @@ Models
 
 [Overview](models-sonnet-5-5-overview.md)[What's new](models-sonnet-5-5-whats-new-sonnet-5-5.md)[Migration guide](models-sonnet-5-5-migration-guide.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -54,11 +54,11 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)Claude Sonnet 5.5
 
@@ -80,7 +80,7 @@ Claude Sonnet 5.5 offers the best combination of speed and intelligence. Five br
 - [Forced tool use returns an error](#forced-tool-use-is-not-supported).
 - [Thinking blocks are tied to the model and the conversation](#thinking-blocks-are-tied-to-the-model-that-produced-them).
 - [On the Claude API and Google Cloud, the earlier `computer_20251124` computer use tool is not accepted](#computer-20251124-is-not-supported).
-- [The advisor tool rejects Claude Opus 4.8, Claude Opus 4.7, and Claude Sonnet 5 as advisors](#advisor-tool-pairings).
+- [The advisor tool rejects Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5, and Claude Haiku 5.5 as advisors](#advisor-tool-pairings).
 
 One more change alters the response shape without failing any request: [text between tool calls comes back in `thinking` blocks](#text-between-tool-calls). An application that streams that text to its users goes quiet between tool calls until it sets a `display` value that returns the text, or turns off up-front thinking with `between_tools`.
 
@@ -102,9 +102,9 @@ To turn off up-front thinking on Claude Sonnet 5.5, send `thinking: {"type": "be
 
 On Claude Sonnet 5.5, a request that sends `thinking: {"type": "disabled"}` returns a 400 `invalid_request_error` whose message points to `between_tools`.
 
-`between_tools` is accepted at `low`, `medium`, and `high` effort. At `xhigh` or `max` effort, a request with `between_tools` returns a 400 error. To run at `xhigh` or `max`, use adaptive thinking: omit the `thinking` field or send `thinking: {"type": "adaptive"}`, which is equivalent. With `between_tools`, effort can't change mid-conversation: a [per-message](../04-API-Reference/Guides/build-with-claude-effort.md#change-effort-mid-conversation-beta) `output_config.effort` that differs from the level in effect returns a 400 error. To vary effort per turn, use adaptive thinking.
+`between_tools` is accepted at `low`, `medium`, and `high` effort. At `xhigh` or `max` effort, a request with `between_tools` returns a 400 error. To run at `xhigh` or `max`, use adaptive thinking: omit the `thinking` field or send `thinking: {"type": "adaptive"}`, which is equivalent. With `between_tools`, effort can't change mid-conversation: a [per-message](../04-API-Reference/Guides/build-with-claude-effort.md#change-effort-mid-conversation-beta) `output_config.effort` that differs from the level in effect returns a 400 error. To vary effort for each turn, use adaptive thinking.
 
-`between_tools` takes no other field: `display`, `budget_tokens`, or `block_binding` sent with it returns a 400 error. Manual thinking budgets (`thinking: {"type": "enabled", "budget_tokens": N}`) return a 400 error. See [Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) and the migration guide's [before and after](models-sonnet-5-5-migration-guide.md#turn-off-up-front-thinking).
+`between_tools` takes no other field: `display`, `budget_tokens`, or `block_binding` sent with it returns a 400 error. Manual thinking budgets (`thinking: {"type": "enabled", "budget_tokens": N}`) return a 400 error. See [Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) and [Turn off up-front thinking](models-sonnet-5-5-migration-guide.md#turn-off-up-front-thinking) in the migration guide.
 
 ### Forced tool use is not supported
 
@@ -120,13 +120,13 @@ tool_choice: type "tool" and "any" are not supported for this model.
 
 ### Thinking blocks are tied to the model and the conversation
 
-Every thinking block records which model produced it. Each model reads its own blocks and only some other models' blocks. Claude Sonnet 5.5 reads thinking blocks from Claude Sonnet 5, Claude Opus 4.8, Claude Haiku 4.5, and earlier models, but not from Claude Opus 5, Claude Opus 5.5, or any Claude Fable or Claude Mythos model. On the Claude API and Google Cloud, Claude Opus 5.5 reads Claude Sonnet 5.5 thinking blocks; no other model does.
+Every thinking block records which model produced it. Each model reads its own blocks and only some other models' blocks. Claude Sonnet 5.5 reads thinking blocks from Claude Sonnet 5, Claude Opus 4.8, Claude Haiku 4.5, and earlier models, and, on the Claude API and Google Cloud, from Claude Haiku 5.5, but not from Claude Opus 5, Claude Opus 5.5, or any Claude Fable or Claude Mythos model. On the Claude API and Google Cloud, Claude Opus 5.5 reads Claude Sonnet 5.5 thinking blocks; no other model does.
 
 So a conversation that moves from Claude Sonnet 5 onto Claude Sonnet 5.5, or from Claude Sonnet 5.5 up to Claude Opus 5.5 on the Claude API and Google Cloud, keeps its reasoning, and any other move away from Claude Sonnet 5.5 runs the turns after the switch without it. When a request carries a block the target model can't read, the API drops it before the model sees it: the request succeeds, and dropped blocks aren't billed. With the `thinking-binding-controls-2026-08-01` beta header, the drop is reported in a top-level `input_transformations` array. See [Switching models mid-conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#switching-models).
 
 The API also checks whether anything before a Claude Sonnet 5.5 thinking block has changed since the block was produced: the `system` prompt, the `tools`, or an earlier message. It enforces that check by default for accounts created on or after August 31, 2026, 00:00 UTC, on the Claude API, Amazon Bedrock, and Google Cloud. On those accounts, a request that replays a block after such a change returns a 400 error. To drop the affected blocks instead, send the `thinking-binding-controls-2026-08-01` beta header and set `thinking.block_binding.prefix_mismatch_behavior` to `"drop_block"`. On older accounts, setting that field to either value opts the request in. `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools`, keep the history append-only, or strip the thinking blocks from the edited turn on.
 
-Keep the conversation append-only so the check never fails: change instructions or tools with [mid-conversation system messages](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md) rather than edits. See [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) and the migration guide's [note on this change](models-sonnet-5-5-migration-guide.md#thinking-blocks).
+Keep the conversation append-only so the check never fails: change instructions or tools with [mid-conversation system messages](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md) rather than edits. See [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) and the migration guide's [note on thinking blocks](models-sonnet-5-5-migration-guide.md#thinking-blocks).
 
 ### The `computer_20251124` computer use tool is not supported on the Claude API and Google Cloud
 
@@ -144,7 +144,7 @@ To move an existing integration on the Claude API or Google Cloud, follow [Migra
 
 ### Some advisor tool pairings are not supported
 
-With the [advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md) (beta), a Claude Sonnet 5.5 executor needs Claude Mythos 5.1, Claude Fable 5.1, Claude Mythos 5, Claude Fable 5, Claude Opus 5.5, or Claude Opus 5 as its advisor, or Claude Sonnet 5.5 itself. Claude Opus 4.8, Claude Opus 4.7, and Claude Sonnet 5 advisors work with a Claude Sonnet 5 executor, but with a Claude Sonnet 5.5 executor they return a 400 `invalid_request_error`. Every advisor that Claude Sonnet 5.5 accepts returns its advice encrypted, as an `advisor_redacted_result` block, so your client can't read the advice text. See the advisor tool's [Model compatibility](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#model-compatibility) and [Result variants](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#result-variants).
+With the [advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md) (beta), a Claude Sonnet 5.5 executor needs Claude Mythos 5.1, Claude Fable 5.1, Claude Mythos 5, Claude Fable 5, Claude Opus 5.5, or Claude Opus 5 as its advisor, or Claude Sonnet 5.5 itself. Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5, and Claude Haiku 5.5 advisors work with a Claude Sonnet 5 executor, but with a Claude Sonnet 5.5 executor they return a 400 `invalid_request_error`. Every advisor that Claude Sonnet 5.5 accepts returns its advice encrypted, as an `advisor_redacted_result` block, so your client can't read the advice text. See the advisor tool's [Model compatibility](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#model-compatibility) and [Result variants](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#result-variants).
 
 ## Feature support
 
@@ -167,8 +167,8 @@ Thinking blocks that Claude Sonnet 5.5 produces work only in the account that pr
 Claude Sonnet 5.5 differs from Claude Sonnet 5 in several ways that show up without any code change. [Prompting Claude Sonnet 5.5](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md) has guidance for each:
 
 - **Effort levels are recalibrated.** An [effort](../04-API-Reference/Guides/build-with-claude-effort.md) level doesn't produce the same amount of thinking as it did on Claude Sonnet 5. Re-run your effort sweep rather than carrying a setting over. Start at `high` unless your workload is agentic or latency-sensitive. For agentic coding and multistep tool use, start at `medium` for well-specified tasks and move to `high` for harder or longer ones. For chat and other latency-sensitive work, start at `medium` or `low`.
-- **Text between tool calls comes back in thinking blocks.** Between tool calls, notes longer than a sentence or two come back as [progress-update `thinking` blocks](../04-API-Reference/Guides/build-with-claude-thinking.md#progress-updates). Shorter remarks stay `text`. At the default `display: "omitted"`, the progress-update blocks' text is empty, so an application that streams those notes to its users goes quiet between tool calls, with no error. If you [turn off up-front thinking with `between_tools`](#turn-off-up-front-thinking), the text comes back. The [migration guide](models-sonnet-5-5-migration-guide.md#text-between-tool-calls) shows how to receive it.
-- **Safeguard categories.** The model's safeguards can decline a request in five [`stop_details` categories](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response). `"cyber"` means the request could enable cyber harm. `"bio"` means it could enable biological harm. `"frontier_llm"` means it could assist the development of competing AI models. `"reasoning_extraction"` means it asks the model to reproduce its internal reasoning in the response text. `"general_harms"` means it falls under another usage-policy area. See [Refusals, fallback, and billing](#refusals-fallback-and-billing).
+- **Text between tool calls comes back in thinking blocks.** Between tool calls, notes longer than a sentence or two come back as [progress-update `thinking` blocks](../04-API-Reference/Guides/build-with-claude-thinking.md#progress-updates). Shorter remarks stay `text`. At the default `display: "omitted"`, the progress-update blocks' text is empty, so an application that streams those notes to its users goes quiet between tool calls, with no error. If you [turn off up-front thinking with `between_tools`](#turn-off-up-front-thinking), the text comes back. To receive it, see [Text between tool calls is returned in thinking blocks](models-sonnet-5-5-migration-guide.md#text-between-tool-calls) in the migration guide.
+- **Safeguard categories.** The model's safeguards can decline a request in five [`stop_details` categories](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response). `"cyber"` means the request could enable cyber harm. `"bio"` means it could enable biological harm. `"frontier_llm"` means it could help with the development of competing AI models. `"reasoning_extraction"` means it asks the model to reproduce its internal reasoning in the response text. `"general_harms"` means it falls under another usage-policy area. See [Refusals, fallback, and billing](#refusals-fallback-and-billing).
 
 ## Refusals, fallback, and billing
 
@@ -176,7 +176,7 @@ Everything in [Refusals and fallback](../04-API-Reference/Guides/build-with-clau
 
 ## Pricing
 
-Claude Sonnet 5.5 has the same prices as Claude Sonnet 5, including prompt caching and batch processing rates. See [Pricing](../17-Billing-Plans/about-claude-pricing.md) for the full list, data residency, and tool pricing.
+Claude Sonnet 5.5 has the same prices as Claude Sonnet 5, except for prompt cache reads, which cost \$0.10 USD per million tokens, half the Claude Sonnet 5 rate. See [Pricing](../17-Billing-Plans/about-claude-pricing.md) for the full list, data residency, and tool pricing.
 
 ## Availability
 
@@ -205,6 +205,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -218,7 +220,7 @@ Then check six things:
 2.  Replace `tool_choice` types `any` and `tool` with `auto` plus [strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
 3.  Keep conversations append-only. A request that replays a Claude Sonnet 5.5 thinking block after an edit to earlier history can return a 400 error. See [Thinking blocks are tied to the model and the conversation](#thinking-blocks-are-tied-to-the-model-that-produced-them).
 4.  If you use computer use through `computer_20251124` on the Claude API or Google Cloud, [move to the toolset](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#migrate-from-computer-20251124).
-5.  If you use the advisor tool with a Claude Opus 4.8, Claude Opus 4.7, or Claude Sonnet 5 advisor, [switch to an advisor that Claude Sonnet 5.5 accepts](#advisor-tool-pairings).
+5.  If you use the advisor tool with a Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5, or Claude Haiku 5.5 advisor, [switch to an advisor that Claude Sonnet 5.5 accepts](#advisor-tool-pairings).
 6.  If your interface shows the text between tool calls, set `thinking.display` when you use adaptive thinking. With `between_tools`, the text comes back without it. See [Text between tool calls is returned in thinking blocks](models-sonnet-5-5-migration-guide.md#text-between-tool-calls).
 
 The [migration guide](models-sonnet-5-5-migration-guide.md) has step-by-step instructions from Claude Sonnet 5 and earlier models, and the full checklist.

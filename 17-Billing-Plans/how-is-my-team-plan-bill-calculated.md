@@ -2,7 +2,7 @@
 title: "How is my Team plan bill calculated? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:24:55Z"
+fetched_at: "2026-10-23T06:29:17Z"
 tags: ["billing"]
 ---
 

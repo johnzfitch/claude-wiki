@@ -2,13 +2,11 @@
 title: "How to create custom skills | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:30Z"
+fetched_at: "2026-10-23T06:29:15Z"
 tags: ["claude-code", "security", "skills"]
 ---
 
 # How to create custom skills
-
-July 22, 2026
 
 
 Skills are available for users on Free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](../15-Claude-AI-Features/create-and-edit-files-with-claude.md#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
@@ -227,7 +225,7 @@ my-skill.zip
 
 4\. Iterate on the description if Claude isn't using it when expected.
 
-When you're iterating on a skill with Claude in chat, you can edit the skill files directly where they open beside the conversation. Highlight the text you want changed, click "Edit with Claude," and type your request. For skills with multiple files, leave edit requests across the files and send them together, and Claude applies them in one pass. Learn more about **[editing artifacts](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md#h_9cbf05e668)**.
+When you're iterating on a skill with Claude in chat, you can edit the skill files directly where they open beside the conversation. Highlight the text you want changed, click "Edit with Claude," and type your request. For skills with multiple files, leave edit requests across the files and send them together, and Claude applies them in one pass. Learn more about **[editing artifacts](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them#h_9cbf05e668)**.
 
 **Note for Team and Enterprise plans:** To make a skill available to all users in your organization, see **[Provision and manage skills for your organization](../15-Claude-AI-Features/provisioning-and-managing-skills-for-your-organization.md)**.
 
@@ -247,7 +245,7 @@ When you're iterating on a skill with Claude in chat, you can edit the skill fil
 
 **Skills can build on each other:** While skills can't explicitly reference other skills, Claude can use multiple skills together automatically. This composability is one of the most powerful parts of the skills feature.
 
-**Review the open Agent Skills specification:** Follow the guidelines at **[agentskills.io](http://agentskills.io)**, so skills you create can work across platforms that adopt the standard.
+**Review the open Agent Skills specification:** Follow the guidelines at **[agentskills.io](https://agentskills.io)**, so skills you create can work across platforms that adopt the standard.
 
 For a more in-depth guide to skill creation, refer to **[Skill authoring best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md)** in our Claude Docs.
 

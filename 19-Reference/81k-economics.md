@@ -2,15 +2,44 @@
 title: "What 81,000 people told us about AI economics \\ Anthropic"
 source_url: "https://www.anthropic.com/research/81k-economics"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:46:16Z"
+fetched_at: "2026-10-21T06:30:33Z"
 tags: ["news-research"]
 ---
 
 # What 81,000 people told us about the economics of AI
 
-Apr 22, 2026
-
 [Read the PDF](https://cdn.sanity.io/files/4zrzovbb/website/3a8d990bc90098038eabd77b0d12ff636ed58d50.pdf)
+
+- [01Who worries about job displacement?](#who-worries-about-job-displacement)
+- [02Who benefits from AI?](#who-benefits-from-ai)
+- [03Scope and speed](#scope-and-speed)
+- [04Discussion](#discussion)
+
+- Published
+
+  Apr 22, 2026
+
+- Team
+
+  [Economics](team-economics.md)
+
+- Topics
+
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Productivity](https://www.anthropic.com/search?topic=productivity)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+
+  See more...
+
+Related articles
+
+- Jun 26, 2026
+
+  [Economic Index](https://www.anthropic.com/economic-index)
+
+[View more](https://www.anthropic.com/search?topic=economic-index)
 
 ### Key findings:
 
@@ -28,21 +57,21 @@ The survey’s results provide initial evidence that [observed exposure](labor-m
 
 ## Who worries about job displacement?
 
-*“Well like anyone who has a white collar job these days I'm 100% concerned, pretty much 24/7 concerned about losing my job eventually to A.I.”—Software engineer.¹*
+*“Well like anyone who has a white collar job these days I'm 100% concerned, pretty much 24/7 concerned about losing my job eventually to A.I.”—Software engineer.^([1](#footnote-1))*
 
 One fifth of the respondents in our survey voiced concern about economic displacement. Some worried about this in the abstract: one software developer cautioned about “the possibility of AI in its current state being used to replace junior positions.” Others lamented that their jobs, or aspects of their jobs, were being automated away. One market researcher said, “In terms of improving my capability, it's no doubt. \[B\]ut in the future AI may replace my work.” In some jobs, people felt it made their work harder. One software developer observed that “when AI arrived, the project managers started giving harder and harder tickets and bugs to solve.”
 
-Throughout this report, we use Claude-powered classifiers to infer people’s attributes and sentiments from their responses. For example, many participants mention their line of work in passing or give informative details about their work life, which allows us to infer their occupation. Similarly, we quantify concerns about job loss by prompting Claude to identify and interpret direct quotes in which respondents indicate that their own role is at risk of AI-driven displacement. We give example prompts in [the Appendix](https://cdn.sanity.io/files/4zrzovbb/website/3a8d990bc90098038eabd77b0d12ff636ed58d50.pdf).
+Throughout this report, we use Claude-powered classifiers to infer people’s attributes and sentiments from their responses. For example, many participants mention their line of work in passing or give informative details about their work life, which allows us to infer their occupation. Similarly, we quantify concerns about job loss by prompting Claude to identify and interpret direct quotes in which respondents indicate that their own role is at risk of AI-driven displacement. We give example prompts in [the Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/3a8d990bc90098038eabd77b0d12ff636ed58d50.pdf).
 
 Respondents’ perceived threat from AI was correlated with our [own measure of observed exposure](labor-market-impacts.md), which reflects the percentage of a job’s tasks for which Claude is used. A respondent was more concerned about AI when our observed exposure measure for that respondent was higher. Elementary school teachers were less worried about their own displacement than software engineers, for example, consistent with the fact that Claude usage skews toward coding tasks.
 
 We show this in Figure 1 below. The y-axis is the percentage of respondents in a given occupation who said that AI is already replacing their role or is likely to do so soon. The x-axis is observed exposure. The plot shows that, on average, people in more exposed occupations tended to express more concern about their jobs being automated away. For every 10-percentage-point increase in exposure, perceived job threat increased by 1.3 percentage points. People in the top 25% of exposure mentioned the worry three times as often as those in the bottom 25%.
 
-Another important worker characteristic is career stage. In previous research, we reported [tentative signs](https://cdn.sanity.io/files/4zrzovbb/website/a42bc3fc08283562f08fd8bdee8f6f9a3d506e87.pdf) of a slowdown in the hiring of recent graduates and early-career workers in the United States. For about half of respondents in this survey, we were able to infer career stage from their answers.² We found that early-career respondents were much more likely to express concern about job displacement than senior workers.
+Another important worker characteristic is career stage. In previous research, we reported [tentative signs](https://www-cdn.anthropic.com/files/4zrzovbb/website/a42bc3fc08283562f08fd8bdee8f6f9a3d506e87.pdf) of a slowdown in the hiring of recent graduates and early-career workers in the United States. For about half of respondents in this survey, we were able to infer career stage from their answers.^([2](#footnote-2)) We found that early-career respondents were much more likely to express concern about job displacement than senior workers.
 
 ## Who benefits from AI?
 
-Using Claude to assess the survey responses, we rated the extent of people’s self-reported productivity gains from AI on a 1–7 scale, where 1 is “less productive,” 2 is “no change,” and each subsequent level denotes a larger gain. Responses that scored 7 included testimonials like, “It used to take months to make the website I \[made\] in 4-5 days”; Claude gave a 5 to statements like, “What might have taken four hours was accomplished in half the time,” and a 2 to ones like, “Personally, I had AI help me fix code on a website. But it took multiple passes to get the result I was after.”³
+Using Claude to assess the survey responses, we rated the extent of people’s self-reported productivity gains from AI on a 1–7 scale, where 1 is “less productive,” 2 is “no change,” and each subsequent level denotes a larger gain. Responses that scored 7 included testimonials like, “It used to take months to make the website I \[made\] in 4-5 days”; Claude gave a 5 to statements like, “What might have taken four hours was accomplished in half the time,” and a 2 to ones like, “Personally, I had AI help me fix code on a website. But it took multiple passes to get the result I was after.”^([3](#footnote-3))
 
 Overall, people reported meaningful productivity gains on average. The mean productivity rating was 5.1, corresponding to “substantially more productive.” Our respondents were, of course, active Claude users who were willing to take a survey. This could make them more likely to report productivity benefits than the average user. Some 3% reported negative or neutral impacts, and 42% did not give a clear indication on productivity.
 
@@ -50,9 +79,9 @@ This splits somewhat across income lines. The left panel in Figure 3 shows that 
 
 Some of the lowest-paid workers describe high productivity gains as well. This included a customer service representative using “AI to save me a lot of time with creating a response based on another one.” And in some cases, people in low-wage jobs were using AI on technical side projects. One delivery driver, for example, was using Claude to start an e-commerce business, and a landscaper was building a music application.
 
-We look at this in more detail in the right panel of Figure 3, showing the inferred productivity gain by major occupational group. At the top are management occupations. These respondents are mostly entrepreneurs using Claude to build a business.⁴ The next highest category is computer and math, which includes software developers. The two groups exhibiting the mildest productivity improvements were workers in scientific and legal professions. Some lawyers worried about AI’s ability to follow precise instructions. For example: “I have given very specific rules about what is where, how to read a legal document, what I want it to do… but it diverges every time.”
+We look at this in more detail in the right panel of Figure 3, showing the inferred productivity gain by major occupational group. At the top are management occupations. These respondents are mostly entrepreneurs using Claude to build a business.^([4](#footnote-4)) The next highest category is computer and math, which includes software developers. The two groups exhibiting the mildest productivity improvements were workers in scientific and legal professions. Some lawyers worried about AI’s ability to follow precise instructions. For example: “I have given very specific rules about what is where, how to read a legal document, what I want it to do… but it diverges every time.”
 
-A key question as AI diffuses through the economy is where the benefits will accrue—to workers, their managers, consumers, or corporations. Respondents indicated the recipient of these gains in about a quarter of interviews. Overall, most of these people cited benefits to themselves, through faster tasks, expanded scope, and freed-up time.⁵ But 10% of respondents who named a recipient said that employers or clients were asking for and getting more work. A smaller share mentioned benefits to AI companies, and an even smaller share said that AI would be a net negative. This depended on career stage: only 60% of early-career workers indicated that they personally benefited from AI, compared to 80% of senior professionals.
+A key question as AI diffuses through the economy is where the benefits will accrue—to workers, their managers, consumers, or corporations. Respondents indicated the recipient of these gains in about a quarter of interviews. Overall, most of these people cited benefits to themselves, through faster tasks, expanded scope, and freed-up time.^([5](#footnote-5)) But 10% of respondents who named a recipient said that employers or clients were asking for and getting more work. A smaller share mentioned benefits to AI companies, and an even smaller share said that AI would be a net negative. This depended on career stage: only 60% of early-career workers indicated that they personally benefited from AI, compared to 80% of senior professionals.
 
 ## Scope and speed
 
@@ -76,21 +105,23 @@ There are key caveats to our analysis, owing to the nature of the data. First, o
 
 Still, the interviews surface real insights about people’s feelings around the economics of AI, showing how qualitative data can surface quantitative hypotheses. And the large share of economic-related concerns is a strong signal in itself.
 
-### Citation
-
-```
-@online{massenkoff2026interviewer,
-author = {Maxim Massenkoff and Saffron Huang},
-title = {What 81,000 people told us about the economics of AI},
-date = {2026-04-22},
-year = {2026},
-url = {anthropic.com/research/81k-economics},
-}
-```
-
 ### Appendix
 
-See the final section of the [linked PDF](https://cdn.sanity.io/files/4zrzovbb/website/3a8d990bc90098038eabd77b0d12ff636ed58d50.pdf).
+See the final section of the [linked PDF](https://www-cdn.anthropic.com/files/4zrzovbb/website/3a8d990bc90098038eabd77b0d12ff636ed58d50.pdf).
+
+## Footnotes
+
+01We inferred people’s occupations using the first question in the survey (“What’s the last thing you used an AI chatbot for?”) or indications given in other responses.[](#footnote-ref-1)
+
+02This came from various indications in the written responses. For example, several users mentioned using Claude for homework, which put them in the early-career group. And many referred to running their own businesses and being involved in hiring decisions, which put them in the senior group.[](#footnote-ref-2)
+
+03The scale is not centered because most people say positive things about productivity, yielding almost entirely 6s and 7s on the original Likert scale. The scale we use here ran from 1 = less productive, 2 = no change, 3 = slightly more productive, 4 = moderately more productive, 5 = substantially more productive, 6 = much more productive, to 7 = transformatively more productive—AI has fundamentally changed what or how much they can produce.[](#footnote-ref-3)
+
+04Removing these “solopreneurs” still leaves management tied with computer and math occupations for showing the highest productivity benefit.[](#footnote-ref-4)
+
+05A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.[](#footnote-ref-5)
+
+## Authors & Acknowledgments
 
 ### Acknowledgements
 
@@ -102,134 +133,14 @@ Zoe Hitzig and Eva Lyubich provided critical feedback and methodological guidanc
 
 Additionally, we thank Miriam Chaum, Ankur Rathi, Santi Ruiz, and David Saunders for their discussion, feedback, and support.
 
-#### Footnotes
+### Citation
 
-1.  We inferred people’s occupations using the first question in the survey (“What’s the last thing you used an AI chatbot for?”) or indications given in other responses.
-2.  This came from various indications in the written responses. For example, several users mentioned using Claude for homework, which put them in the early-career group. And many referred to running their own businesses and being involved in hiring decisions, which put them in the senior group.
-3.  The scale is not centered because most people say positive things about productivity, yielding almost entirely 6s and 7s on the original Likert scale. The scale we use here ran from 1 = less productive, 2 = no change, 3 = slightly more productive, 4 = moderately more productive, 5 = substantially more productive, 6 = much more productive, to 7 = transformatively more productive—AI has fundamentally changed what or how much they can produce.
-4.  Removing these “solopreneurs” still leaves management tied with computer and math occupations for showing the highest productivity benefit.
-5.  A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.
+Copy
 
-  
-## Related content
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+``` CodeBlock-module-scss-module__PbWBnq__code
+@online{massenkoff2026interviewer,
+author = {Maxim Massenkoff and Saffron Huang},
+title = {What 81,000 people told us about the economics of AI},
+date = {2026-04-22},
+year = {2026},
+url = {anthropic.com/research/81k-economics},

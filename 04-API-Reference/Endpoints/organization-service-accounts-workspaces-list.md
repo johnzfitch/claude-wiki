@@ -2,7 +2,7 @@
 title: "List Workspaces For Service Account - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/service_accounts/workspaces/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-09T06:27:57Z"
+fetched_at: "2026-10-17T06:26:08Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces%2Flist)
 
 
 
@@ -146,7 +146,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -156,9 +156,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -229,13 +231,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -243,9 +247,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -263,6 +267,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/service_accounts/workspaces)
 
 # List Workspaces For Service Account
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/service_accounts/{service_account_id}/workspaces
 
@@ -301,6 +311,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 

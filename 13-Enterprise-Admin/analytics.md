@@ -2,7 +2,7 @@
 title: "Track team usage with analytics - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/analytics"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-11T06:27:43Z"
+fetched_at: "2026-10-16T06:24:36Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -46,6 +46,8 @@ Claude Code provides analytics dashboards to help organizations understand devel
 |-------------------------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------|
 | Claude for Teams / Enterprise | [claude.ai/analytics/claude-code](https://claude.ai/analytics/claude-code) | Usage metrics, contribution metrics with GitHub integration, leaderboard, data export | [Details](#access-analytics-for-team-and-enterprise) |
 | API (Claude Console)          | [platform.claude.com/claude-code](../04-API-Reference/Other/playground.md) | Usage metrics, spend tracking, team insights                                          | [Details](#access-analytics-for-api-customers)       |
+
+Code Review has its own dashboard. For review activity and spend, see [View usage](../02-Claude-Code-CLI/code-review-costs.md#view-usage).
 
 
 [​](#access-analytics-for-team-and-enterprise)
@@ -101,7 +103,7 @@ Data typically appears within 24 hours after enabling, with daily updates. If no
 - **“GitHub app required”**: install the GitHub app to view contribution metrics
 - **“Data processing in progress”**: check back in a few days and confirm the GitHub app is installed if data doesn’t appear
 
-Contribution metrics support GitHub Cloud and GitHub Enterprise Server.
+Contribution metrics cover repositories hosted on github.com. For repositories on [GitHub Enterprise Server](../02-Claude-Code-CLI/github-enterprise-server.md), the analytics dashboard shows usage metrics only.
 
 
 [​](#review-summary-metrics)
@@ -268,7 +270,7 @@ The Leaderboard helps you find team members with high Claude Code adoption who c
 
 Access data programmatically
 
-On the Enterprise plan, the [Claude Enterprise Analytics API](../04-API-Reference/Admin/http-beta-organization-analytics.md) returns per-user engagement, usage, and cost reports for your organization across Claude surfaces, including Claude Code. A Primary Owner creates a key with the `read:analytics` scope at [claude.ai/analytics/api-keys](https://claude.ai/analytics/api-keys). The API is not available on the Teams plan. To query contribution data through GitHub instead, search for PRs labeled with `claude-code-assisted`.
+On the Enterprise plan, the [Claude Enterprise Analytics API](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics.md) returns per-user engagement, usage, and cost reports for your organization across Claude surfaces, including Claude Code. A Primary Owner creates a key with the `read:analytics` scope at [claude.ai/analytics/api-keys](https://claude.ai/analytics/api-keys). The API is not available on the Teams plan. To query contribution data through GitHub instead, search for PRs labeled with `claude-code-assisted`.
 
 
 [​](#access-analytics-for-api-customers)

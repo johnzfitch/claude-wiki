@@ -2,7 +2,7 @@
 title: "Quillit Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/quillit"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:18Z"
+fetched_at: "2026-10-23T06:29:47Z"
 tags: ["api", "case-studies", "enterprise", "search", "security"]
 ---
 
@@ -36,24 +36,24 @@ With Claude, Quillit:
 
 - Reduces report writing time by up to 80% for clients
 - Achieves 89-98% citation accuracy with Claude 3.5, up from 60-70% with previous models
-- Processes more interview data simultaneously with Claude's expanded context window
+- Processes more interview data simultaneously with Claude’s expanded context window
 - Implemented their MVP in 3 months, with new features added every 1-2 months
 
 ## Streamlining the qualitative research process
 
 For qualitative market researchers, conducting in-depth interviews, focus groups, transcribing, analyzing, and reporting data is immensely time-consuming. Critical insights risk getting buried in transcripts and notes.
 
-Jason Deniega, Product Manager at Quillit, explains, "Our vision is to simplify and accelerate research: to eliminate the time-consuming parts, so our clients can focus on finding nuances in their data.”
+Jason Deniega, Product Manager at Quillit, explains, “Our vision is to simplify and accelerate research: to eliminate the time-consuming parts, so our clients can focus on finding nuances in their data.”
 
-Quillit serves qualitative market researchers seeking to understand the "why's" in business and consumer behavior. Their workflow encompasses pre-research, respondent recruitment, data collection, analysis, and reporting. Quillit aimed to streamline this entire process while maintaining high data privacy and security standards.
+Quillit serves qualitative market researchers seeking to understand the “why’s” in business and consumer behavior. Their workflow encompasses pre-research, respondent recruitment, data collection, analysis, and reporting. Quillit aimed to streamline this entire process while maintaining high data privacy and security standards.
 
 ## Why Quillit chose Claude
 
-After extensive evaluation, Quillit selected Claude for several key reasons. Anthropic’s emphasis on data ethics and governance aligned perfectly with their clients' strict content analysis requirements. The AI's benchmark performance on multi-task learning and reasoning capabilities also proved superior for Quillit's use cases.
+After extensive evaluation, Quillit selected Claude for several key reasons. Anthropic’s emphasis on data ethics and governance aligned perfectly with their clients’ strict content analysis requirements. The AI’s benchmark performance on multi-task learning and reasoning capabilities also proved superior for Quillit’s use cases.
 
-"Accuracy and peace of mind around data concerns are top priorities for our clients, and we wanted Quillit to deliver on that promise," says Deniega. "Anthropic’s emphasis on data ethics and governance for Claude models aligned with our clients' expectations."
+“Accuracy and peace of mind around data concerns are top priorities for our clients, and we wanted Quillit to deliver on that promise,” says Deniega. “Anthropic’s emphasis on data ethics and governance for Claude models aligned with our clients’ expectations.”
 
-The implementation process was also straightforward. Quillit's team quickly learned to work with Claude. "We're very satisfied with Claude’s performance and the support from our Anthropic account manager," notes Deniega.
+The implementation process was also straightforward. Quillit’s team quickly learned to work with Claude. “We’re very satisfied with Claude’s performance and the support from our Anthropic account manager,” notes Deniega.
 
 ## How Claude powers qualitative research insights
 
@@ -71,19 +71,19 @@ This approach allows researchers to gain deeper insights in significantly less t
 
 Since integrating Claude, Quillit has transformed the research experience for clients. The most dramatic benefit has been time savings, with report writing time reduced by over 80%.
 
-Deniega explains, "Before using Claude 3.5 Sonnet, our accuracy rating for citations was around 60-70%. After that, it was between 89-98%. This level of precision is crucial for our clients' confidence in the insights they receive."
+Deniega explains, “Before using Claude 3.5 Sonnet, our accuracy rating for citations was around 60-70%. After that, it was between 89-98%. This level of precision is crucial for our clients’ confidence in the insights they receive.”
 
-Researchers have embraced these improvements. One client shared, "Creating the AI reports was so easy. My client was extremely happy with the results, and it looks like this may be the only deliverable from now on!"
+Researchers have embraced these improvements. One client shared, “Creating the AI reports was so easy. My client was extremely happy with the results, and it looks like this may be the only deliverable from now on!”
 
-Another highlighted, "Once oriented, Quillit is very easy to use. I like the ability to segment responses in an easy way and with a single file. I like that it will accommodate multiple file types.” It’s noteworthy that Quillit can accommodate the combination of all types of research data, regardless of the platform used to capture the data..
+Another highlighted, “Once oriented, Quillit is very easy to use. I like the ability to segment responses in an easy way and with a single file. I like that it will accommodate multiple file types.” It’s noteworthy that Quillit can accommodate the combination of all types of research data, regardless of the platform used to capture the data..
 
 ## Building the future of AI-powered research
 
-Quillit plans to leverage Claude to streamline the entire research lifecycle. They're exploring an AI moderator for interviews and seamlessPowerPoint generation from Quillit reports.
+Quillit plans to leverage Claude to streamline the entire research lifecycle. They’re exploring an AI moderator for interviews and seamlessPowerPoint generation from Quillit reports.
 
-"Our work with Anthropic is just starting," says Deniega. "We've had success using Claude for the market research industry, and we'd like more people to know about that!"
+“Our work with Anthropic is just starting,” says Deniega. “We’ve had success using Claude for the market research industry, and we’d like more people to know about that!”
 
-By combining Claude's capabilities with their deep understanding of qualitative research workflows, Quillit is transforming how researchers uncover insights – making the process faster, more thorough, and more accessible while maintaining the highest standards of data security and privacy.
+By combining Claude’s capabilities with their deep understanding of qualitative research workflows, Quillit is transforming how researchers uncover insights – making the process faster, more thorough, and more accessible while maintaining the highest standards of data security and privacy.
 
 ## Related stories
 
@@ -108,7 +108,8 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -126,12 +127,12 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -164,7 +165,7 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -182,6 +183,7 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -197,7 +199,7 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -232,7 +234,8 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -250,12 +253,12 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -288,7 +291,7 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -306,6 +309,7 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -321,7 +325,7 @@ By combining Claude's capabilities with their deep understanding of qualitative 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

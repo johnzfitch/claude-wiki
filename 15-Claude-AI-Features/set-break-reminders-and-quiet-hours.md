@@ -2,7 +2,7 @@
 title: "Set break reminders and quiet hours | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15672868-set-break-reminders-and-quiet-hours"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:20Z"
+fetched_at: "2026-10-23T06:29:12Z"
 tags: ["claude-ai"]
 ---
 

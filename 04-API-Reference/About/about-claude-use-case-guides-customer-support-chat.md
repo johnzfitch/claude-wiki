@@ -2,7 +2,7 @@
 title: "Customer support agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat"
 category: "04-API-Reference/About"
-fetched_at: "2026-10-04T08:32:35Z"
+fetched_at: "2026-10-20T06:39:01Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcustomer-support-chat)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcustomer-support-chat)
 
 
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -50,7 +50,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Use cases
 
@@ -233,7 +233,7 @@ The average time it takes for the chatbot to resolve an inquiry. This varies wid
 
 The choice of model depends on the trade-offs between cost, accuracy, and response time.
 
-For customer support chat, Claude Opus 5 is well suited to balance intelligence, latency, and cost, including the most complex support scenarios that require deep reasoning across long, multi-step conversations. However, for instances where you have conversation flow with multiple prompts including RAG, tool use, or long-context prompts, Claude Haiku 4.5 may be more suitable to optimize for latency.
+For customer support chat, Claude Opus 5.5 is well suited to balance intelligence, latency, and cost, including the most complex support scenarios that require deep reasoning across long, multi-step conversations. However, for instances where you have conversation flow with multiple prompts including RAG, tool use, or long-context prompts, Claude Haiku 5.5 may be more suitable to optimize for latency. [Effort](../Guides/build-with-claude-effort.md) is its main control for speed: `low` is the fastest level, suited to chat and short tool tasks.
 
 ### Build a strong prompt
 
@@ -504,6 +504,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -580,7 +582,11 @@ class ChatBot:
                 return f"An error occurred: {follow_up_response['error']}"
 
             response_text = next(
-                (block.text for block in follow_up_response.content if block.type == "text"),
+                (
+                    block.text
+                    for block in follow_up_response.content
+                    if block.type == "text"
+                ),
                 None,
             )
             if response_text is None:
@@ -676,7 +682,7 @@ In complex scenarios, it may be helpful to consider additional strategies to imp
 
 When dealing with large amounts of static and dynamic context, including all information in the prompt can lead to high costs, slower response times, and reaching context window limits. In this scenario, implementing Retrieval Augmented Generation (RAG) techniques can improve performance and efficiency.
 
-By using [embedding models like Voyage](../Guides/build-with-claude-embeddings.md) to convert information into vector representations, you can create a more scalable and responsive system. This approach allows for dynamic retrieval of relevant information based on the current query, rather than including all possible context in every prompt.
+You can create a more scalable and responsive system by converting information into vector representations with [embedding models](../Guides/build-with-claude-embeddings.md), such as those from Voyage AI by MongoDB. This approach allows for dynamic retrieval of relevant information based on the current query, rather than including all possible context in every prompt.
 
 Implementing RAG for support use cases has been shown to increase accuracy, reduce response times, and reduce API costs in systems with extensive context requirements. See the [RAG recipe](https://platform.claude.com/cookbook/capabilities-retrieval-augmented-generation-guide) for a worked example.
 

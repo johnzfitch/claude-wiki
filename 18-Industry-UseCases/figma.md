@@ -2,7 +2,7 @@
 title: "Figma Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/figma"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:47Z"
+fetched_at: "2026-10-23T06:29:55Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -53,37 +53,37 @@ Figma recognized that the role of design is rapidly evolving with AI. As the lea
 
 AI unlocks a new way to quickly visualize design ideas and turn static mocks into interactive experiences with a simple prompt. By bringing this capability to Figma, teams can explore many different directions without manually creating prototypes or writing code.
 
-This evolution also aligned with broader industry shifts. Alex Mullans, a product manager at Figma, noted, "The traditional handoff between design and development creates friction. There's back-and-forth where the developer returns saying 'here's what I built,' and it doesn't match the original vision.” Figma’s collaborative platform brings design and development closer together to maintain craft and quality throughout the entire process.
+This evolution also aligned with broader industry shifts. Alex Mullans, a product manager at Figma, noted, “The traditional handoff between design and development creates friction. There’s back-and-forth where the developer returns saying ‘here’s what I built,’ and it doesn’t match the original vision.” Figma’s collaborative platform brings design and development closer together to maintain craft and quality throughout the entire process.
 
 ## Choosing Claude for technical prowess and design sensibility
 
 When evaluating AI models, Figma sought a solution that could generate high-quality code while understanding design intent and aesthetics.
 
-Mullans described their evaluation process, saying, "We regularly evaluate various models. Claude consistently delivers the right combination of speed, accuracy, and understanding user intent."
+Mullans described their evaluation process, saying, “We regularly evaluate various models. Claude consistently delivers the right combination of speed, accuracy, and understanding user intent.”
 
-Claude's design sensibility also sets it apart, the team shared. An engineer for Figma Make explained: "Before Anthropic came around, you saw these AI models were intelligent, but they definitely lacked taste, they lacked character. You would ask them to generate a design and the design would come out rather flat. And then Anthropic came around and now we have both intelligent models and models with taste."
+Claude’s design sensibility also sets it apart, the team shared. An engineer for Figma Make explained: “Before Anthropic came around, you saw these AI models were intelligent, but they definitely lacked taste, they lacked character. You would ask them to generate a design and the design would come out rather flat. And then Anthropic came around and now we have both intelligent models and models with taste.”
 
-Holly Li, product manager for Figma Make, had firsthand experience with Claude's capabilities. "I spent 30 hours teaching myself React to build my website. With Claude, I refactored and improved all that code in a single day, adding features I'd always wanted but couldn't implement myself."
+Holly Li, product manager for Figma Make, had firsthand experience with Claude’s capabilities. “I spent 30 hours teaching myself React to build my website. With Claude, I refactored and improved all that code in a single day, adding features I’d always wanted but couldn’t implement myself.”
 
 The team identified Claude Sonnet as their breakthrough moment—the point when code generation became good enough to enable their vision for Figma Make.
 
 ## Interactivity via natural language
 
-Figma integrated Claude into two transformative products that turn ideas into code-backed software. The first allows designers working in [Figma Sites](https://www.figma.com/sites/) to add interactivity to existing website designs by describing what they want—selecting elements and typing natural language prompts like "add a hover effect that tilts when my mouse is over it." Claude quickly generates high-quality code while preserving the details of the original design.
+Figma integrated Claude into two transformative products that turn ideas into code-backed software. The first allows designers working in [Figma Sites](https://www.figma.com/sites/) to add interactivity to existing website designs by describing what they want—selecting elements and typing natural language prompts like “add a hover effect that tilts when my mouse is over it.” Claude quickly generates high-quality code while preserving the details of the original design.
 
-The second product, [Figma Make](https://www.figma.com/make/), creates interactive prototypes or apps from descriptions or existing Figma designs. As Li explained: "Figma Make is a way to go from idea to real software. You can either start from scratch or start with an existing design that you've created in Figma." Users can type a prompt describing what they want, or copy their pixel-perfect mockups from Figma Design, and Claude transforms them into fully functional prototypes with complex logic, animations, and responsive behaviors.
+The second product, [Figma Make](https://www.figma.com/make/), creates interactive prototypes or apps from descriptions or existing Figma designs. As Li explained: “Figma Make is a way to go from idea to real software. You can either start from scratch or start with an existing design that you’ve created in Figma.” Users can type a prompt describing what they want, or copy their pixel-perfect mockups from Figma Design, and Claude transforms them into fully functional prototypes with complex logic, animations, and responsive behaviors.
 
-Li articulated their design philosophy, saying, "AI should meet designers where they are. If you've already crafted the perfect design, you shouldn't have to start over. Claude adds the interactivity while respecting every pixel you've placed."
+Li articulated their design philosophy, saying, “AI should meet designers where they are. If you’ve already crafted the perfect design, you shouldn’t have to start over. Claude adds the interactivity while respecting every pixel you’ve placed.”
 
-The team saw remarkable improvements with each Claude update. Li shared, "A prompt now generates sophisticated designs with gradients, varied typography, and thoughtful motion. One of our designers even said 'Claude is so good, I want to cry.'"
+The team saw remarkable improvements with each Claude update. Li shared, “A prompt now generates sophisticated designs with gradients, varied typography, and thoughtful motion. One of our designers even said ‘Claude is so good, I want to cry.’”
 
 ## New models accelerate the vision
 
 The Figma team stays on the cutting edge, constantly testing the latest Claude models.
 
-"Sonnet 4.5 is a very impressive model," said [Dylan Field, Figma CEO](https://www.linkedin.com/posts/dylanfield_spent-the-last-few-days-exploring-the-capabilities-activity-7378474821879341056-h54Z). "We're very impressed so far with how much it can plan ahead, and also how much it can reason about complex codebases." Field explained how the model has transformed Figma designs into functional code. He highlighted the improved round-trip workflow between Figma Design and Make—copying designs in, generating working prototypes, then bringing them into the design canvas to iterate further and compare explorations side-by-side. "We had no idea how much better this round trip would get with Sonnet 4.5... it's been a very happy surprise," he noted. Field called the experience "a joy to play with," adding that the model "has already really shown quite a difference" in Figma Make's capabilities.
+“Sonnet 4.5 is a very impressive model,” said [Dylan Field, Figma CEO](https://www.linkedin.com/posts/dylanfield_spent-the-last-few-days-exploring-the-capabilities-activity-7378474821879341056-h54Z). “We’re very impressed so far with how much it can plan ahead, and also how much it can reason about complex codebases.” Field explained how the model has transformed Figma designs into functional code. He highlighted the improved round-trip workflow between Figma Design and Make—copying designs in, generating working prototypes, then bringing them into the design canvas to iterate further and compare explorations side-by-side. “We had no idea how much better this round trip would get with Sonnet 4.5... it’s been a very happy surprise,” he noted. Field called the experience “a joy to play with,” adding that the model “has already really shown quite a difference” in Figma Make’s capabilities.
 
-Figma also introduced an experimental models setting, giving users access to the latest releases—including the new Claude Opus 4.6—as soon as they're available in Figma Make. "Claude Opus 4.6 generates complex, interactive apps and prototypes in Figma Make with an impressive creative range," said Loredana Crisan, Chief Design Officer at Figma. "The model translates detailed designs and multi-layered tasks into code on the first try, making it a powerful starting point for teams to explore and build ideas." The experimental setting lets teams push the boundaries with new capabilities as Claude continues to evolve.
+Figma also introduced an experimental models setting, giving users access to the latest releases—including the new Claude Opus 4.6—as soon as they’re available in Figma Make. “Claude Opus 4.6 generates complex, interactive apps and prototypes in Figma Make with an impressive creative range,” said Loredana Crisan, Chief Design Officer at Figma. “The model translates detailed designs and multi-layered tasks into code on the first try, making it a powerful starting point for teams to explore and build ideas.” The experimental setting lets teams push the boundaries with new capabilities as Claude continues to evolve.
 
 Every new model release unlocks new possibilities for what teams can create. Field shared, “As AI models get better, Figma gets better.”
 
@@ -91,13 +91,13 @@ Every new model release unlocks new possibilities for what teams can create. Fie
 
 By lowering technical barriers, Claude enables all kinds of Figma users to validate ideas faster, explore more creative directions, and bring diverse perspectives into the product development process.
 
-Speed transforms what's possible. Li illustrated this with her own experience, saying, "I prototyped a new product flow with Figma Make in five minutes. Before, that would have been literally impossible for me to do alone as a product manager without design and engineering support."
+Speed transforms what’s possible. Li illustrated this with her own experience, saying, “I prototyped a new product flow with Figma Make in five minutes. Before, that would have been literally impossible for me to do alone as a product manager without design and engineering support.”
 
 This acceleration enables entirely new workflows. Early users have shared compelling examples: one designer pitched a VC on a startup idea by prototyping it over a weekend using Figma Make, impressing the investor with a fully functional demo. Another user used Make to bring a long-shelved concept to life—turning it interactive finally got the company talking about it again.
 
-Beyond individual productivity, Claude also democratizes who can contribute to product development. Mullans observed, "Product managers who think in spreadsheets and data tables can now create visual prototypes to communicate their ideas. Engineers can quickly mock up interfaces without spending time with CSS. Everyone across the organization can contribute more effectively to the design process."
+Beyond individual productivity, Claude also democratizes who can contribute to product development. Mullans observed, “Product managers who think in spreadsheets and data tables can now create visual prototypes to communicate their ideas. Engineers can quickly mock up interfaces without spending time with CSS. Everyone across the organization can contribute more effectively to the design process.”
 
-The shift goes deeper than tools—it's changing how teams approach product development. Now, engineers can design, product managers can prototype, and designers can ship software. Figma Make is blurring the boundaries between different roles, helping everyone visualize an idea, participate in the design process, and bring a product to life.
+The shift goes deeper than tools—it’s changing how teams approach product development. Now, engineers can design, product managers can prototype, and designers can ship software. Figma Make is blurring the boundaries between different roles, helping everyone visualize an idea, participate in the design process, and bring a product to life.
 
 ## Related stories
 
@@ -122,7 +122,8 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -140,12 +141,12 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -178,7 +179,7 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -196,6 +197,7 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -211,7 +213,7 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -246,7 +248,8 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -264,12 +267,12 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -302,7 +305,7 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -320,6 +323,7 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -335,7 +339,7 @@ The shift goes deeper than tools—it's changing how teams approach product deve
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Find and join a Team or Enterprise organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:37Z"
+fetched_at: "2026-10-23T06:29:04Z"
 tags: ["enterprise"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Start a session - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/sessions"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:32:53Z"
+fetched_at: "2026-10-20T06:39:39Z"
 tags: ["api", "authentication", "mcp"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication", "mcp"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fsessions)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fsessions)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Delegate work to your agent
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Start a session
 
@@ -97,14 +109,6 @@ Create a session to run your agent and begin executing tasks.
 Copy page
 
 
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 A session is an agent instance within an environment. Each session references an [agent](managed-agents-agent-setup.md) and an [environment](managed-agents-environments.md) (both created separately), and maintains conversation history across multiple interactions. Sessions follow a two-step lifecycle: first [create the session](#creating-a-session), then [send a user event](#starting-the-session) to start work. You can also collapse both steps into one call with [`initial_events`](#seed-the-session-with-initial-events).
 
@@ -129,6 +133,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -158,6 +164,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -192,6 +200,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -216,9 +226,11 @@ for event in client.beta.sessions.events.list(seeded_session.id):
                 print(f"Seeded event: {block.text}")
 ```
 
+`initial_events` are not echoed on the create response. To see the seeded message, list the session's events.
+
 No other event type is accepted. Events that respond to an agent turn (`user.tool_confirmation`, `user.tool_result`, and `user.custom_tool_result`) aren't accepted because no agent turn exists yet, and `user.interrupt` isn't accepted because there is no turn to stop. Unlike `initial_events` on a scheduled deployment, a session's `initial_events` don't accept `system.message`.
 
-Each event in `initial_events` is validated and persisted before the create response returns, in list order, with a server-assigned ID, exactly as if you had posted it to the [send events](managed-agents-events-and-streaming.md) endpoint immediately after creation. Per-event content rules are also the same as on that endpoint. An empty list is equivalent to omitting the field. Validation is all-or-nothing: if any event fails validation, the whole request is rejected and no session is created.
+Each event in `initial_events` is validated and persisted before the create response returns, in list order, with a server-assigned ID, exactly as if you had posted it to the [send events](managed-agents-events-and-streaming.md#send-events) endpoint immediately after creation. Per-event content rules are also the same as on that endpoint. An empty list is equivalent to omitting the field. Validation is all-or-nothing: if any event fails validation, the whole request is rejected and no session is created.
 
 The create request is rejected in the following cases:
 
@@ -268,6 +280,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -275,7 +289,7 @@ override_session = client.beta.sessions.create(
     agent={
         "type": "agent_with_overrides",
         "id": agent.id,
-        "model": {"id": "claude-sonnet-5"},
+        "model": {"id": "claude-sonnet-5-5"},
         "system": None,  # clear the agent's system prompt for this session
     },
     environment_id=environment.id,
@@ -287,9 +301,9 @@ print(f"System: {override_session.agent.system}")
 
 #### Pin the inference geo for a session
 
-Because a `model` override replaces the agent's `model` object in full, it also sets or clears the model's [`inference_geo`](manage-claude-data-residency.md) pin for the session: an override that includes `inference_geo` pins the geography that serves the session's model requests, and one that omits it clears the agent's pin so the session follows the workspace's `default_inference_geo`. The overridden value is validated against the workspace's `allowed_inference_geos` when the session is created.
+Because a `model` override replaces the agent's `model` object in full, it also sets or clears the model's [inference geo](manage-claude-data-residency.md) pin for the session: an override that includes `inference_geo` pins the geography that serves the session's model requests, and one that omits it clears the agent's pin so the session follows the workspace's `default_inference_geo`. The overridden value is validated against the workspace's `allowed_inference_geos` when the session is created.
 
-The following example starts a session from an agent whose model has no geo pin, pins the session's model requests to US inference by including `inference_geo` in the `model` override, and prints the value echoed in the response's `agent.model`:
+The following example starts a session from an agent whose model has no geo pin, and pins the session's model requests to US inference by including `inference_geo` in the `model` override. The response echoes the value in `agent.model`:
 
 cURL
 
@@ -308,6 +322,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -330,30 +346,42 @@ The agent defines how Claude behaves within the session, including the model, sy
 
 ### Set a session budget
 
-To cap what a session can spend, pass the optional `budget` object when you create it. A budget is a hard ceiling on the session's list cost: the platform prices everything the session consumes at public list rates, and the session stops issuing new model requests once that running total reaches `max_list_cost`. Set `type` to `limit` and give `max_list_cost` an `amount` and a `currency`. `amount` is a whole number of US cents written as a string, such as `"2500"` for \$25.00; the API takes a string rather than a number so no floating-point rounding is ever applied. `USD` is the only currency currently supported. When the session reaches the cap, it pauses and goes idle with the stop reason `budget_reached`. The cap is enforced between model requests, so the request that crosses it finishes first and the session's final list cost can land [a fraction past the cap](managed-agents-budgets.md#when-a-session-reaches-its-budget). A budget can only be attached at creation: you can [change or remove](managed-agents-session-operations.md#updating-the-session-budget) it later, but you can't add one to a session created without it.
+To cap what a session can spend, pass the optional `budget` object when you create it. A budget is a hard ceiling on the session's list cost: the platform prices everything the session consumes at public list rates, and the session stops issuing new model requests once that running total reaches `max_list_cost`. Set `type` to `limit` and give `max_list_cost` an `amount` and a `currency`. `amount` is a whole number of US cents written as a string, such as `"125"` for \$1.25. The API takes a string rather than a number so no floating-point rounding is ever applied. `USD` is the only currency currently supported. When the session reaches the cap, it pauses and goes idle with the stop reason `budget_reached`. The cap is enforced between model requests, so the request that crosses it finishes first and the session's final list cost can land [a fraction past the cap](managed-agents-budgets.md#when-a-session-reaches-its-budget). A budget can only be attached at creation: you can [change or remove](managed-agents-session-operations.md#updating-the-session-budget) it later, but you can't add one to a session created without it.
 
-The following example creates a session with a \$25.00 budget; the response echoes the `budget` on the session resource:
+The following example creates a session with a \$1.25 budget:
 
 cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
 
 
 
 ```python
-curl -fsSL https://api.anthropic.com/v1/sessions \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -H "anthropic-beta: managed-agents-2026-04-01" \
-  -H "content-type: application/json" \
-  -d @- <<EOF
-{
-  "agent": "$AGENT_ID",
-  "environment_id": "$ENVIRONMENT_ID",
-  "budget": {
-    "type": "limit",
-    "max_list_cost": {"amount": "2500", "currency": "USD"}
-  }
-}
-EOF
+session = client.beta.sessions.create(
+    agent=agent.id,
+    environment_id=environment.id,
+    budget={
+        "type": "limit",
+        "max_list_cost": {"amount": "125", "currency": "USD"},
+    },
+)
+print(session.id, session.budget.max_list_cost.amount)  # sesn_01... 125
 ```
 
 See [Session budgets](managed-agents-budgets.md) for how enforcement works, what counts toward list cost, and how budgets behave in multiagent sessions.
@@ -379,6 +407,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -411,6 +441,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

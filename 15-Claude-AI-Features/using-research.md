@@ -2,7 +2,7 @@
 title: "Using Research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/11106443-using-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:02Z"
+fetched_at: "2026-10-23T06:28:49Z"
 tags: ["claude-ai", "search"]
 ---
 

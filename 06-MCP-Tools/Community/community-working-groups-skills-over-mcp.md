@@ -2,7 +2,7 @@
 title: "Skills Over MCP Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/skills-over-mcp"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-09-23T06:26:51Z"
+fetched_at: "2026-10-21T06:28:35Z"
 tags: ["mcp", "mcp-community", "skills"]
 ---
 
@@ -61,7 +61,7 @@ In Scope
 
 - **Specification Work**: Maintain and evolve the Skills extension, with changes tracked in the [decision log](https://github.com/modelcontextprotocol/ext-skills/blob/main/docs/decisions.md); propose related core protocol changes through the SEP process
 - **Reference Implementations**: SDK components and reference servers demonstrating skill discovery and consumption patterns
-- **Cross-Cutting Concerns**: Coordination with Registry WG (skills discovery/distribution, registry schema changes), Agents WG (skill activation, server metadata consumption), Primitive Grouping IG (progressive disclosure patterns), and external projects including the [Agent Skills](https://agentskills.io/) spec (content format and well-known URI discovery), FastMCP, and PydanticAI
+- **Cross-Cutting Concerns**: Coordination with Registry WG (skills discovery/distribution, registry schema changes), Agents IG (skill activation, server metadata consumption), [Progressive Disclosure WG](community-working-groups-progressive-disclosure.md) (progressive disclosure patterns), and external projects including the [Agent Skills](https://agentskills.io/) spec (content format and well-known URI discovery), FastMCP, and PydanticAI
 - **Documentation**: Specification sections and guidance covering skill authoring, discovery, and consumption
 
 
@@ -78,9 +78,9 @@ Out of Scope
 
 Related Groups
 
-- **Agents WG** — How agents consume server metadata, skill activation
+- **Agents IG** — How agents consume server metadata, skill activation
 - **Registry WG** — Skills discovery/distribution, registry schema changes
-- **Primitive Grouping IG** — Progressive disclosure patterns
+- **[Progressive Disclosure WG](community-working-groups-progressive-disclosure.md)** — Progressive disclosure patterns
 
 
 [​](#leadership)

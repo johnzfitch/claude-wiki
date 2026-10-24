@@ -2,7 +2,7 @@
 title: "Reducing latency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-10-04T08:33:47Z"
+fetched_at: "2026-10-20T06:40:34Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Ftest-and-evaluate%2Fstrengthen-guardrails%2Freduce-latency)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Ftest-and-evaluate%2Fstrengthen-guardrails%2Freduce-latency)
 
 
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -50,7 +50,7 @@ Reference
 
 [Glossary](../About/about-claude-glossary.md)[Additional resources](../About/about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](../About/about-claude-use-case-guides-overview.md)Test and evaluate
 
@@ -60,7 +60,7 @@ Reference
 
 
 
-Reduce Claude's response latency by choosing a faster model like Claude Haiku 4.5, trimming prompt and output tokens, and streaming responses.
+Reduce Claude's response latency by choosing a faster model like Claude Haiku 5.5, trimming prompt and output tokens, and streaming responses.
 
 Copy page
 
@@ -91,7 +91,7 @@ For a more in-depth understanding of these terms, check out the [glossary](../Ab
 
 One of the most direct ways to reduce latency is to select the appropriate model for your use case. Anthropic offers a [range of models](../../20-Models/about-claude-models-overview.md) with different capabilities and performance characteristics. Consider your specific requirements and choose the model that best fits your needs in terms of speed and output quality.
 
-For speed-critical applications, **Claude Haiku 4.5** offers the fastest response times while maintaining high intelligence:
+For speed-critical applications, **Claude Haiku 5.5** offers the fastest response times while maintaining high intelligence. [Effort](../Guides/build-with-claude-effort.md) is its main control for speed and cost. See [Use effort to control thinking](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md#use-effort-to-control-thinking). The following example runs it at `low`, the cheapest and fastest level, and leaves room in `max_tokens` for thinking:
 
 cURL
 
@@ -111,15 +111,18 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-# For time-sensitive applications, use Claude Haiku 4.5
+# For time-sensitive applications, use Claude Haiku 5.5 at low effort
 message = client.messages.create(
-    model="claude-haiku-4-5",
-    max_tokens=100,
+    model="claude-haiku-5-5",
+    max_tokens=1024,
+    output_config={"effort": "low"},
     messages=[
         {
             "role": "user",
@@ -127,7 +130,7 @@ message = client.messages.create(
         }
     ],
 )
-print(message.content[0].text)
+print(next(block.text for block in message.content if block.type == "text"))
 ```
 
 For more details about model metrics, see the [models overview](../../20-Models/about-claude-models-overview.md) page.
@@ -145,7 +148,7 @@ Here are some tips to help you optimize your prompts and outputs:
 - **Set appropriate output limits:** Use the `max_tokens` parameter to set a hard limit on the maximum length of the generated response. This prevents Claude from generating overly long outputs.
   
   When the response reaches `max_tokens` tokens, the response will be cut off, perhaps mid-sentence or mid-word, so this is a blunt technique that might require post-processing and is usually most appropriate for multiple choice or short answer responses where the answer comes right at the beginning.
-- **Experiment with temperature:** The `temperature` [parameter](../Endpoints/messages-create.md) controls the randomness of the output. Lower values (for example, 0.2) can sometimes lead to more focused and shorter responses, while higher values (for example, 0.8) might result in more diverse but potentially longer outputs.
+- **Experiment with temperature:** The `temperature` [parameter](../Endpoints/messages-create.md) controls the randomness of the output. Lower values (for example, 0.2) can sometimes lead to more focused and shorter responses, while higher values (for example, 0.8) might result in more diverse but potentially longer outputs. Claude 4.7 and later models and Claude Mythos Preview accept only the default `temperature` and return a 400 error for any other value, so on those models lower [effort](../Guides/build-with-claude-effort.md) instead.
 
 Finding the right balance among prompt clarity, output quality, and token count might require some experimentation.
 

@@ -2,7 +2,7 @@
 title: "Vaults - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/vaults"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:44Z"
+fetched_at: "2026-10-20T06:37:28Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults)
 
 
 
@@ -62,22 +62,22 @@ Deployment Runs
 Vaults
 
 
-Create Vault
+Create a Vault
 
 
 List Vaults
 
 
-Get Vault
+Retrieve a Vault
 
 
-Update Vault
+Update a Vault
 
 
-Delete Vault
+Delete a Vault
 
 
-Archive Vault
+Archive a Vault
 
 Credentials
 
@@ -140,7 +140,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -150,9 +150,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -223,13 +225,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -237,9 +241,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -248,11 +252,17 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 
 # Vaults
 
-##### [Create Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/create)
+Copy page
+
+
+
+cURL
+
+##### [Create a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/create)
 
 POST/v1/vaults
 
@@ -260,19 +270,19 @@ cURL
 
 GET/v1/vaults
 
-##### [Get Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/retrieve)
+##### [Retrieve a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/retrieve)
 
 GET/v1/vaults/{vault_id}
 
-##### [Update Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/update)
+##### [Update a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/update)
 
 POST/v1/vaults/{vault_id}
 
-##### [Delete Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/delete)
+##### [Delete a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/delete)
 
 DELETE/v1/vaults/{vault_id}
 
-##### [Archive Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/archive)
+##### [Archive a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/archive)
 
 POST/v1/vaults/{vault_id}/archive
 
@@ -294,7 +304,7 @@ id: string
 
 
 
-Unique identifier of the deleted vault.
+The unique ID of the deleted vault (`vlt_...`).
 
 
 
@@ -312,7 +322,7 @@ id: string
 
 
 
-Unique identifier for the vault.
+The unique ID of the vault (`vlt_...`).
 
 
 
@@ -358,7 +368,7 @@ formatdate-time
 
 #### Vaults[Credentials](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials)
 
-##### [Create Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/create)
+##### [Create a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/create)
 
 POST/v1/vaults/{vault_id}/credentials
 
@@ -366,22 +376,22 @@ formatdate-time
 
 GET/v1/vaults/{vault_id}/credentials
 
-##### [Get Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/retrieve)
+##### [Retrieve a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/retrieve)
 
 GET/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Update Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/update)
+##### [Update a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/update)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Delete Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/delete)
+##### [Delete a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/delete)
 
 DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
 
-##### [Archive Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/archive)
+##### [Archive a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/archive)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
 
-##### [Validate Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
+##### [Validate an MCP OAuth Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate

@@ -2,21 +2,55 @@
 title: "Introducing the Life Sciences Verification Program \\ Anthropic"
 source_url: "https://www.anthropic.com/news/life-sciences-verification-program"
 category: "19-Reference"
-fetched_at: "2026-10-01T06:32:45Z"
+fetched_at: "2026-10-21T06:30:27Z"
 tags: ["news-research", "search"]
 ---
 
 # Introducing the Life Sciences Verification Program
 
-Sep 17, 2026
+- [01Verification and access types](#verification-and-access-types)
+- [02Enabling trusted access through shared responsibility](#enabling-trusted-access-through-shared-responsibility)
+- [03How monitoring works in LSVP](#how-monitoring-works-in-lsvp)
+- [04What researchers are saying](#what-researchers-are-saying)
+- [05Applications and availability](#applications-and-availability)
+- [06What comes next](#what-comes-next)
+
+- Published
+
+  Sep 17, 2026
+
+- Category
+
+  [Announcements](announcements.md)
+
+- Topics
+
+  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+  - [Access](https://www.anthropic.com/search?topic=access)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+
+  See more...
+
+Related articles
+
+- Announcements
+
+  Aug 27, 2026
+
+  [Expanding our support for scientists](expanding-support-for-scientists.md)
+
+[View more](https://www.anthropic.com/search?topic=life-sciences)
 
 Today, we are introducing the Life Sciences Verification Program (LSVP), which gives life science professionals access to our Mythos, Opus, and Sonnet models with a refined set of safeguards more permissive for biology-related work. We have already onboarded dozens of organizations through an early-access program, and are now opening applications to the broader life science community ([join waitlist here](https://claude.com/form/life-sciences-verification-program)). The program is launching in beta, initially for teams and institutions. We will continue to improve the program and expand access to individual Pro and Max plans over time.
 
 The LSVP is designed to enable life science professionals to use our models across a wide range of tasks that are currently blocked in our generally available Fable models, like drug discovery, research biology, clinical development, and manufacturing. It’s built for teams of all kinds—from academic labs to startups, pharma companies, and more.
 
-## **Verification and access types**
+## Verification and access types
 
-To qualify for these grants, each applicant goes through a verification process that includes a review of their research credentials, security standards, and ethical research oversight. Once verified, teams may apply for two types of LSVP grants, “Standard Use” or “High-risk Use,” depending on their access needs. These grants can be used through all our product surfaces, including [Claude Science](../15-Claude-AI-Features/product-claude-science.md), [Claude.ai](http://claude.ai/redirect/website.v1.bedf491c-d074-4752-97ac-c2e73a8b22cb), Claude Code and the API.  
+To qualify for these grants, each applicant goes through a verification process that includes a review of their research credentials, security standards, and ethical research oversight. Once verified, teams may apply for two types of LSVP grants, “Standard Use” or “High-risk Use,” depending on their access needs. These grants can be used through all our product surfaces, including [Claude Science](../15-Claude-AI-Features/product-claude-science.md), [Claude.ai](http://claude.ai), Claude Code and the API.  
   
 **Standard Use** grants are suitable for most life science work, including the majority of biology research and development workflows. These grants can be extended to entire teams for diverse, daily workloads, and are renewed once a year. They give those teams access to our Mythos, Opus, and Sonnet models, with refined classifiers that are more permissive for science tasks than our generally available models. Standard Use grants apply to Mythos 5.1, Opus 5, and Sonnet 5 today, and to future models as they launch. They’re specifically designed to enable the full breadth of life science activities in areas spanning basic science, R&D, supply chain and manufacturing, clinical development, quality assurance, regulatory affairs, investing and diligence, and more.
 
@@ -48,19 +82,23 @@ This data is strictly compartmentalized and cannot be used for model training or
 
 ## What researchers are saying
 
-> Xaira is making biology more computable, generating biological data at unprecedented scale and building foundation models of cell, protein and disease biology that turn it into the next generation of life-changing medicines. We’re excited to put Anthropic's frontier models to work across our drug discovery engine, and we believe pairing trusted access with intelligence is the right way to realize AI’s promise in biology.
->
-> Xaira Therapeutics
+> “Xaira is making biology more computable, generating biological data at unprecedented scale and building foundation models of cell, protein and disease biology that turn it into the next generation of life-changing medicines. We’re excited to put Anthropic's frontier models to work across our drug discovery engine, and we believe pairing trusted access with intelligence is the right way to realize AI’s promise in biology.”
 
-> Edison’s mission is to accelerate science and the discovery and development of new medicines. With the Life Sciences Verification Program, we are excited to be able to bring Anthropic’s most intelligent models to bear on these problems. We look forward to collaborating with Anthropic further to end disease and improve the lives of patients everywhere.
->
-> Edison Scientific
+Xaira Therapeutics
 
-> At Manifold Bio, we’re building a massively parallel interface into living systems to enable powerful AI to create medicines. We look forward to putting frontier intelligence to work safely in our engine, and we welcome Anthropic’s approach of pairing access with accountability.
->
-> Manifold Bio
+> “Edison’s mission is to accelerate science and the discovery and development of new medicines. With the Life Sciences Verification Program, we are excited to be able to bring Anthropic’s most intelligent models to bear on these problems. We look forward to collaborating with Anthropic further to end disease and improve the lives of patients everywhere.”
 
-01 / 03
+Edison Scientific
+
+> “At Manifold Bio, we’re building a massively parallel interface into living systems to enable powerful AI to create medicines. We look forward to putting frontier intelligence to work safely in our engine, and we welcome Anthropic’s approach of pairing access with accountability.”
+
+Manifold Bio
+
+01
+
+/
+
+03
 
 ## Applications and availability
 
@@ -70,7 +108,7 @@ Today, LSVP is available in our first-party console for API usage, as well as in
 
 As a beta, LSVP is not available for BAA-enabled orgs. This means customers with PHI data should use separate non-BAA orgs with non-HIPAA.
 
-In API and Claude Science, users can switch between grants natively. In [Claude.ai](http://claude.ai/redirect/website.v1.bedf491c-d074-4752-97ac-c2e73a8b22cb) and Claude Code, initially only a preselected default grant applies (except while using Claude Code with API authentication). This should be fine for the vast majority of users, who will only ever require a Standard Use grant. However, we will improve support and portability of these LSVP features over time.
+In API and Claude Science, users can switch between grants natively. In [Claude.ai](http://claude.ai) and Claude Code, initially only a preselected default grant applies (except while using Claude Code with API authentication). This should be fine for the vast majority of users, who will only ever require a Standard Use grant. However, we will improve support and portability of these LSVP features over time.
 
 ## What comes next
 
@@ -78,125 +116,3 @@ Providing these frontier capabilities is part of our broader efforts in supporti
 
 **Changelog:**  
 September 30th, 2026. We clarified that the form we link to is an expression of interest, not an application.
-
-
-## Related content
-
-### Claude discovers a novel enzyme system with CRISPR-like repeats
-
-We’re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR, with only high-level direction from our scientists.
-
-[Read more](claude-discovers-novel-enzyme-system.md)
-
-### Partnering with Accenture on embedded evaluation
-
-[Read more](accenture-embedded-evaluation.md)
-
-### Developing Enterprise Frontier Safeguards with our customers
-
-[Read more](enterprise-frontier-safeguards.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Developer blog](https://claude.dev)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

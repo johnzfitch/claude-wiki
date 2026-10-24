@@ -40,9 +40,9 @@ When deploying an LLM-based application with Claude, your API calls will typical
     - Conversation context such as user account history
     - System-generated data such as tool use results fed in from other independent calls to Claude
 
-A **prompt template** combines these fixed and variable parts, using placeholders for the dynamic content. In the [Claude Console](../04-API-Reference/Other/usage-limits.md), these placeholders are denoted with **\{\{double brackets\}\}**, making them easily identifiable and allowing for quick testing of different values.
+A **prompt template** combines these fixed and variable parts, using placeholders for the dynamic content. In the [Claude Console](../04-API-Reference/Other/playground.md), these placeholders are denoted with **\{\{double brackets\}\}**, making them easily identifiable and allowing for quick testing of different values.
 
-You should use prompt templates and variables when you expect any part of your prompt to be repeated in another call to Claude (via the API or the [Claude Console](../04-API-Reference/Other/usage-limits.md). [claude.ai](https://claude.ai/) currently does not support prompt templates or variables).
+You should use prompt templates and variables when you expect any part of your prompt to be repeated in another call to Claude (via the API or the [Claude Console](../04-API-Reference/Other/playground.md). [claude.ai](https://claude.ai/) currently does not support prompt templates or variables).
 
 Prompt templates offer several benefits:
 - **Consistency:** Ensure a consistent structure for your prompts across multiple interactions

@@ -2,7 +2,7 @@
 title: "Update Federation Issuer - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/federation/issuers/update"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-09T06:27:56Z"
+fetched_at: "2026-10-17T06:26:18Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fupdate)
 
 
 
@@ -139,7 +139,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -149,9 +149,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -222,13 +224,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -236,9 +240,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -257,6 +261,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update Federation Issuer
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_issuers/{federation_issuer_id}
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -274,6 +284,18 @@ federation_issuer_id: string
 
 
 ID of the federation issuer to update.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 

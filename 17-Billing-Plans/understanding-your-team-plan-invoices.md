@@ -2,7 +2,7 @@
 title: "Understanding your Team plan invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607668-understanding-your-team-plan-invoices"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:24:47Z"
+fetched_at: "2026-10-23T06:29:13Z"
 tags: ["billing"]
 ---
 

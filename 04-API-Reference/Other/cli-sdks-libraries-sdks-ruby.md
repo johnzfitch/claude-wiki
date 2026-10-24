@@ -2,7 +2,7 @@
 title: "Ruby SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/ruby"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:27Z"
+fetched_at: "2026-10-20T06:39:28Z"
 tags: ["api", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "sdk"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fruby)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fruby)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
@@ -62,7 +62,7 @@ Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helper
 
 
 
-The Anthropic Ruby library provides convenient access to the Claude API from any Ruby 3.2.0+ application. It ships with comprehensive types and docstrings in Yard, RBS, and RBI. The standard library's `net/http` is used as the HTTP transport, with connection pooling through the `connection_pool` gem.
+The Anthropic Ruby library provides convenient access to the Claude API from any Ruby 3.2.0+ application. It ships with comprehensive types and docstrings in YARD, RBS, and RBI. The standard library's `net/http` is used as the HTTP transport, with connection pooling through the `connection_pool` gem.
 
 
 
@@ -372,7 +372,7 @@ anthropic.messages.create(**params)
 
 ### Enums
 
-Since this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, the SDK provides "tagged symbols", which is always a primitive at runtime:
+Because this library does not depend on `sorbet-runtime`, it cannot provide [`T::Enum`](https://sorbet.org/docs/tenum) instances. Instead, the SDK provides "tagged symbols," which are always primitives at runtime:
 
 ```python
 # :auto
@@ -387,16 +387,21 @@ T.reveal_type(Anthropic::MessageCreateParams::ServiceTier::AUTO)
 Enum parameters have a "relaxed" type, so you can either pass in enum constants or their literal value:
 
 ```python
+anthropic = Anthropic::Client.new
 # Using the enum constants preserves the tagged type information:
 anthropic.messages.create(
-  service_tier: Anthropic::MessageCreateParams::ServiceTier::AUTO,
-  # ...
+  max_tokens: 1024,
+  messages: [{role: "user", content: "Hello, Claude"}],
+  model: Anthropic::Model::CLAUDE_OPUS_5_5,
+  service_tier: Anthropic::MessageCreateParams::ServiceTier::AUTO
 )
 
 # Literal values are also permissible:
 anthropic.messages.create(
-  service_tier: :auto,
-  # ...
+  max_tokens: 1024,
+  messages: [{role: "user", content: "Hello, Claude"}],
+  model: :"claude-opus-5-5",
+  service_tier: :auto
 )
 ```
 
@@ -408,7 +413,7 @@ All parameter and response objects inherit from `Anthropic::Internal::Type::Base
 
 1.  All fields, including unknown ones, are accessible with `obj[:prop]` syntax, and can be destructured with `obj => {prop: prop}` or pattern-matching syntax.
 
-2.  Structural equivalence for equality; if two API calls return the same values, comparing the responses with == will return true.
+2.  Structural equivalence for equality. If two API calls return the same values, comparing the responses with == will return true.
 
 3.  Both instances and the classes themselves can be pretty-printed.
 
@@ -456,11 +461,11 @@ puts(message[:my_undocumented_property])
 
 ### Undocumented request params
 
-If you want to explicitly send an extra param, you can do so with the `extra_query`, `extra_body`, and `extra_headers` under the `request_options:` parameter when making a request, as seen in the examples above.
+If you want to explicitly send an extra param, you can do so with the `extra_query`, `extra_body`, and `extra_headers` under the `request_options:` parameter when making a request, as seen in the previous examples.
 
 ### Undocumented endpoints
 
-To make requests to undocumented endpoints while retaining the benefit of auth, retries, and so on, you can make requests using `anthropic.request`, like so:
+To make requests to undocumented endpoints while retaining the benefit of authentication, retries, and so on, you can make requests using `anthropic.request`, like so:
 
 ```python
 response = anthropic.request(

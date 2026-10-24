@@ -2,7 +2,7 @@
 title: "Inspect sessions and track usage - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/session-observability"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-08T06:24:44Z"
+fetched_at: "2026-10-22T06:29:45Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fsession-observability)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fsession-observability)
 
 
 
@@ -40,7 +40,7 @@ Define your agent
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Delegate work to your agent
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Inspect sessions and track usage
 
@@ -98,23 +110,15 @@ Inspect a session in the Claude Console, read its token usage and list cost, and
 
 
 
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
-
 Use the session viewer in the Claude Console to inspect what an agent did in a session, without writing any code. Use the session's `usage` totals to see what that work consumed.
 
 ## Inspect a session in the Console
 
-The session viewer is only accessible to Developers and Admins. To open it, go to the Console sidebar and select **Sessions** under **Managed Agents**. The list shows every session in the workspace with its status, agent, token usage, cost, and creation time. Select a session to open it.
+The session viewer is only accessible to Developers and Admins. To open it, go to the [Sessions](playground.md) page (`platform.claude.com/sessions`) in the Claude Console. The list shows every session in the workspace with its status, agent, token usage, cost, and creation time. Select a session to open it.
 
 The session viewer shows:
 
-- **Timeline minimap:** A zoomable overview of the session's activity over time, with one lane per thread in [multiagent](managed-agents-multiagent-orchestration.md) sessions. Select a lane to view that thread, or select a mark to jump to its event.
+- **Timeline minimap:** A zoomable overview of the session's activity over time, with one lane for each thread in [multiagent](managed-agents-multiagent-orchestration.md) sessions. Select a lane to view that thread, or select a mark to jump to its event.
 - **Transcript:** The conversation grouped by model request, including thinking, tool calls with their inputs and results, and message text as it streams. You can filter the events and copy or download them as JSON.
 - **Inspector:** A resizable side panel with details about the session, in five tabs.
 
@@ -134,7 +138,7 @@ With `ant beta:sessions connect`, you can open the same viewer from the `ant` CL
 
 The session object includes a `usage` field with the session's cumulative usage: token counts, server tool use, active time, and the tracked list cost. Fetch the session after it goes idle to read the latest totals.
 
-```python
+``` block
 {
   "id": "sesn_01...",
   "status": "idle",
@@ -177,11 +181,11 @@ The session's `stats` object has its own `active_seconds`, which sums each threa
 
 ### Per-thread usage
 
-Each [session thread](managed-agents-multiagent-orchestration.md)'s own `usage` carries `list_cost` and `active_seconds` too. Per-thread figures are rounded independently and exclude the session's running-time cost, so they don't sum exactly to the session's `list_cost`. The session figure is the authoritative one.
+Each [session thread](managed-agents-session-threads.md)'s own `usage` carries `list_cost` and `active_seconds` too. Per-thread figures are rounded independently and exclude the session's running-time cost, so they don't sum exactly to the session's `list_cost`. The session figure is the authoritative one.
 
 ### Read usage from the stream
 
-You don't have to poll the session to observe these totals. The `session.usage` event carries the same cumulative snapshot on the session stream and in the event history. The snapshot holds the `usage` object plus the session's `budget`, which is `null` when the session has none.
+You don't have to poll the session to observe these totals. The `session.usage` event carries the same cumulative snapshot on the session stream and in the event history. The snapshot holds the `usage` object, plus the session's `budget` if the session has one.
 
 The event is emitted on idle transitions rather than on a timer:
 
@@ -195,7 +199,7 @@ To enforce a spend limit, set a session budget rather than polling usage and sto
 ## Debugging tips
 
 - **Check session events:** The session reports errors through [`session.error`](managed-agents-reference.md#event-types) events.
-- **Review tool results:** Tool execution failures often explain unexpected agent behavior. The Inspector's **Tools** tab shows each tool's failures.
+- **Review tool results:** Tool failures often explain unexpected agent behavior. The Inspector's **Tools** tab shows each tool's failures.
 - **Use system prompts:** Add logging instructions to the system prompt so the agent summarizes what it did and what it found.
 - **Troubleshoot previews:** If a stream that opts in to event deltas doesn't behave as you expect, see [Troubleshoot previews](managed-agents-event-deltas.md#troubleshoot-previews).
 
@@ -205,7 +209,7 @@ To enforce a spend limit, set a session budget rather than polling usage and sto
 
 [Session event stream](managed-agents-events-and-streaming.md)
 
-Send events, stream responses, and interrupt or redirect your session mid-execution.
+Send events, stream responses, and interrupt or redirect your session while it runs.
 
 [Session budgets](managed-agents-budgets.md)
 

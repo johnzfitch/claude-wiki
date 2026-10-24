@@ -40,7 +40,7 @@ Use the Agent SDK to build an AI agent that reads your code, finds bugs, and fix
 Prerequisites
 
 - **Node.js 18+** or **Python 3.10+**
-- An **Anthropic account**. If you don’t have one, [sign up here](../04-API-Reference/Other/usage-limits.md).
+- An **Anthropic account**. If you don’t have one, [sign up here](../04-API-Reference/Other/playground.md).
 
 
 [​](#setup)
@@ -124,7 +124,7 @@ Both the TypeScript and Python SDKs bundle a native Claude Code binary, so most 
 
 Set your API key
 
-Get an API key from the [Claude Console](../04-API-Reference/Other/usage-limits.md), then set it as an environment variable in the shell where you’ll run your agent:
+Get an API key from the [Claude Console](../04-API-Reference/Other/playground.md), then set it as an environment variable in the shell where you’ll run your agent:
 
 - macOS / Linux
 

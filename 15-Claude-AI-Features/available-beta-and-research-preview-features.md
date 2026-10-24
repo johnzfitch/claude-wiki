@@ -2,7 +2,7 @@
 title: "Available beta and research preview features | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14503520-available-beta-and-research-preview-features"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:24:41Z"
+fetched_at: "2026-10-23T06:29:08Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -47,4 +47,4 @@ This table below lists the beta and research preview features currently availabl
 
 ## Share feedback
 
-Feedback on beta and research preview features helps inform our decisions. You can share feedback with **[our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+Feedback on beta and research preview features helps inform our decisions. You can share feedback with **[our Support team](how-to-get-support.md)**.

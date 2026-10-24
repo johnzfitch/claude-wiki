@@ -2,7 +2,7 @@
 title: "Claude on Google Cloud - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-vertex-ai"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:24Z"
+fetched_at: "2026-10-20T06:39:59Z"
 tags: ["agents", "api", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api", "sdk"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fclaude-on-vertex-ai)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fclaude-on-vertex-ai)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Claude on cloud platforms
 
@@ -121,6 +121,8 @@ PHP
 
 Ruby
 
+Python
+
 ```python
 pip install -U "anthropic[vertex]"
 ```
@@ -137,31 +139,44 @@ Note that Anthropic model availability varies by region. Search for "Claude" in 
 
 Lifecycle terms (Deprecated, Retired) are defined in [Model deprecations](../../20-Models/about-claude-model-deprecations.md). Lifecycle dates on partner-operated platforms are set by the partner and can differ from the Claude API schedule. For the current retirement date of any model on Agent Platform, see [Google Cloud's documentation for Claude models on Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude).
 
-| Model                                                                                         | Agent Platform API model ID |
-|-----------------------------------------------------------------------------------------------|-----------------------------|
-| Claude Fable 5.1                                                                              | claude-fable-5-1            |
-| Claude Mythos 5.1 ([limited availability(opens in new tab)](../../22-Safety-Policy/glasswing.md)) | claude-mythos-5-1           |
-| Claude Fable 5                                                                                | claude-fable-5              |
-| Claude Mythos 5 ([limited availability(opens in new tab)](../../22-Safety-Policy/glasswing.md))   | claude-mythos-5             |
-| Claude Opus 5.5                                                                               | claude-opus-5-5             |
-| Claude Opus 5                                                                                 | claude-opus-5               |
-| Claude Opus 4.8                                                                               | claude-opus-4-8             |
-| Claude Opus 4.7                                                                               | claude-opus-4-7             |
-| Claude Opus 4.6                                                                               | claude-opus-4-6             |
-| Claude Opus 4.5                                                                               | claude-opus-4-5@20251101    |
-| Claude Opus 4.1 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                      | claude-opus-4-1@20250805    |
-| Claude Opus 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                        | claude-opus-4@20250514      |
-| Claude Sonnet 5.5                                                                             | claude-sonnet-5-5           |
-| Claude Sonnet 5                                                                               | claude-sonnet-5             |
-| Claude Sonnet 4.6                                                                             | claude-sonnet-4-6           |
-| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                    | claude-sonnet-4-5@20250929  |
-| Claude Sonnet 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                      | claude-sonnet-4@20250514    |
-| Claude Haiku 4.5                                                                              | claude-haiku-4-5@20251001   |
-| Claude Haiku 3.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                     | claude-3-5-haiku@20241022   |
+| Model                                                                                                         | Agent Platform API model ID |
+|---------------------------------------------------------------------------------------------------------------|-----------------------------|
+| Claude Fable 5.1                                                                                              | claude-fable-5-1            |
+| Claude Mythos 5.1 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842)) | claude-mythos-5-1           |
+| Claude Fable 5                                                                                                | claude-fable-5              |
+| Claude Mythos 5 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842))   | claude-mythos-5             |
+| Claude Opus 5.5                                                                                               | claude-opus-5-5             |
+| Claude Opus 5                                                                                                 | claude-opus-5               |
+| Claude Opus 4.8                                                                                               | claude-opus-4-8             |
+| Claude Opus 4.7                                                                                               | claude-opus-4-7             |
+| Claude Opus 4.6                                                                                               | claude-opus-4-6             |
+| Claude Opus 4.5                                                                                               | claude-opus-4-5@20251101    |
+| Claude Opus 4.1 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                      | claude-opus-4-1@20250805    |
+| Claude Opus 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                        | claude-opus-4@20250514      |
+| Claude Sonnet 5.5                                                                                             | claude-sonnet-5-5           |
+| Claude Sonnet 5                                                                                               | claude-sonnet-5             |
+| Claude Sonnet 4.6                                                                                             | claude-sonnet-4-6           |
+| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                    | claude-sonnet-4-5@20250929  |
+| Claude Sonnet 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                      | claude-sonnet-4@20250514    |
+| Claude Haiku 5.5                                                                                              | claude-haiku-5-5            |
+| Claude Haiku 4.5                                                                                              | claude-haiku-4-5@20251001   |
+| Claude Haiku 3.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                     | claude-3-5-haiku@20241022   |
 
 
 
-Upgrading to a newer Claude model? In Claude Code, run `/claude-api migrate` to apply model ID swaps and breaking parameter changes across your codebase. The skill detects which cloud platform your code targets and adjusts model ID formats and feature changes for that platform. See [Migrating to a newer Claude model](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md#migrating-to-a-newer-claude-model).
+Upgrading to a newer Claude model? The [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md#migrating-to-a-newer-claude-model) in Claude Code applies model ID swaps and breaking parameter changes across your code base:
+
+Claude Code
+
+Let Claude Code migrate your code for you
+
+Run in
+
+`❯``/claude-api`` migrate this project to the latest Claude Opus model`
+
+
+
+The skill detects which cloud platform your code targets and adjusts model ID formats and feature changes for that platform.
 
 ### Making requests
 
@@ -186,6 +201,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -253,7 +270,7 @@ For the full feature list with Google Cloud availability, see [Features overview
 
 ### Context window
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Agent Platform. Other Claude models, including Sonnet 4.5 and Sonnet 4 (deprecated), have a 200k-token context window.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, Claude Sonnet 4.6, and Claude Haiku 5.5 have a [1M-token context window](build-with-claude-context-windows.md) on Agent Platform. Other Claude models, including Sonnet 4.5 (deprecated) and Sonnet 4 (deprecated), have a 200k-token context window.
 
 Agent Platform limits request payloads to 30 MB. When sending large documents or many images, you might reach this limit before the token limit.
 
@@ -269,7 +286,7 @@ Regional and multi-region endpoints include a 10% pricing premium over global en
 
 
 
-This applies to Claude Sonnet 4.5 and future models only. Older models (Claude Sonnet 4 (deprecated), Opus 4 (deprecated), and earlier) maintain their existing pricing structures.
+This applies to Claude Sonnet 4.5 (deprecated) and future models only. Older models (Claude Sonnet 4 (deprecated), Opus 4 (deprecated), and earlier) maintain their existing pricing structures.
 
 ### When to use each option
 
@@ -319,6 +336,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -364,6 +383,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -408,6 +429,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

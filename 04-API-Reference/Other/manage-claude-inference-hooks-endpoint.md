@@ -2,7 +2,7 @@
 title: "Develop an Inference hooks integration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-08T06:24:43Z"
+fetched_at: "2026-10-23T06:28:38Z"
 tags: ["api", "hooks", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "hooks", "prompting"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Finference-hooks-endpoint)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Finference-hooks-endpoint)
 
 
 
@@ -32,11 +32,11 @@ tags: ["api", "hooks", "prompting"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)[Organization webhooks (beta)](manage-claude-organization-webhooks.md)[User profiles](manage-claude-user-profiles.md)[Verification Portal links](manage-claude-user-profiles-verification-portal.md)
 
 Authentication
 
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
+[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF with the Admin API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
 
 Identity providers
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -60,7 +62,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Inference hooks
 
@@ -78,7 +80,7 @@ Build the AI security server that receives signed Inference hooks requests, veri
 
 
 
-Inference hooks are in beta and available to Claude Enterprise organizations. Field names, request shapes, and headers may change during the beta.
+Inference hooks are available only to Claude Enterprise organizations.
 
 An Inference hooks integration is an AI security server: an HTTPS service that Anthropic calls. For each governed request, your server receives a signed `POST` carrying the conversation transcript and responds with an allow or deny verdict. This page documents the protocol for building that server: the request and verdict schemas, signature verification, and the operational contract.
 
@@ -101,6 +103,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -144,7 +148,7 @@ Every request carries these fixed headers, along with any [custom request header
 | `User-Agent`      | `anthropic-dlp/1`  |
 | `Accept-Encoding` | `identity`         |
 
-There are two hook events, told apart by the top-level `type` field. The prompt frame is sent once per governed inference request, before inference begins. The tool call frame is sent when a model response contains tool calls, before any of them runs, in organizations that have **Validate tool calls** on. Either way, Anthropic waits until your AI security server responds or the verdict timeout elapses.
+There are two hook events, told apart by the top-level `type` field. The prompt frame is sent once for each governed inference request, before inference starts. The tool call frame is sent when a model response contains tool calls, before any of them runs, in organizations that have **Validate tool calls** on. Either way, Anthropic waits until your AI security server responds or the verdict timeout elapses.
 
 ## The prompt frame
 
@@ -224,7 +228,7 @@ The transcript is the conversation as the end user sees it, up to the point of i
 
 A turn whose every block is excluded is omitted entirely, so don't assume strict user and assistant alternation.
 
-Transcripts are sent untruncated, so a long conversation with large attachments produces a large request body. In practice the model's context window keeps bodies under about 10 MB, but the protocol allows up to 64 MiB. Several common defaults are much smaller, including nginx `client_max_body_size` at 1 MB and Express `express.json()` at 100 kB, and a rejected body counts as a webhook failure, so under **Allow the request** failure handling an oversized prompt would reach the model uninspected.
+Transcripts are sent untruncated, so a long conversation with large attachments produces a large request body. In practice the model's context window keeps bodies under about 10 MB, but the protocol allows up to 64 MiB. Several common defaults are much smaller, including nginx `client_max_body_size` at 1 MB and Express `express.json()` at 100 kB, and a rejected body counts as a webhook failure, so under **Allow the request** failure handling an oversized prompt would reach the model uninspected.
 
 ### Source values
 
@@ -239,14 +243,14 @@ When Claude produces tool calls, Anthropic sends one tool call frame that lists 
 It differs from the prompt frame in three ways:
 
 - `type` is `"tool_call"`.
-- `messages` holds only the latest message, the `assistant` message Claude just produced: any `text` blocks and one `tool_use` block per tool call the frame lists, in the order the model produced them. Earlier conversation is left out, because the prompt frame sent before that model call carried it. Read the last entry of `messages`, because the protocol may later add earlier messages before it.
+- `messages` holds only the latest message, the `assistant` message Claude just produced: any `text` blocks and one `tool_use` block for each tool call the frame lists, in the order the model produced them. Earlier conversation is left out, because the prompt frame sent before that model call carried it. Read the last entry of `messages`, because the protocol may later add earlier messages before it.
 - Each `tool_use` block carries a `tool_info` object that says who runs or provides the tool.
 
 Where `session_id` is set, it is the same on both frames. The tool call frame has its own `request_id`, which is opaque like the prompt frame's.
 
 `tool_info` says who runs or provides the tool, not what the tool can reach. It is one of four kinds, told apart by its `type` field, and each kind carries its own fields. Anthropic sends the first of the following kinds that fits the tool. New kinds may appear: accept a `type` you don't recognize, and for such a kind rely only on `type`.
 
-An optional field that doesn't apply is left out, never `null`, so a `tool_info` can be just `{"type": "client"}`. `tool_name` is chosen by whoever defined the tool, and a server's `toolset_name` by whoever wrote the request, so don't treat either as a trust boundary.
+An optional field that doesn't apply is left out, never `null`, so a `tool_info` can be just `{"type": "client"}`. `tool_name` is chosen by whoever defined the tool, and a server's `toolset_name` by whoever wrote the request or named the connector. Don't treat either as a trust boundary.
 
 ### Platform tools
 
@@ -267,16 +271,36 @@ An application tool is one that the Anthropic application making the request pro
 | `type`         | Always   | `"application"`                   |
 | `toolset_name` | Optional | The group of tools it belongs to. |
 
+A `tool_use` block for a web search tool that claude.ai provides itself:
+
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01LmNoPqRsTuVwXyZaBcDeFg",
+  "tool_name": "web_search",
+  "input": {
+    "query": "comparable deals for unannounced 4.2B USD Acme Corp acquisition"
+  },
+  "tool_info": {
+    "type": "application"
+  }
+}
+```
+
+
+
+claude.ai doesn't always name this tool `web_search`, so don't match on the name alone. `input` always includes the search query and can hold other fields.
+
 ### Third-party tools
 
-A third-party tool is one on a server that Anthropic knows of, such as a claude.ai connector or an MCP server that the request names in `mcp_servers`. This doesn't mean Anthropic has vetted the server.
+A third-party tool is one on a server that Anthropic knows of, such as a claude.ai connector or an MCP server that the request names in `mcp_servers`. This doesn't mean Anthropic has vetted the server. In voice mode, a call to a claude.ai connector's tool is `"client"` instead.
 
-| Field             | Present              | Description                                                                                                                                                         |
-|-------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`            | Always               | `"third_party"`                                                                                                                                                     |
-| `toolset_name`    | Optional             | The name the request gives the server.                                                                                                                              |
-| `origin`          | Optional             | The scheme, host, and non-default port of the server's URL. It can be a private or local address, `localhost` included. An absent `origin` means unknown, not safe. |
-| `verified_origin` | Whenever `origin` is | `true` only when Anthropic's servers connect to the server themselves. Treat `false` as an origin that Anthropic hasn't confirmed.                                  |
+| Field             | Present              | Description                                                                                                                                                            |
+|-------------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`            | Always               | `"third_party"`                                                                                                                                                        |
+| `toolset_name`    | Optional             | For a server in `mcp_servers`, the name the request gives the server. For any other server, such as a claude.ai connector, the server's name, copied from `tool_name`. |
+| `origin`          | Optional             | The scheme, host, and non-default port of the server's URL. It can be a private or local address, `localhost` included. An absent `origin` means unknown, not safe.    |
+| `verified_origin` | Whenever `origin` is | `true` only when Anthropic's servers connect to the server themselves. Treat `false` as an origin that Anthropic hasn't confirmed.                                     |
 
 A `tool_use` block for a tool on an MCP server that the request names `crm` in `mcp_servers`:
 
@@ -298,6 +322,31 @@ A `tool_use` block for a tool on an MCP server that the request names `crm` in `
 ```
 
 
+
+A `tool_use` block for a tool on a Gmail connector, called in a claude.ai chat:
+
+```python
+{
+  "type": "tool_use",
+  "id": "toolu_01DeFgHiJkLmNoPqRsTuVwXy",
+  "tool_name": "mcp__Gmail__search_threads",
+  "input": {
+    "query": "from:cfo@example.com newer_than:30d"
+  },
+  "tool_info": {
+    "type": "third_party",
+    "toolset_name": "Gmail",
+    "origin": "https://gmail.mcp.example.com",
+    "verified_origin": false
+  }
+}
+```
+
+
+
+For a claude.ai connector, `verified_origin` can be `false` even when Anthropic's servers connect to the server themselves.
+
+A name copied from `tool_name` can differ from the name the user sees: `mcp__Google_Drive__search_files` gives `Google_Drive`, not `Google Drive`. It can also end in a short suffix (`Gmail-1a2b3c4d`), for example when another of the user's connectors has the same name. The name isn't a stable identifier and doesn't prove which server the tool is on. When `tool_name` has no server name in it, `toolset_name` is left out.
 
 ### Client tools
 
@@ -387,18 +436,18 @@ The reverse doesn't hold. Anything other than HTTP 200 with a parseable verdict 
 - Don't signal a deny with an error status. A non-200 response is a failure, not a deny.
 - Any `action` value other than `allow` or `deny` is treated as a webhook failure.
 
-Anthropic reads at most 64 KiB of the response body, and the body must be uncompressed. Redirects are not followed, and cookies are ignored. Unknown fields in the verdict body are ignored, so you can return a richer object alongside the fields documented here.
+Anthropic reads at most 64 KiB of the response body, and the body must be uncompressed. Redirects are not followed, and cookies are ignored. Unknown fields in the verdict body are ignored, so you can return a richer object alongside the fields documented here.
 
 A tool call frame takes the same verdict body, and every rule in this section applies to it unchanged. `allow` lets the tool calls run and the response continues; `deny` stops all of them and ends the response with the same error as a denied prompt, including your `deny_reason`. Text delivered before the first tool call is not taken back.
 
 ## Verify the signature
 
-Requests are signed per the [Standard Webhooks](https://www.standardwebhooks.com/) specification, using three headers. Anthropic sends the header names in lowercase, and proxies are free to re-case them, so look them up case-insensitively.
+Requests are signed according to the [Standard Webhooks](https://www.standardwebhooks.com/) specification, using three headers. Anthropic sends the header names in lowercase, and proxies are free to re-case them, so look them up case-insensitively.
 
 | Header              | Contents                                                                                                                                                                                                         |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `webhook-id`        | Unique identifier for this delivery. Equals the body's `request_id`. Use it as an idempotency key and as the first component of the signed payload.                                                              |
-| `webhook-timestamp` | Unix time in seconds, as a decimal string, when the request was signed. Reject a timestamp more than five minutes from your server's clock, in either direction.                                                 |
+| `webhook-timestamp` | Unix time in seconds, as a decimal string, when the request was signed. Reject a timestamp more than 5 minutes from your server's clock, in either direction.                                                    |
 | `webhook-signature` | One or more space-separated `v1,<base64>` values, each an HMAC-SHA256 over `{webhook-id}.{webhook-timestamp}.{raw body bytes}`. Accept the request if any value matches yours, using a constant-time comparison. |
 
 Two details cause most verification bugs:
@@ -425,6 +474,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -485,7 +536,7 @@ Anthropic retries exactly once, after a 100ms delay, and only when the connectio
 
 ### Webhook failures
 
-Timeouts, non-200 statuses (redirects included), unparseable or oversized response bodies, and unreachable endpoints are all webhook failures. A webhook failure never becomes a deny; instead, your organization's [failure handling](manage-claude-inference-hooks-configuration.md) setting decides whether the affected request is blocked or proceeds without inspection.
+Timeouts, non-200 statuses (redirects included), unparseable or oversized response bodies, and unreachable endpoints are all webhook failures. A webhook failure never becomes a deny; instead, your organization's [failure handling](manage-claude-inference-hooks-configuration.md) setting determines whether the affected request is blocked or proceeds without inspection.
 
 ### Circuit breaker
 
@@ -495,7 +546,7 @@ Starting 10 minutes after the trip, Anthropic checks whether your server has rec
 
 Prompt frames and tool call frames share one circuit breaker, and failures on either count toward it.
 
-Each trip is recorded as an `inference_hooks_circuit_breaker_tripped` activity in the [Activity Feed](manage-claude-compliance-activity-feed.md), one activity per trip. While the breaker is tripped, no per-request Inference hooks activities are recorded, so the trip activity is the feed's only record of the tripped window.
+Each trip is recorded as an `inference_hooks_circuit_breaker_tripped` activity in the [Activity Feed](manage-claude-compliance-activity-feed.md), one activity for each trip. While the breaker is tripped, no per-request Inference hooks activities are recorded, so the trip activity is the feed's only record of the tripped window.
 
 ### Latency
 
@@ -524,7 +575,7 @@ Other hook event types will be introduced in the future. A new event type is an 
 
 A production AI security server makes a few design choices beyond the wire protocol.
 
-**Deduplicate on `webhook-id`.** The `webhook-id` header is unique per delivery and equals the body's `request_id`, and a connection-failure retry reuses it, so it works as an idempotency key. If you record verdicts, key the records on it.
+**Deduplicate on `webhook-id`.** The `webhook-id` header is unique for each delivery and equals the body's `request_id`, and a connection-failure retry reuses it, so it works as an idempotency key. If you record verdicts, key the records on it.
 
 **Record verdicts and join denials.** Store each verdict you return along with its `reference_id`. Every denial is recorded as an `inference_hooks_request_denied` compliance activity carrying the `reference_id` your server returned, so you can join denials in the [Activity Feed](manage-claude-compliance-activity-feed.md) to the matching records in your own system.
 

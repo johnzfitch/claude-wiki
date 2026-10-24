@@ -2,7 +2,7 @@
 title: "Scribd Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/scribd"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:59Z"
+fetched_at: "2026-10-23T06:30:08Z"
 tags: ["api", "case-studies", "enterprise", "rag", "security"]
 ---
 
@@ -40,15 +40,15 @@ Scribd, Inc. uses Claude to generate high-quality metadata for millions of user-
 
 Scribd, Inc., a multinational technology company focused on the written and spoken word, offers a massive collection of user-generated content across two of its products: Scribd and Slideshare. With hundreds of millions of documents and more, these platforms faced a significant challenge: a large portion of the content lacked quality metadata, making it difficult for users to discover relevant material.
 
-"When a creator uploads a document to Scribd or a deck to SlideShare, they've already done the work of creating the content," explains Steve Neola, Senior Director of Product at Scribd. "Attaching metadata like titles, descriptions, or categories is extra work for them."
+“When a creator uploads a document to Scribd or a deck to SlideShare, they’ve already done the work of creating the content,” explains Steve Neola, Senior Director of Product at Scribd. “Attaching metadata like titles, descriptions, or categories is extra work for them.”
 
 The company found that approximately 70% of user-uploaded content had low-quality or missing metadata, primarily descriptions. This gap presented an opportunity to improve the user experience and content discoverability across these two Scribd, Inc. platforms.
 
 ## Leveraging AI to scale metadata generation
 
-To address this challenge, Scribd, Inc. turned to generative AI, specifically Claude, to automatically create high-quality metadata for their vast user-generated content library. The project began with careful scoping and experimentation, led by John Strenio, a Data Scientist on Scribd's Applied Research team.
+To address this challenge, Scribd, Inc. turned to generative AI, specifically Claude, to automatically create high-quality metadata for their vast user-generated content library. The project began with careful scoping and experimentation, led by John Strenio, a Data Scientist on Scribd’s Applied Research team.
 
-"We started by testing language capabilities and summarization abilities across various models," Strenio recalls. "One of the difficulties in that experimentation phase was evaluating the quality of the models and the prompts we were using."
+“We started by testing language capabilities and summarization abilities across various models,” Strenio recalls. “One of the difficulties in that experimentation phase was evaluating the quality of the models and the prompts we were using.”
 
 The team conducted extensive human-led evaluations, relying heavily on their content operations department to assess the quality of AI-generated metadata. As they narrowed down their options, the focus shifted to scaling, throughput, and cost considerations.
 
@@ -56,27 +56,27 @@ The team conducted extensive human-led evaluations, relying heavily on their con
 
 While Scribd, Inc. initially explored other options, including open source alternatives, they ultimately chose Claude for its combination of quality, cost-effectiveness, and scalability.
 
-"Claude was the right mix of everything," says Strenio. "It was competitive in our experiments, and from the data scientist's perspective, one of the big factors was the ability to perform a large volume of inference in a very short amount of time."
+“Claude was the right mix of everything,” says Strenio. “It was competitive in our experiments, and from the data scientist’s perspective, one of the big factors was the ability to perform a large volume of inference in a very short amount of time.”
 
-Scribd, Inc. also appreciated the support they received from Anthropic. "The support interaction was really impressive," Neola notes. "We had a Slack channel where we could ask questions in real time and get feedback, which enabled faster turnarounds and implementation efficiency."
+Scribd, Inc. also appreciated the support they received from Anthropic. “The support interaction was really impressive,” Neola notes. “We had a Slack channel where we could ask questions in real time and get feedback, which enabled faster turnarounds and implementation efficiency.”
 
-For an enterprise like Scribd, Inc., trust and reliability were crucial factors. "Claude's Constitutional AI and all the ethical considerations that go into the model makes Anthropic a really exciting long-term partner," Neola explains. "We want to make sure we're building trust around our AI choices internally as well as with our customers."
+For an enterprise like Scribd, Inc., trust and reliability were crucial factors. “Claude’s Constitutional AI and all the ethical considerations that go into the model makes Anthropic a really exciting long-term partner,” Neola explains. “We want to make sure we’re building trust around our AI choices internally as well as with our customers.”
 
 ## Driving engagement and subscriptions
 
 The impact of implementing Claude-generated metadata has been significant for Scribd. By adding AI-generated descriptions to document pages, the company saw a substantial increase in users who view content and ultimately sign up as subscribers.
 
-"Having the content right there at first glance gives the user more context about the particular document versus having to read through the whole thing," Neola says. "We saw a 7% increase in the users who are viewing it that ultimately come to the site and then sign up and become subscribers."
+“Having the content right there at first glance gives the user more context about the particular document versus having to read through the whole thing,” Neola says. “We saw a 7% increase in the users who are viewing it that ultimately come to the site and then sign up and become subscribers.”
 
-Scribd, Inc. is now expanding the use of this enhanced metadata across its user-generated platforms. They've seen similar improvements when incorporating the descriptions into recommendations on their homepage, and are preparing to integrate them into search results.
+Scribd, Inc. is now expanding the use of this enhanced metadata across its user-generated platforms. They’ve seen similar improvements when incorporating the descriptions into recommendations on their homepage, and are preparing to integrate them into search results.
 
 ## Looking to the future
 
-As Scribd, Inc. continues to refine and expand its use of AI-generated metadata, the company is developing a playbook that can be applied to other types of metadata and content enhancements. They value Anthropic's commitment to continually improving Claude's capabilities.
+As Scribd, Inc. continues to refine and expand its use of AI-generated metadata, the company is developing a playbook that can be applied to other types of metadata and content enhancements. They value Anthropic’s commitment to continually improving Claude’s capabilities.
 
-"As a company, we want to stay on the bleeding edge of AI technology," Neola emphasizes. "Having a partner that's at the bleeding edge helps us serve customers today and continually bring new AI capabilities to them as they’re developed."
+“As a company, we want to stay on the bleeding edge of AI technology,” Neola emphasizes. “Having a partner that’s at the bleeding edge helps us serve customers today and continually bring new AI capabilities to them as they’re developed.”
 
-With Claude's ability to process and enhance millions of documents efficiently, Scribd, Inc. is well-positioned to continue improving content discovery and user engagement across its global platforms, making it easier than ever for users to find the information they need.
+With Claude’s ability to process and enhance millions of documents efficiently, Scribd, Inc. is well-positioned to continue improving content discovery and user engagement across its global platforms, making it easier than ever for users to find the information they need.
 
 ## Related stories
 
@@ -84,7 +84,7 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 ### StubHub transforms live event ticketing with Claude
 
 
-### Audience Strategies expands the electronic music industry's policy influence with Claude
+### Audience Strategies expands the electronic music industry’s policy influence with Claude
 
 
 ### Orange localizes manga at an unprecedented scale with Claude
@@ -101,7 +101,8 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -119,12 +120,12 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -157,7 +158,7 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -175,6 +176,7 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -190,7 +192,7 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -225,7 +227,8 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -243,12 +246,12 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -281,7 +284,7 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -299,6 +302,7 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -314,7 +318,7 @@ With Claude's ability to process and enhance millions of documents efficiently, 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

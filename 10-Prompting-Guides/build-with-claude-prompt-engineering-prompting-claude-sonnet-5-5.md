@@ -2,7 +2,7 @@
 title: "Prompting Claude Sonnet 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-10-07T06:24:05Z"
+fetched_at: "2026-10-22T06:29:47Z"
 tags: ["prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["prompting"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fprompt-engineering%2Fprompting-claude-sonnet-5-5)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fprompt-engineering%2Fprompting-claude-sonnet-5-5)
 
 
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -50,7 +50,7 @@ Reference
 
 [Glossary](../04-API-Reference/About/about-claude-glossary.md)[Additional resources](../04-API-Reference/About/about-claude-additional-resources.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)Prompt engineering
 
@@ -90,7 +90,7 @@ For the five breaking API changes when migrating from Claude Sonnet 5, see the [
 
 [Effort](../04-API-Reference/Guides/build-with-claude-effort.md) is the main control for how much Claude Sonnet 5.5 thinks, and with it quality, latency, and cost. Its levels are recalibrated: a level doesn't produce the same amount of thinking as the same level on Claude Sonnet 5. Run a fresh sweep against your own evals rather than carrying over the setting you used on Claude Sonnet 5. Start at `high`, the default on the Claude API, unless your workload is agentic or latency-sensitive. For agentic coding and multistep tool use, start at `medium` for well-specified tasks and move to `high` for harder or longer ones. For chat and other latency-sensitive work, start at `medium` or `low`, because higher effort means a longer wait before the reply starts. Raise effort if quality needs it.
 
-Lower effort also changes how the model finishes agentic work. At `low`, it keeps its thinking short and can skip verifying a change. See [Verification on coding tasks](#verification-on-coding-tasks). At `low` and `medium`, on long agentic tasks, it's more likely to stop and check in with the user before it finishes. See [Steer initiative and scope](#steer-initiative-and-scope).
+Lower effort also changes how the model completes agentic work. At `low`, it keeps its thinking short and can skip verifying a change. See [Verification on coding tasks](#verification-on-coding-tasks). At `low` and `medium`, on long agentic tasks, it's more likely to stop and check in with the user before it completes its work. See [Steer initiative and scope](#steer-initiative-and-scope).
 
 Three adjustments help:
 
@@ -98,7 +98,7 @@ Three adjustments help:
 - Reserve `xhigh` and `max` for work where you've measured a quality gain, because thinking and replies get much longer there. At those levels, `between_tools` isn't accepted, so up-front thinking can't be turned off.
 - To get less thinking, lower the effort level. From `medium` up, the model thinks briefly before almost every reply, even a greeting, which adds to the time before the first visible token. Asking it in the system prompt to think less doesn't reliably reduce its thinking. At `low`, it skips thinking on most simple requests.
 
-Changing the top-level `effort` value between requests invalidates the prompt cache. To run individual turns at a different level, use a [per-message effort change](../04-API-Reference/Guides/build-with-claude-effort.md#change-effort-mid-conversation-beta) (beta) instead, which keeps the cache. For example, run an interactive session at `low` and raise effort to `high` when the user submits a hard problem. Per-message effort changes need adaptive thinking. With `between_tools`, they return a 400 error, as [Running without up-front thinking](#running-without-up-front-thinking) explains.
+Changing the top-level `effort` value between requests invalidates the prompt cache. To change the level partway through a conversation, use a [per-message effort change](../04-API-Reference/Guides/build-with-claude-effort.md#change-effort-mid-conversation-beta) (beta) instead, which keeps the cache. A change holds for every later turn until another one replaces it. For example, in an interactive session at `low`, add a change to `high` before the user's hard problem, and a change back to `low` after Claude answers it. Per-message effort changes need adaptive thinking. With `between_tools`, they return a 400 error, as [Running without up-front thinking](#running-without-up-front-thinking) explains.
 
 ## Steer initiative and scope
 
@@ -116,9 +116,9 @@ When the work the user asked for is done and checked, stop and report. Don't add
 
 With this prompt, the model carries more of the work through at `low` and `medium` effort, so sessions at those levels run longer and cost more. The prompt doesn't replace your own rules about risky or irreversible actions. Keep those rules in your system prompt.
 
-**Unrequested additions when coding.** The model tends to add tests, documentation, and small supporting files that fit your repository's conventions, even when you don't ask for them. It does this at every effort level, and more at higher effort. The requested change itself stays close to what was asked. Most teams will welcome this. If you prefer changes limited to what was explicitly requested, add only the second paragraph of that prompt, which starts "When the work the user asked for is done". At `xhigh` and `max` effort, that paragraph reduces these additions and makes changes smaller overall.
+**Unrequested additions when coding.** The model tends to add tests, documentation, and small supporting files that fit your repository's conventions, even when you don't ask for them. It does this at every effort level, and more at higher effort. The requested change itself stays close to what was asked. Most teams will welcome this. If you prefer changes limited to what was explicitly requested, add only the second paragraph of that prompt, which starts "When the work the user asked for is done." At `xhigh` and `max` effort, that paragraph reduces these additions and makes changes smaller overall.
 
-**Thoroughness at `xhigh` and `max` effort.** At these levels the model is especially thorough. After it finishes a task, it can start its own rounds of review and verification, sometimes with subagents if your harness provides them. It can also make related fixes it noticed along the way. This takes more time and tokens, so run routine work at `high` or below, where it's rare. If you do want that extra thoroughness of these effort levels, but want to direct it to the task itself, add this to your system prompt:
+**Thoroughness at `xhigh` and `max` effort.** At these levels the model is especially thorough. After it completes a task, it can start its own rounds of review and verification, sometimes with subagents if your harness provides them. It can also make related fixes it noticed along the way. This takes more time and tokens, so run routine work at `high` or below, where it's rare. If you do want that extra thoroughness of these effort levels, but want to direct it to the task itself, add this to your system prompt:
 
 ```python
 When the work the user asked for is done and its checks pass, stop and report. Don't start extra rounds of review or hardening on your own, and don't launch reviewer sub-agents unless the user asked for a review. If you think a deeper review is worth doing, say so at the end.
@@ -128,7 +128,7 @@ When the work the user asked for is done and its checks pass, stop and report. D
 
 In testing on coding tasks at `max` effort, this stopped the model from launching reviewer subagents and cut session cost by about a third, with no change in quality. It makes self-started review rounds by the main agent less frequent but doesn't remove them entirely.
 
-**Open-ended requests.** When a request is open-ended, for example "show me what you can do with this", the model can start building a presentation, report, or video when you only wanted ideas. If you want ideas or a plan first, say so in the request, or add this to your system prompt:
+**Open-ended requests.** When a request is open-ended, for example "show me what you can do with this," the model can start building a presentation, report, or video when you only wanted ideas. If you want ideas or a plan first, say so in the request, or add this to your system prompt:
 
 ``` block
 When the user asks for ideas, options or a plan, give them that and stop. Don't start building or changing anything until they say to go ahead.
@@ -140,8 +140,8 @@ When the user asks for ideas, options or a plan, give them that and stop. Don't 
 
 To run Claude Sonnet 5.5 without up-front thinking, send `thinking: {"type": "between_tools"}`. It's the lowest thinking setting on this model, and it's accepted at `high` effort or below. If your integration runs with thinking off today, switch it to `between_tools` and check these points:
 
-- **Send `between_tools` at `high` effort or below.** At `xhigh` or `max` effort, a request with `between_tools` returns a 400 error. With `between_tools`, effort also can't change mid-conversation: a per-message `output_config.effort` that differs from the level in effect returns a 400 error. To vary effort per turn, use adaptive thinking. With `between_tools`, remove any instruction that tells the model not to think. Such instructions make it more likely that the model writes internal XML tags in its visible output.
-- **Read the response by block type.** With adaptive thinking, a response can begin with a `thinking` block, whose `thinking` field is empty under the default `display: "omitted"`. With `between_tools`, a response can begin with a progress-update `thinking` block. Don't assume the first content block is text.
+- **Send `between_tools` at `high` effort or below.** At `xhigh` or `max` effort, a request with `between_tools` returns a 400 error. With `between_tools`, effort also can't change mid-conversation: a per-message `output_config.effort` that differs from the level in effect returns a 400 error. To vary effort for each turn, use adaptive thinking. With `between_tools`, remove any instruction that tells the model not to think. Such instructions make it more likely that the model writes internal XML tags in its visible output.
+- **Read the response by block type.** With adaptive thinking, a response can start with a `thinking` block, whose `thinking` field is empty under the default `display: "omitted"`. With `between_tools`, a response can start with a progress-update `thinking` block. Don't assume the first content block is text.
 - **Pass back the `thinking` blocks unchanged.** With `between_tools`, notes the model writes between tool calls still come back as `thinking` blocks when they run longer than a sentence or two. Each block carries a summary of the note. Pass them back unchanged with the rest of the assistant turn. A block you send back gives the model the full note it wrote, not the summary.
 - **Use adaptive thinking for reasoning tasks without tools.** In a request without tools, `between_tools` means the model answers without thinking first. For tasks that need a few steps of working out, use adaptive thinking instead. See [Reasoning tasks with JSON output](#reasoning-tasks-with-json-output).
 
@@ -165,22 +165,22 @@ With this line, the model more often thinks before it answers. At `high` effort,
 
 **Use adaptive thinking rather than `between_tools`.** In a request without tools, the model doesn't think before it answers under `between_tools`. The line has no effect there, and accuracy on these tasks is lower. Use adaptive thinking for these requests, with the steps in this section. In testing, splitting the request in two, one request for the answer and one for the JSON, led to high answer accuracy and JSON compliance, but at very high cost and latency.
 
-With structured outputs at `low` and `medium` effort, the model occasionally keeps thinking until it reaches `max_tokens`. At `high` effort and above, this almost never happens. Treat any response whose `stop_reason` is `"max_tokens"` as failed, even if its text holds valid JSON, and retry. Set `max_tokens` high enough for the thinking and the JSON, as [Calibrate effort](#calibrate-effort) describes, but no higher than you're willing to spend on one attempt.
+With structured outputs at `low` and `medium` effort, the model occasionally keeps thinking until it reaches `max_tokens`. At `high` effort and above, this almost never occurs. Treat any response whose `stop_reason` is `"max_tokens"` as failed, even if its text holds valid JSON, and retry. Set `max_tokens` high enough for the thinking and the JSON, as [Calibrate effort](#calibrate-effort) describes, but no higher than you're willing to spend on one attempt.
 
 If you can't use structured outputs, ask for JSON in the prompt instead. The model then often works the problem out in the response text and writes the JSON at the end. The JSON usually holds the right answer, but a parser that expects the whole response to be JSON fails. Two things help:
 
-- **Parse the last JSON value in the response.** Read only the `text` blocks, and treat a response whose `stop_reason` is `"max_tokens"` as failed. Starting at each `{` or `[`, try to parse a JSON value. When one parses, continue from the end of that value, so values nested inside it aren't counted on their own. Keep the last value found. Don't take everything from the first `{` to the last `}`. The model occasionally writes a draft before its final JSON, and that range would include both. If your answer is several JSON values in a row, such as one record per line, keep the last run of values separated only by spaces, commas, or line breaks. Check that the result has the fields you expect, and retry once if it doesn't. In testing, this made nearly every response usable without changing its accuracy.
+- **Parse the last JSON value in the response.** Read only the `text` blocks, and treat a response whose `stop_reason` is `"max_tokens"` as failed. Starting at each `{` or `[`, try to parse a JSON value. When one parses, continue from the end of that value, so values nested inside it aren't counted on their own. Keep the last value found. Don't take everything from the first `{` to the last `}`. The model occasionally writes a draft before its final JSON, and that range would include both. If your answer is several JSON values in a row, such as one record on each line, keep the last run of values separated only by spaces, commas, or line breaks. Check that the result has the fields you expect, and retry once if it doesn't. In testing, this made nearly every response usable without changing its accuracy.
 - **Also consider `xhigh` effort with adaptive thinking.** The model then works the problem out in its thinking and nearly always returns the JSON alone. Total output tokens stay about the same as at `high`, because the working moves from the response text into the thinking.
 
 ## User-facing progress updates
 
 Between tool calls, Claude Sonnet 5.5 writes user-facing notes about what it just found and what it's doing next. Notes longer than a sentence or two come back as [progress-update `thinking` blocks](../04-API-Reference/Guides/build-with-claude-thinking.md#progress-updates). Shorter remarks stay `text`. At the default `thinking.display`, a progress-update block's text is empty, so a client that renders only `text` blocks can look silent during a long agentic turn. This matters most in chat interfaces and other products where the user follows the model's work in real time.
 
-To show these notes, set `display: "updates"` (beta, `thinking-display-updates-2026-08-18` header). With `between_tools`, the notes come back with their summary text, so no `display` field is needed. `between_tools` takes no other field: `display`, `budget_tokens`, or `block_binding` sent with it returns a 400 error. The [migration guide](../20-Models/models-sonnet-5-5-migration-guide.md#text-between-tool-calls) shows how to render the notes. Sometimes the model needs to show the user exact text partway through a long turn, such as a code snippet or a question it needs answered. For that case, give it a simple tool for sending the user a message. Tell the model to use that tool only for such content. Declare the tool in the first request of the session, so the `tools` list doesn't change later.
+To show these notes, set `display: "updates"` (beta, `thinking-display-updates-2026-08-18` header). With `between_tools`, the notes come back with their summary text, so no `display` field is needed. `between_tools` takes no other field: `display`, `budget_tokens`, or `block_binding` sent with it returns a 400 error. The migration guide's section on [text between tool calls](../20-Models/models-sonnet-5-5-migration-guide.md#text-between-tool-calls) shows how to render the notes. Sometimes the model needs to show the user exact text partway through a long turn, such as a code snippet or a question it needs answered. For that case, give it a simple tool for sending the user a message. Tell the model to use that tool only for such content. Declare the tool in the first request of the session, so the `tools` list doesn't change later.
 
-Next, remove older instructions such as "hold all findings for the final response". If you then want updates at predictable points, for example a line on what the model is about to do before its first tool call and a short recap at the end, say so in the system prompt. The model follows instructions like this. Updates at set points help most in human-in-the-loop work.
+Next, remove older instructions such as "hold all findings for the final response." If you then want updates at predictable points, for example a line on what the model is about to do before its first tool call and a short recap at the end, say so in the system prompt. The model follows instructions like this. Updates at set points help most in human-in-the-loop work.
 
-If long tool-calling turns still go quiet for longer than you want, your harness can prompt an update. Have it count consecutive tool-calling steps that send the user no text or progress update. After several in a row, for example five, append a one-turn reminder after the latest tool results. Send it as a [turn-scoped system message](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md#turn-scoped-system-messages) (beta), with text like this:
+If long tool-calling turns still go quiet for longer than you want, your harness can prompt an update. Have it count consecutive tool-calling steps that send the user no text or progress update. After several in a row, for example five, append a one-turn reminder after the latest tool results. Send it as a [turn-scoped system message](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md#turn-scoped-system-messages) (beta), with text such as the following:
 
 ``` block
 The user hasn't heard from you in a while — say in a few words what you're doing, then continue.
@@ -188,13 +188,13 @@ The user hasn't heard from you in a while — say in a few words what you're doi
 
 
 
-If the turn stays quiet, stop sending reminders after the second or third. Frequent harness text after tool results can make the model suspect a prompt injection, as [Mid-turn user messages](#mid-turn-user-messages-and-task-budgets) explains. Leave each reminder in `messages` on later requests. Because the reminder is appended rather than inserted and later deleted, the prompt cache and [preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) stay intact. At `high` effort, with a tool for sending the user a message available, the reminder leads the model to update the user more often and shortens its longest silent stretches, with no measurable change in task quality.
+If the turn stays quiet, stop sending reminders after the second or third. Frequent harness text after tool results can lead the model to treat that text as a possible prompt injection, as [Mid-turn user messages](#mid-turn-user-messages-and-task-budgets) explains. Leave each reminder in `messages` on later requests. Because the reminder is appended rather than inserted and later deleted, the prompt cache and [preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md) stay intact. At `high` effort, with a tool for sending the user a message available, the reminder leads the model to update the user more often and shortens its longest silent stretches, with no measurable change in task quality.
 
 ## Tool use in chat and knowledge work
 
 On chat and knowledge-work tasks, Claude Sonnet 5.5 sometimes answers from its training knowledge when a web search would catch details that have changed. Examples include what is allowed, required, or charged.
 
-First, check your prompt for language that discourages tool use, such as "only use tools when strictly necessary" or "minimize tool calls", and remove it. Then, if your product gives the model a search tool, add this to your system prompt:
+First, check your prompt for language that discourages tool use, such as "only use tools when strictly necessary" or "minimize tool calls," and remove it. Then, if your product gives the model a search tool, add this to your system prompt:
 
 ``` block
 Use the search tool to check specifics that may have changed since your training, such as what is allowed, required or charged, even when you feel confident. For researched work such as a report or a comparison, gather current sources rather than writing from your training knowledge.
@@ -208,7 +208,7 @@ This matters most for research and support products, where answers depend on cur
 
 Claude Sonnet 5.5 is trained to resist indirect prompt injection, meaning malicious instructions that arrive through tool results and other content it reads during a task. Sometimes it treats a genuine user message as a possible injection. Suppose a message the user typed mid-task reaches the model as a [mid-conversation system message](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md) placed directly after a tool result, or inside a `tool_result` block. The model can then tell the user that the tool result contained text posing as a message from them, and ignore the message or ask the user to confirm it.
 
-A token countdown that your harness adds after every tool result can cause this. So can letting users send messages while the model is partway through a multistep turn, or having your harness add instructions or context after the tool results on every step. In each case, text arrives right after the tool results. With a countdown or per-step instructions, that can happen on every tool call. An occasional one-turn reminder, like the one in [User-facing progress updates](#user-facing-progress-updates), arrives far less often. If you see this reaction to a reminder of your own, send the reminder less often. To avoid the misread:
+A token countdown that your harness adds after every tool result can cause this. So can letting users send messages while the model is partway through a multistep turn, or having your harness add instructions or context after the tool results on every step. In each case, text arrives right after the tool results. With a countdown or per-step instructions, that can occur on every tool call. An occasional one-turn reminder, such as the one in [User-facing progress updates](#user-facing-progress-updates), arrives far less often. If you see this reaction to a reminder of your own, send the reminder less often. To avoid the misread:
 
 - Never put user text inside a `tool_result` block. The model misreads that placement most often.
 - Deliver mid-turn user input as a user turn. Append the user's words as a text block in the user message that carries the `tool_result` blocks, after the last `tool_result`.
@@ -244,11 +244,11 @@ Claude Sonnet 5.5 runs safety classifiers that can decline a request. A decline 
 
 - `cyber`: the request could enable cyber harm, such as malware or exploit development. Finding vulnerabilities in source code is allowed. High-risk dual-use cybersecurity work isn't allowed.
 - `bio`: the request could enable biological harm, such as dangerous lab methods. Everyday health and educational questions aren't affected.
-- `frontier_llm`: the request could assist the development of competing AI models.
+- `frontier_llm`: the request could help with the development of competing AI models.
 - `reasoning_extraction`: the request asks the model to reproduce its internal reasoning in the response text.
 - `general_harms`: the request falls under another usage-policy area. Benign work can also trigger this category.
 
-If the `bio` classifier blocks your organization's life sciences work, you can apply to the [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md).
+If the `cyber` classifier blocks your organization's legitimate security work, you can apply to the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). If the `bio` classifier blocks your organization's life sciences work, you can apply to the [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md).
 
 If you turn on [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (beta), it retries `cyber` and `frontier_llm` declines on Claude Sonnet 5. It doesn't retry `bio`, `reasoning_extraction`, or `general_harms` declines. See [Refusals, fallback, and billing](../20-Models/models-sonnet-5-5-whats-new-sonnet-5-5.md#refusals-fallback-and-billing).
 

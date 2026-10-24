@@ -2,7 +2,7 @@
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:24:36Z"
+fetched_at: "2026-10-23T06:29:00Z"
 tags: ["api", "billing", "enterprise"]
 ---
 
@@ -37,11 +37,11 @@ If you're unsure whether your organization benefits from a HIPAA-ready product, 
 
 The HIPAA-ready Enterprise offering includes many of the features available on **[standard Enterprise plans](what-is-the-enterprise-plan.md)**—but enabling HIPAA doesn't bring every feature under your BAA. Features fall into three categories: covered by your BAA, available but not covered, and disabled. PHI should only be processed through covered features, so it's important for administrators to know which features fall in which category and to configure their workspace accordingly. The **[Implementation Guide for HIPAA Entities](https://trust.anthropic.com/resources?s=rgirr4qe8u7ek8c2igx3&name=claude-for-enterprise-hipaa-ready-offering-implementation-guide)** on the Anthropic Trust Center lists every feature's status and is the authoritative source.
 
-**Important:** Enabling HIPAA alone doesn't bring Claude Code or Cowork under your BAA. The Primary Owner must also apply the HIPAA configuration to Claude Code (local mode) and Cowork (local mode). Claude Code (local mode) is Claude Code in the terminal and in the Code tab of Claude Desktop. Cowork (local mode) is Cowork in Claude Desktop.
+**Important:** Enabling HIPAA alone doesn't bring Claude Code or Cowork under your BAA. The Primary Owner must also apply the HIPAA configuration to Claude Code (local mode) and Cowork (local mode). This configuration is currently only available to organizations with an Anthropic account team. Claude Code (local mode) is Claude Code in the terminal and in the Code tab of Claude Desktop. Cowork (local mode) is Cowork in Claude Desktop.
 
 - **Before the Primary Owner applies the configuration:** Cowork is available but not covered under your BAA. Claude Code is covered only with zero data retention (ZDR) enabled, which is available on qualified accounts only. Without ZDR, Claude Code is also available but not covered. Don't use PHI with a product that isn't covered.
 
-- **After the Primary Owner applies the configuration:** Your BAA covers Claude Code (local mode) and Cowork (local mode). Cloud features such as Claude Code on the web, Remote Control, and Cowork in the cloud aren't available. The Primary Owner can't remove the configuration.
+- **After the Primary Owner applies the configuration:** Your BAA covers Claude Code (local mode) and Cowork (local mode). Cloud features such as Claude Code cloud sessions, Claude Code Remote Control, and Cowork in the cloud aren't available. The Primary Owner can't remove the configuration.
 
 Learn how to get the configuration and how to prepare in **[Use Claude Code (local mode) and Cowork (local mode) on a HIPAA-ready Enterprise plan](https://support.claude.com/en/articles/17318731)**.
 
@@ -95,7 +95,7 @@ Once enabled, you'll see a checkmark in the **HIPAA Compliance** section of orga
 
 The onboarding modal will guide you through next steps for your team.
 
-For help with the BAA, the Implementation Guide, or post-enablement questions, reach out to your Anthropic account team or **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+For help with the BAA, the Implementation Guide, or post-enablement questions, reach out to your Anthropic account team or **[our support team](../15-Claude-AI-Features/how-to-get-support.md)**.
 
 ------------------------------------------------------------------------
 
@@ -105,4 +105,4 @@ If your organization signed a BAA for Claude API usage before December 2, 2025, 
 
 BAAs signed after December 2, 2025 can cover both API usage and the Enterprise plan under a single agreement.
 
-If you use the Claude API, learn more about **[HIPAA-ready Claude API access and how to set it up](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#hipaa-readiness)**.
+If you use the Claude API, learn more about **[HIPAA-ready Claude API access and how to set it up](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#hipaa-readiness)**.

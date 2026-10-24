@@ -2,7 +2,7 @@
 title: "Courses · Claude Academy"
 source_url: "https://www.claude.com/resources/courses"
 category: "01-Getting-Started"
-fetched_at: "2026-10-10T06:27:30Z"
+fetched_at: "2026-10-23T06:28:18Z"
 tags: ["api", "getting-started"]
 ---
 
@@ -108,6 +108,6 @@ Courses on working with AI, building with Claude, and the Model Context Protocol
 65 lessons · 8 quizzes·8 hr·Completion badge
 
 
-### Claude with Google Cloud's Vertex AI
+### Claude on Google Cloud
 
 66 lessons · 9 quizzes·8.5 hr·Completion badge

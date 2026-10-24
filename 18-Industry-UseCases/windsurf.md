@@ -2,7 +2,7 @@
 title: "Windsurf Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/windsurf"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:29Z"
+fetched_at: "2026-10-23T06:29:47Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -44,41 +44,41 @@ With Claude, Windsurf:
 
 Windsurf—with 800,000+ active users and 1,000+ enterprise customers—aims to transform traditional development tools. Their product combines a modern IDE with Cascade, an AI agent that serves as an intelligent coding partner.
 
-"The goal was to determine the frontier—what was possible," said Anshul Ramachandran of Windsurf. "How can we let every developer dream bigger? How can developers go bigger, better, faster than they could before?"
+“The goal was to determine the frontier—what was possible,” said Anshul Ramachandran of Windsurf. “How can we let every developer dream bigger? How can developers go bigger, better, faster than they could before?”
 
 ## Choosing Claude for powerful reasoning capabilities
 
-Windsurf's background in ML infrastructure and years of enterprise experience uniquely positioned them to evaluate and implement AI models effectively. Through extensive work with large enterprises, they developed sophisticated systems for parsing and understanding complex codebases. These capabilities complement Claude's strengths and enhance its effectiveness.
+Windsurf’s background in ML infrastructure and years of enterprise experience uniquely positioned them to evaluate and implement AI models effectively. Through extensive work with large enterprises, they developed sophisticated systems for parsing and understanding complex codebases. These capabilities complement Claude’s strengths and enhance its effectiveness.
 
-"Understanding the codebase and improving that technology over time led to a 38% improvement in how often developers accept our AI suggestions," said Jeff Wang of Windsurf. The impact is significant: "In companies that install Windsurf, nearly half of all new committed code is written by our AI."
+“Understanding the codebase and improving that technology over time led to a 38% improvement in how often developers accept our AI suggestions,” said Jeff Wang of Windsurf. The impact is significant: “In companies that install Windsurf, nearly half of all new committed code is written by our AI.”
 
-Windsurf chose Claude specifically for its ability to understand and reason about long sequences of development activity. Claude's extensive context window allows Cascade to maintain awareness of everything that's happened in a development session, using this history to make better decisions about what to do next.
+Windsurf chose Claude specifically for its ability to understand and reason about long sequences of development activity. Claude’s extensive context window allows Cascade to maintain awareness of everything that’s happened in a development session, using this history to make better decisions about what to do next.
 
-"Claude powers some of the reasoning and planning parts of Cascade," said Ramachandran. "When a developer is working, Claude looks at everything that's happened in their session and figures out the best next steps, maintaining that full context throughout the conversation."
+“Claude powers some of the reasoning and planning parts of Cascade,” said Ramachandran. “When a developer is working, Claude looks at everything that’s happened in their session and figures out the best next steps, maintaining that full context throughout the conversation.”
 
 ## How Windsurf uses Claude to transform development
 
-Windsurf transforms the AI coding experience by solving two fundamental challenges: speed and codebase understanding. While many AI assistants force developers to wait for responses, Windsurf's infrastructure expertise enables instant interactions. "Most AI systems make you wait around for results," said Ramachandran. "We made ours fast enough to feel like a real-time collaboration with the developer."
+Windsurf transforms the AI coding experience by solving two fundamental challenges: speed and codebase understanding. While many AI assistants force developers to wait for responses, Windsurf’s infrastructure expertise enables instant interactions. “Most AI systems make you wait around for results,” said Ramachandran. “We made ours fast enough to feel like a real-time collaboration with the developer.”
 
-This speed combines with Windsurf's deep expertise in parsing enterprise-scale codebases, refined through years of working with large companies. Unlike typical AI assistants that struggle with complex applications, Cascade can effectively understand and work with production code. "Success with AI in production environments starts with understanding complex codebases," said Ramachandran. "Without that foundation, even the best AI models will fall short."
+This speed combines with Windsurf’s deep expertise in parsing enterprise-scale codebases, refined through years of working with large companies. Unlike typical AI assistants that struggle with complex applications, Cascade can effectively understand and work with production code. “Success with AI in production environments starts with understanding complex codebases,” said Ramachandran. “Without that foundation, even the best AI models will fall short.”
 
 ## Driving explosive growth and user engagement
 
-Integrating Claude has driven remarkable early adoption of Windsurf. Within just two days of launch, Windsurf reached 10,000 users, with numbers climbing into the hundreds of thousands by the end of week two. Most importantly, users aren't just trying the platform once—they're staying and using it extensively.
+Integrating Claude has driven remarkable early adoption of Windsurf. Within just two days of launch, Windsurf reached 10,000 users, with numbers climbing into the hundreds of thousands by the end of week two. Most importantly, users aren’t just trying the platform once—they’re staying and using it extensively.
 
-"At first, we were afraid people would try this out as a novelty or demo, but after looking at the data, we are seeing very high retention numbers and users keep returning daily."
+“At first, we were afraid people would try this out as a novelty or demo, but after looking at the data, we are seeing very high retention numbers and users keep returning daily.”
 
-The platform has value for experienced developers working on production codebases and coding newcomers. Some users are even dropping their existing IDEs to switch to Windsurf full-time, a transition the company hadn't expected. "We hoped to get there someday, but perhaps not on day two," said Ramachandran.
+The platform has value for experienced developers working on production codebases and coding newcomers. Some users are even dropping their existing IDEs to switch to Windsurf full-time, a transition the company hadn’t expected. “We hoped to get there someday, but perhaps not on day two,” said Ramachandran.
 
-Equally validating is how their non-technical users have embraced the platform. "I had our recruiters who've never programmed try it. They started building games right away. It just worked," said Wang. "It gets all the right libraries, creates the files and folders, even writes the documentation. Anybody can be a developer with this."
+Equally validating is how their non-technical users have embraced the platform. “I had our recruiters who’ve never programmed try it. They started building games right away. It just worked,” said Wang. “It gets all the right libraries, creates the files and folders, even writes the documentation. Anybody can be a developer with this.”
 
 ## Building the future of software development
 
 Windsurf envisions a future where AI amplifies rather than replaces developers, enabling them to tackle bigger challenges and create more value. While the role of developers may evolve to work closely with AI, Windsurf believes this will expand rather than contract software development.
 
-"Software development isn't about replacing people—it's about creating value. When you give organizations the ability to build more, they'll take full advantage of it," said Ramachandran. "AI won't reduce the number of developers. It will create more, working in partnership with AI to build bigger things faster."
+“Software development isn’t about replacing people—it’s about creating value. When you give organizations the ability to build more, they’ll take full advantage of it,” said Ramachandran. “AI won’t reduce the number of developers. It will create more, working in partnership with AI to build bigger things faster.”
 
-Since launch, Windsurf has continued to enhance their platform and Cascade with more of Claude's capabilities, such as taking image inputs and leveraging Claude's multimodal features. Their vision goes beyond just improving coding efficiency—it's about democratizing software development and unleashing human creativity. By putting powerful AI tools in the hands of developers worldwide, Windsurf is helping build a future where anyone can turn their ideas into reality through code.
+Since launch, Windsurf has continued to enhance their platform and Cascade with more of Claude’s capabilities, such as taking image inputs and leveraging Claude’s multimodal features. Their vision goes beyond just improving coding efficiency—it’s about democratizing software development and unleashing human creativity. By putting powerful AI tools in the hands of developers worldwide, Windsurf is helping build a future where anyone can turn their ideas into reality through code.
 
 ## Related stories
 
@@ -103,7 +103,8 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -121,12 +122,12 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -159,7 +160,7 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -177,6 +178,7 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -192,7 +194,7 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -227,7 +229,8 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -245,12 +248,12 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -283,7 +286,7 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -301,6 +304,7 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -316,7 +320,7 @@ Since launch, Windsurf has continued to enhance their platform and Cascade with 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

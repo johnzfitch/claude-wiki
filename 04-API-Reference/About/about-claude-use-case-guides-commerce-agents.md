@@ -2,7 +2,7 @@
 title: "Commerce agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/commerce-agents"
 category: "04-API-Reference/About"
-fetched_at: "2026-10-04T08:31:56Z"
+fetched_at: "2026-10-20T06:36:49Z"
 tags: ["agents", "api", "claude-code"]
 ---
 

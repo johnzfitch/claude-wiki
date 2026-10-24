@@ -1,8 +1,8 @@
 ---
 title: "Get Connector Usage - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/connectors/list"
+source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/connectors/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:11Z"
+fetched_at: "2026-10-20T06:38:33Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fconnectors%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fconnectors%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -155,9 +155,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -228,13 +230,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -242,9 +246,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,12 +257,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
-5.  [Connectors](beta-organization-analytics-connectors.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
+5.  [Connectors](http-beta-organization-analytics-connectors.md)
 
 # Get Connector Usage
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/analytics/connectors
 
@@ -294,7 +304,7 @@ filter: optional array of string
 
 
 
-Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `connector_name`, `product`, `rbac_group_id`, `user_id`. Value forms: `connector_name` matches case-insensitively, a display name such as 'GitHub MCP' also matches its normalized stored form ('github'), and for rows whose `connector_name` is an opaque connector id the connector's display name (`connector_display_name`) also matches; `product` is one of `chat`, `claude_code`, `cowork`, or `office_agent`; `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries.
+Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `connector_name`, `product`, `rbac_group_id`, `user_id`. Value forms: `connector_name` matches case-insensitively, a display name such as 'GitHub MCP' also matches its normalized stored form ('github'), and for rows whose `connector_name` is an opaque connector id the connector's display name (`connector_display_name`) also matches; `product` is one of `chat_cowork_unified`, `chat`, `claude_code`, `cowork`, or `office_agent`; `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only on deployments that offer Chat and Cowork unified.
 
 maxItems100
 
@@ -374,17 +384,29 @@ UTC date in YYYY-MM-DD format. Start of a date range (inclusive). Enables rollup
 
 formatdate
 
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
 ##### Returns
 
 
 
-data: array of [BetaAnalyticsConnectorActivity](http-beta-organization-analytics.md#beta_analytics_connector_activity) { chat_metrics, claude_code_metrics, connector_name, 13 more }
+data: array of [BetaAnalyticsConnectorActivity](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_connector_activity) { chat_metrics, claude_code_metrics, connector_name, 14 more }
 
 
 
 
 
-chat_metrics: [BetaAnalyticsConnectorChatMetrics](http-beta-organization-analytics.md#beta_analytics_connector_chat_metrics) { distinct_conversation_connector_used_count }
+chat_metrics: [BetaAnalyticsConnectorChatMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_connector_chat_metrics) { distinct_conversation_connector_used_count }
 
 
 
@@ -398,7 +420,7 @@ Number of distinct conversations in which the connector was used. Approximate (H
 
 
 
-claude_code_metrics: [BetaAnalyticsConnectorClaudeCodeMetrics](http-beta-organization-analytics.md#beta_analytics_connector_claude_code_metrics) { distinct_session_connector_used_count }
+claude_code_metrics: [BetaAnalyticsConnectorClaudeCodeMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_connector_claude_code_metrics) { distinct_session_connector_used_count }
 
 
 
@@ -418,7 +440,7 @@ Name of the connector. Some rows carry an opaque connector id here instead of a 
 
 
 
-cowork_metrics: [BetaAnalyticsConnectorCoworkMetrics](http-beta-organization-analytics.md#beta_analytics_connector_cowork_metrics) { distinct_session_connector_used_count }
+cowork_metrics: [BetaAnalyticsConnectorCoworkMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_connector_cowork_metrics) { distinct_session_connector_used_count }
 
 
 
@@ -438,11 +460,47 @@ Number of distinct users who used the connector on the requested day, or, in dat
 
 
 
-office_metrics: [BetaAnalyticsConnectorOfficeMetrics](http-beta-organization-analytics.md#beta_analytics_connector_office_metrics) { excel, outlook, powerpoint, word }
+office_metrics: [BetaAnalyticsConnectorOfficeMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_connector_office_metrics) { excel, outlook, powerpoint, word }
 
 
 
 Office Agent activity metrics for a single connector on a given day, broken out by Office product.
+
+
+
+chat_cowork_unified_metrics: optional object{ chat, sessions } or null
+
+
+
+Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+
+
+
+chat: [BetaAnalyticsConnectorChatCoworkUnifiedChatMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_connector_chat_cowork_unified_chat_metrics) { distinct_conversation_connector_used_count }
+
+
+
+A connector's use in chat conversations recorded while members had Chat and Cowork unified turned on.
+
+distinct_conversation_connector_used_count: number or null
+
+
+
+Same measure as `chat_metrics.distinct_conversation_connector_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Approximate (HLL, typical error \<2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
+
+
+
+sessions: [BetaAnalyticsConnectorChatCoworkUnifiedSessionsMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_connector_chat_cowork_unified_sessions_metrics) { distinct_session_connector_used_count }
+
+
+
+A connector's use in Cowork sessions recorded while members had Chat and Cowork unified turned on.
+
+distinct_session_connector_used_count: number or null
+
+
+
+Same measure as `cowork_metrics.distinct_session_connector_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Approximate (HLL, typical error \<2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
 
 connector_display_name: optional string or null
 
@@ -466,7 +524,7 @@ product: optional string or null
 
 
 
-Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost & Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost & Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
 
 rbac_group_id: optional string or null
 
@@ -555,6 +613,14 @@ Response 200
           "distinct_session_connector_used_count": 0
         }
       },
+      "chat_cowork_unified_metrics": {
+        "chat": {
+          "distinct_conversation_connector_used_count": 0
+        },
+        "sessions": {
+          "distinct_session_connector_used_count": 0
+        }
+      },
       "connector_display_name": "connector_display_name",
       "individual_auth_distinct_user_count": 0,
       "managed_auth_distinct_user_count": 0,
@@ -603,6 +669,14 @@ Response 200
           "distinct_session_connector_used_count": 0
         },
         "word": {
+          "distinct_session_connector_used_count": 0
+        }
+      },
+      "chat_cowork_unified_metrics": {
+        "chat": {
+          "distinct_conversation_connector_used_count": 0
+        },
+        "sessions": {
           "distinct_session_connector_used_count": 0
         }
       },

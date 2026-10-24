@@ -2,7 +2,7 @@
 title: "Thinking in tool and multi-turn workflows - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/thinking-tool-workflows"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:59Z"
+fetched_at: "2026-10-20T06:40:10Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fthinking-tool-workflows)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fthinking-tool-workflows)
 
 
 
@@ -40,7 +40,7 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
@@ -48,7 +48,7 @@ Model capabilities
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -80,7 +80,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Thinking
 
@@ -98,7 +98,7 @@ Walk through a complete two-turn tool-use round trip that preserves thinking blo
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 This page walks through a complete two-turn tool-use round trip with thinking enabled: Claude thinks, requests a tool call, receives the result, and finishes its answer, with the thinking blocks handled correctly at every step. The full rules live on the [Thinking](build-with-claude-thinking.md) page, in [Thinking with tool use](build-with-claude-thinking.md#thinking-with-tool-use) and [Preserving thinking blocks](build-with-claude-thinking.md#preserving-thinking-blocks); this page shows those rules applied in runnable code.
 
@@ -106,7 +106,7 @@ This page walks through a complete two-turn tool-use round trip with thinking en
 
 Each link leads to the full statement on the Thinking page:
 
-- [Limit tool choice to `auto` or `none` in manual mode](build-with-claude-thinking.md#thinking-with-tool-use): `tool_choice` options that force tool use return an error with manual extended thinking (`thinking: {type: "enabled"}`); adaptive thinking supports forced tool use.
+- [Limit tool choice to `auto` or `none` in manual mode](build-with-claude-thinking.md#thinking-with-tool-use): `tool_choice` options that force tool use return an error with manual extended thinking (`thinking: {type: "enabled"}`). Adaptive thinking supports forced tool use, except on Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, which return a 400 error. Where forced tool use is accepted, it skips thinking: the response starts with the tool call.
 - [Keep one thinking configuration per assistant turn](build-with-claude-thinking.md#thinking-with-tool-use): a tool-use loop is one assistant turn, so change the configuration only between turns.
 - [Pass thinking blocks back complete and unmodified](build-with-claude-thinking.md#preserving-thinking-blocks): when you return a tool result, the thinking blocks from the assistant message must come back with it.
 - [Echo the assistant message exactly as received](build-with-claude-thinking.md#preserving-thinking-blocks): rebuilding the message or filtering out `redacted_thinking` blocks triggers a 400 error.
@@ -133,6 +133,8 @@ The example defines a `get_weather` tool, lets Claude think and request a tool c
     PHP
     Ruby
 
+    Python
+
     
 
     ``` shiki
@@ -150,7 +152,7 @@ The example defines a `get_weather` tool, lets Claude think and request a tool c
 
     # First request - Claude responds with thinking and tool request
     response = client.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5-5",
         max_tokens=16000,
         thinking={"type": "adaptive"},
         tools=[weather_tool],
@@ -163,10 +165,10 @@ The example defines a `get_weather` tool, lets Claude think and request a tool c
 
     ### Capture the content array to echo back
 
-    You should see `thinking`, `text`, and `tool_use` blocks in the response content on a run where Claude chose to think (on simpler requests, adaptive mode may skip the thinking block). Keep this content array intact: the next step sends it back verbatim.
+    You should see `thinking` and `tool_use` blocks in the response content on a run where Claude chose to think (on simpler requests, adaptive mode may skip the thinking block). A note Claude writes before the tool call comes back as a `text` block or, on models that write [progress updates](build-with-claude-thinking.md#progress-updates), as another `thinking` block. Keep this content array intact: the next step sends it back verbatim.
 
     
-    To see thinking text like this output, add `display: "summarized"` to the request. On models where display defaults to omitted, including claude-opus-4-8, the `thinking` field otherwise comes back as an empty string with only the `signature` populated. Either way, echo the content array back unchanged; see [Controlling thinking display](build-with-claude-thinking.md#controlling-thinking-display).
+    To see thinking text like this output, add `display: "summarized"` to the request. On models where display defaults to omitted, including Claude Opus 5.5, the `thinking` field otherwise comes back as an empty string with only the `signature` populated. Either way, echo the content array back unchanged; see [Controlling thinking display](build-with-claude-thinking.md#controlling-thinking-display).
 
     Output
 
@@ -179,10 +181,6 @@ The example defines a `get_weather` tool, lets Claude think and request a tool c
           "type": "thinking",
           "thinking": "The user wants to know the current weather in Paris. I have access to a function `get_weather`...",
           "signature": "BDaL4VrbR2Oj0hO4XpJxT28J5T...."
-        },
-        {
-          "type": "text",
-          "text": "I can help you get the current weather information for Paris. Let me check that for you"
         },
         {
           "type": "tool_use",
@@ -214,6 +212,8 @@ The example defines a `get_weather` tool, lets Claude think and request a tool c
     PHP
     Ruby
 
+    Python
+
     
 
     ``` shiki
@@ -228,7 +228,7 @@ The example defines a `get_weather` tool, lets Claude think and request a tool c
         },
     }
     response = client.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5-5",
         max_tokens=16000,
         thinking={"type": "adaptive"},
         tools=[weather_tool],
@@ -243,7 +243,7 @@ The example defines a `get_weather` tool, lets Claude think and request a tool c
 
     # Second request - Include the assistant turn and the tool result
     continuation = client.messages.create(
-        model="claude-opus-4-8",
+        model="claude-opus-5-5",
         max_tokens=16000,
         thinking={"type": "adaptive"},
         tools=[weather_tool],

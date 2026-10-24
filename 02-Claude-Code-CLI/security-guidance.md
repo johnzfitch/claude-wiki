@@ -2,7 +2,7 @@
 title: "Catch security issues as Claude writes code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/security-guidance"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:52Z"
+fetched_at: "2026-10-20T06:38:51Z"
 tags: ["claude-code", "security"]
 ---
 
@@ -27,7 +27,7 @@ tags: ["claude-code", "security"]
 - [Troubleshooting](#troubleshooting)
 - [Related resources](#related-resources)
 
-Code review & CI/CD
+Security scans
 
 # Catch security issues as Claude writes code
 
@@ -62,14 +62,14 @@ In a terminal Claude Code session, install from the [official Anthropic marketpl
 
 `/plugin` opens an interactive panel in the terminal CLI. If Claude replies that `/plugin` isn’t available in this environment, install another way:
 
-- **Claude desktop app, local or SSH session**: open the [plugin browser](../16-Mobile-Desktop/desktop.md#install-plugins) by clicking the **+** button next to the prompt, then **Plugins**, then **Add plugin**
+- **Claude desktop app, local or SSH session**: use the **Desktop app** tab under [Install a plugin](../08-Plugins-Skills/discover-plugins.md#install-a-plugin)
 - **VS Code extension**: install from the [**Manage plugins** dialog](../03-IDE-Integrations/vs-code.md#manage-plugins)
 - **Cloud sessions**: a cloud session doesn’t load plugins from your user settings or from the repository’s `.claude/settings.json`, as [What carries over from your setup](cloud-environments.md#what-carries-over-from-your-setup) explains. For plugins your organization distributes through managed settings, see [Manage plugins for your organization](../08-Plugins-Skills/plugins-org.md)
 
 The terminal install prompts for a scope. Choose user scope to write the plugin to your user settings, so it loads in every new local session you start on this machine. If the install fails, match the message Claude Code reports:
 
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
-- The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
+- `Plugin "<name>" not found in marketplace "claude-plugins-official"`: your local copy of the marketplace catalog may be out of date. Refresh it with `/plugin marketplace update claude-plugins-official`, then retry the install. If the retry prints the same message, see [Plugin not found in marketplace](../08-Plugins-Skills/plugins-troubleshooting.md#plugin-not-found-in-marketplace).
 
 Check the install summary. If it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) to activate the plugin in your current session.
 

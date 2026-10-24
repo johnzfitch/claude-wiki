@@ -610,7 +610,7 @@ Controls to deploy and manage agents across your organization, including authori
 
 Learn more
 
-[Learn more](../04-API-Reference/Other/usage-limits.md)
+[Learn more](../04-API-Reference/Other/playground.md)
 
 Learn more
 
@@ -1184,7 +1184,7 @@ Claude Platform
 
 - Console login
 
-  [Console login](../04-API-Reference/Other/usage-limits.md)
+  [Console login](../04-API-Reference/Other/playground.md)
   Console login
 
 Resources

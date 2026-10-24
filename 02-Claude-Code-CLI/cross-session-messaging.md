@@ -2,7 +2,7 @@
 title: "Message your other Claude Code sessions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/cross-session-messaging"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-04T08:31:54Z"
+fetched_at: "2026-10-21T06:28:25Z"
 tags: ["claude-code"]
 ---
 
@@ -17,6 +17,7 @@ tags: ["claude-code"]
   - [Limits](#limits)
   - [See which sessions Claude can reach](#see-which-sessions-claude-can-reach)
   - [Message sessions on other machines](#message-sessions-on-other-machines)
+  - [Replies from other machines and cloud sessions](#replies-from-other-machines-and-cloud-sessions)
 - [How a session treats an incoming message](#how-a-session-treats-an-incoming-message)
   - [What a message looks like](#what-a-message-looks-like)
   - [Control inbound messages](#control-inbound-messages)
@@ -103,7 +104,7 @@ The receiving session checks each arriving message against its own [inbound cont
 - **Held**: Claude Code sets the message aside undelivered. A held message reaches Claude only when you approve it or a later mode or settings change allows it.
 - **Refused**: Claude Code drops the message without delivering it.
 
-Once delivered, the message counts toward [usage](../17-Billing-Plans/costs.md) like a prompt you type, and the receiving Claude can reply to the sender the same way, except in the [one-way cross-machine case](#message-sessions-on-other-machines). Permission boundaries stay per-session. Claude is instructed never to ask another session for an action that was denied or blocked in its own session, or that its own permission settings would block, and to route that work back to you instead. On the receiving side, the [receiving session’s own permission prompts and rules still apply](#how-a-session-treats-an-incoming-message) to anything the message asks for.
+Once delivered, the message counts toward [usage](../17-Billing-Plans/costs.md) like a prompt you type. The receiving Claude can reply to the sender with `SendMessage`, except in the cases under [Replies from other machines and cloud sessions](#replies-from-other-machines-and-cloud-sessions) and [Turn off cross-session messaging](#turn-off-cross-session-messaging). Permission boundaries stay per-session. Claude is instructed never to ask another session for an action that was denied or blocked in its own session, or that its own permission settings would block, and to route that work back to you instead. On the receiving side, the [receiving session’s own permission prompts and rules still apply](#how-a-session-treats-an-incoming-message) to anything the message asks for.
 
 
 [​](#get-a-notice-when-another-session-goes-idle)
@@ -163,7 +164,7 @@ While this session is connected to [Remote Control](remote-control.md), Claude C
 - **Session names**: it leaves out any session name it can’t attribute to a person, so a row left with no name reads `(unnamed session)`.
 - **The first line**: it leaves out the line with this session’s own name unless you typed that name at this terminal, with `--name` or with `/rename` and the name, since you launched or last resumed the session.
 
-When the output lists anything, it ends with a note saying details were withheld. Running `/rename` followed by an unused name at a session’s own keyboard gives that session a name that appears in the output. A session answers to the name you set with the [`/rename`](commands.md) command or the [`--name`](cli-reference.md#cli-flags) flag. When you don’t set one, Claude Code names the session itself. For an interactive session, that is the name shown in [listings of running sessions](sessions.md#name-your-sessions). When you rename a session, or start or resume an interactive one, with a name another live session on this machine already uses, Claude Code leaves the name with the session that already has it and [renames yours to a variant](sessions.md#name-your-sessions). Sessions can still share a name, for example when one of them runs an earlier version of Claude Code or the shared name is one Claude Code generated. Unless this session is connected to Remote Control, Claude Code shows each local session’s working directory in the `/list-agents` output, so you can tell same-named sessions apart when they run in different directories. Claude addresses the message in one of two ways, depending on how many live sessions answer to the name:
+When the output lists anything, it ends with a note saying details were withheld. Running `/rename` followed by an unused name at a session’s own keyboard gives that session a name that appears in the output. A session answers to the name you set with the [`/rename`](commands.md) command or the [`--name`](cli-reference.md#cli-flags) flag. When you don’t set one, Claude Code names the session itself. For an interactive session, that is the name shown in [listings of running sessions](sessions.md#name-your-sessions). Unless this session is connected to Remote Control, Claude Code shows each local session’s working directory in the `/list-agents` output, so you can tell same-named sessions apart when they run in different directories. Claude addresses the message in one of two ways, depending on how many live sessions answer to the name:
 
 - **One session answers to the name**: Claude Code delivers the message on the name alone.
 - **Several sessions share the name, or Claude Code couldn’t check everywhere your sessions run**: Claude adds a short identifier to each row of its listing and uses the identifier in the address.
@@ -186,7 +187,14 @@ Starting a conversation with a session on another of your machines requires Clau
 - **`offline`**: that session’s Remote Control connection has dropped. The message goes through, but arrives only after that session’s machine reconnects.
 - **`can't receive cross-session messages (off in that session)`**: messaging [isn’t available](#availability) in that session, or its [`crossSessionInbound`](settings-reference.md#crosssessioninbound) value is `refuse`. Claude Code refuses a message to that session before the message leaves this machine. The result under Claude’s `SendMessage` call begins `Not sent` and names the reason. Once the cause is fixed in that session, a later listing no longer shows this condition, and Claude can message that session.
 
-A session inside a container and a session on the host can’t reach each other. Two sessions inside the same container can still message each other, including on a [self-hosted runner](../13-Enterprise-Admin/self-hosted-environments.md). A session inside WSL 2 and a native Windows session on the same computer can’t reach each other either. If this session isn’t connected to Remote Control when Claude sends to a session beyond this machine, the message still goes through, but without a [reply address](#what-a-message-looks-like), so the receiving Claude can’t answer it. To require your approval before any message goes beyond this machine, set [`isolatePeerMachines`](#require-approval-for-cross-machine-messages).
+A session inside a container and a session on the host can’t reach each other. Two sessions inside the same container can still message each other, including on a [self-hosted runner](../13-Enterprise-Admin/self-hosted-environments.md). A session inside WSL 2 and a native Windows session on the same computer can’t reach each other either. To require your approval before any message goes beyond this machine, set [`isolatePeerMachines`](#require-approval-for-cross-machine-messages).
+
+
+[​](#replies-from-other-machines-and-cloud-sessions)
+
+Replies from other machines and cloud sessions
+
+A [cloud session](claude-code-on-the-web.md), including one on a [self-hosted runner](../13-Enterprise-Admin/self-hosted-environments.md), can’t use `SendMessage` to answer a message from another machine, even when the message carries a [reply address](#what-a-message-looks-like). The message still arrives. Read the cloud session’s response in its transcript at [claude.ai/code](https://claude.ai/code). If this session isn’t connected to Remote Control when Claude sends to a session beyond this machine, the message still goes through, but without a [reply address](#what-a-message-looks-like). The receiving Claude can’t answer it.
 
 
 [​](#how-a-session-treats-an-incoming-message)
@@ -256,7 +264,7 @@ Claude Code binds an inbox socket for a [`claude -p`](headless.md) session like 
 - **Before the deadline**: if a mode or settings change allows the message, Claude Code delivers it.
 - **Past the deadline**: Claude Code drops the message and reports it as expired to a sender it can reach.
 
-Set `dialogExpiry` to `"never"` to keep default-held messages until the session ends. A message held by an explicit `hold` setting doesn’t expire; Claude Code delivers it only when an `accept` later applies. To let a `-p` worker take messages unattended, start it with `crossSessionInbound` set to `accept` in its `--settings` value. An `accept` in your user settings also works but applies to every session you run.
+Set `dialogExpiry` to `"never"` to keep default-held messages until the session ends. A message held by an explicit `hold` setting doesn’t expire; Claude Code delivers it when an `accept` later applies. To let a `-p` worker take messages unattended, start it with `crossSessionInbound` set to `accept` in its `--settings` value. An `accept` in your user settings also works but applies to every session you run.
 
 
 [​](#the-sessions-inbox-socket)

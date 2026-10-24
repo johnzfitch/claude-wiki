@@ -2,7 +2,7 @@
 title: "Configure auto mode - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/auto-mode-config"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:24:34Z"
+fetched_at: "2026-10-22T06:29:14Z"
 tags: ["claude-code"]
 ---
 
@@ -16,6 +16,7 @@ tags: ["claude-code"]
   - [What /auto-mode-setup reads](#what-auto-mode-setup-reads)
   - [Review and save the draft](#review-and-save-the-draft)
   - [Turn off /auto-mode-setup](#turn-off-auto-mode-setup)
+  - [/auto-mode-setup returns “Unknown command”](#auto-mode-setup-returns-unknown-command)
 - [Override the block and allow rules](#override-the-block-and-allow-rules)
 - [Edit rules from /permissions](#edit-rules-from-permissions)
 - [Route all shell commands through the classifier](#route-all-shell-commands-through-the-classifier)
@@ -179,7 +180,7 @@ Generate environment entries with `/auto-mode-setup`
 
 Run `/auto-mode-setup` to have Claude Code draft `autoMode.environment` entries, and sometimes [rule entries](#override-the-block-and-allow-rules) too, from your project and your recent sessions in it. If you accept the draft, Claude Code writes it to `~/.claude/settings.json`.
 
-`/auto-mode-setup` requires a Pro, Max, or Team plan and Claude Code v2.1.228 or later. On native Windows it requires v2.1.233 or later. You can’t run it in a [cloud session](claude-code-on-the-web.md). It also needs [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching), so you can’t run it in a session where you’ve turned flag fetching off.
+`/auto-mode-setup` is available on Pro, Max, Team, and Enterprise plans and with a Claude Console API key. On a Pro, Max, or Team plan, you need v2.1.228 or later, or v2.1.233 or later on native Windows. On an Enterprise plan or with a Claude Console API key, you need v2.1.283 or later. If the command is missing from your session, see [`/auto-mode-setup` returns “Unknown command”](#auto-mode-setup-returns-unknown-command).
 
 
 [​](#what-auto-mode-setup-reads)
@@ -226,6 +227,19 @@ Once auto mode has blocked several actions and you still have no `autoMode.envir
 ```
 
 `/auto-mode-setup` is a built-in command rather than a [bundled skill](../08-Plugins-Skills/skills.md#bundled-skills), so this `skillOverrides` entry still applies to it, but [`disableBundledSkills`](settings-reference.md#disablebundledskills) doesn’t turn it off.
+
+
+[​](#auto-mode-setup-returns-unknown-command)
+
+`/auto-mode-setup` returns “Unknown command”
+
+If typing `/auto-mode-setup` at the Claude Code prompt prints `Unknown command: /auto-mode-setup`, check for these causes:
+
+- **First session after an install or upgrade**: start a new session. If the command is still missing there, see the [setups where later sessions also start without it](env-vars.md#first-session-after-an-install-or-upgrade).
+- **Outdated version**: run `claude --version` in your shell. If the version is below [the minimum for your plan](#generate-environment-entries), [update Claude Code](../01-Getting-Started/setup.md#update-claude-code).
+- **Telemetry off, third-party provider, or Claude apps gateway**: before v2.1.304, the command isn’t available in [sessions where feature-flag fetching is off](env-vars.md#features-that-need-feature-flag-fetching). If your session is one of them, [update Claude Code](../01-Getting-Started/setup.md#update-claude-code) to v2.1.304 or later.
+
+In a [cloud session](claude-code-on-the-web.md), the command prints `/auto-mode-setup isn't available in this environment.` instead. Run it in an interactive session in your terminal.
 
 
 [​](#override-the-block-and-allow-rules)
@@ -314,7 +328,7 @@ The `claude auto-mode` subcommands help you inspect, validate, and reset your co
 claude auto-mode defaults
 ```
 
-To read one rule’s full wording without piping through `jq`, pass `--label` with the start of the rule’s label, such as `claude auto-mode defaults --label 'Git Destructive'`. Matching is a case-insensitive prefix on each rule’s label, and sections with no match print as empty lists. Requires Claude Code v2.1.208 or later. Print what the classifier actually uses as JSON, with your settings applied where set and defaults otherwise:
+To read one rule’s full wording without piping through `jq`, pass `--label` with the start of the rule’s label, such as `claude auto-mode defaults --label 'Git Destructive'`. Matching is a case-insensitive prefix on each rule’s label, and sections with no match print as empty lists. Print what the classifier actually uses as JSON, with your settings applied where set and defaults otherwise:
 
 ```python
 claude auto-mode config
@@ -348,7 +362,7 @@ Get AI feedback on your custom `allow`, `soft_deny`, `hard_deny`, and `environme
 claude auto-mode critique
 ```
 
-If you’ve written custom rules, `claude auto-mode critique` reviews them and flags entries that are ambiguous, redundant, or likely to cause false positives. To discard your customizations and return to the built-in defaults, run the reset subcommand. It requires Claude Code v2.1.212 or later and removes the `autoMode` section from your user settings file:
+If you’ve written custom rules, `claude auto-mode critique` reviews them and flags entries that are ambiguous, redundant, or likely to cause false positives. To discard your customizations and return to the built-in defaults, run the reset subcommand, which removes the `autoMode` section from your user settings file:
 
 ```python
 claude auto-mode reset
@@ -368,7 +382,13 @@ To review and retry actions the auto mode classifier denied, open `/permissions`
 
 Fix a denial with an allow rule, an environment entry, or a retry
 
-To see what the classifier blocked, find the tool call in the conversation. If the call appears shortened or folded into a summary line such as `Ran 3 shell commands`, press `Ctrl+O` to open the [transcript viewer](interactive-mode.md#transcript-viewer), which expands it. Two other places on screen that report denials leave out the command or URL: the notice near the input box, such as `bash denied by auto mode · [Data Exfiltration] · /permissions`, gives the tool and the reason, and the **Recently denied** tab lists a shell command by the description Claude wrote for it. To capture the exact input of these denials programmatically, add a [`PermissionDenied` hook](../07-Hooks/hooks.md#permissiondenied), which receives it as `tool_input`. The text beneath the call tells you whether there is anything to fix. Text that reports a problem with the classifier itself, such as a model that `is temporarily unavailable` or a classifier error, means Claude Code blocked the call without a final verdict from the classifier; see [Auto mode cannot determine the safety of an action](errors.md#auto-mode-cannot-determine-the-safety-of-an-action) for what to do. Otherwise, a line reading `Denied by auto mode classifier` with a reason such as `[Production Deploy]` or `Blocked by classifier` means the classifier judged the call unsafe, so pick the fix from what the call was trying to reach or do:
+To read the command or URL behind a notice such as `bash denied by auto mode · [Data Exfiltration] · /permissions`, use the **Recently denied** tab, a hook, or the conversation:
+
+- **Recently denied tab**: in the `/permissions` dialog, highlight a denied Bash or PowerShell action to read its command below the list. In [screen reader mode](accessibility.md), all the commands appear before the list instead.
+- **Hook**: to capture the exact input of denials programmatically, add a [`PermissionDenied` hook](../07-Hooks/hooks.md#permissiondenied), which receives it as `tool_input`.
+- **Conversation**: find the tool call. If the call appears shortened or folded into a summary line such as `Ran 3 shell commands`, press `Ctrl+O` to open the [transcript viewer](interactive-mode.md#transcript-viewer), which expands it.
+
+The text beneath the call tells you whether there is anything to fix. A dim `Not run · auto mode's check had no usable answer` row, or text that reports a problem with the classifier itself, such as `Auto mode could not evaluate this action`, means Claude Code blocked the call without a verdict from the classifier. For a `Not run` row, press `Ctrl+O` to read the full message, then see [Auto mode cannot determine the safety of an action](errors.md#auto-mode-cannot-determine-the-safety-of-an-action) or [The server returned no safety verdict](errors.md#the-server-returned-no-safety-verdict) for what to do. Otherwise, a line reading `Denied by auto mode classifier` with a reason such as `[Production Deploy]` or `Blocked by classifier` means the classifier judged the call unsafe, so pick the fix from what the call was trying to reach or do:
 
 - A destination Claude needs throughout the task, such as a package registry, an internal domain, or a repository host: add it to `autoMode.environment`.
 - A command you want to run without review from now on: add an `allow` rule.

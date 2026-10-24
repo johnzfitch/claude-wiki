@@ -2,7 +2,7 @@
 title: "Documentation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/home"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:02Z"
+fetched_at: "2026-10-20T06:40:14Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fhome)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fhome)
 
 
 
@@ -36,7 +36,7 @@ Everything you need to integrate Claude into your applications. From first API c
 
 SearchCtrlK
 
-[Quickstart](../../01-Getting-Started/get-started.md)[Get API key](playground.md)[API reference](../Endpoints/overview.md)
+[Quickstart](../../01-Getting-Started/get-started.md)[Get API key in Claude Console](playground.md)[API reference](../Endpoints/overview.md)
 
 Python
 
@@ -56,6 +56,8 @@ cURL
 
 CLI
 
+Python
+
 
 
 ```python
@@ -64,12 +66,14 @@ import anthropic
 client = anthropic.Anthropic()
 
 message = client.messages.create(
-  model="claude-opus-5-5",
-  max_tokens=1024,
-  messages=[{
-    "role": "user",
-    "content": "Hello, Claude"
-  }]
+    model="claude-opus-5-5",
+    max_tokens=1024,
+    messages=[
+        {
+            "role": "user",
+            "content": "Hello, Claude",
+        }
+    ],
 )
 for block in message.content:
     if block.type == "text":
@@ -118,13 +122,13 @@ Managed Agents
 
     [Quickstart](../../01-Getting-Started/get-started.md)
 
-    [Get API key](playground.md)
+    [Get API key in Claude Console](playground.md)
 
     [Choose a model](../../20-Models/about-claude-models-overview.md)
 
     [Install an SDK](cli-sdks-libraries-overview.md)
 
-    [Try the API in playground](playground.md)
+    [Try the API in Console playground](playground.md)
 
 2.  2
 
@@ -170,7 +174,7 @@ Managed Agents
 
     [Workspaces and admin](manage-claude-workspaces.md)
 
-    [API key management](playground.md)
+    [API keys in Claude Console](playground.md)
 
     [Usage monitoring](manage-claude-usage-cost-api.md)
 
@@ -206,11 +210,13 @@ Everyday tasksWritingCost-efficient
 
 The best combination of speed and intelligence
 
-### [Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)
+### [Haiku 5.5](../../20-Models/models-haiku-5-5-overview.md)
+
+New
 
 FastestLowest costHigh volume
 
-The fastest model with near-frontier intelligence
+For high-volume, latency-sensitive tasks such as classification, extraction, and routing
 
 Resources
 

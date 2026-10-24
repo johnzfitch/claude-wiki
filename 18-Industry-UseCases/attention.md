@@ -2,7 +2,7 @@
 title: "Attention Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/attention"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:05Z"
+fetched_at: "2026-10-23T06:29:26Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -55,11 +55,11 @@ Sales reps spend a surprising portion of their day not selling. After every call
 
 The technical bar for an AI-powered sales platform is higher than it first appears. Transcription is easy. Reliable, nuanced sales intelligence is not.
 
-Attention's platform evaluates calls against strict qualification frameworks like MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) without hallucinating details or producing advice too generic to act on. It analyzes patterns across thousands of conversations to surface why deals were lost to a specific competitor last quarter. "We realized early on that just transcription was not enough," said Stewart White, VP of Growth at Attention. "Sales teams did not need more text; they needed action.”
+Attention’s platform evaluates calls against strict qualification frameworks like MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) without hallucinating details or producing advice too generic to act on. It analyzes patterns across thousands of conversations to surface why deals were lost to a specific competitor last quarter. “We realized early on that just transcription was not enough,” said Stewart White, VP of Growth at Attention. “Sales teams did not need more text; they needed action.”
 
-And because Attention automates customer-facing communications like follow-up emails, every output has to match the quality and tone of a skilled sales rep. If it doesn't, reps won't use it, and none of the downstream revenue gains materialize.
+And because Attention automates customer-facing communications like follow-up emails, every output has to match the quality and tone of a skilled sales rep. If it doesn’t, reps won’t use it, and none of the downstream revenue gains materialize.
 
-The model also had to handle scale: “We needed a model with a massive context window that didn’t degrade in performance as data volume increased,” said White. “We wanted to build a system that could not only hear a conversation but understand the nuance of sales methodologies, identify churn risks before they happened, and autonomously update a CRM like a top-tier sales rep would."
+The model also had to handle scale: “We needed a model with a massive context window that didn’t degrade in performance as data volume increased,” said White. “We wanted to build a system that could not only hear a conversation but understand the nuance of sales methodologies, identify churn risks before they happened, and autonomously update a CRM like a top-tier sales rep would.”
 
 ## Why Attention selected Claude
 
@@ -69,29 +69,29 @@ Sales interactions are full of subtext: a prospect who says “we’re evaluatin
 
 Implementation confirmed the fit. The team integrated all three Claude models (Haiku, Sonnet, and Opus), selecting the right one for each task based on complexity and latency requirements. Attention integrated Claude into their core scoring pipeline in under two weeks, and the model’s steerability meant engineers spent less time cleaning up outputs and more time shipping features.
 
-## How Attention's platform uses Claude as its reasoning engine
+## How Attention’s platform uses Claude as its reasoning engine
 
-Attention built the agent architecture, orchestration logic, CRM integrations, and the routing system that connects across 200+ integrations. Claude serves as the reasoning engine within that architecture. "Attention built a powerful AI sales platform," said White, "and Claude's reasoning capabilities are what make the intelligence layer exceptional."
+Attention built the agent architecture, orchestration logic, CRM integrations, and the routing system that connects across 200+ integrations. Claude serves as the reasoning engine within that architecture. “Attention built a powerful AI sales platform,” said White, “and Claude’s reasoning capabilities are what make the intelligence layer exceptional.”
 
-The platform's AI agents can handle virtually any request a sales team might have. Sales leaders use Attention to ask complex questions like "Generate a report on why we lost deals to Competitor X last quarter" or configure automated triggers that surface churn risk before it becomes a lost customer. Individual contributors use it to remove the repetitive work from their day: Claude analyzes call transcripts to fill CRM fields in Salesforce or HubSpot, then drafts follow-up emails that reference specific pain points from the conversation.
+The platform’s AI agents can handle virtually any request a sales team might have. Sales leaders use Attention to ask complex questions like “Generate a report on why we lost deals to Competitor X last quarter” or configure automated triggers that surface churn risk before it becomes a lost customer. Individual contributors use it to remove the repetitive work from their day: Claude analyzes call transcripts to fill CRM fields in Salesforce or HubSpot, then drafts follow-up emails that reference specific pain points from the conversation.
 
-The platform also routes intelligence across teams based on what Claude finds in conversations. When Claude detects a sentiment or keyword that signals churn risk, it triggers an alert to the Customer Success team. When a customer mentions a feature gap, the system extracts that snippet and routes it to the product team's tracking system. Rather than relying on fixed keyword rules, Claude interprets the conversation and Attention's platform routes the result.
+The platform also routes intelligence across teams based on what Claude finds in conversations. When Claude detects a sentiment or keyword that signals churn risk, it triggers an alert to the Customer Success team. When a customer mentions a feature gap, the system extracts that snippet and routes it to the product team’s tracking system. Rather than relying on fixed keyword rules, Claude interprets the conversation and Attention’s platform routes the result.
 
-"Attention isn't just a tool; it's a fundamental operating layer," one VP of Sales told the team. "The intelligence generated is so good I don't even have to listen to the calls to precisely understand the state of our pipeline."
+“Attention isn’t just a tool; it’s a fundamental operating layer,” one VP of Sales told the team. “The intelligence generated is so good I don’t even have to listen to the calls to precisely understand the state of our pipeline.”
 
 ## From time saved to deals closed
 
 Attention estimates that it’s now automated more than 1.6 million hours of admin work, or about 20 minutes of admin for each client interaction. Ninety percent of post-call administrative work is now handled automatically, with accuracy customers describe as near-human.
 
-The more meaningful measure is what that accuracy enables downstream. When a coaching score is reliable, managers use it, reps improve, and win rates go up. When a follow-up email is well-calibrated, reps send it, and deals progress. Attention customers report up to 40% improvements in win rates—outcomes that run directly through the quality of Claude's outputs. AI Healthcare leader Abridge saw 5x improvements in their coaching efficiency. Engine’s go-to-market team is collectively saving over 250 hours per week. These results depend on the reasoning layer being good enough that sales teams trust it in live deals.
+The more meaningful measure is what that accuracy enables downstream. When a coaching score is reliable, managers use it, reps improve, and win rates go up. When a follow-up email is well-calibrated, reps send it, and deals progress. Attention customers report up to 40% improvements in win rates—outcomes that run directly through the quality of Claude’s outputs. AI Healthcare leader Abridge saw 5x improvements in their coaching efficiency. Engine’s go-to-market team is collectively saving over 250 hours per week. These results depend on the reasoning layer being good enough that sales teams trust it in live deals.
 
-Claude's steerability also had a direct impact on Attention's own development velocity. Because the model handles complex instructions well, engineers say they spend significantly less time writing code to clean up AI outputs and more time building new capabilities.
+Claude’s steerability also had a direct impact on Attention’s own development velocity. Because the model handles complex instructions well, engineers say they spend significantly less time writing code to clean up AI outputs and more time building new capabilities.
 
 ## Building autonomous sales ops workflows
 
 Attention is expanding into a new generation of autonomous agents, ones that go beyond analysis to actively participate in workflows. That means proactively scheduling meetings, researching prospects before calls, and helping reps practice objection handling through AI-powered role-play.
 
-"As Anthropic makes advancements in inference speed and context window size, Attention will be there to translate those technical gains into wins for our customers," said White. "We view Anthropic as a core infrastructure partner in our mission to automate the sales stack."
+“As Anthropic makes advancements in inference speed and context window size, Attention will be there to translate those technical gains into wins for our customers,” said White. “We view Anthropic as a core infrastructure partner in our mission to automate the sales stack.”
 
 
 ## Related stories
@@ -117,7 +117,8 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -135,12 +136,12 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -173,7 +174,7 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -191,6 +192,7 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -206,7 +208,7 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -241,7 +243,8 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -259,12 +262,12 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -297,7 +300,7 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -315,6 +318,7 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -330,7 +334,7 @@ Attention is expanding into a new generation of autonomous agents, ones that go 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

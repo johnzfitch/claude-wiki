@@ -2,7 +2,7 @@
 title: "Example settings files - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/settings-example"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-02T06:30:48Z"
+fetched_at: "2026-10-22T06:28:08Z"
 tags: ["claude-code"]
 ---
 
@@ -118,7 +118,7 @@ A team’s shared settings
 
 One team’s shared settings, committed to the repository so everyone who clones it gets the same permissions, hooks, and plugin marketplace. Save a file like this at `.claude/settings.json` at the top of the repository. What to know before you commit one:
 
-- **Cloud sessions read it too.** A [cloud session](settings.md#settings-in-cloud-sessions) starts from a clone of the repository, so the committed file applies there as well.
+- **Cloud sessions outside a [project](claude-projects.md#what-threads-pick-up-from-your-repositories)’s threads read it too.** A [cloud session](settings.md#settings-in-cloud-sessions) with one repository starts inside the clone, so the committed file applies there as well.
 - **Telemetry goes in managed or personal settings.** Claude Code ignores the [OpenTelemetry exporter variables](settings-reference.md#variables-claude-code-ignores-in-env) in a repository’s settings files, apart from some values that turn telemetry off. Set them in [managed settings](../13-Enterprise-Admin/monitoring-usage.md#administrator-configuration) for your organization, or in each person’s `~/.claude/settings.json`.
 - **Allow rules wait for trust.** Allow rules and `extraKnownMarketplaces` entries take effect after each person [trusts this folder itself](permissions.md#project-allow-rules-and-workspace-trust), not only a parent folder; deny and ask rules apply in every session, trusted or not.
 - **The hook is a script in the repo.** This file’s hook runs `.claude/hooks/block-rm.sh`; [How a hook resolves](../07-Hooks/hooks.md#how-a-hook-resolves) walks through writing it.

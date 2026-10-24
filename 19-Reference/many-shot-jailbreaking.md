@@ -2,15 +2,47 @@
 title: "Many-shot jailbreaking \\ Anthropic"
 source_url: "https://www.anthropic.com/research/many-shot-jailbreaking"
 category: "19-Reference"
-fetched_at: "2026-09-12T06:31:37Z"
+fetched_at: "2026-10-21T06:30:27Z"
 tags: ["news-research", "search"]
 ---
 
 # Many-shot jailbreaking
 
-Apr 2, 2024
-
 [Read the paper](https://www-cdn.anthropic.com/af5633c94ed2beb282f6a53c595eb437e8e7b630/Many_Shot_Jailbreaking__2024_04_02_0936.pdf)
+
+- [01Why we’re publishing this research](#why-were-publishing-this-research)
+- [02Many-shot jailbreaking](#many-shot-jailbreaking)
+- [03Why does many-shot jailbreaking work?](#why-does-many-shot-jailbreaking-work)
+- [04Mitigating many-shot jailbreaking](#mitigating-many-shot-jailbreaking)
+- [05Conclusion](#conclusion)
+
+- Published
+
+  Apr 2, 2024
+
+- Team
+
+  [Alignment](team-alignment.md)
+
+- Topics
+
+  - [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
+  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+  - [Context engineering](https://www.anthropic.com/search?topic=context-engineering)
+  - [Scaling laws](https://www.anthropic.com/search?topic=scaling-laws)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+
+  See more...
+
+Related articles
+
+- Alignment
+
+  Jan 9, 2026
+
+  [Next-generation Constitutional Classifiers: More efficient protection against universal jailbreaks](next-generation-constitutional-classifiers.md)
+
+[View more](https://www.anthropic.com/search?topic=jailbreaks)
 
 We investigated a “jailbreaking” technique — a method that can be used to evade the safety guardrails put in place by the developers of large language models (LLMs). The technique, which we call “many-shot jailbreaking”, is effective on Anthropic’s own models, as well as those produced by other AI companies. We briefed other AI developers about this vulnerability in advance, and have implemented mitigations on our systems.
 
@@ -47,10 +79,8 @@ In the example above, and in cases where a handful of faux dialogues are include
 
 However, simply including a very large number of faux dialogues preceding the final question—in our research, we tested up to 256—produces a very different response. As illustrated in the stylized figure below, a large number of “shots” (each shot being one faux dialogue) jailbreaks the model, and causes it to provide an answer to the final, potentially-dangerous request, overriding its safety training.
 
-
 In our study, we showed that as the number of included dialogues (the number of “shots”) increases beyond a certain point, it becomes more likely that the model will produce a harmful response (see figure below).
 
-  
 In our paper, we also report that combining many-shot jailbreaking with other, previously-published jailbreaking techniques makes it even more effective, reducing the length of the prompt that’s required for the model to return a harmful response.
 
 ## Why does many-shot jailbreaking work?
@@ -62,7 +92,6 @@ In-context learning is where an LLM learns using just the information provided w
 We found that in-context learning under normal, non-jailbreak-related circumstances follows the same kind of statistical pattern (the same kind of power law) as many-shot jailbreaking for an increasing number of in-prompt demonstrations. That is, for more “shots”, the performance on a set of benign tasks improves with the same kind of pattern as the improvement we saw for many-shot jailbreaking.
 
 This is illustrated in the two plots below: the left-hand plot shows the scaling of many-shot jailbreaking attacks across an increasing context window (lower on this metric indicates a greater number of harmful responses). The right-hand plot shows strikingly similar patterns for a selection of benign in-context learning tasks (unrelated to any jailbreaking attempts).
-
 
 This idea about in-context learning might also help explain another result reported in our paper: that many-shot jailbreaking is often more effective—that is, it takes a shorter prompt to produce a harmful response—for larger models. The larger an LLM, the better it tends to be at in-context learning, at least on some tasks; if in-context learning is what underlies many-shot jailbreaking, it would be a good explanation for this empirical result. Given that larger models are those that are potentially the most harmful, the fact that this jailbreak works so well on them is particularly concerning.
 
@@ -81,127 +110,3 @@ The ever-lengthening context window of LLMs is a double-edged sword. It makes th
 We hope that publishing on many-shot jailbreaking will encourage developers of powerful LLMs and the broader scientific community to consider how to prevent this jailbreak and other potential exploits of the long context window. As models become more capable and have more potential associated risks, it’s even more important to mitigate these kinds of attacks.
 
 All the technical details of our many-shot jailbreaking study are reported in our [full paper](https://www-cdn.anthropic.com/af5633c94ed2beb282f6a53c595eb437e8e7b630/Many_Shot_Jailbreaking__2024_04_02_0936.pdf). You can read Anthropic’s approach to safety and security [at this link.](https://www.anthropic.com/responsible-disclosure-policy)
-
-  
-## Related content
-
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
-
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
-
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

@@ -2,7 +2,7 @@
 title: "Using the 10x Genomics Extension in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-08T06:25:02Z"
+fetched_at: "2026-10-23T06:28:56Z"
 tags: ["claude-ai"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 Set up and use the 10x Genomics integration with Claude for single cell and spatial genomics analysis through conversational workflows.
 
-3 minClaude.ai
+3 minClaude
 
 [Open Claude](https://claude.ai/new)
 

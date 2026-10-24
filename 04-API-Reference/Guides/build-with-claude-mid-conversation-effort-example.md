@@ -2,7 +2,7 @@
 title: "Build an orchestration mode - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-effort-example"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:32:35Z"
+fetched_at: "2026-10-20T06:39:19Z"
 tags: ["agents", "api", "subagents"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api", "subagents"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fmid-conversation-effort-example)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fmid-conversation-effort-example)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Context management
 
@@ -124,6 +124,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -145,7 +147,9 @@ client = anthropic.Anthropic()
 MODEL = "claude-opus-5-5"
 EFFORT = "xhigh"
 
-SYSTEM_PROMPT = "You are a helpful general-purpose agent. Answer the user's request directly."
+SYSTEM_PROMPT = (
+    "You are a helpful general-purpose agent. Answer the user's request directly."
+)
 
 REQUEST_TIMEOUT_SECONDS = 600
 BASH_TIMEOUT_SECONDS = 60
@@ -177,6 +181,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -187,9 +193,7 @@ MODE_ENTER = (
     "description for standing consent, granularity guidance, and quality patterns. Work solo "
     "only on conversational or trivial turns."
 )
-MODE_REFRESH = (
-    "Orchestration mode is still on. Use the Workflow tool; see its standing consent section."
-)
+MODE_REFRESH = "Orchestration mode is still on. Use the Workflow tool; see its standing consent section."
 MODE_EXIT = (
     "Orchestration mode is off. The Workflow tool's standard opt-in rule applies again."
 )
@@ -212,6 +216,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -262,18 +268,27 @@ REPORT_TOOL = {
     "input_schema": {
         "type": "object",
         "properties": {
-            "summary": {"type": "string", "description": "Two or three sentences of synthesis"},
+            "summary": {
+                "type": "string",
+                "description": "Two or three sentences of synthesis",
+            },
             "findings": {
                 "type": "array",
                 "items": {
                     "type": "object",
                     "properties": {
-                        "claim": {"type": "string", "description": "The finding, one sentence"},
+                        "claim": {
+                            "type": "string",
+                            "description": "The finding, one sentence",
+                        },
                         "evidence": {
                             "type": "string",
                             "description": "How it was verified (file, line, or command output)",
                         },
-                        "severity": {"type": "string", "enum": ["high", "medium", "low", "info"]},
+                        "severity": {
+                            "type": "string",
+                            "enum": ["high", "medium", "low", "info"],
+                        },
                     },
                     "required": ["claim", "evidence", "severity"],
                 },
@@ -301,6 +316,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -336,7 +353,10 @@ def run_bash(command: str) -> tuple[str, bool]:
         return f"command timed out after {BASH_TIMEOUT_SECONDS}s", True
     output = (proc.stdout + proc.stderr).strip() or "(no output)"
     if len(output) > TOOL_RESULT_MAX_CHARS:
-        output = output[:TOOL_RESULT_MAX_CHARS] + f"\n(truncated at {TOOL_RESULT_MAX_CHARS} chars)"
+        output = (
+            output[:TOOL_RESULT_MAX_CHARS]
+            + f"\n(truncated at {TOOL_RESULT_MAX_CHARS} chars)"
+        )
     if proc.returncode != 0:
         output = f"(exit code {proc.returncode})\n{output}"
     return output, proc.returncode != 0
@@ -369,6 +389,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -396,7 +418,9 @@ def run_subagent(model: str, prompt: str) -> str:
         if response.stop_reason == "pause_turn":
             continue
         if response.stop_reason != "tool_use":
-            text = "".join(block.text for block in response.content if block.type == "text")
+            text = "".join(
+                block.text for block in response.content if block.type == "text"
+            )
             if response.stop_reason == "max_tokens":
                 text += "\n\n(warning: subagent response was truncated at max_tokens)"
             return text
@@ -445,6 +469,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -477,7 +503,8 @@ def journaled(prompt: str, compute) -> str:
             with open(temp, "w") as file:
                 json.dump(journal, file)
             os.replace(temp, JOURNAL_PATH)  # atomic on POSIX and Windows
-    except OSError as error:  # the journal is best-effort; never discard a computed result
+    # A failed journal write must not lose the computed result
+    except OSError as error:
         print(f"[journal] write failed: {error}", file=sys.stderr)
     return result
 ```
@@ -499,6 +526,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -523,7 +552,10 @@ def verify_prompt_for(subtask: str, result: str) -> str:
         "that contradicts them. Default to refuted if uncertain. Call report_findings with "
         "summary 'refuted: <why>' or 'confirmed: <why>', citing the file:line or command "
         "output that decided it.\n\n"
-        f"Subtask: {subtask}\n\nResult to verify:\n{result}"
+        f"""Subtask: {subtask}
+
+Result to verify:
+{result}"""
     )
 
 
@@ -541,18 +573,27 @@ def run_workflow(model: str, raw_subtasks) -> tuple[str, bool]:
     def run_one(prompt: str) -> str:
         try:
             return journaled(prompt, lambda: run_subagent(model, prompt))
-        except Exception as error:  # isolation boundary: one bad subagent should not end the run
+        # One failed subagent must not end the run
+        except Exception as error:
             return f"(subagent failed: {type(error).__name__}: {error})"
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_CONCURRENT) as pool:
         results = list(pool.map(run_one, subtasks))
         print(f"[workflow] verifying {len(results)} results", file=sys.stderr)
-        verify_prompts = [verify_prompt_for(task, result) for task, result in zip(subtasks, results)]
+        verify_prompts = [
+            verify_prompt_for(task, result) for task, result in zip(subtasks, results)
+        ]
         verdicts = list(pool.map(run_one, verify_prompts))
 
     joined = "\n\n".join(
-        f"[agent {index + 1}: {task}]\n{result}\n\n[verify {index + 1}]\n{verdict}"
-        for index, (task, result, verdict) in enumerate(zip(subtasks, results, verdicts))
+        f"""[agent {index + 1}: {task}]
+{result}
+
+[verify {index + 1}]
+{verdict}"""
+        for index, (task, result, verdict) in enumerate(
+            zip(subtasks, results, verdicts)
+        )
     )
     if dropped > 0:
         joined = (
@@ -583,6 +624,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -650,9 +693,11 @@ class ModeAgent:
             if response.stop_reason == "pause_turn":
                 continue
             if response.stop_reason != "tool_use":
-                text = "".join(block.text for block in response.content if block.type == "text")
+                text = "".join(
+                    block.text for block in response.content if block.type == "text"
+                )
                 if response.stop_reason == "max_tokens":
-                    # Drop the truncated assistant message so later turns don't build on it.
+                    # Drop the truncated assistant message so later turns do not build on it.
                     self.messages.pop()
                     text += "\n\n(warning: response was truncated at max_tokens)"
                 return text
@@ -663,7 +708,9 @@ class ModeAgent:
                     continue
                 match block.name:
                     case "Workflow":
-                        output, is_error = run_workflow(self.model, block.input.get("subtasks", []))
+                        output, is_error = run_workflow(
+                            self.model, block.input.get("subtasks", [])
+                        )
                     case "bash":
                         output, is_error = handle_bash_block(block)
                     case _:
@@ -699,6 +746,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

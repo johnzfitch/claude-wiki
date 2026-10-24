@@ -2,7 +2,7 @@
 title: "What is Amazon Bedrock? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996918-what-is-amazon-bedrock"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:25:33Z"
+fetched_at: "2026-10-23T06:29:15Z"
 tags: ["api", "bedrock"]
 ---
 

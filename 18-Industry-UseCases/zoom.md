@@ -1,8 +1,8 @@
 ---
 title: "Zoom Claude Platform (API) case study | Claude by Anthropic"
-source_url: "https://www.anthropic.com/customers/zoom"
+source_url: "https://www.claude.com/customers/zoom"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:35Z"
+fetched_at: "2026-10-23T06:29:55Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -33,7 +33,7 @@ in meeting summary accuracy
 
 reported by GitLab team members
 
-Zoom, the AI-first work platform, is bringing AI-driven collaboration and productivity to millions of users around the world, and uses Claude in addition to other third party models as part of their federated approach. With the addition of Claude to its federated approach, Zoom AI Companion, the company's AI assistant, was able to achieve a 14% accuracy improvement in meeting summaries based on Zoom's internal testing.
+Zoom, the AI-first work platform, is bringing AI-driven collaboration and productivity to millions of users around the world, and uses Claude in addition to other third party models as part of their federated approach. With the addition of Claude to its federated approach, Zoom AI Companion, the company’s AI assistant, was able to achieve a 14% accuracy improvement in meeting summaries based on Zoom’s internal testing.
 
 ## The Hybrid work dilemma
 
@@ -47,17 +47,17 @@ Zoom identified a critical need: streamlining workflows to allow users to focus 
 
 ## Transforming meetings into productivity powerhouses
 
-"The quality of our AI features has improved dramatically thanks to our ability to quickly integrate with the new models from Claude. We're seeing much higher user engagement and satisfaction, particularly with our automated meeting summaries and AI-assisted document creation,” said Will Siegelin, Product Manager at Zoom.
+“The quality of our AI features has improved dramatically thanks to our ability to quickly integrate with the new models from Claude. We’re seeing much higher user engagement and satisfaction, particularly with our automated meeting summaries and AI-assisted document creation,” said Will Siegelin, Product Manager at Zoom.
 
-Zoom's AI Companion, powered by Anthropic's Claude and other third party models, directly addresses the time management and productivity challenges of hybrid work environments. By automating routine tasks and enhancing collaboration, AI Companion helps users "work happy" while boosting efficiency. Here's how:
+Zoom’s AI Companion, powered by Anthropic’s Claude and other third party models, directly addresses the time management and productivity challenges of hybrid work environments. By automating routine tasks and enhancing collaboration, AI Companion helps users “work happy” while boosting efficiency. Here’s how:
 
 - Meeting Summaries: Claude helps generate high-quality, automated recaps, and next steps allowing participants to stay fully engaged during meetings without worrying about note-taking. This directly tackles the issue of time lost to meetings, as employees can now focus on strategic discussions rather than documentation.
-- In-Meeting Questions: Users can easily catch up on missed parts of meetings by asking AI Companion questions like "What were the key points just discussed?" or "Was my name mentioned?" This feature helps combat the fatigue and distraction often associated with back-to-back meetings.
+- In-Meeting Questions: Users can easily catch up on missed parts of meetings by asking AI Companion questions like “What were the key points just discussed?” or “Was my name mentioned?” This feature helps combat the fatigue and distraction often associated with back-to-back meetings.
 - Meeting next steps: Claude helps generate high-quality, automated recaps and next steps so that participants can stay fully engaged.
 - Zoom Docs: Claude helps transform meeting content into actionable collaborative documents, wikis, and plans. This streamlines the often time-consuming process of post-meeting follow-ups and documentation, addressing the challenge of insufficient time between meetings to complete tasks.
 - Meeting Prep: By analyzing previous communications, Claude helps craft agendas and pose questions for future meetings. This feature enhances meeting productivity, potentially reducing the overall time spent in meetings - a key concern highlighted in the Morning Consult survey.
 
-The impact of these AI-driven features has been significant. "Partnering with Anthropic, along with other LLMs as part of our federated approach, has allowed us to keep rapidly innovating and respond to customer requests for new features quickly, which really differentiates us in the market," said Siegelin.
+The impact of these AI-driven features has been significant. “Partnering with Anthropic, along with other LLMs as part of our federated approach, has allowed us to keep rapidly innovating and respond to customer requests for new features quickly, which really differentiates us in the market,” said Siegelin.
 
 This agility in development and deployment has led to tangible outcomes:
 
@@ -67,17 +67,17 @@ This agility in development and deployment has led to tangible outcomes:
 
 ## Selecting Claude for trusted, high-quality AI integration
 
-Zoom chose to integrate Claude because of its accuracy, quality, and safety features, which align with the company's commitment to responsible AI. Claude 3.5 Sonnet was deployed within two weeks of its release—demonstrating Zoom's remarkable agility in embracing cutting-edge AI technology. This rapid adoption not only maintained a secure foundation for AI Companion but also ensured that Zoom's customers were among the first to benefit from these advanced capabilities.
+Zoom chose to integrate Claude because of its accuracy, quality, and safety features, which align with the company’s commitment to responsible AI. Claude 3.5 Sonnet was deployed within two weeks of its release—demonstrating Zoom’s remarkable agility in embracing cutting-edge AI technology. This rapid adoption not only maintained a secure foundation for AI Companion but also ensured that Zoom’s customers were among the first to benefit from these advanced capabilities.
 
-Anthropic's focus on safety and human-driven development resonated with Zoom's approach to responsible AI. Claude's capabilities enabled Zoom to quickly develop new AI features without compromising quality or security, supporting their mission to deliver innovative, reliable solutions for businesses of all sizes.
+Anthropic’s focus on safety and human-driven development resonated with Zoom’s approach to responsible AI. Claude’s capabilities enabled Zoom to quickly develop new AI features without compromising quality or security, supporting their mission to deliver innovative, reliable solutions for businesses of all sizes.
 
-Siegelin notes, "Deploying Claude models as part of our federated approach allows us to offer more enterprise-grade AI capabilities while meeting our largest customers' high standards for intelligence, reliability and security."
+Siegelin notes, “Deploying Claude models as part of our federated approach allows us to offer more enterprise-grade AI capabilities while meeting our largest customers’ high standards for intelligence, reliability and security.”
 
 ## The future of AI-enhanced collaboration
 
-Zoom plans to expand AI Companion features, focusing on cross-cultural communication. Xuedong Huang, Zoom’s Chief Technology Officer, says, "We're exploring ways to use Claude to break down language barriers in global meetings and automatically generate culturally nuanced communications. Our goal is to make Zoom an AI-first productivity hub that adapts to each user's unique needs."
+Zoom plans to expand AI Companion features, focusing on cross-cultural communication. Xuedong Huang, Zoom’s Chief Technology Officer, says, “We’re exploring ways to use Claude to break down language barriers in global meetings and automatically generate culturally nuanced communications. Our goal is to make Zoom an AI-first productivity hub that adapts to each user’s unique needs.”
 
-> In the era of AI, we're empowering humans to work happier, collaborate better, and focus on what truly matters. The future of work isn't about AI replacing us; it's about AI helping us unlock our full potential.
+> In the era of AI, we’re empowering humans to work happier, collaborate better, and focus on what truly matters. The future of work isn’t about AI replacing us; it’s about AI helping us unlock our full potential.
 
 — Xuedong Huang, CTO
 
@@ -95,108 +95,110 @@ Zoom plans to expand AI Companion features, focusing on cross-cultural communica
 
 ### Rocket Money on building agents that fix their own code
 
-[](https://www.anthropic.com/)
+[](https://www.claude.com/)
 
 © 2026 Anthropic PBC
 
 ## Products
 
-- [Claude](https://www.anthropic.com/product/overview)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
-- [Claude Cowork](https://www.anthropic.com/product/cowork)
-- [@Claude](https://www.anthropic.com/product/tag)
-- [Claude Science](https://www.anthropic.com/product/claude-science)
-- [Claude Security](https://www.anthropic.com/product/claude-security)
-- [Download app](https://www.anthropic.com/download)
-- [Pricing](https://www.anthropic.com/pricing)
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
 - [Log in](https://claude.ai/login)
 
 ## Capabilities
 
-- [Artifacts](https://www.anthropic.com/features/artifacts)
-- [Design](https://www.anthropic.com/product/design)
-- [Connectors](https://www.anthropic.com/marketplace/connectors-plugins)
-- [Plugins](https://www.anthropic.com/marketplace/plugins)
-- [Skills](https://www.anthropic.com/skills)
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
 
 ## Extensions
 
-- [Claude in Chrome](https://www.anthropic.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://www.anthropic.com/claude-for-microsoft-365)
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
 
 ## Enterprise
 
-- [Overview](https://www.anthropic.com/solutions/enterprise)
-- [Claude Code for Enterprise](https://www.anthropic.com/product/claude-code/enterprise)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
 
-- [Customer support](https://www.anthropic.com/solutions/customer-support)
-- [Cybersecurity](https://www.anthropic.com/solutions/cybersecurity)
-- [Legal](https://www.anthropic.com/solutions/legal)
-- [Sales](https://www.anthropic.com/solutions/sales)
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
 
 ## Industries
 
-- [Financial advisors](https://www.anthropic.com/solutions/financial-advisors)
-- [Financial services](https://www.anthropic.com/solutions/financial-services)
-- [Government](https://www.anthropic.com/solutions/government)
-- [Healthcare](https://www.anthropic.com/solutions/healthcare)
-- [Higher education](https://www.anthropic.com/solutions/education)
-- [K-12 teachers](https://www.anthropic.com/solutions/teachers)
-- [Life sciences](https://www.anthropic.com/solutions/life-sciences)
-- [Nonprofits](https://www.anthropic.com/solutions/nonprofits)
-- [Small business](https://www.anthropic.com/solutions/small-business)
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
 
 ## Programs
 
-- [Campus](https://www.anthropic.com/programs/campus)
-- [Frontier Academy](https://www.anthropic.com/programs/frontier-academy)
-- [Scientists](https://www.anthropic.com/programs/team-plan-for-scientists)
-- [Startups](https://www.anthropic.com/programs/startups)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
 - [Developer docs](../02-Claude-Code-CLI/code-home.md)
 - [Developer blog](https://claude.dev)
-- [Community](https://www.anthropic.com/community)
+- [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)
 - [Engineering at Anthropic](https://www.anthropic.com/engineering)
 
 ## Platform
 
-- [Overview](https://www.anthropic.com/platform/api)
-- [Marketplace](https://www.anthropic.com/marketplace)
-- [Claude on AWS](https://www.anthropic.com/partners/claude-on-aws)
-- [Google Cloud](https://www.anthropic.com/partners/google-cloud)
-- [Microsoft Foundry](https://www.anthropic.com/partners/microsoft-foundry)
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
-- [Overview](https://www.anthropic.com/resources)
-- [Articles](https://www.anthropic.com/resources/articles)
-- [Webinars](https://www.anthropic.com/resources/webinars)
-- [Claude partner network](https://www.anthropic.com/partners)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
 - [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://www.anthropic.com/partners/powered-by-claude)
-- [Service partners](https://www.anthropic.com/marketplace/service-partners)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Check files](https://www.anthropic.com/check-files)
-- [Regional compliance](https://www.anthropic.com/regional-compliance)
-- [Report abuse](https://www.anthropic.com/form/anthropic-content-reporting)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
 - [Security and compliance](https://trust.anthropic.com/)
 - [Status](https://status.anthropic.com/)
 - [Support center](https://support.claude.com/en/)
@@ -225,99 +227,101 @@ Zoom plans to expand AI Companion features, focusing on cross-cultural communica
 
 ## Products
 
-- [Claude](https://www.anthropic.com/product/overview)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
-- [Claude Cowork](https://www.anthropic.com/product/cowork)
-- [@Claude](https://www.anthropic.com/product/tag)
-- [Claude Science](https://www.anthropic.com/product/claude-science)
-- [Claude Security](https://www.anthropic.com/product/claude-security)
-- [Download app](https://www.anthropic.com/download)
-- [Pricing](https://www.anthropic.com/pricing)
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
 - [Log in](https://claude.ai/login)
 
 ## Capabilities
 
-- [Artifacts](https://www.anthropic.com/features/artifacts)
-- [Design](https://www.anthropic.com/product/design)
-- [Connectors](https://www.anthropic.com/marketplace/connectors-plugins)
-- [Plugins](https://www.anthropic.com/marketplace/plugins)
-- [Skills](https://www.anthropic.com/skills)
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
 
 ## Extensions
 
-- [Claude in Chrome](https://www.anthropic.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://www.anthropic.com/claude-for-microsoft-365)
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
 
 ## Enterprise
 
-- [Overview](https://www.anthropic.com/solutions/enterprise)
-- [Claude Code for Enterprise](https://www.anthropic.com/product/claude-code/enterprise)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
 
-- [Customer support](https://www.anthropic.com/solutions/customer-support)
-- [Cybersecurity](https://www.anthropic.com/solutions/cybersecurity)
-- [Legal](https://www.anthropic.com/solutions/legal)
-- [Sales](https://www.anthropic.com/solutions/sales)
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
 
 ## Industries
 
-- [Financial advisors](https://www.anthropic.com/solutions/financial-advisors)
-- [Financial services](https://www.anthropic.com/solutions/financial-services)
-- [Government](https://www.anthropic.com/solutions/government)
-- [Healthcare](https://www.anthropic.com/solutions/healthcare)
-- [Higher education](https://www.anthropic.com/solutions/education)
-- [K-12 teachers](https://www.anthropic.com/solutions/teachers)
-- [Life sciences](https://www.anthropic.com/solutions/life-sciences)
-- [Nonprofits](https://www.anthropic.com/solutions/nonprofits)
-- [Small business](https://www.anthropic.com/solutions/small-business)
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
 
 ## Programs
 
-- [Campus](https://www.anthropic.com/programs/campus)
-- [Frontier Academy](https://www.anthropic.com/programs/frontier-academy)
-- [Scientists](https://www.anthropic.com/programs/team-plan-for-scientists)
-- [Startups](https://www.anthropic.com/programs/startups)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
 - [Developer docs](../02-Claude-Code-CLI/code-home.md)
 - [Developer blog](https://claude.dev)
-- [Community](https://www.anthropic.com/community)
+- [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)
 - [Engineering at Anthropic](https://www.anthropic.com/engineering)
 
 ## Platform
 
-- [Overview](https://www.anthropic.com/platform/api)
-- [Marketplace](https://www.anthropic.com/marketplace)
-- [Claude on AWS](https://www.anthropic.com/partners/claude-on-aws)
-- [Google Cloud](https://www.anthropic.com/partners/google-cloud)
-- [Microsoft Foundry](https://www.anthropic.com/partners/microsoft-foundry)
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
-- [Overview](https://www.anthropic.com/resources)
-- [Articles](https://www.anthropic.com/resources/articles)
-- [Webinars](https://www.anthropic.com/resources/webinars)
-- [Claude partner network](https://www.anthropic.com/partners)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
 - [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://www.anthropic.com/partners/powered-by-claude)
-- [Service partners](https://www.anthropic.com/marketplace/service-partners)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Check files](https://www.anthropic.com/check-files)
-- [Regional compliance](https://www.anthropic.com/regional-compliance)
-- [Report abuse](https://www.anthropic.com/form/anthropic-content-reporting)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

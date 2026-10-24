@@ -2,7 +2,7 @@
 title: "Inscribe Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/inscribe"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:15Z"
+fetched_at: "2026-10-23T06:29:35Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -42,15 +42,15 @@ With Claude, Inscribe was able to:
 
 Financial institutions face an uphill battle against increasingly sophisticated fraud tactics as digital transactions surge. Once a reliable safeguard, manual review processes now create bottlenecks that hinder growth and customer satisfaction. Inscribe recognized this critical pain point in the industry, especially among emerging fintechs and digital-first banks.
 
-Conor Burke, CTO and co-founder of Inscribe, articulates their mission: "We aim to create instant trust in financial services and unlock superhuman abilities for risk teams with AI." This ambitious goal required a powerful AI solution to automate tasks while maintaining strict data privacy and security standards – a delicate balance in the highly regulated financial sector.
+Conor Burke, CTO and co-founder of Inscribe, articulates their mission: “We aim to create instant trust in financial services and unlock superhuman abilities for risk teams with AI.” This ambitious goal required a powerful AI solution to automate tasks while maintaining strict data privacy and security standards – a delicate balance in the highly regulated financial sector.
 
 ## Choosing Claude for unmatched performance and security
 
-After evaluating AI technologies, Inscribe chose Claude for its speed, accuracy, and privacy measures. Burke explains, "Claude stood out for its performance, low latency, and ability to scale costs according to task complexity. Crucially, Claude's approach to data privacy aligned with our need to protect sensitive financial information."
+After evaluating AI technologies, Inscribe chose Claude for its speed, accuracy, and privacy measures. Burke explains, “Claude stood out for its performance, low latency, and ability to scale costs according to task complexity. Crucially, Claude’s approach to data privacy aligned with our need to protect sensitive financial information.”
 
-The seamless integration with Inscribe's existing Amazon Web Services (AWS) infrastructure was a game-changer. "We started testing and deploying Claude in Amazon Bedrock within a day," notes Burke, "allowing us to iterate and refine our AI Risk Agents quickly."
+The seamless integration with Inscribe’s existing Amazon Web Services (AWS) infrastructure was a game-changer. “We started testing and deploying Claude in Amazon Bedrock within a day,” notes Burke, “allowing us to iterate and refine our AI Risk Agents quickly.”
 
-## How Claude powers Inscribe's AI-driven risk management
+## How Claude powers Inscribe’s AI-driven risk management
 
 Inscribe uses Claude to drive its suite of AI Risk Agents, automating key aspects of the risk management processes:
 
@@ -58,25 +58,25 @@ Inscribe uses Claude to drive its suite of AI Risk Agents, automating key aspect
 - Document verification: Claude authenticates financial documents, drastically reducing manual review time.
 - Risk analysis: Claude summarizes complex financial data and provides nuanced risk assessments, enabling faster decision-making.
 
-The recently launched AI Fraud Analyst exemplifies these capabilities. "Our AI Fraud Analyst can detect fraud in images and PDFs, verify applicant details through KYC and KYB checks, uncover risky transactions, and provide auditable risk reports – all in about 90 seconds,” said Burke.
+The recently launched AI Fraud Analyst exemplifies these capabilities. “Our AI Fraud Analyst can detect fraud in images and PDFs, verify applicant details through KYC and KYB checks, uncover risky transactions, and provide auditable risk reports – all in about 90 seconds,” said Burke.
 
 ## Transforming the financial landscape
 
-Inscribe's Claude-powered solutions have had a profound impact on their clients' operations. A representative from a leading fintech client shares, "We've increased our loan application processing capacity by 70 times without adding headcount with Inscribe's AI Risk Agents. This has been transformative for our business growth and customer satisfaction."
+Inscribe’s Claude-powered solutions have had a profound impact on their clients’ operations. A representative from a leading fintech client shares, “We’ve increased our loan application processing capacity by 70 times without adding headcount with Inscribe’s AI Risk Agents. This has been transformative for our business growth and customer satisfaction.”
 
-Inscribe's AI-driven approach is reshaping fairness in financial services beyond speed. These tools expand access to financial products for underserved populations by reducing reliance on traditional credit metrics. "We're working towards increased fairness in financial services, opening doors for thin-file, unbanked, and credit-invisible individuals who are creditworthy but often overlooked," Burke explains.
+Inscribe’s AI-driven approach is reshaping fairness in financial services beyond speed. These tools expand access to financial products for underserved populations by reducing reliance on traditional credit metrics. “We’re working towards increased fairness in financial services, opening doors for thin-file, unbanked, and credit-invisible individuals who are creditworthy but often overlooked,” Burke explains.
 
 For end-users, this means faster application processing and potentially greater access to financial services. The reduction in manual review processes allows financial institutions to offer more cost-effective products and improved customer experiences.
 
-Claude's implementation gives Inscribe a significant competitive edge. Burke notes, "Our ability to rapidly deploy and iterate AI solutions puts us leagues ahead in the risk management space. We're not just keeping pace with fraud tactics; we're staying several steps ahead."
+Claude’s implementation gives Inscribe a significant competitive edge. Burke notes, “Our ability to rapidly deploy and iterate AI solutions puts us leagues ahead in the risk management space. We’re not just keeping pace with fraud tactics; we’re staying several steps ahead.”
 
 ## Shaping the future of AI in financial services
 
-Looking ahead, Inscribe sees AI as the cornerstone of a transformed financial services industry. Burke outlines their goal: "We're driving towards mass adoption of AI in financial services, helping the industry achieve the full potential of digital transformation."
+Looking ahead, Inscribe sees AI as the cornerstone of a transformed financial services industry. Burke outlines their goal: “We’re driving towards mass adoption of AI in financial services, helping the industry achieve the full potential of digital transformation.”
 
 To realize its vision, Inscribe plans to expand its suite of AI Risk Agents, automating and improving fraud, credit, and compliance workflows. The company sees its partnership with Anthropic as key to staying at the forefront of AI innovation in the financial sector.
 
-"Our journey with Claude is just beginning," Burke concludes. "We're inspired by Anthropic's relentless innovation and confident that together, we'll continue to push the boundaries of what's possible in financial risk management. The future of finance is AI-driven, and with Claude, we're leading that revolution."
+“Our journey with Claude is just beginning,” Burke concludes. “We’re inspired by Anthropic’s relentless innovation and confident that together, we’ll continue to push the boundaries of what’s possible in financial risk management. The future of finance is AI-driven, and with Claude, we’re leading that revolution.”
 
 As financial services evolve in a digital world, Inscribe and Claude stand at the forefront, creating more efficient, fair, and secure risk management processes benefiting institutions and consumers alike.
 
@@ -89,7 +89,7 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 ### Pictet turns weeks of work into hours with Claude Code
 
 
-### How Satispay's engineers write 75% of their code with Claude
+### How Satispay’s engineers write 75% of their code with Claude
 
 
 ### OffDeal powers every stage of M&A advisory with one Claude-based agent
@@ -103,7 +103,8 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -121,12 +122,12 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -159,7 +160,7 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -177,6 +178,7 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -192,7 +194,7 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -227,7 +229,8 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -245,12 +248,12 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -283,7 +286,7 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -301,6 +304,7 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -316,7 +320,7 @@ As financial services evolve in a digital world, Inscribe and Claude stand at th
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

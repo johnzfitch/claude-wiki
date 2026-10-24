@@ -2,7 +2,7 @@
 title: "Get structured output from agents - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/structured-outputs"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-08T06:24:46Z"
+fetched_at: "2026-10-21T06:28:42Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -13,6 +13,7 @@ tags: ["agents", "claude-code", "sdk"]
 - [Type-safe schemas with Zod and Pydantic](#type-safe-schemas-with-zod-and-pydantic)
 - [Output format configuration](#output-format-configuration)
 - [Example: TODO tracking agent](#example-todo-tracking-agent)
+- [Recognize the StructuredOutput tool call](#recognize-the-structuredoutput-tool-call)
 - [Error handling](#error-handling)
 - [Related resources](#related-resources)
 
@@ -398,6 +399,18 @@ async def main():
 
 asyncio.run(main())
 ```
+
+
+[​](#recognize-the-structuredoutput-tool-call)
+
+Recognize the StructuredOutput tool call
+
+When you set `outputFormat` in TypeScript or `output_format` in Python, your message stream carries a tool call named `StructuredOutput` that you never defined. Claude Code adds this tool to the session, and the agent calls it to return its answer. The [system init message](agent-sdk-typescript.md#sdksystemmessage) lists it in the `tools` array, and each call arrives as two blocks:
+
+- A `tool_use` block named `StructuredOutput`, whose input is the object the agent produced for your schema
+- A `tool_result` block reading `Structured output provided successfully`
+
+When that object doesn’t match your schema, the `tool_result` carries `is_error: true` instead and the agent calls `StructuredOutput` again, so your stream can hold several calls for one query. Read the validated data from `structured_output` on the result message rather than from a `tool_use` block, and see [Error handling](#error-handling) for the result you get when no attempt succeeds. If your application shows or logs tool calls, skip the ones named `StructuredOutput` so the mechanism doesn’t appear as a step the agent chose. A `tool_result` block carries no tool name, only the `tool_use_id` of the call it answers, so match that against the `id` of each call you skipped.
 
 
 [​](#error-handling)

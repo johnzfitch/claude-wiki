@@ -1,8 +1,8 @@
 ---
 title: "Code execution tool - Claude Platform Docs"
-source_url: "https://platform.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool"
+source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:33:53Z"
+fetched_at: "2026-10-20T06:38:54Z"
 tags: ["api", "containers"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "containers"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fcode-execution-tool)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fcode-execution-tool)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,9 +78,15 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Tools
+
+Code execution tool
+
+[ZDR](../Other/manage-claude-api-and-data-retention.md)
+
+Not eligible
 
 # Code execution tool
 
@@ -93,12 +99,6 @@ Run Python and bash code in a sandboxed container to analyze data, generate file
 Copy page
 
 
-
-Code execution tool
-
-[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
-
-Not eligible
 
 Claude can analyze data, create visualizations, perform complex calculations, run system commands, create and edit files, and process uploaded files directly within the API conversation. The code execution tool allows Claude to run Bash commands and manipulate files, including writing code, in a secure, sandboxed environment.
 
@@ -123,6 +123,8 @@ None of the three tool versions requires an `anthropic-beta` header. The legacy 
 The examples on this page use `code_execution_20250825`, which covers the Bash and file operations they demonstrate and behaves the same way on every supported model; use `code_execution_20260120` or later when you need programmatic tool calling or REPL state persistence. The current [web search](agents-and-tools-tool-use-web-search-tool.md) and [web fetch](agents-and-tools-tool-use-web-fetch-tool.md) tools (`web_search_20260209`, `web_fetch_20260209`, and later) require `code_execution_20260120` or later as their code execution version.
 
 Older tool versions aren't guaranteed to stay compatible with newer models. When you adopt a new model, check [Tool versions](#tool-versions) and [Compatibility](#compatibility), and prefer the newest tool version your integration supports.
+
+To check whether a model accepts the code execution tool before you send a request, read its `capabilities.server_tools.code_execution.supported` value from the Models API. Don't use the top-level `capabilities.code_execution` value for this. It reports whether code running in this tool can call your request's other tools, as in programmatic tool calling. [Using the Models API](../../20-Models/about-claude-models-overview.md#using-the-models-api) describes both fields.
 
 
 
@@ -149,6 +151,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -244,6 +248,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -292,6 +298,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -620,6 +628,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -767,7 +777,7 @@ To upgrade, update the tool type in your API requests:
 
 Code execution runs in server-side sandbox containers. Container data, including execution artifacts, uploaded files, and outputs, is retained for up to 30 days. This retention applies to all data processed within the container environment. Files that code execution creates in the [Files API](../Guides/build-with-claude-files.md) (retrievable with `client.files.download()`) persist until explicitly deleted.
 
-For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 ## Next steps
 
@@ -800,7 +810,7 @@ Supported models
 - Mythos 5 and 5.1
 - Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
 - Sonnet 4.5, 4.6, 5, and 5.5
-- Haiku 4.5
+- Haiku 4.5 and 5.5
 
 Supported platforms  
 - Claude API

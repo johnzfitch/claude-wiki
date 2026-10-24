@@ -2,7 +2,7 @@
 title: "Release notes | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12138966-release-notes"
 category: "19-Reference"
-fetched_at: "2026-10-10T06:25:04Z"
+fetched_at: "2026-10-23T06:28:54Z"
 tags: ["news-research"]
 ---
 
@@ -10,6 +10,12 @@ tags: ["news-research"]
 
 
 ## October 2026
+
+### October 21, 2026
+
+**Claude Duet research preview for Pro and Max plans**
+
+We just opened a research preview for users on Pro and Max plans: Claude Duet, a new app where Claude works as a proactive agent. For more information, see our blog post: **[Introducing Claude Duet](https://claude.com/resources/articles/claude-duet)**.
 
 ### October 7, 2026
 
@@ -49,13 +55,13 @@ We're rolling out a new Claude experience that makes everything Claude Cowork do
 
 **Create designs, decks, and docs in any conversation**
 
-You can now ask for a design, deck, or document in any conversation with Claude, including in Claude Code and the **Artifacts** tab, and edit it with Claude or directly as you work. Claude Design works inside your conversations with all of its features, including on-canvas editing and importing your design system. Claude Slides gives presentations their own starting point, and Claude Docs is a new way to write living documents with Claude and your team. Artifacts, including Claude Design, Claude Slides, and Claude Docs, are available on every plan, including Free. On Enterprise plans, Claude Design, Claude Slides, and Claude Docs are in beta and off by default until an owner turns them on. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/17153992)** and **[Get started with Claude Docs](https://support.claude.com/en/articles/16923645)**.
+You can now ask for a design, deck, or document in any conversation with Claude, including in Claude Code and the **Artifacts** tab, and edit it with Claude or directly as you work. Claude Design works inside your conversations with all of its features, including on-canvas editing and importing your design system. Claude Slides gives presentations their own starting point, and Claude Docs is a new way to write living documents with Claude and your team. Artifacts, including Claude Design, Claude Slides, and Claude Docs, are available on every plan, including Free. On Enterprise plans, Claude Design, Claude Slides, and Claude Docs are in beta and off by default until an owner turns them on. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/17153992)** and **[Get started with Claude Docs](../15-Claude-AI-Features/get-started-with-claude-docs-claude-help-center.md)**.
 
 ### September 15, 2026
 
 **Launching Salesforce in Claude (beta)**
 
-We've launched Salesforce in Claude, a plugin that brings a seller’s accounts, opportunities, and pipeline into Claude with 37 pre-built sales skills. Prep a call, review a deal, create a pipeline dashboard, and send your forecast all from Claude. It’s now available in beta on all paid plans for organizations Salesforce approves through its beta sign-up. For more information, see our blog post: **[Bringing Salesforce into Claude](http://claude.com/blog/salesforce-in-claude)**.
+We've launched Salesforce in Claude, a plugin that brings a seller’s accounts, opportunities, and pipeline into Claude with 37 pre-built sales skills. Prep a call, review a deal, create a pipeline dashboard, and send your forecast all from Claude. It’s now available in beta on all paid plans for organizations Salesforce approves through its beta sign-up. For more information, see our blog post: **[Bringing Salesforce into Claude](https://claude.com/blog/salesforce-in-claude)**.
 
 ### September 10, 2026
 
@@ -81,7 +87,7 @@ Memory now works across chat and Cowork in the cloud. Everything Claude remember
 
 **Skill and plugin security scanning (beta)**
 
-Enterprise plans can now turn on skill and plugin security scanning to automatically check third-party skills and plugins for malicious content when someone uploads or edits them. For more information, see **[Get started with skill and plugin scanning](../15-Claude-AI-Features/get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
+Enterprise plans can now turn on skill and plugin security scanning to automatically check third-party skills and plugins for malicious content when someone uploads or edits them. For more information, see **[Get started with skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
 
 ------------------------------------------------------------------------
 
@@ -97,7 +103,7 @@ We launched Claude Opus 5, a thoughtful and proactive model that comes close to 
 
 **HIPAA configuration for your Claude organizations is now self-serve**
 
-You can now manage HIPAA readiness for your Claude organizations yourself. This applies to both Claude Enterprise and the Claude Platform (API). In each product, an eligible admin can review the Business Associate Agreement (BAA), download the implementation guide, and enable the HIPAA configuration in a single flow. For more information, refer to **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[HIPAA readiness for Claude API](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#hipaa-readiness)**.
+You can now manage HIPAA readiness for your Claude organizations yourself. This applies to both Claude Enterprise and the Claude Platform (API). In each product, an eligible admin can review the Business Associate Agreement (BAA), download the implementation guide, and enable the HIPAA configuration in a single flow. For more information, refer to **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)** and **[HIPAA readiness for Claude API](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#hipaa-readiness)**.
 
 ### July 10, 2026
 
@@ -160,7 +166,7 @@ We've suspended access to Claude Fable 5 and Claude Mythos 5. We aim to return a
 
 **Edit Claude’s drafts in place**
 
-When Claude writes a draft in chat or Claude Cowork (a report, a plan, a brief), it opens right beside your chat. Highlight the part you want changed, type the change, and Claude makes the edit right where you marked it. No switching apps, no re-describing paragraphs in chat. For more information, see **[Work with artifacts](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them.md#h_9cbf05e668)**.
+When Claude writes a draft in chat or Claude Cowork (a report, a plan, a brief), it opens right beside your chat. Highlight the part you want changed, type the change, and Claude makes the edit right where you marked it. No switching apps, no re-describing paragraphs in chat. For more information, see **[Work with artifacts](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them#h_9cbf05e668)**.
 
 ### June 9, 2026
 
@@ -220,11 +226,11 @@ Claude Cowork is now generally available on macOS and Windows through the Claude
 
 - **Usage analytics for Claude Cowork.** For more information, see **[View usage analytics for Team and Enterprise plans](../17-Billing-Plans/view-usage-analytics-for-team-and-enterprise-plans.md)**.
 
-- **Claude Cowork OpenTelemetry support.** For more information, see **[Monitor Claude Cowork activity with OpenTelemetry](https://support.claude.com/en/articles/14477985-monitor-cowork-activity-with-opentelemetry)**.
+- **Claude Cowork OpenTelemetry support.** For more information, see **[Monitor Claude Cowork activity with OpenTelemetry](../15-Claude-AI-Features/monitor-cowork-activity-with-opentelemetry.md)**.
 
 **Role-based access controls for Enterprise plans**
 
-Admins can now organize users into groups, manually or via SCIM from your identity provider, and assign each group a custom role defining which Claude capabilities its members can use. Turn Claude Cowork on for specific teams, restrict features by department and adjust as adoption grows. Learn more about **[setting up role-based permissions](https://support.claude.com/en/articles/13930458-set-up-role-based-entitlements-on-enterprise-plans)**, **[managing group spend limit](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**[s](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md), and **[managing custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
+Admins can now organize users into groups, manually or via SCIM from your identity provider, and assign each group a custom role defining which Claude capabilities its members can use. Turn Claude Cowork on for specific teams, restrict features by department and adjust as adoption grows. Learn more about **[setting up role-based permissions](../17-Billing-Plans/set-up-role-based-entitlements-on-enterprise-plans.md)**, **[managing group spend limit](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md)**[s](../17-Billing-Plans/manage-groups-and-group-spend-limits-on-enterprise-plans.md), and **[managing custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md)**.
 
 ------------------------------------------------------------------------
 
@@ -244,13 +250,13 @@ Unable to execute JavaScript.
 
 **Computer use research preview in Cowork and Claude Code + Dispatch improvements**
 
-Users on Pro and Max plans can give Claude access to computer use. Claude can open files, run dev tools, point, click, and navigate to what’s on your screen to perform tasks itself—with no setup required. Claude’s new computer use capability makes Dispatch even more helpful by allowing it to use your computer on your behalf while you’re away. For more information, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork)** or our blog post: **[Put Claude to work on your computer](https://claude.com/blog/dispatch-and-computer-use)**.
+Users on Pro and Max plans can give Claude access to computer use. Claude can open files, run dev tools, point, click, and navigate to what’s on your screen to perform tasks itself—with no setup required. Claude’s new computer use capability makes Dispatch even more helpful by allowing it to use your computer on your behalf while you’re away. For more information, see **[Let Claude use your computer in Cowork](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md)** or our blog post: **[Put Claude to work on your computer](https://claude.com/blog/dispatch-and-computer-use)**.
 
 ### March 17, 2026
 
 **Control Cowork from your phone with a persistent thread (research preview for Pro/Max)**
 
-Users on Pro and Max plans can access a persistent agent thread via Claude Desktop or Claude for iOS/Android to manage tasks in Cowork. We're rolling this out to Max plans starting today, and Pro plans over the next two days. For more information, see **[Assign tasks to Claude from anywhere in Cowork](../21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md)**.
+Users on Pro and Max plans can access a persistent agent thread via Claude Desktop or Claude for iOS/Android to manage tasks in Cowork. We're rolling this out to Max plans starting today, and Pro plans over the next two days. For more information, see **[Assign tasks to Claude from anywhere in Cowork](https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork)**.
 
 # An error occurred.
 
@@ -294,7 +300,7 @@ Memory from chat history is now available for all Claude users, including free u
 
 **Scheduled tasks in Cowork**
 
-We introduced the ability to create and schedule both recurring and on-demand tasks in Cowork, as well as a new Customize section in Claude Desktop that groups skills, plugins, and connectors in one place. For more information, see **[Schedule recurring tasks in Cowork](../15-Claude-AI-Features/schedule-recurring-tasks-in-cowork.md)**.
+We introduced the ability to create and schedule both recurring and on-demand tasks in Cowork, as well as a new Customize section in Claude Desktop that groups skills, plugins, and connectors in one place. For more information, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
 
 # An error occurred.
 
@@ -306,9 +312,9 @@ Unable to execute JavaScript.
 
 We launched a new plugin marketplace and admin controls for Team and Enterprise plans. For more information, refer to these articles:
 
-- **[Manage Cowork plugins for your organization](../22-Safety-Policy/manage-claude-cowork-plugins-for-your-organization.md)**
+- **[Manage Cowork plugins for your organization](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**
 
-- **[Use plugins in Cowork](../22-Safety-Policy/manage-claude-cowork-plugins-for-your-organization.md)**
+- **[Use plugins in Cowork](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**
 
 ### February 17, 2026
 
@@ -506,7 +512,7 @@ Users on Enterprise plans can leverage memory; Claude can now remember relevant 
 
 - **[Importing and exporting your memory from Claude](../15-Claude-AI-Features/importing-and-exporting-your-memory-from-claude.md)**
 
-- **[Using incognito chats](https://support.claude.com/en/articles/12260368-using-incognito-chats)**
+- **[Using incognito chats](../15-Claude-AI-Features/using-incognito-chats.md)**
 
 ### September 16, 2025
 
@@ -530,7 +536,7 @@ Claude can now remember relevant context from your chats and will generate a mem
 
 - **[Importing and exporting your memory from Claude](../15-Claude-AI-Features/importing-and-exporting-your-memory-from-claude.md)**
 
-- **[Using incognito chats](https://support.anthropic.com/en/articles/12260368-using-incognito-chats)**
+- **[Using incognito chats](../15-Claude-AI-Features/using-incognito-chats.md)**
 
 ### September 9, 2025
 
@@ -590,13 +596,13 @@ Introduced a premium seat tier for Team and Enterprise plans offering more usage
 
 **Extra usage for Team and Enterprise plans**
 
-A new setting allows Team and Enterprise plan users to purchase more usage to continue chatting with Claude or using Claude Code after hitting their usage limit. See **[Extra Usage for Team and Enterprise Plans](https://support.claude.com/en/articles/12005970-extra-usage-for-team-and-enterprise-plans)**.
+A new setting allows Team and Enterprise plan users to purchase more usage to continue chatting with Claude or using Claude Code after hitting their usage limit. See **[Extra Usage for Team and Enterprise Plans](../17-Billing-Plans/extra-usage-for-team-and-enterprise-plans.md)**.
 
 ### August 15, 2025
 
 **Ability to change monthly Team plan billing to annual**
 
-Allowing Team plan organizations with monthly billing to upgrade to annual billing. See **[How to change your Team plan from monthly to annual billing](../17-Billing-Plans/how-to-change-your-team-plan-from-monthly-to-annual-billing.md)**.
+Allowing Team plan organizations with monthly billing to upgrade to annual billing. See **[How to change your Team plan from monthly to annual billing](https://support.claude.com/en/articles/12083917-how-to-change-your-team-plan-from-monthly-to-annual-billing)**.
 
 ### August 12, 2025
 
@@ -608,7 +614,7 @@ The 1M token context window for Claude Sonnet 4 is currently in beta for API org
 
 **Ability to search past conversations**
 
-Users on Max, Team, Enterprise plans can prompt Claude to search over past chats, allowing finer-grained context continuation and synthesizing across topics. See **[Searching past chats](../15-Claude-AI-Features/understanding-claude-s-personalization-features.md#h_4afb5dcf4b)**.
+Users on Max, Team, Enterprise plans can prompt Claude to search over past chats, allowing finer-grained context continuation and synthesizing across topics. See **[Searching past chats](https://support.anthropic.com/en/articles/10185728-understanding-claude-s-personalization-features#h_4afb5dcf4b)**.
 
 ### August 6, 2025
 

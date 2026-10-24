@@ -2,7 +2,7 @@
 title: "Troubleshoot the Agent SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/troubleshooting"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-04T08:32:19Z"
+fetched_at: "2026-10-21T06:28:43Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -186,7 +186,10 @@ Structured outputs
 
 structured_output is None but the result says success
 
-A result message can end with `subtype: "success"` while `structured_output` is `None` in Python or `undefined` in TypeScript. The run completes, but no validated output exists. One way to hit this is a schema no output can satisfy, for example conflicting length constraints. Treat this result as a failure in application code. Check both that `subtype` is `success` and that `structured_output` is present before using it. The [Error handling](agent-sdk-structured-outputs.md#error-handling) section shows this pattern for both SDKs. If it happens repeatedly with a schema you believe is correct, verify the schema is satisfiable, then simplify it until outputs validate, and reintroduce constraints one at a time.
+A result message can end with `subtype: "success"` while `structured_output` is `None` in Python or `undefined` in TypeScript. The run completes, but no validated output exists. Treat this result as a failure in application code. Check both that `subtype` is `success` and that `structured_output` is present before using it. The [Error handling](agent-sdk-structured-outputs.md#error-handling) section shows this pattern for both SDKs. Then check for these causes:
+
+- **A request that Claude declined**: to detect this case in your code, check the result message’s `stop_reason` for `"refusal"`. For what to try next, see [Usage Policy refusal](../02-Claude-Code-CLI/errors.md#usage-policy-refusal).
+- **A schema no output can satisfy**: for example, a string whose `minLength` is greater than its `maxLength`. If `structured_output` is missing repeatedly with a schema you believe is correct, look for constraints that contradict each other. If you find none, simplify the schema until outputs validate, then reintroduce your constraints one at a time.
 
 
 [​](#report-a-new-issue)

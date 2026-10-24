@@ -2,7 +2,7 @@
 title: "Best practices for Claude Code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/best-practices"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:36Z"
+fetched_at: "2026-10-20T06:36:39Z"
 tags: ["claude-code"]
 ---
 
@@ -563,7 +563,7 @@ done
 
 Test on a few files, then run on all of them
 
-Refine your prompt based on what goes wrong with the first 2-3 files, then run on the full set. The `--allowedTools` flag pre-approves the tools the migration needs, and [`--permission-mode dontAsk`](permission-modes.md#allow-only-pre-approved-tools-with-dontask-mode) denies anything else that would need approval, which matters when you’re running unattended.
+Refine your prompt based on what goes wrong with the first 2-3 files, then run on the full set. The `--allowedTools` flag pre-approves the tools the migration needs. [`--permission-mode dontAsk`](permission-modes.md#allow-only-pre-approved-tools-with-dontask-mode) denies anything else that would need approval, which matters when you’re running unattended, though a [mod](../08-Plugins-Skills/plugins-mods-overview.md) you installed can still approve some of those calls.
 
 You can also integrate Claude into existing data/processing pipelines:
 

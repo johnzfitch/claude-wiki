@@ -2,7 +2,7 @@
 title: "Service tiers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/service-tiers"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:29Z"
+fetched_at: "2026-10-20T06:39:57Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fservice-tiers)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fservice-tiers)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [API reference](overview.md)Support & configuration
 
@@ -309,6 +313,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -374,6 +380,6 @@ Priority Tier targets 99.5% uptime with prioritized computational resources. Req
 
 ### Supported models
 
-Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Sonnet 5.
+Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Haiku 5.5, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Sonnet 5.
 
 Check the [Models overview](../../20-Models/about-claude-models-overview.md) for more details on available models.

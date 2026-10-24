@@ -2,7 +2,7 @@
 title: "I have a paid Claude subscription (Pro, Max, Team, or Enterprise plans). Why is Claude API usage billed separately from my paid Claude plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9876003-i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-is-claude-api-usage-billed-separately-from-my-paid-claude-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:25:42Z"
+fetched_at: "2026-10-23T06:29:25Z"
 tags: ["api", "billing", "enterprise"]
 ---
 

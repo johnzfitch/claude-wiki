@@ -2,7 +2,7 @@
 title: "Examples - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/examples"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-28T06:32:20Z"
+fetched_at: "2026-10-21T06:28:39Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -10,6 +10,7 @@ tags: ["agents", "claude-code", "sdk"]
 
 - [Run a minimal agent first](#run-a-minimal-agent-first)
 - [Explore a demo application](#explore-a-demo-application)
+- [Fork a complete project](#fork-a-complete-project)
 - [Work through a Python recipe](#work-through-a-python-recipe)
 
 Build agents
@@ -40,6 +41,13 @@ If you haven’t built anything with the SDK yet, start with one of these before
 Explore a demo application
 
 The applications in [`claude-agent-sdk-demos`](https://github.com/anthropics/claude-agent-sdk-demos) are demos for local development, from an email client to a multi-agent research system. Clone the demo whose shape matches what you’re building.
+
+
+[​](#fork-a-complete-project)
+
+Fork a complete project
+
+To build a shopping agent or a merchant agent with the Python SDK, start from the [Claude for commerce reference implementation](../04-API-Reference/About/about-claude-use-case-guides-commerce-agents.md).
 
 
 [​](#work-through-a-python-recipe)

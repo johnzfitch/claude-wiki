@@ -2,7 +2,7 @@
 title: "National Domestic Workers Alliance Q&A | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/national-domestic-workers-alliance-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:54Z"
+fetched_at: "2026-10-23T06:29:38Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -22,7 +22,7 @@ Product:
 Location:  
 North America
 
-93% of beta testers acted on Ask Aya's advice
+93% of beta testers acted on Ask Aya’s advice
 
 and 25% negotiated increases in compensation
 
@@ -40,9 +40,9 @@ The [National Domestic Workers Alliance](https://www.domesticworkers.org/) repre
 
 ## Anthropic: Domestic work is often described as invisible. What makes this workforce so hard to reach, and what is Ask Aya built to do for them?
 
-**Ai-jen Poo, National Domestic Workers Alliance:** Our organization was founded to uplift the dignity and value of the workforce that works inside our homes, providing caregiving and cleaning as nannies, house cleaners, and home care workers. It's the work that makes all other work possible, and it's also some of the most undervalued and insecure work in our entire economy. You could go into any neighborhood and not know which homes are also workplaces. There's no list, no registry. So much happens behind closed doors in isolation, and nobody knows you're working there except you and your boss. That level of invisibility really defines the workforce, and it defines the challenge of improving working conditions and organizing, which is why technology has been such a powerful tool for us. Against the backdrop of crushing care worker shortages across the United States, good quality jobs really matter.
+**Ai-jen Poo, National Domestic Workers Alliance:** Our organization was founded to uplift the dignity and value of the workforce that works inside our homes, providing caregiving and cleaning as nannies, house cleaners, and home care workers. It’s the work that makes all other work possible, and it’s also some of the most undervalued and insecure work in our entire economy. You could go into any neighborhood and not know which homes are also workplaces. There’s no list, no registry. So much happens behind closed doors in isolation, and nobody knows you’re working there except you and your boss. That level of invisibility really defines the workforce, and it defines the challenge of improving working conditions and organizing, which is why technology has been such a powerful tool for us. Against the backdrop of crushing care worker shortages across the United States, good quality jobs really matter.
 
-**Alistair Stephenson, National Domestic Workers Alliance:** Ask Aya is NDWA's AI support system, built by and for domestic workers. It exists to help a nanny, a cleaner, or a home care worker navigate a hard workplace moment and self-advocate when they are alone, unsure, or afraid to ask someone else.
+**Alistair Stephenson, National Domestic Workers Alliance:** Ask Aya is NDWA’s AI support system, built by and for domestic workers. It exists to help a nanny, a cleaner, or a home care worker navigate a hard workplace moment and self-advocate when they are alone, unsure, or afraid to ask someone else.
 
 ## AI raises real risks for a community already worried about surveillance. How did you decide it was the right tool rather than the wrong one?
 
@@ -50,17 +50,17 @@ The [National Domestic Workers Alliance](https://www.domesticworkers.org/) repre
 
 ## You say Ask Aya is worker-governed. What does that look like day to day?
 
-**Stephenson:** We have leadership across each of the three main sectors that make up the domestic workforce: a council for nannies, a council for cleaners, and a council for home care workers, each made up of elected representatives from our workers across the country. All of them participate in an AI working group. Those leadership spaces are incredibly alive. It's not a feedback afterthought, and it's not a group we send the PDF off to. They're baked into our working cycles to create an AI product that supports their needs.
+**Stephenson:** We have leadership across each of the three main sectors that make up the domestic workforce: a council for nannies, a council for cleaners, and a council for home care workers, each made up of elected representatives from our workers across the country. All of them participate in an AI working group. Those leadership spaces are incredibly alive. It’s not a feedback afterthought, and it’s not a group we send the PDF off to. They’re baked into our working cycles to create an AI product that supports their needs.
 
-**Poo:** My bosses are all domestic workers, elected from our affiliates. If they say no AI, it's no AI. The council members are elected from our membership, so you actually have to run to represent the broader group of workers. And our board of directors is also elected from our membership. We went through a discovery process with a thousand workers to hone in on the problem we wanted to solve. We weren't even sure our solution was going to even be AI in the beginning. Workers helped shape the questions we tested, picked the logo and name, and trained the AI from the beginning.
+**Poo:** My bosses are all domestic workers, elected from our affiliates. If they say no AI, it’s no AI. The council members are elected from our membership, so you actually have to run to represent the broader group of workers. And our board of directors is also elected from our membership. We went through a discovery process with a thousand workers to hone in on the problem we wanted to solve. We weren’t even sure our solution was going to even be AI in the beginning. Workers helped shape the questions we tested, picked the logo and name, and trained the AI from the beginning.
 
 ## Privacy was your first design constraint. Walk us through the choices, and the tradeoffs.
 
-**Laura Liibbe, National Domestic Workers Alliance:** Once our governance said yes to exploring AI, we first explored the privacy and security of user data. We have a zero data retention policy with Anthropic. As an organization, we delete user conversation data after seven days. We also practice data minimization, so we're not collecting information like legal status that we don't need, and we built admin role limitations into the foundation of our platform for Ask Aya. As a nonprofit, losing that data after seven days can be significant for any kind of impact analysis. We've had to get creative by anonymizing and aggregating conversations, as well as doing weekly monitoring to pull out themes and key impact indicators. But it's worth it to protect workers’ data.
+**Laura Liibbe, National Domestic Workers Alliance:** Once our governance said yes to exploring AI, we first explored the privacy and security of user data. We have a zero data retention policy with Anthropic. As an organization, we delete user conversation data after seven days. We also practice data minimization, so we’re not collecting information like legal status that we don’t need, and we built admin role limitations into the foundation of our platform for Ask Aya. As a nonprofit, losing that data after seven days can be significant for any kind of impact analysis. We’ve had to get creative by anonymizing and aggregating conversations, as well as doing weekly monitoring to pull out themes and key impact indicators. But it’s worth it to protect workers’ data.
 
-**Poo:** A big problem in our country right now is trust: trust of institutions, of government, of politics. Worker organizations like ours are one of the last institutions that working people actually do trust, and that trust is everything to us. So it's worth not having that data, because that trust is worth more than anything.
+**Poo:** A big problem in our country right now is trust: trust of institutions, of government, of politics. Worker organizations like ours are one of the last institutions that working people actually do trust, and that trust is everything to us. So it’s worth not having that data, because that trust is worth more than anything.
 
-## You've coined a phrase for your approach, "dignity-driven AI." What do you mean by it?
+## You’ve coined a phrase for your approach, “dignity-driven AI.” What do you mean by it?
 
 **Stephenson:** For us, dignity-driven AI starts with a different question: not “What can this technology automate?” but “Whose life and work can this improve, and who gets to decide?”
 
@@ -68,13 +68,13 @@ Domestic work and care work are not usually the first jobs people think about wh
 
 That is why worker governance is central to Ask Aya. Workers help set the red lines, test the responses, shape the tone, and decide whether the tool is useful in the real moments they face on the job. This is part of a bigger question about the social contract in the AI era: whether technology will concentrate power and devalue human labor, or help us build more dignity, security, and voice into the jobs of the future. Ask Aya is our answer: AI that helps a worker feel more prepared, less alone, and more connected to a broader community that has her back.
 
-## How does Ask Aya handle questions that shouldn't be answered by AI at all?
+## How does Ask Aya handle questions that shouldn’t be answered by AI at all?
 
-**Liibbe:** This is where guardrails come in, and it's one of the biggest topics we discuss with our council from the product side: what can we address with really solid information, and where does it need to be a human? For example, we make sure Ask Aya isn't giving significant input when someone might need an attorney. On immigration, we've carefully guard-railed what Ask Aya answers and instead refer people to human entities we trust. We have a fully staffed worker experience team. So when someone reaches a point in a high-stakes situation, Ask Aya can say in the chat, ‘this is a referral, but also contact our team for 1:1 help.’ We connect with the individuals based on those referrals.
+**Liibbe:** This is where guardrails come in, and it’s one of the biggest topics we discuss with our council from the product side: what can we address with really solid information, and where does it need to be a human? For example, we make sure Ask Aya isn’t giving significant input when someone might need an attorney. On immigration, we’ve carefully guard-railed what Ask Aya answers and instead refer people to human entities we trust. We have a fully staffed worker experience team. So when someone reaches a point in a high-stakes situation, Ask Aya can say in the chat, ‘this is a referral, but also contact our team for 1:1 help.’ We connect with the individuals based on those referrals.
 
 ## You talk with a lot of nonprofits deploying AI. What do they underestimate?
 
-**Liibbe:** It can look easy to scale this kind of impact work, like you just use AI to solve the problem. But building a durable digital product that's embedded in an organization, connected to the rest of a human-centered ecosystem, and verifiably providing accurate and helpful information is much harder. It's a deep process that involves human capacity, subject matter expertise, trust, and building in real internal processes. There's so much work to make it verifiably trustworthy. Evaluating your AI platform’s quality is so important. It can feel like an afterthought, and it needs to be central.
+**Liibbe:** It can look easy to scale this kind of impact work, like you just use AI to solve the problem. But building a durable digital product that’s embedded in an organization, connected to the rest of a human-centered ecosystem, and verifiably providing accurate and helpful information is much harder. It’s a deep process that involves human capacity, subject matter expertise, trust, and building in real internal processes. There’s so much work to make it verifiably trustworthy. Evaluating your AI platform’s quality is so important. It can feel like an afterthought, and it needs to be central.
 
 Nonprofits
 
@@ -82,25 +82,25 @@ Turn limited resources into lasting impact. Generate grant proposals, track prog
 
 [Read more](nonprofits.md)
 
-## What's next for Ask Aya?
+## What’s next for Ask Aya?
 
 **Stephenson:** Our immediate focus is growing toward our goal of bringing 10% of the 2.2 million domestic workers in the U.S. into Ask Aya in the next 36 months.
 
 We are exploring a broader set of features that directly benefit care workers in the day-to-day reality of their work, including tools for documenting hours, understanding pay, preparing for hard conversations, contracts, benefits navigation, career growth, and on-the-job decision support. Done safely and responsibly, Ask Aya can also help us understand the patterns workers are facing across the economy in ways that strengthen our campaigns, policy work, and standards-setting without compromising individual worker privacy. The future of Ask Aya is both individual and collective: helping one worker in one hard moment, and helping the workforce as a whole build more power.
 
-Looking beyond domestic workers, Ask Aya is increasingly being recognized as a pilot for what's possible when AI is built to serve working people. We are already being approached by other industries and workforce communities asking us to help replicate this model for their workers.
+Looking beyond domestic workers, Ask Aya is increasingly being recognized as a pilot for what’s possible when AI is built to serve working people. We are already being approached by other industries and workforce communities asking us to help replicate this model for their workers.
 
-## You talk about wanting to help workers beyond negotiating. What's the bigger goal?
+## You talk about wanting to help workers beyond negotiating. What’s the bigger goal?
 
-**Poo:** There's a different level of impact that can be achieved in community. Being connected to a collective voice for your workforce leads to a different outcome for you individually and for the whole workforce than what you can negotiate on your own. Anybody can get information. It's about what that information leads you to, and what we're trying to lead people to is each other.
+**Poo:** There’s a different level of impact that can be achieved in community. Being connected to a collective voice for your workforce leads to a different outcome for you individually and for the whole workforce than what you can negotiate on your own. Anybody can get information. It’s about what that information leads you to, and what we’re trying to lead people to is each other.
 
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
@@ -117,7 +117,8 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -135,12 +136,12 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -173,7 +174,7 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -191,6 +192,7 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -206,7 +208,7 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -241,7 +243,8 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -259,12 +262,12 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -297,7 +300,7 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -315,6 +318,7 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -330,7 +334,7 @@ Looking beyond domestic workers, Ask Aya is increasingly being recognized as a p
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

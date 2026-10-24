@@ -2,7 +2,7 @@
 title: "How large is the context window on paid Claude plans? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:25:37Z"
+fetched_at: "2026-10-23T06:29:17Z"
 tags: ["billing", "claude-code"]
 ---
 

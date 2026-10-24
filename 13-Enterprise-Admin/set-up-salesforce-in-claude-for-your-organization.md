@@ -2,7 +2,7 @@
 title: "Set up Salesforce in Claude for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:28:23Z"
+fetched_at: "2026-10-23T06:29:33Z"
 tags: ["enterprise"]
 ---
 
@@ -49,7 +49,7 @@ To choose your installation preference:
 
 2.  Find **Salesforce Marketplace**.
 
-3.  Choose an installation preference for the groups you want to use it: "Installed by default," "Available to install," or "Required." Learn more about **[controlling plugin distribution](https://support.claude.com/en/articles/13837433-manage-plugins-for-your-organization#h_cef6a5f497)**.
+3.  Choose an installation preference for the groups you want to use it: "Installed by default," "Available to install," or "Required." Learn more about **[controlling plugin distribution](../22-Safety-Policy/manage-plugins-for-your-organization.md#h_cef6a5f497)**.
 
 To activate and configure the Salesforce MCP Connector:
 

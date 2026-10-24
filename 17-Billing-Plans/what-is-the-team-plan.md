@@ -2,7 +2,7 @@
 title: "What is the Team plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:24:55Z"
+fetched_at: "2026-10-23T06:29:17Z"
 tags: ["billing"]
 ---
 
@@ -123,6 +123,8 @@ This means:
 - If one team member reaches their seat's included usage limit, it does not affect the limits of other team members.
 
 - Other team members can continue to use the service even if one member has reached their seat's included limit.
+
+- Usage limits can't be transferred or shared between team members. Each seat is for one named individual. Learn more about **[who can use a seat](https://support.claude.com/en/articles/12004354-purchase-and-manage-seats-on-team-plans#h_b8a7d07129)**.
 
 ### How do I increase my Team plan usage limits?
 

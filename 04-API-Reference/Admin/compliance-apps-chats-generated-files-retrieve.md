@@ -2,7 +2,7 @@
 title: "Get Claude-generated file metadata - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/chats/generated_files/retrieve"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:50Z"
+fetched_at: "2026-10-20T06:37:33Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Fgenerated_files%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Fgenerated_files%2Fretrieve)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -235,7 +237,11 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -243,9 +249,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -263,6 +269,10 @@ To enable the Compliance API, see the setup guide.
 
 # Get Claude-generated file metadata
 
+Copy page
+
+
+
 GET/v1/compliance/apps/chats/generated-files/{claude_gen_file_id}
 
 Returns metadata for a file the assistant created via tool use.
@@ -278,6 +288,16 @@ claude_gen_file_id: string
 The generated-file id (e.g., 'claude_gen_file_abc123') as returned in `chat_messages[].generated_files[].id` from GET /apps/chats/{claude_chat_id}/messages.
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 "x-api-key": optional string
 

@@ -2,7 +2,7 @@
 title: "Zingage Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/zingage"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:06Z"
+fetched_at: "2026-10-23T06:30:14Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -68,13 +68,13 @@ Claude’s contextual reasoning also enabled Zingage to build agents that weigh 
 
 ## How Zingage coordinates care in real time
 
-Zingage operates inside the agency’s electronic medical record: reading caregiver profiles, writing shift notes, updating schedules, and posting visit documentation directly in the systems agencies already use. Because every action happens natively in the EMR, it's immediately visible to the agency's existing workflows and audit systems, with no synchronization layer to introduce errors or delays.
+Zingage operates inside the agency’s electronic medical record: reading caregiver profiles, writing shift notes, updating schedules, and posting visit documentation directly in the systems agencies already use. Because every action happens natively in the EMR, it’s immediately visible to the agency’s existing workflows and audit systems, with no synchronization layer to introduce errors or delays.
 
 A real example illustrates the system in action. At 1:45 AM, a caregiver at a private pay agency called to say she couldn’t make her morning shift. Zingage’s voice agent answered, recognized the caregiver, confirmed which shift was affected, and passed the details to its coordination system.
 
 Within minutes, Zingage had queried the EMR, identified the patient’s care requirements, and began outreach, texting 23 caregivers and making AI-powered phone calls to qualified replacements. By 3:36 AM, a replacement was confirmed, assigned in the EMR, and shift notes were posted. The agency’s team arrived to find the problem already solved.
 
-A more complex scenario shows the reasoning at work. A patient fell at home on a Saturday evening, and after EMS responded and cleared her, she refused hospital transport. Zingage escalated to the on-call administrator, and when no response came, made a judgment call: a fall requiring EMS, an elderly patient home alone—that warranted notifying the patient's son. Zingage coordinated a wellness check, updated the family, and documented every step. Fifty-six minutes, zero human administrator involvement.
+A more complex scenario shows the reasoning at work. A patient fell at home on a Saturday evening, and after EMS responded and cleared her, she refused hospital transport. Zingage escalated to the on-call administrator, and when no response came, made a judgment call: a fall requiring EMS, an elderly patient home alone—that warranted notifying the patient’s son. Zingage coordinated a wellness check, updated the family, and documented every step. Fifty-six minutes, zero human administrator involvement.
 
 The system handles multilingual calls natively, detecting language directly from the caller’s speech. English and Spanish are fully live, with additional languages in development.
 
@@ -129,7 +129,8 @@ in after-hours labor costs at one Medicaid agency
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -147,12 +148,12 @@ in after-hours labor costs at one Medicaid agency
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -185,7 +186,7 @@ in after-hours labor costs at one Medicaid agency
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -203,6 +204,7 @@ in after-hours labor costs at one Medicaid agency
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -218,7 +220,7 @@ in after-hours labor costs at one Medicaid agency
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -253,7 +255,8 @@ in after-hours labor costs at one Medicaid agency
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -271,12 +274,12 @@ in after-hours labor costs at one Medicaid agency
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -309,7 +312,7 @@ in after-hours labor costs at one Medicaid agency
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -327,6 +330,7 @@ in after-hours labor costs at one Medicaid agency
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -342,7 +346,7 @@ in after-hours labor costs at one Medicaid agency
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

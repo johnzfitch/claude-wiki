@@ -2,7 +2,7 @@
 title: "DXC Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/dxc"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:11Z"
+fetched_at: "2026-10-23T06:29:32Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -45,11 +45,11 @@ classified in under a second
 
 ## An industry that runs on judgment and paper
 
-Insurance runs on two decisions. First, underwriting, whether to take a risk and at what price, and second claims, what to pay and when. Together, they are "two decision points which drive 100% of the value this industry creates for its shareholders, its policyholders, and society as a whole," said Bill Pieroni, DXC’s Global AI, Strategy & Growth Executive. Today, Pieroni estimates 70% of those decisions on human judgment rather than structured rules. That judgment has to happen at industrial scale: “For an average carrier, millions of these decisions are made in less than an hour," he said.
+Insurance runs on two decisions. First, underwriting, whether to take a risk and at what price, and second claims, what to pay and when. Together, they are “two decision points which drive 100% of the value this industry creates for its shareholders, its policyholders, and society as a whole,” said Bill Pieroni, DXC’s Global AI, Strategy & Growth Executive. Today, Pieroni estimates 70% of those decisions on human judgment rather than structured rules. That judgment has to happen at industrial scale: “For an average carrier, millions of these decisions are made in less than an hour,” he said.
 
-That judgment runs on documents. Submissions and claims arrive by email, fax, paper, and phone, requiring manual rekeying or optical character recognition (OCR). The industry sits on four exabytes of data, and Pieroni estimates that less than 15% of it is usable. Before Claude, making sense of those documents took at least 40 to 50% of expert time in claims operations. "Backlogs for claims ran days, exceptions waited, errors compounded," Pieroni said.
+That judgment runs on documents. Submissions and claims arrive by email, fax, paper, and phone, requiring manual rekeying or optical character recognition (OCR). The industry sits on four exabytes of data, and Pieroni estimates that less than 15% of it is usable. Before Claude, making sense of those documents took at least 40 to 50% of expert time in claims operations. “Backlogs for claims ran days, exceptions waited, errors compounded,” Pieroni said.
 
-Those backlogs carried real cost. Time is one of the key drivers of claim severity: claims that take longer to settle cost more, even adjusted for type. And a mishandled claim is one of only two reasons customers leave a carrier at all, the other being a price increase of more than 10% in a year. For property and casualty carriers, running 1% margins over the long term, neither is affordable. And that workload runs through DXC: carriers worldwide underwrite, service their books, and settle claims on the company's platforms.
+Those backlogs carried real cost. Time is one of the key drivers of claim severity: claims that take longer to settle cost more, even adjusted for type. And a mishandled claim is one of only two reasons customers leave a carrier at all, the other being a price increase of more than 10% in a year. For property and casualty carriers, running 1% margins over the long term, neither is affordable. And that workload runs through DXC: carriers worldwide underwrite, service their books, and settle claims on the company’s platforms.
 
 Choosing the right Claude model
 
@@ -59,17 +59,17 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 
 ## Reasoning that holds up in an audit
 
-DXC set its bar before picking a model: governance by default, with every action traceable; production over pilots; a focus on the core, since 25% of an insurer's cost sits in underwriting and 75% in claims; returns measurable decision by decision; and speed to value. Claude cleared it in the evaluations and benchmarks DXC ran to make the call. Commercial claims files can run hundreds of pages, and in testing Claude held context where other models, as Pieroni put it, "just lost the thread." First-pass correctness on complex logic came "far better from the onset," without the retry loops other models needed, and instruction adherence held on DXC's ten-case demo. Explanations came out ready for a compliance officer to sign off on without a translator, which the team found "truly differentiating and a unique moat,” Pieroni said.
+DXC set its bar before picking a model: governance by default, with every action traceable; production over pilots; a focus on the core, since 25% of an insurer’s cost sits in underwriting and 75% in claims; returns measurable decision by decision; and speed to value. Claude cleared it in the evaluations and benchmarks DXC ran to make the call. Commercial claims files can run hundreds of pages, and in testing Claude held context where other models, as Pieroni put it, “just lost the thread.” First-pass correctness on complex logic came “far better from the onset,” without the retry loops other models needed, and instruction adherence held on DXC’s ten-case demo. Explanations came out ready for a compliance officer to sign off on without a translator, which the team found “truly differentiating and a unique moat,” Pieroni said.
 
-"Claude reasons in language a client can read, defend, and audit," Pieroni explained. "It's a unique differentiator. Claude honors the policies, constraints, and guardrails. Here, the policy is the contract. It's the document. Claude honors that more so than anyone else."
+“Claude reasons in language a client can read, defend, and audit,” Pieroni explained. “It’s a unique differentiator. Claude honors the policies, constraints, and guardrails. Here, the policy is the contract. It’s the document. Claude honors that more so than anyone else.”
 
-Behavior mattered as much as capability. "Claude does a better job at flagging uncertainty and asks when there's uncertainty rather than guessing," he said. "That type of behavior is what regulated work like insurance demands." On safety, he added: "Anthropic is truly unique in that it engineers safety into the model versus bolting it on as some kind of afterthought." That evaluation settled it: DXC has been building on the Claude Platform for about a year to create Assure, its orchestration platform. Because Assure is API-driven and tied to its existing solution portfolio, clients connect without custom setups.
+Behavior mattered as much as capability. “Claude does a better job at flagging uncertainty and asks when there’s uncertainty rather than guessing,” he said. “That type of behavior is what regulated work like insurance demands.” On safety, he added: “Anthropic is truly unique in that it engineers safety into the model versus bolting it on as some kind of afterthought.” That evaluation settled it: DXC has been building on the Claude Platform for about a year to create Assure, its orchestration platform. Because Assure is API-driven and tied to its existing solution portfolio, clients connect without custom setups.
 
 ## Claude in every layer of DXC’s Assure platform
 
 Assure gives that reasoning somewhere to run. Document intelligence reads and structures what comes in: a document lands, and Claude classifies its type in under a second. It extracts what matters, the policy, the party, the amount, the date, and flags what a human needs to do. On the underwriting side, the same layer reads the submission, structures the risk, and frames it for the underwriter on an exception basis. Workflow orchestration moves decisions to the right people. Smart apps are purpose-built agents for single jobs, like first notice of loss when an accident is reported, or reserving, setting money aside for a claim, so clients can start small, prove value, and scale. The fourth layer is compliance, built for an industry spanning more than 200 countries and territories.
 
-"Every action is recorded: who decided, what basis, what moment, whether it's a person or the agent," Pieroni said. The Claude-powered agents operate inside set authority levels, and humans own the checkpoints on calls with material, legal, or financial weight, and a regulator can reconstruct any decision end to end: "I need to see every step it took, why it said that." Not every decision needs the same model, either: simple triage runs on lighter tiers, while a hundred-page claim gets routed to a frontier model.
+“Every action is recorded: who decided, what basis, what moment, whether it’s a person or the agent,” Pieroni said. The Claude-powered agents operate inside set authority levels, and humans own the checkpoints on calls with material, legal, or financial weight, and a regulator can reconstruct any decision end to end: “I need to see every step it took, why it said that.” Not every decision needs the same model, either: simple triage runs on lighter tiers, while a hundred-page claim gets routed to a frontier model.
 
 Claude Platform
 
@@ -81,15 +81,15 @@ Use the Claude API to create new user experiences, products, and ways to work wi
 
 ## Intake backlogs reduced from days to minutes
 
-For the carriers running claims through DXC's platforms, intake backlogs that ran days are now minutes or less. That speed compounds: faster settlement means lower severity, and their adjusters focus judgment where it matters rather than across everything. Thousands of the 14,000 DXC employees in its insurance business use these capabilities today, and its field development engineers build them with Claude Code.
+For the carriers running claims through DXC’s platforms, intake backlogs that ran days are now minutes or less. That speed compounds: faster settlement means lower severity, and their adjusters focus judgment where it matters rather than across everything. Thousands of the 14,000 DXC employees in its insurance business use these capabilities today, and its field development engineers build them with Claude Code.
 
-DXC’s clearest example of advancing AI came through a workers' compensation use case centered on a single number: the pre-injury average weekly earnings, which determines what an injured worker receives while recovering, which averages 52 weeks of gross earnings It is what Pieroni calls, "the number the whole claim rides on,” he said. “It drives every weekly payment that follows. It's highly regulated and it's unforgiving." Projects tend to fall months behind getting the calculation right. "We fed Claude the regulations, the legislation, documented rules, our system algorithms, and our own DXC calculators," Pieroni recalled. "We stood a working SmartApp up in eight hours." At DXC, Smart Apps are purpose-built agents for single jobs, like first notice of loss when an accident is reported.
+DXC’s clearest example of advancing AI came through a workers’ compensation use case centered on a single number: the pre-injury average weekly earnings, which determines what an injured worker receives while recovering, which averages 52 weeks of gross earnings It is what Pieroni calls, “the number the whole claim rides on,” he said. “It drives every weekly payment that follows. It’s highly regulated and it’s unforgiving.” Projects tend to fall months behind getting the calculation right. “We fed Claude the regulations, the legislation, documented rules, our system algorithms, and our own DXC calculators,” Pieroni recalled. “We stood a working SmartApp up in eight hours.” At DXC, Smart Apps are purpose-built agents for single jobs, like first notice of loss when an accident is reported.
 
-The workers’ comp Smart App running on Claude was 80% right on the first pass. The remaining 20% of decision-making went to claims experts, whose review further trained the model. The share of the calculation requiring human judgment has already dropped from 70% to 20% and, in Pieroni's words, eventually "gets whittled to nothing." That loop, to Pieroni, is the point: "Every decision and outcome becomes the signal for the next one."
+The workers’ comp Smart App running on Claude was 80% right on the first pass. The remaining 20% of decision-making went to claims experts, whose review further trained the model. The share of the calculation requiring human judgment has already dropped from 70% to 20% and, in Pieroni’s words, eventually “gets whittled to nothing.” That loop, to Pieroni, is the point: “Every decision and outcome becomes the signal for the next one.”
 
-The hours matter because of who's waiting on them. "These are injured people," Pieroni added. "This is making a real difference. These people need this money. They can't wait for it. It's not about compliance. It's about doing the right thing for the insured."
+The hours matter because of who’s waiting on them. “These are injured people,” Pieroni added. “This is making a real difference. These people need this money. They can’t wait for it. It’s not about compliance. It’s about doing the right thing for the insured.”
 
-Regulatory change is getting the same treatment. Across the industry, embedding a new rule has historically taken 12 to 18 months. Claude ingests complex legislation in seconds to minutes, and "stuff that took months now is days," Pieroni said. Speed like that is capacity, and in an industry facing a talent crisis, Pieroni argues carriers "should be clamoring to increase capacity and competency of their workers." His yardstick for where this goes is autonomy. "Right now in the insurance industry, about 1% of decisions are autonomous," he said. "I'm talking no one touches, no one thinks about it. My vision is that it goes to 50%." That would be a fifty-fold jump in a business that makes millions of judgment calls per carrier. And in Pieroni's vision, the friction goes away at the source: regulation itself becomes "living code" that updates itself as the rules change.
+Regulatory change is getting the same treatment. Across the industry, embedding a new rule has historically taken 12 to 18 months. Claude ingests complex legislation in seconds to minutes, and “stuff that took months now is days,” Pieroni said. Speed like that is capacity, and in an industry facing a talent crisis, Pieroni argues carriers “should be clamoring to increase capacity and competency of their workers.” His yardstick for where this goes is autonomy. “Right now in the insurance industry, about 1% of decisions are autonomous,” he said. “I’m talking no one touches, no one thinks about it. My vision is that it goes to 50%.” That would be a fifty-fold jump in a business that makes millions of judgment calls per carrier. And in Pieroni’s vision, the friction goes away at the source: regulation itself becomes “living code” that updates itself as the rules change.
 
 ## Related stories
 
@@ -105,7 +105,8 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -123,12 +124,12 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -161,7 +162,7 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -179,6 +180,7 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -194,7 +196,7 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -229,7 +231,8 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -247,12 +250,12 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -285,7 +288,7 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -303,6 +306,7 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -318,7 +322,7 @@ Regulatory change is getting the same treatment. Across the industry, embedding 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

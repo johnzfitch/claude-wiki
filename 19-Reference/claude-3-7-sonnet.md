@@ -2,19 +2,51 @@
 title: "Claude 3.7 Sonnet and Claude Code \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-3-7-sonnet"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:04Z"
+fetched_at: "2026-10-21T06:30:04Z"
 tags: ["claude-code", "news-research"]
 ---
 
 # Claude 3.7 Sonnet and Claude Code
 
-Feb 24, 2025
+- [01Claude 3.7 Sonnet: Frontier reasoning made practical](#claude-37-sonnet-frontier-reasoning-made-practical)
+- [02Claude Code](#claude-code)
+- [03Working with Claude on your codebase](#working-with-claude-on-your-codebase)
+- [04Building responsibly](#building-responsibly)
+- [05Looking ahead](#looking-ahead)
 
-Today, we’re announcing Claude 3.7 Sonnet¹, our most intelligent model to date and the first hybrid reasoning model on the market. Claude 3.7 Sonnet can produce near-instant responses or extended, step-by-step thinking that is made [visible to the user](https://youtu.be/t3nnDXa81Hs). API users also have fine-grained control over *how long* the model can think for.
+- Published
+
+  Feb 24, 2025
+
+- Category
+
+  [Models](models.md)
+
+- Topics
+
+  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+
+  See more...
+
+Related articles
+
+- Product
+
+  Feb 23, 2026
+
+  [The making of Claude Code](https://www.anthropic.com/features/making-of-claude-code)
+
+[View more](https://www.anthropic.com/search?topic=claude-sonnet)
+
+Today, we’re announcing Claude 3.7 Sonnet^([1](#footnote-1)), our most intelligent model to date and the first hybrid reasoning model on the market. Claude 3.7 Sonnet can produce near-instant responses or extended, step-by-step thinking that is made [visible to the user](https://youtu.be/t3nnDXa81Hs). API users also have fine-grained control over *how long* the model can think for.
 
 Claude 3.7 Sonnet shows particularly strong improvements in coding and front-end web development. Along with the model, we’re also introducing a command line tool for agentic coding, Claude Code. Claude Code is available as a limited research preview, and enables developers to delegate substantial engineering tasks to Claude directly from their terminal.
 
-Claude 3.7 Sonnet is now available on all [Claude](https://claude.ai/redirect/website.v1.8b6bc9f8-a959-4c55-bf79-ef4c7ab57d5d/new) plans—including Free, Pro, Team, and Enterprise—as well as the [Claude Developer Platform](https://docs.claude.com/en/docs/about-claude/models), [Amazon Bedrock](https://aws.amazon.com/bedrock/claude/), and [Google Cloud’s Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude). Extended thinking mode is available on all surfaces except the free Claude tier.
+Claude 3.7 Sonnet is now available on all [Claude](https://claude.ai/new) plans—including Free, Pro, Team, and Enterprise—as well as the [Claude Developer Platform](https://docs.claude.com/en/docs/about-claude/models), [Amazon Bedrock](https://aws.amazon.com/bedrock/claude/), and [Google Cloud’s Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude). Extended thinking mode is available on all surfaces except the free Claude tier.
 
 In both standard and extended thinking modes, Claude 3.7 Sonnet has the same price as its predecessors: \$3 per million input tokens and \$15 per million output tokens—which includes thinking tokens.
 
@@ -28,7 +60,7 @@ Second, when using Claude 3.7 Sonnet through the API, users can also control the
 
 Third, in developing our reasoning models, we’ve optimized somewhat less for math and computer science competition problems, and instead shifted focus towards real-world tasks that better reflect how businesses actually use LLMs.
 
-[Early testing](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md#customer-stories) demonstrated Claude’s leadership in coding capabilities across the board: Cursor noted Claude is once again best-in-class for real-world coding tasks, with significant improvements in areas ranging from handling complex codebases to advanced tool use. Cognition found it far better than any other model at planning code changes and handling full-stack updates. Vercel highlighted Claude’s exceptional precision for complex agent workflows, while Replit has successfully deployed Claude to build sophisticated web apps and dashboards from scratch, where other models stall. In Canva’s evaluations, Claude consistently produced production-ready code with superior design taste and drastically reduced errors.
+[Early testing](../15-Claude-AI-Features/claude-sonnet.md#customer-stories) demonstrated Claude’s leadership in coding capabilities across the board: Cursor noted Claude is once again best-in-class for real-world coding tasks, with significant improvements in areas ranging from handling complex codebases to advanced tool use. Cognition found it far better than any other model at planning code changes and handling full-stack updates. Vercel highlighted Claude’s exceptional precision for complex agent workflows, while Replit has successfully deployed Claude to build sophisticated web apps and dashboards from scratch, where other models stall. In Canva’s evaluations, Claude consistently produced production-ready code with superior design taste and drastically reduced errors.
 
 ## Claude Code
 
@@ -59,10 +91,6 @@ The [system card](https://www.anthropic.com/claude-3-7-sonnet-system-card) for t
 Claude 3.7 Sonnet and Claude Code mark an important step towards AI systems that can truly augment human capabilities. With their ability to reason deeply, work autonomously, and collaborate effectively, they bring us closer to a future where AI enriches and expands what [humans can achieve](https://darioamodei.com/machines-of-loving-grace).
 
 We're excited for you to explore these new capabilities and to see what you’ll create with them. As always, we welcome your [feedback](mailto:%20feedback@anthropic.com) as we continue to improve and evolve our models.
-
-#### Appendix
-
-¹ Lesson learned on [naming](3-5-models-and-computer-use.md).
 
 ### Eval data sources
 
@@ -110,118 +138,6 @@ This results in a score of 70.3% on the subset of n=489 verified tasks which wor
 - sphinx-doc\_\_sphinx-8595
 - sphinx-doc\_\_sphinx-9711
 
+## Footnotes
 
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+01 Lesson learned on [naming](3-5-models-and-computer-use.md).[](#footnote-ref-1)

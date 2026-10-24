@@ -2,7 +2,7 @@
 title: "Get Skill Usage - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/skills/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:27Z"
+fetched_at: "2026-10-20T06:39:23Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fskills%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fskills%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -155,9 +155,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -228,13 +230,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -242,9 +246,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,12 +257,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
-5.  [Skills](beta-organization-analytics-skills.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
+5.  [Skills](http-beta-organization-analytics-skills.md)
 
 # Get Skill Usage
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/analytics/skills
 
@@ -294,7 +304,7 @@ filter: optional array of string
 
 
 
-Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `product`, `rbac_group_id`, `share_status`, `skill_name`, `user_id`. Value forms: `product` is one of `chat`, `claude_code`, `cowork`, or `office_agent`; `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `share_status` is one of `organization`, `private`, or `public`; `skill_name` matches case-insensitively; `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries.
+Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `product`, `rbac_group_id`, `share_status`, `skill_name`, `user_id`. Value forms: `product` is one of `chat_cowork_unified`, `chat`, `claude_code`, `cowork`, or `office_agent`; `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `share_status` is one of `organization`, `private`, or `public`; `skill_name` matches case-insensitively; `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only on deployments that offer Chat and Cowork unified.
 
 maxItems100
 
@@ -374,17 +384,29 @@ UTC date in YYYY-MM-DD format. Start of a date range (inclusive). Enables rollup
 
 formatdate
 
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
 ##### Returns
 
 
 
-data: array of [BetaAnalyticsSkillActivity](http-beta-organization-analytics.md#beta_analytics_skill_activity) { chat_metrics, claude_code_metrics, cowork_metrics, 14 more }
+data: array of [BetaAnalyticsSkillActivity](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_skill_activity) { chat_metrics, claude_code_metrics, cowork_metrics, 15 more }
 
 
 
 
 
-chat_metrics: [BetaAnalyticsSkillChatMetrics](http-beta-organization-analytics.md#beta_analytics_skill_chat_metrics) { distinct_conversation_skill_used_count }
+chat_metrics: [BetaAnalyticsSkillChatMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_skill_chat_metrics) { distinct_conversation_skill_used_count }
 
 
 
@@ -398,7 +420,7 @@ Number of distinct conversations in which the skill was used. A skill counts as 
 
 
 
-claude_code_metrics: [BetaAnalyticsSkillClaudeCodeMetrics](http-beta-organization-analytics.md#beta_analytics_skill_claude_code_metrics) { distinct_session_skill_used_count }
+claude_code_metrics: [BetaAnalyticsSkillClaudeCodeMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_skill_claude_code_metrics) { distinct_session_skill_used_count }
 
 
 
@@ -412,7 +434,7 @@ Number of distinct Claude Code sessions in which the skill was used. A skill cou
 
 
 
-cowork_metrics: [BetaAnalyticsSkillCoworkMetrics](http-beta-organization-analytics.md#beta_analytics_skill_cowork_metrics) { distinct_session_skill_used_count }
+cowork_metrics: [BetaAnalyticsSkillCoworkMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_skill_cowork_metrics) { distinct_session_skill_used_count }
 
 
 
@@ -432,7 +454,7 @@ Number of distinct users who used the skill on the requested day, or, in date-ra
 
 
 
-office_metrics: [BetaAnalyticsSkillOfficeMetrics](http-beta-organization-analytics.md#beta_analytics_skill_office_metrics) { excel, outlook, powerpoint, word }
+office_metrics: [BetaAnalyticsSkillOfficeMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_skill_office_metrics) { excel, outlook, powerpoint, word }
 
 
 
@@ -449,6 +471,42 @@ attributed_list_price: optional string or null
 
 
 List-price (rate-card) value of the member requests attributed to this skill, as a decimal string in the minor unit of `currency` (cents for USD), from Claude Code, Cowork, and Office Agent request-level attribution — the value of requests that involved the skill, not the skill's incremental cost. Unlike `estimated_overage_spend` this reflects usage value regardless of how it was funded — seat-covered usage counts — but it is undiscounted and does not tie to billed spend or the organization's spend reporting. claude.ai chat usage carries no request-level attribution and contributes nothing: the field is null on `chat` product rows and on `office_agent` product cuts dated before 2026-06-18 (the Office Agent attribution data-start), and on ungrouped rows it covers the Claude Code + Cowork + Office Agent share only (null when no attributable usage exists). Also null under the same conditions as `estimated_overage_spend` (spend reporting not enabled for this organization, `office_agent` product cuts before the 2026-06-18 data-start). "0" means attributable usage existed but none was attributed to this skill. Addable across days: date-range rollup mode returns the window's sum. On `group_by[]` and `filter[]` shapes both amounts can total below the ungrouped value for the same skill over the same date or range: spend attributed to a member–skill pair with no counted usage on that day is excluded from those cuts.
+
+
+
+chat_cowork_unified_metrics: optional object{ chat, sessions } or null
+
+
+
+Skill use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+
+
+
+chat: [BetaAnalyticsSkillChatCoworkUnifiedChatMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_skill_chat_cowork_unified_chat_metrics) { distinct_conversation_skill_used_count }
+
+
+
+A skill's use in chat conversations recorded while members had Chat and Cowork unified turned on.
+
+distinct_conversation_skill_used_count: number or null
+
+
+
+Same measure as `chat_metrics.distinct_conversation_skill_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Approximate (HLL, typical error \<2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
+
+
+
+sessions: [BetaAnalyticsSkillChatCoworkUnifiedSessionsMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_skill_chat_cowork_unified_sessions_metrics) { distinct_session_skill_used_count }
+
+
+
+A skill's use in Cowork sessions recorded while members had Chat and Cowork unified turned on.
+
+distinct_session_skill_used_count: number or null
+
+
+
+Same measure as `cowork_metrics.distinct_session_skill_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Approximate (HLL, typical error \<2%) in date-range mode. Null on aggregated rows where a distinct count cannot be computed.
 
 currency: optional string or null
 
@@ -478,7 +536,7 @@ product: optional string or null
 
 
 
-Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, or `office_agent` (the canonical Cost & Usage product naming; an `office_agent` row's per-surface breakdown is in its `office_metrics`). On `/plugins` only `cowork` and `claude_code` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, and `cowork` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost & Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
 
 rbac_group_id: optional string or null
 
@@ -578,6 +636,14 @@ Response 200
       },
       "skill_name": "skill_name",
       "attributed_list_price": "attributed_list_price",
+      "chat_cowork_unified_metrics": {
+        "chat": {
+          "distinct_conversation_skill_used_count": 0
+        },
+        "sessions": {
+          "distinct_session_skill_used_count": 0
+        }
+      },
       "currency": "currency",
       "enable_count": 0,
       "estimated_overage_spend": "estimated_overage_spend",
@@ -630,6 +696,14 @@ Response 200
       },
       "skill_name": "skill_name",
       "attributed_list_price": "attributed_list_price",
+      "chat_cowork_unified_metrics": {
+        "chat": {
+          "distinct_conversation_skill_used_count": 0
+        },
+        "sessions": {
+          "distinct_session_skill_used_count": 0
+        }
+      },
       "currency": "currency",
       "enable_count": 0,
       "estimated_overage_spend": "estimated_overage_spend",

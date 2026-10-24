@@ -2,7 +2,7 @@
 title: "Shortcut Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/shortcut"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:25Z"
+fetched_at: "2026-10-23T06:29:43Z"
 tags: ["agents", "api", "case-studies", "enterprise", "search", "security"]
 ---
 
@@ -56,23 +56,23 @@ Fundamental Research Labs built a benchmarking infrastructure to measure AI perf
 
 After testing multiple model providers against its benchmark pipeline, Claude became the only model in production for Shortcut.
 
-A key factor in the selection was how little adaptation Claude required. Other models required rounds of prompt engineering and benchmarking to work around model-specific behavior. Swapping in Opus required none. “There's very little Claude-specific prompting we have to do," Christie said.
+A key factor in the selection was how little adaptation Claude required. Other models required rounds of prompt engineering and benchmarking to work around model-specific behavior. Swapping in Opus required none. “There’s very little Claude-specific prompting we have to do,” Christie said.
 
 Each subsequent Claude release has reinforced that decision. When Anthropic released Opus 4.6 in February, the score went from 7.29 to 8.08 out of 10.
 
-“It was a step change in improvement,” Christie said. “Hard tasks that were impossible became doable. Medium tasks became easy. Easy tasks were just completely saturated. It was a total change, in the same way it was for coding."
+“It was a step change in improvement,” Christie said. “Hard tasks that were impossible became doable. Medium tasks became easy. Easy tasks were just completely saturated. It was a total change, in the same way it was for coding.”
 
 ## The results: Multi-agent architecture for complex tasks
 
-Shortcut's architecture uses Claude in a multi-agent pattern. When a user asks Shortcut to audit a complex workbook, the system spins off multiple Claude sub-agents to explore each sheet in parallel, similar to how Claude Code operates. For a ten-sheet financial model, that might mean six to ten agents running simultaneously, each analyzing a different tab for errors, structural issues, and missing data. These agents gather context and feed findings back to a main agent.
+Shortcut’s architecture uses Claude in a multi-agent pattern. When a user asks Shortcut to audit a complex workbook, the system spins off multiple Claude sub-agents to explore each sheet in parallel, similar to how Claude Code operates. For a ten-sheet financial model, that might mean six to ten agents running simultaneously, each analyzing a different tab for errors, structural issues, and missing data. These agents gather context and feed findings back to a main agent.
 
 Before executing changes, the system enters planning mode where Claude reviews the workbook, identifies issues, and asks clarifying questions. Once the plan is approved, Shortcut hands execution to a fresh Claude agent, which keeps the execution context clean and focused.
 
 ## Looking to the future
 
-Each Claude model upgrade has delivered measurable gains for Shortcut without requiring engineering work. For Christie, that pattern shapes how the team thinks about its roadmap: as Claude's capabilities improve, so does what Shortcut can offer its users.
+Each Claude model upgrade has delivered measurable gains for Shortcut without requiring engineering work. For Christie, that pattern shapes how the team thinks about its roadmap: as Claude’s capabilities improve, so does what Shortcut can offer its users.
 
-“Excel is used by a billion or so people, spreadsheets by two billion,” Christie said. “Shortcut’s mission is to give the feeling we get when using Claude to a billion Spreadsheet users around the world."
+“Excel is used by a billion or so people, spreadsheets by two billion,” Christie said. “Shortcut’s mission is to give the feeling we get when using Claude to a billion Spreadsheet users around the world.”
 
 
 ## Related stories
@@ -98,7 +98,8 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -116,12 +117,12 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -154,7 +155,7 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -172,6 +173,7 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -187,7 +189,7 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -222,7 +224,8 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -240,12 +243,12 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -278,7 +281,7 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -296,6 +299,7 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -311,7 +315,7 @@ Each Claude model upgrade has delivered measurable gains for Shortcut without re
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -1,8 +1,8 @@
 ---
 title: "Prompts - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/draft/server/prompts"
+source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/prompts"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-09T06:27:47Z"
+fetched_at: "2026-10-21T06:29:14Z"
 tags: ["mcp", "mcp-spec", "prompting"]
 ---
 
@@ -37,7 +37,7 @@ Copy pageCopy page
 
 The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured messages and instructions for interacting with language models. Clients can discover available prompts, retrieve their contents, and provide arguments to customize them.
 
-For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/draft/basic/index#meta).
+For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta).
 
 
 [​](#user-interaction-model)
@@ -169,7 +169,7 @@ To retrieve a specific prompt, clients send a `prompts/get` request. Arguments m
 }
 ```
 
-Servers **MAY** also respond to `prompts/get` with an [`InputRequiredResult`](draft-basic-patterns-mrtr.md#inputrequiredresult) to indicate that additional input is needed before the prompt can be resolved. This follows the [multi round-trip requests](draft-basic-patterns-mrtr.md#multi-round-trip-requests) mechanism. When retrying the request, clients include `inputResponses` and, if provided by the server, `requestState` in the request parameters.
+Servers **MAY** also respond to `prompts/get` with an [`InputRequiredResult`](2026-07-28-basic-patterns-mrtr.md#inputrequiredresult) to indicate that additional input is needed before the prompt can be resolved. This follows the [multi round-trip requests](2026-07-28-basic-patterns-mrtr.md#multi-round-trip-requests) mechanism. When retrying the request, clients include `inputResponses` and, if provided by the server, `requestState` in the request parameters.
 
 
 [​](#list-changed-notification)

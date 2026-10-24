@@ -1,8 +1,8 @@
 ---
 title: "Organization - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/organization"
+source_url: "https://platform.claude.com/docs/en/api/beta/organization"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-05T06:38:29Z"
+fetched_at: "2026-10-21T06:29:00Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,13 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
+
+Webhooks
 
 
 Skills
@@ -150,6 +154,29 @@ Skills
 Delete Skill
 
 Versions
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Delete User Profile
+
+
+Create Enrollment URL
+
+Action URLs
 
 
 Tunnels
@@ -175,24 +202,6 @@ Tunnels
 Certificates
 
 
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
 Compliance API
 
 Activities
@@ -203,13 +212,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +228,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,11 +239,17 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
 
 # Organization
 
-##### [Get Current Organization](beta-organization-retrieve.md)
+Copy page
+
+
+
+cURL
+
+##### [Get Current Organization](http-beta-organization-retrieve.md)
 
 GET/v1/organizations/me
 
@@ -590,6 +607,12 @@ Remove a member from the organization.
 
 List a workspace's rate limits.
 
+##### [Set Workspace Rate Limits](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/rate_limits/update)
+
+POST/v1/organizations/workspaces/{workspace_id}/rate_limits/{rate_limit_id}
+
+Set or clear rate-limit overrides for one rate-limit group in a workspace.
+
 #### OrganizationWorkspaces[Members](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/members)
 
 ##### [List Workspace Members](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/members/list)
@@ -768,9 +791,9 @@ Deprecated
 
 Get organization-wide activity summaries for a date range.
 
-#### OrganizationAnalytics[Users](http-beta-organization-analytics-users.md)
+#### OrganizationAnalytics[Users](platform-claude-com-http-beta-organization-analytics-users.md)
 
-##### [List User Activity](http-beta-organization-analytics-users-list.md)
+##### [List User Activity](platform-claude-com-http-beta-organization-analytics-users-list.md)
 
 GET/v1/organizations/analytics/users
 
@@ -784,33 +807,33 @@ Get per-user activity for a given day, with cursor-based pagination.
 
 Get per-project activity for a given day, with cursor-based pagination.
 
-#### OrganizationAnalytics[Connectors](beta-organization-analytics-connectors.md)
+#### OrganizationAnalytics[Connectors](http-beta-organization-analytics-connectors.md)
 
-##### [Get Connector Usage](http-beta-organization-analytics-connectors-list.md)
+##### [Get Connector Usage](platform-claude-com-http-beta-organization-analytics-connectors-list.md)
 
 GET/v1/organizations/analytics/connectors
 
 Get per-connector usage for a given day, with cursor-based pagination.
 
-#### OrganizationAnalytics[Plugins](http-beta-organization-analytics-plugins.md)
+#### OrganizationAnalytics[Plugins](platform-claude-com-http-beta-organization-analytics-plugins.md)
 
-##### [Get Plugin Usage](http-beta-organization-analytics-plugins-list.md)
+##### [Get Plugin Usage](platform-claude-com-http-beta-organization-analytics-plugins-list.md)
 
 GET/v1/organizations/analytics/plugins
 
 Get per-plugin install + invocation usage for a given day, with pagination.
 
-#### OrganizationAnalytics[Skills](beta-organization-analytics-skills.md)
+#### OrganizationAnalytics[Skills](http-beta-organization-analytics-skills.md)
 
-##### [Get Skill Usage](http-beta-organization-analytics-skills-list.md)
+##### [Get Skill Usage](platform-claude-com-http-beta-organization-analytics-skills-list.md)
 
 GET/v1/organizations/analytics/skills
 
 Get per-skill usage for a given day, with cursor-based pagination.
 
-#### OrganizationAnalytics[Artifacts](beta-organization-analytics-artifacts.md)
+#### OrganizationAnalytics[Artifacts](http-beta-organization-analytics-artifacts.md)
 
-##### [Get Artifact Activity](http-beta-organization-analytics-artifacts-list.md)
+##### [Get Artifact Activity](platform-claude-com-http-beta-organization-analytics-artifacts-list.md)
 
 GET/v1/organizations/analytics/artifacts
 
@@ -1099,3 +1122,99 @@ Check whether a plugin marketplace held in a public GitHub repository would sync
 POST/v1/organizations/plugin_marketplaces/validate_archive
 
 Check whether a plugin marketplace, uploaded as a `.zip` of the marketplace directory, would synchronize into claude.ai, without connecting or storing it.
+
+#### Organization[Telemetry Destinations](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations)
+
+##### [Create a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/create)
+
+POST/v1/organizations/telemetry_destinations
+
+Register an OpenTelemetry destination for the organization.
+
+##### [List Telemetry Destinations](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/list)
+
+GET/v1/organizations/telemetry_destinations
+
+List the organization's destinations, newest first, optionally only those that cover given workspaces.
+
+##### [Retrieve a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/retrieve)
+
+GET/v1/organizations/telemetry_destinations/{destination_id}
+
+Read a destination's configuration, state, and most recent delivery results.
+
+##### [Update a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/update)
+
+POST/v1/organizations/telemetry_destinations/{destination_id}
+
+Change a telemetry destination's settings, its state, or which workspaces it covers.
+
+##### [Delete a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/delete)
+
+DELETE/v1/organizations/telemetry_destinations/{destination_id}
+
+Delete a destination and its workspace list.
+
+##### [Test a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/test)
+
+POST/v1/organizations/telemetry_destinations/{destination_id}/test
+
+Send one test span, named `anthropic.test`, to the destination with its registered headers, once and without retries, and report the destination's answer. The response is 200 whether or not the destination answered with a 2xx status: its `result` has the type `success`, or the type `failure` and the reason in `error`. The destination's configuration, `state` and `delivery_health` do not change. A disabled destination can be tested too. Wait 10 seconds between tests of one destination; a request that comes sooner may be answered with status 429.
+
+#### OrganizationTelemetry Destinations[Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces)
+
+##### [List Telemetry Destination Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/list)
+
+GET/v1/organizations/telemetry_destinations/{destination_id}/workspaces
+
+List the workspaces on a destination's workspace list, newest entry first.
+
+##### [Add a Telemetry Destination Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/add)
+
+POST/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
+
+Add one workspace to a destination's workspace list.
+
+##### [Remove a Telemetry Destination Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/remove)
+
+DELETE/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
+
+Remove one workspace from a destination's workspace list.
+
+#### Organization[Webhooks](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks)
+
+##### [Create Organization Webhook Endpoint](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/create)
+
+POST/v1/organizations/webhooks
+
+Create an organization webhook endpoint.
+
+##### [List Organization Webhook Endpoints](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/list)
+
+GET/v1/organizations/webhooks
+
+List the organization's webhook endpoints.
+
+##### [Get Organization Webhook Endpoint](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/retrieve)
+
+GET/v1/organizations/webhooks/{webhook_endpoint_id}
+
+Retrieve an organization webhook endpoint by ID.
+
+##### [Update Organization Webhook Endpoint](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/update)
+
+POST/v1/organizations/webhooks/{webhook_endpoint_id}
+
+Update an organization webhook endpoint. Only the fields you send are changed.
+
+##### [Delete Organization Webhook Endpoint](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/delete)
+
+DELETE/v1/organizations/webhooks/{webhook_endpoint_id}
+
+Delete an organization webhook endpoint.
+
+##### [Regenerate Organization Webhook Endpoint Signing Secret](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/regenerate_signing_secret)
+
+POST/v1/organizations/webhooks/{webhook_endpoint_id}/regenerate_signing_secret
+
+Replace an organization webhook endpoint's signing secret. The old secret stops working immediately. The new secret is returned only in this response.

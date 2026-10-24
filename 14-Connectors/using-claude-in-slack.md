@@ -2,7 +2,7 @@
 title: "Work with Claude Tag - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 category: "14-Connectors"
-fetched_at: "2026-10-10T06:28:05Z"
+fetched_at: "2026-10-23T06:28:56Z"
 tags: ["connectors"]
 ---
 

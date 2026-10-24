@@ -25,7 +25,7 @@ Path: 04-API-Reference/About/about-claude-additional-resources.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fadditional-resources)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fadditional-resources)
 
 
 
@@ -39,7 +39,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -53,7 +53,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Reference
 
@@ -132,7 +132,7 @@ Path: 04-API-Reference/About/about-claude-api-credits-for-subscribers.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fapi-credits-for-subscribers)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fapi-credits-for-subscribers)
 
 
 
@@ -166,7 +166,7 @@ Lifecycle and reference
 
 [System prompts](../../20-Models/release-notes-system-prompts-overview.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Models & pricing](../../20-Models/about-claude-models-overview.md)Lifecycle and reference
 
@@ -182,13 +182,13 @@ Claim the monthly Claude Platform credits included with Claude Max and Team plan
 
 
 
-Claude Max and Team plans include monthly credits for the Claude API. To claim them, you link a [Claude Console](../Other/usage-limits.md) organization to your plan. Credits then arrive in that organization each billing cycle (or monthly for annual plans), and you can use them to build and run your own applications and agents. You don't need to add a payment method to Claude Platform.
+Claude Max and Team plans include monthly credits for the Claude API. To claim them, you link a [Claude Console](../Other/playground.md) organization to your plan. Credits then arrive in that organization each billing cycle (or monthly for annual plans), and you can use them to build and run your own applications and agents. You don't need to add a payment method to Claude Platform.
 
 
 
 Claude Platform on AWS, Amazon Bedrock, Google Cloud, and Microsoft Foundry: These credits apply only to the Claude API in the Claude Console. They can't be used on other platforms.
 
-## At a glance
+## Summary
 
 | Topic                                  | Details                                                                   |
 |:---------------------------------------|:--------------------------------------------------------------------------|
@@ -200,7 +200,7 @@ Claude Platform on AWS, Amazon Bedrock, Google Cloud, and Microsoft Foundry: The
 | **Expiry**                             | End of each billing cycle (or monthly for annual plans), with no rollover |
 | **Payment method for Claude Platform** | Not required                                                              |
 
-## API credits amounts
+## API credit amounts
 
 | Plan                                          | Monthly credit                                                         |
 |:----------------------------------------------|:-----------------------------------------------------------------------|
@@ -221,13 +221,13 @@ Claude Platform on AWS, Amazon Bedrock, Google Cloud, and Microsoft Foundry: The
 
 ## Claim your credits
 
-### Before you begin
+### Before you start
 
 You need both of the following roles:
 
 [TABLE]
 
-If you don't have a Console organization, create one at [platform.claude.com](../Other/usage-limits.md) first, or create one during the claim flow.
+If you don't have a Claude Console organization, create one in the Console at [platform.claude.com](../Other/playground.md) first, or create one during the claim flow.
 
 ### Steps
 
@@ -241,19 +241,19 @@ If you don't have a Console organization, create one at [platform.claude.com](..
 
     ### Link a Console organization
 
-    In the **API credits** section, choose the Console organization that should receive the credits, then accept the [program terms](https://www.anthropic.com/legal/credit-terms) by linking.
+    In the **API credits** section, select the Console organization that should receive the credits, then accept the [program terms](https://www.anthropic.com/legal/credit-terms) by linking.
 
 3.  3
 
     ### Start building
 
-    Your credits appear in the Console, in the **Promotional credits** section under [**Settings \> Billing**](../Other/playground.md). Create an API key and make your first request. See [Get started](../../01-Getting-Started/get-started.md).
+    Your credits appear in the **Promotional credits** section of the [Billing](../Other/playground.md) page (`platform.claude.com/settings/billing`) in the Console. Create an API key and make your first request. See [Get started](../../01-Getting-Started/get-started.md).
 
 
 
-Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can't change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can't change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](../../15-Claude-AI-Features/how-to-get-support.md).
 
-Subscribers who aren't eligible don't see API credits in their settings page. If you think you should be eligible but don't see the API credits, [reach out to support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Subscribers who aren't eligible don't see API credits in their settings page. If you think you should be eligible but don't see the API credits, [contact support](../../15-Claude-AI-Features/how-to-get-support.md).
 
 ## What the credits cover
 
@@ -264,7 +264,7 @@ These API credits can only be used on the Claude Platform. The following table s
 | [Claude API](../Endpoints/overview.md)                                    | Yes     |
 | [Claude Managed Agents](../Other/managed-agents-overview.md)              | Yes     |
 | [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md) | Yes     |
-| [Playground](../Other/playground.md)                                              | Yes     |
+| [Playground](../Other/playground.md) in the Claude Console                        | Yes     |
 | Claude Code                                                            | No      |
 | Extra usage in the Claude apps                                         | No      |
 | Claude Platform on AWS, Bedrock, Google Cloud, Microsoft Foundry       | No      |
@@ -275,21 +275,21 @@ These API credits can only be used on the Claude Platform. The following table s
 - **Order.** Included credits are spent first, then any credits you've purchased. Auto-reload is based only on your purchased balance. It reloads when that balance reaches your threshold, even if included credits remain.
 - **Expiry.** Unused credits expire at the end of each billing cycle (or monthly for annual plans) and don't roll over.
 - **Sharing.** Every API key and workspace in the linked organization draws from the same balance. To cap spending on a project, give it its own workspace and set that workspace's [spend limit](../Other/manage-claude-workspaces.md#setting-workspace-limits).
-- **Visibility.** Your credits appear in the Console under [**Settings \> Billing**](../Other/playground.md), in the **Promotional credits** section, with the amount and expiry date.
+- **Visibility.** Your credits appear in the **Promotional credits** section of the [Billing](../Other/playground.md) page (`platform.claude.com/settings/billing`) in the Console, with the amount and expiry date.
 - **Your Claude plan.** Credits don't change your usage limits in Claude or Claude Code.
 
 ## Spend limits and rate limits
 
 Credits don't change how [rate limits and spend limits](../Endpoints/rate-limits.md) work:
 
-- Usage paid with credits counts toward your organization's [monthly spend cap](../Endpoints/rate-limits.md#spend-limits). Spend caps reset on the first of each calendar month, while credits refresh on your billing cycle (or monthly for annual plans).
+- Usage paid with credits counts toward your organization's [monthly spend cap](../Endpoints/rate-limits.md#spend-limits). Spend caps reset on the first of each calendar month, whereas credits refresh on your billing cycle (or monthly for annual plans).
 - Organizations linked to an eligible plan move up to at least the Start tier. If their monthly credits are over \$200 USD, they move up to at least the Build tier.
 - Claiming credits doesn't otherwise change your [usage tier](../Endpoints/rate-limits.md#about-rate-limits), and these credits don't count toward moving to a higher tier.
 
 ### When credits run out
 
 - **If the organization has other credits**, requests continue using purchased credits. Auto-reload, if it's turned on, adds credits to the purchased balance.
-- **If the organization has no credits left**, API requests stop until your next monthly API credits arrive. Usage is never charged to your Claude plan. To keep building, purchase credits or turn on auto-reload in the Console.
+- **If the organization has no credits left**, API requests stop until your next monthly API credits arrive. Usage is never charged to your Claude plan. To keep building, purchase credits or turn on auto-reload on the [Billing](../Other/playground.md) page (`platform.claude.com/settings/billing`) in the Console.
 - **If your organization is invoiced through Anthropic sales**, usage beyond the API credits is billed as usual.
 
 When the balance is exhausted, requests return:
@@ -317,14 +317,14 @@ Credit balance too low · Add funds: https://platform.claude.com/settings/billin
 | Upgrade from Max to Team                           | The Max link ends. A Team owner can claim the team's credits after the Team plan has been active for 7 days.                                                                                          |
 | Add or remove Team seats                           | Seats added to your plan count from the next billing month's credit. Seats you remove stay on your plan until it renews, so the credit might be lower after that. The pool stays capped at \$500 USD. |
 
-## Make your credits go further
+## Use your credits efficiently
 
-Your monthly cost depends mainly on the model you choose and how often your application runs. To stretch your credits:
+Your monthly cost depends mainly on the model you choose and how often your application runs. To use fewer credits:
 
 - Choose a model that fits each task. To learn how, see [Choosing the right model](../../20-Models/about-claude-models-choosing-a-model.md).
 - Use [prompt caching](../Guides/build-with-claude-prompt-caching.md) for repeated context.
 - Use the [Message Batches API](../Guides/build-with-claude-batch-processing.md) for work that doesn't need an immediate response. It costs 50 percent less.
-- Check [pricing](../../17-Billing-Plans/about-claude-pricing.md) and track spend on the [Cost](../Other/playground.md) page.
+- Check [pricing](../../17-Billing-Plans/about-claude-pricing.md) and track spend on the [Cost](../Other/playground.md) page in the Claude Console.
 
 ## Related
 
@@ -356,7 +356,7 @@ Path: 04-API-Reference/About/about-claude-glossary.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fglossary)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fglossary)
 
 
 
@@ -370,7 +370,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -384,7 +384,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Reference
 
@@ -458,7 +458,7 @@ Time to First Token (TTFT) is a performance metric that measures the time it tak
 
 ## Tokens
 
-Tokens are the smallest individual units of a language model, and can correspond to words, subwords, characters, or even bytes (in the case of Unicode). For Claude, a token approximately represents 3.5 English characters, though the exact number can vary depending on the language used. Tokens are typically hidden when interacting with language models at the "text" level but become relevant when examining the exact inputs and outputs of a language model. When Claude is provided with text to evaluate, the text (consisting of a series of characters) is encoded into a series of tokens for the model to process. Larger tokens enable data efficiency during inference and pretraining (and are used when possible), while smaller tokens allow a model to handle uncommon or never-before-seen words. The choice of tokenization method can impact the model's performance, vocabulary size, and ability to handle out-of-vocabulary words.
+Tokens are the smallest individual units of a language model, and can correspond to words, subwords, characters, or even bytes (in the case of Unicode). For Claude, the number of characters a token represents depends on the model and the language. Claude 4.7 and later models and Claude Mythos Preview use a newer tokenizer that produces approximately 30 percent more tokens for the same text than earlier models, on which a token represents approximately 3.5 English characters. To get exact counts, use [token counting](../Guides/build-with-claude-token-counting.md) with the model you plan to use. Tokens are typically hidden when interacting with language models at the "text" level but become relevant when examining the exact inputs and outputs of a language model. When Claude is provided with text to evaluate, the text (consisting of a series of characters) is encoded into a series of tokens for the model to process. Larger tokens enable data efficiency during inference and pretraining (and are used when possible), while smaller tokens allow a model to handle uncommon or never-before-seen words. The choice of tokenization method can impact the model's performance, vocabulary size, and ability to handle out-of-vocabulary words.
 
 ---
 
@@ -732,7 +732,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-content-moderation.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcontent-moderation)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcontent-moderation)
 
 
 
@@ -746,7 +746,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -760,7 +760,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Use cases
 
@@ -838,6 +838,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -885,7 +887,7 @@ The unsafe categories can be customized to fit your specific needs. For example,
 
 ### Select the right Claude model
 
-When selecting a model, it’s important to consider the size of your data. If costs are a concern, a smaller model such as Claude Haiku 4.5 is an excellent choice because of its cost-effectiveness. The following is an estimate of the cost to moderate text for a social media platform that receives one billion posts per month:
+When selecting a model, it’s important to consider the size of your data. If costs are a concern, a smaller model such as Claude Haiku 5.5 is an excellent choice because of its cost-effectiveness. The following is an estimate of the cost to moderate text for a social media platform that receives one billion posts per month:
 
 - **Content size**
 
@@ -900,11 +902,11 @@ When selecting a model, it’s important to consider the size of your data. If c
   - Output tokens per flagged message: 50
   - Total output tokens: 1.5B
 
-- **Claude Haiku 4.5 estimated cost**
+- **Claude Haiku 5.5 estimated cost**
 
-  - Input token cost: 28,600 MTok \* \$1.00/MTok = \$28,600 USD
-  - Output token cost: 1,500 MTok \* \$5.00/MTok = \$7,500 USD
-  - Monthly cost: \$28,600 + \$7,500 = \$36,100 USD
+  - Input token cost: 28,600 MTok \* \$0.10/MTok = \$2,860 USD
+  - Output token cost: 1,500 MTok \* \$0.50/MTok = \$750 USD
+  - Monthly cost: \$2,860 + \$750 = \$3,610 USD
 
 - **Claude Opus 5 estimated cost**
 
@@ -939,6 +941,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -1026,6 +1030,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -1136,6 +1142,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -1245,6 +1253,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -1347,7 +1357,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-customer-support-chat.
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcustomer-support-chat)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcustomer-support-chat)
 
 
 
@@ -1361,7 +1371,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -1375,7 +1385,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Use cases
 
@@ -1558,7 +1568,7 @@ The average time it takes for the chatbot to resolve an inquiry. This varies wid
 
 The choice of model depends on the trade-offs between cost, accuracy, and response time.
 
-For customer support chat, Claude Opus 5 is well suited to balance intelligence, latency, and cost, including the most complex support scenarios that require deep reasoning across long, multi-step conversations. However, for instances where you have conversation flow with multiple prompts including RAG, tool use, or long-context prompts, Claude Haiku 4.5 may be more suitable to optimize for latency.
+For customer support chat, Claude Opus 5.5 is well suited to balance intelligence, latency, and cost, including the most complex support scenarios that require deep reasoning across long, multi-step conversations. However, for instances where you have conversation flow with multiple prompts including RAG, tool use, or long-context prompts, Claude Haiku 5.5 may be more suitable to optimize for latency. [Effort](../Guides/build-with-claude-effort.md) is its main control for speed: `low` is the fastest level, suited to chat and short tool tasks.
 
 ### Build a strong prompt
 
@@ -1829,6 +1839,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -1905,7 +1917,11 @@ class ChatBot:
                 return f"An error occurred: {follow_up_response['error']}"
 
             response_text = next(
-                (block.text for block in follow_up_response.content if block.type == "text"),
+                (
+                    block.text
+                    for block in follow_up_response.content
+                    if block.type == "text"
+                ),
                 None,
             )
             if response_text is None:
@@ -2001,7 +2017,7 @@ In complex scenarios, it may be helpful to consider additional strategies to imp
 
 When dealing with large amounts of static and dynamic context, including all information in the prompt can lead to high costs, slower response times, and reaching context window limits. In this scenario, implementing Retrieval Augmented Generation (RAG) techniques can improve performance and efficiency.
 
-By using [embedding models like Voyage](../Guides/build-with-claude-embeddings.md) to convert information into vector representations, you can create a more scalable and responsive system. This approach allows for dynamic retrieval of relevant information based on the current query, rather than including all possible context in every prompt.
+You can create a more scalable and responsive system by converting information into vector representations with [embedding models](../Guides/build-with-claude-embeddings.md), such as those from Voyage AI by MongoDB. This approach allows for dynamic retrieval of relevant information based on the current query, rather than including all possible context in every prompt.
 
 Implementing RAG for support use cases has been shown to increase accuracy, reduce response times, and reduce API costs in systems with extensive context requirements. See the [RAG recipe](https://platform.claude.com/cookbook/capabilities-retrieval-augmented-generation-guide) for a worked example.
 
@@ -2108,7 +2124,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-legal-summarization.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Flegal-summarization)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Flegal-summarization)
 
 
 
@@ -2122,7 +2138,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -2136,7 +2152,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Use cases
 
@@ -2186,6 +2202,24 @@ There is no single correct summary for any given document. Without clear directi
 
 For instance, when summarizing a sublease agreement, you might want to extract the following key points:
 
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
+
+
 ```python
 details_to_extract = [
     "Parties involved (sublessor, sublessee, and original lessor)",
@@ -2196,8 +2230,6 @@ details_to_extract = [
     "Special provisions (furniture, parking, and subletting restrictions)",
 ]
 ```
-
-
 
 ### Establish success criteria
 
@@ -2235,7 +2267,7 @@ See the guide on [establishing success criteria](../Test-Evaluate/test-and-evalu
 
 ### Select the right Claude model
 
-Model accuracy is extremely important when summarizing legal documents. Claude Opus 5 is an excellent choice for use cases such as this where high accuracy is required. If the size and quantity of your documents is large such that costs start to become a concern, you can also try using a smaller model such as Claude Haiku 4.5.
+Model accuracy is extremely important when summarizing legal documents. Claude Opus 5.5 is an excellent choice for use cases such as this where high accuracy is required. If the size and quantity of your documents is large such that costs start to become a concern, you can also try using a smaller model such as Claude Haiku 5.5.
 
 To help estimate these costs, the following is a comparison of the cost to summarize 1,000 sublease agreements using Opus and Haiku models:
 
@@ -2247,37 +2279,53 @@ To help estimate these costs, the following is a comparison of the cost to summa
 
 - **Estimated tokens**
 
-  - Input tokens: 86M (assuming 1 token per 3.5 characters)
-  - Output tokens per summary: 350
-  - Total output tokens: 350,000
+  - Input tokens: 108M, about 108,000 per agreement (about 1 token per 2.8 characters, the rate both models showed on this guide's sample agreement)
+  - Output tokens per summary, including any thinking tokens, which are billed as output: about 6,200 on Claude Opus 5.5 and 3,100 on Claude Haiku 5.5
+  - Total output tokens: 6.2M on Claude Opus 5.5 and 3.1M on Claude Haiku 5.5
 
-- **Claude Opus 5 estimated cost**
+- **Claude Opus 5.5 estimated cost**
 
-  - Input token cost: 86 MTok \* \$5.00/MTok = \$430.00 USD
-  - Output token cost: 0.35 MTok \* \$25.00/MTok = \$8.75 USD
-  - Total cost: \$430.00 + \$8.75 = \$438.75 USD
+  - Input token cost: 108 MTok \* \$4.00/MTok = \$432.00 USD
+  - Output token cost: 6.2 MTok \* \$20.00/MTok = \$124.00 USD
+  - Total cost: \$432.00 + \$124.00 = \$556.00 USD
 
-- **Claude Opus 4.8 estimated cost**
+- **Claude Haiku 5.5 estimated cost**, at its prices for prompts over 100,000 tokens
 
-  - Input token cost: 86 MTok \* \$5.00/MTok = \$430.00 USD
-  - Output token cost: 0.35 MTok \* \$25.00/MTok = \$8.75 USD
-  - Total cost: \$430.00 + \$8.75 = \$438.75 USD
-
-- **Claude Haiku 4.5 estimated cost**
-
-  - Input token cost: 86 MTok \* \$1.00/MTok = \$86.00 USD
-  - Output token cost: 0.35 MTok \* \$5.00/MTok = \$1.75 USD
-  - Total cost: \$86.00 + \$1.75 = \$87.75 USD
+  - Input token cost: 108 MTok \* \$0.50/MTok = \$54.00 USD
+  - Output token cost: 3.1 MTok \* \$2.50/MTok = \$7.75 USD
+  - Total cost: \$54.00 + \$7.75 = \$61.75 USD
 
 
 
-Actual costs may differ from these estimates. These estimates are based on the example highlighted in the [Build a strong prompt](#build-a-strong-prompt) section.
+Actual costs may differ from these estimates. The token counts come from running the example in the [Build a strong prompt](#build-a-strong-prompt) section on this guide's sample agreement, about 105,000 input tokens, and output length varies with the document and from run to run. Each agreement here is one prompt of about 108,000 tokens, over the 100,000-token threshold of Claude Haiku 5.5's [long-prompt prices](../../17-Billing-Plans/about-claude-pricing.md#long-context-pricing). A document whose prompt stays at or under 100,000 tokens pays \$0.10/MTok input and \$0.50/MTok output instead. To see which prices apply, count your documents with [token counting](../Guides/build-with-claude-token-counting.md) and `model` set to `claude-haiku-5-5`.
 
 ### Transform documents into a format that Claude can process
 
 Before you begin summarizing documents, you need to prepare your data. This involves extracting text from PDFs, cleaning the text, and ensuring it's ready to be processed by Claude.
 
 Here is a demonstration of this process on a sample PDF:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
+
 
 ```python
 from io import BytesIO
@@ -2314,17 +2362,33 @@ document_text = get_llm_text(pdf_file)
 print(document_text[:50000])
 ```
 
-
-
 In this example, you first download a PDF of a sample sublease agreement used in the [summarization cookbook](https://platform.claude.com/cookbook/capabilities-summarization-guide). This agreement was sourced from a publicly available sublease agreement from the [sec.gov website](https://www.sec.gov/Archives/edgar/data/1045425/000119312507044370/dex1032.htm).
 
-The example uses the pypdf library to extract the contents of the PDF and convert it to text. The text data is then cleaned by removing page numbers and extra whitespace.
+The example uses the `pypdf` library to extract the contents of the PDF and convert it to text. The text data is then cleaned by removing page numbers and extra whitespace.
 
 ### Build a strong prompt
 
 Claude can adapt to various summarization styles. You can change the details of the prompt to guide Claude to be more or less verbose, include more or less technical terminology, or provide a higher- or lower-level summary of the context at hand.
 
 Here’s an example of how to create a prompt that ensures the generated summaries follow a consistent structure when analyzing sublease agreements:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
 
 Python
 
@@ -2336,7 +2400,7 @@ client = anthropic.Anthropic()
 
 
 def summarize_document(
-    text, details_to_extract, model="claude-opus-5-5", max_tokens=1000
+    text, details_to_extract, model="claude-opus-5-5", max_tokens=16000
 ):
     # Format the details to extract to be placed within the prompt's context
     details_to_extract_str = "\n".join(details_to_extract)
@@ -2427,21 +2491,35 @@ Legal summarization often involves handling long documents or many related docum
 
 Here's an example of how to perform meta-summarization:
 
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
 Python
 
 
 
 ```python
-# Initialize the Anthropic client
-client = anthropic.Anthropic()
-
-
 def chunk_text(text, chunk_size=20000):
     return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
 
 
 def summarize_long_document(
-    text, details_to_extract, model="claude-opus-5-5", max_tokens=1000
+    text, details_to_extract, model="claude-opus-5-5", max_tokens=16000
 ):
     # Format the details to extract to be placed within the prompt's context
     details_to_extract_str = "\n".join(details_to_extract)
@@ -2553,7 +2631,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-overview.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Foverview)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Foverview)
 
 
 
@@ -2567,7 +2645,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -2581,7 +2659,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Best practicesUse cases
 
@@ -2654,7 +2732,7 @@ Path: 04-API-Reference/About/about-claude-use-case-guides-ticket-routing.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fticket-routing)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fticket-routing)
 
 
 
@@ -2668,7 +2746,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -2682,7 +2760,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Use cases
 
@@ -2700,7 +2778,7 @@ This guide walks through how to harness Claude's advanced natural language under
 
 ## Prerequisites
 
-- A Claude API key and the Python SDK installed
+- A Claude API key and the Claude SDK installed
 - Access to, and familiarity with, your existing support ticketing system
 - A sample set of historical support tickets for testing
 
@@ -2921,7 +2999,7 @@ This metric calculates the average cost to resolve each support ticket. Efficien
 
 The choice of model depends on the trade-offs between cost, accuracy, and response time.
 
-Many customers have found `claude-haiku-4-5-20251001` an ideal model for ticket routing, as it is the fastest and most cost-effective model in the Claude 4 family while still delivering excellent results. If your classification problem requires deep subject matter expertise or a large volume of intent categories, or complex reasoning, you may opt for the [larger Sonnet model](../../20-Models/about-claude-models-overview.md).
+Claude Haiku 5.5 (`claude-haiku-5-5`) suits ticket routing: it's the fastest and most cost-effective current model, and at `low` effort it handles simple, high-volume requests such as classification. If your classification problem requires deep subject matter expertise or a large volume of intent categories, or complex reasoning, you may opt for the [larger Sonnet model](../../20-Models/about-claude-models-overview.md).
 
 ### Build a strong prompt
 
@@ -2934,6 +3012,28 @@ Write a ticket classification prompt. The initial prompt should contain the cont
 Try the [metaprompt recipe from the Claude Cookbook](https://colab.research.google.com/github/anthropics/claude-cookbooks/blob/main/misc/metaprompt.ipynb) to have Claude write a first draft for you.
 
 Here's an example ticket routing classification prompt:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
+
 
 ```python
 def classify_support_request(ticket_contents):
@@ -2976,7 +3076,7 @@ def classify_support_request(ticket_contents):
         </example 2>
         <example 3>
 
-        ...
+        […]
 
         </example 8>
         <example 9>
@@ -2992,15 +3092,13 @@ def classify_support_request(ticket_contents):
         """
 ```
 
-
-
 
 
-This prompt is written for Claude Haiku 4.5, which runs here without thinking. On Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
+This prompt is written for Claude Haiku 5.5, which runs here at `low` effort. On Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 Here are the key components of this prompt:
 
-- The prompt template is a Python f-string, allowing the `ticket_contents` to be inserted into the `<request>` tags.
+- The prompt template inserts `ticket_contents` into the `<request>` tags.
 - The prompt gives Claude a clearly defined role as a classification system that carefully analyzes the ticket content to determine the customer's core intent and needs.
 - The prompt instructs Claude on proper output formatting, in this case to provide its reasoning and analysis inside `<reasoning>` tags, followed by the appropriate classification label inside `<intent>` tags.
 - The prompt specifies the valid intent categories: "Support, Feedback, Complaint", "Order Tracking", and "Refund/Exchange".
@@ -3012,7 +3110,25 @@ Having Claude split its response into separate XML tag sections lets you use reg
 
 It’s hard to know how well your prompt works without deploying it in a test production setting and [running evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md).
 
-Build the deployment structure. Start by defining the method signature for wrapping the call to Claude. Extend the method you began writing earlier, which takes `ticket_contents` as input, so that it now returns a tuple of `reasoning` and `intent` as output. If you have an existing automation using traditional ML, you'll want to follow that method signature instead.
+Build the deployment structure. Start by defining the method signature for wrapping the call to Claude. Extend the method you began writing earlier, which takes `ticket_contents` as input, so that it now returns the reasoning and the intent as output. If you have an existing automation using traditional ML, you'll want to follow that method signature instead.
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
 
 Python
 
@@ -3025,23 +3141,26 @@ import re
 client = anthropic.Anthropic()
 
 # Set the default model
-DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+DEFAULT_MODEL = "claude-haiku-5-5"
 
 
 def classify_support_request(ticket_contents):
     # Define the prompt for the classification task
     classification_prompt = f"""You will be acting as a customer support ticket classification system.
-        ...
+        […]
         ... The reasoning should be enclosed in <reasoning> tags and the intent in <intent> tags. Return only the reasoning and the intent.
         """
     # Send the prompt to the API to classify the support request.
     message = client.messages.create(
         model=DEFAULT_MODEL,
-        max_tokens=500,
+        max_tokens=2048,
+        output_config={"effort": "low"},
         messages=[{"role": "user", "content": classification_prompt}],
         stream=False,
     )
-    reasoning_and_intent = message.content[0].text
+    reasoning_and_intent = next(
+        (block.text for block in message.content if block.type == "text"), ""
+    )
 
     # Use Python's regular expressions library to extract `reasoning`.
     reasoning_match = re.search(
@@ -3061,9 +3180,9 @@ This code:
 - Creates a client instance using your API key.
 - Defines a `classify_support_request` function that takes a `ticket_contents` string.
 - Sends the `ticket_contents` to Claude for classification using the `classification_prompt`.
-- Returns the model's `reasoning` and `intent` extracted from the response.
+- Returns the model's reasoning and intent extracted from the response.
 
-Because the entire reasoning and intent text must be generated before parsing, the example sets `stream=False` (the default).
+Because the entire reasoning and intent text must be generated before parsing, the example does not stream the response.
 
 ------------------------------------------------------------------------
 
@@ -3084,6 +3203,24 @@ You may need to assess Claude on other axes depending on what factors that are i
 
 To assess this, first modify the script to add a function that compares the predicted intent with the actual intent and calculates the percentage of correct predictions. Then add cost calculation and time measurement functionality.
 
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
 Python
 
 
@@ -3095,23 +3232,26 @@ import re
 client = anthropic.Anthropic()
 
 # Set the default model
-DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+DEFAULT_MODEL = "claude-haiku-5-5"
 
 
 def classify_support_request(request, actual_intent):
     # Define the prompt for the classification task
     classification_prompt = f"""You will be acting as a customer support ticket classification system.
-        ...
+        […]
         ...The reasoning should be enclosed in <reasoning> tags and the intent in <intent> tags. Return only the reasoning and the intent.
         """
 
     message = client.messages.create(
         model=DEFAULT_MODEL,
-        max_tokens=500,
+        max_tokens=2048,
+        output_config={"effort": "low"},
         messages=[{"role": "user", "content": classification_prompt}],
     )
     usage = message.usage  # Get the usage statistics for the API call for how many input and output tokens were used.
-    reasoning_and_intent = message.content[0].text
+    reasoning_and_intent = next(
+        (block.text for block in message.content if block.type == "text"), ""
+    )
 
     # Use Python's regular expressions library to extract `reasoning`.
     reasoning_match = re.search(

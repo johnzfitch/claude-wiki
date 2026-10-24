@@ -2,7 +2,7 @@
 title: "Get effective organization settings - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/settings/retrieve"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:56Z"
+fetched_at: "2026-10-20T06:39:52Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations%2Fsettings%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Forganizations%2Fsettings%2Fretrieve)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -204,6 +206,8 @@ Organizations
 
 Users
 
+User Preferences
+
 Roles
 
 Settings
@@ -218,13 +222,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -232,9 +238,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -250,6 +256,10 @@ To enable the Compliance API, see the setup guide.
 4.  [Settings](https://platform.claude.com/docs/en/api/http/compliance/organizations/settings)
 
 # Get effective organization settings
+
+Copy page
+
+
 
 GET/v1/compliance/organizations/{organization_id}/settings
 
@@ -268,6 +278,16 @@ organization_id: string
 The organization's UUID
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 "x-api-key": optional string
 
@@ -379,7 +399,7 @@ defaultboolean
 
 
 
-name: "access_transparency_enabled" or "ai_powered_artifacts_enabled" or "api_workbench_feedback_collection_enabled" or 59 more
+name: "access_transparency_enabled" or "ai_powered_artifacts_enabled" or "api_workbench_feedback_collection_enabled" or 61 more
 
 
 
@@ -406,6 +426,10 @@ One of the following:
 
 
 "ask_your_org_enabled"
+
+
+
+"chat_cowork_unified_enabled"
 
 
 
@@ -498,6 +522,10 @@ One of the following:
 
 
 "claude_science_enabled"
+
+
+
+"claude_science_local_work_import_enabled"
 
 
 

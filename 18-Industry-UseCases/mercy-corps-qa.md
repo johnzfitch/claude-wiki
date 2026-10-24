@@ -2,7 +2,7 @@
 title: "Mercy Corps Q&A | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/mercy-corps-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:53Z"
+fetched_at: "2026-10-13T06:30:55Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -171,7 +171,7 @@ Our Innovation Catalyst platform is another effort taking shape, weaving AI for 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -295,7 +295,7 @@ Our Innovation Catalyst platform is another effort taking shape, weaving AI for 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers

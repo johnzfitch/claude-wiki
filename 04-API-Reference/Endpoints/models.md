@@ -2,7 +2,7 @@
 title: "Models - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/models"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:29Z"
+fetched_at: "2026-10-20T06:37:39Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmodels)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmodels)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -229,11 +233,17 @@ cURL
 
 
 
-A beta version of this API exists and may have additional functionality. [View the beta version](http-beta-models.md).
+A beta version of this API exists and may have additional functionality. [View the beta version](platform-claude-com-http-beta-models.md).
 
 1.  [API reference](http.md)
 
 # Models
+
+Copy page
+
+
+
+cURL
 
 ##### [List Models](https://platform.claude.com/docs/en/api/http/models/list)
 
@@ -329,7 +339,7 @@ Effort (reasoning_effort) capability details.
 
 
 
-ModelCapabilities object{ batch, citations, code_execution, 6 more }
+ModelCapabilities object{ batch, citations, code_execution, 7 more }
 
 
 
@@ -337,63 +347,81 @@ Model capability information.
 
 
 
-ModelInfo object{ type: "model", id, capabilities, 4 more }
+ModelInfo object{ type: "model", id, capabilities, 8 more }
 
 
 
 
 
-type: "model"
+ModelLine = "haiku" or "sonnet" or "opus" or 2 more
 
 
 
-Object type.
+A Claude model line, such as `opus` or `sonnet`. More lines may be added as new values.
 
-For Models, this is always `"model"`.
+One of the following:
 
-defaultmodel
-
-id: string
+"haiku"
 
 
 
-Unique model identifier.
+"sonnet"
+
+
+
+"opus"
+
+
+
+"fable"
+
+
+
+"mythos"
+
+
 
 
 
-capabilities: [ModelCapabilities](https://platform.claude.com/docs/en/api/http/models#model_capabilities) { batch, citations, code_execution, 6 more } or null
+ServerToolsCapability object{ code_execution, supported, web_search }
 
 
 
-Object mapping capability names to their support details. Keys are always present for all known capabilities.
+Web search and code execution tool support, with one entry per tool.
 
 
 
-created_at: string
+code_execution: [CapabilitySupport](https://platform.claude.com/docs/en/api/http/models#capability_support) { supported }
 
 
 
-RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
+Whether the model supports the code execution tool: true when the model supports at least one version of the tool, not necessarily every version.
 
-formatdate-time
-
-display_name: string
+supported: boolean
 
 
 
-A human-readable name for the model.
+Whether this capability is supported by the model.
 
-max_input_tokens: number or null
-
-
-
-Maximum input context window size in tokens for this model.
-
-max_tokens: number or null
+supported: boolean
 
 
 
-Maximum value for the `max_tokens` parameter when using this model.
+Whether this capability is supported by the model.
+
+
+
+web_search: [CapabilitySupport](https://platform.claude.com/docs/en/api/http/models#capability_support) { supported }
+
+
+
+Whether the model supports the web search tool: true when the model supports at least one version of the tool, not necessarily every version.
+
+supported: boolean
+
+
+
+Whether this capability is supported by the model.
 
 
 
@@ -411,7 +439,7 @@ Whether this capability is supported by the model.
 
 
 
-types: [ThinkingTypes](https://platform.claude.com/docs/en/api/http/models#thinking_types) { adaptive, enabled }
+types: [ThinkingTypes](https://platform.claude.com/docs/en/api/http/models#thinking_types) { adaptive, between_tools, disabled, enabled }
 
 
 
@@ -419,64 +447,8 @@ Supported thinking type configurations.
 
 
 
-adaptive: [CapabilitySupport](https://platform.claude.com/docs/en/api/http/models#capability_support) { supported }
+ThinkingTypes object{ adaptive, between_tools, disabled, enabled }
 
 
 
-Whether the model supports thinking with type 'adaptive' (auto).
-
-supported: boolean
-
-
-
-Whether this capability is supported by the model.
-
-
-
-enabled: [CapabilitySupport](https://platform.claude.com/docs/en/api/http/models#capability_support) { supported }
-
-
-
-Whether the model supports thinking with type 'enabled'.
-
-supported: boolean
-
-
-
-Whether this capability is supported by the model.
-
-
-
-ThinkingTypes object{ adaptive, enabled }
-
-
-
-Supported thinking type configurations.
-
-
-
-adaptive: [CapabilitySupport](https://platform.claude.com/docs/en/api/http/models#capability_support) { supported }
-
-
-
-Whether the model supports thinking with type 'adaptive' (auto).
-
-supported: boolean
-
-
-
-Whether this capability is supported by the model.
-
-
-
-enabled: [CapabilitySupport](https://platform.claude.com/docs/en/api/http/models#capability_support) { supported }
-
-
-
-Whether the model supports thinking with type 'enabled'.
-
-supported: boolean
-
-
-
-Whether this capability is supported by the model.
+Which `thinking.type` values the model accepts on requests. Read each key on its own: for example, `enabled` can be false while `disabled` is true.

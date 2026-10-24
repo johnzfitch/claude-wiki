@@ -2,38 +2,70 @@
 title: "Claude Fable 5 and Claude Mythos 5 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-fable-5-mythos-5"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:04Z"
+fetched_at: "2026-10-21T06:30:26Z"
 tags: ["news-research"]
 ---
 
 # Claude Fable 5 and Claude Mythos 5
 
-Jun 9, 2026
+- [01Evaluating Claude Fable 5 and Claude Mythos 5](#evaluating-claude-fable-5-and-claude-mythos-5)
+- [02Early feedback for Claude Fable 5](#early-feedback-for-claude-fable-5)
+- [03Claude Fable 5’s new safeguards](#claude-fable-5s-new-safeguards)
+- [04Claude Mythos 5 and the trusted access program](#claude-mythos-5-and-the-trusted-access-program)
+- [05Availability](#availability)
 
-- Update
-  Claude Mythos 5 and Fable 5 redeployed
+- Published
 
-  Jul 1, 2026
+  Jun 9, 2026
+
+- Category
+
+  [Models](models.md)
+
+- Topics
+
+  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Access](https://www.anthropic.com/search?topic=access)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  Oct 8, 2026
+
+  [Launching an opt-in vulnerability-finding service for open-source software](launching-opt-in-vuln-finding-service-for-open-source.md)
+
+[View more](https://www.anthropic.com/search?topic=claude-opus)
+
+- UpdateJul 1, 2026
+
+  ### Claude Mythos 5 and Fable 5 redeployed
 
   Claude Fable 5 and Mythos 5 are now available.
 
-  Read more
+  [View more](redeploying-fable-5.md)
 
-- Claude Mythos 5 and Fable 5 access unavailable
+- Jun 12, 2026
 
-  Jun 12, 2026
+  ### Claude Mythos 5 and Fable 5 access unavailable
 
   We are suspending access to Claude Fable 5 and Claude Mythos 5. We apologize for this disruption to our customers and are working to restore access as soon as possible.
 
-  Read more
+  [View more](fable-mythos-access.md)
 
-Today we’re launching **Claude Fable 5**: a Mythos-class¹ model that we’ve made safe for general use.
+Today we’re launching **Claude Fable 5**: a Mythos-class^([1](#footnote-1)) model that we’ve made safe for general use.
 
 Fable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, scientific research, and many other areas. The longer and more complex the task, the larger Fable 5’s lead over our other models.
 
 Releasing a model this capable comes with risks. Without safeguards, Fable 5’s capabilities in areas like cybersecurity could be misused to cause serious damage. We’ve therefore launched the model with safeguards that mean queries on some topics will instead receive a response from our next-most-capable model, Claude Opus 4.8. To release the model both safely and quickly, we’ve tuned these safeguards conservatively—they’ll sometimes catch harmless requests, though they trigger, on average, in less than 5% of sessions. With more capable models arriving in the coming months, we’re working to improve our safeguards and reduce false positives as quickly as we can.
 
-For a small group of cyberdefenders and infrastructure providers, we’re also launching **Claude Mythos 5**. It’s the same underlying model as Fable 5, but with the safeguards lifted in some areas.² Mythos 5 will initially be deployed through [Project Glasswing](../22-Safety-Policy/glasswing.md), in collaboration with the US government, as an upgrade to Claude Mythos Preview. It has the strongest cybersecurity capabilities of any model in the world. Soon, we intend to expand access to Mythos 5 through a broader trusted access program.
+For a small group of cyberdefenders and infrastructure providers, we’re also launching **Claude Mythos 5**. It’s the same underlying model as Fable 5, but with the safeguards lifted in some areas.^([2](#footnote-2)) Mythos 5 will initially be deployed through [Project Glasswing](../22-Safety-Policy/glasswing.md), in collaboration with the US government, as an upgrade to Claude Mythos Preview. It has the strongest cybersecurity capabilities of any model in the world. Soon, we intend to expand access to Mythos 5 through a broader trusted access program.
 
 The capabilities of models like Fable 5 and Mythos 5 have the potential to do profound good for the world. We’ve seen the beginnings of this in Project Glasswing, where the models have [helped cyber defenders](glasswing-initial-update.md) secure critically important software. We’ve also seen it in life sciences research, where the models are positing novel hypotheses and speeding up the development of new therapeutics.
 
@@ -43,7 +75,6 @@ Fable 5 and Mythos 5 are being offered at \$10 per million input tokens and \$50
 
 The table below compares the capabilities of Fable 5 and Mythos 5 to other leading models.
 
-  
 Fable 5 and Mythos 5 can work autonomously for longer than any previous Claude models. Below we discuss how these skills apply to software engineering, and cover the model’s improved capabilities in knowledge work, vision, memory, and life sciences research.
 
 *Software engineering.* During early testing, [Stripe](https://stripe.com/) reported that Fable 5 compressed months of engineering into days. In a 50-million-line Ruby codebase, the model performed a codebase-wide migration in a day that would otherwise have taken a whole team over two months by hand. Fable 5 is also more token-efficient than past Claude models: on Cognition’s [FrontierCode](https://cognition.ai/blog/frontier-code) evaluation, which tests whether models can pass difficult coding tasks while meeting the standards of high-quality production codebases, Fable 5 scores highest among frontier models, even at medium effort.
@@ -74,77 +105,95 @@ Fluid with Classical EDM
 
 Customers with early access ran their own tests on Fable 5. Below, in their words, is a selection of what they’re seeing:
 
-> Claude Fable 5 is the state of the art model on CursorBench. It's opened up a class of long-horizon problems that were out of reach for earlier models.
->
-> Michael Truell  
-> CEO and Co-founder
+> “Claude Fable 5 is the state of the art model on CursorBench. It's opened up a class of long-horizon problems that were out of reach for earlier models.”
 
-> Claude Fable 5 is a real step forward for the developers GitHub serves. In our early testing, it took on complex, long-horizon coding tasks with a level of autonomy and reliability that exceeded previous benchmarks. But what excites us most is the direction it points: a future where developers can hand increasingly ambitious work to agents and trust the results across the software lifecycle.
->
-> Mario Rodriguez  
-> Chief Product Officer
+Michael Truell
 
-> These are the strongest results of any Claude model we've had the opportunity to test. Claude Fable 5 is a clear step forward on agentic coding and prototyping.
->
-> Matt Colyer  
-> Director of Product, Developers
+CEO and Co-founder
 
-> Claude Fable 5's reasoning is a clear step beyond Opus 4.8. It works at senior research scientist grade — picking directions, allocating resources, killing its incorrect beliefs, and producing novel first-principles outputs.
->
-> Sean Ward  
-> CEO and Co-founder
+> “Claude Fable 5 is a real step forward for the developers GitHub serves. In our early testing, it took on complex, long-horizon coding tasks with a level of autonomy and reliability that exceeded previous benchmarks. But what excites us most is the direction it points: a future where developers can hand increasingly ambitious work to agents and trust the results across the software lifecycle.”
 
-> Claude Fable 5 understands what builders mean, not just what they type. Apps that took a hundred prompts a year ago, it now one-shots. When a customer really hits a wall, it's the model we reach for to get them past it quickly, so they can finish what they set out to build.
->
-> Fabian Hedin  
-> CTO & Co-founder
+Mario Rodriguez
 
-> Claude Fable 5 feels materially different. In blind review, our lawyers found its redlines matched or beat our current model every time.
->
-> Aveek Duttagupta  
-> Member of Technical Staff
+Chief Product Officer
 
-> At the highest effort, Claude Fable 5 reflects on and validates its own work. For us, that's what makes highly autonomous operations possible — the extra thinking pays for itself.
->
-> Yusuke Kaji  
-> GM, AI for Business
+> “These are the strongest results of any Claude model we've had the opportunity to test. Claude Fable 5 is a clear step forward on agentic coding and prototyping.”
 
-> Claude Fable 5 delivers more capable engineering in fewer turns than prior models — handling the complex multi-agent workflows our employees run daily in Claude Code.
->
-> Luke Anderson  
-> CTO
+Matt Colyer
 
-> Claude Fable 5 is the highest-scoring model on FrontierBench, Cognition's frontier coding eval. It excels at long-horizon reasoning and generalizes to unfamiliar tools out of the box.
->
-> Scott Wu  
-> CEO
+Director of Product, Developers
 
-> Claude Fable 5 is the strongest finance-first model we've tested, both on general finance and reasoning. It's a notable step up.
->
-> Damian Miraglia  
-> Principal Engineer, Applied AI
+> “Claude Fable 5's reasoning is a clear step beyond Opus 4.8. It works at senior research scientist grade — picking directions, allocating resources, killing its incorrect beliefs, and producing novel first-principles outputs.”
 
-> Claude Fable 5 is the first to break 90% on our core analytics benchmark of complex, long-running analytical tasks — a 10-point jump over Opus. On the hardest questions, it shows strong judgment and attention to nuance.
->
-> Izzy Miller  
-> AI Research Lead
+Sean Ward
 
-> Claude Fable 5 is the strongest model we've tested on frontier physics research while using a third of the reasoning tokens. In 36 hours it got nearly to where GPT-5.5 landed after four days.
->
-> Matthew Pines  
-> CEO
+CEO and Co-founder
 
-> On ViBench, our end-to-end vibe-coding benchmark, Claude Fable 5 is the highest-performing model we've tested — nearly saturating our base use cases and building apps in less time with fewer tokens.
->
-> Michele Catasta  
-> President & Head of AI
+> “Claude Fable 5 understands what builders mean, not just what they type. Apps that took a hundred prompts a year ago, it now one-shots. When a customer really hits a wall, it's the model we reach for to get them past it quickly, so they can finish what they set out to build.”
 
-> Claude Fable 5 beats Opus 4.8 on our everyday spreadsheet suite at every effort level — and it does it with fewer turns, finishing runs 25–30% faster.
->
-> Peter Wang  
-> Chief Science Officer
+Fabian Hedin
 
-01 / 14
+CTO & Co-founder
+
+> “Claude Fable 5 feels materially different. In blind review, our lawyers found its redlines matched or beat our current model every time.”
+
+Aveek Duttagupta
+
+Member of Technical Staff
+
+> “At the highest effort, Claude Fable 5 reflects on and validates its own work. For us, that's what makes highly autonomous operations possible — the extra thinking pays for itself.”
+
+Yusuke Kaji
+
+GM, AI for Business
+
+> “Claude Fable 5 delivers more capable engineering in fewer turns than prior models — handling the complex multi-agent workflows our employees run daily in Claude Code.”
+
+Luke Anderson
+
+CTO
+
+> “Claude Fable 5 is the highest-scoring model on FrontierBench, Cognition's frontier coding eval. It excels at long-horizon reasoning and generalizes to unfamiliar tools out of the box.”
+
+Scott Wu
+
+CEO
+
+> “Claude Fable 5 is the strongest finance-first model we've tested, both on general finance and reasoning. It's a notable step up.”
+
+Damian Miraglia
+
+Principal Engineer, Applied AI
+
+> “Claude Fable 5 is the first to break 90% on our core analytics benchmark of complex, long-running analytical tasks — a 10-point jump over Opus. On the hardest questions, it shows strong judgment and attention to nuance.”
+
+Izzy Miller
+
+AI Research Lead
+
+> “Claude Fable 5 is the strongest model we've tested on frontier physics research while using a third of the reasoning tokens. In 36 hours it got nearly to where GPT-5.5 landed after four days.”
+
+Matthew Pines
+
+CEO
+
+> “On ViBench, our end-to-end vibe-coding benchmark, Claude Fable 5 is the highest-performing model we've tested — nearly saturating our base use cases and building apps in less time with fewer tokens.”
+
+Michele Catasta
+
+President & Head of AI
+
+> “Claude Fable 5 beats Opus 4.8 on our everyday spreadsheet suite at every effort level — and it does it with fewer turns, finishing runs 25–30% faster.”
+
+Peter Wang
+
+Chief Science Officer
+
+01
+
+/
+
+14
 
 ## Claude Fable 5’s new safeguards
 
@@ -152,7 +201,7 @@ Mythos-class models have reached a threshold where they present significant risk
 
 Over the past few months we have been improving these safeguards, and they are now robust enough for a general release. Because we have prioritized safety, we’ve deliberately tuned the safeguards to be cautious, and they are still stricter than would be ideal—for example, sometimes benign requests will trigger our classifiers. We recognize that this will be frustrating to some users, and our aim is to reduce false positives as we update and refine the safeguards after launch.
 
-Below we discuss each of Fable 5’s new safeguards in turn. Our wider suite of safeguards is discussed and evaluated in the model’s [system card](../15-Claude-AI-Features/claude-fable-5-mythos-5-system-card.md) and our most recent [risk report](https://cdn.sanity.io/files/4zrzovbb/website/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf).
+Below we discuss each of Fable 5’s new safeguards in turn. Our wider suite of safeguards is discussed and evaluated in the model’s [system card](../15-Claude-AI-Features/claude-fable-5-mythos-5-system-card.md) and our most recent [risk report](https://www-cdn.anthropic.com/files/4zrzovbb/website/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf).
 
 ### Safety classifiers
 
@@ -168,7 +217,7 @@ The following are the areas covered by the classifiers:
 
 1\. *Cybersecurity*. Mythos-class models [excel](2026-mythos-preview.md) at discovering and exploiting software vulnerabilities. They can thus make cyberattacks substantially easier and cheaper to commit. Mythos-class models also show strong skills in agentic hacking. This involves performing multiple different parts of a cyberattack in addition to finding exploits—reconnaissance, discovery, lateral movement, and more. To prevent these agentic hacking skills providing uplift in cyberattacks, we designed our cybersecurity classifiers to cover both exploitation and offensive cyber tasks in a broader sense. As shown in the graph below, our classifiers prevent Fable from making any progress on these tasks.
 
-We extensively red-teamed our classifiers to test their robustness against jailbreaks. As well as internal testing, we ran an external bug bounty that produced no universal jailbreaks in over 1,000 hours of testing. External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.⁴ It is likely impossible to *completely* prevent universal jailbreaks, but our goal is to make any remaining jailbreaks sufficiently slow and costly that we can detect and prevent them before they are used at scale.
+We extensively red-teamed our classifiers to test their robustness against jailbreaks. As well as internal testing, we ran an external bug bounty that produced no universal jailbreaks in over 1,000 hours of testing. External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.^([4](#footnote-4)) It is likely impossible to *completely* prevent universal jailbreaks, but our goal is to make any remaining jailbreaks sufficiently slow and costly that we can detect and prevent them before they are used at scale.
 
 The graph below, from one of our internal evaluations, illustrates how Fable 5’s safeguards give it greater resistance to jailbreaks than our previous generally accessible models.
 
@@ -184,7 +233,7 @@ Our priority was to safely release Fable as soon as we could, even at the cost o
 
 ### A new data retention policy
 
-Finally, we’re making a change to the way we handle business customer data for Fable 5, Mythos 5, and future models with similar or higher capability levels. We will require 30-day retention for all traffic on Mythos-class models, on both first- and third-party surfaces. We won’t use this data to train new Claude models, or for any non-safety-related purpose, and we’ve instituted new privacy protections including logging all human access to the data and ensuring its deletion after 30 days in almost all cases (see [this post](https://www.anthropic.com/99-Other/data-retention-practices-for-covered-models-claude-help-center-5e59bf2012.md) for further details). The data will help us defend against complex and novel attacks (including new jailbreaks and attacks that operate across many requests) as well as help us identify and reduce false positives.
+Finally, we’re making a change to the way we handle business customer data for Fable 5, Mythos 5, and future models with similar or higher capability levels. We will require 30-day retention for all traffic on Mythos-class models, on both first- and third-party surfaces. We won’t use this data to train new Claude models, or for any non-safety-related purpose, and we’ve instituted new privacy protections including logging all human access to the data and ensuring its deletion after 30 days in almost all cases (see [this post](../20-Models/data-retention-practices-for-covered-models-claude-help-center.md) for further details). The data will help us defend against complex and novel attacks (including new jailbreaks and attacks that operate across many requests) as well as help us identify and reduce false positives.
 
 ## Claude Mythos 5 and the trusted access program
 
@@ -192,7 +241,7 @@ Beginning today, all users who currently have access to Claude Mythos Preview (f
 
 In consultation with the US government, we plan to steadily expand access to Claude Mythos 5, continuing our [periodic addition](expanding-project-glasswing.md) of new partners, as well as pursuing a trusted access program that allows cybersecurity organizations to apply in a more systematic manner.
 
-Our plans also include opening a trusted access program for biology, to help accelerate biomedical research and discover new therapies with Mythos-class capabilities. This program will provide access to Fable 5 with the biology and chemistry safeguards removed (but the cyber safeguards still in place). It will enroll a small number of researchers from a variety of life science organizations spanning fundamental and translational research; we’re planning to expand access to this program while simultaneously making our safeguards better.  
+Our plans also include opening a trusted access program for biology, to help accelerate biomedical research and discover new therapies with Mythos-class capabilities. This program will provide access to Fable 5 with the biology and chemistry safeguards removed (but the cyber safeguards still in place). It will enroll a small number of researchers from a variety of life science organizations spanning fundamental and translational research; we’re planning to expand access to this program while simultaneously making our safeguards better.
 
 ## Availability
 
@@ -203,132 +252,19 @@ Pricing for both models is \$10 per million input tokens and \$50 per million ou
 We expect demand for Fable 5 to be very high, and difficult to predict. On the Claude API and consumption-based Enterprise plans, Fable 5 is fully available from today. For subscription plans, we’d rather give access sooner than later, so we’re rolling out more conservatively, in stages:
 
 - From today through June 22, Fable 5 is included on Pro, Max, Team, and seat-based Enterprise plans at no extra cost.
-- On June 23, we’ll remove Fable 5 from those plans. Using it after that will require [usage credits](https://www.anthropic.com/17-Billing-Plans/manage-usage-credits-for-paid-claude-plans-3682360a70.md). If capacity allows, we’ll extend the included window.
+- On June 23, we’ll remove Fable 5 from those plans. Using it after that will require [usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans). If capacity allows, we’ll extend the included window.
 - After this point—when sufficient capacity allows us to do so—we aim to restore Fable 5 as a standard part of subscription plans. We intend to do this as quickly as we can.
 
 Throughout this period, we’ll communicate any changes ahead of time so users know where things stand.
 
 *Edit June 9, 2026: Updated the discussion of AAVs to note that the candidates were developed by Dyno Therapeutics.*
 
-#### Footnotes
+## Footnotes
 
-1.  Mythos-class models are a tier of Claude models that sit above our Opus class in capability. The first, Claude Mythos Preview, was released in April through [Project Glasswing](../22-Safety-Policy/glasswing.md). That is followed today by Claude Fable 5 and Claude Mythos 5.
-2.  Fable is from the Latin *fabula*, “that which is told,” akin to the Greek *mythos*. The safeguards are what distinguish the two models (Fable and Mythos) and are why we’ve given them different names.
-3.  Metrics: Firefox = fraction of trials achieving arbitrary code execution (the exploit's full-success tier). OSS-Fuzz = severity-weighted mean of the five-tier score (0.2 crash → 1.0 control-flow hijack), so values are a weighted average rather than a success rate. CyberGym = fraction reproducing the target vulnerability (the public leaderboard metric). CyScenarioBench = success rate averaged equally across its challenges.
-4.  A universal jailbreak can be defined as any prompt, script, or harness that allows a user to interact with a model as if its safeguards were not present. This is opposed to more minor jailbreaks that are only effective in very limited contexts or require additional effort to be adapted to each new situation.
+01Mythos-class models are a tier of Claude models that sit above our Opus class in capability. The first, Claude Mythos Preview, was released in April through [Project Glasswing](../22-Safety-Policy/glasswing.md). That is followed today by Claude Fable 5 and Claude Mythos 5.[](#footnote-ref-1)
 
+02Fable is from the Latin *fabula*, “that which is told,” akin to the Greek *mythos*. The safeguards are what distinguish the two models (Fable and Mythos) and are why we’ve given them different names.[](#footnote-ref-2)
 
-## Related content
+03Metrics: Firefox = fraction of trials achieving arbitrary code execution (the exploit's full-success tier). OSS-Fuzz = severity-weighted mean of the five-tier score (0.2 crash → 1.0 control-flow hijack), so values are a weighted average rather than a success rate. CyberGym = fraction reproducing the target vulnerability (the public leaderboard metric). CyScenarioBench = success rate averaged equally across its challenges.
 
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+04A universal jailbreak can be defined as any prompt, script, or harness that allows a user to interact with a model as if its safeguards were not present. This is opposed to more minor jailbreaks that are only effective in very limited contexts or require additional effort to be adapted to each new situation.[](#footnote-ref-4)

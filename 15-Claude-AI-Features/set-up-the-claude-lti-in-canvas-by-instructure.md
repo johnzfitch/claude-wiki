@@ -2,7 +2,7 @@
 title: "Set up the Claude LTI in Canvas by Instructure | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11725453-set-up-the-claude-lti-in-canvas-by-instructure"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:00Z"
+fetched_at: "2026-10-23T06:28:52Z"
 tags: ["claude-ai"]
 ---
 

@@ -2,13 +2,11 @@
 title: "Enterprise configuration for Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12622667-enterprise-configuration-for-claude-desktop"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:31Z"
+fetched_at: "2026-10-23T06:28:56Z"
 tags: ["desktop", "enterprise"]
 ---
 
 # Enterprise configuration for Claude Desktop
-
-September 2, 2026
 
 
 Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
@@ -35,7 +33,6 @@ Deploy configuration settings through your MDM solution using configuration prof
 
 Deploy configuration settings through your enterprise management solution using **[Group Policy](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/policy/group-policy-objects)** or Intune policies. Settings can be configured at machine-wide (HKLM) or per-user (HKCU) level. Machine-level settings take priority over user-level settings when both are configured.
 
-    ```powershell
     # Set machine-wide settings (recommended)
     New-Item -Path "HKLM:\SOFTWARE\Policies\Claude" -Force
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "disableAutoUpdates" -Value 0 -Type DWord
@@ -44,10 +41,31 @@ Deploy configuration settings through your enterprise management solution using 
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "isDesktopExtensionDirectoryEnabled" -Value 1 -Type DWord
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "isLocalDevMcpEnabled" -Value 1 -Type DWord
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Claude" -Name "isClaudeCodeForDesktopEnabled" -Value 1 -Type DWord
-    ```
 
 ------------------------------------------------------------------------
 
 ## Enterprise policy options
 
 [TABLE]
+
+------------------------------------------------------------------------
+
+## Set `forceLoginOrgUUID` for multiple organizations
+
+To accept more than one organization, set `forceLoginOrgUUID` to a JSON array of organization UUIDs, saved as a single string value.
+
+**Windows**
+
+Use a string value (REG_SZ) whose data is the JSON text. Don’t use a multi-string value (REG_MULTI_SZ).
+
+    New-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Claude' -Name forceLoginOrgUUID 
+    -PropertyType String -Value '["<uuid-1>","<uuid-2>"]' -Force
+
+**macOS**
+
+In your configuration profile for the `com.anthropic.claudefordesktop` domain, set the key as a string that contains the JSON text:
+
+    <key>forceLoginOrgUUID</key> 
+    <string>["<uuid-1>","<uuid-2>"]</string>
+
+Claude Desktop reads this setting when it launches. After you change it, quit and reopen Claude Desktop. To check the value the app read, go to **Help \> Troubleshooting \> Generate Diagnostic Report**.

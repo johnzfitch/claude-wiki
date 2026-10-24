@@ -2,13 +2,40 @@
 title: "Building safeguards for Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/news/building-safeguards-for-claude"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:43:03Z"
-tags: ["evaluation", "news-research", "testing"]
+fetched_at: "2026-10-21T06:30:03Z"
+tags: ["news-research"]
 ---
 
 # Building safeguards for Claude
 
-Aug 12, 2025
+- Published
+
+  Aug 12, 2025
+
+- Category
+
+  [Safeguards](safeguards.md)
+
+- Topics
+
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
+  - [Wellbeing](https://www.anthropic.com/search?topic=wellbeing)
+  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+
+  See more...
+
+Related articles
+
+- Security
+
+  Sep 10, 2026
+
+  [Detecting and countering misuse of AI: September 2026](https://www.anthropic.com/threat-intelligence-report-september-2026)
+
+[View more](https://www.anthropic.com/search?topic=safeguards)
 
 Claude empowers millions of users to tackle complex challenges, spark creativity, and deepen their understanding of the world. We want to amplify human potential while ensuring our models’ capabilities are channeled toward beneficial outcomes. This means continuously refining how we support our users’ learning and problem-solving, while preventing misuse that could cause real-world harm.
 
@@ -16,7 +43,7 @@ This is where our Safeguards team comes in: we identify potential misuse, respon
 
 We operate across multiple layers: developing policies, influencing model training, testing for harmful outputs, enforcing policies in real-time, and identifying novel misuses and attacks. This approach spans the entire lifecycle of our models, ensuring Claude is trained and built with protections that are effective in the real world.
 
-##  **Policy development**
+### Policy development
 
 Safeguards designs our [Usage Policy](https://www.anthropic.com/legal/aup)—the framework that defines how Claude should and shouldn’t be used. The Usage Policy informs how we address critical areas like child safety, election integrity, and cybersecurity while providing nuanced guidance for Claude’s use in industries like healthcare and finance.
 
@@ -25,7 +52,7 @@ Two mechanisms guide our policy development and iteration process:
 - **Unified Harm Framework:** This [evolving framework](our-approach-to-understanding-and-addressing-ai-harms.md) helps our team understand potentially harmful impacts from Claude use across five dimensions: physical, psychological, economic, societal, and individual autonomy. Rather than a formal grading system, the framework serves as a structured lens and considers the likelihood and scale of misuse when developing policies and enforcement procedures.
 - **Policy Vulnerability Testing:** We partner with external domain experts to identify areas of concern, and then stress-test these concerns against our policies by assessing the output of our models under challenging prompts. Our partners include experts in terrorism, radicalization, child safety, and mental health. The findings from these stress tests directly shape our policies, training, and detection systems. For example, during the 2024 U.S. election, we partnered with the [Institute for Strategic Dialogue](https://www.isdglobal.org/) to understand when Claude might provide outdated information. We then added a banner pointing Claude.ai users seeking election information to authoritative sources like [TurboVote](https://turbovote.org/).
 
-## **Claude’s training**
+### Claude’s training
 
 Safeguards works closely with our fine-tuning teams through a collaborative process to help prevent harmful behavior and responses from Claude. This involves extensive discussion about what behaviors Claude should and shouldn't exhibit, which helps to inform decisions about which traits to build into the model during training.
 
@@ -35,9 +62,9 @@ We also work with domain specialists and experts to refine Claude’s understand
 
 Through this collaborative process, Claude develops several important skills. It learns to decline assistance with harmful illegal activities, and it recognizes attempts to generate malicious code, create fraudulent content, or plan harmful activities. It learns how to discuss sensitive topics with care, and how to distinguish between these and attempts to cause actual harm.
 
-##  **Testing and evaluation**
+### Testing and evaluation
 
-Before releasing a new model, we evaluate its performance and capabilities. Our evaluations include:  
+Before releasing a new model, we evaluate its performance and capabilities. Our evaluations include:
 
 - **Safety evaluations:** We assess Claude’s adherence to our Usage Policy on topics like child exploitation or self-harm. We test a variety of scenarios, including clear usage violations, ambiguous contexts, and extended multi-turn conversations. These evaluations leverage our models to grade Claude’s responses, with human review as an additional check for accuracy.
 - **Risk assessments:** For high-risk domains, such as those associated with cyber harm, or chemical, biological, radiological, and nuclear weapons and high-yield explosives (CBRNE), we conduct AI capability uplift testing in partnership with government entities and private industry. We define threat models that could arise from improved capabilities and assess the performance of our safeguards against these threat models.
@@ -47,7 +74,7 @@ This rigorous pre-deployment testing helps us verify whether training holds up u
 
 The results of our evaluations are reported in our [system cards](https://www.anthropic.com/transparency), released with each new model family.
 
-## **Real-time detection and enforcement**
+### Real-time detection and enforcement
 
 We use a combination of automated systems and human review to detect harm and enforce our Usage Policy once models are deployed.
 
@@ -60,7 +87,7 @@ These classifiers help us determine if and when we take enforcement actions incl
 
 Building these enforcement systems represents a considerable challenge, both in terms of machine learning research needed to design them and engineering solutions required to implement them. For instance, our classifiers must be able to process trillions of input and output tokens, while simultaneously limiting both compute overhead and enforcement on benign content.
 
-## **Ongoing monitoring and investigation**
+### Ongoing monitoring and investigation
 
 We also monitor harmful Claude traffic, going beyond single prompts and individual accounts, to understand the prevalence of particular harms and identify more sophisticated attack patterns. This work includes:
 
@@ -68,124 +95,8 @@ We also monitor harmful Claude traffic, going beyond single prompts and individu
 - **Hierarchical summarization:** To monitor computer use capabilities or potential harmful cyber use, we use [hierarchical summarization](https://alignment.anthropic.com/2025/summarization-for-monitoring/), a technique that condenses individual interactions into summaries and then analyzes these summaries to identify account-level concerns. This helps us spot behaviors that might appear violative only in aggregate, such as automated influence operations and other large-scale misuses.
 - **Threat intelligence:** We also study the most severe misuses of our models, identifying adversarial use and patterns that our existing detection systems might miss. We use methods like comparing indicators of abuse (such as unusual spikes in account activity) against typical account usage patterns to identify suspicious activity and cross-reference external threat data (like open source repositories or industry reporting) with our internal systems. We also monitor channels where bad actors might operate, including social media, messaging platforms, and hacker forums. We share our findings in our public [threat intelligence reports](detecting-and-countering-malicious-uses-of-claude-march-2025.md).
 
-## **Looking forward**
+### Looking forward
 
-Safeguarding AI use is too important for any one organization to tackle alone. We actively seek [feedback](../22-Safety-Policy/reporting-blocking-and-removing-content-from-claude.md) and partnership from users, researchers, policymakers, and civil society organizations. We also build on feedback from the public, including via an ongoing [bug bounty program](testing-our-safety-defenses-with-a-new-bug-bounty-program.md) for testing our defenses.
+Safeguarding AI use is too important for any one organization to tackle alone. We actively seek [feedback](https://support.anthropic.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude) and partnership from users, researchers, policymakers, and civil society organizations. We also build on feedback from the public, including via an ongoing [bug bounty program](testing-our-safety-defenses-with-a-new-bug-bounty-program.md) for testing our defenses.
 
 To support our work, we’re actively looking to hire people who can help us tackle these problems. If you’re interested in working on our Safeguards team, we encourage you to check out our [Careers page](https://www.anthropic.com/jobs?team=4002065008).
-
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

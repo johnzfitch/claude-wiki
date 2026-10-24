@@ -2,15 +2,45 @@
 title: "Tracing the thoughts of a large language model \\ Anthropic"
 source_url: "https://www.anthropic.com/research/tracing-thoughts-language-model"
 category: "19-Reference"
-fetched_at: "2026-08-03T07:17:51Z"
+fetched_at: "2026-10-21T06:30:31Z"
 tags: ["news-research"]
 ---
 
 # Tracing the thoughts of a large language model
 
-Mar 27, 2025
-
 [Read the paper](https://transformer-circuits.pub/2025/attribution-graphs/biology.html)
+
+- [01A tour of AI biology](#a-tour-of-ai-biology)
+- [02Work with us](#work-with-us)
+
+- Published
+
+  Mar 27, 2025
+
+- Team
+
+  [Interpretability](team-interpretability.md)
+
+- Topics
+
+  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+  - [Claude Haiku](https://www.anthropic.com/search?topic=claude-haiku)
+  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+  - [Hallucination](https://www.anthropic.com/search?topic=hallucination)
+  - [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+
+  See more...
+
+Related articles
+
+- Interpretability
+
+  Jul 6, 2026
+
+  [A global workspace in language models](global-workspace.md)
+
+[View more](https://www.anthropic.com/search?topic=interpretability)
 
 Language models like Claude aren't programmed directly by humans—instead, they‘re trained on large amounts of data. During that training process, they learn their own strategies to solve problems. These strategies are encoded in the billions of computations a model performs for every word it writes. They arrive inscrutable to us, the model’s developers. This means that we don’t understand how models do most of the things they do.
 
@@ -34,7 +64,7 @@ These findings aren’t just scientifically interesting—they represent signifi
 
 At the same time, we recognize the limitations of our current approach. Even on short, simple prompts, our method only captures a fraction of the total computation performed by Claude, and the mechanisms we do see may have some artifacts based on our tools which don't reflect what is going on in the underlying model. It currently takes a few hours of human effort to understand the circuits we see, even on prompts with only tens of words. To scale to the thousands of words supporting the complex thinking chains used by modern models, we will need to improve both the method and (perhaps with AI assistance) how we make sense of what we see with it.
 
-As AI systems are rapidly becoming more capable and are deployed in increasingly important contexts, Anthropic is investing in a portfolio of approaches including [realtime monitoring](research-constitutional-classifiers.md), [model character improvements](claude-character.md), and the [science of alignment](https://www.anthropic.com/news/alignment-faking). Interpretability research like this is one of the highest-risk, highest-reward investments, a significant scientific challenge with the potential to provide a unique tool for ensuring that AI is transparent. Transparency into the model’s mechanisms allows us to check whether it’s aligned with human values—and whether it’s worthy of our trust.
+As AI systems are rapidly becoming more capable and are deployed in increasingly important contexts, Anthropic is investing in a portfolio of approaches including [realtime monitoring](constitutional-classifiers.md), [model character improvements](claude-character.md), and the [science of alignment](https://www.anthropic.com/news/alignment-faking). Interpretability research like this is one of the highest-risk, highest-reward investments, a significant scientific challenge with the potential to provide a unique tool for ensuring that AI is transparent. Transparency into the model’s mechanisms allows us to check whether it’s aligned with human values—and whether it’s worthy of our trust.
 
 For full details, please read [the](https://transformer-circuits.pub/2025/attribution-graphs/methods.html) [papers](https://transformer-circuits.pub/2025/attribution-graphs/biology.html). Below, we invite you on a short tour of some of the most striking "AI biology" findings from our investigations.
 
@@ -114,123 +144,3 @@ A description of our new interpretability methods can be found in our first pape
 ## Work with us
 
 If you are interested in working with us to help interpret and improve AI models, we have open roles on our team and we’d love for you to apply. We’re looking for [Research Scientists](https://job-boards.greenhouse.io/anthropic/jobs/4020159008) and [Research Engineers](https://job-boards.greenhouse.io/anthropic/jobs/4020305008).
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

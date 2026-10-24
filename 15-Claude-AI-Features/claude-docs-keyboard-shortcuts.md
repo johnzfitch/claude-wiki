@@ -2,14 +2,14 @@
 title: "Claude Docs keyboard shortcuts | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17458093-claude-docs-keyboard-shortcuts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:24Z"
+fetched_at: "2026-10-23T06:29:13Z"
 tags: ["claude-ai"]
 ---
 
 # Claude Docs keyboard shortcuts
 
 
-This article lists every keyboard shortcut in Claude Docs, along with the keys that work in tables, images, links, and the list of doc tabs. For step-by-step instructions, see "Use Claude Docs with a keyboard" in **[Get started with Claude Docs](get-started-with-claude-docs.md#h_3762015b90)**. To get into and out of the artifact panel, see **[Use artifacts with a keyboard or screen reader](https://support.claude.com/en/articles/17457950)**, which also explains what focus means, what to do on a Mac laptop or in Safari, and how the tables show keys.
+This article lists every keyboard shortcut in Claude Docs, along with the keys that work in tables, images, links, and the list of doc tabs. For step-by-step instructions, see "Use Claude Docs with a keyboard" in **[Get started with Claude Docs](https://support.claude.com/en/articles/16923645-get-started-with-claude-docs#h_3762015b90)**. To get into and out of the artifact panel, see **[Use artifacts with a keyboard or screen reader](use-artifacts-with-a-keyboard-or-screen-reader-claude-help-center.md)**, which also explains what focus means, what to do on a Mac laptop or in Safari, and how the tables show keys.
 
 Claude Docs is available on Free, Pro, Max, Team, and Enterprise plans. It's on by default for all except Enterprise plans. On Enterprise plans, it turns on by default on October 15, 2026, and owners can turn it on before then in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**.
 

@@ -2,7 +2,7 @@
 title: "Financial Services Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/financial-services"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-09-23T06:26:51Z"
+fetched_at: "2026-10-11T06:34:45Z"
 tags: ["mcp", "mcp-community"]
 ---
 
@@ -100,10 +100,11 @@ Leadership
 
 Membership
 
-| Name       | Organization | GitHub                               | Discord | Level       |
-|------------|--------------|--------------------------------------|---------|-------------|
-| Xin Fu     | Bloomberg    | [@imfing](https://github.com/imfing) | *TBD*   | Participant |
-| Kengo Arao | Bloomberg    | [@KengoA](https://github.com/KengoA) | *TBD*   | Participant |
+| Name          | Organization | GitHub                                 | Discord | Level       |
+|---------------|--------------|----------------------------------------|---------|-------------|
+| Xin Fu        | Bloomberg    | [@imfing](https://github.com/imfing)   | *TBD*   | Participant |
+| Kengo Arao    | Bloomberg    | [@KengoA](https://github.com/KengoA)   | *TBD*   | Participant |
+| King Yew Choo | True Primary | [@kychooo](https://github.com/kychooo) | kychooo | Participant |
 
 Open to anyone. Join the `#financial-services-ig` channel on the [MCP Contributors Discord](community-communication.md#discord). Calls are open and no approval is required to attend or contribute. The group especially welcomes contributors from regulated institutions who can bring real-world deployment constraints and help drive proposals forward.
 

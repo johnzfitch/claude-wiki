@@ -1,8 +1,8 @@
 ---
 title: "List User Profiles - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/user_profiles/list"
+source_url: "https://platform.claude.com/docs/en/api/beta/user_profiles/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:04Z"
+fetched_at: "2026-10-20T06:39:39Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Fuser_profiles%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fuser_profiles%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,10 +232,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
-3.  [User Profiles](http-beta-user-profiles.md)
+2.  [Beta](platform-claude-com-http-beta.md)
+3.  [User Profiles](platform-claude-com-http-beta-user-profiles.md)
 
 # List User Profiles
+
+Copy page
+
+
+
+cURL
 
 GET/v1/user_profiles
 
@@ -307,11 +317,21 @@ Leave it out to get the first page.
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `user-profiles-2026-03-24`, `user-profiles-2026-08-18`, or `user-profiles-2026-09-04` in this header.
 
 One of the following:
 
@@ -519,6 +539,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -533,7 +557,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-data: array of [BetaUserProfile](http-beta-user-profiles.md#beta_user_profile) { type: "user_profile", id, created_at, 8 more }
+data: array of [BetaUserProfile](platform-claude-com-http-beta-user-profiles.md#beta_user_profile) { type: "user_profile", id, created_at, 8 more }
 
 
 
@@ -569,7 +593,7 @@ Arbitrary key-value metadata. Maximum 16 pairs, keys up to 64 chars, values up t
 
 
 
-trust_grants: map\[[BetaUserProfileTrustGrant](http-beta-user-profiles.md#beta_user_profile_trust_grant) { status }\]
+trust_grants: map\[[BetaUserProfileTrustGrant](platform-claude-com-http-beta-user-profiles.md#beta_user_profile_trust_grant) { status }\]
 
 
 
@@ -637,7 +661,7 @@ Platform's own identifier for this user. Not enforced unique. Present under the 
 
 
 
-external_user_details: optional [BetaUserProfileExternalUserDetails](http-beta-user-profiles.md#beta_user_profile_external_user_details) { account_status, country, email_hash, 4 more }
+external_user_details: optional [BetaUserProfileExternalUserDetails](platform-claude-com-http-beta-user-profiles.md#beta_user_profile_external_user_details) { account_status, country, email_hash, 4 more }
 
 
 

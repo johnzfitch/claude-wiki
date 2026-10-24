@@ -2,7 +2,7 @@
 title: "Set up Claude Code (local mode) for a HIPAA-ready organization - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/hipaa-setup"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:12Z"
+fetched_at: "2026-10-21T06:28:29Z"
 tags: ["claude-code"]
 ---
 
@@ -132,6 +132,7 @@ Allow the hosts in this table through your proxy and firewall, over HTTPS on por
 |:-------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|
 | `api.anthropic.com`                              | Claude API requests, telemetry, and the organization policy that tells Claude Code the HIPAA configuration is on |
 | `claude.ai`, `claude.com`, `platform.claude.com` | Sign-in and token refresh                                                                                        |
+| `sso.claude.com`                                 | Sign-in, when your organization uses single sign-on                                                              |
 | `downloads.claude.ai`                            | The native installer and its updates                                                                             |
 | `mcp-proxy.anthropic.com`                        | [Connectors from claude.ai](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai)                                         |
 
@@ -255,6 +256,7 @@ With the HIPAA configuration applied, some Claude Code features are off or behav
 | `--cloud`, `/teleport`, and [Remote Control](remote-control.md) are refused | [Cloud sessions](claude-code-on-the-web.md) and Remote Control are off                                                       |
 | `/feedback` and `/bug` are unavailable                                            | Feedback submission is off                                                                                                         |
 | Claude can’t publish an [artifact](artifacts.md)                            | Artifact publishing is off                                                                                                         |
+| MCP tools load into context upfront                                               | [MCP tool search](../06-MCP-Tools/General/mcp.md#configure-tool-search) is off. Neither `ENABLE_TOOL_SEARCH` nor managed settings turns it back on   |
 | An MCP server or hook that reads `ANTHROPIC_API_KEY` stops authenticating         | Claude Code [removes Anthropic credentials](#anthropic-credentials-in-commands-hooks-and-mcp-servers) from the processes it starts |
 | Restrictions remain after `/login` to a different organization                    | The HIPAA status lasts until Claude Code restarts                                                                                  |
 

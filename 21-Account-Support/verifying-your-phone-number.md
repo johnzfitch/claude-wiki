@@ -2,7 +2,7 @@
 title: "Verify your phone number | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8287232-verifying-your-phone-number"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:24:52Z"
+fetched_at: "2026-10-23T06:29:15Z"
 tags: ["account"]
 ---
 

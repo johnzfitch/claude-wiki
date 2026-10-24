@@ -2,7 +2,7 @@
 title: "Get Messages Usage Report - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/usage_report/retrieve_messages"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:31:58Z"
+fetched_at: "2026-10-20T06:39:29Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fusage_report%2Fretrieve_messages)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fusage_report%2Fretrieve_messages)
 
 
 
@@ -126,7 +126,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -136,9 +136,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -209,13 +211,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -223,9 +227,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -234,11 +238,17 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Usage Report](https://platform.claude.com/docs/en/api/http/beta/organization/usage_report)
 
 # Get Messages Usage Report
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/usage_report/messages
 
@@ -294,7 +304,7 @@ One of the following:
 
 
 
-context_window: optional array of [BetaAnalyticsContextWindow](http-beta-organization-analytics.md#beta_analytics_context_window)
+context_window: optional array of [BetaAnalyticsContextWindow](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_context_window)
 
 
 
@@ -326,7 +336,7 @@ group_by: optional array of "account_id" or "api_key_id" or "context_window" or 
 
 
 
-Group by any subset of the available options. Grouping by `speed` requires the `fast-mode-2026-02-01` beta header.
+Group by any subset of the available options.
 
 One of the following:
 
@@ -368,7 +378,7 @@ One of the following:
 
 
 
-inference_geos: optional array of [BetaAnalyticsInferenceGeoFilter](http-beta-organization-analytics.md#beta_analytics_inference_geo_filter)
+inference_geos: optional array of [BetaAnalyticsInferenceGeoFilter](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_inference_geo_filter)
 
 
 
@@ -456,7 +466,7 @@ speeds: optional array of "standard" or "fast"
 
 
 
-Restrict usage returned to the specified speed(s) (Claude Code research preview). Requires the `fast-mode-2026-02-01` beta header.
+Restrict usage returned to the specified speed(s).
 
 One of the following:
 
@@ -478,7 +488,17 @@ Restrict usage returned to the specified workspace ID(s).
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/http-beta.md#anthropic_beta)
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -690,6 +710,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 ##### Returns
 
 
@@ -730,13 +754,14 @@ Response 200
           "cache_read_input_tokens": 200,
           "context_window": "0-200k",
           "inference_geo": "global",
-          "model": "claude-opus-5",
+          "model": "claude-opus-5-5",
           "output_tokens": 500,
           "server_tool_use": {
             "web_search_requests": 10
           },
           "service_account_id": "svac_01Hk3R9TWxq7CfQak00OiVw4",
           "service_tier": "standard",
+          "speed": "standard",
           "uncached_input_tokens": 1500,
           "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
         }
@@ -771,13 +796,14 @@ Response 200
           "cache_read_input_tokens": 200,
           "context_window": "0-200k",
           "inference_geo": "global",
-          "model": "claude-opus-5",
+          "model": "claude-opus-5-5",
           "output_tokens": 500,
           "server_tool_use": {
             "web_search_requests": 10
           },
           "service_account_id": "svac_01Hk3R9TWxq7CfQak00OiVw4",
           "service_tier": "standard",
+          "speed": "standard",
           "uncached_input_tokens": 1500,
           "workspace_id": "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
         }

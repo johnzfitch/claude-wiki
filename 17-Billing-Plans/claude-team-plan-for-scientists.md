@@ -1,8 +1,8 @@
 ---
 title: "Claude Team plan for scientists | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/16634237"
+source_url: "https://support.claude.com/en/articles/16634237-claude-team-plan-for-scientists"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:21Z"
+fetched_at: "2026-10-23T06:29:11Z"
 tags: ["billing"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["billing"]
 
 ## What is the Claude Team plan for scientists?
 
-The **[Claude Team plan for scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)** gives academic and non-profit research groups and labs discounted access to a Claude Team subscription plan. Standard seats are free, and Premium seats are \$15 per user per month. This discounted pricing is for verified research groups, available for 12 months and offered to a limited number of groups. Final pricing is confirmed after verification at sign up; **[terms apply](https://anthropic.com/legal/team-plan-for-scientists-terms)**.
+The **[Claude Team plan for scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)** gives academic and non-profit research groups and labs discounted access to a Claude Team subscription plan. Standard seats are free, and Premium seats are \$15 per user per month. This discounted pricing is for verified research groups, available for 12 months and offered to a limited number of groups. Final pricing is confirmed after verification at sign up; **[terms apply](https://anthropic.com/legal/team-plan-for-scientists-terms)**.
 
 A principal investigator (PI) can sign up directly, verify their eligibility, and then invite their whole group.
 
@@ -24,6 +24,8 @@ Every seat includes everything in Claude Team:
 - Central billing and administration
 
 - Single sign-on (SSO)
+
+This plan has Claude Science on by default. An Owner or Primary Owner can turn it off at any time in **[Organization settings \> Claude Science](https://claude.ai/admin-settings/claude-science)**.
 
 Premium seats add five times more usage and higher limits for long-running analyses.
 
@@ -45,7 +47,7 @@ If you’re at a for-profit company, contract research organization, or industry
 
 ## How do I sign up?
 
-1.  Go to **[the program page](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)** and start an application as the PI or lab lead.
+1.  Go to **[the program page](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)** and start an application as the PI or lab lead.
 
 2.  Verify your eligibility. You’ll confirm your institutional affiliation. Most applications are reviewed within seven business days.
 
@@ -59,7 +61,7 @@ From 1 to 25 seats per group.
 
 ### I’m already on the discounted Team plan. What changes?
 
-Your plan moves to the new pricing automatically for billing charges after August 27, 2026—no action needed. Prior charges, including prepaid annual seats, aren’t refunded or prorated. Any seats you add to your plan after August 27, 2026 will be billed at the new pricing. Your workspace admin will get an email with the details.
+This applies only to workspaces that were already on the discounted Team plan before August 27, 2026. If you’re applying the discount to a standard Team plan for the first time, see **[Can I apply the discounted Team plan pricing to my existing Team plan?](#h_80d427d957)** below. Your plan moves to the new pricing automatically for billing charges after August 27, 2026—no action needed. Any seats you add to your plan after August 27, 2026 will be billed at the new pricing. Your workspace admin will get an email with the details.
 
 ### My university already has a Claude Enterprise agreement. Should I use this?
 
@@ -80,3 +82,7 @@ By default, Anthropic doesn’t train its models on user data from Team and Ente
 ### Can I apply the discounted Team plan pricing to my existing Team plan?
 
 First, you must complete the **[application flow](https://claude.ai/labs-verification/attestation)** to verify your eligibility for the discounted plan. Once you are verified, you can apply the discounted pricing to an existing plan that you manage in **Settings \> Account** under **Program verifications**.
+
+If your existing Team plan is billed annually and you apply the discounted pricing partway through your annual term, your plan switches to monthly billing at the discounted rate. The unused portion of your prepaid annual term becomes a credit on your workspace’s billing account, and it’s applied automatically to your future monthly invoices until it’s used up. This is an account credit, not a refund to your original payment method.
+
+**Note:** If all your seats are Standard seats (\$0 per user per month), your monthly invoices will be \$0. The credit stays on your account until a charge is generated, for example when you add Premium seats.

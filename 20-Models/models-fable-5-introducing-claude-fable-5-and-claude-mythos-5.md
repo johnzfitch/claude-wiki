@@ -22,7 +22,7 @@ tags: ["api", "billing", "models", "prompting"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5%2Fintroducing-claude-fable-5-and-claude-mythos-5)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5%2Fintroducing-claude-fable-5-and-claude-mythos-5)
 
 
 
@@ -30,7 +30,7 @@ tags: ["api", "billing", "models", "prompting"]
 
 SearchCtrlK
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 Documentation
 
@@ -97,7 +97,7 @@ A refusal that arrives before any output is billed when it is in a category with
 - **Claude Fable 5** is available on the Claude API, [Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md), and [Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md).
 - **Claude Mythos 5** is offered only to approved customers in [Project Glasswing](../22-Safety-Policy/glasswing.md). For access, contact your Anthropic, AWS, or Google Cloud account team. Customers without access to Claude Mythos 5 can use Claude Fable 5, which does not require access approval and offers the same capabilities.
 
-Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention unless expressly authorized by Anthropic. Both are designated [Covered Models](https://support.claude.com/en/articles/15425695). See [Model-specific data retention requirements](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+Claude Fable 5 and Claude Mythos 5 carry 30-day data retention and are not available under zero data retention unless expressly authorized by Anthropic. Both are designated [Covered Models](https://support.claude.com/en/articles/15425695). See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 ## Prompting
 

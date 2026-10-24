@@ -2,7 +2,7 @@
 title: "Java SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/java"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:32:41Z"
+fetched_at: "2026-10-20T06:37:50Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "cli", "sdk"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fjava)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fjava)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
@@ -74,8 +74,22 @@ Gradle
 
 Maven
 
+Gradle
+
 ```python
-implementation("com.anthropic:anthropic-java:2.67.0")
+implementation("com.anthropic:anthropic-java:2.73.0")
+```
+
+
+
+Maven
+
+```python
+<dependency>
+    <groupId>com.anthropic</groupId>
+    <artifactId>anthropic-java</artifactId>
+    <version>2.73.0</version>
+</dependency>
 ```
 
 
@@ -512,7 +526,7 @@ private static Object callTool(BetaToolUseBlock toolUseBlock) {
 
 ### Tool name conversion
 
-Tool names are derived from the camel case tool class names (for example, `GetWeather`) and converted to snake case (for example, `get_weather`). Word boundaries begin where the current character is not the first character, is upper-case, and either the preceding character is lower-case, or the following character is lower-case. For example, `MyJSONParser` becomes `my_json_parser` and `ParseJSON` becomes `parse_json`. This conversion can be overridden using the `@JsonTypeName` annotation.
+Tool names are derived from the camel case tool class names (for example, `GetWeather`) and converted to snake case (for example, `get_weather`). Word boundaries begin where the current character is not the first character, is uppercase, and either the preceding character is lowercase, or the following character is lowercase. For example, `MyJSONParser` becomes `my_json_parser` and `ParseJSON` becomes `parse_json`. This conversion can be overridden using the `@JsonTypeName` annotation.
 
 ### Local tool JSON schema validation
 
@@ -762,7 +776,7 @@ Duration.ofSeconds(
 
 This results in a timeout of up to 60 minutes, scaled by the `maxTokens` parameter, unless overridden.
 
-For non-streaming requests, the dynamic timeout scales from a 30 second minimum up to a 10 minute maximum based on `maxTokens`.
+For non-streaming requests, the dynamic timeout scales from a 30-second minimum up to a 10-minute maximum based on `maxTokens`.
 
 To set a custom timeout per-request:
 
@@ -796,7 +810,7 @@ AnthropicClient client = AnthropicOkHttpClient.builder()
 
 Consider using [streaming](#streaming) for longer running requests.
 
-Avoid setting a large `maxTokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [timeout](#timeouts) without receiving a response from Anthropic. The SDK periodically pings the API to keep the connection alive and reduce the impact of these networks.
+Avoid setting a large `maxTokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [time out](#timeouts) without receiving a response from Anthropic. The SDK periodically pings the API to keep the connection alive and reduce the impact of these networks.
 
 The SDK throws an error if a non-streaming request is expected to take longer than 10 minutes. Using a [streaming method](#streaming) or [overriding the timeout](#timeouts) at the client or request level disables the error.
 
@@ -1215,7 +1229,7 @@ For detailed platform setup guides with code examples, see:
 
 The Java SDK supports the following platforms through separate dependencies that provide platform-specific `Backend` implementations:
 
-- **Agent Platform:** `com.anthropic:anthropic-java-vertex`: Use `VertexBackend.fromEnv()` or `VertexBackend.builder()`.
+- **Agent Platform:** `com.anthropic:anthropic-java-vertex`: Use `VertexBackend.builder()` or `VertexBackend.fromEnv()`. `fromEnv()` reads `CLOUD_ML_REGION` and `ANTHROPIC_VERTEX_PROJECT_ID` and uses Application Default Credentials.
 - **Bedrock:** `com.anthropic:anthropic-java-bedrock`: Use `BedrockMantleBackend.fromEnv()` or `BedrockMantleBackend.builder()` for the Messages-API Bedrock endpoint, or `BedrockBackend.fromEnv()` / `BedrockBackend.builder()` (`bedrock-runtime` path).
 - **Claude Platform on AWS:** `com.anthropic:anthropic-java-aws`: Use `AwsBackend.fromEnv()` (reads `ANTHROPIC_AWS_WORKSPACE_ID` and the AWS default region/credential chain) or `AwsBackend.builder()`. Available in beta.
 - **Foundry:** `com.anthropic:anthropic-java-foundry`: Use `FoundryBackend.fromEnv()` or `FoundryBackend.builder()`.
@@ -1346,7 +1360,7 @@ Prefer the well-typed constants (for example, `Model.CLAUDE_OPUS_5`) so you get 
 
 ## Beta features
 
-Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [build with Claude overview](../Guides/build-with-claude-overview.md).
+Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [Features overview](../Guides/build-with-claude-overview.md).
 
 You can access most beta API features through the `beta()` method on the client. To enable a particular beta feature, add the appropriate [beta header](../Endpoints/beta-headers.md) with `.addBeta()` when building the message params.
 

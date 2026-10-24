@@ -2,7 +2,7 @@
 title: "List Session Threads - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/threads/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:38Z"
+fetched_at: "2026-10-20T06:37:23Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Flist)
 
 
 
@@ -155,7 +155,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -165,9 +165,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -238,13 +240,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -252,9 +256,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -263,11 +267,17 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Sessions](https://platform.claude.com/docs/en/api/http/beta/sessions)
 4.  [Threads](https://platform.claude.com/docs/en/api/http/beta/sessions/threads)
 
 # List Session Threads
+
+Copy page
+
+
+
+cURL
 
 GET/v1/sessions/{session_id}/threads
 
@@ -297,15 +307,53 @@ page: optional string
 
 Opaque pagination cursor from a previous response's `next_page`. Forward-only.
 
+
+
+statuses: optional array of [BetaManagedAgentsSessionThreadStatus](https://platform.claude.com/docs/en/api/http/beta/sessions/threads#beta_managed_agents_session_thread_status)
+
+
+
+Return only threads that have one of these statuses.
+
+Repeat the parameter to give more than one status. Leave it out to return threads of every status.
+
+One of the following:
+
+"running"
+
+
+
+"idle"
+
+
+
+"rescheduling"
+
+
+
+"terminated"
+
+
+
 ##### Headers
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -513,6 +561,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -527,7 +579,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-data: optional array of [BetaManagedAgentsSessionThread](https://platform.claude.com/docs/en/api/http/beta/sessions/threads#beta_managed_agents_session_thread) { type: "session_thread", id, agent, 8 more }
+data: optional array of [BetaManagedAgentsSessionThread](https://platform.claude.com/docs/en/api/http/beta/sessions/threads#beta_managed_agents_session_thread) { type: "session_thread", id, agent, 9 more }
 
 
 
@@ -545,7 +597,7 @@ Unique identifier for this thread.
 
 
 
-agent: [BetaManagedAgentsSessionThreadAgent](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_session_thread_agent) or [BetaManagedAgentsAdvisor](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_advisor)
+agent: [BetaManagedAgentsSessionThreadAgent](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_session_thread_agent) or [BetaManagedAgentsAdvisor](https://platform.claude.com/docs/en/api/http/beta/agents#beta_managed_agents_advisor) or [BetaManagedAgentsInlineAgent](https://platform.claude.com/docs/en/api/http/beta/sessions/threads#beta_managed_agents_inline_agent)
 
 
 
@@ -555,7 +607,7 @@ One of the following:
 
 
 
-BetaManagedAgentsSessionThreadAgent object{ type: "agent", id, description, 7 more }
+BetaManagedAgentsSessionThreadAgent object{ type: "agent", id, description, 8 more }
 
 
 
@@ -578,6 +630,14 @@ model: string
 
 
 The advisor model id.
+
+
+
+BetaManagedAgentsInlineAgent object{ type: "inline", description, execution_identity, 6 more }
+
+
+
+An agent that has no Agent resource, and so no `id` or `version`. It is defined inline, in a workflow run's plan or when a session thread is spawned, and is not saved.
 
 
 
@@ -693,6 +753,12 @@ usage: [BetaManagedAgentsSessionThreadUsage](https://platform.claude.com/docs/en
 
 Cumulative token usage for this thread. Null until the thread's first idle transition.
 
+workflow_run_id: string or null
+
+
+
+Identifier of the workflow run that created the thread, or `null` for any other thread.
+
 next_page: optional string or null
 
 
@@ -720,10 +786,13 @@ Response 200
 {
   "data": [
     {
-      "id": "sthr_011CZkZVWa6oIjw0rgXZpnBt",
+      "id": "sthr_011CZkZVWa6oJjw1rgXZpnBt",
       "agent": {
         "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
         "description": "A focused research subagent.",
+        "execution_identity": {
+          "type": "service_account"
+        },
         "mcp_servers": [
           {
             "name": "example-mcp",
@@ -732,7 +801,7 @@ Response 200
           }
         ],
         "model": {
-          "id": "claude-opus-5",
+          "id": "claude-opus-5-5",
           "effort": {
             "type": "low"
           },
@@ -801,7 +870,8 @@ Response 200
           "web_fetch_requests": 0,
           "web_search_requests": 3
         }
-      }
+      },
+      "workflow_run_id": null
     }
   ],
   "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="
@@ -818,10 +888,13 @@ Response 200
 {
   "data": [
     {
-      "id": "sthr_011CZkZVWa6oIjw0rgXZpnBt",
+      "id": "sthr_011CZkZVWa6oJjw1rgXZpnBt",
       "agent": {
         "id": "agent_011CZkYqphY8vELVzwCUpqiQ",
         "description": "A focused research subagent.",
+        "execution_identity": {
+          "type": "service_account"
+        },
         "mcp_servers": [
           {
             "name": "example-mcp",
@@ -830,7 +903,7 @@ Response 200
           }
         ],
         "model": {
-          "id": "claude-opus-5",
+          "id": "claude-opus-5-5",
           "effort": {
             "type": "low"
           },
@@ -899,7 +972,8 @@ Response 200
           "web_fetch_requests": 0,
           "web_search_requests": 3
         }
-      }
+      },
+      "workflow_run_id": null
     }
   ],
   "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="

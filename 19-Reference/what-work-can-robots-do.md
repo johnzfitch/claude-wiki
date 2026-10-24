@@ -2,15 +2,53 @@
 title: "Can we predict the jobs robots will do? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/what-work-can-robots-do"
 category: "19-Reference"
-fetched_at: "2026-10-06T06:24:44Z"
+fetched_at: "2026-10-21T06:30:46Z"
 tags: ["news-research"]
 ---
 
 # What work can robots do?
 
-Sep 30, 2026
-
 [Download the PDF](https://cdn.sanity.io/files/4zrzovbb/website/401a473469db99fd39bba1ca6d9a5653a70e2f12.pdf)
+
+- [01Key findings](#key-findings)
+- [02Introduction](#introduction)
+- [03Robots today and tomorrow](#robots-today-and-tomorrow)
+- [04Measuring exposure](#measuring-exposure)
+- [05What work can robots do?](#what-work-can-robots-do)
+- [06Characteristics of exposed jobs](#characteristics-of-exposed-jobs)
+- [07Robot and LLM exposure](#robot-and-llm-exposure)
+- [08Robot costs and adoption](#robot-costs-and-adoption)
+- [09Discussion](#discussion)
+- [10Appendix](#appendix)
+- [11References](#references)
+- [12Data sources](#data-sources)
+
+- Published
+
+  Sep 30, 2026
+
+- Team
+
+  [Economics](team-economics.md)
+
+- Topics
+
+  - [Robotics](https://www.anthropic.com/search?topic=robotics)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+
+  See more...
+
+Related articles
+
+- Economics
+
+  Aug 12, 2026
+
+  [Reviewing the evidence on worker retraining programs](reviewing-the-evidence-on-worker-retraining-programs.md)
+
+[View more](https://www.anthropic.com/search?topic=robotics)
 
 ## **Key findings**
 
@@ -186,35 +224,11 @@ Much remains uncertain about how robots and AI could reshape the economy. Growth
 
 ## **Appendix**
 
-Available [here](https://cdn.sanity.io/files/4zrzovbb/website/d27288375b0ac486cb9da0a30a94423b36ff0443.pdf).
+Available [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/d27288375b0ac486cb9da0a30a94423b36ff0443.pdf).
 
 #### Data availability
 
 Data from this report are available [here](https://huggingface.co/datasets/Anthropic/EconomicIndex).
-
-## **Authors**
-
-Russell Legate-Yang and Maxim Massenkoff.
-
-## **Acknowledgments**
-
-James Akl, Tess Cotter, Sholto Douglas, Adam Farina, Megan Giacobetti, Ryan Heller, Johannes Hermle, Zoë Hitzig, Ben Jones, Chad Jones, Anton Korinek, Jan Leike, Eva Lyubich, Peter McCrory, Kerry Persen, Sarah Pollack, Santi Ruiz, Szymon Sacher, Monika Tuchowska, Zhengdong Wang, Heather Whitney, Nathan Wilmers, Kim Withee.
-
-## **Citation**
-
-Please cite this as:
-
-``` CodeBlock-module-scss-module__PbWBnq__preFull
-@online{legateyang2026robots,
- author = {Legate-Yang, Russell and Massenkoff, Maxim},
- title = {What work can robots do?},
- date = {2026-09-30},
- year = {2026},
- url = {https://www.anthropic.com/research/what-work-can-robots-do}
-}
-```
-
-Copy
 
 ## **References**
 
@@ -238,13 +252,13 @@ Agaskar, Ameya, Sriram Siva, William Pickering, Kyle O'Brien, Charles Kekeh, Ale
 
 Aghion, Philippe, Benjamin F. Jones, and Charles I. Jones, "Artificial Intelligence and Economic Growth," in Ajay Agrawal, Joshua Gans, and Avi Goldfarb, eds., *The Economics of Artificial Intelligence: An Agenda*, University of Chicago Press, 2019, 237-282.
 
-Airbus, "Airbus Concludes ATTOL with Fully Autonomous Flight Tests," press release, June 29, 2020. <https://www.airbus.com/en/newsroom/press-releases/2020-06-airbus-concludes-attol-with-fully-autonomous-flight-tests>
+Airbus, "Airbus Concludes ATTOL with Fully Autonomous Flight Tests," press release, June 29, 2020. [https://www.airbus.com/en/newsroom/press-releases/2020-06-airbus-concludes-attol-with-fully-autonomous-flight-tests](https://www.airbus.com/en/newsroom/press-releases/2020-06-airbus-concludes-attol-with-fully-autonomous-flight-tests)
 
-Airbus, "Airbus Tests New Technologies to Enhance Pilot Assistance," press release, January 12, 2023. <https://www.airbus.com/en/newsroom/press-releases/2023-01-airbus-tests-new-technologies-to-enhance-pilot-assistance>
+Airbus, "Airbus Tests New Technologies to Enhance Pilot Assistance," press release, January 12, 2023. [https://www.airbus.com/en/newsroom/press-releases/2023-01-airbus-tests-new-technologies-to-enhance-pilot-assistance](https://www.airbus.com/en/newsroom/press-releases/2023-01-airbus-tests-new-technologies-to-enhance-pilot-assistance)
 
-Amazon, "Introducing Vulcan: Amazon's First Robot with a Sense of Touch," About Amazon, May 7, 2025. <https://www.aboutamazon.com/news/operations/amazon-vulcan-robot-pick-stow-touch>
+Amazon, "Introducing Vulcan: Amazon's First Robot with a Sense of Touch," About Amazon, May 7, 2025. [https://www.aboutamazon.com/news/operations/amazon-vulcan-robot-pick-stow-touch](https://www.aboutamazon.com/news/operations/amazon-vulcan-robot-pick-stow-touch)
 
-Andreassen, Dag, "A Robotic Success from Jæren," The Norwegian Museum of Science and Technology, September 3, 2024. <https://www.tekniskmuseum.no/en/stories/a-robotic-success-from-the-fighter>
+Andreassen, Dag, "A Robotic Success from Jæren," The Norwegian Museum of Science and Technology, September 3, 2024. [https://www.tekniskmuseum.no/en/stories/a-robotic-success-from-the-fighter](https://www.tekniskmuseum.no/en/stories/a-robotic-success-from-the-fighter)
 
 Andrychowicz, Marcin, Bowen Baker, Maciek Chociej, Rafal Józefowicz, Bob McGrew, Jakub Pachocki, Arthur Petron, Matthias Plappert, Glenn Powell, Alex Ray, Jonas Schneider, Szymon Sidor, Josh Tobin, Peter Welinder, Lilian Weng, and Wojciech Zaremba, "Learning Dexterous In-Hand Manipulation," *International Journal of Robotics Research*, 2020, 39 (1), 3-20.
 
@@ -268,31 +282,31 @@ Autor, David, David Mindell, and Elisabeth Reynolds, "The Work of the Future: Bu
 
 Autor, David H. and Neil Thompson, "Expertise," *Journal of the European Economic Association*, 2025, 23 (4), 1203-1271.
 
-Badger Technologies, "Badger Technologies and Stop & Shop Stores Upgrade Marty the Robot at 300+ Locations to Improve Customer Shopping Experiences," press release, September 18, 2023. <https://www.badger-technologies.com/news/press-releases/stop-and-shop-upgrade-marty-the-robot.html>
+Badger Technologies, "Badger Technologies and Stop & Shop Stores Upgrade Marty the Robot at 300+ Locations to Improve Customer Shopping Experiences," press release, September 18, 2023. [https://www.badger-technologies.com/news/press-releases/stop-and-shop-upgrade-marty-the-robot.html](https://www.badger-technologies.com/news/press-releases/stop-and-shop-upgrade-marty-the-robot.html)
 
 Bank of America, "Humanoid Robots 101," BofA Global Research, April 29, 2025.
 
-Bank of Japan, "Producer Price Index, 2020 Base: Robots \[PRCG20_2201350029\]," Time-Series Data Search, 2026. <https://www.stat-search.boj.or.jp/>
+Bank of Japan, "Producer Price Index, 2020 Base: Robots \[PRCG20_2201350029\]," Time-Series Data Search, 2026. [https://www.stat-search.boj.or.jp/](https://www.stat-search.boj.or.jp/)
 
-Baptista, Eduardo, Ju-min Park, and Laurie Chen, "Robots Poised for 'ChatGPT Moment,' Unitree CEO Says," Reuters, August 20, 2026. <https://www.reuters.com/world/asia-pacific/robots-poised-chatgpt-moment-unitree-ceo-says-2026-08-20/>
+Baptista, Eduardo, Ju-min Park, and Laurie Chen, "Robots Poised for 'ChatGPT Moment,' Unitree CEO Says," Reuters, August 20, 2026. [https://www.reuters.com/world/asia-pacific/robots-poised-chatgpt-moment-unitree-ceo-says-2026-08-20/](https://www.reuters.com/world/asia-pacific/robots-poised-chatgpt-moment-unitree-ceo-says-2026-08-20/)
 
 Billard, Aude and Danica Kragic, "Trends and Challenges in Robot Manipulation," *Science*, 2019, 364 (6446), eaat8414.
 
-Binder, Damon, "AGI Will Set Off an Industrial Explosion," *AI Frontiers*, August 11, 2026. <https://ai-frontiers.org/articles/agi-will-set-off-an-industrial-explosion>
+Binder, Damon, "AGI Will Set Off an Industrial Explosion," *AI Frontiers*, August 11, 2026. [https://ai-frontiers.org/articles/agi-will-set-off-an-industrial-explosion](https://ai-frontiers.org/articles/agi-will-set-off-an-industrial-explosion)
 
-Bishop, Todd, "Amazon Tops 1 Million Robots: Here's What They Do," *GeekWire*, July 1, 2025. <https://www.geekwire.com/2025/amazons-robot-workforce-hits-1-million-heres-what-they-all-do/>
+Bishop, Todd, "Amazon Tops 1 Million Robots: Here's What They Do," *GeekWire*, July 1, 2025. [https://www.geekwire.com/2025/amazons-robot-workforce-hits-1-million-heres-what-they-all-do/](https://www.geekwire.com/2025/amazons-robot-workforce-hits-1-million-heres-what-they-all-do/)
 
-BMW Group, "BMW Group Advances the Use of Physical AI in Production with Figure 03 Project in Spartanburg," press release, June 25, 2026. <https://www.press.bmwgroup.com/global/article/detail/T0458778EN/bmw-group-advances-the-use-of-physical-ai-in-production-with-figure-03-project-in-spartanburg?language=en>
+BMW Group, "BMW Group Advances the Use of Physical AI in Production with Figure 03 Project in Spartanburg," press release, June 25, 2026. [https://www.press.bmwgroup.com/global/article/detail/T0458778EN/bmw-group-advances-the-use-of-physical-ai-in-production-with-figure-03-project-in-spartanburg?language=en](https://www.press.bmwgroup.com/global/article/detail/T0458778EN/bmw-group-advances-the-use-of-physical-ai-in-production-with-figure-03-project-in-spartanburg?language=en)
 
-Boston Consulting Group, "The Robotics Revolution: The Next Great Leap in Manufacturing," report, September 2015. <https://www.bcg.com/publications/2015/lean-manufacturing-innovation-robotics-revolution-next-great-leap-manufacturing>
+Boston Consulting Group, "The Robotics Revolution: The Next Great Leap in Manufacturing," report, September 2015. [https://www.bcg.com/publications/2015/lean-manufacturing-innovation-robotics-revolution-next-great-leap-manufacturing](https://www.bcg.com/publications/2015/lean-manufacturing-innovation-robotics-revolution-next-great-leap-manufacturing)
 
-Boston Dynamics, "Stretch," product page, 2026. <https://bostondynamics.com/products/stretch/>
+Boston Dynamics, "Stretch," product page, 2026. [https://bostondynamics.com/products/stretch/](https://bostondynamics.com/products/stretch/)
 
-Brooks, Rodney, "Why Today's Humanoids Won't Learn Dexterity," rodneybrooks.com, September 26, 2025. <https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/>
+Brooks, Rodney, "Why Today's Humanoids Won't Learn Dexterity," rodneybrooks.com, September 26, 2025. [https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/](https://rodneybrooks.com/why-todays-humanoids-wont-learn-dexterity/)
 
-Built Robotics, "The World's First Fully Autonomous Trenching Solution," Exosystem product page, 2026. <https://www.builtrobotics.com/solutions/trenching>
+Built Robotics, "The World's First Fully Autonomous Trenching Solution," Exosystem product page, 2026. [https://www.builtrobotics.com/solutions/trenching](https://www.builtrobotics.com/solutions/trenching)
 
-Canvas, "Drywall Finishing Robot," product page, JLG Industries, 2026. <https://www.jlg.com/en/canvas>
+Canvas, "Drywall Finishing Robot," product page, JLG Industries, 2026. [https://www.jlg.com/en/canvas](https://www.jlg.com/en/canvas)
 
 Cazzaniga, Mauro, Florence Jaumotte, Longji Li, Giovanni Melina, Augustus J. Panton, Carlo Pizzinelli, Emma J. Rockall, and Marina Mendes Tavares, "Gen-AI: Artificial Intelligence and the Future of Work," IMF Staff Discussion Note SDN/2024/001, 2024.
 
@@ -300,37 +314,37 @@ Chaparro-Rico, Betsy D. M., Daniele Cafolla, Paolo Tortola, and Giuseppe Galardi
 
 Chen, Jiafeng and Jonathan Roth, "Logs with Zeros? Some Problems and Solutions," *Quarterly Journal of Economics*, 2024, 139 (2), 891-936.
 
-Cleveland Clinic, "da Vinci Robotic Surgery," Health Library, last updated April 29, 2025. <https://my.clevelandclinic.org/health/treatments/16908-da-vinci-surgery>
+Cleveland Clinic, "da Vinci Robotic Surgery," Health Library, last updated April 29, 2025. [https://my.clevelandclinic.org/health/treatments/16908-da-vinci-surgery](https://my.clevelandclinic.org/health/treatments/16908-da-vinci-surgery)
 
 Cockburn, Iain M., Rebecca Henderson, and Scott Stern, "The Impact of Artificial Intelligence on Innovation: An Exploratory Analysis," in Ajay Agrawal, Joshua Gans, and Avi Goldfarb, eds., *The Economics of Artificial Intelligence: An Agenda*, University of Chicago Press, 2019, 115-146.
 
-Code of Federal Regulations, "Composition of Flight Crew," 14 CFR 121.385, retrieved September 21, 2026. <https://www.ecfr.gov/current/title-14/section-121.385>
+Code of Federal Regulations, "Composition of Flight Crew," 14 CFR 121.385, retrieved September 21, 2026. [https://www.ecfr.gov/current/title-14/section-121.385](https://www.ecfr.gov/current/title-14/section-121.385)
 
-CORDIS, "Automated System for Packaging Fresh Meat with Reduced Waste/Giveaway, Processing Time, Human Involvement and Contamination (AUTOMEATIC)," European Commission, grant agreement 775913, periodic reporting summary, 2018. <https://cordis.europa.eu/project/id/775913>
+CORDIS, "Automated System for Packaging Fresh Meat with Reduced Waste/Giveaway, Processing Time, Human Involvement and Contamination (AUTOMEATIC)," European Commission, grant agreement 775913, periodic reporting summary, 2018. [https://cordis.europa.eu/project/id/775913](https://cordis.europa.eu/project/id/775913)
 
-Counterpoint Research, "Global Humanoid Robot Shipments Soar Nearly 300% YoY in H1 2026, Driven by Commercial Deployments," August 20, 2026. <https://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026>
+Counterpoint Research, "Global Humanoid Robot Shipments Soar Nearly 300% YoY in H1 2026, Driven by Commercial Deployments," August 20, 2026. [https://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026](https://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026)
 
-Davidson, Tom and Rose Hadshar, "The Industrial Explosion," Forethought Research, May 2025. <https://www.forethought.org/research/the-industrial-explosion>
+Davidson, Tom and Rose Hadshar, "The Industrial Explosion," Forethought Research, May 2025. [https://www.forethought.org/research/the-industrial-explosion](https://www.forethought.org/research/the-industrial-explosion)
 
 Davidson, Tom, Basil Halperin, Thomas Houlden, and Anton Korinek, "When Does Automating Research Produce Explosive Growth?," EconTAI Working Paper, January 2026. <https://www.econtai.org/research/AutomatingAIResearch.pdf>
 
 Deming, David J., "The Growing Importance of Social Skills in the Labor Market," *Quarterly Journal of Economics*, 2017, 132 (4), 1593-1640.
 
-Denain, Jean-Stanislas and Yann Rivière, "How Fast Could Robot Production Scale Up?," Epoch AI, April 2026. <https://epoch.ai/publications/how-fast-could-robot-production-scale-up>
+Denain, Jean-Stanislas and Yann Rivière, "How Fast Could Robot Production Scale Up?," Epoch AI, April 2026. [https://epoch.ai/publications/how-fast-could-robot-production-scale-up](https://epoch.ai/publications/how-fast-could-robot-production-scale-up)
 
-Drankhan, Holly, "Developments in Robotic Teat Sprayers Cut Costs and Labor," *Progressive Dairy*, September 30, 2016. <https://www.agproud.com/articles/28362-developments-in-robotic-teat-sprayers-cut-costs-and-labor>
+Drankhan, Holly, "Developments in Robotic Teat Sprayers Cut Costs and Labor," *Progressive Dairy*, September 30, 2016. [https://www.agproud.com/articles/28362-developments-in-robotic-teat-sprayers-cut-costs-and-labor](https://www.agproud.com/articles/28362-developments-in-robotic-teat-sprayers-cut-costs-and-labor)
 
-Dürr Group, "See and Drive Perfectly with x-light and x-wheel," duerrmore magazine, November 13, 2018. <https://www.durr-group.com/en/duerrmore/2019/autonomous-driving/x-light-and-x-wheel>
+Dürr Group, "See and Drive Perfectly with x-light and x-wheel," duerrmore magazine, November 13, 2018. [https://www.durr-group.com/en/duerrmore/2019/autonomous-driving/x-light-and-x-wheel](https://www.durr-group.com/en/duerrmore/2019/autonomous-driving/x-light-and-x-wheel)
 
 Eloundou, Tyna, Sam Manning, Pamela Mishkin, and Daniel Rock, "GPTs are GPTs: Labor Market Impact Potential of LLMs," *Science*, 2024, 384 (6702), 1306-1308.
 
-Epiroc, "Autonomous Material Handling: A Crucial Step Toward the Mine of the Future," customer story, April 17, 2024. <https://www.epiroc.com/en-me/customer-stories/2024/autonomous-material-handling-a-crucial-step-toward-the-mine-of-the-future>
+Epiroc, "Autonomous Material Handling: A Crucial Step Toward the Mine of the Future," customer story, April 17, 2024. [https://www.epiroc.com/en-me/customer-stories/2024/autonomous-material-handling-a-crucial-step-toward-the-mine-of-the-future](https://www.epiroc.com/en-me/customer-stories/2024/autonomous-material-handling-a-crucial-step-toward-the-mine-of-the-future)
 
-Ewing, Jack, "Robots That Walk and Talk Are Coming to Car Factories," *The New York Times*, August 11, 2026. <https://www.nytimes.com/2026/08/11/business/humanoid-robots-car-factories.html>
+Ewing, Jack, "Robots That Walk and Talk Are Coming to Car Factories," *The New York Times*, August 11, 2026. [https://www.nytimes.com/2026/08/11/business/humanoid-robots-car-factories.html](https://www.nytimes.com/2026/08/11/business/humanoid-robots-car-factories.html)
 
-Fabrico, "Maintenance Cost as Percent of RAV: The Benchmark That Cuts Through Excuses," blog, June 26, 2026. <https://www.fabrico.io/blog/maintenance-cost-as-percent-of-rav/>
+Fabrico, "Maintenance Cost as Percent of RAV: The Benchmark That Cuts Through Excuses," blog, June 26, 2026. [https://www.fabrico.io/blog/maintenance-cost-as-percent-of-rav/](https://www.fabrico.io/blog/maintenance-cost-as-percent-of-rav/)
 
-Federal Aviation Administration (FAA), "Safety Framework for Aircraft Automation," September 2025. <https://www.faa.gov/aircraft/air_cert/step/safety_framework_aircraft_automation>
+Federal Aviation Administration (FAA), "Safety Framework for Aircraft Automation," September 2025. [https://www.faa.gov/aircraft/air_cert/step/safety_framework_aircraft_automation](https://www.faa.gov/aircraft/air_cert/step/safety_framework_aircraft_automation)
 
 Fine, Sidney A., "A Structure of Worker Functions," *Personnel and Guidance Journal*, 1955, 34 (2), 66-73.
 
@@ -338,27 +352,27 @@ Fine, Sidney A. and Wretha W. Wiley, *An Introduction to Functional Job Analysis
 
 Firoozi, Roya, Johnathan Tucker, Stephen Tian, Anirudha Majumdar, Jiankai Sun, Weiyu Liu, Yuke Zhu, Shuran Song, Ashish Kapoor, Karol Hausman, Brian Ichter, Danny Driess, Jiajun Wu, Cewu Lu, and Mac Schwager, "Foundation Models in Robotics: Applications, Challenges, and the Future," *International Journal of Robotics Research*, 2025, 44 (5), 701-739.
 
-Fori Automation, "Toe Tool Systems," product page, 2025. <https://foriauto.com/our-products/end-of-line/alignment-systems/wheel-alignment-systems/toe-tool-systems>
+Fori Automation, "Toe Tool Systems," product page, 2025. [https://foriauto.com/our-products/end-of-line/alignment-systems/wheel-alignment-systems/toe-tool-systems](https://foriauto.com/our-products/end-of-line/alignment-systems/wheel-alignment-systems/toe-tool-systems)
 
 Frey, Carl Benedikt and Michael A. Osborne, "The Future of Employment: How Susceptible Are Jobs to Computerisation?," *Technological Forecasting and Social Change*, 2017, 114, 254-280.
 
-Friedel, William C., Jr., Thomas S. Bettencourt, and Daniel L. Freeman, "Tomato Harvesting Employing Electronic Sorting," U.S. Patent 4,033,099, issued July 5, 1977. <https://patents.google.com/patent/US4033099A/en>
+Friedel, William C., Jr., Thomas S. Bettencourt, and Daniel L. Freeman, "Tomato Harvesting Employing Electronic Sorting," U.S. Patent 4,033,099, issued July 5, 1977. [https://patents.google.com/patent/US4033099A/en](https://patents.google.com/patent/US4033099A/en)
 
-Friedel, William C., Jr. and Charles F. Dietz, "Tomato Harvesting Sorting System," U.S. Patent 4,118,311, issued October 3, 1978. <https://patents.google.com/patent/US4118311A/en>
+Friedel, William C., Jr. and Charles F. Dietz, "Tomato Harvesting Sorting System," U.S. Patent 4,118,311, issued October 3, 1978. [https://patents.google.com/patent/US4118311A/en](https://patents.google.com/patent/US4118311A/en)
 
-Goldman, Sharon, "A Year Ago, Nvidia's Jensen Huang Said the 'ChatGPT Moment' for Robotics Was Around the Corner. Now He Says It's 'Nearly Here.' But Is It?," *Fortune*, January 6, 2026. <https://fortune.com/2026/01/06/nvidia-jensen-huang-chatgpt-moment-for-robotics/>
+Goldman, Sharon, "A Year Ago, Nvidia's Jensen Huang Said the 'ChatGPT Moment' for Robotics Was Around the Corner. Now He Says It's 'Nearly Here.' But Is It?," *Fortune*, January 6, 2026. [https://fortune.com/2026/01/06/nvidia-jensen-huang-chatgpt-moment-for-robotics/](https://fortune.com/2026/01/06/nvidia-jensen-huang-chatgpt-moment-for-robotics/)
 
 González Huarte, Javier, Maite Ortiz de Zarate, and Aitor Ibarguren, "CAD-Based Robot Programming Solution for Wire Harness Manufacturing in Aeronautic Sector," *Robotics*, 2023, 12 (5), 130.
 
 Graetz, Georg and Guy Michaels, "Robots at Work," *Review of Economics and Statistics*, 2018, 100 (5), 753-768.
 
-Gridwise, "How Are Robotaxis Affecting Driver Pay in AV Cities?," blog, August 2025. <https://gridwise.io/blog/how-are-robotaxis-affecting-driver-pay-in-av-cities>
+Gridwise, "How Are Robotaxis Affecting Driver Pay in AV Cities?," blog, August 2025. [https://gridwise.io/blog/how-are-robotaxis-affecting-driver-pay-in-av-cities](https://gridwise.io/blog/how-are-robotaxis-affecting-driver-pay-in-av-cities)
 
-Hirsch, Barry T., David A. Macpherson, and William E. Even, "Union Membership, Coverage, and Earnings from the CPS" \[dataset\], Unionstats.com, 2026. <https://unionstats.com/>
+Hirsch, Barry T., David A. Macpherson, and William E. Even, "Union Membership, Coverage, and Earnings from the CPS" \[dataset\], Unionstats.com, 2026. [https://unionstats.com/](https://unionstats.com/)
 
-Honerkamp, Paxton, "Within Uber-Waymo Split, a Key Labor Battle over AVs Is Being Waged in the Nation's Capital," CNBC, August 1, 2026. <https://www.cnbc.com/2026/08/01/uber-waymo-autonomous-vehicle-regulation.html>
+Honerkamp, Paxton, "Within Uber-Waymo Split, a Key Labor Battle over AVs Is Being Waged in the Nation's Capital," CNBC, August 1, 2026. [https://www.cnbc.com/2026/08/01/uber-waymo-autonomous-vehicle-regulation.html](https://www.cnbc.com/2026/08/01/uber-waymo-autonomous-vehicle-regulation.html)
 
-Huffman, Wallace E., "The Status of Labor-Saving Mechanization in U.S. Fruit and Vegetable Harvesting," *Choices*, 2012, 27 (2). <https://www.choicesmagazine.org/choices-magazine/theme-articles/immigration-and-agriculture/the-status-of-labor-saving-mechanization-in-us-fruit-and-vegetable-harvesting>
+Huffman, Wallace E., "The Status of Labor-Saving Mechanization in U.S. Fruit and Vegetable Harvesting," *Choices*, 2012, 27 (2). [https://www.choicesmagazine.org/choices-magazine/theme-articles/immigration-and-agriculture/the-status-of-labor-saving-mechanization-in-us-fruit-and-vegetable-harvesting](https://www.choicesmagazine.org/choices-magazine/theme-articles/immigration-and-agriculture/the-status-of-labor-saving-mechanization-in-us-fruit-and-vegetable-harvesting)
 
 Humlum, Anders, "Robot Adoption and Labor Market Dynamics," Rockwool Foundation Research Unit Study Paper 175, 2021.
 
@@ -366,19 +380,19 @@ Hwang, Jyh-Jing, Runsheng Xu, Hubert Lin, Wei-Chih Hung, Jingwei Ji, Kristy Choi
 
 Ibarz, Julian, Jie Tan, Chelsea Finn, Mrinal Kalakrishnan, Peter Pastor, and Sergey Levine, "How to Train Your Robot with Deep Reinforcement Learning: Lessons We Have Learned," *International Journal of Robotics Research*, 2021, 40 (4-5), 698-721.
 
-Ingenia, "Fruit-Picking Robots," Issue 93, December 2022. <https://www.ingenia.org.uk/articles/fruit-picking-robots/>
+Ingenia, "Fruit-Picking Robots," Issue 93, December 2022. [https://www.ingenia.org.uk/articles/fruit-picking-robots/](https://www.ingenia.org.uk/articles/fruit-picking-robots/)
 
 International Organization for Standardization (ISO), "Robotics — Vocabulary," ISO 8373:2021, Geneva, 2021.
 
-Jarrett, Cosette, "12 Cool Facts About the AI-Powered Robots That Help Deliver Your Amazon Packages," About Amazon, December 11, 2023. <https://www.aboutamazon.com/news/operations/amazon-robotics-cool-facts>
+Jarrett, Cosette, "12 Cool Facts About the AI-Powered Robots That Help Deliver Your Amazon Packages," About Amazon, December 11, 2023. [https://www.aboutamazon.com/news/operations/amazon-robotics-cool-facts](https://www.aboutamazon.com/news/operations/amazon-robotics-cool-facts)
 
 Jones, Charles I. and Christopher Tonetti, "Past Automation and Future A.I.: How Weak Links Tame the Growth Explosion," working paper, Stanford University, 2026. <https://web.stanford.edu/~chadj/JonesTonetti_Automation.pdf>
 
-Jurkat, Anne, Rainer Klump, and Florian Schneider, "Tracking the Rise of Robots: A Survey of the IFR Database and its Applications," MPRA Paper 111812, Munich Personal RePEc Archive, October 2021. <https://mpra.ub.uni-muenchen.de/111812/>
+Jurkat, Anne, Rainer Klump, and Florian Schneider, "Tracking the Rise of Robots: A Survey of the IFR Database and its Applications," MPRA Paper 111812, Munich Personal RePEc Archive, October 2021. [https://mpra.ub.uni-muenchen.de/111812/](https://mpra.ub.uni-muenchen.de/111812/)
 
 Katz, Lawrence F. and Kevin M. Murphy, "Changes in Relative Wages, 1963-1987: Supply and Demand Factors," *Quarterly Journal of Economics*, 1992, 107 (1), 35-78.
 
-Kawasaki Robotics, "At the Forefront of FRP Automation: Spray-Up and Cutting Process Innovations Pioneered by KADO × IEC," case study, 2026. <https://kawasakirobotics.com/case-studies/at-the-forefront-of-frp-automation-spray-up-and-cutting-process-innovations-pioneered-by-kado-x-iec/>
+Kawasaki Robotics, "At the Forefront of FRP Automation: Spray-Up and Cutting Process Innovations Pioneered by KADO × IEC," case study, 2026. [https://kawasakirobotics.com/case-studies/at-the-forefront-of-frp-automation-spray-up-and-cutting-process-innovations-pioneered-by-kado-x-iec/](https://kawasakirobotics.com/case-studies/at-the-forefront-of-frp-automation-spray-up-and-cutting-process-innovations-pioneered-by-kado-x-iec/)
 
 Kemp, Charles C., Aaron Edsinger, and Eduardo Torres-Jara, "Challenges for Robot Manipulation in Human Environments," *IEEE Robotics & Automation Magazine*, 2007, 14 (1), 20-29.
 
@@ -390,41 +404,41 @@ Kogan, Leonid, Dimitris Papanikolaou, Lawrence D. W. Schmidt, and Bryan Seegmill
 
 Kroemer, Oliver, Scott Niekum, and George Konidaris, "A Review of Robot Learning for Manipulation: Challenges, Representations, and Algorithms," *Journal of Machine Learning Research*, 2021, 22 (30), 1-82.
 
-Link, Albert N., Zachary T. Oliver, and Alan C. O'Connor, "Economic Analysis of Technology Infrastructure Needs for Advanced Manufacturing: Advanced Robotics and Automation," NIST GCR 16-005, National Institute of Standards and Technology, August 2016. <https://doi.org/10.6028/NIST.GCR.16-005>
+Link, Albert N., Zachary T. Oliver, and Alan C. O'Connor, "Economic Analysis of Technology Infrastructure Needs for Advanced Manufacturing: Advanced Robotics and Automation," NIST GCR 16-005, National Institute of Standards and Technology, August 2016. [https://doi.org/10.6028/NIST.GCR.16-005](https://doi.org/10.6028/NIST.GCR.16-005)
 
 Lise, Jeremy and Fabien Postel-Vinay, "Multidimensional Skills, Sorting, and Human Capital Accumulation," *American Economic Review*, 2020, 110 (8), 2328-2376.
 
 Ludwig, Jens, Sendhil Mullainathan, and Ashesh Rambachan, "Large Language Models: An Applied Econometric Framework," NBER Working Paper 33344, 2025.
 
-Lung, Natalie, "New York's Robotaxi Plan Pulled in Setback to Waymo Expansion," Bloomberg News, February 19, 2026. <https://www.bloomberg.com/news/articles/2026-02-19/new-york-s-robotaxi-plan-pulled-in-setback-to-waymo-expansion>
+Lung, Natalie, "New York's Robotaxi Plan Pulled in Setback to Waymo Expansion," Bloomberg News, February 19, 2026. [https://www.bloomberg.com/news/articles/2026-02-19/new-york-s-robotaxi-plan-pulled-in-setback-to-waymo-expansion](https://www.bloomberg.com/news/articles/2026-02-19/new-york-s-robotaxi-plan-pulled-in-setback-to-waymo-expansion)
 
-Madrigal, Alexis C., "Inside Waymo's Secret World for Training Self-Driving Cars," *The Atlantic*, August 23, 2017. <https://www.theatlantic.com/technology/archive/2017/08/inside-waymos-secret-testing-and-simulation-facilities/537648/>
+Madrigal, Alexis C., "Inside Waymo's Secret World for Training Self-Driving Cars," *The Atlantic*, August 23, 2017. [https://www.theatlantic.com/technology/archive/2017/08/inside-waymos-secret-testing-and-simulation-facilities/537648/](https://www.theatlantic.com/technology/archive/2017/08/inside-waymos-secret-testing-and-simulation-facilities/537648/)
 
 Mason, Matthew T., "Toward Robotic Manipulation," *Annual Review of Control, Robotics, and Autonomous Systems*, 2018, 1, 1-28.
 
 Massenkoff, Maxim and Peter McCrory, "Labor Market Impacts of AI: A New Measure and Early Evidence," Anthropic, March 5, 2026. <https://www.anthropic.com/research/labor-market-impacts>
 
-Mayekawa, "Deboning Machines," product page, 2026a. <https://mayekawa.com/products/deboning_machines/>
+Mayekawa, "Deboning Machines," product page, 2026a. [https://mayekawa.com/products/deboning_machines/](https://mayekawa.com/products/deboning_machines/)
 
-Mayekawa, "Reducing Workloads with Reliable Deboning Technology and Stabilizing Production to Meet Market Demands for Pork," With Mayekawa, 2026b (undated; retrieved September 29, 2026). <https://mayekawa.com/with/stories/hamdas/>
+Mayekawa, "Reducing Workloads with Reliable Deboning Technology and Stabilizing Production to Meet Market Demands for Pork," With Mayekawa, 2026b (undated; retrieved September 29, 2026). [https://mayekawa.com/with/stories/hamdas/](https://mayekawa.com/with/stories/hamdas/)
 
-McKinsey & Company, "The Future of Robotics: Intelligent, Adaptable, and on Your Team," The Next Normal, 2026. <https://www.mckinsey.com/featured-insights/the-next-normal/robotics>
+McKinsey & Company, "The Future of Robotics: Intelligent, Adaptable, and on Your Team," The Next Normal, 2026. [https://www.mckinsey.com/featured-insights/the-next-normal/robotics](https://www.mckinsey.com/featured-insights/the-next-normal/robotics)
 
 Metzger, Jean-Claude, Olivier Lambercy, Antonella Califfi, Daria Dinacci, Claudio Petrillo, Paolo Rossi, Fabio M. Conti, and Roger Gassert, "Assessment-Driven Selection and Adaptation of Exercise Difficulty in Robot-Assisted Therapy: A Pilot Study with a Hand Rehabilitation Robot," *Journal of NeuroEngineering and Rehabilitation*, 2014, 11, 154.
 
 Moravec, Hans, *Mind Children: The Future of Robot and Human Intelligence*, Cambridge, MA: Harvard University Press, 1988.
 
-Morgan Stanley, "Humanoid Robot Market Expected to Reach \$5 Trillion by 2050," May 14, 2025. <https://www.morganstanley.com/insights/articles/humanoid-robot-market-5-trillion-by-2050>
+Morgan Stanley, "Humanoid Robot Market Expected to Reach \$5 Trillion by 2050," May 14, 2025. [https://www.morganstanley.com/insights/articles/humanoid-robot-market-5-trillion-by-2050](https://www.morganstanley.com/insights/articles/humanoid-robot-market-5-trillion-by-2050)
 
 Morgan Stanley Research, "Humanoids: Investment Implications of Embodied AI," report, June 26, 2024.
 
 Navas-Reascos, Gabriel E., David Romero, Johan Stahre, and Alberto Caballero-Ruiz, "Wire Harness Assembly Process Supported by Collaborative Robots: Literature Review and Call for R&D," *Robotics*, 2022, 11 (3), 65.
 
-Nissyoku Shimbun, "前川製作所が豚もも肉脱骨ロボット「ハムダス」発売" \[Mayekawa Launches HAMDAS Pork Ham Deboning Robot\], *Nihon Shokuryo Shimbun*, September 14, 1998. <https://news.nissyoku.co.jp/news/nss-8423-0032>
+Nissyoku Shimbun, "前川製作所が豚もも肉脱骨ロボット「ハムダス」発売" \[Mayekawa Launches HAMDAS Pork Ham Deboning Robot\], *Nihon Shokuryo Shimbun*, September 14, 1998. [https://news.nissyoku.co.jp/news/nss-8423-0032](https://news.nissyoku.co.jp/news/nss-8423-0032)
 
-Oitzman, Mike, "Pharm Robotics Advances Automated Dairy Cow Healthcare," *The Robot Report*, July 13, 2025. <https://www.therobotreport.com/pharm-robotics-advances-automated-dairy-cow-healthcare/>
+Oitzman, Mike, "Pharm Robotics Advances Automated Dairy Cow Healthcare," *The Robot Report*, July 13, 2025. [https://www.therobotreport.com/pharm-robotics-advances-automated-dairy-cow-healthcare/](https://www.therobotreport.com/pharm-robotics-advances-automated-dairy-cow-healthcare/)
 
-Oxmaint, "Food Manufacturing Maintenance Budgeting: Planning, Benchmarks, and Cost Control," March 28, 2026. <https://oxmaint.com/industries/food-manufacturing/food-manufacturing-maintenance-budgeting-benchmarks-cost-control>
+Oxmaint, "Food Manufacturing Maintenance Budgeting: Planning, Benchmarks, and Cost Control," March 28, 2026. [https://oxmaint.com/industries/food-manufacturing/food-manufacturing-maintenance-budgeting-benchmarks-cost-control](https://oxmaint.com/industries/food-manufacturing/food-manufacturing-maintenance-budgeting-benchmarks-cost-control)
 
 Pallottino, Lucia, "Robotics for Warehouses and Logistics: Technologies, Challenges, and Future Directions," *Annual Review of Control, Robotics, and Autonomous Systems*, 2026, 9, 377-401.
 
@@ -432,87 +446,87 @@ Polanyi, Michael, *The Tacit Dimension*, Garden City, NY: Doubleday, 1966.
 
 Pumacay, Wilbert, Ishika Singh, Jiafei Duan, Ranjay Krishna, Jesse Thomason, and Dieter Fox, "THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation," arXiv:2402.08191, 2024.
 
-Reuters, "Meet SwagBot, the AI-Powered Robot Cattle Herder Preventing Soil Degradation," Rappler, December 12, 2024. <https://www.rappler.com/technology/innovations/swagbot-artificial-intelligence-powered-robot-cattle-herder/>
+Reuters, "Meet SwagBot, the AI-Powered Robot Cattle Herder Preventing Soil Degradation," Rappler, December 12, 2024. [https://www.rappler.com/technology/innovations/swagbot-artificial-intelligence-powered-robot-cattle-herder/](https://www.rappler.com/technology/innovations/swagbot-artificial-intelligence-powered-robot-cattle-herder/)
 
-Rivière, Yann and Jean-Stanislas Denain, "Where Autonomy Works: Evaluating Robot Capabilities in 2026," Epoch AI, 2026. <https://epoch.ai/publications/where-autonomy-works-evaluating-robot-capabilities-in-2026>
+Rivière, Yann and Jean-Stanislas Denain, "Where Autonomy Works: Evaluating Robot Capabilities in 2026," Epoch AI, 2026. [https://epoch.ai/publications/where-autonomy-works-evaluating-robot-capabilities-in-2026](https://epoch.ai/publications/where-autonomy-works-evaluating-robot-capabilities-in-2026)
 
-Robbins, Jacob, "Apptronik Raises \$520M as VC Funding for Humanoid Robotics Explodes 300%," PitchBook News, February 11, 2026. <https://pitchbook.com/news/articles/apptronik-raises-520m-as-vc-funding-for-humanoid-robotics-explodes-300>
+Robbins, Jacob, "Apptronik Raises \$520M as VC Funding for Humanoid Robotics Explodes 300%," PitchBook News, February 11, 2026. [https://pitchbook.com/news/articles/apptronik-raises-520m-as-vc-funding-for-humanoid-robotics-explodes-300](https://pitchbook.com/news/articles/apptronik-raises-520m-as-vc-funding-for-humanoid-robotics-explodes-300)
 
-The Robot Report, "Path Robotics Raises \$100M to Automate Welding," October 28, 2024. <https://www.therobotreport.com/path-robotics-raises-100m-to-automate-welding/>
+The Robot Report, "Path Robotics Raises \$100M to Automate Welding," October 28, 2024. [https://www.therobotreport.com/path-robotics-raises-100m-to-automate-welding/](https://www.therobotreport.com/path-robotics-raises-100m-to-automate-welding/)
 
-The Robot Report, "Okibo Opens New Jersey HQ and Launches EG7 Robot in U.S. Market," April 11, 2025. <https://www.therobotreport.com/okibo-opens-new-jersey-hq-and-launches-eg7-robot-in-u-s-market/>
+The Robot Report, "Okibo Opens New Jersey HQ and Launches EG7 Robot in U.S. Market," April 11, 2025. [https://www.therobotreport.com/okibo-opens-new-jersey-hq-and-launches-eg7-robot-in-u-s-market/](https://www.therobotreport.com/okibo-opens-new-jersey-hq-and-launches-eg7-robot-in-u-s-market/)
 
 Rosen, C. A., "Machine Vision and Robotics: Industrial Requirements," in George G. Dodd and Lothar Rossol, eds., *Computer Vision and Sensor-Based Robots*, Springer, 1979, 3-22.
 
 SAE International, "Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles," SAE Recommended Practice J3016_202104, April 2021.
 
-Sandvik, "Sandvik Introduces AutoMine AutoLoad 2.0 for Improved Autonomous Bucket Loading," press release, June 14, 2023. <https://www.mining.sandvik/en/news-and-media/news-archive/2023/06/sandvik-introduces-automine-autoload-2.0-for-improved-autonomous-bucket-loading>
+Sandvik, "Sandvik Introduces AutoMine AutoLoad 2.0 for Improved Autonomous Bucket Loading," press release, June 14, 2023. [https://www.mining.sandvik/en/news-and-media/news-archive/2023/06/sandvik-introduces-automine-autoload-2.0-for-improved-autonomous-bucket-loading](https://www.mining.sandvik/en/news-and-media/news-archive/2023/06/sandvik-introduces-automine-autoload-2.0-for-improved-autonomous-bucket-loading)
 
-Schenck RoTec, "Wheel Assembly Lines: Individual & Complete Solutions," product page, 2025. <https://www.schenck-rotec.com/en-us/product/wheel-assembly-lines/>
+Schenck RoTec, "Wheel Assembly Lines: Individual & Complete Solutions," product page, 2025. [https://www.schenck-rotec.com/en-us/product/wheel-assembly-lines/](https://www.schenck-rotec.com/en-us/product/wheel-assembly-lines/)
 
-Scoop, "‘Golden Opportunity’ for Scott Technology with Silver Fern Farms," Scott Technology announcement, September 14, 2022. <https://www.scoop.co.nz/stories/BU2209/S00201/golden-opportunity-for-scott-technology-with-silver-fern-farms.htm>
+Scoop, "‘Golden Opportunity’ for Scott Technology with Silver Fern Farms," Scott Technology announcement, September 14, 2022. [https://www.scoop.co.nz/stories/BU2209/S00201/golden-opportunity-for-scott-technology-with-silver-fern-farms.htm](https://www.scoop.co.nz/stories/BU2209/S00201/golden-opportunity-for-scott-technology-with-silver-fern-farms.htm)
 
-Simbe Robotics, "Tally," product page, 2026. <https://www.simberobotics.com/store-intelligence/tally>
+Simbe Robotics, "Tally," product page, 2026. [https://www.simberobotics.com/store-intelligence/tally](https://www.simberobotics.com/store-intelligence/tally)
 
-Statista, "Average Retail Electricity Price for Industrial Consumers in the United States from 1970 to 2025," April 28, 2026. <https://www.statista.com/statistics/190680/us-industrial-consumer-price-estimates-for-retail-electricity-since-1970/>
+Statista, "Average Retail Electricity Price for Industrial Consumers in the United States from 1970 to 2025," April 28, 2026. [https://www.statista.com/statistics/190680/us-industrial-consumer-price-estimates-for-retail-electricity-since-1970/](https://www.statista.com/statistics/190680/us-industrial-consumer-price-estimates-for-retail-electricity-since-1970/)
 
 Suresh, Sudharshan, Haozhi Qi, Tingfan Wu, Taosha Fan, Luis Pineda, Mike Lambeta, Jitendra Malik, Mrinal Kalakrishnan, Roberto Calandra, Michael Kaess, Joseph Ortiz, and Mustafa Mukadam, "NeuralFeels with Neural Fields: Visuotactile Perception for In-Hand Manipulation," *Science Robotics*, 2024, 9 (96), eadl0628.
 
-Svanberg, Maja, Wensu Li, Martin Fleming, Brian Goehring, and Neil Thompson, "Beyond AI Exposure: Which Tasks Are Cost-Effective to Automate with Computer Vision?," MIT FutureTech working paper, January 2024. <https://futuretech.mit.edu/publication/beyond-ai-exposure-which-tasks-are-cost-effective-to-automate-with-computer-vision>
+Svanberg, Maja, Wensu Li, Martin Fleming, Brian Goehring, and Neil Thompson, "Beyond AI Exposure: Which Tasks Are Cost-Effective to Automate with Computer Vision?," MIT FutureTech working paper, January 2024. [https://futuretech.mit.edu/publication/beyond-ai-exposure-which-tasks-are-cost-effective-to-automate-with-computer-vision](https://futuretech.mit.edu/publication/beyond-ai-exposure-which-tasks-are-cost-effective-to-automate-with-computer-vision)
 
 Tamkin, Alex, Miles McCain, Kunal Handa, Esin Durmus, Liane Lovitt, Ankur Rathi, Saffron Huang, Alfred Mountfield, Jerry Hong, Stuart Ritchie, Michael Stern, Brian Clarke, Landon Goldberg, Theodore R. Sumers, Jared Mueller, William McEachen, Wes Mitchell, Shan Carter, Jack Clark, Jared Kaplan, and Deep Ganguli, "Clio: Privacy-Preserving Insights into Real-World AI Use," arXiv:2412.13678, 2024.
 
 Tamkin, Alex and Peter McCrory, "Estimating AI Productivity Gains from Claude Conversations," Anthropic, 2025. <https://www.anthropic.com/research/estimating-productivity-gains>
 
-Tedrake, Russ, *Robotic Manipulation: Perception, Planning, and Control*, course notes for MIT 6.421, 2026. <http://manipulation.mit.edu>
+Tedrake, Russ, *Robotic Manipulation: Perception, Planning, and Control*, course notes for MIT 6.421, 2026. [http://manipulation.mit.edu](http://manipulation.mit.edu)
 
-Telexistence, "Telexistence to Begin Installing AI Robot 'TX SCARA' in 300 FamilyMart Stores," press release, August 10, 2022. <https://tx-inc.com/en/blog/2022/08/10/11737/>
+Telexistence, "Telexistence to Begin Installing AI Robot 'TX SCARA' in 300 FamilyMart Stores," press release, August 10, 2022. [https://tx-inc.com/en/blog/2022/08/10/11737/](https://tx-inc.com/en/blog/2022/08/10/11737/)
 
-Thomas, Charlotte, "Rise of the Robots," METSTRADE, October 23, 2023. <https://www.metstrade.com/news/superyacht/rise-of-the-robots>
+Thomas, Charlotte, "Rise of the Robots," METSTRADE, October 23, 2023. [https://www.metstrade.com/news/superyacht/rise-of-the-robots](https://www.metstrade.com/news/superyacht/rise-of-the-robots)
 
 Trammell, Philip and Anton Korinek, "Economic Growth Under Transformative AI," *Annual Review of Economics*, 2026, 18, 589-611.
 
-Transformation Hub Wiring Harness, "Robotics Challenge 2026," 2026. <https://www.leitungssatz-hub.de/en/robotik-challenge/robotik-challenge-2026/>
+Transformation Hub Wiring Harness, "Robotics Challenge 2026," 2026. [https://www.leitungssatz-hub.de/en/robotik-challenge/robotik-challenge-2026/](https://www.leitungssatz-hub.de/en/robotik-challenge/robotik-challenge-2026/)
 
 UBS, "Is the World Ready for 1bn Robots?," UBS Global Research Q-Series, June 17, 2025.
 
-University of Michigan, "U-M Opens Mcity Test Environment for Connected and Driverless Vehicles," Michigan Engineering News, July 20, 2015. <https://news.engin.umich.edu/2015/07/u-m-opens-mcity-test-environment-for-connected-and-driverless-vehicles/>
+University of Michigan, "U-M Opens Mcity Test Environment for Connected and Driverless Vehicles," Michigan Engineering News, July 20, 2015. [https://news.engin.umich.edu/2015/07/u-m-opens-mcity-test-environment-for-connected-and-driverless-vehicles/](https://news.engin.umich.edu/2015/07/u-m-opens-mcity-test-environment-for-connected-and-driverless-vehicles/)
 
-U.S. Bureau of Economic Analysis (BEA), "Price Indexes for Private Fixed Investment in Equipment by Type: Computers and Peripheral Equipment \[B935RG3A086NBEA\]," NIPA Table 5.5.4, retrieved from FRED, Federal Reserve Bank of St. Louis, 2026. <https://fred.stlouisfed.org/series/B935RG3A086NBEA>
+U.S. Bureau of Economic Analysis (BEA), "Price Indexes for Private Fixed Investment in Equipment by Type: Computers and Peripheral Equipment \[B935RG3A086NBEA\]," NIPA Table 5.5.4, retrieved from FRED, Federal Reserve Bank of St. Louis, 2026. [https://fred.stlouisfed.org/series/B935RG3A086NBEA](https://fred.stlouisfed.org/series/B935RG3A086NBEA)
 
-U.S. Bureau of Labor Statistics (BLS), "A New Methodology for Estimating Hours Worked for U.S. Labor Productivity Measurement," Office of Productivity and Technology technical note, November 3, 2022. <https://www.bls.gov/productivity/technical-notes/labor-productivity-hours-worked-method-using-ces-all-employee-hours-nov-2022.htm>
+U.S. Bureau of Labor Statistics (BLS), "A New Methodology for Estimating Hours Worked for U.S. Labor Productivity Measurement," Office of Productivity and Technology technical note, November 3, 2022. [https://www.bls.gov/productivity/technical-notes/labor-productivity-hours-worked-method-using-ces-all-employee-hours-nov-2022.htm](https://www.bls.gov/productivity/technical-notes/labor-productivity-hours-worked-method-using-ces-all-employee-hours-nov-2022.htm)
 
-U.S. Bureau of Labor Statistics (BLS), "Occupational Employment and Wage Statistics (OEWS): May 2025 National Occupational Employment and Wage Estimates," 2025. <https://www.bls.gov/oes/tables.htm>
+U.S. Bureau of Labor Statistics (BLS), "Occupational Employment and Wage Statistics (OEWS): May 2025 National Occupational Employment and Wage Estimates," 2025. [https://www.bls.gov/oes/tables.htm](https://www.bls.gov/oes/tables.htm)
 
-U.S. Bureau of Labor Statistics (BLS), "Consumer Price Index for All Urban Consumers: New Vehicles, U.S. City Average, Not Seasonally Adjusted \[CUUR0000SETA01\]," 2026a. <https://www.bls.gov/cpi/>
+U.S. Bureau of Labor Statistics (BLS), "Consumer Price Index for All Urban Consumers: New Vehicles, U.S. City Average, Not Seasonally Adjusted \[CUUR0000SETA01\]," 2026a. [https://www.bls.gov/cpi/](https://www.bls.gov/cpi/)
 
-U.S. Bureau of Labor Statistics (BLS), "Employment Level - Agriculture and Related Industries \[LNS12034560\] and Employment Level \[CE16OV\]," Current Population Survey, retrieved from FRED, Federal Reserve Bank of St. Louis, 2026b. <https://fred.stlouisfed.org/series/LNS12034560>
+U.S. Bureau of Labor Statistics (BLS), "Employment Level - Agriculture and Related Industries \[LNS12034560\] and Employment Level \[CE16OV\]," Current Population Survey, retrieved from FRED, Federal Reserve Bank of St. Louis, 2026b. [https://fred.stlouisfed.org/series/LNS12034560](https://fred.stlouisfed.org/series/LNS12034560)
 
-U.S. Bureau of Labor Statistics (BLS), "Occupational Employment and Wage Statistics: Frequently Asked Questions," 2026c, retrieved September 21, 2026. <https://www.bls.gov/oes/oes_ques.htm>
+U.S. Bureau of Labor Statistics (BLS), "Occupational Employment and Wage Statistics: Frequently Asked Questions," 2026c, retrieved September 21, 2026. [https://www.bls.gov/oes/oes_ques.htm](https://www.bls.gov/oes/oes_ques.htm)
 
-U.S. Census Bureau, "Annual Capital Expenditures Survey: Robotic Equipment Expenditures, 2019-2022," 2024. <https://www.census.gov/programs-surveys/aces.html>
+U.S. Census Bureau, "Annual Capital Expenditures Survey: Robotic Equipment Expenditures, 2019-2022," 2024. [https://www.census.gov/programs-surveys/aces.html](https://www.census.gov/programs-surveys/aces.html)
 
 U.S. Department of Transportation Office of Inspector General, "Enhanced FAA Oversight Could Reduce Hazards Associated with Increased Use of Flight Deck Automation," Audit Report AV-2016-013, January 7, 2016. <https://www.oig.dot.gov/sites/default/files/FAA%20Flight%20Decek%20Automation_Final%20Report%5E1-7-16.pdf>
 
 Vitiello, V., K.-W. Kwok, and G.-Z. Yang, "Introduction to Robot-Assisted Minimally Invasive Surgery (MIS)," in Paula Gomes, ed., *Medical Robotics: Minimally Invasive Surgery*, Woodhead Publishing, 2012, 1-40.
 
-Wallace, Neal, "Butcher Bot Pays Off in Dollars per Carcase," *Farmers Weekly* (New Zealand), September 30, 2022. <https://www.farmersweekly.co.nz/technology/butcher-bot-pays-off-in-dollars-per-carcase/>
+Wallace, Neal, "Butcher Bot Pays Off in Dollars per Carcase," *Farmers Weekly* (New Zealand), September 30, 2022. [https://www.farmersweekly.co.nz/technology/butcher-bot-pays-off-in-dollars-per-carcase/](https://www.farmersweekly.co.nz/technology/butcher-bot-pays-off-in-dollars-per-carcase/)
 
-Wallace, Neal, "One Giant LEAP for Robo Meatworks," *Farmers Weekly* (New Zealand), April 22, 2024. <https://www.farmersweekly.co.nz/technology/one-giant-leap-for-robo-meatworks/>
+Wallace, Neal, "One Giant LEAP for Robo Meatworks," *Farmers Weekly* (New Zealand), April 22, 2024. [https://www.farmersweekly.co.nz/technology/one-giant-leap-for-robo-meatworks/](https://www.farmersweekly.co.nz/technology/one-giant-leap-for-robo-meatworks/)
 
 Wang, Hanchen, Tianfan Fu, Yuanqi Du, Wenhao Gao, Kexin Huang, Ziming Liu, Payal Chandak, Shengchao Liu, Peter Van Katwyk, Andreea Deac, Anima Anandkumar, Karianne Bergen, Carla P. Gomes, Shirley Ho, Pushmeet Kohli, Joan Lasenby, Jure Leskovec, Tie-Yan Liu, Arjun Manrai, Debora Marks, Bharath Ramsundar, Le Song, Jimeng Sun, Jian Tang, Petar Veličković, Max Welling, Linfeng Zhang, Connor W. Coley, Yoshua Bengio, and Marinka Zitnik, "Scientific Discovery in the Age of Artificial Intelligence," *Nature*, 2023, 620, 47-60.
 
-Waste360, "Q&A: AMP's Matanya Horowitz on Bringing AI to the Recycling World and How the Tech Is Advancing," November 2023. <https://www.waste360.com/waste-recycling/q-a-amp-s-matanya-horowitz-on-bringing-ai-to-the-recycling-and-how-the-tech-is-advancing>
+Waste360, "Q&A: AMP's Matanya Horowitz on Bringing AI to the Recycling World and How the Tech Is Advancing," November 2023. [https://www.waste360.com/waste-recycling/q-a-amp-s-matanya-horowitz-on-bringing-ai-to-the-recycling-and-how-the-tech-is-advancing](https://www.waste360.com/waste-recycling/q-a-amp-s-matanya-horowitz-on-bringing-ai-to-the-recycling-and-how-the-tech-is-advancing)
 
-WATTAgNet, "The New Generation of Automated Deboning Machines," October 1, 2018. <https://www.wattagnet.com/broilers-turkeys/processing-slaughter/article/15526256/the-new-generation-of-automated-deboning-machines-wattagnet>
+WATTAgNet, "The New Generation of Automated Deboning Machines," October 1, 2018. [https://www.wattagnet.com/broilers-turkeys/processing-slaughter/article/15526256/the-new-generation-of-automated-deboning-machines-wattagnet](https://www.wattagnet.com/broilers-turkeys/processing-slaughter/article/15526256/the-new-generation-of-automated-deboning-machines-wattagnet)
 
 Webb, Michael, "The Impact of Artificial Intelligence on the Labor Market," working paper, Stanford University, 2020.
 
-Wessling, Brianna, "With New Funding, Monumental Plans to Bring Its Construction Robots to the U.S.," *The Robot Report*, July 17, 2026. <https://www.therobotreport.com/with-new-funding-monumental-plans-bring-construction-robots-u-s/>
+Wessling, Brianna, "With New Funding, Monumental Plans to Bring Its Construction Robots to the U.S.," *The Robot Report*, July 17, 2026. [https://www.therobotreport.com/with-new-funding-monumental-plans-bring-construction-robots-u-s/](https://www.therobotreport.com/with-new-funding-monumental-plans-bring-construction-robots-u-s/)
 
-Wishart-Smith, Heather, "Built Robotics Unveils Autonomous Pile Driving Robot, Expediting Solar Rollout," *Forbes*, March 20, 2023. <https://www.forbes.com/sites/heatherwishartsmith/2023/03/20/built-robotics-unveils-autonomous-pile-driving-robot-expediting-solar-rollout/>
+Wishart-Smith, Heather, "Built Robotics Unveils Autonomous Pile Driving Robot, Expediting Solar Rollout," *Forbes*, March 20, 2023. [https://www.forbes.com/sites/heatherwishartsmith/2023/03/20/built-robotics-unveils-autonomous-pile-driving-robot-expediting-solar-rollout/](https://www.forbes.com/sites/heatherwishartsmith/2023/03/20/built-robotics-unveils-autonomous-pile-driving-robot-expediting-solar-rollout/)
 
-Yotzov, Ivan, Jose Maria Barrero, Nicholas Bloom, Philip Bunn, Steven J. Davis, Kevin M. Foster, Aaron Jalca, Brent H. Meyer, Paul Mizen, Michael A. Navarrete, Pawel Smietanka, Gregory Thwaites, and Ben Zhe Wang, "Firm Data on AI," NBER Working Paper 34836, 2026. <https://doi.org/10.3386/w34836>
+Yotzov, Ivan, Jose Maria Barrero, Nicholas Bloom, Philip Bunn, Steven J. Davis, Kevin M. Foster, Aaron Jalca, Brent H. Meyer, Paul Mizen, Michael A. Navarrete, Pawel Smietanka, Gregory Thwaites, and Ben Zhe Wang, "Firm Data on AI," NBER Working Paper 34836, 2026. [https://doi.org/10.3386/w34836](https://doi.org/10.3386/w34836)
 
 Yu, Zhen, Jingyu Wang, Ting Zuo, James Alm, Xun Li, and Xue Li, "Robotaxis Reduce Taxi Drivers' Income," *Humanities and Social Sciences Communications*, 2026, 13, article 629.
 
@@ -522,266 +536,160 @@ Ziemerink, Jan, "How to Manage Automatic Calf Feeders Successfully," Förster-Te
 
 ## **Data sources**
 
-Althobaiti, Shahad, Ahmad Alabdulkareem, Judy Hanwen Shen, Iyad Rahwan, Morgan Frank, Esteban Moro, and Alex Rutherford. "Dictionary of Titles" \[dataset\]. Harvard Dataverse, 2022. <https://doi.org/10.7910/DVN/DQW8IP>
+Althobaiti, Shahad, Ahmad Alabdulkareem, Judy Hanwen Shen, Iyad Rahwan, Morgan Frank, Esteban Moro, and Alex Rutherford. "Dictionary of Titles" \[dataset\]. Harvard Dataverse, 2022. [https://doi.org/10.7910/DVN/DQW8IP](https://doi.org/10.7910/DVN/DQW8IP)
 
-Autor, David, Caroline Chin, Anna Salomons, and Bryan Seegmiller. Replication Data for: "New Frontiers: The Origins and Content of New Work, 1940-2018." Harvard Dataverse, V1.1, 2024. <https://doi.org/10.7910/DVN/7RYD2E>, retrieved July 30-31, 2026.
+Autor, David, Caroline Chin, Anna Salomons, and Bryan Seegmiller. Replication Data for: "New Frontiers: The Origins and Content of New Work, 1940-2018." Harvard Dataverse, V1.1, 2024. [https://doi.org/10.7910/DVN/7RYD2E](https://doi.org/10.7910/DVN/7RYD2E), retrieved July 30-31, 2026.
 
-Autor, David H. and David Dorn. 2013. "The Growth of Low-Skill Service Jobs and the Polarization of the US Labor Market." American Economic Review 103 (5): 1553-1597. Occupation crosswalks (occ1990dd) and offshorability measure: <https://www.ddorn.net/data.htm>.
+Autor, David H. and David Dorn. 2013. "The Growth of Low-Skill Service Jobs and the Polarization of the US Labor Market." American Economic Review 103 (5): 1553-1597. Occupation crosswalks (occ1990dd) and offshorability measure: [https://www.ddorn.net/data.htm](https://www.ddorn.net/data.htm).
 
-Bank of Japan. Producer Price Index, 2020 Base: Robots \[PRCG20_2201350029\]. Time-Series Data Search, retrieved September 16, 2026. <https://www.stat-search.boj.or.jp/>
+Bank of Japan. Producer Price Index, 2020 Base: Robots \[PRCG20_2201350029\]. Time-Series Data Search, retrieved September 16, 2026. [https://www.stat-search.boj.or.jp/](https://www.stat-search.boj.or.jp/)
 
-Eloundou, Tyna, Sam Manning, Pamela Mishkin, and Daniel Rock. 2024. "GPTs are GPTs: Labor Market Impact Potential of LLMs." Science 384 (6702): 1306-1308. Task-level exposure labels: <https://github.com/openai/GPTs-are-GPTs>.
+Eloundou, Tyna, Sam Manning, Pamela Mishkin, and Daniel Rock. 2024. "GPTs are GPTs: Labor Market Impact Potential of LLMs." Science 384 (6702): 1306-1308. Task-level exposure labels: [https://github.com/openai/GPTs-are-GPTs](https://github.com/openai/GPTs-are-GPTs).
 
-Hirsch, Barry T., David A. Macpherson, and William E. Even. Union Membership, Coverage, and Earnings from the CPS \[dataset\]. Unionstats.com, 2026. <https://unionstats.com/>. Described in Hirsch, Barry T. and David A. Macpherson. 2003. "Union Membership and Coverage Database from the Current Population Survey: Note." Industrial and Labor Relations Review 56 (2): 349-354.
+Hirsch, Barry T., David A. Macpherson, and William E. Even. Union Membership, Coverage, and Earnings from the CPS \[dataset\]. Unionstats.com, 2026. [https://unionstats.com/](https://unionstats.com/). Described in Hirsch, Barry T. and David A. Macpherson. 2003. "Union Membership and Coverage Database from the Current Population Survey: Note." Industrial and Labor Relations Review 56 (2): 349-354.
 
-National Academy of Sciences, Committee on Occupational Classification and Analysis. Dictionary of Occupational Titles (DOT): Part I - Current Population Survey, April 1971, Augmented With DOT Characteristics, and Part II - Fourth Edition Dictionary of DOT Scores for 1970 Census Categories. Ann Arbor, MI: Inter-university Consortium for Political and Social Research \[distributor\], 2006-09-06. <https://doi.org/10.3886/ICPSR07845.v2>
+National Academy of Sciences, Committee on Occupational Classification and Analysis. Dictionary of Occupational Titles (DOT): Part I - Current Population Survey, April 1971, Augmented With DOT Characteristics, and Part II - Fourth Edition Dictionary of DOT Scores for 1970 Census Categories. Ann Arbor, MI: Inter-university Consortium for Political and Social Research \[distributor\], 2006-09-06. [https://doi.org/10.3886/ICPSR07845.v2](https://doi.org/10.3886/ICPSR07845.v2)
 
-National Center for O\*NET Development. O\*NET Database, versions 29.3 (2025), 13.0 (2008), and 4.0 (2002); the O\*NET-SOC taxonomy crosswalks; and the DOT to O\*NET-SOC 2019 Crosswalk. Washington, DC: U.S. Department of Labor, Employment and Training Administration. <https://www.onetcenter.org/database.html>; <https://www.onetcenter.org/taxonomy.html>; <https://www.onetcenter.org/crosswalks/dot/>
+National Center for O\*NET Development. O\*NET Database, versions 29.3 (2025), 13.0 (2008), and 4.0 (2002); the O\*NET-SOC taxonomy crosswalks; and the DOT to O\*NET-SOC 2019 Crosswalk. Washington, DC: U.S. Department of Labor, Employment and Training Administration. [https://www.onetcenter.org/database.html](https://www.onetcenter.org/database.html); [https://www.onetcenter.org/taxonomy.html](https://www.onetcenter.org/taxonomy.html); [https://www.onetcenter.org/crosswalks/dot/](https://www.onetcenter.org/crosswalks/dot/)
 
-Ruggles, Steven, Sarah Flood, Matthew Sobek, Daniel Backman, Grace Cooper, Julia A. Rivera Drew, Stephanie Richards, Renae Rodgers, Jonathan Schroeder, and Kari C.W. Williams. IPUMS USA: Version 16.0 \[dataset\]. Minneapolis, MN: IPUMS, 2025. <https://doi.org/10.18128/D010.V16.0>
+Ruggles, Steven, Sarah Flood, Matthew Sobek, Daniel Backman, Grace Cooper, Julia A. Rivera Drew, Stephanie Richards, Renae Rodgers, Jonathan Schroeder, and Kari C.W. Williams. IPUMS USA: Version 16.0 \[dataset\]. Minneapolis, MN: IPUMS, 2025. [https://doi.org/10.18128/D010.V16.0](https://doi.org/10.18128/D010.V16.0)
 
-U.S. Bureau of Economic Analysis (BEA). Personal Consumption Expenditures: Chain-type Price Index \[PCEPI\], retrieved from FRED, Federal Reserve Bank of St. Louis. <https://fred.stlouisfed.org/series/PCEPI>, September 21, 2026.
+U.S. Bureau of Economic Analysis (BEA). Personal Consumption Expenditures: Chain-type Price Index \[PCEPI\], retrieved from FRED, Federal Reserve Bank of St. Louis. [https://fred.stlouisfed.org/series/PCEPI](https://fred.stlouisfed.org/series/PCEPI), September 21, 2026.
 
-U.S. Bureau of Economic Analysis (BEA). Table 5.5.4. Price Indexes for Private Fixed Investment in Equipment by Type: Computers and peripheral equipment \[B935RG3A086NBEA\], retrieved from FRED, Federal Reserve Bank of St. Louis. <https://fred.stlouisfed.org/series/B935RG3A086NBEA>, September 16, 2026.
+U.S. Bureau of Economic Analysis (BEA). Table 5.5.4. Price Indexes for Private Fixed Investment in Equipment by Type: Computers and peripheral equipment \[B935RG3A086NBEA\], retrieved from FRED, Federal Reserve Bank of St. Louis. [https://fred.stlouisfed.org/series/B935RG3A086NBEA](https://fred.stlouisfed.org/series/B935RG3A086NBEA), September 16, 2026.
 
-U.S. Bureau of Labor Statistics (BLS). Consumer Price Index for All Urban Consumers, U.S. city average, not seasonally adjusted: New vehicles \[CUUR0000SETA01\]. Washington, DC: U.S. Department of Labor. Retrieved September 16, 2026. <https://www.bls.gov/cpi/>
+U.S. Bureau of Labor Statistics (BLS). Consumer Price Index for All Urban Consumers, U.S. city average, not seasonally adjusted: New vehicles \[CUUR0000SETA01\]. Washington, DC: U.S. Department of Labor. Retrieved September 16, 2026. [https://www.bls.gov/cpi/](https://www.bls.gov/cpi/)
 
-U.S. Bureau of Labor Statistics (BLS). Employer Costs for Employee Compensation (ECEC), 2004-2023 and March 2026. Washington, DC: U.S. Department of Labor. <https://www.bls.gov/ecec/>
+U.S. Bureau of Labor Statistics (BLS). Employer Costs for Employee Compensation (ECEC), 2004-2023 and March 2026. Washington, DC: U.S. Department of Labor. [https://www.bls.gov/ecec/](https://www.bls.gov/ecec/)
 
-U.S. Bureau of Labor Statistics (BLS). Employment Projections, 2025-35: Table 1.6, Occupations with the Largest Job Declines. Washington, DC: U.S. Department of Labor, August 27, 2026. <https://www.bls.gov/emp/tables/occupations-largest-job-declines.htm>
+U.S. Bureau of Labor Statistics (BLS). Employment Projections, 2025-35: Table 1.6, Occupations with the Largest Job Declines. Washington, DC: U.S. Department of Labor, August 27, 2026. [https://www.bls.gov/emp/tables/occupations-largest-job-declines.htm](https://www.bls.gov/emp/tables/occupations-largest-job-declines.htm)
 
-U.S. Bureau of Labor Statistics (BLS). Occupational Employment and Wage Statistics (OEWS): 2002, May 2008, May 2015, and May 2025 National Occupational Employment and Wage Estimates. Washington, DC: U.S. Department of Labor. <https://www.bls.gov/oes/tables.htm>
+U.S. Bureau of Labor Statistics (BLS). Occupational Employment and Wage Statistics (OEWS): 2002, May 2008, May 2015, and May 2025 National Occupational Employment and Wage Estimates. Washington, DC: U.S. Department of Labor. [https://www.bls.gov/oes/tables.htm](https://www.bls.gov/oes/tables.htm)
 
-U.S. Bureau of Labor Statistics (BLS). Occupational Requirements Survey (ORS), 2023 and 2025. Washington, DC: U.S. Department of Labor. <https://www.bls.gov/ors/>
+U.S. Bureau of Labor Statistics (BLS). Occupational Requirements Survey (ORS), 2023 and 2025. Washington, DC: U.S. Department of Labor. [https://www.bls.gov/ors/](https://www.bls.gov/ors/)
 
 U.S. Census Bureau. 2018 Census Occupation Code List with Crosswalk, and 2018 ACS PUMS and 2018 SIPP Public-Use Occupation Code List \[datasets\], 2018. <https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/2018-occupation-code-list-and-crosswalk.xlsx>; <https://www2.census.gov/programs-surveys/demo/guidance/industry-occupation/2018-ACS-PUMS-and-2018-SIPP-Public-Use-Occupation-Code-List.xlsx>
 
-U.S. Census Bureau. Annual Capital Expenditures Survey: Capital Expenditures for Structures and Equipment, Tables 1a and 1b, 2019-2022 releases. <https://www.census.gov/data/tables/2022/econ/aces/2022-aces-summary.html>
+U.S. Census Bureau. Annual Capital Expenditures Survey: Capital Expenditures for Structures and Equipment, Tables 1a and 1b, 2019-2022 releases. [https://www.census.gov/data/tables/2022/econ/aces/2022-aces-summary.html](https://www.census.gov/data/tables/2022/econ/aces/2022-aces-summary.html)
 
 U.S. Department of Labor, Employment and Training Administration. Dictionary of Occupational Titles, Fourth Edition. Washington, DC: U.S. Government Printing Office, 1977.
 
-United States Department of Labor, United States Employment Service, and North Carolina Occupational Analysis Field Center. Dictionary of Occupational Titles (DOT): Revised Fourth Edition, 1991. Ann Arbor, MI: Inter-university Consortium for Political and Social Research \[distributor\], 2026-02-19. <https://doi.org/10.3886/ICPSR06100.v2>. Missing text from the Department of Labor Office of Administrative Law Judges DOT pages and <https://occupationalinfo.org>.
+United States Department of Labor, United States Employment Service, and North Carolina Occupational Analysis Field Center. Dictionary of Occupational Titles (DOT): Revised Fourth Edition, 1991. Ann Arbor, MI: Inter-university Consortium for Political and Social Research \[distributor\], 2026-02-19. [https://doi.org/10.3886/ICPSR06100.v2](https://doi.org/10.3886/ICPSR06100.v2). Missing text from the Department of Labor Office of Administrative Law Judges DOT pages and [https://occupationalinfo.org](https://occupationalinfo.org).
 
-Webb, Michael. 2020. "The Impact of Artificial Intelligence on the Labor Market." Working paper, Stanford University. Robot exposure percentiles and 2010 labor-supply weights: <https://web.stanford.edu/~mww/>, retrieved July 18, 2026; now at <https://www.michaelwebb.co/>.
+Webb, Michael. 2020. "The Impact of Artificial Intelligence on the Labor Market." Working paper, Stanford University. Robot exposure percentiles and 2010 labor-supply weights: [https://web.stanford.edu/~mww/](https://web.stanford.edu/~mww/), retrieved July 18, 2026; now at [https://www.michaelwebb.co/](https://www.michaelwebb.co/).
 
-###   Footnotes
+## Footnotes
 
-1.  See for example Aghion et al. (2019), Davidson et al. (2026), and Jones and Tonetti (2026) on the role of weak links and complementarities in explosive economic growth scenarios. AI is often thought to affect digital work more than physical work; see for example Cazzaniga et al. (2024).
+01See for example Aghion et al. (2019), Davidson et al. (2026), and Jones and Tonetti (2026) on the role of weak links and complementarities in explosive economic growth scenarios. AI is often thought to affect digital work more than physical work; see for example Cazzaniga et al. (2024).
 
-2.  See for example Autor (2015) on “environmental control” as a barrier to physical automation. See also Section 6 of Link et al. (2016). We discuss this point in more detail in “Measuring exposure.”
+02See for example Autor (2015) on “environmental control” as a barrier to physical automation. See also Section 6 of Link et al. (2016). We discuss this point in more detail in “Measuring exposure.”
 
-3.  See Firoozi et al. (2025) on AI foundation models for robots. Rivière and Denain (2026) discuss robot capabilities afforded by AI. See Agaskar et al. (2025) and Hwang et al. (2025) on AI-powered robots in warehousing and driving. AI could also speed the pace of innovation in robotics; see Cockburn et al. (2019), Wang et al. (2023), and Davidson et al. (2026).
+03See Firoozi et al. (2025) on AI foundation models for robots. Rivière and Denain (2026) discuss robot capabilities afforded by AI. See Agaskar et al. (2025) and Hwang et al. (2025) on AI-powered robots in warehousing and driving. AI could also speed the pace of innovation in robotics; see Cockburn et al. (2019), Wang et al. (2023), and Davidson et al. (2026).
 
-4.  See Baptista et al. (2026) and Goldman (2026) on a potential “ChatGPT moment” in robotics. See also forecasts from Morgan Stanley Research (2024) and McKinsey & Company (2026).
+04See Baptista et al. (2026) and Goldman (2026) on a potential “ChatGPT moment” in robotics. See also forecasts from Morgan Stanley Research (2024) and McKinsey & Company (2026).
 
-5.  Robot investment data from the 2022 Annual Capital Expenditures Survey (U.S. Census Bureau, 2024). Surveys of US executives in November 2025 from Yotzov et al. (2026) show that 13% of firms use robotics now while 22% expect to within three years of surveying, weighted by employment. Expected use is broadly similar in the United Kingdom, Germany, and Australia.
+05Robot investment data from the 2022 Annual Capital Expenditures Survey (U.S. Census Bureau, 2024). Surveys of US executives in November 2025 from Yotzov et al. (2026) show that 13% of firms use robotics now while 22% expect to within three years of surveying, weighted by employment. Expected use is broadly similar in the United Kingdom, Germany, and Australia.
 
-6.  See Robbins (2026) on investment in humanoid robotics startups and Ewing (2026) on efforts by large automakers to use humanoids.
+06See Robbins (2026) on investment in humanoid robotics startups and Ewing (2026) on efforts by large automakers to use humanoids.
 
-7.  For example, some robots use cameras only while others use touch sensors. See Brooks (2025) on these approaches, as well as research on vision and tactile robots by Andrychowicz et al. (2020) and Suresh et al. (2024).
+07For example, some robots use cameras only while others use touch sensors. See Brooks (2025) on these approaches, as well as research on vision and tactile robots by Andrychowicz et al. (2020) and Suresh et al. (2024).
 
-8.  See Counterpoint Research (2026) for a humanoid market overview; most humanoids today are used for entertainment and data collection. See BMW Group (2026) for a humanoid deployment in a car factory.
+08See Counterpoint Research (2026) for a humanoid market overview; most humanoids today are used for entertainment and data collection. See BMW Group (2026) for a humanoid deployment in a car factory.
 
-9.  Our taxonomy builds on a long tradition in labor economics and occupational analysis. The predecessor to O\*NET, the Dictionary of Occupational Titles, categorized jobs by “Data/People/Things.” See Fine (1955), Fine and Wiley (1971), Autor et al. (2003), Acemoglu and Autor (2011), and Deming (2017).
+09Our taxonomy builds on a long tradition in labor economics and occupational analysis. The predecessor to O\*NET, the Dictionary of Occupational Titles, categorized jobs by “Data/People/Things.” See Fine (1955), Fine and Wiley (1971), Autor et al. (2003), Acemoglu and Autor (2011), and Deming (2017).
 
-10. Precise definitions of a robot vary. We describe robots in our exposure prompt (Appendix F.3), and rely on Claude to judge which machines meet this criterion. The International Organization for Standardization defines a robot as a “programmed actuated mechanism with a degree of autonomy to perform locomotion, manipulation or positioning” and autonomy as the “ability to perform intended tasks based on current state and sensing, without human intervention” (ISO 2021).
+10Precise definitions of a robot vary. We describe robots in our exposure prompt (Appendix F.3), and rely on Claude to judge which machines meet this criterion. The International Organization for Standardization defines a robot as a “programmed actuated mechanism with a degree of autonomy to perform locomotion, manipulation or positioning” and autonomy as the “ability to perform intended tasks based on current state and sensing, without human intervention” (ISO 2021).
 
-11. Our focus on what today’s robots can do is similar to Eloundou et al. (2024), who measure AI exposure by what tasks LLMs could speed up as of 2023. Other AI exposure measures are described in Massenkoff and McCrory (2026).
+11Our focus on what today’s robots can do is similar to Eloundou et al. (2024), who measure AI exposure by what tasks LLMs could speed up as of 2023. Other AI exposure measures are described in Massenkoff and McCrory (2026).
 
-12. See Autor (2015) on “environmental control” as a bottleneck to automation, and Autor et al. (2020) on how integration slows robot adoption. A report on the economic impacts of robotics for the National Institute of Standards and Technology highlights robot capabilities in unstructured environments; see Section 6 of Link et al. (2016). Kober et al. (2013), Ibarz et al. (2021), and Kim et al. (2025) discuss how robot performance generalizes to new tasks and environments. See Firoozi et al. (2025) on robotic foundation models versus specialized robot control systems. For surveys on progress in robotic manipulation, see Kemp et al. (2007) and Kroemer et al. (2021). See Pumacay et al. (2024) for manipulation benchmarks. For an inventory of robot capabilities in complex environments, see Rivière and Denain (2026).
+12See Autor (2015) on “environmental control” as a bottleneck to automation, and Autor et al. (2020) on how integration slows robot adoption. A report on the economic impacts of robotics for the National Institute of Standards and Technology highlights robot capabilities in unstructured environments; see Section 6 of Link et al. (2016). Kober et al. (2013), Ibarz et al. (2021), and Kim et al. (2025) discuss how robot performance generalizes to new tasks and environments. See Firoozi et al. (2025) on robotic foundation models versus specialized robot control systems. For surveys on progress in robotic manipulation, see Kemp et al. (2007) and Kroemer et al. (2021). See Pumacay et al. (2024) for manipulation benchmarks. For an inventory of robot capabilities in complex environments, see Rivière and Denain (2026).
 
-13. Mason (2018) and Tedrake (2026), for example, discuss the complex skills robots need to manipulate objects.
+13Mason (2018) and Tedrake (2026), for example, discuss the complex skills robots need to manipulate objects.
 
-14. See for example Madrigal (2017) on a mock town at a former Air Force base and University of Michigan (2015) on Mcity, a similar facility.
+14See for example Madrigal (2017) on a mock town at a former Air Force base and University of Michigan (2015) on Mcity, a similar facility.
 
-15. Our ratings indeed score this task E3 today and E1 in a version of our measure that rates exposure as of 2008 (Appendix B). As in our rubric, performance in unstructured environments factors into standards for autonomous vehicle performance; see SAE International (2021).
+15Our ratings indeed score this task E3 today and E1 in a version of our measure that rates exposure as of 2008 (Appendix B). As in our rubric, performance in unstructured environments factors into standards for autonomous vehicle performance; see SAE International (2021).
 
-16. Moravec (1988) notably makes this point. See also Polanyi (1966), applied to automation in Autor (2015).
+16Moravec (1988) notably makes this point. See also Polanyi (1966), applied to automation in Autor (2015).
 
-17. Appendix A.4 presents variants of our exposure measure; these produce a similar ranking of jobs by exposure.
+17Appendix A.4 presents variants of our exposure measure; these produce a similar ranking of jobs by exposure.
 
-18. See the Built Robotics Exosystem (2026).
+18See the Built Robotics Exosystem (2026).
 
-19. Results are similar when also weighting across occupations by usual weekly hours from the 2020–2024 American Community Survey.
+19Results are similar when also weighting across occupations by usual weekly hours from the 2020–2024 American Community Survey.
 
-20. Humans also work in controlled environments: tasks like “Deliver medications or pharmaceutical supplies to patients, nursing stations, or surgery” are done in hospitals and clinics. In Appendix A.4 we measure robot exposure by the gap between where robots can do a task and where humans do it. This produces nearly the same ranking of jobs by exposure.
+20Humans also work in controlled environments: tasks like “Deliver medications or pharmaceutical supplies to patients, nursing stations, or surgery” are done in hospitals and clinics. In Appendix A.4 we measure robot exposure by the gap between where robots can do a task and where humans do it. This produces nearly the same ranking of jobs by exposure.
 
-21. The Robot Report (2024).
+21The Robot Report (2024).
 
-22. See the Boston Dynamics Stretch.
+22See the Boston Dynamics Stretch.
 
-23. See Pallottino (2026).
+23See Pallottino (2026).
 
-24. Employment data in Figure 4 come from the BLS OEWS, so independent contractors for ride-sharing services are excluded from taxi driver employment.
+24Employment data in Figure 4 come from the BLS OEWS, so independent contractors for ride-sharing services are excluded from taxi driver employment.
 
-25. Early evidence suggests pay declines for drivers exposed to autonomous ride-hailing. See Gridwise (2025) and Yu et al. (2026).
+25Early evidence suggests pay declines for drivers exposed to autonomous ride-hailing. See Gridwise (2025) and Yu et al. (2026).
 
-26. See Amazon’s Vulcan robot.
+26See Amazon’s Vulcan robot.
 
-27. See the Badger Marty and the Simbe Tally.
+27See the Badger Marty and the Simbe Tally.
 
-28. See the Telexistence TX SCARA.
+28See the Telexistence TX SCARA.
 
-29. See the Canvas drywall robot.
+29See the Canvas drywall robot.
 
-30. See the AMP Cortex (Waste360, 2023).
+30See the AMP Cortex (Waste360, 2023).
 
-31. Restricting to physical jobs (at least half physical by work time), exposed workers are still paid less, less educated, less often female, more often Hispanic, and more often unemployed, though most gaps are somewhat smaller.
+31Restricting to physical jobs (at least half physical by work time), exposed workers are still paid less, less educated, less often female, more often Hispanic, and more often unemployed, though most gaps are somewhat smaller.
 
-32. See for example Massenkoff and McCrory (2026).
+32See for example Massenkoff and McCrory (2026).
 
-33. Deming (2017) and Frey and Osborne (2017).
+33Deming (2017) and Frey and Osborne (2017).
 
-34. Analyses of automation and the labor market in the past few decades generally emphasize computers and software over physical automation. See for example Autor et al. (2003) on computerization and Acemoglu and Restrepo (2020) on the limited total impact of robots on US jobs so far. Svanberg et al. (2024) estimate costs to automate computer vision tasks.
+34Analyses of automation and the labor market in the past few decades generally emphasize computers and software over physical automation. See for example Autor et al. (2003) on computerization and Acemoglu and Restrepo (2020) on the limited total impact of robots on US jobs so far. Svanberg et al. (2024) estimate costs to automate computer vision tasks.
 
-35. We instruct Claude to include costs of the robot itself, accessories, integration and installation, maintenance and service, software, energy and other operating inputs, oversight and operation, insurance, and end-of-life decommissioning, plus any other costs. Claude annualizes fixed costs with an estimated cost of capital.
+35We instruct Claude to include costs of the robot itself, accessories, integration and installation, maintenance and service, software, energy and other operating inputs, oversight and operation, insurance, and end-of-life decommissioning, plus any other costs. Claude annualizes fixed costs with an estimated cost of capital.
 
-36. We estimate total compensation by multiplying BLS occupation wages by the ratio between total compensation and wages plus paid leave by occupation group in the BLS Employer Costs for Employee Compensation survey. Total compensation includes paid leave, supplemental pay, insurance, retirement and savings, and legally required employer payments like FICA and unemployment insurance.
+36We estimate total compensation by multiplying BLS occupation wages by the ratio between total compensation and wages plus paid leave by occupation group in the BLS Employer Costs for Employee Compensation survey. Total compensation includes paid leave, supplemental pay, insurance, retirement and savings, and legally required employer payments like FICA and unemployment insurance.
 
-37. On automation in task models, see for example Zeira (1998), Acemoglu and Autor (2011), and Acemoglu and Restrepo (2018).
+37On automation in task models, see for example Zeira (1998), Acemoglu and Autor (2011), and Acemoglu and Restrepo (2018).
 
-38. In these comparisons, robots may be cheaper than workers but only do a few of their tasks. For example, archivists perform two physical tasks; their only robot-exposed one is “Preserve records, documents, and objects, copying records to film, videotape, audiotape, disk, or computer formats as necessary.” We estimate that it costs \$5,500 per year for robots to do this task. Archivists spend about 8% of their time on it, and their median total compensation is \$85,000, so labor costs for this task are \$6,800 per year. Robots are cost-competitive for this task, but automating one task is unlikely to displace archivists.
+38In these comparisons, robots may be cheaper than workers but only do a few of their tasks. For example, archivists perform two physical tasks; their only robot-exposed one is “Preserve records, documents, and objects, copying records to film, videotape, audiotape, disk, or computer formats as necessary.” We estimate that it costs \$5,500 per year for robots to do this task. Archivists spend about 8% of their time on it, and their median total compensation is \$85,000, so labor costs for this task are \$6,800 per year. Robots are cost-competitive for this task, but automating one task is unlikely to displace archivists.
 
-39. Cited robots and systems include the Douglas top-load case packer (packing), Boston Dynamics’ Stretch and Agility Robotics’ Digit (material handling), machine-vision inspection stations (inspection), the Combi robotic random case erector (carton assembly), print-and-apply labelers (labeling), and the 3M-Matic random case sealer (sealing).
+39Cited robots and systems include the Douglas top-load case packer (packing), Boston Dynamics’ Stretch and Agility Robotics’ Digit (material handling), machine-vision inspection stations (inspection), the Combi robotic random case erector (carton assembly), print-and-apply labelers (labeling), and the 3M-Matic random case sealer (sealing).
 
-40. See for example Honerkamp (2026) and Lung (2026).
+40See for example Honerkamp (2026) and Lung (2026).
 
-41. August 2026 forecasts from the BLS Employment Projections program, 2025–35, Table 1.6. Packers and packagers rank 11th in job loss, behind correctional officers and jailers and 9 sales and office occupations (the SOC “high-level aggregation” name for groups 41 and 43). Employment data from the BLS OEWS for 2015 and 2025.
+41August 2026 forecasts from the BLS Employment Projections program, 2025–35, Table 1.6. Packers and packagers rank 11th in job loss, behind correctional officers and jailers and 9 sales and office occupations (the SOC “high-level aggregation” name for groups 41 and 43). Employment data from the BLS OEWS for 2015 and 2025.
 
-42. See for example the Path Robotics AW-3 autonomous welding cell.
+42See for example the Path Robotics AW-3 autonomous welding cell.
 
-43. Though cleaning robots might work longer hours, they are up to 10 times slower than humans. See Rivière and Denain (2026).
+43Though cleaning robots might work longer hours, they are up to 10 times slower than humans. See Rivière and Denain (2026).
 
-44. This figure includes tire builders and packers and packagers. In these occupations, at least 95% of tasks by work time are exposed to robots, and robot costs fall below total compensation for a share of workers.
+44This figure includes tire builders and packers and packagers. In these occupations, at least 95% of tasks by work time are exposed to robots, and robot costs fall below total compensation for a share of workers.
 
-45. See Davidson and Hadshar (2025) and Denain and Rivière (2026).
+45See Davidson and Hadshar (2025) and Denain and Rivière (2026).
 
-46. Compare LLM exposure in Eloundou et al. (2024) for computer programmers (25th most exposed by human raters, 6th by the LLM rater) and poets, lyricists and creative writers (11th by humans, 14th by the LLM). The two occupations were similarly exposed, but AI developers have since directed effort toward coding more than creative writing.
+46Compare LLM exposure in Eloundou et al. (2024) for computer programmers (25th most exposed by human raters, 6th by the LLM rater) and poets, lyricists and creative writers (11th by humans, 14th by the LLM). The two occupations were similarly exposed, but AI developers have since directed effort toward coding more than creative writing.
 
+## Authors & Acknowledgments
 
-## Related content
+### Contributors
 
-### Claude-shaped science
-
-Guest author Prof. Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calculations in quantitative science, which he has been applying across scientific fields alongside experts.
-
-[Read more](claude-shaped-science.md)
-
-### What do you want from AI?
-
-We’re launching a new study using Anthropic Interviewer to learn from your experiences with AI, and we invite you to participate.
-
-[Read more](your-thoughts-on-ai.md)
-
-### GLM-5.3 and the spread of advanced cyber capabilities
-
-Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse.
-
-[Read more](glm-5-3-and-the-spread-of-advanced-cyber-capabilities.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Developer blog](https://claude.dev)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+Russell Legate-Yang and Maxim Massenkoff.
+
+### Acknowledgements
+
+James Akl, Tess Cotter, Sholto Douglas, Adam Farina, Megan Giacobetti, Ryan Heller, Johannes Hermle, Zoë Hitzig, Ben Jones, Chad Jones, Anton Korinek, Jan Leike, Eva Lyubich, Peter McCrory, Kerry Persen, Sarah Pollack, Santi Ruiz, Szymon Sacher, Monika Tuchowska, Zhengdong Wang, Heather Whitney, Nathan Wilmers, Kim Withee.
+
+### Citation
+
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
+@online{legateyang2026robots,
+ author = {Legate-Yang, Russell and Massenkoff, Maxim},
+ title = {What work can robots do?},
+ date = {2026-09-30},
+ year = {2026},
+ url = {https://www.anthropic.com/research/what-work-can-robots-do}

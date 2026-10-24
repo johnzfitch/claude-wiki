@@ -2,15 +2,48 @@
 title: "Claude's new constitution \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-new-constitution"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:41Z"
+fetched_at: "2026-10-21T06:30:27Z"
 tags: ["news-research"]
 ---
 
 # Claude's new constitution
 
-Jan 22, 2026
-
 [Read the constitution](http://anthropic.com/constitution)
+
+Listen to this article
+
+- [01What is Claude’s Constitution?](#what-is-claudes-constitution)
+- [02Our new approach to Claude’s Constitution](#our-new-approach-to-claudes-constitution)
+- [03A brief summary of the new constitution](#a-brief-summary-of-the-new-constitution)
+- [04Conclusion](#conclusion)
+
+- Published
+
+  Jan 22, 2026
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [Constitutional AI](https://www.anthropic.com/search?topic=constitutional-ai)
+  - [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
+  - [Training](https://www.anthropic.com/search?topic=training)
+  - [Transparency](https://www.anthropic.com/search?topic=transparency)
+  - [Alignment](https://www.anthropic.com/search?topic=alignment)
+
+  See more...
+
+Related articles
+
+- Policy
+
+  May 19, 2026
+
+  [Widening the conversation on frontier AI](widening-conversation-ai.md)
+
+[View more](https://www.anthropic.com/search?topic=constitutional-ai)
 
 We’re publishing a new constitution for our AI model, Claude. It’s a detailed description of Anthropic’s vision for Claude’s values and behavior; a holistic document that explains the context in which Claude operates and the kind of entity we would like Claude to be.
 
@@ -24,7 +57,7 @@ In this post, we describe what we’ve included in the new constitution and some
 
 Claude’s constitution is the foundational document that both expresses and shapes who Claude is. It contains detailed explanations of the values we would like Claude to embody and the reasons why. In it, we explain what we think it means for Claude to be helpful while remaining broadly safe, ethical, and compliant with our guidelines. The constitution gives Claude information about its situation and offers advice for how to deal with difficult situations and tradeoffs, like balancing honesty with compassion and the protection of sensitive information. Although it might sound surprising, the constitution is written *primarily for Claude*. It is intended to give Claude the knowledge and understanding it needs to act well in the world.
 
-We treat the constitution as the final authority on how we want Claude to be and to behave—that is, any other training or instruction given to Claude should be consistent with both its letter and its underlying spirit. This makes publishing the constitution particularly important from a transparency perspective: it lets people understand which of Claude’s behaviors are intended versus unintended, to make informed choices, and to provide useful feedback. We think transparency of this kind will become ever more important as AIs start to exert more influence in society¹.
+We treat the constitution as the final authority on how we want Claude to be and to behave—that is, any other training or instruction given to Claude should be consistent with both its letter and its underlying spirit. This makes publishing the constitution particularly important from a transparency perspective: it lets people understand which of Claude’s behaviors are intended versus unintended, to make informed choices, and to provide useful feedback. We think transparency of this kind will become ever more important as AIs start to exert more influence in society^([1](#footnote-1)).
 
 We use the constitution at various stages of the training process. This has grown out of training techniques we’ve been using since 2023, when we first began training Claude models using [Constitutional AI](constitutional-ai-harmlessness-from-ai-feedback.md). Our approach has evolved significantly since then, and the new constitution plays an even more central role in training.
 
@@ -34,7 +67,7 @@ Claude itself also uses the constitution to construct many kinds of synthetic tr
 
 Our previous [Constitution](claudes-constitution.md) was composed of a list of standalone principles. We’ve come to believe that a different approach is necessary. We think that in order to be good actors in the world, AI models like Claude need to understand *why* we want them to behave in certain ways, and we need to explain this to them rather than merely specify *what* we want them to do. If we want models to exercise good judgment across a wide range of novel situations, they need to be able to generalize—to apply broad principles rather than mechanically following specific rules.
 
-Specific rules and bright lines sometimes have their advantages. They can make models’ actions more predictable, transparent, and testable, and we do use them for some especially high-stakes behaviors in which Claude should never engage (we call these “hard constraints”). But such rules can also be applied poorly in unanticipated situations or when followed too rigidly². We don’t intend for the constitution to be a rigid legal document—and legal constitutions aren’t necessarily like this anyway.
+Specific rules and bright lines sometimes have their advantages. They can make models’ actions more predictable, transparent, and testable, and we do use them for some especially high-stakes behaviors in which Claude should never engage (we call these “hard constraints”). But such rules can also be applied poorly in unanticipated situations or when followed too rigidly^([2](#footnote-2)). We don’t intend for the constitution to be a rigid legal document—and legal constitutions aren’t necessarily like this anyway.
 
 The constitution reflects our current thinking about how to approach a dauntingly novel and high-stakes project: creating safe, beneficial non-human entities whose capabilities may come to rival or exceed our own. Although the document is no doubt flawed in many ways, we want it to be something future models can look back on and see as an honest and sincere attempt to help Claude understand its situation, our motives, and the reasons we shape Claude in the ways we do.
 
@@ -75,123 +108,8 @@ At some point in the future, and perhaps soon, documents like Claude’s constit
 
 Read [**the full constitution**](http://anthropic.com/constitution).
 
-#### Footnotes
+## Footnotes
 
-1.  We have previously published an [earlier version](claudes-constitution.md) of our constitution, and OpenAI has published their [model spec](https://model-spec.openai.com/2025-10-27.html) which has a similar function.
-2.  Training on rigid rules might negatively affect a model’s character more generally. For example, imagine we trained Claude to follow a rule like “Always recommend professional help when discussing emotional topics.” This might be well-intentioned, but it could have unintended consequences: Claude might start modeling itself as an entity that cares more about bureaucratic box-ticking—always ensuring that a specific recommendation is made—rather than actually helping people.
+01We have previously published an [earlier version](claudes-constitution.md) of our constitution, and OpenAI has published their [model spec](https://model-spec.openai.com/2025-10-27.html) which has a similar function.[](#footnote-ref-1)
 
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+02Training on rigid rules might negatively affect a model’s character more generally. For example, imagine we trained Claude to follow a rule like “Always recommend professional help when discussing emotional topics.” This might be well-intentioned, but it could have unintended consequences: Claude might start modeling itself as an entity that cares more about bureaucratic box-ticking—always ensuring that a specific recommendation is made—rather than actually helping people.[](#footnote-ref-2)

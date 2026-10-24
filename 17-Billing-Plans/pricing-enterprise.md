@@ -2,7 +2,7 @@
 title: "Claude Enterprise plan | Claude by Anthropic"
 source_url: "https://www.claude.com/pricing/enterprise"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:29:08Z"
+fetched_at: "2026-10-23T06:30:16Z"
 tags: ["billing", "enterprise", "security"]
 ---
 
@@ -102,7 +102,7 @@ North America
 
 > “As AI becomes the interface for decisions, trust becomes the standard. Moody’s decision-grade connected intelligence is key to unlocking AI for high‑stakes credit and compliance decision‑making.”
 
-1200%credit memo prep time cut from 40 hours to 2 minutes with Claude-built agents
+1,200× fastercredit memo prep time cut from 40 hours to 2 minutes with Claude-built agents
 
 Industry:  
 Financial services
@@ -208,9 +208,9 @@ EMEA
 
 ## Built for enterprise
 
-### Built on the best models
+### Built on leading models
 
-Claude leads on reasoning, coding, and analysis benchmarks. The same frontier models power every surface, from business apps to developer tools.
+Claude is a leader on reasoning, coding, and analysis benchmarks. The same frontier models power every surface, from business apps to developer tools.
 
 ### No model training by default
 
@@ -456,7 +456,7 @@ Everything you need to ship production-grade agents, including Claude Managed Ag
 
 Controls to deploy and manage agents across your organization, including authorization, governance, and observability.
 
-[Learn more](../04-API-Reference/Other/usage-limits.md)
+[Learn more](../04-API-Reference/Other/playground.md)
 
 Customer story
 
@@ -616,7 +616,7 @@ Claude for Work was the earlier name for our business plans — what are now the
 
 ### Can we buy Claude through AWS Marketplace, Google Cloud, or Azure?
 
-Claude Enterprise is available directly from Anthropic and through AWS Marketplace, where it can draw down from your existing AWS commit. Claude Platform (the API) is also available on Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Azure.
+Claude Enterprise is available directly from Anthropic and through AWS Marketplace, where it can draw down from your existing AWS commit. Claude Platform (the API) is also available on Amazon Bedrock, Gemini Enterprise Agent Platform, and Microsoft Foundry.
 
 ### Do you support invoice billing on Claude Enterprise?
 
@@ -701,7 +701,8 @@ Report
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -719,12 +720,12 @@ Report
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -757,7 +758,7 @@ Report
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -775,6 +776,7 @@ Report
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -790,7 +792,7 @@ Report
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -825,7 +827,8 @@ Report
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -843,12 +846,12 @@ Report
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -881,7 +884,7 @@ Report
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -899,6 +902,7 @@ Report
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -914,7 +918,7 @@ Report
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

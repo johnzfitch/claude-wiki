@@ -2,7 +2,7 @@
 title: "Grafana Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/grafana"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:14Z"
+fetched_at: "2026-10-23T06:29:34Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,29 +41,29 @@ Grafana Labs uses Claude to power an intelligent multi-agent assistant that help
 
 ## Making observability accessible to every team
 
-Since 2014, Grafana Labs has transformed how organizations visualize and understand their data. Their comprehensive stack includes Grafana for visualization, Mimir for metrics, Loki for logs, Tempo for traces, and Pyroscope for continuous profiling. Companies worldwide rely on Grafana's tools to monitor critical systems—from everyday applications to high-stakes environments where downtime isn't an option.
+Since 2014, Grafana Labs has transformed how organizations visualize and understand their data. Their comprehensive stack includes Grafana for visualization, Mimir for metrics, Loki for logs, Tempo for traces, and Pyroscope for continuous profiling. Companies worldwide rely on Grafana’s tools to monitor critical systems—from everyday applications to high-stakes environments where downtime isn’t an option.
 
 Observability means processing millions of daily data points that need analysis and understanding. Traditional approaches required deep technical expertise to write queries, create dashboards, and navigate complex workflows. This expertise barrier often locked valuable insights away from teams who needed them most.
 
-“Grafana's AI evolution progressed in stages. Where we started with traditional methods to forecast and detect outliers, we rapidly moved into the GenAI space to provide auto-summaries for incidents or explain flame graphs," said Maurice Rochau, Senior Product Manager at Grafana Labs. "These tasks were mostly single prompt, single action, single outcome." The team recognized that observability challenges required more sophisticated solutions that could combine context with prompts, execute multiple actions, and drive various outcomes simultaneously.
+“Grafana’s AI evolution progressed in stages. Where we started with traditional methods to forecast and detect outliers, we rapidly moved into the GenAI space to provide auto-summaries for incidents or explain flame graphs,” said Maurice Rochau, Senior Product Manager at Grafana Labs. “These tasks were mostly single prompt, single action, single outcome.” The team recognized that observability challenges required more sophisticated solutions that could combine context with prompts, execute multiple actions, and drive various outcomes simultaneously.
 
 ## Selecting Claude for technical complexity and accessibility
 
-When building their Grafana Assistant, the team needed AI models that could handle observability's technical complexity while remaining accessible across all skill levels. They chose Claude Sonnet 3.7, soon to be 4, and Claude Haiku 3 as the main models powering their multi-agent system.
+When building their Grafana Assistant, the team needed AI models that could handle observability’s technical complexity while remaining accessible across all skill levels. They chose Claude Sonnet 3.7, soon to be 4, and Claude Haiku 3 as the main models powering their multi-agent system.
 
-"We use Claude Sonnet 3.7 and Claude Haiku 3 as main models for our Grafana Assistant," Rochau explained. "With Claude Sonnet 3.7, we tackle more technically complex tasks while Haiku 3 handles simpler summarization tasks."
+“We use Claude Sonnet 3.7 and Claude Haiku 3 as main models for our Grafana Assistant,” Rochau explained. “With Claude Sonnet 3.7, we tackle more technically complex tasks while Haiku 3 handles simpler summarization tasks.”
 
-Claude consistently demonstrated superior performance handling observability data's nuanced requirements—from understanding database queries to generating accurate visualizations. The model family approach proved particularly valuable, allowing Grafana to optimize for both deep technical analysis and quick responses based on specific use cases.
+Claude consistently demonstrated superior performance handling observability data’s nuanced requirements—from understanding database queries to generating accurate visualizations. The model family approach proved particularly valuable, allowing Grafana to optimize for both deep technical analysis and quick responses based on specific use cases.
 
-Implementation was straightforward thanks to comprehensive documentation and Grafana's open-source nature. "Integration with Claude is easy due to the available docs and best practices," Rochau noted. As an open-source company with extensive public documentation, community contributions, and openly available code, Grafana benefits from Claude's ability to understand their ecosystem deeply. This ease allowed Grafana to move quickly from concept to working prototype.
+Implementation was straightforward thanks to comprehensive documentation and Grafana’s open-source nature. “Integration with Claude is easy due to the available docs and best practices,” Rochau noted. As an open-source company with extensive public documentation, community contributions, and openly available code, Grafana benefits from Claude’s ability to understand their ecosystem deeply. This ease allowed Grafana to move quickly from concept to working prototype.
 
 ## How Claude enables intelligent observability workflows
 
-Grafana's AI assistant operates directly within the interface as a sidebar, providing contextual help wherever users work. The assistant combines Claude's capabilities with Grafana-specific best practices and deep observability workflow understanding.
+Grafana’s AI assistant operates directly within the interface as a sidebar, providing contextual help wherever users work. The assistant combines Claude’s capabilities with Grafana-specific best practices and deep observability workflow understanding.
 
 The multi-agent system handles sophisticated observability tasks:
 
-- **Natural language query generation**: Users ask questions like "What’s the request latency for my checkout service?" and the assistant automatically finds relevant metrics and constructs appropriate queries
+- **Natural language query generation**: Users ask questions like “What’s the request latency for my checkout service?” and the assistant automatically finds relevant metrics and constructs appropriate queries
 - **Dashboard creation**: Creates entire dashboards with multiple panels, selects visualizations, crafts titles and descriptions, and handles panel placement—tasks typically requiring significant time and expertise
 - **Intelligent investigations**: When prompted about service issues, navigates through logs and metrics, identifies errors, analyzes latency patterns, and provides root cause analysis with recommended actions
 - **Multi-step automation**: Breaks complex observability tasks into logical steps, showing reasoning and tool usage throughout
@@ -74,15 +74,15 @@ The assistant leverages specialized tools to query metrics, navigate between Gra
 
 Claude is changing how Grafana customers interact with their observability data. The assistant eliminates traditional barriers between technical expertise and actionable insights, enabling teams at all levels to leverage data effectively.
 
-"CTOs and CEOs can query their data like a seasoned SRE," Rochau observed. This democratization means strategic decision-makers can directly access insights without requiring specialized technical knowledge or spending hours analyzing data. Tasks like dashboard creation now happen in minutes through natural language conversations, letting teams focus on interpreting insights and taking action rather than wrestling with query syntax.
+“CTOs and CEOs can query their data like a seasoned SRE,” Rochau observed. This democratization means strategic decision-makers can directly access insights without requiring specialized technical knowledge or spending hours analyzing data. Tasks like dashboard creation now happen in minutes through natural language conversations, letting teams focus on interpreting insights and taking action rather than wrestling with query syntax.
 
 For customers, this represents a shift from reactive to proactive observability. Instead of manually investigating issues when they arise, teams receive intelligent analysis and recommendations that identify problems before they escalate.
 
 ## Building the future of AI-enhanced observability
 
-Grafana envisions AI transforming observability in profound ways. "AI will greatly shape the observability space," Rochau predicted. "The combination of humans and agents is powerful: Agents help sift through relevant incidents and data to give a cohesive map of the situation while you focus on delivering fixes."
+Grafana envisions AI transforming observability in profound ways. “AI will greatly shape the observability space,” Rochau predicted. “The combination of humans and agents is powerful: Agents help sift through relevant incidents and data to give a cohesive map of the situation while you focus on delivering fixes.”
 
-Looking ahead, Grafana plans to explore Model Context Protocol integrations further, seeking deeper capabilities that provide customers more tools for solving observability challenges. Working with Anthropic, they're pushing the boundaries of what's possible in observability while ensuring powerful insights remain accessible to organizations of all sizes.
+Looking ahead, Grafana plans to explore Model Context Protocol integrations further, seeking deeper capabilities that provide customers more tools for solving observability challenges. Working with Anthropic, they’re pushing the boundaries of what’s possible in observability while ensuring powerful insights remain accessible to organizations of all sizes.
 
 ## Related stories
 
@@ -107,7 +107,8 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -125,12 +126,12 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -163,7 +164,7 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -181,6 +182,7 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -196,7 +198,7 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -231,7 +233,8 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -249,12 +252,12 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -287,7 +290,7 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -305,6 +308,7 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -320,7 +324,7 @@ Looking ahead, Grafana plans to explore Model Context Protocol integrations furt
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

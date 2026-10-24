@@ -2,7 +2,7 @@
 title: "Claude Partner Network Directory"
 source_url: "https://www.claude.com/partners/services"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:25:32Z"
+fetched_at: "2026-10-23T06:29:49Z"
 tags: ["api"]
 ---
 
@@ -90,7 +90,7 @@ Services Offered
 
 All
 
-AI Readiness & Governance Assessment / DesignAI Strategy & RoadmapBuild Prototype / POCClaude Consumption / FinOps OptimisationClaude Training SessionsConnectors, plugins and API integrationsCustomer-Facing AI Product BuildIndustry Solution Accelerator DeploymentInternal Agentic Platform BuildJumpstart for SMBManaged AI OperationsOngoing Cowork / Claude Code Scaled User SupportPlatform Migration to ClaudeProcess RedesignRollout & ActivationSustained Adoption / CoE ProgramUse-Case Portfolio & Business Case
+AI Readiness & Governance Assessment / DesignAI Strategy & RoadmapBuild Prototype / POCClaude Consumption / FinOps OptimisationClaude Training SessionsConnectors, plugins and API integrationsCustomer-Facing AI Product BuildIndustry Solution Accelerator DeploymentInternal Agentic Platform BuildJumpstart for SMBLegal Team SupportManaged AI OperationsOngoing Cowork / Claude Code Scaled User SupportPlatform Migration to ClaudeProcess RedesignRollout & ActivationSustained Adoption / CoE ProgramUse-Case Portfolio & Business Case
 
 Clear all
 

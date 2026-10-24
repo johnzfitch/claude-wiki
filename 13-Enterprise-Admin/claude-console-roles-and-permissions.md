@@ -2,7 +2,7 @@
 title: "Claude Console roles and permissions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10186004-claude-console-roles-and-permissions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:27:56Z"
+fetched_at: "2026-10-23T06:28:47Z"
 tags: ["enterprise"]
 ---
 
@@ -96,4 +96,4 @@ The Claude Console uses a role-based access system with six distinct roles: User
 
 - Removing an Admin or Billing role does not automatically update the billing email in our payment processor.
 
-- To modify the primary billing email address or add additional billing contact emails, please **[contact our Support Team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+- To modify the primary billing email address or add additional billing contact emails, please **[contact our Support Team](../15-Claude-AI-Features/how-to-get-support.md)**.

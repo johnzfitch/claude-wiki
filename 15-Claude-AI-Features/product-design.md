@@ -2,7 +2,7 @@
 title: "Claude Design | Turn ideas into design | Claude by Anthropic"
 source_url: "https://www.claude.com/product/design"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:33Z"
+fetched_at: "2026-10-23T06:30:03Z"
 tags: ["claude-ai", "enterprise", "security"]
 ---
 
@@ -161,7 +161,7 @@ Import from your codebase, or DOCX, PPTX, and XLSX files. Export to PPTX, PDF, o
 
 ### Will it match my brand?
 
-Bring in one or several design systems from a GitHub repo, design files, or raw uploads. Claude builds with your components, checks its output against your design system, and makes corrections before you see it. For larger teams, an admin role can approve one standard system and lock down edits, so the work always matches your company guidelines.
+Bring in one or several design systems from a GitHub repo, design files, or raw uploads. Claude builds with your components, checks its output against your design system, and makes corrections before you see it. For larger teams, an admin role can approve one standard system and lock down edits, so the work can match your company guidelines.
 
 ### What services does Claude Design connect with?
 
@@ -169,7 +169,7 @@ Claude Design connects with Adobe, Canva, Gamma, Lovable, Miro, Replit, Vercel, 
 
 ### Can admins limit Claude Design to one design system?
 
-Yes. Admins can lock a team to a single approved design system, so every design stays on brand no matter who's building it.
+Yes. Admins can lock a team to a single approved design system to help keep designs on brand no matter the user.
 
 ### How do I create designs from Claude Code?
 
@@ -177,7 +177,7 @@ From your Claude Code session on desktop or from the terminal, ask Claude to tur
 
 ### How do I bring in my company's design system?
 
-The new, integrated Claude Design has a revamped Design Systems feature, which you can manage in Settings \> Design Systems. To bring an existing design system over, open the Design tab at the bottom of the sidebar and click Migrate team design systems in the banner. Each design system becomes an artifact Claude can use in any conversation, including in Claude Code. Migrated systems aren't perfect, so each one shows a banner: click Let Claude clean it up and Claude tidies the guide, the tokens and the components. You can create a design system using Claude Code, which works best for organizations with existing React design systems, or in any conversation with Claude, which works best for brand design systems with fonts, colors and brand guidelines. [Learn more](../21-Account-Support/set-up-your-design-system-in-claude-design.md).
+The new, integrated Claude Design has a revamped Design Systems feature, which you can manage in Settings \> Design Systems. To bring an existing design system over, open the Design tab at the bottom of the sidebar and click Migrate team design systems in the banner. Each design system becomes an artifact Claude can use in any conversation, including in Claude Code. Migrated systems aren't perfect, so each one shows a banner: click Let Claude clean it up and Claude tidies the guide, the tokens and the components. You can create a design system using Claude Code, which works best for organizations with existing React design systems, or in any conversation with Claude, which works best for brand design systems with fonts, colors and brand guidelines. [Learn more](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design).
 
 ### What’s included in my plan?
 
@@ -200,7 +200,8 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -218,12 +219,12 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -256,7 +257,7 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -274,6 +275,7 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -289,7 +291,7 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -324,7 +326,8 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 - [Claude](product-overview.md)
 - [Claude Code](product-claude-code-fad1ab4b.md)
 - [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
+- [Claude Duet](product-claude-duet.md)
+- [Claude Tag](product-tag.md)
 - [Claude Science](product-claude-science.md)
 - [Claude Security](product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -342,12 +345,12 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
+- [Mythos (including Fable)](claude-mythos.md)
 - [Opus](claude-opus.md)
 - [Sonnet](claude-sonnet.md)
 - [Haiku](claude-haiku.md)
@@ -380,7 +383,7 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 
 - [Campus](programs-campus.md)
 - [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 - [Startups](programs-startups.md)
 
 ## Developers
@@ -398,6 +401,7 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -413,7 +417,7 @@ Artifacts, including work made with Claude Design, Claude Slides and Claude Docs
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

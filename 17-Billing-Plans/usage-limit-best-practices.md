@@ -2,16 +2,18 @@
 title: "Usage limit best practices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9797557-usage-limit-best-practices"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:31Z"
+fetched_at: "2026-10-23T06:29:19Z"
 tags: ["billing", "prompting", "search"]
 ---
 
 # Usage limit best practices
 
+September 22, 2026
+
 
 The number of messages you can send will vary based on your Claude plan. For more information on your plan’s usage, refer to the following resources.
 
-- **[Free Claude](../01-Getting-Started/getting-started-with-claude.md#h_57262af5ae)**
+- **[Free Claude](https://support.claude.com/en/articles/8114491-getting-started-with-claude#h_57262af5ae)**
 
 - **[Pro plan](what-is-the-pro-plan.md#h_62ccc00135)**
 

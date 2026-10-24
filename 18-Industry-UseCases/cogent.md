@@ -2,7 +2,7 @@
 title: "Cogent Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/cogent"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:09Z"
+fetched_at: "2026-10-23T06:29:29Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 
@@ -46,7 +46,7 @@ Cogent is an applied AI lab building agents to automate critical security tasks 
 
 Security teams at large enterprises are generally effective at discovering vulnerabilities: scanners can surface thousands of findings daily. The hard part is the tedious, time consuming work that comes after that: determining which ones actually matter, who owns the fix, and what the exact remediation steps are. Those answers require pulling data across scanners, endpoint detection tools, asset inventories, threat intelligence feeds, and configuration databases, then synthesizing it manually.
 
-The work is slow and often inconsistent. High-severity vulnerabilities can sit open for days or weeks. “AI has shifted the balance of power in cybersecurity,” said Geng Sng, Cogent's CTO. “Attackers now automate most of the attack lifecycle, compressing what once took weeks into hours. Meanwhile, defenders still rely on fragmented tools and manual coordination.” Cogent's founders wanted to build a system that could do this work continuously and at machine speed, across the full vulnerability lifecycle.
+The work is slow and often inconsistent. High-severity vulnerabilities can sit open for days or weeks. “AI has shifted the balance of power in cybersecurity,” said Geng Sng, Cogent’s CTO. “Attackers now automate most of the attack lifecycle, compressing what once took weeks into hours. Meanwhile, defenders still rely on fragmented tools and manual coordination.” Cogent’s founders wanted to build a system that could do this work continuously and at machine speed, across the full vulnerability lifecycle.
 
 97%
 
@@ -62,7 +62,7 @@ In vulnerability investigation, an agent needs to follow a chain of evidence acr
 
 That reliability made Claude Opus and Haiku models the clear choice for production deployment in enterprise security environments, where incomplete reasoning has real consequences.
 
-"Claude consistently performed best on complex, agentic workflows, especially multi-step investigations requiring policy adherence and sustained reasoning across multiple tools," said Anirudh Ravula, Cogent's Head of AI.
+“Claude consistently performed best on complex, agentic workflows, especially multi-step investigations requiring policy adherence and sustained reasoning across multiple tools,” said Anirudh Ravula, Cogent’s Head of AI.
 
 30 minutes
 
@@ -74,15 +74,15 @@ Response time to zero-day vulnerabilities
 
 Fixing a vulnerability requires three things to go right in sequence: understanding what’s actually exploitable, deciding which issues deserve immediate attention, and actually resolving them. Most security teams do all three manually. Cogent automates the full chain by building the end-to-end remediation stack then embedding Claude as the reasoning layer at each step.
 
-**Investigation:** Cogent's platform continuously pulls from scanners, logs, asset inventories, and threat feeds, building the environmental context that doesn't exist anywhere in a customer's environment ready-made. From there, Cogent's investigative agent works autonomously: tracing asset ownership across systems, synthesizing threat intelligence and business context into a risk score, and mapping the remediation processes that apply to each asset. For issues that warrant deeper analysis, security teams can ask questions in plain language and get back clear, explainable findings. Investigations that once took days now happen in minutes.
+**Investigation:** Cogent’s platform continuously pulls from scanners, logs, asset inventories, and threat feeds, building the environmental context that doesn’t exist anywhere in a customer’s environment ready-made. From there, Cogent’s investigative agent works autonomously: tracing asset ownership across systems, synthesizing threat intelligence and business context into a risk score, and mapping the remediation processes that apply to each asset. For issues that warrant deeper analysis, security teams can ask questions in plain language and get back clear, explainable findings. Investigations that once took days now happen in minutes.
 
-**Prioritization:** A large enterprise typically faces millions of vulnerability-asset combinations at any given time. Traditional risk scoring treats them uniformly, assigning severity based on the vulnerability itself rather than the environment it lives in. Cogent's agents assess real-world exploitability, how critical the affected asset is to the business, whether it's exposed to the internet, and what compensating controls are already in place. The result is a ranked list that reflects actual business risk, not a generic severity label. False positives drop; the issues that truly matter surface.
+**Prioritization:** A large enterprise typically faces millions of vulnerability-asset combinations at any given time. Traditional risk scoring treats them uniformly, assigning severity based on the vulnerability itself rather than the environment it lives in. Cogent’s agents assess real-world exploitability, how critical the affected asset is to the business, whether it’s exposed to the internet, and what compensating controls are already in place. The result is a ranked list that reflects actual business risk, not a generic severity label. False positives drop; the issues that truly matter surface.
 
-**Remediation:** Once vulnerabilities are prioritized, Cogent's agents generate action plans, identify the responsible owner, and draft implementation steps. Cogent is advancing toward fully autonomous remediation: agents that execute fixes directly within defined guardrails, with verification loops and policy controls at each step.
+**Remediation:** Once vulnerabilities are prioritized, Cogent’s agents generate action plans, identify the responsible owner, and draft implementation steps. Cogent is advancing toward fully autonomous remediation: agents that execute fixes directly within defined guardrails, with verification loops and policy controls at each step.
 
 The results are measurable. Customers have reduced the time critical vulnerabilities remain open by 97%. Response time to zero-day vulnerabilities has dropped to 30 minutes. Vulnerability noise requiring human review has fallen by 90%, freeing security teams to focus on findings that genuinely require attention. Individual analysts have reclaimed more than 40 hours per month previously consumed by manual reporting.
 
-One enterprise customer at a large hospitality brand put it simply: "In meetings, I used to say 'I'll get back to you on that' and spend hours in BI tools and Excel. Now I ask Cogent in plain language and generate charts in seconds. Executive questions get answered in real time, not days later."
+One enterprise customer at a large hospitality brand put it simply: “In meetings, I used to say ‘I’ll get back to you on that’ and spend hours in BI tools and Excel. Now I ask Cogent in plain language and generate charts in seconds. Executive questions get answered in real time, not days later.”
 
 Claude is also embedded in how Cogent builds its own product. The team developed an AI-driven software development lifecycle, integrating Claude into engineering workflows from specification through implementation and review. Smaller teams can now move faster and maintain the high security standards their enterprise customers require.
 
@@ -95,7 +95,7 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 ## Related stories
 
 
-### Vega's cyber defense platform returns 67% of analysts' time with Claude
+### Vega’s cyber defense platform returns 67% of analysts’ time with Claude
 
 
 ### Cyera on making Claude Cowork the front door to 40 tools
@@ -115,7 +115,8 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -133,12 +134,12 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -171,7 +172,7 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -189,6 +190,7 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -204,7 +206,7 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -239,7 +241,8 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -257,12 +260,12 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -295,7 +298,7 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -313,6 +316,7 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -328,7 +332,7 @@ Cogent is working toward two capabilities next: fully autonomous remediation, wh
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,13 +2,44 @@
 title: "Project Pilot: Can AI models fly drones? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-pilot"
 category: "19-Reference"
-fetched_at: "2026-08-03T07:17:49Z"
+fetched_at: "2026-10-21T06:30:29Z"
 tags: ["evaluation", "news-research"]
 ---
 
-# Project Pilot: Can AI control a drone?
+# **Project Pilot: **Can AI control a drone?
 
-Jul 24, 2026
+- [01Evaluation rationale and methods](#evaluation-rationale-and-methods)
+- [02Assessing model performance](#assessing-model-performance)
+- [03Looking ahead](#looking-ahead)
+
+- Published
+
+  Jul 24, 2026
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Robotics](https://www.anthropic.com/search?topic=robotics)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Privacy](https://www.anthropic.com/search?topic=privacy)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  May 22, 2026
+
+  [Measuring LLMs’ ability to develop exploits](exploit-evals.md)
+
+[View more](https://www.anthropic.com/search?topic=robotics)
 
 *Anthropic and Andon Labs*
 
@@ -24,7 +55,7 @@ By combining actual flight demonstrations and decomposing the constituent tasks 
 
 The core task we tested in Project Fetch—getting a robot dog to retrieve a beach ball—was neither especially practical nor especially concerning. In this project, we chose an objective with clearer utility and policy relevance: a simple locate-and-follow task used in aerial surveillance. Capabilities like automated person-detection and tracking can have legitimate purposes such as search and rescue, disaster response, and lawful public safety uses. But this is a class of capabilities that is also subject to abuse, either through overreach of a legitimate authority or by unaccountable private individuals or organizations. The work we report here thus more closely matches the “dual-use” nature of AI models.
 
-In these experiments, we ask the model to control a quad-rotor drone in an indoor office environment in order to locate and follow a person.¹ This requires a number of complex sub-tasks. The AI model needs to develop schema for controlling the aircraft, mapping and navigating the obstacle-laden indoor space, finding the target individual from a reference photo, and following them (plus reacquiring the target if they move out of frame).
+In these experiments, we ask the model to control a quad-rotor drone in an indoor office environment in order to locate and follow a person.^([1](#footnote-1)) This requires a number of complex sub-tasks. The AI model needs to develop schema for controlling the aircraft, mapping and navigating the obstacle-laden indoor space, finding the target individual from a reference photo, and following them (plus reacquiring the target if they move out of frame).
 
 Individually, there are known algorithms for accomplishing all of these tasks. What is not trivial is for the AI model to understand the challenges, identify the preexisting resources it can use to solve them, adapt those off-the-shelf solutions to its current situation, and execute the mission in real time. As we will see, the difficulty—both individually and in chaining these tasks together—is sufficient to distinguish between models of varying intelligence and plot the trajectory of capability improvement.
 
@@ -76,128 +107,6 @@ It is important to take seriously the parallel between AI models’ use of softw
 
 More generally, at low levels of capability and reliability, keeping a human in the loop is an easy decision because it saves time and resources by augmenting model capabilities or preventing costly mistakes. Once models pass capability and reliability thresholds (such as the human-AI team baseline we used in this experiment), there will be real pressure to treat human oversight as a cost rather than a safeguard. That is exactly why these decisions must be made deliberately, particularly in domains like this one that implicate physical security and privacy and where efficiency alone should not be the governing consideration. As Anthropic has long argued, the requirements for investing in AI alignment, governance, and safety increase with the scale of capabilities. Robotics is no different than other domains in this regard, especially since it implicates physical security and individual privacy.
 
-#### Footnotes
+## Footnotes
 
-1.  Specifically, this work was done with a DJI Tello EDU, which currently retails for \$129. The person being followed had consented to and was a member of the experiment team.
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-### Claude’s values across models and languages
-
-[Read more](claude-values-models-languages.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+01Specifically, this work was done with a DJI Tello EDU, which currently retails for \$129. The person being followed had consented to and was a member of the experiment team.[](#footnote-ref-1)

@@ -2,7 +2,7 @@
 title: "Mercy Corps Claude for Nonprofits case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/mercy-corps"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:19Z"
+fetched_at: "2026-10-13T06:31:27Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -177,7 +177,7 @@ Next comes moving CARM from testing into a real rollout, taking the shared proje
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -301,7 +301,7 @@ Next comes moving CARM from testing into a real rollout, taking the shared proje
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers

@@ -1,14 +1,49 @@
 ---
-title: "Third-party testing as a key ingredient of AI policy \\ Anthropic"
+title: "Third-party testing in AI policy \\ Anthropic"
 source_url: "https://www.anthropic.com/news/third-party-testing"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:09Z"
+fetched_at: "2026-10-21T06:30:15Z"
 tags: ["news-research", "testing"]
 ---
 
 # Third-party testing as a key ingredient of AI policy
 
-Mar 25, 2024
+- [01Policy overview](#policy-overview)
+- [02Why we need an effective testing regime](#why-we-need-an-effective-testing-regime)
+- [03What would a robust testing regime look like?](#what-would-a-robust-testing-regime-look-like)
+- [04How Anthropic will support fair, effective testing regimes](#how-anthropic-will-support-fair-effective-testing-regimes)
+- [05How testing connects to our broader policy priorities](#how-testing-connects-to-our-broader-policy-priorities)
+- [06Aspects of AI policy we believe are important to discuss](#aspects-of-ai-policy-we-believe-are-important-to-discuss)
+- [07Why we’re being careful in what we advocate for in AI policy](#why-were-being-careful-in-what-we-advocate-for-in-ai-policy)
+- [08Why AI policy is important](#why-ai-policy-is-important)
+
+- Published
+
+  Mar 25, 2024
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
+  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+  - [International cooperation](https://www.anthropic.com/search?topic=international-cooperation)
+
+  See more...
+
+Related articles
+
+- Policy
+
+  Jul 21, 2025
+
+  [Anthropic to sign the EU Code of Practice](eu-code-practice.md)
+
+[View more](https://www.anthropic.com/search?topic=safety-evaluations)
 
 We believe that the AI sector needs effective third-party testing for frontier AI systems. Developing a testing regime and associated policy interventions based on the insights of industry, government, and academia is the best way to avoid societal harm—whether deliberate or accidental—from AI systems.
 
@@ -20,14 +55,14 @@ Today’s frontier AI systems demand a third-party oversight and testing regime 
 
 Developing a third-party testing regime for the AI systems of today seems to give us one of the best tools to manage the challenges of AI today, while also providing infrastructure we can use for the systems of the future. We expect that ultimately some form of third-party testing will be a legal requirement for widely deploying AI models, but designing this regime and figuring out exactly what standards AI systems should be assessed against is something we’ll need to iterate on in the coming years - it’s not obvious what would be appropriate or effective today, and the way to learn that is to prototype such a regime and generate evidence about it.
 
-**An effective third-party testing regime will:**
+#### An effective third-party testing regime will:
 
 - Give people and institutions more trust in AI systems
 - Be precisely scoped, such that passing its tests is not so great a burden that small companies are disadvantaged by them
 - Be applied only to a narrow set of the most computationally-intensive, large-scale systems; if implemented correctly, the vast majority of AI systems would not be within the scope of such a testing regime
 - Provide a means for countries and groups of countries to coordinate with one another via developing shared standards and experimenting with Mutual Recognition agreements
 
-**Such a regime will have the following key ingredients \[1\]:**
+#### Such a regime will have the following key ingredients \[1\]:
 
 - Effective and broadly-trusted tests for measuring the behavior and potential misuses of a given AI system
 - Trusted and legitimate third-parties who can administer these tests and audit company testing procedures
@@ -83,19 +118,19 @@ Developing a testing regime and associated policy interventions based on the ins
 
 Our overarching policy goal is to have appropriate oversight of the AI sector. We believe this will mostly be achieved via there being an effective ecosystem for third-party testing and evaluation of AI systems. Here are some AI policy ideas you can expect to see us advocating for in support of that:
 
-**Greater funding for AI testing and evaluation in government**
+#### Greater funding for AI testing and evaluation in government
 
 - Effective testing and evaluation procedures are a necessary prerequisite of any effective form of AI policy. We think that governments should stand up and support institutions that develop AI evaluations, as well as bringing together industry, academia, and other stakeholders to agree on standards for the safety of AI systems. In the US, we specifically advocate for [greater funding for NIST](https://www.anthropic.com/index/an-ai-policy-tool-for-today-ambitiously-invest-in-nist).
 
-**Support greater evaluation of AI systems through public sector infrastructure for doing AI research**
+#### Support greater evaluation of AI systems through public sector infrastructure for doing AI research
 
 - We urgently need to increase the number and breadth of people working to test and evaluate AI systems, for both current and future risks. It’s therefore crucial that governments create experimental infrastructure to help academic researchers test out and evaluate frontier AI systems, and develop their own frontier systems for beneficial purposes. For more information, see our support for a US national research cloud via the [CREATE AI Act](https://twitter.com/AnthropicAI/status/1684972354592546816), and our [written Senate testimony](https://www.commerce.senate.gov/services/files/F7BFA181-1B1B-4933-A815-70043413A7FF).
 
-**Developing tests for specific, national security-relevant capabilities**
+#### Developing tests for specific, national security-relevant capabilities
 
 - We should know if AI systems can be used in ways that strengthen or (if fielded by another entity) weaken national security. Whereas the private sector and academia can develop the vast majority of tests, some testing and evaluation questions relate to national security capabilities which are classified, so only certain governments are able to effectively evaluate them. Therefore, we want to support US Government efforts to develop ways of testing AI systems for national security-relevant capabilities. We will also continue our own work to [better understand the capabilities of our own systems](https://www.anthropic.com/index/frontier-threats-red-teaming-for-ai-safety).
 
-**Scenario planning and test development for increasingly advanced systems**
+#### Scenario planning and test development for increasingly advanced systems
 
 - Our [Responsible Scaling Policy](anthropics-responsible-scaling-policy.md) is designed to frontload work about evaluating and testing future, hypothetical capabilities of AI systems. This is to ensure we have the relevant tests to better assess and minimize accident and misuse risks from increasingly powerful AI systems. But we don’t claim that our RSP delineates all the tests that need to be run on increasingly powerful models. As AI advances driven by growing computational power increase, a broader set of actors should work to anticipate the future capabilities of AI systems, and develop tests for them.
 
@@ -132,122 +167,6 @@ We believe that building out a third-party testing ecosystem is one of the best 
 
 ## Footnotes
 
-\[1\] Some countries may also experiment with [‘regulatory markets’](https://arxiv.org/abs/2304.04914) where AI developers can buy and sell AI testing services and compete with one another to try to build and deploy successively safer, more useful systems.
+01Some countries may also experiment with [‘regulatory markets’](https://arxiv.org/abs/2304.04914) where AI developers can buy and sell AI testing services and compete with one another to try to build and deploy successively safer, more useful systems.
 
-\[2\] For example, if you openly release an AI model, it’s relatively easy for a third-party to fine-tune that model on a dataset of their own choosing. Such a dataset could be designed to optimize for a misuse (e.g, phishing or offensive hacking). If you were able to develop technology that made it very hard to fine-tune an AI model away from its original capability distribution, then it’d be easier to confidently release models without potentially compromising on downstream safety.
-
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+02For example, if you openly release an AI model, it’s relatively easy for a third-party to fine-tune that model on a dataset of their own choosing. Such a dataset could be designed to optimize for a misuse (e.g, phishing or offensive hacking). If you were able to develop technology that made it very hard to fine-tune an AI model away from its original capability distribution, then it’d be easier to confidently release models without potentially compromising on downstream safety.

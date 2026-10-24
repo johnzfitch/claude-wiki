@@ -2,7 +2,7 @@
 title: "SDKs, CLI, and libraries - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/overview"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:01Z"
+fetched_at: "2026-10-20T06:40:13Z"
 tags: ["agents", "api", "claude-code", "cli", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api", "claude-code", "cli", "sdk"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Foverview)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Foverview)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 SDKs, CLI, and libraries
 

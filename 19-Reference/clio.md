@@ -1,35 +1,66 @@
 ---
-title: "Clio: Privacy-preserving insights into real-world AI use \\ Anthropic"
+title: "Clio: Privacy-preserving insights into AI use \\ Anthropic"
 source_url: "https://www.anthropic.com/research/clio"
 category: "19-Reference"
-fetched_at: "2026-08-26T06:29:18Z"
+fetched_at: "2026-10-21T06:30:37Z"
 tags: ["cli", "news-research"]
 ---
 
-# Clio: A system for privacy-preserving insights into real-world AI use
-
-Dec 12, 2024
+# **Clio: **A system for privacy-preserving insights into real-world AI use
 
 [Read the paper](https://arxiv.org/abs/2412.13678)
 
-- Update
-  This system and research tool is now called Anthropic Insights
+- [01How Clio works: Privacy-preserving analysis at scale](#how-clio-works-privacy-preserving-analysis-at-scale)
+- [02How people use Claude: Insights from Clio](#how-people-use-claude-insights-from-clio)
+- [03How we improve our safety systems with Clio](#how-we-improve-our-safety-systems-with-clio)
+- [04Ethical considerations and mitigations](#ethical-considerations-and-mitigations)
+- [05Conclusions](#conclusions)
 
-  Aug 24, 2026
+- Published
 
-- Update
-  Consumer Terms and Privacy Policy
+  Dec 12, 2024
+
+- Team
+
+  [Societal Impacts](team-societal-impacts.md)
+
+- Topics
+
+  - [Privacy](https://www.anthropic.com/search?topic=privacy)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+  - [Claude apps](https://www.anthropic.com/search?topic=claude-apps)
+
+  See more...
+
+Related articles
+
+- Policy
 
   Aug 28, 2025
 
-  
+  [Updates to Consumer Terms and Privacy Policy](updates-to-our-consumer-terms.md)
+
+[View more](https://www.anthropic.com/search?topic=privacy)
+
+- UpdateAug 24, 2026
+
+  ### This system and research tool is now called Anthropic Insights
+
+- UpdateAug 28, 2025
+
+  ### Consumer Terms and Privacy Policy
+
+------------------------------------------------------------------------
+
 What do people use AI models for? Despite the rapidly-growing popularity of large language models, until now we’ve had little insight into exactly how they’re being used.
 
 This isn’t just a matter of curiosity, or even of sociological research. Knowing how people actually use language models is important for safety reasons: providers put considerable effort into pre-deployment testing, and use Trust and Safety systems to prevent abuses. But the sheer scale and diversity of what language models can do makes understanding their uses—not to mention any kind of comprehensive safety monitoring—very difficult.
 
 There’s also a crucially important factor standing in the way of a clear understanding of AI model use: privacy. At Anthropic, we take the protection of our users’ data very seriously. How, then, can we research and observe how our systems are used while rigorously maintaining user privacy?
 
-**Cl**aude **i**nsights and **o**bservations, or “Clio,” is our attempt to answer this question. Clio is an automated analysis tool that enables privacy-preserving analysis of real-world language model use. It gives us insights into the day-to-day uses of [claude.ai](http://claude.ai/redirect/website.v1.54d504c8-9504-4961-8c40-c53fe15d9651) in a way that’s analogous to tools like Google Trends. It’s also already helping us improve our safety measures. In this post—which accompanies a [full research paper](https://arxiv.org/abs/2412.13678)—we describe Clio and some of its initial results.
+**Cl**aude **i**nsights and **o**bservations, or “Clio,” is our attempt to answer this question. Clio is an automated analysis tool that enables privacy-preserving analysis of real-world language model use. It gives us insights into the day-to-day uses of [claude.ai](http://claude.ai) in a way that’s analogous to tools like Google Trends. It’s also already helping us improve our safety measures. In this post—which accompanies a [full research paper](https://arxiv.org/abs/2412.13678)—we describe Clio and some of its initial results.
 
 ## How Clio works: Privacy-preserving analysis at scale
 
@@ -48,11 +79,11 @@ All our privacy protections have been extensively tested, as we describe in the 
 
 ## How people use Claude: Insights from Clio
 
-Using Clio, we've been able to glean high-level insights into how people use [claude.ai](https://claude.ai/redirect/website.v1.54d504c8-9504-4961-8c40-c53fe15d9651) in practice. While public datasets like [WildChat](https://arxiv.org/abs/2405.01470) and [LMSYS-Chat-1M](https://arxiv.org/abs/2309.11998) provide useful information on how people use language models, they only capture specific contexts and use cases. Clio allows us to understand the full spectrum of real-world usage of [claude.ai](https://claude.ai/redirect/website.v1.54d504c8-9504-4961-8c40-c53fe15d9651) (which may look different than usage of other AI systems due to differences in user bases and model types).
+Using Clio, we've been able to glean high-level insights into how people use [claude.ai](https://claude.ai/) in practice. While public datasets like [WildChat](https://arxiv.org/abs/2405.01470) and [LMSYS-Chat-1M](https://arxiv.org/abs/2309.11998) provide useful information on how people use language models, they only capture specific contexts and use cases. Clio allows us to understand the full spectrum of real-world usage of [claude.ai](https://claude.ai/) (which may look different than usage of other AI systems due to differences in user bases and model types).
 
 ### Top use cases on Claude.ai
 
-We used Clio to analyze 1 million conversations with Claude on [claude.ai](https://claude.ai/redirect/website.v1.54d504c8-9504-4961-8c40-c53fe15d9651) (both the Free and Pro tiers) to identify the top tasks people use Claude for. This revealed a particular emphasis on coding-related tasks: the "Web and mobile application development" category represented over 10% of all conversations. Software developers use Claude for tasks ranging from debugging code to explaining Git operations and concepts.
+We used Clio to analyze 1 million conversations with Claude on [claude.ai](https://claude.ai/) (both the Free and Pro tiers) to identify the top tasks people use Claude for. This revealed a particular emphasis on coding-related tasks: the "Web and mobile application development" category represented over 10% of all conversations. Software developers use Claude for tasks ranging from debugging code to explaining Git operations and concepts.
 
 Educational uses formed another significant category, with more than 7% of conversations focusing on teaching and learning. A substantial percentage of conversations (nearly 6%) concerned business strategy and operations (including tasks like drafting professional communications and analyzing business data).
 
@@ -83,7 +114,7 @@ Clio has proven effective at identifying patterns of coordinated, sophisticated 
 
 ### Enhanced monitoring for high-stakes events
 
-Clio also helps us monitor novel uses and risks during periods of uncertainty or high-stakes events. For example, while we conducted a wide range of safety tests in advance of launching a new [computer use](developing-computer-use.md) feature, we used Clio to screen for emergent capabilities and harms we might have missed¹. Clio provided an additional safeguard here, as well as insights that helped us continually improve our safety measures throughout the rollout and in future versions of our systems.
+Clio also helps us monitor novel uses and risks during periods of uncertainty or high-stakes events. For example, while we conducted a wide range of safety tests in advance of launching a new [computer use](developing-computer-use.md) feature, we used Clio to screen for emergent capabilities and harms we might have missed^([1](#footnote-1)). Clio provided an additional safeguard here, as well as insights that helped us continually improve our safety measures throughout the rollout and in future versions of our systems.
 
 Clio has also helped us monitor for unknown risks in the run up to important public events like elections or major international events. In the months preceding the 2024 US General Election, we [used Clio](elections-ai-2024.md) to identify clusters of activity relating to US politics, voting, and related issues, and guard against any potential risks or misuse. The ability to detect “unknown unknowns,” made possible through Clio, complements our proactive safety measures and helps us respond quickly to new challenges.
 
@@ -114,129 +145,6 @@ We're continuing to develop and improve Clio, and we hope that others will build
 
 **Edit 14 January 2025:** Links to the Clio paper in this post have been updated to point to the *arXiv* version.
 
-#### Footnotes
+## Footnotes
 
-¹ For safety investigations, we also run Clio on a subset of first-party API traffic, keeping results restricted to authorized staff. Certain accounts are excluded from analysis, including trusted organizations with zero retention agreements. For more information about our policies, see Appendix F in the research paper.
-
-
-## Related content
-
-### How Claude is accelerating protein design and analytical chemistry
-
-In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
-
-[Read more](claude-accelerates-protein-design.md)
-
-### Patterns and problems in emerging multiagent systems
-
-Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.
-
-[Read more](multiagent-systems.md)
-
-### Reviewing the evidence on worker retraining programs
-
-We're sharing a review of the evidence on worker retraining programs, coauthored by independent researcher David Roodman and Anthropic's Maxim Massenkoff.
-
-[Read more](reviewing-the-evidence-on-worker-retraining-programs.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+01 For safety investigations, we also run Clio on a subset of first-party API traffic, keeping results restricted to authorized staff. Certain accounts are excluded from analysis, including trusted organizations with zero retention agreements. For more information about our policies, see Appendix F in the research paper.[](#footnote-ref-1)

@@ -2,7 +2,7 @@
 title: "NRI Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/nri"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:55Z"
+fetched_at: "2026-10-23T06:29:39Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,13 +41,13 @@ Key results:
 - Top performance in internal benchmarks using Claude 3.5 Sonnet
 - Significant time savings for clients while expanding AI usage across departments
 
-## Meeting Japan's business challenges with AI
+## Meeting Japan’s business challenges with AI
 
-NRI was formed through the merger of Nomura Research Institute, Japan's first private think tank established in 1965, and Nomura Computer Systems, which introduced Japan's first commercial computers. With nearly 60 years of history, NRI now provides services and solutions across four business segments: Consulting, Financial IT Solutions, Industrial IT Solutions, and IT Platform Services.
+NRI was formed through the merger of Nomura Research Institute, Japan’s first private think tank established in 1965, and Nomura Computer Systems, which introduced Japan’s first commercial computers. With nearly 60 years of history, NRI now provides services and solutions across four business segments: Consulting, Financial IT Solutions, Industrial IT Solutions, and IT Platform Services.
 
 For over 20 years, NRI has been researching and developing natural language processing technologies in Japan for customer-facing services. As the country faces a labor shortage, NRI sees AI as a critical solution for businesses across sectors.
 
-Takahiko Inaba, Head of AI at NRI, explained, "While AI began with basic applications, as we advance to more sophisticated implementations, we believe it can address various challenges faced by our customers. Generative AI can automate routine tasks, enhance productivity of existing workers, and provide 24/7 customer service capabilities—directly supplementing Japan's workforce needs amid the country's growing workforce shortage."
+Takahiko Inaba, Head of AI at NRI, explained, “While AI began with basic applications, as we advance to more sophisticated implementations, we believe it can address various challenges faced by our customers. Generative AI can automate routine tasks, enhance productivity of existing workers, and provide 24/7 customer service capabilities—directly supplementing Japan’s workforce needs amid the country’s growing workforce shortage.”
 
 NRI has developed a three-phase approach to AI adoption. The first phase applies AI to individual business operations, the second phase integrates it with enterprise-wide systems, and the third phase develops AI-native applications. This progression has enabled NRI to deliver measurable improvements to their diverse client base, which includes top Japanese companies across various industries with global operations.
 
@@ -57,9 +57,9 @@ When building AI solutions for clients, NRI evaluates multiple AI models to dete
 
 Through this evaluation process, NRI selected Claude in Amazon Bedrock specialized terminology review system for Japanese business documentation.
 
-NRI was also impressed by Claude's ability to accurately interpret and follow detailed business instructions. Yuki Kitamura, promotion leader in NRI's AI Center of Excellence (AI-CoE), explained, "What surprised us was how Claude could understand and follow complex instructions where other AI models had more trouble."
+NRI was also impressed by Claude’s ability to accurately interpret and follow detailed business instructions. Yuki Kitamura, promotion leader in NRI’s AI Center of Excellence (AI-CoE), explained, “What surprised us was how Claude could understand and follow complex instructions where other AI models had more trouble.”
 
-This capability proved valuable for Japanese business documents with distinctive formats and specialized terminology. Claude's superior comprehension of Japanese language nuances makes it the optimal choice for NRI's document review system, where accuracy in understanding context and business requirements is essential.
+This capability proved valuable for Japanese business documents with distinctive formats and specialized terminology. Claude’s superior comprehension of Japanese language nuances makes it the optimal choice for NRI’s document review system, where accuracy in understanding context and business requirements is essential.
 
 ## Transforming document review with Claude-powered analysis
 
@@ -72,21 +72,21 @@ NRI implemented their Claude solution in Amazon Bedrock, becoming the first comp
 
 ## Delivering measurable business impact across industries
 
-NRI's Claude-powered document review system has transformed workflows across various industries, cutting review times by 50% and creating more time for customer engagement. Their client reports significant work-hour savings and plans to expand the system across more departments.
+NRI’s Claude-powered document review system has transformed workflows across various industries, cutting review times by 50% and creating more time for customer engagement. Their client reports significant work-hour savings and plans to expand the system across more departments.
 
-NRI applies their generative AI expertise across securities, banking, distribution, and manufacturing sectors. This wide implementation helps address Japan's labor shortage while modernizing operations for major clients.
+NRI applies their generative AI expertise across securities, banking, distribution, and manufacturing sectors. This wide implementation helps address Japan’s labor shortage while modernizing operations for major clients.
 
-NRI's internal production innovation has demonstrated AI's concrete value, achieving up to 85% productivity improvements in testing processes and 40% in development processes. These measurable results support NRI's continued AI expansion across Japanese businesses.
+NRI’s internal production innovation has demonstrated AI’s concrete value, achieving up to 85% productivity improvements in testing processes and 40% in development processes. These measurable results support NRI’s continued AI expansion across Japanese businesses.
 
-The company's AI Center of Excellence coordinates knowledge sharing between industry teams, ensuring efficient solution deployment while maintaining security standards. This organizational approach has established NRI as Japan's trusted AI implementation partner, uniquely offering both consulting and system integration services.
+The company’s AI Center of Excellence coordinates knowledge sharing between industry teams, ensuring efficient solution deployment while maintaining security standards. This organizational approach has established NRI as Japan’s trusted AI implementation partner, uniquely offering both consulting and system integration services.
 
 ## Building Japan’s AI powered business future
 
 NRI envisions AI adoption progressing through multiple phases, from basic information systems to business analytics and ultimately company-wide productivity innovations.
 
-The company anticipates specialized AI models for specific industries, including fine-tuned models and AI agents as new business tools. This forward-looking strategy aligns with NRI's philosophy of "creating a sustainable future society" through digital transformation, with AI becoming integral to business operations.
+The company anticipates specialized AI models for specific industries, including fine-tuned models and AI agents as new business tools. This forward-looking strategy aligns with NRI’s philosophy of “creating a sustainable future society” through digital transformation, with AI becoming integral to business operations.
 
-"I personally love Claude. It's my favorite AI model," said Kitamura. "I'm excited to show Japanese companies how to use it in their businesses." Through their partnership with Anthropic and AWS, NRI is transforming Japan's business landscape, turning AI from a technological novelty into an essential driver of the country's economic future.
+“I personally love Claude. It’s my favorite AI model,” said Kitamura. “I’m excited to show Japanese companies how to use it in their businesses.” Through their partnership with Anthropic and AWS, NRI is transforming Japan’s business landscape, turning AI from a technological novelty into an essential driver of the country’s economic future.
 
 ## Related stories
 
@@ -111,7 +111,8 @@ The company anticipates specialized AI models for specific industries, including
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -129,12 +130,12 @@ The company anticipates specialized AI models for specific industries, including
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -167,7 +168,7 @@ The company anticipates specialized AI models for specific industries, including
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -185,6 +186,7 @@ The company anticipates specialized AI models for specific industries, including
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -200,7 +202,7 @@ The company anticipates specialized AI models for specific industries, including
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -235,7 +237,8 @@ The company anticipates specialized AI models for specific industries, including
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -253,12 +256,12 @@ The company anticipates specialized AI models for specific industries, including
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -291,7 +294,7 @@ The company anticipates specialized AI models for specific industries, including
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -309,6 +312,7 @@ The company anticipates specialized AI models for specific industries, including
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -324,7 +328,7 @@ The company anticipates specialized AI models for specific industries, including
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,11 +2,11 @@
 title: "Jamf Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/jamf-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:07Z"
+fetched_at: "2026-10-23T06:29:40Z"
 tags: ["case-studies", "cli", "enterprise", "security"]
 ---
 
-# How Jamf's engineering team turns structured workflows into interactive tools with Cowork
+# How Jamf’s engineering team turns structured workflows into interactive tools with Cowork
 
 [Try Claude](https://claude.ai)
 
@@ -36,51 +36,51 @@ Give Claude access to your local files and let it complete tasks autonomously. A
 
 [Read more](../15-Claude-AI-Features/product-cowork.md)
 
-[Jamf](https://www.jamf.com/) manages and secures Apple devices for more than 70,000 customers worldwide. The company recently rolled out Claude Enterprise across all 16 departments. Then the engineering team found Cowork and started replacing spreadsheets and checklists with guided, reusable workflows. Nick Benyo, Software Engineer on Jamf's Enterprise AI and Automation team, sat down with Anthropic to discuss how the team is using Cowork, what surprised them about adoption, and where they see the most untapped potential. The following conversation has been edited for length and clarity.
+[Jamf](https://www.jamf.com/) manages and secures Apple devices for more than 70,000 customers worldwide. The company recently rolled out Claude Enterprise across all 16 departments. Then the engineering team found Cowork and started replacing spreadsheets and checklists with guided, reusable workflows. Nick Benyo, Software Engineer on Jamf’s Enterprise AI and Automation team, sat down with Anthropic to discuss how the team is using Cowork, what surprised them about adoption, and where they see the most untapped potential. The following conversation has been edited for length and clarity.
 
 ## What made Cowork click for your team?
 
-**Nick Benyo:** It stopped feeling like a chatbot and started feeling like a lightweight app framework. It changed how we thought about what we could build. We saw that a Claude skill could show a visible checklist tracking progress through a multi-step process, then use the ask-question feature to pause and wait for real input. And MCP integrations show up almost like a heads-up display. Each of those pieces on its own is useful, but together they give you structure, interactivity, and live context in one place. And anything you build is reusable by default. You're not writing a one-off script, you're building a tool anyone on the team can pick up and run.
+**Nick Benyo:** It stopped feeling like a chatbot and started feeling like a lightweight app framework. It changed how we thought about what we could build. We saw that a Claude skill could show a visible checklist tracking progress through a multi-step process, then use the ask-question feature to pause and wait for real input. And MCP integrations show up almost like a heads-up display. Each of those pieces on its own is useful, but together they give you structure, interactivity, and live context in one place. And anything you build is reusable by default. You’re not writing a one-off script, you’re building a tool anyone on the team can pick up and run.
 
 ## Has adoption spread beyond engineering?
 
-**Nick Benyo:** The biggest surprise is that it's not engineers driving the broadest adoption. People across the org are using Cowork for data blending, analysis, and dashboard building. Bespoke dashboarding has been huge. Tasks that previously required a BI tool or an engineer's help, people are now doing themselves in minutes. Nobody had to teach them how to write a skill or explain what an MCP server is. The barrier to building isn't technical skill, it's just knowing what you want and making sense of what you're getting back. Once people realized that, adoption took care of itself.
+**Nick Benyo:** The biggest surprise is that it’s not engineers driving the broadest adoption. People across the org are using Cowork for data blending, analysis, and dashboard building. Bespoke dashboarding has been huge. Tasks that previously required a BI tool or an engineer’s help, people are now doing themselves in minutes. Nobody had to teach them how to write a skill or explain what an MCP server is. The barrier to building isn’t technical skill, it’s just knowing what you want and making sense of what you’re getting back. Once people realized that, adoption took care of itself.
 
-## Walk us through a specific skill you've built.
+## Walk us through a specific skill you’ve built.
 
-**Nick Benyo:** Our engineering team has a performance review spreadsheet that covers seven areas across levels from Associate to Principal. Depending on your role, some competencies don't apply. Engineers doing self-evaluations had to navigate all of that on their own with limited guidance on what a good answer looks like. Many people found it intimidating.
+**Nick Benyo:** Our engineering team has a performance review spreadsheet that covers seven areas across levels from Associate to Principal. Depending on your role, some competencies don’t apply. Engineers doing self-evaluations had to navigate all of that on their own with limited guidance on what a good answer looks like. Many people found it intimidating.
 
-We built a skill that turns that spreadsheet into a guided conversation. It asks your name, level, and role type, then builds a personalized checklist of competencies to cover. From there it works through each one: asks about a specific behavior, listens to your answer, then pushes for a concrete example. In the old process, someone might write "I do thorough code reviews" and call it done. The skill won't let you off the hook: what review, what feedback did you give, what changed because of it? If you get stuck, it can pull up your recently closed Jira tickets to jog your memory.
+We built a skill that turns that spreadsheet into a guided conversation. It asks your name, level, and role type, then builds a personalized checklist of competencies to cover. From there it works through each one: asks about a specific behavior, listens to your answer, then pushes for a concrete example. In the old process, someone might write “I do thorough code reviews” and call it done. The skill won’t let you off the hook: what review, what feedback did you give, what changed because of it? If you get stuck, it can pull up your recently closed Jira tickets to jog your memory.
 
 A typical session runs 60 to 90 minutes with a visible checklist tracking progress. At the end it generates a file you can review and paste back into the original spreadsheet and a summary report with a level assessment and development plan.
 
 ## How long did that take to build?
 
-**Nick Benyo:** Under 45 minutes. At a previous employer, something comparable was a full team and three months of build time. You're talking about a conversational UI with branching logic, role-based filtering, Jira integration, progress tracking, and structured file export. Testing was just as fast. I told the skill to sample a few questions from each competency instead of running the full set and it adjusted on the fly. No code change, no redeployment. The test framework was up and running in a single prompt.
+**Nick Benyo:** Under 45 minutes. At a previous employer, something comparable was a full team and three months of build time. You’re talking about a conversational UI with branching logic, role-based filtering, Jira integration, progress tracking, and structured file export. Testing was just as fast. I told the skill to sample a few questions from each competency instead of running the full set and it adjusted on the fly. No code change, no redeployment. The test framework was up and running in a single prompt.
 
 ## How does the quality compare to the old process?
 
-**Nick Benyo:** Before this, engineers either rushed through it or were overwhelmed and avoided filling it out entirely. The results were inconsistent and managers had to work with whatever they got. When I went through the evaluation myself, the skill reframed something I said about my own work and I almost typed back "I feel so seen right now." The engineer walks away feeling like they had a real conversation instead of the painfully awkward self-promotion vibe of a self-evaluation.
+**Nick Benyo:** Before this, engineers either rushed through it or were overwhelmed and avoided filling it out entirely. The results were inconsistent and managers had to work with whatever they got. When I went through the evaluation myself, the skill reframed something I said about my own work and I almost typed back “I feel so seen right now.” The engineer walks away feeling like they had a real conversation instead of the painfully awkward self-promotion vibe of a self-evaluation.
 
-## Are there other workflows you've brought into Cowork?
+## Are there other workflows you’ve brought into Cowork?
 
-**Nick Benyo:** The software vendor review skill is another good example. It's a structured 12-question review with clear steps, but the startup cost of manually researching a vendor's capabilities meant reviews were often late. The skill researches the vendor, drafts answers, and walks the reviewer through each one for approval.
+**Nick Benyo:** The software vendor review skill is another good example. It’s a structured 12-question review with clear steps, but the startup cost of manually researching a vendor’s capabilities meant reviews were often late. The skill researches the vendor, drafts answers, and walks the reviewer through each one for approval.
 
-We're also looking at plugins as a way to put guardrails around how data gets queried. A plugin is a bundle of related skills and configurations that ships as a unit. When a skill needs data, it shouldn't have to know whether to hit a live API or a warehouse. Plugins can set those rules through the MCPs they include and the logic in their skills. A plugin might route to the data warehouse first for anything historical or aggregated, and only reach out to live sources when the request needs real-time data. That keeps API load down, keeps responses fast, and means the person using the skill never has to think about where the data came from.
+We’re also looking at plugins as a way to put guardrails around how data gets queried. A plugin is a bundle of related skills and configurations that ships as a unit. When a skill needs data, it shouldn’t have to know whether to hit a live API or a warehouse. Plugins can set those rules through the MCPs they include and the logic in their skills. A plugin might route to the data warehouse first for anything historical or aggregated, and only reach out to live sources when the request needs real-time data. That keeps API load down, keeps responses fast, and means the person using the skill never has to think about where the data came from.
 
-The human is still making the decisions. Cowork just makes sure the process doesn't stall or come back with the wrong data.
+The human is still making the decisions. Cowork just makes sure the process doesn’t stall or come back with the wrong data.
 
 ## Where do you see the most untapped potential?
 
-**Nick Benyo:** Structured workflows are the big opportunity. I've worked with teams that have full React webapps dedicated to provisioning resources and spinning up pipelines. There's usually an entire team building and maintaining those. That's a natural fit for Cowork, and a stronger case than the evaluation skill, because those React workflows are rigid. When something goes wrong or a step doesn't apply, they break. Cowork is adaptive by default.
+**Nick Benyo:** Structured workflows are the big opportunity. I’ve worked with teams that have full React webapps dedicated to provisioning resources and spinning up pipelines. There’s usually an entire team building and maintaining those. That’s a natural fit for Cowork, and a stronger case than the evaluation skill, because those React workflows are rigid. When something goes wrong or a step doesn’t apply, they break. Cowork is adaptive by default.
 
-The most exciting piece is shared read/write between users. So far, most of what we've done is read-heavy. But we're exploring a skill that gives engineers a guided template to workshop ideas, walk through feasibility, then write the output to a persistence layer and use similarity search to connect them with others working on something related. Right now, those connections happen by accident. Building discovery into the workflow itself is where we think the real leverage is.
+The most exciting piece is shared read/write between users. So far, most of what we’ve done is read-heavy. But we’re exploring a skill that gives engineers a guided template to workshop ideas, walk through feasibility, then write the output to a persistence layer and use similarity search to connect them with others working on something related. Right now, those connections happen by accident. Building discovery into the workflow itself is where we think the real leverage is.
 
 ## What advice would you give another team getting started with Cowork?
 
 **Nick Benyo:** Lean into the interactive elements. The task list, the ask-question feature, the MCP calls visible on the side. Once you start thinking of Cowork as a canvas with interactive elements you can fill, the use cases become obvious. Look for high-value knowledge work that has structure: a checklist to get through, inputs to collect, data to pull in, outputs to produce.
 
-Don't overthink the first skill. Pick a workflow that's annoying, structured, and repeatable, and build it. The engineering evaluation took 45 minutes. Once people saw what came out of that, they started finding their own use cases without being asked.
+Don’t overthink the first skill. Pick a workflow that’s annoying, structured, and repeatable, and build it. The engineering evaluation took 45 minutes. Once people saw what came out of that, they started finding their own use cases without being asked.
 
 Claude Enterprise, now available self-serve
 
@@ -111,7 +111,8 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -129,12 +130,12 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -167,7 +168,7 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -185,6 +186,7 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -200,7 +202,7 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -235,7 +237,8 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -253,12 +256,12 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -291,7 +294,7 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -309,6 +312,7 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -324,7 +328,7 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

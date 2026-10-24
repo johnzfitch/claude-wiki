@@ -2,7 +2,7 @@
 title: "Doctolib Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/doctolib"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:59Z"
+fetched_at: "2026-10-23T06:29:36Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -42,9 +42,9 @@ Since 2013, Doctolib has been transforming healthcare across Europe, serving 420
 
 ## The problem
 
-Doctolib's engineering team faced a productivity paradox. As Europe's leading healthcare technology Operating System serving 420,000 health professionals and 90 million patients, the company needed to ship features faster while maintaining reliability for critical healthcare workflows. But administrative tasks consumed significant engineering time—writing documentation, creating tests, reviewing pull requests, and addressing technical debt pulled developers away from solving complex healthcare challenges.
+Doctolib’s engineering team faced a productivity paradox. As Europe’s leading healthcare technology Operating System serving 420,000 health professionals and 90 million patients, the company needed to ship features faster while maintaining reliability for critical healthcare workflows. But administrative tasks consumed significant engineering time—writing documentation, creating tests, reviewing pull requests, and addressing technical debt pulled developers away from solving complex healthcare challenges.
 
-"Engineers were spending valuable time on repeatable tasks instead of solving complex healthcare challenges," said Julien Tanay, Staff Engineer leading Doctolib's AI tooling program alongside Platform Product Manager Thomas Bentkowski.
+“Engineers were spending valuable time on repeatable tasks instead of solving complex healthcare challenges,” said Julien Tanay, Staff Engineer leading Doctolib’s AI tooling program alongside Platform Product Manager Thomas Bentkowski.
 
 The team needed to address three specific challenges: First, new engineers took weeks to contribute meaningfully to unfamiliar parts of the codebase. Second, pull request reviews created bottlenecks, with engineers waiting hours or days for teammate availability. Third, technical debt accumulated faster than the team could address it—migrations and documentation updates fell behind as engineers prioritized feature work.
 
@@ -52,17 +52,17 @@ The team needed to address three specific challenges: First, new engineers took 
 
 After piloting Claude Code with 30 engineers and seeing promising productivity gains, Doctolib rolled out the tool to their entire development team.
 
-Engineers could self-onboard in under five minutes across any IDE—VSCode, JetBrains, or CLI-based workflows. The team chose Claude Code specifically for its documentation, hands-on training courses through Anthropic's Skilljar platform, and flexible features including slash commands, subagents, and plan mode. The license-free, pay-as-you-go billing model allowed them to scale adoption without upfront commitments.
+Engineers could self-onboard in under five minutes across any IDE—VSCode, JetBrains, or CLI-based workflows. The team chose Claude Code specifically for its documentation, hands-on training courses through Anthropic’s Skilljar platform, and flexible features including slash commands, subagents, and plan mode. The license-free, pay-as-you-go billing model allowed them to scale adoption without upfront commitments.
 
 ## Doctolib creates reusable AI workflows for common development tasks
 
-Doctolib's platform team created a centralized repository of prompts, custom commands, and subagents that all developers pull during their initial Claude Code setup. Every engineer starts with proven, reusable workflows on day one—writing documentation, creating tests, reviewing code, and debugging common issues.
+Doctolib’s platform team created a centralized repository of prompts, custom commands, and subagents that all developers pull during their initial Claude Code setup. Every engineer starts with proven, reusable workflows on day one—writing documentation, creating tests, reviewing code, and debugging common issues.
 
-"Engineers can now start contributing to unfamiliar codebases immediately," said Tanay. "Instead of waiting weeks to understand a new service or library, they start a conversation with the code and begin making changes within days."
+“Engineers can now start contributing to unfamiliar codebases immediately,” said Tanay. “Instead of waiting weeks to understand a new service or library, they start a conversation with the code and begin making changes within days.”
 
-The team embedded Claude Code into their daily development workflow across several critical areas. Engineers write documentation and tests, review pull requests, and address technical debt through repeatable prompts for migrations and debugging. The tool's headless mode runs directly in their CI pipeline, automatically opening pull requests for routine maintenance tasks.
+The team embedded Claude Code into their daily development workflow across several critical areas. Engineers write documentation and tests, review pull requests, and address technical debt through repeatable prompts for migrations and debugging. The tool’s headless mode runs directly in their CI pipeline, automatically opening pull requests for routine maintenance tasks.
 
-One project demonstrated the velocity gains: replacing the entire legacy visual regression testing infrastructure. "We completed the migration in hours, not weeks," said Tanay. "It's now in production handling all our screenshot comparisons."
+One project demonstrated the velocity gains: replacing the entire legacy visual regression testing infrastructure. “We completed the migration in hours, not weeks,” said Tanay. “It’s now in production handling all our screenshot comparisons.”
 
 The automated documentation workflow changed their maintenance burden. Every code change triggers a CI job that updates technical documentation automatically. This documentation-as-code approach keeps their technical docs current with very rare intervention.
 
@@ -70,15 +70,15 @@ Pull request reviews, previously a bottleneck requiring hours or days of wait ti
 
 ## The outcome
 
-Claude Code has become the most-used AI tool on Doctolib's engineering team. Engineers self-onboard to the platform and start seeing productivity gains within minutes.
+Claude Code has become the most-used AI tool on Doctolib’s engineering team. Engineers self-onboard to the platform and start seeing productivity gains within minutes.
 
 Teams now self-onboard to new projects on unfamiliar technology stacks—reducing ramp-up time from weeks to days.
 
-"Engineers can now contribute to areas outside their expertise much faster," said Tanay. "This fundamentally changes our development velocity."
+“Engineers can now contribute to areas outside their expertise much faster,” said Tanay. “This fundamentally changes our development velocity.”
 
-Doctolib plans to expand autonomous coding agents in Q1, moving from tickets directly to pull requests through GitHub Actions. They're also developing tailored AI-assisted reviews for triage and code quality, and implementing specs-driven development with Claude.
+Doctolib plans to expand autonomous coding agents in Q1, moving from tickets directly to pull requests through GitHub Actions. They’re also developing tailored AI-assisted reviews for triage and code quality, and implementing specs-driven development with Claude.
 
-"We want to help shape the roadmap of Claude Code and explore what's possible with autonomous agents," said Tanay.
+“We want to help shape the roadmap of Claude Code and explore what’s possible with autonomous agents,” said Tanay.
 
 ## Related stories
 
@@ -103,7 +103,8 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -121,12 +122,12 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -159,7 +160,7 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -177,6 +178,7 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -192,7 +194,7 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -227,7 +229,8 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -245,12 +248,12 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -283,7 +286,7 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -301,6 +304,7 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -316,7 +320,7 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

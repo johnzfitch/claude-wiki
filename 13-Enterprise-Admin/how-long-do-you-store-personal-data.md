@@ -33,7 +33,7 @@ You control your conversations and can [delete your chats](https://privacy.anthr
 
 - Deleted from our back-end storage systems within 30 days
 
-Incognito chats are automatically deleted within 30 days unless flagged as a Usage Policy violation. [Learn more](https://support.anthropic.com/en/articles/12260368-using-incognito-chats) about Incognito chats for your organization.
+Incognito chats are automatically deleted within 30 days unless flagged as a Usage Policy violation. [Learn more](../15-Claude-AI-Features/using-incognito-chats.md) about Incognito chats for your organization.
 
 ## **Covered Models**
 

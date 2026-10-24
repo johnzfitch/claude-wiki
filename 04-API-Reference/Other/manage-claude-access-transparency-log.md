@@ -2,7 +2,7 @@
 title: "Verify Access Transparency events with the transparency log - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/access-transparency-log"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-07T06:24:06Z"
+fetched_at: "2026-10-22T06:29:47Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Faccess-transparency-log)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Faccess-transparency-log)
 
 
 
@@ -32,11 +32,11 @@ tags: ["api"]
 
 Organization
 
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
+[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)[Organization webhooks (beta)](manage-claude-organization-webhooks.md)[User profiles](manage-claude-user-profiles.md)[Verification Portal links](manage-claude-user-profiles-verification-portal.md)
 
 Authentication
 
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
+[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF with the Admin API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
 
 Identity providers
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -60,9 +62,13 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Access Transparency
+
+Verify Access Transparency events with the transparency log
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
 
 # Verify Access Transparency events with the transparency log
 
@@ -75,10 +81,6 @@ Use signed checkpoints and Merkle proofs from the Compliance API to verify that 
 Copy page
 
 
-
-Verify Access Transparency events with the transparency log
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
 
 Learn how to cryptographically verify that no [Access Transparency](manage-claude-access-transparency.md) event was removed or altered after it was committed to your organization's transparency log.
 
@@ -94,9 +96,9 @@ The transparency log is provided for your information. It is not designed or cer
 
 A transparency log is a technique for making a record tamper-evident. Entries are only ever appended. Each time the log grows, its operator signs a short statement, called a checkpoint, that commits to every entry so far through a Merkle tree hash. Anyone who keeps a checkpoint can later demand proof that the current log still contains everything that checkpoint covered, unchanged and in the same order. Removing or rewriting an entry therefore cannot go unnoticed by a verifier who kept a checkpoint that covered that entry. Certificate Transparency and the Go module checksum database are built on the same technique. [C2SP tlog-tiles](https://c2sp.org/tlog-tiles) is an open specification for serving such a log as signed checkpoints plus static, cacheable tiles of hashes and entries, so that clients can fetch the hashes and compute every proof themselves.
 
-When Access Transparency is enabled, Anthropic maintains a transparency log for your organization. It is an append-only, cryptographically signed record of Access Transparency events (`anthropic_access` and `cmek_preserve`). Each such event recorded for your organization after the log was created is appended to it. The log follows the C2SP tlog-tiles format, so tooling built for that standard understands its checkpoints, tiles, and proofs.
+When Access Transparency is enabled, Anthropic maintains a transparency log for your organization. It is an append-only, cryptographically signed record of Access Transparency events (`anthropic_access` and `cmek_preserve`). Each such event recorded for your organization after the log was created is appended to it. The log follows the C2SP tlog-tiles format, so tooling built for that standard can parse its checkpoints, tiles, and proofs.
 
-- **One log per organization.** Each organization's log has a fixed origin string: `axt.anthropic.com/<your organization UUID>`. The origin never changes for the life of the organization.
+- **One log for each organization.** Each organization's log has a fixed origin string: `axt.anthropic.com/<your organization UUID>`. The origin never changes for the life of the organization.
 - **Every new event becomes a leaf.** When an Access Transparency event becomes eligible to appear on your Activity Feed, it is first appended to your log as a leaf, and only then served on the feed. A leaf is a deterministic serialization of the event's documented fields. The event on your feed carries `transparency_log_leaf_index`, its zero-based position in your log.
 - **Checkpoints commit to the whole history.** The log is a Merkle tree. Whenever it grows, Anthropic publishes a signed checkpoint: a short text document stating the log's origin, its current size, and the root hash that commits to every leaf. Each checkpoint carries exactly one signature from the log's signing key.
 - **Two proofs follow.** An inclusion proof shows that a specific event is present at its position under a checkpoint. A consistency proof shows that a later checkpoint is an append-only extension of an earlier one you saved, so nothing between them was removed or changed.
@@ -122,12 +124,12 @@ When Access Transparency is enabled, Anthropic maintains a transparency log for 
 You need:
 
 - A Compliance Access Key with the `read:compliance_activities` scope, the same key and scope you use for the [Activity Feed](manage-claude-compliance-activity-feed.md). A parent-organization key can read each enrolled child organization's log by naming the child organization on every request.
-- Your organization's UUID. Find it in the Claude Console under **Settings \> Organization**. It is the same value the Activity Feed serves as `organization_uuid`, but take it from the Console. This value is what makes a checkpoint yours, so it must not come from the API you are verifying. You derive your log's origin from it as `axt.anthropic.com/<organization UUID>`. Derive this string yourself. Do not read it from an API response.
+- Your organization's UUID. Find it on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console. It is the same value the Activity Feed serves as `organization_uuid`, but take it from the Console. This value is what makes a checkpoint yours, so it must not come from the API you are verifying. You derive your log's origin from it as `axt.anthropic.com/<organization UUID>`. Derive this string yourself. Do not read it from an API response.
 - Somewhere durable to keep the last checkpoint you verified. That saved checkpoint is what turns "the log is consistent today" into "the log has been consistent since you started watching."
 
 ## Timing
 
-- **Events:** Access Transparency events appear on your Activity Feed within two business days of the access. An event enters the log only once it is eligible to be served, so the log never reveals an event early. Because the log is written before the feed serves the event, an entry can briefly appear in the log before its event appears on your feed. That gap is not a discrepancy.
+- **Events:** Access Transparency events appear on your Activity Feed within 2 business days of the access. An event enters the log only once it is eligible to be served, so the log never reveals an event early. Because the log is written before the feed serves the event, an entry can briefly appear in the log before its event appears on your feed. That gap is not a discrepancy.
 - **Checkpoints:** A new checkpoint is published whenever your log grows.
 - **Inclusion proofs:** A proof for a newly served event is available once a checkpoint covering the event's position is published, normally very shortly after the event appears. If you request one sooner, you receive a `404` and retry after a short delay.
 - **Verification cadence:** Run your verification at least daily. Hourly is reasonable.
@@ -170,7 +172,7 @@ A `404` means there is no log this key can read. An organization outside the key
 
 ### Errors
 
-Errors use the standard Compliance API JSON error envelope on every endpoint, including the text and binary ones. See [Errors](manage-claude-compliance-errors.md) for the envelope and the shared error types.
+Errors use the standard Compliance API JSON error envelope on every endpoint, including the text and binary ones. See [Handle Compliance API errors](manage-claude-compliance-errors.md) for the envelope and the shared error types.
 
 | Status | Meaning on this surface                                                                                                                                                           |
 |:-------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -192,8 +194,8 @@ Responses are cacheable only by the requesting client. `Cache-Control` always in
 ```python
 curl --fail-with-body -sS \
   "https://api.anthropic.com/v1/compliance/transparency_log/checkpoint" \
-  --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  --header "anthropic-version: 2023-06-01"
+  -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
+  -H "anthropic-version: 2023-06-01"
 ```
 
 
@@ -210,7 +212,7 @@ C6C4HzGRqDNlbu54LWCvpDX0NcB5DRTmLcjM4u5vWUI=
 
 
 
-- The first four bytes of the decoded signature value are the signing key's `key_hash`, which tells you which entry in the [verifier key set](#read-the-verifier-keys) to verify with. The remaining bytes are an ASN.1 DER ECDSA P-256 signature over the SHA-256 of the note body: every byte before the blank line, including the body's trailing newline.
+- The first 4 bytes of the decoded signature value are the signing key's `key_hash`, which tells you which entry in the [verifier key set](#read-the-verifier-keys) to verify with. The remaining bytes are an ASN.1 DER ECDSA P-256 signature over the SHA-256 of the note body: every byte before the blank line, including the body's trailing newline.
 - A checkpoint can carry additional lines after the root hash. Ignore lines you do not understand. They are covered by the signature.
 - Ignore a signature line whose name is not your origin or whose key hash you do not hold.
 - Never cache a checkpoint. A stale one hides the log's current size, so newly served events look uncovered.
@@ -222,13 +224,13 @@ C6C4HzGRqDNlbu54LWCvpDX0NcB5DRTmLcjM4u5vWUI=
 ```python
 curl --fail-with-body -sS \
   "https://api.anthropic.com/v1/compliance/transparency_log/keys" \
-  --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  --header "anthropic-version: 2023-06-01"
+  -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
+  -H "anthropic-version: 2023-06-01"
 ```
 
 
 
-```python
+``` inline-block
 {
   "type": "transparency_log_keys",
   "origin": "axt.anthropic.com/25f6429a-3293-49bf-afed-cb312911554b",
@@ -252,12 +254,12 @@ curl --fail-with-body -sS \
 | `origin`                  | string | The origin line every checkpoint of this log carries. Informational: compare checkpoints against the origin you derive yourself, not against this field                                                                                                                                                  |
 | `log_keys`                | array  | The key that signs new checkpoints first, then every other key the log serves, newest first. Never empty                                                                                                                                                                                                 |
 | `log_keys[].verifier_key` | string | The key as a C2SP note-verifier string, `<origin>+<key_hash>+<base64 key>`, accepted by tlog-tiles tooling that supports ECDSA note keys (for example, the Go `github.com/transparency-dev/formats` module). The base64 part decodes to the algorithm byte `0x02` followed by the DER-encoded public key |
-| `log_keys[].key_hash`     | string | Eight lowercase hex digits. The 4-byte selector that matches this key to a checkpoint's signature line. It is the first four bytes of `fingerprint` and is not an identity                                                                                                                               |
+| `log_keys[].key_hash`     | string | Eight lowercase hex digits. The 4-byte selector that matches this key to a checkpoint's signature line. It is the first 4 bytes of `fingerprint` and is not an identity                                                                                                                                  |
 | `log_keys[].fingerprint`  | string | 64 lowercase hex digits: the SHA-256 of the DER `SubjectPublicKeyInfo`                                                                                                                                                                                                                                   |
 | `log_keys[].algorithm`    | string | The key type, currently `ecdsa_p256_sha256`. Values may be added. Skip a key whose algorithm you do not support                                                                                                                                                                                          |
 | `log_keys[].public_key`   | string | The public key as base64 DER `SubjectPublicKeyInfo`                                                                                                                                                                                                                                                      |
 
-The `key_hash` covers only the key bytes: it is the first four bytes of SHA-256 over the DER `SubjectPublicKeyInfo`, which is the rule the ECDSA note-verifier encoding uses. It is not the name-dependent key ID that the base signed-note format defines for Ed25519 keys, so it does not change with the origin. A valid signature by a key listed in [Published key fingerprints](#published-key-fingerprints) proves the checkpoint came from Anthropic's transparency log service. The origin line inside the signed checkpoint is what binds it to your organization. That is why you compare that line against the origin you derive yourself.
+The `key_hash` covers only the key bytes: it is the first 4 bytes of SHA-256 over the DER `SubjectPublicKeyInfo`, which is the rule the ECDSA note-verifier encoding uses. It is not the name-dependent key ID that the base signed-note format defines for Ed25519 keys, so it does not change with the origin. A valid signature by a key listed in [Published key fingerprints](#published-key-fingerprints) proves the checkpoint came from Anthropic's transparency log service. The origin line inside the signed checkpoint is what binds it to your organization. That is why you compare that line against the origin you derive yourself.
 
 Keys can rotate:
 
@@ -267,7 +269,7 @@ Keys can rotate:
 
 #### Published key fingerprints
 
-Anthropic publishes the fingerprint of every key that signs checkpoints here, outside the API. This lets you check a key you hold locally against a source the serving path cannot alter. The key you hold may come from an earlier `GET /keys` response or from tooling that pins the key.
+Anthropic publishes the fingerprint of every key that signs checkpoints here, outside the API. This lets you check a key you hold locally against a source the serving path cannot alter. The key you hold might come from an earlier `GET /keys` response or from tooling that pins the key.
 
 | Key hash   | SHA-256 fingerprint                                                | Algorithm           | Signing since | Status              |
 |:-----------|:-------------------------------------------------------------------|:--------------------|:--------------|:--------------------|
@@ -275,7 +277,7 @@ Anthropic publishes the fingerprint of every key that signs checkpoints here, ou
 
 A planned rotation is announced on this page at least 30 days before the new key signs its first checkpoint. During that notice period the new key is listed in `log_keys` and in this table with its switch date. Retired keys stay listed with their service dates. A key that does not appear in this table is not legitimate, whatever `GET /keys` returns. Treat a checkpoint that verifies under no listed key as a verification failure, and report it to your Anthropic account representative or [Anthropic support](https://support.claude.com).
 
-[`axt-verify`](#verify-with-axt-verify) carries the current key in each release and never reads a key from the API. Each release carries exactly one key. On the switch date, Anthropic starts signing with the new key and publishes the `axt-verify` release that carries it. On the same date Anthropic re-issues every organization's latest checkpoint under the new key, even for a log that has not grown. Upgrade on the switch date. Running the old release after the switch fails with exit status `1`, and so does running the new release before it. Either failure clears once you run the matching release. A verifier you maintain yourself needs the new fingerprint, with its switch date, added before that date.
+`axt-verify` carries the current key in each release and never reads a key from the API (see [Verify with axt-verify](#verify-with-axt-verify)). Each release carries exactly one key. On the switch date, Anthropic starts signing with the new key and publishes the `axt-verify` release that carries it. On the same date Anthropic re-issues every organization's latest checkpoint under the new key, even for a log that has not grown. Upgrade on the switch date. Running the old release after the switch fails with exit status `1`, and so does running the new release before it. Either failure clears once you run the matching release. A verifier you maintain yourself needs the new fingerprint, with its switch date, added before that date.
 
 ### Fetch an inclusion proof
 
@@ -290,13 +292,13 @@ A planned rotation is announced on this page at least 30 days before the new key
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/transparency_log/inclusion" \
   --data-urlencode "leaf_index=41" \
-  --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  --header "anthropic-version: 2023-06-01"
+  -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
+  -H "anthropic-version: 2023-06-01"
 ```
 
 
 
-```python
+``` inline-block
 {
   "type": "transparency_log_inclusion_proof",
   "leaf_index": 41,
@@ -340,13 +342,13 @@ A `leaf_index` that is missing or is not a non-negative integer returns `400`.
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/transparency_log/consistency" \
   --data-urlencode "from=1180" \
-  --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  --header "anthropic-version: 2023-06-01"
+  -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
+  -H "anthropic-version: 2023-06-01"
 ```
 
 
 
-```python
+``` inline-block
 {
   "type": "transparency_log_consistency_proof",
   "hashes": [
@@ -376,7 +378,7 @@ curl --fail-with-body -sS -G \
 
 `GET /v1/compliance/transparency_log/tile/{level}/{index}`
 
-Returns `application/octet-stream`: concatenated 32-byte SHA-256 hashes, per tlog-tiles. Tile addressing follows tlog-tiles exactly, including the `{level}` and `{index}` path grammar, the `x001/234` index form for large trees, and the partial-tile suffix `.p/{width}`. Hash tiles are the unit from which tlog-tiles clients compute proofs themselves.
+Returns `application/octet-stream`: concatenated 32-byte SHA-256 hashes, as tlog-tiles specifies. Tile addressing follows tlog-tiles exactly, including the `{level}` and `{index}` path grammar, the `x001/234` index form for large trees, and the partial-tile suffix `.p/{width}`. Hash tiles are the unit from which tlog-tiles clients compute proofs themselves.
 
 - Full tiles are immutable and are served with `Cache-Control: private, max-age=604800, immutable`.
 - Partial tiles are superseded as the tree grows and are served with `Cache-Control: private, no-store`. Once a tile fills, a request for its earlier partial form can return `404` even though the full tile exists. Falling back from the partial tile to the full tile is the client's job, as tlog-tiles specifies, and standard clients already do it.
@@ -386,14 +388,14 @@ Returns `application/octet-stream`: concatenated 32-byte SHA-256 hashes, per tlo
 
 `GET /v1/compliance/transparency_log/tile/entries/{index}`
 
-Returns `application/octet-stream`: consecutive leaf entries, each prefixed with its big-endian `uint16` length, per tlog-tiles. Entry bundles contain event plaintext: the [canonical bytes](#how-an-event-becomes-a-leaf) of each Access Transparency event. That is why the whole surface requires the Activity Feed's scope. Addressing, the partial form, caching, and errors are identical to hash tiles.
+Returns `application/octet-stream`: consecutive leaf entries, each prefixed with its big-endian `uint16` length, as tlog-tiles specifies. Entry bundles contain event plaintext: the [canonical bytes](#how-an-event-becomes-a-leaf) of each Access Transparency event. That is why the whole surface requires the Activity Feed's scope. Addressing, the partial form, caching, and errors are identical to hash tiles.
 
 ## The `transparency_log_leaf_index` field on Activity Feed events
 
 `anthropic_access` and `cmek_preserve` events on `GET /v1/compliance/activities` carry `transparency_log_leaf_index`, an integer, whenever the event has a leaf. Other activity types never carry it.
 
 - **The key is absent, not `null`, when the event has no leaf.** A robust verifier treats an absent key and a `null` value the same way.
-- **An event is served without `transparency_log_leaf_index` in only two cases.** The first is while your organization is not enrolled in Access Transparency, that is, before enrollment or between an un-enrollment and a re-enrollment. The second is when the event was recorded before your organization's log was created. For an organization enrolled before the transparency log was introduced, that includes its earlier history. Once your log exists and while you are enrolled, every event is appended to the log before the feed serves it. If a fault prevents the feed from learning the index, the feed delays the event rather than serving it without one. The event is not lost: it is already in the log and appears on the feed, index included, once the fault is remediated. An index-less event is not expected when it is dated after your log was created and falls inside a period when you were enrolled.
+- **An event is served without `transparency_log_leaf_index` in only two cases.** The first is while your organization is not enrolled in Access Transparency, that is, before enrollment or between an un-enrollment and a re-enrollment. The second is when the event was recorded before your organization's log was created. For an organization enrolled before the transparency log was introduced, that includes its earlier history. Once your log exists and while you are enrolled, every event is appended to the log before the feed serves it. If a fault prevents the feed from obtaining the index, the feed delays the event rather than serving it without one. The event is not lost: it is already in the log and appears on the feed, index included, once the fault is remediated. An index-less event is not expected when it is dated after your log was created and falls inside a period when you were enrolled.
 - **A present index is a pointer, not a proof.** Verify inclusion before treating the event as committed in the log. The anomaly worth escalating is a present index whose inclusion proof still cannot be fetched long after a covering checkpoint should have been published.
 - The index is assigned when the event is appended to the log and is not one of the fields that make up the leaf.
 
@@ -420,7 +422,7 @@ The rules:
 
 For example, this access event as the Activity Feed serves it:
 
-```python
+``` block
 {
   "id": "activity_01GPXmAhizavrUuoXNn3tzeA",
   "type": "anthropic_access",
@@ -480,22 +482,22 @@ axt-verify --org 25f6429a-3293-49bf-afed-cb312911554b \
 
 
 
-Each `run` fetches the latest checkpoint and verifies its signature and origin line. It then proves the log is an append-only extension of the checkpoint the previous run saved. Next it pages through the Access Transparency events on your Activity Feed. It starts seven days (by `created_at`) before the newest event the previous run read, so that events listed late or out of order are still picked up. It rebuilds each event's leaf, verifies an inclusion proof for it, and compares any event it verified before against what it recorded then. Finally, it saves the new checkpoint and its progress to the `--state` file, which the next run starts from. Run it at least daily. Hourly is reasonable. With a parent-organization key, run one copy per child organization, each with its own `--org` and `--state` file. Each child organization's UUID also comes from the Claude Console, not from the Compliance API responses you are verifying. Find it on the child organization's **Settings \> Organization** page or in your parent organization's list of organizations in the Console. `axt-verify checkpoint` does only the checkpoint and append-only steps. `axt-verify events FILE` verifies events you already hold, such as an auditor's sample or your own export. It proves that each event in the file is still committed in the log under the current checkpoint. It does not read the feed or touch the state file.
+Each `run` fetches the latest checkpoint and verifies its signature and origin line. It then proves the log is an append-only extension of the checkpoint the previous run saved. Next it pages through the Access Transparency events on your Activity Feed. It starts seven days (by `created_at`) before the newest event the previous run read, so that events listed late or out of order are still picked up. It rebuilds each event's leaf, verifies an inclusion proof for it, and compares any event it verified before against what it recorded then. Finally, it saves the new checkpoint and its progress to the `--state` file, which the next run starts from. Run it at least daily. Hourly is reasonable. With a parent-organization key, run one copy per child organization, each with its own `--org` and `--state` file. Each child organization's UUID also comes from the Claude Console, not from the Compliance API responses you are verifying. To find it, switch to the child organization in the account menu at the bottom of the Console sidebar, then open the [Organization](playground.md) page (`platform.claude.com/settings/organization`). You can also find it in your parent organization's list of organizations in the Console. `axt-verify checkpoint` does only the checkpoint and append-only steps. `axt-verify events FILE` verifies events you already hold, such as an auditor's sample or your own export. It proves that each event in the file is still committed in the log under the current checkpoint. It does not read the feed or touch the state file.
 
-One limit follows from that window: `run` re-reads only the last seven days of events, so it re-checks recently served events (step 7), not your whole history. Keep the events you export (see [Keep your own checkpoint archive](#keep-your-own-checkpoint-archive)). `axt-verify events FILE` proves at any later date that those copies are still committed in the log, but it does not re-read the feed. To detect an older event removed from or rewritten on the feed, re-export that range from the Activity Feed and compare it with the copies you kept. You can also verify the re-export itself with `axt-verify events FILE`. The seven-day overlap is longer than the feed's two-business-day delivery time, so a late-arriving event still falls inside a later run's window. `--overlap` changes the duration if you need to.
+One limit follows from that window: `run` re-reads only the last 7 days of events, so it re-checks recently served events (step 7), not your whole history. Keep the events you export (see [Keep your own checkpoint archive](#keep-your-own-checkpoint-archive)). `axt-verify events FILE` proves at any later date that those copies are still committed in the log, but it does not re-read the feed. To detect an older event removed from or rewritten on the feed, re-export that range from the Activity Feed and compare it with the copies you kept. You can also verify the re-export itself with `axt-verify events FILE`. The 7-day overlap is longer than the feed's 2-business-day delivery time, so a late-arriving event still falls inside a later run's window. `--overlap` changes the duration if you need to.
 
 If you need your own implementation instead, follow the preceding checklist with a tlog-tiles library that supports ECDSA note keys.
 
 ### Interpret the result
 
-`axt-verify` prints your origin, the tree size and root hash of the checkpoint it verified, the tree size the append-only check started from, and a count of events by outcome. Pass `--json` to get the same report as one JSON object per line. Each event has one of four outcomes:
+`axt-verify` prints your origin, the tree size and root hash of the checkpoint it verified, the tree size the append-only check started from, and a count of events by outcome. Pass `--json` to get the same report as one JSON object on each line. Each event has one of four outcomes:
 
 - **Verified:** the leaf rebuilt from the served event is committed at the event's index in the signed log.
 - **Pending:** the event's index is beyond the latest published checkpoint. This is normal for a short time after an event appears. In `run`, `axt-verify` remembers the event, verifies it on a later run once a checkpoint covers it, and fails it if that takes longer than 24 hours. `events FILE` has no later run to settle it, so it waits up to a minute for a covering checkpoint to be published. If none arrives, it reports the event as not yet covered and ends with exit status `3`. Run it again later. If `events FILE` reports the same event as not yet covered on two runs at least a day apart, treat it as a verification failure and escalate as for exit status `1`.
 - **Not logged:** the event was served without an index. An event is served without `transparency_log_leaf_index` only while your organization is not enrolled in Access Transparency, or when it was recorded before your organization's log was created (see [The `transparency_log_leaf_index` field on Activity Feed events](#the-transparency-log-leaf-index-field-on-activity-feed-events)). `axt-verify` reports such events as not logged and does not fail the run on them. An index-less event is not expected when it is dated after your log was created and falls inside a period when you were enrolled. Review the not-logged list in the run's summary or `--json` output rather than relying on the exit status alone.
 - **Failed:** see exit status `1`.
 
-The exit status tells your scheduler what happened:
+The exit status tells your scheduler what occurred:
 
 - **`0`:** Nothing failed. Not-logged events are reported, not failed, and so are pending events in `run`.
 
@@ -511,7 +513,7 @@ The exit status tells your scheduler what happened:
   - An event still pending 24 hours after the run first saw it.
   - A refused inclusion proof (`400`, `401`, or `403`) for an event the feed served you.
   - An inclusion proof returned for a different `leaf_index` from the one requested.
-  - In `events FILE`, an event at an index the latest checkpoint already covered when the check began, for which no inclusion proof is served before the wait runs out.
+  - In `events FILE`, an event at an index the latest checkpoint already covered when the check started, for which no inclusion proof is served before the wait runs out.
   - An event whose `organization_uuid` is not the organization UUID you passed with `--org`. When a parent organization runs `events FILE` on an export that covers several child organizations, every other organization's event fails this way, so split the export by organization first and verify each part with its own `--org`.
   - The same activity `id` at two different indices, or twice at one index with different content, within one run or one `events FILE` input.
   - An event whose leaf cannot be rebuilt: for example, a documented field that is not a string, a field name that appears twice, or a `type` that is missing or is an unrecognized variant of an Access Transparency type. `events FILE` skips rows of other activity types and does not fail them.
@@ -530,7 +532,7 @@ The exit status tells your scheduler what happened:
   - An unexpected response.
   - A state or `--save` file that could not be written.
 
-  An exit status `3` with `404` responses is expected until Anthropic has recorded a first Access Transparency event for your organization, because every transparency log endpoint returns `404` until that event creates the log. Escalate if the transparency log endpoints still return `404` more than a few days after your Activity Feed first shows an Access Transparency event, whether or not that event carries a `transparency_log_leaf_index`. That combination is not expected. Once a run has succeeded, escalate an exit status `3` that persists.
+  An exit status `3` with `404` responses is expected until Anthropic has recorded a first Access Transparency event for your organization, because every transparency log endpoint returns `404` until that event creates the log. Escalate if the transparency log endpoints still return `404` more than a few days after your Activity Feed first shows an Access Transparency event, regardless of whether that event carries a `transparency_log_leaf_index`. That combination is not expected. Once a run has succeeded, escalate an exit status `3` that persists.
 
 ### Keep your own checkpoint archive
 
@@ -560,14 +562,14 @@ Nothing is deleted. Your log stays readable and verifiable through the same endp
 
 ### Can I verify all of my child organizations with one key?
 
-Yes. A parent-organization key reads any enrolled child organization's log by passing `organization_id`. Each child organization has its own log, origin, and saved checkpoint. Run one verification per child organization, each with its own state.
+Yes. A parent-organization key reads any enrolled child organization's log by passing `organization_id`. Each child organization has its own log, origin, and saved checkpoint. Run a separate verification, with its own state, for each child organization.
 
 ## Related resources
 
 - [Access Transparency](manage-claude-access-transparency.md)
 - [Query the Activity Feed](manage-claude-compliance-activity-feed.md)
 - [Compliance API overview](manage-claude-compliance-api.md)
-- [Errors](manage-claude-compliance-errors.md)
+- [Handle Compliance API errors](manage-claude-compliance-errors.md)
 - [axt-verify](https://github.com/anthropics/axt-verify), Anthropic's open-source verifier for the transparency log
 - [C2SP tlog-tiles](https://c2sp.org/tlog-tiles) and [C2SP signed note](https://c2sp.org/signed-note), the wire formats for tiles, entry bundles, and checkpoints
 - [RFC 9162](https://www.rfc-editor.org/rfc/rfc9162), the Merkle tree, inclusion proof, and consistency proof algorithms

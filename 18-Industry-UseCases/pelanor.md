@@ -2,7 +2,7 @@
 title: "Pelanor Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/pelanor"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:55Z"
+fetched_at: "2026-10-23T06:29:45Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -42,7 +42,7 @@ Pelanor, an AI-powered FinOps platform, uses Claude to help enterprises instantl
 
 ## When cloud costs become impossible to understand
 
-Enterprise cloud costs have become a black box. Companies spend millions on shared Kubernetes clusters, databases, and AI workloads, but can't figure out which teams, products, or customers are actually driving the costs. Traditional FinOps tools just show billing summaries—they can't connect a \$50,000 spike to the specific feature launch or customer surge that caused it.
+Enterprise cloud costs have become a black box. Companies spend millions on shared Kubernetes clusters, databases, and AI workloads, but can’t figure out which teams, products, or customers are actually driving the costs. Traditional FinOps tools just show billing summaries—they can’t connect a \$50,000 spike to the specific feature launch or customer surge that caused it.
 
 This leaves finance teams making budget decisions blind, engineers deploying code without understanding cost impact, and executives unable to tie infrastructure spending to business outcomes. As AI reshapes cloud usage and infrastructure becomes more complex, manual cost allocation becomes impossible.
 
@@ -54,19 +54,19 @@ The team has integrated Claude throughout their operations. Since launch, they h
 
 ## Turning cost data into conversational insights
 
-Pelanor built their platform to make Claude an expert in each customer's specific cloud environment. Instead of just showing billing data, they map the relationships between infrastructure costs and business activities—connecting spending to applications, features, teams, and even individual users.
+Pelanor built their platform to make Claude an expert in each customer’s specific cloud environment. Instead of just showing billing data, they map the relationships between infrastructure costs and business activities—connecting spending to applications, features, teams, and even individual users.
 
-This enables Claude to answer questions like "why did our database costs spike 40% last Tuesday?" by tracing the increase through specific microservices, identifying the code changes that triggered it, and even finding the engineer responsible. Users can then dive deeper with follow-up questions, turning weeks of manual investigation into an immediate natural conversation.
+This enables Claude to answer questions like “why did our database costs spike 40% last Tuesday?” by tracing the increase through specific microservices, identifying the code changes that triggered it, and even finding the engineer responsible. Users can then dive deeper with follow-up questions, turning weeks of manual investigation into an immediate natural conversation.
 
 Beyond answering questions, Claude automatically monitors for cost anomalies and generates detailed explanations without being asked. When costs spike, customers receive clear reports explaining exactly what happened, why, and who to contact, eliminating the need for manual root cause analysis.
 
-The upcoming Agent Composer takes this further. It lets users create custom monitoring by describing what they want in plain English: "alert me if any customer's costs exceed 30% of revenue" or "watch for new service adoption across engineering teams."
+The upcoming Agent Composer takes this further. It lets users create custom monitoring by describing what they want in plain English: “alert me if any customer’s costs exceed 30% of revenue” or “watch for new service adoption across engineering teams.”
 
 ## From manual analysis to instant understanding
 
-The transformation for Pelanor's customers has been dramatic. Finance teams can now attribute costs to specific business outcomes, engineers see the real cost impact of their code, and executives make informed decisions about infrastructure investments through conversations with Claude.
+The transformation for Pelanor’s customers has been dramatic. Finance teams can now attribute costs to specific business outcomes, engineers see the real cost impact of their code, and executives make informed decisions about infrastructure investments through conversations with Claude.
 
-This shift from static dashboards to intelligent analysis has fueled Pelanor's rapid growth. In just six months, the company achieved 10x customer expansion, growing from 5 to 50 customers across enterprises, government agencies and public companies.
+This shift from static dashboards to intelligent analysis has fueled Pelanor’s rapid growth. In just six months, the company achieved 10x customer expansion, growing from 5 to 50 customers across enterprises, government agencies and public companies.
 
 In fact, Claude-powered features account for nearly half of their new business, based on what prospects prioritize during evaluations.
 
@@ -74,7 +74,7 @@ In fact, Claude-powered features account for nearly half of their new business, 
 
 Pelanor envisions a future where cost management happens automatically through intelligent agents. Their Agent Composer, launching in August, will let customers define monitoring goals in plain English and have Claude create the complete automation.
 
-As Pelanor continues to scale, Claude will become even more critical. The Agent Composer will use Claude Opus for complex workflow creation, then faster models like Haiku for real-time execution. This partnership has been foundational to Pelanor's growth and will deepen as they transform how enterprises understand and manage cloud costs.
+As Pelanor continues to scale, Claude will become even more critical. The Agent Composer will use Claude Opus for complex workflow creation, then faster models like Haiku for real-time execution. This partnership has been foundational to Pelanor’s growth and will deepen as they transform how enterprises understand and manage cloud costs.
 
 ## Related stories
 
@@ -99,7 +99,8 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -117,12 +118,12 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -155,7 +156,7 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -173,6 +174,7 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -188,7 +190,7 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -223,7 +225,8 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -241,12 +244,12 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -279,7 +282,7 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -297,6 +300,7 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -312,7 +316,7 @@ As Pelanor continues to scale, Claude will become even more critical. The Agent 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Use Claude in Google Docs, Sheets, and Slides | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides"
 category: "14-Connectors"
-fetched_at: "2026-10-10T06:25:24Z"
+fetched_at: "2026-10-23T06:29:15Z"
 tags: ["connectors", "security"]
 ---
 
@@ -35,7 +35,7 @@ If your organization already allows Marketplace apps, this takes about two minut
 
 1.  Install Claude from the **[Google Workspace Marketplace listing](https://workspace.google.com/marketplace/app/claude/12459801340)** and click "Install.” If an admin has already installed it for you, skip this step.
 
-2.  Open any file in Google Docs, Sheets, or Slides and go to Extensions \> Claude \> “Open Claude":
+2.  Open a Google Docs, Sheets, or Slides file and go to Extensions \> Claude \> “Open Claude":
 
 
 3.  The first time, Google asks you to allow two permissions. Review them and click "Allow":
@@ -175,6 +175,8 @@ Claude for Google Workspace is in beta. These are the limits people ask about mo
 
 ### All three apps
 
+- Works only in Google Docs, Sheets, and Slides files. Google doesn’t support extensions in Word, Excel, or PowerPoint files, even when you open them in Docs, Sheets, or Slides. To use Claude on one, convert it first (**File \> Save as Google Docs**, **Save as Google Sheets**, or **Save as Google Slides**) and open Claude in the new file.
+
 - Works only on the file it’s opened in. Claude can’t open, create, or copy other files in Drive, and can’t export the file as a PDF or download.
 
 - Keep the sidebar open while Claude is working. Closing it stops the current task.
@@ -267,7 +269,9 @@ Files can contain instructions written by someone else, sometimes hidden in whit
 
 ### Claude doesn't appear in the Extensions menu
 
-Extensions only appear in files opened after the install, so if Claude isn’t appearing in the menu, reload the file. If it’s still missing, check that you are signed in to Google with the account Claude was installed for, then ask your Google Workspace admin to confirm Claude is installed or allowlisted for you. Tip: press Alt+/ (Option+/ on Mac) and type "Claude" to find the menu item quickly.
+Extensions only appear in files opened after the install, so if Claude isn’t appearing in the menu, reload the file. If it’s still missing, check that you are signed in to Google with the account Claude was installed for, then ask your Google Workspace admin to confirm Claude is installed or allowlisted for you.
+
+**Tip:** press Alt+/ (Option+/ on Mac) and type "Claude" to find the menu item quickly. If the file is a Word, Excel, or PowerPoint file, Claude won’t appear. Convert it first with **File \> Save as Google Docs**, **Sheets**, or **Slides**.”
 
 ### "This application is not allowed by your administrator"
 
@@ -280,6 +284,10 @@ You previously signed in to a Claude add-in with an API key, Amazon Bedrock, Goo
 ### The sidebar opens but nothing happens when I send a message
 
 This can be caused by using Firefox or a browser with strict tracking protection that blocks the sidebar from talking to the document. Switch to Chrome, Edge, or Safari. If you are already on one of those, reload the file and reopen Claude.
+
+### Claude can’t read or change your file, or every action fails
+
+This usually happens when your browser is signed in to more than one Google account. Open the file in a browser window that’s signed in to only one Google account, such as a separate Chrome profile. Then reopen Claude from the **Extensions** menu.
 
 ### "This document's Claude add-in script is out of date"
 

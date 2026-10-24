@@ -2,7 +2,7 @@
 title: "Skillfully Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/skillfully"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:59Z"
+fetched_at: "2026-10-23T06:29:54Z"
 tags: ["api", "case-studies", "enterprise", "evaluation", "security"]
 ---
 
@@ -42,27 +42,27 @@ With Claude, Skillfully:
 
 ## The broken state of resume-based hiring
 
-Traditional hiring practices face a credibility crisis. In today's digital age, candidates can automatically generate and submit hundreds of perfectly tailored applications with the click of a button, making it hard for employers to identify genuine talent beneath punched up paper credentials. "Employers are frustrated by resume-driven hiring because applicants can use AI to rewrite their resumes en masse," said Brett Waikart, CEO of Skillfully. Instead of fixing this broken system anchored to traditional credentials, Skillfully developed a revolutionary approach: interactive simulations that let candidates demonstrate their actual skills in realistic workplace scenarios. This shifts employer focus from reviewing what people claim they can do to observing what skills they can actually bring to the job.
+Traditional hiring practices face a credibility crisis. In today’s digital age, candidates can automatically generate and submit hundreds of perfectly tailored applications with the click of a button, making it hard for employers to identify genuine talent beneath punched up paper credentials. “Employers are frustrated by resume-driven hiring because applicants can use AI to rewrite their resumes en masse,” said Brett Waikart, CEO of Skillfully. Instead of fixing this broken system anchored to traditional credentials, Skillfully developed a revolutionary approach: interactive simulations that let candidates demonstrate their actual skills in realistic workplace scenarios. This shifts employer focus from reviewing what people claim they can do to observing what skills they can actually bring to the job.
 
 ## Revolutionizing talent evaluation with AI
 
 Skillfully creates realistic job simulations that let candidates demonstrate their capabilities rather than just describe them. These interactive scenarios are powered by two core components: a sophisticated backend for designing and deploying customizable simulations, and an assessment engine that evaluates candidate behavior to generate objective proficiency scores.
 
-After evaluating several AI solutions to power this platform, Skillfully selected Claude for two key reasons. First, while other solutions required extensive fine-tuning for each new simulation, Claude delivered superior performance immediately. This fits Skillfully's innovative "Lego LLM" infrastructure perfectly, which combines multiple AI models acting in concert to create a seamless simulated experience without additional model training. "Employers need a solution that’s flexible enough to meet the unique skill requirements of any given role, but also one that’s fast and easy to deploy,” explained Waikart. "So we built our own solution with just that in mind. With Claude and Lego LLM, we can create just about anything our employers ask for—it’s just like building with Legos."
+After evaluating several AI solutions to power this platform, Skillfully selected Claude for two key reasons. First, while other solutions required extensive fine-tuning for each new simulation, Claude delivered superior performance immediately. This fits Skillfully’s innovative “Lego LLM” infrastructure perfectly, which combines multiple AI models acting in concert to create a seamless simulated experience without additional model training. “Employers need a solution that’s flexible enough to meet the unique skill requirements of any given role, but also one that’s fast and easy to deploy,” explained Waikart. “So we built our own solution with just that in mind. With Claude and Lego LLM, we can create just about anything our employers ask for—it’s just like building with Legos.”
 
-Second, as a public benefit corporation dedicated to creating a more meritocratic job market, Skillfully found a natural partner in Anthropic. "We're dedicated to inclusivity and accessibility of opportunity—that's in our DNA," explained Waikart. "It's not a small thing that Anthropic is also a public benefit corporation. We focus on human-centric hiring, they focus on human-centric AI." This shared commitment to responsible innovation made Claude the clear choice for powering their platform.
+Second, as a public benefit corporation dedicated to creating a more meritocratic job market, Skillfully found a natural partner in Anthropic. “We’re dedicated to inclusivity and accessibility of opportunity—that’s in our DNA,” explained Waikart. “It’s not a small thing that Anthropic is also a public benefit corporation. We focus on human-centric hiring, they focus on human-centric AI.” This shared commitment to responsible innovation made Claude the clear choice for powering their platform.
 
 ## Transforming lives through fairer hiring
 
-Skillfully's impact extends beyond improved hiring efficiency. Their platform opens doors for talent that often goes unrecognized by traditional hiring practices, particularly benefiting job-seekers like first-generation college students. "We love our community college and workforce development partners like CUNY and America Needs You. They're preparing some of the most talented, skilled, aspiring workers in the country and we’re fortunate to play our part in that work" said Waikart.
+Skillfully’s impact extends beyond improved hiring efficiency. Their platform opens doors for talent that often goes unrecognized by traditional hiring practices, particularly benefiting job-seekers like first-generation college students. “We love our community college and workforce development partners like CUNY and America Needs You. They’re preparing some of the most talented, skilled, aspiring workers in the country and we’re fortunate to play our part in that work” said Waikart.
 
 Major employers like Bloomberg use Skillfully to transform campus recruiting at HBCUs and other diverse institutions. By giving candidates access to job simulations before recruiting events, students can experience potential roles firsthand and receive constructive feedback. This creates a more inclusive, empowering experience that helps surface hidden talent that might be missed in traditional resume screening.
 
 ## Making hiring more human through AI
 
-Skillfully envisions a fundamental transformation in how organizations evaluate talent. Their roadmap includes expanding Claude's role in providing personalized feedback and coaching to job seekers, helping candidates understand their strengths and potential growth areas, plus powering new automations that help employers deliver a brand-positive candidate experience at a global scale.
+Skillfully envisions a fundamental transformation in how organizations evaluate talent. Their roadmap includes expanding Claude’s role in providing personalized feedback and coaching to job seekers, helping candidates understand their strengths and potential growth areas, plus powering new automations that help employers deliver a brand-positive candidate experience at a global scale.
 
-Through their partnership with Claude, Skillfully aims to make hiring both more efficient and more human. "Instead of reducing candidates to checkboxes on a resume, we want to create rich, dynamic interactions where people can truly showcase their abilities and feel seen for who they are," explained Waikart. By combining Claude's advanced capabilities with their commitment to human-centric hiring, Skillfully is working to create a future where everyone has the opportunity to demonstrate—and benefit from—their true potential.
+Through their partnership with Claude, Skillfully aims to make hiring both more efficient and more human. “Instead of reducing candidates to checkboxes on a resume, we want to create rich, dynamic interactions where people can truly showcase their abilities and feel seen for who they are,” explained Waikart. By combining Claude’s advanced capabilities with their commitment to human-centric hiring, Skillfully is working to create a future where everyone has the opportunity to demonstrate—and benefit from—their true potential.
 
 ## Related stories
 
@@ -84,7 +84,8 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -102,12 +103,12 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -140,7 +141,7 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -158,6 +159,7 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -173,7 +175,7 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -208,7 +210,8 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -226,12 +229,12 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -264,7 +267,7 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -282,6 +285,7 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -297,7 +301,7 @@ Through their partnership with Claude, Skillfully aims to make hiring both more 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

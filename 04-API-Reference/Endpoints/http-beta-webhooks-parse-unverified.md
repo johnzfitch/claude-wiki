@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Fwebhooks%2Fparse_unverified)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Fwebhooks%2Fparse_unverified)
 
 
 
@@ -247,7 +247,7 @@ Claude Code
 
 [Trigger a routine](claude-code-routines-fire.md)
 
-[](../Other/usage-limits.md)
+[](../Other/playground.md)
 
 Console
 
@@ -258,7 +258,7 @@ Console
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Webhooks](http-beta-webhooks.md)
 
 # Parse Unverified

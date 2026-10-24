@@ -2,7 +2,7 @@
 title: "Braintrust Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/braintrust"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:41Z"
+fetched_at: "2026-10-23T06:29:34Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -40,15 +40,15 @@ Braintrust, an AI-powered recruiting platform, uses Claude to speed up the hirin
 
 ## Matching talent with opportunity at scale
 
-Braintrust aims to revolutionize recruiting in today's competitive talent landscape by addressing key pain points for employers and job seekers. The company faced the challenge of efficiently matching quality candidates with opportunities, given the overwhelming volume of applications for popular roles. Elena Luneva, Braintrust's Chief Product Officer, highlighted the scope of this issue, saying "over 800 applicants might apply to a role, and only 10% are real."
+Braintrust aims to revolutionize recruiting in today’s competitive talent landscape by addressing key pain points for employers and job seekers. The company faced the challenge of efficiently matching quality candidates with opportunities, given the overwhelming volume of applications for popular roles. Elena Luneva, Braintrust’s Chief Product Officer, highlighted the scope of this issue, saying “over 800 applicants might apply to a role, and only 10% are real.”
 
 ## Building trust with ethical, high-performing AI
 
-After evaluating several large language models, Braintrust selected Claude for its performance, ethical AI capabilities, and seamless integration with their tech stack. The team found that Claude excelled at producing ethical, unbiased content, which is crucial for professional tasks like conducting interviews and writing job descriptions. Emma Teng, Head of AI and Data at Braintrust, noted, "Claude's ethical AI and safety-first design made it more attractive than other models."
+After evaluating several large language models, Braintrust selected Claude for its performance, ethical AI capabilities, and seamless integration with their tech stack. The team found that Claude excelled at producing ethical, unbiased content, which is crucial for professional tasks like conducting interviews and writing job descriptions. Emma Teng, Head of AI and Data at Braintrust, noted, “Claude’s ethical AI and safety-first design made it more attractive than other models.”
 
-Claude's 200,000-token context window was also invaluable for lengthy interactions. Teng explained, "This is very helpful for a 30 or 60 minute interview. We need to pass a lot of information to the model to produce the next response. This longer context window helped our implementation."
+Claude’s 200,000-token context window was also invaluable for lengthy interactions. Teng explained, “This is very helpful for a 30 or 60 minute interview. We need to pass a lot of information to the model to produce the next response. This longer context window helped our implementation.”
 
-Additionally, Braintrust's existing Amazon Web Services (AWS) infrastructure made Claude an ideal choice. Teng elaborated, "Our overall tech stack is in the AWS environment. So being able to access Claude models in Amazon Bedrock was a great advantage." The team found it easy to deploy Claude, leveraging AWS tools like CloudWatch for monitoring and troubleshooting.
+Additionally, Braintrust’s existing Amazon Web Services (AWS) infrastructure made Claude an ideal choice. Teng elaborated, “Our overall tech stack is in the AWS environment. So being able to access Claude models in Amazon Bedrock was a great advantage.” The team found it easy to deploy Claude, leveraging AWS tools like CloudWatch for monitoring and troubleshooting.
 
 ## Powering innovative AI features across the hiring lifecycle
 
@@ -60,17 +60,17 @@ Braintrust integrated Claude into key features to enhance their platform:
 
 ## Better outcomes for employers and job seekers
 
-Integrating Claude has benefited both Braintrust's clients and job seekers. Luneva reported strong adoption of the AI-powered features, noting, "50% of clients are already using the job description generator. Those jobs now get 25% more applicants because the descriptions are richer."
+Integrating Claude has benefited both Braintrust’s clients and job seekers. Luneva reported strong adoption of the AI-powered features, noting, “50% of clients are already using the job description generator. Those jobs now get 25% more applicants because the descriptions are richer.”
 
-AI tools are also boosting recruiter efficiency. Teng noted, "Recruiters would love to speak to more candidates, but it's time-consuming. With AI conducting the interviews, you can spread your net a little wider. This is a win-win for recruiters and talent."
+AI tools are also boosting recruiter efficiency. Teng noted, “Recruiters would love to speak to more candidates, but it’s time-consuming. With AI conducting the interviews, you can spread your net a little wider. This is a win-win for recruiters and talent.”
 
-Braintrust's Claude-powered platform offers job seekers valuable career growth opportunities. The system provides personalized job recommendations and insights into candidates' standing. This transparency allows talent to identify skill gaps and connect with mentors to enhance their qualifications.
+Braintrust’s Claude-powered platform offers job seekers valuable career growth opportunities. The system provides personalized job recommendations and insights into candidates’ standing. This transparency allows talent to identify skill gaps and connect with mentors to enhance their qualifications.
 
 ## Looking forward
 
-Braintrust sees AI as key to making recruiting more human-centric and equitable. Luneva envisions a future where AI eliminates tedious tasks, allowing recruiters to focus on building meaningful candidate relationships and telling their company’s story. She explains, "AI is actually making things more human. You get rid of the fluff, the box-checking, the vanilla questions and recruiters can focus on finding the right person for the job."
+Braintrust sees AI as key to making recruiting more human-centric and equitable. Luneva envisions a future where AI eliminates tedious tasks, allowing recruiters to focus on building meaningful candidate relationships and telling their company’s story. She explains, “AI is actually making things more human. You get rid of the fluff, the box-checking, the vanilla questions and recruiters can focus on finding the right person for the job.”
 
-The company is excited about Claude's potential to reduce hiring bias. Luneva emphasized, "With LLMs or AIs, there's no bias from past experiences, so you get built-in diversity by seeing previously unseen candidates."
+The company is excited about Claude’s potential to reduce hiring bias. Luneva emphasized, “With LLMs or AIs, there’s no bias from past experiences, so you get built-in diversity by seeing previously unseen candidates.”
 
 As Braintrust continues to innovate with Claude, they aim to create a recruiting ecosystem that unlocks human potential, fosters diversity, and efficiently connects talent with opportunities. By harnessing AI, Braintrust is working towards a future where companies and candidates can thrive in a streamlined, transparent, and equitable hiring landscape.
 
@@ -94,7 +94,8 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -112,12 +113,12 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -150,7 +151,7 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -168,6 +169,7 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -183,7 +185,7 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -218,7 +220,8 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -236,12 +239,12 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -274,7 +277,7 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -292,6 +295,7 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -307,7 +311,7 @@ As Braintrust continues to innovate with Claude, they aim to create a recruiting
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

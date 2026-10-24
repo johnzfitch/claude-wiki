@@ -2,7 +2,7 @@
 title: "Groups - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/groups"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:04Z"
+fetched_at: "2026-10-20T06:37:36Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fgroups)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fgroups)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -211,13 +213,15 @@ Members
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -225,9 +229,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -241,6 +245,10 @@ To enable the Compliance API, see the setup guide.
 2.  [Compliance API](../Endpoints/http-compliance.md)
 
 # Groups
+
+Copy page
+
+
 
 ##### [List Compliance Groups](https://platform.claude.com/docs/en/api/http/compliance/groups/list)
 

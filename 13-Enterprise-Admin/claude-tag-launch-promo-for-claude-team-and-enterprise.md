@@ -2,7 +2,7 @@
 title: "Claude Tag launch promo for Claude Team and Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15575654"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:25:27Z"
+fetched_at: "2026-10-23T06:29:30Z"
 tags: ["enterprise"]
 ---
 
@@ -89,4 +89,4 @@ Yes. All billing types are in scope, including legacy contracts, AWS Marketplace
 
 ### Where can I get help?
 
-Contact your account team, or **[reach out to Support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**.
+Contact your account team, or **[reach out to Support](https://support.claude.com/en/articles/9015913)**.

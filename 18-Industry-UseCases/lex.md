@@ -2,7 +2,7 @@
 title: "Lex Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/lex"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:17Z"
+fetched_at: "2026-10-23T06:29:37Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -40,7 +40,7 @@ With Claude, Lex saw:
 
 ## Improving creative writing tools
 
-Nathan Baschez, Lex’s founder, saw a gap in the market for high-quality writing tools. He explains, "The tools that writers and editors use in their workflow aren't nearly as good as those used by programmers and designers." Baschez envisioned a platform that could rival industry-standard creative tools like Adobe Photoshop, but for writing.
+Nathan Baschez, Lex’s founder, saw a gap in the market for high-quality writing tools. He explains, “The tools that writers and editors use in their workflow aren’t nearly as good as those used by programmers and designers.” Baschez envisioned a platform that could rival industry-standard creative tools like Adobe Photoshop, but for writing.
 
 The Lex team initially focused on improving the user interface for writers, addressing pain points like cumbersome track changes. However, they soon realized the potential of generative AI to enhance the writing process, offering benefits like instant feedback, idea generation, and personalized learning.
 
@@ -48,11 +48,11 @@ The Lex team initially focused on improving the user interface for writers, addr
 
 After experimenting with various large language models, Lex chose Claude as their primary AI model for its tone, cost, and quality of output.
 
-Baschez described Claude's output as more natural and human-like. "Claude is like a sage editor. Its tone and personality give its answers a smarter, more human vibe. It feels less bullet point-y and less robot-generated."
+Baschez described Claude’s output as more natural and human-like. “Claude is like a sage editor. Its tone and personality give its answers a smarter, more human vibe. It feels less bullet point-y and less robot-generated.”
 
 “Cost was another consideration,” notes Baschez. “A 50% reduction in cost from a competitive model we had previously used was helpful to the business!”
 
-Lex's decision to use Claude was also based on qualitative improvements in user experience. Baschez explains, "We focus on how the advice impacts users emotionally. It's like casting the right actor - Claude's 'voice' matched the brand and user experience we wanted to create."
+Lex’s decision to use Claude was also based on qualitative improvements in user experience. Baschez explains, “We focus on how the advice impacts users emotionally. It’s like casting the right actor - Claude’s ‘voice’ matched the brand and user experience we wanted to create.”
 
 ## Transforming the writing process with AI assistance
 
@@ -69,7 +69,7 @@ Adopting Claude immediately boosted growth and user satisfaction for Lex. Within
 
 The impact on individual writers has been equally impressive. Nathan shares, “Lex has helped me build confidence and publish in a way I never could have or would have before. It makes writing feel less agonizing and anxiety-inducing to have real feedback to work against.”
 
-This sentiment resonates across Lex's diverse user base, from business professionals to academics to creative writers. Users consistently report increased confidence, productivity, and willingness to tackle challenging writing projects. Baschez adds, "Before AI, very few people had access to a good editor. Now, anyone can have instant access to high-quality writing assistance."
+This sentiment resonates across Lex’s diverse user base, from business professionals to academics to creative writers. Users consistently report increased confidence, productivity, and willingness to tackle challenging writing projects. Baschez adds, “Before AI, very few people had access to a good editor. Now, anyone can have instant access to high-quality writing assistance.”
 
 With Claude, Lex has created a writing environment that feels like collaborating with a knowledgeable, supportive editor rather than a robotic assistant. This human-like interaction has transformed the writing process for thousands of users, helping them overcome writer’s block and produce higher-quality content.
 
@@ -77,7 +77,7 @@ With Claude, Lex has created a writing environment that feels like collaborating
 
 As Lex evolves, Baschez and his team focus on refining the user experience, creating an interface for writers to compare versions, collaborate with AI, and navigate complex writing projects with ease.
 
-This approach lets Lex play to its strengths while leveraging Anthropic's AI expertise. "We're focused on improving our application layer, while Anthropic is focused on developing even better models for us to use,” Baschez notes.
+This approach lets Lex play to its strengths while leveraging Anthropic’s AI expertise. “We’re focused on improving our application layer, while Anthropic is focused on developing even better models for us to use,” Baschez notes.
 
 With Claude, Lex aims to set a new standard for digital writing tools to make the writing process more efficient and rewarding while unlocking new realms of creativity and productivity for writers across all domains.
 
@@ -93,7 +93,7 @@ Author’s note: This case study was written with help from Lex!
 ### StubHub transforms live event ticketing with Claude
 
 
-### Audience Strategies expands the electronic music industry's policy influence with Claude
+### Audience Strategies expands the electronic music industry’s policy influence with Claude
 
 
 ### Orange localizes manga at an unprecedented scale with Claude
@@ -110,7 +110,8 @@ Author’s note: This case study was written with help from Lex!
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -128,12 +129,12 @@ Author’s note: This case study was written with help from Lex!
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -166,7 +167,7 @@ Author’s note: This case study was written with help from Lex!
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -184,6 +185,7 @@ Author’s note: This case study was written with help from Lex!
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -199,7 +201,7 @@ Author’s note: This case study was written with help from Lex!
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -234,7 +236,8 @@ Author’s note: This case study was written with help from Lex!
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -252,12 +255,12 @@ Author’s note: This case study was written with help from Lex!
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -290,7 +293,7 @@ Author’s note: This case study was written with help from Lex!
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -308,6 +311,7 @@ Author’s note: This case study was written with help from Lex!
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -323,7 +327,7 @@ Author’s note: This case study was written with help from Lex!
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

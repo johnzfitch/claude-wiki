@@ -2,7 +2,7 @@
 title: "Qualified Health Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/qualified-health"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:23Z"
+fetched_at: "2026-10-23T06:29:41Z"
 tags: ["api", "case-studies", "cli", "enterprise", "security"]
 ---
 
@@ -47,7 +47,7 @@ Claude helps healthcare organizations move faster without sacrificing accuracy, 
 ## With Claude, Qualified Health and the UT System:
 
 - Screen a 2 million patient population to identify candidates for life-saving interventions
-- Route eligible patients directly into clinicians' workflows with supporting documentation
+- Route eligible patients directly into clinicians’ workflows with supporting documentation
 - Complete chart reviews in minutes that previously required extensive manual abstraction
 - Identify patients who benefit from medication optimization, therapeutic intervention, or further discussion
 - Plan to expand from cardiology to primary care, vascular, GI, rheumatology, and neurology by end of 2026
@@ -56,9 +56,9 @@ Claude helps healthcare organizations move faster without sacrificing accuracy, 
 
 In Texas, almost every county experiences some critical physician shortage. Healthcare providers know that catching diseases earlier leads to better outcomes, but the information needed to identify at-risk patients is buried in fragmented clinical data that no human could reasonably review at scale.
 
-"People both want and deserve a level of access to healthcare that our workforce can’t realistically deliver without AI augmentation," said Dr. Peter McCaffrey, Chief Digital and AI Officer at the University of Texas Medical Branch (UTMB).
+“People both want and deserve a level of access to healthcare that our workforce can’t realistically deliver without AI augmentation,” said Dr. Peter McCaffrey, Chief Digital and AI Officer at the University of Texas Medical Branch (UTMB).
 
-Healthcare systems spent years digitizing their records, but digitization didn't make the data usable. "The problem we face is literally one of search, retrieval, and comprehension,” McCaffrey said. “It's 90% of what we do. It's where so much of our workforce gets burned out and it’s where most care gaps accumulate. The size and scope of that data are only growing, the breadth of our responsibility to patients is only growing, but our workforce is not keeping pace."
+Healthcare systems spent years digitizing their records, but digitization didn’t make the data usable. “The problem we face is literally one of search, retrieval, and comprehension,” McCaffrey said. “It’s 90% of what we do. It’s where so much of our workforce gets burned out and it’s where most care gaps accumulate. The size and scope of that data are only growing, the breadth of our responsibility to patients is only growing, but our workforce is not keeping pace.”
 
 Organizations ended up with vast amounts of unstructured clinical notes, imaging reports, and test results scattered across disconnected systems. A patient may receive a new diagnosis of heart failure and may be started on therapy, but those medications and dosages may not align with the latest guidelines. Meanwhile, a Cardiology team–even at the same hospital–may be aware of the latest guidelines, but they would not be aware of whether newly diagnosed patients are receiving guideline-directed care even though doing so improves mortality. In Texas, an estimated 4–6 million patients qualify for evidence-based interventions each year and never get identified—resulting in preventable deaths, avoidable complications, and growing strain on the healthcare system.
 
@@ -72,15 +72,15 @@ Patients who meet those criteria are surfaced directly into clinicians’ existi
 
 ## From reactive care to proactive intervention
 
-Justin Norden, MD, a physician and computer scientist, founded Qualified Health to help health systems deploy AI safely and at scale across clinical and administrative operations, enabling clinicians to find and treat patients who would otherwise fall through the cracks. His previous company focused on algorithm safety and trust in high-risk environments before being acquired for autonomous vehicle applications. That background shaped Qualified Health's approach: building the infrastructure needed to monitor, validate, and govern AI performance in high-risk healthcare settings.
+Justin Norden, MD, a physician and computer scientist, founded Qualified Health to help health systems deploy AI safely and at scale across clinical and administrative operations, enabling clinicians to find and treat patients who would otherwise fall through the cracks. His previous company focused on algorithm safety and trust in high-risk environments before being acquired for autonomous vehicle applications. That background shaped Qualified Health’s approach: building the infrastructure needed to monitor, validate, and govern AI performance in high-risk healthcare settings.
 
-"If we caught patients earlier and intervened, that would be better for everyone. That's very well known," said Norden. "What is not yet well known is that today, we have the potential to do that."
+“If we caught patients earlier and intervened, that would be better for everyone. That’s very well known,” said Norden. “What is not yet well known is that today, we have the potential to do that.”
 
-The partnership with the UT System began when Dr. McCaffrey was expanding his AI leadership role at UTMB. The institution needed a partner who could help them move fast and demonstrate real value, not just run interesting experiments. "We're not so much interested in, oh, you did something that looks cool on a poster," Dr. McCaffrey explained. "At this stage, we need true examples where AI is deployed in practice and it brings value to care because that is our mandate."
+The partnership with the UT System began when Dr. McCaffrey was expanding his AI leadership role at UTMB. The institution needed a partner who could help them move fast and demonstrate real value, not just run interesting experiments. “We’re not so much interested in, oh, you did something that looks cool on a poster,” Dr. McCaffrey explained. “At this stage, we need true examples where AI is deployed in practice and it brings value to care because that is our mandate.”
 
-For cardiologists at UTMB’s Sealy Heart and Vascular Institute, the workflow is straightforward. They log into Qualified Health’s platform and see a census of patients who have been pre-screened by AI and who have opportunities for more optimized management in areas like heart-failure and valvular disease. The system then brings forward relevant medical and historical context balanced with evidence-based appropriateness criteria to highlight those who might otherwise go unnoticed but who would benefit from improved management. The Claude-powered AI platform surfaces relevant details from each patient's chart, extracting and synthesizing information that would be impossible to manually compile across a patient population.
+For cardiologists at UTMB’s Sealy Heart and Vascular Institute, the workflow is straightforward. They log into Qualified Health’s platform and see a census of patients who have been pre-screened by AI and who have opportunities for more optimized management in areas like heart-failure and valvular disease. The system then brings forward relevant medical and historical context balanced with evidence-based appropriateness criteria to highlight those who might otherwise go unnoticed but who would benefit from improved management. The Claude-powered AI platform surfaces relevant details from each patient’s chart, extracting and synthesizing information that would be impossible to manually compile across a patient population.
 
-"I could spend hours looking through charts and find things to worry about," Norden said. "But you can't do that on 10,000 patients." The system doesn't replace clinical judgment, he added. It amplifies it, enabling clinicians to apply their expertise at a scope that was previously impossible.
+“I could spend hours looking through charts and find things to worry about,” Norden said. “But you can’t do that on 10,000 patients.” The system doesn’t replace clinical judgment, he added. It amplifies it, enabling clinicians to apply their expertise at a scope that was previously impossible.
 
 ## Choosing Claude for clinical accuracy
 
@@ -98,13 +98,13 @@ The validation process reflects Qualified Health’s roots in algorithmic safety
 
 In the first month of deployment, the platform revealed that as many as a third of patients with heart failure have opportunities for improved optimization in guideline directed medical therapy. In the initial wave of review, this translated into dozens of patients with opportunities for evidence-based improvement in medication management which cardiologists could then validate and notify care teams. “This is a great example of AI actively augmenting the clinical workforce”, McCaffrey said. “It’s well known that many patients with heart failure can benefit from improved pharmacologic management but examining this adherence and medication practice across a population just isn’t feasible; we don’t have the clinician bandwidth for that.”
 
-The approach extends beyond cardiology. "We started in cardiology, but this isn't just a cardiology tool," McCaffrey noted. "It's the same problem everywhere—there's a patient in GI with early cirrhosis, there's someone in vascular with an aneurysm that's never been flagged. The information is there. We just haven't had a scalable way to surface it. The need isn’t for AI to make medical decisions; instead, the need is to bring buried issues to the foreground so that clinicians can make medical decisions."
+The approach extends beyond cardiology. “We started in cardiology, but this isn’t just a cardiology tool,” McCaffrey noted. “It’s the same problem everywhere—there’s a patient in GI with early cirrhosis, there’s someone in vascular with an aneurysm that’s never been flagged. The information is there. We just haven’t had a scalable way to surface it. The need isn’t for AI to make medical decisions; instead, the need is to bring buried issues to the foreground so that clinicians can make medical decisions.”
 
 Cardiology was a deliberate starting point as a specialty with well-established diagnostic criteria, clear clinical guidelines, and availability of proven interventions with life-saving potential.
 
-Building on UTMB's success, the initiative is now expanding system-wide. By the end of 2026, new deployments will help health systems across Texas identify patients eligible for evidence-based treatments in primary care, vascular, gastrointestinal, rheumatology, and neurology specialties. Dr. McCaffrey chairs AI work across all UT System health institutions, and the system views itself as responsible for all Texans across its exceptional geographic, medical, and socioeconomic diversity.
+Building on UTMB’s success, the initiative is now expanding system-wide. By the end of 2026, new deployments will help health systems across Texas identify patients eligible for evidence-based treatments in primary care, vascular, gastrointestinal, rheumatology, and neurology specialties. Dr. McCaffrey chairs AI work across all UT System health institutions, and the system views itself as responsible for all Texans across its exceptional geographic, medical, and socioeconomic diversity.
 
-Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reasoning, to everyone, everywhere is a really inherent social good.”
+Dr. McCaffrey added: “Being able to scale that intelligence, that clinical reasoning, to everyone, everywhere is a really inherent social good.”
 
 
 ## Related stories
@@ -130,7 +130,8 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -148,12 +149,12 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -186,7 +187,7 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -204,6 +205,7 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -219,7 +221,7 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -254,7 +256,8 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -272,12 +275,12 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -310,7 +313,7 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -328,6 +331,7 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -343,7 +347,7 @@ Dr. McCaffrey added: "Being able to scale that intelligence, that clinical reaso
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

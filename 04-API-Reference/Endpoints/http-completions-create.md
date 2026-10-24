@@ -1,8 +1,8 @@
 ---
 title: "Create a Text Completion - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/completions/create"
+source_url: "https://platform.claude.com/docs/en/api/completions/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:04Z"
+fetched_at: "2026-10-20T06:37:31Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fcompletions%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompletions%2Fcreate)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,11 +232,21 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Completions](http-completions.md)
+2.  [Completions](platform-claude-com-http-completions.md)
 
 # Create a Text Completion
 
+Copy page
+
+
+
+cURL
+
 POST/v1/complete
+
+
+
+Deprecated: Use the [Messages API](messages-create.md) instead.
 
 \[Legacy\] Create a Text Completion.
 
@@ -241,6 +255,16 @@ The Text Completions API is a legacy API. We recommend using the [Messages API](
 Future models and features will not be compatible with Text Completions. See our [migration guide](../Guides/build-with-claude-working-with-messages.md) for guidance in migrating from Text Completions to Messages.
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 
 
@@ -254,7 +278,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)⁠Deprecated
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)⁠Deprecated
 
 
 
@@ -468,6 +492,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 ##### Body
 
 
@@ -493,6 +521,12 @@ The model that will complete your prompt.
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 One of the following:
+
+"claude-haiku-5-5"
+
+
+
+Fastest model for high-volume, real-time tasks
 
 "claude-sonnet-5-5"
 
@@ -570,13 +604,9 @@ Best combination of speed and intelligence
 
 
 
-Fastest model with near-frontier intelligence
-
 "claude-haiku-4-5-20251001"
 
 
-
-Fastest model with near-frontier intelligence
 
 "claude-opus-4-5"
 

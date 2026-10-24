@@ -14,7 +14,7 @@ tags: ["api", "claude-code"]
 **The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
 </Tip>
 
-The [Admin API](../Admin/admin.md) allows you to programmatically manage your organization's resources, including organization members, workspaces, and API keys. This provides programmatic control over administrative tasks that would otherwise require manual configuration in the [Claude Console](../Other/usage-limits.md).
+The [Admin API](../Admin/admin.md) allows you to programmatically manage your organization's resources, including organization members, workspaces, and API keys. This provides programmatic control over administrative tasks that would otherwise require manual configuration in the [Claude Console](../Other/playground.md).
 
 <Check>
   **The Admin API requires special access**

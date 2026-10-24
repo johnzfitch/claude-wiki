@@ -2,7 +2,7 @@
 title: "Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-04T08:33:51Z"
+fetched_at: "2026-10-20T06:37:42Z"
 tags: ["api", "bedrock", "cli", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "bedrock", "cli", "sdk"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fclaude-on-amazon-bedrock-legacy)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fclaude-on-amazon-bedrock-legacy)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Claude on cloud platforms
 
@@ -136,6 +136,8 @@ Ruby
 
 Boto3 (Python)
 
+Python
+
 ```python
 pip install -U "anthropic[bedrock]"
 ```
@@ -152,7 +154,7 @@ Go to the [AWS Console \> Bedrock \> Model Access](https://console.aws.amazon.co
 
 
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Opus 4.8, and Claude Opus 4.7 are reachable through `InvokeModel` on `bedrock-runtime`. These requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. For the native Messages API request shape and full feature parity, use that page. These models are omitted from the model table on this page because they do not have ARN-versioned model IDs.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Haiku 5.5, Claude Opus 4.8, and Claude Opus 4.7 are reachable through `InvokeModel` on `bedrock-runtime`. These requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. For the native Messages API request shape and full feature parity, use that page. These models are omitted from the model table on this page because they do not have ARN-versioned model IDs.
 
 Lifecycle terms (Deprecated, Retired) are defined in [Model deprecations](../../20-Models/about-claude-model-deprecations.md). Lifecycle dates on partner-operated platforms are set by the partner and can differ from the Claude API schedule. For the current retirement date of any model on Amazon Bedrock, see [Amazon Bedrock's model lifecycle page](https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html).
 
@@ -175,7 +177,6 @@ To invoke these models, pass an inference profile instead of the base model ID. 
 | Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | anthropic.claude-sonnet-4-5-20250929-v1:0 | Yes      | Yes  | Yes  | Yes  | No     |
 | Claude Sonnet 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))   | anthropic.claude-sonnet-4-20250514-v1:0   | Yes      | Yes  | Yes  | No   | Yes    |
 | Claude Haiku 4.5                                                           | anthropic.claude-haiku-4-5-20251001-v1:0  | Yes      | Yes  | Yes  | No   | No     |
-| Claude Haiku 3.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))  | anthropic.claude-3-5-haiku-20241022-v1:0  | No       | Yes  | No   | No   | No     |
 
 ### List available models
 
@@ -196,6 +197,8 @@ Java
 PHP
 
 Ruby
+
+Boto3 (Python)
 
 
 
@@ -232,6 +235,8 @@ PHP
 Ruby
 
 Boto3 (Python)
+
+Python
 
 ```python
 from anthropic import AnthropicBedrock
@@ -288,6 +293,8 @@ PHP
 
 Ruby
 
+Python
+
 ```python
 from anthropic import AnthropicBedrock
 
@@ -327,7 +334,7 @@ For the full feature list with Amazon Bedrock availability, see [Features overvi
 - [Thinking](build-with-claude-thinking.md)
 - [Tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md), including the [Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md), [Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md), [Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md), and [Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)
 - [Citations](build-with-claude-citations.md)
-- [Structured outputs](build-with-claude-structured-outputs.md), for the models in the Amazon Bedrock note under its [Compatibility](build-with-claude-structured-outputs.md#compatibility) section
+- [Structured outputs](build-with-claude-structured-outputs.md)
 
 ### Features not supported
 
@@ -352,13 +359,15 @@ PDF support is available on Bedrock through both the Converse API and InvokeMode
 
 ### Mid-conversation system messages on Bedrock
 
-[Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md) are available through the InvokeModel API for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, and Claude Sonnet 5.5. As described in the note under [API model IDs](#api-model-ids), these requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. No beta header is required. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. It is not available for the ARN-versioned models in the model table on this page.
+[Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md) are available through the InvokeModel API for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Haiku 5.5. As described in the note under [API model IDs](#api-model-ids), these requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. No beta header is required for mid-conversation system messages. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. It is not available for the ARN-versioned models in the model table on this page.
+
+A `role: "system"` message can also set `output_config.effort` to [change effort mid-conversation](build-with-claude-effort.md#change-effort-mid-conversation-beta) on Claude Fable 5.1 and Claude Opus 5.5. This is in beta: add `mid-conversation-output-config-2026-07-01` to the `anthropic_beta` array in the request body. Without that value, or on Claude Fable 5, Claude Opus 5, or Claude Opus 4.8, the request returns a 400 error: `messages.N.output_config: Extra inputs are not permitted`. In the error, `N` is the index of the `system` message in `messages`.
 
 **For Converse API users:** the Converse API accepts system instructions through its top-level [`system` parameter](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html). To add system instructions mid-conversation, use the InvokeModel API.
 
 ### Context window
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, and Claude Sonnet 4.6 have a [1M-token context window](build-with-claude-context-windows.md) on Amazon Bedrock. Other Claude models, including Sonnet 4.5 and Sonnet 4 (deprecated), have a 200k-token context window.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, Claude Sonnet 4.6, and Claude Haiku 5.5 have a [1M-token context window](build-with-claude-context-windows.md) on Amazon Bedrock. Other Claude models, including Sonnet 4.5 (deprecated) and Sonnet 4 (deprecated), have a 200k-token context window.
 
 Bedrock limits request payloads to 20 MB. When sending large documents or many images, you may reach this limit before the token limit.
 
@@ -373,7 +382,7 @@ Regional endpoints include a 10% pricing premium over global endpoints.
 
 
 
-This applies to Claude Sonnet 4.5 and future models only. Older models (Claude Sonnet 4 (deprecated) and earlier) maintain their existing pricing structures.
+This applies to Claude Sonnet 4.5 (deprecated) and future models only. Older models (Claude Sonnet 4 (deprecated) and earlier) maintain their existing pricing structures.
 
 ### When to use each option
 
@@ -393,9 +402,9 @@ This applies to Claude Sonnet 4.5 and future models only. Older models (Claude S
 
 ### Implementation
 
-**Using global endpoints (default for Opus 4.6, Sonnet 4.6, and Sonnet 4.5):**
+**Using global endpoints (default for Opus 4.6, Sonnet 4.6, and Sonnet 4.5 (deprecated)):**
 
-The model IDs for Claude Opus 4.6, Sonnet 4.6, and Sonnet 4.5 already include the `global.` prefix:
+The model IDs for Claude Opus 4.6, Sonnet 4.6, and Sonnet 4.5 (deprecated) already include the `global.` prefix:
 
 cURL
 
@@ -414,6 +423,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 ```python
 from anthropic import AnthropicBedrock
@@ -450,6 +461,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 ```python
 from anthropic import AnthropicBedrock

@@ -2,7 +2,7 @@
 title: "Code - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/code"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:29Z"
+fetched_at: "2026-10-12T06:41:57Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fcode)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fcode)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,9 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
 
 
 Skills
@@ -211,7 +211,7 @@ Artifacts
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
 
 Support & configuration
 
@@ -219,9 +219,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -235,6 +235,10 @@ To enable the Compliance API, see the setup guide.
 2.  [Compliance API](../Endpoints/http-compliance.md)
 
 # Code
+
+Copy page
+
+
 
 #### Code[Artifacts](https://platform.claude.com/docs/en/api/http/compliance/code/artifacts)
 

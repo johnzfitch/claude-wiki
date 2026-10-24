@@ -2,7 +2,7 @@
 title: "Covered Models under a Business Associate Agreement (BAA) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15455031-covered-models-under-a-business-associate-agreement-baa"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:19Z"
+fetched_at: "2026-10-23T06:29:11Z"
 tags: ["claude-ai", "rag"]
 ---
 
@@ -29,7 +29,7 @@ Access to newly released Covered Models rolls out in stages on subscription and 
 
 Each row in the table is a configuration: a product, how you access it, and whether you're using standard retention or zero data retention. The two right-hand columns show whether that configuration is covered under Anthropic's BAA and whether it can access Covered Models.
 
-**Note:** Coverage under Anthropic's BAA always requires (a) signing the BAA, and (b) accessing Anthropic's products through their HIPAA-ready configurations. For Claude Code, zero data retention also meets requirement (b). Learn about **[HIPAA-ready API access](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#hipaa-readiness)** and **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)**.
+**Note:** Coverage under Anthropic's BAA always requires (a) signing the BAA, and (b) accessing Anthropic's products through their HIPAA-ready configurations. For Claude Code, zero data retention also meets requirement (b). Learn about **[HIPAA-ready API access](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#hipaa-readiness)** and **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)**.
 
 [TABLE]
 
@@ -42,7 +42,7 @@ Requests to a Covered Model from a ZDR-enabled organization or workspace return 
 
 To access Covered Models in configurations that are covered under the BAA:
 
-- **For API workloads: use a HIPAA-ready API organization.** This configuration operates with standard retention, so your applications can access Covered Models, including Claude Fable 5. If your organization doesn't have a HIPAA-ready API organization yet, contact your Anthropic account team to set one up. Note that Claude Code isn't an Eligible Service on a HIPAA-ready API organization. Learn more **[about HIPAA-ready API access](../04-API-Reference/Guides/build-with-claude-api-and-data-retention.md#hipaa-readiness)**.
+- **For API workloads: use a HIPAA-ready API organization.** This configuration operates with standard retention, so your applications can access Covered Models, including Claude Fable 5. If your organization doesn't have a HIPAA-ready API organization yet, contact your Anthropic account team to set one up. Note that Claude Code isn't an Eligible Service on a HIPAA-ready API organization. Learn more **[about HIPAA-ready API access](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#hipaa-readiness)**.
 
 - **For Chat: use a HIPAA-ready Claude Enterprise plan.** Chat operates with standard retention, so it can access Covered Models with no configuration change. If your organization hasn't activated HIPAA readiness on its Enterprise plan, learn how in **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)**.
 
@@ -56,7 +56,7 @@ To access Covered Models in configurations that aren't covered under the BAA:
 
 - **On a 1P API organization with zero data retention enabled, you have two options:**
 
-  - Enable standard retention in a dedicated workspace (**Workspace \> Manage \> Privacy Controls**). Your other workspaces keep ZDR. See **[Data retention practices for Mythos-class models](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models#h_7008995545)** for instructions.
+  - Enable standard retention in a dedicated workspace: go to the **Data retention** page (platform.claude.com/settings/privacy) and select the workspace from the dropdown menu at the top of the page. Your other workspaces keep ZDR. See **[Data retention practices for Mythos-class models](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models#h_7008995545)** for instructions.
 
   - Contact your Anthropic account team to remove ZDR from the organization entirely.
 

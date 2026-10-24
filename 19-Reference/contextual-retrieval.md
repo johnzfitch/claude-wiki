@@ -1,16 +1,44 @@
 ---
-title: "Contextual Retrieval in AI Systems \\ Anthropic"
+title: "Contextual retrieval in AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/contextual-retrieval"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:31Z"
+fetched_at: "2026-10-23T06:29:44Z"
 tags: ["news-research", "rag"]
 ---
 
 # Introducing Contextual Retrieval
 
-Published Sep 19, 2024
+- [01A primer on RAG: scaling to larger knowledge bases](#a-primer-on-rag-scaling-to-larger-knowledge-bases)
+- [02Introducing Contextual Retrieval](#introducing-contextual-retrieval)
+- [03Further boosting performance with Reranking](#further-boosting-performance-with-reranking)
+- [04Conclusion](#conclusion)
+- [05Appendix I](#appendix-i)
 
-For an AI model to be useful in specific contexts, it often needs access to background knowledge.
+- Published
+
+  Sep 19, 2024
+
+- Team
+
+  [Engineering](https://www.anthropic.com/engineering)
+
+- Topics
+
+  - [Context engineering](https://www.anthropic.com/search?topic=context-engineering)
+  - [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+
+  See more...
+
+Related articles
+
+- Engineering
+
+  Nov 26, 2025
+
+  [Effective harnesses for long-running agents](effective-harnesses-for-long-running-agents.md)
+
+[View more](https://www.anthropic.com/search?topic=context-engineering)
 
 For an AI model to be useful in specific contexts, it often needs access to background knowledge. For example, customer support chatbots need knowledge about the specific business they're being used for, and legal analyst bots need to know about a vast array of past cases.
 
@@ -71,13 +99,13 @@ Contextual Retrieval solves this problem by prepending chunk-specific explanator
 
 Let’s return to our SEC filings collection example. Here's an example of how a chunk might be transformed:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 original_chunk = "The company's revenue grew by 3% over the previous quarter."
 
 contextualized_chunk = "This chunk is from an SEC filing on ACME corp's performance in Q2 2023; the previous quarter's revenue was $314 million. The company's revenue grew by 3% over the previous quarter."
 ```
-
-Copy
 
 It is worth noting that other approaches to using context to improve retrieval have been proposed in the past. Other proposals include: [adding generic document summaries to chunks](https://aclanthology.org/W02-0405.pdf) (we experimented and saw very limited gains), [hypothetical document embedding](https://arxiv.org/abs/2212.10496), and [summary-based indexing](https://www.llamaindex.ai/blog/a-new-document-summary-index-for-llm-powered-qa-systems-9a32ece2f9ec) (we evaluated and saw low performance). These methods differ from what is proposed in this post.
 
@@ -85,7 +113,9 @@ It is worth noting that other approaches to using context to improve retrieval h
 
 Of course, it would be far too much work to manually annotate the thousands or even millions of chunks in a knowledge base. To implement Contextual Retrieval, we turn to Claude. We’ve written a prompt that instructs the model to provide concise, chunk-specific context that explains the chunk using the context of the overall document. We used the following Claude 3 Haiku prompt to generate context for each chunk:
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 <document> 
 {{WHOLE_DOCUMENT}} 
 </document> 
@@ -95,8 +125,6 @@ Here is the chunk we want to situate within the whole document
 </chunk> 
 Please give a short succinct context to situate this chunk within the overall document for the purposes of improving search retrieval of the chunk. Answer only with the succinct context and nothing else. 
 ```
-
-Copy
 
 The resulting contextual text, usually 50-100 tokens, is prepended to the chunk before embedding it and before creating the BM25 index.
 
@@ -172,6 +200,8 @@ Below is a breakdown of results across datasets, embedding providers, use of BM2
 
 See [Appendix II](https://assets.anthropic.com/m/1632cded0a125333/original/Contextual-Retrieval-Appendix-2.pdf) for the breakdowns for Retrievals @ 10 and @ 5 as well as example questions and answers for each dataset.
 
-## Acknowledgements
+## Authors & Acknowledgments
+
+### Acknowledgements
 
 Research and writing by Daniel Ford. Thanks to Orowa Sikder, Gautam Mittal, and Kenneth Lien for critical feedback, Samuel Flamini for implementing the cookbooks, Lauren Polansky for project coordination and Alex Albert, Susan Payne, Stuart Ritchie, and Brad Abrams for shaping this blog post.

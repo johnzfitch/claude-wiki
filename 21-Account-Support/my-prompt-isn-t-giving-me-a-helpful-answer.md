@@ -2,7 +2,7 @@
 title: "My prompt isn’t giving me a helpful answer. | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996857-my-prompt-isn-t-giving-me-a-helpful-answer"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:25:26Z"
+fetched_at: "2026-10-23T06:29:17Z"
 tags: ["account", "prompting"]
 ---
 

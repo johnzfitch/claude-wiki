@@ -2,7 +2,7 @@
 title: "Monthly API credits for Max and Team plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:23Z"
+fetched_at: "2026-10-23T06:29:13Z"
 tags: ["api", "billing"]
 ---
 
@@ -17,7 +17,7 @@ Available on Max and Team plans, including discounted Team plans. Free, Pro, and
 
 [TABLE]
 
-\* On Team plans, credits for all seats are pooled into one monthly balance, capped at \$500. For example, a team with three Standard seats and two Premium seats receives \$260 a month. The pool is calculated from the seats on the plan when the credits are granted.
+\*On Team plans, credits for all seats are pooled into one monthly balance, capped at \$500. For example, a team with three Standard seats and two Premium seats receives \$260 a month. The pool is calculated from the seats on the plan when the credits are granted.
 
 ## Eligibility
 
@@ -37,7 +37,7 @@ Before you begin, you need:
 
 - **On your Claude plan:** Max: be the subscriber. Team: be a Primary Owner or Owner
 
-- **In the Console organization:** the Owner, Admin, or Billing role. If you don't have a Console organization yet, you can create one during the claim flow or at **[platform.claude.com](../04-API-Reference/Other/usage-limits.md)**.
+- **In the Console organization:** the Owner, Admin, or Billing role. If you don't have a Console organization yet, you can create one during the claim flow or at **[platform.claude.com](../04-API-Reference/Other/playground.md)**.
 
 To claim your credit:
 
@@ -51,7 +51,7 @@ To claim your credit:
 
 Your credits appear in that organization's balance, ready to use.
 
-**Important:** You can link only one Console organization, and each Console organization can receive credits from only one plan. You can't change the linked organization yourself, so choose the one you plan to build in. To change it later, **[contact support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+**Important:** You can link only one Console organization, and each Console organization can receive credits from only one plan. You can't change the linked organization yourself, so choose the one you plan to build in. To change it later, **[contact support](../15-Claude-AI-Features/how-to-get-support.md)**.
 
 **Tip:** Sign in to the Claude Console with the same email you use on claude.ai. If you’re seeing errors during the linking flow, please try again in a few hours.
 
@@ -87,7 +87,7 @@ The credits don’t apply to:
 
 - **Separate from your plan limits.** The credits don’t change your usage limits in Claude, Claude Code, or Claude Cowork.
 
-- **Visible in the Console.** All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in Claude Console with their amount and expiry date.
+- **Visible in the Console.** All credits appear on the **Billing** page (platform.claude.com/settings/billing) in the Claude Console with their amount and expiry date.
 
 ## What happens when your credits run out
 
@@ -113,6 +113,8 @@ The credits don’t apply to:
 
 **Control who spends it.** Everyone with an API key in the linked organization can use the balance. To limit usage by project or teammate, set **[workspace spend limits](../04-API-Reference/Endpoints/rate-limits.md#setting-lower-limits-for-workspaces)** in the Console.
 
+------------------------------------------------------------------------
+
 ## Frequently asked questions
 
 ### Why can't I use the credits for Claude Code?
@@ -121,7 +123,7 @@ The credits are for building your own apps and agents on the Claude Platform. Th
 
 ### Why don't I see the offer yet?
 
-We’re rolling out API credits over a few days so we might not have gotten to you yet. The offer appears after you've been on an eligible plan for seven days. If you're past seven days and still don't see it, check that you're on a Max or Team plan and that you have one of the required roles. If you think you should be eligible but don’t see the API credits, **[contact support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+We’re rolling out API credits over a few days so we might not have gotten to you yet. The offer appears after you've been on an eligible plan for seven days. If you're past seven days and still don't see it, check that you're on a Max or Team plan and that you have one of the required roles. If you think you should be eligible but don’t see the API credits, **[contact support](../15-Claude-AI-Features/how-to-get-support.md)**.
 
 ### Is this the same as the Agent SDK credits announced in June?
 

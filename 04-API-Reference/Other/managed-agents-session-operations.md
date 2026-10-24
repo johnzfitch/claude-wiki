@@ -2,7 +2,7 @@
 title: "Session operations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/session-operations"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:39Z"
+fetched_at: "2026-10-20T06:40:28Z"
 tags: ["agents", "api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fsession-operations)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fsession-operations)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Delegate work to your agent
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Session operations
 
@@ -98,36 +110,28 @@ Retrieve, list, update, archive, and delete Claude Managed Agents sessions.
 
 
 
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
-
 Once a session exists, use these operations to read, update, archive, or delete it. See [Start a session](managed-agents-sessions.md) for creating a session and sending it work.
 
 ## Session statuses
 
 Sessions progress through these statuses. See [Start a session](managed-agents-sessions.md) for the session lifecycle.
 
-| Status         | Description                                                                                                                                             |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `idle`         | Agent is waiting for input, including user messages or tool confirmations. Sessions created without `initial_events` start in `idle`.                   |
-| `running`      | Agent is actively executing.                                                                                                                            |
-| `rescheduling` | Transient error occurred, retrying automatically.                                                                                                       |
-| `terminated`   | Session has ended, either because of an unrecoverable error or because it was archived. A session that finishes its work goes `idle`, not `terminated`. |
+| Status         | Description                                                                                                                                                                                                                                                                                                                                                                                                            |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `idle`         | Agent is waiting for input, including user messages or tool confirmations. Sessions created without `initial_events` start in `idle`. A session can be `idle` while a [workflow run](managed-agents-workflow-runs.md#while-a-run-is-open) is still open, so `idle` alone doesn't mean that the work is done. See [Know when the work is done](managed-agents-workflow-runs.md#know-when-the-work-is-done). |
+| `running`      | Agent is actively executing.                                                                                                                                                                                                                                                                                                                                                                                           |
+| `rescheduling` | Transient error occurred, retrying automatically.                                                                                                                                                                                                                                                                                                                                                                      |
+| `terminated`   | Session has ended, either because of an unrecoverable error or because it was archived. A session that finishes its work goes `idle`, not `terminated`.                                                                                                                                                                                                                                                                |
 
 ## Updating the agent configuration
 
-You can update a session's `agent.tools` and `agent.mcp_servers`, including permission policies and per-tool web settings such as [domain filters](managed-agents-tools.md#restrict-web-search-and-web-fetch-domains), mid-session without creating a new agent version. Updates are session-local and do not propagate back to the underlying agent. Updated `allowed_domains` and `blocked_domains` apply to the rest of the session.
+You can update a session's `agent.tools` and `agent.mcp_servers`, including permission policies and per-tool web settings such as [domain filters](managed-agents-tools-web-restrictions.md#change-the-lists-mid-session), mid-session without creating a new agent version. Updates are session-local and do not propagate back to the underlying agent. Updated `allowed_domains` and `blocked_domains` apply to the rest of the session.
 
-Only the agent's `tools` and `mcp_servers` can change after a session is created. To run a session with `model`, `system`, or `skills` values other than the agent's, use [agent configuration overrides](managed-agents-sessions.md#override-agent-configuration-for-a-session) when you create the session. The agent's model configuration, including its [`inference_geo`](manage-claude-data-residency.md) pin, also can't change mid-session: set the pin when you save the agent, or set or clear it for a single session with a `model` override when you create it. The agent's configured `system` field is fixed for the session's lifetime. On models that support it, you can still append system-level guidance mid-session by sending a [`system.message` event](managed-agents-events-and-streaming.md#sending-system-messages).
+Only the agent's `tools` and `mcp_servers` can change after a session is created. To run a session with `model`, `system`, or `skills` values other than the agent's, use [agent configuration overrides](managed-agents-sessions.md#override-agent-configuration-for-a-session) when you create the session. The agent's model configuration, including its [`inference_geo`](manage-claude-data-residency.md) pin, also can't change mid-session: set the pin when you save the agent, or set or clear it for a single session with a `model` override when you create it. The agent's configured `system` field is fixed for the session's lifetime. On models that support it, you can still append system-level guidance mid-session by sending a [`system.message` event](managed-agents-events-and-streaming.md#send-system-messages).
 
 The semantics of a `tools` or `mcp_servers` update are full replacement: the provided array is the new value. To preserve existing entries, `GET` the session, modify the array, and `POST` it back.
 
-The session must be `idle` to update the agent. To update the agent while the session is running, send a [`user.interrupt` event](managed-agents-events-and-streaming.md#integrating-events) by itself and wait for the session to become `idle`.
+The session must be `idle` to update the agent. To update the agent while the session is running, send a [`user.interrupt` event](managed-agents-events-and-streaming.md#interrupt-the-agent) by itself and wait for the session to become `idle`. If a [workflow run](managed-agents-workflow-runs.md#while-a-run-is-open) is open, whether it's running or paused, the update returns a 400 error, even when the session is `idle`. An interrupt doesn't end a run, so the update still fails after you interrupt the session. Send a `user.message` that [asks the agent to stop its runs](managed-agents-workflow-runs.md#interrupt-a-session-with-runs-open), or wait until every run has ended.
 
 cURL
 
@@ -146,6 +150,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -166,7 +172,7 @@ client.beta.sessions.update(
 
 ## Updating the session budget
 
-A session [created with a budget](managed-agents-sessions.md#set-a-session-budget) accepts two kinds of budget update: replacing the cap with a new `max_list_cost`, and removing it by setting `budget` to `null`. Both automatically resume work that paused when the session reached its cap. A replacement cap can be higher or lower than the current one, but it must be strictly greater than the session's consumed list cost, and removal is one-way: a non-null `budget` is accepted only on a session that currently has one, so you can't re-add a removed budget or add one to a session created without it. See [Session budgets](managed-agents-budgets.md#resume-a-session-at-its-budget) for request examples, the error behaviors, and what counts toward list cost.
+A session [created with a budget](managed-agents-sessions.md#set-a-session-budget) accepts two kinds of budget update: replacing the cap with a new `max_list_cost`, and removing it by passing `budget=None`. Both automatically resume work that paused when the session reached its cap. A replacement cap can be higher or lower than the current one, but it must be strictly greater than the session's consumed list cost, and removal is one-way: a non-null `budget` is accepted only on a session that currently has one, so you can't re-add a removed budget or add one to a session created without it. See [Session budgets](managed-agents-budgets.md#resume-a-session-at-its-budget) for request examples, the error behaviors, and what counts toward list cost.
 
 ## Retrieving a session
 
@@ -187,6 +193,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -221,6 +229,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -248,7 +258,7 @@ for listed_session in previous_page.data:
 
 ## Archiving a session
 
-Archive a session to prevent new events from being sent while preserving its history. A `running` session cannot be archived; to archive one, send a [`user.interrupt` event](managed-agents-events-and-streaming.md#integrating-events) by itself and wait for the session to become `idle`.
+Archive a session to prevent new events from being sent while preserving its history. A `running` session cannot be archived; to archive one, send a [`user.interrupt` event](managed-agents-events-and-streaming.md#interrupt-the-agent) by itself and wait for the session to become `idle`. If a [workflow run](managed-agents-workflow-runs.md#while-a-run-is-open) is open, archiving might return a 400 error, even when the session is `idle`, or it might succeed and end the run. Before you archive, send a `user.message` that [asks the agent to stop its runs](managed-agents-workflow-runs.md#interrupt-a-session-with-runs-open), or wait until each run has ended. Then archive the session once it's `idle`.
 
 cURL
 
@@ -268,6 +278,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -276,7 +288,7 @@ client.beta.sessions.archive(session.id)
 
 ## Deleting a session
 
-Delete a session to permanently remove its record, events, and associated sandbox. A `running` session cannot be deleted; to delete one, send a [`user.interrupt` event](managed-agents-events-and-streaming.md#integrating-events) by itself and wait for the session to become `idle`.
+Delete a session to permanently remove its record, events, and associated sandbox. A `running` session cannot be deleted; to delete one, send a [`user.interrupt` event](managed-agents-events-and-streaming.md#interrupt-the-agent) by itself and wait for the session to become `idle`. If a [workflow run](managed-agents-workflow-runs.md#while-a-run-is-open) is open, deleting might return a 400 error, even when the session is `idle`, or it might succeed. After a delete that succeeds, no `workflow_run` event reports the end of the session's runs. Before you delete, send a `user.message` that [asks the agent to stop its runs](managed-agents-workflow-runs.md#interrupt-a-session-with-runs-open), or wait until each run has ended. Then delete the session once it's `idle`.
 
 Memory stores, vaults, skills, environments, and agents are independent resources and are not affected by session deletion. Files you uploaded through the Files API are also unaffected, but files the session itself produced are scoped to it and are permanently deleted along with its filesystem. Download anything you need to keep before deleting the session. An output file written at the end of the last turn can take a few seconds after the session goes idle to appear in the [session's file list](managed-agents-files.md#listing-and-downloading-session-files), so check that the files you expect are listed first.
 
@@ -297,6 +309,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

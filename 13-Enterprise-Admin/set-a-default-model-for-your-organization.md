@@ -2,7 +2,7 @@
 title: "Set a default model for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:44Z"
+fetched_at: "2026-10-23T06:29:08Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -23,7 +23,7 @@ When you set or change a default model, it replaces the model currently selected
 
 **Note:** Not all models are available in every product. If the selected model is not available in the product, Anthropic’s recommendation is used as default.
 
-Users can still select a different model for any conversation. By default, Claude remembers each user's last selection, so their next conversation starts on whichever model they last used. When you update the default again, the new default replaces their selection. To have every new conversation start on the default instead, see **Always start new conversations on the default model** below.
+Users can still select a different model for any conversation. By default, Claude remembers each user's last selection, so their next conversation starts on whichever model they last used. When you update the default again, the new default replaces their selection. To have every new conversation start on the default instead, see **[Always start new chats on the default model](#h_bc399beba0)** below.
 
 For example: you set the organization default to Claude Sonnet 4.6, and every member’s new conversations start on Sonnet 4.6. A member switches a conversation to Claude Opus 4.7, so their next conversations start on Opus 4.7. When you later change the organization default, the new default replaces their selection again. If you turn on **Always start with the default model and effort level**, their next chat starts on Sonnet 4.6 no matter which model they used last.
 
@@ -39,7 +39,7 @@ Alongside the default model, you can set a default effort level. New conversatio
 
 For member-facing CLI instructions, see **[Claude Code model configuration](https://support.claude.com/en/articles/11940350)**.
 
-For member-facing instructions on switching models, see **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings.md)**.
+For member-facing instructions on switching models, see **[Change the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings)**.
 
 ------------------------------------------------------------------------
 
@@ -99,6 +99,16 @@ With this setting on:
 - When the default model changes, new conversations move to the new default. For example, if you use Anthropic's recommended default and the recommendation moves to a newer model, every user's next conversation starts on the newer model.
 
 This setting applies in chat, Cowork, Claude Code, Claude for Office, Claude Design, and Claude Science.
+
+### In projects
+
+Projects keep their own model selection. Claude remembers the model each user last picked in each project, and this setting doesn’t override that choice in existing chat projects. With **Always start with the default model and effort level** turned on:
+
+- New projects start on the default model.
+
+- Existing chat projects start on the model the user last selected in that project.
+
+- New Cowork tasks in a project start on the default model.
 
 ### For a custom role
 
@@ -168,4 +178,4 @@ If your organization also configures Claude Code through `managed-settings.json`
 
 If `managed-settings.json` specifies `availableModels` that doesn't contain the default model, Claude CLI bypasses `availableModels` and starts on the selected default model unless `enforceAvailableModels` is set.
 
-Managed settings for models apply only to Claude Code CLI and IDE, not to Claude Code on web or desktop. For consistent behavior across all Claude Code surfaces, we recommend setting the default here alone. For more on managed settings, see **[Claude Code settings](../02-Claude-Code-CLI/settings.md#settings-files)**.
+Managed settings for models apply only to local Claude Code sessions in your terminal or IDE, not to cloud sessions or to Claude Code in Claude Desktop. For consistent behavior across all Claude Code surfaces, we recommend setting the default here alone. For more on managed settings, see **[Claude Code settings](../02-Claude-Code-CLI/settings.md#settings-files)**.

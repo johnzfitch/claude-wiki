@@ -2,7 +2,7 @@
 title: "Python SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/python"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:35Z"
+fetched_at: "2026-10-20T06:40:22Z"
 tags: ["api", "python", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "python", "sdk"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fpython)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fpython)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
@@ -352,6 +352,8 @@ for message in runner:
 
 On every iteration, an API request is made. If the response includes a call to one of the given tools, the tool is automatically called, and the result is returned directly to the model in the next iteration.
 
+To run the browser use tool or the computer use tool with this SDK, see [Browser and computer use with the SDK toolsets](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md).
+
 ## Message batches
 
 This SDK provides support for [Batch processing](../Guides/build-with-claude-batch-processing.md) under `client.messages.batches`.
@@ -555,7 +557,7 @@ Note that requests that time out are [retried twice by default](#retries).
 
 Consider using the streaming [Messages API](#streaming-responses) for longer running requests.
 
-Avoid setting a large `max_tokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [timeout](#timeouts) without receiving a response from Anthropic.
+Avoid setting a large `max_tokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [time out](#timeouts) without receiving a response from Anthropic.
 
 The SDK will throw a `ValueError` if a non-streaming request is expected to take longer than approximately 10 minutes. Passing `stream=True` or overriding the `timeout` option at the client or request level disables this error.
 
@@ -834,7 +836,7 @@ with Anthropic() as client:
 
 ## Beta features
 
-Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [build with Claude overview](../Guides/build-with-claude-overview.md).
+Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [Features overview](../Guides/build-with-claude-overview.md).
 
 You can access most beta API features through the `beta` property of the client. To enable a particular beta feature, you need to add the appropriate [beta header](../Endpoints/beta-headers.md) to the `betas` field when creating a message.
 

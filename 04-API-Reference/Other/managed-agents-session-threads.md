@@ -2,7 +2,7 @@
 title: "Session threads - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/session-threads"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-10T06:24:58Z"
+fetched_at: "2026-10-18T06:26:56Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fsession-threads)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fsession-threads)
 
 
 
@@ -40,7 +40,7 @@ Define your agent
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
@@ -57,6 +57,10 @@ Build persistent memory
 Advanced orchestration
 
 [Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)Advanced orchestration
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Session threads
 
@@ -97,14 +109,6 @@ List, interrupt, and archive the threads of a multiagent session, read their eve
 Copy page
 
 
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 In a [multiagent session](managed-agents-multiagent-orchestration.md), each agent works in its own **session thread**. This page covers how to list, interrupt, and archive threads, the events they send, and how tool permissions work across them. A [workflow run](managed-agents-workflow-runs.md) creates session threads too.
 
@@ -144,6 +148,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -153,7 +159,7 @@ for thread in client.beta.sessions.threads.list(session.id):
     print(f"[{label}] {thread.status}")
 ```
 
-The full list includes the primary thread. `parent_thread_id` is `null` for the primary thread. Every other thread is a child thread. `workflow_run_id` is `null` except on [a run's threads](managed-agents-workflow-runs.md#a-runs-threads).
+The full list includes the primary thread. `parent_thread_id` is `None` for the primary thread. Every other thread is a child thread. `workflow_run_id` is `None` except on [a run's threads](managed-agents-workflow-runs.md#a-runs-threads).
 
 To list only threads that have certain statuses, add `statuses[]` to the request, and repeat it to give more than one status, as in `?statuses[]=running&statuses[]=idle`. Leave it out to return threads of every status.
 
@@ -178,6 +184,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -212,6 +220,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -238,6 +248,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -278,7 +290,7 @@ Critical events are proxied to the primary thread. However, you might still want
 
 Each session thread has its own event stream at `/v1/sessions/{session_id}/threads/{thread_id}/stream`, and it accepts the same `event_deltas[]` parameter as the session-level stream, so you can preview a subagent's text as the model generates it. A connection previews only the thread it's reading: a child thread's previews never appear on the session-level stream, so to watch a subagent live, open its own thread stream. See [Preview session thread events](managed-agents-event-deltas.md#preview-session-thread-events) for opting in, accumulating, and reconciling previews.
 
-In a workflow run, the server runs a workflow: a program that the primary thread's agent writes. On each of the run's threads, the first `agent.thread_message_received` is the prompt that the workflow wrote. Its `from_session_thread_id` is the primary thread's ID, and it has no `from_agent_name`. The API doesn't guarantee the prompt's text, so don't parse it. The thread's `session.thread_status_terminated` event, on the primary thread's stream, tells you the thread is done. No event records the result it returned to the workflow.
+In a workflow run, the server runs a workflow: a program that the primary thread's agent writes. On each of the run's threads, the first `agent.thread_message_received` is the prompt that the workflow wrote. Its `from_session_thread_id` is the primary thread's ID, and the API doesn't set its `from_agent_name`. The API doesn't guarantee the prompt's text, so don't parse it. The thread's `session.thread_status_terminated` event, on the primary thread's stream, tells you the thread is done. No event records the result it returned to the workflow.
 
 A thread's stream doesn't replay earlier events. Right after `session.thread_created`, the event list of a run's thread can be empty, because the server writes the thread's first event after it. So open the thread's stream first, then list the thread's events, and skip each streamed event whose `id` the list returned.
 
@@ -305,6 +317,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -345,6 +359,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -380,7 +396,7 @@ The session goes `idle` only when no thread is `running`, so `session.status_idl
 
 Under `auto`, your `user.message` events can lead the server to allow a call it would otherwise deny. Nothing in a subagent's thread counts as your intent. Your client posts no messages there, and the messages that the primary thread's agent sends the subagent don't count. When the server denies a call under `auto`, nothing is cross-posted: the event and the error tool result appear only on the subagent's own [thread stream](#session-thread-events), and the subagent keeps running.
 
-The following example goes inside the event loop of the [tool confirmation handler](managed-agents-events-and-streaming.md#tool-confirmation). For each ID in `stop_reason.event_ids`, it sends a `user.tool_confirmation` that allows the call. The same pattern applies to `user.custom_tool_result`.
+The following example goes inside the event loop of the [tool confirmation handler](managed-agents-events-and-streaming.md#tool-confirmation). For each ID in `stop_reason.event_ids`, it sends a `user.tool_confirmation` that allows the call. The same pattern applies to `user.custom_tool_result`, which you can also send as soon as its `agent.custom_tool_use` event arrives.
 
 cURL
 
@@ -399,6 +415,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

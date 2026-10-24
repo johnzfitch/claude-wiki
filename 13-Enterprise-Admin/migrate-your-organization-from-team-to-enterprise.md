@@ -2,7 +2,7 @@
 title: "Migrate your organization from Team to Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:28:12Z"
+fetched_at: "2026-10-23T06:29:03Z"
 tags: ["enterprise"]
 ---
 
@@ -87,7 +87,7 @@ For detailed guidance, refer to **[Purchase and manage seats on Enterprise plans
 
 ### Role-based access controls
 
-After migrating your organization from a Team plan to an Enterprise plan, an Owner or Primary Owner can follow the instructions to configure custom roles, groups, and group spend limits: **[Set up role-based permissions on Enterprise plans](../17-Billing-Plans/set-up-role-based-permissions-on-enterprise-plans.md)**.
+After migrating your organization from a Team plan to an Enterprise plan, an Owner or Primary Owner can follow the instructions to configure custom roles, groups, and group spend limits: **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)**.
 
 Read more about groups, group spend limits, and custom roles:
 

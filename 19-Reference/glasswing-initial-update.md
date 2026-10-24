@@ -2,13 +2,38 @@
 title: "Project Glasswing: An initial update \\ Anthropic"
 source_url: "https://www.anthropic.com/research/glasswing-initial-update"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:10:58Z"
-tags: ["news-research", "security"]
+fetched_at: "2026-10-23T06:29:45Z"
+tags: ["news-research"]
 ---
 
-# Project Glasswing: An initial update
+# **Project Glasswing: **An initial update
 
-May 22, 2026
+- Published
+
+  May 22, 2026
+
+- Category
+
+  [Security](security.md)
+
+- Topics
+
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Open source](https://www.anthropic.com/search?topic=open-source)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+  - [Beneficial Deployments](https://www.anthropic.com/search?topic=beneficial-deployments)
+
+  See more...
+
+Related articles
+
+- Security
+
+  Oct 8, 2026
+
+  [Introducing the Anthropic Cyber Mission](anthropic-cyber-mission.md)
+
+[View more](https://www.anthropic.com/search?topic=cybersecurity)
 
 Last month, we launched [Project Glasswing](../22-Safety-Policy/glasswing.md), our collaborative effort to secure the world’s most critical software before increasingly capable AI models can be turned against it.
 
@@ -16,15 +41,15 @@ Since then, we and our approximately 50 partners have used Claude Mythos Preview
 
 In this post, we discuss what we’ve learned about this critical challenge for cybersecurity in the first weeks of Project Glasswing. We focus on the early public evidence of Mythos Preview’s performance, on the initial results of our effort to scan thousands of open-source software projects, and on what this progress means for cyberdefenders today. We also cover what to expect next from Project Glasswing, and how we’re thinking about releasing Mythos-class models in the future.
 
-## Our early results
+### Our early results
 
-### Our approach to discussing Mythos Preview’s findings
+#### Our approach to discussing Mythos Preview’s findings
 
 The software industry’s longstanding convention is to disclose new vulnerabilities 90 days after they’re discovered (or, if a patch is created before the 90 days is up, around 45 days after the patch becomes available). This allows time for end users to update their software before a vulnerability can be exploited by attackers. Our own [Coordinated Vulnerability Disclosure policy](https://www.anthropic.com/coordinated-vulnerability-disclosure) takes this approach.
 
 However, this means that disclosed vulnerabilities are a lagging indicator of the accelerating frontier of AI models’ cyber capabilities: we’re not yet at the point where we can fully detail our partners’ findings with Mythos Preview without putting end users at risk. Instead, we provide illustrative examples of the model’s performance, along with aggregate statistics on our progress to date. Once patches for the vulnerabilities that Mythos Preview has discovered are widely deployed, we’ll provide much more detail about what we’ve learned.
 
-### Evidence from our partners and external testers
+#### Evidence from our partners and external testers
 
 Project Glasswing’s initial partners build and maintain software that is fundamental to the functioning of the internet and other essential infrastructure. Fixing flaws in their code reduces risk for the many other organizations that rely on it, and therefore reduces risk for billions of end users.
 
@@ -41,7 +66,7 @@ More generally, we’re now seeing that patched software is being rolled out muc
 
 Mythos Preview has also proved useful for other kinds of security work. For example, at one of our Glasswing partner banks, Mythos Preview helped to detect and prevent a fraudulent \$1.5 million wire transfer after a threat actor compromised a customer’s email account and made spoof phone calls.
 
-## Open-source software
+### Open-source software
 
 For the last few months, Anthropic has used Mythos Preview to scan more than 1,000 open-source projects, which collectively underpin much of the internet—and much of our own infrastructure.
 
@@ -63,7 +88,7 @@ We estimate that we’ve disclosed 530 high- or critical-severity bugs to mainta
 
 The relative ease of finding vulnerabilities compared with the difficulty of fixing them amounts to a major challenge for cybersecurity. Confronting this challenge successfully will make our software far safer than before. Below we discuss some ways that cyber defenders can adapt.
 
-## Adapting to a new phase of cybersecurity
+### Adapting to a new phase of cybersecurity
 
 Models with similar cybersecurity skills to Mythos Preview will soon be more broadly available. There is a clear need for a larger effort across the software industry to manage the volume of findings that these models will generate.
 
@@ -74,13 +99,13 @@ Software developers and users should act now to reduce their exposure to these r
 - **Software developers** should shorten their patch cycles and make security fixes available as quickly as possible. The thoughtful use of publicly available AI models can help here; we’re building tools and sharing our research to support this (more details below). Developers should also help their users stay up-to-date with their software by making it as easy as possible to install updates; to the extent feasible, they should be more persistent with users who are still running software with known vulnerabilities.
 - **Network defenders** should shorten their patch testing and deployment timelines. The critical controls laid out by organizations like the [National Institute of Standards and Technology](https://www.nist.gov/cyberframework) and the UK’s [National Cyber Security Centre](https://www.ncsc.gov.uk/collection/10-steps/risk-management) are now all the more important, since they improve security without depending on any single patch landing in time. These include steps like hardening networks’ default configurations, enforcing multi-factor authentication, and keeping comprehensive logs for detection and response.
 
-### Tools for cyberdefense with publicly available AI models
+#### Tools for cyberdefense with publicly available AI models
 
 Many generally-available models can already find large numbers of software vulnerabilities, even if they can’t find the most sophisticated vulnerabilities or exploit them as effectively as Claude Mythos Preview. Project Glasswing has already spurred many other organizations to take action on their own codebases with these generally-available models; we’re working to make this much easier to do.
 
 To begin, we’ve released [Claude Security](../15-Claude-AI-Features/product-claude-security.md) in public beta for Claude Enterprise customers. It’s a tool that helps teams scan their codebases for vulnerabilities, and which can generate proposed fixes for them. In the three weeks since launch, Claude Opus 4.7 has been used to patch over 2,100 vulnerabilities. (This is faster than the open-source patching described above in large part because enterprises are fixing their own code, whereas open-source fixes usually require volunteer maintainers who work through coordinated disclosure.)
 
-We’ve also begun our [Cyber Verification Program](https://www.anthropic.com/99-Other/real-time-cyber-safeguards-on-claude-7906f65cc7.md), which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
+We’ve also begun our [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude), which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
 
 Now, we’re making the tools that we and our partners have used with Mythos Preview available to qualifying customers’ security teams on request. Our aim is to make it much easier to get the best performance out of highly capable public models without extensive setup. This release includes:
 
@@ -90,13 +115,13 @@ Now, we’re making the tools that we and our partners have used with Mythos Pre
 
 Cisco, one of our Project Glasswing partners, has also recently open-sourced its [Foundry Security Spec](https://blogs.cisco.com/ai/announcing-foundry-security-spec) to help other defenders build an evaluation system similar to the one they use themselves.
 
-## Supporting the ecosystem
+### Supporting the ecosystem
 
 We’ve formed a [partnership](https://openssf.org/press-release/2026/03/17/linux-foundation-announces-12-5-million-in-grant-funding-from-leading-organizations-to-advance-open-source-security/) with the Open Source Security Foundation’s Alpha-Omega project, which will support the foundation’s efforts to assist maintainers in processing and triaging bug reports. We’re also continuing to publish research into how frontier model capabilities can best support cyberdefenders.
 
 We’ve also supported the development of [ExploitBench](http://exploitbench.ai) and [ExploitGym](https://rdi.berkeley.edu/blog/exploitgym/), the two new benchmarks that allow researchers to track frontier AI models’ exploit development capabilities over time, as we discuss [here](https://red.anthropic.com/2026/exploit-evals/). We’re supporting the development of other high-quality quantitative benchmarks through our [External Researcher Access Program](../15-Claude-AI-Features/what-is-the-external-researcher-access-program.md). Finally, [Claude for Open Source](https://claude.com/contact-sales/claude-for-oss) supports maintainers and contributors, and we’re committing to scan any open-source package that we adopt ourselves in the future.
 
-## What's next for Project Glasswing
+### What's next for Project Glasswing
 
 The speed of AI progress means that models as capable as Mythos Preview will soon be developed by many different AI companies. At present, no company—including Anthropic—has developed safeguards strong enough to prevent such models from being misused and potentially causing severe harm. That is why we have yet to release Mythos-class models to the public. But it’s also why we began Project Glasswing: if a similarly capable model is released *without* such safeguards, it will soon become dramatically cheaper and easier for almost anyone in the world to exploit flawed software.
 
@@ -105,123 +130,3 @@ Glasswing helps the most systemically important cyber defenders gain an asymmetr
 Next, we will work with critical partners—including US and allied governments—to expand Project Glasswing to additional partners. And in the near future, once we’ve developed the far stronger safeguards we need, we look forward to making Mythos-class models available through a general release.
 
 On the far side of these risks, there’s an encouraging world available to us: one in which important code is hardened far better than it is today, and in which hacking is far less prevalent. There are many obstacles, but we’re nonetheless confident that Project Glasswing can help get us there.
-
-  
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

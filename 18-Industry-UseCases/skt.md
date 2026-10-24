@@ -2,7 +2,7 @@
 title: "SK Telecom Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/skt"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:00Z"
+fetched_at: "2026-10-23T06:30:08Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 
@@ -43,19 +43,19 @@ With Claude, SKT achieved:
 
 ## Meeting the unique demands of Korean customer service
 
-In Korea's fast-paced culture, customer service expectations create unique challenges that extend far beyond typical support requirements. Eric Davis, Head of AI Tech Collaboration Group at SKT, said, "Korea is a very urgent society. If you're one minute late, you're ten minutes late."
+In Korea’s fast-paced culture, customer service expectations create unique challenges that extend far beyond typical support requirements. Eric Davis, Head of AI Tech Collaboration Group at SKT, said, “Korea is a very urgent society. If you’re one minute late, you’re ten minutes late.”
 
-SKT, Korea's \#1 customer service provider for 27 consecutive years, built their reputation on rapid response times and personalized support through regional call centers that accommodate different dialects and cultural nuances. However, they face mounting pressure to maintain this excellence while bridging critical gaps: their traditional call centers only operate 9-6 Monday through Friday, older customers prefer phone support while younger ones gravitate toward chat.
+SKT, Korea’s \#1 customer service provider for 27 consecutive years, built their reputation on rapid response times and personalized support through regional call centers that accommodate different dialects and cultural nuances. However, they face mounting pressure to maintain this excellence while bridging critical gaps: their traditional call centers only operate 9-6 Monday through Friday, older customers prefer phone support while younger ones gravitate toward chat.
 
-"If I call in, I can probably talk to a person within minutes versus having to wait on hold for 30 minutes," Davis explains. But maintaining this level of service excellence requires innovative solutions as customer expectations continue to rise.
+“If I call in, I can probably talk to a person within minutes versus having to wait on hold for 30 minutes,” Davis explains. But maintaining this level of service excellence requires innovative solutions as customer expectations continue to rise.
 
 ## Why SKT chose Claude
 
-After evaluating multiple LLMs, SKT selected Claude based on three critical requirements essential for their market leadership. Brand safety came first. " For us, brand safety is crucial—anything that tarnishes the brand is just a no-go. Anthropic's huge focus on safety really stood out," said Davis.
+After evaluating multiple LLMs, SKT selected Claude based on three critical requirements essential for their market leadership. Brand safety came first. “ For us, brand safety is crucial—anything that tarnishes the brand is just a no-go. Anthropic’s huge focus on safety really stood out,” said Davis.
 
-Second, Claude's natural communication abilities set it apart from competitors. "Claude is more relatable and creative," said Davis. This warmth and emotional intelligence proved especially valuable in Korean customer service, where cultural nuance and empathy are essential. While other AI models generated formal, detached responses, Claude demonstrated the cultural sensitivity needed for natural conversations across regional dialects.
+Second, Claude’s natural communication abilities set it apart from competitors. “Claude is more relatable and creative,” said Davis. This warmth and emotional intelligence proved especially valuable in Korean customer service, where cultural nuance and empathy are essential. While other AI models generated formal, detached responses, Claude demonstrated the cultural sensitivity needed for natural conversations across regional dialects.
 
-The final breakthrough emerged through the Amazon Bedrock integration. "We dedicated a lot of effort with Bedrock in terms of getting the performance there," said Davis. "Performance wasn't just about model accuracy—the throughput and latency had to meet our standards.”
+The final breakthrough emerged through the Amazon Bedrock integration. “We dedicated a lot of effort with Bedrock in terms of getting the performance there,” said Davis. “Performance wasn’t just about model accuracy—the throughput and latency had to meet our standards.”
 
 Amazon Bedrock enabled the seamless serving of SKT’s custom models while rapidly scaling resources to ensure a stable launch of large-scale LLM services. Additionally, the close collaboration between AWS and Anthropic facilitated swift issue resolution and an efficient deployment process.
 
@@ -79,15 +79,15 @@ Post-Call Processing
 
 ## Transforming agent and customer experiences
 
-Claude-powered solutions transformed agent wellbeing and service quality at SKT. Claude-powered solutions greatly improved agent wellbeing and service quality at SKT. Agent evaluation scores increased significantly from 3.3 to mid-4s, meeting SKT’s rigorous standards for service deployment. "We recognized that our customer service agents are stressed, overwhelmed. We wanted human-in-the-loop technology to make their lives better," said Davis.
+Claude-powered solutions transformed agent wellbeing and service quality at SKT. Claude-powered solutions greatly improved agent wellbeing and service quality at SKT. Agent evaluation scores increased significantly from 3.3 to mid-4s, meeting SKT’s rigorous standards for service deployment. “We recognized that our customer service agents are stressed, overwhelmed. We wanted human-in-the-loop technology to make their lives better,” said Davis.
 
-SKT's approach, which Davis calls "IA" for intelligence augmentation, emphasizes enhancing rather than replacing human capabilities. "This is not meant to replace jobs—it's meant to augment the experience," said Davis. This philosophy helped SKT maintain their 27-year leadership in customer service while preserving the human touch of their regional support network, where local agents provide service in customers' preferred dialects.
+SKT’s approach, which Davis calls “IA” for intelligence augmentation, emphasizes enhancing rather than replacing human capabilities. “This is not meant to replace jobs—it’s meant to augment the experience,” said Davis. This philosophy helped SKT maintain their 27-year leadership in customer service while preserving the human touch of their regional support network, where local agents provide service in customers’ preferred dialects.
 
 ## Building the future of human-centered AI support
 
-SKT is working to develop more sophisticated AI solutions that support a human-centered vision. "We're going to build a way more multilingual, way deeper model," said Davis. While automation will increase from today's levels due to workforce shifts, SKT remains committed to using technology to enhance rather than replace the personal connections that distinguish exceptional customer service.
+SKT is working to develop more sophisticated AI solutions that support a human-centered vision. “We’re going to build a way more multilingual, way deeper model,” said Davis. While automation will increase from today’s levels due to workforce shifts, SKT remains committed to using technology to enhance rather than replace the personal connections that distinguish exceptional customer service.
 
-By partnering with Anthropic to pursue this vision, SKT aims to create a blueprint for how companies worldwide can harness AI's power while preserving the irreplaceable human elements of customer care.
+By partnering with Anthropic to pursue this vision, SKT aims to create a blueprint for how companies worldwide can harness AI’s power while preserving the irreplaceable human elements of customer care.
 
 ## Related stories
 
@@ -112,7 +112,8 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -130,12 +131,12 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -168,7 +169,7 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -186,6 +187,7 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -201,7 +203,7 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -236,7 +238,8 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -254,12 +257,12 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -292,7 +295,7 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -310,6 +313,7 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -325,7 +329,7 @@ By partnering with Anthropic to pursue this vision, SKT aims to create a bluepri
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

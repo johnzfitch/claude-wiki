@@ -2,7 +2,7 @@
 title: "Set up JIT or SCIM provisioning | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning-to-manage-user-assignments-on-team-or-enterprise-plans"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:28:09Z"
+fetched_at: "2026-10-23T06:29:01Z"
 tags: ["enterprise"]
 ---
 
@@ -98,15 +98,25 @@ Once your IdP is connected, continue to Step 3.
 
     3.  **SCIM directory sync**: Add or remove members automatically as your directory changes. Your org always stays current.
 
-3.  If you selected “Just-in-time (JIT)” or “SCIM directory sync,” do NOT click “Save changes” immediately. You must first ensure all users are assigned to your Anthropic application in your IdP.
+3.  If you selected “Just-in-time (JIT)” or “SCIM directory sync,” don’t click “Save changes” yet. First, make sure all users are assigned to your Anthropic application in your IdP. Any users who aren’t assigned when you save will be deprovisioned from the organization.
 
-4.  Once you’ve confirmed all users are assigned in your IdP you can either:
+4.  Once you’ve confirmed all users are assigned in your IdP, choose one:
 
-    1.  Click “Save changes” to complete the set up and trigger the initial provisioning, or
+    1.  Click “Save changes” to complete the setup and trigger the initial provisioning. Where it’s available, the admin console shows a preview of what the sync will change before it applies, including how many users will be removed. Review it before you confirm, and cancel if the removal count is higher than you expect. Learn more about **[how SCIM sync works](how-scim-sync-works-for-enterprise-organizations.md)**.
 
-    2.  Toggle on **Enable group mappings** and move to Step 4.
+    2.  Turn on **Enable group mappings** and move to Step 4. If you’re on an Enterprise plan and plan to map any IdP group to the “Custom” role with SCIM, follow the steps in the next section first.
 
-**Important**: Saving before users are properly assigned will result in those users being deprovisioned from the organization. Where it's available, the admin console shows a preview of what the sync will change, including how many members will be removed, before it applies. Review it before you confirm, and cancel if the removal count is higher than you expect. Learn more about **[how SCIM sync works](https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations)**.
+### Use custom roles with SCIM group mappings (Enterprise plans)
+
+Your IdP groups appear in Claude only after the first SCIM sync runs, so you can’t assign them to custom roles ahead of time. Until a synced group is assigned to a custom role, users in a group mapped to “Custom” have no permissions: features that require permissions are greyed out or hidden, and Claude Code sign-in fails. To avoid this, set up SCIM in two passes:
+
+1.  Click “Save changes” with **Enable group mappings** off, and let the initial sync finish.
+
+2.  Go to **[Organization settings \> Roles](https://claude.ai/admin-settings/roles)** and assign the synced groups to your custom roles. If the groups aren’t listed yet, click “Check for updates” in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)** and sync Groups only.
+
+3.  Return to **User provisioning**, turn on **Enable group mappings**, and move to Step 4.
+
+Learn more about **[setting up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
@@ -141,13 +151,13 @@ Once your IdP is connected, continue to Step 3.
 
 **Important:** All users who need access must be assigned to the appropriate groups before you save your group mappings configuration. These users should already be assigned to your Anthropic application in your IdP from when you enabled SSO.
 
-### How the Primary Owner role works with SCIM
+### How the Primary Owner role works with JIT and SCIM
 
-- Your organization's Primary Owner is exempt from SCIM reconciliation. If the Primary Owner account is not present in the IdP directory, or is not a member of any group mapped to a role, it will be skipped when SCIM syncs. The Primary Owner's membership and role are preserved.
+- Your organization's Primary Owner is exempt from SCIM reconciliation. If the Primary Owner account is not present in the IdP directory, or is not a member of any group mapped to a role, it will be skipped when SCIM syncs. With JIT and group mappings, the Primary Owner’s role isn’t changed when they log in, and they aren’t removed if they’re not in any mapped group. The Primary Owner’s membership and role are preserved.
 
-- This exemption applies only to the single Primary Owner role. Owner and Admin roles are **not** exempt and **must** be in a group mapped to a role, or they will be removed when SCIM group mappings are enabled.
+- This exemption applies only to the single Primary Owner role. Owner and Admin roles are **not** exempt and **must** be in a group mapped to a role, or they will be removed when SCIM group mappings are enabled. With JIT and group mappings, they’re removed the next time they log in.
 
-- The Primary Owner role cannot be assigned via SCIM group mappings. It can only be transferred manually from **[Organization settings \> Members](https://claude.ai/admin-settings/members)**. Set your intended Primary Owner before enabling SCIM.
+- The Primary Owner role cannot be assigned through group mappings. It can only be transferred manually from **[Organization settings \> Members](https://claude.ai/admin-settings/members)**. Set your intended Primary Owner before enabling SCIM or group mappings.
 
 - The Primary Owner is not exempt from SSO sign-in enforcement. SSO enforcement is applied by email domain; if the Primary Owner's email is on an enforced domain, they must authenticate through SSO.
 
@@ -182,11 +192,11 @@ To fix this, do one of the following:
 
 1.  Add the affected users to the appropriate groups manually in **[Organization settings \> Groups](https://claude.ai/admin-settings/groups)**. Learn more about **[managing groups on Enterprise plans](https://support.claude.com/en/articles/13799932)**.
 
-2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](how-scim-sync-works-for-enterprise-organizations-claude-help-center.md)**.
+2.  Switch your provisioning mode to SCIM directory sync, which syncs groups and their memberships from your IdP. Learn more about **[how SCIM sync works](https://support.claude.com/en/articles/14499648)**.
 
 ### I lost Admin/Owner access after enabling group mappings
 
-This happens when the person configuring group mappings isn't assigned to a group mapped to an Admin or Owner role, causing their permissions to be downgraded to User.
+This happens when the person configuring group mappings isn’t assigned to a group mapped to an Admin or Owner role, causing their permissions to be downgraded to User. Someone who isn’t in any mapped group is removed from the organization instead (with JIT, the next time they log in; with SCIM, at the next sync) and needs to be added again. This doesn’t affect the Primary Owner.
 
 To fix this, do one of the following:
 

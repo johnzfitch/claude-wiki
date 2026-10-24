@@ -2,7 +2,7 @@
 title: "Emergent Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/emergent"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:46Z"
+fetched_at: "2026-10-23T06:29:54Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -47,13 +47,13 @@ compliance rate vs 70% industry standard
 
 ## The problem
 
-Emergent set out to democratize software creation by removing coding as a barrier. The company's customers—founders building MVPs, product managers creating internal tools, domain experts developing industry solutions, and small businesses automating operations—typically pay \$25-50 monthly to build applications that would traditionally cost \$50,000+ in development fees.
+Emergent set out to democratize software creation by removing coding as a barrier. The company’s customers—founders building MVPs, product managers creating internal tools, domain experts developing industry solutions, and small businesses automating operations—typically pay \$25-50 monthly to build applications that would traditionally cost \$50,000+ in development fees.
 
-"We've had three lives," said Mukund Jha, CEO and co-founder at Emergent. The company initially built an AI-powered QA testing product, with agents that could navigate web applications, understand interfaces, and verify functionality. Then on day one of Y Combinator, they had a revelation: if their AI could understand applications well enough to test them, why not build them?
+“We’ve had three lives,” said Mukund Jha, CEO and co-founder at Emergent. The company initially built an AI-powered QA testing product, with agents that could navigate web applications, understand interfaces, and verify functionality. Then on day one of Y Combinator, they had a revelation: if their AI could understand applications well enough to test them, why not build them?
 
 They pivoted immediately. Version two was an enterprise coding agent that topped SWE benchmarks. But enterprise sales cycles slowed feedback to months. In January, they pivoted again—this time to consumers, packaging their agent into a web platform where anyone could start building immediately.
 
-However, they faced three critical technical challenges. Models would forget instructions within the same session, specifying formatting requirements only to ignore them minutes later. They would write partial code with comments like "rest remains the same," making output unusable for actual development. Most problematically, agents needed to execute hundreds of terminal commands, but models consistently failed at maintaining correct syntax and parameter ordering.
+However, they faced three critical technical challenges. Models would forget instructions within the same session, specifying formatting requirements only to ignore them minutes later. They would write partial code with comments like “rest remains the same,” making output unusable for actual development. Most problematically, agents needed to execute hundreds of terminal commands, but models consistently failed at maintaining correct syntax and parameter ordering.
 
 ## Claude enables complete autonomous development workflows
 
@@ -61,29 +61,29 @@ Emergent tested everything—leading proprietary models, open source options, al
 
 Instructions given once remained consistent throughout entire projects. Command execution showed high accuracy in tool-calling syntax and multi-step workflows. The model consistently generated full code files spanning 500+ lines without truncation.
 
-"The API integration was straightforward—we had it running in production within two days," said Jha.
+“The API integration was straightforward—we had it running in production within two days,” said Jha.
 
 ## Emergent deploys Claude across development lifecycle
 
-Claude powers five core functions in Emergent's platform. For code generation, it produces complete applications averaging 5,000+ lines across Python backends, JavaScript frontends, and database schemas. Different Claude instances handle specialized tasks in multi-agent orchestration—one manages frontend work, another handles backend logic, a third focuses on testing, and a fourth manages deployment.
+Claude powers five core functions in Emergent’s platform. For code generation, it produces complete applications averaging 5,000+ lines across Python backends, JavaScript frontends, and database schemas. Different Claude instances handle specialized tasks in multi-agent orchestration—one manages frontend work, another handles backend logic, a third focuses on testing, and a fourth manages deployment.
 
 For autonomous debugging, Claude analyzes stack traces, identifies root causes, and implements fixes without human intervention. It uses vision capabilities to verify UI functionality through visual testing. Claude also makes architecture decisions, selecting appropriate tech stacks and implementing design patterns.
 
-"The bigger challenge was learning to trust it," Jha explained. "We kept wanting to constrain Claude, add guardrails, limit its capabilities. Then we realized: Claude performs better with more freedom, not less. So we gave it full access to virtual machines. That's when the magic happened."
+“The bigger challenge was learning to trust it,” Jha explained. “We kept wanting to constrain Claude, add guardrails, limit its capabilities. Then we realized: Claude performs better with more freedom, not less. So we gave it full access to virtual machines. That’s when the magic happened.”
 
-The approach unlocked capabilities that weren't possible before. Projects can now complete 100+ step workflows successfully, compared to 10-15 steps previously. Agents generate 5,000+ line codebases without human intervention and build full-stack applications with separate frontend and backend architectures. They handle complex features like WebSockets, real-time updates, and payment processing, while automatically recovering from errors by fixing their own mistakes.
+The approach unlocked capabilities that weren’t possible before. Projects can now complete 100+ step workflows successfully, compared to 10-15 steps previously. Agents generate 5,000+ line codebases without human intervention and build full-stack applications with separate frontend and backend architectures. They handle complex features like WebSockets, real-time updates, and payment processing, while automatically recovering from errors by fixing their own mistakes.
 
 ## The outcome
 
-The final pivot to consumers, powered by Claude's capabilities, changed everything. Emergent went commercial at the start of June. Four months later, the company reached \$25M ARR with 2 million+ users and thousands of real businesses launched through the platform.
+The final pivot to consumers, powered by Claude’s capabilities, changed everything. Emergent went commercial at the start of June. Four months later, the company reached \$25M ARR with 2 million+ users and thousands of real businesses launched through the platform.
 
-Projects that would traditionally take a freelancer two weeks get built in two hours. The technical integration took two days for initial setup, one week to fully optimize prompts, and two weeks to restructure the entire agent architecture around Claude's capabilities.
+Projects that would traditionally take a freelancer two weeks get built in two hours. The technical integration took two days for initial setup, one week to fully optimize prompts, and two weeks to restructure the entire agent architecture around Claude’s capabilities.
 
 Looking ahead, Emergent is developing mobile and desktop application capabilities in the near term. Medium-term projects include voice coding, where users can describe applications verbally while Emergent builds them in real-time, and screen sharing functionality that lets users point at problems for the agent to fix.
 
-The company is collaborating with Anthropic on production performance benchmarking, multi-agent orchestration patterns, long-context optimization, and real-world reliability metrics. Emergent's testing and evaluation data helps Anthropic understand production applications, while model improvements directly enhance the platform's capabilities.
+The company is collaborating with Anthropic on production performance benchmarking, multi-agent orchestration patterns, long-context optimization, and real-world reliability metrics. Emergent’s testing and evaluation data helps Anthropic understand production applications, while model improvements directly enhance the platform’s capabilities.
 
-"Our shared goal is making software development accessible to anyone who can describe what they need, regardless of technical background," said Jha.
+“Our shared goal is making software development accessible to anyone who can describe what they need, regardless of technical background,” said Jha.
 
 
 ## Related stories
@@ -109,7 +109,8 @@ The company is collaborating with Anthropic on production performance benchmarki
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -127,12 +128,12 @@ The company is collaborating with Anthropic on production performance benchmarki
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -165,7 +166,7 @@ The company is collaborating with Anthropic on production performance benchmarki
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -183,6 +184,7 @@ The company is collaborating with Anthropic on production performance benchmarki
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -198,7 +200,7 @@ The company is collaborating with Anthropic on production performance benchmarki
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -233,7 +235,8 @@ The company is collaborating with Anthropic on production performance benchmarki
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -251,12 +254,12 @@ The company is collaborating with Anthropic on production performance benchmarki
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -289,7 +292,7 @@ The company is collaborating with Anthropic on production performance benchmarki
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -307,6 +310,7 @@ The company is collaborating with Anthropic on production performance benchmarki
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -322,7 +326,7 @@ The company is collaborating with Anthropic on production performance benchmarki
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Get Activity Summaries - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/summaries/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-10T06:24:55Z"
+fetched_at: "2026-10-18T06:27:05Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fsummaries%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fsummaries%2Flist)
 
 
 
@@ -159,6 +159,8 @@ Plugins
 
 Plugin Marketplaces
 
+Telemetry Destinations
+
 
 Skills
 
@@ -228,13 +230,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -244,7 +248,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,12 +257,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
 5.  [Summaries](http-beta-organization-analytics-summaries.md)
 
 # Get Activity Summaries
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/analytics/summaries
 
@@ -332,7 +342,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-data: array of [BetaAnalyticsSingleDayActivitySummary](http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }
+data: array of [BetaAnalyticsSingleDayActivitySummary](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }
 
 
 
@@ -546,7 +556,7 @@ Opaque cursor for the next page, or null if no more results. Currently always nu
 
 
 
-summaries: array of [BetaAnalyticsSingleDayActivitySummary](http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }⁠Deprecated
+summaries: array of [BetaAnalyticsSingleDayActivitySummary](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }⁠Deprecated
 
 
 

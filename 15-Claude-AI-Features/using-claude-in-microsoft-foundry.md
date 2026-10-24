@@ -2,7 +2,7 @@
 title: "Use Claude in Microsoft Foundry | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12864745-using-claude-in-microsoft-foundry"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:07Z"
+fetched_at: "2026-10-23T06:28:59Z"
 tags: ["claude-ai"]
 ---
 

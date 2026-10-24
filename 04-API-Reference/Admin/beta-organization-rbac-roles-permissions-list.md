@@ -2,7 +2,7 @@
 title: "List RBAC Role Permissions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_roles/permissions/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:09Z"
+fetched_at: "2026-10-20T06:38:39Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_roles%2Fpermissions%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_roles%2Fpermissions%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -141,9 +141,11 @@ Permissions
 
 List RBAC Role Permissions
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -214,13 +216,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -228,9 +232,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -239,12 +243,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [RBAC Roles](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_roles)
 5.  [Permissions](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_roles/permissions)
 
 # List RBAC Role Permissions
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/rbac_roles/{rbac_role_id}/permissions
 
@@ -283,6 +293,18 @@ page: optional string
 
 
 Optionally set to the `next_page` token from the previous response.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 ##### Returns
 

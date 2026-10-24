@@ -2,7 +2,7 @@
 title: "Run Claude Code programmatically - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/headless"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:35Z"
+fetched_at: "2026-10-21T06:28:48Z"
 tags: ["claude-code"]
 ---
 
@@ -72,13 +72,13 @@ Claude Code exits with code 0 on success and a non-zero code when the run fails,
 
 Start faster with bare mode
 
-Add `--bare` to reduce startup time by skipping auto-discovery of hooks, skills, custom commands, [subagents](../09-Agents-Patterns/sub-agents.md), installed plugins, MCP servers, auto memory, and CLAUDE.md. Without it, `claude -p` loads the same [context](how-claude-code-works.md#the-context-window) an interactive session would, including anything configured in the working directory or `~/.claude`. Bare mode is useful for CI and scripts where you need the same result on every machine. A hook in a teammate’s `~/.claude` or an MCP server in the project’s `.mcp.json` won’t run, because bare mode never reads them. A directory you name with `--add-dir` is a partial exception: bare mode loads skills from its `.claude/skills/` folder, but still skips its `.claude/commands/` and `.claude/agents/` folders. [Skills from additional directories](../08-Plugins-Skills/skills.md#skills-from-additional-directories) covers what does and doesn’t load. Without `--bare`, a `-p` session runs the hooks in a project’s `.claude/settings.json` and connects the servers in its `.mcp.json`, even in a folder you’ve never trusted. A `-p` session shows no workspace trust dialog and no per-server approval prompt. [What runs before you trust a folder](permissions.md#what-runs-before-you-trust-a-folder) covers each kind of repository content under `-p` and how to keep it out. This example runs a one-off summarize task in bare mode and pre-approves the Read tool so the call completes without a permission prompt. Set `ANTHROPIC_API_KEY` before running it, because bare mode doesn’t use your subscription login:
+Add `--bare` to reduce startup time by skipping auto-discovery of hooks, skills, custom commands, [subagents](../09-Agents-Patterns/sub-agents.md), installed plugins, MCP servers, auto memory, and CLAUDE.md. Without it, `claude -p` discovers and loads them as an interactive session would, including anything configured in the working directory or `~/.claude`. Bare mode is useful for CI and scripts where you need the same result on every machine. A hook in a teammate’s `~/.claude` or an MCP server in the project’s `.mcp.json` won’t run, because bare mode never reads them. A directory you name with `--add-dir` is a partial exception: bare mode loads skills from its `.claude/skills/` folder, but still skips its `.claude/commands/` and `.claude/agents/` folders. [Skills from additional directories](../08-Plugins-Skills/skills.md#skills-from-additional-directories) covers what does and doesn’t load. Without `--bare`, a `-p` session runs the hooks in a project’s `.claude/settings.json` and connects the servers in its `.mcp.json`, even in a folder you’ve never trusted. A `-p` session shows no workspace trust dialog and no per-server approval prompt. [What runs before you trust a folder](permissions.md#what-runs-before-you-trust-a-folder) covers each kind of repository content under `-p` and how to keep it out. This example runs a one-off summarize task in bare mode and pre-approves the Read tool so the call completes without a permission prompt. Set `ANTHROPIC_API_KEY` before running it, because bare mode doesn’t use your subscription login:
 
 ```python
 claude --bare -p "Summarize README.md" --allowedTools "Read"
 ```
 
-In bare mode, Claude Code never reads OAuth credentials or the system keychain. For the Anthropic API, set `ANTHROPIC_API_KEY` in the environment, with a key created in the [Claude Console](../04-API-Reference/Other/usage-limits.md), or supply an `apiKeyHelper` in the `--settings` JSON. Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry continue to read their own provider credentials as usual. In bare mode Claude has access to the Bash, file read, and file edit tools. Pass any context you need with a flag:
+In bare mode, Claude Code never reads OAuth credentials or the system keychain. For the Anthropic API, set `ANTHROPIC_API_KEY` in the environment, with a key created in the [Claude Console](../04-API-Reference/Other/playground.md), or supply an `apiKeyHelper` in the `--settings` JSON. Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry continue to read their own provider credentials as usual. In bare mode Claude has access to the Bash, file read, and file edit tools. Pass any context you need with a flag:
 
 | To load                                                        | Use                                                     |
 |----------------------------------------------------------------|---------------------------------------------------------|
@@ -153,7 +153,7 @@ With `--output-format json`, the response payload includes `total_cost_usd` and 
 
 Piped stdin is capped at 10MB. If you exceed the cap, Claude Code exits with a clear error and a non-zero status. To work with larger inputs, write the content to a file and reference the file path in your prompt instead of piping it.
 
-If Claude Code can’t read stdin, for example because the process that started it disconnected its end, Claude Code prints a warning to stderr and continues with the prompt from the command line. Before v2.1.211, an unreadable stdin on Windows crashed the session or made it exit silently with no output.
+If Claude Code can’t read stdin, for example because the process that started it disconnected its end, Claude Code prints a warning to stderr and continues with the prompt from the command line.
 
 
 [​](#add-claude-to-a-build-script)
@@ -197,7 +197,7 @@ claude -p "Extract the main function names from auth.py" \
   --json-schema '{"type":"object","properties":{"functions":{"type":"array","items":{"type":"string"}}},"required":["functions"]}'
 ```
 
-If the value isn’t a valid JSON Schema, `claude` exits with `Error: --json-schema is not a valid JSON Schema` followed by the validator’s diagnostic. Claude Code accepts schemas that use the `format` keyword, such as `"format": "email"`, but treats `format` as an annotation and doesn’t enforce it. Before v2.1.205, Claude Code silently ignored an invalid schema and returned unstructured text, and treated any schema containing `format` as invalid.
+If the value isn’t a valid JSON Schema, `claude` exits with `Error: --json-schema is not a valid JSON Schema` followed by the validator’s diagnostic. Claude Code accepts schemas that use the `format` keyword, such as `"format": "email"`, but treats `format` as an annotation and doesn’t enforce it. If a run ends without valid structured output, for example because Claude declined the request, the response has no `structured_output` field. Before your script uses `structured_output`, check that the field is present.
 
 Use a tool like [jq](https://jqlang.org/) to parse the response and extract specific fields:
 
@@ -223,7 +223,7 @@ Use `--output-format stream-json` with `--verbose` and `--include-partial-messag
 claude -p "Explain recursion" --output-format stream-json --verbose --include-partial-messages
 ```
 
-The last line of the stream is a `result` message with the final response text, cost, and session metadata. If your consumer reads the stream slowly, Claude Code waits for the queued output to drain before exiting, scaling the wait with how much is still queued, capped at 30 seconds. Before v2.1.214 the exit wait was capped at about two seconds, which could cut off the end of a large response. The following example uses [jq](https://jqlang.org/) to filter for text deltas and display only the streaming text. The `-r` flag outputs raw strings (no quotes) and `-j` joins without newlines so tokens stream continuously:
+The last line of the stream is a `result` message with the final response text, cost, and session metadata. If your consumer reads the stream slowly, Claude Code waits for the queued output to drain before exiting, scaling the wait with how much is still queued, capped at 30 seconds. The following example uses [jq](https://jqlang.org/) to filter for text deltas and display only the streaming text. The `-r` flag outputs raw strings (no quotes) and `-j` joins without newlines so tokens stream continuously:
 
 ```python
 claude -p "Write a poem" --output-format stream-json --verbose --include-partial-messages | \
@@ -252,7 +252,6 @@ When you enable either option, Claude Code forwards messages from [subagents at 
 
 For a forked skill started from the prompt, match `parent_tool_use_id` on the `forked-command-` prefix, because the name after it can differ from the one you typed. If some of these messages are missing from your stream, check your Claude Code version against these minimums:
 
-- **`--forward-subagent-text` and `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT`**: v2.1.211 or later
 - **Forwarding at every nesting depth**: v2.1.219 or later
 - **A forked skill that Claude starts with the Skill tool from the main conversation**: v2.1.86 or later for its `tool_use` and `tool_result` blocks, and v2.1.265 or later for its first `user` message and its text and thinking blocks
 - **Messages of subagents that a forked skill spawns, and of forked skills started inside a subagent or another forked skill**: v2.1.275 or later
@@ -286,9 +285,9 @@ Read session metadata
 The `system/init` event reports session metadata including the model, tools, MCP servers, and loaded plugins. It is the first event in the stream unless startup events precede it:
 
 - `plugin_install` events, when [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](env-vars.md) is set.
-- [`hook_started`, `hook_progress`, and `hook_response` events](../05-Agent-SDK/agent-sdk-typescript.md#sdkhookstartedmessage), while a configured [`SessionStart`](../07-Hooks/hooks.md#sessionstart) or [`Setup`](../07-Hooks/hooks.md#setup) hook runs. These stream as the hook produces them. Claude Code v2.1.169 through v2.1.203 delivered them in one batch after the hook completed, still ahead of `system/init`; v2.1.204 restored live delivery.
+- [`hook_started`, `hook_progress`, and `hook_response` events](../05-Agent-SDK/agent-sdk-typescript.md#sdkhookstartedmessage), while a configured [`SessionStart`](../07-Hooks/hooks.md#sessionstart) or [`Setup`](../07-Hooks/hooks.md#setup) hook runs. These stream as the hook produces them.
 
-The event also carries an optional `capabilities` array of strings naming the protocol behaviors this Claude Code version implements, such as `interrupt_receipt_v1` or `interrupt_cancel_queued_v1`. Check it to feature-detect instead of comparing version strings, and ignore values you don’t recognize. The field requires Claude Code v2.1.205 or later and is absent from earlier versions. See [`SDKSystemMessage`](../05-Agent-SDK/agent-sdk-typescript.md#sdksystemmessage) for the capability list.
+The event also carries an optional `capabilities` array of strings naming the protocol behaviors this Claude Code version implements, such as `interrupt_receipt_v1` or `interrupt_cancel_queued_v1`. Check it to feature-detect instead of comparing version strings, and ignore values you don’t recognize. See [`SDKSystemMessage`](../05-Agent-SDK/agent-sdk-typescript.md#sdksystemmessage) for the capability list.
 
 
 [​](#fail-ci-when-a-plugin-or-mcp-server-doesn’t-load)
@@ -333,17 +332,17 @@ When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](env-vars.md) is set, Claude Code emits 
 
 Auto-approve tools
 
-Use `--allowedTools` to let Claude use certain tools without prompting. Listing `Read` and `Edit` lets Claude read and edit files without asking for permission. Listing `Bash` does the same for shell commands, except in a run that starts in [auto mode](permission-modes.md#how-auto-mode-evaluates-actions), where Claude Code drops a bare `Bash` entry as a broad allow rule and auto mode evaluates each command instead. This example runs a test suite and fixes failures with those three tools listed:
+Use `--allowedTools` to let Claude use certain tools without prompting. Listing `Read` and `Edit` lets Claude read and edit files without asking for permission, apart from reads from [network paths](permissions.md#network-paths). Listing `Bash` does the same for shell commands, except in a run that starts in [auto mode](permission-modes.md#how-auto-mode-evaluates-actions), where Claude Code drops a bare `Bash` entry as a broad allow rule and auto mode evaluates each command instead. This example runs a test suite and fixes failures with those three tools listed:
 
 ```python
 claude -p "Run the test suite and fix any failures" \
   --allowedTools "Bash,Read,Edit"
 ```
 
-To set a baseline for the whole session instead of listing individual tools, pass a [permission mode](permission-modes.md). A run where nothing sets a permission mode takes the [built-in starting permission mode](permission-modes.md#which-mode-a-session-starts-in), which can be `auto`, so pass the one you want:
+Calls to tools you didn’t list run if they need no approval. In a [Manual mode](permission-modes.md#available-modes) `claude -p` run, a call that needs approval is denied unless something approves it, such as a [`PermissionRequest` hook](../07-Hooks/hooks.md#permissionrequest) or a [`--permission-prompt-tool`](cli-reference.md#cli-flags). With Claude Code v2.1.302 or later, `claude -p` runs start in Manual mode when [nothing sets a permission mode](permission-modes.md#which-mode-a-non-interactive-run-starts-in). To set a baseline for the whole session instead of listing individual tools, pass a [permission mode](permission-modes.md) with `--permission-mode`, such as `auto`, `dontAsk`, or `acceptEdits`:
 
 - **`auto`**: pass `--permission-mode auto` to have a classifier review most actions instead of you
-- **`dontAsk`**: Claude Code denies every call that would otherwise prompt, which is useful for locked-down CI runs. Actions that need no approval in Manual mode still run, such as file reads in your working directories and the [read-only command set](permissions.md#read-only-commands), and so do actions your `--allowedTools` entries or `permissions.allow` rules cover. `AskUserQuestion`, connector tools [your organization set to `ask`](../06-MCP-Tools/General/mcp.md#organization-controls-on-connector-tools), and MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool) are denied even when an allow rule matches
+- **`dontAsk`**: Claude Code denies every call that would otherwise prompt, which is useful for locked-down CI runs, though a [mod](../08-Plugins-Skills/plugins-mods-overview.md) you installed can still approve some of those calls. To check which calls a mod can approve, see [Extend permissions with hooks](permissions.md#precedence-among-rules-hooks-and-mods). Actions that need no approval in Manual mode still run, such as file reads in your working directories and the [read-only command set](permissions.md#read-only-commands). Actions covered by your `--allowedTools` entries or `permissions.allow` rules also run. `AskUserQuestion`, connector tools [your organization set to `ask`](../06-MCP-Tools/General/mcp.md#organization-controls-on-connector-tools), MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool), and [reads from network paths](permissions.md#network-paths) are denied even when an allow rule matches
 - **`acceptEdits`**: Claude writes files without prompting, and Claude Code auto-approves common filesystem commands such as `mkdir`, `touch`, `mv`, and `cp`. The [actions no mode auto-approves](permission-modes.md#actions-no-mode-auto-approves) still apply. Apart from the read-only command set, other shell commands and network requests still need an `--allowedTools` entry or a `permissions.allow` rule. See [what `acceptEdits` auto-approves](permission-modes.md#auto-approve-file-edits-with-acceptedits-mode) for the full list
 
 This example applies lint fixes with `acceptEdits` as the baseline:
@@ -385,7 +384,7 @@ Command support differs in `-p` mode:
 
 - User-invoked [skills](../08-Plugins-Skills/skills.md) and custom commands work. Include `/skill-name` in the prompt string and Claude Code expands it before running.
 - Built-in commands that only run in the terminal interface, such as `/login`, aren’t available.
-- `/model`, `/effort`, `/fast`, `/color`, and `/rename` accept the value as an argument, for example `/model sonnet`, and `/mcp` with no argument prints a text summary of server status. These forms require Claude Code v2.1.205 or later and follow each command’s [availability notes](commands.md#all-commands).
+- `/model`, `/effort`, `/fast`, `/color`, and `/rename` accept the value as an argument, for example `/model sonnet`, and `/mcp` with no argument prints a text summary of server status. These forms follow each command’s [availability notes](commands.md#all-commands).
 - To change a setting, pass `key=value` to `/config`, for example `/config thinking=false`.
 - `/output-style <style>` switches [output styles](output-styles.md) and `/output-style` alone lists them. Requires Claude Code v2.1.269 or later.
 
@@ -402,14 +401,14 @@ gh pr diff "$1" | claude -p \
   --output-format json
 ```
 
-In the script, `"$1"` stands for the first argument you pass on the command line. Run `bash review.sh 123` and the shell replaces `"$1"` with `123`, so the script fetches the diff for PR 123. Claude Code prints the review as JSON, with the text in the `result` field. See [system prompt flags](cli-reference.md#system-prompt-flags) for more options including `--system-prompt` to fully replace the default prompt.
+In the script, `"$1"` stands for the first argument you pass on the command line. Run `bash review.sh 123` and the shell replaces `"$1"` with `123`, so the script fetches the diff for PR 123. Claude Code prints the review as JSON, with the text in the `result` field. See [system prompt flags](cli-reference.md#system-prompt-flags) for more options including `--system-prompt` to fully replace the default prompt. If you replace it, the run also starts without the [git status snapshot](settings-reference.md#includegitinstructions).
 
 
 [​](#continue-conversations)
 
 Continue conversations
 
-Use `--continue` to continue the most recent conversation, or `--resume` with a session ID to continue a specific conversation. On Claude Code v2.1.257 or later, when you pass `--continue`, Claude Code opens a [background session](sessions.md#resume-a-session) that has finished, but not one that is still running. This example runs a review, then sends follow-up prompts:
+Use `--continue` to continue the most recent conversation, or `--resume` with a session ID to continue a specific conversation. On Claude Code v2.1.257 or later, when you pass `--continue`, Claude Code opens a [background session](sessions.md#where-the-session-picker-looks) that has finished, but not one that is still running. This example runs a review, then sends follow-up prompts:
 
 ```python
 # First request
@@ -427,7 +426,7 @@ session_id=$(claude -p "Start a review" --output-format json | jq -r '.session_i
 claude -p "Continue that review" --resume "$session_id"
 ```
 
-You can run the two commands from different directories: Claude Code [finds the session by its ID](sessions.md#resume-a-session) in any project on this machine. Before v2.1.223, Claude Code looked for the ID only in the current project directory and its git worktrees, so you had to run both commands from the same directory. In place of the session ID, you can pass `--resume` the absolute path to a session’s `.jsonl` [transcript file](sessions.md#where-transcripts-are-stored), and Claude Code continues the conversation stored in that file.
+You can run the two commands from different directories: Claude Code [finds the session by its ID](sessions.md#where-the-session-picker-looks) in any project on this machine. In place of the session ID, you can pass `--resume` the absolute path to a session’s `.jsonl` [transcript file](sessions.md#where-transcripts-are-stored), and Claude Code continues the conversation stored in that file.
 
 
 [​](#next-steps)

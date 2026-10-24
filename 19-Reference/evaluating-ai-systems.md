@@ -2,13 +2,45 @@
 title: "Challenges in evaluating AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/evaluating-ai-systems"
 category: "19-Reference"
-fetched_at: "2026-10-10T06:28:36Z"
+fetched_at: "2026-10-23T06:29:22Z"
 tags: ["news-research"]
 ---
 
 # Challenges in evaluating AI systems
 
-Oct 4, 2023
+- [01Introduction](#introduction)
+- [02Challenges](#challenges)
+- [03Policy recommendations](#policy-recommendations)
+- [04Conclusion](#conclusion)
+
+- Published
+
+  Oct 4, 2023
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+
+  See more...
+
+Related articles
+
+- Alignment
+
+  Jun 16, 2025
+
+  [SHADE-Arena: Evaluating sabotage and monitoring in LLM agents](shade-arena-sabotage-monitoring.md)
+
+[View more](https://www.anthropic.com/search?topic=benchmarks)
 
 ## Introduction
 
@@ -145,153 +177,28 @@ As we have explored in this post, building meaningful AI evaluations is a challe
 
 We hope that by openly sharing our experiences evaluating our own systems across many different dimensions, we can help people interested in AI policy acknowledge challenges with current model evaluations.  
   
-If you found this post helpful and want to discuss evaluations of AI systems with Anthropic, please email <policy@anthropic.com>. We are going to spend the next couple of months chatting with more people about this area and will endeavor to share what we learn in those conversations.  
+If you found this post helpful and want to discuss evaluations of AI systems with Anthropic, please email <policy@anthropic.com>. We are going to spend the next couple of months chatting with more people about this area and will endeavor to share what we learn in those conversations.
 
-If you’d like to cite this post you can use the following Bibtex key:  
-  
-@online{ganguli2023challenges,  
-author = {Deep Ganguli and Nicholas Schiefer and Marina Favaro and Jack Clark},  
-title = {Challenges in evaluating {AI} systems},  
-date = {2023-10-04},  
-year = {2023},  
-url = {[https://www.anthropic.com/index/evaluating-ai-systems](research-evaluating-ai-systems.md)},  
-}
+## Footnotes
 
-### Footnotes
+01How long did it take to develop BBQ? BBQ took the developers ~2 people years spread over 6 months across 8 people to build. Designing and implementing even just a single evaluation is a resource intensive effort that can take tens of people several months.
 
-\[1\] How long did it take to develop BBQ? BBQ took the developers ~2 people years spread over 6 months across 8 people to build. Designing and implementing even just a single evaluation is a resource intensive effort that can take tens of people several months.  
+02BIG-bench Hard was released 4 months after BIG-bench that narrowed down to 23 hard tasks. We were implementing BIG-bench before BIG-bench Hard was released.
 
-\[2\] BIG-bench Hard was released 4 months after BIG-bench that narrowed down to 23 hard tasks. We were implementing BIG-bench before BIG-bench Hard was released.
+03See for example [Ghost Work](https://ghostwork.info/).
 
-\[3\] See for example [Ghost Work](https://ghostwork.info/).
+04For example, a well-known issue with many facial recognition systems has been higher error rates for certain demographics, like women and people of color. The FRVT reports shined a spotlight on these accuracy discrepancies, which put pressure on vendors to improve their algorithms and mitigate systemic biases.
 
-\[4\] For example, a well-known issue with many facial recognition systems has been higher error rates for certain demographics, like women and people of color. The FRVT reports shined a spotlight on these accuracy discrepancies, which put pressure on vendors to improve their algorithms and mitigate systemic biases.
+## Authors & Acknowledgments
 
+### Citation
 
-## Related content
+Copy
 
-### Investigating unintended model actions in our evaluations and internal use
-
-This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude.
-
-[Read more](investigating-unintended-model-actions.md)
-
-### The missing map of the sky
-
-Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light.
-
-[Read more](the-missing-map-of-the-sky.md)
-
-### Launching an opt-in vulnerability-finding service for open-source software
-
-We’re making available OSS Scanner, an opt-in vulnerability scanner for the open-source ecosystem that’s informed by our experience using Claude to find vulnerabilities during Project Glasswing.
-
-[Read more](launching-opt-in-vuln-finding-service-for-open-source.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Developer blog](https://claude.dev)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+``` CodeBlock-module-scss-module__PbWBnq__code
+@online{ganguli2023challenges,
+author = {Deep Ganguli and Nicholas Schiefer and Marina Favaro and Jack Clark},
+title = {Challenges in evaluating {AI} systems},
+date = {2023-10-04},
+year = {2023},
+url = {https://www.anthropic.com/index/evaluating-ai-systems},

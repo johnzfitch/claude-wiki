@@ -1,8 +1,8 @@
 ---
 title: "Paid plan billing FAQs | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/8325618"
+source_url: "https://support.claude.com/en/articles/8325618-paid-plan-billing-faqs"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:27Z"
+fetched_at: "2026-10-23T06:29:17Z"
 tags: ["api", "billing"]
 ---
 
@@ -53,7 +53,7 @@ To change the card on your Pro or Max subscription:
 
 The new card becomes your default payment method, and all future subscription renewals are charged to it. Your previous card is no longer billed.
 
-There's no separate option to remove a card, and updating to a new card replaces the old one for billing purposes. The billing page only shows your current default card. Previously used cards are no longer charged, but they may remain stored with our payment processor. If you need a previous card fully removed from your account, please contact **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+There's no separate option to remove a card, and updating to a new card replaces the old one for billing purposes. The billing page only shows your current default card. Previously used cards are no longer charged, but they may remain stored with our payment processor. If you need a previous card fully removed from your account, please contact **[our support team](../15-Claude-AI-Features/how-to-get-support.md)**.
 
 ## How can I use a different name on my invoices?
 

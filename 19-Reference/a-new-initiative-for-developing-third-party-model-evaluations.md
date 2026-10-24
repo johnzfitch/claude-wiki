@@ -1,14 +1,41 @@
 ---
-title: "A new initiative for developing third-party model evaluations \\ Anthropic"
+title: "Funding third-party model evaluations \\ Anthropic"
 source_url: "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:36Z"
+fetched_at: "2026-10-21T06:30:16Z"
 tags: ["evaluation", "news-research"]
 ---
 
 # A new initiative for developing third-party model evaluations
 
-Jul 1, 2024
+- Published
+
+  Jul 1, 2024
+
+- Category
+
+  [Policy](policy.md)
+
+- Topics
+
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
+  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  May 22, 2026
+
+  [Measuring LLMs’ ability to develop exploits](exploit-evals.md)
+
+[View more](https://www.anthropic.com/search?topic=safety-evaluations)
 
 A [robust, third-party evaluation ecosystem](third-party-testing.md) is essential for assessing AI capabilities and risks, but the current evaluations landscape is limited. Developing high-quality, safety-relevant evaluations remains challenging, and the demand is outpacing the supply. To address this, today we're introducing a new initiative to fund evaluations developed by third-party organizations that can effectively measure advanced capabilities in AI models. Our investment in these evaluations is intended to elevate the entire field of AI safety, providing valuable tools that benefit the whole ecosystem.
 
@@ -16,7 +43,7 @@ In this post, we describe our initiative to source new evaluations for measuring
 
 If you have a proposal, apply through our [**application form**](https://forms.gle/atw9KD3N9RPYeqoh6).
 
-## Our highest priority focus areas
+### Our highest priority focus areas
 
 We are interested in sourcing three key areas of evaluation development, which we'll describe further in the post:
 
@@ -24,7 +51,7 @@ We are interested in sourcing three key areas of evaluation development, which w
 2.  Advanced capability and safety metrics
 3.  Infrastructure, tools, and methods for developing evaluations
 
-### AI Safety Level assessments
+#### AI Safety Level assessments
 
 We're seeking evaluations that help us measure the AI Safety Levels (ASLs) defined in our [Responsible Scaling Policy](anthropics-responsible-scaling-policy.md). These levels determine the safety and security requirements for models with specific capabilities. Robust ASL evaluations are crucial for ensuring we develop and deploy our models responsibly. This category includes:
 
@@ -42,7 +69,7 @@ We're seeking evaluations that help us measure the AI Safety Levels (ASLs) defin
   - Isolating and assessing the model's unique contribution to these risks
 - **Misalignment risks —** Our research shows that, under some circumstances, AI models can [learn dangerous goals and motivations](reward-tampering.md), retain them [even after safety training](https://www.anthropic.com/news/sleeper-agents-training-deceptive-llms-that-persist-through-safety-training), and deceive human users about actions taken in their pursuit. These abilities, in combination with the human-level [persuasiveness](https://www.anthropic.com/news/measuring-model-persuasiveness) and cyber capabilities of current AI models, increases our concern about the potential actions of future, more-capable models. For example, future models might be able to pursue sophisticated and hard-to-detect deception that bypasses or sabotages the security of an organization, either by causing humans to take actions they would not otherwise take or exfiltrating sensitive information. We propose to develop evaluations that would monitor such abilities.
 
-### Advanced capability and safety metrics
+#### Advanced capability and safety metrics
 
 Beyond our ASL assessments, we want to develop evaluations that assess advanced model capabilities and relevant safety criteria. These metrics will provide a more comprehensive understanding of our models' strengths and potential risks. This category includes:
 
@@ -62,7 +89,7 @@ Beyond our ASL assessments, we want to develop evaluations that assess advanced 
 - **Improved multilingual evaluations —** Capability benchmarks often aren’t available across most of the world’s languages. We’d like to support capability evaluations that support multiple languages.
 - **Societal impacts —** Evaluations that provide sophisticated, nuanced assessments that go beyond surface-level metrics to create rigorous assessments targeting concepts like harmful biases, discrimination, over-reliance, dependence, attachment, psychological influence, economic impacts, homogenization, and other broad societal impacts.
 
-### Infrastructure, tools, and methods for developing evaluations
+#### Infrastructure, tools, and methods for developing evaluations
 
 We're interested in funding tools and infrastructure that streamline the development of high-quality evaluations. These will be critical to achieve more efficient and effective testing across the AI community. This category includes:
 
@@ -72,7 +99,7 @@ We're interested in funding tools and infrastructure that streamline the develop
   - The development of networks of high-quality study populations who are motivated to complete the tasks
   - Tooling to easily run and analyze trials
 
-## Principles of good evaluations
+### Principles of good evaluations
 
 [Developing great evaluations is hard](evaluating-ai-systems.md). Even some of the most experienced developers fall into common traps, and even the best evaluations are not always indicative of risks they purport to measure. Below we list some of the characteristics of good evaluations that we’ve learned through trial-and-error:
 
@@ -96,7 +123,7 @@ We're interested in funding tools and infrastructure that streamline the develop
 
 10\. **Realistic, safety-relevant threat modeling:** Safety evaluations should ideally have the property that if a model scored highly, experts would believe that a major incident could be caused. Most of the time, when models have performed highly, experts have realized that high performance on that version of the evaluation is not sufficient to worry them.
 
-## How to submit a proposal
+### How to submit a proposal
 
 You can submit a proposal on our [**application form**](https://forms.gle/atw9KD3N9RPYeqoh6). For any questions, please reach out to [**eval-initiative@anthropic.com**](mailto:eval-initiative@anthropic.com).
 
@@ -104,120 +131,4 @@ Our team will review submissions on a rolling basis and follow up with selected 
 
 Our experience has shown that refining an evaluation typically requires several iterations. You will have the opportunity to interact directly with our domain experts from the Frontier Red Team, Finetuning, Trust & Safety, and other relevant teams. Our teams can provide guidance to help shape your evaluations for maximum impact.
 
-We hope this initiative serves as a catalyst for progress towards a future where comprehensive AI evaluation is an industry standard. We invite you to join us in this important work and help shape the path forward.  
-  
-
-## Related content
-
-### Investigating three real-world incidents in our cybersecurity evaluations
-
-[Read more](investigating-incidents-cybersecurity-evals.md)
-
-### Our position on open-weights models
-
-[Read more](position-open-weights-models.md)
-
-### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients
-
-[Read more](cognizant-anthropic.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+We hope this initiative serves as a catalyst for progress towards a future where comprehensive AI evaluation is an industry standard. We invite you to join us in this important work and help shape the path forward.

@@ -2,7 +2,7 @@
 title: "Sentry Claude Managed Agents case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/sentry"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:59Z"
+fetched_at: "2026-10-23T06:29:54Z"
 tags: ["agents", "case-studies", "enterprise", "security"]
 ---
 
@@ -36,7 +36,7 @@ We're launching Claude Managed Agents, a suite of composable APIs for building a
 
 [Read more](https://claude.com/resources/articles/claude-managed-agents)
 
-[Sentry](https://sentry.io/welcome/) is a software monitoring platform that ingests billions of events daily, giving development teams the context they need to debug production issues. Their AI debugging agent, Seer, already used Claude to identify root causes accurately. But telling developers what's wrong wasn't enough. They wanted Seer to fix it, too.
+[Sentry](https://sentry.io/welcome/) is a software monitoring platform that ingests billions of events daily, giving development teams the context they need to debug production issues. Their AI debugging agent, Seer, already used Claude to identify root causes accurately. But telling developers what’s wrong wasn’t enough. They wanted Seer to fix it, too.
 
 With [Claude Managed Agents](https://claude.com/resources/articles/claude-managed-agents), Sentry built the infrastructure to go from bug detection to merge-ready pull request, without building a custom agent runtime from scratch.
 
@@ -48,43 +48,43 @@ With [Claude Managed Agents](https://claude.com/resources/articles/claude-manage
 - Initial Managed Agents integration shipped in weeks instead of months by a single engineer
 - Elimination of the ongoing operational overhead of maintaining custom agent infrastructure
 
-## **The challenge: A gap between knowing what's broken and fixing it**
+## **The challenge: A gap between knowing what’s broken and fixing it**
 
 Sentry provides deep context for every error: stack traces, profiling data, trace connections, logs, spans, and metrics. When Seer launched, it used Claude to analyze all that telemetry, identify root causes, and suggest code fixes. Developers at every level got faster.
 
-"Developers are often overwhelmed by the amount of context they need to reason through to debug a problem," said Indragie Karunaratne, Senior Director of Engineering, AI/ML at Sentry. Seer helped junior developers navigate that complexity and gave senior engineers quick summaries so they could apply their expertise to validation rather than investigation.
+“Developers are often overwhelmed by the amount of context they need to reason through to debug a problem,” said Indragie Karunaratne, Senior Director of Engineering, AI/ML at Sentry. Seer helped junior developers navigate that complexity and gave senior engineers quick summaries so they could apply their expertise to validation rather than investigation.
 
-But even with a diagnosis and a suggested fix in hand, developers still had to context-switch into their codebase, plan the implementation, write the code, and open a pull request. That handoff from diagnosis to resolution is where time and momentum were lost. Sentry wanted to close the loop: take Seer's root cause analysis and turn it into a finished PR automatically.
+But even with a diagnosis and a suggested fix in hand, developers still had to context-switch into their codebase, plan the implementation, write the code, and open a pull request. That handoff from diagnosis to resolution is where time and momentum were lost. Sentry wanted to close the loop: take Seer’s root cause analysis and turn it into a finished PR automatically.
 
 Building that capability meant running a coding agent. And running a coding agent meant building sandboxing, lifecycle management, and an agent runtime. For a team focused on debugging, that was a significant detour.
 
 ## **The solution: Why Sentry chose Claude and Managed Agents**
 
-Sentry had already selected Claude for Seer after evaluating multiple AI models. Security factored heavily: running Claude through Vertex AI let Sentry minimize data shared outside Google Cloud. "We were able to preserve data residency for our customers and avoid having to add a new subprocessor by using Claude through Vertex AI,” Karunaratne said.
+Sentry had already selected Claude for Seer after evaluating multiple AI models. Security factored heavily: running Claude through Vertex AI let Sentry minimize data shared outside Google Cloud. “We were able to preserve data residency for our customers and avoid having to add a new subprocessor by using Claude through Vertex AI,” Karunaratne said.
 
-When it came time to extend Seer from diagnosis to automated fixing, Claude Managed Agents was a natural fit. It provided the secure agent runtime, sandboxing, and lifecycle management that Sentry would have otherwise spent months building. And there was pull from Sentry's customer base: many were already using Claude Code for local and cloud-based development and wanted an experience that bridged Sentry's debugging capabilities with Claude's coding strengths.
+When it came time to extend Seer from diagnosis to automated fixing, Claude Managed Agents was a natural fit. It provided the secure agent runtime, sandboxing, and lifecycle management that Sentry would have otherwise spent months building. And there was pull from Sentry’s customer base: many were already using Claude Code for local and cloud-based development and wanted an experience that bridged Sentry’s debugging capabilities with Claude’s coding strengths.
 
-Managed Agents let Sentry focus on what differentiated their product, the handoff between Seer's diagnosis and the coding agent, rather than building generic agent infrastructure.
+Managed Agents let Sentry focus on what differentiated their product, the handoff between Seer’s diagnosis and the coding agent, rather than building generic agent infrastructure.
 
 ## **How the Seer-to-PR workflow runs on Managed Agents**
 
 Seer root causes and fixes the most actionable bugs in the background, while also helping developers in real time, both on the same Managed Agents infrastructure.
 
-Here's what happens when an issue is detected: Seer queries source code and telemetry to build a comprehensive root cause analysis for the issue, drawing on Sentry's rich context of errors, logs, spans, and metrics. Once it has a diagnosis, Seer hands it off to a Claude agent running on Managed Agents. That agent plans a solution, implements the code change, and creates a pull request. The developer's job shifts from writing the fix to reviewing it.
+Here’s what happens when an issue is detected: Seer queries source code and telemetry to build a comprehensive root cause analysis for the issue, drawing on Sentry’s rich context of errors, logs, spans, and metrics. Once it has a diagnosis, Seer hands it off to a Claude agent running on Managed Agents. That agent plans a solution, implements the code change, and creates a pull request. The developer’s job shifts from writing the fix to reviewing it.
 
-"Turns out telling developers what's wrong with their code isn't enough: they want you to fix it too," Karunaratne said. "Customers can now go from Seer's root cause analysis straight to a Claude agent that writes the fix and opens a PR."
+“Turns out telling developers what’s wrong with their code isn’t enough: they want you to fix it too,” Karunaratne said. “Customers can now go from Seer’s root cause analysis straight to a Claude agent that writes the fix and opens a PR.”
 
-Without Managed Agents, Sentry would have needed to build their own sandboxing capabilities and agent runtime from scratch. Instead, a single engineer shipped the initial integration. The team didn't have to build a coding agent or the infrastructure to support one. They could put that energy into building the best debugging experience and designing the handoff between Seer's analysis and the Claude agent.
+Without Managed Agents, Sentry would have needed to build their own sandboxing capabilities and agent runtime from scratch. Instead, a single engineer shipped the initial integration. The team didn’t have to build a coding agent or the infrastructure to support one. They could put that energy into building the best debugging experience and designing the handoff between Seer’s analysis and the Claude agent.
 
-"We chose Claude Managed Agents because it gives us a secure, fully managed agent runtime, allowing us to focus our efforts on building a seamless developer experience around the handoff," Karunaratne said. "Managed Agents not only allowed us to build the initial integration in weeks instead of months, but has also eliminated the ongoing operational overhead of maintaining bespoke agent infrastructure."
+“We chose Claude Managed Agents because it gives us a secure, fully managed agent runtime, allowing us to focus our efforts on building a seamless developer experience around the handoff,” Karunaratne said. “Managed Agents not only allowed us to build the initial integration in weeks instead of months, but has also eliminated the ongoing operational overhead of maintaining bespoke agent infrastructure.”
 
 ## **What changes for developers**
 
-The original Seer experience already made debugging faster across the board. Junior developers got support navigating complex issues that would typically require extensive system knowledge. Senior engineers skipped hours of context review and jumped straight to validating Seer's analysis.
+The original Seer experience already made debugging faster across the board. Junior developers got support navigating complex issues that would typically require extensive system knowledge. Senior engineers skipped hours of context review and jumped straight to validating Seer’s analysis.
 
-“Seer leverages Claude’s ability to quickly and accurately extract relevant patterns out of multimodal telemetry data," Karunaratne explained. “Developers can stay focused on using their domain context to validate the analysis rather than manually combing through events.”
+“Seer leverages Claude’s ability to quickly and accurately extract relevant patterns out of multimodal telemetry data,” Karunaratne explained. “Developers can stay focused on using their domain context to validate the analysis rather than manually combing through events.”
 
-With the Managed Agents integration, that benefit compounds. A developer no longer just gets a diagnosis and a suggested fix. They get a pull request they can review, test, and merge. The workflow moves from "Seer tells you what's wrong" to "Seer tells you what's wrong and proposes the code to make it right,” Karunaratne added.
+With the Managed Agents integration, that benefit compounds. A developer no longer just gets a diagnosis and a suggested fix. They get a pull request they can review, test, and merge. The workflow moves from “Seer tells you what’s wrong” to “Seer tells you what’s wrong and proposes the code to make it right,” Karunaratne added.
 
 ## **Looking ahead**
 
@@ -119,7 +119,8 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -137,12 +138,12 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -175,7 +176,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -193,6 +194,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -208,7 +210,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -243,7 +245,8 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -261,12 +264,12 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -299,7 +302,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -317,6 +320,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -332,7 +336,7 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Trigger a routine through the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/claude-code/routines-fire"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:47Z"
+fetched_at: "2026-10-20T06:37:31Z"
 tags: ["api", "authentication", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication", "sdk"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fclaude-code%2Froutines-fire)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fclaude-code%2Froutines-fire)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [API reference](overview.md)Claude Code
 
@@ -249,14 +253,14 @@ Calling this endpoint requires a claude.ai account on a Pro, Max, Team, or Enter
 
 The routine fire endpoint belongs to the Claude Code product surface, which differs from the Claude Platform APIs and SDKs in a few ways:
 
-| Aspect         | This endpoint                                                                                                                               | Claude Platform APIs                                                 |
-|:---------------|:--------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------|
-| Authentication | `Authorization: Bearer` with a per-routine token (`sk-ant-oat01-...`) created at [claude.ai/code/routines](https://claude.ai/code/routines) | `x-api-key` with a Claude API key from Claude Console                |
-| Token scope    | One routine only; no read access                                                                                                            | Workspace-level                                                      |
-| SDK support    | None                                                                                                                                        | Available in all [client SDKs](../Other/cli-sdks-libraries-overview.md) |
-| Billing        | Claude Code subscription usage on claude.ai                                                                                                 | Claude Platform usage                                                |
-| Path namespace | `/v1/claude_code/...`                                                                                                                       | `/v1/...`                                                            |
-| Stability      | Experimental                                                                                                                                | Stable or standard beta                                              |
+| Aspect         | This endpoint                                                                                                                               | Claude Platform APIs                                                  |
+|:---------------|:--------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|
+| Authentication | `Authorization: Bearer` with a per-routine token (`sk-ant-oat01-...`) created at [claude.ai/code/routines](https://claude.ai/code/routines) | A Claude API key from Claude Console, sent as `Authorization: Bearer` |
+| Token scope    | One routine only; no read access                                                                                                            | Workspace-level                                                       |
+| SDK support    | None                                                                                                                                        | Available in all [client SDKs](../Other/cli-sdks-libraries-overview.md)  |
+| Billing        | Claude Code subscription usage on claude.ai                                                                                                 | Claude Platform usage                                                 |
+| Path namespace | `/v1/claude_code/...`                                                                                                                       | `/v1/...`                                                             |
+| Stability      | Experimental                                                                                                                                | Stable or standard beta                                               |
 
 ## Before you begin
 

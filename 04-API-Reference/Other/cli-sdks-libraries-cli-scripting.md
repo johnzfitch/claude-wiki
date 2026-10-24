@@ -2,7 +2,7 @@
 title: "CLI scripting and automation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:24Z"
+fetched_at: "2026-10-20T06:39:26Z"
 tags: ["api", "claude-code", "cli"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "claude-code", "cli"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fscripting)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fscripting)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
@@ -154,7 +154,7 @@ FIRST_AGENT=$(ant beta:agents list --transform id --raw-output | head -1)
 
 ant beta:agents:versions list \
   --agent-id "$FIRST_AGENT" \
-  --transform "{version,created_at}" --format jsonl
+  --format jsonl
 ```
 
 

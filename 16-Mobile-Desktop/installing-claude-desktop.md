@@ -2,7 +2,7 @@
 title: "Install Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10065433-installing-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-10T06:24:59Z"
+fetched_at: "2026-10-23T06:28:46Z"
 tags: ["desktop"]
 ---
 
@@ -19,7 +19,7 @@ Claude Desktop is available on macOS, Windows, and Linux (beta). What you can do
 
 ## System Requirements
 
-- macOS: macOS 11 (Big Sur) or higher
+- macOS: macOS 13 (Ventura) or higher
 
 - Windows: Windows 10 or higher
 

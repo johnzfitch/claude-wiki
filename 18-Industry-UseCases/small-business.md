@@ -2,7 +2,7 @@
 title: "Claude for Small Business | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/small-business"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:10Z"
+fetched_at: "2026-10-23T06:30:06Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -200,7 +200,6 @@ Virtual
 
 titleLocationDate
 
-- [TNMemphis \| Claude SMB WorkshopMemphis, TNOctober 20, 2026](https://anthropic.swoogo.com/claude-smb-workshop-memphis/rta)
 - [GASavannah \| Claude SMB WorkshopSavannah, GAOctober 22, 2026](https://anthropic.swoogo.com/claude-smb-workshop-savannah/rta)
 - [ARBentonville \| Claude SMB WorkshopBentonville, ARNovember 4, 2026](https://anthropic.swoogo.com/claude-smb-workshop-bentonville/rta)
 - [FLTampa \| Claude SMB WorkshopTampa, FLNovember 10, 2026](https://anthropic.swoogo.com/claude-smb-workshop-tampa/rta)
@@ -220,11 +219,6 @@ How to install and use the Claude for Small Business plugin.
 
 titleLocationDate
 
-- [VMonday.com WebinarVirtualOctober 12, 2026](https://monday.zoom.us/webinar/register/WN_WkuWnYDXQ9GQMisrSzJgpg#/registration)
-- [VExpensify WebinarVirtualOctober 13, 2026](https://use.expensify.com/c4sb-webinar?utm_source=anthropic&utm_medium=partner_blog&utm_campaign=claude_for_small_business_sept_2026)
-- [VApollo WebinarVirtualOctober 15, 2026](https://events.apollo.io/apollo-claude-growth/)
-- [VHubspot WebinarVirtualOctober 20, 2026](https://adminhug.info/claude102026)
-- [VGusto WebinarVirtualOctober 21, 2026](https://event.on24.com/wcc/r/5496016/977F305A86D5D6E06F602DE266A993C6)
 - [VZapier WebinarVirtualOctober 22, 2026](https://zapier.com/resources/events/claude-smb-zapier-with-anthropic)
 - [VXero WebinarVirtualOctober 27, 2026](https://xero.zoom.us/webinar/register/WN_c_4fE7BGRGi35kiIK1OwCA#/registration)
 - [VClay WebinarVirtualOctober 28, 2026](https://www.clay.com/livestreams/claude-for-small-business-build-your-growth-engine-with-clay?utm_source=all&utm_medium=influencerpartner&utm_campaign=claude_smb_anthropic)
@@ -284,7 +278,7 @@ Pro for one person, Team for a business with more than one; both are month to mo
 
 ### What happens if I get stuck?
 
-Visit the resources section for support, review the [small business tutorial](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin), or [file a ticket](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Visit the resources section for support, review the [small business tutorial](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin), or [file a ticket](../15-Claude-AI-Features/how-to-get-support.md).
 
 ### Privacy & security
 
@@ -317,7 +311,8 @@ No. We don't sell your data or use what's in your tools to build products that c
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -335,12 +330,12 @@ No. We don't sell your data or use what's in your tools to build products that c
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -373,7 +368,7 @@ No. We don't sell your data or use what's in your tools to build products that c
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -391,6 +386,7 @@ No. We don't sell your data or use what's in your tools to build products that c
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -406,7 +402,7 @@ No. We don't sell your data or use what's in your tools to build products that c
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -441,7 +437,8 @@ No. We don't sell your data or use what's in your tools to build products that c
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -459,12 +456,12 @@ No. We don't sell your data or use what's in your tools to build products that c
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -497,7 +494,7 @@ No. We don't sell your data or use what's in your tools to build products that c
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -515,6 +512,7 @@ No. We don't sell your data or use what's in your tools to build products that c
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -530,7 +528,7 @@ No. We don't sell your data or use what's in your tools to build products that c
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

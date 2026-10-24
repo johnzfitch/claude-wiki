@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fusage-cost-api)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fusage-cost-api)
 
 
 
@@ -46,7 +46,7 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Other/manage-claude-data-residency.md)[API and data retention](build-with-claude-api-and-data-retention.md)[Access Transparency](../Other/manage-claude-access-transparency.md)
+[Data residency](../Other/manage-claude-data-residency.md)[API and data retention](../Other/manage-claude-api-and-data-retention.md)[Access Transparency](../Other/manage-claude-access-transparency.md)
 
 [Encryption keys](../Other/manage-claude-cmek.md)
 
@@ -56,7 +56,7 @@ Compliance API
 
 [Overview](../Other/manage-claude-compliance-api.md)[Set up the Compliance API](../Other/manage-claude-compliance-api-access.md)[Activity Feed](../Other/manage-claude-compliance-activity-feed.md)[Chats, files, and projects](../Other/manage-claude-compliance-content-data.md)[Session transcripts](../Other/manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](../Other/manage-claude-compliance-org-data.md)[Design your integration](../Other/manage-claude-compliance-integration-patterns.md)[Errors](../Other/manage-claude-compliance-errors.md)[FAQ](../Other/manage-claude-compliance-faq.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Admin](../Other/manage-claude-admin-api.md)Monitoring
 
@@ -103,7 +103,7 @@ Anthropic provides cost and usage reporting through two APIs, depending on which
 | Your organization                | API                                                                                          | Key type                                                                                                                |
 |----------------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | Claude Console (Claude Platform) | The Usage and Cost Admin API described on this page                                          | Admin API key (`sk-ant-admin01-...`) or another [Admin API credential](../Other/manage-claude-admin-api.md#authentication) |
-| Claude Enterprise (claude.ai)    | The [Claude Enterprise Analytics API](../Admin/http-beta-organization-analytics.md) cost and usage endpoints | Analytics API key                                                                                                       |
+| Claude Enterprise (claude.ai)    | The [Claude Enterprise Analytics API](../Admin/platform-claude-com-http-beta-organization-analytics.md) cost and usage endpoints | Analytics API key                                                                                                       |
 
 Claude Enterprise parent organizations do not appear in Claude Console and carry no Admin API keys, so for them the Analytics API key is the only path to this data. See [Analytics APIs](../Other/manage-claude-analytics-api.md) for how to create each key type and which plans the Claude Enterprise cost data applies to.
 

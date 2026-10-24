@@ -2,7 +2,7 @@
 title: "Plugin manifest reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/manifest-reference"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-10T06:24:14Z"
+fetched_at: "2026-10-23T06:28:42Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -251,7 +251,9 @@ A free-form object for your own data, such as catalog or entitlement fields. Cla
 
 Directory listing fields
 
-Anthropic’s directory reads the `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl`, and `termsOfServiceUrl` fields from `plugin.json` for your plugin’s listing when you [submit the plugin](plugins-publish.md#submit-to-anthropics-directory). Claude Code ignores them at load time. Set them only in `plugin.json`. In a [marketplace entry](#marketplace-entries-and-the-manifest), `claude plugin validate` reports each one as an unknown field. Set `icon` to the path of an image file inside the plugin, such as `./logo.png`, and each of the four URL fields to an `https://` URL. `claude plugin validate` accepts these fields without a warning on Claude Code v2.1.281 or later. Earlier versions print an `Unknown field` warning for each one, so a `--strict` run fails on those versions.
+Anthropic’s directory reads the `icon`, `documentationUrl`, `supportUrl`, `privacyPolicyUrl`, and `termsOfServiceUrl` fields from `plugin.json` for your plugin’s listing when you [submit the plugin](plugins-publish.md#submit-to-anthropics-directory). Claude Code ignores them at load time. Set them only in `plugin.json`. In a [marketplace entry](#marketplace-entries-and-the-manifest), `claude plugin validate` reports each one as an unknown field. Set `icon` to the path of an image file inside the plugin, such as `./logo.png`, and each of the four URL fields to an `https://` URL.
+
+`claude plugin validate` doesn’t report these fields in `plugin.json` as unknown on Claude Code v2.1.281 or later. Earlier versions print an `Unknown field` warning for each one, so a `--strict` run fails on those versions.
 
 
 [​](#defaultenabled)

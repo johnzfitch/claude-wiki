@@ -2,7 +2,7 @@
 title: "Can I have a Claude account and a Console account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8987223-can-i-have-a-claude-account-and-a-console-account"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:24:53Z"
+fetched_at: "2026-10-23T06:29:16Z"
 tags: ["account"]
 ---
 

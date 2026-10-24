@@ -1,200 +1,275 @@
 ---
-title: "Interpretability Research \\ Anthropic"
+title: "Interpretability \\ Anthropic"
 source_url: "https://www.anthropic.com/research/team/interpretability"
 category: "19-Reference"
-fetched_at: "2026-08-03T07:18:01Z"
-tags: ["news-research", "search"]
+fetched_at: "2026-10-23T06:29:27Z"
+tags: ["news-research"]
 ---
 
-# Interpretability
+# The Interpretability team studies how large language models work internally as a foundation for AI safety. They seek to understand what happens inside neural networks so that we can better trust the models we build.
 
-The mission of the Interpretability team is to discover and understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-Research teams:[Alignment](team-alignment.md)[Economic Research](team-economic-research.md)[Interpretability](team-interpretability.md)[Societal Impacts](team-societal-impacts.md)[Frontier Red Team](team-frontier-red-team.md)
+Team blog  
+[Visit](https://transformer-circuits.pub/)
 
 ### Safety through understanding
 
-It's very challenging to reason about the safety of neural networks without understanding them. The Interpretability team’s goal is to be able to explain large language models’ behaviors in detail, and then use that to solve a variety of problems ranging from bias to misuse to autonomous harmful behavior.
+It’s hard to reason about the safety of neural networks without understanding what happens inside them. Our goal is to be able to explain large language models’ behavior, and to use that understanding to identify problems that are hard to see from the outside, such as situations where a model’s stated reasoning differs from what it’s actually doing.
 
-### Multidisciplinary approach
+### An evolving approach
 
-Some Interpretability researchers have deep backgrounds in machine learning – one member of the team is often described as having started mechanistic interpretability, while another was on the famous scaling laws paper. Other members joined after careers in astronomy, physics, mathematics, biology, data visualization, and more.
+Our early work focused on mapping the internal mechanisms of AI models. Today, we increasingly apply our methods to real models to understand how they think and why they behave the way they do. We’ve developed techniques that allow us to understand models’ inner workings in plain language, making it easier to detect unsafe behavior or dishonest reasoning and safeguard against it.
+
+- 
+
+
+[Interpretability](team-interpretability.md)
+
+May 7, 2026
 
 
 ## Natural Language Autoencoders: Turning Claude’s thoughts into text
 
-InterpretabilityMay 7, 2026
-
 AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.
 
+[Read more](natural-language-autoencoders.md)
 
-InterpretabilityApr 2, 2026
+[Interpretability](team-interpretability.md)
 
-#### Emotion concepts and their function in a large language model
+Jul 6, 2026
+
+
+## A global workspace in language models
+
+New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.
+
+[Read more](global-workspace.md)
+
+[Interpretability](team-interpretability.md)
+
+Apr 2, 2026
+
+
+## Emotion concepts and their function in a large language model
 
 All modern language models sometimes act like they have emotions. What’s behind these behaviors? Our interpretability team investigates.
 
+[Read more](emotion-concepts-function.md)
 
-InterpretabilityJan 19, 2026
+01
 
-#### The assistant axis: situating and stabilizing the character of large language models
+/
 
-Who is the Assistant? We investigate the character that most modern language models inhabit when interacting with users.
+03
+
+35
+
+ARTICLES
+
+Most recent
+
+Grid view
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+Jul 6, 2026
+
+### [A global workspace in language models](global-workspace.md)
+
+May 7, 2026
+
+### [Natural Language Autoencoders: Turning Claude’s thoughts into text](natural-language-autoencoders.md)
+
+Apr 2, 2026
+
+### [Emotion concepts and their function in a large language model](emotion-concepts-function.md)
+
+Mar 13, 2026
+
+### [A “diff” tool for AI: Finding behavioral differences in new models](diff-tool.md)
+
+Jan 19, 2026
+
+### [The assistant axis: situating and stabilizing the character of large language models](assistant-axis.md)
+
+Oct 29, 2025
+
+### [Signs of introspection in large language models](introspection.md)
+
+Aug 1, 2025
+
+### [Persona vectors: Monitoring and controlling character traits in language models](persona-vectors.md)
+
+May 29, 2025
+
+### [Open-sourcing circuit tracing tools](open-source-circuit-tracing.md)
+
+Mar 27, 2025
+
+### [Tracing the thoughts of a large language model](tracing-thoughts-language-model.md)
+
+Mar 13, 2025
+
+### [Auditing language models for hidden objectives](auditing-hidden-objectives.md)
+
+Feb 20, 2025
+
+### [Insights on crosscoder model diffing](crosscoder-model-diffing.md)
+
+Oct 25, 2024
+
+### [Evaluating feature steering: A case study in mitigating social biases](evaluating-feature-steering.md)
+
+Oct 16, 2024
+
+### [Using dictionary learning features as classifiers](features-as-classifiers.md)
+
+Oct 1, 2024
+
+### [Circuits Updates – September 2024](circuits-updates-sept-2024.md)
+
+Sep 6, 2024
+
+### [Circuits Updates – August 2024](circuits-updates-august-2024.md)
+
+Jul 31, 2024
+
+### [Circuits Updates – July 2024](circuits-updates-july-2024.md)
+
+Jun 28, 2024
+
+### [Circuits Updates – June 2024](circuits-updates-june-2024.md)
+
+Jun 13, 2024
+
+### [The engineering challenges of scaling interpretability](engineering-challenges-interpretability.md)
+
+May 23, 2024
+
+### [Golden Gate Claude](research-golden-gate-claude.md)
+
+May 21, 2024
+
+### [Mapping the mind of a large language model](mapping-mind-language-model.md)
+
+Apr 26, 2024
+
+### [Circuits Updates – April 2024](circuits-updates-april-2024.md)
+
+Apr 23, 2024
+
+### [Simple probes can catch sleeper agents](probes-catch-sleeper-agents.md)
+
+Mar 8, 2024
+
+### [Reflections on qualitative research](transformer-circuits.md)
+
+Oct 5, 2023
+
+### [Towards monosemanticity: Decomposing language models with dictionary learning](towards-monosemanticity-decomposing-language-models-with-dictionary-learning.md)
+
+See more
+
+## Explore work from other teams
 
 
-InterpretabilityOct 29, 2025
+### Alignment
 
-#### Signs of introspection in large language models
+47 posts
 
-Can Claude access and report on its own internal states? This research finds evidence for a limited but functional ability to introspect.
+Works to understand the risks of AI models and develop ways to ensure future ones remain helpful, honest, and harmless.
 
 
-InterpretabilityAug 1, 2025
+### Economics
 
-#### Persona vectors: Monitoring and controlling character traits in language models
+25 posts
 
-AI models represent character traits as patterns of activations within their neural networks. By extracting "persona vectors" for traits like sycophancy or hallucination, we can monitor personality shifts and mitigate undesirable behaviors.
+Studies and monitors the impact of AI systems on individuals, firms, and economies.
 
-## Publications
 
-Search
+### Engineering
 
-DateCategoryTitle
+27 posts
 
-  Jul 6, 2026Interpretability
+Builds the infrastructure and systems that make Claude reliable and trustworthy.
 
-  A global workspace in language models
-  May 7, 2026Interpretability
 
-  Natural Language Autoencoders: Turning Claude’s thoughts into text
-  Apr 2, 2026Interpretability
+### Frontier Red Team
 
-  Emotion concepts and their function in a large language model
-  Mar 13, 2026Interpretability
+34 posts
 
-  A “diff” tool for AI: Finding behavioral differences in new models
-  Jan 19, 2026Interpretability
+Stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next.
 
-  The assistant axis: situating and stabilizing the character of large language models
-  Oct 29, 2025Interpretability
 
-  Signs of introspection in large language models
-  Aug 1, 2025Interpretability
+### Societal Impacts
 
-  Persona vectors: Monitoring and controlling character traits in language models
-  May 29, 2025Interpretability
+24 posts
 
-  Open-sourcing circuit tracing tools
-  Mar 27, 2025Interpretability
+Studies how AI affects people, both individually and collectively.
 
-  Tracing the thoughts of a large language model
-  Mar 13, 2025Alignment
 
-  Auditing language models for hidden objectives
+### Science
 
-[See more](#)
+18 posts
 
-Join the Research team
+Explores how AI can increase the pace of scientific progress through both research and collaborations.
 
-[See open roles](https://www.anthropic.com/jobs)
 
-[](https://www.anthropic.com/)
+### Interpretability
 
-### Products
+35 posts
 
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
+Studies how large language models work internally as a foundation for AI safety.
 
-### Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/research/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/research/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/research/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
+### Alignment
 
-### Solutions
+47 posts
 
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
+Works to understand the risks of AI models and develop ways to ensure future ones remain helpful, honest, and harmless.
 
-### Claude Platform
 
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+### Economics
 
-### Resources
+25 posts
 
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
+Studies and monitors the impact of AI systems on individuals, firms, and economies.
 
-### Programs
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+### Engineering
 
-### Help and security
+27 posts
 
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
+Builds the infrastructure and systems that make Claude reliable and trustworthy.
 
-### Company
 
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+### Frontier Red Team
+
+34 posts
+
+Stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next.
+
+
+### Societal Impacts
+
+24 posts
+
+Studies how AI affects people, both individually and collectively.
+
+
+### Science
+
+18 posts
+
+Explores how AI can increase the pace of scientific progress through both research and collaborations.
+
+
+### Interpretability
+
+35 posts
+
+Studies how large language models work internally as a foundation for AI safety.

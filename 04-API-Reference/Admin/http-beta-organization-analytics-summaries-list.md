@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fsummaries%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fsummaries%2Flist)
 
 
 
@@ -244,7 +244,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,9 +253,9 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
 5.  [Summaries](http-beta-organization-analytics-summaries.md)
 
 # Get Activity Summaries
@@ -320,7 +320,7 @@ Opaque cursor from a previous response's `next_page` field. `next_page` is curre
 
 
 
-data: array of [BetaAnalyticsSingleDayActivitySummary](http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 26 more }
+data: array of [BetaAnalyticsSingleDayActivitySummary](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 26 more }
 
 
 
@@ -516,7 +516,7 @@ Opaque cursor for the next page, or null if no more results. Currently always nu
 
 
 
-summaries: array of [BetaAnalyticsSingleDayActivitySummary](http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 26 more }⁠Deprecated
+summaries: array of [BetaAnalyticsSingleDayActivitySummary](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 26 more }⁠Deprecated
 
 
 

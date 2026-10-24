@@ -2,7 +2,7 @@
 title: "Semgrep Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/semgrep"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:25Z"
+fetched_at: "2026-10-23T06:29:43Z"
 tags: ["api", "bedrock", "case-studies", "enterprise", "mcp", "security"]
 ---
 
@@ -39,15 +39,15 @@ With Claude, Semgrep:
 - Delivered 17% better performance in component tagging (compared to their previous model, GPT-4o)
 - Processes and analyzes thousands of security findings for customers daily
 
-## How Semgrep is solving security's false positive problem
+## How Semgrep is solving security’s false positive problem
 
-Software development teams face an overwhelming volume of security alerts, many of which are false positives that consume valuable time and resources. "Security tools are notorious for generating high volumes of alerts. This is a widespread problem across the industry," said Bence Nagy, Staff Engineer at Semgrep.
+Software development teams face an overwhelming volume of security alerts, many of which are false positives that consume valuable time and resources. “Security tools are notorious for generating high volumes of alerts. This is a widespread problem across the industry,” said Bence Nagy, Staff Engineer at Semgrep.
 
 Semgrep recognized this pain point and saw an opportunity to apply AI to dramatically reduce alert noise.
 
-Semgrep's fast, deterministic code analysis engine and LLM-friendly rule syntax made it the perfect foundation for AI-powered AppSec—retaining the benefits of precise pattern matching while taking advantage of AI’s ability to understand code context.
+Semgrep’s fast, deterministic code analysis engine and LLM-friendly rule syntax made it the perfect foundation for AI-powered AppSec—retaining the benefits of precise pattern matching while taking advantage of AI’s ability to understand code context.
 
-Nagy explained their first breakthrough with a practical example: "We tested if an AI model could distinguish between actual leaked passwords in code versus harmless placeholders like 'password=REPLACE_PASSWORD_HERE'.”
+Nagy explained their first breakthrough with a practical example: “We tested if an AI model could distinguish between actual leaked passwords in code versus harmless placeholders like ‘password=REPLACE_PASSWORD_HERE’.”
 
 Traditional security tools blindly flag both as vulnerabilities, but we discovered that AI could accurately determine which alerts represented genuine security risks and which were false alarms. This initial success proved AI could solve a fundamental problem in security scanning—distinguishing real threats from noise—prompting Semgrep to explore how AI could transform their entire security platform to help teams focus exclusively on legitimate security issues.
 
@@ -61,7 +61,7 @@ To compare how different models perform on these prompt chains, Semgrep relies o
 
 Claude was unique in that it was a top performing model (top 3) across every single one of Semgrep’s unique, task-specific evals.
 
-"Claude 3.7 Sonnet demonstrated remarkable code analysis capabilities with deeper contextual understanding," said Nagy. "It was the only model that recognized a vulnerability in an auto-generated file, advising developers to fix the generating source rather than editing the output file directly."
+“Claude 3.7 Sonnet demonstrated remarkable code analysis capabilities with deeper contextual understanding,” said Nagy. “It was the only model that recognized a vulnerability in an auto-generated file, advising developers to fix the generating source rather than editing the output file directly.”
 
 In two of the most important evals, false positive detection and component tagging, Claude outperformed GPT-4o, the previous top performing model, by 16% and 17% respectively.
 
@@ -80,11 +80,11 @@ Semgrep uses a variety of large language models—including Claude—to power fe
 
 ## One of the security tools that developers don’t mind
 
-Semgrep's AI-powered features have improved productivity for security and development teams, and extend beyond noise reduction. Claude's contextual understanding also helps developers implement more comprehensive fixes. "Claude provides additional detail on what developers need to check after implementing a fix and how to adapt other parts of their project," said Nagy. This approach prevents the common problem where fixing a vulnerability breaks existing functionality.
+Semgrep’s AI-powered features have improved productivity for security and development teams, and extend beyond noise reduction. Claude’s contextual understanding also helps developers implement more comprehensive fixes. “Claude provides additional detail on what developers need to check after implementing a fix and how to adapt other parts of their project,” said Nagy. This approach prevents the common problem where fixing a vulnerability breaks existing functionality.
 
-Semgrep's benchmarking approach ensures optimal AI performance for each security task. Nagy explained, "For our noise filtering feature, we've built evaluation suites containing thousands of pre-classified security findings to measure accuracy precisely."
+Semgrep’s benchmarking approach ensures optimal AI performance for each security task. Nagy explained, “For our noise filtering feature, we’ve built evaluation suites containing thousands of pre-classified security findings to measure accuracy precisely.”
 
-This testing revealed important insights about model configuration, including a counterintuitive discovery: "We found that giving Claude more tokens for 'thinking' actually made it overly cautious about security issues, becoming too conservative in its assessments." These insights allow Semgrep to fine-tune Claude's parameters for security tasks, maximizing its effectiveness for real-world operations.
+This testing revealed important insights about model configuration, including a counterintuitive discovery: “We found that giving Claude more tokens for ‘thinking’ actually made it overly cautious about security issues, becoming too conservative in its assessments.” These insights allow Semgrep to fine-tune Claude’s parameters for security tasks, maximizing its effectiveness for real-world operations.
 
 ## Claude in Amazon Bedrock: Enterprise security, privacy, and performance
 
@@ -96,18 +96,18 @@ This availability makes Claude a compelling choice—not just for its technical 
 
 ## MCP and the future of AI-powered development
 
-Semgrep envisions a future where AI both creates and secures software. "As software development becomes more accessible, less experienced engineers will generate more AI-written code. How do we keep that code secure?" asked Dennison. "We need security tools embedded directly in the AI's generation process, plus verification systems to audit code in the chain of thought."
+Semgrep envisions a future where AI both creates and secures software. “As software development becomes more accessible, less experienced engineers will generate more AI-written code. How do we keep that code secure?” asked Dennison. “We need security tools embedded directly in the AI’s generation process, plus verification systems to audit code in the chain of thought.”
 
-This vision drove Semgrep to develop an open-source Model Context Protocol (MCP) tool that enables AI assistants like Claude to scan their generated code for vulnerabilities before delivering it. Since Semgrep’s core SAST engine is fast, transparent, and source-based, an MCP server makes it possible for LLMs to dynamically call Semgrep as a tool. Nagy said, "We want to create a world where you can build an entire project with AI and be confident it's secure and functional."
+This vision drove Semgrep to develop an open-source Model Context Protocol (MCP) tool that enables AI assistants like Claude to scan their generated code for vulnerabilities before delivering it. Since Semgrep’s core SAST engine is fast, transparent, and source-based, an MCP server makes it possible for LLMs to dynamically call Semgrep as a tool. Nagy said, “We want to create a world where you can build an entire project with AI and be confident it’s secure and functional.”
 
-The company is also developing organizational memory features to enhance contextual security. "We're building systems that learn from developer comments and decisions to understand non-obvious facts about a codebase," explained Nagy. By capturing this institutional knowledge, security assessments become more intelligent over time.
+The company is also developing organizational memory features to enhance contextual security. “We’re building systems that learn from developer comments and decisions to understand non-obvious facts about a codebase,” explained Nagy. By capturing this institutional knowledge, security assessments become more intelligent over time.
 
 Through these innovations, Semgrep aims to ensure AI accelerates development while maintaining security—benefiting the entire software industry with both speed and safety.
 
 ## Related stories
 
 
-### Vega's cyber defense platform returns 67% of analysts' time with Claude
+### Vega’s cyber defense platform returns 67% of analysts’ time with Claude
 
 
 ### Cyera on making Claude Cowork the front door to 40 tools
@@ -127,7 +127,8 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -145,12 +146,12 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -183,7 +184,7 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -201,6 +202,7 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -216,7 +218,7 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -251,7 +253,8 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -269,12 +272,12 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -307,7 +310,7 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -325,6 +328,7 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -340,7 +344,7 @@ Through these innovations, Semgrep aims to ensure AI accelerates development whi
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

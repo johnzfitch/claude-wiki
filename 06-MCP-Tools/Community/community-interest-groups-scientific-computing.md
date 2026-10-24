@@ -2,7 +2,7 @@
 title: "Scientific Computing Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/scientific-computing"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-09-24T06:28:05Z"
+fetched_at: "2026-10-21T06:28:34Z"
 tags: ["mcp", "mcp-community"]
 ---
 
@@ -74,7 +74,7 @@ Out of Scope
 
 Related Groups
 
-- **[Agents WG](community-working-groups-agents.md)**: Tasks are the foundation for the long-running simulation and job-submission workflows for high-performance computing
+- **[Tasks and Events WG](community-working-groups-tasks-events.md)**: Tasks are the foundation for the long-running simulation and job-submission workflows for high-performance computing
 - **[Interceptors WG](community-working-groups-interceptors.md)**: interceptors are a potential implementation path for validating correctness and normalizing units between clients and servers
 - **[File Uploads WG](community-working-groups-file-uploads.md)**: input datasets, mesh and geometry files, and other large files must be considered
 - **[Primitive Grouping IG](community-interest-groups-primitive-grouping.md)**: scientific servers often expose large, hierarchical tool surfaces that motivate organization beyond flat lists

@@ -2,7 +2,7 @@
 title: "Debug your configuration - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/debug-your-config"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:27:15Z"
+fetched_at: "2026-10-22T06:29:22Z"
 tags: ["claude-code"]
 ---
 
@@ -79,6 +79,7 @@ Run `/hooks` to list every hook registered for the current session, grouped by e
 
 - The hook is defined in a standalone file. Hooks go under the `"hooks"` key in a [settings file](settings.md#settings-files).
 - The `matcher` value is an array instead of a single string. Claude Code lists the entry as an invalid setting when you start an interactive session and in `claude doctor`. If the array is under `PreToolUse` or `PermissionRequest`, none of that file’s other hooks load either.
+- The hook is in a skill’s frontmatter, and neither you nor Claude has invoked the skill yet in this session. Invoke it or ask Claude to, then run `/hooks` again. If the hook still doesn’t appear, check for other causes, such as [frontmatter that didn’t parse](../08-Plugins-Skills/skills.md#skill-not-triggering) or one of the [limits on skill hooks](../07-Hooks/hooks.md#limits-on-skill-hooks).
 
 If the hook appears but doesn’t fire, the matcher is the usual cause. Check it for these mistakes:
 
@@ -101,18 +102,60 @@ Start with [`claude --safe-mode`](cli-reference.md#cli-flags), which launches a 
 - Custom output styles
 - Custom keybindings
 
-Authentication, model selection, built-in tools, and permissions work normally. If the problem disappears in safe mode, you’ve narrowed the cause to one of the items you turned off. To find it, use the check for that item, such as [See what loaded into context](#see-what-loaded-into-context), [Check MCP servers](#check-mcp-servers), or [Check hooks](#check-hooks). Safe mode still applies managed hooks and settings policy from your organization. Managed plugins, skills, `CLAUDE.md`, and MCP servers are turned off. If the problem persists in safe mode, or your settings themselves are suspect, compare against a session that loads nothing from your usual setup. Point [`CLAUDE_CONFIG_DIR`](env-vars.md) at an empty directory to bypass everything under `~/.claude`, and launch from a directory that has no `.claude` folder, `.mcp.json`, or `CLAUDE.md` so project configuration is also skipped.
+Authentication, model selection, built-in tools, and permissions work normally. If the problem disappears in safe mode, you’ve narrowed the cause to one of the items you turned off. To find it, use the check for that item, such as [See what loaded into context](#see-what-loaded-into-context), [Check MCP servers](#check-mcp-servers), or [Check hooks](#check-hooks). Safe mode still applies managed hooks and settings policy from your organization. Managed plugins, skills, `CLAUDE.md`, and MCP servers are turned off. If the problem persists in safe mode, or your settings themselves are suspect, start a session with none of your own configuration and check whether the problem follows.
+
+1
+
+Create an empty directory and change into it
+
+In your shell, with no Claude Code session running, create the directory and move into it:
+
+- Bash or Zsh
+
+- PowerShell
 
 ```python
-cd /tmp && CLAUDE_CONFIG_DIR=/tmp/claude-clean claude
+mkdir -p ~/claude-clean/empty && cd ~/claude-clean/empty
 ```
 
-The clean session has no user or project settings, hooks, MCP servers, plugins, or memory. On the first launch, expect the first-run setup screens, starting with theme selection. If you see them, the clean configuration directory is in effect. Later launches with the same directory skip these screens because Claude Code saves onboarding state there.
+```python
+New-Item -ItemType Directory -Force "$HOME/claude-clean/empty" | Out-Null
+Set-Location "$HOME/claude-clean/empty"
+```
 
-- Managed settings still apply if your organization deploys them. Claude Code reads MDM profiles, registry policy, and `managed-settings.json` from locations outside the configuration directory, and [fetches server-managed settings](../13-Enterprise-Admin/server-managed-settings.md#fetch-and-caching-behavior) again for the clean session once it has credentials
-- You’ll be prompted to log in again
+2
 
-If the problem disappears here, the cause is somewhere in your real `~/.claude` or project `.claude` files. Reintroduce them one at a time, by copying files into the temporary directory or by launching from your project, to find which one. If it persists in the clean session, the cause is outside your user and project configuration. Run `/status` to check whether managed settings are in effect, look for [environment variables](env-vars.md) that affect Claude Code, then see [Troubleshooting](troubleshooting.md).
+Start Claude Code with a clean configuration directory
+
+From the same shell, set [`CLAUDE_CONFIG_DIR`](env-vars.md) to a fresh directory in place of `~/.claude`, and pass [`--setting-sources user`](cli-reference.md#cli-flags) to turn off project configuration such as `.claude/settings.json`, `CLAUDE.md`, and `.mcp.json`:
+
+- Bash or Zsh
+
+- PowerShell
+
+The variable applies to this one launch.
+
+```python
+CLAUDE_CONFIG_DIR=~/claude-clean/config claude --setting-sources user
+```
+
+The variable stays set for the rest of this PowerShell session, so later `claude` launches in the same window keep using the clean directory. To return to your usual directory, run `Remove-Item Env:CLAUDE_CONFIG_DIR` before the next launch.
+
+```python
+$env:CLAUDE_CONFIG_DIR = "$HOME/claude-clean/config"
+claude --setting-sources user
+```
+
+On the first launch, you go through the first-run setup screens again, a sign that the clean configuration directory is in effect. Managed settings still apply, and [connectors](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai) still load if you log in with a claude.ai account.
+
+3
+
+Reproduce the problem
+
+Repeat what triggered the problem in the clean session:
+
+- **Problem gone**: the cause is in your user or project configuration. Copy `~/.claude.json` and the files in `~/.claude` into `~/claude-clean/config` one at a time. If none brings the problem back, go to your project directory in the same shell and start Claude Code without `--setting-sources user`. In Bash or Zsh, run `CLAUDE_CONFIG_DIR=~/claude-clean/config claude`. In PowerShell, the variable is still set, so run `claude`.
+- **Problem persists**: the cause is outside your user and project configuration. Run `/status` in the session to check for managed settings, check your shell for [environment variables](env-vars.md), then see [Troubleshooting](troubleshooting.md).
 
 
 [​](#check-common-causes)
@@ -131,8 +174,8 @@ Most configuration surprises trace back to a small set of location and syntax ru
 | A `settings.json` value seems ignored                                | The same key is set in `settings.local.json`                                                                                                                                                                                                      | `settings.local.json` overrides `settings.json`, and both override `~/.claude/settings.json`. See [settings precedence](settings.md#settings-precedence).                                                                                                                                                                      |
 | Skill doesn’t appear in `/skills`                                    | Skill file is at `.claude/skills/name.md` instead of in a folder                                                                                                                                                                                  | Use a folder with `SKILL.md` inside: `.claude/skills/name/SKILL.md`.                                                                                                                                                                                                                                                                 |
 | Skill appears in `/skills` but Claude never invokes it               | Skill has `disable-model-invocation: true` in its frontmatter, or its description doesn’t match how you phrase the request                                                                                                                        | Check the badge in `/skills`: a “user-only” label means Claude won’t trigger it on its own. See [skill invocation](../08-Plugins-Skills/skills.md).                                                                                                                                                                                                 |
-| Subdirectory `CLAUDE.md` instructions seem ignored                   | Subdirectory files load on demand, not at session start                                                                                                                                                                                           | See [when subdirectory files load](memory.md#how-claude-md-files-load). Before v2.1.288, only the Read tool loaded them.                                                                                                                                                                                                       |
-| Subagent ignores `CLAUDE.md` instructions                            | The built-in Explore and Plan agents skip `CLAUDE.md`. A custom subagent loads it the same way the main conversation does, unless its definition sets [`omitClaudeMd`](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields)                          | For Explore or Plan, restate the instruction in your delegating prompt. For a subagent that sets `omitClaudeMd`, remove the field. For any other custom subagent, put critical instructions in the agent file body, which becomes the agent’s system prompt. See [what loads at startup](../09-Agents-Patterns/sub-agents.md#what-loads-at-startup). |
+| Subdirectory `CLAUDE.md` instructions seem ignored                   | Subdirectory files load on demand, not at session start                                                                                                                                                                                           | To load a subdirectory’s `CLAUDE.md`, ask Claude to read another file in that subdirectory. See [when subdirectory files load](memory.md#how-claude-md-files-load).                                                                                                                                                            |
+| Subagent ignores `CLAUDE.md` instructions                            | The built-in Explore and Plan agents skip `CLAUDE.md` at startup. A custom subagent loads it the same way the main conversation does, unless it has [`omitClaudeMd`](../09-Agents-Patterns/sub-agents.md#supported-frontmatter-fields) set in its definition      | For Explore or Plan, restate the instruction in your delegating prompt. For a subagent that sets `omitClaudeMd`, remove the field. For any other custom subagent, put critical instructions in the agent file body, which becomes the agent’s system prompt. See [what loads at startup](../09-Agents-Patterns/sub-agents.md#what-loads-at-startup). |
 | Cleanup logic never runs at session end                              | No `SessionEnd` hook configured                                                                                                                                                                                                                   | Add a `SessionEnd` hook in `settings.json`. See the [hook events list](../07-Hooks/hooks.md#hook-events).                                                                                                                                                                                                                                  |
 | MCP servers in `.mcp.json` never load                                | File is under `.claude/`, or its servers sit under a top-level `servers` key, as in VS Code’s `mcp.json`, instead of `mcpServers`                                                                                                                 | Project MCP config goes at the repository root as `.mcp.json`, not inside `.claude/`, with servers under the `mcpServers` key. See [MCP configuration](../06-MCP-Tools/General/mcp.md).                                                                                                                                                                |
 | MCP servers added under `mcpServers` in `settings.json` never appear | `settings.json` does not read an `mcpServers` key                                                                                                                                                                                                 | Define project servers in `.mcp.json` at the repository root, or run `claude mcp add --scope user` for user-scoped servers. See [MCP configuration](../06-MCP-Tools/General/mcp.md).                                                                                                                                                                   |

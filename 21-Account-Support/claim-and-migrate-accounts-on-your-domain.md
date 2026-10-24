@@ -2,7 +2,7 @@
 title: "Claim and migrate accounts on your domain | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625619-claim-and-migrate-accounts-on-your-domain"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:25:18Z"
+fetched_at: "2026-10-23T06:29:09Z"
 tags: ["account"]
 ---
 

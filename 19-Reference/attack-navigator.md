@@ -2,17 +2,51 @@
 title: "Mapping AI-enabled cyber threats \\ Anthropic"
 source_url: "https://www.anthropic.com/research/attack-navigator"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:45:58Z"
+fetched_at: "2026-10-21T06:30:20Z"
 tags: ["agents", "news-research"]
 ---
 
-# Mapping AI-enabled cyber threats: Insights from the LLM ATT&CK Navigator
+# **Mapping AI-enabled cyber threats: **Insights from the LLM ATT&CK Navigator
 
-Jun 3, 2026
+- [01Key findings](#key-findings)
+- [02About the dataset](#about-the-dataset)
+- [03The LLM ATT&CK Navigator and ARiES risk score](#the-llm-attck-navigator-and-aries-risk-score)
+- [04How cyber threat actors are using AI today](#how-cyber-threat-actors-are-using-ai-today)
+- [05Novelty and sophistication in the age of AI agents](#novelty-and-sophistication-in-the-age-of-ai-agents)
+- [06How we are using the Navigator to inform our safeguards](#how-we-are-using-the-navigator-to-inform-our-safeguards)
+- [07A new era for MITRE ATT&CK](#a-new-era-for-mitre-attck)
+
+- Published
+
+  Jun 3, 2026
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+
+  See more...
+
+Related articles
+
+- Security
+
+  Jun 3, 2026
+
+  [What we learned mapping a year’s worth of AI-enabled cyber threats](ai-enabled-cyber-threats-mitre-attack.md)
+
+[View more](https://www.anthropic.com/search?topic=threat-intelligence)
 
 *Kyla Guru, Alex Moix, and Jacob Klein*
 
-*We’ve spent the past year investigating how threat actors are weaponizing AI to conduct cyber operations. Today, we’re sharing a new analysis that maps these real-world attacks onto the* *[MITRE ATT&CK® framework](https://attack.mitre.org/), a database of tactics and techniques used by cyberattackers. Doing so reveals patterns that challenge traditional assumptions about cybersecurity—for example, the level of risk a threat actor poses can be assessed via metrics like technical sophistication or breadth of techniques. We partnered with Verizon to include some of these results in the* *[2026 Verizon Data Breach Investigation Report (DBIR)](https://www.verizon.com/business/resources/reports/dbir/), and are publishing this report to offer a longer-form analysis of trends we are seeing in AI-enabled cyber operations.*^(\[1\])
+*We’ve spent the past year investigating how threat actors are weaponizing AI to conduct cyber operations. Today, we’re sharing a new analysis that maps these real-world attacks onto the* *[MITRE ATT&CK® framework](https://attack.mitre.org/), a database of tactics and techniques used by cyberattackers. Doing so reveals patterns that challenge traditional assumptions about cybersecurity—for example, the level of risk a threat actor poses can be assessed via metrics like technical sophistication or breadth of techniques. We partnered with Verizon to include some of these results in the* *[2026 Verizon Data Breach Investigation Report (DBIR)](https://www.verizon.com/business/resources/reports/dbir/), and are publishing this report to offer a longer-form analysis of trends we are seeing in AI-enabled cyber operations.*^([1](#footnote-1))
 
 # LLM ATT&CK Navigator
 
@@ -25,7 +59,7 @@ Open the [interactive Navigator in a new tab](https://red.anthropic.com/2026/att
 
 For this study, we analyzed 832 accounts associated with malicious cyber activity over the course of one year, from March 2025 to March 2026. Anthropic banned these accounts from using Claude for violating our [Usage Policy](https://www.anthropic.com/legal/aup). The accounts in this analysis are just a subset of those we investigated and banned during this time period; we selected them because we had enough detail about their malicious activities to map their techniques onto the MITRE ATT&CK framework.
 
-The 832 accounts in our analysis used AI models for all 14 tactics and 482 unique sub-techniques across the framework, from initial reconnaissance through final impact.^(\[2\]) We also developed a risk-scoring framework (described later in this post) to assess how much AI assistance helped these actors plan their attacks. Most strikingly, we found that the percentage of actors labeled as being medium risk or higher jumped from 33% to 56% between the first and second halves of the year. This suggests that AI is helping attackers conduct increasingly sophisticated cyber operations with greater ease.
+The 832 accounts in our analysis used AI models for all 14 tactics and 482 unique sub-techniques across the framework, from initial reconnaissance through final impact.^([2](#footnote-2)) We also developed a risk-scoring framework (described later in this post) to assess how much AI assistance helped these actors plan their attacks. Most strikingly, we found that the percentage of actors labeled as being medium risk or higher jumped from 33% to 56% between the first and second halves of the year. This suggests that AI is helping attackers conduct increasingly sophisticated cyber operations with greater ease.
 
 There are three key findings from our analysis:
 
@@ -143,7 +177,7 @@ The findings in this report have shaped how we detect, investigate, and disrupt 
 
 First, our risk scores show that the highest-risk actors are not always the loudest or the most prolific—they often appear ordinary in terms of the type and volume of techniques they employ, and instead are distinguished by how they orchestrate their AI to carry out an entire cyber operation. We are updating our detection systems accordingly, expanding our [classifiers and probes](next-generation-constitutional-classifiers.md) to catch techniques that correlate with high ARiES scores. We’re also developing detection signals for agentic misuse patterns that don’t map cleanly to MITRE, such as multistep autonomous execution, AI-directed pivot decisions, and tool-augmented operations through MCP servers and similar interfaces.
 
-Second, we have rolled out [real-time cyber safeguards](https://www.anthropic.com/99-Other/real-time-cyber-safeguards-on-claude-7906f65cc7.md) on our most capable models that automatically detect and block prohibited activity (such as ransomware development or mass data exfiltration) at the request level. We are also now routing higher-risk dual-use activities—those that both cyberattackers and defenders may undertake—through our [Cyber Verification Program (CVP)](https://claude.com/form/cyber-use-case), which allows defensive practitioners to continue using our models in their work.
+Second, we have rolled out [real-time cyber safeguards](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude) on our most capable models that automatically detect and block prohibited activity (such as ransomware development or mass data exfiltration) at the request level. We are also now routing higher-risk dual-use activities—those that both cyberattackers and defenders may undertake—through our [Cyber Verification Program (CVP)](https://claude.com/form/cyber-use-case), which allows defensive practitioners to continue using our models in their work.
 
 Third, through [Project Glasswing](../22-Safety-Policy/glasswing.md), we are studying the offensive cyber capabilities of our most capable model before making it available to the wider public, so that we understand where AI cyber capabilities are heading before threat actors can make use of them, and can design safeguards before such misuse happens.
 
@@ -159,136 +193,8 @@ We believe the next step is to add new cross-cutting categories to the ATT&CK fr
 
 At the same time, it is clear that defenders will need to use AI with the same sophistication and urgency as attackers, share threat intelligence between organizations, and shorten the time from identifying a software vulnerability to patching it. As an industry, we must become much less tolerant of insecure code. The transitional period will be difficult. But, if industry, government, and civil society treat the current moment with the urgency it warrants, we believe capable AI systems will benefit defenders more than attackers in the long run: finding bugs before new code ships, and making the systems societies depend on more secure. The result could be better-defended infrastructure, and a digital environment with materially less fraud and abuse. We will continue to publish what we learn as the threat landscape evolves.
 
-#### Footnotes
+## Footnotes
 
-\[1\] For the DBIR, we provided analysis of 11 months of threat actor data, and rounded this out to 12 months for this report.
+01For the DBIR, we provided analysis of 11 months of threat actor data, and rounded this out to 12 months for this report.[](#footnote-ref-1)
 
-\[2\] We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.
-
-
-## Related content
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+02We observe sub-techniques from both the Enterprise and the Mobile technique matrices from MITRE. Enterprise techniques account for 99% of observations.[](#footnote-ref-2)

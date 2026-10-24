@@ -2,7 +2,7 @@
 title: "Add or update your paid Claude account’s tax or VAT ID | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9889408-i-need-to-add-or-update-my-paid-claude-account-s-tax-or-vat-id"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:31Z"
+fetched_at: "2026-10-23T06:29:19Z"
 tags: ["billing"]
 ---
 

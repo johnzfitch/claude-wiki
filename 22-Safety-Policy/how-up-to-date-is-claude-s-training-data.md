@@ -2,7 +2,7 @@
 title: "How up-to-date is Claude's training data? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:34Z"
+fetched_at: "2026-10-23T06:29:15Z"
 tags: ["safety"]
 ---
 

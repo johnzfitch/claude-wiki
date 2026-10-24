@@ -2,7 +2,7 @@
 title: "Use Claude for Excel - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/12650343-using-claude-in-excel"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:24:32Z"
+fetched_at: "2026-10-23T06:28:57Z"
 tags: ["claude-ai"]
 ---
 

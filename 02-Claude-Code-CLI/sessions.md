@@ -2,7 +2,7 @@
 title: "Manage sessions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/sessions"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:24:43Z"
+fetched_at: "2026-10-23T06:28:25Z"
 tags: ["claude-code"]
 ---
 
@@ -12,8 +12,11 @@ tags: ["claude-code"]
   - [Resume a running background session](#resume-a-running-background-session)
   - [What a resumed session restores](#what-a-resumed-session-restores)
   - [Permission mode on resume](#permission-mode-on-resume)
-  - [Resume from a summary](#resume-from-a-summary)
+  - [The “Resume this conversation?” dialog](#resume-usage-limit-dialog)
   - [Where the session picker looks](#where-the-session-picker-looks)
+  - [/loop, -p, Agent SDK, and background sessions](#%2Floop-p-agent-sdk-and-background-sessions)
+  - [Sessions in other worktrees and projects](#sessions-in-other-worktrees-and-projects)
+  - [Resume by session ID or name](#resume-by-session-id-or-name)
 - [Name your sessions](#name-your-sessions)
 - [Use the session picker](#use-the-session-picker)
 - [Branch a session](#branch-a-session)
@@ -35,7 +38,7 @@ Name, resume, branch, and switch between Claude Code conversations. Covers `--co
 
 Copy pageCopy page
 
-A session is a saved conversation tied to a project directory. Claude Code stores it locally as you work, so you can resume where you left off, branch to try a different approach, or switch between tasks. The [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions), [claude.ai/code](claude-code-on-the-web.md), and the [VS Code extension](../03-IDE-Integrations/vs-code.md#resume-past-conversations) each keep their own session list, and the desktop app can also [resume a CLI session](../16-Mobile-Desktop/desktop.md#coming-from-the-cli). This page covers the CLI.
+A [session](glossary.md#session) is a saved conversation tied to a project directory. Claude Code stores it locally as you work, so you can resume where you left off, branch to try a different approach, or switch between tasks. The [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions), [claude.ai/code](claude-code-on-the-web.md), and the [VS Code extension](../03-IDE-Integrations/vs-code.md#resume-past-conversations) each keep their own session list, and the desktop app can also [resume a CLI session](../16-Mobile-Desktop/desktop.md#coming-from-the-cli). This page covers the CLI.
 
 
 [​](#resume-a-session)
@@ -44,21 +47,14 @@ Resume a session
 
 Sessions are saved continuously to [local transcript files](#export-and-locate-session-data) as you work, so you can return to one after exiting or running `/clear`. Use these entry points:
 
-| Command                             | What it does                                                                                                           |
-|:------------------------------------|:-----------------------------------------------------------------------------------------------------------------------|
-| `claude --continue`                 | Reopens the most recent conversation in the current directory                                                          |
-| `claude --resume`                   | Opens the [session picker](#use-the-session-picker)                                                                    |
-| `claude --resume <name>`            | Resumes the named session directly                                                                                     |
-| `claude --resume <transcript-path>` | Resumes the conversation stored in the `.jsonl` [transcript file](#where-transcripts-are-stored) at that absolute path |
-| `claude --from-pr <number>`         | Opens the session picker filtered to sessions linked to that pull request                                              |
-| `/resume`                           | Switches to a different conversation from inside an active session                                                     |
-
-Claude Code leaves sessions created with [`claude -p`](headless.md) or the [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) out of the session picker and out of `claude --continue`. You can still resume one by passing its session ID to `claude --resume <session-id>`. With `claude --continue`, Claude Code also skips [sessions whose first prompt was `/loop`](#where-the-session-picker-looks). When you run [`claude -p --continue`](headless.md#continue-conversations), Claude Code includes `-p`, SDK, and `/loop` sessions. You can run `claude --resume <session-id>` from any directory, so you can resume a session that started elsewhere or moved with [`/cd`](commands.md). Claude Code looks for the ID in this order:
-
-1.  The current project directory and its git worktrees
-2.  Every other project on this machine
-
-The cross-project search resolves the ID only when exactly one other project holds a transcript with messages for it, so a hand-copied duplicate makes Claude Code report not-found rather than resume an arbitrary copy. If no stored session matches the ID, Claude Code reports `No conversation found with session ID: <session-id>`. Before v2.1.223, the lookup stopped at the current project directory and its git worktrees, so you had to resume from the directory the session last worked in. `claude --continue` opens a [background session](../09-Agents-Patterns/agent-view.md) that has finished, but not one that is still running; opening finished background sessions requires Claude Code v2.1.257 or later. If your most recent conversation is one you [moved to the background](../09-Agents-Patterns/agent-view.md#send-the-session-to-the-background) and it is still running there, Claude Code exits with `Your most recent conversation is running in the background` and that session’s ID. Attach to the session from [`claude agents`](../09-Agents-Patterns/agent-view.md#attach-to-a-session), or run `claude --resume` to pick another one.
+| Command                             | What it does                                                                                                      |
+|:------------------------------------|:------------------------------------------------------------------------------------------------------------------|
+| `claude --continue`                 | Reopens the most recent session in the current directory                                                          |
+| `claude --resume`                   | Opens the [session picker](#use-the-session-picker)                                                               |
+| `claude --resume <name>`            | Resumes the named session directly                                                                                |
+| `claude --resume <transcript-path>` | Resumes the session stored in the `.jsonl` [transcript file](#where-transcripts-are-stored) at that absolute path |
+| `claude --from-pr <number>`         | Opens the session picker filtered to sessions linked to that pull request                                         |
+| `/resume`                           | Switches to a different session from inside an active session                                                     |
 
 
 [​](#resume-a-running-background-session)
@@ -83,12 +79,13 @@ What a resumed session restores
 
 When Claude Code loads a conversation from its transcript, the resumed session restores the conversation along with the state saved in it:
 
-- Conversation history: the full history, including tool calls and results. A tool that was still running when the previous process ended, for example in a crash, doesn’t finish or run again when you resume. Claude sees the call marked as cut off before its result was recorded and is told to check whether it took effect before running it again, unless [`CLAUDE_CODE_RESUME_INTERRUPTED_TURN`](env-vars.md#variables) is set. Before v2.1.281, Claude Code dropped the cut-off call from the conversation or showed it to Claude as one you interrupted.
+- Conversation history: the messages, tool calls, and results. If the session was [compacted](context-window.md#what-survives-compaction), the conversation opens at a `Conversation compacted` row. Claude continues with the last compaction’s summary, the messages that compaction left unsummarized, and every message since. The messages that the last compaction summarized aren’t loaded again.
+- Interrupted tool calls: a tool that was still running when the previous process ended, for example in a crash, doesn’t finish or get rerun when you resume. Claude sees the call marked as cut off before its result was recorded and is told to check whether it took effect before running it again, unless [`CLAUDE_CODE_RESUME_INTERRUPTED_TURN`](env-vars.md#variables) is set.
 - Model: the session continues on the model it was using, except in the cases in [Setting your model](model-config.md#setting-your-model).
 - Agent: a session started with [`--agent`](../09-Agents-Patterns/sub-agents.md#invoke-subagents-explicitly) or the `agent` setting continues as that agent, keeping its tool restrictions and model. Pass `--agent` when resuming to pick a different one; for the system prompt in either case, see [System prompt flags in resumed conversations](cli-reference.md#system-prompt-flags-in-resumed-conversations). Claude Code looks for the agent in two places: the session’s original directory, provided you have [trusted that workspace](permissions.md#project-allow-rules-and-workspace-trust), and then the directory you resume from, so a project-scoped agent still loads when you resume from another directory. If Claude Code doesn’t find the agent in either place, the session resumes with the default tools and shows a [warning naming the agent](errors.md#session-agent-no-longer-available).
 - Permission mode: if you resume from a terminal with `claude --continue`, `claude --resume <session-id>`, or `claude --resume <name>` when the name matches one session, without `-p`, Claude Code restores the permission mode the session was in, except in the cases in [permission mode on resume](#permission-mode-on-resume), which also covers the session picker, `/resume`, and resuming with `claude -p`. Pass `--permission-mode` or `--dangerously-skip-permissions` to override the restored mode.
 - Active goal: a [goal](goal.md#resume-with-an-active-goal) that was still active when the session ended carries over; its turn count, timer, and token-spend baseline reset.
-- Scheduled tasks: [tasks that haven’t expired](scheduled-tasks.md#limitations) are restored. Background Bash and monitor tasks aren’t.
+- Session-scoped scheduled tasks: [tasks that haven’t expired](scheduled-tasks.md#limitations) are restored. Background Bash and monitor tasks aren’t.
 - Background work: a [background subagent](../09-Agents-Patterns/sub-agents.md#run-subagents-in-foreground-or-background), background Bash command, or [workflow](workflows.md) that ended with the previous process shows up in the resumed transcript as a note that it didn’t finish. Claude Code doesn’t start a turn from those notes; Claude reads them with your next prompt.
 
 Not every configuration flag from the original launch is restored. If the session depended on `--mcp-config`, `--settings`, `--plugin-dir`, `--fallback-model`, or directories added with `--add-dir`, pass them again when you resume; directories added mid-session with `/add-dir` aren’t restored either, though the session picker still uses them to locate the session. The standard settings files, such as `settings.json` and `settings.local.json`, are re-read at launch, so configuration that lives in them doesn’t need to be passed again. For `--system-prompt` and `--append-system-prompt`, see [System prompt flags in resumed conversations](cli-reference.md#system-prompt-flags-in-resumed-conversations).
@@ -103,15 +100,16 @@ Which permission mode Claude Code starts a resumed session in depends on how you
 - Terminal: `claude --continue`, `claude --resume <session-id>`, or `claude --resume <name>` when the name matches one session, without `-p`. Claude Code restores the permission mode the session was in, except in the cases in the table. Pass `--permission-mode` or `--dangerously-skip-permissions` to override the restored mode.
 - Non-interactive: `claude -p --resume` or `claude -p --continue`. Claude Code starts the run in the permission mode a new `claude -p` run would start in, except that a session that ended in plan mode resumes in plan mode under the [conditions below](#resume-in-plan-mode-with-p).
 - VS Code: the extension’s conversation panel. The table covers only a conversation that ended in plan mode; for the rest, see [resume past conversations](../03-IDE-Integrations/vs-code.md#resume-past-conversations).
-- Session picker at launch: a session you select from the [session picker](#use-the-session-picker), whether you opened it with `claude --resume` alone, `claude --from-pr`, or a name that matches more than one session. Claude Code starts the session in the permission mode it would start a new session in from the same command line, except that a session that ended in plan mode resumes in plan mode unless you pass `--permission-mode`, `--dangerously-skip-permissions`, or `--fork-session`. No other stored permission mode is restored.
+- Session picker at launch: a session you select from the [session picker](#use-the-session-picker), whether you opened it with `claude --resume` alone, `claude --from-pr`, or a name that matches more than one session. Claude Code starts the session in the permission mode it would start a new session in from the same command line, except that a session that ended in plan mode resumes in plan mode. If you pass `--permission-mode`, `--dangerously-skip-permissions`, or `--fork-session`, Claude Code doesn’t restore plan mode. No other stored permission mode is restored.
 - `/resume` inside a session, with or without an argument: the conversation you switch to continues in the permission mode your current session is in, except that a conversation that ended in plan mode resumes in plan mode, even if you launched Claude Code with `--permission-mode` or `--dangerously-skip-permissions`. If that conversation was already open earlier in this run of Claude Code, such as the conversation you started in or one you left with `/clear` or `/resume`, it continues in your current permission mode instead.
 
-Restoring plan mode on the non-interactive and VS Code paths requires Claude Code v2.1.246 or later. Each row names the permission mode the session ended in, which of the terminal, non-interactive, and VS Code paths you resume it by, and the permission mode Claude Code starts the resumed session in.
+If a [deny rule](permissions.md#manage-permissions) removes the [`ExitPlanMode`](tools-reference.md) tool, Claude can’t present a plan for approval, so Claude Code doesn’t restore plan mode. The session starts in the permission mode a new session would start in from the same command line. With `/resume`, the conversation continues in your current permission mode. Restoring plan mode on the non-interactive and VS Code paths requires Claude Code v2.1.246 or later. Each row names the permission mode the session ended in, which of the terminal, non-interactive, and VS Code paths you resume it by, and the permission mode Claude Code starts the resumed session in.
 
 | Session ended in    | How you resume                                                             | Permission mode after you resume                                                                                                                                                                                                                                                                                                                             |
 |:--------------------|:---------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `bypassPermissions` | Terminal                                                                   | The permission mode a new session would start in. To [bypass permissions](permission-modes.md#skip-all-checks-with-bypasspermissions-mode) again, enable it at launch with one of its launch flags or `permissions.defaultMode: "bypassPermissions"` in [user, `--settings`, or managed settings](settings-reference.md#permissions-defaultmode) |
 | `plan`              | Terminal                                                                   | Plan mode. With `--fork-session`, the permission mode a new session would start in                                                                                                                                                                                                                                                                           |
+| `plan`              | Terminal, when a deny rule removes `ExitPlanMode`                          | The permission mode a new session would start in                                                                                                                                                                                                                                                                                                             |
 | `auto`              | Terminal                                                                   | `auto`, only when your account still meets the [auto mode requirements](permission-modes.md#eliminate-prompts-with-auto-mode)                                                                                                                                                                                                                          |
 | Manual              | Terminal                                                                   | Manual when a new session would start in auto mode from the [built-in default](permission-modes.md#which-mode-a-session-starts-in). When a `defaultMode` from a settings file [takes effect](permission-modes.md#which-mode-a-session-starts-in), Claude Code starts the resumed session in that mode instead                                    |
 | `plan`              | Non-interactive, under the [conditions below](#resume-in-plan-mode-with-p) | Plan mode                                                                                                                                                                                                                                                                                                                                                    |
@@ -126,19 +124,17 @@ A `claude -p --resume` or `claude -p --continue` run resumes in plan mode only w
 - You don’t pass `--permission-mode` or `--dangerously-skip-permissions`
 - You don’t pass `--fork-session`
 - The run isn’t started through [channels](channels.md)
+- No [deny rule](permissions.md#manage-permissions) removes the `ExitPlanMode` tool
 
 
-[​](#resume-from-a-summary)
+[​](#resume-usage-limit-dialog)
 
-Resume from a summary
+The “Resume this conversation?” dialog
 
-On a Pro or Max plan, when you resume a session that has been inactive for more than about an hour and is over 100,000 tokens, Claude Code restores the conversation and then opens a dialog before you send your first message. The session’s [prompt cache](prompt-caching.md#cache-lifetime) has expired by then, so the next request processes the full history once no matter which of the dialog’s options you pick. The dialog offers three ways to continue the session. They differ in how much of the conversation each one carries forward into later requests, which is a tradeoff between keeping every detail and sending fewer tokens per request:
+If you see the “Resume this conversation?” dialog when resuming a session, its estimate is the share of your 5-hour usage limit that the saved conversation alone would use. The estimate doesn’t count what you’ve already used. On Pro and Max plans, the dialog can appear when you resume a long conversation [after a long break](prompt-caching.md#resuming-a-session) or on a different model. The estimated use comes when you send your first message after **Resume**, not when you select it. Choose by whether your next task still needs the saved conversation:
 
-- **Resume from summary**: runs [`/compact`](context-window.md#what-survives-compaction) immediately. Claude Code sends one summarization request over the full history, then replaces the history with the summary, your most recent exchanges, and up to five recently read files. Later requests carry the summary instead of the full history.
-- **Resume full session as-is**: loads the conversation unchanged. After you send your first message, Claude Code reprocesses and re-caches the full history, then re-reads it from the cache on later requests while the cache stays warm.
-- **Don’t ask me again**: resumes the full session and stops showing the dialog on all future resumes.
-
-Resuming as-is keeps every detail of the conversation available, at a per-request cost that scales with the conversation’s size. Resuming from the summary costs less on each later request because it carries the summary instead of the full history, but whatever the summary leaves out is no longer in Claude’s context. See [why usage climbs in a long session](../17-Billing-Plans/costs.md#why-usage-climbs-in-a-long-session) for where that per-request cost comes from.
+- **Resume**: keep working in the saved conversation.
+- **Start a new conversation**: switch to work that doesn’t need the saved conversation. To reopen it later, run [`/resume`](#use-the-session-picker) at the prompt. The estimate doesn’t apply to your first message in the new conversation. If the option says that Claude can look up this conversation, you can still refer to earlier work in the new conversation.
 
 
 [​](#where-the-session-picker-looks)
@@ -150,7 +146,33 @@ Claude Code stores sessions per project directory. By default the session picker
 - Sessions from the current worktree, including [background sessions](../09-Agents-Patterns/agent-view.md), which are marked `bg` in the list
 - Sessions started elsewhere that added the current directory with `/add-dir`
 
-Use `Ctrl+W` to widen to all worktrees of the repository or `Ctrl+A` to widen to every project on this machine. Sessions whose first prompt was a [`/loop`](scheduled-tasks.md#run-a-prompt-repeatedly-with-%2Floop) command don’t appear in the picker, and `claude --continue` skips them too. Running `/loop` later in a conversation doesn’t hide the session. Before v2.1.211, a `/loop` run early in a conversation hid the session from the picker permanently. Moving a session with [`/cd`](commands.md) relocates it to the new directory’s project storage, so it appears in that directory’s picker afterward. As of v2.1.196, a moved session stays out of the old directory’s picker even after a crash or forced exit. On earlier versions, it could also reappear in the old directory’s list after an exit that wasn’t clean when the old path contained special characters such as underscores. When you select a session from another worktree of the same repository, Claude Code resumes it in place; when the session’s own worktree no longer exists, Claude Code [resumes it in your current directory](worktrees.md#resume-a-worktree-session). When you select a session from an unrelated project, Claude Code copies a `cd` and resume command to your clipboard instead. If that project’s directory no longer exists, Claude Code resumes the session in your current directory rather than copying a `cd` command that would fail. Resuming by name resolves across the current repository and its worktrees. Both forms look for an exact match and resume it directly even if it lives in a different worktree:
+Use `Ctrl+W` to widen to all worktrees of the repository or `Ctrl+A` to widen to every project on this machine.
+
+
+[​](#/loop-p-agent-sdk-and-background-sessions)
+
+`/loop`, `-p`, Agent SDK, and background sessions
+
+Sessions whose first prompt was a [`/loop`](scheduled-tasks.md#run-a-prompt-repeatedly-with-%2Floop) command don’t appear in the picker, and `claude --continue` skips them too. Running `/loop` later in a conversation doesn’t hide the session. Claude Code leaves sessions created with [`claude -p`](headless.md) or the [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) out of the session picker and out of `claude --continue`. You can still resume one by passing its session ID to `claude --resume <session-id>`. When you run [`claude -p --continue`](headless.md#continue-conversations), Claude Code includes `-p`, SDK, and `/loop` sessions. `claude --continue` opens a [background session](../09-Agents-Patterns/agent-view.md) that has finished, but not one that is still running; opening finished background sessions requires Claude Code v2.1.257 or later. If your most recent conversation is one you [moved to the background](../09-Agents-Patterns/agent-view.md#send-the-session-to-the-background) and it is still running there, Claude Code exits with `Your most recent conversation is running in the background` and that session’s ID. Attach to the session from [`claude agents`](../09-Agents-Patterns/agent-view.md#attach-to-a-session), or run `claude --resume` to pick another one.
+
+
+[​](#sessions-in-other-worktrees-and-projects)
+
+Sessions in other worktrees and projects
+
+When you select a session from another worktree of the same repository, Claude Code resumes it in place; when the session’s own worktree no longer exists, Claude Code [resumes it in your current directory](worktrees.md#resume-a-worktree-session). When you select a session from an unrelated project, Claude Code copies a `cd` and resume command to your clipboard instead. If that project’s directory no longer exists, Claude Code resumes the session in your current directory rather than copying a `cd` command that would fail. Moving a session with [`/cd`](commands.md) relocates it to the new directory’s project storage, so it appears in that directory’s picker afterward.
+
+
+[​](#resume-by-session-id-or-name)
+
+Resume by session ID or name
+
+You can run `claude --resume <session-id>` from any directory, so you can resume a session that started elsewhere or moved with [`/cd`](commands.md). Claude Code looks for the ID in this order:
+
+1.  The current project directory and its git worktrees
+2.  Every other project on this machine
+
+The cross-project search resolves the ID only when exactly one other project holds a transcript with messages for it, so a hand-copied duplicate makes Claude Code report not-found rather than resume an arbitrary copy. If no stored session matches the ID, Claude Code reports `No conversation found with session ID: <session-id>`. Resuming by name resolves across the current repository and its worktrees. Both forms look for an exact match and resume it directly even if it lives in a different worktree:
 
 | Command                  | Exact match      | Ambiguous name                                                              |
 |:-------------------------|:-----------------|:----------------------------------------------------------------------------|
@@ -171,18 +193,12 @@ Give sessions descriptive names so they’re findable in the session picker and 
 | From the session picker          | Highlight a session and press `Ctrl+R`                                                                                                                                                 |
 | On plan accept                   | Accepting a plan in [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode) gives the session a generated title based on the plan unless you’ve already named it |
 | From claude.ai or the Claude app | Rename a [Remote Control session](remote-control.md#connect-from-another-device); Claude Code applies the same name in the CLI. Requires Claude Code v2.1.221 or later           |
-| From the desktop app             | Rename a session in the [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions)                                                                                                 |
+| From the desktop app             | Rename a session in the [desktop app](../16-Mobile-Desktop/desktop.md#organize-and-find-sessions)                                                                                                     |
 
-Once you name a session through a CLI route or from claude.ai, return to it with `claude --resume <name>` or `/resume <name>`; a desktop-app session resumes in the [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions). See [Resume a session](#resume-a-session) for how name resolution behaves across worktrees. When you start or resume an interactive session with a name that another live session on this machine already uses, or rename a session into such a name, Claude Code leaves the name with the session that already has it, renames yours to a variant with a two-word suffix, such as `auth-refactor-graceful-unicorn`, and tells you. Run `/rename` with a new name if you’d rather pick one yourself. Before v2.1.232, both sessions kept the name. In three cases Claude Code doesn’t rename the duplicate, so you can still see two sessions with the same name in listings:
+Once you name a session through a CLI route or from claude.ai, return to it with `claude --resume <name>` or `/resume <name>`; a desktop-app session resumes in the [desktop app](../16-Mobile-Desktop/desktop.md#work-in-parallel-with-sessions). See [Resume a session](#resume-a-session) for how name resolution behaves across worktrees. Sessions you don’t name still get two labels that Claude Code assigns. Only the generated title works as a resume handle:
 
-- It doesn’t check AI-generated titles or default display names.
-- It doesn’t check the `--name` of a [background](../09-Agents-Patterns/agent-view.md#from-your-shell) or `-p` session at startup.
-- It can’t rename a session on an earlier version of Claude Code.
-
-Sessions you don’t name still get two labels that Claude Code assigns. Only the generated title works as a resume handle:
-
-- Default display name: interactive sessions you never name still get a default display name when they start. Requires Claude Code v2.1.196 or later. The default combines the working directory’s name with a two-character suffix, for example `my-app-3f`, and identifies the session in listings of running sessions, such as [agent view](../09-Agents-Patterns/agent-view.md) and `claude agents --json` output. The default isn’t a resume handle. If you pass it to `claude --resume` or `/resume`, Claude Code doesn’t find the session. Naming the session replaces the default in those listings, and so does accepting a plan.
-- Generated title: if you don’t name a session, Claude Code generates a session title for it. The title is a short summary of your first prompt, written by a background request to the small/fast model, normally a Haiku-class model. A `claude -p` run you start directly from a shell or script doesn’t get one. Accepting a plan replaces the generated title with a title based on the plan. Naming the session replaces it as well. You see the first-prompt title in the [session picker](#use-the-session-picker) and in the statusline [`session_name`](statusline.md) field when no name is set. The plan title shows in the same two places and also in the listings of running sessions, where it takes the place of the default display name. You can pass either title to `claude --resume` or `/resume`, and Claude Code resolves it the same way as a name you set.
+- Default display name: interactive sessions you never name still get a default display name when they start. The default combines the working directory’s name with a two-character suffix, for example `my-app-3f`, and identifies the session in listings of running sessions, such as [agent view](../09-Agents-Patterns/agent-view.md) and `claude agents --json` output. The default isn’t a resume handle. If you pass it to `claude --resume` or `/resume`, Claude Code doesn’t find the session.
+- Generated title: if you don’t name a session, Claude Code generates a session title for it. The title is a short summary of your first prompt, written by a background request to the small/fast model, normally a Haiku-class model. A `claude -p` run you start directly from a shell or script doesn’t get one. Accepting a plan replaces the generated title with a title based on the plan. You can pass either title to `claude --resume` or `/resume`, and Claude Code resolves it the same way as a name you set.
 
 
 [​](#use-the-session-picker)
@@ -205,7 +221,7 @@ Run `/resume` inside a session, or `claude --resume` with no arguments, to open 
 | `Ctrl+B`                                                                | Filter to sessions from the current git branch. Press again to show all branches                                                                             |
 | `Esc`                                                                   | Exit the session picker or search mode                                                                                                                       |
 
-Each row shows the session name if you set one, otherwise the AI-generated session title, conversation summary, or first prompt, along with time since last activity, git branch, and file size. Widen to all projects with `Ctrl+A` to also see each session’s project path. Sessions created with `/branch` or `--fork-session` get their own session IDs and appear as separate rows. When the picker finds more than one entry for the same session, it groups them under a single row. Press `→` to expand a group. If Claude Code can’t load the session you select from the `claude --resume` picker, it prints [`Failed to resume the conversation`](errors.md#failed-to-resume-the-conversation) with a command to retry, then exits with code 1. From the `/resume` picker inside a session, Claude Code reports the failure and your current conversation keeps running.
+Each row shows the session name if you set one, otherwise the AI-generated session title, conversation summary, or first prompt, along with time since last activity, git branch, and file size. Sessions created with `/branch` or `--fork-session` get their own session IDs and appear as separate rows. When the picker finds more than one entry for the same session, it groups them under a single row. Press `→` to expand a group. If Claude Code can’t load the session you select from the `claude --resume` picker, it prints [`Failed to resume the conversation`](errors.md#failed-to-resume-the-conversation) with a command to retry, then exits with code 1. From the `/resume` picker inside a session, Claude Code reports the failure and your current conversation keeps running.
 
 
 [​](#branch-a-session)
@@ -218,7 +234,7 @@ Branching creates a copy of the conversation so far and switches you into it, le
 /branch try-streaming-approach
 ```
 
-If you omit the name, Claude Code names the new branch after the first prompt in the conversation. As of v2.1.198 this also applies after [compaction](how-claude-code-works.md#when-context-fills-up); earlier versions fell back to the literal name `Branched conversation` instead of looking past the compaction summary to the original first prompt. From the command line, combine `--continue` or `--resume` with `--fork-session`:
+If you omit the name, Claude Code names the new branch after the first prompt in the conversation. From the command line, combine `--continue` or `--resume` with `--fork-session`:
 
 ```python
 claude --continue --fork-session
@@ -242,7 +258,7 @@ Manage context within a session
 
 These commands control what’s in the context window without leaving the session:
 
-- **`/clear`**: start fresh with an empty context. Claude Code saves the previous conversation; resume it with `/resume`, or, in the same Claude Code process, from [the rewind menu’s previous-session entry](checkpointing.md#rewind-past-a-cleared-conversation). With no argument, the new conversation keeps a name you set with `--name` or `/rename`, but not an AI-generated session title. To name the conversation you’re leaving instead, pass the name, as in `/clear release-prep`; the new conversation then starts unnamed
+- **`/clear`**: start fresh with an empty context. Claude Code saves the previous session; resume it with `/resume`, or, in the same Claude Code process, from [the rewind menu’s previous-session entry](checkpointing.md#rewind-past-a-cleared-conversation). With no argument, the new session keeps a name you set with `--name` or `/rename`, but not an AI-generated session title. To name the session you’re leaving instead, pass the name, as in `/clear release-prep`; the new session then starts unnamed
 - **`/compact [instructions]`**: replace history with a summary, optionally focused on what you specify
 - **`/context`**: show what is currently consuming context
 

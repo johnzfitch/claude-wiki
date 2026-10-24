@@ -2,7 +2,7 @@
 title: "Development containers - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/devcontainer"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-16T06:24:05Z"
+fetched_at: "2026-10-22T06:29:23Z"
 tags: ["claude-code", "containers"]
 ---
 
@@ -88,7 +88,7 @@ If the browser sign-in completes but the callback never reaches the container, c
 
 Persist authentication and settings across rebuilds
 
-By default, the container’s home directory is discarded on rebuild, so engineers must sign in again each time. Claude Code stores its authentication token, user settings, and session history under the [`~/.claude`](claude-directory.md) directory. It stores your OAuth account, personal MCP servers, and per-project trust in [`~/.claude.json`](settings-reference.md#global-config-settings), a separate file outside that directory, so mounting a volume at `~/.claude` alone doesn’t keep you signed in. Mount a named volume at `~/.claude` and set [`CLAUDE_CONFIG_DIR`](env-vars.md) to the same path so Claude Code writes `.claude.json` inside the volume. The following example mounts the volume and sets `CLAUDE_CONFIG_DIR` for a container whose `remoteUser` is `node`:
+By default, the container’s home directory is discarded on rebuild, so engineers must sign in again each time. Claude Code stores its authentication token, user settings, and session history under the [`~/.claude`](claude-directory.md) directory. It stores your account details, personal MCP servers, and per-project trust in a separate file outside that directory: [`~/.claude.json`](settings-reference.md#global-config-settings). To keep the directory and the file, mount a named volume at `~/.claude` and set [`CLAUDE_CONFIG_DIR`](env-vars.md) to the same path so Claude Code writes `.claude.json` inside the volume. The following example mounts the volume and sets `CLAUDE_CONFIG_DIR` for a container whose `remoteUser` is `node`:
 
 devcontainer.json
 
@@ -101,7 +101,11 @@ devcontainer.json
 }
 ```
 
-Replace `/home/node` with the home directory of your container’s `remoteUser`. If you already set `containerEnv`, for example in [Enforce organization policy](#enforce-organization-policy), add `CLAUDE_CONFIG_DIR` to that object rather than adding a second one. To isolate state per project rather than sharing one volume across all repositories, include the `${devcontainerId}` variable in the source name. The [reference configuration](https://github.com/anthropics/claude-code/blob/main/.devcontainer/devcontainer.json) uses `source=claude-code-config-${devcontainerId}` for this purpose. In GitHub Codespaces, `~/.claude` persists when you stop and start a codespace but is cleared when you rebuild the container, so the configuration above applies there too. To carry authentication across codespaces, store `ANTHROPIC_API_KEY` or a `CLAUDE_CODE_OAUTH_TOKEN` from [`claude setup-token`](authentication.md#generate-a-long-lived-token) as a [Codespaces secret](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces). Codespaces exposes secrets as environment variables inside the container automatically.
+Replace `/home/node` with the home directory of your container’s `remoteUser`. If you already set `containerEnv`, for example in [Enforce organization policy](#enforce-organization-policy), add `CLAUDE_CONFIG_DIR` to that object rather than adding a second one.
+
+If Claude Code repeats first-launch setup after each rebuild despite the mounted volume, check that `containerEnv` in `devcontainer.json` sets `CLAUDE_CONFIG_DIR` to the volume’s mount path. Without `CLAUDE_CONFIG_DIR`, `~/.claude.json` stays in the home directory and is discarded on rebuild, along with its record that you completed setup.
+
+To isolate state per project rather than sharing one volume across all repositories, include the `${devcontainerId}` variable in the source name. The [reference configuration](https://github.com/anthropics/claude-code/blob/main/.devcontainer/devcontainer.json) uses `source=claude-code-config-${devcontainerId}` for this purpose. In GitHub Codespaces, `~/.claude` persists when you stop and start a codespace but is cleared when you rebuild the container, so the configuration above applies there too. To carry authentication across codespaces, store `ANTHROPIC_API_KEY` or a `CLAUDE_CODE_OAUTH_TOKEN` from [`claude setup-token`](authentication.md#generate-a-long-lived-token) as a [Codespaces secret](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-your-account-specific-secrets-for-github-codespaces). Codespaces exposes secrets as environment variables inside the container automatically.
 
 
 [​](#enforce-organization-policy)

@@ -2,7 +2,7 @@
 title: "Advolve Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/advolve"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:37Z"
+fetched_at: "2026-10-23T06:29:46Z"
 tags: ["api", "case-studies", "enterprise", "git", "security"]
 ---
 
@@ -41,15 +41,15 @@ With Claude, Advolve is able to:
 
 ## Building an AI-native approach to digital marketing
 
-Advolve, an AI-native company, approached digital marketing automation differently from the start. João Sobreira, co-founder, said, "Our company is AI-native, so we built our entire system around having a trustworthy AI to handle all of the features we had in mind." Their team recognized that traditional digital marketing workflows—spanning multiple platforms, creative assets, and data streams—demanded a fundamentally new approach.
+Advolve, an AI-native company, approached digital marketing automation differently from the start. João Sobreira, co-founder, said, “Our company is AI-native, so we built our entire system around having a trustworthy AI to handle all of the features we had in mind.” Their team recognized that traditional digital marketing workflows—spanning multiple platforms, creative assets, and data streams—demanded a fundamentally new approach.
 
-"We started by generating static creative assets and copywriting, building an end-to-end system of AI agents that generate and evaluate each asset layer—background, art, fonts, copywriting—based on data from successful past ads," said Sobreira. "Then, we expanded to automate the entire cross-platform campaign configuration, deployment, and optimization, using machine learning to allocate budgets dynamically across platforms and adapt content for the best return on ad spend."
+“We started by generating static creative assets and copywriting, building an end-to-end system of AI agents that generate and evaluate each asset layer—background, art, fonts, copywriting—based on data from successful past ads,” said Sobreira. “Then, we expanded to automate the entire cross-platform campaign configuration, deployment, and optimization, using machine learning to allocate budgets dynamically across platforms and adapt content for the best return on ad spend.”
 
 ## Selecting Claude for enterprise-grade reliability
 
-After evaluating multiple AI models, Advolve chose Claude for its superior capabilities in orchestrating complex systems. "Our main challenge was to create a complex system connecting multiple software, platforms, and data inputs—way beyond human capabilities," said Sobreira. "We needed robust validation mechanisms, reliable code generation support, and the ability to generate effective creative texts for copywriting. Claude consistently outperformed alternatives in our LLM evaluator testing."
+After evaluating multiple AI models, Advolve chose Claude for its superior capabilities in orchestrating complex systems. “Our main challenge was to create a complex system connecting multiple software, platforms, and data inputs—way beyond human capabilities,” said Sobreira. “We needed robust validation mechanisms, reliable code generation support, and the ability to generate effective creative texts for copywriting. Claude consistently outperformed alternatives in our LLM evaluator testing.”
 
-The decision centered on Claude's:
+The decision centered on Claude’s:
 
 - Advanced code generation for complex technical implementations
 - Consistent reliability with lower hallucination rates
@@ -67,21 +67,21 @@ Claude’s reasoning capabilities help Advolve with:
 - Multi-platform content generation and deployment
 - Complex decision-making for campaign management
 
-"Since Claude powers our platform’s central reasoning, we can efficiently manage millions of advertisements simultaneously due to its processing speed," said Sobreira. "The integration was straightforward, allowing us to focus immediately on building our specialized workflows and features."
+“Since Claude powers our platform’s central reasoning, we can efficiently manage millions of advertisements simultaneously due to its processing speed,” said Sobreira. “The integration was straightforward, allowing us to focus immediately on building our specialized workflows and features.”
 
 ## Transforming results for businesses
 
-Claude's impact has driven exceptional business growth for Advolve. With their AI-native approach, Advolve anticipates scaling significantly in 2025, managing ad budgets exceeding \$100M by year's end.
+Claude’s impact has driven exceptional business growth for Advolve. With their AI-native approach, Advolve anticipates scaling significantly in 2025, managing ad budgets exceeding \$100M by year’s end.
 
-The system's effectiveness has attracted major enterprise clients. "Our platform achieves human-level ROAS when managing multi-million dollar budgets in under 30 days," said Sobreira. "We're trusted by some of the largest companies in Brazil, such as iFood and Cogna, validating our impact and scalability."
+The system’s effectiveness has attracted major enterprise clients. “Our platform achieves human-level ROAS when managing multi-million dollar budgets in under 30 days,” said Sobreira. “We’re trusted by some of the largest companies in Brazil, such as iFood and Cogna, validating our impact and scalability.”
 
 The transformation is even more dramatic for clients. Operations that previously required large teams now run efficiently with lean staffs while maintaining human-level performance.
 
 ## Building an AI-powered future for digital marketing
 
-As an AI-native company, Advolve views the future of advertising technology through the lens of deep tech innovation. "We aim to transform the adtech industry by building a deep tech company through AI," said Sobreira. "We're focused on exploring fine-tuning capabilities to combine Anthropic's powerful models with our proprietary solutions."
+As an AI-native company, Advolve views the future of advertising technology through the lens of deep tech innovation. “We aim to transform the adtech industry by building a deep tech company through AI,” said Sobreira. “We’re focused on exploring fine-tuning capabilities to combine Anthropic’s powerful models with our proprietary solutions.”
 
-Their partnership with Anthropic continues to evolve. Sobreira concludes, "We deeply value Anthropic's team—they're highly skilled and a pleasure to work with, making collaboration smooth and productive. Sobreira said, "Looking ahead, we're excited to host joint events in Brazil, bringing together influential companies to showcase our combined strengths.”
+Their partnership with Anthropic continues to evolve. Sobreira concludes, “We deeply value Anthropic’s team—they’re highly skilled and a pleasure to work with, making collaboration smooth and productive. Sobreira said, “Looking ahead, we’re excited to host joint events in Brazil, bringing together influential companies to showcase our combined strengths.”
 
 ## Related stories
 
@@ -106,7 +106,8 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -124,12 +125,12 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -162,7 +163,7 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -180,6 +181,7 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -195,7 +197,7 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -230,7 +232,8 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -248,12 +251,12 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -286,7 +289,7 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -304,6 +307,7 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -319,7 +323,7 @@ Their partnership with Anthropic continues to evolve. Sobreira concludes, "We de
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

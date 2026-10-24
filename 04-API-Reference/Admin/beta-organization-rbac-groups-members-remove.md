@@ -2,7 +2,7 @@
 title: "Remove RBAC Group Member - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_groups/members/remove"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-10T06:24:50Z"
+fetched_at: "2026-10-18T06:26:51Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_groups%2Fmembers%2Fremove)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_groups%2Fmembers%2Fremove)
 
 
 
@@ -160,6 +160,8 @@ Plugins
 
 Plugin Marketplaces
 
+Telemetry Destinations
+
 
 Skills
 
@@ -229,13 +231,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -245,7 +249,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -254,12 +258,18 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [RBAC Groups](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups)
 5.  [Members](https://platform.claude.com/docs/en/api/http/beta/organization/rbac_groups/members)
 
 # Remove RBAC Group Member
+
+Copy page
+
+
+
+cURL
 
 DELETE/v1/organizations/rbac_groups/{rbac_group_id}/members/{user_id}
 

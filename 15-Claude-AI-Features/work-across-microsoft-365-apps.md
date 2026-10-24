@@ -2,7 +2,7 @@
 title: "Work across M365 apps - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/13892150-work-across-apps-with-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:13Z"
+fetched_at: "2026-10-23T06:29:04Z"
 tags: ["claude-ai"]
 ---
 
@@ -112,7 +112,7 @@ Claude carries relevant context forward when working across multiple files. If y
 
 Skills work across apps
 
-Skills you’ve enabled in your Claude settings apply when Claude is working in Excel, PowerPoint, Word, or Outlook during a cross-app task. If you have a Skill that enforces your team’s modeling conventions in Excel and another that matches your slide template in PowerPoint, Claude uses each one in the right app as it moves through the workflow. For more on Skills, see [Use Skills in Claude](../02-Claude-Code-CLI/using-skills-in-claude.md).
+Skills you’ve enabled in your Claude settings apply when Claude is working in Excel, PowerPoint, Word, or Outlook during a cross-app task. If you have a Skill that enforces your team’s modeling conventions in Excel and another that matches your slide template in PowerPoint, Claude uses each one in the right app as it moves through the workflow. For more on Skills, see [Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 
 
 [​](#manage-access-as-an-admin)

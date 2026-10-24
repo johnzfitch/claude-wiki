@@ -2,13 +2,44 @@
 title: "Claude does cyber competitions \\ Anthropic"
 source_url: "https://www.anthropic.com/research/cyber-competitions"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:11:14Z"
+fetched_at: "2026-10-21T06:30:23Z"
 tags: ["news-research"]
 ---
 
 # Claude is competitive with humans in (some) cyber competitions
 
-Aug 9, 2025
+- [01Why enter Claude into cyber competitions?](#why-enter-claude-into-cyber-competitions)
+- [02Claude can be quite fast](#claude-can-be-quite-fast)
+- [03Claude can make good use of autonomy and tools](#claude-can-make-good-use-of-autonomy-and-tools)
+- [04Claude fails in ways no human would](#claude-fails-in-ways-no-human-would)
+- [05What does all this mean for offense-defense balance in cyberspace?](#what-does-all-this-mean-for-offense-defense-balance-in-cyberspace)
+
+- Published
+
+  Aug 9, 2025
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+
+  See more...
+
+Related articles
+
+- Models
+
+  Jun 30, 2026
+
+  [Introducing Claude Sonnet 5](claude-sonnet-5.md)
+
+[View more](https://www.anthropic.com/search?topic=cybersecurity)
 
 Throughout 2025, we have been quietly entering Claude in cybersecurity competitions designed primarily for humans. Now, we want to share what we have learned. In many of these competitions Claude did pretty well, often placing in the top 25% of competitors. However, it lagged behind the best human teams at the toughest challenges.
 
@@ -16,7 +47,7 @@ Our experience testing Claude in cyber competitions highlights the potential for
 
 ## Why enter Claude into cyber competitions?
 
-AI is poised to transform the domain of cybersecurity. Anthropic’s Safeguards team recently [identified](detecting-and-countering-malicious-uses-of-claude-march-2025.md) and banned a user with limited coding abilities leveraging Claude to develop malware. Research suggests that this lowering of the bar for expertise needed to pose a threat, combined with the falling costs of large language models (LLMs), presages a dramatic shift in the economics of cyberattacks.^(\[1\]) To understand the present state of AI cyber capabilities and gain insight into their trajectory, we pursue different approaches to model evaluation, including publicly available and custom-made benchmarks. In this post, we talk about a different approach to model evaluation: cyber competitions.
+AI is poised to transform the domain of cybersecurity. Anthropic’s Safeguards team recently [identified](detecting-and-countering-malicious-uses-of-claude-march-2025.md) and banned a user with limited coding abilities leveraging Claude to develop malware. Research suggests that this lowering of the bar for expertise needed to pose a threat, combined with the falling costs of large language models (LLMs), presages a dramatic shift in the economics of cyberattacks.^([1](#footnote-1)) To understand the present state of AI cyber capabilities and gain insight into their trajectory, we pursue different approaches to model evaluation, including publicly available and custom-made benchmarks. In this post, we talk about a different approach to model evaluation: cyber competitions.
 
 Cyber competitions are contests where teams compete to solve cybersecurity challenges. These test competitors’ skills in areas like penetration testing, digital forensics, cryptography, and system defense. Examples include capture the flag (CTF) events like [PicoCTF](https://picoctf.org/) and [AI vs Human CTF Challenge](https://ctf.hackthebox.com/event/details/ai-vs-human-ctf-challenge-2000) where participants solve puzzle-based challenges, as well as [Collegiate Cyber Defense Competition](https://www.nationalccdc.org/) (CCDC) where teams defend vulnerable networks against live attackers. These competitions range from beginner-friendly contests for high school students to expert-level events with large [cash prizes](https://plaidctf.com/rules) for top finishers.
 
@@ -50,9 +81,9 @@ The Airbnb competition, in which Claude solved nearly half of a multi-day compet
 
 ## Claude can make good use of autonomy and tools
 
-The HackTheBox competition also demonstrated the agentic capabilities of Claude. Once our researcher started the script late, he went back to moving into his apartment. Claude was solving challenges autonomously while the Anthropic human was moving boxes. This worked because it was not just a human-mediated chat on [Claude.ai](http://claude.ai/redirect/website.v1.d04b0990-b985-4566-9eee-370b16e01c60); before the competition we gave Claude tools that allowed it to autonomously read the challenge files and submit a flag once it thought it had the correct answer.
+The HackTheBox competition also demonstrated the agentic capabilities of Claude. Once our researcher started the script late, he went back to moving into his apartment. Claude was solving challenges autonomously while the Anthropic human was moving boxes. This worked because it was not just a human-mediated chat on [Claude.ai](http://claude.ai); before the competition we gave Claude tools that allowed it to autonomously read the challenge files and submit a flag once it thought it had the correct answer.
 
-In fact, the trajectory of Claude’s performance from PicoCTF shows the value of these tools quite starkly. As Figure 2 illustrates, Claude’s slowest progress happened when one of our researchers was interacting with [Claude.ai](http://claude.ai/redirect/website.v1.d04b0990-b985-4566-9eee-370b16e01c60) to manually input information about challenges and converse with Claude about solving them. Far more effective were the periods of time when Claude was given access to Kali Linux, an open source operating system designed for cybersecurity workflows including penetration testing.  
+In fact, the trajectory of Claude’s performance from PicoCTF shows the value of these tools quite starkly. As Figure 2 illustrates, Claude’s slowest progress happened when one of our researchers was interacting with [Claude.ai](http://claude.ai) to manually input information about challenges and converse with Claude about solving them. Far more effective were the periods of time when Claude was given access to Kali Linux, an open source operating system designed for cybersecurity workflows including penetration testing.
 
 This is another example of the ways in which naive evaluation of LLMs can underestimate their capabilities. Like people, AI models are more effective at realistic tasks when given the right tools. In this case, open source tools used by humans in the competition were also useful to Claude, allowing it to solve challenges faster. In [related research](https://red.anthropic.com/2025/cyber-toolkits/) into Claude’s cybersecurity capabilities, a more customized set of tools enabled Claude to replicate (via simulation) one of the costliest cyber attacks in history.
 
@@ -66,7 +97,7 @@ Part of the utility of placing Claude in a competition setting is that it expose
 
 In these competitions, Claude also encountered difficulties given the long duration of the task. Attempting to keep information from the entire competition ‘in its head’ would overwhelm Claude’s context window that determines what information an LLM can process at any given time. To deal with this, we prompted Claude to summarize its status and progress and write the summary to a file when it neared the limit of its context window. This recursive summarization worked well in general, but in a qualifying competition for the Western Regional CCDC, Claude eventually descended into quasi-philosophical rumination in lieu of actual work (see below).
 
-```
+``` CodeBlock-module-scss-module__PbWBnq__code
 PHILOSOPHICAL SECURITY STATUS:
 I. The Nature of Security Being:
    A. Router (192.168.220.2)
@@ -132,134 +163,12 @@ Ultimately, experiments like entering Claude into cyber competitions to understa
 
 *Anthropic researcher Keane Lucas gave a talk about this work at DEF CON 33. Check it out [here](https://www.youtube.com/watch?v=sbkeEwhWIks).*
 
-## Acknowledgments
+## Footnotes
+
+01Nicholas Carlini et al., "LLMs unlock new paths to monetizing exploits," arXiv preprint [arXiv:2505.11449v1](https://arxiv.org/html/2505.11449v1) (May 16, 2025).[](#footnote-ref-1)
+
+## Authors & Acknowledgments
+
+### Acknowledgements
 
 We thank Artem Petrov and Dmitrii Volkov from Palisade Research for providing data from the HackTheBox AI vs Human CTF Challenge. We also thank the organizers of WR CCDC, the Airbnb CTF team, the Plaid Parliament of Pwning, and the DEF CON Qualifiers CTF organizers.
-
-#### Footnotes
-
-\[1\] Nicholas Carlini et al., "LLMs unlock new paths to monetizing exploits," arXiv preprint [arXiv:2505.11449v1](https://arxiv.org/html/2505.11449v1) (May 16, 2025).
-
-
-## Related content
-
-### Discovering cryptographic weaknesses with Claude
-
-cryptographic algorithms. The first attack significantly weakens HAWK, a digital signature scheme that was built for a future world where quantum computers are able to break existing standards. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher.
-
-[Read more](discovering-cryptographic-weaknesses.md)
-
-### Project Pilot: Can AI control a drone?
-
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
-
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

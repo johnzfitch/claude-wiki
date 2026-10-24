@@ -2,7 +2,7 @@
 title: "Retrieve and delete chats, files, and projects - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-content-data"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:31Z"
+fetched_at: "2026-10-20T06:37:54Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-content-data)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-content-data)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Compliance API
 
@@ -93,6 +95,8 @@ Endpoints on this page paginate two ways; see [Paginate results](manage-claude-c
 ## Retrieve chats and messages
 
 Use [List chats](../Admin/compliance-apps-chats-list.md) to page through chat metadata, then [Get chat messages](../Admin/compliance-apps-chats-messages-list.md) to fetch the full message content of one chat.
+
+Chats in the unified Claude experience are returned by these endpoints like any other chat: a chat that continues in a session in the cloud comes back as one chat. The work Claude does there appears in each message's `content` as `tool_use` blocks (the tool's `name` and `input`) and `tool_result` blocks (its output, matched by `tool_use_id`). Coverage of these chats is in beta.
 
 The chat list endpoint defaults to organization-wide scope: leave off `user_ids[]` to include every chat under your parent organization. Add `order_by=updated_at` to sort by last update time. This combination is the recommended way to export chats and keep an export current, because one paginated loop picks up new chats, chats with new messages, and chats deleted in claude.ai for every user without enumerating users first. The following request lists chats updated since a given date.
 
@@ -168,10 +172,8 @@ cURL
 
 
 ```python
-chat_id="claude_chat_01H5CWunD7RpVJ5bHa8RCkja"
-
 curl --fail-with-body -sS \
-  "https://api.anthropic.com/v1/compliance/apps/chats/$chat_id/messages" \
+  "https://api.anthropic.com/v1/compliance/apps/chats/claude_chat_01H5CWunD7RpVJ5bHa8RCkja/messages" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   --header "anthropic-version: 2023-06-01"
 ```
@@ -258,7 +260,7 @@ Response
 
 ## Retrieve files and artifacts
 
-Files and artifacts are downloaded by ID, not listed independently. The IDs come from the chat messages endpoint in [Retrieve chats and messages](#retrieve-chats-and-messages) (the `files`, `generated_files`, and `artifacts` arrays on each message) or, for project-level uploads, from the [project attachments endpoint](#retrieve-projects-and-attachments).
+Files and artifacts are downloaded by ID. Except for Claude Docs documents (see the end of this section), they aren't listed independently. The IDs come from the chat messages endpoint in [Retrieve chats and messages](#retrieve-chats-and-messages) (the `files`, `generated_files`, and `artifacts` arrays on each message) or, for project-level uploads, from the [project attachments endpoint](#retrieve-projects-and-attachments).
 
 Pick the endpoint that matches your ID type and the data you need. The same file content endpoint serves both chat files and project files.
 
@@ -287,10 +289,8 @@ cURL
 
 
 ```python
-file_id="claude_file_01UaT9wBcDfGhJkLmNpQrSv7"
-
 curl --fail-with-body -sS \
-  "https://api.anthropic.com/v1/compliance/apps/chats/files/$file_id/content" \
+  "https://api.anthropic.com/v1/compliance/apps/chats/files/claude_file_01UaT9wBcDfGhJkLmNpQrSv7/content" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   --header "anthropic-version: 2023-06-01" \
   --output "dashboard_mockup_v1.pdf"
@@ -299,6 +299,8 @@ curl --fail-with-body -sS \
 In curl, the `--remote-header-name` (`-J`) option, which normally saves a download under the `Content-Disposition` file name, does not read the `filename*` form, so name the saved file yourself with `--output`. In a script, take the name from the file's `filename` field in the chat messages or [Get file metadata](../Admin/compliance-apps-chats-files-retrieve.md) response, or decode `filename*`. Either way, it is the name the user gave the upload, so treat it as untrusted before using it as an output path: keep only the base name, allow only characters that are safe on your filesystem, and refuse names that begin with `-` or `.`.
 
 Unlike the file content endpoint, the artifact content endpoint returns a JSON object. Pass the `version_id` from one of the entries in an assistant message's `artifacts` array, not the artifact's stable `id`; each new version of an artifact has its own `version_id`. The response's `content` field holds exactly that version's text, and its `title` and `artifact_type` fields describe the artifact. [Get artifact metadata](../Admin/compliance-apps-artifacts-retrieve.md) computes `size_bytes` and `md5` over the UTF-8 encoding of that text, so compare them with the `content` value rather than the whole response body.
+
+Claude Docs documents are listed separately, by [List code artifacts](../Admin/compliance-apps-code-artifacts-list.md), with `artifact_type` set to `claude_docs`. A document's `versions` list is empty and its `published_version_id` is `null`. To download a document's current text, call `GET /v1/compliance/apps/code/artifacts/{artifact_id}/content?multi_file_format=zip`. It returns a ZIP archive with one Word (.docx) file for each tab that holds text. Comments, uploaded files, and edit history aren't included. Downloading Claude Docs through the Compliance API is in beta.
 
 ## Retrieve projects and attachments
 
@@ -324,10 +326,8 @@ cURL
 
 
 ```python
-project_id="claude_proj_01KGp4eZNug9ri4kE35RSppq"
-
 curl --fail-with-body -sS -G \
-  "https://api.anthropic.com/v1/compliance/apps/projects/$project_id/attachments" \
+  "https://api.anthropic.com/v1/compliance/apps/projects/claude_proj_01KGp4eZNug9ri4kE35RSppq/attachments" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   --header "anthropic-version: 2023-06-01"
 ```
@@ -374,6 +374,8 @@ The Compliance API exposes hard-delete endpoints for chats, files, project docum
 - [Delete project document](../Admin/compliance-apps-projects-documents-delete.md): removes a single project document by ID.
 - [Delete project](../Admin/compliance-apps-projects-delete.md): see [Detach chats before deleting a project](#detach-chats-before-deleting-a-project).
 
+For a chat in the unified Claude experience, [Delete chat](../Admin/compliance-apps-chats-delete.md) also deletes the sessions in the cloud that were started for the chat. It does not delete sessions that those sessions started.
+
 All four endpoints require the `delete:compliance_user_data` scope, which is granted separately from the read scope when the Compliance Access Key is created.
 
 The following request deletes one chat. The same pattern applies to the other delete endpoints; only the URL changes.
@@ -389,10 +391,8 @@ cURL
 # from `read:compliance_user_data` when the Compliance Access Key is created.
 # Ensure you have explicit authorization before running this.
 
-chat_id="claude_chat_01H5CWunD7RpVJ5bHa8RCkja"
-
 curl --fail-with-body -sS -X DELETE \
-  "https://api.anthropic.com/v1/compliance/apps/chats/$chat_id" \
+  "https://api.anthropic.com/v1/compliance/apps/chats/claude_chat_01H5CWunD7RpVJ5bHa8RCkja" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   --header "anthropic-version: 2023-06-01"
 ```

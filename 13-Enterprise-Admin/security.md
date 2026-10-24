@@ -2,7 +2,7 @@
 title: "Security - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/security"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-07T06:23:40Z"
+fetched_at: "2026-10-17T06:25:25Z"
 tags: ["claude-code", "enterprise", "security"]
 ---
 
@@ -147,7 +147,7 @@ You can connect Claude Code to Model Context Protocol (MCP) servers. Project-sco
 
 IDE security
 
-See [VS Code security and privacy](../03-IDE-Integrations/vs-code.md#security-and-privacy) for more information on running Claude Code in an IDE.
+See [The built-in IDE MCP server](../03-IDE-Integrations/vs-code.md#the-built-in-ide-mcp-server) for more information on running Claude Code in an IDE.
 
 
 [​](#cloud-execution-security)

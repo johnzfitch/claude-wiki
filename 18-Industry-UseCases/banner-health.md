@@ -2,7 +2,7 @@
 title: "Banner Health Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/banner-health"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:05Z"
+fetched_at: "2026-10-23T06:29:26Z"
 tags: ["api", "case-studies", "cli", "enterprise", "security"]
 ---
 
@@ -57,37 +57,37 @@ Claude helps healthcare organizations move faster without sacrificing accuracy, 
 
 ## The problem
 
-Like many health systems nationwide, a heavy and growing administrative burden was causing Banner's care providers to burn out. After a full day of patient care, physicians were spending two to three hours more each night on chart preparation and intake processes.
+Like many health systems nationwide, a heavy and growing administrative burden was causing Banner’s care providers to burn out. After a full day of patient care, physicians were spending two to three hours more each night on chart preparation and intake processes.
 
 For oncologists, the challenge was particularly acute. Complex referrals required reviewing hundreds of pages of patient notes—lab results, imaging reports, treatment histories, consultation notes—to create a history of present illness. Twenty percent of hematology oncology physician documentation time was occurring between 6 PM and 6 AM.
 
-"Oncology patients can come with a whole trove of medical records," said Dr. Gary Walker, the Chief of the Division of Radiation Oncology at Banner MD Anderson Cancer Center. "On extreme examples, you get a referral from perhaps another clinic where they could have 100, 200, 300 pages of documents that we have to go through."
+“Oncology patients can come with a whole trove of medical records,” said Dr. Gary Walker, the Chief of the Division of Radiation Oncology at Banner MD Anderson Cancer Center. “On extreme examples, you get a referral from perhaps another clinic where they could have 100, 200, 300 pages of documents that we have to go through.”
 
 Against the backdrop of a national provider shortage, Banner set an ambitious goal: by the end of 2029, achieve a 50% reduction of administrative tasks for clinicians while improving patient and provider experience. The challenge was to increase care access and capacity while letting medical professionals focus on caring for patients instead of doing data entry.
 
 ## Banner uses Claude for enterprise AI and clinical documentation
 
-The solution was BannerWise—an enterprise AI platform powered by Claude Sonnet 4.5, now available to 55,000+ employees across Banner's hospitals and medical offices in six states. The platform handles everything from communications and content creation to knowledge retrieval and complex document analysis, with users gravitating toward three primary applications: document analysis and summarization (32% of usage), content creation (20%), and development support with code optimization (16%).
+The solution was BannerWise—an enterprise AI platform powered by Claude Sonnet 4.5, now available to 55,000+ employees across Banner’s hospitals and medical offices in six states. The platform handles everything from communications and content creation to knowledge retrieval and complex document analysis, with users gravitating toward three primary applications: document analysis and summarization (32% of usage), content creation (20%), and development support with code optimization (16%).
 
-For oncology chart preparation specifically, BannerWise helps physicians and medical scribes synthesize patient records into comprehensive documentation. The system reviews incoming medical records—whether PDF documents from referring clinics or notes from within Banner's own system—and creates summaries that capture a patient's oncology journey, treatment history, and current status.
+For oncology chart preparation specifically, BannerWise helps physicians and medical scribes synthesize patient records into comprehensive documentation. The system reviews incoming medical records—whether PDF documents from referring clinics or notes from within Banner’s own system—and creates summaries that capture a patient’s oncology journey, treatment history, and current status.
 
 ## Building BannerWise for healthcare transformation
 
-Banner's technology teams brought the BannerWise vision to life, going from project approval to a functioning proof of concept in less than 30 days while fully focused on agent safety and reliability.
+Banner’s technology teams brought the BannerWise vision to life, going from project approval to a functioning proof of concept in less than 30 days while fully focused on agent safety and reliability.
 
-"We began building BannerWise when hallucinations and incorrect outputs were more common across model providers, and we were drawn to Anthropic's focus on AI safety and Claude's Constitutional AI approach to creating more helpful, harmless, and honest AI systems," said Mike Reagin, Banner's Chief Technology Officer. "We are encouraged by the pace of improvement and quality of output from the Claude family of models."
+“We began building BannerWise when hallucinations and incorrect outputs were more common across model providers, and we were drawn to Anthropic’s focus on AI safety and Claude’s Constitutional AI approach to creating more helpful, harmless, and honest AI systems,” said Mike Reagin, Banner’s Chief Technology Officer. “We are encouraged by the pace of improvement and quality of output from the Claude family of models.”
 
-Integrating Claude into the organization's AWS environment was straightforward. Banner deployed Claude within its own AWS infrastructure to ensure patient data never left its secure environment—a critical requirement for healthcare. They've continued to iterate on BannerWise with monthly releases, adding features like Bedrock Knowledge Bases, document upload capabilities, a prompt library, and a prompt improver, all designed to empower users to apply the tool to new applications in hours rather than weeks.
+Integrating Claude into the organization’s AWS environment was straightforward. Banner deployed Claude within its own AWS infrastructure to ensure patient data never left its secure environment—a critical requirement for healthcare. They’ve continued to iterate on BannerWise with monthly releases, adding features like Bedrock Knowledge Bases, document upload capabilities, a prompt library, and a prompt improver, all designed to empower users to apply the tool to new applications in hours rather than weeks.
 
-"Getting Claude activated in our AWS environment was straightforward," Reagin shared. "We've built our stack with Amazon Bedrock, so the Anthropic models are readily accessible. The real magic started as we honed prompt structures optimized for Claude."
+“Getting Claude activated in our AWS environment was straightforward,” Reagin shared. “We’ve built our stack with Amazon Bedrock, so the Anthropic models are readily accessible. The real magic started as we honed prompt structures optimized for Claude.”
 
 The impact on medical scribes has been particularly notable. Where training a new scribe previously required months of physician coaching and on-the-job learning, BannerWise enables scribes with minimal medical background to produce high-quality documentation within days.
 
-"We can literally take a new scribe with very little training, and within a couple days they're producing a product that is better than our previous scribes would produce even after months or years of being a scribe," said Dr. Walker.
+“We can literally take a new scribe with very little training, and within a couple days they’re producing a product that is better than our previous scribes would produce even after months or years of being a scribe,” said Dr. Walker.
 
-Rather than replacing staff, the system functions as what Dr. Walker called a "workforce amplifier." Built-in quality checks catch inconsistencies that humans would likely miss, such as records from a different patient inadvertently included in a file or mismatched dates of birth. In one case, the system flagged a date of birth discrepancy buried in documentation, “something that no human would ever catch,” Dr. Walker said.
+Rather than replacing staff, the system functions as what Dr. Walker called a “workforce amplifier.” Built-in quality checks catch inconsistencies that humans would likely miss, such as records from a different patient inadvertently included in a file or mismatched dates of birth. In one case, the system flagged a date of birth discrepancy buried in documentation, “something that no human would ever catch,” Dr. Walker said.
 
-"It allows me to focus more on the patient in front of me,” said Dr. Walker. "I can instead shift my focus to making sure I'm communicating well with the patient, and that they understand the treatment plan."
+“It allows me to focus more on the patient in front of me,” said Dr. Walker. “I can instead shift my focus to making sure I’m communicating well with the patient, and that they understand the treatment plan.”
 
 ## The outcome
 
@@ -97,7 +97,7 @@ Banner is now expanding chart preparation capabilities across multiple specialti
 
 The organization put BannerWise in the hands of every Banner employee by the end of 2025 and is exploring Claude Code to transform software development practices. Future applications will extend across customer experience centers, revenue cycle operations, and supply chain management—demonstrating how a single AI platform can transform every kind of work found across a complex healthcare system.
 
-"It certainly can amplify the ability of the physician, but even more so the medical scribes, MAs, nurses that are doing some of this chart prep," said Dr. Walker. "It allows them to function at a much higher level than they could with their level of training."
+“It certainly can amplify the ability of the physician, but even more so the medical scribes, MAs, nurses that are doing some of this chart prep,” said Dr. Walker. “It allows them to function at a much higher level than they could with their level of training.”
 
 
 ## Related stories
@@ -123,7 +123,8 @@ The organization put BannerWise in the hands of every Banner employee by the end
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -141,12 +142,12 @@ The organization put BannerWise in the hands of every Banner employee by the end
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -179,7 +180,7 @@ The organization put BannerWise in the hands of every Banner employee by the end
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -197,6 +198,7 @@ The organization put BannerWise in the hands of every Banner employee by the end
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -212,7 +214,7 @@ The organization put BannerWise in the hands of every Banner employee by the end
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -247,7 +249,8 @@ The organization put BannerWise in the hands of every Banner employee by the end
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -265,12 +268,12 @@ The organization put BannerWise in the hands of every Banner employee by the end
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -303,7 +306,7 @@ The organization put BannerWise in the hands of every Banner employee by the end
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -321,6 +324,7 @@ The organization put BannerWise in the hands of every Banner employee by the end
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -336,7 +340,7 @@ The organization put BannerWise in the hands of every Banner employee by the end
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

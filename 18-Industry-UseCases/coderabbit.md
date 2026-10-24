@@ -2,7 +2,7 @@
 title: "CodeRabbit Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/coderabbit"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:43Z"
+fetched_at: "2026-10-23T06:29:51Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,17 +41,17 @@ With Claude, CodeRabbit:
 
 ## The challenge of maintaining code quality at scale
 
-CodeRabbit's mission is to accelerate software development by automating code review processes for organizations from open-source projects to Fortune 500 enterprises. Modern development teams need to maintain consistent code quality while speeding up delivery cycles. Teams wrestle with fragmented quality assurance processes requiring multiple specialized tools across different languages and frameworks. Security scanning tools overwhelm teams with false positives while missing context-dependent vulnerabilities.
+CodeRabbit’s mission is to accelerate software development by automating code review processes for organizations from open-source projects to Fortune 500 enterprises. Modern development teams need to maintain consistent code quality while speeding up delivery cycles. Teams wrestle with fragmented quality assurance processes requiring multiple specialized tools across different languages and frameworks. Security scanning tools overwhelm teams with false positives while missing context-dependent vulnerabilities.
 
-"Teams struggled with manual review bottlenecks, inconsistent quality checks, and growing technical debt," said Aravind Putrevu, Developer Relations Lead at CodeRabbit. "While basic linting (automated checks for programming style and errors) and static analysis tools helped, they couldn't understand code context or provide nuanced feedback, unlike human reviewers."
+“Teams struggled with manual review bottlenecks, inconsistent quality checks, and growing technical debt,” said Aravind Putrevu, Developer Relations Lead at CodeRabbit. “While basic linting (automated checks for programming style and errors) and static analysis tools helped, they couldn’t understand code context or provide nuanced feedback, unlike human reviewers.”
 
 ## Why CodeRabbit chose Claude
 
-CodeRabbit's journey to Claude began with a fundamental observation: traditional code review tools weren't keeping pace with modern development velocity. After experimenting with rule-based systems and basic machine learning models, they realized they needed an AI solution that could truly understand code semantics, programming patterns, and developer intent.
+CodeRabbit’s journey to Claude began with a fundamental observation: traditional code review tools weren’t keeping pace with modern development velocity. After experimenting with rule-based systems and basic machine learning models, they realized they needed an AI solution that could truly understand code semantics, programming patterns, and developer intent.
 
-After evaluating multiple AI models, Claude stood out for its unique ability to understand code with human-like comprehension. "Claude demonstrates an exceptional ability to grasp not just syntax, but underlying architectural patterns and implementation nuances," said Putrevu. Claude's superior context management across large repositories, ability to translate complex technical concepts into clear explanations, and exceptional security reasoning with minimal false positives made it the clear choice.
+After evaluating multiple AI models, Claude stood out for its unique ability to understand code with human-like comprehension. “Claude demonstrates an exceptional ability to grasp not just syntax, but underlying architectural patterns and implementation nuances,” said Putrevu. Claude’s superior context management across large repositories, ability to translate complex technical concepts into clear explanations, and exceptional security reasoning with minimal false positives made it the clear choice.
 
-The integration process was smooth, thanks to Anthropic's modern SDK architecture and clear API specifications. This allowed CodeRabbit to rapidly integrate Claude's capabilities while maintaining reliable infrastructure and consistent performance at scale.
+The integration process was smooth, thanks to Anthropic’s modern SDK architecture and clear API specifications. This allowed CodeRabbit to rapidly integrate Claude’s capabilities while maintaining reliable infrastructure and consistent performance at scale.
 
 ## How Claude powers intelligent code review
 
@@ -65,13 +65,13 @@ CodeRabbit leverages Claude to deliver:
 
 ## Transforming development team productivity
 
-Integrating Claude has improved efficiency and code quality for CodeRabbit's customers. Their one-click fixes enable rapid decision-making and faster bug resolution, while streamlined ticketing integrations with tools like Jira and Linear enhance workflow efficiency. The platform delivers insightful analytics dashboards and customizable reports for data-driven engineering leadership. Its ability to provide senior developer-level insights bridges knowledge gaps between junior and senior developers while making code reviews more educational and accessible.
+Integrating Claude has improved efficiency and code quality for CodeRabbit’s customers. Their one-click fixes enable rapid decision-making and faster bug resolution, while streamlined ticketing integrations with tools like Jira and Linear enhance workflow efficiency. The platform delivers insightful analytics dashboards and customizable reports for data-driven engineering leadership. Its ability to provide senior developer-level insights bridges knowledge gaps between junior and senior developers while making code reviews more educational and accessible.
 
-"Claude empowers developers by delivering insights into architectural patterns and code dependencies," said Putrevu. "Its contextual explanations accelerate developer learning while proactively identifying security vulnerabilities."
+“Claude empowers developers by delivering insights into architectural patterns and code dependencies,” said Putrevu. “Its contextual explanations accelerate developer learning while proactively identifying security vulnerabilities.”
 
 ## Building the future of AI-powered development
 
-CodeRabbit envisions a future where AI seamlessly augments every aspect of the software development lifecycle. Their roadmap focuses on pioneering new frontiers in autonomous code improvements, predictive quality insights, and intelligent knowledge systems that evolve alongside codebases. "Engineering teams today manage a maze of tools for code quality – our vision is to unify this through AI that thinks like your best senior developer," said Harjot Gill, CEO of CodeRabbit AI.
+CodeRabbit envisions a future where AI seamlessly augments every aspect of the software development lifecycle. Their roadmap focuses on pioneering new frontiers in autonomous code improvements, predictive quality insights, and intelligent knowledge systems that evolve alongside codebases. “Engineering teams today manage a maze of tools for code quality – our vision is to unify this through AI that thinks like your best senior developer,” said Harjot Gill, CEO of CodeRabbit AI.
 
 Through their continued partnership with Anthropic, CodeRabbit is poised to transform how teams collaborate on code, making high-quality software development more accessible and efficient than ever before.
 
@@ -98,7 +98,8 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -116,12 +117,12 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -154,7 +155,7 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -172,6 +173,7 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -187,7 +189,7 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -222,7 +224,8 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -240,12 +243,12 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -278,7 +281,7 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -296,6 +299,7 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -311,7 +315,7 @@ Through their continued partnership with Anthropic, CodeRabbit is poised to tran
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

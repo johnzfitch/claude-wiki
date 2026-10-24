@@ -2,13 +2,45 @@
 title: "Finding bugs with Claude and property-based testing \\ Anthropic"
 source_url: "https://www.anthropic.com/research/property-based-testing"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:46:02Z"
+fetched_at: "2026-10-21T06:30:51Z"
 tags: ["agents", "news-research", "search", "testing"]
 ---
 
 # Finding bugs across the Python ecosystem with Claude and property-based testing
 
-Jan 14, 2026
+- [01Introduction](#introduction)
+- [02Our Property-Based Testing Agent](#our-property-based-testing-agent)
+- [03Searching for bugs in real PyPI packages](#searching-for-bugs-in-real-pypi-packages)
+- [04Conclusion](#conclusion)
+
+- Published
+
+  Jan 14, 2026
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+  - [Open source](https://www.anthropic.com/search?topic=open-source)
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
+
+  See more...
+
+Related articles
+
+- Partnerships
+
+  Jul 6, 2026
+
+  [Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems](alberta-government-claude-cybersecurity.md)
+
+[View more](https://www.anthropic.com/search?topic=coding)
 
 *Muhammad Maaz^(1,2), Liam DeVoe³, Zac Hatfield-Dodds², Nicholas Carlini²  
 ¹MATS, ²Anthropic, ³Northeastern University*
@@ -33,7 +65,7 @@ The review process we used is more laborious than we would otherwise implement f
 
 We’ve made available all of our data, including bugs that have not yet been validated, and, for completeness, even bugs that we determined to be invalid, so that maintainers can look at them at this [site](https://mmaaz-git.github.io/agentic-pbt-site/). Over the coming weeks we intend to file many of these remaining bugs (after additional validation), as well as expand our project to additional PyPI projects.
 
-```
+``` CodeBlock-module-scss-module__PbWBnq__code
 # example-based test
 def test_sort():
     assert my_sort([1,3,2]) == [1,2,3]
@@ -49,7 +81,7 @@ def test_sort(lst):
         assert result[i] <= result[i+1]
 ```
 
-**Figure 1.** Two ways of testing code. An example-based unit test verifies specific manually-specified inputs. A property-based test, in contrast, specifies a general property (e.g., the definition of a sorted list) and relies on the framework to automatically construct inputs that might fail this property.
+Two ways of testing code. An example-based unit test verifies specific manually-specified inputs. A property-based test, in contrast, specifies a general property (e.g., the definition of a sorted list) and relies on the framework to automatically construct inputs that might fail this property.
 
 ## Our Property-Based Testing Agent
 
@@ -273,7 +305,7 @@ Based on this manual review, we developed a rubric that ranks bugs out of 15, wi
 
 In the second phase of our evaluation, we ran the agent with Sonnet 4.5 on a subset of 10 important packages, running it on each package multiple times. We also developed an evaluation agent that used Sonnet 4.5 to read the code and the bug report to check the correctness and severity of the bug, which was more sophisticated than the rubric from the first phase. Lastly, we paid 3 expert human reviewers to evaluate high-severity bugs for correctness.
 
-To read all the bug reports our agent found, see <https://mmaaz-git.github.io/agentic-pbt-site/>.
+To read all the bug reports our agent found, see [https://mmaaz-git.github.io/agentic-pbt-site/](https://mmaaz-git.github.io/agentic-pbt-site/).
 
 ### Maintainer validation
 
@@ -283,31 +315,31 @@ Evaluating the effectiveness of any tool which discovers bugs in code is difficu
 
 numpy.random.wald sometimes returns negative numbers, which is a bug because samples from the Wald distribution should only return positive numbers. This is the bug demonstrated in our example run above. Claude knew this as a property of the Wald distribution and wrote a straightforward PBT to see if all samples generated are positive. We traced the error to a catastrophic cancellation occurring in the code, and developed a more numerically stable formulation when we submitted the pull request. As shown by the NumPy maintainers in the pull request, our reformulation has nearly ten orders of magnitude lower relative error than the previous algorithm.
 
-*Patch merged: <https://github.com/numpy/numpy/pull/29609>*
+*Patch merged: [https://github.com/numpy/numpy/pull/29609](https://github.com/numpy/numpy/pull/29609)*
 
 ### aws-lambda-powertools
 
 slice_dictionary() returns the first chunk repeatedly, due to not incrementing the iterator. This was caught by our agent by identifying that slicing and then reconstructing the dictionary should return the original dictionary.
 
-*Patch merged: <https://github.com/aws-powertools/powertools-lambda-python/pull/7246>*
+*Patch merged: [https://github.com/aws-powertools/powertools-lambda-python/pull/7246](https://github.com/aws-powertools/powertools-lambda-python/pull/7246)*
 
 ### cloudformation-cli-java-plugin
 
 item_hash() produces the same value of hash(None) for all lists, due to use of the in-place .sort() method, which returns None. The agent caught this by testing that hashes of different inputs should be different.
 
-*Patch submitted: <https://github.com/aws-cloudformation/cloudformation-cli/pull/1106>*
+*Patch submitted: [https://github.com/aws-cloudformation/cloudformation-cli/pull/1106](https://github.com/aws-cloudformation/cloudformation-cli/pull/1106)*
 
 ### tokenizers
 
 EncodingVisualizer.calculate_label_colors() is missing a closing parenthesis, returning invalid HSL CSS. Our agent identified this by testing that the output should match the regex for a HSL color code.
 
-Patch merged: <https://github.com/huggingface/tokenizers/pull/1853>
+Patch merged: [https://github.com/huggingface/tokenizers/pull/1853](https://github.com/huggingface/tokenizers/pull/1853)
 
 ### python-dateutil
 
 easter() returns a non-Sunday date for some years when using the Julian calendar. Maintainers identified the behavior as intended due to differing calendar systems, and acknowledged the semantics as subtle.
 
-*Issue invalid: <https://github.com/dateutil/dateutil/issues/1437>*
+*Issue invalid: [https://github.com/dateutil/dateutil/issues/1437](https://github.com/dateutil/dateutil/issues/1437)*
 
 The report to python-dateutil shows an important limitation of the agent: deriving properties from code with subtle or complex semantics remains difficult. If the code makes an implicit assumption, only the library maintainers can decide what the correct property to test is.
 
@@ -318,131 +350,3 @@ As language models continue to improve, we think agentic property-based testing 
 Going forward, we believe that applying LLM to testing and bugfinding is an important research direction. Especially as LLMs improve at the process of exploiting vulnerabilities, it is necessary to stay ahead of attackers using LLMs for exploitation.
 
 While we do not focus on the automatic generation of patches in this work, this is a clear direction for future work. If it is possible to (nearly) completely specify the correctness properties of a block of code, then correcting the bug becomes significantly easier, and we believe that in the near future LLMs will be able to effectively propose high-quality patches that are worth the consideration of maintainers.
-
-
-## Related content
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

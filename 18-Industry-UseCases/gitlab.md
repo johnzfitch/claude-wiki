@@ -1,8 +1,8 @@
 ---
 title: "GitLab Claude Platform (API) case study | Claude by Anthropic"
-source_url: "https://www.anthropic.com/customers/gitlab"
+source_url: "https://www.claude.com/customers/gitlab"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:34Z"
+fetched_at: "2026-10-23T06:29:38Z"
 tags: ["api", "case-studies", "enterprise", "git", "security"]
 ---
 
@@ -30,7 +30,7 @@ Weeks not years
 
 AI feature development time with Claude
 
-GitLab, the most comprehensive DevSecOps platform, uses Claude to drive AI-powered features across their software development, deployment and security platform. By leveraging Claude's capabilities, GitLab delivers innovative AI solutions while maintaining the stability and security its customers demand.
+GitLab, the most comprehensive DevSecOps platform, uses Claude to drive AI-powered features across their software development, deployment and security platform. By leveraging Claude’s capabilities, GitLab delivers innovative AI solutions while maintaining the stability and security its customers demand.
 
 - Several Claude-powered features are implemented across the platform
 - Claude delivers high-context and accurate code generation for users
@@ -40,27 +40,27 @@ GitLab, the most comprehensive DevSecOps platform, uses Claude to drive AI-power
 
 GitLab’s AI-powered platform helps companies manage the entire software development lifecycle. With security and speed at the core of its value proposition, GitLab needed to balance AI’s potential with taking a privacy-first approach to embedding AI capabilities across the platform.
 
-"Our mission is to enable everyone to contribute to and co-create the software that powers our world," says Taylor McCaslin, Group Manager of Product, Data Science AI/ML at GitLab. "That's a major undertaking we do not take lightly."
+“Our mission is to enable everyone to contribute to and co-create the software that powers our world,” says Taylor McCaslin, Group Manager of Product, Data Science AI/ML at GitLab. “That’s a major undertaking we do not take lightly.”
 
-As GitLab embarked on its journey to integrate generative AI, they recognized that collaborating with an AI company like Anthropic would be the most effective way to integrate the technology into their platform. GitLab Principal Engineer Jessie Young explains, "As a company that specializes in APIs, we wanted to weave AI into various features without reinventing the wheel. Partnering with Anthropic allowed us to access powerful and easy-to-use AI models that could seamlessly integrate with our platform."
+As GitLab embarked on its journey to integrate generative AI, they recognized that collaborating with an AI company like Anthropic would be the most effective way to integrate the technology into their platform. GitLab Principal Engineer Jessie Young explains, “As a company that specializes in APIs, we wanted to weave AI into various features without reinventing the wheel. Partnering with Anthropic allowed us to access powerful and easy-to-use AI models that could seamlessly integrate with our platform.”
 
 ## Implementing a multi-model approach with Claude
 
-GitLab hit its stride when more advanced AI models became available. The company has now integrated AI throughout its platform, with features for generative coding, interactive chat, planning summarization, and explaining and remediating software vulnerabilities. To ensure they're using the best tool for each task, GitLab created a model evaluation team that assesses new vendors and new versions of models.
+GitLab hit its stride when more advanced AI models became available. The company has now integrated AI throughout its platform, with features for generative coding, interactive chat, planning summarization, and explaining and remediating software vulnerabilities. To ensure they’re using the best tool for each task, GitLab created a model evaluation team that assesses new vendors and new versions of models.
 
-"Since we have AI-powered use cases across the entire software development lifecycle, we need an approach that enables us to choose the right model for the right use case. This makes the Claude model family approach a huge advantage for our team,” says McCaslin.
+“Since we have AI-powered use cases across the entire software development lifecycle, we need an approach that enables us to choose the right model for the right use case. This makes the Claude model family approach a huge advantage for our team,” says McCaslin.
 
-GitLab chose Claude 3 models to power their AI-powered Duo features due to their performance and the fully featured developer experience. "We see consistently strong performance from Claude 3 models for thoughtful, holistic, and contextualized code generation and other software development-related tasks," McCaslin notes, attributing this partly to Claude's long context window.
+GitLab chose Claude 3 models to power their AI-powered Duo features due to their performance and the fully featured developer experience. “We see consistently strong performance from Claude 3 models for thoughtful, holistic, and contextualized code generation and other software development-related tasks,” McCaslin notes, attributing this partly to Claude’s long context window.
 
 ## Empowering engineers and ensuring reliability
 
-For GitLab, Anthropic's intuitive developer tools have enabled their team to build AI-powered features efficiently.
+For GitLab, Anthropic’s intuitive developer tools have enabled their team to build AI-powered features efficiently.
 
-"The tooling Anthropic provides us is approachable for somebody who doesn't have a machine learning background," says Young. "Anthropic's developer tools and docs enable us to have dozens of people with more traditional software engineering backgrounds work on AI features."
+“The tooling Anthropic provides us is approachable for somebody who doesn’t have a machine learning background,” says Young. “Anthropic’s developer tools and docs enable us to have dozens of people with more traditional software engineering backgrounds work on AI features.”
 
-GitLab values Anthropic's commitment to transparency and privacy in this rapidly evolving AI landscape. This reliability is essential for GitLab as they work to deliver stable, secure software development tools to their customers.
+GitLab values Anthropic’s commitment to transparency and privacy in this rapidly evolving AI landscape. This reliability is essential for GitLab as they work to deliver stable, secure software development tools to their customers.
 
-> Anthropic shares our values of privacy and transparency and are straightforward to work with. That's especially important for us as an enterprise organization that builds reliable software.
+> Anthropic shares our values of privacy and transparency and are straightforward to work with. That’s especially important for us as an enterprise organization that builds reliable software.
 
 — Taylor McCaslin, Group Manager of Product, Data Science AI/ML
 
@@ -84,108 +84,110 @@ By choosing Claude, GitLab has found foundation models that provide powerful AI 
 
 ### Rocket Money on building agents that fix their own code
 
-[](https://www.anthropic.com/)
+[](https://www.claude.com/)
 
 © 2026 Anthropic PBC
 
 ## Products
 
-- [Claude](https://www.anthropic.com/product/overview)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
-- [Claude Cowork](https://www.anthropic.com/product/cowork)
-- [@Claude](https://www.anthropic.com/product/tag)
-- [Claude Science](https://www.anthropic.com/product/claude-science)
-- [Claude Security](https://www.anthropic.com/product/claude-security)
-- [Download app](https://www.anthropic.com/download)
-- [Pricing](https://www.anthropic.com/pricing)
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
 - [Log in](https://claude.ai/login)
 
 ## Capabilities
 
-- [Artifacts](https://www.anthropic.com/features/artifacts)
-- [Design](https://www.anthropic.com/product/design)
-- [Connectors](https://www.anthropic.com/marketplace/connectors-plugins)
-- [Plugins](https://www.anthropic.com/marketplace/plugins)
-- [Skills](https://www.anthropic.com/skills)
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
 
 ## Extensions
 
-- [Claude in Chrome](https://www.anthropic.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://www.anthropic.com/claude-for-microsoft-365)
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
 
 ## Enterprise
 
-- [Overview](https://www.anthropic.com/solutions/enterprise)
-- [Claude Code for Enterprise](https://www.anthropic.com/product/claude-code/enterprise)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
 
-- [Customer support](https://www.anthropic.com/solutions/customer-support)
-- [Cybersecurity](https://www.anthropic.com/solutions/cybersecurity)
-- [Legal](https://www.anthropic.com/solutions/legal)
-- [Sales](https://www.anthropic.com/solutions/sales)
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
 
 ## Industries
 
-- [Financial advisors](https://www.anthropic.com/solutions/financial-advisors)
-- [Financial services](https://www.anthropic.com/solutions/financial-services)
-- [Government](https://www.anthropic.com/solutions/government)
-- [Healthcare](https://www.anthropic.com/solutions/healthcare)
-- [Higher education](https://www.anthropic.com/solutions/education)
-- [K-12 teachers](https://www.anthropic.com/solutions/teachers)
-- [Life sciences](https://www.anthropic.com/solutions/life-sciences)
-- [Nonprofits](https://www.anthropic.com/solutions/nonprofits)
-- [Small business](https://www.anthropic.com/solutions/small-business)
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
 
 ## Programs
 
-- [Campus](https://www.anthropic.com/programs/campus)
-- [Frontier Academy](https://www.anthropic.com/programs/frontier-academy)
-- [Scientists](https://www.anthropic.com/programs/team-plan-for-scientists)
-- [Startups](https://www.anthropic.com/programs/startups)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
 - [Developer docs](../02-Claude-Code-CLI/code-home.md)
 - [Developer blog](https://claude.dev)
-- [Community](https://www.anthropic.com/community)
+- [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)
 - [Engineering at Anthropic](https://www.anthropic.com/engineering)
 
 ## Platform
 
-- [Overview](https://www.anthropic.com/platform/api)
-- [Marketplace](https://www.anthropic.com/marketplace)
-- [Claude on AWS](https://www.anthropic.com/partners/claude-on-aws)
-- [Google Cloud](https://www.anthropic.com/partners/google-cloud)
-- [Microsoft Foundry](https://www.anthropic.com/partners/microsoft-foundry)
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
-- [Overview](https://www.anthropic.com/resources)
-- [Articles](https://www.anthropic.com/resources/articles)
-- [Webinars](https://www.anthropic.com/resources/webinars)
-- [Claude partner network](https://www.anthropic.com/partners)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
 - [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://www.anthropic.com/partners/powered-by-claude)
-- [Service partners](https://www.anthropic.com/marketplace/service-partners)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Check files](https://www.anthropic.com/check-files)
-- [Regional compliance](https://www.anthropic.com/regional-compliance)
-- [Report abuse](https://www.anthropic.com/form/anthropic-content-reporting)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
 - [Security and compliance](https://trust.anthropic.com/)
 - [Status](https://status.anthropic.com/)
 - [Support center](https://support.claude.com/en/)
@@ -214,99 +216,101 @@ By choosing Claude, GitLab has found foundation models that provide powerful AI 
 
 ## Products
 
-- [Claude](https://www.anthropic.com/product/overview)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
-- [Claude Cowork](https://www.anthropic.com/product/cowork)
-- [@Claude](https://www.anthropic.com/product/tag)
-- [Claude Science](https://www.anthropic.com/product/claude-science)
-- [Claude Security](https://www.anthropic.com/product/claude-security)
-- [Download app](https://www.anthropic.com/download)
-- [Pricing](https://www.anthropic.com/pricing)
+- [Claude](../15-Claude-AI-Features/product-overview.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
+- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
+- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
+- [Download app](https://www.claude.com/download)
+- [Pricing](../17-Billing-Plans/pricing.md)
 - [Log in](https://claude.ai/login)
 
 ## Capabilities
 
-- [Artifacts](https://www.anthropic.com/features/artifacts)
-- [Design](https://www.anthropic.com/product/design)
-- [Connectors](https://www.anthropic.com/marketplace/connectors-plugins)
-- [Plugins](https://www.anthropic.com/marketplace/plugins)
-- [Skills](https://www.anthropic.com/skills)
+- [Artifacts](https://www.claude.com/features/artifacts)
+- [Design](../15-Claude-AI-Features/product-design.md)
+- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
+- [Plugins](https://www.claude.com/marketplace/plugins)
+- [Skills](https://www.claude.com/skills)
 
 ## Extensions
 
-- [Claude in Chrome](https://www.anthropic.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://www.anthropic.com/claude-for-microsoft-365)
+- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
+- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
 
 ## Enterprise
 
-- [Overview](https://www.anthropic.com/solutions/enterprise)
-- [Claude Code for Enterprise](https://www.anthropic.com/product/claude-code/enterprise)
+- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
 
-- [Customer support](https://www.anthropic.com/solutions/customer-support)
-- [Cybersecurity](https://www.anthropic.com/solutions/cybersecurity)
-- [Legal](https://www.anthropic.com/solutions/legal)
-- [Sales](https://www.anthropic.com/solutions/sales)
+- [Customer support](customer-support.md)
+- [Cybersecurity](cybersecurity.md)
+- [Legal](legal.md)
+- [Sales](sales.md)
 
 ## Industries
 
-- [Financial advisors](https://www.anthropic.com/solutions/financial-advisors)
-- [Financial services](https://www.anthropic.com/solutions/financial-services)
-- [Government](https://www.anthropic.com/solutions/government)
-- [Healthcare](https://www.anthropic.com/solutions/healthcare)
-- [Higher education](https://www.anthropic.com/solutions/education)
-- [K-12 teachers](https://www.anthropic.com/solutions/teachers)
-- [Life sciences](https://www.anthropic.com/solutions/life-sciences)
-- [Nonprofits](https://www.anthropic.com/solutions/nonprofits)
-- [Small business](https://www.anthropic.com/solutions/small-business)
+- [Financial advisors](financial-advisors.md)
+- [Financial services](finance.md)
+- [Government](government.md)
+- [Healthcare](healthcare.md)
+- [Higher education](education.md)
+- [K-12 teachers](teachers.md)
+- [Life sciences](life-sciences.md)
+- [Nonprofits](nonprofits.md)
+- [Small business](small-business.md)
 
 ## Programs
 
-- [Campus](https://www.anthropic.com/programs/campus)
-- [Frontier Academy](https://www.anthropic.com/programs/frontier-academy)
-- [Scientists](https://www.anthropic.com/programs/team-plan-for-scientists)
-- [Startups](https://www.anthropic.com/programs/startups)
+- [Campus](../15-Claude-AI-Features/programs-campus.md)
+- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
+- [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
 
 - [Developer docs](../02-Claude-Code-CLI/code-home.md)
 - [Developer blog](https://claude.dev)
-- [Community](https://www.anthropic.com/community)
+- [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)
 - [Engineering at Anthropic](https://www.anthropic.com/engineering)
 
 ## Platform
 
-- [Overview](https://www.anthropic.com/platform/api)
-- [Marketplace](https://www.anthropic.com/marketplace)
-- [Claude on AWS](https://www.anthropic.com/partners/claude-on-aws)
-- [Google Cloud](https://www.anthropic.com/partners/google-cloud)
-- [Microsoft Foundry](https://www.anthropic.com/partners/microsoft-foundry)
+- [Overview](https://www.claude.com/platform/api)
+- [Marketplace](https://www.claude.com/marketplace)
+- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
+- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
+- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
-- [Overview](https://www.anthropic.com/resources)
-- [Articles](https://www.anthropic.com/resources/articles)
-- [Webinars](https://www.anthropic.com/resources/webinars)
-- [Claude partner network](https://www.anthropic.com/partners)
+- [Overview](https://www.claude.com/resources)
+- [Articles](https://www.claude.com/resources/articles)
+- [Webinars](https://www.claude.com/resources/webinars)
+- [Claude partner network](../04-API-Reference/Other/partners.md)
 - [Claude Academy](https://academy.claude.com/)
 - [Customer stories](customers.md)
 - [Events](https://www.anthropic.com/events)
-- [Powered by Claude](https://www.anthropic.com/partners/powered-by-claude)
-- [Service partners](https://www.anthropic.com/marketplace/service-partners)
+- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
+- [Service partners](https://www.claude.com/marketplace/service-partners)
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Check files](https://www.anthropic.com/check-files)
-- [Regional compliance](https://www.anthropic.com/regional-compliance)
-- [Report abuse](https://www.anthropic.com/form/anthropic-content-reporting)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
+- [Check files](https://www.claude.com/check-files)
+- [Regional compliance](https://www.claude.com/regional-compliance)
+- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

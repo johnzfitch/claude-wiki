@@ -2,7 +2,7 @@
 title: "Messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/chats/messages"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:33:27Z"
+fetched_at: "2026-10-20T06:39:54Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Fmessages)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Fmessages)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -232,7 +234,11 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -240,9 +246,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -259,6 +265,10 @@ To enable the Compliance API, see the setup guide.
 
 # Messages
 
+Copy page
+
+
+
 ##### [Get chat messages](https://platform.claude.com/docs/en/api/http/compliance/apps/chats/messages/list)
 
 GET/v1/compliance/apps/chats/{claude_chat_id}/messages
@@ -274,3 +284,5 @@ MessageListResponse object{ id, artifacts, content, 4 more }
 
 
 A single message in a chat conversation.
+
+When the chat's `deleted_at` is set, `content` is an empty list and `files`, `generated_files` and `artifacts` are null.

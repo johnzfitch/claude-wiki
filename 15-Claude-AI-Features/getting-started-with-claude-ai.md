@@ -2,7 +2,7 @@
 title: "Getting started with Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12997377-getting-started-with-claude-ai"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:11Z"
+fetched_at: "2026-10-23T06:29:19Z"
 tags: ["claude-ai", "prompting"]
 ---
 
@@ -36,7 +36,7 @@ The default is a useful answer in the chat.
 
 ### Inline visuals[](#inline-visuals)
 
-Diagrams, charts, and interactive explainers drawn inside the response. Ask *"show me how this works"* or *"chart this data"* and the visual appears alongside the words. [More on custom visuals(opens in new tab)](https://support.claude.com/en/articles/13979539-custom-visuals-in-chat-and-cowork).
+Diagrams, charts, and interactive explainers drawn inside the response. Ask *"show me how this works"* or *"chart this data"* and the visual appears alongside the words. [More on custom visuals(opens in new tab)](custom-visuals-in-chat-and-cowork.md).
 
 ### Artifacts[](#artifacts)
 
@@ -49,7 +49,7 @@ The work product itself, made in the conversation and opened beside the chat. Se
 - **Claude Motion:** an animated explainer, chart or product walkthrough you can download as an MP4 file. In beta on Team and Enterprise plans.
 - **Interactive artifacts:** ask for a planner, a calculator or a small tool and Claude builds it to use right there.
 
-Ask Claude to change any of them, or edit a design, deck or doc directly. You can share them with your team, and you'll find them again in the Artifacts tab in the sidebar. On an Enterprise plan, an organization Owner chooses which of these are on. [More on artifacts(opens in new tab)](what-are-artifacts-and-how-do-i-use-them.md).
+Ask Claude to change any of them, or edit a design, deck or doc directly. You can share them with your team, and you'll find them again in the Artifacts tab in the sidebar. On an Enterprise plan, an organization Owner chooses which of these are on. [More on artifacts(opens in new tab)](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them).
 
 ### Files[](#files)
 
@@ -68,8 +68,8 @@ Loading
 The + menu has a few more options for when a task needs them:
 
 - **[Connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities):** let Claude read and act in the apps you already use, such as your email, calendar, drive, chat and CRM. Turn one on once and every conversation can search it, quote from it and, where you allow it, write back. [Browse the directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md).
-- **[Web search(opens in new tab)](https://support.claude.com/en/articles/10684626-enable-and-use-web-search):** on by default for Free, Pro and Max plans. On Team and Enterprise plans it's off by default, and an admin can turn it on. Turn it off when the answer should come only from your documents.
-- **[Research(opens in new tab)](use-research-on-claude.md):** runs many searches and returns one cited brief. It takes minutes, so save it for the big questions.
+- **[Web search(opens in new tab)](enable-and-use-web-search.md):** on by default for Free, Pro and Max plans. On Team and Enterprise plans it's off by default, and an admin can turn it on. Turn it off when the answer should come only from your documents.
+- **[Research(opens in new tab)](https://support.claude.com/en/articles/11088861-use-research-on-claude):** runs many searches and returns one cited brief. It takes minutes, so save it for the big questions.
 - **[Skills(opens in new tab)](../02-Claude-Code-CLI/what-are-skills.md):** saved instructions for work you do the same way every time, including a tone or format you want on demand. In the Claude desktop app you can also record yourself doing a task once and keep it as a skill.
 - **Add folder** ([desktop app(opens in new tab)](https://support.claude.com/tutorials/navigating-the-claude-desktop-app)): hand Claude a whole folder on your computer to read from and save into, instead of uploading files one at a time.
 
@@ -80,7 +80,7 @@ The + menu has a few more options for when a task needs them:
 Once you've explained your project, your team, or how you like to work, you shouldn't have to explain it again. A few features carry the important things forward so each conversation starts where the last one left off:
 
 - **[Projects(opens in new tab)](what-are-projects.md):** a place for one ongoing piece of work. Add the files Claude should always have on hand, write a few lines of instruction (the brand voice, the format, the things to never forget), and every conversation inside starts already knowing them. Make one when you keep re-uploading the same files or re-explaining the same rules.
-- **[Instructions for Claude(opens in new tab)](understanding-claude-s-personalization-features.md):** a short note in your Settings profile that Claude keeps in mind in every conversation, such as who you are, what to assume and how to talk to you. Set it once and it applies everywhere.
+- **[Instructions for Claude(opens in new tab)](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features):** a short note in your Settings profile that Claude keeps in mind in every conversation, such as who you are, what to assume and how to talk to you. Set it once and it applies everywhere.
 - **[Memory(opens in new tab)](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context):** what Claude remembers about you across conversations, such as your team, your projects and how you like to work. Turn it on in Settings and it fills in as you go; you can read or edit it any time.
 
 ## Beyond the chat window[](#beyond-the-chat-window)

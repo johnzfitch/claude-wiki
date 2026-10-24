@@ -2,7 +2,7 @@
 title: "Claude Code model configuration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11940350-claude-code-model-configuration"
 category: "20-Models"
-fetched_at: "2026-10-10T06:28:02Z"
+fetched_at: "2026-10-23T06:28:53Z"
 tags: ["claude-code", "models"]
 ---
 

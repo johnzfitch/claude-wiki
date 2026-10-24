@@ -2,7 +2,7 @@
 title: "Troubleshoot installation and login - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/troubleshoot-install"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:44Z"
+fetched_at: "2026-10-21T06:28:58Z"
 tags: ["claude-code"]
 ---
 
@@ -25,6 +25,8 @@ tags: ["claude-code"]
   - [TLS or SSL connection errors](#tls-or-ssl-connection-errors)
   - [Failed to fetch version from downloads.claude.ai](#failed-to-fetch-version-from-downloads-claude-ai)
   - [The connection dropped while downloading the update](#the-connection-dropped-while-downloading-the-update)
+  - [Release verification failed for Claude Code](#release-verification-failed)
+  - [Auto-update failed · Run claude doctor in the session footer](#auto-update-failed)
   - [Wrong install command on Windows](#wrong-install-command-on-windows)
   - [running scripts is disabled on this system](#running-scripts-is-disabled-on-this-system)
   - [The process cannot access the file during Windows install](#the-process-cannot-access-the-file-during-windows-install)
@@ -95,6 +97,8 @@ Match the error message or symptom you’re seeing to a fix:
 | `CRYPT_E_NO_REVOCATION_CHECK` or `CRYPT_E_REVOCATION_OFFLINE`                                              | [Work around blocked revocation checks](#tls-or-ssl-connection-errors)                                                                        |
 | `Failed to fetch version` or can’t reach download server                                                   | [Check network and proxy settings](#check-network-connectivity)                                                                               |
 | `The connection dropped while downloading the update` or `Download timed out: exceeded the total deadline` | [Run the update again or set your proxy](#the-connection-dropped-while-downloading-the-update)                                                |
+| `Release verification failed for Claude Code`                                                              | [Run `claude update` or `claude install` again](#release-verification-failed)                                                                 |
+| `Auto-update failed · Run claude doctor` in red in the session footer                                      | [Run `claude update` from your shell](#auto-update-failed)                                                                                    |
 | `irm is not recognized` or `The token '&&' is not a valid statement separator`                             | [Use the right command for your shell](#wrong-install-command-on-windows)                                                                     |
 | `Cask 'claude-code' is unavailable: No Cask with this name exists`                                         | [Update Homebrew](#homebrew-cask-unavailable-or-outdated)                                                                                     |
 | `Cask 'claude-code@latest' is not installed`                                                               | [Upgrade the cask you installed](#cask-is-not-installed)                                                                                      |
@@ -681,6 +685,31 @@ The text in parentheses names which attempt failed and the underlying network er
 - Run `claude doctor` from your shell for installation diagnostics
 
 
+[​](#release-verification-failed)
+
+Release verification failed for Claude Code
+
+This message from `claude update` or `claude install` means Claude Code couldn’t confirm that the release it was about to install is genuine, so it installed nothing. Any version you already have keeps working.
+
+```python
+Release verification failed for Claude Code <version> (<reason>). The update was not installed.
+```
+
+Take the step that matches the value in parentheses in your message:
+
+- **A value that starts with `sidecar_fetch_`**: run the same command again from your shell. `claude update` succeeded if it prints a line that starts with `Successfully updated from`, and `claude install` succeeded if it prints `Claude Code successfully installed!`.
+- **Any other value**: try the same command again later
+
+With any value, if the message repeats, [report the problem](#still-stuck) and include the full message.
+
+
+[​](#auto-update-failed)
+
+`Auto-update failed · Run claude doctor` in the session footer
+
+This red line means Claude Code tried to update itself in the background and the update didn’t install. You can keep working without doing anything. The line points you to `claude doctor`, whose `Last update attempt: failed (install_failed)` line gives a date but no cause. To finish the update or see why it failed, run `claude update` in your shell instead. If that install fails too, look for the error `claude update` prints under [Find your error](#find-your-error).
+
+
 [​](#wrong-install-command-on-windows)
 
 Wrong install command on Windows
@@ -1159,7 +1188,7 @@ If you see `OAuth error: Invalid code. Please make sure the full code was copied
 If you see `API Error: 403 Request not allowed` after logging in:
 
 - **Claude Pro/Max users**: verify your subscription is active at [claude.ai/settings](https://claude.ai/settings)
-- **Anthropic Console users**: confirm your account has the “Claude Code” or “Developer” role. Admins assign this in the Anthropic Console under Settings → Members.
+- **Anthropic Console users**: confirm your account has the “Claude Code” or “Developer” role. Admins assign this on the Console’s Members page at [platform.claude.com/settings/members](../04-API-Reference/Other/playground.md).
 - **Behind a proxy**: corporate proxies can interfere with API requests. See [network configuration](../13-Enterprise-Admin/network-config.md) for proxy setup.
 
 
@@ -1285,4 +1314,4 @@ If none of the above resolves your issue:
 1.  Check the [GitHub repository](https://github.com/anthropics/claude-code/issues) for known issues, or open a new one with your operating system, the install command you ran, and the full error output
 2.  If `claude --version` works but something else is wrong, run `claude doctor` for an automated diagnostic report
 3.  If you can start a session, use `/feedback` inside Claude Code to report the problem
-4.  If the problem is with your account rather than the install, such as a login loop, a subscription that isn’t recognized, or a disabled organization, contact Anthropic support: sign in at [claude.ai](https://claude.ai) (Console users: [platform.claude.com](../04-API-Reference/Other/usage-limits.md)), click your initials in the lower left, and select **Get help**. See [How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support) for the full flow.
+4.  If the problem is with your account rather than the install, such as a login loop, a subscription that isn’t recognized, or a disabled organization, contact Anthropic support: sign in at [claude.ai](https://claude.ai) (Console users: [platform.claude.com](../04-API-Reference/Other/playground.md)), click your initials in the lower left, and select **Get help**. See [How to get support](../15-Claude-AI-Features/how-to-get-support.md) for the full flow.

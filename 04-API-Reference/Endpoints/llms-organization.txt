@@ -25,7 +25,7 @@ Path: 04-API-Reference/Endpoints/organization-api-keys-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fapi_keys%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fapi_keys%2Flist)
 
 
 
@@ -132,7 +132,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -142,9 +142,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -215,13 +217,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -229,9 +233,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -241,7 +245,7 @@ cURL
 
 
 
-Looking for your API keys? You can view and create them in [Settings → API keys](../Other/playground.md) in the Claude Console.
+Looking for your API keys? You can view and create them on the [API keys](../Other/playground.md) page in the Claude Console.
 
 
 
@@ -252,6 +256,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [API Keys](https://platform.claude.com/docs/en/api/http/organization/api_keys)
 
 # List API Keys
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/api_keys
 
@@ -324,6 +334,18 @@ workspace_id: optional string
 
 
 Filter by Workspace ID.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -673,7 +695,7 @@ Path: 04-API-Reference/Endpoints/organization-api-keys-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fapi_keys%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fapi_keys%2Fretrieve)
 
 
 
@@ -780,7 +802,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -790,9 +812,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -863,13 +887,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -877,9 +903,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -889,7 +915,7 @@ cURL
 
 
 
-Looking for your API keys? You can view and create them in [Settings → API keys](../Other/playground.md) in the Claude Console.
+Looking for your API keys? You can view and create them on the [API keys](../Other/playground.md) page in the Claude Console.
 
 
 
@@ -900,6 +926,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [API Keys](https://platform.claude.com/docs/en/api/http/organization/api_keys)
 
 # Retrieve API Key (Admin API)
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/api_keys/{api_key_id}
 
@@ -912,6 +944,18 @@ api_key_id: string
 
 
 ID of the API key.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -1014,7 +1058,7 @@ Path: 04-API-Reference/Endpoints/organization-api-keys-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fapi_keys%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fapi_keys%2Fupdate)
 
 
 
@@ -1121,7 +1165,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -1131,9 +1175,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -1204,13 +1250,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -1218,9 +1266,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -1230,7 +1278,7 @@ cURL
 
 
 
-Looking for your API keys? You can view and create them in [Settings → API keys](../Other/playground.md) in the Claude Console.
+Looking for your API keys? You can view and create them on the [API keys](../Other/playground.md) page in the Claude Console.
 
 
 
@@ -1241,6 +1289,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [API Keys](https://platform.claude.com/docs/en/api/http/organization/api_keys)
 
 # Update API Key
+
+Copy page
+
+
+
+cURL
 
 POST/v1/organizations/api_keys/{api_key_id}
 
@@ -1253,6 +1307,18 @@ api_key_id: string
 
 
 ID of the API key.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -1393,7 +1459,7 @@ Path: 04-API-Reference/Endpoints/organization-api-keys.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fapi_keys)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fapi_keys)
 
 
 
@@ -1500,7 +1566,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -1510,9 +1576,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -1583,13 +1651,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -1597,9 +1667,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -1609,7 +1679,7 @@ cURL
 
 
 
-Looking for your API keys? You can view and create them in [Settings → API keys](../Other/playground.md) in the Claude Console.
+Looking for your API keys? You can view and create them on the [API keys](../Other/playground.md) page in the Claude Console.
 
 
 
@@ -1619,6 +1689,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # API Keys
+
+Copy page
+
+
+
+cURL
 
 ##### [List API Keys](https://platform.claude.com/docs/en/api/http/organization/api_keys/list)
 
@@ -1777,7 +1853,7 @@ Path: 04-API-Reference/Endpoints/organization-compliance-settings-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fcompliance_settings%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fcompliance_settings%2Fretrieve)
 
 
 
@@ -1881,7 +1957,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -1891,9 +1967,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -1964,13 +2042,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -1978,9 +2058,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -1998,11 +2078,29 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get Compliance Settings
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/compliance_settings
 
 Retrieve your organization's Compliance Settings.
 
 Compliance Settings is a singleton resource: there is exactly one per organization, addressed without an identifier. The `state` field reflects whether the Compliance API is enabled. An organization with a parent organization reads the state inherited from the parent's configuration.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -2092,7 +2190,7 @@ Path: 04-API-Reference/Endpoints/organization-compliance-settings-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fcompliance_settings%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fcompliance_settings%2Fupdate)
 
 
 
@@ -2196,7 +2294,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -2206,9 +2304,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -2279,13 +2379,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -2293,9 +2395,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -2313,6 +2415,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update Compliance Settings
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/compliance_settings
 
 Update your organization's Compliance Settings.
@@ -2320,6 +2428,18 @@ Update your organization's Compliance Settings.
 Setting `state` to `enabled` turns on the Compliance API and begins capturing organization activity events. Setting it to `disabled` turns both off. `state` reflects whether the Compliance API is enabled.
 
 A request that sets `state` to its current value succeeds and leaves the resource unchanged. A `disabled` request stays in effect until a later `enabled` request or the organization's next provisioning action that enables Access Transparency: enabling Access Transparency also enables the Compliance API, which serves its activity events, so such provisioning (including re-runs) re-enables the Compliance API even after a `disabled` request. Automated provisioning never disables compliance settings.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -2442,7 +2562,7 @@ Path: 04-API-Reference/Endpoints/organization-compliance-settings.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fcompliance_settings)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fcompliance_settings)
 
 
 
@@ -2546,7 +2666,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -2556,9 +2676,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -2629,13 +2751,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -2643,9 +2767,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -2661,6 +2785,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # Compliance Settings
+
+Copy page
+
+
+
+cURL
 
 ##### [Get Compliance Settings](https://platform.claude.com/docs/en/api/http/organization/compliance_settings/retrieve)
 
@@ -2853,7 +2983,7 @@ Path: 04-API-Reference/Endpoints/organization-external-keys-create.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fcreate)
 
 
 
@@ -2969,7 +3099,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -2979,9 +3109,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -3052,13 +3184,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -3066,9 +3200,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -3086,9 +3220,27 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create External Key
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/external_keys
 
 Create an external key config owned by the caller's organization.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -3306,7 +3458,7 @@ Path: 04-API-Reference/Endpoints/organization-external-keys-delete.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fdelete)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fdelete)
 
 
 
@@ -3422,7 +3574,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -3432,9 +3584,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -3505,13 +3659,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -3519,9 +3675,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -3538,6 +3694,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [External Keys](https://platform.claude.com/docs/en/api/http/organization/external_keys)
 
 # Delete External Key
+
+Copy page
+
+
+
+cURL
 
 DELETE/v1/organizations/external_keys/{external_key_id}
 
@@ -3556,6 +3718,18 @@ external_key_id: string
 ID of the External Key.
 
 maxLength2048
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -3631,7 +3805,7 @@ Path: 04-API-Reference/Endpoints/organization-external-keys-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Flist)
 
 
 
@@ -3747,7 +3921,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -3757,9 +3931,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -3830,13 +4006,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -3844,9 +4022,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -3863,6 +4041,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [External Keys](https://platform.claude.com/docs/en/api/http/organization/external_keys)
 
 # List External Keys
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/external_keys
 
@@ -3891,6 +4075,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -4168,7 +4364,7 @@ Path: 04-API-Reference/Endpoints/organization-external-keys-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fretrieve)
 
 
 
@@ -4284,7 +4480,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -4294,9 +4490,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -4367,13 +4565,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -4381,9 +4581,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -4401,6 +4601,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get External Key
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/external_keys/{external_key_id}
 
 Retrieve a single external key config in the caller's organization by ID.
@@ -4416,6 +4622,18 @@ external_key_id: string
 ID of the External Key.
 
 maxLength2048
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -4512,7 +4730,7 @@ Path: 04-API-Reference/Endpoints/organization-external-keys-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fupdate)
 
 
 
@@ -4628,7 +4846,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -4638,9 +4856,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -4711,13 +4931,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -4725,9 +4947,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -4744,6 +4966,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [External Keys](https://platform.claude.com/docs/en/api/http/organization/external_keys)
 
 # Update External Key
+
+Copy page
+
+
+
+cURL
 
 POST/v1/organizations/external_keys/{external_key_id}
 
@@ -4762,6 +4990,18 @@ external_key_id: string
 ID of the External Key.
 
 maxLength2048
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -4974,7 +5214,7 @@ Path: 04-API-Reference/Endpoints/organization-external-keys-validate.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fvalidate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys%2Fvalidate)
 
 
 
@@ -5090,7 +5330,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -5100,9 +5340,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -5173,13 +5415,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -5187,9 +5431,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -5206,6 +5450,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [External Keys](https://platform.claude.com/docs/en/api/http/organization/external_keys)
 
 # Validate External Key
+
+Copy page
+
+
+
+cURL
 
 POST/v1/organizations/external_keys/{external_key_id}/validate
 
@@ -5224,6 +5474,18 @@ external_key_id: string
 ID of the External Key.
 
 maxLength2048
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -5319,7 +5581,7 @@ Path: 04-API-Reference/Endpoints/organization-external-keys.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fexternal_keys)
 
 
 
@@ -5435,7 +5697,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -5445,9 +5707,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -5518,13 +5782,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -5532,9 +5798,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -5550,6 +5816,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # External Keys
+
+Copy page
+
+
+
+cURL
 
 ##### [Create External Key](https://platform.claude.com/docs/en/api/http/organization/external_keys/create)
 
@@ -5820,7 +6092,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-issuers-archive.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Farchive)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Farchive)
 
 
 
@@ -5937,7 +6209,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -5947,9 +6219,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -6020,13 +6294,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -6034,9 +6310,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -6055,6 +6331,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Archive Federation Issuer
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_issuers/{federation_issuer_id}/archive
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -6070,6 +6352,18 @@ federation_issuer_id: string
 
 
 ID of the federation issuer to archive.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -6183,7 +6477,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-issuers-create.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fcreate)
 
 
 
@@ -6300,7 +6594,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -6310,9 +6604,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -6383,13 +6679,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -6397,9 +6695,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -6418,6 +6716,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Federation Issuer
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_issuers
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -6425,6 +6729,18 @@ A beta version of this method exists and may have additional functionality. [Vie
 Register an OIDC issuer that Anthropic will trust for workload identity federation in your organization.
 
 The `jwks` field controls how the issuer's signing keys are obtained and takes one of three shapes selected by `type`: `discovery` (resolve keys through OIDC discovery), `explicit_url` (fetch keys from a fixed JWKS URL), or `inline` (provide a static key set). When `jwks.type` is `discovery` and no `discovery_base` is set, the issuer URL must be publicly reachable over HTTPS so Anthropic can fetch the discovery document; for `explicit_url` and `inline` modes the issuer URL is only matched as the JWT's `iss` claim and is not fetched.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -6676,7 +6992,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-issuers-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Flist)
 
 
 
@@ -6793,7 +7109,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -6803,9 +7119,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -6876,13 +7194,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -6890,9 +7210,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -6910,6 +7230,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Issuers](https://platform.claude.com/docs/en/api/http/organization/federation/issuers)
 
 # List Federation Issuers
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/federation_issuers
 
@@ -6950,6 +7276,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -7293,7 +7631,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-issuers-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fretrieve)
 
 
 
@@ -7410,7 +7748,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -7420,9 +7758,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -7493,13 +7833,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -7507,9 +7849,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -7528,6 +7870,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get Federation Issuer
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/federation_issuers/{federation_issuer_id}
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -7541,6 +7889,18 @@ federation_issuer_id: string
 
 
 ID of the federation issuer.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -7653,7 +8013,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-issuers-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fupdate)
 
 
 
@@ -7770,7 +8130,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -7780,9 +8140,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -7853,13 +8215,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -7867,9 +8231,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -7888,6 +8252,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update Federation Issuer
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_issuers/{federation_issuer_id}
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -7905,6 +8275,18 @@ federation_issuer_id: string
 
 
 ID of the federation issuer to update.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -8159,7 +8541,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-issuers.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers)
 
 
 
@@ -8276,7 +8658,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -8286,9 +8668,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -8359,13 +8743,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -8373,9 +8759,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -8392,6 +8778,12 @@ A beta version of this API exists and may have additional functionality. [View t
 3.  [Federation](https://platform.claude.com/docs/en/api/http/organization/federation)
 
 # Issuers
+
+Copy page
+
+
+
+cURL
 
 ##### [Create Federation Issuer](https://platform.claude.com/docs/en/api/http/organization/federation/issuers/create)
 
@@ -8574,7 +8966,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-archive.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Farchive)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Farchive)
 
 
 
@@ -8693,7 +9085,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -8703,9 +9095,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -8776,13 +9170,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -8790,9 +9186,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -8811,6 +9207,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Archive Federation Rule
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_rules/{federation_rule_id}/archive
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -8826,6 +9228,18 @@ federation_rule_id: string
 
 
 ID of the federation rule to archive.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -8960,7 +9374,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-create.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fcreate)
 
 
 
@@ -9079,7 +9493,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -9089,9 +9503,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -9162,13 +9578,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -9176,9 +9594,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -9197,6 +9615,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Federation Rule
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_rules
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -9204,6 +9628,18 @@ A beta version of this method exists and may have additional functionality. [Vie
 Create a federation rule owned by your organization.
 
 The referenced issuer and the target service account must already exist in the same organization; invalid references are rejected with a 400 error. The workspace reference is validated. Membership is not checked at rule creation: token exchange resolves a single enabled workspace per call and is rejected unless the target service account is a member of that workspace (it is implicitly a member of the default workspace). Rules on well-known shared issuers (GitHub Actions, GitLab, Buildkite, Terraform Cloud, Google) must constrain tenant identity via an identity-bearing claim, a tenant-pinning subject prefix (such as `repo:YOUR_ORG/...`), or a CEL condition referencing one of those identity claims (e.g. `claims.repository_owner`). OAuth callers may only manage rules whose `oauth_scope` is `workspace:developer` or `workspace:inference`; other scopes require a Console session.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -9486,7 +9922,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Flist)
 
 
 
@@ -9605,7 +10041,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -9615,9 +10051,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -9688,13 +10126,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -9702,9 +10142,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -9722,6 +10162,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Rules](https://platform.claude.com/docs/en/api/http/organization/federation/rules)
 
 # List Federation Rules
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/federation_rules
 
@@ -9768,6 +10214,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -10100,7 +10558,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fretrieve)
 
 
 
@@ -10219,7 +10677,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -10229,9 +10687,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -10302,13 +10762,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -10316,9 +10778,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -10337,6 +10799,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get Federation Rule
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/federation_rules/{federation_rule_id}
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -10350,6 +10818,18 @@ federation_rule_id: string
 
 
 ID of the federation rule.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -10483,7 +10963,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fupdate)
 
 
 
@@ -10602,7 +11082,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -10612,9 +11092,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -10685,13 +11167,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -10699,9 +11183,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -10720,6 +11204,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update Federation Rule
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_rules/{federation_rule_id}
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -10735,6 +11225,18 @@ federation_rule_id: string
 
 
 ID of the federation rule to update.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -11002,7 +11504,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-workspaces-add.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fworkspaces%2Fadd)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fworkspaces%2Fadd)
 
 
 
@@ -11130,7 +11632,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -11140,9 +11642,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -11213,13 +11717,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -11227,9 +11733,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -11249,6 +11755,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Add Federation Rule Workspace
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_rules/{federation_rule_id}/workspaces
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -11264,6 +11776,18 @@ federation_rule_id: string
 
 
 ID of the federation rule.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -11392,7 +11916,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-workspaces-list.m
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fworkspaces%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fworkspaces%2Flist)
 
 
 
@@ -11520,7 +12044,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -11530,9 +12054,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -11603,13 +12129,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -11617,9 +12145,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -11638,6 +12166,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 5.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/federation/rules/workspaces)
 
 # List Federation Rule Workspaces
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/federation_rules/{federation_rule_id}/workspaces
 
@@ -11676,6 +12210,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -11805,7 +12351,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-workspaces-remove
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fworkspaces%2Fremove)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fworkspaces%2Fremove)
 
 
 
@@ -11933,7 +12479,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -11943,9 +12489,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -12016,13 +12564,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -12030,9 +12580,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -12051,6 +12601,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 5.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/federation/rules/workspaces)
 
 # Remove Federation Rule Workspace
+
+Copy page
+
+
+
+cURL
 
 DELETE/v1/organizations/federation_rules/{federation_rule_id}/workspaces/{workspace_id}
 
@@ -12073,6 +12629,18 @@ workspace_id: string
 
 
 ID of the workspace to disable for.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -12156,7 +12724,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules-workspaces.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fworkspaces)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules%2Fworkspaces)
 
 
 
@@ -12284,7 +12852,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -12294,9 +12862,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -12367,13 +12937,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -12381,9 +12953,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -12401,6 +12973,12 @@ A beta version of this API exists and may have additional functionality. [View t
 4.  [Rules](https://platform.claude.com/docs/en/api/http/organization/federation/rules)
 
 # Workspaces
+
+Copy page
+
+
+
+cURL
 
 ##### [Add Federation Rule Workspace](https://platform.claude.com/docs/en/api/http/organization/federation/rules/workspaces/add)
 
@@ -12471,7 +13049,7 @@ Path: 04-API-Reference/Endpoints/organization-federation-rules.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Frules)
 
 
 
@@ -12590,7 +13168,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -12600,9 +13178,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -12673,13 +13253,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -12687,9 +13269,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -12706,6 +13288,12 @@ A beta version of this API exists and may have additional functionality. [View t
 3.  [Federation](https://platform.claude.com/docs/en/api/http/organization/federation)
 
 # Rules
+
+Copy page
+
+
+
+cURL
 
 ##### [Create Federation Rule](https://platform.claude.com/docs/en/api/http/organization/federation/rules/create)
 
@@ -12910,7 +13498,7 @@ Path: 04-API-Reference/Endpoints/organization-federation.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation)
 
 
 
@@ -13012,7 +13600,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -13022,9 +13610,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -13095,13 +13685,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -13109,9 +13701,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -13127,6 +13719,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # Federation
+
+Copy page
+
+
+
+cURL
 
 #### Federation[Issuers](https://platform.claude.com/docs/en/api/http/organization/federation/issuers)
 
@@ -13235,7 +13833,7 @@ Path: 04-API-Reference/Endpoints/organization-invites-create.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites%2Fcreate)
 
 
 
@@ -13345,7 +13943,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -13355,9 +13953,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -13428,13 +14028,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -13442,9 +14044,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -13462,11 +14064,29 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Invite
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/invites
 
 Invite a user to join the organization by email.
 
 On plans that draw members from a finite pool of purchased seats, the invite automatically consumes a seat from the lowest tier with availability; there is no seat-tier parameter. When no seat is free the request fails with a 400 error rather than purchasing a seat.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -13488,7 +14108,7 @@ role: "billing" or "claude_code_user" or "developer" or 2 more
 
 Role for the invited User.
 
-The accepted values depend on the organization type. Console and API organizations accept `user`, `developer`, `billing`, and `claude_code_user`; `admin` cannot be assigned through the API. Claude Enterprise organizations accept `user` and `managed`.
+The accepted values depend on the organization type. Console and API organizations accept `user`, `developer`, `billing`, and `claude_code_user`; `admin` cannot be assigned through the API. Claude Enterprise organizations accept `user` and `managed`; inviting with the `managed` role requires the `write:rbac_groups` scope in addition to `write:members`.
 
 One of the following:
 
@@ -13604,7 +14224,7 @@ Path: 04-API-Reference/Endpoints/organization-invites-delete.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites%2Fdelete)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites%2Fdelete)
 
 
 
@@ -13714,7 +14334,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -13724,9 +14344,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -13797,13 +14419,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -13811,9 +14435,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -13831,6 +14455,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Delete Invite
 
+Copy page
+
+
+
+cURL
+
 DELETE/v1/organizations/invites/{invite_id}
 
 Delete a pending invite.
@@ -13842,6 +14472,18 @@ invite_id: string
 
 
 ID of the Invite.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -13920,7 +14562,7 @@ Path: 04-API-Reference/Endpoints/organization-invites-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites%2Flist)
 
 
 
@@ -14030,7 +14672,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -14040,9 +14682,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -14113,13 +14757,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -14127,9 +14773,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -14146,6 +14792,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [Invites](https://platform.claude.com/docs/en/api/http/organization/invites)
 
 # List Invites
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/invites
 
@@ -14222,6 +14874,18 @@ One of the following:
 "pending"
 
 
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -14459,7 +15123,7 @@ Path: 04-API-Reference/Endpoints/organization-invites-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites%2Fretrieve)
 
 
 
@@ -14569,7 +15233,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -14579,9 +15243,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -14652,13 +15318,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -14666,9 +15334,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -14686,6 +15354,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get Invite
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/invites/{invite_id}
 
 Retrieve an invite by ID.
@@ -14697,6 +15371,18 @@ invite_id: string
 
 
 ID of the Invite.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -14775,7 +15461,7 @@ Path: 04-API-Reference/Endpoints/organization-invites.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Finvites)
 
 
 
@@ -14885,7 +15571,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -14895,9 +15581,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -14968,13 +15656,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -14982,9 +15672,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -15000,6 +15690,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # Invites
+
+Copy page
+
+
+
+cURL
 
 ##### [Create Invite](https://platform.claude.com/docs/en/api/http/organization/invites/create)
 
@@ -15080,7 +15776,7 @@ Path: 04-API-Reference/Endpoints/organization-rate-limits-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Frate_limits%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Frate_limits%2Flist)
 
 
 
@@ -15181,7 +15877,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -15191,9 +15887,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -15264,13 +15962,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -15278,9 +15978,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -15297,6 +15997,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [Rate Limits](https://platform.claude.com/docs/en/api/http/organization/rate_limits)
 
 # List Organization Rate Limits
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/rate_limits
 
@@ -15367,6 +16073,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -15691,7 +16409,7 @@ Path: 04-API-Reference/Endpoints/organization-rate-limits.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Frate_limits)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Frate_limits)
 
 
 
@@ -15792,7 +16510,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -15802,9 +16520,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -15875,13 +16595,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -15889,9 +16611,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -15907,6 +16629,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # Rate Limits
+
+Copy page
+
+
+
+cURL
 
 ##### [List Organization Rate Limits](https://platform.claude.com/docs/en/api/http/organization/rate_limits/list)
 
@@ -16101,7 +16829,7 @@ Path: 04-API-Reference/Endpoints/organization-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fretrieve)
 
 
 
@@ -16199,7 +16927,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -16209,9 +16937,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -16282,13 +17012,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -16296,9 +17028,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -16308,16 +17040,34 @@ cURL
 
 
 
-A beta version of this method exists and may have additional functionality. [View the beta version](../Admin/beta-organization-retrieve.md).
+A beta version of this method exists and may have additional functionality. [View the beta version](../Admin/http-beta-organization-retrieve.md).
 
 1.  [API reference](http.md)
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # Get Current Organization
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/me
 
 Retrieve information about the organization associated with the authenticated API key.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -16412,7 +17162,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-archive.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Farchive)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Farchive)
 
 
 
@@ -16527,7 +17277,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -16537,9 +17287,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -16610,13 +17362,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -16624,9 +17378,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -16644,6 +17398,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Archive Service Account
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/service_accounts/{service_account_id}/archive
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -16659,6 +17419,18 @@ service_account_id: string
 
 
 ID of the service account to archive.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -16748,7 +17520,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-create.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fcreate)
 
 
 
@@ -16863,7 +17635,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -16873,9 +17645,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -16946,13 +17720,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -16960,9 +17736,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -16980,6 +17756,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Service Account
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/service_accounts
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -16987,6 +17769,18 @@ A beta version of this method exists and may have additional functionality. [Vie
 Create a service account.
 
 A service account is a named workload identity that federation rules target. `organization_role` is `developer` (default) or `admin`; a rule may only be created or retargeted to grant `org:admin` scope when the target's `organization_role` is `admin`. Creating an `admin`-role service account requires an interactive credential (a user OAuth token or a Console session) — a workload may only create `developer`-role service accounts.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -17121,7 +17915,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Flist)
 
 
 
@@ -17236,7 +18030,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -17246,9 +18040,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -17319,13 +18115,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -17333,9 +18131,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -17352,6 +18150,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [Service Accounts](https://platform.claude.com/docs/en/api/http/organization/service_accounts)
 
 # List Service Accounts
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/service_accounts
 
@@ -17392,6 +18196,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -17581,7 +18397,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fretrieve)
 
 
 
@@ -17696,7 +18512,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -17706,9 +18522,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -17779,13 +18597,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -17793,9 +18613,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -17813,6 +18633,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get Service Account
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/service_accounts/{service_account_id}
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -17826,6 +18652,18 @@ service_account_id: string
 
 
 ID of the service account.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -17914,7 +18752,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fupdate)
 
 
 
@@ -18029,7 +18867,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -18039,9 +18877,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -18112,13 +18952,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -18126,9 +18968,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -18146,6 +18988,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update Service Account
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/service_accounts/{service_account_id}
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -18161,6 +19009,18 @@ service_account_id: string
 
 
 ID of the service account to update.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -18281,7 +19141,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-workspaces-add.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces%2Fadd)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces%2Fadd)
 
 
 
@@ -18405,7 +19265,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -18415,9 +19275,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -18488,13 +19350,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -18502,9 +19366,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -18523,6 +19387,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Add Workspace To Service Account
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/service_accounts/{service_account_id}/workspaces
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -18538,6 +19408,18 @@ service_account_id: string
 
 
 ID of the service account.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -18713,7 +19595,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-workspaces-list.m
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces%2Flist)
 
 
 
@@ -18837,7 +19719,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -18847,9 +19729,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -18920,13 +19804,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -18934,9 +19820,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -18954,6 +19840,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/service_accounts/workspaces)
 
 # List Workspaces For Service Account
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/service_accounts/{service_account_id}/workspaces
 
@@ -18992,6 +19884,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -19141,7 +20045,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-workspaces-remove
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces%2Fremove)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces%2Fremove)
 
 
 
@@ -19265,7 +20169,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -19275,9 +20179,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -19348,13 +20254,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -19362,9 +20270,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -19382,6 +20290,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/service_accounts/workspaces)
 
 # Remove Workspace From Service Account
+
+Copy page
+
+
+
+cURL
 
 DELETE/v1/organizations/service_accounts/{service_account_id}/workspaces/{workspace_id}
 
@@ -19404,6 +20318,18 @@ workspace_id: string
 
 
 ID of the workspace.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -19487,7 +20413,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts-workspaces.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts%2Fworkspaces)
 
 
 
@@ -19611,7 +20537,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -19621,9 +20547,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -19694,13 +20622,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -19708,9 +20638,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -19727,6 +20657,12 @@ A beta version of this API exists and may have additional functionality. [View t
 3.  [Service Accounts](https://platform.claude.com/docs/en/api/http/organization/service_accounts)
 
 # Workspaces
+
+Copy page
+
+
+
+cURL
 
 ##### [Add Workspace To Service Account](https://platform.claude.com/docs/en/api/http/organization/service_accounts/workspaces/add)
 
@@ -19797,7 +20733,7 @@ Path: 04-API-Reference/Endpoints/organization-service-accounts.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fservice_accounts)
 
 
 
@@ -19912,7 +20848,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -19922,9 +20858,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -19995,13 +20933,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -20009,9 +20949,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -20027,6 +20967,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # Service Accounts
+
+Copy page
+
+
+
+cURL
 
 ##### [Create Service Account](https://platform.claude.com/docs/en/api/http/organization/service_accounts/create)
 
@@ -20181,7 +21127,7 @@ Path: 04-API-Reference/Endpoints/organization-users-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Flist)
 
 
 
@@ -20291,7 +21237,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -20301,9 +21247,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -20374,13 +21322,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -20388,9 +21338,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -20407,6 +21357,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [Users](https://platform.claude.com/docs/en/api/http/organization/users)
 
 # List Users
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/users
 
@@ -20461,6 +21417,18 @@ roles: optional array of string
 Filter to items whose `role` equals one of the supplied values. Repeatable; values are OR'ed together.
 
 Accepted values depend on the organization type: Console and API organizations accept `user`, `developer`, `billing`, `admin`, and `claude_code_user`; Claude Enterprise organizations accept `user`, `owner`, `primary_owner`, `membership_admin`, and `managed`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -20645,7 +21613,7 @@ Path: 04-API-Reference/Endpoints/organization-users-remove.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fremove)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fremove)
 
 
 
@@ -20755,7 +21723,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -20765,9 +21733,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -20838,13 +21808,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -20852,9 +21824,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -20872,6 +21844,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Remove User
 
+Copy page
+
+
+
+cURL
+
 DELETE/v1/organizations/users/{user_id}
 
 Remove a member from the organization.
@@ -20883,6 +21861,18 @@ user_id: string
 
 
 ID of the User.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -20961,7 +21951,7 @@ Path: 04-API-Reference/Endpoints/organization-users-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fretrieve)
 
 
 
@@ -21071,7 +22061,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -21081,9 +22071,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -21154,13 +22146,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -21168,9 +22162,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -21188,6 +22182,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get User
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/users/{user_id}
 
 Retrieve a member of the organization by user ID.
@@ -21199,6 +22199,18 @@ user_id: string
 
 
 ID of the User.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -21356,7 +22368,7 @@ Path: 04-API-Reference/Endpoints/organization-users-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fupdate)
 
 
 
@@ -21466,7 +22478,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -21476,9 +22488,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -21549,13 +22563,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -21563,9 +22579,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -21583,6 +22599,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update User
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/users/{user_id}
 
 Update a member's organization role.
@@ -21595,6 +22617,18 @@ user_id: string
 
 ID of the User.
 
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
 ##### Body
 
 
@@ -21605,7 +22639,7 @@ role: "billing" or "claude_code_user" or "developer" or 2 more
 
 New role for the User.
 
-The accepted values depend on the organization type. Console and API organizations accept `user`, `developer`, `billing`, and `claude_code_user`; `admin` cannot be assigned through the API. Claude Enterprise organizations accept `user` and `managed`.
+The accepted values depend on the organization type. Console and API organizations accept `user`, `developer`, `billing`, and `claude_code_user`; `admin` cannot be assigned through the API. Claude Enterprise organizations accept `user` and `managed`; changing a User's role to `managed` requires the `write:rbac_groups` scope in addition to `write:members`.
 
 One of the following:
 
@@ -21789,7 +22823,7 @@ Path: 04-API-Reference/Endpoints/organization-users.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers)
 
 
 
@@ -21899,7 +22933,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -21909,9 +22943,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -21982,13 +23018,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -21996,9 +23034,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -22014,6 +23052,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # Users
+
+Copy page
+
+
+
+cURL
 
 ##### [List Users](https://platform.claude.com/docs/en/api/http/organization/users/list)
 
@@ -22180,7 +23224,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-archive.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Farchive)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Farchive)
 
 
 
@@ -22299,7 +23343,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -22309,9 +23353,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -22382,13 +23428,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -22396,9 +23444,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -22416,6 +23464,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Archive Workspace
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/workspaces/{workspace_id}/archive
 
 Archive Workspace
@@ -22425,6 +23479,18 @@ Archive Workspace
 workspace_id: string
 
 
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -22516,7 +23582,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-create.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fcreate)
 
 
 
@@ -22635,7 +23701,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -22645,9 +23711,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -22718,13 +23786,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -22732,9 +23802,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -22752,9 +23822,27 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Workspace
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/workspaces
 
 Create Workspace
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -22768,7 +23856,7 @@ Name of the Workspace.
 
 minLength1
 
-maxLength40
+maxLength255
 
 
 
@@ -22901,7 +23989,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Flist)
 
 
 
@@ -23020,7 +24108,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -23030,9 +24118,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -23103,13 +24193,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -23117,9 +24209,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -23136,6 +24228,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/workspaces)
 
 # List Workspaces
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/workspaces
 
@@ -23190,6 +24288,18 @@ default20
 minimum1
 
 maximum1000
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -23437,7 +24547,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-members-add.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Fadd)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Fadd)
 
 
 
@@ -23571,7 +24681,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -23581,9 +24691,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -23654,13 +24766,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -23668,9 +24782,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -23689,6 +24803,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Workspace Member
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/workspaces/{workspace_id}/members
 
 Create Workspace Member
@@ -23700,6 +24820,18 @@ workspace_id: string
 
 
 ID of the Workspace.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -23863,7 +24995,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-members-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Flist)
 
 
 
@@ -23997,7 +25129,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -24007,9 +25139,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -24080,13 +25214,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -24094,9 +25230,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -24114,6 +25250,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Members](https://platform.claude.com/docs/en/api/http/organization/workspaces/members)
 
 # List Workspace Members
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/workspaces/{workspace_id}/members
 
@@ -24156,6 +25298,18 @@ default20
 minimum1
 
 maximum1000
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -24307,7 +25461,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-members-remove.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Fremove)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Fremove)
 
 
 
@@ -24441,7 +25595,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -24451,9 +25605,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -24524,13 +25680,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -24538,9 +25696,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -24559,6 +25717,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Delete Workspace Member
 
+Copy page
+
+
+
+cURL
+
 DELETE/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 Delete Workspace Member
@@ -24576,6 +25740,18 @@ user_id: string
 
 
 ID of the User.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -24663,7 +25839,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-members-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Fretrieve)
 
 
 
@@ -24797,7 +25973,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -24807,9 +25983,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -24880,13 +26058,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -24894,9 +26074,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -24915,6 +26095,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get Workspace Member
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 Get Workspace Member
@@ -24932,6 +26118,18 @@ user_id: string
 
 
 ID of the User.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -25056,7 +26254,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-members-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers%2Fupdate)
 
 
 
@@ -25190,7 +26388,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -25200,9 +26398,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -25273,13 +26473,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -25287,9 +26489,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -25308,6 +26510,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update Workspace Member
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/workspaces/{workspace_id}/members/{user_id}
 
 Update Workspace Member
@@ -25325,6 +26533,18 @@ user_id: string
 
 
 ID of the User.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -25485,7 +26705,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-members.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fmembers)
 
 
 
@@ -25619,7 +26839,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -25629,9 +26849,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -25702,13 +26924,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -25716,9 +26940,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -25735,6 +26959,12 @@ A beta version of this API exists and may have additional functionality. [View t
 3.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/workspaces)
 
 # Members
+
+Copy page
+
+
+
+cURL
 
 ##### [List Workspace Members](https://platform.claude.com/docs/en/api/http/organization/workspaces/members/list)
 
@@ -25811,7 +27041,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-rate-limits-list.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Frate_limits%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Frate_limits%2Flist)
 
 
 
@@ -25933,7 +27163,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -25943,9 +27173,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -26016,13 +27248,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -26030,9 +27264,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -26050,6 +27284,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Rate Limits](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits)
 
 # List Workspace Rate Limits
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/workspaces/{workspace_id}/rate_limits
 
@@ -26132,6 +27372,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -26512,6 +27764,486 @@ Response 200
 
 ---
 
+## Set Workspace Rate Limits - Claude API Reference
+
+Source: https://platform.claude.com/docs/en/api/organization/workspaces/rate_limits/update
+Path: 04-API-Reference/Endpoints/organization-workspaces-rate-limits-update.md
+
+- [Managed Agents](../Other/managed-agents-overview.md)
+
+- [Admin](../Other/manage-claude-admin-api.md)
+
+- Resources
+  - [Best practices](../About/about-claude-use-case-guides-overview.md)
+  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
+  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
+  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
+  - [Release notes](../../20-Models/release-notes-overview.md)
+
+[API reference](overview.md)
+
+
+
+
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Frate_limits%2Fupdate)
+
+
+
+
+
+SearchCtrlK
+
+Include beta APIs
+
+Using the API
+
+[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
+
+
+Messages
+
+
+Create a Message
+
+
+Count tokens in a Message
+
+Batches
+
+Managed Agents
+
+Agents
+
+Environments
+
+Sessions
+
+Deployments
+
+Deployment Runs
+
+Vaults
+
+Memory Stores
+
+Dreams
+
+
+Files
+
+
+Upload File
+
+
+List Files
+
+
+Download File
+
+
+Get File Metadata
+
+
+Delete File
+
+
+Models
+
+
+List Models
+
+
+Get a Model
+
+
+Organization
+
+
+Get Current Organization
+
+API Keys
+
+External Keys
+
+Federation
+
+Invites
+
+Service Accounts
+
+Users
+
+Workspaces
+
+
+List Workspaces
+
+
+Create Workspace
+
+
+Get Workspace
+
+
+Update Workspace
+
+
+Archive Workspace
+
+Rate Limits
+
+
+List Workspace Rate Limits
+
+
+Set Workspace Rate Limits
+
+Members
+
+Service Accounts
+
+Rate Limits
+
+Compliance Settings
+
+Usage Report
+
+Cost Report
+
+MCP Tunnels
+
+Analytics
+
+Spend Limits
+
+RBAC Groups
+
+RBAC Roles
+
+Plugins
+
+Plugin Marketplaces
+
+Telemetry Destinations
+
+Webhooks
+
+
+Skills
+
+
+Create Skill
+
+
+List Skills
+
+
+Get Skill
+
+
+Delete Skill
+
+Versions
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Delete User Profile
+
+
+Create Enrollment URL
+
+Action URLs
+
+
+Tunnels
+
+
+Create Tunnel
+
+
+Get Tunnel
+
+
+List Tunnels
+
+
+Archive Tunnel
+
+
+Reveal Tunnel Token
+
+
+Rotate Tunnel Token
+
+Certificates
+
+
+Compliance API
+
+Activities
+
+Organizations
+
+Groups
+
+Apps
+
+
+Completions
+
+
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
+
+Support & configuration
+
+[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
+
+Claude Code
+
+[Trigger a routine](claude-code-routines-fire.md)
+
+[Console](../Other/playground.md)
+
+Copy page
+
+
+
+cURL
+
+
+
+A beta version of this method exists and may have additional functionality. [View the beta version](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/rate_limits/update).
+
+1.  [API reference](http.md)
+2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
+3.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/workspaces)
+4.  [Rate Limits](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits)
+
+# Set Workspace Rate Limits
+
+Copy page
+
+
+
+cURL
+
+POST/v1/organizations/workspaces/{workspace_id}/rate_limits/{rate_limit_id}
+
+Set or clear rate-limit overrides for one rate-limit group in a workspace.
+
+Only the limiter types named in `limits` change: an integer `value` sets that type's override and `null` clears it. Types not named keep their current value. A value above the organization's own limit is stored, but the organization limit still applies, so the lower of the two is enforced.
+
+Returns the targeted group's entry with this request applied, in the shape `GET /v1/organizations/workspaces/{workspace_id}/rate_limits` returns. Changes take effect within about an hour.
+
+##### Path parameters
+
+workspace_id: string
+
+
+
+The ID of the workspace.
+
+rate_limit_id: string
+
+
+
+The `id` of the organization's rate-limit entry to set overrides for.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+##### Body
+
+
+
+limits: array of [WorkspaceRateLimitUpdateValue](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits#workspace_rate_limit_update_value) { type, value }
+
+
+
+Limits to set or clear. Unspecified limit types are unchanged.
+
+minItems1
+
+maxItems16
+
+
+
+type: [WorkspaceRateLimitType](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits#workspace_rate_limit_type)
+
+
+
+Rate limiter type.
+
+One of the following:
+
+"fast_itpmca"
+
+
+
+"fast_otpm"
+
+
+
+"input_tokens_per_minute"
+
+
+
+"input_tokens_per_minute_cache_aware"
+
+
+
+"output_tokens_per_minute"
+
+
+
+"requests_per_minute"
+
+
+
+"tokens_per_day"
+
+
+
+"tokens_per_minute"
+
+
+
+"tool_uses_per_second"
+
+
+
+
+
+value: number or null
+
+
+
+New limit value. Set to null to clear the workspace override and fall back to the organization limit.
+
+minimum0
+
+maximum9007199254740991
+
+##### Returns
+
+
+
+WorkspaceRateLimit object{ type: "workspace_rate_limit", group, group_type, 4 more }
+
+
+
+Set Workspace Rate Limits
+
+cURL
+
+
+
+```python
+curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/rate_limits/$RATE_LIMIT_ID \
+    -H 'Content-Type: application/json' \
+    -H 'anthropic-version: 2023-06-01' \
+    -H "X-Api-Key: $ANTHROPIC_API_KEY" \
+    -d '{
+          "limits": [
+            {
+              "type": "fast_itpmca",
+              "value": 0
+            }
+          ]
+        }'
+```
+
+Response 200
+
+
+
+```python
+{
+  "group": {
+    "id": "id",
+    "display_name": "display_name",
+    "type": "model_group"
+  },
+  "group_type": "batch",
+  "limits": [
+    {
+      "org_limit": 0,
+      "source": {
+        "type": "workspace"
+      },
+      "type": "type",
+      "value": 0
+    }
+  ],
+  "models": [
+    "string"
+  ],
+  "rate_limit_id": "rate_limit_id",
+  "type": "workspace_rate_limit",
+  "workspace_id": "workspace_id"
+}
+```
+
+##### Returns Examples
+
+Response 200
+
+
+
+```python
+{
+  "group": {
+    "id": "id",
+    "display_name": "display_name",
+    "type": "model_group"
+  },
+  "group_type": "batch",
+  "limits": [
+    {
+      "org_limit": 0,
+      "source": {
+        "type": "workspace"
+      },
+      "type": "type",
+      "value": 0
+    }
+  ],
+  "models": [
+    "string"
+  ],
+  "rate_limit_id": "rate_limit_id",
+  "type": "workspace_rate_limit",
+  "workspace_id": "workspace_id"
+
+---
+
 ## Rate Limits - Claude API Reference
 
 Source: https://platform.claude.com/docs/en/api/organization/workspaces/rate_limits
@@ -26533,7 +28265,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-rate-limits.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Frate_limits)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Frate_limits)
 
 
 
@@ -26655,7 +28387,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -26665,9 +28397,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -26738,13 +28472,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -26752,9 +28488,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -26771,6 +28507,12 @@ A beta version of this API exists and may have additional functionality. [View t
 3.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/workspaces)
 
 # Rate Limits
+
+Copy page
+
+
+
+cURL
 
 ##### [List Workspace Rate Limits](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits/list)
 
@@ -26845,7 +28587,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-retrieve.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fretrieve)
 
 
 
@@ -26964,7 +28706,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -26974,9 +28716,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -27047,13 +28791,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -27061,9 +28807,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -27081,6 +28827,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Get Workspace
 
+Copy page
+
+
+
+cURL
+
 GET/v1/organizations/workspaces/{workspace_id}
 
 Get Workspace
@@ -27092,6 +28844,18 @@ workspace_id: string
 
 
 ID of the Workspace.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -27182,7 +28946,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-service-accounts-add.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Fadd)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Fadd)
 
 
 
@@ -27316,7 +29080,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -27326,9 +29090,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -27399,13 +29165,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -27413,9 +29181,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -27434,6 +29202,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Service Account Workspace Member
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/workspaces/{workspace_id}/service_accounts
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -27449,6 +29223,18 @@ workspace_id: string
 
 
 ID of the workspace.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -27624,7 +29410,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-service-accounts-list.m
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Flist)
 
 
 
@@ -27758,7 +29544,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -27768,9 +29554,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -27841,13 +29629,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -27855,9 +29645,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -27875,6 +29665,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Service Accounts](https://platform.claude.com/docs/en/api/http/organization/workspaces/service_accounts)
 
 # List Service Account Workspace Members
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/workspaces/{workspace_id}/service_accounts
 
@@ -27913,6 +29709,18 @@ page: optional string
 
 
 Opaque cursor from a previous response's `next_page`.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -28062,7 +29870,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-service-accounts-remove
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Fremove)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Fremove)
 
 
 
@@ -28196,7 +30004,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -28206,9 +30014,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -28279,13 +30089,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -28293,9 +30105,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -28313,6 +30125,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Service Accounts](https://platform.claude.com/docs/en/api/http/organization/workspaces/service_accounts)
 
 # Delete Service Account Workspace Member
+
+Copy page
+
+
+
+cURL
 
 DELETE/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
 
@@ -28335,6 +30153,18 @@ service_account_id: string
 
 
 ID of the service account.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -28418,7 +30248,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-service-accounts-retrie
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Fretrieve)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Fretrieve)
 
 
 
@@ -28552,7 +30382,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -28562,9 +30392,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -28635,13 +30467,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -28649,9 +30483,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -28669,6 +30503,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Service Accounts](https://platform.claude.com/docs/en/api/http/organization/workspaces/service_accounts)
 
 # Get Service Account Workspace Member
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
 
@@ -28691,6 +30531,18 @@ service_account_id: string
 
 
 ID of the service account.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Returns
 
@@ -28827,7 +30679,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-service-accounts-update
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts%2Fupdate)
 
 
 
@@ -28961,7 +30813,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -28971,9 +30823,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -29044,13 +30898,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -29058,9 +30914,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -29078,6 +30934,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 4.  [Service Accounts](https://platform.claude.com/docs/en/api/http/organization/workspaces/service_accounts)
 
 # Update Service Account Workspace Member
+
+Copy page
+
+
+
+cURL
 
 POST/v1/organizations/workspaces/{workspace_id}/service_accounts/{service_account_id}
 
@@ -29100,6 +30962,18 @@ service_account_id: string
 
 
 ID of the service account.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -29268,7 +31142,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-service-accounts.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts)
 
 
 
@@ -29402,7 +31276,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -29412,9 +31286,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -29485,13 +31361,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -29499,9 +31377,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -29518,6 +31396,12 @@ A beta version of this API exists and may have additional functionality. [View t
 3.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/workspaces)
 
 # Service Accounts
+
+Copy page
+
+
+
+cURL
 
 ##### [List Service Account Workspace Members](https://platform.claude.com/docs/en/api/http/organization/workspaces/service_accounts/list)
 
@@ -29600,7 +31484,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces-update.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fupdate)
 
 
 
@@ -29719,7 +31603,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -29729,9 +31613,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -29802,13 +31688,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -29816,9 +31704,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -29836,6 +31724,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update Workspace
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/workspaces/{workspace_id}
 
 Update Workspace
@@ -29845,6 +31739,18 @@ Update Workspace
 workspace_id: string
 
 
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 
@@ -29932,7 +31838,7 @@ Name of the Workspace.
 
 minLength1
 
-maxLength40
+maxLength255
 
 tags: optional map\[string\] or null
 
@@ -30038,7 +31944,7 @@ Path: 04-API-Reference/Endpoints/organization-workspaces.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces)
 
 
 
@@ -30157,7 +32063,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -30167,9 +32073,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -30240,13 +32148,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -30254,9 +32164,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -30272,6 +32182,12 @@ A beta version of this API exists and may have additional functionality. [View t
 2.  [Organization](https://platform.claude.com/docs/en/api/http/organization)
 
 # Workspaces
+
+Copy page
+
+
+
+cURL
 
 ##### [List Workspaces](https://platform.claude.com/docs/en/api/http/organization/workspaces/list)
 
@@ -30688,7 +32604,7 @@ Path: 04-API-Reference/Endpoints/organization.md
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization)
 
 
 
@@ -30786,7 +32702,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -30796,9 +32712,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -30869,13 +32787,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -30883,9 +32803,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -30895,11 +32815,17 @@ cURL
 
 
 
-A beta version of this API exists and may have additional functionality. [View the beta version](../Admin/http-beta-organization.md).
+A beta version of this API exists and may have additional functionality. [View the beta version](../Admin/platform-claude-com-http-beta-organization.md).
 
 1.  [API reference](http.md)
 
 # Organization
+
+Copy page
+
+
+
+cURL
 
 ##### [Get Current Organization](https://platform.claude.com/docs/en/api/http/organization/retrieve)
 

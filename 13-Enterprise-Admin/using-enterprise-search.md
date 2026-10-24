@@ -1,8 +1,8 @@
 ---
 title: "Use enterprise search | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12489464-use-enterprise-search"
+source_url: "https://support.claude.com/en/articles/12489464-using-enterprise-search"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:28:05Z"
+fetched_at: "2026-10-23T06:28:56Z"
 tags: ["enterprise", "search"]
 ---
 
@@ -316,7 +316,7 @@ No. Search results are permission-aware. You only see data that you have permiss
 
 ### Is my search history visible to others?
 
-No. Conversations within your search project are private to you unless you choose to manually share them, just like other conversations with Claude. However, on Enterprise plans, conversations follow your **[organization's data retention policies](https://support.claude.com/en/articles/10440198-custom-data-retention-controls-for-enterprise-plans)**.
+No. Conversations within your search project are private to you unless you choose to manually share them, just like other conversations with Claude. However, on Enterprise plans, conversations follow your **[organization's data retention policies](custom-data-retention-controls-for-enterprise-plans.md)**.
 
 ### How long are search results retained?
 

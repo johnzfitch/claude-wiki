@@ -2,7 +2,7 @@
 title: "Manage project visibility and sharing | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519189-project-visibility-and-sharing"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:32Z"
+fetched_at: "2026-10-23T06:29:23Z"
 tags: ["claude-ai"]
 ---
 

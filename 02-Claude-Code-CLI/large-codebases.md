@@ -2,7 +2,7 @@
 title: "Set up Claude Code in a monorepo or large codebase - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/large-codebases"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:39Z"
+fetched_at: "2026-10-22T06:29:24Z"
 tags: ["claude-code"]
 ---
 
@@ -181,7 +181,7 @@ This skips every CLAUDE.md and rules file under that package. The root CLAUDE.md
 - `"**/packages/legacy-*/**"`: excludes every package whose name matches the glob, including rules
 - `"/home/user/monorepo/legacy/CLAUDE.md"`: excludes one specific file by absolute path
 
-Managed policy CLAUDE.md files cannot be excluded, so organization-wide instructions always apply. You can set `claudeMdExcludes` at any [settings scope](settings.md#where-settings-live): user, project, local, or managed. Arrays merge across scopes, so a team can set project-level defaults while individuals add local overrides. For the full exclusion documentation, see [Exclude specific CLAUDE.md files](memory.md#exclude-specific-claude-md-files).
+You can set `claudeMdExcludes` at any [settings scope](settings.md#where-settings-live): user, project, local, or managed. Arrays merge across scopes, so a team can set project-level defaults while individuals add local overrides. If your organization deploys a [managed CLAUDE.md file](memory.md#deploy-organization-wide-claude-md), a pattern that matches it doesn’t skip it, whichever scope sets the pattern. For the full exclusion documentation, see [Exclude specific CLAUDE.md files](memory.md#exclude-specific-claude-md-files).
 
 
 [​](#reduce-what-claude-reads)
@@ -234,7 +234,7 @@ In a large codebase, finding where a symbol is defined or used can cost many fil
 If the install fails, match the message Claude Code reports:
 
 - `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
-- The plugin is [not found in the marketplace](../08-Plugins-Skills/discover-plugins.md#install-a-plugin): check the plugin name.
+- `Plugin "<name>" not found in marketplace "claude-plugins-official"`: your local copy of the marketplace catalog may be out of date. Refresh it with `/plugin marketplace update claude-plugins-official`, then retry the install. If the retry prints the same message, see [Plugin not found in marketplace](../08-Plugins-Skills/plugins-troubleshooting.md#plugin-not-found-in-marketplace).
 
 To enable a plugin for everyone in the repository rather than installing it yourself, add it to the [`enabledPlugins` project setting](settings-reference.md#plugin-settings). Code intelligence plugins require the language’s language server binary on each developer’s machine. See [which binary each language requires](../08-Plugins-Skills/plugins-code-intelligence.md). Installing from the official marketplace requires network access to GitHub, where the marketplace is hosted. On a restricted network, [add the marketplace from an internal Git host or local path](../08-Plugins-Skills/discover-plugins.md#add-a-marketplace) instead. This pairs well with `claudeMdExcludes` and the `Read` deny rules above. Those keep irrelevant content out of context, and code intelligence keeps Claude from reading through what remains to locate a definition.
 
@@ -266,7 +266,7 @@ The `--worktree` flag starts a session in a new git worktree so changes stay iso
 }
 ```
 
-When Claude creates a worktree, it checks out only `.claude/`, `packages/api/`, and `packages/shared/` instead of the full tree. Paths in `sparsePaths` are relative to the repository root, regardless of which subdirectory you start Claude from. Any directory paths work here, not only package roots. This is particularly useful for [subagent worktree isolation](worktrees.md#isolate-subagents-with-worktrees). Subagents are parallel Claude instances spawned for subtasks, and each one that runs in a worktree gets a lightweight checkout instead of the full tree. All worktrees in a session share the same `sparsePaths`, so if one subagent needs `packages/api/` and another needs `packages/web/`, list both. List directories in `sparsePaths`, not individual files. Root-level files like `package.json`, `tsconfig.base.json`, and lock files are always checked out alongside the directories you list. Root-level directories are not, so include `.claude` in the list if you want the repository root’s `.claude/settings.json` or `.claude/rules/` available inside the worktree. For project skills, agents, and commands, see [What worktrees share with the main checkout](worktrees.md#what-worktrees-share-with-the-main-checkout). Sparse checkout requires git to enable `extensions.worktreeConfig` in the repository’s shared `.git/config` while a sparse worktree exists. Claude Code removes that entry after the last worktree is removed, but only if Claude Code added it. It never removes a value you set yourself. Before v2.1.207, the entry remained after the last worktree was removed, and go-git-based tools such as `tea` failed to open the repository until you ran `git config --unset extensions.worktreeConfig`. To avoid duplicating large directories like `node_modules` across worktrees, pair `sparsePaths` with `symlinkDirectories` in the same `.claude/settings.json`:
+When Claude creates a worktree, it checks out only `.claude/`, `packages/api/`, and `packages/shared/` instead of the full tree. Paths in `sparsePaths` are relative to the repository root, regardless of which subdirectory you start Claude from. Any directory paths work here, not only package roots. This is particularly useful for [subagent worktree isolation](worktrees.md#isolate-subagents-with-worktrees). Subagents are parallel Claude instances spawned for subtasks, and each one that runs in a worktree gets a lightweight checkout instead of the full tree. All worktrees in a session share the same `sparsePaths`, so if one subagent needs `packages/api/` and another needs `packages/web/`, list both. List directories in `sparsePaths`, not individual files. Root-level files like `package.json`, `tsconfig.base.json`, and lock files are always checked out alongside the directories you list. Root-level directories are not, so include `.claude` in the list if you want the repository root’s `.claude/settings.json` or `.claude/rules/` available inside the worktree. For project skills, agents, and commands, see [What worktrees share with the main checkout](worktrees.md#what-worktrees-share-with-the-main-checkout). Sparse checkout requires git to enable `extensions.worktreeConfig` in the repository’s shared `.git/config` while a sparse worktree exists. Claude Code removes that entry after the last worktree is removed, but only if Claude Code added it. It never removes a value you set yourself. To avoid duplicating large directories like `node_modules` across worktrees, pair `sparsePaths` with `symlinkDirectories` in the same `.claude/settings.json`:
 
 .claude/settings.json
 
@@ -376,7 +376,7 @@ Each route file has a corresponding `.test.ts` file.
 - Mock external services in `src/__tests__/mocks/`
 ```
 
-A different subdirectory holds different skills the same way: `packages/web/.claude/skills/component-patterns/` describes the frontend’s component conventions instead of testing. When Claude works on a file in `packages/api/`, it loads the api-testing skill. When it works in `packages/web/`, it loads component-patterns instead. Neither directory’s skills load during the other’s tasks. You can also scope a skill by file pattern instead of by placement. The [`paths` frontmatter field](../08-Plugins-Skills/skills.md#frontmatter-reference) takes glob patterns, and Claude loads the skill automatically only when it works with matching files. Use this for a skill that lives in the repository root’s `.claude/skills/` but applies only to certain files wherever they appear, such as a database-migration skill scoped to `**/migrations/**`. For more on creating and organizing skills, see [Skills](../08-Plugins-Skills/skills.md).
+A different subdirectory holds different skills the same way: `packages/web/.claude/skills/component-patterns/` describes the frontend’s component conventions instead of testing. When Claude works on a file in `packages/api/`, it loads the api-testing skill. When it works in `packages/web/`, it loads component-patterns instead. Neither directory’s skills load during the other’s tasks. You can also scope a skill by file pattern instead of by placement. The [`paths` frontmatter field](../08-Plugins-Skills/skills.md#frontmatter-reference) takes glob patterns, and Claude loads the skill automatically only when it works with matching files. Use this for a skill that lives in the repository root’s `.claude/skills/` but applies only to certain files, such as a database-migration skill scoped to `**/migrations/**`. For more on creating and organizing skills, see [Skills](../08-Plugins-Skills/skills.md).
 
 
 [​](#keep-skills-discoverable)

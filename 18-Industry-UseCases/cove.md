@@ -2,7 +2,7 @@
 title: "Cove Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/cove"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:09Z"
+fetched_at: "2026-10-23T06:29:30Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -46,13 +46,13 @@ Instead of a single chat thread, each Cove session takes place in a visual works
 
 The user and the AI can both edit all content in the workspace, allowing them to build off each other’s ideas. Cove’s AI can even make precise edits without having to re-stream a whole answer. Every step of your journey, Cove suggests many possible next steps, so you’re never stuck.
 
-“People come to Cove to collaborate with AI on a variety of personal and work projects,” says Stephen Chau, co-founder of Cove. “Just some examples include planning kids' birthday parties, building exercise and meal plans, working on business plans, finding sales prospects, designing home renovations, and more.”
+“People come to Cove to collaborate with AI on a variety of personal and work projects,” says Stephen Chau, co-founder of Cove. “Just some examples include planning kids’ birthday parties, building exercise and meal plans, working on business plans, finding sales prospects, designing home renovations, and more.”
 
 ## Why Cove chose Claude
 
-Cove evaluated various large language models before selecting Claude. "We were initially uncertain if LLMs could support our ambitious product vision," explains Chau.
+Cove evaluated various large language models before selecting Claude. “We were initially uncertain if LLMs could support our ambitious product vision,” explains Chau.
 
-Fulfilling this vision required complex prompting. Andy Szybalski, co-founder and design lead, explains, "Our prompt is complex because there are many commands we want the LLM to access for manipulating the workspace—creating cards, editing text, adding columns to tables. We need to be very prescriptive about syntax in some places while requiring extreme creativity in others. Finding a model that excels at both was crucial."
+Fulfilling this vision required complex prompting. Andy Szybalski, co-founder and design lead, explains, “Our prompt is complex because there are many commands we want the LLM to access for manipulating the workspace—creating cards, editing text, adding columns to tables. We need to be very prescriptive about syntax in some places while requiring extreme creativity in others. Finding a model that excels at both was crucial.”
 
 Throughout their rigorous testing, Claude consistently outperformed alternatives.
 
@@ -60,9 +60,9 @@ Throughout their rigorous testing, Claude consistently outperformed alternatives
 
 — Mike Chu, co-founder and engineering lead
 
-Chu also highlighted Claude’s large context window and prompt caching as key differentiators. "Claude's larger context window allows for nuanced steering of responses in a cost-effective way.” Chu adds, "We cache about 70% of our prompt, mostly examples that drive good outcomes for our users.” The Cove Sidebar browser extension also makes use of Claude’s large context window, allowing users to tap into Claude’s reasoning ability alongside their existing workflows.
+Chu also highlighted Claude’s large context window and prompt caching as key differentiators. “Claude’s larger context window allows for nuanced steering of responses in a cost-effective way.” Chu adds, “We cache about 70% of our prompt, mostly examples that drive good outcomes for our users.” The Cove Sidebar browser extension also makes use of Claude’s large context window, allowing users to tap into Claude’s reasoning ability alongside their existing workflows.
 
-Finally, Chau highlights the importance of Claude's tone, saying, "We think of Cove as your AI thought partner. In considering the best collaborative partnerships you've had, the tonality is a big part."
+Finally, Chau highlights the importance of Claude’s tone, saying, “We think of Cove as your AI thought partner. In considering the best collaborative partnerships you’ve had, the tonality is a big part.”
 
 ## Inside Cove’s dual-model architecture
 
@@ -81,13 +81,13 @@ Claude 3 Haiku is used for real time interactions where speed and cost are key:
 - Generates low-latency responses for dynamic interface updates
 - Example: As a user edits a table, Haiku might suggest adding relevant columns or expanding certain points
 
-"After Claude 3.5 Sonnet generates an answer, we immediately trigger Claude 3 Haiku for quick suggestions, creating a seamless experience for users," explains Chu.
+“After Claude 3.5 Sonnet generates an answer, we immediately trigger Claude 3 Haiku for quick suggestions, creating a seamless experience for users,” explains Chu.
 
 ## The future of collaborative thinking
 
-Cove envisions a future where AI is integral to complex thinking and problem-solving. "Imagine having an AI thought partner with all the helpful context you need. You also have a workspace to workshop ideas and problems, one that is transforming and improving based on how you’re interacting with AI." As Cove helps more users work through complex tasks, the team will be able to use this data to further improve the AI’s capabilities as a thought partner.
+Cove envisions a future where AI is integral to complex thinking and problem-solving. “Imagine having an AI thought partner with all the helpful context you need. You also have a workspace to workshop ideas and problems, one that is transforming and improving based on how you’re interacting with AI.” As Cove helps more users work through complex tasks, the team will be able to use this data to further improve the AI’s capabilities as a thought partner.
 
-As Cove evolves, the team remains focused on their core mission: empowering people to think brilliantly. Chau emphasizes, "We are excited to see models like Claude continue to advance their capabilities in reasoning and thinking. We hope Cove will be the user interface that complements these model advances so that people can get the most out of AI." With Claude's advanced capabilities at its core, Cove is poised to redefine human-AI collaboration, ensuring that in the future, no one has to think alone.
+As Cove evolves, the team remains focused on their core mission: empowering people to think brilliantly. Chau emphasizes, “We are excited to see models like Claude continue to advance their capabilities in reasoning and thinking. We hope Cove will be the user interface that complements these model advances so that people can get the most out of AI.” With Claude’s advanced capabilities at its core, Cove is poised to redefine human-AI collaboration, ensuring that in the future, no one has to think alone.
 
 ## Related stories
 
@@ -112,7 +112,8 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -130,12 +131,12 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -168,7 +169,7 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -186,6 +187,7 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -201,7 +203,7 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -236,7 +238,8 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -254,12 +257,12 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -292,7 +295,7 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -310,6 +313,7 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -325,7 +329,7 @@ As Cove evolves, the team remains focused on their core mission: empowering peop
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

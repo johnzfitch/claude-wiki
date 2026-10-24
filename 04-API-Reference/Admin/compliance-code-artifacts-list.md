@@ -2,7 +2,7 @@
 title: "List Code Artifacts - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/code/artifacts/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:16Z"
+fetched_at: "2026-10-12T06:43:10Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fcode%2Fartifacts%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fcode%2Fartifacts%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,9 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
 
 
 Skills
@@ -220,7 +220,7 @@ Artifacts
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
 
 Support & configuration
 
@@ -228,9 +228,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -246,6 +246,10 @@ To enable the Compliance API, see the setup guide.
 4.  [Artifacts](https://platform.claude.com/docs/en/api/http/compliance/code/artifacts)
 
 # List Code Artifacts
+
+Copy page
+
+
 
 GET/v1/compliance/apps/code/artifacts
 
@@ -345,6 +349,16 @@ maxItems200
 
 ##### Headers
 
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
+
 "x-api-key": optional string
 
 
@@ -367,11 +381,11 @@ Artifact identifier (tagged ID)
 
 
 
-artifact_type: "claude_design" or "claude_design_systems" or "claude_docs" or 3 more
+artifact_type: "claude_design" or "claude_design_systems" or "claude_docs" or 4 more
 
 
 
-Which kind of Artifact this is: `code` for a site published from Claude Code, or the built-in Artifact type it was made from — `claude_docs` (Claude Docs), `claude_slides` (Slides), `claude_design` (Design) or `claude_design_systems` (a design system). `other` is an Artifact made from a built-in type this list does not name yet.
+Which kind of Artifact this is: `code` for a site published from Claude Code, or the built-in Artifact type it was made from — `claude_docs` (Claude Docs), `claude_slides` (Slides), `claude_design` (Design), `claude_design_systems` (a design system) or `claude_motion` (Motion). `other` is an Artifact made from a built-in type this list does not name yet.
 
 One of the following:
 
@@ -384,6 +398,10 @@ One of the following:
 
 
 "claude_docs"
+
+
+
+"claude_motion"
 
 
 

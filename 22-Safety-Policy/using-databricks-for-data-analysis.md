@@ -2,7 +2,7 @@
 title: "Using Databricks for Data Analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12430928-using-databricks-for-data-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-08T06:25:11Z"
+fetched_at: "2026-10-23T06:28:55Z"
 tags: ["safety"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["safety"]
 
 Integrate Claude with Databricks to access organizational data through Unity Catalog using custom functions, vector search, and natural language queries.
 
-15 minClaude.ai
+15 minClaude
 
 [Open Claude](https://claude.ai/new)
 

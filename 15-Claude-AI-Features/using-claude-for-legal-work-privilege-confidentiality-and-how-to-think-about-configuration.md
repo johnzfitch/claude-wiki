@@ -2,7 +2,7 @@
 title: "Using Claude for Legal Work: Privilege, Confidentiality, and How to Think About Configuration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15707726-using-claude-for-legal-work-privilege-confidentiality-and-how-to-think-about-configuration"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:22Z"
+fetched_at: "2026-10-23T06:29:09Z"
 tags: ["claude-ai"]
 ---
 
@@ -37,7 +37,7 @@ On the first—our **[Trust Center](https://trust.anthropic.com/)** and our **[d
 
 - **We do not train on your content by default.** Under our commercial terms, **[by default](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training)**, customer content from Claude for Work, the Claude Platform, and the API is not used to train our models.
 
-- **Retention is configurable.** **[Claude for Work](../13-Enterprise-Admin/configure-custom-data-retention-controls-for-enterprise-plans.md)** administrators can set an organization-wide retention period. **[API](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)** customers can use our standard 30-day retention or, on eligible endpoints and models, **[Zero Data Retention](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to)**. For our most **[capable models](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)**, where safety monitoring requires it, we retain prompts and outputs for 30 days in a governed store that is automatically deleted, with the serving path itself stateless.
+- **Retention is configurable.** **[Claude for Work](https://support.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans)** administrators can set an organization-wide retention period. **[API](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)** customers can use our standard 30-day retention or, on eligible endpoints and models, **[Zero Data Retention](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to)**. For our most **[capable models](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)**, where safety monitoring requires it, we retain prompts and outputs for 30 days in a governed store that is automatically deleted, with the serving path itself stateless.
 
 - **Human review is a very narrow exception.** Retained data is processed by automated safety systems for potential harm only. Only content flagged by the automated safety system can be reached by a human reviewer. When content is flagged for potential serious harm, review is performed by a small, designated set of safeguards personnel under contractual confidentiality, with need-to-know scoping and two-person approval for regulated data categories.
 

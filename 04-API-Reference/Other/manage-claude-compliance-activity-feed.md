@@ -2,7 +2,7 @@
 title: "Query the Activity Feed - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-activity-feed"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:32:45Z"
+fetched_at: "2026-10-20T06:40:17Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-activity-feed)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-activity-feed)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Compliance API
 
@@ -185,19 +187,19 @@ cURL
 
 
 ```python
-# Fetch the first page (newest activities first) and capture its trailing cursor.
-last_id=$(curl --fail-with-body -sS \
+# Fetch the first page (newest activities first).
+curl --fail-with-body -sS \
   "https://api.anthropic.com/v1/compliance/activities?limit=2" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  --header "anthropic-version: 2023-06-01" | jq -er '.last_id')
+  --header "anthropic-version: 2023-06-01"
 
-# Pass the cursor back unchanged to fetch the next (older) page.
+# LAST_ID is the last_id from the first response. Pass it back unchanged to fetch the next (older) page.
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/activities" \
   --header "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
   --header "anthropic-version: 2023-06-01" \
   --data-urlencode "limit=2" \
-  --data-urlencode "after_id=${last_id}"
+  --data-urlencode "after_id=$LAST_ID"
 ```
 
 A production **backfill** loop pages through older activities by driving iteration off `has_more` and `last_id`:

@@ -2,7 +2,7 @@
 title: "Create and edit files with Claude to eliminate hours of busy work · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12143746-create-and-edit-files-with-claude-to-eliminate-hours-of-busy-work"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-08T06:25:06Z"
+fetched_at: "2026-10-23T06:28:55Z"
 tags: ["claude-ai"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["claude-ai"]
 
 Learn how Claude creates and edits files directly including spreadsheets, documents, presentations, and PDFs to eliminate manual work.
 
-10 minClaude.ai
+10 minClaude
 
 Watch
 
@@ -35,6 +35,8 @@ Claude can now create and work directly with the documents that drive your busin
 - **Perform detailed analyses —** Use Claude to analyze your data, build models and forecasts, and generate data visualizations
 - **Craft PowerPoint presentations** — Convert documents into slide format, organize research into presentations, or transform notes into decks. From there, you can edit directly to polish and finalize.
 - **Fill PDF forms** — ask Claude to fill PDF forms with your information; just give it context on how to answer, and watch it do the work.
+
+If you don't name a file format, Claude may make the deck or document as an artifact instead. You edit an artifact in Claude and export it when you're done.
 
 After you’re done iterating with Claude, just open the file in Drive or hit Download to finalize and share.
 

@@ -2,13 +2,47 @@
 title: "How AI is transforming work at Anthropic \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:28:58Z"
+fetched_at: "2026-10-21T06:30:05Z"
 tags: ["claude-code", "news-research"]
 ---
 
 # How AI is transforming work at Anthropic
 
-Dec 2, 2025
+- [01Key findings](#key-findings)
+- [02Survey data](#survey-data)
+- [03Qualitative interviews](#qualitative-interviews)
+- [04Claude Code usage trends](#claude-code-usage-trends)
+- [05Looking forward](#looking-forward)
+- [06Appendix](#appendix)
+
+- Published
+
+  Dec 2, 2025
+
+- Team
+
+  [Societal Impacts](team-societal-impacts.md)
+
+- Topics
+
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Productivity](https://www.anthropic.com/search?topic=productivity)
+  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+
+  See more...
+
+Related articles
+
+- Economics
+
+  Oct 16, 2026
+
+  [The AI expectations gap](ai-expectations-gap.md)
+
+[View more](https://www.anthropic.com/search?topic=how-people-use-ai)
 
 How is AI changing the way we work? Our [previous research](https://www.anthropic.com/economic-index) on AI’s economic impacts looked at the labor market as a whole, covering a variety of different jobs. But what if we studied some of the earliest adopters of AI technology in more detail—namely, us?
 
@@ -55,7 +89,7 @@ We asked the surveyed engineers and researchers to rate how often they used Clau
 
 Below are the most common daily tasks. Most employees (55%) used Claude for debugging on a daily basis. 42% used Claude everyday for code understanding, and 37% used Claude everyday for implementing new features. The less-frequent tasks were high level design/planning (likely because these are tasks people tend to keep in human hands), as well as data science and front-end development (likely because they are overall less common tasks). This roughly aligns with the Claude Code usage data distribution reported in the “Claude Code usage trends” section.
 
-###  Usage and productivity 
+### Usage and productivity
 
 Employees self-reported that 12 months ago, they used Claude in 28% of their daily work and got a +20% productivity boost from it, whereas now, they use Claude in 59% of their work and achieve +50% productivity gains from it on average. (This roughly corroborates the 67% increase in merged pull requests—i.e. successfully incorporated changes to code—per engineer per day we saw when we adopted Claude Code [across our Engineering org](https://newsletter.pragmaticengineer.com/p/how-claude-code-is-built).) The year-on-year comparison is quite dramatic—this suggests a more than 2x increase in both metrics in one year. Usage and productivity are also strongly correlated, and at the extreme end of the distribution, 14% of respondents are increasing their productivity by more than 100% by using Claude—these are our internal “power users.”
 
@@ -71,7 +105,7 @@ It is also not clear from our data where reported time savings are being reinves
 
 Output volume increases are more straightforward and substantial; there is a larger net increase across all task categories. This pattern makes sense when we consider that people are reporting on task categories (like “debugging” overall) rather than individual tasks—i.e. people can spend slightly less time on debugging as a category while producing much more debugging output overall. Productivity is very hard to measure directly, but this self-reported data suggests that AI enables increased productivity at Anthropic primarily through greater output volume.
 
-###  Claude enabling new work
+### Claude enabling new work
 
 One thing we were curious about: Is Claude enabling qualitatively new kinds of work, or would Claude-assisted work have been done by employees eventually (albeit potentially at a slower rate)?
 
@@ -95,7 +129,43 @@ While these survey findings reveal significant productivity gains and changing w
 
 Engineers and researchers are developing a variety of strategies for productively leveraging Claude in their workflow. People generally delegate tasks that are:
 
-[TABLE]
+**Outside the user’s context *and* low complexity**:  
+
+“I use Claude for things where I have low context, but think that the overall complexity is also low.”  
+  
+
+“The majority of the infra\[structure\] problems I have are not difficult and can be handled by Claude… I don’t know Git or Linux very well… Claude does a good job covering for my lack of experience in these areas.”
+
+**Easily verifiable:  
+**
+
+“It's absolutely *amazing* for everything where validation effort isn't large in comparison to creation effort.”
+
+**Well-defined or self-contained:  
+**
+
+“If a subcomponent of the project is sufficiently decoupled from the rest, I'll get Claude to take a stab.”
+
+**Code quality isn’t critical:  
+**
+
+“If it's throwaway debug\[ging\] or research code, it goes straight to Claude. If it's conceptually difficult or needs some very specific type of debug injection, or a design problem, I do it myself.”
+
+**Repetitive or boring:  
+**
+
+“The more excited I am to do the task, the more likely I am to not use Claude. Whereas if I'm feeling a lot of resistance… I often find it easier to start a conversation with Claude about the task.”  
+  
+
+In our survey, on average people said that 44% of Claude-assisted work consisted of tasks they wouldn't have enjoyed doing themselves.
+
+**Faster to prompt than execute:  
+**
+
+“\[For\] a task that I anticipate will take me less than 10 minutes... I'm probably not going to bother using Claude.”  
+  
+
+“The cold start problem is probably the biggest blocker right now. And by cold start, I mean there is a lot of intrinsic information that I just have about how my team's code base works that Claude will not have by default… I could spend time trying to iterate on the perfect prompt \[but\] I’m just going to go and do it myself.”
 
 These factors mentioned by our employees in their decisions about delegation were similar to those found to explain AI-related productivity slowdowns (such as high developer familiarity with codebase, large and complex repositories) in an [external study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) from METR. The convergence on these delegation criteria across our interviews suggests that appropriate task choice is an important factor in AI productivity gains (which should be carefully controlled for in future productivity studies).
 
@@ -150,7 +220,7 @@ One reason that the atrophy of coding skills is concerning is the “paradox of 
 
 To combat this, some engineers deliberately practice without AI: "Every once in a while, even if I know that Claude can nail a problem, I will not ask it to. It helps me keep myself sharp.”
 
-####  Will we still need those hands-on coding skills?
+#### Will we still need those hands-on coding skills?
 
 Perhaps software engineering is moving to higher levels of abstraction, which it has done in the past. Early programmers worked much closer to the machine—manually managing memory, writing in assembly language, or even toggling physical switches to input instructions. Over time, higher-level, more human-readable languages emerged that automatically handled complex, low-level operations. Perhaps, in particular with the rise of “vibe coding”, we’re now moving to English as a programming language. One of our staff suggested that aspiring engineers “get good at having AIs \[write code\], and focus on learning higher level concepts and patterns.”
 
@@ -186,7 +256,7 @@ However, others described experiencing less interaction with colleagues (“I wo
 
 > It's been sad that more junior people don't come to me with questions as often, though they definitely get their questions answered more effectively and learn faster.
 
-###  Career uncertainty and adaptation
+### Career uncertainty and adaptation
 
 Many engineers describe their role shifting from writing code to managing AIs. Engineers increasingly see themselves as “manager\[s\] of AI agents”—some already “constantly have at least a few \[Claude\] instances running.” One person estimated their work has shifted “70%+ to being a code reviewer/reviser rather than a net-new code writer” and another saw “taking accountability for the work of 1, 5, or 100 Claudes” as part of their future role.
 
@@ -202,7 +272,7 @@ Overall, many acknowledge deep uncertainty: “I have very low confidence in wha
 
 The survey and interview data show that increased Claude usage is helping people work faster and take on new types of work, though this comes with tensions around AI delegation and skill development. Still, self-reported data only tells part of the story. To complement this, we also analyzed actual Claude usage data across Anthropic teams. Because survey respondents reported Claude Code as the majority of their usage, we used our [privacy-preserving analysis tool](clio.md) to analyze 200,000 internal transcripts from Claude Code from February and August 2025.
 
-###  Tackling harder problems with less oversight
+### Tackling harder problems with less oversight
 
 Claude Code usage has shifted toward more difficult and autonomous coding tasks over the last six months: (Figure 3):
 
@@ -247,28 +317,6 @@ To follow up on this initial work, we’re taking several steps. We're talking t
 
 We expect to share more concrete plans in 2026 as our thinking matures. Anthropic is a laboratory for responsible workplace transition; we want to not just study how AI transforms work, but also experiment with how to navigate that transformation thoughtfully, starting with ourselves first.
 
-#### Bibtex
-
-If you’d like to cite this post you can use the following Bibtex key:
-
-```
-@online{huang2025aiwork,
-author = {Saffron Huang and Bryan Seethor and Esin Durmus and Kunal Handa and Miles McCain and Michael Stern and Deep Ganguli},
-title = {How AI Is Transforming Work at Anthropic},
-date = {2025-12-02},
-year = {2025},
-url = {https://anthropic.com/research/how-ai-is-transforming-work-at-anthropic/},
-}
-```
-
-Copy
-
-####  Acknowledgments
-
-Saffron Huang led the project, designed and executed the surveys, interviews, and data analysis, plotted figures and wrote the blog post. Bryan Seethor co-designed the surveys and interviews, co-led survey and interview data collection, analyzed interview themes, contributed to writing, and managed the project timeline. Esin Durmus contributed to experiment design and provided detailed direction and feedback throughout. Kunal Handa contributed infrastructure for the interviewing process. Deep Ganguli provided critical guidance and organizational support. All authors provided detailed guidance and feedback throughout.
-
-Additionally, we thank Ruth Appel, Sally Aldous, Avital Balwit, Drew Bent, Zoe Blumenfeld, Miriam Chaum, Jack Clark, Jake Eaton, Sarah Heck, Kamya Jagadish, Jen Martinez, Peter McCrory, Jared Mueller, Christopher Nulty, Sasha de Marigny, Sarah Pollack, Hannah Pritchett, Stuart Ritchie, David Saunders, Alex Tamkin, Janel Thamkul, Sar Warner, and Heather Whitney for their helpful ideas, discussion, feedback and support. Thank you to Casey Yamaguma for illustrating the figures. We also appreciate the productive comments and discussion from Anton Korinek, Ioana Marinescu, Silvana Tenreyro, and Neil Thompson.
-
 ## Appendix
 
 ### Limitations
@@ -281,126 +329,24 @@ Our Claude Code analysis uses proportionate sampling across time periods, which 
 
 Finally, this research was conducted in August 2025 when Claude Sonnet 4 and Claude Opus 4 were our state-of-the-art models. Given the rapid pace of AI development, the patterns we observed may have already shifted as newer models become available.
 
-  
-## Related content
+## Authors & Acknowledgments
 
-### Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
+### Contributors
 
-Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
+Saffron Huang led the project, designed and executed the surveys, interviews, and data analysis, plotted figures and wrote the blog post. Bryan Seethor co-designed the surveys and interviews, co-led survey and interview data collection, analyzed interview themes, contributed to writing, and managed the project timeline. Esin Durmus contributed to experiment design and provided detailed direction and feedback throughout. Kunal Handa contributed infrastructure for the interviewing process. Deep Ganguli provided critical guidance and organizational support. All authors provided detailed guidance and feedback throughout.
 
-[Read more](intelligence-targeting-conventional-weapons-capabilities.md)
+### Acknowledgements
 
-### An alignment assessment of recent cybersecurity incidents
+Additionally, we thank Ruth Appel, Sally Aldous, Avital Balwit, Drew Bent, Zoe Blumenfeld, Miriam Chaum, Jack Clark, Jake Eaton, Sarah Heck, Kamya Jagadish, Jen Martinez, Peter McCrory, Jared Mueller, Christopher Nulty, Sasha de Marigny, Sarah Pollack, Hannah Pritchett, Stuart Ritchie, David Saunders, Alex Tamkin, Janel Thamkul, Sar Warner, and Heather Whitney for their helpful ideas, discussion, feedback and support. Thank you to Casey Yamaguma for illustrating the figures. We also appreciate the productive comments and discussion from Anton Korinek, Ioana Marinescu, Silvana Tenreyro, and Neil Thompson.
 
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
+### Citation
 
-[Read more](alignment-assessment-cybersecurity-incidents.md)
+Copy
 
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+``` CodeBlock-module-scss-module__PbWBnq__code
+@online{huang2025aiwork,
+author = {Saffron Huang and Bryan Seethor and Esin Durmus and Kunal Handa and Miles McCain and Michael Stern and Deep Ganguli},
+title = {How AI Is Transforming Work at Anthropic},
+date = {2025-12-02},
+year = {2025},
+url = {https://anthropic.com/research/how-ai-is-transforming-work-at-anthropic/},

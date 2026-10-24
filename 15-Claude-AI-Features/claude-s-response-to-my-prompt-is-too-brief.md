@@ -2,7 +2,7 @@
 title: "Claude’s response to my prompt is too brief. | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114518-claude-s-response-to-my-prompt-is-too-brief"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:27Z"
+fetched_at: "2026-10-23T06:29:18Z"
 tags: ["claude-ai", "prompting"]
 ---
 

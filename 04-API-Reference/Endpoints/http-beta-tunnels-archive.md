@@ -1,8 +1,8 @@
 ---
 title: "Archive Tunnel - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/tunnels/archive"
+source_url: "https://platform.claude.com/docs/en/api/beta/tunnels/archive"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:14Z"
+fetched_at: "2026-10-20T06:38:49Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Ftunnels%2Farchive)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Ftunnels%2Farchive)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,10 +232,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
-3.  [Tunnels](http-beta-tunnels.md)
+2.  [Beta](platform-claude-com-http-beta.md)
+3.  [Tunnels](platform-claude-com-http-beta-tunnels.md)
 
 # Archive Tunnel
+
+Copy page
+
+
+
+cURL
 
 POST/v1/tunnels/{tunnel_id}/archive
 
@@ -251,11 +261,21 @@ ID of the tunnel (`tnl_...`).
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `mcp-tunnels-2026-06-22` in this header.
 
 One of the following:
 
@@ -460,6 +480,10 @@ string
 
 
 "spend-limit-reads-2026-09-26"
+
+
+
+"telemetry-destinations-2026-08-11"
 
 
 

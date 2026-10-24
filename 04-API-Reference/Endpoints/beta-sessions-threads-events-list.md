@@ -2,7 +2,7 @@
 title: "List Session Thread Events - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/threads/events/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:14Z"
+fetched_at: "2026-10-20T06:39:40Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Fevents%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Fevents%2Flist)
 
 
 
@@ -161,7 +161,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -171,9 +171,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -244,13 +246,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -258,9 +262,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -269,12 +273,18 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Sessions](https://platform.claude.com/docs/en/api/http/beta/sessions)
 4.  [Threads](https://platform.claude.com/docs/en/api/http/beta/sessions/threads)
 5.  [Events](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/events)
 
 # List Session Thread Events
+
+Copy page
+
+
+
+cURL
 
 GET/v1/sessions/{session_id}/threads/{thread_id}/events
 
@@ -308,11 +318,21 @@ page: optional string
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -520,6 +540,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -606,7 +630,7 @@ BetaManagedAgentsAgentCustomToolUseEvent object{ type: "agent.custom_tool_use", 
 
 
 
-Event emitted when the agent calls a custom tool. The session goes idle until the client sends a `user.custom_tool_result` event with the result.
+Event emitted when the agent calls a custom tool. The session goes idle until the client sends a `user.custom_tool_result` event with the result. The client can send it as soon as this event arrives, without waiting for `session.status_idle`.
 
 type: "agent.custom_tool_use"
 
@@ -860,11 +884,11 @@ formatdate-time
 
 
 
-BetaManagedAgentsSessionThreadCreatedEvent object{ type: "session.thread_created", id, agent_name, 2 more }
+BetaManagedAgentsSessionThreadCreatedEvent object{ type: "session.thread_created", id, agent_name, 3 more }
 
 
 
-Emitted when a subagent is spawned as a new thread. Written to the parent thread's output stream so clients observing the session see child creation.
+Emitted when a child thread is created. Written to the parent thread's output stream so clients observing the session see child creation.
 
 type: "session.thread_created"
 
@@ -897,6 +921,12 @@ session_thread_id: string
 
 
 Public `sthr_` ID of the newly created thread.
+
+workflow_run_id: string or null
+
+
+
+Identifier of the workflow run that created the thread, or `null` for any other thread.
 
 
 
@@ -1268,6 +1298,220 @@ BetaManagedAgentsSessionUsageEvent object{ type: "session.usage", id, processed_
 
 Periodic snapshot of the session's cumulative usage and tracked list cost.
 
+
+
+BetaManagedAgentsWorkflowRunCreatedEvent object{ type: "workflow_run.created", id, description, 4 more }
+
+
+
+A workflow run was created. A workflow run is background work that the session's agent starts. Emitted once per run, before the run's other `workflow_run.*` events.
+
+
+
+BetaManagedAgentsWorkflowRunStatusEndedEvent object{ type: "workflow_run.status_ended", id, processed_at, 2 more }
+
+
+
+A workflow run ended. Emitted once per run, as the last of the run's `workflow_run.*` events.
+
+
+
+BetaManagedAgentsWorkflowRunPhaseStartedEvent object{ type: "workflow_run.phase_started", id, processed_at, 2 more }
+
+
+
+A workflow run's plan entered a phase.
+
+type: "workflow_run.phase_started"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string
+
+
+
+Identifier of the run. The same value is on all of the run's `workflow_run.*` events.
+
+workflow_run_phase_id: string
+
+
+
+Identifier of the phase, as in `phases` on the run's `workflow_run.created` event.
+
+
+
+BetaManagedAgentsWorkflowRunPhaseEndedEvent object{ type: "workflow_run.phase_ended", id, phase_started_id, 3 more }
+
+
+
+A workflow run's plan left a phase, or the run's end closed it. Emitted once for every `workflow_run.phase_started` event, before the run's `workflow_run.status_ended` event. The event does not say whether the plan finished the phase's work, or why it left.
+
+type: "workflow_run.phase_ended"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+phase_started_id: string
+
+
+
+Identifier of the `workflow_run.phase_started` event that opened the phase.
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string
+
+
+
+Identifier of the run. The same value is on all of the run's `workflow_run.*` events.
+
+workflow_run_phase_id: string
+
+
+
+Identifier of the phase, as in `phases` on the run's `workflow_run.created` event.
+
+
+
+BetaManagedAgentsWorkflowRunStatusRunningEvent object{ type: "workflow_run.status_running", id, processed_at, workflow_run_id }
+
+
+
+A workflow run is running. Emitted when the run starts to execute, and each time it resumes after being idle. A run that starts idle emits `workflow_run.status_idle` first.
+
+type: "workflow_run.status_running"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string
+
+
+
+Identifier of the run. The same value is on all of the run's `workflow_run.*` events.
+
+
+
+BetaManagedAgentsWorkflowRunStatusIdleEvent object{ type: "workflow_run.status_idle", id, processed_at, workflow_run_id }
+
+
+
+A workflow run is idle. Emitted each time the run goes idle, whatever the cause. If the run ends while idle, no `workflow_run.status_running` comes between this event and its `workflow_run.status_ended`.
+
+type: "workflow_run.status_idle"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string
+
+
+
+Identifier of the run. The same value is on all of the run's `workflow_run.*` events.
+
+
+
+BetaManagedAgentsWorkflowRunErrorEvent object{ type: "workflow_run.error", id, error, 2 more }
+
+
+
+A workflow run met an error, or an error kept a run from being created. A run that ends with a `result.type` of `error` emits this event before its `workflow_run.status_ended`, with the same `error`.
+
+type: "workflow_run.error"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+
+
+error: [BetaManagedAgentsWorkflowRunError](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_workflow_run_error)
+
+
+
+Why the run did not finish, or was not created.
+
+One of the following:
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string or null
+
+
+
+Identifier of the run that met the error, or `null` when the error kept a run from being created.
+
 next_page: optional string or null
 
 
@@ -1295,7 +1539,7 @@ Response 200
 {
   "data": [
     {
-      "id": "sevt_011CZkZGOp0iBcp4kaQSihUmy",
+      "id": "sevt_011CZkZGPp1iBcp4kaQSihUm",
       "content": [
         {
           "text": "Where is my order #1234?",
@@ -1304,9 +1548,20 @@ Response 200
       ],
       "type": "user.message",
       "processed_at": "2026-03-15T10:00:00Z"
+    },
+    {
+      "id": "sevt_011CZkZHPq1jCdq5mbRTjiVn",
+      "content": [
+        {
+          "text": "Let me look up order #1234 for you.",
+          "type": "text"
+        }
+      ],
+      "processed_at": "2026-03-15T10:00:00Z",
+      "type": "agent.message"
     }
   ],
-  "next_page": "next_page"
+  "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="
 }
 ```
 
@@ -1320,7 +1575,7 @@ Response 200
 {
   "data": [
     {
-      "id": "sevt_011CZkZGOp0iBcp4kaQSihUmy",
+      "id": "sevt_011CZkZGPp1iBcp4kaQSihUm",
       "content": [
         {
           "text": "Where is my order #1234?",
@@ -1329,3 +1584,17 @@ Response 200
       ],
       "type": "user.message",
       "processed_at": "2026-03-15T10:00:00Z"
+    },
+    {
+      "id": "sevt_011CZkZHPq1jCdq5mbRTjiVn",
+      "content": [
+        {
+          "text": "Let me look up order #1234 for you.",
+          "type": "text"
+        }
+      ],
+      "processed_at": "2026-03-15T10:00:00Z",
+      "type": "agent.message"
+    }
+  ],
+  "next_page": "page_MjAyNS0wNS0xNFQwMDowMDowMFo="

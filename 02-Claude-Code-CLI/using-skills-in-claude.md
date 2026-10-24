@@ -1,12 +1,14 @@
 ---
 title: "Use skills in Claude | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
+source_url: "https://support.claude.com/en/articles/12512180-using-skills-in-claude"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:28:05Z"
+fetched_at: "2026-10-23T06:28:57Z"
 tags: ["claude-code", "security", "skills"]
 ---
 
 # Use skills in Claude
+
+September 22, 2026
 
 
 Skills extend Claude's capabilities by giving it access to specialized knowledge and workflows. This guide shows you how to enable, discover, and use skills in Claude.
@@ -224,7 +226,7 @@ For Team and Enterprise plans, organization owners can provision skills for all 
 
 Note that skills may include, or instruct Claude to install, third-party packages and software for Claude to use when completing a task. See **[our guidance on Claude's container environment](../15-Claude-AI-Features/create-and-edit-files-with-claude.md#h_0ee9d698a1)** for details on Claude's container environment and **[the API documentation](https://docs.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool#containers)** for API's container environment.
 
-**Note:** If you're on the Enterprise plan and your organization has skill scanning turned on, each third-party skill you upload or edit is checked for malicious content before it can run. Most scans finish in about one to two minutes. If a skill is blocked, you can't use it until you fix what was flagged and upload it again. Learn more about **[skill and plugin scanning](../15-Claude-AI-Features/get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
+**Note:** If you're on the Enterprise plan and your organization has skill scanning turned on, each third-party skill you upload or edit is checked for malicious content before it can run. Most scans finish in about one to two minutes. If a skill is blocked, you can't use it until you fix what was flagged and upload it again. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
 
 ### What are the primary risks of using skills?
 

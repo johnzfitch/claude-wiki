@@ -2,7 +2,7 @@
 title: "Get started with Claude Motion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:24Z"
+fetched_at: "2026-10-23T06:29:13Z"
 tags: ["claude-ai"]
 ---
 
@@ -55,7 +55,7 @@ Say who will watch it, where it will play, and roughly how long it should be. At
 
 ## Export and share
 
-To download an animation, click "Export" and choose MP4. Animations start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](discovering-publishing-customizing-and-sharing-artifacts.md)**.
+To download an animation, click "Export" and choose MP4. Animations start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
 
 ## Usage
 

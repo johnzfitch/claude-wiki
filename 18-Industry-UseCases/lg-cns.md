@@ -2,7 +2,7 @@
 title: "LG CNS Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/lg-cns"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:52Z"
+fetched_at: "2026-10-23T06:29:45Z"
 tags: ["case-studies", "claude-code", "enterprise", "security"]
 ---
 
@@ -49,7 +49,7 @@ LG CNS is the IT services and digital transformation arm of LG Group, with appro
 
 The migration requests landing at LG CNS follow a pattern. Customers need stored procedures over 10,000 lines long moved to a modern database, or Oracle Forms screens rebuilt in React. Many need to retire MiPlatform, proprietary UI platforms that dominated Korean enterprise IT two decades ago and have now reached end of service.
 
-These systems are mission-critical, but the engineers who understand them are scarce and the documentation is thin. "From the customer's perspective, modernization is clearly necessary, but cost, timeline, and quality risks make it difficult to initiate," explained Hyosup Bae, Director and Head of Build Center at LG CNS.
+These systems are mission-critical, but the engineers who understand them are scarce and the documentation is thin. “From the customer’s perspective, modernization is clearly necessary, but cost, timeline, and quality risks make it difficult to initiate,” explained Hyosup Bae, Director and Head of Build Center at LG CNS.
 
 One engagement made the bind concrete. A Korean construction company ran its projects on a 20-year-old project management system covering everything from winning an order through final settlement. The company needed to move onto a modern stack, with a fixed deadline and a tightly constrained budget.
 
@@ -65,23 +65,23 @@ Build innovative AI applications with safer systems from Anthropic, supported by
 
 LG CNS tested multiple models, starting from the position that public benchmarks are useful only as a reference point. The criterion that mattered most was task completion: does the model finish what it was asked to do? The team evaluated planning capability, to-do sequencing, tool-calling behavior, and what happened when a model hit an error. Could it find an alternative path, or did it stall?
 
-Claude stood out for understanding intent, not just instructions. "While other models were able to execute given tasks reasonably well, Claude often interpreted what was not explicitly stated and proposed outputs that were more closely aligned with the underlying objective of the problem," Bae said. The difference was clearest in architecture design for large projects, where Claude behaved "less like a code generator and more like a consultant that could understand the problem and propose a direction for solving it."
+Claude stood out for understanding intent, not just instructions. “While other models were able to execute given tasks reasonably well, Claude often interpreted what was not explicitly stated and proposed outputs that were more closely aligned with the underlying objective of the problem,” Bae said. The difference was clearest in architecture design for large projects, where Claude behaved “less like a code generator and more like a consultant that could understand the problem and propose a direction for solving it.”
 
-Access mattered as much as capability. LG CNS reaches Claude through Amazon Bedrock, which lets the team run Claude inside the AWS security configurations its enterprise customers already have in place. For clients in regulated industries such as financial services, that changed the nature of the adoption discussion. "The conversation shifts from 'Can we trust this model?' to 'How can we use a technology that is already within our security boundary?'" Bae noted.
+Access mattered as much as capability. LG CNS reaches Claude through Amazon Bedrock, which lets the team run Claude inside the AWS security configurations its enterprise customers already have in place. For clients in regulated industries such as financial services, that changed the nature of the adoption discussion. “The conversation shifts from ‘Can we trust this model?’ to ‘How can we use a technology that is already within our security boundary?’” Bae noted.
 
 Selecting the model was only half the equation. [Enterprise customers](../17-Billing-Plans/pricing-enterprise.md) need far more than generated code: they expect security, compliance, testing, and uniform quality across thousands of APIs and screens.
 
-To deliver that, the Build Center, LG CNS's 200-engineer technology delivery organization, built an engineering orchestration layer around Claude Code. The harness connects legacy analysis, business logic extraction, code generation, testing, verification, and quality management.
+To deliver that, the Build Center, LG CNS’s 200-engineer technology delivery organization, built an engineering orchestration layer around Claude Code. The harness connects legacy analysis, business logic extraction, code generation, testing, verification, and quality management.
 
 A typical project runs in pods of five to seven people: a Solution Owner, Architect, Engineers, and DevOps. Work starts with planning, where the team presents the project objective and intent to Claude and asks it to propose an approach.
 
-Once the direction is set, work is decomposed into small, clearly scoped tasks defined in YAML. Context is chained through the local file system, with each stage's output stored as files and passed to the next. The team relies on Claude Opus 4.6 for core work: architecture design, legacy analysis, complex code generation, and multi-step workflow execution.
+Once the direction is set, work is decomposed into small, clearly scoped tasks defined in YAML. Context is chained through the local file system, with each stage’s output stored as files and passed to the next. The team relies on Claude Opus 4.6 for core work: architecture design, legacy analysis, complex code generation, and multi-step workflow execution.
 
-The file-mediated approach began as a workaround. Before the 1M-token context window and memory features arrived, preventing quality degradation as context accumulated was the team's hardest engineering problem. The patterns LG CNS designed to solve it, persistent file-based memory and multi-agent coordination through file handoffs, anticipated capabilities Anthropic later shipped natively.
+The file-mediated approach began as a workaround. Before the 1M-token context window and memory features arrived, preventing quality degradation as context accumulated was the team’s hardest engineering problem. The patterns LG CNS designed to solve it, persistent file-based memory and multi-agent coordination through file handoffs, anticipated capabilities Anthropic later shipped natively.
 
 The team still treats decomposition and context chaining as core strategy. At enterprise scale, maintaining context taxonomy and output consistency matters more than raw context length.
 
-The design philosophy is deliberately restrained. "Trust the model," Bae advised. "Building an overly thick harness to prevent every possible failure constrains the model's performance and increases token consumption." Instead, LG CNS uses a thin, multi-layered harness, with lightweight layers for validation, context scoping, and quality checks that preserve Claude's ability to reason while providing the stability enterprise projects require.
+The design philosophy is deliberately restrained. “Trust the model,” Bae advised. “Building an overly thick harness to prevent every possible failure constrains the model’s performance and increases token consumption.” Instead, LG CNS uses a thin, multi-layered harness, with lightweight layers for validation, context scoping, and quality checks that preserve Claude’s ability to reason while providing the stability enterprise projects require.
 
 Claude Code
 
@@ -97,15 +97,15 @@ The approach was validated on the construction PMS itself: a multi-billion-won, 
 
 The project achieved a 99.1% API mapping completion rate, with 2,888 of 2,913 APIs converted. On the frontend, 1,340 screens moved from MiPlatform to React across a main portal and a partner portal. Backend and frontend conversion ran simultaneously through 24/7 parallel-track operations.
 
-"The ROI is not simply that we did it faster," Bae said. "The ROI is that we made a previously difficult-to-start project possible."
+“The ROI is not simply that we did it faster,” Bae said. “The ROI is that we made a previously difficult-to-start project possible.”
 
-The work itself has shifted for senior engineers. Their role now centers on setting direction: defining the tasks a large-scale project requires, decomposing them along the right boundaries, and establishing the work sequence and chaining strategy between them. "Once the strategy and direction are set correctly, the details are then refined to fit the on-site situation and the nature of each individual task," Bae explained.
+The work itself has shifted for senior engineers. Their role now centers on setting direction: defining the tasks a large-scale project requires, decomposing them along the right boundaries, and establishing the work sequence and chaining strategy between them. “Once the strategy and direction are set correctly, the details are then refined to fit the on-site situation and the nature of each individual task,” Bae explained.
 
-For customers, the most meaningful change is not speed. Migrations they had deferred for years are now realistic options, discussed not as open-ended risks but as executable transformation roadmaps. "The most memorable customer reaction has been the realization that this is now possible," Bae said.
+For customers, the most meaningful change is not speed. Migrations they had deferred for years are now realistic options, discussed not as open-ended risks but as executable transformation roadmaps. “The most memorable customer reaction has been the realization that this is now possible,” Bae said.
 
 LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable modernization discipline, investing in deterministic validation through decision-making, automated quality measurement against golden datasets, and a harness that improves itself over time. As the team sees it, the two layers compound.
 
-"The model gets more capable, the harness becomes more sophisticated, and as the two evolve together, the quality and scale of modernization outcomes we can deliver to customers will continue to improve," Bae said.
+“The model gets more capable, the harness becomes more sophisticated, and as the two evolve together, the quality and scale of modernization outcomes we can deliver to customers will continue to improve,” Bae said.
 
 ## Related stories
 
@@ -130,7 +130,8 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -148,12 +149,12 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -186,7 +187,7 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -204,6 +205,7 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -219,7 +221,7 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -254,7 +256,8 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -272,12 +275,12 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -310,7 +313,7 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -328,6 +331,7 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -343,7 +347,7 @@ LG CNS plans to develop LG CNS Build Factory into a rigorous, verifiable moderni
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Data residency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/data-residency"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:06Z"
+fetched_at: "2026-10-20T06:40:27Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fdata-residency)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fdata-residency)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Data & compliance
 
@@ -77,7 +79,7 @@ Manage where model inference runs and where data is stored with geographic contr
 Data residency controls let you manage where your data is processed and stored. Two independent settings govern this:
 
 - **Inference geo:** Controls where model inference runs, on a per-request basis. Set through the `inference_geo` API parameter or as a workspace default.
-- **Workspace geo:** Controls where data is stored at rest and where endpoint processing (such as image transcoding and code execution) happens. Configured at the workspace level in the [Claude Console](usage-limits.md).
+- **Workspace geo:** Controls where data is stored at rest and where endpoint processing (such as image transcoding and code execution) happens. Configured at the workspace level in the [Claude Console](playground.md).
 
 
 
@@ -87,7 +89,7 @@ Data residency controls let you manage where your data is processed and stored. 
 
 
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
+To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](manage-claude-api-and-data-retention.md).
 
 The `inference_geo` parameter controls where model inference runs for a specific API request. Add it to any `POST /v1/messages` call.
 
@@ -115,6 +117,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -157,7 +161,7 @@ Output
 
 ### Model availability
 
-The `inference_geo` parameter is supported on Claude 4.6 and later models. Requests with `inference_geo` on Claude Opus 4.5, Claude Sonnet 4.5, Claude Haiku 4.5, or earlier models return a 400 error.
+The `inference_geo` parameter is supported on Claude 4.6 and later models. Requests with `inference_geo` on Claude Opus 4.5, Claude Sonnet 4.5 (deprecated), Claude Haiku 4.5, or earlier models return a 400 error.
 
 
 
@@ -176,11 +180,11 @@ These settings can be configured through the Console or the [Admin API](manage-c
 
 Workspace geo is set when you create a workspace and can't be changed afterward. Currently, `"us"` is the only available workspace geo.
 
-To set workspace geo, create a new workspace in the [Console](usage-limits.md):
+To set workspace geo, create a new workspace in the [Console](playground.md):
 
-1.  Go to **Settings** \> **Workspaces**.
-2.  Create a new workspace.
-3.  Select the workspace geo.
+1.  In the Console, go to the [Workspaces](playground.md) page (`platform.claude.com/settings/workspaces`).
+2.  Click **Create workspace** to open the [Create workspace](https://platform.claude.com/settings/workspaces/new) page (`platform.claude.com/settings/workspaces/new`) in the Console.
+3.  Enter a name, confirm the value in the **Workspace geo** field, and click **Create workspace**.
 
 
 
@@ -190,7 +194,7 @@ To set workspace geo, create a new workspace in the [Console](usage-limits.md):
 
 Data residency pricing varies by model generation:
 
-- **Claude 4.6 and later models:** US-only inference (`inference_geo: "us"`) is priced at 1.1x the standard rate across all token pricing categories (input tokens, output tokens, cache writes, and cache reads).
+- **Claude 4.6 and later models:** US-only inference (`inference_geo: "us"`) is priced at 1.1x the standard rate across all token pricing categories (input tokens, output tokens, cache writes, and cache reads). On Claude Haiku 5.5, the multiplier also applies to the higher prices for prompts over 100,000 tokens (see [Long context pricing](../../17-Billing-Plans/about-claude-pricing.md#long-context-pricing)).
 - **Global routing** (`inference_geo: "global"`): Standard pricing applies.
 - **Older models:** Don't support `inference_geo` (see [Model availability](#model-availability)); standard pricing applies. Requests that include the parameter return a 400 error.
 

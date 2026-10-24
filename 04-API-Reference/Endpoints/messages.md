@@ -2,7 +2,7 @@
 title: "Messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/messages"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:19Z"
+fetched_at: "2026-10-20T06:40:04Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -229,11 +233,17 @@ cURL
 
 
 
-A beta version of this API exists and may have additional functionality. [View the beta version](http-beta-messages.md).
+A beta version of this API exists and may have additional functionality. [View the beta version](platform-claude-com-http-beta-messages.md).
 
 1.  [API reference](http.md)
 
 # Messages
+
+Copy page
+
+
+
+cURL
 
 ##### [Create a Message](https://platform.claude.com/docs/en/api/http/messages/create)
 
@@ -547,6 +557,66 @@ One of the following:
 
 
 
+BrowserClickTarget = [BrowserCoordinateTarget](https://platform.claude.com/docs/en/api/http/messages#browser_coordinate_target) or [BrowserRefTarget](https://platform.claude.com/docs/en/api/http/messages#browser_ref_target)
+
+
+
+Where to act: either a viewport coordinate or an element reference.
+
+One of the following:
+
+
+
+BrowserCoordinateTarget object{ type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+
+
+BrowserRefTarget object{ type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+
+
 BrowserCloseTabConfig object{ defer_loading, enabled }
 
 
@@ -564,6 +634,58 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserCloseTabInput object{ tab_id }
+
+
+
+Close the tab with the given tab_id.
+
+tab_id: string
+
+
+
+The tab to close.
+
+
+
+BrowserCloseTabToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
+BrowserCoordinateTarget object{ type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
 
 
 
@@ -587,6 +709,20 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserDoubleClickInput object{ target, modifiers, tab_id }
+
+
+
+Double left-click at a viewport coordinate or on an element by reference.
+
+
+
+BrowserDoubleClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserFileUploadConfig object{ defer_loading, enabled }
 
 
@@ -604,6 +740,64 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserFileUploadInput object{ target, document_ids, paths, tab_id }
+
+
+
+Set the value of a file-input element to one or more files. The target must be an element reference; at least one of paths or document_ids is required.
+
+
+
+target: [BrowserRefTarget](https://platform.claude.com/docs/en/api/http/messages#browser_ref_target) { type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+
+
+document_ids: optional array of string or null
+
+
+
+References to files the harness has staged, for deployments where the browser executor cannot read the caller's filesystem.
+
+minItems1
+
+
+
+paths: optional array of string or null
+
+
+
+File paths on the browser executor's filesystem.
+
+minItems1
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserFileUploadToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -627,6 +821,32 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserFindInput object{ query, tab_id }
+
+
+
+Find elements matching a natural-language description (e.g. "search bar", "add to cart button") and return up to 20 matches with element references.
+
+query: string
+
+
+
+Natural-language description of the element(s) to find.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserFindToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserFormInputConfig object{ defer_loading, enabled }
 
 
@@ -644,6 +864,86 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserFormInputInput object{ target, value, tab_id }
+
+
+
+Set the value of a form element (input, textarea, select, checkbox). Use a boolean for checkboxes, an option value or text for selects.
+
+
+
+target: [BrowserRefTarget](https://platform.claude.com/docs/en/api/http/messages#browser_ref_target) { type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+
+
+value: [BrowserFormInputValue](https://platform.claude.com/docs/en/api/http/messages#browser_form_input_value)
+
+
+
+The value to set.
+
+One of the following:
+
+string
+
+
+
+number
+
+
+
+boolean
+
+
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserFormInputToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
+BrowserFormInputValue = string or number or boolean
+
+
+
+One of the following:
+
+string
+
+
+
+number
+
+
+
+boolean
+
+
 
 
 
@@ -667,6 +967,26 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserGetPageTextInput object{ tab_id }
+
+
+
+Return the page's visible text content as plain text, prioritizing article content. Suited to articles, documentation, and other text-heavy pages.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserGetPageTextToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserHoldKeyConfig object{ defer_loading, enabled }
 
 
@@ -684,6 +1004,44 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserHoldKeyInput object{ duration, text, tab_id }
+
+
+
+Hold a key or key chord down for a duration, then release it. Uses the same key names and "+" chord syntax as the key action.
+
+
+
+duration: number
+
+
+
+Seconds to hold the key down (maximum 30).
+
+minimum0
+
+maximum30
+
+text: string
+
+
+
+The key or chord to hold.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserHoldKeyToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -707,6 +1065,20 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserHoverInput object{ target, tab_id }
+
+
+
+Move the cursor to a coordinate or element without clicking.
+
+
+
+BrowserHoverToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserJavascriptExecConfig object{ defer_loading, enabled }
 
 
@@ -727,6 +1099,32 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserJavascriptExecInput object{ text, tab_id }
+
+
+
+Execute JavaScript in the page context and return the value of the last expression. The code runs with access to the DOM, `window`, and page variables. Write the expression you want evaluated — do NOT use `return`.
+
+text: string
+
+
+
+JavaScript to execute in the page context.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserJavascriptExecToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserKeyConfig object{ defer_loading, enabled }
 
 
@@ -744,6 +1142,44 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserKeyInput object{ text, repeat, tab_id }
+
+
+
+Press a key or key chord. Use "+" to combine modifiers with a key (e.g. "ctrl+a", "cmd+shift+p") and space to sequence presses (e.g. "Backspace Backspace Delete"). Common names like "Return", "Tab", "Escape", "BackSpace" are supported.
+
+text: string
+
+
+
+The key, chord, or space-separated sequence to press.
+
+
+
+repeat: optional number or null
+
+
+
+Number of times to repeat. Default 1.
+
+minimum1
+
+maximum100
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserKeyToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -787,6 +1223,34 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserLeftClickDragInput object{ from, target, tab_id }
+
+
+
+Press at `from`, drag to `target`, release. Both must be coordinate targets.
+
+
+
+BrowserLeftClickDragToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
+BrowserLeftClickInput object{ target, modifiers, tab_id }
+
+
+
+Left-click at a viewport coordinate or on an element by reference.
+
+
+
+BrowserLeftClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserLeftMouseDownConfig object{ defer_loading, enabled }
 
 
@@ -804,6 +1268,58 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserLeftMouseDownInput object{ target, tab_id }
+
+
+
+Press and hold the left mouse button at a viewport coordinate. Pair with left_mouse_up to perform a custom drag.
+
+
+
+target: [BrowserCoordinateTarget](https://platform.claude.com/docs/en/api/http/messages#browser_coordinate_target) { type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserLeftMouseDownToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -827,6 +1343,58 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserLeftMouseUpInput object{ target, tab_id }
+
+
+
+Release the left mouse button at a viewport coordinate.
+
+
+
+target: [BrowserCoordinateTarget](https://platform.claude.com/docs/en/api/http/messages#browser_coordinate_target) { type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserLeftMouseUpToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserListTabsConfig object{ defer_loading, enabled }
 
 
@@ -844,6 +1412,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+BrowserListTabsInput object{  }
+
+
+
+List all open tabs with each tab's tab_id, title, and URL.
+
+
+
+BrowserListTabsToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -867,6 +1447,20 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserMiddleClickInput object{ target, modifiers, tab_id }
+
+
+
+Middle-click at a viewport coordinate or on an element by reference.
+
+
+
+BrowserMiddleClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserMouseMoveConfig object{ defer_loading, enabled }
 
 
@@ -884,6 +1478,58 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserMouseMoveInput object{ target, tab_id }
+
+
+
+Move the pointer to a viewport coordinate without clicking.
+
+
+
+target: [BrowserCoordinateTarget](https://platform.claude.com/docs/en/api/http/messages#browser_coordinate_target) { type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserMouseMoveToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -907,6 +1553,32 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserNavigateInput object{ url, tab_id }
+
+
+
+Navigate to a URL, or go back/forward/reload in history. The protocol may be omitted (defaults to https://).
+
+url: string
+
+
+
+The URL to navigate to, or "back" / "forward" / "reload" for history navigation.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserNavigateToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserNewTabConfig object{ defer_loading, enabled }
 
 
@@ -924,6 +1596,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+BrowserNewTabInput object{  }
+
+
+
+Open a new empty tab and return its tab_id.
+
+
+
+BrowserNewTabToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -947,6 +1631,26 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserReadConsoleInput object{ tab_id }
+
+
+
+Return console output (log entries, errors, warnings) accumulated since the driver attached to the tab and since the last read, one line per entry. An empty result does not mean no traffic for a tab that predates attach.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserReadConsoleToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserReadNetworkConfig object{ defer_loading, enabled }
 
 
@@ -964,6 +1668,26 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserReadNetworkInput object{ tab_id }
+
+
+
+Return the network requests (method, URL, status, MIME type, timing) recorded since the driver attached to the tab and since the last read, one line per entry. An empty result does not mean no traffic for a tab that predates attach.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserReadNetworkToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -987,6 +1711,94 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserReadPageFilter = "all" or "interactive"
+
+
+
+One of the following:
+
+"all"
+
+
+
+"interactive"
+
+
+
+
+
+BrowserReadPageInput object{ depth, filter, ref, tab_id }
+
+
+
+Return a structured accessibility tree of the page (or the subtree rooted at `ref`), with element references like \[ref_7\] that can be used as targets on later actions. Output is capped at 50,000 characters — narrow with `ref` or a smaller `depth` when exceeded.
+
+
+
+depth: optional number or null
+
+
+
+Maximum tree depth. Default 15.
+
+minimum1
+
+
+
+filter: optional [BrowserReadPageFilter](https://platform.claude.com/docs/en/api/http/messages#browser_read_page_filter) or null
+
+
+
+Which elements to include. Omitted: every visible element. "interactive": interactive elements only. "all": additionally includes off-viewport elements.
+
+One of the following:
+
+"all"
+
+
+
+"interactive"
+
+
+
+ref: optional string or null
+
+
+
+Element reference to read a subtree from. Omit to read from the page root.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserReadPageToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
+BrowserRefTarget object{ type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+
+
 BrowserRightClickConfig object{ defer_loading, enabled }
 
 
@@ -1004,6 +1816,20 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserRightClickInput object{ target, modifiers, tab_id }
+
+
+
+Right-click at a viewport coordinate or on an element by reference.
+
+
+
+BrowserRightClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -1027,6 +1853,26 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserScreenshotInput object{ tab_id }
+
+
+
+Capture the current browser viewport.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserScreenshotToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserScrollConfig object{ defer_loading, enabled }
 
 
@@ -1047,6 +1893,112 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserScrollDirection = "up" or "down" or "left" or "right"
+
+
+
+One of the following:
+
+"up"
+
+
+
+"down"
+
+
+
+"left"
+
+
+
+"right"
+
+
+
+
+
+BrowserScrollInput object{ scroll_direction, target, scroll_amount, tab_id }
+
+
+
+Scroll at a viewport position. `target` must be a coordinate target.
+
+
+
+scroll_direction: [BrowserScrollDirection](https://platform.claude.com/docs/en/api/http/messages#browser_scroll_direction)
+
+
+
+One of the following:
+
+"up"
+
+
+
+"down"
+
+
+
+"left"
+
+
+
+"right"
+
+
+
+
+
+target: [BrowserCoordinateTarget](https://platform.claude.com/docs/en/api/http/messages#browser_coordinate_target) { type: "coordinate", x, y }
+
+
+
+A point in the browser viewport, in viewport pixels (the same frame as a full-viewport screenshot).
+
+type: "coordinate"
+
+
+
+
+
+x: number
+
+
+
+Pixels from the left edge of the viewport.
+
+minimum0
+
+
+
+y: number
+
+
+
+Pixels from the top edge of the viewport.
+
+minimum0
+
+
+
+scroll_amount: optional number or null
+
+
+
+Scroll-wheel notches (1–10). Default 3.
+
+minimum1
+
+maximum10
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
 BrowserScrollToConfig object{ defer_loading, enabled }
 
 
@@ -1064,6 +2016,50 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserScrollToInput object{ target, tab_id }
+
+
+
+Scroll an element into view.
+
+
+
+target: [BrowserRefTarget](https://platform.claude.com/docs/en/api/http/messages#browser_ref_target) { type: "ref", ref }
+
+
+
+An element on the page, identified by a reference from a prior `read_page` or `find` result. References are scoped to the tab that produced them and become stale after navigation or a major re-render.
+
+type: "ref"
+
+
+
+ref: string
+
+
+
+An element reference (e.g. "ref_7") returned by a prior `read_page` or `find` result.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserScrollToToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
+BrowserScrollToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -1335,6 +2331,34 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserSwitchTabInput object{ tab_id }
+
+
+
+Make the tab with the given tab_id the active tab — the tab that actions without a tab_id apply to.
+
+tab_id: string
+
+
+
+The tab to switch to.
+
+
+
+BrowserSwitchTabToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
+BrowserToolUseBlock = [BrowserNavigateToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#browser_navigate_tool_use_block) or [BrowserListTabsToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#browser_list_tabs_tool_use_block) or [BrowserNewTabToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#browser_new_tab_tool_use_block) or 28 more
+
+
+
+One of the following:
+
+
+
 BrowserToolset20260801 object{ type: "browser_toolset_20260801", cache_control, configs }
 
 
@@ -1371,6 +2395,20 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserTripleClickInput object{ target, modifiers, tab_id }
+
+
+
+Triple left-click at a viewport coordinate or on an element by reference (typically selects a line or paragraph).
+
+
+
+BrowserTripleClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserTypeConfig object{ defer_loading, enabled }
 
 
@@ -1388,6 +2426,32 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserTypeInput object{ text, tab_id }
+
+
+
+Type a literal string at the current focus.
+
+text: string
+
+
+
+The text to type.
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserTypeToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -1411,6 +2475,38 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+BrowserWaitInput object{ duration, tab_id }
+
+
+
+Pause for the given duration.
+
+
+
+duration: number
+
+
+
+Seconds to wait (maximum 30).
+
+minimum0
+
+maximum30
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserWaitToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 BrowserZoomConfig object{ defer_loading, enabled }
 
 
@@ -1428,6 +2524,38 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+BrowserZoomInput object{ region, tab_id }
+
+
+
+Return a cropped screenshot of the given viewport region, scaled up for closer inspection — useful for small icons, buttons, or text. Coordinates are in the same viewport-pixel space as a full screenshot.
+
+
+
+region: array of number
+
+
+
+\[x0, y0, x1, y1\] in viewport pixels.
+
+minItems4
+
+maxItems4
+
+tab_id: optional string or null
+
+
+
+Tab to act on. Defaults to the active tab when omitted.
+
+
+
+BrowserZoomToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -2497,6 +3625,18 @@ enabled: optional boolean or null
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
 
+ComputerCursorPositionInput object{  }
+
+
+
+Get the current (x, y) pixel coordinate of the cursor.
+
+
+
+ComputerCursorPositionToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
 
 
 ComputerDoubleClickConfig object{ defer_loading, enabled }
@@ -2516,6 +3656,38 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+ComputerDoubleClickInput object{ coordinate, text }
+
+
+
+Double-click the left mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+ComputerDoubleClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -2539,6 +3711,36 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+ComputerHoldKeyInput object{ duration, text }
+
+
+
+Hold down a key or key-combination for a specified duration. Uses the same key syntax as `key`.
+
+
+
+duration: number
+
+
+
+Duration to hold the key, in seconds.
+
+maximum300
+
+text: string
+
+
+
+The key or key-combination to hold.
+
+
+
+ComputerHoldKeyToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 ComputerKeyConfig object{ defer_loading, enabled }
 
 
@@ -2556,6 +3758,38 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+ComputerKeyInput object{ text, repeat }
+
+
+
+Press a key or key-combination on the keyboard. Use "+" to combine modifiers with a key (e.g. "ctrl+s", "alt+Tab", "ctrl+shift+Escape"). Key names are case-insensitive; common names like "Return", "Tab", "Escape", "Up", "Down", "Left", "Right", "Home", "End", "Page_Up", "Page_Down", "Delete", "BackSpace" are supported.
+
+text: string
+
+
+
+The key or key-combination to press.
+
+
+
+repeat: optional number or null
+
+
+
+Number of times to repeat the key press. Default is 1.
+
+minimum1
+
+maximum100
+
+
+
+ComputerKeyToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -2599,6 +3833,82 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+ComputerLeftClickDragInput object{ coordinate, start_coordinate, text }
+
+
+
+Click and drag the cursor from `start_coordinate` to `coordinate`.
+
+
+
+coordinate: array of number
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+
+
+start_coordinate: array of number
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+ComputerLeftClickDragToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
+ComputerLeftClickInput object{ coordinate, text }
+
+
+
+Click the left mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+ComputerLeftClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 ComputerLeftMouseDownConfig object{ defer_loading, enabled }
 
 
@@ -2616,6 +3926,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+ComputerLeftMouseDownInput object{  }
+
+
+
+Press and hold the left mouse button at the current cursor position.
+
+
+
+ComputerLeftMouseDownToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -2636,6 +3958,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+ComputerLeftMouseUpInput object{  }
+
+
+
+Release the left mouse button.
+
+
+
+ComputerLeftMouseUpToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -2659,6 +3993,38 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+ComputerMiddleClickInput object{ coordinate, text }
+
+
+
+Click the middle mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+ComputerMiddleClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 ComputerMouseMoveConfig object{ defer_loading, enabled }
 
 
@@ -2676,6 +4042,32 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+ComputerMouseMoveInput object{ coordinate }
+
+
+
+Move the cursor to a specified (x, y) pixel coordinate. Use this ONLY to hover without clicking; otherwise use a click action directly.
+
+
+
+coordinate: array of number
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+
+
+ComputerMouseMoveToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -2699,6 +4091,38 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+ComputerRightClickInput object{ coordinate, text }
+
+
+
+Click the right mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+ComputerRightClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 ComputerScreenshotConfig object{ defer_loading, enabled }
 
 
@@ -2716,6 +4140,18 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+ComputerScreenshotInput object{  }
+
+
+
+Take a screenshot of the screen.
+
+
+
+ComputerScreenshotToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -2736,6 +4172,100 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+ComputerScrollDirection = "up" or "down" or "left" or "right"
+
+
+
+One of the following:
+
+"up"
+
+
+
+"down"
+
+
+
+"left"
+
+
+
+"right"
+
+
+
+
+
+ComputerScrollInput object{ scroll_amount, scroll_direction, coordinate, text }
+
+
+
+Scroll the screen at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted. Do NOT use PageUp/PageDown to scroll.
+
+scroll_amount: number
+
+
+
+Number of 'clicks' of the scroll wheel.
+
+
+
+scroll_direction: [ComputerScrollDirection](https://platform.claude.com/docs/en/api/http/messages#computer_scroll_direction)
+
+
+
+One of the following:
+
+"up"
+
+
+
+"down"
+
+
+
+"left"
+
+
+
+"right"
+
+
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+ComputerScrollToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
+ComputerToolUseBlock = [ComputerKeyToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#computer_key_tool_use_block) or [ComputerHoldKeyToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#computer_hold_key_tool_use_block) or [ComputerTypeToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#computer_type_tool_use_block) or 14 more
+
+
+
+One of the following:
 
 
 
@@ -2775,6 +4305,38 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+ComputerTripleClickInput object{ coordinate, text }
+
+
+
+Triple-click the left mouse button at the specified (x, y) pixel coordinate, or the current cursor position if `coordinate` is omitted.
+
+
+
+coordinate: optional array of number or null
+
+
+
+(x, y): x pixels from the left edge, y pixels from the top edge.
+
+minItems2
+
+maxItems2
+
+text: optional string or null
+
+
+
+Optional key combination to hold down during this action (e.g. "ctrl", "shift", "ctrl+shift").
+
+
+
+ComputerTripleClickToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 ComputerTypeConfig object{ defer_loading, enabled }
 
 
@@ -2792,6 +4354,26 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+ComputerTypeInput object{ text }
+
+
+
+Type a string of text on the keyboard.
+
+text: string
+
+
+
+The text to type.
+
+
+
+ComputerTypeToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -2815,6 +4397,30 @@ Whether this member is offered to the model. Default is per member, per the tool
 
 
 
+ComputerWaitInput object{ duration }
+
+
+
+Wait for a specified duration.
+
+
+
+duration: number
+
+
+
+Duration to wait, in seconds.
+
+maximum300
+
+
+
+ComputerWaitToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
+
+
+
 ComputerZoomConfig object{ defer_loading, enabled }
 
 
@@ -2832,6 +4438,32 @@ enabled: optional boolean or null
 
 
 Whether this member is offered to the model. Default is per member, per the toolset's documentation. A member whose enabled resolves false is withheld from the served schema.
+
+
+
+ComputerZoomInput object{ region }
+
+
+
+Take a screenshot of a rectangular region. Region coordinates are in the full-screenshot space (not physical display pixels). The crop is scaled up to fill the image budget so fine details become legible.
+
+
+
+region: array of number
+
+
+
+(x0, y0, x1, y1): The region to capture.
+
+minItems4
+
+maxItems4
+
+
+
+ComputerZoomToolUseBlock object{ type: "tool_use", id, caller, 3 more }
+
+
 
 
 
@@ -3556,7 +5188,7 @@ maxLength512
 
 
 
-Model = "claude-sonnet-5-5" or "claude-fable-5-1" or "claude-opus-5-5" or 16 more or string
+Model = "claude-haiku-5-5" or "claude-sonnet-5-5" or "claude-fable-5-1" or 17 more or string
 
 
 
@@ -4508,7 +6140,7 @@ display: optional "summarized" or "omitted" or null
 
 
 
-Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. The default depends on the model; see [Controlling thinking display](../Guides/build-with-claude-thinking.md#controlling-thinking-display).
 
 One of the following:
 
@@ -4570,7 +6202,7 @@ display: optional "summarized" or "omitted" or null
 
 
 
-Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. Defaults to `summarized`.
+Controls how thinking content appears in the response. When set to `summarized`, thinking is returned normally. When set to `omitted`, thinking content is redacted but a signature is returned for multi-turn continuity. The default depends on the model; see [Controlling thinking display](../Guides/build-with-claude-thinking.md#controlling-thinking-display).
 
 One of the following:
 
@@ -4588,11 +6220,11 @@ ThinkingConfigParam = [ThinkingConfigEnabled](https://platform.claude.com/docs/e
 
 
 
-Configuration for enabling Claude's extended thinking.
+Configuration for Claude's thinking.
 
-When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.
+With `{"type": "adaptive"}`, Claude decides when and how much to think. With `{"type": "enabled"}` (manual extended thinking), you set a `budget_tokens` of at least 1,024. Thinking tokens count toward your `max_tokens` limit.
 
-See [extended thinking](../Guides/build-with-claude-extended-thinking.md) for details.
+Which `type` values are accepted, and what happens when you omit `thinking`, depend on the model. See [thinking](../Guides/build-with-claude-thinking.md#configuring-thinking) for each model's behavior.
 
 One of the following:
 
@@ -5029,6 +6661,74 @@ ToolUseBlockParam object{ type: "tool_use", id, input, 4 more }
 
 
 
+ToolUseCaller = [DirectCaller](https://platform.claude.com/docs/en/api/http/messages#direct_caller) or [ServerToolCaller](https://platform.claude.com/docs/en/api/http/messages#server_tool_caller) or [ServerToolCaller20260120](https://platform.claude.com/docs/en/api/http/messages#server_tool_caller_20260120)
+
+
+
+Which party invoked the tool call: the model directly, or a server tool on its behalf.
+
+One of the following:
+
+
+
+DirectCaller object{ type: "direct" }
+
+
+
+Tool invocation directly from the model.
+
+type: "direct"
+
+
+
+
+
+ServerToolCaller object{ type: "code_execution_20250825", tool_id }
+
+
+
+Tool invocation generated by a server-side tool.
+
+type: "code_execution_20250825"
+
+
+
+
+
+tool_id: string
+
+
+
+pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
+
+
+
+ServerToolCaller20260120 object{ type: "code_execution_20260120", tool_id }
+
+
+
+type: "code_execution_20260120"
+
+
+
+
+
+tool_id: string
+
+
+
+pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
+
+
+
+ToolsetToolUseBlock = [BrowserToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#browser_tool_use_block) or [ComputerToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#computer_tool_use_block) or [ToolUseBlock](https://platform.claude.com/docs/en/api/http/messages#tool_use_block)
+
+
+
+One of the following:
+
+
+
 URLImageSource object{ type: "url", url }
 
 
@@ -5057,7 +6757,7 @@ url: string
 
 
 
-Usage object{ cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 6 more }
+Usage object{ cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 7 more }
 
 
 

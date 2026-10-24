@@ -2,7 +2,7 @@
 title: "Content moderation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation"
 category: "04-API-Reference/About"
-fetched_at: "2026-10-04T08:31:24Z"
+fetched_at: "2026-10-20T06:38:46Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcontent-moderation)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcontent-moderation)
 
 
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -50,7 +50,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Use cases
 
@@ -128,6 +128,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -175,7 +177,7 @@ The unsafe categories can be customized to fit your specific needs. For example,
 
 ### Select the right Claude model
 
-When selecting a model, it’s important to consider the size of your data. If costs are a concern, a smaller model such as Claude Haiku 4.5 is an excellent choice because of its cost-effectiveness. The following is an estimate of the cost to moderate text for a social media platform that receives one billion posts per month:
+When selecting a model, it’s important to consider the size of your data. If costs are a concern, a smaller model such as Claude Haiku 5.5 is an excellent choice because of its cost-effectiveness. The following is an estimate of the cost to moderate text for a social media platform that receives one billion posts per month:
 
 - **Content size**
 
@@ -190,11 +192,11 @@ When selecting a model, it’s important to consider the size of your data. If c
   - Output tokens per flagged message: 50
   - Total output tokens: 1.5B
 
-- **Claude Haiku 4.5 estimated cost**
+- **Claude Haiku 5.5 estimated cost**
 
-  - Input token cost: 28,600 MTok \* \$1.00/MTok = \$28,600 USD
-  - Output token cost: 1,500 MTok \* \$5.00/MTok = \$7,500 USD
-  - Monthly cost: \$28,600 + \$7,500 = \$36,100 USD
+  - Input token cost: 28,600 MTok \* \$0.10/MTok = \$2,860 USD
+  - Output token cost: 1,500 MTok \* \$0.50/MTok = \$750 USD
+  - Monthly cost: \$2,860 + \$750 = \$3,610 USD
 
 - **Claude Opus 5 estimated cost**
 
@@ -229,6 +231,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -316,6 +320,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -426,6 +432,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -534,6 +542,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

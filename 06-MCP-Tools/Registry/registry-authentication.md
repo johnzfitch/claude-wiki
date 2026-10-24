@@ -2,7 +2,7 @@
 title: "How to Authenticate When Publishing to the Official MCP Registry - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/authentication"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-09T06:27:30Z"
+fetched_at: "2026-10-21T06:28:38Z"
 tags: ["mcp", "mcp-registry"]
 ---
 

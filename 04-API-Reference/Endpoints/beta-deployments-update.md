@@ -2,7 +2,7 @@
 title: "Update Deployment - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/deployments/update"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:50Z"
+fetched_at: "2026-10-20T06:38:21Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdeployments%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdeployments%2Fupdate)
 
 
 
@@ -144,7 +144,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -154,9 +154,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -227,13 +229,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -241,9 +245,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -252,10 +256,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Deployments](https://platform.claude.com/docs/en/api/http/beta/deployments)
 
 # Update Deployment
+
+Copy page
+
+
+
+cURL
 
 POST/v1/deployments/{deployment_id}
 
@@ -273,11 +283,21 @@ Unique identifier of the deployment to update.
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -485,6 +505,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -559,7 +583,7 @@ type: "limit"
 
 
 
-max_list_cost: [BetaMonetaryAmount](http-beta.md#beta_monetary_amount) { amount, currency }
+max_list_cost: [BetaMonetaryAmount](platform-claude-com-http-beta.md#beta_monetary_amount) { amount, currency }
 
 
 
@@ -571,7 +595,7 @@ amount: string
 
 Amount in minor units of the currency, as an integer decimal string with no leading zeros: "2500" is \$25.00 and "50" is fifty cents. A string rather than a number so no float rounding is ever applied.
 
-currency: [BetaCurrency](http-beta.md#beta_currency)
+currency: [BetaCurrency](platform-claude-com-http-beta.md#beta_currency)
 
 
 

@@ -2,7 +2,7 @@
 title: "Anthropic’s Responsible Scaling Policy \\ Anthropic"
 source_url: "https://www.anthropic.com/safety"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:25:47Z"
+fetched_at: "2026-10-23T06:29:27Z"
 tags: ["safety"]
 ---
 
@@ -18,17 +18,13 @@ As frontier AI models advance, we believe they will bring about transformative b
 
 In September 2023, we released the first version of our Responsible Scaling Policy (RSP). We believe that risk governance in this rapidly evolving domain should be proportional, iterative, and exportable. In that spirit, we have continued to refine the RSP over time and will use this page to inform the public of any developments.
 
-## Current and Prior Versions
-
+### Current and Prior Versions
 
 ### Read the current version of the RSP
 
-See the pdf
-
+[See the pdf](https://cdn.sanity.io/files/4zrzovbb/website/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf)
 
 ### RSP Noncompliance Reporting and Anti-Retaliation Policy
-
-See the PDF
 
 - [Version 3.4](../19-Reference/www-cdn-anthropic-com-for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md) and [redline](../19-Reference/for-more-information-seew-ww-anthropic-com-responsible-scaling-policy-f8f0b47b.md) (effective July 8, 2026)
 - [Version 3.3](../19-Reference/for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md) and [redline](../19-Reference/effectivemay-26-2026april-29-2026.md) (effective May 26, 2026)
@@ -40,29 +36,29 @@ See the PDF
 - [Version 2.0](https://www-cdn.anthropic.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf) (effective October 15, 2024)
 - [Version 1.0](https://www-cdn.anthropic.com/1adf000c8f675958c2ee23805d91aaade1cd4613/responsible-scaling-policy.pdf) (effective September 19, 2023)
 
-## Risk Reports
+### Risk Reports
 
 - [Redacted Risk Report August 2026](https://anthropic.com/aug-2026-risk-report)
 - [Redacted Risk Report February 2026](https://anthropic.com/feb-2026-risk-report)
 
-## August 14, 2026
+### August 14, 2026
 
 We shared our [August 2026 Risk Report](https://www.anthropic.com/aug-2026-risk-report). Our Risk Reports aim to provide a direct, candid, and informative description of how we see the risks of our  
 systems and our state of preparedness for them (particularly the catastrophic risks addressed in our Responsible Scaling Policy). It covers the risks of Anthropic's models and actions between our previous February 2026 risk report and the report's coverage date of July 15, as well as our mitigations for those risks and our forward-looking plans in each category.
 
-## July 8, 2026
+### July 8, 2026
 
 This version 3.4 update does the following: 1) revises our threshold for automated R&D to better track the threat model of concern; 2) revises our requirement to share fully unredacted Risk Reports internally (we no longer require sharing with all regular-clearance Anthropic staff, and instead require sharing with at least 200 Anthropic employees); 3) allows Risk Reports to analyze risks as of a given coverage date, rather than necessarily as of the date of publication (to avoid requiring rushed analysis of particularly recent changes); 4) requires public Risk Reports to contain indications of where material was redacted; 5) clarifies that external review of our Risk Reports can involve multiple external reviewers reviewing different unredacted sections of the Risk Report, so long as all parts of the unredacted report are evaluated by at least one external reviewer.
 
-## May 26, 2026
+### May 26, 2026
 
 This version 3.3 update does the following: 1) revises our threshold for novel chemical/biological weapons production to better track the threat model of concern; 2) refines our approach to off-cycle updates regarding the risks of individual models; and 3) makes minor terminology changes.
 
-## April 29, 2026
+### April 29, 2026
 
 Version 3.2 of our RSP authorizes the LTBT to request external review of Risk Reports, gives the LTBT the power to approve our selection of external reviewers, and formalizes a requirement that we provide the LTBT with regular briefings.
 
-## April 2, 2026
+### April 2, 2026
 
 We are updating our [Frontier Safety Roadmap](http://anthropic.com/responsible-scaling-policy/roadmap), because we have achieved two of the goals we had set for our AI safety work. We have now launched the planned moonshot R&D projects, and we have replaced the goal of launching them with more detailed goals for ongoing projects. We have also completed the goal of creating a “comprehensive internal report to identify how our Safeguards could be improved by updating our data retention policies”.
 
@@ -75,17 +71,17 @@ There are also a number of smaller edits for style and clarity elsewhere in the 
 
 As we noted in the [post announcing RSP v3](../19-Reference/responsible-scaling-policy-v3.md), the policy is a living document. As we learn more about its operation in the real world, we expect to make further changes, all of which will be logged both on this page and in a changelog in the policy document itself.
 
-## March 24, 2026
+### March 24, 2026
 
 We posted an update to our RSP Noncompliance Reporting and Anti-Retaliation Policy, which we released internally in February 2026. It expands reporting channels, introduces a pathway for employees to make informal inquiries about potential RSP violations, and aligns with RSP Version 3.0. The policy document can be found at the link above.
 
-## February 24, 2026
+### February 24, 2026
 
 Version 3.0 is a comprehensive rewrite of the RSP. The reasoning behind the rewrite can be found [here](../19-Reference/responsible-scaling-policy-v3.md).  
   
 This new version of the RSP involves the publication of [Frontier Safety Roadmaps](https://anthropic.com/responsible-scaling-policy/roadmap) with detailed safety goals, and [Risk Reports](https://anthropic.com/feb-2026-risk-report) that quantify risk across all our deployed models.
 
-## February 10, 2026
+### February 10, 2026
 
 Our RSP requires that once models cross the AI R&D-4 capability threshold, we develop an affirmative case identifying the most immediate and relevant misalignment risks from models pursuing misaligned goals and explaining how we have mitigated them. Our determination is that Claude Opus 4.6 does not cross this threshold.  
   
@@ -93,21 +89,21 @@ However, as we noted in the [Claude Opus 4.5 System Card](../15-Claude-AI-Featur
 
 [Read the Sabotage Risk Report](https://anthropic.com/claude-opus-4-6-risk-report)
 
-## May 14, 2025
+### May 14, 2025
 
 Version 2.2 implements a minor revision, amending a footnote to exclude both sophisticated insiders and state-compromised insiders from the scope of the ASL-3 Security Standard. Previously, only “highly sophisticated state-compromised insiders” were explicitly excluded. For more details, please see the changelog appended to the policy.
 
-## March 31, 2025
+### March 31, 2025
 
 Version 2.1 reflected minor updates clarifying which Capability Thresholds would require enhanced safeguards beyond our current ASL-3 standards. First, we have added a new capability threshold related to CBRN development, which defines capabilities that could substantially uplift the development capabilities of moderately resourced state programs. Second, we have disaggregated our existing AI R&D capability thresholds, separating them into two distinct levels (the ability to fully automate entry-level AI research work, and the ability to cause dramatic acceleration in the rate of effective scaling) and have provided additional detail on the corresponding Required Safeguards. Finally, we have adopted a general commitment to reevaluate our Capability Thresholds whenever we upgrade to a new set of Required Safeguards.
 
-## October 15, 2024
+### October 15, 2024
 
-### Planned ASL-3 Safeguards
+#### Planned ASL-3 Safeguards
 
 In our Responsible Scaling Policy, reaching certain Capability Thresholds requires us to upgrade our safeguards to the ASL-3 Security Standard or the ASL-3 Deployment Standard. Our RSP contains requirements for meeting these standards, and also says we will publicly release key information related to the evaluation and deployment of our models (not including sensitive details). Below, we give non-binding descriptions of our future ASL-3 safeguard plans. We hope sharing these plans will offer useful insights for organizations working on similar systems, and contribute to conversations about emerging best practices.
 
-### Deployment Safeguards
+#### Deployment Safeguards
 
 Our teams are currently developing and building ASL-3 Deployment Safeguards to mitigate catastrophic risks associated with more advanced models. These safeguards are being designed to prevent misuse of capabilities that could enable severe harm, particularly in relation to chemical, biological, radiological, and nuclear (CBRN) technologies. This overview outlines the planned technical architecture and design of these safeguards, with a focus on the technical aspects and safety considerations of this developing system.
 
@@ -150,7 +146,7 @@ By implementing multiple defense layers, from real-time classifiers to asynchron
 
 The success of this system will depend on the integration and improvement of individual components. As implementation of these safeguards progresses, new challenges and opportunities for innovation in AI safety are likely to emerge. Ongoing research into areas such as balancing security and model utility, improving scalability and performance, enhancing adversarial robustness, and maintaining cross-platform consistency will be crucial in addressing these challenges.
 
-### Security Safeguards
+#### Security Safeguards
 
 The following sections outline the key security controls we plan to implement as part of our ASL-3 safeguards. Many of these security measures are already in place and are dedicated to enhancing our existing ASL-2 controls. In presenting this information, we have carefully balanced the need for transparency with the imperative to protect sensitive security details. As such, this overview provides a high-level description of our planned controls, offering insight into our security approach without compromising our defenses against potential threats.
 
@@ -172,11 +168,11 @@ The following sections outline the key security controls we plan to implement as
 16. Deception technology: Install and monitor honeypots (including fake model weights) for high precision detection of unauthorized system access. Implement deception technology in a realistic way to trick attackers and gain insights into their tactics.
 17. Physical security: Conduct regular Technical Surveillance Countermeasures (TSCM) at physical spaces using advanced detection equipment and techniques. Tailor TSCM sweeps to specific events, threats or incidents that may trigger an inspection. Regularly sweep physical premises for intruders and conduct physical security red-teaming
 
-### Planned Capability Assessments
+#### Planned Capability Assessments
 
 We plan to publish additional details on our capability assessment methodology in the near future. For information about our past capability assessments, please see our overviews for [Claude 3.0 Opus](https://www-cdn.anthropic.com/f2986af8d052f26236f6251da62d16172cfabd6e/claude-3-model-card.pdf) and [Claude 3.5 Sonnet](https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf).
 
-### Learning from Experience
+#### Learning from Experience
 
 We have learned a lot in our first year with the previous RSP in effect, and are using this update as an opportunity to reflect on what has worked well and what makes sense to update in the policy. As part of this, we reviewed how well we adhered to the framework and identified a small number of instances where we fell short of meeting the full letter of its requirements. These areas were:
 
@@ -188,111 +184,3 @@ We have learned a lot in our first year with the previous RSP in effect, and are
 In all cases, we found these instances posed minimal risk to the safety of our models. From our review, we learned two valuable lessons to incorporate into our updated framework: we needed to incorporate more flexibility into our policies, and we needed to improve our process for tracking compliance with the RSP.
 
 Since we first released the RSP a year ago, our goal has been to offer an example of a framework that others might draw inspiration from when crafting their own AI risk governance policies. We hope that proactively sharing our experiences implementing our own policy will help other companies in implementing their own risk management frameworks and contribute to the establishment of best practices across the AI ecosystem.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Developer blog](https://claude.dev)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](../19-Reference/company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](../19-Reference/company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](../19-Reference/anthropic-com-research.md)
-- [News](../19-Reference/news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

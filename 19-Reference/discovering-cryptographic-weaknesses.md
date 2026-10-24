@@ -2,13 +2,47 @@
 title: "Discovering cryptographic weaknesses with Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/discovering-cryptographic-weaknesses"
 category: "19-Reference"
-fetched_at: "2026-08-02T07:10:56Z"
+fetched_at: "2026-10-21T06:30:43Z"
 tags: ["news-research"]
 ---
 
 # Discovering cryptographic weaknesses with Claude
 
-Jul 28, 2026
+- [01Summary](#summary)
+- [02Introduction](#introduction)
+- [03An improved key recovery attack on HAWK](#an-improved-key-recovery-attack-on-hawk)
+- [04An improved attack on reduced-round AES](#an-improved-attack-on-reduced-round-aes)
+- [05Further work](#further-work)
+- [06Conclusions](#conclusions)
+
+- Published
+
+  Jul 28, 2026
+
+- Team
+
+  [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Discovery](https://www.anthropic.com/search?topic=discovery)
+  - [Agents](https://www.anthropic.com/search?topic=agents)
+  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+  - [National security](https://www.anthropic.com/search?topic=national-security)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  May 22, 2026
+
+  [Measuring LLMs’ ability to develop exploits](exploit-evals.md)
+
+[View more](https://www.anthropic.com/search?topic=cybersecurity)
 
 ## Summary
 
@@ -18,7 +52,7 @@ Jul 28, 2026
 
 When we launched Claude Mythos Preview, we showed it was able to autonomously find and exploit vulnerabilities in almost every piece of software we pointed it at. This included several major cryptographic libraries—shared collections of code that are used to encrypt data.
 
-The vulnerabilities that Claude found in these cryptographic libraries¹ were due to incorrect *implementation* of the algorithms—that is, errors in how programmers used the algorithms in their code that created opportunities for attackers to break the encryption.
+The vulnerabilities that Claude found in these cryptographic libraries^([1](#footnote-1)) were due to incorrect *implementation* of the algorithms—that is, errors in how programmers used the algorithms in their code that created opportunities for attackers to break the encryption.
 
 Now, we have found that Claude is able to find mathematical flaws *in the algorithms themselves*.
 
@@ -28,11 +62,11 @@ The first result we describe in this post, which was discovered with Claude Myth
 
 The second result concerns the [Advanced Encryption Standard](https://www.nist.gov/publications/advanced-encryption-standard-aes) (AES), a symmetric cipher that was adopted by NIST in 2001 and has received more scrutiny than almost any other encryption algorithm. In order to better understand the robustness of AES, weaker variations of the algorithm are regularly studied in cryptography research; Mythos found a way to break one such weaker version, and eliminated one of the guesses an attacker needs to make, improving the speed of the previous best attacks by 200-800×.
 
-To be clear, neither of these results has a practical impact on today’s computer systems; no production software will have to change as a result. HAWK is only a *candidate* signature scheme and so is not deployed;² our second attack is on a reduced version of AES and does not break the full cipher.³
+To be clear, neither of these results has a practical impact on today’s computer systems; no production software will have to change as a result. HAWK is only a *candidate* signature scheme and so is not deployed;^([2](#footnote-2)) our second attack is on a reduced version of AES and does not break the full cipher.^([3](#footnote-3))
 
 Nevertheless, both results show the potential for frontier AI models to help discover flaws in important cryptographic algorithms, both before and after real-world deployment. This is cryptography research working as intended: stress-testing algorithms to build trust and ultimately make systems more secure.
 
-Mythos Preview achieved these results mostly autonomously and mostly without human intervention. Over the course of a week, one Anthropic researcher worked together with Claude to develop the HAWK attack, and another researcher built a scaffold⁴ that allowed Claude to fully autonomously discover the AES attack.⁵ Each of the results cost roughly \$100,000 in API cost to develop. After seeing these results, we broadened our search and began to discover other attacks. We discuss some of these follow-ups below.
+Mythos Preview achieved these results mostly autonomously and mostly without human intervention. Over the course of a week, one Anthropic researcher worked together with Claude to develop the HAWK attack, and another researcher built a scaffold^([4](#footnote-4)) that allowed Claude to fully autonomously discover the AES attack.^([5](#footnote-5)) Each of the results cost roughly \$100,000 in API cost to develop. After seeing these results, we broadened our search and began to discover other attacks. We discuss some of these follow-ups below.
 
 In order to make it easier for others to continue studying the cryptanalytic ability of LLMs, we partnered with academics at ETH Zurich, Tel Aviv University, and TU Berlin to build [CryptanalysisBench](https://arxiv.org/abs/2607.18538), a benchmark that packages together many cryptographic ciphers and makes it easy for others to evaluate the capabilities of LLMs on this important topic.
 
@@ -104,7 +138,7 @@ Three days later, Mythos discovered the Möbius Bridge idea that results in an i
 
 Researchers at Anthropic then spent several hundred hours learning enough cryptography research to validate the model’s claim, and to prepare [the research paper](https://anthropic.com/document/aes_mobius_bridge.pdf) itself, which we are releasing along with this blog post.
 
-Along with the research paper, we are also releasing [a document containing Claude’s chain of thought](https://anthropic.com/document/aes_mobius_bridge_cot.pdf) during the discovery of the key algorithmic insight.⁶ In this session, Claude begins by reviewing what previous agents had discovered, reading the various critiques, and then turns to proposing various new transforms; after proposing and rejecting several ideas, it comes up with the key idea of the Möbius transform. Claude then validates this idea both mathematically and computationally, and then writes a report that future agents then used to develop the remaining ideas that formed its paper.
+Along with the research paper, we are also releasing [a document containing Claude’s chain of thought](https://anthropic.com/document/aes_mobius_bridge_cot.pdf) during the discovery of the key algorithmic insight.^([6](#footnote-6)) In this session, Claude begins by reviewing what previous agents had discovered, reading the various critiques, and then turns to proposing various new transforms; after proposing and rejecting several ideas, it comes up with the key idea of the Möbius transform. Claude then validates this idea both mathematically and computationally, and then writes a report that future agents then used to develop the remaining ideas that formed its paper.
 
 ## Further work
 
@@ -140,133 +174,16 @@ Read the paper [introducing CryptanalysisBench](https://arxiv.org/abs/2607.18538
 
 *Edit 29 July: Updated an academic affiliation.*
 
-#### Footnotes
+## Footnotes
 
-1.  See, for example, cryptographic vulnerabilities we have found on [OpenSSL](https://nvd.nist.gov/vuln/detail/CVE-2026-45445) and [wolfSSL](https://nvd.nist.gov/vuln/detail/CVE-2026-5194).
-2.  We believe the attack discovered by Mythos Preview does not impact the other NIST post-quantum cryptographic schemes or other schemes that use related methods.
-3.  Even then, the attack would cost hundreds of millions of dollars to implement and does not impact other similar cipher schemes.
-4.  A scaffold is a set of prompts and code that help the model achieve its goal. We build on top of Claude Code, construct an environment where it can safely run various experiments, and log its results.
-5.  Out of curiosity, after confirming the HAWK result was correct, we then tested if the same scaffold that successfully attacked AES could also re-discover the HAWK break. It could.
-6.  Importantly, this is just one of many (autonomous) sessions where Claude worked on discovering new ideas. Many sessions resulted in no new discoveries; other follow-up sessions improved on the insight developed in this one. This document was produced by having Claude rewrite the chain of thought to include more detail to make it easier to read.
+01See, for example, cryptographic vulnerabilities we have found on [OpenSSL](https://nvd.nist.gov/vuln/detail/CVE-2026-45445) and [wolfSSL](https://nvd.nist.gov/vuln/detail/CVE-2026-5194).[](#footnote-ref-1)
 
+02We believe the attack discovered by Mythos Preview does not impact the other NIST post-quantum cryptographic schemes or other schemes that use related methods.[](#footnote-ref-2)
 
-## Related content
+03Even then, the attack would cost hundreds of millions of dollars to implement and does not impact other similar cipher schemes.[](#footnote-ref-3)
 
-### Project Pilot: Can AI control a drone?
+04A scaffold is a set of prompts and code that help the model achieve its goal. We build on top of Claude Code, construct an environment where it can safely run various experiments, and log its results.[](#footnote-ref-4)
 
-Working with Andon Labs, we’ve developed a new series of evaluations that assess AI models’ ability to use a flying drone, culminating in a new benchmark: Drone-Bench.
+05Out of curiosity, after confirming the HAWK result was correct, we then tested if the same scaffold that successfully attacked AES could also re-discover the HAWK break. It could.[](#footnote-ref-5)
 
-[Read more](project-pilot.md)
-
-### How Canada uses Claude: Findings from the Anthropic Economic Index
-
-[Read more](how-canada-uses-claude.md)
-
-### Claude’s values across models and languages
-
-[Read more](claude-values-models-languages.md)
-
-## Subscribe to the Frontier Red Team newsletter
-
-Get updates on our latest red-teaming research and findings.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude for Chrome](https://claude.com/chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://www.anthropic.com/learn)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+06Importantly, this is just one of many (autonomous) sessions where Claude worked on discovering new ideas. Many sessions resulted in no new discoveries; other follow-up sessions improved on the insight developed in this one. This document was produced by having Claude rewrite the chain of thought to include more detail to make it easier to read.[](#footnote-ref-6)

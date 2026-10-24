@@ -2,7 +2,7 @@
 title: "Age assurance on Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15171100-age-assurance-on-claude"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:28:18Z"
+fetched_at: "2026-10-23T06:29:29Z"
 tags: ["safety"]
 ---
 

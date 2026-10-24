@@ -2,7 +2,7 @@
 title: "Compaction and preserved thinking - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-thinking-blocks"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-08T06:24:46Z"
+fetched_at: "2026-10-22T06:29:42Z"
 tags: ["api", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "prompting"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fcompaction-thinking-blocks)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fcompaction-thinking-blocks)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -80,9 +80,17 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Compaction
+
+Compaction and preserved thinking
+
+[Beta](build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+compact-2026-09-04
 
 # Compaction and preserved thinking
 
@@ -95,14 +103,6 @@ When thinking blocks in turns kept after on-demand compaction stay valid on mode
 Copy page
 
 
-
-Compaction and preserved thinking
-
-[Beta](build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-compact-2026-09-04
 
 Skip this page unless you send thinking blocks back to a model with [preserved thinking](build-with-claude-preserved-thinking.md) and keep turns after the compaction block. Kept turns are the turns that follow the block: recent turns you left out of the compaction request, as in [Compaction that keeps recent turns](build-with-claude-compaction-keep-recent-turns.md), or turns that arrived while the summary was being written, as in [Compaction in the background](build-with-claude-compaction-background.md).
 
@@ -128,13 +128,13 @@ Compactions from before a thinking block was produced don't count against it. Th
 
 ## Change the system prompt or tools
 
-A later request can use a different `system`, different `tools`, or a different model than the compaction request, and the API still accepts the block. Such a change can invalidate the thinking in the kept turns, but it has no other effect.
+A later request can use a different `system`, different `tools`, or a different model from the compaction request, and the API still accepts the block. Such a change can invalidate the thinking in the kept turns, but it has no other effect.
 
 To change `system` or `tools` without invalidating any kept thinking, compact the whole conversation first, so no turns are kept. Then change them on the next request.
 
 To add an instruction or change the available tools without touching `system` or `tools`, append the change to `messages`, as described in [Make changes without editing the prefix](build-with-claude-preserved-thinking.md#replace-prefix-edits).
 
-Mid-conversation system messages inside the summarized turns are summarized too, so their text instructions stop applying after the swap. To keep one in force, state it again in a `role: "system"` message directly after the first new `user` turn that follows the kept turns. Tool changes inside those turns carry over on their own when the compaction request also carries `inline-tools-2026-09-15`: the returned block records their net effect in its `tool_changes` field, so send the block back unmodified. If the block has no `tool_changes` field, restate those tool changes the same way. A system message placed between the block and the kept turns breaks their thinking.
+Mid-conversation system messages inside the summarized turns are summarized too, so their text instructions stop applying after the swap. A [per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta) level they set isn't carried over either: until a later message sets a level, turns run at the request's top-level `output_config.effort`, or the model's default if you don't set one. To keep an instruction or effort level in force, state it again in a `role: "system"` message directly after the first new `user` turn that follows the kept turns. Tool changes inside those turns carry over on their own when the compaction request also carries `inline-tools-2026-09-15`: the returned block records their net effect in its `tool_changes` field, so send the block back unmodified. If the block has no `tool_changes` field, restate those tool changes the same way. A system message placed between the block and the kept turns breaks their thinking.
 
 ## Check that the kept thinking held
 
@@ -145,7 +145,7 @@ The compaction response doesn't say whether the kept thinking holds. The first r
 3.  Send the next request, with the block first, then the kept turn, then a new `user` message, and with `thinking.block_binding.prefix_mismatch_behavior` set to `"error"`.
 4.  Read the result. A 200 response whose `input_transformations` array is empty means no thinking block failed the check or was dropped. A 400 error that says the block is bound to a different conversation means one did. The message starts with the path of the first block that failed, and [What the API does with an invalid block](build-with-claude-preserved-thinking.md#mismatch-behavior) shows it in full.
 
-The `prefix_mismatch_behavior` field needs the `thinking-binding-controls-2026-08-01` beta header in addition to [the `compact-2026-09-04` beta header](build-with-claude-compaction-on-demand.md#request-a-summary). Setting the field also opts the request into the check on accounts where the check isn't on by default.
+The `prefix_mismatch_behavior` field needs the `thinking-binding-controls-2026-08-01` beta header in addition to the [`compact-2026-09-04` beta header](build-with-claude-compaction-on-demand.md#request-a-summary). Setting the field also opts the request into the check on accounts where the check isn't on by default.
 
 The following program runs the four steps. It prints how many thinking blocks the kept turn holds and how many entries `input_transformations` has; no entries means the kept thinking held:
 
@@ -162,6 +162,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -252,7 +254,7 @@ Thinking blocks in the kept turn: 1
 Dropped thinking blocks: 0
 ```
 
-In production, `"drop_block"` keeps requests succeeding when a condition doesn't hold, and reports each dropped block in `input_transformations` with `reason: "prefix_binding_mismatch"`. An entry whose `path` falls in a kept turn means that turn's thinking didn't hold. [What the API does with an invalid block](build-with-claude-preserved-thinking.md#mismatch-behavior) describes what is dropped and says how to alert on it.
+In production, `"drop_block"` keeps requests succeeding when a condition doesn't hold, and reports each dropped block in `input_transformations` with `reason: "prefix_binding_mismatch"`. An entry whose `path` falls in a kept turn means that turn's thinking didn't hold. [What the API does with an invalid block](build-with-claude-preserved-thinking.md#mismatch-behavior) describes what is dropped and says how to alert on it. On Claude Sonnet 5.5 and Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. A request that sets it with `thinking: {"type": "between_tools"}` on Claude Sonnet 5.5, or with `thinking: {"type": "disabled"}` on Claude Haiku 5.5, returns a 400 error. On those requests, make sure every condition holds, or remove the `thinking` and `redacted_thinking` blocks from the kept turns.
 
 ## Compatibility
 

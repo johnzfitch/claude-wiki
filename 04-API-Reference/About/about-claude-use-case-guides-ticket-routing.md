@@ -2,7 +2,7 @@
 title: "Ticket routing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing"
 category: "04-API-Reference/About"
-fetched_at: "2026-10-04T08:31:24Z"
+fetched_at: "2026-10-20T06:38:47Z"
 tags: ["api", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "prompting"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fticket-routing)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fticket-routing)
 
 
 
@@ -36,7 +36,7 @@ Use cases
 
 Prompt engineering
 
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)
+[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
 
 Test and evaluate
 
@@ -50,7 +50,7 @@ Reference
 
 [Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Best practices](about-claude-use-case-guides-overview.md)Use cases
 
@@ -68,7 +68,7 @@ This guide walks through how to harness Claude's advanced natural language under
 
 ## Prerequisites
 
-- A Claude API key and the Python SDK installed
+- A Claude API key and the Claude SDK installed
 - Access to, and familiarity with, your existing support ticketing system
 - A sample set of historical support tickets for testing
 
@@ -289,7 +289,7 @@ This metric calculates the average cost to resolve each support ticket. Efficien
 
 The choice of model depends on the trade-offs between cost, accuracy, and response time.
 
-Many customers have found `claude-haiku-4-5-20251001` an ideal model for ticket routing, as it is the fastest and most cost-effective model in the Claude 4 family while still delivering excellent results. If your classification problem requires deep subject matter expertise or a large volume of intent categories, or complex reasoning, you may opt for the [larger Sonnet model](../../20-Models/about-claude-models-overview.md).
+Claude Haiku 5.5 (`claude-haiku-5-5`) suits ticket routing: it's the fastest and most cost-effective current model, and at `low` effort it handles simple, high-volume requests such as classification. If your classification problem requires deep subject matter expertise or a large volume of intent categories, or complex reasoning, you may opt for the [larger Sonnet model](../../20-Models/about-claude-models-overview.md).
 
 ### Build a strong prompt
 
@@ -302,6 +302,28 @@ Write a ticket classification prompt. The initial prompt should contain the cont
 Try the [metaprompt recipe from the Claude Cookbook](https://colab.research.google.com/github/anthropics/claude-cookbooks/blob/main/misc/metaprompt.ipynb) to have Claude write a first draft for you.
 
 Here's an example ticket routing classification prompt:
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
+
 
 ```python
 def classify_support_request(ticket_contents):
@@ -344,7 +366,7 @@ def classify_support_request(ticket_contents):
         </example 2>
         <example 3>
 
-        ...
+        […]
 
         </example 8>
         <example 9>
@@ -360,15 +382,13 @@ def classify_support_request(ticket_contents):
         """
 ```
 
-
-
 
 
-This prompt is written for Claude Haiku 4.5, which runs here without thinking. On Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
+This prompt is written for Claude Haiku 5.5, which runs here at `low` effort. On Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 Here are the key components of this prompt:
 
-- The prompt template is a Python f-string, allowing the `ticket_contents` to be inserted into the `<request>` tags.
+- The prompt template inserts `ticket_contents` into the `<request>` tags.
 - The prompt gives Claude a clearly defined role as a classification system that carefully analyzes the ticket content to determine the customer's core intent and needs.
 - The prompt instructs Claude on proper output formatting, in this case to provide its reasoning and analysis inside `<reasoning>` tags, followed by the appropriate classification label inside `<intent>` tags.
 - The prompt specifies the valid intent categories: "Support, Feedback, Complaint", "Order Tracking", and "Refund/Exchange".
@@ -380,7 +400,25 @@ Having Claude split its response into separate XML tag sections lets you use reg
 
 It’s hard to know how well your prompt works without deploying it in a test production setting and [running evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md).
 
-Build the deployment structure. Start by defining the method signature for wrapping the call to Claude. Extend the method you began writing earlier, which takes `ticket_contents` as input, so that it now returns a tuple of `reasoning` and `intent` as output. If you have an existing automation using traditional ML, you'll want to follow that method signature instead.
+Build the deployment structure. Start by defining the method signature for wrapping the call to Claude. Extend the method you began writing earlier, which takes `ticket_contents` as input, so that it now returns the reasoning and the intent as output. If you have an existing automation using traditional ML, you'll want to follow that method signature instead.
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
 
 Python
 
@@ -393,23 +431,26 @@ import re
 client = anthropic.Anthropic()
 
 # Set the default model
-DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+DEFAULT_MODEL = "claude-haiku-5-5"
 
 
 def classify_support_request(ticket_contents):
     # Define the prompt for the classification task
     classification_prompt = f"""You will be acting as a customer support ticket classification system.
-        ...
+        […]
         ... The reasoning should be enclosed in <reasoning> tags and the intent in <intent> tags. Return only the reasoning and the intent.
         """
     # Send the prompt to the API to classify the support request.
     message = client.messages.create(
         model=DEFAULT_MODEL,
-        max_tokens=500,
+        max_tokens=2048,
+        output_config={"effort": "low"},
         messages=[{"role": "user", "content": classification_prompt}],
         stream=False,
     )
-    reasoning_and_intent = message.content[0].text
+    reasoning_and_intent = next(
+        (block.text for block in message.content if block.type == "text"), ""
+    )
 
     # Use Python's regular expressions library to extract `reasoning`.
     reasoning_match = re.search(
@@ -429,9 +470,9 @@ This code:
 - Creates a client instance using your API key.
 - Defines a `classify_support_request` function that takes a `ticket_contents` string.
 - Sends the `ticket_contents` to Claude for classification using the `classification_prompt`.
-- Returns the model's `reasoning` and `intent` extracted from the response.
+- Returns the model's reasoning and intent extracted from the response.
 
-Because the entire reasoning and intent text must be generated before parsing, the example sets `stream=False` (the default).
+Because the entire reasoning and intent text must be generated before parsing, the example does not stream the response.
 
 ------------------------------------------------------------------------
 
@@ -452,6 +493,24 @@ You may need to assess Claude on other axes depending on what factors that are i
 
 To assess this, first modify the script to add a function that compares the predicted intent with the actual intent and calculates the percentage of correct predictions. Then add cost calculation and time measurement functionality.
 
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
 Python
 
 
@@ -463,23 +522,26 @@ import re
 client = anthropic.Anthropic()
 
 # Set the default model
-DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+DEFAULT_MODEL = "claude-haiku-5-5"
 
 
 def classify_support_request(request, actual_intent):
     # Define the prompt for the classification task
     classification_prompt = f"""You will be acting as a customer support ticket classification system.
-        ...
+        […]
         ...The reasoning should be enclosed in <reasoning> tags and the intent in <intent> tags. Return only the reasoning and the intent.
         """
 
     message = client.messages.create(
         model=DEFAULT_MODEL,
-        max_tokens=500,
+        max_tokens=2048,
+        output_config={"effort": "low"},
         messages=[{"role": "user", "content": classification_prompt}],
     )
     usage = message.usage  # Get the usage statistics for the API call for how many input and output tokens were used.
-    reasoning_and_intent = message.content[0].text
+    reasoning_and_intent = next(
+        (block.text for block in message.content if block.type == "text"), ""
+    )
 
     # Use Python's regular expressions library to extract `reasoning`.
     reasoning_match = re.search(

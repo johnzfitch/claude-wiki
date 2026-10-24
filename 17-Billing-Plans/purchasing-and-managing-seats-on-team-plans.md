@@ -2,13 +2,11 @@
 title: "Purchase and manage seats on Team plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats-on-team-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:28:02Z"
+fetched_at: "2026-10-23T06:28:53Z"
 tags: ["billing"]
 ---
 
 # Purchase and manage seats on Team plans
-
-September 2, 2026
 
 
 Seat management allows Team plan owners to control their organization's seat allocation, assign users to different seat types, and manage billing. For pricing and billing details, see **[How is my Team plan bill calculated?](how-is-my-team-plan-bill-calculated.md)**
@@ -28,6 +26,24 @@ Team plans offer two seat types:
 Organizations can mix and match seat types based on team needs. Assign Premium seats to power users who need more capacity, while keeping other team members on Standard seats.
 
 Your plan has a total seat allocation (e.g., 30 Standard seats and 10 Premium seats). Within that allocation, you can assign and reassign users to different seat types as needed.
+
+**Note:** Only Admins and above can see each user’s seat type, shown in the **Tier** column in **[Organization settings \> Members](https://claude.ai/admin-settings/member)**. Other users can’t see their own seat type anywhere in Claude. If you need to confirm whether your seat is Standard or Premium, ask an Owner or Admin in your organization.
+
+------------------------------------------------------------------------
+
+## Who can use a seat
+
+Each seat on a Team plan is assigned to one named individual, and only that person may use it. This means:
+
+- Only the assigned user may sign in to the account. Users can't share login credentials or let others use their account.
+
+- Users can't route their work through another user's account to use that user's remaining usage.
+
+- Unused usage on one seat can't be transferred to another user.
+
+If a user regularly needs more capacity, an owner can move them to a Premium seat or turn on usage credits. Learn more about **[managing usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970)**.
+
+Reassigning a seat is meant for normal team changes, such as a user joining, leaving, or changing roles. It isn't designed for rotating one seat among several active users.
 
 ------------------------------------------------------------------------
 

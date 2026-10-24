@@ -2,7 +2,7 @@
 title: "Create a Message Batch - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:46Z"
+fetched_at: "2026-10-20T06:39:54Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages%2Fbatches%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages%2Fbatches%2Fcreate)
 
 
 
@@ -138,7 +138,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -148,9 +148,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -221,13 +223,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -235,9 +239,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -255,6 +259,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create a Message Batch
 
+Copy page
+
+
+
+cURL
+
 POST/v1/messages/batches
 
 Send a batch of Message creation requests.
@@ -264,6 +274,16 @@ The Message Batches API can be used to process multiple Messages API requests at
 Learn more about the Message Batches API in our [user guide](../Guides/build-with-claude-batch-processing.md)
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 "anthropic-user-profile-id": optional string
 
@@ -313,7 +333,7 @@ pattern^\[a-zA-Z0-9\_-\]{1,64}\$
 
 
 
-params: object{ max_tokens, messages, model, 16 more }
+params: object{ max_tokens, messages, model, 17 more }
 
 
 
@@ -349,7 +369,7 @@ Our models are trained to operate on alternating `user` and `assistant` conversa
 
 Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.
 
-If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.
+If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response. This is called prefill. On models that don't support prefill, creating a message that ends with a partial `assistant` response returns a 400 error. See [Prefill not supported](errors.md#prefill-not-supported).
 
 Example with a single `user` message:
 
@@ -371,7 +391,7 @@ Example with multiple conversational turns:
 
 
 
-Example with a partially-filled response from Claude:
+Example with a partially-filled response from Claude, for models that support prefill:
 
 ```python
 [
@@ -684,6 +704,12 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 One of the following:
 
+"claude-haiku-5-5"
+
+
+
+Fastest model for high-volume, real-time tasks
+
 "claude-sonnet-5-5"
 
 
@@ -760,13 +786,9 @@ Best combination of speed and intelligence
 
 
 
-Fastest model with near-frontier intelligence
-
 "claude-haiku-4-5-20251001"
 
 
-
-Fastest model with near-frontier intelligence
 
 "claude-opus-4-5"
 
@@ -1050,6 +1072,26 @@ One of the following:
 
 
 "standard_only"
+
+
+
+
+
+speed: optional "standard" or "fast" or null
+
+
+
+The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
+
+Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](../Guides/build-with-claude-fast-mode.md) for which models.
+
+One of the following:
+
+"standard"
+
+
+
+"fast"
 
 
 
@@ -1402,11 +1444,11 @@ thinking: optional [ThinkingConfigParam](https://platform.claude.com/docs/en/api
 
 
 
-Configuration for enabling Claude's extended thinking.
+Configuration for Claude's thinking.
 
-When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.
+With `{"type": "adaptive"}`, Claude decides when and how much to think. With `{"type": "enabled"}` (manual extended thinking), you set a `budget_tokens` of at least 1,024. Thinking tokens count toward your `max_tokens` limit.
 
-See [extended thinking](../Guides/build-with-claude-extended-thinking.md) for details.
+Which `type` values are accepted, and what happens when you omit `thinking`, depend on the model. See [thinking](../Guides/build-with-claude-thinking.md#configuring-thinking) for each model's behavior.
 
 One of the following:
 
@@ -1715,7 +1757,7 @@ curl https://api.anthropic.com/v1/messages/batches \
                     "role": "user"
                   }
                 ],
-                "model": "claude-opus-5"
+                "model": "claude-opus-5-5"
               }
             }
           ]

@@ -2,7 +2,7 @@
 title: "Admin API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/admin-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:03Z"
+fetched_at: "2026-10-20T06:40:15Z"
 tags: ["api", "authentication", "claude-code"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication", "claude-code"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fadmin-api)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fadmin-api)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 AdminOrganization
 
@@ -74,35 +76,33 @@ Manage organization members, workspaces, invites, and API keys programmatically 
 
 
 
-
+The [Admin API](../Endpoints/organization.md) lets you manage your organization's members, workspaces, invites, and API keys programmatically instead of by hand in the [Claude Console](playground.md).
 
-**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
+## Availability
 
-The [Admin API](../Admin/http-beta-organization.md) lets you manage your organization's members, workspaces, invites, and API keys programmatically instead of by hand in the [Claude Console](usage-limits.md).
+The Admin API is unavailable for individual accounts. To collaborate with teammates and add members, set up your organization on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.
 
-
+Claude Enterprise (claude.ai) organizations call the Admin API with a scoped API key created in claude.ai. From this page, only the members and invites endpoints apply to them. They also get Enterprise-only endpoints: group and custom-role reads, and [spend limits](manage-claude-spend-limits-api.md). The [Plugins API](manage-claude-plugins-api.md), also Enterprise-only, is in beta. See [User management](manage-claude-user-management.md).
 
-**The Admin API requires special access**
+On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), only these Admin API endpoints are available:
 
-The Admin API accepts three credentials:
+- The workspace endpoints: create, get, list, update, and archive on `/v1/organizations/workspaces`.
+- The external key endpoints, for [CMEK](manage-claude-cmek-claude-platform-on-aws.md): register, get, list, update, and delete on `/v1/organizations/external_keys`. There is no validate endpoint, because keys are validated when attached to a workspace.
+- The [telemetry destination endpoints](../Endpoints/claude-platform-on-aws-iam-actions.md#telemetry-destinations).
+
+Organization members, workspace members, invites, API keys, and the usage, cost, and rate limit reports aren't available on Claude Platform on AWS.
+
+## Authentication
+
+The Admin API accepts any of these three credentials:
 
 - An **Admin API key** (starting with `sk-ant-admin...`) sent in the `x-api-key` header. Only organization members with the admin role can provision one. See [Create an Admin API key](manage-claude-admin-api-keys.md).
 - An **OAuth bearer token** with the `org:admin` scope sent in the `authorization: Bearer` header. Only members with the admin, owner, or primary owner role can obtain one. See [Obtain an OAuth bearer token](#oauth-bearer-token).
 - A **personal key** or **service account key** that isn't scoped to a specific workspace, sent in the `x-api-key` header. The key has the same permissions as the linked account. See [Key types](manage-claude-authentication.md#key-types).
 
-
+An Admin API key covers most endpoints. The service-account, federation-issuer, and federation-rule endpoints accept only an `org:admin` OAuth token. Send a personal key or service account key in the `x-api-key` header, as you would an Admin API key. The following examples call the [organization info endpoint](#accessing-organization-info) with an OAuth token and with an Admin API key.
 
-**Claude Enterprise:** Claude Enterprise (claude.ai) organizations call the Admin API with a scoped API key created in claude.ai. From this page, only the members and invites endpoints apply to them. They also get Enterprise-only endpoints: group and custom-role reads, and [spend limits](manage-claude-spend-limits-api.md). See [User management](manage-claude-user-management.md).
-
-
-
-**Claude Platform on AWS:** Only the workspace endpoints (create, get, list, update, and archive on `/v1/organizations/workspaces`) and the external key endpoints (register, get, list, update, and delete on `/v1/organizations/external_keys`, for [CMEK](manage-claude-cmek-aws-kms.md#claude-platform-on-aws); there is no validate endpoint, because keys are validated when attached to a workspace) are available on Claude Platform on AWS. Organization members, workspace members, invites, API keys, and the usage, cost, and rate limit reports aren't. See [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md).
-
-## Authentication
-
-Authenticate with any of the three credentials. An Admin API key covers most endpoints. The service-account, federation-issuer, and federation-rule endpoints accept only an `org:admin` OAuth token. Send a personal key or service account key in the `x-api-key` header, as you would an Admin API key. The following examples call the [organization info endpoint](#accessing-organization-info) with an OAuth token and with an Admin API key.
-
-The Python, TypeScript, C#, Go, Java, PHP, and Ruby SDKs expose the Admin API under `client.beta.organization`, and the `ant` CLI under `ant beta:organization`. The examples on this page use the default client, which reads an Admin API key from `ANTHROPIC_API_KEY` or an OAuth bearer token from `ANTHROPIC_AUTH_TOKEN`. SDK list methods in Python, TypeScript, C#, Go, and Java return an iterator that fetches more pages on demand, so `limit` sets the page size, not the total. The PHP, Ruby, and curl examples return one page. In the CLI, `--limit` caps the results on the member, invite, workspace, workspace-member, and API-key lists. For each endpoint's parameters and responses, see the [Admin API reference](../Admin/http-beta-organization.md).
+The Python, TypeScript, C#, Go, Java, PHP, and Ruby SDKs expose the endpoints on this page under `client.organization`, and the `ant` CLI under `ant organization`. The examples on this page use the default client, which reads an Admin API key from `ANTHROPIC_API_KEY` or an OAuth bearer token from `ANTHROPIC_AUTH_TOKEN`. SDK list methods in Python, TypeScript, C#, Go, and Java return an iterator that fetches more pages on demand, so `limit` sets the page size, not the total. The PHP, Ruby, and curl examples return one page. In the CLI, `--limit` caps the results on the member, invite, workspace, workspace-member, and API-key lists. For each endpoint's parameters and responses, see the [Admin API reference](../Endpoints/organization.md).
 
 ### OAuth bearer token
 
@@ -141,12 +141,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-organization = client.beta.organization.retrieve()
+organization = client.organization.retrieve()
 
 print(f"id: {organization.id}")
 print(f"name: {organization.name}")
@@ -178,12 +180,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-organization = client.beta.organization.retrieve()
+organization = client.organization.retrieve()
 
 print(f"id: {organization.id}")
 print(f"name: {organization.name}")
@@ -219,7 +223,7 @@ Organization owners and primary owners have all admin permissions and can also m
 
 ### Organization members
 
-List [organization members](../Admin/beta-organization-users-retrieve.md), update their roles, and remove them.
+List [organization members](../Endpoints/organization-users-retrieve.md), update their roles, and remove them.
 
 List the members of your organization:
 
@@ -241,12 +245,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-users = client.beta.organization.users.list(limit=10)
+users = client.organization.users.list(limit=10)
 
 # Automatically fetches more pages as needed.
 for user in users:
@@ -273,12 +279,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-user = client.beta.organization.users.update(
+user = client.organization.users.update(
     "user_01XyDMpzjS89pFZXqSFUBDr6", role="developer"
 )
 
@@ -306,19 +314,21 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-removed_user = client.beta.organization.users.remove("user_01XyDMpzjS89pFZXqSFUBDr6")
+removed_user = client.organization.users.remove("user_01XyDMpzjS89pFZXqSFUBDr6")
 
 print(f"id: {removed_user.id}")
 ```
 
 ### Organization invites
 
-Invite users to your organization and manage pending [invites](../Admin/beta-organization-invites-retrieve.md).
+Invite users to your organization and manage pending [invites](../Endpoints/organization-invites-retrieve.md).
 
 Invite a user to your organization:
 
@@ -340,14 +350,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-invite = client.beta.organization.invites.create(
-    email="user@example.com", role="developer"
-)
+invite = client.organization.invites.create(email="user@example.com", role="developer")
 
 print(f"id: {invite.id}")
 print(f"email: {invite.email}")
@@ -375,12 +385,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-invites = client.beta.organization.invites.list(limit=10)
+invites = client.organization.invites.list(limit=10)
 
 # Automatically fetches more pages as needed.
 for invite in invites:
@@ -407,14 +419,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-deleted_invite = client.beta.organization.invites.delete(
-    "invite_015gWxHNr6h6TdRPZTmuCGnn"
-)
+deleted_invite = client.organization.invites.delete("invite_015gWxHNr6h6TdRPZTmuCGnn")
 
 print(f"id: {deleted_invite.id}")
 ```
@@ -425,7 +437,7 @@ See [Workspaces](manage-claude-workspaces.md) for Console and API examples.
 
 ### Workspace members
 
-Manage [user access to specific workspaces](../Admin/beta-organization-workspaces-members-retrieve.md):
+Manage [user access to specific workspaces](../Endpoints/organization-workspaces-members-retrieve.md):
 
 Add a member to a workspace:
 
@@ -447,12 +459,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-member = client.beta.organization.workspaces.members.add(
+member = client.organization.workspaces.members.add(
     "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
     user_id="user_01XyDMpzjS89pFZXqSFUBDr6",
     workspace_role="workspace_developer",
@@ -482,12 +496,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-members = client.beta.organization.workspaces.members.list(
+members = client.organization.workspaces.members.list(
     "wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ", limit=10
 )
 
@@ -516,12 +532,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-member = client.beta.organization.workspaces.members.update(
+member = client.organization.workspaces.members.update(
     "user_01XyDMpzjS89pFZXqSFUBDr6",
     workspace_id="wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ",
     workspace_role="workspace_admin",
@@ -551,12 +569,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-removed_member = client.beta.organization.workspaces.members.remove(
+removed_member = client.organization.workspaces.members.remove(
     "user_01XyDMpzjS89pFZXqSFUBDr6", workspace_id="wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
 )
 
@@ -565,7 +585,7 @@ print(f"user_id: {removed_member.user_id}")
 
 ### API keys
 
-Monitor and manage [API keys](../Admin/beta-organization-api-keys-list.md). Each key in the response includes its `expires_at` timestamp (`null` for keys without an [expiration](manage-claude-authentication.md#key-expiration)) and `principal`, the identity it acts as (see [Key types](manage-claude-authentication.md#key-types)). For a personal key, `principal` is `{"type": "user_actor", "user_id": "user_..."}`; for a service account key, `{"type": "service_account_actor", "service_account_id": "svac_..."}`; and for a workspace key, `null`. Each key also has a `scope` object: `{"type": "workspace", "workspace_id": "wrkspc_..."}` for a key bound to one workspace, or `{"type": "organization"}` for a key that can work across any workspace the account has access to. The top-level `workspace_id` field is deprecated and is `null` both for keys bound to the Default Workspace and for keys without a workspace scope; use `scope` to tell them apart. Filtering the list by `workspace_id` with the Default Workspace's ID returns only keys bound to the Default Workspace; keys without a workspace scope aren't returned under any `workspace_id` filter.
+Monitor and manage [API keys](../Endpoints/organization-api-keys-list.md). Each key in the response includes its `expires_at` timestamp (`null` for keys without an [expiration](manage-claude-authentication.md#key-expiration)) and `principal`, the identity it acts as (see [Key types](manage-claude-authentication.md#key-types)). For a personal key, `principal` is `{"type": "user_actor", "user_id": "user_..."}`; for a service account key, `{"type": "service_account_actor", "service_account_id": "svac_..."}`; and for a workspace key, `null`. Each key also has a `scope` object: `{"type": "workspace", "workspace_id": "wrkspc_..."}` for a key bound to one workspace, or `{"type": "organization"}` for a key that can work across any workspace the account has access to. The top-level `workspace_id` field is deprecated and is `null` both for keys bound to the Default Workspace and for keys without a workspace scope; use `scope` to tell them apart. Filtering the list by `workspace_id` with the Default Workspace's ID returns only keys bound to the Default Workspace; keys without a workspace scope aren't returned under any `workspace_id` filter.
 
 List the active API keys in a workspace:
 
@@ -587,12 +607,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-api_keys = client.beta.organization.api_keys.list(
+api_keys = client.organization.api_keys.list(
     limit=10, status="active", workspace_id="wrkspc_01JwQvzr7rXLA5AGx3HKfFUJ"
 )
 
@@ -621,12 +643,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-api_key = client.beta.organization.api_keys.update(
+api_key = client.organization.api_keys.update(
     "apikey_01Rj2N8SVvo6BePZj99NhmiT", status="inactive", name="New Key Name"
 )
 
@@ -669,12 +693,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-organization = client.beta.organization.retrieve()
+organization = client.organization.retrieve()
 
 print(f"id: {organization.id}")
 print(f"name: {organization.name}")
@@ -690,7 +716,7 @@ print(f"name: {organization.name}")
 
 
 
-For parameter details and response schemas, see the [Organization Info API reference](../Admin/beta-organization-retrieve.md).
+For parameter details and response schemas, see the [Organization Info API reference](../Endpoints/organization-retrieve.md).
 
 ## Usage and cost reports
 

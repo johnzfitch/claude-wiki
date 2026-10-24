@@ -2,7 +2,7 @@
 title: "Using Claude Code Remote Control · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/using-claude-code-remote-control"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:24:20Z"
+fetched_at: "2026-10-23T06:28:36Z"
 tags: ["claude-code"]
 ---
 

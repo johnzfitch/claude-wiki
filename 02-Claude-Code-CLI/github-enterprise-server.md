@@ -2,7 +2,7 @@
 title: "Claude Code with GitHub Enterprise Server - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/github-enterprise-server"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:19Z"
+fetched_at: "2026-10-20T06:37:55Z"
 tags: ["claude-code", "enterprise", "git", "github"]
 ---
 
@@ -28,7 +28,7 @@ tags: ["claude-code", "enterprise", "git", "github"]
   - [Session start fails with Unable to get organization UUID](#session-start-fails-with-unable-to-get-organization-uuid)
 - [Related resources](#related-resources)
 
-Code review & CI/CD
+Code review and pull requests
 
 # Claude Code with GitHub Enterprise Server
 
@@ -45,23 +45,23 @@ What works with GitHub Enterprise Server
 
 The table below shows which Claude Code features support GHES and any differences from github.com behavior.
 
-| Feature              | GHES support     | Notes                                                                                                                          |
-|:---------------------|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------|
-| Cloud sessions       | ✅ Supported     | An Owner connects the GHES instance once; developers use `claude --cloud` or [claude.ai/code](https://claude.ai/code) as usual |
-| Code Review          | ✅ Supported     | Same automated PR reviews as github.com                                                                                        |
-| Claude Security      | ✅ Supported     | Available in public beta for Enterprise plans at [claude.ai/security](https://claude.ai/security)                              |
-| Teleport sessions    | ✅ Supported     | Move sessions between cloud and terminal with `--teleport`                                                                     |
-| Plugin marketplaces  | ✅ Supported     | Credential requirements differ by surface. See [Plugin marketplaces on GHES](#plugin-marketplaces-on-ghes)                     |
-| Contribution metrics | ✅ Supported     | Delivered via webhooks to the [analytics dashboard](../13-Enterprise-Admin/analytics.md)                                                        |
-| GitHub Actions       | ✅ Supported     | Requires manual workflow setup; `/install-github-app` is github.com only                                                       |
-| GitHub MCP server    | ❌ Not supported | The GitHub MCP server does not work with GHES instances                                                                        |
+| Feature              | GHES support     | Notes                                                                                                                                             |
+|:---------------------|:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
+| Cloud sessions       | ✅ Supported     | An Owner connects the GHES instance once; developers use `claude --cloud` or [claude.ai/code](https://claude.ai/code)                             |
+| Code Review          | ✅ Supported     | Same automated PR reviews as github.com                                                                                                           |
+| Claude Security      | ✅ Supported     | Available in public beta for Enterprise plans at [claude.ai/security](https://claude.ai/security)                                                 |
+| Teleport sessions    | ✅ Supported     | Move sessions between cloud and terminal with `--teleport`                                                                                        |
+| Plugin marketplaces  | ✅ Supported     | Credential requirements differ by surface. See [Plugin marketplaces on GHES](#plugin-marketplaces-on-ghes)                                        |
+| Contribution metrics | ❌ Not supported | Requires repositories hosted on github.com. The [analytics dashboard](../13-Enterprise-Admin/analytics.md) still shows usage metrics for work in GHES repositories |
+| GitHub Actions       | ✅ Supported     | Requires manual workflow setup; `/install-github-app` is github.com only                                                                          |
+| GitHub MCP server    | ❌ Not supported | The GitHub MCP server does not work with GHES instances                                                                                           |
 
 
 [​](#admin-setup)
 
 Admin setup
 
-An Owner connects your GHES instance to Claude Code once. After that, developers in your organization can use GHES repositories without any additional configuration. You need the Owner or Primary Owner role in your Claude organization and permission to create GitHub Apps on your GHES instance. The guided setup generates a GitHub App manifest and redirects you to your GHES instance to create the app in one click. If your environment blocks the redirect flow, an [alternative manual setup](#manual-setup) is available.
+An Owner connects your GHES instance to Claude Code once. You need the Owner or Primary Owner role in your Claude organization and permission to create GitHub Apps on your GHES instance. The guided setup generates a GitHub App manifest and redirects you to your GHES instance to create the app in one click. If your environment blocks the redirect flow, an [alternative manual setup](#manual-setup) is available.
 
 1
 
@@ -89,15 +89,15 @@ From the GitHub App page on your GHES instance, install the app on the repositor
 
 5
 
-Enable features
+Enable Code Review
 
-Go to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enable [Code Review](code-review.md#set-up-code-review) and [contribution metrics](../13-Enterprise-Admin/analytics.md#enable-contribution-metrics) for your GHES repositories using the same configuration as github.com.
+Go to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enable [Code Review](code-review-setup.md) for your GHES repositories using the same configuration as github.com.
 
 
 [​](#github-app-permissions)
 
 
-The manifest configures the GitHub App with the permissions and webhook events below, which together cover cloud sessions, Code Review, Claude Security, plugin marketplaces, and contribution metrics:
+The manifest configures the GitHub App with the permissions and webhook events below, which together cover cloud sessions, Code Review, Claude Security, and plugin marketplaces:
 
 | Permission           | Access         | Used for                                                                                                                                                                                                                      |
 |:---------------------|:---------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -132,7 +132,7 @@ For Anthropic-hosted sessions, your GHES instance must be reachable from Anthrop
 
 Developer workflow
 
-Once an Owner has connected the GHES instance, no developer-side configuration is needed. Claude Code detects your GHES hostname automatically from the git remote in your working directory. Clone a repository from your GHES instance as you normally would, replacing `github.example.com` and the repository path with your GHES hostname and repository:
+Claude Code detects your GHES hostname automatically from the git remote in your working directory. Clone a repository from your GHES instance as you normally would, replacing `github.example.com` and the repository path with your GHES hostname and repository:
 
 ```python
 git clone git@github.example.com:platform/api-service.git
@@ -145,7 +145,7 @@ Then start a cloud session. Claude detects the GHES host from your git remote an
 claude --cloud "Add retry logic to the payment webhook handler"
 ```
 
-The session clones your repository from GHES and pushes changes back to a branch. Monitor progress at [claude.ai/code](https://claude.ai/code). See [Use Claude Code in the cloud](claude-code-on-the-web.md) for the full cloud session workflow including diff review, auto-fix, and routines.
+The session clones your repository from GHES and pushes changes back to a branch. Monitor progress at [claude.ai/code](https://claude.ai/code). See [Use Claude Code in the cloud](claude-code-on-the-web.md) for the full cloud session workflow including diff review, auto-fix, and cloud scheduled tasks.
 
 
 [​](#teleport-sessions-to-your-terminal)
@@ -255,7 +255,7 @@ Troubleshooting
 
 Cloud session fails to clone repository
 
-If `claude --cloud` fails with a clone error, verify that an Owner has completed setup for your GHES instance and that the GitHub App is installed on the repository you’re working in. Ask the Owner who connected the instance to confirm that the hostname registered in Claude settings matches the hostname in your git remote.
+If `claude --cloud` fails with a clone error, verify that an Owner has completed setup for your GHES instance and that the GitHub App is installed on the repository you’re working in. Ask the Owner who connected the instance to confirm that the hostname registered in Claude settings matches the hostname in your git remote. If the session stops with “Authentication failed while accessing the repository”, you may not have connected your own GitHub Enterprise account. Connect it from the repository picker on [claude.ai/code](https://claude.ai/code), then start a new session.
 
 
 [​](#marketplace-add-fails-with-a-policy-error)
@@ -300,6 +300,6 @@ These pages cover the features referenced throughout this guide in more depth:
 - [Use Claude Code in the cloud](claude-code-on-the-web.md): run Claude Code sessions on cloud infrastructure
 - [Code Review](code-review.md): automated PR reviews
 - [Plugin marketplaces](../08-Plugins-Skills/plugins-host-marketplace.md): build and distribute plugin catalogs
-- [Analytics](../13-Enterprise-Admin/analytics.md): track usage and contribution metrics
+- [Analytics](../13-Enterprise-Admin/analytics.md): track Claude Code usage across your organization
 - [Managed settings](settings.md): organization-wide policy configuration
 - [Network configuration](../13-Enterprise-Admin/network-config.md): firewall and IP allowlist requirements

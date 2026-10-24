@@ -2,7 +2,7 @@
 title: "WIF reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/wif-reference"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:41Z"
+fetched_at: "2026-10-20T06:40:30Z"
 tags: ["api", "oauth"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "oauth"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-reference)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-reference)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Authentication
 
@@ -107,7 +109,7 @@ The SDK reads these variables to perform a federated token exchange with no cons
 | Variable                        | Required                         | Description                                                                                                                                                                                                                                                                                                                                                                                                      | Example                                |
 |:--------------------------------|:---------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------|
 | `ANTHROPIC_FEDERATION_RULE_ID`  | Yes                              | Tagged ID of the federation rule to evaluate.                                                                                                                                                                                                                                                                                                                                                                    | `fdrl_...`                             |
-| `ANTHROPIC_ORGANIZATION_ID`     | Yes                              | UUID of your Anthropic organization. Find it in the Claude Console under **Settings \> Organization**.                                                                                                                                                                                                                                                                                                           | `00000000-0000-0000-0000-000000000000` |
+| `ANTHROPIC_ORGANIZATION_ID`     | Yes                              | UUID of your Anthropic organization. Find it on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.                                                                                                                                                                                                                                             | `00000000-0000-0000-0000-000000000000` |
 | `ANTHROPIC_IDENTITY_TOKEN_FILE` | One of `_TOKEN_FILE` or `_TOKEN` | Filesystem path to the JWT issued by your identity provider (IdP). The SDK re-reads this file on every exchange so that projected tokens that rotate on disk are always current.                                                                                                                                                                                                                                 | `/var/run/secrets/anthropic.com/token` |
 | `ANTHROPIC_IDENTITY_TOKEN`      | One of `_TOKEN_FILE` or `_TOKEN` | The literal JWT as a string. Use when your platform injects the token as an environment variable rather than a file.                                                                                                                                                                                                                                                                                             | `eyJhbGciOiJSUzI1NiIs...`              |
 | `ANTHROPIC_SERVICE_ACCOUNT_ID`  | Yes                              | Tagged ID of the target Anthropic service account that the issued access token acts as.                                                                                                                                                                                                                                                                                                                          | `svac_...`                             |
@@ -217,7 +219,7 @@ A federation rule's `oauth_scope` is a ceiling: the minted token can never excee
 
 Anthropic enforces these constraints when you create or update issuers and rules, and when verifying an incoming JWT at exchange time.
 
-For complete parameter details and response schemas, see the [Service accounts API reference](../Admin/beta-organization-service-accounts.md), [Federation issuers API reference](../Admin/beta-organization-federation-issuers.md), and [Federation rules API reference](../Admin/beta-organization-federation-rules.md).
+For complete parameter details and response schemas, see the [Service accounts API reference](../Endpoints/organization-service-accounts.md), [Federation issuers API reference](../Endpoints/organization-federation-issuers.md), and [Federation rules API reference](../Endpoints/organization-federation-rules.md).
 
 ### Resource fields
 
@@ -246,15 +248,15 @@ URL constraints apply only to URLs that Anthropic dials. In `explicit_url` and `
 
 ### JWT verification
 
-| Constraint        | Detail                                                                                                                                                                                                                                                                                                                                                                            |
-|:------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Maximum size      | The `assertion` JWT must be at most 16 KiB.                                                                                                                                                                                                                                                                                                                                       |
-| Signing algorithm | Only asymmetric algorithms (RSA and ECDSA families: ES256, ES384, ES512, RS256, RS384, RS512, PS256, PS384, PS512) are accepted. HMAC (`HS256`, `HS384`, `HS512`) and `none` are rejected.                                                                                                                                                                                        |
-| Key ID            | The JWT header must carry a `kid` that matches a key in the issuer's JWKS. Tokens without `kid` are rejected.                                                                                                                                                                                                                                                                     |
-| Required claims   | `sub` must be present. `iat` must be present and not in the future. `exp` must be present and in the future.                                                                                                                                                                                                                                                                      |
-| Single use        | An assertion that carries a `jti` claim can be exchanged only once per issuer: repeating an exchange with the same `jti` is rejected as a replay. The issuer's `check_jti` field (enabled by default) controls this check; assertions without a `jti` claim are not subject to it. See the [Federation issuers API reference](../Admin/beta-organization-federation-issuers.md). |
-| Maximum lifetime  | The token's lifetime (`exp` minus `iat`) must not exceed the issuer's configured maximum (1 hour by default, configurable for each issuer in the Claude Console).                                                                                                                                                                                                                 |
-| Clock skew        | A 30-second leeway is applied to `exp`, `nbf`, and `iat`.                                                                                                                                                                                                                                                                                                                         |
+| Constraint        | Detail                                                                                                                                                                                                                                                                                                                                                                       |
+|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Maximum size      | The `assertion` JWT must be at most 16 KiB.                                                                                                                                                                                                                                                                                                                                  |
+| Signing algorithm | Only asymmetric algorithms (RSA and ECDSA families: ES256, ES384, ES512, RS256, RS384, RS512, PS256, PS384, PS512) are accepted. HMAC (`HS256`, `HS384`, `HS512`) and `none` are rejected.                                                                                                                                                                                   |
+| Key ID            | The JWT header must carry a `kid` that matches a key in the issuer's JWKS. Tokens without `kid` are rejected.                                                                                                                                                                                                                                                                |
+| Required claims   | `sub` must be present. `iat` must be present and not in the future. `exp` must be present and in the future.                                                                                                                                                                                                                                                                 |
+| Single use        | An assertion that carries a `jti` claim can be exchanged only once per issuer: repeating an exchange with the same `jti` is rejected as a replay. The issuer's `check_jti` field (enabled by default) controls this check; assertions without a `jti` claim are not subject to it. See the [Federation issuers API reference](../Endpoints/organization-federation-issuers.md). |
+| Maximum lifetime  | The token's lifetime (`exp` minus `iat`) must not exceed the issuer's configured maximum (1 hour by default, configurable for each issuer in the Claude Console).                                                                                                                                                                                                            |
+| Clock skew        | A 30-second leeway is applied to `exp`, `nbf`, and `iat`.                                                                                                                                                                                                                                                                                                                    |
 
 ## Rule matching semantics
 
@@ -291,7 +293,7 @@ CEL conditions are security boundaries. An expression that evaluates to `true` f
 
 ### Token exchange errors
 
-`POST /v1/oauth/token` returns errors in the standard [API error shape](../Endpoints/errors.md). The SDK wraps exchange failures in a typed `WorkloadIdentityError` that exposes the HTTP status, the response body, and the `request_id`.
+`POST /v1/oauth/token` returns errors in the standard [API error shape](../Endpoints/errors.md). The SDK reports an exchange failure as `WorkloadIdentityError`, which gives the HTTP status and the error details from the response body. The request ID is on the error in Python, TypeScript, and Ruby, and in the exception's response headers in Java. In Go it is only in the error's message, because the error's type is in an internal package; the C# and PHP errors do not carry it.
 
 | Status | Error                   | Cause                                                                                                                                                                   | Resolution                                                                                                                                                                                                                                                     |
 |:-------|:------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -304,7 +306,7 @@ CEL conditions are security boundaries. An expression that evaluates to `true` f
 | 401    | `authentication_error`  | The `federation_rule_id` does not exist, is archived, or the JWT is not authorized for it (consolidated to prevent enumeration).                                        | Confirm the rule ID in the Claude Console and that the rule has not been archived.                                                                                                                                                                             |
 | 401    | `authentication_error`  | The federation rule is enabled for more than one workspace and the request omits `workspace_id`. The authentication history entry shows reason `workspace_id_required`. | Set `ANTHROPIC_WORKSPACE_ID` (or the `workspace_id` body field on a raw request) to the `wrkspc_...` ID you want the token scoped to. See [Token exchange request](#token-exchange-request).                                                                   |
 
-Every assertion denial returns the same opaque `401` `authentication_error` with the fixed message `Authentication failed`, regardless of which check failed; a distinguishable error would let a caller probe rule configuration. The deny reason is recorded on the attempt's entry in the [authentication history](https://platform.claude.com/settings/workload-identity-federation?tab=history), for example `match_subject_prefix` when the `sub` claim fails the rule's `subject_prefix`, or `workspace_id_required` when the rule spans multiple workspaces and the request names none. Requests rejected before the rule's organization is corroborated (the `400 invalid_request_error` family above) leave no history entry; their response messages name the problem directly. A `401` with no matching history entry usually means the `federation_rule_id` itself was not recognized.
+Every assertion denial returns the same opaque `401` `authentication_error` with the fixed message `Authentication failed`, regardless of which check failed; a distinguishable error would let a caller probe rule configuration. The deny reason is recorded on the attempt's entry in the [authentication history](https://platform.claude.com/settings/workload-identity-federation?tab=history) in the Claude Console, for example `match_subject_prefix` when the `sub` claim fails the rule's `subject_prefix`, or `workspace_id_required` when the rule spans multiple workspaces and the request names none. Requests rejected before the rule's organization is corroborated (the `400 invalid_request_error` family above) leave no history entry; their response messages name the problem directly. A `401` with no matching history entry usually means the `federation_rule_id` itself was not recognized.
 
 ### Common SDK-side failures
 

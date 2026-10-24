@@ -2,7 +2,7 @@
 title: "Apple Foundation Models - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:33Z"
+fetched_at: "2026-10-20T06:40:20Z"
 tags: ["api", "authentication"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Flibraries%2Fapple-foundation-models)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Flibraries%2Fapple-foundation-models)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Libraries and integrations
 
@@ -78,7 +78,7 @@ Claude for Foundation Models is **not** a general-purpose Messages API client. I
 
 - iOS 27, macOS 27, visionOS 27, or watchOS 27 (all in beta): the OS releases whose Foundation Models framework supports server-side language models
 - Xcode 27 (beta)
-- A Claude API key from the [Claude Console](usage-limits.md) for development. See [Authentication](#authentication) for production options.
+- A Claude API key from the [Claude Console](playground.md) for development. See [Authentication](#authentication) for production options.
 
 ## Install the package
 
@@ -155,7 +155,7 @@ ClaudeLanguageModel(name: model, auth: auth)
 
 ### Effort
 
-Pin a Claude [effort level](../Guides/build-with-claude-effort.md) for every request with `fixedEffort:`. It takes precedence over the framework's per-request reasoning hints. The framework's named reasoning levels stop at high; to request more effort for a single request instead, pass a custom reasoning level naming the Claude effort (`.custom("xhigh")` or `.custom("max")`), which maps directly. The API defaults to `high` when no effort is sent:
+Pin a Claude [effort level](../Guides/build-with-claude-effort.md) for every request with `fixedEffort:`. It takes precedence over the framework's per-request reasoning hints. The framework's named reasoning levels stop at high; to request more effort for a single request instead, pass a custom reasoning level naming the Claude effort (`.custom("xhigh")` or `.custom("max")`), which maps directly. When no effort is sent, the API uses the model's default level, which differs by model (see [Effort levels](../Guides/build-with-claude-effort.md#effort-levels)):
 
 ```python
 ClaudeLanguageModel(name: .opus5_5, auth: auth, fixedEffort: .xhigh)
@@ -194,10 +194,10 @@ ClaudeLanguageModel(
 
 App Attest requires a physical device. The Simulator, and hardware without a Secure Enclave, cannot perform App Attest. Use `.apiKey` while iterating in the Simulator, and `.appAttest` when running on a device.
 
-To set up App Attest, you need your Apple Developer Team ID and the admin, owner, or primary owner role in your organization. Configure your Xcode project and register your app in the [Claude Console](usage-limits.md):
+To set up App Attest, you need your Apple Developer Team ID and the admin, owner, or primary owner role in your organization. Configure your Xcode project and register your app in the [Claude Console](playground.md):
 
 1.  In Xcode, add the **App Attest** capability to your app target under **Signing & Capabilities**.
-2.  In your workspace's settings in the Claude Console, open **App integrations**.
+2.  In the Claude Console, go to the [App integrations](https://platform.claude.com/settings/workspaces/default/app-integrations) page (`platform.claude.com/settings/workspaces/default/app-integrations`). Each app integration belongs to one workspace. Select the workspace you want in the workspace picker in the sidebar.
 3.  Click **Create app integration** and enter a name, your Apple Developer Team ID, and one or more bundle IDs (up to 32).
 4.  Copy the client ID (`clid_...`) from the integration's **Overview** tab and pass it to your app's Claude configuration.
 
@@ -205,7 +205,7 @@ The first time your app uses Claude on a device, the app requests a challenge fr
 
 Tokens are scoped to your workspace, expire after one hour, and authorize only [Messages API](../Endpoints/messages-create.md) calls. They carry no end-user identity: App Attest identifies your app, not the person using it, so handle any per-user logic in your app.
 
-To stop a compromised or retired app, revoke its integration: in your workspace's settings in the Claude Console, open **App integrations**, select the integration, and click **Revoke**, then confirm. Revoking an integration revokes its outstanding tokens, and its registered devices can no longer request new ones. Revocation is permanent, so create a new app integration to restore access.
+To stop a compromised or retired app, revoke its integration. In the Claude Console, go to the [App integrations](https://platform.claude.com/settings/workspaces/default/app-integrations) page (`platform.claude.com/settings/workspaces/default/app-integrations`). Each app integration belongs to one workspace. In the workspace picker in the sidebar, select the workspace that holds the integration. Select the integration and click **Revoke**, then confirm. Revoking an integration revokes its outstanding tokens, and its registered devices can no longer request new ones. Revocation is permanent, so create a new app integration to restore access.
 
 ### Proxy (production)
 
@@ -221,7 +221,7 @@ ClaudeLanguageModel(
 
 
 
-Your proxy receives standard [Messages API](../Endpoints/messages-create.md) requests, attaches the `x-api-key` header, and forwards them to `https://api.anthropic.com`.
+Your proxy receives standard [Messages API](../Endpoints/messages-create.md) requests, attaches your API key as `Authorization: Bearer <key>`, and forwards them to `https://api.anthropic.com`.
 
 ### API key (development)
 

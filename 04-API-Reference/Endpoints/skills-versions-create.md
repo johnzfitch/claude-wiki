@@ -2,7 +2,7 @@
 title: "Create Skill Version - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/skills/versions/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-05T06:38:31Z"
+fetched_at: "2026-10-21T06:29:38Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fskills%2Fversions%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fskills%2Fversions%2Fcreate)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,13 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
+
+Webhooks
 
 
 Skills
@@ -167,6 +171,29 @@ Versions
 Delete Skill Version
 
 
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Delete User Profile
+
+
+Create Enrollment URL
+
+Action URLs
+
+
 Tunnels
 
 
@@ -190,24 +217,6 @@ Tunnels
 Certificates
 
 
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
 Compliance API
 
 Activities
@@ -218,13 +227,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -232,9 +243,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -251,6 +262,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 3.  [Versions](https://platform.claude.com/docs/en/api/http/skills/versions)
 
 # Create Skill Version
+
+Copy page
+
+
+
+cURL
 
 POST/v1/skills/{skill_id}/versions
 
@@ -269,6 +286,16 @@ Unique identifier for the skill.
 The format and length of IDs may change over time.
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 
 

@@ -2,13 +2,48 @@
 title: "Challenges in red teaming AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/challenges-in-red-teaming-ai-systems"
 category: "19-Reference"
-fetched_at: "2026-08-27T09:25:45Z"
+fetched_at: "2026-10-21T06:30:19Z"
 tags: ["evaluation", "news-research"]
 ---
 
 # Challenges in red teaming AI systems
 
-Jun 12, 2024
+- [01What is red teaming?](#what-is-red-teaming)
+- [02Red teaming methods this post covers:](#red-teaming-methods-this-post-covers)
+- [03Domain-specific, expert teaming](#domain-specific-expert-teaming)
+- [04Using language models to red team](#using-language-models-to-red-team-2)
+- [05Red teaming in new modalities](#red-teaming-in-new-modalities-2)
+- [06Open-ended, general red teaming](#open-ended-general-red-teaming-2)
+- [07How do we go from qualitative red teaming to quantitative evaluations?](#how-do-we-go-from-qualitative-red-teaming-to-quantitative-evaluations)
+- [08Conclusion](#conclusion)
+
+- Published
+
+  Jun 12, 2024
+
+- Category
+
+  [Safeguards](safeguards.md)
+
+- Topics
+
+  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+  - [National security](https://www.anthropic.com/search?topic=national-security)
+  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+
+  See more...
+
+Related articles
+
+- Partnerships
+
+  Sep 18, 2026
+
+  [Partnering with Accenture on embedded evaluation](accenture-embedded-evaluation.md)
+
+[View more](https://www.anthropic.com/search?topic=red-teaming)
 
 In this post we detail insights from a sample of red teaming approaches that we’ve used to test our AI systems. Through this practice, we’ve begun to gather empirical data about the appropriate tool to reach for in a given situation, and the associated benefits and challenges with each approach. We hope this post is helpful for other companies trying to red team their AI systems, policymakers curious about how red teaming works in practice, and organizations that want to red team AI technology.
 
@@ -22,21 +57,21 @@ To address this, the AI field needs established practices and standards for syst
 
 ## Red teaming methods this post covers:
 
-### **Domain-specific, expert red teaming**
+### Domain-specific, expert red teaming
 
 - Trust & Safety: Policy Vulnerability Testing
 - National security: Frontier threats red teaming
 - Region-specific: Multilingual and multicultural red teaming
 
-### **Using language models to red team**
+### Using language models to red team
 
 - Automated red teaming
 
-### **Red teaming in new modalities**
+### Red teaming in new modalities
 
 - Multimodal red teaming
 
-### **Open-ended, general red teaming**
+### Open-ended, general red teaming
 
 - Crowdsourced red teaming for general harms
 - Community-based red teaming for general risks and system limitations
@@ -108,126 +143,3 @@ To support further adoption and standardization of red teaming, we encourage pol
 ## Conclusion
 
 Red teaming is a valuable technique for identifying and mitigating risks in AI systems. The various red teaming methods covered in this post highlight a handful of techniques available for different use cases and threat models. We look forward to collaborating with other actors to iterate on these techniques and work towards common standards for safety testing. By investing in red teaming, we can work towards building AI systems that are safe and beneficial to society. It is one of several tools in a larger effort to ensure AI is developed thoughtfully and with robust safeguards in place.
-
-  
-## Related content
-
-### Funding better evaluations of AI’s impact on wellbeing
-
-We’re launching a \$5 million grant program to fund independent research into how AI impacts users’ wellbeing.
-
-[Read more](wellbeing-research-grants.md)
-
-### How Claude’s text watermark works
-
-In this article, we share answers to some of the questions we’ve received about how our chosen watermarking method works, whether it affects Claude’s outputs, and why we’re making this change.
-
-[Read more](claude-text-watermark.md)
-
-### Improving Fable 5's biology safeguards
-
-We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces false positives. Fable 5 users will now experience many fewer “fallbacks”—where the system switches to a less capable model after they make a biology-related query.
-
-[Read more](improving-fable-5-s-biology-safeguards.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

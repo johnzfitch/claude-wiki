@@ -2,7 +2,7 @@
 title: "Newfront Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/newfront"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:54Z"
+fetched_at: "2026-10-23T06:29:44Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -42,21 +42,21 @@ With Claude, Newfront:
 
 Insurance professionals and their clients have long struggled with time-consuming manual processes. Brokers navigate complex documents and toggle between systems, manually copying data. HR teams spend hours answering the same benefits questions. Legal departments face endless cycles of contract reviews. Many insurance-tech companies try to solve these inefficiencies by fully automating insurance, believing that removing human brokers will reduce costs and speed up processes.
 
-"We see it differently —the insurance industry needs both human expertise and advanced technology," said Gordon Wintrob, Co-founder and CTO at Newfront. "Our platform uses AI to handle routine tasks so our brokers can focus on what matters: providing strategic guidance and solving complex problems for clients."
+“We see it differently —the insurance industry needs both human expertise and advanced technology,” said Gordon Wintrob, Co-founder and CTO at Newfront. “Our platform uses AI to handle routine tasks so our brokers can focus on what matters: providing strategic guidance and solving complex problems for clients.”
 
 ## Why Newfront chose Claude
 
-Newfront's journey to Claude began with a search for the ideal AI to help power their benefits chatbot. They had compiled a set of twenty critical customer questions that existing AI models struggled to answer—questions about specific benefit plans, insurance terminology, and complex coverage scenarios.
+Newfront’s journey to Claude began with a search for the ideal AI to help power their benefits chatbot. They had compiled a set of twenty critical customer questions that existing AI models struggled to answer—questions about specific benefit plans, insurance terminology, and complex coverage scenarios.
 
-"When we tested Claude, the results were remarkable," said Wintrob. "Without any changes to our system, Claude correctly handled twelve of our twenty toughest cases—questions that had stumped other AI models." While other models provided generic responses, Claude incorporated specific details from individual client plans and delivered nuanced, accurate answers. The model demonstrated a unique ability to understand complex insurance terminology while providing clear, accessible explanations for employees.
+“When we tested Claude, the results were remarkable,” said Wintrob. “Without any changes to our system, Claude correctly handled twelve of our twenty toughest cases—questions that had stumped other AI models.” While other models provided generic responses, Claude incorporated specific details from individual client plans and delivered nuanced, accurate answers. The model demonstrated a unique ability to understand complex insurance terminology while providing clear, accessible explanations for employees.
 
-This initial success convinced Newfront to expand Claude's role across their platform. Today, they maintain a flexible approach, choosing the right AI for each specific challenge while leveraging Claude for their most complex natural language needs.
+This initial success convinced Newfront to expand Claude’s role across their platform. Today, they maintain a flexible approach, choosing the right AI for each specific challenge while leveraging Claude for their most complex natural language needs.
 
 ## How Claude transforms insurance work
 
 Newfront has strategically deployed Claude across their challenging insurance workflows, automating tedious tasks while improving accuracy:
 
-The benefit assistant provides employees instant answers about coverage limits, eligible expenses, and life event changes—no more waiting on HR emails or business hours. Wintrob adds, "Whether it's questions about prescription sunglasses coverage or help during a divorce, the assistant handles sensitive inquiries privately and accurately."
+The benefit assistant provides employees instant answers about coverage limits, eligible expenses, and life event changes—no more waiting on HR emails or business hours. Wintrob adds, “Whether it’s questions about prescription sunglasses coverage or help during a divorce, the assistant handles sensitive inquiries privately and accurately.”
 
 The contract review tool transforms days of back-and-forth emails into instant insights about coverage gaps and suggested adjustments for CFOs and legal teams.
 
@@ -64,13 +64,13 @@ The insurance management platform enables professionals to process complex loss 
 
 ## Real results for everyone
 
-Newfront's AI-powered platform delivers measurable improvements across every aspect of insurance operations. HR teams recover a full month of productivity annually as the benefit assistant handles thousands of routine questions. Processing loss run documents now costs 60% less with higher accuracy rates. Legal teams have eliminated the need for time-consuming calls and email chains, with contract reviews now completed in minutes instead of days. The benefit assistant handles hundreds of thousands of inquiries annually, giving employees 24/7 access to accurate benefits information and reducing the burden on HR teams.
+Newfront’s AI-powered platform delivers measurable improvements across every aspect of insurance operations. HR teams recover a full month of productivity annually as the benefit assistant handles thousands of routine questions. Processing loss run documents now costs 60% less with higher accuracy rates. Legal teams have eliminated the need for time-consuming calls and email chains, with contract reviews now completed in minutes instead of days. The benefit assistant handles hundreds of thousands of inquiries annually, giving employees 24/7 access to accurate benefits information and reducing the burden on HR teams.
 
 ## Creating the future of insurance
 
-Newfront sees AI as key to making insurance work better for everyone. Wintrob said, "Even with today's AI capabilities, we have hundreds of workflows to enhance." The company is systematically identifying opportunities where AI can reduce friction and improve accuracy, while maintaining the human expertise that clients value.
+Newfront sees AI as key to making insurance work better for everyone. Wintrob said, “Even with today’s AI capabilities, we have hundreds of workflows to enhance.” The company is systematically identifying opportunities where AI can reduce friction and improve accuracy, while maintaining the human expertise that clients value.
 
-Newfront envisions a future where technology eliminates the administrative burden from insurance, allowing professionals to focus entirely on strategic guidance and complex problem-solving. Their AI-powered platform is already showing how this future might look: one where employees understand their benefits, businesses manage risk effectively, and insurance professionals focus on meaningful work. By combining Claude's capabilities with human expertise, Newfront is making insurance more accessible, efficient, and transparent for everyone involved.
+Newfront envisions a future where technology eliminates the administrative burden from insurance, allowing professionals to focus entirely on strategic guidance and complex problem-solving. Their AI-powered platform is already showing how this future might look: one where employees understand their benefits, businesses manage risk effectively, and insurance professionals focus on meaningful work. By combining Claude’s capabilities with human expertise, Newfront is making insurance more accessible, efficient, and transparent for everyone involved.
 
 ## Related stories
 
@@ -86,7 +86,8 @@ Newfront envisions a future where technology eliminates the administrative burde
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -104,12 +105,12 @@ Newfront envisions a future where technology eliminates the administrative burde
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -142,7 +143,7 @@ Newfront envisions a future where technology eliminates the administrative burde
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -160,6 +161,7 @@ Newfront envisions a future where technology eliminates the administrative burde
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -175,7 +177,7 @@ Newfront envisions a future where technology eliminates the administrative burde
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -210,7 +212,8 @@ Newfront envisions a future where technology eliminates the administrative burde
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -228,12 +231,12 @@ Newfront envisions a future where technology eliminates the administrative burde
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -266,7 +269,7 @@ Newfront envisions a future where technology eliminates the administrative burde
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -284,6 +287,7 @@ Newfront envisions a future where technology eliminates the administrative burde
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -299,7 +303,7 @@ Newfront envisions a future where technology eliminates the administrative burde
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

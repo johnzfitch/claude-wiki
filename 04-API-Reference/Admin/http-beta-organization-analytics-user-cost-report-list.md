@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fuser_cost_report%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fuser_cost_report%2Flist)
 
 
 
@@ -244,7 +244,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -253,9 +253,9 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
-4.  [Analytics](http-beta-organization-analytics.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
+4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
 5.  [User Cost Report](http-beta-organization-analytics-user-cost-report.md)
 
 # Get Per-User Cost
@@ -302,7 +302,7 @@ One of the following:
 
 
 
-claude_tag_categories: optional array of [BetaAnalyticsClaudeTagCategory](http-beta-organization-analytics.md#beta_analytics_claude_tag_category)
+claude_tag_categories: optional array of [BetaAnalyticsClaudeTagCategory](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_claude_tag_category)
 
 
 
@@ -344,7 +344,7 @@ maxItems100
 
 
 
-context_windows: optional array of [BetaAnalyticsContextWindow](http-beta-organization-analytics.md#beta_analytics_context_window)
+context_windows: optional array of [BetaAnalyticsContextWindow](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_context_window)
 
 
 
@@ -440,7 +440,7 @@ One of the following:
 
 
 
-inference_geos: optional array of [BetaAnalyticsInferenceGeoFilter](http-beta-organization-analytics.md#beta_analytics_inference_geo_filter)
+inference_geos: optional array of [BetaAnalyticsInferenceGeoFilter](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_inference_geo_filter)
 
 
 
@@ -534,7 +534,7 @@ Opaque cursor from a previous response's `next_page` field.
 
 
 
-products: optional array of [BetaAnalyticsProductFilter](http-beta-organization-analytics.md#beta_analytics_product_filter)
+products: optional array of [BetaAnalyticsProductFilter](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_product_filter)
 
 
 
@@ -626,7 +626,7 @@ maxItems100
 
 
 
-data: array of [BetaAnalyticsCostUsersItem](http-beta-organization-analytics.md#beta_analytics_cost_users_item) { actor, amount, claude_tag_category, 15 more }
+data: array of [BetaAnalyticsCostUsersItem](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_cost_users_item) { actor, amount, claude_tag_category, 15 more }
 
 
 
@@ -634,7 +634,7 @@ Rows for this page, ranked by `order_by` in the `order` direction. One row per u
 
 
 
-actor: [BetaAnalyticsUserActor](http-beta-organization-analytics.md#beta_analytics_user_actor) { type: "user_actor", deleted, email, 3 more }
+actor: [BetaAnalyticsUserActor](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_user_actor) { type: "user_actor", deleted, email, 3 more }
 
 
 
@@ -684,7 +684,7 @@ Amount (post-discount, pre-credit) in fractional cents (minor units).
 
 
 
-claude_tag_category: [BetaAnalyticsClaudeTagCategory](http-beta-organization-analytics.md#beta_analytics_claude_tag_category) or null
+claude_tag_category: [BetaAnalyticsClaudeTagCategory](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_claude_tag_category) or null
 
 
 
@@ -720,7 +720,7 @@ Slack user ID (for example `U0123ABCDEF`) of the member the Claude Tag (Claude i
 
 
 
-context_window: [BetaAnalyticsContextWindow](http-beta-organization-analytics.md#beta_analytics_context_window) or null
+context_window: [BetaAnalyticsContextWindow](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_context_window) or null
 
 
 
@@ -738,7 +738,7 @@ One of the following:
 
 
 
-cost_type: [BetaAnalyticsCostType](http-beta-organization-analytics.md#beta_analytics_cost_type) or null
+cost_type: [BetaAnalyticsCostType](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_cost_type) or null
 
 
 
@@ -862,7 +862,7 @@ formatdate-time
 
 
 
-token_type: [BetaAnalyticsTokenType](http-beta-organization-analytics.md#beta_analytics_token_type) or null
+token_type: [BetaAnalyticsTokenType](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_token_type) or null
 
 
 

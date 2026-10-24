@@ -2,7 +2,7 @@
 title: "Use WIF with Google Cloud - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/wif-providers/gcp"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:08Z"
+fetched_at: "2026-10-20T06:40:20Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-providers%2Fgcp)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-providers%2Fgcp)
 
 
 
@@ -46,9 +46,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -60,7 +62,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Identity providers
 
@@ -94,6 +96,8 @@ Google issues identity tokens automatically to any workload with an attached ser
 Cloud Run, Cloud Functions, App Engine, GCE
 
 GKE with Workload Identity
+
+Cloud Run, Cloud Functions, App Engine, GCE
 
 Attach a dedicated service account to your service or instance:
 
@@ -147,9 +151,33 @@ The decoded token payload looks like this:
 
 The `sub` claim is the Google service account's opaque numeric unique ID. The `email` claim is the human-readable service account address. Match on both `sub` and `email` in your federation rule.
 
+GKE with Workload Identity
+
+Enable [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) on your cluster and bind your Kubernetes service account to a Google service account with the `iam.gke.io/gcp-service-account` annotation:
+
+```python
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: inference-worker
+  namespace: prod
+  annotations:
+    iam.gke.io/gcp-service-account: inference-worker@my-project.iam.gserviceaccount.com
+```
+
+
+
+With this binding in place, the GKE metadata server returns a Google-signed token identical to the Cloud Run and GCE case: same `https://accounts.google.com` issuer, same `email` claim, same fetch URL. Configure Anthropic exactly as in the next section.
+
+A `format=full` token from GKE additionally includes `google.compute_engine.project_id`, `google.compute_engine.zone`, and `google.compute_engine.instance_name` claims, which you can reference in a federation rule's `condition` matcher (a CEL expression like `claims.google.compute_engine.project_id == "my-project"`) to scope access to a specific cluster or node pool.
+
+
+
+If you do not want to bind Kubernetes service accounts to Google service accounts, GKE pods can instead use the cluster's own OIDC issuer (`https://container.googleapis.com/v1/projects/PROJECT/locations/REGION/clusters/CLUSTER`) with a projected `serviceAccountToken` volume. That path uses a per-cluster issuer rather than `accounts.google.com`. See [Use WIF with Kubernetes](manage-claude-wif-providers-kubernetes.md) for that pattern.
+
 ## Configure Anthropic
 
-In the Claude Console, open **Settings → Workload identity**, click **Connect workload**, and select the **Google Cloud** tile. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
+In the Claude Console, go to the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`), click **Connect workload**, and select the **Google Cloud** tile. The wizard walks you through registering the issuer, creating a service account, and creating a federation rule.
 
 The wizard creates these resources for you. Use the following values whether you enter them in the wizard or send them to the [Admin API](manage-claude-wif-admin-api.md):
 
@@ -192,7 +220,7 @@ The wizard creates these resources for you. Use the following values whether you
 
 ## Acquire and use the token
 
-Inside your Google Cloud workload, fetch the identity token from the metadata server, exchange it at `POST /v1/oauth/token`, and use the returned bearer token to call the Claude API. The Claude SDK handles the exchange and refresh loop for you when you pass a callable that returns a fresh identity token from the metadata server to `identity_token_provider`, as shown in the following examples.
+Inside your Google Cloud workload, fetch the identity token from the metadata server, exchange it at `POST /v1/oauth/token`, and use the returned bearer token to call the Claude API. The Claude SDK handles the exchange and refresh loop for you when you supply `identity_token_provider`, as shown in the following examples. Except in Java (see the comment in that example), that option takes a token provider that returns a fresh identity token from the metadata server.
 
 cURL
 
@@ -211,6 +239,8 @@ CLI
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -247,7 +277,7 @@ message = client.messages.create(
 print(next(block.text for block in message.content if block.type == "text"))
 ```
 
-Google identity tokens expire after roughly one hour. The SDK re-invokes the token provider and re-exchanges automatically before expiry. For shell scripts that run longer than the access token's `expires_in`, refresh on a timer and repeat the exchange.
+Google identity tokens expire after roughly one hour. Except in Java (see the comment in that example), the SDK re-invokes the token provider and re-exchanges automatically before expiry. For shell scripts that run longer than the access token's `expires_in`, refresh on a timer and repeat the exchange.
 
 ## Verify the setup
 
@@ -263,7 +293,7 @@ curl -sS -H "Metadata-Flavor: Google" \
   | jq -rR 'split(".")[1] | gsub("-";"+") | gsub("_";"/") | @base64d | fromjson'
 ```
 
-Check that `iss` is `https://accounts.google.com`, `aud` is `https://api.anthropic.com`, and `email` matches the value in your federation rule. Then run the exchange from the previous section. A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange); the most common Google Cloud-side cause is the `email` claim missing (request the token with `format=full` so it is included).
+Check that `iss` is `https://accounts.google.com`, `aud` is `https://api.anthropic.com`, and `email` matches the value in your federation rule. Then run the exchange from the previous section. A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) in the Claude Console for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange); the most common Google Cloud-side cause is the `email` claim missing (request the token with `format=full` so it is included).
 
 ## Scope your rule
 

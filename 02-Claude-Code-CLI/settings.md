@@ -2,7 +2,7 @@
 title: "Settings files and precedence - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/settings"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:27:22Z"
+fetched_at: "2026-10-22T06:29:31Z"
 tags: ["claude-code"]
 ---
 
@@ -98,7 +98,7 @@ Installing Claude Code doesn’t create any settings file. If your machine or pr
 
 On Windows, `~/.claude` means `%USERPROFILE%\.claude`. To keep the home-directory files somewhere else, set [`CLAUDE_CONFIG_DIR`](env-vars.md); Claude Code then stores your settings, session history, and plugins there instead.
 
-Claude Code also keeps a fifth file, [`~/.claude.json`](claude-directory.md#ce-claude-json), that it writes for itself; you don’t need to edit it. It holds your sign-in session, [MCP server](../06-MCP-Tools/General/mcp.md) configurations, per-project state such as trust decisions, and the [global config keys](settings-reference.md#global-config-settings) that `/config` writes for you.
+Claude Code also keeps a fifth file, [`~/.claude.json`](claude-directory.md#ce-claude-json), that it writes for itself; you don’t need to edit it. It holds your account details, [MCP server](../06-MCP-Tools/General/mcp.md) configurations, per-project state such as trust decisions, and the [global config keys](settings-reference.md#global-config-settings) that `/config` writes for you.
 
 
 [​](#share-settings-with-your-team)
@@ -128,7 +128,7 @@ When Claude asks permission to run a Bash command and you choose “Yes, and don
 - **When the file stays with `.claude/settings.json` instead**: outside a git repository, when the repository root is your home directory, on Windows, or when the repository root or its `.git` or `.claude` entry isn’t owned by your user.
 - **Paths in the file don’t anchor at the repository root**: a permission rule that starts with `/` or a relative sandbox path [anchors at the session’s primary working directory](permissions.md#read-and-edit) instead.
 
-Before v2.1.211, Claude Code kept the file in the starting directory. It still reads a file an earlier version left there alongside the root file; where both set the same key, the root’s value applies, and permission rules from both files apply. The Agent SDK’s [`resolveSettings()`](../05-Agent-SDK/agent-sdk-typescript.md#resolvesettings) helper always reads the file from the starting directory. Claude Code reads the shared `.claude/settings.json` from the session’s [primary working directory](permissions.md#working-directories), so to use a file committed at the repository root, start Claude Code there. After you [move the session with `/cd`](permissions.md#move-the-session-to-another-directory), Claude Code reads both project files from the new directory instead, placing the local file by the same rules. Reading them from the directory you moved to requires Claude Code v2.1.246 or later.
+Before v2.1.211, Claude Code kept the file in the starting directory. It still reads a file an earlier version left there alongside the root file; where both set the same key, the root’s value applies, and permission rules from both files apply. The Agent SDK’s [`resolveSettings()`](../05-Agent-SDK/agent-sdk-typescript.md#resolvesettings) helper always reads the file from the starting directory. Claude Code reads the shared `.claude/settings.json` from the session’s [primary working directory](permissions.md#working-directories), so to use a file committed at the repository root, start Claude Code there. After you [move the session with `/cd`](permissions.md#move-the-session-to-another-directory), Claude Code reads both project files from the new directory instead, placing the local file by the same rules. Reading them from the directory you moved to requires Claude Code v2.1.246 or later. For a worktree session that you start from the desktop app, see [What worktrees share with the main checkout](worktrees.md#what-worktrees-share-with-the-main-checkout).
 
 
 [​](#check-what-your-organization-enforces)
@@ -342,7 +342,7 @@ A committed key doesn’t reach teammates
 
 Two things keep a key in `.claude/settings.json` from applying for everyone who clones it:
 
-- **Claude Code ignores the key in a repository file.** Look for `User, local, or managed`, `User or managed`, `Managed`, or `Global config` in the Scope column of the [settings index](settings-reference.md#settings-index). Those keys never apply from the shared file, apart from a few that a repository file can still switch off. Each of those entries says so on its Scope line. `Global config` keys apply only from `~/.claude.json`. Inside the `env` key, the telemetry export variables never apply from the shared file either, apart from a few off values; see [Variables Claude Code ignores in `env`](settings-reference.md#variables-claude-code-ignores-in-env).
+- **Claude Code ignores the key in a repository file.** Look for `User, local, or managed`, `User or managed`, `User`, `Managed`, or `Global config` in the Scope column of the [settings index](settings-reference.md#settings-index). Those keys never apply from the shared file, apart from a few that a repository file can still switch off. Each of those entries says so on its Scope line. `Global config` keys apply only from `~/.claude.json`. Inside the `env` key, the telemetry export variables never apply from the shared file either, apart from a few off values; see [Variables Claude Code ignores in `env`](settings-reference.md#variables-claude-code-ignores-in-env).
 - **The key waits for trust.** `permissions.allow` rules, `permissions.additionalDirectories`, `extraKnownMarketplaces`, and most [`env`](settings-reference.md#env) values apply only after each teammate [trusts the folder](permissions.md#project-allow-rules-and-workspace-trust). Until then they still see prompts and don’t get plugins from a marketplace the file declares. `deny` and `ask` rules apply right away.
 
 
@@ -383,10 +383,12 @@ Settings in cloud sessions
 
 A [cloud session](claude-code-on-the-web.md) runs in a [cloud environment](cloud-environments.md) on a fresh clone of your repository, not on your machine. That changes which settings reach it:
 
-- **Shared project settings** (`.claude/settings.json`): read in a session with one repository, because the file is part of the clone and the session starts inside it. Commit a setting there to apply it in those sessions. In an Anthropic-hosted environment, a session with several repositories starts above the clones and reads only the `enabledPlugins` and `extraKnownMarketplaces` keys from each repository’s `.claude/settings.json`, not permission rules, hooks, `env`, or other keys. The marketplaces and plugins those two keys declare still [don’t load in a cloud session](cloud-environments.md#what-carries-over-from-your-setup). For a self-hosted environment, see [which repository’s settings apply](../13-Enterprise-Admin/self-hosted-environments-configuration.md#repository-settings-in-sessions-with-several-repositories).
+- **Cloud threads in a project**: in a cloud thread in a [project](claude-projects.md#what-threads-pick-up-from-your-repositories), none of a repository’s `.claude/settings.json` permission rules, hooks, or `env` apply, however many repositories the project has. [What threads pick up from your repositories](claude-projects.md#what-threads-pick-up-from-your-repositories) lists what to use instead.
+- **Shared project settings** (`.claude/settings.json`): read in a session with one repository outside a project’s threads, because the file is part of the clone and the session starts inside it. Commit a setting there to apply it in those sessions.
+- **Shared project settings with several repositories**: in an Anthropic-hosted environment, a session with several repositories starts above the clones and reads only the `enabledPlugins` and `extraKnownMarketplaces` keys from each repository’s `.claude/settings.json`, not permission rules, hooks, `env`, or other keys. The marketplaces and plugins those two keys declare still [don’t load in a cloud session](cloud-environments.md#what-carries-over-from-your-setup). For a self-hosted environment, see [which repository’s settings apply](../13-Enterprise-Admin/self-hosted-environments-configuration.md#repository-settings-in-sessions-with-several-repositories).
 - **User and project local settings** (`~/.claude/settings.json` and `.claude/settings.local.json`): not read. Both stay on your machine, and the local file isn’t in the clone.
 - **Managed settings**: a `managed-settings.json` file or MDM profile on your device doesn’t reach a cloud session. Your organization’s [server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) do; [surface coverage](model-config.md#surface-coverage) lists which cloud sessions receive them. A [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) also reads the managed settings file in its runner image. [How Claude Code combines managed sources](../13-Enterprise-Admin/managed-settings.md#how-claude-code-combines-managed-sources) says when that file applies.
-- **`/config`**: in your browser at claude.ai/code, opens the Claude Code section of your claude.ai settings instead of changing a value. To change a setting for a cloud session, set an [environment variable](cloud-environments.md#set-environment-variables) on the environment, or in a session with one repository, commit the key to that repository’s `.claude/settings.json`.
+- **`/config`**: in your browser at claude.ai/code, opens the Claude Code section of your claude.ai settings instead of changing a value. To change a setting for a cloud session, set an [environment variable](cloud-environments.md#set-environment-variables) on the environment. In a session with one repository outside a project’s threads, you can instead commit the key to that repository’s `.claude/settings.json`.
 
 [What carries over from your setup](cloud-environments.md#what-carries-over-from-your-setup) lists the rest: `CLAUDE.md`, skills, MCP servers, plugins, and credentials.
 

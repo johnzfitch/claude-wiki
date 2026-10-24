@@ -2,7 +2,7 @@
 title: "List local sessions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions/local/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-07T06:23:54Z"
+fetched_at: "2026-10-22T06:28:17Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fsessions%2Flocal%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fsessions%2Flocal%2Flist)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,13 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
+
+Webhooks
 
 
 Skills
@@ -150,6 +154,29 @@ Skills
 Delete Skill
 
 Versions
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Delete User Profile
+
+
+Create Enrollment URL
+
+Action URLs
 
 
 Tunnels
@@ -173,24 +200,6 @@ Tunnels
 Rotate Tunnel Token
 
 Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
 
 
 Compliance API
@@ -229,17 +238,21 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
+[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[AWS IAM actions](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[Migrating to API version 2026-10-21](../Endpoints/migration-2026-10-21.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -249,6 +262,12 @@ To enable the Compliance API, see the setup guide.
 
 
 
+API version 2023-06-01
+
+
+
+This page documents API version 2023-06-01. [See this page for the newer version, 2026-10-21](compliance-apps-sessions-local-list.md), or read [what changed in 2026-10-21](../Endpoints/migration-2026-10-21.md).
+
 1.  [API reference](../Endpoints/http.md)
 2.  [Compliance API](../Endpoints/http-compliance.md)
 3.  [Apps](https://platform.claude.com/docs/en/api/http/compliance/apps)
@@ -256,6 +275,12 @@ To enable the Compliance API, see the setup guide.
 5.  [Local](https://platform.claude.com/docs/en/api/http/compliance/apps/sessions/local)
 
 # List local sessions
+
+Copy page
+
+
+
+API version 2023-06-01
 
 GET/v1/compliance/apps/sessions/local
 
@@ -267,9 +292,19 @@ Results are ordered by `created_at` descending. Pagination is forward-only via `
 
 
 
-created_at: optional object{ gte, lt }
+created_at: optional object{ gt, gte, lt, lte }
 
 
+
+
+
+gt: optional string
+
+
+
+Only return sessions whose first inference call is strictly after this time (RFC 3339; a UTC offset is required).
+
+formatdate-time
 
 
 
@@ -288,6 +323,16 @@ lt: optional string
 
 
 Only return sessions whose first inference call is strictly before this time (RFC 3339; a UTC offset is required).
+
+formatdate-time
+
+
+
+lte: optional string
+
+
+
+Only return sessions whose first inference call is at or before this time (RFC 3339; a UTC offset is required).
 
 formatdate-time
 
@@ -323,11 +368,21 @@ gte: optional string
 
 
 
-Only return sessions whose last inference call is at or after this time (RFC 3339; a UTC offset is required). Combines with `created_at.gte` / `created_at.lt`; the ordering and pagination are unchanged. Use it to poll for sessions that have been active since a previous pass — a session that becomes active later can only enter the result, never leave it.
+Only return sessions whose last inference call is at or after this time (RFC 3339; a UTC offset is required). Combines with the `created_at` filters and does not change the ordering or pagination. Use it to poll for sessions that have been active since a previous pass — a session that becomes active later can only enter the result, never leave it.
 
 formatdate-time
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 "x-api-key": optional string
 
@@ -377,7 +432,7 @@ product_surface: string or null
 
 
 
-The product the session ran in: `cowork` (Cowork in Claude Desktop on the user's machine), `claude_code` (Claude Code), `claude_science` (Claude Science), `claude_in_chrome` (the Claude in Chrome browser extension's built-in chat), or one of `office_agents/excel`, `office_agents/powerpoint`, `office_agents/word`, and `office_agents/outlook` (Claude for Microsoft 365, by app; `office_agents` alone when the app is not identified). New values appear as coverage expands; treat unrecognized values as opaque. `null` when the surface was not recorded.
+The product the session ran in: `cowork` (Cowork in Claude Desktop on the user's machine); `claude_code` (Claude Code); `claude_science` (Claude Science); `claude_in_chrome` (the Claude in Chrome browser extension's built-in chat); `office_agents/excel`, `office_agents/powerpoint`, `office_agents/word` or `office_agents/outlook` (Claude for Microsoft 365, by app); `office_agents/google_docs`, `office_agents/google_sheets` or `office_agents/google_slides` (the Claude add-ins for Google Docs, Google Sheets, and Google Slides, by app); or `office_agents` alone (Claude for Microsoft 365 or one of the Google add-ins, app not identified). New values appear as coverage expands; treat unrecognized values as opaque. `null` when the surface was not recorded.
 
 
 
@@ -395,7 +450,7 @@ updated_at: string
 
 
 
-Timestamp of the session's last retained inference call (RFC 3339, UTC). Always at or after `created_at`. When a session's activity spans the child organization's retention boundary, calls older than the boundary are no longer reflected — but because retention removes only the oldest calls, this value (unlike `created_at`) is unaffected until the entire session has aged out. On the list endpoint this value is a lower bound: for a session still active at a page or `created_at.lt` window boundary it can momentarily lag the session's true last activity. Retrieving the session, or its messages, always reflects the exact latest retained call.
+Timestamp of the session's last retained inference call (RFC 3339, UTC). Always at or after `created_at`. When a session's activity spans the child organization's retention boundary, calls older than the boundary are no longer reflected — but because retention removes only the oldest calls, this value (unlike `created_at`) is unaffected until the entire session has aged out. On the list endpoint this value is a lower bound: for a session still active at a page boundary or the upper end of a `created_at` window it can momentarily lag the session's true last activity. Retrieving the session, or its messages, always reflects the exact latest retained call.
 
 formatdate-time
 

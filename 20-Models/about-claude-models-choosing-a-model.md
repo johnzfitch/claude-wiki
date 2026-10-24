@@ -2,7 +2,7 @@
 title: "Choosing the right model - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model"
 category: "20-Models"
-fetched_at: "2026-10-04T08:32:33Z"
+fetched_at: "2026-10-20T06:38:59Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodels%2Fchoosing-a-model)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodels%2Fchoosing-a-model)
 
 
 
@@ -40,7 +40,7 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -52,11 +52,11 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)Guides
 
@@ -77,9 +77,9 @@ Choosing a Claude model means balancing capabilities, speed, and cost. This guid
 When choosing a Claude model, consider first evaluating these factors:
 
 - **Capabilities:** What specific features or capabilities will you need the model to have to meet your needs?
-- **Speed:** How quickly does the model need to respond in your application? Claude Opus 5.5, Claude Opus 5, and Claude Opus 4.8 support [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) (research preview), which delivers up to 2.5x higher output speed at premium pricing.
+- **Speed:** How quickly does the model need to respond in your application? [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) delivers up to 2.5x higher output speed at premium pricing on [supported models](../04-API-Reference/Guides/build-with-claude-fast-mode.md#supported-models).
 - **Cost:** What's your budget for both development and production usage?
-- **Effort:** Several Claude models support an [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md) that trades intelligence for latency and cost within a single model. Tuning effort is often a better lever than switching models. On Claude Fable 5.1 and Claude Opus 5, start with the default (`high`) and adjust up or down based on your evals. On Claude Opus 5.5 the default is `medium`; start there and adjust the same way. On Claude Opus 4.8 and Claude Opus 4.7, the `xhigh` effort level, between `high` and `max`, is the best setting for most coding and agentic use cases.
+- **Effort:** Several Claude models support an [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md) that trades intelligence for latency and cost within a single model. Tuning effort is often a better lever than switching models. On Claude Fable 5.1, Claude Opus 5, and Claude Sonnet 5.5, start with the default (`high`) and adjust up or down based on your evals. On Claude Opus 5.5 and Claude Haiku 5.5 the default is `medium`; start there and adjust the same way. On Claude Opus 4.8 and Claude Opus 4.7, the `xhigh` effort level, between `high` and `max`, is the best setting for most coding and agentic use cases.
 
 ------------------------------------------------------------------------
 
@@ -89,9 +89,9 @@ There are two general approaches you can use to start testing which Claude model
 
 ### Option 1: Start efficiency-first
 
-For many applications, starting with a faster, more cost-effective model like Claude Haiku 4.5 can be the optimal approach:
+For many applications, starting with a faster, more cost-effective model like Claude Haiku 5.5 can be the optimal approach:
 
-1.  Begin implementation with Claude Haiku 4.5.
+1.  Begin implementation with Claude Haiku 5.5.
 2.  Test your use case thoroughly.
 3.  Evaluate if performance meets your requirements.
 4.  Upgrade only if necessary for specific capability gaps.
@@ -123,7 +123,7 @@ This approach is best for:
 
 **Claude Opus 5.5** (`claude-opus-5-5`) is built for long-running agentic coding and knowledge work, with [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) always on. If your integration forces tool use (`tool_choice` of type `any` or `tool`), turns thinking off, or uses the `computer_20251124` computer use tool, see [Breaking changes](models-opus-5-5-whats-new-opus-5-5.md#breaking-changes) before switching.
 
-**Claude Fable 5.1** (`claude-fable-5-1`) is Anthropic's most capable model open to all customers. It extends Claude Fable 5 with stronger long-running agentic coding, knowledge work, and research at the same input and output prices, with cache reads at a quarter of the cost. **Claude Mythos 5.1** (`claude-mythos-5-1`) offers the same capabilities to [Project Glasswing](../22-Safety-Policy/glasswing.md) participants only. Both models use always-on [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md). See [What's new in Claude Fable 5.1](models-fable-5-1-whats-new-fable-5-1.md) for details.
+**Claude Fable 5.1** (`claude-fable-5-1`) is Anthropic's most capable model open to all customers. It extends Claude Fable 5 with stronger long-running agentic coding, knowledge work, and research at the same input and output prices, with cache reads at a quarter of the cost. **Claude Mythos 5.1** (`claude-mythos-5-1`) offers the same capabilities only to organizations verified through Anthropic's verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). Both models use always-on [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md). See [What's new in Claude Fable 5.1](models-fable-5-1-whats-new-fable-5-1.md) for details.
 
 For context windows, output limits, and prices, see the [model comparison table](about-claude-models-overview.md#latest-models-comparison).
 
@@ -136,7 +136,7 @@ Most workloads start with Claude Opus 5.5.
 | The highest available capability                                          | Claude Fable 5.1          | Agent sessions that run for hours, multistep deep research, analysis carried through to a finished document, spreadsheet, or deck |
 | Complex agentic coding and enterprise work                                | Claude Opus 5.5           | Multihour autonomous coding agents, large-scale refactoring, complex systems engineering, vision-heavy workflows, computer use    |
 | Speed and capability for everyday coding, agent, and enterprise workloads | Claude Sonnet 5.5         | Code generation, data analysis, content creation, visual understanding, agentic tool use                                          |
-| The lowest latency and price, with extended thinking                      | Claude Haiku 4.5          | Real-time applications, high-volume intelligent processing, cost-sensitive deployments needing strong reasoning, sub-agent tasks  |
+| The lowest latency and price                                              | Claude Haiku 5.5          | Real-time applications, high-volume intelligent processing, cost-sensitive deployments needing strong reasoning, sub-agent tasks  |
 
 ------------------------------------------------------------------------
 
@@ -175,6 +175,10 @@ The latest Opus model: breaking changes, new features, and behavior differences
 [What's new in Claude Sonnet 5.5](models-sonnet-5-5-whats-new-sonnet-5-5.md)
 
 The latest Sonnet model: breaking changes, new features, and behavior differences
+
+[What's new in Claude Haiku 5.5](models-haiku-5-5-whats-new-haiku-5-5.md)
+
+The latest Haiku model: breaking changes, new features, and behavior differences
 
 
 

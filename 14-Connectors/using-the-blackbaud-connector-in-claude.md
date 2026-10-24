@@ -2,7 +2,7 @@
 title: "Using the Blackbaud connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-10-10T06:28:07Z"
+fetched_at: "2026-10-23T06:28:59Z"
 tags: ["connectors"]
 ---
 

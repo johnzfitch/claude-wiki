@@ -2,7 +2,7 @@
 title: "Overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:42Z"
+fetched_at: "2026-10-23T06:28:13Z"
 tags: ["claude-code"]
 ---
 
@@ -30,7 +30,7 @@ Claude Code is an AI-powered coding assistant that helps you build features, fix
 
 Get started
 
-Claude Code runs on several surfaces: the terminal, IDE extensions, a desktop app, and the web. Choose one from the tabs below to get started. Most surfaces require a [Claude subscription](../17-Billing-Plans/pricing.md) or [Anthropic Console](../04-API-Reference/Other/usage-limits.md) account. The Terminal CLI, VS Code, and JetBrains also support [third-party providers](third-party-integrations.md).
+Claude Code runs on several surfaces: the terminal, IDE extensions, a desktop app, and the web. Choose one from the tabs below to get started. Most surfaces require a [Claude subscription](../17-Billing-Plans/pricing.md) or [Anthropic Console](../04-API-Reference/Other/playground.md) account. The Terminal CLI, VS Code, and JetBrains also support [third-party providers](third-party-integrations.md).
 
 - Terminal
 
@@ -179,7 +179,7 @@ Schedule recurring tasks
 
 Run Claude on a schedule to automate work that repeats: morning PR reviews, overnight CI failure analysis, weekly dependency audits, or syncing docs after PRs merge.
 
-- [Routines](web-scheduled-tasks.md) run in the cloud, so they keep running even when your computer is off. They can also trigger on API calls or GitHub events. Create them from the web, the Desktop app, or by running `/schedule` in the CLI.
+- [Cloud scheduled tasks](web-scheduled-tasks.md), formerly routines, run in the cloud, so they keep running even when your computer is off. They can also trigger on API calls or GitHub events. Create them from the web, the Desktop app, or by running `/schedule` in the CLI.
 - [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md) run on your machine, with direct access to your local files and tools
 - [`/loop`](scheduled-tasks.md) repeats a prompt within a CLI session for quick polling
 
@@ -205,7 +205,7 @@ Each [surface](glossary.md#surface) connects to the same underlying Claude Code 
 | Continue a local session from my phone or another device                        | [Remote Control](remote-control.md)                                                                                 |
 | Push events from Telegram, Discord, iMessage, or my own webhooks into a session | [Channels](channels.md)                                                                                             |
 | Start a task locally, continue on mobile                                        | [`claude --cloud`](claude-code-on-the-web.md#from-terminal-to-cloud), then the [Claude mobile app](../16-Mobile-Desktop/mobile.md) |
-| Run Claude on a recurring schedule                                              | [Routines](web-scheduled-tasks.md) or [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md)                              |
+| Run Claude on a recurring schedule                                              | [Cloud scheduled tasks](web-scheduled-tasks.md) or [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md)                 |
 | Automate PR reviews and issue triage                                            | [GitHub Actions](github-actions.md) or [GitLab CI/CD](gitlab-ci-cd.md)                                        |
 | Get automatic code review on every PR                                           | [GitHub Code Review](code-review.md)                                                                                |
 | Route bug reports from Slack to pull requests                                   | [Slack](../14-Connectors/slack.md)                                                                                                   |
@@ -226,4 +226,4 @@ Once you’ve installed Claude Code, these guides help you go deeper.
 - [A harness for every task](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code): how the Claude Code team uses [dynamic workflows](workflows.md) to orchestrate many subagents at once
 - [Settings](settings.md): customize Claude Code for your workflow
 - [Troubleshooting](troubleshooting.md): solutions for common issues
-- [code.claude.com](code-claude-com-code-home.md): demos, pricing, and product details
+- [code.claude.com](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md): demos, pricing, and product details

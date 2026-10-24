@@ -2,7 +2,7 @@
 title: "Customize keyboard shortcuts - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/keybindings"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:24:38Z"
+fetched_at: "2026-10-23T06:28:19Z"
 tags: ["claude-code"]
 ---
 
@@ -49,6 +49,7 @@ tags: ["claude-code"]
 - [Terminal conflicts](#terminal-conflicts)
 - [Text fields](#text-fields)
 - [Vim mode interaction](#vim-mode-interaction)
+  - [Cancel a question with one key press](#cancel-a-question-with-one-key-press)
 - [Validation](#validation)
 
 Interface
@@ -195,6 +196,7 @@ Actions available in the `Chat` context:
 | `chat:externalEditor` | Ctrl+G, Ctrl+X Ctrl+E             | Open in external editor. The [agent view dispatch input](../09-Agents-Patterns/agent-view.md#keyboard-shortcuts) follows this action’s single-keystroke bindings too                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `chat:stash`          | Ctrl+S                            | Stash current prompt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `chat:imagePaste`     | Ctrl+V (Alt+V on Windows and WSL) | Paste image from clipboard. On WSL, both shortcuts are bound by default                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `command:<name>`      | (unbound)                         | Run the [command](commands.md) `/<name>`. For example, `"meta+g": "command:compact"` in a `Chat` block makes `Meta+G` run `/compact`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 \*On Windows without VT mode (Node \<24.2.0/\<22.17.0, Bun \<1.2.23), defaults to Meta+M.
 
@@ -514,12 +516,7 @@ Actions for the band above the prompt, the shared strip where [mods](../08-Plugi
 | `abovePrompt:highlightNext`     | Down          | Highlight the next option in a focused select                                                                         |
 | `abovePrompt:highlightPrevious` | Up            | Highlight the previous option in a focused select                                                                     |
 
-Two contexts bind more keys to these actions by default:
-
-- **`AbovePrompt`**: Right and Left also run `abovePrompt:next` and `abovePrompt:previous`, and Space also runs `abovePrompt:press`
-- **`AbovePromptInput`**: Down and Up also run `abovePrompt:next` and `abovePrompt:previous`
-
-The `AbovePrompt` context also binds Up, Down, PageUp, PageDown, Home, and End to the [pane scroll actions](#pane-actions) `pane:scrollUp` through `pane:bottom`, so to change one of those keys for the band, bind the scroll action in an `AbovePrompt` block.
+In the [`AbovePrompt` context](#contexts), Right and Left also run `abovePrompt:next` and `abovePrompt:previous` by default, and Space also runs `abovePrompt:press`. The `AbovePrompt` context also binds Up, Down, PageUp, PageDown, Home, and End to the [pane scroll actions](#pane-actions) `pane:scrollUp` through `pane:bottom`, so to change one of those keys for the band, bind the scroll action in an `AbovePrompt` block.
 
 
 [​](#pane-actions)
@@ -551,12 +548,13 @@ Settings actions
 
 Actions available in the `Settings` context. The `select:accept` and `confirm:no` actions are reused from the [Select](#select-actions) and [Confirmation](#confirmation-actions) contexts with Settings-specific behavior: changes apply to each setting as soon as you change it, so Escape closes the panel with your changes saved rather than declining.
 
-| Action            | Default      | Description                                     |
-|:------------------|:-------------|:------------------------------------------------|
-| `settings:search` | /            | Enter search mode                               |
-| `settings:retry`  | R            | Retry loading usage data on error               |
-| `select:accept`   | Enter, Space | Change the selected setting or open its submenu |
-| `confirm:no`      | Escape       | Close the panel. Changes are already saved      |
+| Action              | Default      | Description                                                                                                                                                                                           |
+|:--------------------|:-------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `settings:search`   | /            | Enter search mode                                                                                                                                                                                     |
+| `settings:retry`    | R            | Retry loading usage data on error                                                                                                                                                                     |
+| `settings:fixUsage` | F            | Send your session the [`/usage` recommendations](../17-Billing-Plans/costs.md#apply-recommendations-with-the-fix-shortcut) Claude Code can apply, when the `/usage` footer offers a fix. Requires v2.1.305 or later |
+| `select:accept`     | Enter, Space | Change the selected setting or open its submenu                                                                                                                                                       |
+| `confirm:no`        | Escape       | Close the panel. Changes are already saved                                                                                                                                                            |
 
 
 [​](#agents-actions)
@@ -823,6 +821,30 @@ When vim mode is enabled via `/config` → Editor mode, keybindings and vim mode
 - In vim NORMAL mode, `?` shows the help menu (vim behavior)
 - In vim NORMAL mode, `/` opens history search, the same as Ctrl+R in standard mode
 
+In the `Other` row of a question Claude asks, Escape doesn’t cancel the question right away in vim mode. Except in [screen reader mode](accessibility.md), the row starts in INSERT mode each time you focus it. When you press Escape in the `Other` row, the row switches to NORMAL mode or drops a half-typed vim command, and the question stays open. Press Escape again in NORMAL mode to cancel the question.
+
+
+[​](#cancel-a-question-with-one-key-press)
+
+Cancel a question with one key press
+
+To cancel a question with one key press in vim mode, bind another key to `select:cancel` in the `Select` context. You can cancel this way from the `Other` row of a question where you select one option. In [screen reader mode](accessibility.md) or in a question where you can select several options, the bound key doesn’t cancel, so cancel with Escape instead. Pick a key that you press with Ctrl or Alt. A bare letter or digit [goes to the `Other` row](#text-fields) instead and doesn’t reach your bindings. For example, to bind `Ctrl+Q`, add this to `~/.claude/keybindings.json`:
+
+```python
+{
+  "bindings": [
+    {
+      "context": "Select",
+      "bindings": {
+        "ctrl+q": "select:cancel"
+      }
+    }
+  ]
+}
+```
+
+After you save the file, press `Ctrl+Q` in the `Other` row of a question where you select one option. The question closes whether the row is in INSERT or NORMAL mode.
+
 
 [​](#validation)
 
@@ -832,6 +854,7 @@ Claude Code validates your keybindings and writes a warning to the debug log for
 
 - Parse errors (invalid JSON or structure)
 - Misspelled modifiers, such as `ctl+k`. Claude Code drops the part it doesn’t recognize and applies the binding to the keystroke that remains, `k` in this example.
+- A space next to `+` in a key string, such as `ctrl+ k`. Claude Code reads the string as a [chord](#chords) of `ctrl+` followed by `k`. No keypress matches `ctrl+` on its own, so the binding never fires. Remove the space.
 - Invalid context names
 - Invalid action values, such as an action that isn’t a string or `null`
 - Unknown action names, such as a typo of a registered action. Claude Code skips the binding and keeps any default binding for that key in effect.

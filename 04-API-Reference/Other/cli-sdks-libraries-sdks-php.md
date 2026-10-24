@@ -2,7 +2,7 @@
 title: "PHP SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/php"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:02Z"
+fetched_at: "2026-10-20T06:40:13Z"
 tags: ["api", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "sdk"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fphp)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fphp)
 
 
 
@@ -46,7 +46,7 @@ Libraries and integrations
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
@@ -136,8 +136,8 @@ foreach ($stream as $event) {
 Streaming requires an HTTP client that returns the response body incrementally. When Guzzle is the discovered PSR-18 client, the SDK configures it for streaming automatically. With a buffering client, the `foreach` loop yields every event at once when the response completes instead of incrementally; if you observe that symptom, install Guzzle or supply a streaming-capable PSR-18 client through the `streamingTransporter` request option:
 
 ```python
-$client = new Anthropic\Client(
-  requestOptions: Anthropic\RequestOptions::with(streamingTransporter: $myStreamingClient),
+$client = new Client(
+  requestOptions: RequestOptions::with(streamingTransporter: $myStreamingClient),
 );
 ```
 
@@ -230,8 +230,10 @@ foreach ($page->getItems() as $item) {
   echo $item->id, PHP_EOL;
 }
 // make additional network requests to fetch items from all pages, including and after the current page
+// ...
 foreach ($page->pagingEachItem() as $item) {
   echo $item->id, PHP_EOL;
+// ...
 }
 ```
 

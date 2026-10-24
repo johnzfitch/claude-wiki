@@ -2,7 +2,7 @@
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-10T06:24:55Z"
+fetched_at: "2026-10-23T06:28:49Z"
 tags: ["desktop", "enterprise", "mcp"]
 ---
 
@@ -144,4 +144,4 @@ For more in-depth information on building your own MCP clients and servers, we r
 
 - [Guide to debugging MCP integrations](https://modelcontextprotocol.io/docs/tools/debugging) - Troubleshooting tips and solutions for common implementation challenges.
 
-If you need further guidance, visit our guide on [How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support) for additional support options.
+If you need further guidance, visit our guide on [How to Get Support](../15-Claude-AI-Features/how-to-get-support.md) for additional support options.

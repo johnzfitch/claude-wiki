@@ -2,7 +2,7 @@
 title: "How to gift a Claude subscription | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:25:11Z"
+fetched_at: "2026-10-23T06:29:19Z"
 tags: ["billing"]
 ---
 

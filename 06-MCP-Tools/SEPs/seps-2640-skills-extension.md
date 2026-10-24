@@ -2,7 +2,7 @@
 title: "SEP-2640: Skills Extension - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/2640-skills-extension"
 category: "06-MCP-Tools/SEPs"
-fetched_at: "2026-09-17T06:27:23Z"
+fetched_at: "2026-10-18T06:26:37Z"
 tags: ["mcp", "mcp-seps", "skills"]
 ---
 
@@ -421,7 +421,7 @@ A server MAY direct the agent to specific skill URIs from its `instructions` fie
 
 Capability Declaration
 
-Per [SEP-2133](https://modelcontextprotocol.io/seps/Extensions) extension negotiation, servers declare support for this extension in the `extensions` field of their capabilities:
+Per [SEP-2133](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2133) extension negotiation, servers declare support for this extension in the `extensions` field of their capabilities:
 
 ```python
 {
@@ -650,7 +650,7 @@ Skill content is instructional text delivered to a model, which makes it a promp
 
 Reference Implementation
 
-Per [SEP-2133](https://modelcontextprotocol.io/seps/Extensions), an Extensions Track SEP requires at least one reference implementation in an official SDK prior to review. **SDK implementations:**
+Per [SEP-2133](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2133), an Extensions Track SEP requires at least one reference implementation in an official SDK prior to review. **SDK implementations:**
 
 - Python SDK: [python-sdk#3485](https://github.com/modelcontextprotocol/python-sdk/pull/3485)
 - C# SDK: [csharp-sdk#1856](https://github.com/modelcontextprotocol/csharp-sdk/pull/1856)
@@ -696,7 +696,7 @@ The cost of removal is the one archives were introduced to address: a skill with
 References
 
 - [Agent Skills specification](../../08-Plugins-Skills/specification.md)
-- 
+- [SEP-2133](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2133): Extensions
 - [SEP-2549](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2549): TTL for list results
 - [SEP-2076](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2076): Agent Skills as first-class primitive (alternative approach)
 - [Skills Over MCP Working Group charter](https://modelcontextprotocol.io/community/skills-over-mcp/charter)

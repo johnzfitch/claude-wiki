@@ -2,7 +2,7 @@
 title: "Modifying system prompts - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-08T06:24:33Z"
+fetched_at: "2026-10-15T06:26:11Z"
 tags: ["agents", "claude-code", "prompting", "sdk"]
 ---
 
@@ -458,7 +458,7 @@ While you iterate on prompt wording and want each edit to reach a session you re
 
 Context Claude Code adds outside the system prompt
 
-System reminders are messages Claude Code adds to the conversation during a session to give Claude context, such as the contents of your CLAUDE.md files or a note that a file changed on disk. Claude Code sends them in the conversation, not in the system prompt, so they reach Claude whether you use the `claude_code` preset or pass your own string as `systemPrompt`. This section covers the [reminders most likely to change how your agent behaves](#reminders-claude-code-adds-to-the-conversation), how to [turn off the ones your agent replaces](#turn-off-the-context-your-agent-replaces), and how to [see what Claude received](#see-what-claude-received) in a specific request.
+System reminders are messages Claude Code adds to the conversation during a session to give Claude context, such as the contents of your CLAUDE.md files or a note that a file changed on disk. Claude Code sends them in the conversation, not in the system prompt, so most reach Claude whether you use the `claude_code` preset or pass your own string as `systemPrompt`. This section covers the [reminders most likely to change how your agent behaves](#reminders-claude-code-adds-to-the-conversation), how to [turn off the ones your agent replaces](#turn-off-the-context-your-agent-replaces), and how to [see what Claude received](#see-what-claude-received) in a specific request.
 
 
 [​](#reminders-claude-code-adds-to-the-conversation)
@@ -497,7 +497,7 @@ Turn off a piece of built-in context when your agent supplies its own version of
 | Every CLAUDE.md file                                                          | Set `CLAUDE_CODE_DISABLE_CLAUDE_MDS=1`                                                                                                                                                             |
 | Task list nudges, file-changed notes, and the skill list                      | Set `CLAUDE_CODE_DISABLE_ATTACHMENTS=1`                                                                                                                                                            |
 
-Claude Code’s built-in commit and pull request instructions aren’t a reminder. They are part of the Bash tool’s description, so they also reach Claude when you pass a custom `systemPrompt`. If you set `CLAUDE_CODE_DISABLE_ATTACHMENTS`, Claude Code also sends `@` file mentions as plain text instead of expanding them into file content. The list of available subagents and background task notifications still arrive. The following example is for an agent that carries its own commit rules in `append`. It sets both `attribution` keys to empty strings to remove the trailer and footer, and turns off `includeGitInstructions` so Claude Code’s own commit workflow instructions don’t compete with yours:
+Set `includeGitInstructions` to `false` to keep out the built-in commit and pull request instructions, which are part of the Bash tool’s description and reach Claude even with a custom `systemPrompt`. With the minimal default, a custom `systemPrompt`, or a custom main-thread agent that has its own prompt, though, the session starts without the git status snapshot. If you set `CLAUDE_CODE_DISABLE_ATTACHMENTS`, Claude Code also sends `@` file mentions as plain text instead of expanding them into file content. The list of available subagents and background task notifications still arrive. To stop only `@` file mentions from expanding, set [`CLAUDE_CODE_DISABLE_FILE_MENTIONS=1`](../02-Claude-Code-CLI/env-vars.md#variables) instead, on Claude Code v2.1.299 or later. Claude then gets the mentioned paths plus a note to read them with its file tools. The following example is for an agent that carries its own commit rules in `append`. It sets both `attribution` keys to empty strings to remove the trailer and footer, and turns off `includeGitInstructions` so Claude Code’s own commit workflow instructions don’t compete with yours:
 
 TypeScript
 

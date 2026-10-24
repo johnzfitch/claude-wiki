@@ -2,7 +2,7 @@
 title: "Plugin security and trust - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/security"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-08T06:24:59Z"
+fetched_at: "2026-10-21T06:28:34Z"
 tags: ["claude-code", "plugins", "security"]
 ---
 
@@ -51,7 +51,7 @@ A plugin can carry content that runs code on your machine with your user privile
 - **Monitors**: a plugin’s [monitors](plugins-components.md#monitors) run as background shell commands that Claude Code starts on its own when the session starts, when you reload plugins, or the first time a named skill runs.
 - **Mods**: a plugin’s [mod](plugins-mods-overview.md) runs JavaScript inside Claude Code with your permissions. To list what a mod does before you install it, see [Decide whether to trust a mod](plugins-mods-overview.md#decide-whether-to-trust-a-mod).
 - **MCP and LSP servers**: Claude Code connects to the [MCP servers](../06-MCP-Tools/General/mcp.md) an enabled plugin declares and gives Claude their tools. A stdio MCP server runs as a process that Claude Code starts on your machine. Claude Code also starts the language servers the plugin declares.
-- **`bin/` directory**: Claude Code adds each enabled plugin’s `bin/` directory to the `PATH` of the Bash tool’s shell, so Claude’s Bash commands can run any executable there.
+- **`bin/` directory**: Claude Code adds each enabled plugin’s `bin/` directory to the `PATH` of the Bash tool’s shell, so Claude’s Bash commands can run any executable there. A command that Claude runs with the [PowerShell tool](../02-Claude-Code-CLI/tools-reference.md#powershell-tool) gets those directories on its `PATH` when it runs outside the [sandbox](../02-Claude-Code-CLI/sandboxing.md), and not when it runs inside it.
 - **Skills, commands, and agents**: these enter Claude’s context as instructions, so they influence what Claude does with the tools it already has.
 - **Updates**: when auto-update is on for the marketplace you installed a plugin from, Claude Code updates that plugin in the background, so the files you reviewed can change on disk. [When auto-update runs](plugins-loading.md#when-auto-update-runs) has the timing. To turn auto-update on or off per marketplace, see [Keep plugins updated](discover-plugins.md#keep-plugins-updated).
 
@@ -206,7 +206,7 @@ If your organization exports Claude Code’s [OpenTelemetry events](../13-Enterp
 - **[Plugin loaded event](../13-Enterprise-Admin/monitoring-usage.md#plugin-loaded-event)**: the event reports official-tier plugin and marketplace names as they are. For the community and third-party tiers, `plugin.name` and `marketplace.name` are the literal string `third-party` unless you set `OTEL_LOG_TOOL_DETAILS=1`.
 - **Plugin scope**: the loaded event’s `plugin.scope` still reports where the plugin came from, such as `org` for a plugin your managed settings enable or `user-local` for any other third-party plugin. The [plugin loaded event](../13-Enterprise-Admin/monitoring-usage.md#plugin-loaded-event) lists every value.
 - **[Plugin installed event](../13-Enterprise-Admin/monitoring-usage.md#plugin-installed-event)**: unless you set `OTEL_LOG_TOOL_DETAILS=1`, the event omits the name fields for non-official plugins instead of reporting `third-party`.
-- **[Claude Code Analytics API](../04-API-Reference/Admin/http-beta-organization-analytics-plugins-list.md)**: Claude Code reports plugins from the official and community tiers by name and reports every other plugin as `third-party`.
+- **[Claude Code Analytics API](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics-plugins-list.md)**: Claude Code reports plugins from the official and community tiers by name and reports every other plugin as `third-party`.
 
 
 [​](#next-steps)

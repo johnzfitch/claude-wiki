@@ -1,8 +1,8 @@
 ---
 title: "Prompt engineering overview - Claude Platform Docs"
-source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
+source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering"
 category: "10-Prompting-Guides"
-fetched_at: "2026-10-04T08:33:55Z"
+fetched_at: "2026-10-20T06:40:14Z"
 tags: ["prompting"]
 ---
 

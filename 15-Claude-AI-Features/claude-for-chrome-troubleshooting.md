@@ -2,13 +2,13 @@
 title: "Claude in Chrome troubleshooting | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:07Z"
+fetched_at: "2026-10-23T06:28:59Z"
 tags: ["claude-ai", "claude-code", "desktop"]
 ---
 
 # Claude in Chrome troubleshooting
 
-August 12, 2026
+Updated today
 
 
 This article helps you resolve common issues with Claude in Chrome and explains how to provide feedback.
@@ -19,7 +19,7 @@ Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise
 
 On Max and Team plans, on Pro plans as the rollout reaches you, and on Enterprise plans where an admin has enabled it, the side panel now runs as a Claude Cowork session, so it uses the same interface as Cowork on the web and desktop. Your conversations are saved to your history and can be reopened on your other devices. The Cowork side panel also defaults to "Automatically approve" mode, so Claude works continuously and pauses only when an action needs your approval.
 
-If you'd rather use the previous side panel, click the three dots in the upper right corner and select "Switch back to classic." For details, see **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173)**.
+If you'd rather use the previous side panel, click the three dots in the upper right corner and select "Switch back to classic." For details, see **[Get started with Claude in Chrome](get-started-with-claude-in-chrome-claude-help-center.md)**.
 
 ## I don't see the Cowork side panel
 
@@ -79,7 +79,7 @@ If you'd rather use the previous side panel, click the three dots in the upper r
 
 ## Usage limits
 
-Usage limits apply across different interfaces, so using Claude in Chrome will count against the same plan limits that apply to Claude or Claude Code. Browser interactions are more compute-intensive than regular chats with Claude, so you can expect the extension to use more of your limit. With the long-running workflow capabilities, tasks can continue for extended periods, which may use more of your usage allocation. The Cowork side panel defaults to "Automatically approve" mode, which runs extra safety checks on each action and uses more of your usage limit than the other modes.
+Usage limits apply across different interfaces, so using Claude in Chrome will count against the same plan limits that apply to Claude or Claude Code. Browser interactions are more compute-intensive than regular chats with Claude, so you can expect the extension to use more of your limit. With the long-running workflow capabilities, tasks can continue for extended periods, which may use more of your usage allocation.
 
 ------------------------------------------------------------------------
 
@@ -93,9 +93,9 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 - **Report suspected prompt injection** if Claude behaves unexpectedly.
 
-  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#067375637475676063727f466768726e7469766f652865696b)** to report any safety issues or unexpected behaviors.
+  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#cbbeb8aeb9b8aaadaebfb28baaa5bfa3b9a4bba2a8e5a8a4a6)** to report any safety issues or unexpected behaviors.
 
-- **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for technical issues or account problems.
+- **[Contact Support](how-to-get-support.md)** for technical issues or account problems.
 
 ### What we're learning
 

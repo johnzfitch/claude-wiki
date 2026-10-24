@@ -2,7 +2,7 @@
 title: "Use Claude for M365 with third-party platforms - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/13945233-use-claude-in-excel-and-powerpoint-with-an-llm-gateway"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:14Z"
+fetched_at: "2026-10-23T06:29:05Z"
 tags: ["claude-ai"]
 ---
 
@@ -32,6 +32,7 @@ tags: ["claude-ai"]
   - [Bedrock, Vertex AI, or Foundry direct](#bedrock-vertex-ai-or-foundry-direct)
   - [Foundry direct without an API key](#foundry-direct-without-an-api-key)
   - [Route Foundry direct through your own gateway](#route-foundry-direct-through-your-own-gateway)
+  - [Route Vertex AI direct through your own gateway](#route-vertex-ai-direct-through-your-own-gateway)
   - [Change or update your gateway connection](#change-or-update-your-gateway-connection)
 - [Gateway requirements for IT teams](#gateway-requirements-for-it-teams)
   - [CORS requirements](#cors-requirements)
@@ -125,17 +126,18 @@ Anthropic API (1P)
 
 Use this table if your organization signs in with Claude accounts and inference goes to `api.anthropic.com`.
 
-| Domain                         | Required when             | Purpose                                                                                    |
-|--------------------------------|---------------------------|--------------------------------------------------------------------------------------------|
-| `pivot.claude.ai`              | Always                    | Add-in host serving task pane UI, analytics, icon search, skill downloads, and telemetry.  |
-| `claude.ai`                    | Always                    | Anthropic OAuth sign-in and feature-flag evaluation.                                       |
-| `api.anthropic.com`            | Always                    | Claude inference API, file uploads, code-execution containers, and MCP connector registry. |
-| `appsforoffice.microsoft.com`  | Always                    | Microsoft Office.js runtime script (required by all Office add-ins).                       |
-| `login.microsoftonline.com`    | If using Outlook          | Microsoft Entra ID sign-in via Nested App Auth for the Graph token.                        |
-| `o1158394.ingest.us.sentry.io` | Optional                  | Crash and error reporting; blocking degrades diagnostics only.                             |
-| `mcp-proxy.anthropic.com`      | If using MCP connectors   | Proxy for MCP connector tool calls.                                                        |
-| `bridge.claudeusercontent.com` | If using work across apps | WebSocket bridge for the work-across-apps feature.                                         |
-| `graph.microsoft.com`          | If using Outlook          | Microsoft Graph mailbox and calendar API.                                                  |
+| Domain                           | Required when             | Purpose                                                                                                                                                                                                                       |
+|----------------------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `pivot.claude.ai`                | Always                    | Add-in host serving task pane UI, analytics, icon search, skill downloads, and telemetry.                                                                                                                                     |
+| `claude.ai`                      | Always                    | Anthropic OAuth sign-in and feature-flag evaluation.                                                                                                                                                                          |
+| `hcaptcha.com`, `*.hcaptcha.com` | Always                    | hCaptcha browser check on the `claude.ai` sign-in and approval pages, which open in the user’s web browser. If these domains are blocked, the sign-in approval can fail with a message that the browser couldn’t be verified. |
+| `api.anthropic.com`              | Always                    | Claude inference API, file uploads, code-execution containers, and MCP connector registry.                                                                                                                                    |
+| `appsforoffice.microsoft.com`    | Always                    | Microsoft Office.js runtime script (required by all Office add-ins).                                                                                                                                                          |
+| `login.microsoftonline.com`      | If using Outlook          | Microsoft Entra ID sign-in via Nested App Auth for the Graph token.                                                                                                                                                           |
+| `o1158394.ingest.us.sentry.io`   | Optional                  | Crash and error reporting; blocking degrades diagnostics only.                                                                                                                                                                |
+| `mcp-proxy.anthropic.com`        | If using MCP connectors   | Proxy for MCP connector tool calls.                                                                                                                                                                                           |
+| `bridge.claudeusercontent.com`   | If using work across apps | WebSocket bridge for the work-across-apps feature.                                                                                                                                                                            |
+| `graph.microsoft.com`            | If using Outlook          | Microsoft Graph mailbox and calendar API.                                                                                                                                                                                     |
 
 If your organization has [IP allowlisting](../13-Enterprise-Admin/restrict-access-to-claude-with-ip-allowlisting.md) enabled for Claude, route `bridge.claudeusercontent.com` through the same proxy egress as `claude.ai` and `api.anthropic.com`, for example by placing it in the same Zscaler app segment or Netskope steering policy. If you cannot route it that way, add the egress address your proxy uses for that domain to your organization’s Claude IP allowlist, but only when that address is dedicated to your organization: a shared proxy egress range also admits the proxy vendor’s other customers. Anthropic checks connections to `bridge.claudeusercontent.com` against your organization’s Claude IP allowlist using the address they arrive from. If your proxy sends traffic for that domain out through an address that is not on that allowlist, [work across apps](https://support.claude.com/docs/office-agents/work-across-apps) stops while the rest of the add-in keeps working.
 
@@ -146,25 +148,26 @@ Third-party platforms (3P)
 
 Use this table if your organization signs in with Microsoft Entra ID and inference goes to your LLM gateway, Bedrock, Vertex AI, or Azure AI Foundry.
 
-| Domain                                   | Required when                                    | Purpose                                                                                                                        |
-|------------------------------------------|--------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| `pivot.claude.ai`                        | Always                                           | Add-in host serving task pane UI, analytics, and telemetry.                                                                    |
-| `claude.ai/api/`                         | Always                                           | Feature-flag evaluation without sign-in.                                                                                       |
-| `appsforoffice.microsoft.com`            | Always                                           | Microsoft Office.js runtime script.                                                                                            |
-| `login.microsoftonline.com`              | Always                                           | Microsoft Entra ID sign-in via Nested App Auth; reads admin config and issues tokens.                                          |
-| `o1158394.ingest.us.sentry.io`           | Optional                                         | Crash and error reporting; blocking degrades diagnostics only.                                                                 |
-| Your LLM gateway URL                     | If using LLM gateway                             | Organization’s LLM gateway for inference.                                                                                      |
-| `sts.amazonaws.com`                      | If using Bedrock direct                          | AWS STS for exchanging Entra ID token for temporary Bedrock credentials.                                                       |
-| `bedrock-runtime.<region>.amazonaws.com` | If using Bedrock direct                          | Bedrock inference endpoint; replace `<region>` with your configured AWS region.                                                |
-| `accounts.google.com`                    | If using Vertex AI direct                        | Google OAuth consent screen.                                                                                                   |
-| `oauth2.googleapis.com`                  | If using Vertex AI direct                        | Google OAuth token exchange and refresh.                                                                                       |
-| `aiplatform.googleapis.com`              | If using Vertex AI direct                        | Vertex AI global inference endpoint.                                                                                           |
-| `<region>-aiplatform.googleapis.com`     | If using Vertex AI direct                        | Vertex AI regional inference endpoint; replace `<region>` with your GCP region.                                                |
-| `<resource>.services.ai.azure.com`       | If using Foundry direct                          | Azure AI Foundry inference endpoint; replace `<resource>` with your resource name.                                             |
-| Your Foundry gateway URL                 | If using Foundry direct through your own gateway | The gateway or proxy set in `azure_base_url`. Connections made while it is set do not call `<resource>.services.ai.azure.com`. |
-| `graph.microsoft.com`                    | If using Outlook                                 | Microsoft Graph mailbox and calendar API.                                                                                      |
+| Domain                                   | Required when                                      | Purpose                                                                                                                                                                                                                                    |
+|------------------------------------------|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `pivot.claude.ai`                        | Always                                             | Add-in host serving task pane UI, analytics, and telemetry.                                                                                                                                                                                |
+| `claude.ai/api/`                         | Always                                             | Feature-flag evaluation without sign-in.                                                                                                                                                                                                   |
+| `appsforoffice.microsoft.com`            | Always                                             | Microsoft Office.js runtime script.                                                                                                                                                                                                        |
+| `login.microsoftonline.com`              | Always                                             | Microsoft Entra ID sign-in via Nested App Auth; reads admin config and issues tokens.                                                                                                                                                      |
+| `o1158394.ingest.us.sentry.io`           | Optional                                           | Crash and error reporting; blocking degrades diagnostics only.                                                                                                                                                                             |
+| Your LLM gateway URL                     | If using LLM gateway                               | Organization’s LLM gateway for inference.                                                                                                                                                                                                  |
+| `sts.amazonaws.com`                      | If using Bedrock direct                            | AWS STS for exchanging Entra ID token for temporary Bedrock credentials.                                                                                                                                                                   |
+| `bedrock-runtime.<region>.amazonaws.com` | If using Bedrock direct                            | Bedrock inference endpoint; replace `<region>` with your configured AWS region.                                                                                                                                                            |
+| `accounts.google.com`                    | If using Vertex AI direct                          | Google OAuth consent screen.                                                                                                                                                                                                               |
+| `oauth2.googleapis.com`                  | If using Vertex AI direct                          | Google OAuth token exchange and refresh.                                                                                                                                                                                                   |
+| `aiplatform.googleapis.com`              | If using Vertex AI direct                          | Vertex AI global inference endpoint.                                                                                                                                                                                                       |
+| `<region>-aiplatform.googleapis.com`     | If using Vertex AI direct                          | Vertex AI regional inference endpoint; replace `<region>` with your GCP region.                                                                                                                                                            |
+| `<resource>.services.ai.azure.com`       | If using Foundry direct                            | Azure AI Foundry inference endpoint; replace `<resource>` with your resource name.                                                                                                                                                         |
+| Your Vertex AI gateway URL               | If using Vertex AI direct through your own gateway | The gateway or proxy set in `gcp_base_url`. Connections made while it is set do not call `aiplatform.googleapis.com` or `<region>-aiplatform.googleapis.com`. Google sign-in still uses `accounts.google.com` and `oauth2.googleapis.com`. |
+| Your Foundry gateway URL                 | If using Foundry direct through your own gateway   | The gateway or proxy set in `azure_base_url`. Connections made while it is set do not call `<resource>.services.ai.azure.com`.                                                                                                             |
+| `graph.microsoft.com`                    | If using Outlook                                   | Microsoft Graph mailbox and calendar API.                                                                                                                                                                                                  |
 
-If Anthropic serves your add-in settings from your Claude organization, as described in [Serve add-in settings from your Claude organization](#serve-add-in-settings-from-your-claude-organization), also allow `claude.ai` and `api.anthropic.com`. Members sign in with their Claude account at `claude.ai`, and the add-in reads your organization’s settings from `api.anthropic.com`. Inference still goes only to the gateway or cloud provider those settings name.
+If Anthropic serves your add-in settings from your Claude organization, as described in [Serve add-in settings from your Claude organization](#serve-add-in-settings-from-your-claude-organization), also allow `claude.ai`, `api.anthropic.com`, `hcaptcha.com`, and `*.hcaptcha.com`. Members sign in with their Claude account at `claude.ai`, and the add-in reads your organization’s settings from `api.anthropic.com`. The `claude.ai` sign-in and approval pages run an hCaptcha browser check. Inference still goes only to the gateway or cloud provider those settings name.
 
 
 [​](#deploy-the-add-in-for-your-organization)
@@ -272,13 +275,15 @@ Admin feature controls
 
 The `disabled_features` configuration key turns off individual add-in features for your users. It travels over the same three channels as every other key: manifest parameters (comma-separated), Entra ID extension attributes (comma-separated), or a bootstrap endpoint (JSON array), so it can apply org-wide from one manifest or vary per user.
 
-| Slug               | Effect                                                                                                                                                                                    |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `skills.authoring` | Blocks creating, editing, and uploading skills. Running admin-provisioned skills is unaffected.                                                                                           |
-| `thumbs`           | Blocks response feedback (thumbs up / down and the follow-up prompt).                                                                                                                     |
-| `addin.access`     | Kill switch: the add-in refuses to run.                                                                                                                                                   |
-| `file.upload`      | Blocks attaching files to the conversation.                                                                                                                                               |
-| `web_search`       | Removes the built-in web search and web fetch tools, whose queries are served by Anthropic’s search provider, along with the user-facing web search toggle. Code execution is unaffected. |
+| Slug                                       | Effect                                                                                                                                                                                                                |
+|--------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `skills.authoring`                         | Blocks creating, editing, and uploading skills. Running admin-provisioned skills is unaffected.                                                                                                                       |
+| `thumbs`                                   | Blocks response feedback (thumbs up / down and the follow-up prompt).                                                                                                                                                 |
+| `addin.access`                             | Kill switch: the add-in refuses to run.                                                                                                                                                                               |
+| `file.upload`                              | Blocks attaching files to the conversation.                                                                                                                                                                           |
+| `web_search`                               | Removes the built-in web search and web fetch tools, whose queries are served by Anthropic’s search provider, along with the user-facing web search toggle. Code execution is unaffected.                             |
+| `permission_mode.accept_all_edits`         | Keeps users in “Ask before edits”: “Accept all edits” and “Skip all permissions” can’t be turned on, and users already in either mode go back to “Ask before edits”. Connector “Always allow” choices are unaffected. |
+| `permission_mode.dangerously_always_allow` | Removes the “Dangerously always allow” button from approval cards. It switches users to the mode shown as “Skip all permissions”; users already in that mode are moved to “Accept all edits”.                         |
 
 Unknown slugs are ignored, so setting a slug from a newer add-in version on an older deployment is safe. Disabling `web_search` pairs with the `mcp_servers` key: attach your own search tool from a server inside your network, and with the built-in search disabled the model uses the tool you provide. This keeps search queries on infrastructure you control. For document-scoped control, such as disabling a feature only on files carrying certain sensitivity labels, use the `access_policies` key instead; a statement without a resource behaves exactly like `disabled_features`. The setup wizard’s `/claude-for-msft-365-install:manifest` and `/claude-for-msft-365-install:access-policies` commands document both keys in full.
 
@@ -482,6 +487,19 @@ If your organization reaches Azure AI Foundry through a gateway or proxy it oper
 | `azure_resource_name` | Your Foundry resource name.                                                           |
 | `azure_base_url`      | The gateway base URL, for example `https://ai-gateway.example.com/foundry/anthropic`. |
 | `azure_api_key`       | The key the gateway expects as `x-api-key`. Omit it with keyless sign-in.             |
+
+
+[​](#route-vertex-ai-direct-through-your-own-gateway)
+
+Route Vertex AI direct through your own gateway
+
+If your organization reaches Vertex AI through a gateway or proxy it operates, set `gcp_base_url` to that gateway’s base URL, API version included. Each user still signs in with Google, and the add-in keeps the Vertex AI request format, but it sends every request to `<gcp_base_url>/projects/<project>/locations/<region>/publishers/anthropic/models/<model>:rawPredict`, or `:streamRawPredict` for streaming responses, instead of `https://<region>-aiplatform.googleapis.com/v1/...`, with the user’s Google access token as `Authorization: Bearer`. Google sign-in and token refresh still go to `accounts.google.com` and `oauth2.googleapis.com`. `gcp_project_id`, `google_client_id`, and `google_client_secret` are still required, and `gcp_region` still names the region in the request path. Use the same value you would set as Claude Code’s `ANTHROPIC_VERTEX_BASE_URL`. The URL must use HTTPS. Because the add-in calls the gateway from the browser, the gateway must meet the [CORS requirements](#cors-requirements), and your network must allow its domain as listed in the [network allowlist](#network-allowlist). On this path the add-in sends the same headers it sends to Vertex AI: `authorization`, `content-type`, `accept`, and `user-agent`. The token the gateway receives is the user’s Google OAuth token with the `cloud-platform` scope, so the gateway should forward it to Vertex AI and not store it. Users who connected before you set `gcp_base_url` keep their direct connection until they log out and sign in again, as described in [Change or update your gateway connection](#change-or-update-your-gateway-connection). Until the setup wizard accepts this key, add `gcp_base_url` to the generated manifest URL by hand, or deliver it per user through Microsoft Entra ID extension attributes or a bootstrap endpoint.
+
+| Parameter        | Value                                                                         |
+|------------------|-------------------------------------------------------------------------------|
+| `gcp_project_id` | Your Google Cloud project ID.                                                 |
+| `gcp_region`     | The Vertex AI region, or `global`.                                            |
+| `gcp_base_url`   | The gateway base URL, for example `https://ai-gateway.example.com/vertex/v1`. |
 
 
 [​](#change-or-update-your-gateway-connection)

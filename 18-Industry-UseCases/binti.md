@@ -2,7 +2,7 @@
 title: "Binti Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/binti"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:52Z"
+fetched_at: "2026-10-23T06:29:31Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -47,9 +47,9 @@ Now, with Claude, Binti is able to drive even greater impact for agencies. Socia
 
 ## Critical work slowed by overwhelming administrative burden
 
-Child welfare represents some of society's most important work—ensuring children have safe, permanent homes. Yet the systems designed to help these children often lead to social workers spending half or more of their time on administrative tasks instead of directly with children and families. There is a nationwide shortage of social workers. Social worker turnover is exacerbated by staff frustration with outdated tools such as 70-column Excel spreadsheets, paper forms, sticky notes, and 20 year old legacy government systems—leading to vital information slipping through the cracks, social workers getting burnt out, and suboptimal outcomes for children.
+Child welfare represents some of society’s most important work—ensuring children have safe, permanent homes. Yet the systems designed to help these children often lead to social workers spending half or more of their time on administrative tasks instead of directly with children and families. There is a nationwide shortage of social workers. Social worker turnover is exacerbated by staff frustration with outdated tools such as 70-column Excel spreadsheets, paper forms, sticky notes, and 20 year old legacy government systems—leading to vital information slipping through the cracks, social workers getting burnt out, and suboptimal outcomes for children.
 
-This administrative burden created real challenges. Felicia Curcuru, co-founder and CEO of Binti, said, "Social workers spend hours interviewing a family in person. Then they have to go back to the office and spend 6-8 hours writing their notes and assessment of the interview. Social workers got into this work to work with children and families, but they spend 50% or more of their time doing administrative work.”
+This administrative burden created real challenges. Felicia Curcuru, co-founder and CEO of Binti, said, “Social workers spend hours interviewing a family in person. Then they have to go back to the office and spend 6-8 hours writing their notes and assessment of the interview. Social workers got into this work to work with children and families, but they spend 50% or more of their time doing administrative work.”
 
 ## AI-powered features that transform daily workflows
 
@@ -59,38 +59,38 @@ Binti integrated Claude to power three core features that reduce administrative 
 - **Chat with Binti AI:** Workers can instantly query case information using natural language instead of searching through hundreds of pages of documents. The AI cites its sources for every answer and includes feedback mechanisms for continuous improvement.
 - **Binti Translate** Families can complete forms in their preferred language, with responses automatically translated for caseworkers. This reduces interpretation costs while ensuring non-English-speaking families can fully participate in the process.
 
-Curcuru noted, "The technical integration with Claude was straightforward and user friendly for our engineering team. It allowed us to quickly launch AI-powered features, get them into the hands of social workers, and gather early, meaningful feedback."
+Curcuru noted, “The technical integration with Claude was straightforward and user friendly for our engineering team. It allowed us to quickly launch AI-powered features, get them into the hands of social workers, and gather early, meaningful feedback.”
 
 ## Selecting Claude for security and human-centered AI in child welfare
 
-Binti needed an AI partner that could handle sensitive family data securely while respecting the human element of social work. Curcuru emphasized, "Agencies need absolute confidence that children's and families' personal information is completely protected." This meant HIPAA compliance, SOC 2 certification, and guarantees against training on client data.
+Binti needed an AI partner that could handle sensitive family data securely while respecting the human element of social work. Curcuru emphasized, “Agencies need absolute confidence that children’s and families’ personal information is completely protected.” This meant HIPAA compliance, SOC 2 certification, and guarantees against training on client data.
 
-After evaluating multiple AI models with mock family interviews, Binti chose Claude because it excelled at both security and appropriate boundaries. Curcuru said, "Anthropic prioritizes security and trust above everything else. They don't train on our data and made HIPAA compliance straightforward."
+After evaluating multiple AI models with mock family interviews, Binti chose Claude because it excelled at both security and appropriate boundaries. Curcuru said, “Anthropic prioritizes security and trust above everything else. They don’t train on our data and made HIPAA compliance straightforward.”
 
-Beyond security, Claude maintained the right balance between advanced capabilities and responsible boundaries. Curcuru explained, "The AI accurately captures what families say and places it in the right form fields, but it never makes judgments about whether a family is suitable. Its purpose is to support social workers with more accessible information and less administrative burden—not to make decisions on their behalf."
+Beyond security, Claude maintained the right balance between advanced capabilities and responsible boundaries. Curcuru explained, “The AI accurately captures what families say and places it in the right form fields, but it never makes judgments about whether a family is suitable. Its purpose is to support social workers with more accessible information and less administrative burden—not to make decisions on their behalf.”
 
 ## Rapid adoption across the child welfare system
 
-This is just the beginning of the impact of Binti and Claude’s partnership. "I've rarely seen social workers this enthusiastic about a new tool," Curcuru observed.
+This is just the beginning of the impact of Binti and Claude’s partnership. “I’ve rarely seen social workers this enthusiastic about a new tool,” Curcuru observed.
 
-After seeing the positive feedback and impact, agency directors have embraced the technology. Curcuru shared, "Leadership teams are focused on reducing burnout and retaining skilled social workers. When they see how much time this saves and hear how much their staff appreciates it, adoption happens quickly." Quality has improved alongside efficiency, with supervisors noting that "AI-assisted reports are consistently more thorough and accurate than what we typically see."
+After seeing the positive feedback and impact, agency directors have embraced the technology. Curcuru shared, “Leadership teams are focused on reducing burnout and retaining skilled social workers. When they see how much time this saves and hear how much their staff appreciates it, adoption happens quickly.” Quality has improved alongside efficiency, with supervisors noting that “AI-assisted reports are consistently more thorough and accurate than what we typically see.”
 
-Families benefit from more engaged, present social workers. Curcuru explained, "When we share that AI will help with paperwork so the social workers can focus on their conversation and move the process forward more quickly, families are often very open to it. They want social workers’ full attention, not to watch them taking notes. And given how long the process can be, they’re excited about technology that helps reduce delays."
+Families benefit from more engaged, present social workers. Curcuru explained, “When we share that AI will help with paperwork so the social workers can focus on their conversation and move the process forward more quickly, families are often very open to it. They want social workers’ full attention, not to watch them taking notes. And given how long the process can be, they’re excited about technology that helps reduce delays.”
 
 ## Building a future where technology amplifies human compassion
 
-Binti plans to expand Claude's role across the entire child welfare continuum while maintaining their commitment to human-led AI. "The positive response from social workers motivates us to develop more AI features that save time and reduce administrative work," said Curcuru. Future applications from identifying kin who can support a child to helping families access critical resources and more—always with human judgment at the center.
+Binti plans to expand Claude’s role across the entire child welfare continuum while maintaining their commitment to human-led AI. “The positive response from social workers motivates us to develop more AI features that save time and reduce administrative work,” said Curcuru. Future applications from identifying kin who can support a child to helping families access critical resources and more—always with human judgment at the center.
 
-Working with Anthropic, Binti proves that the most powerful AI applications don't replicate human judgment—but clear away administrative obstacles so humans can focus on what matters most. Every child deserves a loving family, and by giving social workers the tools to spend their time where it counts, Binti is helping social workers around the country focus on social work, instead of paperwork, to help more children have loving families.
+Working with Anthropic, Binti proves that the most powerful AI applications don’t replicate human judgment—but clear away administrative obstacles so humans can focus on what matters most. Every child deserves a loving family, and by giving social workers the tools to spend their time where it counts, Binti is helping social workers around the country focus on social work, instead of paperwork, to help more children have loving families.
 
 
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
@@ -107,7 +107,8 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -125,12 +126,12 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -163,7 +164,7 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -181,6 +182,7 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -196,7 +198,7 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -231,7 +233,8 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -249,12 +252,12 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -287,7 +290,7 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -305,6 +308,7 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -320,7 +324,7 @@ Working with Anthropic, Binti proves that the most powerful AI applications don'
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

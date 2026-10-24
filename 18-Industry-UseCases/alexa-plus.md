@@ -2,7 +2,7 @@
 title: "Alexa+ Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/alexa-plus"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:28:38Z"
+fetched_at: "2026-10-23T06:29:46Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -30,11 +30,11 @@ Best-in-class
 
 jailbreaking resistance and advanced safety capabilities
 
-Today, we're announcing that Claude models are helping power Alexa+. This collaboration is part of our ongoing partnership with Amazon to deliver advanced AI technology to businesses and consumers around the world.
+Today, we’re announcing that Claude models are helping power Alexa+. This collaboration is part of our ongoing partnership with Amazon to deliver advanced AI technology to businesses and consumers around the world.
 
-Teams from Amazon and Anthropic worked closely throughout the past year. Our Chief Product Officer, Mike Krieger, led a team that helped Alexa+ to get the full benefits of Claude's capabilities.
+Teams from Amazon and Anthropic worked closely throughout the past year. Our Chief Product Officer, Mike Krieger, led a team that helped Alexa+ to get the full benefits of Claude’s capabilities.
 
-Consistent with Anthropic's commitment to trust and safety, Alexa+ is able to take advantage of our best in class capabilities, such as our advanced jailbreaking resistance.
+Consistent with Anthropic’s commitment to trust and safety, Alexa+ is able to take advantage of our best in class capabilities, such as our advanced jailbreaking resistance.
 
 Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the U.S. in the next few weeks, becoming more widely available in the coming months.
 
@@ -61,7 +61,8 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -79,12 +80,12 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -117,7 +118,7 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -135,6 +136,7 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -150,7 +152,7 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -185,7 +187,8 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -203,12 +206,12 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -241,7 +244,7 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -259,6 +262,7 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -274,7 +278,7 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

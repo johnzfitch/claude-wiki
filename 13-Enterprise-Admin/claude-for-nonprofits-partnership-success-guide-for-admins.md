@@ -2,7 +2,7 @@
 title: "Claude for nonprofits partnership success guide for admins · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923668-claude-for-nonprofits-partnership-success-guide-for-admins"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-09T06:28:13Z"
+fetched_at: "2026-10-23T06:28:58Z"
 tags: ["enterprise"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["enterprise"]
 
 A phased implementation framework to help nonprofit admins launch, scale, and sustain Claude adoption across their organization.
 
-4 minClaude.ai
+4 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -74,7 +74,6 @@ The framework below is flexible and self-paced. Move through the phases at whate
 
 - [Use case library(opens in new tab)](https://support.claude.com/all?kind=use-case)
 - [How to access audit logs(opens in new tab)](how-to-access-audit-logs.md)
-- [Claude artifact inspiration gallery(opens in new tab)](https://claude.ai/artifacts?category=learn)
 - [MCP connector directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md)
 
 #### Recommended actions

@@ -2,7 +2,7 @@
 title: "Lokalise Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/lokalise"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:09Z"
+fetched_at: "2026-10-23T06:29:42Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -43,39 +43,39 @@ With Claude, Lokalise:
 
 Lokalise helps businesses expand globally through their intuitive localization platform that combines automation, AI orchestration, and collaboration. Founded in Europe, they have evolved from serving developers and product managers to supporting enterprises across technology, financial services, and healthcare, as well as startups entering new markets.
 
-As companies expand globally, they need high-quality localized content delivered efficiently. Etgar Bonar, CMO at Lokalise, said, "Our journey with AI started with helping customers get translations faster and more cost-effectively, but we soon realized that quality matters just as much." This insight led them to build an AI-driven localization process that bridges the gap between machine and human translation without compromising efficiency.
+As companies expand globally, they need high-quality localized content delivered efficiently. Etgar Bonar, CMO at Lokalise, said, “Our journey with AI started with helping customers get translations faster and more cost-effectively, but we soon realized that quality matters just as much.” This insight led them to build an AI-driven localization process that bridges the gap between machine and human translation without compromising efficiency.
 
 ## Choosing Claude for superior translation quality
 
-After evaluating multiple AI models, Lokalise selected Claude as one of their five engines based on its exceptional performance in testing across language pairs—combinations of source and target languages such as English to Portuguese or Japanese to English. "Claude ranked number one of the models that we tested, consistently delivering the best results across all benchmark metrics," said Bonar.
+After evaluating multiple AI models, Lokalise selected Claude as one of their five engines based on its exceptional performance in testing across language pairs—combinations of source and target languages such as English to Portuguese or Japanese to English. “Claude ranked number one of the models that we tested, consistently delivering the best results across all benchmark metrics,” said Bonar.
 
 In a recent A/B test comparing Claude 3.5 Sonnet with GPT-4o, Claude achieved a higher AI suggestion acceptance rate and consistently outperformed competing models across key language pairs, particularly English to Portuguese and Japanese to English.
 
-Beyond raw performance metrics, Lokalise found that Claude delivered more natural and context-aware outputs, leading to higher acceptance rates and less post-editing effort for translators. "When we tested Claude 3.5 Sonnet, the results were clear—it was the most accurate model we'd evaluated, particularly for handling nuanced content and maintaining proper context for several language pairs," said Bonar.
+Beyond raw performance metrics, Lokalise found that Claude delivered more natural and context-aware outputs, leading to higher acceptance rates and less post-editing effort for translators. “When we tested Claude 3.5 Sonnet, the results were clear—it was the most accurate model we’d evaluated, particularly for handling nuanced content and maintaining proper context for several language pairs,” said Bonar.
 
-## How Claude powers Lokalise's intelligent translation platform
+## How Claude powers Lokalise’s intelligent translation platform
 
 Lokalise has integrated Claude 3.5 Sonnet into their AI orchestration platform. This platform compares translations from multiple large language models and selects the best one based on factors like language pair, content type, and additional context provided.
 
-Claude's role in this ecosystem includes:
+Claude’s role in this ecosystem includes:
 
-- Generating AI suggestions in Lokalise's Expert Editor, which translators can accept, modify, or reject
+- Generating AI suggestions in Lokalise’s Expert Editor, which translators can accept, modify, or reject
 - Serving as the default engine for several high-impact language pairs due to its superior performance
 - Processing longer, more nuanced content segments, which is particularly valuable for product UI localization and in-app messaging
 
-Integrating Claude into Lokalise's existing tools was straightforward thanks to Anthropic's clear documentation and stable API performance. "Claude integrated seamlessly with our existing model infrastructure, requiring minimal adaptation and allowing us to rapidly deploy and iterate," noted Bonar. This smooth integration enabled Lokalise to quickly stand up an A/B test framework, evaluate results across numerous language pairs, and begin deployment without major backend rework.
+Integrating Claude into Lokalise’s existing tools was straightforward thanks to Anthropic’s clear documentation and stable API performance. “Claude integrated seamlessly with our existing model infrastructure, requiring minimal adaptation and allowing us to rapidly deploy and iterate,” noted Bonar. This smooth integration enabled Lokalise to quickly stand up an A/B test framework, evaluate results across numerous language pairs, and begin deployment without major backend rework.
 
 ## Empowering global businesses with faster, higher-quality localization
 
 Lokalise has improved translation quality and efficiency by incorporating Claude into their suite of AI models. Currently, over 80% of Lokalise AI translations do not need post-editing, meeting human translation quality standards while driving cost savings of over 80% by reducing the need for manual review.
 
-This means faster time to market for their global content strategies for Lokalise's customers. "Our customers can now enter new markets faster using AI translations because they trust that with proper context provided to our AI engine, they’ll see human-like quality for at least 80% of their translations," explained Bonar.
+This means faster time to market for their global content strategies for Lokalise’s customers. “Our customers can now enter new markets faster using AI translations because they trust that with proper context provided to our AI engine, they’ll see human-like quality for at least 80% of their translations,” explained Bonar.
 
 Most importantly, Lokalise saw up to a 5% increase in translations ready to publish without post-editing for selected language pairs. This is an improvement over their baseline using other models. This performance improvement translates directly to time and cost savings for their customers.
 
 ## Building the future of AI-powered localization
 
-Lokalise envisions a future where AI transforms the localization industry, making high-quality localization accessible to all. Their next steps include leveraging retrieval augmented generation (RAG) to tailor translations to individual customers' styles and context, further enhancing the personalization and accuracy of their AI translations.
+Lokalise envisions a future where AI transforms the localization industry, making high-quality localization accessible to all. Their next steps include leveraging retrieval augmented generation (RAG) to tailor translations to individual customers’ styles and context, further enhancing the personalization and accuracy of their AI translations.
 
 Additionally, Lokalise plans to use Claude to evaluate translation quality through the Multidimensional Quality Metrics (MQM) framework. This will help customers decide which translations need review and which are ready for immediate publication.
 
@@ -104,7 +104,8 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -122,12 +123,12 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -160,7 +161,7 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -178,6 +179,7 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -193,7 +195,7 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -228,7 +230,8 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -246,12 +249,12 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -284,7 +287,7 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -302,6 +305,7 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -317,7 +321,7 @@ As AI technology evolves, Lokalise remains committed to advancing localization t
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

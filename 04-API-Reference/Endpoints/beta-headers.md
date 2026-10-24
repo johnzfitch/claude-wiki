@@ -2,7 +2,7 @@
 title: "Beta headers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/beta-headers"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:46Z"
+fetched_at: "2026-10-20T06:38:17Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta-headers)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta-headers)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [API reference](overview.md)Using the API
 
@@ -247,7 +251,7 @@ To access beta features, include the `anthropic-beta` header in your API request
 
 ```python
 POST /v1/messages
-x-api-key: YOUR_API_KEY
+Authorization: Bearer YOUR_API_KEY
 anthropic-version: 2023-06-01
 anthropic-beta: BETA_FEATURE_NAME
 content-type: application/json
@@ -276,6 +280,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -322,6 +328,15 @@ anthropic-beta: feature3
 
 
 With the SDK, list each feature (for example, `betas=["feature1", "feature2"]`). With the CLI, pass a single `--beta` flag with the feature names separated by commas (for example, `--beta feature1,feature2`). You can also repeat the flag (for example, `--beta feature1 --beta feature2`).
+
+### Beta features on other platforms
+
+Beta names are the same on every platform that accepts them, but not every platform accepts every beta. [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), and [Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md) take beta names in the `anthropic-beta` header, as the Claude API does. To send several betas, put their names in one header, separated by commas: Google Cloud reads only one `anthropic-beta` header and ignores the rest, so betas in the others don't take effect.
+
+On Amazon Bedrock, where beta names go depends on the API you call:
+
+- [Claude in Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md) (`bedrock-mantle` endpoints) takes them in the `anthropic-beta` header.
+- The [InvokeModel API](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) reads them from the request body, not from a header. List them in the body's `anthropic_beta` array, one name per element, for example `"anthropic_beta": ["feature1", "feature2"]`.
 
 ### Endpoint-specific headers
 

@@ -2,7 +2,7 @@
 title: "Create Federation Issuer - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/federation/issuers/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-09T06:27:35Z"
+fetched_at: "2026-10-17T06:26:15Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Ffederation%2Fissuers%2Fcreate)
 
 
 
@@ -139,7 +139,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -149,9 +149,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -222,13 +224,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -236,9 +240,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -257,6 +261,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Create Federation Issuer
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/federation_issuers
 
 **Requires an OAuth access token with the `org:admin` scope**, from `ant auth login --scope org:admin` or a workload identity federation rule; Admin API keys are not accepted. See [Manage WIF with the Admin API](../Other/manage-claude-wif-admin-api.md).
@@ -264,6 +274,18 @@ A beta version of this method exists and may have additional functionality. [Vie
 Register an OIDC issuer that Anthropic will trust for workload identity federation in your organization.
 
 The `jwks` field controls how the issuer's signing keys are obtained and takes one of three shapes selected by `type`: `discovery` (resolve keys through OIDC discovery), `explicit_url` (fetch keys from a fixed JWKS URL), or `inline` (provide a static key set). When `jwks.type` is `discovery` and no `discovery_base` is set, the issuer URL must be publicly reachable over HTTPS so Anthropic can fetch the discovery document; for `explicit_url` and `inline` modes the issuer URL is only matched as the JWT's `iss` claim and is not fetched.
+
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
 
 ##### Body
 

@@ -2,7 +2,7 @@
 title: "Model cards - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/resources/overview"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:22Z"
+fetched_at: "2026-10-20T06:39:47Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fresources%2Foverview)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fresources%2Foverview)
 
 
 
@@ -40,7 +40,7 @@ Models
 
 [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](../../20-Models/models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -52,11 +52,11 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](../../20-Models/about-claude-models-model-ids-and-versions.md)[Model deprecations](../../20-Models/about-claude-model-deprecations.md)[Model cards](resources-overview.md)[Pricing](../../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](../../20-Models/about-claude-models-model-ids-and-versions.md)[Model deprecations](../../20-Models/about-claude-model-deprecations.md)[Model cards](resources-overview.md)[Pricing](../../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](../../20-Models/release-notes-system-prompts-overview.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Models & pricing](../../20-Models/about-claude-models-overview.md)Lifecycle and reference
 
@@ -71,6 +71,18 @@ Model cards with detailed documentation for Claude models.
 Copy page
 
 
+
+
+
+[Claude Haiku 5.5 System Card](https://www.anthropic.com/document/claude-haiku-5-5-system-card)
+
+Detailed documentation of Claude Haiku 5.5.
+
+
+
+[Claude Sonnet 5.5 System Card](https://www.anthropic.com/document/claude-sonnet-5-5-system-card)
+
+Detailed documentation of Claude Sonnet 5.5.
 
 
 

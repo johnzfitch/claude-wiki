@@ -2,7 +2,7 @@
 title: "Compaction on demand - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-08T06:25:14Z"
+fetched_at: "2026-10-23T06:28:51Z"
 tags: ["api", "prompting"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "prompting"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fcompaction-on-demand)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fcompaction-on-demand)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode (research preview)](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
+[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
 
 [Thinking](build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,11 +78,21 @@ MCP
 
 Claude on cloud platforms
 
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](../Other/usage-limits.md)
+[Google Cloud](build-with-claude-claude-models-on-google-cloud-overview.md)
+
+[Console](../Other/playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)Compaction
+
+Compaction on demand
+
+[Beta](build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+compact-2026-09-04
 
 # Compaction on demand
 
@@ -96,21 +106,13 @@ Ask Claude to summarize a conversation when your application chooses, then conti
 
 
 
-Compaction on demand
-
-[Beta](build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-compact-2026-09-04
-
-With on-demand compaction, your application decides when a conversation is summarized: you send one request with the `compaction` parameter, and Claude returns a summary in place of a reply.
+With on-demand compaction, your application determines when a conversation is summarized: you send one request with the `compaction` parameter, and Claude returns a summary in place of a reply.
 
 ## How on-demand compaction works
 
 A compaction request is separate from your conversation turns. You send the conversation as it stands with the `compaction` parameter, and the response contains a single `compaction` block. The block holds the summary as text you can read, and a signature. Send it in future requests exactly as it came.
 
-From then on the block takes the place of the messages it summarizes. It goes first in `messages`, the summarized messages are removed, and your next turn follows it. Claude sees the summary where those messages were.
+From then on the block takes the place of the messages it summarizes. It goes first in `messages`, the summarized messages are removed, and your next turn follows it. Claude receives the summary where those messages were.
 
 ## Request a summary
 
@@ -135,6 +137,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -170,7 +174,7 @@ Response
 
 
 
-```python
+``` inline-block
 {
   "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
   "type": "message",
@@ -234,7 +238,7 @@ The API puts the summary where the block stands and passes every later message t
 
 - Put the block first in `messages`, either as an `assistant` message of its own or as the first content block of the first message, whether that is a `user` or `assistant` message.
 - Remove the summarized messages. If any remain in front of the block, the request returns a 400 error (`compaction_block_misplaced`).
-- Send exactly one `compaction` block per request, on every later request.
+- Send exactly one `compaction` block in each request, on every later request.
 
 
 
@@ -267,6 +271,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -320,13 +326,13 @@ for turn, question in enumerate(QUESTIONS, start=1):
 
 The check on `stop_reason` comes before the code looks for the block; [Handle a missing summary or an error](#when-no-summary-comes-back) says why. The history is replaced, not appended to: the returned message replaces every message the request carried, under the rules in [Continue from the summary](#continue-from-the-summary). When no summary comes back, the loop keeps its history and asks again after the next turn.
 
-The SDK [tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) in Python, TypeScript, C#, Go, Java, PHP, and Ruby can send the compaction request for you. When you decide to compact, call `compact_before_next_turn()` on the runner. Once the current turn and its tool calls finish, the runner sends the compaction request and replaces its history with the returned message. Create the runner with the `compact-2026-09-04` beta, because the runner doesn't add it.
+The SDK [tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) in Python, TypeScript, C#, Go, Java, PHP, and Ruby can send the compaction request for you. When you decide to compact, call `compact_before_next_turn()` on the runner. Once the current turn and its tool calls complete, the runner sends the compaction request and replaces its history with the returned message. Create the runner with the `compact-2026-09-04` beta, because the runner doesn't add it.
 
 The runner builds the compaction request from its own parameters and leaves `context_management` out. It also leaves out `stop_sequences`, a `tool_choice` of type `any` or `tool`, and a structured-output `output_config.format`, which the API rejects on a compaction request. [Request a summary](#request-a-summary) explains why. The runner sends them again on its later requests. SDK versions before Python 1.8.0, TypeScript 0.128.0, C# 12.50.0, Go 1.75.0, and Java 2.65.0 send them on the compaction request too. On those versions, a runner that sets any of these parameters gets a 400 error. The runner sends a [task budget](build-with-claude-task-budgets.md) unchanged. If `output_config.task_budget` sets `remaining`, the compaction request returns a 400 error, so leave `remaining` unset, as [Limits and interactions with other features](#how-it-fits-with-the-rest-of-the-api) says. The runner refuses to compact while its `context_management` has a compaction edit, so use one kind of compaction on a runner.
 
 ### When to compact
 
-You can send a compaction request after any completed turn, so your code decides when.
+You can send a compaction request after any completed turn, so your code determines when.
 
 To estimate how large the next request will be, add `input_tokens` and `output_tokens` from the last response's `usage`, as the loop does. With [prompt caching](build-with-claude-prompt-caching.md#tracking-cache-performance), `input_tokens` counts only the tokens after the last cache breakpoint, so add `cache_read_input_tokens` and `cache_creation_input_tokens` as well. You can also send the same messages to the [token counting](build-with-claude-token-counting.md) endpoint.
 
@@ -367,17 +373,17 @@ The summarization call is subject to the same safeguards as your other requests.
 
 A compaction request, or a request that carries a block, can also fail outright. Most 400 errors have a message that says what to remove or resend. Some also carry an `error.details.error_code` that starts with `compaction_`. Parameter errors, such as a field that can't be combined with `compaction`, carry the message only.
 
-| Error                                                                                                                                                                           | Cause                                                                                   | What to do                                                                                                |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
-| 529 `overloaded_error`, `error.details.error_code` `compaction_unavailable`                                                                                                     | A transient server problem while producing a block, or while reading one you sent back. | Retry the request.                                                                                        |
-| 400 `compaction_block_misplaced`                                                                                                                                                | Summarized messages remain in front of the block.                                       | Remove them, so the block comes first in `messages`.                                                      |
-| 400 `compaction_signature_invalid` or `compaction_content_mismatch`                                                                                                             | The block's `signature` or `content` was changed after the API returned it.             | Send the block exactly as returned, including its `signature`.                                            |
-| 400                                                                                                                                                                             | The request carries more than one `compaction` block.                                   | Send exactly one, the newest.                                                                             |
-| 400                                                                                                                                                                             | The last `assistant` turn ends in a tool call with no result yet.                       | Send that turn's tool results, then compact.                                                              |
-| 400 `compaction_nothing_to_summarize`                                                                                                                                           | `messages` has no `user` or `assistant` content, for example an empty list.             | Send at least one `user` or `assistant` message.                                                          |
-| 400 on the compaction request, with a message that says the `compaction` parameter `requires anthropic-beta: compact-2026-09-04`                                                | The compaction request left out the beta header.                                        | Add the beta header; see [Request a summary](#request-a-summary).                                         |
-| 400 on a later request that carries the block: a validation error that says `compaction` is not one of the expected content block types. The message doesn't mention the header | That request left out the beta header.                                                  | Add the beta header to every request that carries the block; see [Request a summary](#request-a-summary). |
-| 400 validation error, such as `messages.0.content.0.compaction.citations: Extra inputs are not permitted`                                                                       | A block was sent back with fields the API didn't return, such as `citations: null`.     | Send the block exactly as returned; see [Continue from the summary](#continue-from-the-summary).          |
+| Error                                                                                                                                                                            | Cause                                                                                   | What to do                                                                                                |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
+| 529 `overloaded_error`, `error.details.error_code` `compaction_unavailable`                                                                                                      | A transient server problem while producing a block, or while reading one you sent back. | Retry the request.                                                                                        |
+| 400 `compaction_block_misplaced`                                                                                                                                                 | Summarized messages remain in front of the block.                                       | Remove them, so the block comes first in `messages`.                                                      |
+| 400 `compaction_signature_invalid` or `compaction_content_mismatch`                                                                                                              | The block's `signature` or `content` was changed after the API returned it.             | Send the block exactly as returned, including its `signature`.                                            |
+| 400                                                                                                                                                                              | The request carries more than one `compaction` block.                                   | Send exactly one, the newest.                                                                             |
+| 400                                                                                                                                                                              | The last `assistant` turn ends in a tool call with no result yet.                       | Send that turn's tool results, then compact.                                                              |
+| 400 `compaction_nothing_to_summarize`                                                                                                                                            | `messages` has no `user` or `assistant` content, for example an empty list.             | Send at least one `user` or `assistant` message.                                                          |
+| 400 on the compaction request, with a message that says the `compaction` parameter `requires anthropic-beta: compact-2026-09-04`                                                 | The compaction request left out the beta header.                                        | Add the beta header; see [Request a summary](#request-a-summary).                                         |
+| 400 on a later request that carries the block: a validation error that says `compaction` is not one of the expected content block types. The message doesn't mention the header. | That request left out the beta header.                                                  | Add the beta header to every request that carries the block; see [Request a summary](#request-a-summary). |
+| 400 validation error, such as `messages.0.content.0.compaction.citations: Extra inputs are not permitted`                                                                        | A block was sent back with fields the API didn't return, such as `citations: null`.     | Send the block exactly as returned; see [Continue from the summary](#continue-from-the-summary).          |
 
 ## Count compaction usage
 
@@ -389,7 +395,7 @@ You have a working loop that compacts a conversation and handles a missing summa
 
 - **Threshold compaction and context editing.** You can't send `compaction` and `context_management` on the same request. Threshold compaction (`compact_20260112`) can't run on a request that carries a signed block.
 - **Prompt caching.** `cache_control` on the block places a breakpoint after the summary.
-- **Mid-conversation system messages and tool changes.** `role: "system"` messages inside the summarized range are summarized too, so their text instructions stop applying once the block replaces them. If an instruction still matters, state it again in a `role: "system"` message. Send that message right after your next new `user` turn, and leave it in your history from then on. For [tool changes](build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes), and for where that message goes when you keep turns after the block, see [Change the system prompt or tools](build-with-claude-compaction-thinking-blocks.md#change-the-system-prompt-or-tools).
+- **Mid-conversation system messages and tool changes.** `role: "system"` messages inside the summarized range are summarized too, so their text instructions stop applying once the block replaces them. A [per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta) level they set isn't carried over either: until a later message sets a level, turns run at the request's top-level `output_config.effort`, or the model's default if you don't set one. If an instruction or effort level still matters, state it again in a `role: "system"` message. Send that message right after your next new `user` turn, and leave it in your history from then on. For [tool changes](build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes), and for where that message goes when you keep turns after the block, see [Change the system prompt or tools](build-with-claude-compaction-thinking-blocks.md#change-the-system-prompt-or-tools).
 - **Task budgets.** Don't send the `remaining` value of a [task budget](build-with-claude-task-budgets.md) (`output_config.task_budget.remaining`) with `compaction` or on requests that carry the block. Doing so returns a 400 error.
 - **Token counting.** The [token counting](build-with-claude-token-counting.md) endpoint ignores the `compaction` parameter.
 - **Content the summary can't carry.** Images, documents, `container_upload` blocks, and fetched URLs inside the summarized messages are gone once the block replaces them. Restate or re-upload anything a later turn still needs.
@@ -406,5 +412,5 @@ Supported models
 Supported platforms  
 - Claude APIBeta
 - Claude Platform on AWSBeta
-- Google CloudBeta
+- Claude Models on Google Cloud (Google managed)Beta
 - Microsoft FoundryBeta

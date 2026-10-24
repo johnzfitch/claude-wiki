@@ -2,7 +2,7 @@
 title: "Use Claude for PowerPoint - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:16Z"
+fetched_at: "2026-10-23T06:29:02Z"
 tags: ["claude-ai"]
 ---
 

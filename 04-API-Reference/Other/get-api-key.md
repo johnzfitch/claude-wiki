@@ -2,7 +2,7 @@
 title: "Get your Claude API key - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/get-api-key"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:27Z"
+fetched_at: "2026-10-20T06:39:29Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fget-api-key)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fget-api-key)
 
 
 
@@ -40,13 +40,13 @@ Building with Claude
 
 Model capabilities
 
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode (research preview)](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
+[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
 
 [Thinking](../Guides/build-with-claude-thinking.md)
 
 Tools
 
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
+[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
 
 Tool infrastructure
 
@@ -78,7 +78,7 @@ Claude on cloud platforms
 
 [Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Messages](../../01-Getting-Started/intro.md)First steps
 
@@ -94,7 +94,7 @@ Find, create, and manage your API keys for the Claude API in the Claude Console.
 
 
 
-API keys for the Claude API (also called Anthropic API keys) live in the Claude Console. To view your existing keys or create a new one, go to [Settings → API keys](playground.md).
+API keys for the Claude API (also called Anthropic API keys) live in the Claude Console. To view your existing keys or create a new one, go to the [API keys](playground.md) page (`platform.claude.com/settings/keys`) in the Console.
 
 ## Choose a key type
 
@@ -108,19 +108,19 @@ You can also create a **workspace key**, a legacy key without an owner: it belon
 
     ### Sign in to the Claude Console
 
-    Go to [platform.claude.com](usage-limits.md) and sign in, or create an account if you don't have one yet.
+    Go to the Claude Console at [platform.claude.com](playground.md) and sign in, or create an account if you don't have one yet.
 
 2.  2
 
     ### Open the API keys page
 
-    Go to [Settings → API keys](playground.md).
+    In the Claude Console, go to the [API keys](playground.md) page (`platform.claude.com/settings/keys`).
 
 3.  3
 
     ### Create a key
 
-    Click **Create key**, name the key, choose an [expiration](manage-claude-authentication.md#key-expiration), and set **Linked account** to yourself or a service account. You can also choose a [workspace](playground.md) to scope the key to.
+    Click **Create key**, name the key, choose an [expiration](manage-claude-authentication.md#key-expiration), and set **Linked account** to yourself or a service account. You can also choose a [workspace](playground.md) in the Console to scope the key to.
 
 4.  4
 
@@ -140,14 +140,14 @@ export ANTHROPIC_API_KEY="sk-ant-api03-..."
 
 
 
-The [client SDK](cli-sdks-libraries-overview.md) reads `ANTHROPIC_API_KEY` automatically. Direct HTTP requests send the key in the `x-api-key` header. If your API key works on multiple workspaces, you must also send the `anthropic-workspace-id` header on each Claude API request, as shown in [Select a workspace](manage-claude-authentication.md#select-a-workspace). For the Admin API, see [API keys and the Admin API](#api-keys-and-the-admin-api).
+The [client SDK](cli-sdks-libraries-overview.md) reads `ANTHROPIC_API_KEY` automatically. Direct HTTP requests send the key as `Authorization: Bearer <key>`. If your API key works on multiple workspaces, you must also send the `anthropic-workspace-id` header on each Claude API request, as shown in [Select a workspace](manage-claude-authentication.md#select-a-workspace). For the Admin API, see [API keys and the Admin API](#api-keys-and-the-admin-api).
 
 To make your first request, follow the [Quickstart](../../01-Getting-Started/get-started.md), and see [Authentication](manage-claude-authentication.md) for the full picture, including short-lived credentials with Workload Identity Federation.
 
 ## API keys and the Admin API
 
-The [Admin API](../Admin/http-beta-organization.md) includes endpoints for managing your organization's API keys programmatically, such as [Retrieve API Key](../Admin/beta-organization-api-keys-retrieve.md) and [List API Keys](../Admin/beta-organization-api-keys-list.md). These endpoints are for organization admins automating key management. They accept an [Admin API key](manage-claude-admin-api-keys.md), an OAuth token with the `org:admin` scope, or a personal or service account key that isn't scoped to a specific workspace; workspace keys don't work there. They never return a key's secret value, only a partially redacted hint.
+The [Admin API](../Endpoints/organization.md) includes endpoints for managing your organization's API keys programmatically, such as [Retrieve API Key](../Endpoints/organization-api-keys-retrieve.md) and [List API Keys](../Endpoints/organization-api-keys-list.md). These endpoints are for organization admins automating key management. They accept an [Admin API key](manage-claude-admin-api-keys.md), an OAuth token with the `org:admin` scope, or a personal or service account key that isn't scoped to a specific workspace; workspace keys don't work there. They never return a key's secret value, only a partially redacted hint.
 
 
 
-The Admin API can't recover a lost key or give you a key to call the Claude API with. To get a usable API key, create one in [Settings → API keys](playground.md) in the Claude Console.
+The Admin API can't recover a lost key or give you a key to call the Claude API with. To get a usable API key, create one on the [API keys](playground.md) page (`platform.claude.com/settings/keys`) in the Claude Console.

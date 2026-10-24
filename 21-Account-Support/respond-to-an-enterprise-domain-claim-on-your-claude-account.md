@@ -2,7 +2,7 @@
 title: "Respond to an Enterprise domain claim on your Claude account | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625626-respond-to-an-enterprise-domain-claim-on-your-claude-account"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:28:17Z"
+fetched_at: "2026-10-23T06:29:28Z"
 tags: ["account", "enterprise"]
 ---
 
@@ -35,7 +35,7 @@ After the merge, your personal account is deactivated. **This can’t be undone*
 
 Start with a clean Enterprise account. None of your personal account data transfers.
 
-Before your deadline, you can **[export your data](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** if you want to keep a copy. Navigate to **[Settings \> Account](https://claude.ai/settings/account)** to request a data export. Note that exported data can’t be imported into your Enterprise account—it’s for your personal records only.
+Before your deadline, you can **[export your data](../22-Safety-Policy/how-can-i-export-my-claude-data.md)** if you want to keep a copy. Navigate to **[Settings \> Account](https://claude.ai/settings/account)** to request a data export. Note that exported data can’t be imported into your Enterprise account—it’s for your personal records only.
 
 ## What happens if you don’t choose
 

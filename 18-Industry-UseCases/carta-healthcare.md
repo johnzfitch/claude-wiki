@@ -2,7 +2,7 @@
 title: "Carta Healthcare Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/carta-healthcare"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:42Z"
+fetched_at: "2026-10-23T06:29:35Z"
 tags: ["api", "case-studies", "cli", "enterprise", "security"]
 ---
 
@@ -31,7 +31,7 @@ in time required for clinical data abstraction
 
 +50% cost savings
 
-on abstraction work while maintaining the industry's highest quality data
+on abstraction work while maintaining the industry’s highest quality data
 
 Advancing Claude in healthcare and the life sciences
 
@@ -51,7 +51,7 @@ Claude helps healthcare organizations move faster without sacrificing accuracy, 
 
 - Reduces clinical data abstraction time by up to 66% while improving data quality
 - Enabled processing of clinically complex questions that were previously impossible to automate
-- Achieve 98-99% Inter-rater Reliability (IRR) scores, which is the healthcare industry's gold standard for data quality
+- Achieve 98-99% Inter-rater Reliability (IRR) scores, which is the healthcare industry’s gold standard for data quality
 - Transformed clinicians from manual data hunters into high-value validators and users of data to drive healthcare improvement
 
 ## The problem
@@ -66,23 +66,23 @@ But the challenge is not only the volume. Clinical documentation is messy, incon
 
 ## Choosing Claude
 
-Security was the deciding factor in Carta Healthcare's model selection. Handling sensitive medical information, including protected health information, requires rigorous data privacy controls. Claude's availability in Amazon Bedrock provided the confidence Carta Healthcare needed with data privacy protections and assurance that customer data wouldn't be used for model training.
+Security was the deciding factor in Carta Healthcare’s model selection. Handling sensitive medical information, including protected health information, requires rigorous data privacy controls. Claude’s availability in Amazon Bedrock provided the confidence Carta Healthcare needed with data privacy protections and assurance that customer data wouldn’t be used for model training.
 
-"While other models were available in Amazon Bedrock, no other model showed the capability for reasoning and understanding we found in Anthropic's models," said Crowder. "In addition, the published research on bias and model alignment has allowed us to pass rigorous hospital AI reviews."
+“While other models were available in Amazon Bedrock, no other model showed the capability for reasoning and understanding we found in Anthropic’s models,” said Crowder. “In addition, the published research on bias and model alignment has allowed us to pass rigorous hospital AI reviews.”
 
 That combination of security infrastructure, reasoning capability, and documented research on model alignment allowed Carta Healthcare to clear the high bar of hospital IT and AI review boards, a prerequisite for any system handling patient data.
 
 ## Building a clinical-grade AI system
 
-Claude powers Carta Healthcare's Lighthouse platform, serving as the AI engine for clinical registry abstraction. Claude interprets both structured and unstructured medical data semantically, understanding the clinical context to formulate answers, provide justifications, and surface direct citations from medical records. The system can find evidence that's easy to miss in manual reviews, such as documentation buried deep in a chart or originating from encounters years earlier.
+Claude powers Carta Healthcare’s Lighthouse platform, serving as the AI engine for clinical registry abstraction. Claude interprets both structured and unstructured medical data semantically, understanding the clinical context to formulate answers, provide justifications, and surface direct citations from medical records. The system can find evidence that’s easy to miss in manual reviews, such as documentation buried deep in a chart or originating from encounters years earlier.
 
 Carta Healthcare implemented a two-phase extraction pipeline. In the first phase, Claude Haiku 3.5 and Sonnet 4 extracted relevant information from medical documentation, processing both structured data and unstructured clinical notes. In the second phase, Claude Sonnet synthesized all extracted evidence to formulate suggested answers to registry questions, scoring and ranking the evidence. This approach improved accuracy and reduced the validation burden for abstractors. They now validate findings rather than hunt for them.
 
-Because the system is built around Claude's ability to understand natural language, clinical experts can improve it directly. When abstractors notice an issue, the team adjusts prompts rather than rewriting code—changes that can be tested in production the same day. This keeps the people who understand clinical nuance in control of how the system behaves.
+Because the system is built around Claude’s ability to understand natural language, clinical experts can improve it directly. When abstractors notice an issue, the team adjusts prompts rather than rewriting code—changes that can be tested in production the same day. This keeps the people who understand clinical nuance in control of how the system behaves.
 
 ## The outcome
 
-For one large health system abstracting over 22,000 surgical cases annually across 14 hospitals, the results were immediate. Time per case dropped from 30 minutes to 15-22 minutes for routine cases. For complex cases—the ones that used to consume five or six hours of an abstractor's day—time dropped to 90 minutes. Annual time savings reached between 3,667 and 6,050 hours, with Inter-rater Reliability consistently at 99%.
+For one large health system abstracting over 22,000 surgical cases annually across 14 hospitals, the results were immediate. Time per case dropped from 30 minutes to 15-22 minutes for routine cases. For complex cases—the ones that used to consume five or six hours of an abstractor’s day—time dropped to 90 minutes. Annual time savings reached between 3,667 and 6,050 hours, with Inter-rater Reliability consistently at 99%.
 
 At a large multi-entity health system, manual abstraction for NSQIP cases was a constant strain. With over 22,000 cases annually across 14 hospitals, each taking about 30 minutes to abstract, the workload was immense leading to more than 11,000 hours of labor every year. The process was slow, expensive, and prone to human error. Before using Carta Healthcare’s Lighthouse platform, one experienced abstractor was quite skeptical of AI. She was experienced and clinically sharp, and worried that AI would not meet her expectations.
 
@@ -90,9 +90,9 @@ But she saw potential. She met with Carta Healthcare’s product team, shared de
 
 Today, she trusts Lighthouse completely. For complex cases, she even uses it as a second set of eyes, double-checking occurrences as well as catching subtle details like post-op medications that might otherwise slip through. As she puts it, “Lighthouse doesn’t replace my judgment, it enhances it.” The impact has been dramatic:
 
-Selecting Claude as the core LLM has fundamentally changed Carta Healthcare's business model. By automating the cognitive work of abstracting unstructured clinical data, Claude and Lighthouse transformed the company's clinicians “from manual data hunters into high-value validators,” explained Crowder. Carta Healthcare reports 100% customer retention; 90% of customers also expand their engagement over time.
+Selecting Claude as the core LLM has fundamentally changed Carta Healthcare’s business model. By automating the cognitive work of abstracting unstructured clinical data, Claude and Lighthouse transformed the company’s clinicians “from manual data hunters into high-value validators,” explained Crowder. Carta Healthcare reports 100% customer retention; 90% of customers also expand their engagement over time.
 
-Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle more complex registry scenarios, including cases with multiple procedures. "We are excited to grow both our usage of Anthropic's models." Crowder said. "We also look forward to expanding our technical relationship as we explore new possibilities with Claude."
+Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle more complex registry scenarios, including cases with multiple procedures. “We are excited to grow both our usage of Anthropic’s models.” Crowder said. “We also look forward to expanding our technical relationship as we explore new possibilities with Claude.”
 
 ## Related stories
 
@@ -117,7 +117,8 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -135,12 +136,12 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -173,7 +174,7 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -191,6 +192,7 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -206,7 +208,7 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -241,7 +243,8 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -259,12 +262,12 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -297,7 +300,7 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -315,6 +318,7 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -330,7 +334,7 @@ Looking ahead, Carta Healthcare plans to expand their AI capabilities to handle 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

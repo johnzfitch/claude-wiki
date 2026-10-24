@@ -2,15 +2,13 @@
 title: "Claude Code on Console to Enterprise migration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14128775-claude-code-on-console-to-enterprise-migration"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:24:41Z"
+fetched_at: "2026-10-23T06:29:07Z"
 tags: ["authentication", "claude-code", "enterprise"]
 ---
 
 # Claude Code on Console to Enterprise migration
 
 Claude Console (API) → Claude Enterprise
-
-August 26, 2026
 
 
 ## Overview
@@ -21,7 +19,7 @@ This guide is built for teams migrating from Console-based Claude Code access to
 
 Claude Code on the Console API is a fast way to get developers started, but it leaves governance up to each individual machine. Claude Enterprise puts the same Claude Code your developers already use behind the controls that security, IT, and finance teams need to run it at scale. You get centralized identity and access through your existing IdP, server-managed settings that enforce tool, file, and MCP policies on every client without MDM, and granular spend caps that cascade from the org down to individual users.
 
-Claude Enterprise adds rich analytics and audit logs (including contribution metrics like PRs and lines committed), custom data retention controls, and additional product surfaces—Claude Code on the web, mobile, and Slack (Claude Tag), plus Code Review—that aren't available on Console. And because Claude Enterprise is available via AWS Marketplace, procurement can run through the channel you already have.
+Claude Enterprise adds rich analytics and audit logs (including contribution metrics like PRs and lines committed), custom data retention controls, and additional product surfaces—Claude Code cloud sessions, Claude Mobile, and Slack (Claude Tag), plus Code Review—that aren't available on Console. And because Claude Enterprise is available via AWS Marketplace, procurement can run through the channel you already have.
 
 ------------------------------------------------------------------------
 

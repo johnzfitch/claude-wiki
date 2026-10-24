@@ -2,15 +2,48 @@
 title: "Economic Index report: Economic primitives \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:46:17Z"
+fetched_at: "2026-10-21T06:30:00Z"
 tags: ["news-research"]
 ---
 
-# Anthropic Economic Index report: Economic primitives
-
-Jan 15, 2026
+# **Anthropic Economic Index report: **Economic primitives
 
 [Download PDF](https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf)
+
+- [01Introduction](#introduction)
+- [02Chapter 1: What has changed since our last report](#chapter-1-what-has-changed-since-our-last-report)
+- [03Chapter 2: Introducing economic primitives](#chapter-2-introducing-economic-primitives)
+- [04Chapter 3: How Claude is used varies by geography](#chapter-3-how-claude-is-used-varies-by-geography)
+- [05Chapter 4: Tasks and productivity](#chapter-4-tasks-and-productivity)
+- [06Concluding Remarks](#concluding-remarks)
+
+- Published
+
+  Jan 15, 2026
+
+- Team
+
+  [Economics](team-economics.md)
+
+- Topics
+
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Productivity](https://www.anthropic.com/search?topic=productivity)
+  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
+
+  See more...
+
+Related articles
+
+- Economics
+
+  Oct 16, 2026
+
+  [The AI expectations gap](ai-expectations-gap.md)
+
+[View more](https://www.anthropic.com/search?topic=economic-index)
 
 ## Introduction
 
@@ -79,15 +112,14 @@ In this chapter we analyze how Claude usage and diffusion patterns changed from 
 
 ### Shifting patterns of usage across tasks and associated occupations
 
-Even though frontier LLMs have an impressive range of capabilities relevant to every facet of the modern economy, Claude usage remains very concentrated among a small number of tasks. As compared to nearly one year ago, consumer usage on [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) is modestly more concentrated: The share of conversations assigned to the ten most prevalent O\*NET tasks was 24% in November 2025, 1pp higher than in August and up from 21% in January 2025. The most prevalent task in November 2025—modifying software to correct errors—alone represented 6% of usage.
+Even though frontier LLMs have an impressive range of capabilities relevant to every facet of the modern economy, Claude usage remains very concentrated among a small number of tasks. As compared to nearly one year ago, consumer usage on [Claude.ai](http://claude.ai) is modestly more concentrated: The share of conversations assigned to the ten most prevalent O\*NET tasks was 24% in November 2025, 1pp higher than in August and up from 21% in January 2025. The most prevalent task in November 2025—modifying software to correct errors—alone represented 6% of usage.
 
-In our last Anthropic Economic Index Report we began tracking business adoption patterns by studying Claude usage among 1P API customers. The ten most common tasks grew from 28% of API records in August to 32% in November. Rising concentration among a small set of tasks suggests the highest-value applications continue to generate outsized economic value even as models have become more capable at a wider range of tasks. As with [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) the most common task among API customers was modifying software to correct errors, which accounted for one in ten records.
+In our last Anthropic Economic Index Report we began tracking business adoption patterns by studying Claude usage among 1P API customers. The ten most common tasks grew from 28% of API records in August to 32% in November. Rising concentration among a small set of tasks suggests the highest-value applications continue to generate outsized economic value even as models have become more capable at a wider range of tasks. As with [Claude.ai](http://claude.ai) the most common task among API customers was modifying software to correct errors, which accounted for one in ten records.
 
 Indeed, computer and mathematical tasks—like modifying software to correct errors—continue to dominate Claude usage overall, representing a third of conversations on Claude.ai and nearly half of 1P API traffic. Such dominance has subsided on Claude.ai: the share of conversations on Claude.ai assigned to such (mostly) coding-related tasks is down from a peak of 40% in March 2025 to 34% in November 2025. At the same time, the share of transcripts assigned to computer and mathematical tasks among 1P API traffic edged higher from 44% in August to 46% in November 2025 (Figure 1.2).
 
 The second largest share of Claude.ai usage in November 2025 was in the Educational Instruction and Library category. This corresponds mostly to help with coursework and review, and the development of instructional materials. Such usage has risen steadily since our first report, up from 9% of conversations on Claude.ai in January 2025 to 15% in November.
 
-  
 The share of usage on Claude.ai for Arts, Design, Entertainment, Sports, and Media tasks increased between August and November 2025 as Claude was used in a growing share of conversations for writing tasks, primarily copyediting and the writing and refinement of fictional pieces. This jump in the prevalence of design- and writing-related tasks reversed a steady decline across earlier reports. For both Claude.ai and API customers, there was a drop in the share of conversations/transcripts where Claude was used for Life, Physical, and Social Science-related tasks.
 
 Perhaps the most notable development for API customers was the increase in the share of transcripts associated with Office and Administrative Support related tasks, which rose 3pp in August to 13% in November 2025. Because API use is automation-dominant, this suggests that businesses are increasingly using Claude to automate routine back-office workflows such as email management, document processing, customer relationship management, and scheduling.⁴
@@ -116,7 +148,7 @@ By contrast, usage became more evenly distributed across US states from August t
 
 What shapes patterns of usage within the US and around the world? In our previous report we emphasized the key role played by income differences globally: Variation in Claude usage across countries is largely accounted for by variation in GDP per capita. In Chapter 3 we revisit the importance of income in shaping not just usage intensity but also patterns of usage around the world.
 
-Within the US, income is less clearly a predictor of usage. Instead, what appears to matter most is the composition of each state’s workforce and how well-matched the workforce is to Claude capabilities as reflected in task-level usage. States that have a higher share of workers in computer and mathematical occupations—like Washington D.C., Virginia, and Washington—tend to have higher usage per capita. Quantitatively, each 1% increase in the share of such tech workers in a state is associated with 0.36% higher usage per capita (Figure 1.7). This alone accounts for nearly two-thirds of the cross-state variation in AUI.  
+Within the US, income is less clearly a predictor of usage. Instead, what appears to matter most is the composition of each state’s workforce and how well-matched the workforce is to Claude capabilities as reflected in task-level usage. States that have a higher share of workers in computer and mathematical occupations—like Washington D.C., Virginia, and Washington—tend to have higher usage per capita. Quantitatively, each 1% increase in the share of such tech workers in a state is associated with 0.36% higher usage per capita (Figure 1.7). This alone accounts for nearly two-thirds of the cross-state variation in AUI.
 
 While we would intuitively expect Claude usage to be higher in states with more tech workers, this pattern holds more generally: Usage per capita is higher in states with more workers in occupations where Claude usage is overrepresented as compared to the US workforce (e.g., Arts, Design, Entertainment, Sports and Media) or with relatively fewer workers in occupations where Claude usage is low as compared to the national economy (e.g., Transportation and Material Moving). This can be seen by calculating the Kullback–Leibler (KL) divergence between the composition of each state’s workforce and the global composition of Claude usage. States with a lower KL divergence—and thus with a workforce that looks more similar to Claude usage patterns—tend to have higher usage per capita.
 
@@ -138,8 +170,7 @@ To address this, we estimate the model by two-stage least squares (2SLS), instru
 
 The 2SLS estimates imply modestly slower convergence: β̂ ≈ 0.89 unweighted and β̂ ≈ 0.86 when weighting by each state’s working-age population. However, these estimates are less precise, and only the former is statistically distinguishable from 1 at the 10% level. Despite implying a slower convergence than OLS, the 2SLS estimates still imply rapid diffusion: just four to five years for the log deviation of each state's AUI to shrink by 90%.
 
-  
-That said, our estimates are based on just three months of data. And while the 2SLS specification may help address sampling noise, considerable uncertainty remains. We will revisit this question of the pace of diffusion in future reports.  
+That said, our estimates are based on just three months of data. And while the 2SLS specification may help address sampling noise, considerable uncertainty remains. We will revisit this question of the pace of diffusion in future reports.
 
 ¹ As with previous reports, all our analysis is based on privacy-preserving analysis. Throughout the report we analyze a random sample of 1M conversations from Claude.ai Free, Pro and Max conversations (we also refer to this as “consumer data” since it mostly represents consumer use) and 1M transcripts from our first-party (1P) API traffic (we also refer to this as “enterprise data” since it mostly represents enterprise use). Both samples come from November 13, 2025 to November 20, 2025. We continue to manage data according to our privacy and retention policies, and our analysis is consistent with our terms, policies, and contractual agreements. For 1P API data, each record is a prompt-response pair from our sample period which in some instances is mid-session for multi-turn interactions.
 
@@ -308,11 +339,11 @@ The patterns reveal that more complex tasks yield greater time savings, but that
 
 Claude usage spans a meaningful fraction of tasks across a growing share of occupations. We incorporate success rates into a richer model of job coverage; some occupations with modest coverage see large effects because AI succeeds on their most time-intensive work. Adjusting productivity estimates for task reliability roughly halves the implied gains, from 1.8 to about 1.0 percentage points of annual labor productivity growth over the next decade. However, these estimates reflect current model capabilities, and all signs suggest that reliability over increasingly long-running tasks will improve.
 
-### Tradeoffs in task acceleration 
+### Tradeoffs in task acceleration
 
 Our estimates suggest that, in general, the more complex tasks in our data yield a greater time savings (or “speedup”) from AI. We derive this by having Claude estimate both how long a task would take a human working alone and the duration when human and AI work together, which we validated in [previous work](estimating-productivity-gains.md). Speedup is then the human-alone time divided by the human-with-AI time. So reducing a 1 hour task to 10 minutes would give a 6x speedup.
 
-The left panel of Figure 4.1 below gives the average speedup against our core measure of task complexity, the human years of schooling required to understand the inputs, all at the O\*NET task level¹. It shows that in Claude.ai conversations, for example, prompts requiring 12 years of schooling (a high school education) enjoy a speedup of 9x, while those requiring 16 years of schooling (a college degree) attain a 12x speedup. This implies that productivity gains are more pronounced for use cases requiring higher human capital, consistent with evidence that white collar workers are far more likely to adopt AI (e.g., [Bick et al 2025](https://www.nber.org/system/files/working_papers/w32966/w32966.pdf)).
+The left panel of Figure 4.1 below gives the average speedup against our core measure of task complexity, the human years of schooling required to understand the inputs, all at the O\*NET task level^(¹). It shows that in Claude.ai conversations, for example, prompts requiring 12 years of schooling (a high school education) enjoy a speedup of 9x, while those requiring 16 years of schooling (a college degree) attain a 12x speedup. This implies that productivity gains are more pronounced for use cases requiring higher human capital, consistent with evidence that white collar workers are far more likely to adopt AI (e.g., [Bick et al 2025](https://www.nber.org/system/files/working_papers/w32966/w32966.pdf)).
 
 Throughout the range of task complexity, the speedup is higher for API users. This could reflect the nature of the API data, which is restricted to single-turn interactions, and that API tasks have been specifically selected for automation.
 
@@ -330,7 +361,7 @@ Recent work on AI “task horizons” ([Kwa et al., 2025](https://metr.org/blog/
 
 Figure 4.3 shows a similar measure using our primitives. The plot shows task-level success rates against the human time required, all at the O\*NET task level. In the API data, success rates drop from around 60% for sub-hour tasks to roughly 45% for tasks estimated to take humans 5+ hours. The fitted line crosses the horizontal 50% success line at 3.5 hours, suggesting that API calls attain a 50% success rate for tasks that are 3.5 hours. The analogous time estimate in METR’s software engineering benchmark is 2 hours for Sonnet 4.5 and about 5 hours for Opus 4.5. (The data in this report predates the release of Opus 4.5.)
 
-Claude.ai data tells a different story. Success rates decline far slower as a function of task length. Extrapolating using the linear fit, [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) would hit a 50% success rate at about 19 hours. This may reflect how multi-turn conversation effectively breaks complex tasks into smaller steps, with each turn providing a feedback loop that allows users to correct course.
+Claude.ai data tells a different story. Success rates decline far slower as a function of task length. Extrapolating using the linear fit, [Claude.ai](http://claude.ai) would hit a 50% success rate at about 19 hours. This may reflect how multi-turn conversation effectively breaks complex tasks into smaller steps, with each turn providing a feedback loop that allows users to correct course.
 
 It’s worth noting that a fundamental difference from the METR setting is selection. METR constructs a benchmark where a fixed set of tasks is assigned to models. In our data, users choose which tasks to bring to Claude. This means observed success rates reflect not just model capability but also user judgment about what will work, the cost of setting up the problem for Claude, and the expected time savings if the task succeeds.
 
@@ -357,14 +388,13 @@ Microbiologists fall below the 45-degree line, suggesting lower effective AI cov
 
 This measure arguably gives a more realistic picture of job-level AI penetration. However, its implications depend on how often these Claude conversations actually displace or augment work that would otherwise be done by humans. For data entry clerks, AI likely does substitute for tasks previously performed manually. But when a Claude conversation maps to a teacher performing a lecture, it is less clear how this translates to reduced lecture time on the job. In future work, we could leverage our 1P API data to understand which of these tasks are being integrated into production workflows.
 
-###  AI’s impact on the task content of jobs
+### AI’s impact on the task content of jobs
 
-  
 Beyond how much of a worker's day AI can successfully perform, a separate question is which tasks get covered, and whether those tend to be the high-skill or low-skill components of the job. Recent research has studied changes in the task mix within jobs to understand AI's impact on wages and employment ([Autor and Thompson 2025](https://economics.mit.edu/sites/default/files/2025-06/Expertise-Autor-Thompson-20250618.pdf); [Hampole et al 2025](https://www.nber.org/papers/w33509)). A key insight is that automation's effects depend not just on how many tasks are covered, but on which tasks.
 
 To see how jobs change when we remove the tasks AI can perform, we first construct a measure of the level of skill required for each task. O\*NET doesn't provide task-level education requirements, so we train a model that predicts years of schooling from task embeddings, using the BLS's occupation-level education as the target⁴. This way, a low-education occupation may still have a high-skill task if it looks like those that tend to exist in high-education occupations. For example, Legal Secretaries is a 12-year education occupation, but the task “Review legal publications and perform database searches to identify laws and court decisions relevant to pending cases” is predicted to require 17.7 years because it resembles tasks typically performed by lawyers and paralegals.
 
-The data shows that Claude tends to cover tasks that require higher levels of education. The mean predicted education for tasks in the economy is 13.2 years. For tasks that we see in our data, the mean prediction is about a year higher, 14.4 years (corresponding to an Associate’s degree). This aligns with the occupation-level results from earlier reports, showing more Claude usage among white collar occupations.  
+The data shows that Claude tends to cover tasks that require higher levels of education. The mean predicted education for tasks in the economy is 13.2 years. For tasks that we see in our data, the mean prediction is about a year higher, 14.4 years (corresponding to an Associate’s degree). This aligns with the occupation-level results from earlier reports, showing more Claude usage among white collar occupations.
 
 We next calculate how removing AI-covered tasks shifts the average education level of what remains. Overall, the net first-order impact is to deskill jobs, since AI removes tasks that require relatively higher levels of education. One job that experiences such deskilling is technical writers, which loses tasks like "Analyze developments in specific field to determine need for revisions" (18.7 years) and "Review published materials and recommend revisions or changes in scope, format" (16.4 years), leaving tasks like "Draw sketches to illustrate specified materials" (13.6 years) and "Observe production, developmental, and experimental activities" (13.5 years). Travel agents also experience deskilling because AI covers tasks like "Plan, describe, arrange, and sell itinerary tour packages" (13.5 years) and "Compute cost of travel and accommodations" (13.4 years), while tasks like "Print or request transportation carrier tickets" (12.0 years) and "Collect payment for transportation and accommodations" (11.5 years) remain. Several teaching professions experience deskilling because AI addresses tasks like grading, advising students, writing grants, and conducting research without being able to do the hands-on work of delivering lectures in person and managing a classroom.
 
@@ -378,7 +408,7 @@ However, our education-based measure differs from Autor and Thompson's expertise
 
 In earlier work, we [estimated that widespread adoption of AI could increase US labor productivity growth by 1.8 percentage points](estimating-productivity-gains.md) annually over the next decade. Here we revisit that analysis, incorporating the task success primitive introduced in this report and a richer treatment of task complementarity.
 
-Based on the speedups associated with tasks with at least 200 observations in our sample of 1M [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) conversations,⁶ we replicate our previous finding that current-generation AI models and current usage patterns imply a productivity effect of 1.8 percentage points per year over the next decade.⁷
+Based on the speedups associated with tasks with at least 200 observations in our sample of 1M [Claude.ai](http://claude.ai) conversations,⁶ we replicate our previous finding that current-generation AI models and current usage patterns imply a productivity effect of 1.8 percentage points per year over the next decade.⁷
 
 With the inclusion of 1P API data, we can assess whether implied labor productivity effects differ based on enterprise Claude deployment patterns. Two countervailing forces are at play: API usage is more concentrated in a narrower set of tasks and occupations (particularly coding-related work), which would tend to reduce implied effects; but task-level speedups are higher on average among API tasks, as implied by Figure 4.1. These forces largely offset: the API sample likewise implies a 1.8 percentage point increase in labor productivity over the next decade.
 
@@ -392,11 +422,11 @@ The key parameter is the elasticity of substitution across tasks, σ. When the e
 
 Figure 4.6 reports the results of this exercise for different values of task substitutability. As expected, when the elasticity of substitution is equal to one the implied productivity effect is the same as in our baseline analysis: An increase in labor productivity growth of ~1.8 percentage points per year over the next decade implied by both Claude.ai and API samples.
 
-When tasks are complements, however, the implied aggregate labor productivity impact declines sharply as the economic effects are bottlenecked by tasks that AI speeds up the least. For example, at =0.5 the implied overall labor productivity effect is 0.7-0.9 percentage points per year—around half the size as implied by our baseline estimates. Additionally adjusting for task success further reduces the implied productivity effects to 0.8pp for [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) and 0.6pp for API.
+When tasks are complements, however, the implied aggregate labor productivity impact declines sharply as the economic effects are bottlenecked by tasks that AI speeds up the least. For example, at =0.5 the implied overall labor productivity effect is 0.7-0.9 percentage points per year—around half the size as implied by our baseline estimates. Additionally adjusting for task success further reduces the implied productivity effects to 0.8pp for [Claude.ai](http://claude.ai) and 0.6pp for API.
 
 On the other hand, when the elasticity of substitution is greater than one, the implied labor productivity based on pre-Opus 4.5 usage patterns is materially higher. For example, at =1.5 the implied labor productivity effect rises to 2.2-2.6 percentage points per year, consistent with greater specialization in tasks where AI provides the largest speedups.
 
-In both cases the implied productivity impact based on API traffic is more responsive to the degree of task substitutability. This is consistent with the fact that there is a larger share of API traffic concentrated in fewer tasks and associated occupations as compared to [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67): When tasks are complements, this concentration amplifies the bottleneck problem; when they are substitutes, it amplifies productivity gains from task specialization.
+In both cases the implied productivity impact based on API traffic is more responsive to the degree of task substitutability. This is consistent with the fact that there is a larger share of API traffic concentrated in fewer tasks and associated occupations as compared to [Claude.ai](http://claude.ai): When tasks are complements, this concentration amplifies the bottleneck problem; when they are substitutes, it amplifies productivity gains from task specialization.
 
 What this analysis shows is that the productivity effects of automation may ultimately be constrained by bottleneck tasks that elude AI automation for the time being. And the labor market implications of increasingly capable AI could be similarly affected by such forces. For example, [Gans and Goldfarb (2026)](https://www.nber.org/papers/w34639) argue that the presence of bottleneck tasks within jobs means that partial AI automation can lead to an increase in labor income as such tasks increase in economic value (at least until a job is *entirely* automated).
 
@@ -412,7 +442,7 @@ The counterpart to these transformative labor market effects is the broader impa
 
 ¹ When we study the correlation between primitives with the O\*NET, we restrict to tasks appearing in at least 100 conversations to reduce measurement error. In the coverage analysis, we use all tasks above the privacy threshold of 15.
 
-² Our online appendix is available at <https://huggingface.co/datasets/Anthropic/EconomicIndex>.
+² Our online appendix is available at [https://huggingface.co/datasets/Anthropic/EconomicIndex](https://huggingface.co/datasets/Anthropic/EconomicIndex).
 
 ³ See also [Tomlinson et al (2025)](https://arxiv.org/pdf/2507.07935) for a related AI applicability score.
 
@@ -420,7 +450,7 @@ The counterpart to these transformative labor market effects is the broader impa
 
 ⁵ On the other hand, some historical evidence suggests that when technologies automating job tasks appear in patent data, employment and wages subsequently fall for exposed occupations ([Webb 2020](https://www.michaelwebb.co/webb_ai.pdf)).
 
-⁶ When we first assessed the aggregate productivity implications of Claude usage, we relied on a sample of 100k Claude.ai conversations from Fall 2025. Based on the set of tasks for which we observed speedups, we estimated that labor productivity could be 1.8 percentage points higher per year over the next decade. Expanding the sample to 1M observations means that we need to take a stand on how to handle very infrequently occurring tasks—which are very common given that usage follows a power law, as we documented in our past report. We choose a threshold of 0.02% because it replicates our previous results for our sample of [Claude.ai](http://claude.ai/redirect/website.v1.b8abdda9-f95c-4495-afe9-757afb1adb67) conversations. For privacy-preserving reasons, we only ever analyze tasks with at least 15 observations, or an implied threshold of 0.015% for a 100k sample. And so our results are internally consistent across samples. If we do not impose a restriction on our 1M sample and assume that efficiency gains for any task in our sample, even those with just 15 observations out of one million, the implied aggregate labor productivity growth over the next decade would be roughly 5% percentage points per year—a mechanical increase based on a the much larger set of tasks included.
+⁶ When we first assessed the aggregate productivity implications of Claude usage, we relied on a sample of 100k Claude.ai conversations from Fall 2025. Based on the set of tasks for which we observed speedups, we estimated that labor productivity could be 1.8 percentage points higher per year over the next decade. Expanding the sample to 1M observations means that we need to take a stand on how to handle very infrequently occurring tasks—which are very common given that usage follows a power law, as we documented in our past report. We choose a threshold of 0.02% because it replicates our previous results for our sample of [Claude.ai](http://claude.ai) conversations. For privacy-preserving reasons, we only ever analyze tasks with at least 15 observations, or an implied threshold of 0.015% for a 100k sample. And so our results are internally consistent across samples. If we do not impose a restriction on our 1M sample and assume that efficiency gains for any task in our sample, even those with just 15 observations out of one million, the implied aggregate labor productivity growth over the next decade would be roughly 5% percentage points per year—a mechanical increase based on a the much larger set of tasks included.
 
 ⁷ As before, this result is based on applying [Hulten’s Theorem](https://doi.org/10.3982/ECTA15202) to task-level productivity shocks and assuming that the corresponding one-time increase in total factor productivity materializes over the course of a decade alongside capital deepening effects.  
 ⁸ As a reminder, for aggregating to implied labor productivity we calculate task-level efficiency gains as the log difference between human time without AI and with AI. There are certainly other ways to adjust based on task reliability. If tasks in our sample are composed of sub-tasks with heterogeneous AI applicability, and workers optimally deploy AI only on sub-tasks where it is effective, then scaling the efficiency gain by the success rate captures the extensive margin of AI adoption within a task.
@@ -441,156 +471,26 @@ Building on prior releases, this edition significantly expands both the scope an
 
 How willing users are to experiment with AI, and whether policymakers create a regulatory context that advances both safety and innovation, will shape how AI transforms economies. For AI to benefit users globally, expanding access alone will not suffice—developing the human capital that enables effective use, particularly in lower-income economies, is essential.
 
-## Authors & Acknowledgements
+## Authors & Acknowledgments
 
-#### **First Author Block\***:
+### Contributors
 
-Ruth Appel, Maxim Massenkoff, Peter McCrory
+Ruth Appel\*, Maxim Massenkoff\*, Peter McCrory\*, Miles McCain, Ryan Heller, Tyler Neylon, Alex Tamkin
 
 *\*Lead authors of the report*
 
-#### **Second Author Block**:
-
-Miles McCain, Ryan Heller, Tyler Neylon, Alex Tamkin
-
-#### Acknowledgements
+### Acknowledgements
 
 Xabi Azagirre, Tim Belonax, Keir Bradwell, Andy Braden, Dexter Callender III, Sylvie Carr, Miriam Chaum, Ronan Davy, Evan Frondorf, Deep Ganguli, Kunal Handa, Andrew Ho, Rebecca Jacobs, Owen Kaye-Kauderer, Bianca Lindner, Kelly Loftus, James Ma, Jennifer Martinez, Jared Mueller, Kelsey Nanan, Kim O'Rourke, Dianne Penn, Sarah Pollack, Ankur Rathi, Zoe Richards, Alexandra Sanderford, David Saunders, Michael Sellitto, Thariq Shihipar, Michael Stern, Kim Withee, Mengyi Xu, Tony Zeng, Xiuruo Zhang, Shuyi Zheng, Emily Pastewka, Angeli Jain, Sarah Heck, Jared Kaplan, Jack Clark, Dario Amodei
 
-####  Citation
+### Citation
 
-```
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 @online{anthropic2026aeiv4,
         author = {Ruth Appel and Maxim Massenkoff and Peter McCrory and Miles McCain and Ryan Heller and Tyler Neylon and Alex Tamkin},
         title = {Anthropic Economic Index report: economic primitives},
         date = {2026-01-15},
         year = {2026},
         url = {https://www.anthropic.com/research/anthropic-economic-index-january-2026-report},
-}
-```
-
-Copy
-
-
-## Related content
-
-### An alignment assessment of recent cybersecurity incidents
-
-We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
-
-[Read more](alignment-assessment-cybersecurity-incidents.md)
-
-### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
-
-[Read more](formalizing-fermats-last-theorem.md)
-
-### Automated researchers can reliably mitigate alignment failures
-
-We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities.
-
-[Read more](automated-researchers-mitigate-alignment-failures.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

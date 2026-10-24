@@ -2,7 +2,7 @@
 title: "ASAPP Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/asapp"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:05Z"
+fetched_at: "2026-10-23T06:29:26Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -41,35 +41,35 @@ With Claude, ASAPP:
 
 ## Meeting growing customer service demands securely
 
-ASAPP has worked to transform contact centers using AI for over a decade. ASAPP's journey to Claude followed limitations with their initial foundational AI provider. Using this provider's models required implementing complex processes to identify and remove sensitive information before sending requests over the public internet—then reinserting that information into responses.
+ASAPP has worked to transform contact centers using AI for over a decade. ASAPP’s journey to Claude followed limitations with their initial foundational AI provider. Using this provider’s models required implementing complex processes to identify and remove sensitive information before sending requests over the public internet—then reinserting that information into responses.
 
-"This redaction process introduced errors that impacted the quality of our AI interactions," explained Michael Griffiths, Senior Director, Data Science at ASAPP. "The modified text made it harder for the AI to reason correctly and generate appropriate responses." This challenge was particularly acute in customer service, where accurate handling of personal information is crucial.
+“This redaction process introduced errors that impacted the quality of our AI interactions,” explained Michael Griffiths, Senior Director, Data Science at ASAPP. “The modified text made it harder for the AI to reason correctly and generate appropriate responses.” This challenge was particularly acute in customer service, where accurate handling of personal information is crucial.
 
 ## Choosing Claude for security and reliability
 
-The search for a more secure solution led ASAPP to Claude in Amazon Bedrock. Nirmal Mukhi, VP of AI Engineering at ASAPP, said, "A key advantage of accessing Claude in Amazon Bedrock is the enhanced security. Our requests never traverse the public internet and are encrypted end-to-end. We can handle sensitive customer data without compromise, which is essential for our enterprise clients."
+The search for a more secure solution led ASAPP to Claude in Amazon Bedrock. Nirmal Mukhi, VP of AI Engineering at ASAPP, said, “A key advantage of accessing Claude in Amazon Bedrock is the enhanced security. Our requests never traverse the public internet and are encrypted end-to-end. We can handle sensitive customer data without compromise, which is essential for our enterprise clients.”
 
-Claude's alignment capabilities also emerged as a crucial differentiator. Gabe Maggiotti, Director of Machine Learning Engineering at ASAPP, said, "We have experienced that Anthropic has better alignment." Where other AI models might ignore instructions or make problematic assumptions, Claude adheres to defined parameters.
+Claude’s alignment capabilities also emerged as a crucial differentiator. Gabe Maggiotti, Director of Machine Learning Engineering at ASAPP, said, “We have experienced that Anthropic has better alignment.” Where other AI models might ignore instructions or make problematic assumptions, Claude adheres to defined parameters.
 
 Alignment matters because ASAPP allows companies to instruct GenerativeAgent on how to help solve customer problems. Claude makes that task easier by obediently following instructions from business users and engaging customers naturally with clarifying questions when GenerativeAgent needs more information.
 
 ## Delivering measurable business impact
 
-The switch to Claude in Amazon Bedrock has significantly improved ASAPP's GenerativeAgent. Compared to other AI models, Claude delivers a 25-40% boost in key business outcomes in production, varying by use case.
+The switch to Claude in Amazon Bedrock has significantly improved ASAPP’s GenerativeAgent. Compared to other AI models, Claude delivers a 25-40% boost in key business outcomes in production, varying by use case.
 
-For businesses using ASAPP's platform, the impact extends beyond metrics. ASAPP can assure their enterprise customers that sensitive information remains protected by leveraging AWS PrivateLink for private API access and benefiting from Amazon Bedrock's no-data-retention policy. "We can pass these guarantees on to our customers, making them more comfortable with us as a provider," said Mukhi.
+For businesses using ASAPP’s platform, the impact extends beyond metrics. ASAPP can assure their enterprise customers that sensitive information remains protected by leveraging AWS PrivateLink for private API access and benefiting from Amazon Bedrock’s no-data-retention policy. “We can pass these guarantees on to our customers, making them more comfortable with us as a provider,” said Mukhi.
 
 ## Transforming the customer experience
 
-The experience represents a fundamental shift in automated service for end customers. Mukhi noted, "As humans, we're used to speaking with automated systems in certain ways. We expect a very rigid, menu-driven system." However, ASAPP's GenerativeAgent solution, powered by Claude, changes this paradigm entirely.
+The experience represents a fundamental shift in automated service for end customers. Mukhi noted, “As humans, we’re used to speaking with automated systems in certain ways. We expect a very rigid, menu-driven system.” However, ASAPP’s GenerativeAgent solution, powered by Claude, changes this paradigm entirely.
 
-Customers quickly transition from terse, command-like interactions to full, natural conversations within just a few exchanges. The platform maintains context throughout conversations, meaning customers don't have to repeat information. The interaction quality is so convincing that customers often ask mid-conversation if they're speaking with a real person, and saying "thank you" to GenerativeAgent at the end.
+Customers quickly transition from terse, command-like interactions to full, natural conversations within just a few exchanges. The platform maintains context throughout conversations, meaning customers don’t have to repeat information. The interaction quality is so convincing that customers often ask mid-conversation if they’re speaking with a real person, and saying “thank you” to GenerativeAgent at the end.
 
 ## The future of AI-powered customer service
 
-While technology advances rapidly, ASAPP recognizes that organizational adoption takes time, creating a business process transformation involving millions of people requires careful, thoughtful implementation. "Claude fundamentally changes what's possible in automated customer care," explains Griffiths. "The ability to have nuanced, context-aware conversations through secure enterprise channels opens up entirely new possibilities for how companies and customers interact."
+While technology advances rapidly, ASAPP recognizes that organizational adoption takes time, creating a business process transformation involving millions of people requires careful, thoughtful implementation. “Claude fundamentally changes what’s possible in automated customer care,” explains Griffiths. “The ability to have nuanced, context-aware conversations through secure enterprise channels opens up entirely new possibilities for how companies and customers interact.”
 
-Through their partnership with Anthropic, ASAPP isn't just automating interactions, but entirely reimagining them. Their vision is a future where customer service roles evolve to focus on higher-leverage, uniquely human skills while AI handles routine conversations with unprecedented efficiency and humanity. As each natural, trust-building interaction demonstrates, they're not just transforming technology—they're transforming how millions of people experience customer service.
+Through their partnership with Anthropic, ASAPP isn’t just automating interactions, but entirely reimagining them. Their vision is a future where customer service roles evolve to focus on higher-leverage, uniquely human skills while AI handles routine conversations with unprecedented efficiency and humanity. As each natural, trust-building interaction demonstrates, they’re not just transforming technology—they’re transforming how millions of people experience customer service.
 
 ## Related stories
 
@@ -94,7 +94,8 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -112,12 +113,12 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -150,7 +151,7 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -168,6 +169,7 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -183,7 +185,7 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -218,7 +220,8 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -236,12 +239,12 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -274,7 +277,7 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -292,6 +295,7 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -307,7 +311,7 @@ Through their partnership with Anthropic, ASAPP isn't just automating interactio
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

@@ -2,7 +2,7 @@
 title: "Clay Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/clay"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:43Z"
+fetched_at: "2026-10-23T06:29:36Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -38,27 +38,27 @@ Clay, a platform for RevOps and growth teams, uses Claude to meet user demand fo
 
 ## Empowering sales teams with AI-driven personalization
 
-Clay's AI-powered platform helps RevOps and growth teams run highly personalized outreach at scale. Matthew Quan, Clay’s enterprise growth lead, explains, "We're automating the mundane. 80% of Sales work today is manual, laborious, data work. In the era of AI, humans can focus on truly human, creative work, and we can leave the data work in the hands of AI.”
+Clay’s AI-powered platform helps RevOps and growth teams run highly personalized outreach at scale. Matthew Quan, Clay’s enterprise growth lead, explains, “We’re automating the mundane. 80% of Sales work today is manual, laborious, data work. In the era of AI, humans can focus on truly human, creative work, and we can leave the data work in the hands of AI.”
 
 The platform offers various features to streamline sales processes. Claygent, the platform’s AI research agent, helps in building and enriching lead lists. The data organization feature transforms broad CRM segments into specific, targeted lists. Additionally, the platform generates personalized messaging, creating tailored content for cold calls and email campaigns, leading to increased revenue at lower costs.
 
 ## Meeting user demand for Claude
 
-Clay's user community of AI enthusiasts played a crucial role in adding Claude models to their platform. The platform allows users to choose their preferred model, and the demand for Claude was overwhelming.
+Clay’s user community of AI enthusiasts played a crucial role in adding Claude models to their platform. The platform allows users to choose their preferred model, and the demand for Claude was overwhelming.
 
-"Users were begging us to implement Claude," says Software Engineer Adam Eldefrawy. Yash Tekriwal, Head of Education, adds, "Hundreds of customers asked us when we were going to add the models."
+“Users were begging us to implement Claude,” says Software Engineer Adam Eldefrawy. Yash Tekriwal, Head of Education, adds, “Hundreds of customers asked us when we were going to add the models.”
 
 ## Rapid adoption and impressive results
 
-Once added, users quickly embraced the Claude model family, particularly Claude 3 Haiku, which offers an optimal balance of cost-effectiveness and quality. "Our most advanced users were really excited when we were able to ship Claude,” Eldefrawy explained. "You can scale and do a lot more volume on Haiku a lot more cheaply than any other model.”
+Once added, users quickly embraced the Claude model family, particularly Claude 3 Haiku, which offers an optimal balance of cost-effectiveness and quality. “Our most advanced users were really excited when we were able to ship Claude,” Eldefrawy explained. “You can scale and do a lot more volume on Haiku a lot more cheaply than any other model.”
 
 The Claude integration has led to several notable improvements. Clay customers often report that Claude is the model that performs best for crafting reliable, personalized email messaging. “Customers regularly mention that emails generated via Claude sound more human and natural as compared to those written by other LLMs,” shares Mishti Sharma, Head of Product Marketing.
 
-Tekriwal shares an example of Claude's capabilities: "With Claude, Claygent can scrape the public web to find a prospect's thought leadership: podcast appearances, blog posts, media mentions, and so on. Then, using a tailored prompt that includes instructions on tone and examples of good copy, it generates a highly personalized email that references the lead's thought leadership." Adoption started high and has steadily increased since Claude's addition in April.
+Tekriwal shares an example of Claude’s capabilities: “With Claude, Claygent can scrape the public web to find a prospect’s thought leadership: podcast appearances, blog posts, media mentions, and so on. Then, using a tailored prompt that includes instructions on tone and examples of good copy, it generates a highly personalized email that references the lead’s thought leadership.” Adoption started high and has steadily increased since Claude’s addition in April.
 
 ## Seamless implementation and internal use
 
-Integrating Claude into Clay's product suite was straightforward, according to software engineer Maggie Williams. "People love Anthropic. Claude's creative ability and speed outperform a lot of the other models we're looking at." She also noted that Anthropic's error messaging while debugging Claude was helpful during the implementation.
+Integrating Claude into Clay’s product suite was straightforward, according to software engineer Maggie Williams. “People love Anthropic. Claude’s creative ability and speed outperform a lot of the other models we’re looking at.” She also noted that Anthropic’s error messaging while debugging Claude was helpful during the implementation.
 
 Clay has also found internal use cases for Claude:
 
@@ -66,15 +66,15 @@ Clay has also found internal use cases for Claude:
 - Data collection and resource optimization: Saving hundreds of hours with automated gathering of 10-K URLs, LinkedIn profile summaries, and contact research (podcasts, events, panels) using Claygent + Claude
 - Feedback insights: Categorizing and tagging feedback for product analysis
 
-Tekriwal says, "retaining and categorizing data accurately is a major challenge. Manual processes are time-consuming and prone to human error, with accuracy rates often between 50-70% even with incentives for quality." He emphasizes that AI is better for these repetitive tasks, allowing humans to focus on more complex, creative work.
+Tekriwal says, “retaining and categorizing data accurately is a major challenge. Manual processes are time-consuming and prone to human error, with accuracy rates often between 50-70% even with incentives for quality.” He emphasizes that AI is better for these repetitive tasks, allowing humans to focus on more complex, creative work.
 
 ## Looking ahead
 
-Clay's goal in using AI models like Claude 3 Haiku, both internally and for their customers, is to maximize efficiency and quality.
+Clay’s goal in using AI models like Claude 3 Haiku, both internally and for their customers, is to maximize efficiency and quality.
 
-As Clay continues to refine and expand its AI-powered offerings, the addition of Claude plays a crucial role in meeting user demands and pushing the boundaries of what's possible in personalized sales outreach.
+As Clay continues to refine and expand its AI-powered offerings, the addition of Claude plays a crucial role in meeting user demands and pushing the boundaries of what’s possible in personalized sales outreach.
 
-> AI-powered tooling has definitely been a multiplicative force for where we're at size-wise.It's about how you help people do more with the same level of resources—and do better, at a higher quality.
+> AI-powered tooling has definitely been a multiplicative force for where we’re at size-wise.It’s about how you help people do more with the same level of resources—and do better, at a higher quality.
 
 – Yash Tekriwal, Head of Education
 
@@ -101,7 +101,8 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -119,12 +120,12 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -157,7 +158,7 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -175,6 +176,7 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -190,7 +192,7 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -225,7 +227,8 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -243,12 +246,12 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -281,7 +284,7 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -299,6 +302,7 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -314,7 +318,7 @@ As Clay continues to refine and expand its AI-powered offerings, the addition of
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

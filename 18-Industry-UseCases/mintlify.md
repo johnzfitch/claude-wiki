@@ -2,7 +2,7 @@
 title: "Mintlify Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/mintlify"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:11Z"
+fetched_at: "2026-10-23T06:29:46Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -38,7 +38,7 @@ Introducing Claude Opus 4.6
 
 We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its predecessor’s coding skills. It plans more carefully, sustains agentic tasks for longer, and features a 1M token context window.
 
-[Mintlify](https://www.mintlify.com/), a developer documentation platform serving companies like Coinbase, HubSpot, and Perplexity, uses Claude to power an AI assistant that resolves 67% of documentation queries without human intervention—while an automated agent keeps their customers' docs synchronized with code changes. Internally, their engineering team ships features 3-4x faster using Claude Code. Mintlify documentation sites receive as many requests from AI agents as from human developers.
+[Mintlify](https://www.mintlify.com/), a developer documentation platform serving companies like Coinbase, HubSpot, and Perplexity, uses Claude to power an AI assistant that resolves 67% of documentation queries without human intervention—while an automated agent keeps their customers’ docs synchronized with code changes. Internally, their engineering team ships features 3-4x faster using Claude Code. Mintlify documentation sites receive as many requests from AI agents as from human developers.
 
 ## With Claude, Mintlify achieved:
 
@@ -49,9 +49,9 @@ We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its pr
 
 ## The challenge
 
-Mintlify's customers faced two persistent problems: developer relations teams overwhelmed by repetitive documentation questions, and documentation that couldn't keep pace with rapidly evolving codebases. For enterprise customers with thousands of API developers, this meant dedicating significant support resources to answering questions that were already covered in documentation.
+Mintlify’s customers faced two persistent problems: developer relations teams overwhelmed by repetitive documentation questions, and documentation that couldn’t keep pace with rapidly evolving codebases. For enterprise customers with thousands of API developers, this meant dedicating significant support resources to answering questions that were already covered in documentation.
 
-Meanwhile, API endpoints would change, code examples would become outdated, and parameter names would drift—often going unnoticed for weeks or months. Technical writers manually reviewing commits couldn't keep pace with the volume of changes, and the resulting documentation gaps eroded developer trust.
+Meanwhile, API endpoints would change, code examples would become outdated, and parameter names would drift—often going unnoticed for weeks or months. Technical writers manually reviewing commits couldn’t keep pace with the volume of changes, and the resulting documentation gaps eroded developer trust.
 
 Mintlify wanted to solve these problems not just for their customers, but also for their own engineering team. They needed to accelerate feature development while maintaining quality—shipping customer-requested improvements faster.
 
@@ -59,7 +59,7 @@ Mintlify wanted to solve these problems not just for their customers, but also f
 
 Mintlify evaluated multiple AI providers, measuring resolution rate for their AI assistant and merge rate for their documentation agent. Claude consistently outperformed alternatives on both metrics. The extended 200k context window in Opus 4.5 proved essential—documentation sites often span hundreds of pages covering APIs, SDKs, tutorials, and reference materials. Being able to process entire documentation codebases in a single request, rather than chunking content and losing context, meant the AI assistant could provide more accurate, contextually relevant answers.
 
-"Everyone on our team is writing far more code using Claude than they are manually," explains Nick Khami, an engineering manager at Mintlify. "Our engineers find Claude the best for programming—everyone prefers it relative to all other models we have tried."
+“Everyone on our team is writing far more code using Claude than they are manually,” explains Nick Khami, an engineering manager at Mintlify. “Our engineers find Claude the best for programming—everyone prefers it relative to all other models we have tried.”
 
 ## Implementing Claude
 
@@ -67,7 +67,7 @@ The AI assistant went from prototype to production in two weeks. Most of that ti
 
 ## Mintlify deploys Claude from customer docs to internal dev
 
-**AI-powered documentation assistant:** Every Mintlify documentation site now includes an assistant built on Opus 4.5 that answers natural language questions using documentation, code examples, and live API schemas. It handles complex, multi-step queries—breaking down compound questions like "How do I set up authentication with SSO and then customize the user profile page?", pulling from multiple documentation sections, and delivering coherent step-by-step answers. The assistant uses tool use to fetch live API schemas, ensuring responses reflect the current state of each customer's product.
+**AI-powered documentation assistant:** Every Mintlify documentation site now includes an assistant built on Opus 4.5 that answers natural language questions using documentation, code examples, and live API schemas. It handles complex, multi-step queries—breaking down compound questions like “How do I set up authentication with SSO and then customize the user profile page?”, pulling from multiple documentation sections, and delivering coherent step-by-step answers. The assistant uses tool use to fetch live API schemas, ensuring responses reflect the current state of each customer’s product.
 
 **Automated documentation maintenance:** An agentic system monitors code repositories and automatically generates pull requests when it detects drift between code and docs—such as an API endpoint that has changed while documentation still references the old version. One enterprise customer reported 43 outdated code examples identified and fixed in the first month alone, issues that would have otherwise gone unnoticed and potentially generated support tickets.
 
@@ -77,7 +77,7 @@ The AI assistant went from prototype to production in two weeks. Most of that ti
 
 Developer satisfaction scores at one enterprise customer increased from 3.8 to 4.6 out of 5 after implementing the assistant—developers particularly appreciated getting instant answers during off-hours. For customers with thousands of API developers, the AI assistant translates to hundreds of support hours saved monthly.
 
-Documentation quality improved substantially. Customers report saving 8-12 hours per week on documentation maintenance. Engineering velocity accelerated dramatically—Mintlify's team now ships features at 3-4x their previous rate, and time from feature request to deployment dropped from 3-4 weeks to 1-2 weeks.
+Documentation quality improved substantially. Customers report saving 8-12 hours per week on documentation maintenance. Engineering velocity accelerated dramatically—Mintlify’s team now ships features at 3-4x their previous rate, and time from feature request to deployment dropped from 3-4 weeks to 1-2 weeks.
 
 Customer retention improved by 15%, with the AI assistant becoming a competitive differentiator that prospects specifically cite when choosing Mintlify. Looking ahead, Mintlify is building multi-repository documentation orchestration to maintain consistency across related codebases, and exploring proactive documentation intelligence to identify gaps before they become support issues.
 
@@ -104,7 +104,8 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -122,12 +123,12 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -160,7 +161,7 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -178,6 +179,7 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -193,7 +195,7 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -228,7 +230,8 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -246,12 +249,12 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -284,7 +287,7 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -302,6 +305,7 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -317,7 +321,7 @@ Customer retention improved by 15%, with the AI assistant becoming a competitive
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

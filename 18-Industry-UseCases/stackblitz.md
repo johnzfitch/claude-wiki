@@ -325,7 +325,7 @@ Products
 
 - Max plan
 
-  [Max plan](../17-Billing-Plans/pricing.md)
+  [Max plan](../17-Billing-Plans/pricing-max.md)
   Max plan
 
 - Team plan

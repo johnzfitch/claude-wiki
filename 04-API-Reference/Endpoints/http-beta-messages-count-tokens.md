@@ -1,8 +1,8 @@
 ---
 title: "Count tokens in a Message - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/messages/count_tokens"
+source_url: "https://platform.claude.com/docs/en/api/beta/messages/count_tokens"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:10Z"
+fetched_at: "2026-10-20T06:39:20Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Fmessages%2Fcount_tokens)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmessages%2Fcount_tokens)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,10 +232,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
-3.  [Messages](http-beta-messages.md)
+2.  [Beta](platform-claude-com-http-beta.md)
+3.  [Messages](platform-claude-com-http-beta-messages.md)
 
 # Count tokens in a Message
+
+Copy page
+
+
+
+cURL
 
 POST/v1/messages/count_tokens
 
@@ -245,7 +255,17 @@ Learn more about token counting in our [user guide](../Guides/build-with-claude-
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -457,6 +477,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 "anthropic-user-profile-id": optional string
 
 
@@ -477,7 +501,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-messages: array of [BetaMessageParam](http-beta-messages.md#beta_message_param) { content, role, clear_at, output_config }
+messages: array of [BetaMessageParam](platform-claude-com-http-beta-messages.md#beta_message_param) { content, role, clear_at, output_config }
 
 
 
@@ -487,7 +511,7 @@ Our models are trained to operate on alternating `user` and `assistant` conversa
 
 Each input message must be an object with a `role` and `content`. You can specify a single `user`-role message, or you can include multiple `user` and `assistant` messages.
 
-If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response.
+If the final message uses the `assistant` role, the response content will continue immediately from the content in that message. This can be used to constrain part of the model's response. This is called prefill. On models that don't support prefill, creating a message that ends with a partial `assistant` response returns a 400 error. See [Prefill not supported](errors.md#prefill-not-supported).
 
 Example with a single `user` message:
 
@@ -509,7 +533,7 @@ Example with multiple conversational turns:
 
 
 
-Example with a partially-filled response from Claude:
+Example with a partially-filled response from Claude, for models that support prefill:
 
 ```python
 [
@@ -542,7 +566,7 @@ There is a limit of 100,000 messages in a single request.
 
 
 
-content: string or array of [BetaContentBlockParam](http-beta-messages.md#beta_content_block_param)
+content: string or array of [BetaContentBlockParam](platform-claude-com-http-beta-messages.md#beta_content_block_param)
 
 
 
@@ -554,7 +578,7 @@ string
 
 
 
-array of [BetaContentBlockParam](http-beta-messages.md#beta_content_block_param)
+array of [BetaContentBlockParam](platform-claude-com-http-beta-messages.md#beta_content_block_param)
 
 
 
@@ -674,7 +698,7 @@ type: "code_execution_tool_result"
 
 
 
-content: [BetaCodeExecutionToolResultBlockParamContent](http-beta-messages.md#beta_code_execution_tool_result_block_param_content)
+content: [BetaCodeExecutionToolResultBlockParamContent](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_block_param_content)
 
 
 
@@ -690,7 +714,7 @@ pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -773,7 +797,7 @@ file_id: string
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -866,7 +890,7 @@ maxLength255
 
 
 
-tools: array of [BetaMCPToolParam](http-beta-messages.md#beta_mcp_tool_param) { input_schema, name, description }
+tools: array of [BetaMCPToolParam](platform-claude-com-http-beta-messages.md#beta_mcp_tool_param) { input_schema, name, description }
 
 
 
@@ -912,7 +936,7 @@ type: "fallback"
 
 
 
-from: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
+from: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
@@ -920,7 +944,7 @@ Identifies one hop of a fallback transition.
 
 
 
-to: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
+to: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
@@ -972,7 +996,7 @@ One of the following:
 
 
 
-output_config: optional [BetaSystemMessageOutputConfig](http-beta-messages.md#beta_system_message_output_config) { effort } or null
+output_config: optional [BetaSystemMessageOutputConfig](platform-claude-com-http-beta-messages.md#beta_system_message_output_config) { effort } or null
 
 
 
@@ -1023,6 +1047,12 @@ The model that will complete your prompt.
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 One of the following:
+
+"claude-haiku-5-5"
+
+
+
+Fastest model for high-volume, real-time tasks
 
 "claude-sonnet-5-5"
 
@@ -1100,13 +1130,9 @@ Best combination of speed and intelligence
 
 
 
-Fastest model with near-frontier intelligence
-
 "claude-haiku-4-5-20251001"
 
 
-
-Fastest model with near-frontier intelligence
 
 "claude-opus-4-5"
 
@@ -1156,7 +1182,7 @@ string
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -1193,7 +1219,7 @@ One of the following:
 
 
 
-compaction: optional [BetaCompactionConfig](http-beta-messages.md#beta_compaction_config) { type: "summarize", instructions } or null
+compaction: optional [BetaCompactionConfig](platform-claude-com-http-beta-messages.md#beta_compaction_config) { type: "summarize", instructions } or null
 
 
 
@@ -1217,7 +1243,7 @@ maxLength16384
 
 
 
-context_management: optional [BetaContextManagementConfig](http-beta-messages.md#beta_context_management_config) { edits } or null
+context_management: optional [BetaContextManagementConfig](platform-claude-com-http-beta-messages.md#beta_context_management_config) { edits } or null
 
 
 
@@ -1227,7 +1253,7 @@ This allows you to control how Claude manages context across multiple requests, 
 
 
 
-mcp_servers: optional array of [BetaRequestMCPServerURLDefinition](http-beta-messages.md#beta_request_mcp_server_url_definition) { type: "url", name, url, 2 more }
+mcp_servers: optional array of [BetaRequestMCPServerURLDefinition](platform-claude-com-http-beta-messages.md#beta_request_mcp_server_url_definition) { type: "url", name, url, 2 more }
 
 
 
@@ -1253,7 +1279,7 @@ authorization_token: optional string or null
 
 
 
-tool_configuration: optional [BetaRequestMCPServerToolConfiguration](http-beta-messages.md#beta_request_mcp_server_tool_configuration) { allowed_tools, enabled } or null
+tool_configuration: optional [BetaRequestMCPServerToolConfiguration](platform-claude-com-http-beta-messages.md#beta_request_mcp_server_tool_configuration) { allowed_tools, enabled } or null
 
 
 
@@ -1267,7 +1293,7 @@ enabled: optional boolean or null
 
 
 
-output_config: optional [BetaOutputConfig](http-beta-messages.md#beta_output_config) { effort, format, task_budget }
+output_config: optional [BetaOutputConfig](platform-claude-com-http-beta-messages.md#beta_output_config) { effort, format, task_budget }
 
 
 
@@ -1281,6 +1307,8 @@ speed: optional "standard" or "fast" or null
 
 The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
 
+Some models require the `fast-mode-2026-02-01` beta header for any `speed` value. See [fast mode](../Guides/build-with-claude-fast-mode.md) for which models.
+
 One of the following:
 
 "standard"
@@ -1293,7 +1321,7 @@ One of the following:
 
 
 
-system: optional string or array of [BetaTextBlockParam](http-beta-messages.md#beta_text_block_param)
+system: optional string or array of [BetaTextBlockParam](platform-claude-com-http-beta-messages.md#beta_text_block_param)
 
 
 
@@ -1309,7 +1337,7 @@ string
 
 
 
-array of [BetaTextBlockParam](http-beta-messages.md#beta_text_block_param) { type: "text", text, cache_control, citations }
+array of [BetaTextBlockParam](platform-claude-com-http-beta-messages.md#beta_text_block_param) { type: "text", text, cache_control, citations }
 
 
 
@@ -1327,7 +1355,7 @@ minLength1
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -1364,7 +1392,7 @@ One of the following:
 
 
 
-citations: optional array of [BetaTextCitationParam](http-beta-messages.md#beta_text_citation_param) or null
+citations: optional array of [BetaTextCitationParam](platform-claude-com-http-beta-messages.md#beta_text_citation_param) or null
 
 
 
@@ -1614,21 +1642,21 @@ title: string or null
 
 
 
-thinking: optional [BetaThinkingConfigParam](http-beta-messages.md#beta_thinking_config_param)
+thinking: optional [BetaThinkingConfigParam](platform-claude-com-http-beta-messages.md#beta_thinking_config_param)
 
 
 
-Configuration for enabling Claude's extended thinking.
+Configuration for Claude's thinking.
 
-When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.
+With `{"type": "adaptive"}`, Claude decides when and how much to think. With `{"type": "enabled"}` (manual extended thinking), you set a `budget_tokens` of at least 1,024. Thinking tokens count toward your `max_tokens` limit.
 
-See [extended thinking](../Guides/build-with-claude-extended-thinking.md) for details.
+Which `type` values are accepted, and what happens when you omit `thinking`, depend on the model. See [thinking](../Guides/build-with-claude-thinking.md#configuring-thinking) for each model's behavior.
 
 One of the following:
 
 
 
-tool_choice: optional [BetaToolChoice](http-beta-messages.md#beta_tool_choice)
+tool_choice: optional [BetaToolChoice](platform-claude-com-http-beta-messages.md#beta_tool_choice)
 
 
 
@@ -1638,7 +1666,7 @@ One of the following:
 
 
 
-tools: optional array of [BetaTool](http-beta-messages.md#beta_tool) or [BetaToolBash20241022](http-beta-messages.md#beta_tool_bash_20241022) or [BetaToolBash20250124](http-beta-messages.md#beta_tool_bash_20250124) or 25 more
+tools: optional array of [BetaTool](platform-claude-com-http-beta-messages.md#beta_tool) or [BetaToolBash20241022](platform-claude-com-http-beta-messages.md#beta_tool_bash_20241022) or [BetaToolBash20250124](platform-claude-com-http-beta-messages.md#beta_tool_bash_20250124) or 25 more
 
 
 
@@ -1896,7 +1924,7 @@ Allows configuring enabled status and defer_loading for all tools from an MCP se
 
 
 
-output_format: optional [BetaJSONOutputFormat](http-beta-messages.md#beta_json_output_format) { type: "json_schema", schema } or null⁠Deprecated
+output_format: optional [BetaJSONOutputFormat](platform-claude-com-http-beta-messages.md#beta_json_output_format) { type: "json_schema", schema } or null⁠Deprecated
 
 
 
@@ -1924,7 +1952,7 @@ BetaMessageTokensCount object{ context_management, input_tokens }
 
 
 
-context_management: [BetaCountTokensContextManagementResponse](http-beta-messages.md#beta_count_tokens_context_management_response) { original_input_tokens } or null
+context_management: [BetaCountTokensContextManagementResponse](platform-claude-com-http-beta-messages.md#beta_count_tokens_context_management_response) { original_input_tokens } or null
 
 
 
@@ -1960,7 +1988,7 @@ curl https://api.anthropic.com/v1/messages/count_tokens \
               "role": "user"
             }
           ],
-          "model": "claude-opus-5",
+          "model": "claude-opus-5-5",
           "system": [
             {
               "text": "Today'\''s date is 2024-06-01.",

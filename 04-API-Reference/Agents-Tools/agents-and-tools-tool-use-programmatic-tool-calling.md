@@ -2,7 +2,7 @@
 title: "Programmatic tool calling - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-04T08:32:10Z"
+fetched_at: "2026-10-20T06:36:56Z"
 tags: ["api"]
 ---
 
@@ -18,12 +18,6 @@ Let Claude call your tools from code in the code execution container, cutting mo
 
 
 
-Programmatic tool calling
-
-[ZDR](../Guides/build-with-claude-api-and-data-retention.md)
-
-Not eligible
-
 Programmatic tool calling allows Claude to write code that calls your tools programmatically within a [code execution](agents-and-tools-tool-use-code-execution-tool.md) container, rather than requiring round trips through the model for each tool invocation. This reduces latency for multi-tool workflows and decreases token consumption by allowing Claude to filter or process data before it reaches the model's context window. On agentic search benchmarks like [BrowseComp](https://arxiv.org/abs/2504.12516) and [DeepSearchQA](https://github.com/google-deepmind/deepsearchqa), which test multistep web research and complex information retrieval, adding programmatic tool calling on top of basic search tools improved performance by an average of 11% while using 24% fewer input tokens (see [Improved web search with dynamic filtering](https://claude.com/blog/improved-web-search-with-dynamic-filtering)).
 
 Consider checking budget compliance across 20 employees: the traditional approach requires 20 separate model round-trips, pulling thousands of expense line items into the context along the way. With programmatic tool calling, a single script runs all 20 lookups, filters the results, and returns only the employees who exceeded their limits, shrinking what Claude needs to reason over from hundreds of kilobytes down to a handful of lines.
@@ -32,7 +26,7 @@ Consider checking budget compliance across 20 employees: the traditional approac
 
 For a deeper look at the inference and context costs that programmatic tool calling addresses, see [Advanced tool use](https://www.anthropic.com/engineering/advanced-tool-use).
 
-Programmatic tool calling requires the [code execution tool](agents-and-tools-tool-use-code-execution-tool.md) with tool version `code_execution_20260120` or later.
+Programmatic tool calling requires the [code execution tool](agents-and-tools-tool-use-code-execution-tool.md) with tool version `code_execution_20260120` or later. To check whether a model supports programmatic tool calling before you send a request, read its `capabilities.code_execution.supported` value from the Models API. [Using the Models API](../../20-Models/about-claude-models-overview.md#using-the-models-api) describes the field.
 
 ## Quick start
 
@@ -55,6 +49,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -279,6 +275,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -785,7 +783,7 @@ Consider using Anthropic's managed solution if you're using the Claude API, [Cla
 
 Programmatic tool calling is built on the code execution infrastructure and uses the same sandbox containers. Container data, including execution artifacts and outputs, is retained for up to 30 days.
 
-For ZDR eligibility across all features, see [API and data retention](../Guides/build-with-claude-api-and-data-retention.md).
+For ZDR eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 ## Next steps
 
@@ -820,6 +818,7 @@ Supported models
 - Mythos 5 and 5.1
 - Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
 - Sonnet 4.5, 4.6, 5, and 5.5
+- Haiku 5.5
 
 Supported platforms  
 - Claude API

@@ -2,7 +2,7 @@
 title: "MCP Memory Server"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/memory/README.md"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-09-03T06:26:48Z"
+fetched_at: "2026-10-20T06:40:35Z"
 tags: ["api", "mcp"]
 ---
 
@@ -70,7 +70,8 @@ Example:
       - `name` (string): Entity identifier
       - `entityType` (string): Type classification
       - `observations` (string[]): Associated observations
-  - Ignores entities with existing names
+  - Ignores entities with existing names (and repeats of a name earlier in the same call); their observations are not added
+  - Returns the created entities. When any were skipped, the structured result also lists their names in `skipped`, and a second text item says which were skipped (use `add_observations` to extend an existing entity)
 
 - **create_relations**
   - Create multiple new relations between entities
@@ -143,6 +144,15 @@ Example:
   - MIME type: `application/json`
   - Returns the same shape as `read_graph` (entities and relations)
   - Mutation tools (`create_entities`, `create_relations`, `add_observations`, `delete_entities`, `delete_observations`, `delete_relations`) emit `notifications/resources/updated` for this URI, so subscribed clients see live changes
+  - How a client subscribes depends on its protocol version: a 2026-07-28 client names the URI in the `resourceSubscriptions` of its `subscriptions/listen` request and gets the updates on that stream; a 2025-era client calls `resources/subscribe`
+
+## Protocol versions
+
+The server serves both protocol eras on stdio from the same process. The client's first message picks the era of the connection: a 2026-07-28 client opens with `server/discover` and sends its protocol version, identity and capabilities with each request, and a 2025-era client opens with the `initialize` handshake. The tools and the resource are the same on both.
+
+## Requirements
+
+Node.js 24 or later, when the server runs through `npx` or from source.
 
 # Usage with Claude Desktop
 
@@ -239,6 +249,14 @@ On Windows, use:
 ```
 
 - `MEMORY_FILE_PATH`: Path to the memory storage JSONL file (default: `memory.jsonl` in the server directory)
+
+#### Sharing one memory file between clients
+
+Each MCP client starts its own server process, so two clients using the same `MEMORY_FILE_PATH` (or both using the default) are two processes writing one file. Every write tool takes an exclusive lock file, `<memory file>.lock`, next to the memory file while it reads, changes and saves the graph, so writes from different processes take turns and none is lost. The lock file exists only while a write is in progress, so the directory holding the memory file must be writable (it already must be, for the atomic save).
+
+- A lock left behind by a server that crashed mid-write is removed automatically: at once if its process is known to have exited on the same machine, otherwise once it has gone 30 seconds without being refreshed (a server holding the lock refreshes it every 15 seconds while it works). Only one waiting server breaks a stale lock at a time, guarded by a momentary `<memory file>.lock.break` file.
+- A write that cannot get the lock within 60 seconds fails with a tool error rather than overwriting the file.
+- The lock relies on exclusive file creation, which local filesystems provide; a network filesystem that does not honour it cannot be shared safely this way.
 
 # VS Code Installation Instructions
 

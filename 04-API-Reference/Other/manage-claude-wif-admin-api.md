@@ -2,7 +2,7 @@
 title: "Manage WIF with the Admin API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/wif-admin-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:40Z"
+fetched_at: "2026-10-20T06:40:28Z"
 tags: ["api", "authentication"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-admin-api)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-admin-api)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Authentication
 
@@ -109,7 +111,7 @@ One Console-created rule is enough to put the rest of your federation configurat
 
     ### Create the org:admin rule in the Console
 
-    In the Claude Console, go to **Settings → Workload identity** and select **Connect workload** to create one federation rule for your automation workload, for example a GitHub Actions workflow in your infrastructure repository. Under **Advanced rule options**, set the rule's OAuth scope to `org:admin`: the wizard then creates the new service account with the Admin organization role (or asks you to pick an existing admin service account as the target).
+    In the Claude Console, go to the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`) and select **Connect workload** to create one federation rule for your automation workload, for example a GitHub Actions workflow in your infrastructure repository. Under **Advanced rule options**, set the rule's OAuth scope to `org:admin`: the wizard then creates the new service account with the Admin organization role (or asks you to pick an existing admin service account as the target).
 
     
     Match the rule to one exact workload identity, not a broad pattern. `subject_prefix` is an exact match unless it ends in `*`. For GitHub Actions, pin the subject to a protected branch, such as `repo:my-org/my-repo:ref:refs/heads/main`. A trailing wildcard such as `repo:my-org/my-repo:*` also matches `pull_request` runs, including runs triggered from forks, so anyone who could open a pull request against the repository could mint an `org:admin` token. See [Restrict which workflows can authenticate](manage-claude-wif-providers-github-actions.md#restrict-which-workflows-can-authenticate).
@@ -148,7 +150,7 @@ For the operations a workload-minted token can and cannot perform, see [Permissi
 
 All endpoints live under `https://api.anthropic.com/v1/organizations/`. Every request to the federation and service-account endpoints needs the API version header and the bearer token:
 
-In the SDKs these endpoints are `client.beta.organization.service_accounts`, `client.beta.organization.federation.issuers`, and `client.beta.organization.federation.rules` (`ant beta:organization:service-accounts`, `federation:issuers`, and `federation:rules` in the CLI). The SDK and CLI examples construct the default client, which sends the bearer token from `ANTHROPIC_AUTH_TOKEN`, or, in an automated workload, performs the federation exchange itself as described in [Bootstrap a workload to manage WIF](#bootstrap-a-workload-to-manage-wif). SDK list methods fetch further pages on demand, so `limit` sets the page size; the PHP and Ruby examples read one page.
+In the SDKs these endpoints are `client.organization.service_accounts`, `client.organization.federation.issuers`, and `client.organization.federation.rules` (`ant organization:service-accounts`, `federation:issuers`, and `federation:rules` in the CLI). The SDK and CLI examples construct the default client, which sends the bearer token from `ANTHROPIC_AUTH_TOKEN`, or, in an automated workload, performs the federation exchange itself as described in [Bootstrap a workload to manage WIF](#bootstrap-a-workload-to-manage-wif). SDK list methods fetch further pages on demand, so `limit` sets the page size; the PHP and Ruby examples read one page.
 
 cURL
 
@@ -168,12 +170,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-service_accounts = client.beta.organization.service_accounts.list()
+service_accounts = client.organization.service_accounts.list()
 
 for service_account in service_accounts:
     print(f"{service_account.id}: {service_account.name}")
@@ -205,12 +209,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-service_account = client.beta.organization.service_accounts.create(
+service_account = client.organization.service_accounts.create(
     name="inference-worker", organization_role="developer"
 )
 
@@ -238,12 +244,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-service_accounts = client.beta.organization.service_accounts.list(limit=20)
+service_accounts = client.organization.service_accounts.list(limit=20)
 
 for service_account in service_accounts:
     print(f"{service_account.id}: {service_account.name}")
@@ -269,12 +277,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-service_account = client.beta.organization.service_accounts.archive(
+service_account = client.organization.service_accounts.archive(
     "svac_01ABCDEFabcdef0123456789XY"
 )
 
@@ -299,7 +309,7 @@ The create endpoint returns the new service account:
 
 To read or update a single service account, use `GET` and `POST` on `/v1/organizations/service_accounts/{service_account_id}`. A service account must be a member of a workspace before federated tokens can act in it. Every service account has an implicit membership in your organization's default workspace; add explicit memberships for other workspaces with `GET`, `POST`, and `DELETE` on `/v1/organizations/service_accounts/{service_account_id}/workspaces`, where `DELETE` targets `.../workspaces/{workspace_id}`.
 
-For complete parameter details and response schemas, see the [Service accounts API reference](../Admin/beta-organization-service-accounts.md).
+For complete parameter details and response schemas, see the [Service accounts API reference](../Endpoints/organization-service-accounts.md).
 
 ## Federation issuers
 
@@ -331,12 +341,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-issuer = client.beta.organization.federation.issuers.create(
+issuer = client.organization.federation.issuers.create(
     name="github-actions",
     issuer_url="https://token.actions.githubusercontent.com",
     jwks={"type": "discovery"},
@@ -367,12 +379,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-issuers = client.beta.organization.federation.issuers.list(limit=20)
+issuers = client.organization.federation.issuers.list(limit=20)
 
 for issuer in issuers:
     print(f"{issuer.id}: {issuer.name}")
@@ -398,12 +412,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-issuer = client.beta.organization.federation.issuers.archive(
+issuer = client.organization.federation.issuers.archive(
     "fdis_01ABCDEFabcdef0123456789XY"
 )
 
@@ -413,7 +429,7 @@ print(f"archived_at: {issuer.archived_at}")
 
 To read or update a single issuer, use `GET` and `POST` on `/v1/organizations/federation_issuers/{issuer_id}`. An OAuth caller cannot update an issuer that backs a rule whose `oauth_scope` is anything other than `workspace:developer` or `workspace:inference`; see [Permissions and constraints](#permissions-and-constraints).
 
-For complete parameter details and response schemas, see the [Federation issuers API reference](../Admin/beta-organization-federation-issuers.md).
+For complete parameter details and response schemas, see the [Federation issuers API reference](../Endpoints/organization-federation-issuers.md).
 
 ## Federation rules
 
@@ -439,12 +455,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-rule = client.beta.organization.federation.rules.create(
+rule = client.organization.federation.rules.create(
     name="gha-deploy",
     issuer_id="fdis_01ABCDEFabcdef0123456789XY",
     match={
@@ -484,12 +502,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-rules = client.beta.organization.federation.rules.list(
+rules = client.organization.federation.rules.list(
     issuer_id="fdis_01ABCDEFabcdef0123456789XY"
 )
 
@@ -517,14 +537,14 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
 client = anthropic.Anthropic()
 
-rule = client.beta.organization.federation.rules.archive(
-    "fdrl_01ABCDEFabcdef0123456789XY"
-)
+rule = client.organization.federation.rules.archive("fdrl_01ABCDEFabcdef0123456789XY")
 
 print(f"id: {rule.id}")
 print(f"archived_at: {rule.archived_at}")
@@ -543,7 +563,7 @@ The list endpoint returns a page of rules and the cursor for the next page:
 
 To read or update a single rule, use `GET` and `POST` on `/v1/organizations/federation_rules/{rule_id}`. To manage the workspaces a rule can mint tokens in, use `GET` and `POST` on `/v1/organizations/federation_rules/{rule_id}/workspaces`, and `DELETE` on `/v1/organizations/federation_rules/{rule_id}/workspaces/{workspace_id}`.
 
-For complete parameter details and response schemas, see the [Federation rules API reference](../Admin/beta-organization-federation-rules.md).
+For complete parameter details and response schemas, see the [Federation rules API reference](../Endpoints/organization-federation-rules.md).
 
 ## Permissions and constraints
 
@@ -566,4 +586,4 @@ Archiving is a soft delete and is idempotent: archiving an already-archived reso
 - [Workload Identity Federation](manage-claude-workload-identity-federation.md): concepts and the Console setup walkthrough
 - [WIF reference](manage-claude-wif-reference.md): environment variables, validation rules, OAuth scopes, and error codes
 - [Admin API](manage-claude-admin-api.md): the rest of the organization management surface
-- [Admin API reference](../Admin/http-beta-organization.md): generated request and response schemas for every Admin API endpoint
+- [Admin API reference](../Endpoints/organization.md): generated request and response schemas for the service account and federation endpoints

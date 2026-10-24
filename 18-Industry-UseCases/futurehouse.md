@@ -2,7 +2,7 @@
 title: "FutureHouse Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/futurehouse"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:47Z"
+fetched_at: "2026-10-23T06:29:40Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 
@@ -42,21 +42,21 @@ With Claude, FutureHouse:
 
 FutureHouse founders Andrew White and Sam Rodriques experienced firsthand the information overload crisis in biological research. As scientists, they faced an impossible choice between spending hours reading papers or focusing on lab work while missing critical advances. The challenge intensified as biological techniques generated exponentially more data while publication volumes skyrocketed.
 
-"There is an enormous corpus of literature to consider when approaching any scientific problem," said Sam Rodriques, Co-Founder and CEO. "Even if we had all the information we needed to understand how biology works, we wouldn't necessarily know it, because no one has enough time to read and synthesize all the scientific literature."
+“There is an enormous corpus of literature to consider when approaching any scientific problem,” said Sam Rodriques, Co-Founder and CEO. “Even if we had all the information we needed to understand how biology works, we wouldn’t necessarily know it, because no one has enough time to read and synthesize all the scientific literature.”
 
 This bottleneck has tangible consequences. Graduate students delay research for months-long literature reviews, drug development teams unknowingly duplicate failed approaches, and cross-disciplinary breakthroughs remain undiscovered. White and Rodriques founded FutureHouse to break through this barrier, recognizing that AI offered the only viable path to scale scientific knowledge processing beyond human limitations.
 
 ## Why FutureHouse chose Claude for scientific reasoning
 
-After evaluating numerous AI models through their LAB-Bench benchmark evaluation, FutureHouse selected Claude for three essential capabilities that scientific applications demand. First, Claude excels at recognizing uncertainty—a fundamental requirement in science. "Claude is a very discerning model," explained Skarlinski. "When evidence is insufficient, it will clearly indicate this rather than hallucinating an answer, which is crucial when explaining molecular mechanisms or gene interactions."
+After evaluating numerous AI models through their LAB-Bench benchmark evaluation, FutureHouse selected Claude for three essential capabilities that scientific applications demand. First, Claude excels at recognizing uncertainty—a fundamental requirement in science. “Claude is a very discerning model,” explained Skarlinski. “When evidence is insufficient, it will clearly indicate this rather than hallucinating an answer, which is crucial when explaining molecular mechanisms or gene interactions.”
 
-Second, Claude's contextual understanding enhances research quality. Skarlinski noted, "Claude 3.7 is an excellent model for orchestration," highlighting how Claude processes complex scientific literature while maintaining awareness of important metadata like citation counts and journal quality. This contextual reasoning "significantly improves our final outputs" compared to other approaches.
+Second, Claude’s contextual understanding enhances research quality. Skarlinski noted, “Claude 3.7 is an excellent model for orchestration,” highlighting how Claude processes complex scientific literature while maintaining awareness of important metadata like citation counts and journal quality. This contextual reasoning “significantly improves our final outputs” compared to other approaches.
 
-Third, Claude provides the transparency scientists require. When researchers use FutureHouse's platform, they can see why specific citations were chosen and the reasoning behind conclusions—creating the provenance that scientific work demands. This combination of precision, contextual understanding, and transparent reasoning made Claude the clear choice for powering their scientific agents.
+Third, Claude provides the transparency scientists require. When researchers use FutureHouse’s platform, they can see why specific citations were chosen and the reasoning behind conclusions—creating the provenance that scientific work demands. This combination of precision, contextual understanding, and transparent reasoning made Claude the clear choice for powering their scientific agents.
 
 ## Building an aviary of specialized scientific agents
 
-FutureHouse has developed an elegant, open source framework for AI agents called "aviary." The name comes from their bird-themed convention and is inspired by birds, who are the perfect mascot for FutureHouse. They are endowed with natural intelligence, vastly amplified by their ability to use tools (much like FutureHouse’s agents). Each agent addresses different aspects of the scientific workflow, with Claude powering the reasoning capabilities across the ecosystem.
+FutureHouse has developed an elegant, open source framework for AI agents called “aviary.” The name comes from their bird-themed convention and is inspired by birds, who are the perfect mascot for FutureHouse. They are endowed with natural intelligence, vastly amplified by their ability to use tools (much like FutureHouse’s agents). Each agent addresses different aspects of the scientific workflow, with Claude powering the reasoning capabilities across the ecosystem.
 
 The current platform includes:
 
@@ -66,33 +66,33 @@ The current platform includes:
 
 **Phoenix (experimental)**: This specialized agent handles chemical informatics, building on their previous ChemCrow project. It connects with chemistry databases to support molecular prediction and synthesis, while incorporating safety tools to ensure molecules are both non-toxic and feasible to produce. This capability is essential for drug discovery and materials research.
 
-**Owl**: Focused on novelty assessment, Owl (previously called "Has Anyone") determines if research ideas have precedent. "Owl emphasizes recall, searching across fields to determine if your hypothesis is truly novel," explained Skarlinski. This helps researchers avoid duplicating existing work while identifying innovative approaches.
+**Owl**: Focused on novelty assessment, Owl (previously called “Has Anyone”) determines if research ideas have precedent. “Owl emphasizes recall, searching across fields to determine if your hypothesis is truly novel,” explained Skarlinski. This helps researchers avoid duplicating existing work while identifying innovative approaches.
 
-These agents operate within FutureHouse's open-source "Aviary" environment, which coordinates their interaction with scientific tools and manages complex research workflows.
+These agents operate within FutureHouse’s open-source “Aviary” environment, which coordinates their interaction with scientific tools and manages complex research workflows.
 
 ## How agentic workflows transform scientific discovery
 
-FutureHouse's Claude-powered agents address the inherently non-linear nature of scientific research. Skarlinski explained, "A lot of problems in science, especially around using literature or using a lot of data sources, are nonlinear. You need to think of some subhypothesis in order to answer a question, look at the quality of that information, and then evaluate it and maybe do a different search after. This process is fundamentally agentic. You can't do it with a linear workflow."
+FutureHouse’s Claude-powered agents address the inherently non-linear nature of scientific research. Skarlinski explained, “A lot of problems in science, especially around using literature or using a lot of data sources, are nonlinear. You need to think of some subhypothesis in order to answer a question, look at the quality of that information, and then evaluate it and maybe do a different search after. This process is fundamentally agentic. You can’t do it with a linear workflow.”
 
-FutureHouse has quantified this advantage through controlled studies, demonstrating that removing the agentic step "statistically significantly decreases the output accuracy of questions" compared to their full agent system. For researchers, this translates to concrete benefits: literature reviews completed in days instead of months, and drug discovery teams identifying promising candidates with unprecedented efficiency.
+FutureHouse has quantified this advantage through controlled studies, demonstrating that removing the agentic step “statistically significantly decreases the output accuracy of questions” compared to their full agent system. For researchers, this translates to concrete benefits: literature reviews completed in days instead of months, and drug discovery teams identifying promising candidates with unprecedented efficiency.
 
-The agents provide transparency by explaining their reasoning, enabling scientists to make informed decisions about experimental paths. Skarlinski noted, "Our agents function like next-generation search tools that not only process vast amounts of data but also explain their reasoning." By automating information-intensive tasks, FutureHouse frees researchers to focus on creative hypothesis generation—ultimately accelerating discovery across biological sciences.
+The agents provide transparency by explaining their reasoning, enabling scientists to make informed decisions about experimental paths. Skarlinski noted, “Our agents function like next-generation search tools that not only process vast amounts of data but also explain their reasoning.” By automating information-intensive tasks, FutureHouse frees researchers to focus on creative hypothesis generation—ultimately accelerating discovery across biological sciences.
 
 ## Building the future of AI-powered scientific discovery
 
-FutureHouse is now expanding beyond literature analysis to create integrated scientific workflows. Skarlinski explained, "Our next frontier is taking experimental data as it's generated and analyzing it as part of the agentic loop." This vision includes automating code generation, data visualization, and hypothesis refinement based on experimental results.
+FutureHouse is now expanding beyond literature analysis to create integrated scientific workflows. Skarlinski explained, “Our next frontier is taking experimental data as it’s generated and analyzing it as part of the agentic loop.” This vision includes automating code generation, data visualization, and hypothesis refinement based on experimental results.
 
 This expansion requires advanced multimodal AI capabilities, especially for understanding scientific graphs and processing experimental data. FutureHouse plans to make their platform publicly accessible with usage limits for individual researchers, democratizing these powerful tools for scientists worldwide.
 
-"Just as AI has transformed software engineering productivity, these agents will fundamentally change how science is conducted," concluded Skarlinski. "By automating routine information processing, we free scientists to focus on the creative aspects of research—designing novel experiments and advancing human knowledge."
+“Just as AI has transformed software engineering productivity, these agents will fundamentally change how science is conducted,” concluded Skarlinski. “By automating routine information processing, we free scientists to focus on the creative aspects of research—designing novel experiments and advancing human knowledge.”
 
 ## Related stories
 
 
-### Mercy Corps on what AI makes possible in humanitarian work
+### Prosper Global on what AI makes possible in humanitarian work
 
 
-### Mercy Corps accelerates global humanitarian response to community feedback with Claude
+### Prosper Global accelerates global humanitarian response to community feedback with Claude
 
 
 ### How can a medical lab keep patients at the center of its work while the caseload keeps growing?
@@ -109,7 +109,8 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -127,12 +128,12 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -165,7 +166,7 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -183,6 +184,7 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -198,7 +200,7 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -233,7 +235,8 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -251,12 +254,12 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -289,7 +292,7 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -307,6 +310,7 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -322,7 +326,7 @@ This expansion requires advanced multimodal AI capabilities, especially for unde
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

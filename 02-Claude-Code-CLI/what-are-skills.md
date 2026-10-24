@@ -2,11 +2,13 @@
 title: "What are skills? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-10T06:24:30Z"
+fetched_at: "2026-10-23T06:29:15Z"
 tags: ["agents", "claude-code", "skills"]
 ---
 
 # What are skills?
+
+September 22, 2026
 
 
 Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
@@ -93,7 +95,7 @@ MCP connects Claude to external services and data sources. Skills provide proced
 
 ### Skills vs. custom instructions
 
-**[Custom instructions](../15-Claude-AI-Features/understanding-claude-s-personalization-features.md)** apply broadly to all your conversations. Skills are task-specific and only load when relevant, making them better for specialized workflows.
+**[Custom instructions](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features)** apply broadly to all your conversations. Skills are task-specific and only load when relevant, making them better for specialized workflows.
 
 ------------------------------------------------------------------------
 
@@ -101,6 +103,6 @@ MCP connects Claude to external services and data sources. Skills provide proced
 
 To discover available skills, check out the directory by clicking "Customize" in your account and navigating to "Skills." You can click "+" then "Browse skills" to open the directory. For more information, see **[Browse skills, connectors, and plugins in one directory](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md)**.
 
-On the Enterprise plan, organizations can turn on skill scanning to check uploaded skills and plugins for malicious content. Learn more about **[skill and plugin scanning](../15-Claude-AI-Features/get-started-with-skill-and-plugin-scanning-claude-help-center.md)**.
+On the Enterprise plan, organizations can turn on skill scanning to check uploaded skills and plugins for malicious content. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
 
 For more details about how skills work, see **[Agent Skills](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md)** in our Claude Docs.

@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fapi-and-data-retention)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fapi-and-data-retention)
 
 
 
@@ -46,7 +46,7 @@ Monitoring
 
 Data & compliance
 
-[Data residency](../Other/manage-claude-data-residency.md)[API and data retention](build-with-claude-api-and-data-retention.md)
+[Data residency](../Other/manage-claude-data-residency.md)[API and data retention](../Other/manage-claude-api-and-data-retention.md)
 
 [Access Transparency](../Other/manage-claude-access-transparency.md)
 
@@ -58,7 +58,7 @@ Compliance API
 
 [Overview](../Other/manage-claude-compliance-api.md)[Set up the Compliance API](../Other/manage-claude-compliance-api-access.md)[Activity Feed](../Other/manage-claude-compliance-activity-feed.md)[Chats, files, and projects](../Other/manage-claude-compliance-content-data.md)[Session transcripts](../Other/manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](../Other/manage-claude-compliance-org-data.md)[Design your integration](../Other/manage-claude-compliance-integration-patterns.md)[Errors](../Other/manage-claude-compliance-errors.md)[FAQ](../Other/manage-claude-compliance-faq.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [Admin](../Other/manage-claude-admin-api.md)Data & compliance
 

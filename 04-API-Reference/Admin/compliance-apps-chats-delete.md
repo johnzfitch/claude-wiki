@@ -2,7 +2,7 @@
 title: "Delete chat - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/chats/delete"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-04T08:32:13Z"
+fetched_at: "2026-10-20T06:39:45Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Fdelete)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Fapps%2Fchats%2Fdelete)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -229,7 +231,11 @@ Code
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -237,9 +243,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -256,9 +262,15 @@ To enable the Compliance API, see the setup guide.
 
 # Delete chat
 
+Copy page
+
+
+
 DELETE/v1/compliance/apps/chats/{claude_chat_id}
 
 Permanently deletes a chat and all associated messages and files. This is a destructive operation that cannot be undone.
+
+A chat's remote sessions are deleted first. If that deletion cannot be confirmed, the request returns a 503 with error code `chat_delete_remote_sessions_unconfirmed` and leaves the chat unchanged. You can retry the request.
 
 ##### Path parameters
 
@@ -269,6 +281,16 @@ claude_chat_id: string
 The chat ID (tagged ID, e.g., claude_chat_abc123)
 
 ##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 "x-api-key": optional string
 

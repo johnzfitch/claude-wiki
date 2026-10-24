@@ -2,7 +2,7 @@
 title: "Thomson Reuters Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/thomson-reuters-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:24Z"
+fetched_at: "2026-10-23T06:29:52Z"
 tags: ["case-studies", "enterprise", "security"]
 ---
 
@@ -46,7 +46,7 @@ For example, a product manager can describe a workflow, attach relevant files, a
 
 We are still in pilot mode, but the early signals are strong.
 
-**Anthropic: Walk us through a specific Cowork workflow that's become part of a team's regular routine at Thomson Reuters. What do they give Claude as input, what comes out, and how much of the output is usable versus needing rework?**
+**Anthropic: Walk us through a specific Cowork workflow that’s become part of a team’s regular routine at Thomson Reuters. What do they give Claude as input, what comes out, and how much of the output is usable versus needing rework?**
 
 **Joel Hron:** A good example is product analytics around NPS data.
 
@@ -64,7 +64,7 @@ That shift is important. The human role does not disappear. It moves up the stac
 
 That used to be manual, which limited how many tailored outputs you could produce. Now, Cowork can help parallelize the effort. The human role becomes validation, refinement, and decision-making. Not repetitive rework. We’re starting to experience these shifts in our engineering processes with Claude Code—and Cowork has the potential to drive a similar change in various other aspects of our business.
 
-**Anthropic: Thomson Reuters has a deep focus on trust, IP protection, and accuracy. How does Cowork fit within those requirements? Are there specific guardrails you've put in place?**
+**Anthropic: Thomson Reuters has a deep focus on trust, IP protection, and accuracy. How does Cowork fit within those requirements? Are there specific guardrails you’ve put in place?**
 
 **Joel Hron:** Trust is foundational for us. That is true in our customer-facing products, and it is true internally.
 
@@ -74,15 +74,15 @@ We reinforce least-privilege access through approved connectors, strong data han
 
 Governance is not an afterthought. It is part of adoption.
 
-**Anthropic: What's surprised you most about how people at Thomson Reuters have used Cowork?**
+**Anthropic: What’s surprised you most about how people at Thomson Reuters have used Cowork?**
 
-**Joel Hron:** One surprise has been how strong Cowork is with everyday enterprise files, especially spreadsheets and presentations. What we have seen is that Cowork's ability to analyze, transform, and generate outputs in those formats is extremely impressive, even early on.
+**Joel Hron:** One surprise has been how strong Cowork is with everyday enterprise files, especially spreadsheets and presentations. What we have seen is that Cowork’s ability to analyze, transform, and generate outputs in those formats is extremely impressive, even early on.
 
-We have had people who were skeptical at first. Then a couple hours later they come back and say, "I'm converted." In an enterprise environment, that kind of credibility is earned through real workflows, not demos.
+We have had people who were skeptical at first. Then a couple hours later they come back and say, “I’m converted.” In an enterprise environment, that kind of credibility is earned through real workflows, not demos.
 
 **Anthropic: Where do you see the most untapped potential for Cowork at Thomson Reuters?**
 
-**Joel Hron:** The biggest untapped potential is moving from person-by-person learning to reusable internal capabilities. So far, we have let individuals and teams build skills organically, prove value, and share within their groups. The next step is to systematize it: shared plugins, standard workflows for common tasks, and a way to distribute "how we work" patterns across the enterprise.
+**Joel Hron:** The biggest untapped potential is moving from person-by-person learning to reusable internal capabilities. So far, we have let individuals and teams build skills organically, prove value, and share within their groups. The next step is to systematize it: shared plugins, standard workflows for common tasks, and a way to distribute “how we work” patterns across the enterprise.
 
 In engineering, we have norms like code review and shared practices. We think the same idea applies here. Teams develop strong patterns for using Cowork, and we create lightweight mechanisms, so the best approaches spread quickly and safely.
 
@@ -121,7 +121,8 @@ And finally, measure value beyond time savings. Some of the most important gains
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -139,12 +140,12 @@ And finally, measure value beyond time savings. Some of the most important gains
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -177,7 +178,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -195,6 +196,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -210,7 +212,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -245,7 +247,8 @@ And finally, measure value beyond time savings. Some of the most important gains
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -263,12 +266,12 @@ And finally, measure value beyond time savings. Some of the most important gains
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -301,7 +304,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -319,6 +322,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -334,7 +338,7 @@ And finally, measure value beyond time savings. Some of the most important gains
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

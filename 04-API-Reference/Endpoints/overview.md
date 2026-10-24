@@ -2,7 +2,7 @@
 title: "API overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/overview"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:22Z"
+fetched_at: "2026-10-20T06:39:13Z"
 tags: ["api", "authentication", "cli", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "authentication", "cli", "sdk"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Foverview)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Foverview)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 API referenceUsing the API
 
@@ -245,8 +249,8 @@ The Claude API is a RESTful API at `https://api.anthropic.com` that provides pro
 
 To use the Claude API, you'll need:
 
-- A [Claude Console account](../Other/usage-limits.md)
-- An [API key](../Other/playground.md), or a configured [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md) rule
+- A [Claude Console account](../Other/playground.md)
+- An [API key](../Other/playground.md) from the Console, or a configured [Workload Identity Federation](../Other/manage-claude-workload-identity-federation.md) rule
 
 For step-by-step setup instructions, see [Get started](../../01-Getting-Started/get-started.md).
 
@@ -287,7 +291,7 @@ When accessing Claude through a [cloud platform](#claude-api-vs-cloud-platforms)
 
 ### Getting API keys
 
-The API is made available through the web [Console](../Other/usage-limits.md). You can use [playground](../Other/playground.md) to try out the API in the browser and then generate API keys in [Account Settings](../Other/playground.md) (see [Get your Claude API key](../Other/get-api-key.md)). You choose each key's type (see [Key types](../Other/manage-claude-authentication.md#key-types)) and its [expiration](../Other/manage-claude-authentication.md#key-expiration) when you create it. Use [workspaces](../Other/playground.md) to separate environments and [control spend](rate-limits.md) by use case.
+The API is made available through the web [Console](../Other/playground.md). In the Console, you can use [playground](../Other/playground.md) (`platform.claude.com/playground`) to try out the API in the browser and then generate API keys on the [API keys](../Other/playground.md) page (`platform.claude.com/settings/keys`). To learn how, see [Get your Claude API key](../Other/get-api-key.md). You choose each key's type (see [Key types](../Other/manage-claude-authentication.md#key-types)) and its [expiration](../Other/manage-claude-authentication.md#key-expiration) when you create it. Use [workspaces](../Other/playground.md) in the Console to separate environments and [control spend](rate-limits.md) by use case.
 
 ## Client SDKs
 
@@ -394,7 +398,7 @@ The API enforces rate limits and spend limits to prevent misuse and manage capac
 - **Spend limits**: Maximum monthly cost for API usage
 - **Rate limits**: Maximum number of requests per minute (RPM) and tokens per minute (TPM)
 
-You can view your rate limits on the [Rate limits](../Other/playground.md) page and your spend limits on the [Billing](../Other/playground.md) page in the Console. For higher rate limits or a higher monthly spend cap, use **Request rate limit increase** on the Rate limits page.
+In the Console, you can view your rate limits on the [Rate limits](../Other/playground.md) page and your spend limits on the [Billing](../Other/playground.md) page. For higher rate limits or a higher monthly spend cap, use **Request tier increase** on the Rate limits page.
 
 For detailed information about limits, tiers, and the token bucket algorithm used for rate limiting, see [Rate limits](rate-limits.md).
 

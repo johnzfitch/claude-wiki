@@ -2,7 +2,7 @@
 title: "Events - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/events"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:38Z"
+fetched_at: "2026-10-20T06:38:43Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fevents)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fevents)
 
 
 
@@ -153,7 +153,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -163,9 +163,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -236,13 +238,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -250,9 +254,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -261,10 +265,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Sessions](https://platform.claude.com/docs/en/api/http/beta/sessions)
 
 # Events
+
+Copy page
+
+
+
+cURL
 
 ##### [List Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/list)
 
@@ -352,7 +362,7 @@ BetaManagedAgentsAgentCustomToolUseEvent object{ type: "agent.custom_tool_use", 
 
 
 
-Event emitted when the agent calls a custom tool. The session goes idle until the client sends a `user.custom_tool_result` event with the result.
+Event emitted when the agent calls a custom tool. The session goes idle until the client sends a `user.custom_tool_result` event with the result. The client can send it as soon as this event arrives, without waiting for `session.status_idle`.
 
 type: "agent.custom_tool_use"
 
@@ -768,6 +778,24 @@ Image content specified directly as base64 data or as a reference via a URL.
 
 
 
+BetaManagedAgentsMaxWorkflowRunsWorkflowRunError object{ type: "max_workflow_runs_error", message }
+
+
+
+No run was created, because the session was at its limit of open workflow runs, which are runs that have not ended. Only `workflow_run.error` carries this type.
+
+type: "max_workflow_runs_error"
+
+
+
+message: string
+
+
+
+Short explanation written by the server. It never contains content from the run or its agents.
+
+
+
 BetaManagedAgentsMCPAuthenticationFailedError object{ type: "mcp_authentication_failed_error", mcp_server_name, message, retry_status }
 
 
@@ -833,6 +861,24 @@ media_type: "text/plain"
 
 
 MIME type of the text content. Must be "text/plain".
+
+
+
+BetaManagedAgentsProgramWorkflowRunError object{ type: "program_error", message }
+
+
+
+The plan, a program that the agent wrote, failed, or the server refused it.
+
+type: "program_error"
+
+
+
+message: string
+
+
+
+Short explanation written by the server. It never contains content from the run or its agents.
 
 
 
@@ -1096,7 +1142,7 @@ An error event indicating a problem occurred during session execution.
 
 
 
-BetaManagedAgentsSessionEvent = [BetaManagedAgentsUserMessageEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_message_event) or [BetaManagedAgentsUserInterruptEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_interrupt_event) or [BetaManagedAgentsUserToolConfirmationEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_tool_confirmation_event) or 32 more
+BetaManagedAgentsSessionEvent = [BetaManagedAgentsUserMessageEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_message_event) or [BetaManagedAgentsUserInterruptEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_interrupt_event) or [BetaManagedAgentsUserToolConfirmationEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_tool_confirmation_event) or 39 more
 
 
 
@@ -1106,7 +1152,7 @@ One of the following:
 
 
 
-BetaManagedAgentsSessionEventType = "user.message" or "user.interrupt" or "user.tool_confirmation" or 31 more
+BetaManagedAgentsSessionEventType = "user.message" or "user.interrupt" or "user.tool_confirmation" or 38 more
 
 
 
@@ -1298,11 +1344,11 @@ formatdate-time
 
 
 
-BetaManagedAgentsSessionThreadCreatedEvent object{ type: "session.thread_created", id, agent_name, 2 more }
+BetaManagedAgentsSessionThreadCreatedEvent object{ type: "session.thread_created", id, agent_name, 3 more }
 
 
 
-Emitted when a subagent is spawned as a new thread. Written to the parent thread's output stream so clients observing the session see child creation.
+Emitted when a child thread is created. Written to the parent thread's output stream so clients observing the session see child creation.
 
 type: "session.thread_created"
 
@@ -1335,6 +1381,12 @@ session_thread_id: string
 
 
 Public `sthr_` ID of the newly created thread.
+
+workflow_run_id: string or null
+
+
+
+Identifier of the workflow run that created the thread, or `null` for any other thread.
 
 
 
@@ -1672,7 +1724,7 @@ formatdate-time
 
 
 
-BetaManagedAgentsStreamSessionEvents = [BetaManagedAgentsUserMessageEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_message_event) or [BetaManagedAgentsUserInterruptEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_interrupt_event) or [BetaManagedAgentsUserToolConfirmationEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_tool_confirmation_event) or 34 more
+BetaManagedAgentsStreamSessionEvents = [BetaManagedAgentsUserMessageEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_message_event) or [BetaManagedAgentsUserInterruptEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_interrupt_event) or [BetaManagedAgentsUserToolConfirmationEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_tool_confirmation_event) or 41 more
 
 
 
@@ -1778,11 +1830,65 @@ maxLength262144
 
 
 
+BetaManagedAgentsThreadLimitWorkflowRunError object{ type: "thread_limit_error", message }
+
+
+
+The run exceeded the limit on the number of threads that a run can create.
+
+type: "thread_limit_error"
+
+
+
+message: string
+
+
+
+Short explanation written by the server. It never contains content from the run or its agents.
+
+
+
+BetaManagedAgentsTimeoutWorkflowRunError object{ type: "timeout_error", message }
+
+
+
+The run reached its time limit.
+
+type: "timeout_error"
+
+
+
+message: string
+
+
+
+Short explanation written by the server. It never contains content from the run or its agents.
+
+
+
 BetaManagedAgentsUnknownError object{ type: "unknown_error", message, retry_status }
 
 
 
 An unknown or unexpected error occurred during session execution. A fallback variant; clients that don't recognize a new error code can match on `retry_status` and `message` alone.
+
+
+
+BetaManagedAgentsUnknownWorkflowRunError object{ type: "unknown_error", message }
+
+
+
+A failure that has no type of its own.
+
+type: "unknown_error"
+
+
+
+message: string
+
+
+
+Short explanation written by the server. It never contains content from the run or its agents.
 
 
 
@@ -1995,3 +2101,355 @@ BetaManagedAgentsUserToolResultEventParams object{ type: "user.tool_result", too
 
 
 Parameters for providing the result of an agent-toolset tool execution. Only valid on `self_hosted` environments, where sandbox-routed tools are executed by the client rather than the server.
+
+
+
+BetaManagedAgentsWorkflowRunCreatedEvent object{ type: "workflow_run.created", id, description, 4 more }
+
+
+
+A workflow run was created. A workflow run is background work that the session's agent starts. Emitted once per run, before the run's other `workflow_run.*` events.
+
+
+
+BetaManagedAgentsWorkflowRunError = [BetaManagedAgentsTimeoutWorkflowRunError](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_timeout_workflow_run_error) or [BetaManagedAgentsProgramWorkflowRunError](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_program_workflow_run_error) or [BetaManagedAgentsUnknownWorkflowRunError](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_unknown_workflow_run_error) or 2 more
+
+
+
+Why a workflow run did not finish, or was not created. More types may be added. On `workflow_run.status_ended`, for a `type` you do not recognize, rely on the event's `result.type`.
+
+One of the following:
+
+
+
+BetaManagedAgentsWorkflowRunErrorEvent object{ type: "workflow_run.error", id, error, 2 more }
+
+
+
+A workflow run met an error, or an error kept a run from being created. A run that ends with a `result.type` of `error` emits this event before its `workflow_run.status_ended`, with the same `error`.
+
+type: "workflow_run.error"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+
+
+error: [BetaManagedAgentsWorkflowRunError](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_workflow_run_error)
+
+
+
+Why the run did not finish, or was not created.
+
+One of the following:
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string or null
+
+
+
+Identifier of the run that met the error, or `null` when the error kept a run from being created.
+
+
+
+BetaManagedAgentsWorkflowRunPhase object{ id, description, name }
+
+
+
+A phase that a workflow run's plan declares.
+
+id: string
+
+
+
+Unique identifier for the phase.
+
+description: string or null
+
+
+
+Description that the agent gave the phase, passed on as written, or `null` if it gave none.
+
+name: string
+
+
+
+Name that the agent gave the phase, passed on as written.
+
+
+
+BetaManagedAgentsWorkflowRunPhaseEndedEvent object{ type: "workflow_run.phase_ended", id, phase_started_id, 3 more }
+
+
+
+A workflow run's plan left a phase, or the run's end closed it. Emitted once for every `workflow_run.phase_started` event, before the run's `workflow_run.status_ended` event. The event does not say whether the plan finished the phase's work, or why it left.
+
+type: "workflow_run.phase_ended"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+phase_started_id: string
+
+
+
+Identifier of the `workflow_run.phase_started` event that opened the phase.
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string
+
+
+
+Identifier of the run. The same value is on all of the run's `workflow_run.*` events.
+
+workflow_run_phase_id: string
+
+
+
+Identifier of the phase, as in `phases` on the run's `workflow_run.created` event.
+
+
+
+BetaManagedAgentsWorkflowRunPhaseStartedEvent object{ type: "workflow_run.phase_started", id, processed_at, 2 more }
+
+
+
+A workflow run's plan entered a phase.
+
+type: "workflow_run.phase_started"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string
+
+
+
+Identifier of the run. The same value is on all of the run's `workflow_run.*` events.
+
+workflow_run_phase_id: string
+
+
+
+Identifier of the phase, as in `phases` on the run's `workflow_run.created` event.
+
+
+
+BetaManagedAgentsWorkflowRunResult = [BetaManagedAgentsWorkflowRunResultCompleted](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_workflow_run_result_completed) or [BetaManagedAgentsWorkflowRunResultError](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_workflow_run_result_error) or [BetaManagedAgentsWorkflowRunResultStopped](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_workflow_run_result_stopped)
+
+
+
+How a workflow run ended.
+
+One of the following:
+
+
+
+BetaManagedAgentsWorkflowRunResultCompleted object{ type: "completed" }
+
+
+
+The run's plan, a program that the agent wrote, finished. This does not say whether the work succeeded.
+
+type: "completed"
+
+
+
+
+
+BetaManagedAgentsWorkflowRunResultError object{ type: "error", error }
+
+
+
+The run failed or reached its time limit.
+
+type: "error"
+
+
+
+
+
+error: [BetaManagedAgentsWorkflowRunError](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_workflow_run_error)
+
+
+
+Why the run did not finish.
+
+One of the following:
+
+
+
+BetaManagedAgentsWorkflowRunResultStopped object{ type: "stopped" }
+
+
+
+The agent stopped the run.
+
+type: "stopped"
+
+
+
+
+
+BetaManagedAgentsWorkflowRunResultCompleted object{ type: "completed" }
+
+
+
+The run's plan, a program that the agent wrote, finished. This does not say whether the work succeeded.
+
+type: "completed"
+
+
+
+
+
+BetaManagedAgentsWorkflowRunResultError object{ type: "error", error }
+
+
+
+The run failed or reached its time limit.
+
+type: "error"
+
+
+
+
+
+error: [BetaManagedAgentsWorkflowRunError](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_workflow_run_error)
+
+
+
+Why the run did not finish.
+
+One of the following:
+
+
+
+BetaManagedAgentsWorkflowRunResultStopped object{ type: "stopped" }
+
+
+
+The agent stopped the run.
+
+type: "stopped"
+
+
+
+
+
+BetaManagedAgentsWorkflowRunStatusEndedEvent object{ type: "workflow_run.status_ended", id, processed_at, 2 more }
+
+
+
+A workflow run ended. Emitted once per run, as the last of the run's `workflow_run.*` events.
+
+
+
+BetaManagedAgentsWorkflowRunStatusIdleEvent object{ type: "workflow_run.status_idle", id, processed_at, workflow_run_id }
+
+
+
+A workflow run is idle. Emitted each time the run goes idle, whatever the cause. If the run ends while idle, no `workflow_run.status_running` comes between this event and its `workflow_run.status_ended`.
+
+type: "workflow_run.status_idle"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string
+
+
+
+Identifier of the run. The same value is on all of the run's `workflow_run.*` events.
+
+
+
+BetaManagedAgentsWorkflowRunStatusRunningEvent object{ type: "workflow_run.status_running", id, processed_at, workflow_run_id }
+
+
+
+A workflow run is running. Emitted when the run starts to execute, and each time it resumes after being idle. A run that starts idle emits `workflow_run.status_idle` first.
+
+type: "workflow_run.status_running"
+
+
+
+id: string
+
+
+
+Unique identifier for this event.
+
+
+
+processed_at: string
+
+
+
+Timestamp when this event was processed.
+
+formatdate-time
+
+workflow_run_id: string
+
+
+
+Identifier of the run. The same value is on all of the run's `workflow_run.*` events.

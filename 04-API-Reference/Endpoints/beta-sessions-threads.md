@@ -2,7 +2,7 @@
 title: "Threads - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/threads"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:41Z"
+fetched_at: "2026-10-20T06:38:46Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads)
 
 
 
@@ -155,7 +155,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -165,9 +165,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -238,13 +240,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -252,9 +256,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -263,10 +267,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Sessions](https://platform.claude.com/docs/en/api/http/beta/sessions)
 
 # Threads
+
+Copy page
+
+
+
+cURL
 
 ##### [List Session Threads](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/list)
 
@@ -284,11 +294,19 @@ cURL
 
 
 
-BetaManagedAgentsSessionThread object{ type: "session_thread", id, agent, 8 more }
+BetaManagedAgentsInlineAgent object{ type: "inline", description, execution_identity, 6 more }
 
 
 
-An execution thread within a `session`. Each session has one primary thread plus zero or more child threads spawned by the coordinator.
+An agent that has no Agent resource, and so no `id` or `version`. It is defined inline, in a workflow run's plan or when a session thread is spawned, and is not saved.
+
+
+
+BetaManagedAgentsSessionThread object{ type: "session_thread", id, agent, 9 more }
+
+
+
+An execution thread within a `session`. Each session has one primary thread plus zero or more child threads.
 
 
 
@@ -362,7 +380,7 @@ Cumulative token usage for a session thread across all turns.
 
 
 
-BetaManagedAgentsStreamSessionThreadEvents = [BetaManagedAgentsUserMessageEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_message_event) or [BetaManagedAgentsUserInterruptEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_interrupt_event) or [BetaManagedAgentsUserToolConfirmationEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_tool_confirmation_event) or 34 more
+BetaManagedAgentsStreamSessionThreadEvents = [BetaManagedAgentsUserMessageEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_message_event) or [BetaManagedAgentsUserInterruptEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_interrupt_event) or [BetaManagedAgentsUserToolConfirmationEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_tool_confirmation_event) or 41 more
 
 
 

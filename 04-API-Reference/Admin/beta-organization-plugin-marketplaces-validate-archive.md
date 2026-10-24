@@ -2,7 +2,7 @@
 title: "Validate Plugin Marketplace Archive - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugin_marketplaces/validate_archive"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-09T06:27:45Z"
+fetched_at: "2026-10-17T06:25:27Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fplugin_marketplaces%2Fvalidate_archive)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fplugin_marketplaces%2Fvalidate_archive)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,9 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
 
 
 List Plugin Marketplaces
@@ -148,6 +148,8 @@ Plugin Marketplaces
 
 
 Validate Plugin Marketplace Archive
+
+Telemetry Destinations
 
 
 Skills
@@ -218,13 +220,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -232,9 +236,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -243,11 +247,17 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Plugin Marketplaces](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces)
 
 # Validate Plugin Marketplace Archive
+
+Copy page
+
+
+
+cURL
 
 POST/v1/organizations/plugin_marketplaces/validate_archive
 
@@ -269,7 +279,7 @@ Every request must include the beta header `anthropic-beta: ce-plugins-2026-09-0
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/http-beta.md#anthropic_beta)
+"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -478,6 +488,10 @@ string
 
 
 "spend-limit-reads-2026-09-26"
+
+
+
+"telemetry-destinations-2026-08-11"
 
 
 

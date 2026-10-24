@@ -2,7 +2,7 @@
 title: "Week 30 · July 20–24, 2026 - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/whats-new/2026-w30"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-04T06:29:54Z"
+fetched_at: "2026-10-16T06:24:36Z"
 tags: ["claude-code"]
 ---
 
@@ -60,7 +60,7 @@ Claude Code
 
 Other wins
 
-[`/code-review`](code-review.md#review-a-diff-locally) now runs as a background subagent with its own context window, so review work stays out of your conversation and the findings arrive when it completes
+[`/code-review`](code-review-local.md) now runs as a background subagent with its own context window, so review work stays out of your conversation and the findings arrive when it completes
 
 `/verify`, `/code-review`, and `/deep-research` run only when you invoke them; Claude no longer launches them on its own
 

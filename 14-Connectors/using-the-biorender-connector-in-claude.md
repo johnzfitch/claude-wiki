@@ -2,7 +2,7 @@
 title: "Using the BioRender Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-10-09T06:28:18Z"
+fetched_at: "2026-10-23T06:28:57Z"
 tags: ["connectors"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["connectors"]
 
 Set up and use the BioRender integration with Claude to search scientific figure templates and icon collections.
 
-9 minClaude.ai
+9 minClaude
 
 [Open Claude](https://claude.ai/new)
 

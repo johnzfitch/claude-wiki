@@ -2,7 +2,7 @@
 title: "How do I learn more about Amazon and Anthropic’s strategic collaboration? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10280779-how-do-i-learn-more-about-amazon-and-anthropic-s-strategic-collaboration"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:24:53Z"
+fetched_at: "2026-10-23T06:28:47Z"
 tags: ["claude-ai"]
 ---
 

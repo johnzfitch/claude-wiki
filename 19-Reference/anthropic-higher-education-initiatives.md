@@ -2,17 +2,42 @@
 title: "Higher education advisory board and AI Fluency courses \\ Anthropic"
 source_url: "https://www.anthropic.com/news/anthropic-higher-education-initiatives"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:29:14Z"
+fetched_at: "2026-10-21T06:30:24Z"
 tags: ["news-research"]
 ---
 
 # Anthropic launches higher education advisory board and AI Fluency courses
 
-Aug 21, 2025
+- Published
+
+  Aug 21, 2025
+
+- Category
+
+  [Announcements](announcements.md)
+
+- Topics
+
+  - [Education](https://www.anthropic.com/search?topic=education)
+  - [Leadership](https://www.anthropic.com/search?topic=leadership)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+  - [Open source](https://www.anthropic.com/search?topic=open-source)
+
+  See more...
+
+Related articles
+
+- Partnerships
+
+  Jun 3, 2026
+
+  [Introducing the Services Track and Partner Hub of the Claude Partner Network](services-track-partner-hub.md)
+
+[View more](https://www.anthropic.com/search?topic=education)
 
 The choices made in the next few years about how AI enters the classroom will shape a generation's relationship with both technology and learning. Today, we're announcing two initiatives for AI in education to help navigate these critical decisions: a Higher Education Advisory Board to guide Claude's development for education, and three AI Fluency courses co-created with educators that can help teachers and students build practical, responsible AI skills.
 
-## **Higher education advisory board**
+### Higher education advisory board
 
 Anthropic has appointed a Higher Education Advisory Board of distinguished academic leaders who will help guide how Claude serves teaching, learning, and research in higher education. Drawing on expertise spanning university leadership, educational technology, and learning science, the board will ensure AI strengthens rather than undermines learning and critical thinking skills.
 
@@ -28,7 +53,7 @@ Joining Levin are leaders who bring extensive experience serving in academia:
 - **Matthew Rascoff**, Vice Provost for Digital Education at Stanford University, leading digital learning initiatives that expand access to advanced education for those who have been underserved.
 - **Yolanda Watson Spiva**, President of Complete College America, leads a national alliance of 53 states and systems mobilizing to increase college completion rates. With nearly three decades in postsecondary education policy, she leads CCA's work on AI adoption for student success and formed the CCA Council on AI.
 
-## **AI fluency courses for educators and students**
+### AI fluency courses for educators and students
 
 Working with the advisory board and educators worldwide, we've developed three new courses that build on our existing [AI Fluency course](https://www.anthropic.com/learn/claude-for-you), and are designed to address what universities need most: practical frameworks for thoughtful AI integration. Each course, co-developed with Professor Rick Dakan of Ringling College of Art and Design and Professor Joseph Feller of University College Cork, is available now under Creative Commons license, so any institution can adapt them:
 
@@ -38,130 +63,8 @@ Working with the advisory board and educators worldwide, we've developed three n
 
 **[Teaching AI Fluency](http://anthropic.skilljar.com/teaching-ai-fluency)** supports educators who want to bring AI literacy to their campuses and classrooms. It includes frameworks for instruction and assessment, plus curriculum considerations for preparing students for a more AI-enhanced world.
 
-## **The path forward**
+### The path forward
 
 These initiatives reflect our commitment to co-creating the future of AI in education. As universities worldwide grapple with AI's role in education, these resources provide both immediate support and long-term guidance. While the advisory board informs our strategic approach, the AI Fluency courses offer practical tools educators can use today to navigate this transformation thoughtfully and responsibly.
 
 Access the courses and learn more at [anthropic.com/learn](https://www.anthropic.com/learn).
-
-  
-## Related content
-
-### Developing Enterprise Frontier Safeguards with our customers
-
-[Read more](enterprise-frontier-safeguards.md)
-
-### Improving our alignment and security efforts
-
-On July 30, we reported three incidents in which Claude models gained unauthorized access to real computer systems. We are conducting an in-depth analysis of both incidents, and planning to work with METR for an independent review. In the meantime, we’re sharing some of the changes we’ve made over the past month.
-
-[Read more](improving-alignment-security-efforts.md)
-
-### Previewing the Model Hardware Standard
-
-We’re opening a research preview of the Model Hardware Standard (MHS), a shared specification for AI agents to safely operate physical devices, to a first group of scientific research labs and advanced manufacturers.
-
-[Read more](model-hardware-standard-research-preview.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

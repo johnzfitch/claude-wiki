@@ -2,7 +2,7 @@
 title: "How enterprises are building AI agents in 2026 | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/how-enterprises-are-building-ai-agents-in-2026"
 category: "09-Agents-Patterns"
-fetched_at: "2026-10-10T06:24:39Z"
+fetched_at: "2026-10-23T06:28:10Z"
 tags: ["agents", "enterprise"]
 ---
 

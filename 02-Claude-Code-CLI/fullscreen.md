@@ -2,7 +2,7 @@
 title: "Fullscreen rendering - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/fullscreen"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:19Z"
+fetched_at: "2026-10-22T06:29:25Z"
 tags: ["claude-code"]
 ---
 
@@ -56,6 +56,7 @@ Run `/tui fullscreen` inside any Claude Code conversation. The CLI saves the [`t
 - Your [permission mode](permission-modes.md) and [effort level](model-config.md#adjust-effort-level)
 - The model you last picked with [`/model`](model-config.md#setting-your-model)
 - Rules you passed with [`--allowed-tools` or `--disallowed-tools`](cli-reference.md#cli-flags), and your `--agent`, `--agents`, `--append-system-prompt`, and `--system-prompt-snapshot` flags
+- A `--chrome` or `--no-chrome` flag you launched with, so [Chrome integration](../03-IDE-Integrations/chrome.md) stays on or off as you chose for this session
 
 Claude Code declines to relaunch if the session has a restriction it can’t pass to the restarted process. Restrictions it can’t pass include:
 
@@ -120,7 +121,7 @@ Fullscreen rendering captures mouse events and handles them inside Claude Code:
 - **Click in the prompt input** to position your cursor anywhere in the text you’re typing.
 - **Click a suggestion in the `/` command or `@` file list** to accept it. Hovering highlights the row under your cursor.
 - **Click an option in a select menu** to choose it. This covers permission prompts, `/model`, `/config`, and other dialogs that show a list of options.
-- **Click an option in a multi-select menu** to toggle it, and click the submit button to confirm your choices. Clicking a free-text row, such as the `Other` row in a multiple-choice question, focuses its input field so you can type an answer. Requires Claude Code v2.1.208 or later.
+- **Click an option in a multi-select menu** to toggle it, and click the submit button to confirm your choices. Clicking a free-text row, such as the `Other` row in a multiple-choice question, focuses its input field so you can type an answer.
 - **Click a setting’s value in the `/config` panel** to change it, and scroll the settings list with the mouse wheel. Requires Claude Code v2.1.271 or later.
 - **Scroll a select or multi-select menu with the mouse wheel** when it has more options than it shows at once, such as the `/model` list in a short terminal window. The wheel scrolls the list while the pointer is over its options. Requires Claude Code v2.1.280 or later.
 - **Scroll an overflowing list with its scrollbar.** In list panels such as `/skills`, `/mcp`, and `/plugin`’s Installed list, a scrollbar appears beside a list with more rows than fit while the pointer is over it. Click the track to jump to that point, or drag the thumb. Requires Claude Code v2.1.281 or later.
@@ -160,7 +161,7 @@ Fullscreen rendering handles scrolling inside the app. Use these shortcuts to na
 | `Ctrl+End`      | Jump to the latest message and re-enable auto-follow |
 | Mouse wheel     | Scroll a few lines at a time                         |
 
-You can scroll back to the start of the session even after [compaction](context-window.md#what-survives-compaction). Claude continues working from the compaction summary, but Claude Code keeps every earlier message in the fullscreen scrollback across repeated compactions. On keyboards without dedicated `PgUp`, `PgDn`, `Home`, or `End` keys, like MacBook keyboards, hold `Fn` with the arrow keys: `Fn+↑` sends `PgUp`, `Fn+↓` sends `PgDn`, `Fn+←` sends `Home`, and `Fn+→` sends `End`. `Ctrl+Fn+→` doesn’t reach Claude Code on macOS, so a MacBook keyboard has no working jump-to-bottom chord by default. Instead, use one of these options:
+If you close a [compacted](context-window.md#what-survives-compaction) session and [resume](sessions.md#what-a-resumed-session-restores) it, scrolling up stops at the `Conversation compacted` row, and your earlier messages stay on disk in the [transcript file](sessions.md#where-transcripts-are-stored). To get a detail from those messages, ask Claude to look it up in that file. On keyboards without dedicated `PgUp`, `PgDn`, `Home`, or `End` keys, like MacBook keyboards, hold `Fn` with the arrow keys: `Fn+↑` sends `PgUp`, `Fn+↓` sends `PgDn`, `Fn+←` sends `Home`, and `Fn+→` sends `End`. `Ctrl+Fn+→` doesn’t reach Claude Code on macOS, so a MacBook keyboard has no working jump-to-bottom chord by default. Instead, use one of these options:
 
 - Click the [jump-to-bottom button](#auto-follow).
 - Scroll to the bottom with the mouse wheel to resume following.

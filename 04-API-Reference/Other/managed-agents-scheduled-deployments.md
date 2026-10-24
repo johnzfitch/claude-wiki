@@ -2,7 +2,7 @@
 title: "Scheduled deployments - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:38Z"
+fetched_at: "2026-10-20T06:40:26Z"
 tags: ["api"]
 ---
 
@@ -18,14 +18,6 @@ Create and manage deployments with the Claude API: run an agent on a recurring c
 
 
 
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
-
 A **scheduled deployment** allows an [agent](managed-agents-agent-setup.md) to start [sessions](managed-agents-sessions.md) autonomously, enabling task completion over a predictable cadence. You create and manage deployments with the Deployments API, part of the Claude API.
 
 For the launch context and examples of what teams run on schedules, see [scheduled deployments and vaults in Claude Managed Agents](https://claude.com/blog/whats-new-in-claude-managed-agents) on the blog.
@@ -37,6 +29,14 @@ When creating a deployment, you pass the [session configurations](managed-agents
 - Deployments require [agent configuration](managed-agents-agent-setup.md) and [environment configuration](managed-agents-environments.md), and optionally accept [files](managed-agents-files.md), [GitHub](managed-agents-github.md), [memory stores](managed-agents-memory.md), and [vaults](managed-agents-vaults.md). A deployment that targets a [self-hosted environment](managed-agents-self-hosted-sandboxes-memory.md) can attach memory stores; `file` and `github_repository` resources require a cloud environment. The Claude Console deployment form does not currently offer memory stores for self-hosted environments; attach them through the API or an SDK instead.
 - Deployments also require at least one initial event, a `user.message` or `user.define_outcome`, that starts each session's work. In a deployment file for `ant apply`, the text below the frontmatter becomes that `user.message`.
 - In the `schedule`, you define a cron `expression` and a `timezone`. Maximum granularity supported is at the minute level.
+
+
+
+On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), each run creates its session as an IAM role in your AWS account. Before you create the deployment, set `execution_identity` on the agent to `{"type": "aws_role", "role_arn": "arn:aws:iam::123456789012:role/example-role"}`. Creating a deployment for an agent without this field returns a 400 error.
+
+- **Trust policy:** Allow the `aws-external-anthropic.amazonaws.com` service principal to call `sts:AssumeRole` and `sts:SetSourceIdentity`.
+- **Role permissions:** Allow `aws-external-anthropic:CreateSession`, `sts:GetWebIdentityToken`, and `sts:TagGetWebIdentityToken`.
+- **Caller permissions:** The IAM principal that sets the role on the agent needs `iam:PassRole` on that role. The role must be in the same AWS account. No [managed policy](../Endpoints/claude-platform-on-aws-iam-actions.md#managed-policies) grants `iam:PassRole`.
 
 cURL
 
@@ -55,6 +55,8 @@ Java
 PHP
 
 Ruby
+
+CLI
 
 
 
@@ -127,28 +129,59 @@ Wall-clock times that do not exist on a spring-forward day (such as 2 AM) are no
 
 Pass the optional `budget` object when you create or update the deployment. It takes the same shape as a [session budget](managed-agents-budgets.md). The deployment copies the cap onto each session it starts, so the budget bounds every run separately rather than acting as a cumulative ceiling across runs: a deployment with a `"2000"` cap can spend up to about \$20 on every run.
 
-A session started by the deployment behaves exactly like any other budgeted session: it pauses with `budget_reached` when its own list cost [reaches the cap](managed-agents-budgets.md#when-a-session-reaches-its-budget). Changing the deployment's budget applies to runs started afterward; a session already running keeps the cap it started with, which you can [change through the session itself](managed-agents-session-operations.md#updating-the-session-budget). Unlike a session budget, a deployment's budget can be removed with `"budget": null` and set again later.
+A session started by the deployment behaves exactly like any other budgeted session: it pauses with `budget_reached` when its own list cost [reaches the cap](managed-agents-budgets.md#when-a-session-reaches-its-budget). Changing the deployment's budget applies to runs started afterward; a session already running keeps the cap it started with, which you can [change through the session itself](managed-agents-session-operations.md#updating-the-session-budget). Unlike a session budget, a deployment's budget can be removed with `budget=None` and set again later.
 
 The following example sets a budget on an existing deployment:
 
 cURL
 
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+CLI
+
 
 
 ```python
-curl --fail-with-body -sS "https://api.anthropic.com/v1/deployments/$DEPLOYMENT_ID?beta=true" \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -H "anthropic-beta: managed-agents-2026-04-01" \
-  -H "content-type: application/json" \
-  -d @- <<'EOF'
-{
-  "budget": {
-    "type": "limit",
-    "max_list_cost": {"amount": "2000", "currency": "USD"}
-  }
-}
-EOF
+ant apply deployment.md
+```
+
+deployment.md
+
+
+
+
+
+```python
+---
+name: Weekly compliance scan
+agent: agent_011CYm1BLqPXpQRk5khsSXrs
+environment_id: env_01595EKxaaTTGwwY3kyXdtbs
+schedule:
+  type: cron
+  expression: "0 20 * * 5"
+  timezone: America/New_York
+budget:
+  type: limit
+  max_list_cost:
+    amount: "2000"
+    currency: USD
+---
+
+Run the weekly compliance scan.
 ```
 
 ## Deployment runs
@@ -176,6 +209,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -205,6 +240,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -262,6 +299,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -288,6 +327,8 @@ PHP
 
 Ruby
 
+Python
+
 
 
 ```python
@@ -313,6 +354,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -347,6 +390,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 

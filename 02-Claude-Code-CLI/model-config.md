@@ -2,7 +2,7 @@
 title: "Model configuration - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/model-config"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:27:09Z"
+fetched_at: "2026-10-23T06:28:30Z"
 tags: ["claude-code"]
 ---
 
@@ -49,8 +49,10 @@ tags: ["claude-code"]
   - [Haiku 5.5 context window and pricing](#haiku-5-5-context-window-and-pricing)
 - [Context window and auto-compaction](#context-window-and-auto-compaction)
   - [Set the auto-compact window](#set-the-auto-compact-window)
+  - [Values and warnings for CLAUDE_CODE_AUTO_COMPACT_WINDOW](#claude_code_auto_compact_window-values)
   - [Default auto-compact thresholds](#default-auto-compact-thresholds)
   - [Correct the window for a gateway or custom model ID](#correct-the-window-for-a-gateway-or-custom-model-id)
+  - [Which IDs CLAUDE_CODE_MAX_CONTEXT_TOKENS applies to](#which-ids-claude_code_max_context_tokens-applies-to)
 - [Checking your current model](#checking-your-current-model)
 - [Add a custom model option](#add-a-custom-model-option)
 - [Environment variables](#environment-variables)
@@ -146,7 +148,7 @@ On the Anthropic API, a Fable model appears in the `/model` picker unless [`avai
 
 Fable and usage credits
 
-Depending on your plan and seat tier, Fable usage can bill to [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) instead of drawing on your plan’s included limits. When it does, the `/model` picker shows “Requires usage credits” on the Fable row. To manage usage credits, see [Add usage credits to your subscription](../17-Billing-Plans/costs.md#add-usage-credits-to-your-subscription). In interactive sessions, Claude Code shows a consent prompt before a Fable request bills usage credits. Members of Enterprise plans with organization billing don’t see the prompt. You can continue on Fable using usage credits or switch to your default model. You can also dismiss the prompt:
+Depending on your plan and seat tier, Fable usage can bill to [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) instead of drawing on your plan’s included limits. When it does, the `/model` picker shows “Requires usage credits” on the Fable row. To manage usage credits, see [Add usage credits to your subscription](../17-Billing-Plans/costs.md#add-usage-credits-to-your-subscription). In interactive sessions, Claude Code shows a consent prompt before a Fable request bills usage credits. Members of Enterprise plans with organization billing don’t see the prompt. You can continue on Fable using usage credits or switch to your default model. You can also dismiss the prompt:
 
 - When you select a Fable model with `/model`, you keep your current model.
 - Mid-session, Claude Code continues the turn on your default model.
@@ -268,6 +270,7 @@ On the Anthropic API and [Claude Platform on AWS](claude-platform-on-aws.md), a 
 - **Skill or command override**: Claude Code ignores the override, including a blocked family alias, and the skill or command runs on the session model. A skill or command that [runs in a subagent](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent) follows the subagent behavior above instead
 - **`advisorModel` setting**: the advisor is disabled for the session
 - **`--advisor` flag**: Claude Code exits with an error at launch. In a [background session](../09-Agents-Patterns/agent-view.md), it starts the session without the advisor instead of exiting
+- **`CLAUDE_CODE_AUTO_MODE_MODEL`**: Claude Code ignores the variable and picks the model for its [auto mode classifier requests](permission-modes.md#default-classifier-model) as if you hadn’t set it
 
 Claude Code hides excluded models from the `/model` picker. Whether a model ID you list also gets a row of its own differs by provider:
 
@@ -279,7 +282,7 @@ Model changes that Claude Code makes on your behalf are checked the same way:
 - **[Fallback model chains](#fallback-model-chains)**: entries outside the allowlist are dropped
 - **Plan-mode upgrades**: on the Anthropic API and Claude Platform on AWS, an upgrade such as [`opusplan`](#opusplan-model-setting) to an excluded model uses the newest permitted version of the upgrade family. On providers with provider-specific model IDs, and when no version is permitted, the upgrade is skipped and planning continues on the session’s model
 - **[Automatic model fallback](#automatic-model-fallback)**: a fallback whose target is excluded does not run, so the flagged request ends with a refusal instead
-- **[Auto mode classifier](permission-modes.md#eliminate-prompts-with-auto-mode)**: the classifier’s Claude Sonnet 5 default applies only when the allowlist permits Sonnet 5. When it’s excluded, the classifier runs on the session’s model, which the allowlist already governs, or on an Opus model when the session runs on a [Fable model](#work-with-fable). On providers other than the Anthropic API, that Opus fallback runs on the model you set in `ANTHROPIC_DEFAULT_OPUS_MODEL` or otherwise on Opus 5, without consulting the allowlist. Requires Claude Code v2.1.210 or later
+- **[Auto mode classifier](permission-modes.md#eliminate-prompts-with-auto-mode)**: when the allowlist excludes the [default classifier model](permission-modes.md#default-classifier-model), classifier requests that would use that model run on the session model, or an Opus model in [Fable](#work-with-fable) sessions. On providers other than the Anthropic API, that Opus fallback runs on the model you set in `ANTHROPIC_DEFAULT_OPUS_MODEL` or otherwise on Opus 5, without consulting the allowlist. Requires Claude Code v2.1.210 or later
 - **[Fast mode](fast-mode.md)**: enabling fast mode is refused when the model the session would run on afterward is outside the allowlist
 - **Availability fallback on Amazon Bedrock and Google Cloud’s Agent Platform**: when your account loses access to a model mid-session, the switch to another model skips excluded models. The startup model checks on [Amazon Bedrock](amazon-bedrock.md#when-your-organization-enforces-a-model-allowlist) and [Google Cloud’s Agent Platform](google-vertex-ai.md#when-your-organization-enforces-a-model-allowlist) skip excluded models only when managed settings also set [`enforceAvailableModels`](#enforce-the-allowlist-for-the-default-model)
 
@@ -440,7 +443,13 @@ As of v2.1.199, when the organization default is a different model family from y
 
 Organization effort limits
 
-Your organization can cap the [effort level](#adjust-effort-level) in two ways. On a Claude Enterprise plan, organization admins set per-role effort limits, described below. On any plan and any provider, including Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry, the [`maxEffortLevel`](settings-reference.md#maxeffortlevel) managed setting caps effort on the client instead. When both apply to a model, the lower cap applies. Organization admins on Claude Enterprise plans can set a maximum [effort level](#adjust-effort-level) per model for each custom role, alongside role-level [organization model restrictions](#organization-model-restrictions). Levels above the cap aren’t offered in the `/effort` picker, and naming a higher level with `--effort` or `/effort` runs at the cap instead. In interactive sessions and plain-text `--print` runs, a warning names the requested and applied levels; with `json` or `stream-json` output or in background agents, the clamp applies silently. Caps are per model, so switching models can change which levels are available. When several of your roles grant the same model, the least restrictive cap applies. Requires Claude Code v2.1.195 or later. Effort limits are delivered together with [organization model restrictions](#organization-model-restrictions) and reach the same sessions.
+Your organization can cap the [effort level](#adjust-effort-level) in two ways. On a Claude Enterprise plan, organization admins set per-role effort limits, described below. On any plan and any provider, including Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry, the [`maxEffortLevel`](settings-reference.md#maxeffortlevel) managed setting caps effort on the client instead. When both apply to a model, the lower cap applies. Organization admins on Claude Enterprise plans can set a maximum [effort level](#adjust-effort-level) per model for each custom role, alongside role-level [organization model restrictions](#organization-model-restrictions). Requires Claude Code v2.1.195 or later.
+
+- Levels above the cap aren’t offered in the `/effort` picker, and naming a higher level with `--effort` or `/effort` runs at the cap instead. If you start a plain-text `--print` run with `--effort` above the cap, a warning on stderr names the requested and applied levels. In interactive sessions, with `json` or `stream-json` output, or in background agents, that warning goes to the [debug log](errors.md#configuration-warnings) instead.
+- Caps are per model, so switching models can change which levels are available.
+- When several of your roles grant the same model, the least restrictive cap applies.
+
+Effort limits are delivered together with [organization model restrictions](#organization-model-restrictions) and reach the same sessions.
 
 
 [​](#special-model-behavior)
@@ -680,12 +689,12 @@ You can’t turn thinking off on Opus 5.5, Sonnet 5.5, Haiku 5.5, or the Fable m
 
 Extended context
 
-Fable 5.1, Fable 5, Sonnet 5 and later, Haiku 5.5, Opus 4.6 and later, and Sonnet 4.6 support a [1 million token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md#context-window-sizes-by-model) for long sessions with large codebases. Fable 5.1, Fable 5, Sonnet 5 and later, Haiku 5.5, and Opus 4.7 and later run with the 1M window by default, with no `[1m]` suffix needed. That includes sessions on Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry, and [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md) sessions. To run them with a 200K window instead, see [Turn off 1M context](#turn-off-1m-context). Opus 4.6 and Sonnet 4.6 reach 1M only through their `[1m]` variant, and access to that variant depends on your plan. On Max, Team, and Enterprise plans, including both Team Standard and Team Premium seats, Opus 4.6 with 1M context is included with your subscription. Sonnet 4.6 with 1M context requires [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) on every subscription plan, including Max.
+Fable 5.1, Fable 5, Sonnet 5 and later, Haiku 5.5, Opus 4.6 and later, and Sonnet 4.6 support a [1 million token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md#context-window-sizes-by-model) for long sessions with large codebases. Fable 5.1, Fable 5, Sonnet 5 and later, Haiku 5.5, and Opus 4.7 and later run with the 1M window by default, with no `[1m]` suffix needed. That includes sessions on Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry, and [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md) sessions. To run them with a 200K window instead, see [Turn off 1M context](#turn-off-1m-context). Opus 4.6 and Sonnet 4.6 reach 1M only through their `[1m]` variant, and access to that variant depends on your plan. On Max, Team, and Enterprise plans, including both Team Standard and Team Premium seats, Opus 4.6 with 1M context is included with your subscription. Sonnet 4.6 with 1M context requires [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) on every subscription plan, including Max.
 
 | Plan                      | Opus 4.6 with 1M context                                                                                    | Sonnet 4.6 with 1M context                                                                                  |
 |---------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| Max, Team, and Enterprise | Included with subscription                                                                                  | Requires [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) |
-| Pro                       | Requires [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) | Requires [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) |
+| Max, Team, and Enterprise | Included with subscription                                                                                  | Requires [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) |
+| Pro                       | Requires [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) | Requires [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) |
 | API and pay-as-you-go     | Full access                                                                                                 | Full access                                                                                                 |
 
 Claude Code checks these plan requirements only when it connects to the Anthropic API directly. If you point `ANTHROPIC_BASE_URL` at an [LLM gateway](../13-Enterprise-Admin/llm-gateway.md#subscriptions-and-gateways) and your saved claude.ai login stays the active credential, Claude Code doesn’t check your plan’s usage credits. The `[1m]` options stay available in `/model`, and the gateway decides whether the request succeeds. Before v2.1.229, Claude Code rejected `/model sonnet[1m]` in that configuration when it couldn’t confirm usage credits on the account. On the Anthropic API, the 1M context window uses standard model pricing with no premium for tokens beyond 200K, except on Haiku 5.5, which [costs more on prompts longer than 100K tokens](#haiku-5-5-context-window-and-pricing). For plans where extended context is included with your subscription, usage remains covered by your subscription. For plans that access extended context through usage credits, tokens are billed to usage credits.
@@ -742,12 +751,15 @@ The auto-compact window is how full the context window can get before Claude Cod
 
 Set the auto-compact window
 
+If Claude Code warned about the value of `CLAUDE_CODE_AUTO_COMPACT_WINDOW`, see [the variable’s values and warnings](#claude_code_auto_compact_window-values).
+
 You can set the auto-compact window in these places:
 
 - **For the current model, in this session and later ones**: run `/autocompact` with a value, like `/autocompact 500k`. Claude Code saves it to your user settings under the current model in [`modelSettings`](settings-reference.md#modelsettings) and applies it to the current session. If a higher-priority [settings scope](settings.md#settings-precedence) such as managed settings sets its own window for that model or for every model, the command saves your value but the session keeps that scope’s window, and the command says so. Run `/autocompact auto` to return to the window tuned for your model. Before v2.1.288, the command saved one window for every model, as the top-level `autoCompactWindow`.
 - **For every model**: set [`autoCompactWindow`](settings-reference.md#autocompactwindow) in a settings file, such as `"autoCompactWindow": 200000` in `~/.claude/settings.json`. A window you saved for a model with `/autocompact` takes precedence over this key in the same file for that model.
 - **For one launch**: pass [`--autocompact`](cli-reference.md#cli-flags) when starting Claude Code. The flag overrides your saved setting for that launch without changing it, and `claude --autocompact auto` runs the session at the tuned window even if your saved setting has a value. Unlike `/autocompact`, the flag isn’t preempted by a higher-priority settings scope such as managed settings.
-- **In scripts and cloud environments**: set [`CLAUDE_CODE_AUTO_COMPACT_WINDOW`](env-vars.md). While it’s set, it takes precedence over the command, the flag, and the setting, and `/autocompact` reports the override instead of changing the window.
+- **In scripts and cloud environments**: set [`CLAUDE_CODE_AUTO_COMPACT_WINDOW`](env-vars.md) to a token count such as `200000`. Unless Claude Code [ignores the value](#claude_code_auto_compact_window-values), the variable takes precedence over the command, the flag, and the `autoCompactWindow` setting. `/autocompact` then reports the override without saving. The status line’s `used_percentage` measures against the model’s full context window, so while the variable is set, that percentage doesn’t indicate when compaction will run.
+- **For one subagent**: see [Set the auto-compact window for one subagent](../09-Agents-Patterns/sub-agents.md#subagent-auto-compact-window).
 
 The command and the flag accept a window size from 100K to 1M tokens, in any of these forms:
 
@@ -755,7 +767,22 @@ The command and the flag accept a window size from 100K to 1M tokens, in any of 
 - A `k` or `M` suffix, such as `500k` or `1M`
 - A bare number from 100 to 1000, meaning thousands, so `200` sets 200,000
 
-The environment variable accepts only the plain token count. Claude Code caps the window at the model’s context window.
+Whichever way you set the window, Claude Code caps it at the model’s context window.
+
+
+[​](#claude_code_auto_compact_window-values)
+
+Values and warnings for `CLAUDE_CODE_AUTO_COMPACT_WINDOW`
+
+A warning that quotes your `CLAUDE_CODE_AUTO_COMPACT_WINDOW` value means the value falls outside 100,000 to 1,000,000 or isn’t a token count. To stop the warning, set a number in that range, such as `CLAUDE_CODE_AUTO_COMPACT_WINDOW=200000`. On Claude Code v2.1.304 or later, you can also write the number with `k` for thousands or `M` for millions, as in `200k` or `1M`. Find your warning’s wording in the first column, then read across for the window your session uses and what to change:
+
+| Your warning contains                                               | Window the session uses                                                                                                                      | What to change                                                                     |
+|:--------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
+| `reads as <N> tokens, so Claude Code treats it as the 100k minimum` | The smaller of 100,000 tokens and your model’s context window                                                                                | Set at least `100000`, such as `200000`, or `200k` if you meant `200` as thousands |
+| `is too large, so Claude Code treats it as the 1M maximum`          | The smaller of 1,000,000 tokens and your model’s context window                                                                              | You already have the largest window. To stop the warning, set `1M` or `1000000`    |
+| `isn't a usable size, so Claude Code ignores it`                    | The window from `--autocompact`, `/autocompact`, or `autoCompactWindow`, or the [default](#default-auto-compact-thresholds) when none is set | Set a number such as `200000`, or unset the variable                               |
+
+A number with no suffix is read as that many tokens, so `CLAUDE_CODE_AUTO_COMPACT_WINDOW=200` means 200 tokens even though `/autocompact 200` means 200,000.
 
 
 [​](#default-auto-compact-thresholds)
@@ -770,15 +797,38 @@ If you don’t set an auto-compact window, Claude Code compacts when the convers
 - Models running with a native 1M window compact before the window fills, at about 967K tokens by default. These include the Fable models, Sonnet 5 and later, Haiku 5.5, and Opus 4.7 and later. Behind a custom `ANTHROPIC_BASE_URL`, see [the context window behind a gateway](#context-window-behind-a-gateway)
 - Sessions on a model ID Claude Code doesn’t recognize, such as an [LLM gateway](../13-Enterprise-Admin/llm-gateway.md) alias, compact at the context window Claude Code assumes for the ID; see [Correct the window for a gateway or custom model ID](#correct-the-window-for-a-gateway-or-custom-model-id)
 
+See the [`idleCompaction`](settings-reference.md#idlecompaction) setting for when Claude Code also compacts a conversation you leave idle.
+
 
 [​](#correct-the-window-for-a-gateway-or-custom-model-id)
 
 Correct the window for a gateway or custom model ID
 
+Either of these startup warnings means Claude Code doesn’t recognize your session’s model ID, so it can’t tell the model’s context window and assumes 200K tokens:
+
+```python
+⚠ Model "my-gateway-opus" isn't recognized · context assumed to be 200k tokens · ...
+Claude Code doesn't recognize the model "my-gateway-opus", so it assumes a context window of 200k tokens. Update Claude Code, or see https://code.claude.com/docs/en/model-config#correct-the-window-for-a-gateway-or-custom-model-id to set the window.
+```
+
+Claude Code [auto-compacts](#default-auto-compact-thresholds) the conversation at the assumed 200K, so if the model’s real context window is 200K, there is nothing to correct. Otherwise, give Claude Code the real window in whichever of these ways fits your ID:
+
+- **A model newer than your Claude Code version**: run `claude update` in your shell. If Claude Code recognizes the ID after the update, you don’t need to configure anything else.
+- **Your gateway’s or provider’s name for a model Claude Code knows**: add a [`modelOverrides`](#override-model-ids-per-version) entry that maps the Anthropic model ID to your ID, such as `"claude-opus-4-8": "my-gateway-opus"`. You can instead list your ID in a [`modelPicker`](settings-reference.md#fields-for-modelpicker) row with `behavesAs` set to that model. Either way, Claude Code then treats the ID as that model.
+- **A model with a 1M window**: append `[1m]` to the ID where you set the model, such as `claude --model 'my-gateway-opus[1m]'` in your shell. If you [turned off 1M context](#turn-off-1m-context), you get the same window with or without the suffix.
+- **Any other window**: set [`CLAUDE_CODE_MAX_CONTEXT_TOKENS`](env-vars.md) to the window size in tokens in the environment that starts Claude Code, such as `CLAUDE_CODE_MAX_CONTEXT_TOKENS=400000`. For an unrecognized ID that doesn’t start with `claude-` and has no `[1m]` suffix, the variable takes effect on its own. For any other ID, check [which IDs it applies to](#which-ids-claude_code_max_context_tokens-applies-to) first.
+
+Once Claude Code recognizes the ID or uses the window you gave it, the warning no longer appears when you start a session on that ID.
+
+
+[​](#which-ids-claude_code_max_context_tokens-applies-to)
+
+Which IDs `CLAUDE_CODE_MAX_CONTEXT_TOKENS` applies to
+
 On an [LLM gateway](../13-Enterprise-Admin/llm-gateway.md) or other custom deployment, Claude Code can assume a context window for the model ID that differs from the model’s real window, whether or not it resolves the ID to a Claude model. Set [`CLAUDE_CODE_MAX_CONTEXT_TOKENS`](env-vars.md) to the window Claude Code should assume instead. How the variable applies depends on the ID. Claude Code treats an ID as a provider or custom spelling when it doesn’t start with `claude-`, in any casing, or when it carries a suffix that Claude Code strips when reading the ID, such as the `@YYYYMMDD` date used on Google Cloud’s Agent Platform. Before v2.1.259, Claude Code didn’t count a stripped suffix, so an unrecognized `claude-` ID with a date suffix was treated as a bare `claude-` name. An unrecognized provider or custom spelling, the same spelling with `[1m]`, and every other ID are three separate cases:
 
 - If Claude Code can’t resolve a provider or custom spelling to a model it recognizes and the ID doesn’t contain `[1m]`, the variable applies directly and proactive compaction continues at the declared window.
-- If Claude Code can’t resolve a provider or custom spelling to a model it recognizes and the ID contains `[1m]`, in any casing, Claude Code assumes a 1M window for it and the variable doesn’t apply on its own. To correct the window while keeping proactive compaction, also set [`CLAUDE_CODE_DISABLE_1M_CONTEXT=1`](env-vars.md). With that variable set, Claude Code sizes the ID like the same spelling without `[1m]`, so `CLAUDE_CODE_MAX_CONTEXT_TOKENS` applies when it would apply to that untagged spelling. With a declared window above 200K, Claude Code then shows a [startup warning](errors.md#the-200k-limit-isnt-enforced) that the 200K limit isn’t enforced. The warning is expected in this configuration.
+- If Claude Code can’t resolve a provider or custom spelling to a model it recognizes and the ID contains `[1m]`, in any casing, Claude Code assumes a 1M window for it and the variable doesn’t apply on its own. To correct the window while keeping proactive compaction, also set [`CLAUDE_CODE_DISABLE_1M_CONTEXT=1`](env-vars.md). With that variable set, Claude Code sizes the ID like the same spelling without `[1m]`, so `CLAUDE_CODE_MAX_CONTEXT_TOKENS` applies when it would apply to that untagged spelling. With a declared window above 200K, the warning that [the 200K limit isn’t enforced](errors.md#the-200k-limit-isnt-enforced) is expected in this configuration.
 - If the ID resolves to a model Claude Code recognizes, or the ID is a bare `claude-` name with no suffix for Claude Code to strip, in any casing, the variable takes effect only when you also set [`DISABLE_COMPACT`](env-vars.md), which disables all compaction. For example, an ID that contains a Claude model name that Claude Code knows, such as `anthropic/claude-opus-4-8`, `us.anthropic.claude-…-v1:0`, or the dated `claude-sonnet-4-5@20250929`, resolves to that model. This includes IDs that also contain `[1m]`: Claude Code resolves `claude-opus-4-8[1m]` to Opus 4.8 even with `CLAUDE_CODE_DISABLE_1M_CONTEXT` set.
 
 For a model ID Claude Code doesn’t recognize, set [`CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT=1`](env-vars.md) to have Claude Code compact only after the API rejects the conversation with a [too-long error Claude Code recognizes](errors.md#prompt-is-too-long). Claude Code doesn’t run that recovery when a gateway [rewrites the error](../13-Enterprise-Admin/llm-gateway-connect.md#troubleshoot-gateway-errors) to wording Claude Code doesn’t recognize.
@@ -871,7 +921,7 @@ Customize pinned model display and capabilities
 When you pin a model on a third-party provider, its row in the `/model` picker shows the model’s name by default if Claude Code recognizes the pinned ID, and the raw ID otherwise:
 
 - **Recognized**: the exact ID of a model Claude Code knows, such as its Anthropic API ID or your provider’s or gateway’s form of it, with or without the `[1m]` suffix. Pin `us.anthropic.claude-sonnet-4-5-20250929-v1:0` and the row reads `Sonnet 4.5`.
-- **Not recognized**: any other ID, such as an application inference profile ARN or a model version Claude Code doesn’t know, unless a [`modelOverrides`](#override-model-ids-per-version) entry maps a model to that exact string. On Microsoft Foundry, deployment names are user-defined, so Claude Code never recognizes a pinned ID there, mapped or not, and the row shows the deployment name by default.
+- **Not recognized**: any other ID, such as an application inference profile ARN or a model version Claude Code doesn’t know, unless a [`modelOverrides`](#override-model-ids-per-version) entry maps a model to that ID. On Microsoft Foundry, deployment names are user-defined, so Claude Code never recognizes a pinned ID there, mapped or not, and the row shows the deployment name by default.
 
 When a row shows the model’s name, its default description includes the pinned ID so you can still see which ID is pinned. Claude Code may also not recognize which features a pinned model supports. You can set the display name and description yourself and declare capabilities with companion environment variables for each pinned model. These variables take effect on third-party providers such as Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry. The `_NAME` and `_DESCRIPTION` variables also take effect when `ANTHROPIC_BASE_URL` points to an [LLM gateway](../13-Enterprise-Admin/llm-gateway.md). They have no effect when connecting directly to `api.anthropic.com`.
 

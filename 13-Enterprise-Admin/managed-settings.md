@@ -2,7 +2,7 @@
 title: "Deploy managed settings - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/managed-settings"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:27:44Z"
+fetched_at: "2026-10-23T06:28:20Z"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -124,7 +124,7 @@ A deployed policy reaches the developer’s sessions as follows:
   - **In a full VM sandbox**: when your Claude Desktop managed configuration sets [`requireCoworkFullVmSandbox`](https://claude.com/docs/third-party/claude-desktop/configuration#requirecoworkfullvmsandbox), Claude Code runs inside a virtual machine where the device’s MDM policy and managed settings file aren’t present.
   - **Remote Cowork sessions**: these run on Anthropic-managed VMs, where Claude Code has no device policy to read.
 
-  Wherever the session runs, claude.ai applies the admin console’s [`strictKnownMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#strictknownmarketplaces) and [`blockedMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#blockedmarketplaces) lists itself when anyone adds a marketplace from a git repository on claude.ai or from **Customize** in the Cowork tab. [How restrictions work](../08-Plugins-Skills/plugins-org.md#restrict-what-users-can-install) describes that check. The [surface coverage](../02-Claude-Code-CLI/model-config.md#surface-coverage) table compares Cowork with the other surfaces.
+  Wherever the session runs, claude.ai applies the admin console’s [`strictKnownMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#strictknownmarketplaces) and [`blockedMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#blockedmarketplaces) lists itself when anyone adds a marketplace from a git repository on claude.ai or from **Customize** in Cowork. [How restrictions work](../08-Plugins-Skills/plugins-org.md#restrict-what-users-can-install) describes that check. The [surface coverage](../02-Claude-Code-CLI/model-config.md#surface-coverage) table compares Cowork with the other surfaces.
 - **Running sessions**: most changes reach a running session on the schedule in the [delivery mechanism table](#choose-a-delivery-mechanism), without a restart.
   - Changes to [`forceRemoteSettingsRefresh`](../02-Claude-Code-CLI/settings-reference.md#forceremotesettingsrefresh), [`requiredMinimumVersion`](../02-Claude-Code-CLI/settings-reference.md#requiredminimumversion), and [some user-editable keys](../02-Claude-Code-CLI/settings.md#when-edits-take-effect) take effect at the next session start.
   - A new or changed [`policyHelper`](../02-Claude-Code-CLI/settings-reference.md#policyhelper) entry takes effect at the next launch. If server-managed settings shadow the helper at that launch, the helper runs as soon as a fetch reports those settings removed.
@@ -141,7 +141,7 @@ The keys are the same everywhere, but each mechanism stores them in a different 
 - **Server-managed**: Anthropic’s servers, or your gateway, hold the policy. Claude Code keeps a local cache that it applies at startup and [replaces on each successful fetch](server-managed-settings.md#security-considerations).
 - **macOS configuration profile**: the `com.anthropic.claudecode` managed preferences domain. Use the same top-level keys as `managed-settings.json`, with nested settings as dictionaries and lists as plist arrays.
 - **Windows HKLM registry**: the JSON as a `REG_SZ` or `REG_EXPAND_SZ` value named `Settings` under `HKLM\SOFTWARE\Policies\ClaudeCode`.
-- **File-based**: `managed-settings.json`, an optional `managed-settings.d/` directory, and `managed-mcp.json` in the system directory: `/Library/Application Support/ClaudeCode/` on macOS, `/etc/claude-code/` on Linux and WSL, and `C:\Program Files\ClaudeCode\` on Windows. Claude Code doesn’t read the legacy Windows path `C:\ProgramData\ClaudeCode\managed-settings.json`.
+- **File-based**: `managed-settings.json`, an optional `managed-settings.d/` directory, and `managed-mcp.json` in the system directory: `/Library/Application Support/ClaudeCode/` on macOS, `/etc/claude-code/` on Linux and WSL, and `C:\Program Files\ClaudeCode\` on Windows. Claude Code doesn’t read the legacy Windows path `C:\ProgramData\ClaudeCode\managed-settings.json`. You can deploy any of these files as a symbolic link, and Claude Code reads the file the link leads to. The policy still applies when the link leads outside the system directory or Claude Code can’t confirm that it stays inside. A warning naming the file then appears in `/status` and `claude doctor`. To clear the warning, point the link at a target inside the system directory.
 - **Windows HKCU registry**: the same `Settings` value under `HKCU\SOFTWARE\Policies\ClaudeCode`.
 
 

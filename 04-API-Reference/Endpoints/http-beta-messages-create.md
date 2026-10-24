@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Fmessages%2Fcreate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Fmessages%2Fcreate)
 
 
 
@@ -219,7 +219,7 @@ Claude Code
 
 [Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -228,8 +228,8 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
-3.  [Messages](http-beta-messages.md)
+2.  [Beta](platform-claude-com-http-beta.md)
+3.  [Messages](platform-claude-com-http-beta-messages.md)
 
 # Create a Message
 
@@ -245,7 +245,7 @@ Learn more about the Messages API in our [user guide](../../01-Getting-Started/g
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -493,7 +493,7 @@ minimum0
 
 
 
-messages: array of [BetaMessageParam](http-beta-messages.md#beta_message_param) { content, role, clear_at, output_config }
+messages: array of [BetaMessageParam](platform-claude-com-http-beta-messages.md#beta_message_param) { content, role, clear_at, output_config }
 
 
 
@@ -558,7 +558,7 @@ There is a limit of 100,000 messages in a single request.
 
 
 
-content: string or array of [BetaContentBlockParam](http-beta-messages.md#beta_content_block_param)
+content: string or array of [BetaContentBlockParam](platform-claude-com-http-beta-messages.md#beta_content_block_param)
 
 
 
@@ -570,7 +570,7 @@ string
 
 
 
-array of [BetaContentBlockParam](http-beta-messages.md#beta_content_block_param)
+array of [BetaContentBlockParam](platform-claude-com-http-beta-messages.md#beta_content_block_param)
 
 
 
@@ -690,7 +690,7 @@ type: "code_execution_tool_result"
 
 
 
-content: [BetaCodeExecutionToolResultBlockParamContent](http-beta-messages.md#beta_code_execution_tool_result_block_param_content)
+content: [BetaCodeExecutionToolResultBlockParamContent](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_block_param_content)
 
 
 
@@ -706,7 +706,7 @@ pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -789,7 +789,7 @@ file_id: string
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -882,7 +882,7 @@ maxLength255
 
 
 
-tools: array of [BetaMCPToolParam](http-beta-messages.md#beta_mcp_tool_param) { input_schema, name, description }
+tools: array of [BetaMCPToolParam](platform-claude-com-http-beta-messages.md#beta_mcp_tool_param) { input_schema, name, description }
 
 
 
@@ -928,7 +928,7 @@ type: "fallback"
 
 
 
-from: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
+from: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
@@ -936,7 +936,7 @@ Identifies one hop of a fallback transition.
 
 
 
-to: [BetaFallbackInfoParam](http-beta-messages.md#beta_fallback_info_param) { model }
+to: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
@@ -988,7 +988,7 @@ One of the following:
 
 
 
-output_config: optional [BetaSystemMessageOutputConfig](http-beta-messages.md#beta_system_message_output_config) { effort } or null
+output_config: optional [BetaSystemMessageOutputConfig](platform-claude-com-http-beta-messages.md#beta_system_message_output_config) { effort } or null
 
 
 
@@ -1172,7 +1172,7 @@ string
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -1209,7 +1209,7 @@ One of the following:
 
 
 
-compaction: optional [BetaCompactionConfig](http-beta-messages.md#beta_compaction_config) { type: "summarize", instructions } or null
+compaction: optional [BetaCompactionConfig](platform-claude-com-http-beta-messages.md#beta_compaction_config) { type: "summarize", instructions } or null
 
 
 
@@ -1233,7 +1233,7 @@ maxLength16384
 
 
 
-container: optional [BetaContainerParams](http-beta-messages.md#beta_container_params) or string or null
+container: optional [BetaContainerParams](platform-claude-com-http-beta-messages.md#beta_container_params) or string or null
 
 
 
@@ -1257,7 +1257,7 @@ Container id
 
 
 
-skills: optional array of [BetaSkillParams](http-beta-messages.md#beta_skill_params) { type, skill_id, version } or null
+skills: optional array of [BetaSkillParams](platform-claude-com-http-beta-messages.md#beta_skill_params) { type, skill_id, version } or null
 
 
 
@@ -1313,7 +1313,7 @@ string
 
 
 
-context_management: optional [BetaContextManagementConfig](http-beta-messages.md#beta_context_management_config) { edits } or null
+context_management: optional [BetaContextManagementConfig](platform-claude-com-http-beta-messages.md#beta_context_management_config) { edits } or null
 
 
 
@@ -1323,7 +1323,7 @@ This allows you to control how Claude manages context across multiple requests, 
 
 
 
-diagnostics: optional [BetaDiagnosticsParam](http-beta-messages.md#beta_diagnostics_param) { previous_message_id } or null
+diagnostics: optional [BetaDiagnosticsParam](platform-claude-com-http-beta-messages.md#beta_diagnostics_param) { previous_message_id } or null
 
 
 
@@ -1341,7 +1341,7 @@ maxLength256
 
 
 
-fallback_credit_token: optional string or [BetaFallbackCreditTokenParam](http-beta-messages.md#beta_fallback_credit_token_param) or null
+fallback_credit_token: optional string or [BetaFallbackCreditTokenParam](platform-claude-com-http-beta-messages.md#beta_fallback_credit_token_param) or null
 
 
 
@@ -1399,7 +1399,7 @@ One of the following:
 
 
 
-fallbacks: optional [BetaFallbacksParam](http-beta-messages.md#beta_fallbacks_param) or null
+fallbacks: optional [BetaFallbacksParam](platform-claude-com-http-beta-messages.md#beta_fallbacks_param) or null
 
 
 
@@ -1415,7 +1415,7 @@ Specifies the geographic region for inference processing. If not specified, the 
 
 
 
-mcp_servers: optional array of [BetaRequestMCPServerURLDefinition](http-beta-messages.md#beta_request_mcp_server_url_definition) { type: "url", name, url, 2 more }
+mcp_servers: optional array of [BetaRequestMCPServerURLDefinition](platform-claude-com-http-beta-messages.md#beta_request_mcp_server_url_definition) { type: "url", name, url, 2 more }
 
 
 
@@ -1441,7 +1441,7 @@ authorization_token: optional string or null
 
 
 
-tool_configuration: optional [BetaRequestMCPServerToolConfiguration](http-beta-messages.md#beta_request_mcp_server_tool_configuration) { allowed_tools, enabled } or null
+tool_configuration: optional [BetaRequestMCPServerToolConfiguration](platform-claude-com-http-beta-messages.md#beta_request_mcp_server_tool_configuration) { allowed_tools, enabled } or null
 
 
 
@@ -1455,7 +1455,7 @@ enabled: optional boolean or null
 
 
 
-metadata: optional [BetaMetadata](http-beta-messages.md#beta_metadata) { user_id }
+metadata: optional [BetaMetadata](platform-claude-com-http-beta-messages.md#beta_metadata) { user_id }
 
 
 
@@ -1475,7 +1475,7 @@ maxLength512
 
 
 
-output_config: optional [BetaOutputConfig](http-beta-messages.md#beta_output_config) { effort, format, task_budget }
+output_config: optional [BetaOutputConfig](platform-claude-com-http-beta-messages.md#beta_output_config) { effort, format, task_budget }
 
 
 
@@ -1543,7 +1543,7 @@ In the TypeScript, Python and Ruby SDKs, the recommended way to stream is `messa
 
 
 
-system: optional string or array of [BetaTextBlockParam](http-beta-messages.md#beta_text_block_param)
+system: optional string or array of [BetaTextBlockParam](platform-claude-com-http-beta-messages.md#beta_text_block_param)
 
 
 
@@ -1559,7 +1559,7 @@ string
 
 
 
-array of [BetaTextBlockParam](http-beta-messages.md#beta_text_block_param) { type: "text", text, cache_control, citations }
+array of [BetaTextBlockParam](platform-claude-com-http-beta-messages.md#beta_text_block_param) { type: "text", text, cache_control, citations }
 
 
 
@@ -1577,7 +1577,7 @@ minLength1
 
 
 
-cache_control: optional [BetaCacheControlEphemeral](http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
+cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
 
 
@@ -1614,7 +1614,7 @@ One of the following:
 
 
 
-citations: optional array of [BetaTextCitationParam](http-beta-messages.md#beta_text_citation_param) or null
+citations: optional array of [BetaTextCitationParam](platform-claude-com-http-beta-messages.md#beta_text_citation_param) or null
 
 
 
@@ -1864,7 +1864,7 @@ title: string or null
 
 
 
-thinking: optional [BetaThinkingConfigParam](http-beta-messages.md#beta_thinking_config_param)
+thinking: optional [BetaThinkingConfigParam](platform-claude-com-http-beta-messages.md#beta_thinking_config_param)
 
 
 
@@ -1878,7 +1878,7 @@ One of the following:
 
 
 
-tool_choice: optional [BetaToolChoice](http-beta-messages.md#beta_tool_choice)
+tool_choice: optional [BetaToolChoice](platform-claude-com-http-beta-messages.md#beta_tool_choice)
 
 
 
@@ -1888,7 +1888,7 @@ One of the following:
 
 
 
-tools: optional array of [BetaToolUnion](http-beta-messages.md#beta_tool_union)
+tools: optional array of [BetaToolUnion](platform-claude-com-http-beta-messages.md#beta_tool_union)
 
 
 
@@ -2146,7 +2146,7 @@ Allows configuring enabled status and defer_loading for all tools from an MCP se
 
 
 
-output_format: optional [BetaJSONOutputFormat](http-beta-messages.md#beta_json_output_format) { type: "json_schema", schema } or null⁠Deprecated
+output_format: optional [BetaJSONOutputFormat](platform-claude-com-http-beta-messages.md#beta_json_output_format) { type: "json_schema", schema } or null⁠Deprecated
 
 
 
@@ -2248,7 +2248,7 @@ The format and length of IDs may change over time.
 
 
 
-container: [BetaContainer](http-beta-messages.md#beta_container) { id, expires_at, skills } or null
+container: [BetaContainer](platform-claude-com-http-beta-messages.md#beta_container) { id, expires_at, skills } or null
 
 
 
@@ -2274,7 +2274,7 @@ formatdate-time
 
 
 
-skills: array of [BetaContainerSkill](http-beta-messages.md#beta_container_skill) { type, skill_id, version } or null
+skills: array of [BetaContainerSkill](platform-claude-com-http-beta-messages.md#beta_container_skill) { type, skill_id, version } or null
 
 
 
@@ -2324,7 +2324,7 @@ maxLength64
 
 
 
-content: array of [BetaContentBlock](http-beta-messages.md#beta_content_block)
+content: array of [BetaContentBlock](platform-claude-com-http-beta-messages.md#beta_content_block)
 
 
 
@@ -2473,7 +2473,7 @@ defaultcode_execution_tool_result
 
 
 
-content: [BetaCodeExecutionToolResultBlockContent](http-beta-messages.md#beta_code_execution_tool_result_block_content)
+content: [BetaCodeExecutionToolResultBlockContent](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_block_content)
 
 
 
@@ -2613,7 +2613,7 @@ mcp_server_name: string
 
 
 
-tools: array of [BetaMCPTool](http-beta-messages.md#beta_mcp_tool) { input_schema, name, description }
+tools: array of [BetaMCPTool](platform-claude-com-http-beta-messages.md#beta_mcp_tool) { input_schema, name, description }
 
 
 
@@ -2631,7 +2631,7 @@ description: optional string
 
 
 
-context_management: [BetaContextManagementResponse](http-beta-messages.md#beta_context_management_response) { applied_edits } or null
+context_management: [BetaContextManagementResponse](platform-claude-com-http-beta-messages.md#beta_context_management_response) { applied_edits } or null
 
 
 
@@ -2641,7 +2641,7 @@ Information about context management strategies applied during the request.
 
 
 
-diagnostics: [BetaDiagnostics](http-beta-messages.md#beta_diagnostics) { cache_miss_reason } or null
+diagnostics: [BetaDiagnostics](platform-claude-com-http-beta-messages.md#beta_diagnostics) { cache_miss_reason } or null
 
 
 
@@ -2649,7 +2649,7 @@ Request-level diagnostics. `null` when the request did not supply `diagnostics`,
 
 
 
-cache_miss_reason: [BetaCacheMissReason](http-beta-messages.md#beta_cache_miss_reason) or null
+cache_miss_reason: [BetaCacheMissReason](platform-claude-com-http-beta-messages.md#beta_cache_miss_reason) or null
 
 
 
@@ -2813,7 +2813,7 @@ defaultassistant
 
 
 
-stop_details: [BetaRefusalStopDetails](http-beta-messages.md#beta_refusal_stop_details) { type: "refusal", category, explanation, 3 more } or null
+stop_details: [BetaRefusalStopDetails](platform-claude-com-http-beta-messages.md#beta_refusal_stop_details) { type: "refusal", category, explanation, 3 more } or null
 
 
 
@@ -2823,7 +2823,7 @@ This is `null` when the `stop_reason` has no additional detail to report.
 
 
 
-stop_reason: [BetaStopReason](http-beta-messages.md#beta_stop_reason) or null
+stop_reason: [BetaStopReason](platform-claude-com-http-beta-messages.md#beta_stop_reason) or null
 
 
 
@@ -2887,7 +2887,7 @@ This value will be a non-null string if one of your custom stop sequences was ge
 
 
 
-usage: [BetaUsage](http-beta-messages.md#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 9 more }
+usage: [BetaUsage](platform-claude-com-http-beta-messages.md#beta_usage) { cache_creation, cache_creation_input_tokens, cache_read_input_tokens, 9 more }
 
 
 
@@ -2903,7 +2903,7 @@ Total input tokens in a request is the summation of `input_tokens`, `cache_creat
 
 
 
-input_transformations: optional array of [BetaInputTransformation](http-beta-messages.md#beta_input_transformation) or null
+input_transformations: optional array of [BetaInputTransformation](platform-claude-com-http-beta-messages.md#beta_input_transformation) or null
 
 
 
@@ -3011,7 +3011,7 @@ One of the following:
 
 
 
-BetaRawMessageStreamEvent = [BetaRawMessageStartEvent](http-beta-messages.md#beta_raw_message_start_event) or [BetaRawMessageDeltaEvent](http-beta-messages.md#beta_raw_message_delta_event) or [BetaRawMessageStopEvent](http-beta-messages.md#beta_raw_message_stop_event) or 3 more
+BetaRawMessageStreamEvent = [BetaRawMessageStartEvent](platform-claude-com-http-beta-messages.md#beta_raw_message_start_event) or [BetaRawMessageDeltaEvent](platform-claude-com-http-beta-messages.md#beta_raw_message_delta_event) or [BetaRawMessageStopEvent](platform-claude-com-http-beta-messages.md#beta_raw_message_stop_event) or 3 more
 
 
 

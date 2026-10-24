@@ -2,7 +2,7 @@
 title: "Stream Session Thread Events - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/threads/events/stream"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:41Z"
+fetched_at: "2026-10-20T06:38:47Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Fevents%2Fstream)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fthreads%2Fevents%2Fstream)
 
 
 
@@ -161,7 +161,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -171,9 +171,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -244,13 +246,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -258,9 +262,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -269,12 +273,18 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
+2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Sessions](https://platform.claude.com/docs/en/api/http/beta/sessions)
 4.  [Threads](https://platform.claude.com/docs/en/api/http/beta/sessions/threads)
 5.  [Events](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/events)
 
 # Stream Session Thread Events
+
+Copy page
+
+
+
+cURL
 
 GET/v1/sessions/{session_id}/threads/{thread_id}/stream
 
@@ -314,11 +324,21 @@ One of the following:
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](http-beta.md#anthropic_beta)
+"anthropic-version": optional string
 
 
 
-Optional header to specify the beta version(s) you want to use.
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
+
+
+"anthropic-beta": optional array of [AnthropicBeta](platform-claude-com-http-beta.md#anthropic_beta)
+
+
+
+This endpoint is in beta: requests must send `managed-agents-2026-04-01` in this header.
 
 One of the following:
 
@@ -526,6 +546,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -540,7 +564,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-BetaManagedAgentsStreamSessionThreadEvents = [BetaManagedAgentsUserMessageEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_message_event) or [BetaManagedAgentsUserInterruptEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_interrupt_event) or [BetaManagedAgentsUserToolConfirmationEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_tool_confirmation_event) or 34 more
+BetaManagedAgentsStreamSessionThreadEvents = [BetaManagedAgentsUserMessageEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_message_event) or [BetaManagedAgentsUserInterruptEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_interrupt_event) or [BetaManagedAgentsUserToolConfirmationEvent](https://platform.claude.com/docs/en/api/http/beta/sessions/events#beta_managed_agents_user_tool_confirmation_event) or 41 more
 
 
 
@@ -567,7 +591,7 @@ Response 200
 
 ```python
 {
-  "id": "sevt_011CZkZGOp0iBcp4kaQSihUmy",
+  "id": "sevt_011CZkZGPp1iBcp4kaQSihUm",
   "content": [
     {
       "text": "Where is my order #1234?",
@@ -587,7 +611,7 @@ Response 200
 
 ```python
 {
-  "id": "sevt_011CZkZGOp0iBcp4kaQSihUmy",
+  "id": "sevt_011CZkZGPp1iBcp4kaQSihUm",
   "content": [
     {
       "text": "Where is my order #1234?",

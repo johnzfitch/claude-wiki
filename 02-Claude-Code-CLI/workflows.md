@@ -2,7 +2,7 @@
 title: "Orchestrate subagents at scale with dynamic workflows - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/workflows"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-09T06:27:25Z"
+fetched_at: "2026-10-21T06:28:59Z"
 tags: ["agents", "claude-code", "subagents"]
 ---
 
@@ -35,6 +35,8 @@ tags: ["agents", "claude-code", "subagents"]
   - [Behavior and limits](#behavior-and-limits)
 - [Manage runs](#manage-runs)
   - [Resume after a pause](#resume-after-a-pause)
+  - [Which agents run again](#which-agents-run-again)
+  - [Resume after you leave the session](#resume-after-you-leave-the-session)
   - [When a run hits your usage limit](#when-a-run-hits-your-usage-limit)
   - [When an agent stalls and restarts](#when-an-agent-stalls-and-restarts)
   - [Cost](#cost)
@@ -137,17 +139,17 @@ Watch the run
 
 Workflows run in the background, so the session stays responsive while agents work. Run `/workflows` at any time to list running and completed workflows, then select one to open its progress view. When the session has only one run, `/workflows` skips the list and opens that run. To stop a running workflow from the list without opening it, select it and press `x`. The progress view shows each phase with its agent counts. The footer lists the key for each action:
 
-| Key            | Action                                                                                                                      |
-|:---------------|:----------------------------------------------------------------------------------------------------------------------------|
-| `↑` / `↓`      | Select a phase or agent                                                                                                     |
-| `Enter` or `→` | Drill into the selected phase, then into an agent’s detail. In the detail, `Enter` expands or collapses it                  |
-| `Esc` or `←`   | Back out one level. In v2.1.203 through v2.1.205, `←` didn’t step back out of a phase or agent; use `Esc` on those versions |
-| `j` / `k`      | Scroll within the agent detail when it overflows                                                                            |
-| `f`            | Filter the agent list in the selected phase by status. Press again to cycle                                                 |
-| `p`            | Pause or resume the run                                                                                                     |
-| `x`            | Stop the selected agent, or stop the whole workflow when focus is on the run                                                |
-| `r`            | Restart the selected running agent                                                                                          |
-| `s`            | [Save](#save-the-workflow-for-reuse) the run’s script as a command                                                          |
+| Key            | Action                                                                                                     |
+|:---------------|:-----------------------------------------------------------------------------------------------------------|
+| `↑` / `↓`      | Select a phase or agent                                                                                    |
+| `Enter` or `→` | Drill into the selected phase, then into an agent’s detail. In the detail, `Enter` expands or collapses it |
+| `Esc` or `←`   | Back out one level                                                                                         |
+| `j` / `k`      | Scroll within the agent detail when it overflows                                                           |
+| `f`            | Filter the agent list in the selected phase by status. Press again to cycle                                |
+| `p`            | Pause or resume the run                                                                                    |
+| `x`            | Stop the selected agent, or stop the whole workflow when focus is on the run                               |
+| `r`            | Restart the selected running agent                                                                         |
+| `s`            | [Save](#save-the-workflow-for-reuse) the run’s script as a command                                         |
 
 The agent detail lists the agent’s prompt, its recent tool calls, and its result. Each call shows its state, such as still running or failed. When the agent keeps a task list of its own, the detail shows it too, with each task’s status. Press `Enter` to expand the detail. The prompt and result then show in full, and each listed call shows its input and the start of its result.
 
@@ -195,8 +197,6 @@ The keyword is an opt-in only in a prompt you type yourself: at the interactive 
 - a scheduled task prompt
 - a webhook payload or pull request comment relayed into the conversation
 
-Before v2.1.210, the keyword started a workflow from any of these routes too, including a webhook payload or pull request comment relayed into the conversation.
-
 
 [​](#let-claude-decide-with-ultracode)
 
@@ -208,7 +208,7 @@ Ultracode is a Claude Code setting that turns on automatic workflow orchestratio
 /effort ultracode
 ```
 
-To start a session with ultracode already on, launch with `claude --effort ultracode`, which also sets the effort level to `xhigh`. Requires Claude Code v2.1.203 or later. To turn it on from the `/effort` slider, press `Tab` to flip the **Ultracode** toggle, then `Enter` to apply it. [Adjust effort level](model-config.md#adjust-effort-level) lists the routes that turn ultracode on. With ultracode on, Claude decides when a task warrants a workflow. A single request can turn into several workflows in a row: one to understand the code, one to make the change, and one to verify it. This applies to every task in the session, so each request uses more tokens and takes longer than the same request without a workflow. On a subscription plan those tokens draw on your usage limits, so a session with ultracode on reaches a session or weekly limit sooner than the same work with it off. Turning ultracode on already opts you in to large runs, so these checks don’t apply while it’s on:
+To start a session with ultracode already on, launch with `claude --effort ultracode`, which also sets the effort level to `xhigh`. To turn it on from the `/effort` slider, press `Tab` to flip the **Ultracode** toggle, then `Enter` to apply it. [Adjust effort level](model-config.md#adjust-effort-level) lists the routes that turn ultracode on. With ultracode on, Claude decides when a task warrants a workflow. A single request can turn into several workflows in a row: one to understand the code, one to make the change, and one to verify it. This applies to every task in the session, so each request uses more tokens and takes longer than the same request without a workflow. On a subscription plan those tokens draw on your usage limits, so a session with ultracode on reaches a session or weekly limit sooner than the same work with it off. Turning ultracode on already opts you in to large runs, so these checks don’t apply while it’s on:
 
 - The [`Large workflow` warning](#cost) doesn’t appear on a workflow run
 - The session’s [concurrent subagent limit](../09-Agents-Patterns/sub-agents.md#concurrent-subagent-limit) isn’t enforced for the subagents Claude spawns with the Agent tool
@@ -239,10 +239,10 @@ In the CLI, the per-run prompt shows the planned phases and these options:
 
 In `claude -p` and the Agent SDK, Claude Code never shows this prompt. It runs the Workflow tool call through the same [permission evaluation](../05-Agent-SDK/agent-sdk-permissions.md#how-permissions-are-evaluated) as the rest of the session, so deny rules, ask rules, and `dontAsk` mode apply to the launch as they apply to every tool call. To let the workflow start in these runs, use one of these:
 
-- **Permission rule**: `Workflow` in your allow rules approves every workflow, and `Workflow(<name>)` approves one saved workflow by name.
-- **Auto permission mode**: the [classifier](permission-modes.md#eliminate-prompts-with-auto-mode) reviews the call and can approve it.
-- **Bypass permissions mode**: Claude Code approves the call.
-- **A hook**: a [`PreToolUse`](../07-Hooks/hooks.md#pretooluse) hook that allows the call approves it.
+- **Permission rule**: add `Workflow` to your allow rules to approve every workflow, or `Workflow(<name>)` to approve one saved workflow by name.
+- **Auto permission mode**: run in [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode), where the classifier reviews the call and can approve it.
+- **Bypass permissions mode**: run in bypass permissions mode.
+- **A hook**: return `"allow"` for the call from a [`PreToolUse`](../07-Hooks/hooks.md#pretooluse) hook. In [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode), the workflow doesn’t start on the hook’s approval alone, so use a permission rule or your host’s approval there instead.
 - **Your host**: a [`--permission-prompt-tool`](cli-reference.md#cli-flags) or, with the Agent SDK, a [`canUseTool`](../05-Agent-SDK/agent-sdk-permissions.md) callback approves it.
 
 In the Desktop app, an approval card shows the workflow name, the phase list, and a token-usage caution, with **Once**, **Always**, and **Deny** actions. The progress view appears in the Background tasks side pane. The subagents the workflow spawns use your [permission rules](settings-reference.md#permission-settings), and Claude Code picks their permission mode by the rules under [which permission mode a subagent runs in](../09-Agents-Patterns/sub-agents.md#permission-modes). To avoid prompts on a long run, add the tools the agents need to your allow rules before starting.
@@ -440,13 +440,27 @@ Once a run starts, you manage it from the `/workflows` view, or by expanding its
 
 Resume after a pause
 
-Resume a paused run from `/workflows` by selecting it and pressing `p`. For a run you stopped, ask Claude to relaunch the workflow with the same script. If agents from the stopped run haven’t exited yet, Claude Code refuses the relaunch until they have, so a second copy of those agents can’t run alongside them. Claude Code replays the run in the order agents started, and each agent either returns its saved result or runs again:
+Resume a paused run from `/workflows` by selecting it and pressing `p`. For a run you stopped, ask Claude to relaunch the workflow with the same script. If agents from the stopped run haven’t exited yet, Claude Code refuses the relaunch until they have, so a second copy of those agents can’t run alongside them.
 
-- **Completed**: returns its saved result. The first agent whose prompt differs from the previous run, because you edited the script or an earlier agent returned something different, runs again, and so does every agent after it, even ones that completed.
+
+[​](#which-agents-run-again)
+
+Which agents run again
+
+Claude Code replays the run in the order agents start, and each agent either returns its saved result or runs again:
+
+- **Completed**: returns its saved result. The first agent whose prompt differs from the previous run, because you edited the script or an earlier agent returned something different, runs again, and so does every agent after it, even ones that completed. Before v2.1.305, completed agents could also run again when you relaunched an unedited script whose `pipeline()` items or `parallel()` tasks ran more than one agent each. To stop those reruns for new runs, update Claude Code.
 - **Still running when you stopped**: starts over. Stopping the whole run doesn’t count any agent as failed.
-- **Failed**: runs again, and so does every agent that started after it, even ones that completed. Stopping one agent alone, by selecting it in [`/workflows`](#watch-the-run) and pressing `x`, counts as failing.
+- **Failed**: runs again, and so does every agent the script starts after it, even ones that completed. Stopping one agent alone, by selecting it in [`/workflows`](#watch-the-run) and pressing `x`, counts as failing.
 
-That last case means a failure in the middle of a fan-out reruns work that already finished. If a script starts A, B, C, and D in that order and B fails, relaunching returns A from cache and runs B, C, and D again. You can resume a run within the same Claude Code session. What happens to a running workflow when you leave the session depends on how you leave:
+That last case means a failure in the middle of a fan-out reruns work that already finished. If a script starts A, B, C, and D in that order and B fails, relaunching returns A from cache and runs B, C, and D again. If you edit a script that started A, B, C, and D so that it starts A, C, B, and D, the second agent to start is now C, where the previous run started B. Relaunching returns A from cache and runs C, B, and D again.
+
+
+[​](#resume-after-you-leave-the-session)
+
+Resume after you leave the session
+
+You can resume a run within the same Claude Code session. What happens to a running workflow when you leave the session depends on how you leave:
 
 - If you [background the session](../09-Agents-Patterns/agent-view.md#what-carries-over-when-you-background), Claude Code replays the run the same way in the background session and continues it.
 - If you exit Claude Code while a workflow is running and [agent view is on](../09-Agents-Patterns/agent-view.md#from-inside-a-session), the exit dialog offers `Move to background and exit`, which carries the run over the same way. If you choose `Exit and stop tasks` instead, or the option isn’t offered, the run stops with the session. Claude Code keeps the run’s saved results under that session’s directory in `~/.claude/projects/`, so a session you resume with `claude --resume` can replay them when you ask Claude to relaunch the workflow. In a session you start fresh, Claude has no earlier run to relaunch and starts the workflow over as a new run.
@@ -503,14 +517,14 @@ Claude Code picks each workflow agent’s model in the same [order it uses for s
 - Check `/model` before a large run if you usually switch to a smaller model for routine work
 - Ask Claude to use a smaller model for stages that don’t need the strongest one when you describe the task
 
-When your organization’s [`availableModels` allowlist](model-config.md#restrict-model-selection) blocks a model the script requests for an agent, that agent runs on a substituted model instead, following the same [substitution rules as subagents](../09-Agents-Patterns/sub-agents.md#choose-a-model). The run’s progress view in [`/workflows`](#watch-the-run) shows a warning naming both the requested and substituted models.
+When your organization’s [`availableModels` allowlist](model-config.md#restrict-model-selection) blocks a model the script requests for an agent, that agent runs on a substituted model instead, following the same [substitution rules as subagents](../09-Agents-Patterns/sub-agents.md#choose-a-model).
 
 
 [​](#set-a-size-guideline)
 
 Set a size guideline
 
-A size guideline tells Claude how many agents to aim for when it writes a dynamic workflow. Claude Code sends the guideline to Claude as advice, not a cap, so a prompt that calls for a different scale still overrides it. Requires Claude Code v2.1.202 or later. Each value maps to an agent count:
+A size guideline tells Claude how many agents to aim for when it writes a dynamic workflow. Claude Code sends the guideline to Claude as advice, not a cap, so a prompt that calls for a different scale still overrides it. Each value maps to an agent count:
 
 | Value          | Agent count Claude aims for                         |
 |:---------------|:----------------------------------------------------|

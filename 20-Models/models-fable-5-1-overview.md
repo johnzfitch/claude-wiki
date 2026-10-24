@@ -2,7 +2,7 @@
 title: "Claude Fable 5.1 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/fable-5-1/overview"
 category: "20-Models"
-fetched_at: "2026-10-04T08:33:45Z"
+fetched_at: "2026-10-20T06:39:41Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["models"]
 
 
 
-[Console](../04-API-Reference/Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5-1%2Foverview)
+[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5-1%2Foverview)
 
 
 
@@ -42,7 +42,7 @@ Models
 
 [Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
 
-[Claude Haiku 4.5](models-haiku-4-5-overview.md)
+[Claude Haiku 5.5](models-haiku-5-5-overview.md)
 
 Specialized models
 
@@ -54,11 +54,11 @@ Guides
 
 Lifecycle and reference
 
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)
+[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
 
 [System prompts](release-notes-system-prompts-overview.md)
 
-[Console](../04-API-Reference/Other/usage-limits.md)
+[Console](../04-API-Reference/Other/playground.md)
 
 [Models & pricing](about-claude-models-overview.md)Models
 
@@ -94,15 +94,15 @@ Output pricing
 
 ## Overview
 
-Claude Fable 5.1 extends Claude Fable 5 at the same input and output prices, with cache reads at a quarter of the cost, and brings stronger long-running agentic coding, multistep research, and document, spreadsheet, and slide work. For most workloads, start with Claude Opus 5 (see [Choosing a model](about-claude-models-choosing-a-model.md)). Use Claude Fable 5.1 for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5 at higher effort still fall short. Claude Mythos 5.1 offers the same capabilities to [Project Glasswing](../22-Safety-Policy/glasswing.md) participants only.
+Claude Fable 5.1 extends Claude Fable 5 at the same input and output prices, with cache reads at a quarter of the cost, and brings stronger long-running agentic coding, multistep research, and document, spreadsheet, and slide work. For most workloads, start with Claude Opus 5.5 (see [Choosing a model](about-claude-models-choosing-a-model.md)). Use Claude Fable 5.1 for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. Claude Mythos 5.1 offers the same capabilities only to organizations verified through Anthropic's verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842).
 
-If you already call Claude Fable 5, three changes are breaking: [forced tool use returns an error](models-fable-5-1-whats-new-fable-5-1.md#forced-tool-use-is-not-supported), [earlier models can't read its thinking blocks](models-fable-5-1-whats-new-fable-5-1.md#thinking-blocks-are-tied-to-the-model-that-produced-them), and [editing earlier turns invalidates thinking blocks](models-fable-5-1-whats-new-fable-5-1.md#editing-earlier-turns-invalidates-thinking-blocks). Five are additive: [per-message effort](models-fable-5-1-whats-new-fable-5-1.md#change-effort-mid-conversation-beta) (beta), [turn-scoped system messages](models-fable-5-1-whats-new-fable-5-1.md#turn-scoped-system-messages-beta) (beta), [readable progress updates between tool calls](models-fable-5-1-whats-new-fable-5-1.md#progress-updates-between-tool-calls-beta) (`display: "updates"`, beta), a [lower cache read price](models-fable-5-1-whats-new-fable-5-1.md#pricing), and [content provenance](models-fable-5-1-whats-new-fable-5-1.md#content-provenance).
+If you already call Claude Fable 5, three changes are breaking: [forced tool use returns an error](models-fable-5-1-whats-new-fable-5-1.md#forced-tool-use-is-not-supported), [only Claude Fable 5.1 and Claude Mythos 5.1 can read Claude Fable 5.1's thinking blocks](models-fable-5-1-whats-new-fable-5-1.md#thinking-blocks-are-tied-to-the-model-that-produced-them), and [editing earlier turns invalidates thinking blocks](models-fable-5-1-whats-new-fable-5-1.md#editing-earlier-turns-invalidates-thinking-blocks). Five are additive: [per-message effort](models-fable-5-1-whats-new-fable-5-1.md#change-effort-mid-conversation-beta) (beta), [turn-scoped system messages](models-fable-5-1-whats-new-fable-5-1.md#turn-scoped-system-messages-beta) (beta), [readable progress updates between tool calls](models-fable-5-1-whats-new-fable-5-1.md#progress-updates-between-tool-calls-beta) (`display: "updates"`, beta), a [lower cache read price](models-fable-5-1-whats-new-fable-5-1.md#pricing), and [content provenance](models-fable-5-1-whats-new-fable-5-1.md#content-provenance).
 
 [What's new in Claude Fable 5.1](models-fable-5-1-whats-new-fable-5-1.md)
 
 ## Claude Fable 5.1 and Claude Mythos 5.1
 
-[Claude Mythos 5.1](models-mythos-5-1-overview.md) offers the same capabilities by invitation only, as part of [Project Glasswing](../22-Safety-Policy/glasswing.md). It shares Claude Fable 5.1's specifications and pricing. For access, contact your Anthropic, AWS, or Google Cloud account team.
+[Claude Mythos 5.1](models-mythos-5-1-overview.md) offers the same capabilities only to organizations verified through Anthropic's verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). It shares Claude Fable 5.1's specifications and pricing. To request access, apply to the program that covers your use case, or contact your Anthropic, AWS, or Google Cloud account team.
 
 ## How it compares
 
@@ -199,7 +199,7 @@ Model-specific prompting guidance for long-horizon and agentic work.
 
 
 
-[Migrating to Claude Fable 5.1](models-fable-5-1-migration-guide.md)
+[Claude Fable 5.1 migration guide](models-fable-5-1-migration-guide.md)
 
 What changes when you move from Claude Fable 5, Claude Opus 5, or Claude Opus 4.8.
 

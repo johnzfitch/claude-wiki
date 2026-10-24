@@ -2,15 +2,47 @@
 title: "How Canada uses Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-canada-uses-claude"
 category: "19-Reference"
-fetched_at: "2026-08-26T06:28:53Z"
+fetched_at: "2026-10-21T06:30:45Z"
 tags: ["news-research"]
 ---
 
-# How Canada uses Claude: Findings from the Anthropic Economic Index
+# **How Canada uses Claude: **Findings from the Anthropic Economic Index
 
-Jul 14, 2026
+- [01Canada is at the forefront of Claude adoption](#canada-is-at-the-forefront-of-claude-adoption)
+- [02Within Canada, adoption is concentrated and tracks workforce composition](#within-canada-adoption-is-concentrated-and-tracks-workforce-composition)
+- [03Understanding the distinctive uses of Claude within Canada](#understanding-the-distinctive-uses-of-claude-within-canada)
+- [04Conclusion](#conclusion)
+- [05Utilisation de Claude au Canada : constatations présentées dans l’Anthropic Economic Index](#utilisation-de-claude-au-canada-constatations-prsentes-dans-lanthropic-economic-index)
+
+- Published
+
+  Jul 14, 2026
+
+- Team
+
+  [Economics](team-economics.md)
+
+- Topics
+
+  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+  - [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
+  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
+  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
+
+  See more...
 
 *Le français suit.*
+
+Related articles
+
+- Economics
+
+  Mar 24, 2026
+
+  [Anthropic Economic Index report: Learning curves](economic-index-march-2026-report.md)
+
+[View more](https://www.anthropic.com/search?topic=economic-index)
 
 ### Key findings
 
@@ -22,13 +54,13 @@ Jul 14, 2026
 - We find evidence that specific use cases coincide with local economic characteristics. Translation requests track public administration employment shares across provinces, likely reflecting Canada's policy of official bilingualism in federal services and communications: New Brunswick, Nova Scotia, and Quebec have both the highest rates of public administration employment and the largest shares of conversations devoted to translation.
 - Document translation is also the most distinctive Canadian use case relative to Anglosphere peers. More generally, Canadian usage tilts toward academic and early-career usage: academic coursework, coding assistance, and resume drafting are all overrepresented, while professional communication and everyday personal tasks are underrepresented.
 
-### Canada is at the forefront of Claude adoption
+## Canada is at the forefront of Claude adoption
 
 Adoption of Claude is high in Canada. Based on a sample of Claude.ai conversations in February 2026, 2.6% of global traffic is in Canada. Adjusting for population, its Anthropic AI Usage Index (AUI) is 4.4, which implies that usage per capita is more than four times higher than would be expected based on its working-age population. Among the top ten countries that lead in terms of overall Claude usage volume, Canada has the second-highest AUI, just behind the United States (Figure 1).
 
 In part, this reflects the fact that Canada is a high-income country. Among advanced economies, as defined by the IMF, there is a clear link between usage per capita and GDP per working-age capita. But Canada’s adoption exceeds what would be expected based on its income (Figure 2). In this sense, Canada appears further along on its AI adoption curve as compared to peer countries, perhaps reflecting its highly educated workforce and proximity to the US technology frontier.
 
-### Within Canada, adoption is concentrated and tracks workforce composition
+## Within Canada, adoption is concentrated and tracks workforce composition
 
 Just as global adoption of Claude is disproportionately concentrated among a small number of countries, usage within Canada is unevenly distributed across provinces. Ontario accounts for 43.9% of conversations. Another 50% of usage within Canada comes from Quebec (20.8%), British Columbia (18.9%), and Alberta (10.2%). Adjusting for population, the ordering shifts: British Columbia has 1.4x more Claude usage than expected based on its working age population, followed by Ontario (1.1x). The remaining provinces have below-parity rates of adoption. The province of Newfoundland and Labrador has an AUI of 0.2.
 
@@ -36,7 +68,7 @@ What explains the pattern of regional adoption? We explore this question in Figu
 
 Evidently, workforce composition—rather than income per se—is a key determinant of within-Canada patterns of adoption. This evidence is consistent with our [earlier findings](anthropic-economic-index-january-2026-report.md) concerning adoption diffusion within the United States. It appears that AI adoption in high-income countries is primarily shaped by how well matched model capabilities are to the structure of the local economy.
 
-### Understanding the distinctive uses of Claude within Canada
+## Understanding the distinctive uses of Claude within Canada
 
 Despite the large regional variation in *rates* of Claude usage, people across Canada tend to use Claude in broadly similar ways. In every province, personal use—looking up health information, researching products, getting help with recipes or home repairs—accounts for 44% to 51% of conversations. Work-related use, where Claude is used to troubleshoot software, draft work emails, and build business applications, accounts for around 34% to 40%. What remains is using Claude to assist with coursework-related tasks (Figure 5).
 
@@ -44,27 +76,13 @@ While broad usage patterns are consistent across provinces, we nevertheless find
 
 In fact, document translation usage is the most distinctive use case in Canada as a whole as compared to peer Anglosphere countries that likewise have high volume of Claude usage—Australia, UK, and the US (Figure 7). More generally, we find that Canadian usage tilts toward education and labor-market entry: academic coursework (mathematics and STEM), coding assistance, and resume drafting are among the most overrepresented categories relative to peer countries. The categories where Canada runs below lean toward professional communication—workplace email, marketing content, legal assistance—and everyday personal tasks to assist with cooking, home maintenance, and health questions.
 
-### Conclusion
+## Conclusion
 
 Canada has among the highest rates of Claude adoption around the world, both in terms of overall volume (2.6% of global Claude.ai traffic) and after adjusting for the size of its population. Such intensity of adoption allows us to better understand how Claude usage reflects the structure of the Canadian economy and broader economic conditions.
 
 Across the country, adoption is greatest in provinces with a higher share of professional, scientific, and technical services workers. This is consistent with the view that model capabilities well-matched to the composition of the local economy primarily drive overall adoption rates. This stands in contrast to patterns of adoption globally, which appear more tightly linked to income per capita.
 
 Particular use cases also reflect the structure of the Canadian economy. Translation is more common in provinces with more public administration employment, consistent with the official-languages requirements that apply across much of Canada's public sector—and document translation is the single most distinctive Canadian use of Claude relative to its Anglosphere peers. More broadly, Canadian usage tilts toward education and labor-market entry, with academic coursework, coding assistance, and resume drafting all overrepresented relative to Australia, the United Kingdom, and the United States.
-
-#### Citation
-
-```
-@online{mccrory2026canadacountrybrief,
-author = {Peter McCrory},
-title = {How Canada Uses Claude: Findings from the Anthropic Economic Index},
-date = {2026-06},
-year = {2026},
-url = {https://www.anthropic.com/research/how-canada-uses-claude},
-}
-```
-
-Copy
 
 ## Utilisation de Claude au Canada : constatations présentées dans l’Anthropic Economic Index
 
@@ -108,139 +126,16 @@ Le Canada figure parmi les pays où l’adoption de Claude est la plus forte au 
 
 Certains types d’utilisation sont également révélateurs de la structure de l’économie canadienne. Les utilisations d’aide à la traduction sont plus fréquentes dans les provinces ayant plus d’emplois dans la fonction publique, ce qui correspond aux exigences relatives aux langues officielles qui s’appliquent à une grande partie de la fonction publique canadienne; il en résulte que la traduction de documents est l’utilisation la plus caractéristique de Claude au Canada par rapport aux autres pays de la sphère anglophone. D’une manière plus générale, l’utilisation de Claude au Canada est davantage axée sur les études et l’insertion sur le marché du travail, puisque les travaux scolaires, l’aide au codage et la rédaction de CV sont surreprésentés au Canada par rapport à l’Australie, au Royaume-Uni et aux États-Unis.
 
-#### Citation
+## Authors & Acknowledgments
 
-```
+### Citation
+
+Copy
+
+``` CodeBlock-module-scss-module__PbWBnq__code
 @online{mccrory2026canadacountrybrief,
 author = {Peter McCrory},
 title = {Utilisation de Claude au Canada : constatations présentées dans l’Anthropic Economic Index},
 date = {2026-06},
 year = {2026},
 url = {https://www.anthropic.com/research/how-canada-uses-claude},
-}
-```
-
-Copy
-
-
-## Related content
-
-### How Claude is accelerating protein design and analytical chemistry
-
-In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
-
-[Read more](claude-accelerates-protein-design.md)
-
-### Patterns and problems in emerging multiagent systems
-
-Here, we identify a few examples of behavioral tendencies in current frontier models and show how they can produce unexpected systemic failures, in hopes of starting a conversation about mitigating these risks.
-
-[Read more](multiagent-systems.md)
-
-### Reviewing the evidence on worker retraining programs
-
-We're sharing a review of the evidence on worker retraining programs, coauthored by independent researcher David Roodman and Anthropic's Maxim Massenkoff.
-
-[Read more](reviewing-the-evidence-on-worker-retraining-programs.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Research Labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

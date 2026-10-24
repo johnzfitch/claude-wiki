@@ -2,7 +2,7 @@
 title: "How to get support for Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:25:11Z"
+fetched_at: "2026-10-23T06:29:19Z"
 tags: ["claude-ai"]
 ---
 

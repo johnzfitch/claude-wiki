@@ -2,7 +2,7 @@
 title: "See your monthly recap | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15672559-see-your-monthly-recap"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:24:45Z"
+fetched_at: "2026-10-23T06:29:10Z"
 tags: ["claude-ai"]
 ---
 

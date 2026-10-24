@@ -1,167 +1,118 @@
 ---
-title: "Creating with artifacts · Claude 101 · Claude Academy"
+title: "Collaborate with your team in Claude artifacts · Claude Academy"
 source_url: "https://support.claude.com/en/articles/9945615-intro-to-artifacts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-10T06:28:32Z"
+fetched_at: "2026-10-22T06:30:41Z"
 tags: ["claude-ai"]
 ---
 
-Lesson 6 of 13 · Claude 101Creating with artifacts
+# Collaborate with your team in Claude artifacts
 
-1.  [Academy](https://support.claude.com/)
-2.  /[Courses](https://support.claude.com/courses)
-3.  /[Claude 101](https://support.claude.com/courses/claude-101)
+Build a doc, a deck, a design, a dashboard, or an animation with Claude, then share it so your team can work on it too.
 
-[Claude 101](https://support.claude.com/courses/claude-101)
+8 minClaude
 
-# Creating with artifacts
+Watch
 
-Lesson 610 min
+[Open Claude](https://claude.ai/new)
 
-In this lessonBy the end, you’ll be able to
+Loading
 
-- Explain what artifacts are and where your outputs live
-- Create designs, decks, and living documents as artifacts (on paid plans)
-- Edit an artifact directly, with a comment, or by asking in the conversation
-- Share an artifact and control who can see and edit it
+## What artifacts are[](#what-artifacts-are)
 
-## What are artifacts?[](#what-are-artifacts)
+Ask Claude for a document, a slide deck, a design, a dashboard, or an animation, and the result opens in a panel beside your conversation. The work Claude builds this way, and keeps open alongside your chat, is an artifact. Each artifact also has its own page and link, so you can share and collaborate with your team directly in Claude.
 
-[Artifacts(opens in new tab)](https://claude.com/features/artifacts) are the outputs you create with Claude: a document, a deck, a design, a dashboard, a prototype. Instead of getting a long block of code or text buried in the chat, you see the real thing take shape in a dedicated window alongside your conversation, ready to use and refine.
+Loading
 
-Claude creates an artifact when you ask for something that stands on its own — something you'll want to edit, reuse, or share rather than just read once. If you want to ensure Claude creates an artifact, just say so: "Create this as an artifact."
+Not everything Claude makes beside the chat is an artifact. Claude can also build a file for you to download, or export to other places like PowerPoint or Google Docs. An artifact has a page you can share and edit with teammates right in Claude.
 
-On paid plans, an artifact isn't tied to the conversation that created it: everything you make is saved in the Artifacts tab, so you can come back to it later, keep editing it, and share it with others. Think of the conversation as where you create, and the Artifacts tab as where your outputs live. (On the Free plan, an artifact stays with the conversation that created it.)
+## Ask Claude for an artifact[](#ask-claude-for-an-artifact)
 
-## Designs, decks, and living documents[](#designs-decks-and-living-documents)
+You can specify which kind you want, or describe the work and Claude picks what fits the task. When your work fits none of those kinds, like a tracker or a quiz, Claude builds a custom artifact for it. If Claude makes the wrong one, say which you wanted, for instance *"make this a Claude Slides deck"* or *"give me this as a file for PowerPoint."*
 
-Claude has a dedicated way to make each of the most common work deliverables:
+Loading
 
-- **Claude Design** creates visual work — landing pages, one-pagers, product mockups, interface prototypes. You can bring in your design system so drafts come back in your brand, and edit directly on the canvas: drag, resize, and align anything.
-- **Claude Slides** creates presentations. Share the notes, report, or conversation you already have, and Claude outlines, writes, and lays out every slide. You can edit any slide directly, add your own images, and present without leaving Claude — or export to PowerPoint or PDF when you're ready.
-- **Claude Docs** creates living documents — rich-text pages you and Claude write together. Claude drafts in front of you, asks clarifying questions, and explains its choices in comments. You and your colleagues can edit the same doc at the same time, and changes save as you go. Claude can also pull data from your connected tools into charts and diagrams right in the page — a snapshot, not a live feed; ask Claude to refresh it when you need the latest. Export to Google Docs or as a .docx file anytime.
+For more on each kind, see the [Help Center(opens in new tab)](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_11d5a9a5fa). To check which kinds your plan has, see [What your plan includes](#what-your-plan-includes).
 
-These work together in one conversation, and you can ask for one from another: "turn this doc into a deck," or "make a one-pager from this deck."
+### Build from the conversation[](#build-from-the-conversation)
 
-
+Starting right in the chat where you work, Claude can build artifacts. It can use any information you provide, like your connectors or [skills](#save-your-process-for-making-artifacts), or what's already in the conversation:
 
-Plan availability
+- **The conversation itself**, when you talk an idea through or brainstorm with Claude first: *"Mock up a landing page for the idea we just worked out, in Claude Design, using our design system."*
+- **Files you attach**, like meeting notes, a report, or a photo of a whiteboard: *"Make a six-slide Claude Slides deck from this report for my leadership team."*
+- **[Tools you have connected(opens in new tab)](https://support.claude.com/tutorials/getting-started-with-connectors)**, like your drive, calendar, or team chat: *"Pull this quarter's numbers from \[the tool\] into a one-page update for my team, as a Claude Doc."*
+- **Numbers that keep changing:** A doc shows the numbers as they were when Claude pulled them, and you can ask again for the latest. For numbers that stay current, ask for a dashboard or custom artifact that reads from your connected tools: *"Build a dashboard of this quarter's revenue by region from \[the tool\]."*
 
-Claude Design, Claude Slides, and Claude Docs are in beta and available on paid plans (Pro, Max, Team, and Enterprise). On Pro and Max they're on by default, and you can turn each one off in Settings \> Capabilities. On Team they're on by default, and an admin can turn them off. On Enterprise they're off by default until an admin turns them on in Organization settings \> Artifacts. If you don't see them, ask your admin, who also controls whether artifacts are on for your organization.
+### Get a better first version[](#get-a-better-first-version)
 
-## Artifacts on every plan[](#artifacts-on-every-plan)
+Claude does a better job with more information and context about your work. A few ways to give it that:
 
-Not everything needs Claude Design, Claude Slides, or Claude Docs. Ask for a dashboard of your team's numbers, a tracker you update each week, a flowchart of your onboarding process, an interactive page, or working code, and Claude builds it as an artifact right in the conversation — on every plan, including Free.
+- **Name the audience and the purpose:** *"This is for my leadership team, who will use it to set next quarter's budget."*
+- **Show an example:** Attach a deck, doc, or screenshot you like and say what to take from it: *"Match the structure of this deck, not its colors."*
+- **Use your design system:** Once your organization has set up its colors, type, and components in Claude, decks and designs come out on brand.
+- **Teach Claude your taste once:** Put your house style (tone, layout habits, words to avoid) in a skill, so you don't have to repeat it. [Save your process for making artifacts](#save-your-process-for-making-artifacts) explains how.
 
-Artifacts are different from Claude's file creation, which produces downloadable Word documents, Excel spreadsheets, PowerPoint presentations, and PDF files. The practical difference: an artifact opens and updates right in Claude and is shared by link, while file creation hands you a file to download and open in other apps.
+## Edit it yourself or ask Claude[](#edit-it-yourself-or-ask-claude)
 
-## Creating your first artifact[](#creating-your-first-artifact)
+You and Claude work on the same artifact. Change it yourself or ask Claude to, at any point, and pick the way that fits the size of the change.
 
-Creating an artifact is as simple as having a conversation. Describe what you want in any conversation with Claude (the composer's Output menu lets you pick a design, slides, or a doc), or start from the Artifacts tab, where you can pick a design, a deck, or a doc and describe what you need.
+- **A small fix, like a word or a number:** In a deck, doc, or design, click into it and type, drag, or resize. In an animation, open **Tweaks** to retype the on-screen text. It saves as you go.
+- **A change to one part:** Click **Comment**, click the spot, write the request, and keep **Send to Claude** checked. In a doc, select the text, add a comment, and mention **@Claude**.
+- **A change to the whole thing:** Ask in the conversation, for example *"Cut this to five slides"* or *"Restyle this in our design system."*
 
-For example, you might say (the first three assume your plan — and on Team and Enterprise, your admin — has the design, deck, and doc experiences turned on):
+To change a dashboard or a custom artifact, ask in the conversation, or leave a comment with **Send to Claude** checked. If you've edited a deck or design by hand, say what to keep when you ask Claude for a rework.
 
-- “Turn these meeting notes into a five-slide deck for my team meeting”Creates a deck you can edit slide by slide and present.
-  
-  
-- “Draft a one-page project brief for the onboarding revamp as a doc I can share with the team”Creates a living doc your team can edit with you.
-  
-  
-- “Design a landing page for a productivity app with a hero section and feature list”Creates a design on an editable canvas.
-  
-  
-- “Build an interactive dashboard that lets me input monthly expenses and see a breakdown”Creates an interactive dashboard — available on any plan.
-  
-  
+Loading
 
-When the artifact appears, you can copy it or download it — and keep going: everything stays editable.
+Once you have one artifact, build the next from it without explaining the work again, for example *"Turn this Claude Doc into a six-slide deck."*
 
-Whatever you ask for, Claude uses the context it already has — the files you've shared, the conversation so far, your project knowledge, and your connected tools — so you don't have to feed it everything. If you've just worked through an analysis together, the deck starts from that thinking.
+## Share, collaborate, and export[](#share-collaborate-and-export)
 
-## Working on an artifact[](#working-on-an-artifact)
+You can share an artifact and edit it directly with your team, on a page that Claude hosts. Everyone opens the same page and sees the artifact and its comments, not your conversation with Claude. In a doc, deck, or design, people with edit access can work at the same time and see each other's changes as they happen. Claude keeps working on it too, whenever you or a teammate with edit access asks for a change.
 
-Once an artifact exists, you have three ways to change it — and you can mix them freely (editing directly and commenting are part of the design, deck, and doc experiences):
+Other people can't open an artifact until you share it. To share, click **Share** at the top right of the artifact and choose what each person can do. People you invite need a Claude account. For every sharing setting and the options on each plan, see [Share artifacts(opens in new tab)](share-artifacts.md) in the Help Center.
 
-- **Edit it directly.** Type straight into a doc, edit any slide, or drag and resize elements on a design canvas. Your edits and Claude's can land side by side.
-- **Comment for Claude.** Leave a comment on the exact element, slide, or passage you want changed, and Claude makes the change there. In a doc, @-mention Claude in a comment and it replies explaining what it changed and why.
-- **Just ask.** Keep talking in the conversation and Claude takes the next pass on the artifact, showing you every change it makes.
+Loading
 
-Fixing a typo or nudging a logo yourself means you don't have to describe the change and wait for a rewrite. One note on where this happens: editing directly, commenting, and changing sharing happen on desktop or web — on mobile, you can ask for an artifact in any conversation and open it full screen in the Artifacts tab.
+When the work has to leave Claude, export a file in the format the destination needs, like PowerPoint or Google Slides for a deck, Word or Google Docs for a doc, or MP4 for an animation. Open **Share** or the artifact's title menu and choose **Export**.
 
-## Sharing your work[](#sharing-your-work)
+### What your plan includes[](#what-your-plan-includes)
 
-Your artifacts are private until you share them. For designs, decks, and docs, add people by name or email and choose what each person can do — view, comment, or edit (docs offer view and edit) — or share a link with everyone in your organization. Anyone you share with needs a Claude account to open the artifact.
+- **Every plan, including Free:** you can ask for an artifact and make Claude Docs, Slides, and Design.
+- **Paid plans (Pro, Max, Team, Enterprise):** Claude Dashboards (in beta), saving entries in an artifact, and connecting it to your tools.
+- **Team and Enterprise:** Claude Motion (in beta). An owner of your organization decides [which kinds you can use(opens in new tab)](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md#h_6e06d8f1a8) and whether you can share outside it.
 
-- **On Pro and Max plans**, you choose between keeping an artifact to yourself or sharing it with anyone who has the link — and you can publish a design or a deck as a public artifact. Only the artifact becomes public — your conversation stays private.
-- **On Team and Enterprise plans**, links stay inside your organization by default. Sharing outside the organization ("anyone with the link") is available only after an Owner or Primary Owner turns on External sharing in Organization settings \> Artifacts.
-- **On the Free plan**, you can copy your work, download it, or publish it so anyone with the link can view it.
+For the details on each plan, see [What are artifacts and how do I use them(opens in new tab)](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md) in the Help Center.
 
-When the work needs to leave Claude, export it. Artifacts export to files that match what you've made: a deck to .pptx or .pdf, a design to .pptx, .pdf, or .html, a doc to Google Docs or .docx. You can also copy or download any artifact directly from the artifact window.
+## See everything you've made in one place[](#see-everything-youve-made-in-one-place)
 
-## Tips for getting the most from artifacts[](#tips-for-getting-the-most-from-artifacts)
+Everything you make is saved on the Artifacts page in the sidebar, wherever you started it, so you can open each one again from any device. You can start an artifact on the web, in the desktop app, in the mobile app, or in Claude Code, and you can edit a doc, deck, or design in the mobile app. From the Artifacts page you can also start a new one by picking the kind you want under **Make something new**.
 
-**Ask for the deliverable, not just the content.** "Summarize our Q3 results" gets you a chat reply; "turn our Q3 results into a one-page doc for the leadership team" gets you an artifact you can share and keep working on.
+Loading
 
-**Be specific about what you want.** "Build a budget tracker" is good, but "Build a monthly budget tracker where I can input expenses by category, see a pie chart breakdown, and get a warning when I'm over budget" is better.
+## Save your process for making artifacts[](#save-your-process-for-making-artifacts)
 
-**Describe the end user.** Telling Claude who will use the artifact helps it make appropriate design choices. "This flowchart is for new employees" leads to different results than "This flowchart is for the engineering team."
+Using [skills(opens in new tab)](../02-Claude-Code-CLI/what-are-skills.md), you can save your format and your checks once, and Claude follows them each time you ask for that work. A skill is a set of instructions for one kind of work, like the Monday status deck or the monthly board update.
 
-**Build on work you've already done.** The best artifacts come at the end of a conversation, when Claude already understands the problem.
+Loading
 
-**Refresh data when you need it current.** Charts and diagrams embedded in a doc don't update on their own — when you want the latest numbers, ask Claude to pull fresh data from your connected tools and update the chart.
+To make one, describe your process in a conversation, and Claude writes the skill. Say where the notes or numbers come from, the kind of artifact you want, who reads it, and what you'd check before sending it. For example: *"Make a skill for my Monday status deck. Pull last week's updates from \[the tool\], make a five-slide Claude Slides deck for the team leads, and check each number against its source before you finish."*
 
-## Lesson reflection[](#lesson-reflection)
+## Where to go next[](#where-to-go-next)
 
-Before moving on, consider:
+Start with work you have due this week: ask Claude for a first version, then share it with a teammate.
 
-- What's the deliverable you most often build by hand — a status doc, a team deck, a one-pager — that could start as an artifact instead?
-- What recurring work could benefit from having an interactive artifact you can reuse?
-- Who would you share your next piece of work with, and what should they be able to do — view it, comment on it, or edit it with you?
+For more detail, see:
 
-## What's next[](#whats-next)
+- **Decks:** [Making slides and presentations with Claude(opens in new tab)](https://support.claude.com/tutorials/using-claude-design-for-presentations-and-slide-decks)
+- **Prototypes:** [Using Claude for prototypes and UX(opens in new tab)](https://support.claude.com/tutorials/using-claude-design-for-prototypes-and-ux)
+- **Decks and designs that match your brand:** [Setting up a design system in Claude(opens in new tab)](https://support.claude.com/tutorials/create-a-design-system-with-claude)
+- **Trackers, quizzes, and other custom artifacts:** [Build and share tools in Claude with custom artifacts(opens in new tab)](https://support.claude.com/tutorials/build-custom-artifacts-with-claude)
 
-In the next lesson, you'll learn about Skills — reusable instruction sets that teach Claude specialized workflows.
-
-[Previous lessonIntroduction to projects](https://support.claude.com/courses/claude-101/introduction-to-projects)[Next lessonWorking with skills](https://support.claude.com/courses/claude-101/working-with-skills)
-
-Lesson 6 of 13 · Claude 101Creating with artifacts
-
-Meet Claude
-
-- [What is Claude?](https://support.claude.com/courses/claude-101/what-is-claude)
-- [Your first conversation with Claude](https://support.claude.com/courses/claude-101/your-first-conversation-with-claude)
-- [Getting better results](https://support.claude.com/courses/claude-101/getting-better-results)
-- [How you'll work with Claude on your desktop](https://support.claude.com/courses/claude-101/claude-desktop-app-chat-cowork-code)
-
-Organizing your work and knowledge
-
-- [Introduction to projects](https://support.claude.com/courses/claude-101/introduction-to-projects)
-- [Creating with artifacts](https://support.claude.com/courses/claude-101/creating-with-artifacts)
-- [Working with skills](https://support.claude.com/courses/claude-101/working-with-skills)
-
-Expanding Claude's reach
-
-- [Connecting your tools](https://support.claude.com/courses/claude-101/connecting-your-tools)
-- [Enterprise search](https://support.claude.com/courses/claude-101/enterprise-search)
-- [Research for deep dives](https://support.claude.com/courses/claude-101/research-mode-for-deep-dives)
-
-Putting it all together
-
-- [Claude in action: use-cases by role](https://support.claude.com/courses/claude-101/claude-in-action-use-cases-by-role)
-- [Other ways to work with Claude](https://support.claude.com/courses/claude-101/other-ways-to-work-with-claude)
-
-Conclusion & badge
-
-- [What's next?](https://support.claude.com/courses/claude-101/what-s-next)
-- [Course quizQuiz](https://support.claude.com/courses/claude-101/certificate-of-completion)
-
-- [Completion badge](https://support.claude.com/courses/claude-101/badge)
-
-- [What are artifacts?](#what-are-artifacts)
-- [Designs, decks, and living documents](#designs-decks-and-living-documents)
-- [Artifacts on every plan](#artifacts-on-every-plan)
-- [Creating your first artifact](#creating-your-first-artifact)
-- [Working on an artifact](#working-on-an-artifact)
-- [Sharing your work](#sharing-your-work)
-- [Tips for getting the most from artifacts](#tips-for-getting-the-most-from-artifacts)
-- [Lesson reflection](#lesson-reflection)
+- [What artifacts are](#what-artifacts-are)
+- [Ask Claude for an artifact](#ask-claude-for-an-artifact)
+- [Edit it yourself or ask Claude](#edit-it-yourself-or-ask-claude)
+- [Share, collaborate, and export](#share-collaborate-and-export)
+- [See everything you've made in one place](#see-everything-youve-made-in-one-place)
+- [Save your process for making artifacts](#save-your-process-for-making-artifacts)
+- [Where to go next](#where-to-go-next)

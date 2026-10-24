@@ -2,7 +2,7 @@
 title: "Rate Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/workspaces/rate_limits"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-05T06:38:03Z"
+fetched_at: "2026-10-21T06:29:31Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fworkspaces%2Frate_limits)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fworkspaces%2Frate_limits)
 
 
 
@@ -132,6 +132,9 @@ Rate Limits
 
 List Workspace Rate Limits
 
+
+Set Workspace Rate Limits
+
 Members
 
 Service Accounts
@@ -144,7 +147,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -154,9 +157,13 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
+
+Webhooks
 
 
 Skills
@@ -174,6 +181,29 @@ Skills
 Delete Skill
 
 Versions
+
+
+User Profiles
+
+
+Create User Profile
+
+
+List User Profiles
+
+
+Get User Profile
+
+
+Update User Profile
+
+
+Delete User Profile
+
+
+Create Enrollment URL
+
+Action URLs
 
 
 Tunnels
@@ -199,24 +229,6 @@ Tunnels
 Certificates
 
 
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
 Compliance API
 
 Activities
@@ -227,13 +239,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -241,9 +255,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
+[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -252,17 +266,29 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces)
 
 # Rate Limits
+
+Copy page
+
+
+
+cURL
 
 ##### [List Workspace Rate Limits](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/rate_limits/list)
 
 GET/v1/organizations/workspaces/{workspace_id}/rate_limits
 
 List a workspace's rate limits.
+
+##### [Set Workspace Rate Limits](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/rate_limits/update)
+
+POST/v1/organizations/workspaces/{workspace_id}/rate_limits/{rate_limit_id}
+
+Set or clear rate-limit overrides for one rate-limit group in a workspace.
 
 ##### Models
 
@@ -287,6 +313,116 @@ type: "organization"
 Always `organization`: no workspace-level override is stored, so the organization's value applies.
 
 defaultorganization
+
+
+
+BetaWorkspaceRateLimitType = "fast_itpmca" or "fast_otpm" or "input_tokens_per_minute" or 6 more
+
+
+
+Rate limiter type.
+
+One of the following:
+
+"fast_itpmca"
+
+
+
+"fast_otpm"
+
+
+
+"input_tokens_per_minute"
+
+
+
+"input_tokens_per_minute_cache_aware"
+
+
+
+"output_tokens_per_minute"
+
+
+
+"requests_per_minute"
+
+
+
+"tokens_per_day"
+
+
+
+"tokens_per_minute"
+
+
+
+"tool_uses_per_second"
+
+
+
+
+
+BetaWorkspaceRateLimitUpdateValue object{ type, value }
+
+
+
+
+
+type: [BetaWorkspaceRateLimitType](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/rate_limits#beta_workspace_rate_limit_type)
+
+
+
+Rate limiter type.
+
+One of the following:
+
+"fast_itpmca"
+
+
+
+"fast_otpm"
+
+
+
+"input_tokens_per_minute"
+
+
+
+"input_tokens_per_minute_cache_aware"
+
+
+
+"output_tokens_per_minute"
+
+
+
+"requests_per_minute"
+
+
+
+"tokens_per_day"
+
+
+
+"tokens_per_minute"
+
+
+
+"tool_uses_per_second"
+
+
+
+
+
+value: number or null
+
+
+
+New limit value. Set to null to clear the workspace override and fall back to the organization limit.
+
+minimum0
+
+maximum9007199254740991
 
 
 

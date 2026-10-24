@@ -2,7 +2,7 @@
 title: "OneLogin SSO setup | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917899-onelogin-sso-setup"
 category: "21-Account-Support"
-fetched_at: "2026-10-10T06:25:19Z"
+fetched_at: "2026-10-23T06:29:04Z"
 tags: ["account"]
 ---
 
@@ -89,4 +89,4 @@ In the **Users** tab, assign individual people or use **Rules** to automatically
 
 ## Need help?
 
-See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your OneLogin domain and a screenshot of your SAML configuration.
+See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](https://support.claude.com/en/articles/9015913)** with your OneLogin domain and a screenshot of your SAML configuration.

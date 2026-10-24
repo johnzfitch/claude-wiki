@@ -2,7 +2,7 @@
 title: "Claude Code Analytics API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/claude-code-analytics-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:33:29Z"
+fetched_at: "2026-10-20T06:39:31Z"
 tags: ["api", "claude-code"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "claude-code"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fclaude-code-analytics-api)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fclaude-code-analytics-api)
 
 
 
@@ -44,9 +44,11 @@ Monitoring
 
 [Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
 
+[OpenTelemetry](manage-claude-opentelemetry.md)
+
 Data & compliance
 
-[Data residency](manage-claude-data-residency.md)[API and data retention](../Guides/build-with-claude-api-and-data-retention.md)
+[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
 
 [Access Transparency](manage-claude-access-transparency.md)
 
@@ -58,7 +60,7 @@ Compliance API
 
 [Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Admin](manage-claude-admin-api.md)Monitoring
 
@@ -76,9 +78,9 @@ Programmatically access your organization's Claude Code usage analytics and prod
 
 
 
-**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization in **Console → Settings → Organization**.
+**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.
 
-The Claude Code Analytics Admin API provides programmatic access to daily aggregated usage metrics for Claude Code users, enabling organizations to analyze developer productivity and build custom dashboards. This API provides more detail than the basic [Analytics dashboard](playground.md) without the complexity of the OpenTelemetry integration.
+The Claude Code Analytics Admin API provides programmatic access to daily aggregated usage metrics for Claude Code users, enabling organizations to analyze developer productivity and build custom dashboards. This API provides more detail than the basic [Analytics dashboard](playground.md) in the Claude Console, without the complexity of the OpenTelemetry integration.
 
 This API enables you to better monitor, analyze, and optimize your Claude Code adoption:
 
@@ -358,7 +360,7 @@ The Claude Code Analytics API helps you understand and optimize your team's deve
 
 - [Admin API](manage-claude-admin-api.md)
 - [Admin API reference](../Admin/http-beta-organization.md)
-- [Claude Code Analytics dashboard](playground.md)
+- [Claude Code Analytics dashboard](playground.md) in the Claude Console
 - [Usage and Cost API](manage-claude-usage-cost-api.md) - Track API usage across all Anthropic services
 - [Compliance API](manage-claude-compliance-api.md) - Retrieve audit and activity data
 - [Identity and access management](../../13-Enterprise-Admin/iam.md)

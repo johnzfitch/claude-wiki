@@ -2,7 +2,7 @@
 title: "LaunchNotes Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/graph"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:48Z"
+fetched_at: "2026-10-23T06:29:41Z"
 tags: ["api", "bedrock", "case-studies", "enterprise", "security"]
 ---
 
@@ -33,7 +33,7 @@ incident identification for SRE teams
 
 in meeting time with automated updates
 
-LaunchNotes leverages [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) not only to power key capabilities in its core product management platform, but also as the foundation of Graph, its new developer productivity solution for engineering teams. Graph combines data from GitHub, Jira, and Linear with Claude's analysis to help R&D teams understand the context behind their development metrics.
+LaunchNotes leverages [Claude in Amazon Bedrock](https://aws.amazon.com/bedrock/claude/) not only to power key capabilities in its core product management platform, but also as the foundation of Graph, its new developer productivity solution for engineering teams. Graph combines data from GitHub, Jira, and Linear with Claude’s analysis to help R&D teams understand the context behind their development metrics.
 
 Teams using Graph with Claude in Amazon Bedrock have achieved:
 
@@ -45,21 +45,21 @@ Teams using Graph with Claude in Amazon Bedrock have achieved:
 
 Many engineering teams face increasing pressure to maintain productivity despite a wave of recent downsizing. As companies optimize their organizational structures, many engineering managers find themselves overseeing significantly larger teams.
 
-"The macroeconomic environment has forced companies to tighten their belts, which has particularly impacted middle management in product engineering," said Jake Brereton, COO at LaunchNotes. "Many engineering managers who previously oversaw teams of five now manage fifteen, yet still need to deliver the same quality of leadership and results."
+“The macroeconomic environment has forced companies to tighten their belts, which has particularly impacted middle management in product engineering,” said Jake Brereton, COO at LaunchNotes. “Many engineering managers who previously oversaw teams of five now manage fifteen, yet still need to deliver the same quality of leadership and results.”
 
-This rapid expansion of management scope brings significant challenges in sustaining tight team alignment, ensuring real-time project visibility, and proactively addressing bottlenecks and anomalies. Traditional development tools weren't designed for these challenges.
+This rapid expansion of management scope brings significant challenges in sustaining tight team alignment, ensuring real-time project visibility, and proactively addressing bottlenecks and anomalies. Traditional development tools weren’t designed for these challenges.
 
 ## Why LaunchNotes standardized on Claude in Amazon Bedrock
 
-LaunchNotes' journey with Claude began in their core product announcements platform. After seeing Claude's impact there, choosing it for Graph was a natural decision. "Without Claude, we might not have felt confident enough to take the bet on Graph," said Tyler Davis, CEO at LaunchNotes. "Having a platform our engineering team was familiar with made all the difference. Claude has literally enabled us, as a business, to attack an entirely new market opportunity."
+LaunchNotes’ journey with Claude began in their core product announcements platform. After seeing Claude’s impact there, choosing it for Graph was a natural decision. “Without Claude, we might not have felt confident enough to take the bet on Graph,” said Tyler Davis, CEO at LaunchNotes. “Having a platform our engineering team was familiar with made all the difference. Claude has literally enabled us, as a business, to attack an entirely new market opportunity.”
 
-Implementing Claude in Amazon Bedrock provided crucial advantages. "What we value most about Bedrock is the straightforward access to the Anthropic foundational models while keeping our customers' data within our control," said Davis. "This means we can focus on building a great user experience while ensuring our data privacy and security are sound."
+Implementing Claude in Amazon Bedrock provided crucial advantages. “What we value most about Bedrock is the straightforward access to the Anthropic foundational models while keeping our customers’ data within our control,” said Davis. “This means we can focus on building a great user experience while ensuring our data privacy and security are sound.”
 
-Amazon Bedrock's deep integration with [Amazon Web Services (AWS) infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/) proved particularly valuable as LaunchNotes scaled. "Bedrock has enabled deeper integrations with our database and search infrastructure allowing us to scale real-time updates more efficiently," said Davis. "Cross-region inference has allowed us to maintain true high availability. Additionally, our teams have been building systems in AWS for years. Bedrock allows them to build with these new capabilities with confidence."
+Amazon Bedrock’s deep integration with [Amazon Web Services (AWS) infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/) proved particularly valuable as LaunchNotes scaled. “Bedrock has enabled deeper integrations with our database and search infrastructure allowing us to scale real-time updates more efficiently,” said Davis. “Cross-region inference has allowed us to maintain true high availability. Additionally, our teams have been building systems in AWS for years. Bedrock allows them to build with these new capabilities with confidence.”
 
 ## How Claude powers intelligent engineering management
 
-LaunchNotes' new product, Graph, uses Claude to transform engineering data into actionable insights. "Graph functions as an ETL platform with Claude managing the data pipelines," said Davis. "For example, when an engineering manager asks for sprint analysis, Graph creates a pipeline that pulls data from Linear and GitHub, processes it, and delivers meaningful results."
+LaunchNotes’ new product, Graph, uses Claude to transform engineering data into actionable insights. “Graph functions as an ETL platform with Claude managing the data pipelines,” said Davis. “For example, when an engineering manager asks for sprint analysis, Graph creates a pipeline that pulls data from Linear and GitHub, processes it, and delivers meaningful results.”
 
 The core LaunchNotes product uses Claude to power three key features:
 
@@ -76,15 +76,15 @@ LaunchNotes helps engineering leaders maintain effective oversight as their team
 - Generates tailored, up-to-date release notes in seconds
 - Provides shared context for team meetings without manual preparation
 
-"Our goal is to help engineering managers anticipate and prevent problems before they escalate," said Davis. "Graph transforms hours of manual analysis into instant insights."
+“Our goal is to help engineering managers anticipate and prevent problems before they escalate,” said Davis. “Graph transforms hours of manual analysis into instant insights.”
 
-The impact extends beyond their customers to LaunchNotes' 16-person team, where Claude has become central to daily operations. "When we switched to Claude, we asked everyone to stop paying for other AI tools and standardize on the team plan," said Brereton.
+The impact extends beyond their customers to LaunchNotes’ 16-person team, where Claude has become central to daily operations. “When we switched to Claude, we asked everyone to stop paying for other AI tools and standardize on the team plan,” said Brereton.
 
 ## Looking toward an AI-powered future of engineering management
 
 LaunchNotes envisions transforming how engineering teams operate in an AI-driven world. While the market has focused on tools for senior leadership and individual contributors, LaunchNotes sees an opportunity to empower the essential but often overlooked middle management layer.
 
-"Most engineering tools today target either VPs and CTOs with analytics dashboards or individual contributors with coding assistance," said Brereton. "But that middle management layer—keeping engineering teams aligned and productive—has been overlooked. That's where we're heading, with Claude in Amazon Bedrock as our backbone."
+“Most engineering tools today target either VPs and CTOs with analytics dashboards or individual contributors with coding assistance,” said Brereton. “But that middle management layer—keeping engineering teams aligned and productive—has been overlooked. That’s where we’re heading, with Claude in Amazon Bedrock as our backbone.”
 
 Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a future where engineering managers can focus on what matters most: building strong teams, making strategic decisions, and driving innovation. As companies continue to optimize their organizational structures, LaunchNotes is positioning Graph to help engineering managers not just adapt to change, but thrive in leading larger, more complex teams.
 
@@ -111,7 +111,8 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -129,12 +130,12 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -167,7 +168,7 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -185,6 +186,7 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -200,7 +202,7 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -235,7 +237,8 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -253,12 +256,12 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -291,7 +294,7 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -309,6 +312,7 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -324,7 +328,7 @@ Through their collaboration with Anthropic and AWS, LaunchNotes aims to create a
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

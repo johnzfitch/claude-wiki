@@ -2,7 +2,7 @@
 title: "Solvely.ai Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/solvely"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:29:00Z"
+fetched_at: "2026-10-23T06:30:09Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -46,19 +46,19 @@ Solvely was founded to address this challenge. Zhang recognized that LLM technol
 
 ## Why Solvely.ai chose Claude
 
-Solvely’s evaluation found that Claude offered unique advantages essential for educational applications. The team initially discovered Claude's superior language capabilities, which delivered more personalized interactions crucial for effective tutoring.
+Solvely’s evaluation found that Claude offered unique advantages essential for educational applications. The team initially discovered Claude’s superior language capabilities, which delivered more personalized interactions crucial for effective tutoring.
 
-"When you talk to some other models, it's rigorous but feels more like a chatbot. Claude feels very personalized—like you're actually talking to someone," said Dr. Nick Yuan, co-founder and AI Lead at Solvely. "Claude's communication style is super important for social science and humanities tutoring because those questions require helping students understand concepts in a more humanized way."
+“When you talk to some other models, it’s rigorous but feels more like a chatbot. Claude feels very personalized—like you’re actually talking to someone,” said Dr. Nick Yuan, co-founder and AI Lead at Solvely. “Claude’s communication style is super important for social science and humanities tutoring because those questions require helping students understand concepts in a more humanized way.”
 
-As their platform evolved, Solvely also discovered Claude's exceptional coding abilities. This enabled them to build innovative features like real-time interactive visualizations. Claude Sonnet 3.7's improved performance accelerated these capabilities, reducing generation time from minutes to seconds—critical for maintaining engagement with their young user base.
+As their platform evolved, Solvely also discovered Claude’s exceptional coding abilities. This enabled them to build innovative features like real-time interactive visualizations. Claude Sonnet 3.7’s improved performance accelerated these capabilities, reducing generation time from minutes to seconds—critical for maintaining engagement with their young user base.
 
-Beyond technical capabilities, Solvely discovered a fundamental alignment with Anthropic's vision and values. Yuan explained, "What really resonates with us is Anthropic's broader mission. Working with Claude feels like a true partnership in pursuit of something meaningful—we're not just using a tool, we're collaborating with a team that shares our commitment to making education more accessible and equitable for everyone."
+Beyond technical capabilities, Solvely discovered a fundamental alignment with Anthropic’s vision and values. Yuan explained, “What really resonates with us is Anthropic’s broader mission. Working with Claude feels like a true partnership in pursuit of something meaningful—we’re not just using a tool, we’re collaborating with a team that shares our commitment to making education more accessible and equitable for everyone.”
 
 ## How Claude powers personalized learning companions
 
 Solvely leverages Claude to create an all-in-one learning companion that supports students throughout their educational journey:
 
-**Homework Support with Understanding**: Solvely guides students through problem-solving with step-by-step explanations. Their "Study Mode" walks students through each step of the solution as a tutor would, fostering genuine understanding rather than just answer-checking.
+**Homework Support with Understanding**: Solvely guides students through problem-solving with step-by-step explanations. Their “Study Mode” walks students through each step of the solution as a tutor would, fostering genuine understanding rather than just answer-checking.
 
 **Interactive Learning Visualizations**: Claude Sonnet generates real-time interactive visualizations that transform abstract concepts into dynamic experiences. Students can manipulate variables—such as shifting supply-demand curves by changing input values—creating a more effective learning experience than a static textbook.
 
@@ -66,25 +66,25 @@ Solvely leverages Claude to create an all-in-one learning companion that support
 
 **Writing and Research Support**: Solvely helps students develop crucial academic skills by assisting with research, paper formatting, and proper citations, helping students build the skills needed for academic success.
 
-**Test Preparation**: Solvely offers personalized exam preparation that adapts to each student's learning style and knowledge gaps so they develop stronger testing strategies and deeper subject mastery.
+**Test Preparation**: Solvely offers personalized exam preparation that adapts to each student’s learning style and knowledge gaps so they develop stronger testing strategies and deeper subject mastery.
 
 ## Measurable impact on learning outcomes
 
-Claude's integration into Solvely's platform has led to better educational and business performance outcomes. Students report significant improvements in understanding and grades. One physics student progressed from a 62% on their first midterm to a B average, noting, "Instead of copying answers, I'm learning to solve problems on my own. The best part is being able to ask 'but why?' when I don't understand something, and it explains in different ways until it clicks."
+Claude’s integration into Solvely’s platform has led to better educational and business performance outcomes. Students report significant improvements in understanding and grades. One physics student progressed from a 62% on their first midterm to a B average, noting, “Instead of copying answers, I’m learning to solve problems on my own. The best part is being able to ask ‘but why?’ when I don’t understand something, and it explains in different ways until it clicks.”
 
-For AP Calculus students, Solvely transformed challenging topics like integration. "The breakdown of each step and explanation of WHY we do each part made everything click," said one student who improved from C to B+ within two months.
+For AP Calculus students, Solvely transformed challenging topics like integration. “The breakdown of each step and explanation of WHY we do each part made everything click,” said one student who improved from C to B+ within two months.
 
-The interactive learning features powered by Claude Sonnet have also improved comprehension speed. Zhang shared, "Users say they're learning concepts that usually take three to five days to understand from textbooks. Now with our interactive features, they grasp these concepts instantly."
+The interactive learning features powered by Claude Sonnet have also improved comprehension speed. Zhang shared, “Users say they’re learning concepts that usually take three to five days to understand from textbooks. Now with our interactive features, they grasp these concepts instantly.”
 
-This deeper understanding translates to stronger engagement metrics for Solvely as a business. Zhang explained, "Today we see users spending significantly more time on our platform. When they interact with visualizations, they not only spend more time but feel empowered to learn anything. This naturally leads them to ask more questions and seek additional support, driving engagement and retention."
+This deeper understanding translates to stronger engagement metrics for Solvely as a business. Zhang explained, “Today we see users spending significantly more time on our platform. When they interact with visualizations, they not only spend more time but feel empowered to learn anything. This naturally leads them to ask more questions and seek additional support, driving engagement and retention.”
 
-Solvely's development team has also experienced efficiency gains, with product managers and designers reporting tasks that took five days now complete in one or two, allowing for rapid iteration using Claude's feedback.
+Solvely’s development team has also experienced efficiency gains, with product managers and designers reporting tasks that took five days now complete in one or two, allowing for rapid iteration using Claude’s feedback.
 
-Most importantly, Solvely has made quality education accessible to underserved students like Dion C., who described the platform as "an ideal solution due to its affordability and accuracy" that allowed her to pursue cybersecurity education while balancing work and family responsibilities.
+Most importantly, Solvely has made quality education accessible to underserved students like Dion C., who described the platform as “an ideal solution due to its affordability and accuracy” that allowed her to pursue cybersecurity education while balancing work and family responsibilities.
 
 ## Building a future where learning is joyful again
 
-Solvely envisions a future where educational AI makes learning globally accessible while restoring its inherent joy. "Learning is a fundamentally enjoyable human experience. We're born to learn," Zhang reflected. As Claude advances and becomes more affordable, the startup plans to expand their platform globally, with the ambitious goal of eventually offering it free to users worldwide.
+Solvely envisions a future where educational AI makes learning globally accessible while restoring its inherent joy. “Learning is a fundamentally enjoyable human experience. We’re born to learn,” Zhang reflected. As Claude advances and becomes more affordable, the startup plans to expand their platform globally, with the ambitious goal of eventually offering it free to users worldwide.
 
 Through their collaboration with Anthropic, Solvely is realizing their vision that education should be a right, not a privilege—available to everyone regardless of circumstances. With Claude, they see the opportunity to provide personalized, adaptive, and genuinely enjoyable education to every child—restoring the natural joy of discovery that makes us human.
 
@@ -111,7 +111,8 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -129,12 +130,12 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -167,7 +168,7 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -185,6 +186,7 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -200,7 +202,7 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -235,7 +237,8 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -253,12 +256,12 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -291,7 +294,7 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -309,6 +312,7 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -324,7 +328,7 @@ Through their collaboration with Anthropic, Solvely is realizing their vision th
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

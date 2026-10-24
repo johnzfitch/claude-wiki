@@ -2,7 +2,7 @@
 title: "TELUS Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/telus"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:26:01Z"
+fetched_at: "2026-10-23T06:29:56Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -35,7 +35,7 @@ saved to date with 40 minutes per AI interaction
 
 TELUS, a leading communications technology company headquartered in Canada, is empowering team members by integrating Claude into everyday workflows — unleashing unprecedented levels of experimentation, creativity and productivity across the organization.
 
-"In just a couple of years, we've transformed how 57,000 team members work — with teams creating over 13,000 custom AI solutions and engineering shipping code 30% faster. Our partnership with Anthropic has been invaluable. Their commitment to building reliable, ethical AI aligns perfectly with our vision for democratizing AI access while maintaining trust and safety," said Jaime Tatis, Chief AI Officer, TELUS.
+“In just a couple of years, we’ve transformed how 57,000 team members work — with teams creating over 13,000 custom AI solutions and engineering shipping code 30% faster. Our partnership with Anthropic has been invaluable. Their commitment to building reliable, ethical AI aligns perfectly with our vision for democratizing AI access while maintaining trust and safety,” said Jaime Tatis, Chief AI Officer, TELUS.
 
 Key AI results at TELUS:
 
@@ -49,19 +49,19 @@ Key AI results at TELUS:
 
 As a company serving 20 million global customers across telecommunications, healthcare, agriculture, security and digital solutions, TELUS operates in a complex ecosystem of hundreds of specialized and vastly different technology systems. This fragmentation initially created barriers to innovation and collaboration.
 
-"Imagine trying to orchestrate a symphony where each musician speaks a different language," explained Justin Watts, Distinguished Engineer at TELUS. "Before generative AI, connecting these systems required complex custom integrations that were prohibitively expensive and time-consuming. AI now serves as a universal translator between systems, understanding their different languages and creating connections that weren't possible before. This breakthrough has eliminated silos, transforming how our teams collaborate and share information."
+“Imagine trying to orchestrate a symphony where each musician speaks a different language,” explained Justin Watts, Distinguished Engineer at TELUS. “Before generative AI, connecting these systems required complex custom integrations that were prohibitively expensive and time-consuming. AI now serves as a universal translator between systems, understanding their different languages and creating connections that weren’t possible before. This breakthrough has eliminated silos, transforming how our teams collaborate and share information.”
 
 ## Building Fuel iX
 
-Rather than simply adopting publicly-available AI tools when GenAI first came to market, TELUS built [Fuel iX](https://www.fuelix.ai/) — a proprietary generative AI platform that has become the backbone of the company's AI transformation. Fuel iX was designed with a "choice-first" philosophy, providing a secure and flexible environment for team members to access and leverage the choice of cutting-edge AI models for different tasks, including Claude models developed by Anthropic.
+Rather than simply adopting publicly-available AI tools when GenAI first came to market, TELUS built [Fuel iX](https://www.fuelix.ai/) — a proprietary generative AI platform that has become the backbone of the company’s AI transformation. Fuel iX was designed with a “choice-first” philosophy, providing a secure and flexible environment for team members to access and leverage the choice of cutting-edge AI models for different tasks, including Claude models developed by Anthropic.
 
-“When TELUS gave our team access to multiple AI models through Fuel iX, Claude became the overwhelming choice," said Watts. "The platform processes 100 billion tokens monthly, and Claude is the preferred model for some of our most complex and creative tasks."
+“When TELUS gave our team access to multiple AI models through Fuel iX, Claude became the overwhelming choice,” said Watts. “The platform processes 100 billion tokens monthly, and Claude is the preferred model for some of our most complex and creative tasks.”
 
-Fuel iX's internal success was so remarkable that TELUS made it available to customers as well. TELUS's GenAI Customer Support tool, powered by Fuel iX, became the world's first to achieve ISO 31700-1 [Privacy by Design certification](https://www.telus.com/en/about/news-and-events/media-releases/telus-genai-customer-support-tool-becomes-worlds-first-to-achieve-privacy-by-design-certification), reflecting TELUS' commitment to building AI solutions that prioritize data protection and user trust from the ground up.
+Fuel iX’s internal success was so remarkable that TELUS made it available to customers as well. TELUS’s GenAI Customer Support tool, powered by Fuel iX, became the world’s first to achieve ISO 31700-1 [Privacy by Design certification](https://www.telus.com/en/about/news-and-events/media-releases/telus-genai-customer-support-tool-becomes-worlds-first-to-achieve-privacy-by-design-certification), reflecting TELUS’ commitment to building AI solutions that prioritize data protection and user trust from the ground up.
 
 ## Why TELUS chose Claude to power innovation
 
-Claude's appeal came from its seamless integration into existing workflows and its strong instruction-following capabilities. Developers could use Claude within their preferred tools like GitHub Copilot, Cline and VS Code. "Developers don't want to abandon the tools they already love and switch to something completely new. Claude enhances these existing tools, making them more powerful without disrupting the creative process," Watts explained.
+Claude’s appeal came from its seamless integration into existing workflows and its strong instruction-following capabilities. Developers could use Claude within their preferred tools like GitHub Copilot, Cline and VS Code. “Developers don’t want to abandon the tools they already love and switch to something completely new. Claude enhances these existing tools, making them more powerful without disrupting the creative process,” Watts explained.
 
 As a global leader in the ethical and human-centric use of AI, TELUS is proud to partner with other organizations that approach technology with a similar philosophy. Like TELUS, Anthropic understands that success can only be achieved by embedding responsibility into data architecture, governance, and workflows. Earlier this year, both TELUS and Anthropic were among the first in the world to submit to the [Hiroshima AI Process (HAIP) Reporting Framework](https://transparency.oecd.ai/), sharing proven approaches and best practices for safe and trustworthy AI development in alignment with the G7 AI Code of Conduct.
 
@@ -71,13 +71,13 @@ TELUS’ Claude implementation spans two key dimensions. Developers use Claude t
 
 The results have been remarkable. Team members have built tailored AI solutions for accessing HR policies, real-time translation, brand guidelines and conversation coaches.
 
-This scale of grassroots innovation is powered in part by Model Context Protocol (MCP), which Watts described as "the most transformative technology to impact TELUS in decades." MCP enables Claude to connect previously incompatible business systems, eliminating the complex integration work that would have made these team-built solutions impossible.
+This scale of grassroots innovation is powered in part by Model Context Protocol (MCP), which Watts described as “the most transformative technology to impact TELUS in decades.” MCP enables Claude to connect previously incompatible business systems, eliminating the complex integration work that would have made these team-built solutions impossible.
 
 ## Transforming how team members work and innovate
 
-Claude has turned TELUS' "everyone should be a builder" philosophy from aspiration into reality. Previously, team members with breakthrough ideas often faced technical barriers that needed months of support from development teams. Now, innovation happens in real time.
+Claude has turned TELUS’ “everyone should be a builder” philosophy from aspiration into reality. Previously, team members with breakthrough ideas often faced technical barriers that needed months of support from development teams. Now, innovation happens in real time.
 
-With AI, engineering teams are shipping code 30% faster, removing bottlenecks from development to planning and resource allocation. Meanwhile, team members across the company are building their own AI solutions that drive business results and improve the customer experience. Senior leaders who haven't written code in decades are now creating Slack applications that streamline daily operations—some even include dad jokes.
+With AI, engineering teams are shipping code 30% faster, removing bottlenecks from development to planning and resource allocation. Meanwhile, team members across the company are building their own AI solutions that drive business results and improve the customer experience. Senior leaders who haven’t written code in decades are now creating Slack applications that streamline daily operations—some even include dad jokes.
 
 Watts shared, “This democratized access to AI creates a ripple effect: when every team member can be an innovator, our customers greatly benefit from improved products and services.”
 
@@ -85,7 +85,7 @@ Watts shared, “This democratized access to AI creates a ripple effect: when ev
 
 As TELUS expands Claude’s integration into operational areas like finance, planning and program management, it remains guided by a commitment to responsible innovation, which includes deliberately choosing partners aligned with these ethical standards.
 
-"We're rooting for Anthropic because we believe responsible AI development must win out in the market," said Watts. This commitment extends beyond its own operations. TELUS is actively shaping Canada’s AI future and driving nationwide adoption by empowering businesses of all sizes with Fuel iX – a safe, secure and flexible solution offering access to cutting-edge models like Claude to unlock their AI potential.
+“We’re rooting for Anthropic because we believe responsible AI development must win out in the market,” said Watts. This commitment extends beyond its own operations. TELUS is actively shaping Canada’s AI future and driving nationwide adoption by empowering businesses of all sizes with Fuel iX – a safe, secure and flexible solution offering access to cutting-edge models like Claude to unlock their AI potential.
 
 Looking ahead, TELUS envisions Claude enabling seamless information flow across their complex organization, creating unprecedented opportunities for collaboration and empowering team members to be more productive and find new, innovative ways to solve business challenges. With 13,000 custom AI solutions already deployed and growing, the vision is to create a workforce where AI amplifies human creativity at every level, proving that large organizations can embrace transformative technology without compromising on their fundamental values.
 
@@ -112,7 +112,8 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -130,12 +131,12 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -168,7 +169,7 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -186,6 +187,7 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -201,7 +203,7 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -236,7 +238,8 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -254,12 +257,12 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -292,7 +295,7 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -310,6 +313,7 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -325,7 +329,7 @@ Looking ahead, TELUS envisions Claude enabling seamless information flow across 
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

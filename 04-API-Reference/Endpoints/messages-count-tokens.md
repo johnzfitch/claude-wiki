@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages%2Fcount_tokens)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages%2Fcount_tokens)
 
 
 
@@ -215,7 +215,7 @@ Claude Code
 
 [Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -225,7 +225,7 @@ cURL
 
 
 
-A beta version of this method exists and may have additional functionality. [View the beta version](http-beta-messages-count-tokens.md).
+A beta version of this method exists and may have additional functionality. [View the beta version](platform-claude-com-http-beta-messages-count-tokens.md).
 
 1.  [API reference](http.md)
 2.  [Messages](https://platform.claude.com/docs/en/api/http/messages)

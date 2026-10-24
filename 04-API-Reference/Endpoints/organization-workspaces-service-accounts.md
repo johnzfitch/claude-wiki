@@ -2,7 +2,7 @@
 title: "Service Accounts - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/workspaces/service_accounts"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-09T06:28:00Z"
+fetched_at: "2026-10-17T06:26:11Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Fservice_accounts)
 
 
 
@@ -156,7 +156,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -166,9 +166,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -239,13 +241,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -253,9 +257,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -272,6 +276,12 @@ A beta version of this API exists and may have additional functionality. [View t
 3.  [Workspaces](https://platform.claude.com/docs/en/api/http/organization/workspaces)
 
 # Service Accounts
+
+Copy page
+
+
+
+cURL
 
 ##### [List Service Account Workspace Members](https://platform.claude.com/docs/en/api/http/organization/workspaces/service_accounts/list)
 

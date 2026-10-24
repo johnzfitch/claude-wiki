@@ -2,7 +2,7 @@
 title: "Claude API errors - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/errors"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:33:06Z"
+fetched_at: "2026-10-20T06:39:59Z"
 tags: ["api", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api", "sdk"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Ferrors)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Ferrors)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -203,13 +205,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -217,9 +221,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 [API reference](overview.md)Using the API
 
@@ -243,9 +247,9 @@ The API follows a predictable HTTP error code format:
 
 - 401 - `authentication_error`: There's an issue with your [API key](../Other/get-api-key.md) (for example, it's malformed, revoked, or expired; see [Key expiration](../Other/manage-claude-authentication.md#key-expiration)). On Claude Platform on AWS, this can also indicate a problem with your AWS credentials or SigV4 signature.
 
-- 402 - `billing_error`: There's an issue with your billing or payment information. Check your payment details in the [Claude Console](../Other/usage-limits.md), or in AWS Marketplace if you're using Claude Platform on AWS.
+- 402 - `billing_error`: There's an issue with your billing or payment information. Check your payment details in the [Claude Console](../Other/playground.md), or in AWS Marketplace if you're using Claude Platform on AWS.
 
-- 403 - `permission_error`: Your API key does not have permission to use the specified resource. Check your organization's access and workspace settings in the [Claude Console](../Other/usage-limits.md).
+- 403 - `permission_error`: Your API key does not have permission to use the specified resource. Check your organization's access and workspace settings in the [Claude Console](../Other/playground.md).
 
 - 404 - `not_found_error`: The requested resource was not found. Check the endpoint path and any resource IDs in the request URL.
 
@@ -341,6 +345,8 @@ Python (Claude Platform on AWS)
 
 TypeScript (Claude Platform on AWS)
 
+Python
+
 
 
 ```python
@@ -390,6 +396,8 @@ Java
 PHP
 
 Ruby
+
+Python
 
 
 
@@ -466,7 +474,7 @@ Use `thinking: {"type": "enabled", "budget_tokens": N}` on these models; see [Ex
 
 ### Thinking cannot be disabled
 
-On Claude Fable 5.1, [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md), Claude Fable 5, [Claude Mythos 5](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, and [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), thinking is always on. Sending `thinking: {"type": "disabled"}` to any of these models returns a 400 `invalid_request_error`. On all of these models except Claude Mythos Preview, the message reads:
+On Claude Fable 5.1, [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md), Claude Fable 5, [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md), Claude Opus 5.5, and [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), thinking is always on. Sending `thinking: {"type": "disabled"}` to any of these models returns a 400 `invalid_request_error`. On all of these models except Claude Mythos Preview, the message reads:
 
 ``` block
 "thinking.type.disabled" is not supported for this model. Use "thinking.type.adaptive" and "output_config.effort" to control thinking behavior.
@@ -506,7 +514,9 @@ messages.N: output_config.effort 'low' differs from the 'high' in effect before 
 
 
 
-In both messages, "enable thinking" means adaptive thinking: omit the `thinking` field or send `thinking: {"type": "adaptive"}`. Claude Sonnet 5.5 rejects `"enabled"` with a 400 error. To vary effort per turn, use adaptive thinking.
+Claude Haiku 5.5 accepts `thinking: {"type": "disabled"}` and holds it to the same two effort limits that apply to `between_tools`: at `xhigh` or `max` effort, or with a per-message `output_config.effort` that differs from the level in effect, the request returns a 400 `invalid_request_error` with the matching message shown earlier.
+
+In both messages, "enable thinking" means adaptive thinking: omit the `thinking` field or send `thinking: {"type": "adaptive"}`. Claude Sonnet 5.5 and Claude Haiku 5.5 reject `"enabled"` with a 400 error. To vary effort per turn, use adaptive thinking.
 
 Sending `thinking: {"type": "between_tools"}` to any model other than Claude Sonnet 5.5 returns a 400 `invalid_request_error`:
 
@@ -522,7 +532,7 @@ Omit the `thinking` parameter and the request runs with adaptive thinking. To ke
 
 ### Forced tool use not supported
 
-Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../22-Safety-Policy/glasswing.md) don't support forced tool use. Sending `tool_choice: {"type": "any"}` or `tool_choice: {"type": "tool", "name": "..."}` to any of these models, including on the [token counting endpoint](../Guides/build-with-claude-token-counting.md), returns a 400 `invalid_request_error`:
+Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) don't support forced tool use. Sending `tool_choice: {"type": "any"}` or `tool_choice: {"type": "tool", "name": "..."}` to any of these models, including on the [token counting endpoint](../Guides/build-with-claude-token-counting.md), returns a 400 `invalid_request_error`:
 
 ``` block
 tool_choice: type "tool" and "any" are not supported for this model.
@@ -534,7 +544,7 @@ tool_choice: type "tool" and "any" are not supported for this model.
 
 ### Computer use tool version not supported
 
-On the Claude API and Google Cloud, Claude Opus 5.5 and Claude Sonnet 5.5 support [computer use](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) only as the `computer_toolset_20260801` toolset. On those platforms, sending either model a `tools` entry of the earlier `computer_20251124` type (with that tool's beta header) returns a 400 `invalid_request_error`. The message names the rejected type, then lists the tool types the model does accept after `Did you mean one of`. For Claude Opus 5.5, it begins:
+On the Claude API and Google Cloud, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5 support [computer use](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) only as the `computer_toolset_20260801` toolset. On those platforms, sending any of these models a `tools` entry of the earlier `computer_20251124` or `computer_20250124` type, with that tool's beta header, returns a 400 `invalid_request_error`. The message names the rejected type, then lists the tool types the model does accept after `Did you mean one of`. For Claude Opus 5.5, it begins:
 
 ```python
 'claude-opus-5-5' does not support tool types: computer_20251124.
@@ -542,11 +552,11 @@ On the Claude API and Google Cloud, Claude Opus 5.5 and Claude Sonnet 5.5 suppor
 
 
 
-The API returns the same message for any Anthropic-defined tool type that the requested model doesn't support. Declare `{"type": "computer_toolset_20260801"}` without the beta header and update your agent loop as described in [Migrate from `computer_20251124`](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#migrate-from-computer-20251124). Earlier models that support the toolset keep accepting `computer_20251124`, as do Claude Opus 5.5 and Claude Sonnet 5.5 on Amazon Bedrock.
+The API returns the same message for any Anthropic-defined tool type that the requested model doesn't support. Declare `{"type": "computer_toolset_20260801"}` without the beta header and update your agent loop as described in [Migrate from `computer_20251124`](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#migrate-from-computer-20251124). To move from `computer_20250124`, see [Move computer use to the toolset](../../20-Models/models-haiku-5-5-migration-guide.md#computer-use-toolset) in the Claude Haiku 5.5 migration guide. Earlier models that support the toolset keep accepting `computer_20251124`, as do Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5 on Amazon Bedrock.
 
 ### Thinking block no longer matches the conversation
 
-On Claude Fable 5.1, Claude Opus 5.5, and Claude Sonnet 5.5, the API accepts a replayed thinking block only while the `system` prompt, `tools`, and messages that preceded it are unchanged. For new accounts created on or after August 31, 2026, and for any request that sets `thinking.block_binding.prefix_mismatch_behavior` to `"error"`, a replayed block whose earlier history changed is rejected with a 400 `invalid_request_error` (with `"drop_block"`, the API drops the block and the request succeeds). The message starts with the position of the first failing block:
+On Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, the API accepts a replayed thinking block only while the `system` prompt, `tools`, and messages that preceded it are unchanged. For new accounts created on or after August 31, 2026, and for any request that sets `thinking.block_binding.prefix_mismatch_behavior` to `"error"`, a replayed block whose earlier history changed is rejected with a 400 `invalid_request_error` (with `"drop_block"`, the API drops the block and the request succeeds). The message starts with the position of the first failing block:
 
 ``` block
 messages.{i}.content.{j}: Invalid `signature` in `thinking` block. The block is bound to a different conversation. Remove the block, or set `thinking.block_binding.prefix_mismatch_behavior` to "drop_block".
@@ -554,7 +564,7 @@ messages.{i}.content.{j}: Invalid `signature` in `thinking` block. The block is 
 
 
 
-Without the `thinking-binding-controls-2026-08-01` beta header the message also names that header. Keep the conversation history append-only, or send the beta header with `prefix_mismatch_behavior: "drop_block"` to drop the block and continue. On Claude Sonnet 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools`, keep the history append-only, or strip the thinking blocks from the edited turn on. A block from a model the target model can't read is dropped rather than rejected. See [Keeping the prefix unchanged](../Guides/build-with-claude-preserved-thinking.md#prefix-check) and [Troubleshooting thinking](../Guides/build-with-claude-thinking-troubleshooting.md#error-thinking-block-signature).
+Without the `thinking-binding-controls-2026-08-01` beta header the message also names that header. Keep the conversation history append-only, or send the beta header with `prefix_mismatch_behavior: "drop_block"` to drop the block and continue. On Claude Sonnet 5.5 and Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools` on Claude Sonnet 5.5, or `thinking: {"type": "disabled"}` on Claude Haiku 5.5, keep the history append-only, or strip the thinking blocks from the edited turn on. A block from a model the target model can't read is dropped rather than rejected. See [Keeping the prefix unchanged](../Guides/build-with-claude-preserved-thinking.md#prefix-check) and [Troubleshooting thinking](../Guides/build-with-claude-thinking-troubleshooting.md#error-thinking-block-signature).
 
 Sending `thinking.block_binding` without the `thinking-binding-controls-2026-08-01` [beta header](beta-headers.md) returns a 400 `invalid_request_error` whose message ends in:
 

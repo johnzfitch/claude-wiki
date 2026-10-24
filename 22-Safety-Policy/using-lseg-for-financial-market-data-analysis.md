@@ -2,7 +2,7 @@
 title: "Using LSEG for financial market data analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-10T06:24:32Z"
+fetched_at: "2026-10-23T06:28:57Z"
 tags: ["safety"]
 ---
 

@@ -2,212 +2,351 @@
 title: "Research \\ Anthropic"
 source_url: "https://www.anthropic.com/research"
 category: "19-Reference"
-fetched_at: "2026-09-10T06:45:09Z"
-tags: ["news-research", "search"]
+fetched_at: "2026-10-21T06:30:38Z"
+tags: ["agents", "news-research", "search"]
 ---
 
-# Research
-
-Our research teams investigate the safety, inner workings, and societal impacts of AI models—so that artificial intelligence has a positive impact as it becomes increasingly capable.
-
-Research teams:[Alignment](team-alignment.md)[Economics](team-economics.md)[Interpretability](team-interpretability.md)[Societal Impacts](team-societal-impacts.md)[Frontier Red Team](team-frontier-red-team.md)
-
-### Alignment
-
-The Alignment team works to understand the risks of AI models and develop ways to ensure that future ones remain helpful, honest, and harmless.
-
-### Economics
-
-The Economics team studies how AI is reshaping the economy, including work, productivity, and economic opportunity.
-
-### Frontier Red Team
-
-The Frontier Red Team analyzes the implications of frontier AI models for cybersecurity, biosecurity, and autonomous systems.
-
-### Interpretability
-
-The mission of the Interpretability team is to understand how large language models work internally, as a foundation for AI safety and positive outcomes.
-
-### Societal Impacts
-
-Working closely with the Anthropic Policy and Safeguards teams, Societal Impacts is a technical research team that explores how AI is used in the real world.
+Our research teams study the inner workings of AI models, stress-test their limits, and track their effects in the real world.
 
 
-## Scenarios for our Economic Future
+## Alignment
 
+47 posts
+
+Works to understand the risks of AI models and develop ways to ensure future ones remain helpful, honest, and harmless.
+
+
+## Economics
+
+25 posts
+
+Studies and monitors the impact of AI systems on individuals, firms, and economies.
+
+
+## Engineering
+
+27 posts
+
+Builds the infrastructure and systems that make Claude reliable and trustworthy.
+
+
+## Frontier Red Team
+
+33 posts
+
+Stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next.
+
+
+## Interpretability
+
+35 posts
+
+Studies how large language models work internally as a foundation for AI safety.
+
+
+## Societal Impacts
+
+24 posts
+
+Studies how AI affects people, both individually and collectively.
+
+
+## Science
+
+18 posts
+
+Explores how AI can increase the pace of scientific progress through both research and collaborations.
+
+
+## Alignment
+
+47 posts
+
+Works to understand the risks of AI models and develop ways to ensure future ones remain helpful, honest, and harmless.
+
+
+## Economics
+
+25 posts
+
+Studies and monitors the impact of AI systems on individuals, firms, and economies.
+
+
+## Engineering
+
+27 posts
+
+Builds the infrastructure and systems that make Claude reliable and trustworthy.
+
+
+## Frontier Red Team
+
+33 posts
+
+Stress-tests AI systems to understand the full extent of their current capabilities and anticipate what comes next.
+
+
+## Interpretability
+
+35 posts
+
+Studies how large language models work internally as a foundation for AI safety.
+
+
+## Societal Impacts
+
+24 posts
+
+Studies how AI affects people, both individually and collectively.
+
+
+## Science
+
+18 posts
+
+Explores how AI can increase the pace of scientific progress through both research and collaborations.
+
+01/07
+
+
+[Economics](team-economics.md)
+
+Sep 9, 2026
+
+
+## Scenarios for our economic future
 
 Anthropic’s Economics team is sharing a new model of how AI may affect economic growth, jobs, wages, and more by 2030. The model lets you explore the scenarios, tell us what you think will happen, and see how your answers compare to +10,000 Americans.
 
+[Science](https://www.anthropic.com/science)
 
-ScienceSep 4, 2026
-
-#### Formalizing Fermat's Last Theorem
-
-We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.
+Oct 8, 2026
 
 
-ScienceAug 10, 2026
+## The missing map of the sky
 
-#### Learning more about Claude's mathematical capabilities
+Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light.
 
-An unreleased research version of Claude has made strides on a problem related to the Riemann hypothesis. It improved a longstanding lower bound for the fraction of zeros of the Riemann zeta function that satisfy the hypothesis, increasing it from 41.6% to 67.2%.
+[Economics](team-economics.md)
 
-
-ScienceAug 18, 2026
-
-#### How Claude is accelerating protein design and analytical chemistry
-
-In this post, we share two results that show how Claude can help life scientists increase the pace of their research.
+Sep 24, 2026
 
 
-EconomicsAug 12, 2026
+## Project Swap: What happens when agents trade for us?
 
-#### Reviewing the evidence on worker retraining programs
+To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes.
 
-We're sharing a review of the evidence on worker retraining programs, coauthored by independent researcher David Roodman and Anthropic's Maxim Massenkoff.
+01
 
-## Publications
+/
 
-Search
+03
 
-DateCategoryTitle
+203
 
-  Sep 9, 2026Alignment
+ARTICLES
 
-  An alignment assessment of recent cybersecurity incidents
-  Sep 4, 2026Science
+Filter
 
-  Formalizing Fermat's Last Theorem
-  Aug 28, 2026Alignment
+Most recent
 
-  Automated researchers can reliably mitigate alignment failures
-  Aug 26, 2026Societal Impacts
+Gallery view
 
-  Enabling independent research on how people use Claude
-  Aug 18, 2026Science
+- 
+- 
+- 
+- 
+- 
+- 
 
-  How Claude is accelerating protein design and analytical chemistry
-  Aug 13, 2026Frontier Red Team
+[Science](https://www.anthropic.com/science)
 
-  Patterns and problems in emerging multiagent systems
-  Aug 12, 2026Economics
+Oct 20, 2026
 
-  Reviewing the evidence on worker retraining programs
-  Aug 10, 2026Science
+### [How Claude designed protein binders against scorpion neurotoxins](claude-scorpion-toxin-binder-design.md)
 
-  Learning more about Claude's mathematical capabilities
-  Jul 28, 2026Frontier Red Team
+We asked an internal research Claude model to design minibinders (small proteins that attach tightly to a target) against scorpion neurotoxins.
 
-  Discovering cryptographic weaknesses with Claude
-  Jul 24, 2026Frontier Red Team
+[Economics](team-economics.md)
 
-  Project Pilot: Can AI control a drone?
+Oct 16, 2026
 
-[See more](#)
+### [Working at the frontier shapes expectations for the future](expectations-for-the-future.md)
 
-Join the Research team
+We’re sharing two reports: the first covers how AI is changing employment inside Anthropic, and the second looks at the gap between how the public and Anthropic employees expect AI to affect work and the economy.
 
-[See open roles](https://www.anthropic.com/jobs)
+[Frontier Red Team](team-frontier-red-team.md)
 
-[](https://www.anthropic.com/)
+Oct 16, 2026
 
-### Products
+### [Claude reveals ECDSA curve origins](ecdsa-curve-origins.md)
 
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
+The decades-old mystery of the origins of one of the most popular cryptographic standards has been explained.
 
-### Models
+[Economics](team-economics.md)
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](https://www.anthropic.com/15-Claude-AI-Features/claude-opus-4-6-anthropic.md)
-- [Sonnet](https://www.anthropic.com/15-Claude-AI-Features/claude-sonnet-4-6-anthropic.md)
-- [Haiku](https://www.anthropic.com/15-Claude-AI-Features/claude-haiku-4-5-anthropic.md)
+Oct 16, 2026
 
-### Solutions
+### [How employment is changing at Anthropic](employment-at-anthropic.md)
 
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
+How has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy.
 
-### Claude Platform
+[Economics](team-economics.md)
 
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+Oct 16, 2026
 
-### Resources
+### [The AI expectations gap](ai-expectations-gap.md)
 
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
+How will AI reshape the economy in the years ahead? What is the core source of disagreement about AI's future impact on the economy? This note presents new survey evidence on these questions.
 
-### Programs
+[Science](https://www.anthropic.com/science)
 
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+Oct 16, 2026
 
-### Help and security
+### [Designing more efficient quantum circuits with Claude](designing-efficient-quantum-circuits.md)
 
-- [Availability](https://www.anthropic.com/supported-countries)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
+We gave Claude plain-language specifications for eight quantum circuits, along with an automated evaluator to check and score its designs. Working largely on its own, Claude improved on the best published circuits, in some cases by an order of magnitude or more, which could bring practical quantum computers closer than previously anticipated.
 
-### Company
+[Engineering](https://www.anthropic.com/engineering)
 
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)
+Oct 13, 2026
+
+### [Redesigning source control at Anthropic](redesigning-source-control.md)
+
+As our merges per day grew more than tenfold, source control became our biggest development bottleneck. Here, we share how we migrated to an in-house version control system in five months.
+
+[Frontier Red Team](team-frontier-red-team.md)
+
+Oct 12, 2026
+
+### [AI models may be capable of self-replicating without access to a datacenter](self-replicating-ai.md)
+
+Our experiments suggest that small AI models may be only months away from being capable enough to self-replicate on commercial IoT devices, like Android TVs and smart ovens.
+
+[Alignment](team-alignment.md)
+
+Oct 9, 2026
+
+### [Investigating unintended model actions in our evaluations and internal use](investigating-unintended-model-actions.md)
+
+This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude.
+
+[Science](https://www.anthropic.com/science)
+
+Oct 8, 2026
+
+### [The missing map of the sky](the-missing-map-of-the-sky.md)
+
+Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light.
+
+[Frontier Red Team](team-frontier-red-team.md)
+
+Oct 8, 2026
+
+### [Launching an opt-in vulnerability-finding service for open-source software](launching-opt-in-vuln-finding-service-for-open-source.md)
+
+We’re making available OSS Scanner, an opt-in vulnerability scanner for the open-source ecosystem that’s informed by our experience using Claude to find vulnerabilities during Project Glasswing.
+
+[Science](https://www.anthropic.com/science)
+
+Oct 1, 2026
+
+### [Claude-shaped science](claude-shaped-science.md)
+
+Guest author Prof. Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calculations in quantitative science, which he has been applying across scientific fields alongside experts.
+
+[Economics](team-economics.md)
+
+Sep 30, 2026
+
+### [What work can robots do?](what-work-can-robots-do.md)
+
+We built an index of how well today’s robots can perform US job tasks. Robots can already do three-quarters of physical tasks, mostly in limited settings, but are cost-competitive for just 0.3% of them.
+
+[Societal Impacts](team-societal-impacts.md)
+
+Sep 29, 2026
+
+### [What do you want from AI?](your-thoughts-on-ai.md)
+
+We’re launching a new study using Anthropic Interviewer to learn from your experiences with AI.
+
+[Frontier Red Team](team-frontier-red-team.md)
+
+Sep 29, 2026
+
+### [GLM-5.3 and the spread of advanced cyber capabilities](glm-5-3-and-the-spread-of-advanced-cyber-capabilities.md)
+
+Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse.
+
+[Science](https://www.anthropic.com/science)
+
+Sep 25, 2026
+
+### [Yes, Claude can do Nine Loops](yes-claude-can-do-nine-loops.md)
+
+Guest writer and physicist Matt von Hippel shares what happened when he issued a challenge to AI companies to solve a problem in his former subfield of theoretical physics.
+
+[Economics](team-economics.md)
+
+Sep 24, 2026
+
+### [Project Swap: What happens when agents trade for us?](project-swap.md)
+
+To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes.
+
+[Science](https://www.anthropic.com/science)
+
+Sep 23, 2026
+
+### [Claude discovers a novel enzyme system with CRISPR-like repeats](claude-discovers-novel-enzyme-system.md)
+
+We’re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR.
+
+[Alignment](team-alignment.md)
+
+Sep 17, 2026
+
+### [Illuminating the frontier](https://www.anthropic.com/institute/measuring-pace-of-ai-development)
+
+Anthropic is sharing new measurements that would give the public visibility into frontier AI development.
+
+[Science](https://www.anthropic.com/science)
+
+Sep 17, 2026
+
+### [How Claude is uplifting biomolecular modeling](claude-uplifts-biomolecular-modeling.md)
+
+Claude made the open-source models that scientists use to predict and design biomolecules faster and more memory-efficient. Claude optimized more than 30 of these models in just under four weeks, speeding them up roughly 4x on average. It also created a low-memory mode that enables the accurate prediction of biomolecular systems larger than 10,000 tokens (amino acids, nucleotides, and atoms from small molecules and ions) on a single NVIDIA GPU node.
+
+[Frontier Red Team](team-frontier-red-team.md)
+
+Sep 10, 2026
+
+### [Measuring tactical intelligence targeting and conventional weapons capabilities of AI models](intelligence-targeting-conventional-weapons-capabilities.md)
+
+Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development.
+
+[Economics](team-economics.md)
+
+Sep 9, 2026
+
+### [Scenarios for our economic future](https://www.anthropic.com/institute/econ-scenarios)
+
+Anthropic’s Economics team is sharing a new model of how AI may affect economic growth, jobs, wages, and more by 2030. The model lets you explore the scenarios, tell us what you think will happen, and see how your answers compare to +10,000 Americans.
+
+[Alignment](team-alignment.md)
+
+Sep 9, 2026
+
+### [An alignment assessment of recent cybersecurity incidents](alignment-assessment-cybersecurity-incidents.md)
+
+We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems.
+
+[Science](https://www.anthropic.com/science)
+
+Sep 4, 2026
+
+### [Formalizing Fermat's Last Theorem](formalizing-fermats-last-theorem.md)
+
+We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language.

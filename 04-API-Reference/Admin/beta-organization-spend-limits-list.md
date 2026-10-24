@@ -2,7 +2,7 @@
 title: "List Spend Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-10T06:24:51Z"
+fetched_at: "2026-10-18T06:26:51Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fspend_limits%2Flist)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fspend_limits%2Flist)
 
 
 
@@ -150,6 +150,8 @@ Plugins
 
 Plugin Marketplaces
 
+Telemetry Destinations
+
 
 Skills
 
@@ -219,13 +221,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](../Endpoints/opentelemetry-spans.md)
 
 Support & configuration
 
@@ -235,7 +239,7 @@ Claude Code
 
 [Trigger a routine](../Endpoints/claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -244,17 +248,23 @@ Claude Code
 cURL
 
 1.  [API reference](../Endpoints/http.md)
-2.  [Beta](../Endpoints/http-beta.md)
-3.  [Organization](http-beta-organization.md)
+2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
+3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits)
 
 # List Spend Limits
+
+Copy page
+
+
+
+cURL
 
 GET/v1/organizations/spend_limits
 
 List the organization's spend limits.
 
-A Claude Console organization's limits come in an order that is stable across pages. A Claude Enterprise organization's are grouped by scope type, in the order `organization`, `seat_tier`, `rbac_group`, `organization_service`, `user`; within a type they come in a fixed order that is not creation order. Listing Claude Console limits is in an early access preview. To request access, contact your Anthropic account team.
+Limits are grouped by scope type, in the order `organization`, `seat_tier`, `rbac_group`, `organization_service`, `user`; within a type they come in a fixed order that is not creation order. Supported for Claude Enterprise organizations only, not for Claude Console organizations.
 
 ##### Query parameters
 
@@ -284,7 +294,7 @@ scope_type: optional array of "organization" or "organization_service" or "rbac_
 
 
 
-Return only limits with these scope types. A Claude Console organization has `organization` and `workspace` limits; a Claude Enterprise organization has `organization`, `seat_tier`, `rbac_group`, `organization_service` and `user` limits. Omit for all.
+Return only limits with these scope types. Omit for all.
 
 maxItems100
 
@@ -328,7 +338,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/http-beta.md#anthropic_beta)
+"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -540,6 +550,10 @@ string
 
 
 
+"telemetry-destinations-2026-08-11"
+
+
+
 ##### Returns
 
 
@@ -590,7 +604,7 @@ is_enabled: boolean
 
 
 
-Read-only. `false` when extra usage is switched off for this organization (`organization` limit) or for this member (`user` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits.
+Read-only. `false` when extra usage is switched off for this organization (`organization` limit); `amount` is kept and applies again when it's switched back on. Always `true` for other limits.
 
 
 
@@ -616,7 +630,7 @@ One of the following:
 
 
 
-scope: [BetaSpendLimitUserScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_user_scope) or [BetaSpendLimitSeatTierScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_seat_tier_scope) or [BetaSpendLimitRBACGroupScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_rbac_group_scope) or 3 more
+scope: [BetaSpendLimitUserScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_user_scope) or [BetaSpendLimitSeatTierScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_seat_tier_scope) or [BetaSpendLimitRBACGroupScope](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_rbac_group_scope) or 4 more
 
 
 
@@ -739,6 +753,24 @@ workspace_id: string
 
 
 Tagged ID of the workspace the spend limit applies to.
+
+
+
+BetaSpendLimitUsageTierScope object{ type: "usage_tier" }
+
+
+
+Scope of the monthly spend cap Anthropic sets for a Claude Console organization from its usage tier, or a higher cap Anthropic granted the organization. Read-only; its `created_at` and `updated_at` are the organization's creation time, so `amount` can change while `updated_at` stays the same.
+
+
+
+type: "usage_tier"
+
+
+
+Scope type. Always `usage_tier` for this scope.
+
+defaultusage_tier
 
 
 

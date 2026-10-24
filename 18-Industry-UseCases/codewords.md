@@ -2,7 +2,7 @@
 title: "CodeWords Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/codewords"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:57Z"
+fetched_at: "2026-10-23T06:29:34Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -44,7 +44,7 @@ With Claude, CodeWords:
 
 Workflow automation has remained stubbornly technical despite decades of attempts at simplification. While tools have emerged to simplify website creation for non-technical users, automation platforms still require significant technical knowledge. Operations teams, marketers, and small business owners who need to automate workflows often find themselves stuck choosing between expensive technical hires or abandoning automation altogether.
 
-"Automation still requires a technical mindset and has a high barrier to entry even with visual no-code builders," said Aymeric Zhuo, Co-Founder of Agemo.
+“Automation still requires a technical mindset and has a high barrier to entry even with visual no-code builders,” said Aymeric Zhuo, Co-Founder of Agemo.
 
 The challenge extends beyond just building automations. Users need systems that can understand their intent through natural conversation, generate clean code that adheres to best practices, and improve themselves over time without requiring technical intervention. Traditional automation platforms force users to think like programmers, mapping out logic flows and error handling manually.
 
@@ -58,25 +58,25 @@ Cody, powered by a context-intelligent Claude, is able to self-improve through c
 
 Agemo started as an applied AI lab focused on building an AI system that could generate back-end systems for workflow automation. The company worked with pioneers like François Chollet, inventor of Keras, and Mike Knoop, co-founder of Zapier, to develop AI reasoning capabilities. This year, their focus shifted to CodeWords, bringing that technical foundation into a product anyone can use.
 
-CodeWords treats LLMs as stakeholders in its infrastructure design. "We built the environment for LLMs from the beginning, considering them as stakeholders in our infrastructure," Ramadan explained. "This enables us to focus on increasing intelligence rather than model-specific plumbing."
+CodeWords treats LLMs as stakeholders in its infrastructure design. “We built the environment for LLMs from the beginning, considering them as stakeholders in our infrastructure,” Ramadan explained. “This enables us to focus on increasing intelligence rather than model-specific plumbing.”
 
-CodeWords combines Claude's code generation with surrounding context intelligence to understand what users want to build. When a user describes an automation in plain language, CodeWords interprets the request, generates the necessary code, and deploys it—all through conversation. The system handles complex scenarios, like building a multi-source knowledge aggregator that combines data from Jira, internal documentation, Salesforce, and Supabase to answer support tickets directly in Slack.
+CodeWords combines Claude’s code generation with surrounding context intelligence to understand what users want to build. When a user describes an automation in plain language, CodeWords interprets the request, generates the necessary code, and deploys it—all through conversation. The system handles complex scenarios, like building a multi-source knowledge aggregator that combines data from Jira, internal documentation, Salesforce, and Supabase to answer support tickets directly in Slack.
 
-"We're using the Claude Agent SDK as our starting point and are in active discussions with Anthropic's API team about how we can contribute our work back to benefit the broader developer community," said Ramadan.
+“We’re using the Claude Agent SDK as our starting point and are in active discussions with Anthropic’s API team about how we can contribute our work back to benefit the broader developer community,” said Ramadan.
 
-Agemo uses CodeWords internally to build automations for their own product, operations, and marketing workflows, replacing manual processes and reducing reliance on SaaS tools. The company even drafts emails for new feature launches and pushes code for review using AI. "We've never been a pre-AI company," Zhuo noted. "We started in the AI phase and our product has AI at its core."
+Agemo uses CodeWords internally to build automations for their own product, operations, and marketing workflows, replacing manual processes and reducing reliance on SaaS tools. The company even drafts emails for new feature launches and pushes code for review using AI. “We’ve never been a pre-AI company,” Zhuo noted. “We started in the AI phase and our product has AI at its core.”
 
 ## The outcome
 
-CodeWords’ traction demonstrates the power of combining conversational AI with production-ready code generation. Success rates for non-technical users building workflows in a single session jumped from 43% during open beta to 92%, driven by Claude's intelligence and CodeWords’ surrounding context systems.
+CodeWords’ traction demonstrates the power of combining conversational AI with production-ready code generation. Success rates for non-technical users building workflows in a single session jumped from 43% during open beta to 92%, driven by Claude’s intelligence and CodeWords’ surrounding context systems.
 
 Build times dropped dramatically. Simple automations that took 11 minutes now complete in 115 seconds. Complex automations decreased from 25 minutes to 6 minutes, largely because fewer iterations are needed to fix issues.
 
-Customer feedback highlights an unexpected benefit: emotional connection. "Claude Sonnet 4.5 has the best emotional maturity compared to other models," Ramadan explained. "It knows how to empathize with the user, and that created stickiness for us." Anecdotally, Zhuo reported users saying that "CodeWords knows me" and describing conversations as being like talking to "a workflow therapist" or someone "with so much wisdom and experience."
+Customer feedback highlights an unexpected benefit: emotional connection. “Claude Sonnet 4.5 has the best emotional maturity compared to other models,” Ramadan explained. “It knows how to empathize with the user, and that created stickiness for us.” Anecdotally, Zhuo reported users saying that “CodeWords knows me” and describing conversations as being like talking to “a workflow therapist” or someone “with so much wisdom and experience.”
 
 This combination of technical capability and conversational quality drives retention. Users see the platform improve with each visit, creating a feedback loop that keeps them engaged.
 
-Looking ahead, Agemo aims to disrupt the workflow automation space by building AI-native products that remove technical barriers. "We want to be known for making automation accessible to everyone," said Zhuo. "Everyone should be able to build an automation, whether from WhatsApp, for personal productivity, time management, or things related to work. Lovable managed to make accessible website creation—everyone can build a website now. We want to do that for automation."
+Looking ahead, Agemo aims to disrupt the workflow automation space by building AI-native products that remove technical barriers. “We want to be known for making automation accessible to everyone,” said Zhuo. “Everyone should be able to build an automation, whether from WhatsApp, for personal productivity, time management, or things related to work. Lovable managed to make accessible website creation—everyone can build a website now. We want to do that for automation.”
 
 
 ## Related stories
@@ -102,7 +102,8 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -120,12 +121,12 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -158,7 +159,7 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -176,6 +177,7 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -191,7 +193,7 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -226,7 +228,8 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -244,12 +247,12 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -282,7 +285,7 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -300,6 +303,7 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -315,7 +319,7 @@ Looking ahead, Agemo aims to disrupt the workflow automation space by building A
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

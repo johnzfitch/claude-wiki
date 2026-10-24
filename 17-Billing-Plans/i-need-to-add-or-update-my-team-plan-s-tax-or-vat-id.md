@@ -2,7 +2,7 @@
 title: "Add or update your Team plan's tax or VAT ID | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9927624-i-need-to-add-or-update-my-team-plan-s-tax-or-vat-id"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-10T06:25:33Z"
+fetched_at: "2026-10-23T06:29:22Z"
 tags: ["billing"]
 ---
 

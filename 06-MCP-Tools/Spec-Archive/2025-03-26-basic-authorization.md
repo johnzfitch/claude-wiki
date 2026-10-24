@@ -2,7 +2,7 @@
 title: "Authorization - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-09T06:26:59Z"
+fetched_at: "2026-10-21T06:29:06Z"
 tags: ["authorization", "mcp", "mcp-spec"]
 ---
 

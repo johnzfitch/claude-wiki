@@ -2,7 +2,7 @@
 title: "Test a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/test"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-09T06:27:20Z"
+fetched_at: "2026-10-21T06:28:54Z"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -213,6 +213,7 @@ Every mods API call your mod makes in a test needs a stub that answers in Claude
 | `prompt.fill`                                                                                                 | `() => ({ isFilled: true })`                                                                                                                                                                                                              |
 | `$.prompt.read`                                                                                               | `() => ({ value: { text: '...', cursor: 0 } })`                                                                                                                                                                                           |
 | `$.ui.copy`                                                                                                   | `() => ({ value: { isCopied: true } })`                                                                                                                                                                                                   |
+| `$.ui.notify`                                                                                                 | `() => ({ value: { isSent: true, channel: 'terminal_bell' } })`. The text is `e.text` and the title is `e.title`.                                                                                                                         |
 | `$.session.messages`                                                                                          | `() => ({ value: [{ role: 'assistant', text: '...', toolUses: [] }] })`                                                                                                                                                                   |
 | `$.session.id`, `$.agent.list`                                                                                | `() => ({ value: 'abc123' })`, `() => ({ value: [] })`                                                                                                                                                                                    |
 | `session.send`                                                                                                | `() => ({ isDelivered: true })`. `e.to` arrives as a string even when your mod passed `{ sessionId }`.                                                                                                                                    |

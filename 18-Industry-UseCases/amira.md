@@ -2,7 +2,7 @@
 title: "Amira Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/amira"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:04Z"
+fetched_at: "2026-10-23T06:29:25Z"
 tags: ["api", "case-studies", "enterprise", "security"]
 ---
 
@@ -44,21 +44,21 @@ As Ran Liu, Chief AI Scientist at Amira, explains, “Reading proficiency is a c
 
 Amira addressed this challenge by designing an AI-powered reading assessment and personal tutoring technology with advanced children’s speech recognition. While Amira excelled for years at teaching foundational word recognition skills, opportunities remained to enhance instruction and tutoring on comprehension—understanding meaning, making inferences, and connecting ideas—and knowledge building through reading.
 
-"When LLMs emerged, we saw an opportunity to expand our AI capabilities to teach reading comprehension in a dynamic and natural way, just like an expert human tutor would,” said Liu. The challenge was to create AI that could engage students in sophisticated educational conversations about texts while maintaining strict safety standards for young learners. This required intersecting cutting-edge technology with deep pedagogical expertise.
+“When LLMs emerged, we saw an opportunity to expand our AI capabilities to teach reading comprehension in a dynamic and natural way, just like an expert human tutor would,” said Liu. The challenge was to create AI that could engage students in sophisticated educational conversations about texts while maintaining strict safety standards for young learners. This required intersecting cutting-edge technology with deep pedagogical expertise.
 
 ## Why Amira chose Claude
 
-Amira selected Claude after rigorous testing revealed its superior performance for educational applications. "We conducted extensive benchmarking across a variety of commercial and open-source models and found that Claude performed exceptionally well," said Liu. The model consistently earned high scores from human content experts who evaluated the quality and educational value of its generated dialogues, making it the clear choice for Amira.
+Amira selected Claude after rigorous testing revealed its superior performance for educational applications. “We conducted extensive benchmarking across a variety of commercial and open-source models and found that Claude performed exceptionally well,” said Liu. The model consistently earned high scores from human content experts who evaluated the quality and educational value of its generated dialogues, making it the clear choice for Amira.
 
-In Amira's selection process, safety was equally important. Liu noted, "We know Anthropic prioritizes safety and accuracy in their models. Amira operates on private, secure AI systems. The data students generate stays within our secure infrastructure and is not accessible by external AI providers. When a student uses Amira, their data is never shared with or used to train any public AI models or third-party foundation models,” emphasizing how critical this is when developing technology for young students.
+In Amira’s selection process, safety was equally important. Liu noted, “We know Anthropic prioritizes safety and accuracy in their models. Amira operates on private, secure AI systems. The data students generate stays within our secure infrastructure and is not accessible by external AI providers. When a student uses Amira, their data is never shared with or used to train any public AI models or third-party foundation models,” emphasizing how critical this is when developing technology for young students.
 
-Claude's leading language capabilities further distinguished it from competitors. Liu explained, "Claude has consistently performed well with language tasks, making it well-suited for the dialogues that power comprehension tutoring in Amira.”
+Claude’s leading language capabilities further distinguished it from competitors. Liu explained, “Claude has consistently performed well with language tasks, making it well-suited for the dialogues that power comprehension tutoring in Amira.”
 
-## How Claude powers Amira's reading comprehension
+## How Claude powers Amira’s reading comprehension
 
 Amira uses Claude to enhance reading comprehension in several ways:
 
-- **Generating comprehension dialogues**: Claude powers experiences where Amira asks students thoughtful questions about passages they've read, focusing on skills aligned with educational and state standards.
+- **Generating comprehension dialogues**: Claude powers experiences where Amira asks students thoughtful questions about passages they’ve read, focusing on skills aligned with educational and state standards.
 - **Content analysis**: Claude analyzes texts to match specific comprehension skills with appropriate passages. For example, it might select a story with a vivid and rich setting to exercise the skill of explaining the influence of the setting on the plot.
 - **Creating instructional content**: Claude generates questions, hints, and response pathways that maintain pedagogical rigor while ensuring an individualized learning experience.
 
@@ -66,7 +66,7 @@ Amira uses Claude to enhance reading comprehension in several ways:
 
 ## Transforming reading education with AI-powered conversations
 
-Claude has strengthened Amira’s ability to develop students’ comprehension skills through responsive, research-based instruction. Teachers have shared enthusiastic feedback about how effectively Amira engages with students and adapts to their needs in real time. Liu noted, "Teachers are amazed that Amira can understand and respond to their students appropriately. It makes students feel heard and provides excellent modeling of responses."
+Claude has strengthened Amira’s ability to develop students’ comprehension skills through responsive, research-based instruction. Teachers have shared enthusiastic feedback about how effectively Amira engages with students and adapts to their needs in real time. Liu noted, “Teachers are amazed that Amira can understand and respond to their students appropriately. It makes students feel heard and provides excellent modeling of responses.”
 
 Multiple independent research studies demonstrate that Amira drives far greater reading growth than other leading reading technologies. Students reading with Amira experience 70% faster reading growth and a minimum of 7+ extra weeks of growth in one school year.
 
@@ -74,9 +74,9 @@ For students, these AI-powered dialogues provide scaffolding where they need imp
 
 ## Building the future of AI in education
 
-Liu envisions AI supporting educators rather than replacing human teaching, noting "We need to work closely with teachers, administrators, and literacy coaches – the people who are closest to the students. AI should assist teachers, and teachers’ needs should drive the use cases of AI."
+Liu envisions AI supporting educators rather than replacing human teaching, noting “We need to work closely with teachers, administrators, and literacy coaches – the people who are closest to the students. AI should assist teachers, and teachers’ needs should drive the use cases of AI.”
 
-Amira plans to continue enhancing their technology with Claude's capabilities, particularly by training the LLM to exercise more Science of Reading expertise. Liu shared, "Developing a Claude model with deep science of reading expertise would be transformative," noting this could significantly enhance multiple aspects of the product.
+Amira plans to continue enhancing their technology with Claude’s capabilities, particularly by training the LLM to exercise more Science of Reading expertise. Liu shared, “Developing a Claude model with deep science of reading expertise would be transformative,” noting this could significantly enhance multiple aspects of the product.
 
 By combining the science of reading with the power of AI, Amira and Claude are equalizing access to effective literacy instruction and opening doors for millions of young students. In a world where literacy is fundamental to success, this collaboration embodies the promise of educational equity through the thoughtful application of AI.
 
@@ -103,7 +103,8 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -121,12 +122,12 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -159,7 +160,7 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -177,6 +178,7 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -192,7 +194,7 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -227,7 +229,8 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -245,12 +248,12 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -283,7 +286,7 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -301,6 +304,7 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -316,7 +320,7 @@ By combining the science of reading with the power of AI, Amira and Claude are e
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

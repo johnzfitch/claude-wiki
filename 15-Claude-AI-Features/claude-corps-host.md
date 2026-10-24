@@ -312,7 +312,7 @@ Hosts can [submit questions](https://form.typeform.com/to/GieGX8Yc) that are spe
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/usage-limits.md)
+- [Console login](../04-API-Reference/Other/playground.md)
 
 ### Resources
 
@@ -333,7 +333,7 @@ Hosts can [submit questions](https://form.typeform.com/to/GieGX8Yc) that are spe
 ### Programs
 
 - [Startups](programs-startups.md)
-- [Scientists](programs-claude-team-plan-for-research-labs.md)
+- [Scientists](programs-team-plan-for-scientists.md)
 
 ### Help and security
 

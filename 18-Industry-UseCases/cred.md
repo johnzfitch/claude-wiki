@@ -2,7 +2,7 @@
 title: "CRED Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/cred"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-10T06:25:10Z"
+fetched_at: "2026-10-23T06:29:30Z"
 tags: ["agents", "api", "case-studies", "enterprise", "security"]
 ---
 
@@ -51,21 +51,21 @@ CRED needed an agentic coding solution to help them streamline processes across 
 
 ## Choosing Claude for superior programming performance
 
-CRED's evaluation process led them to select Anthropic's Claude models over alternatives.
+CRED’s evaluation process led them to select Anthropic’s Claude models over alternatives.
 
-”We chose Anthropic's Claude models for their performance in programming-related tasks,” the team said.
+“We chose Anthropic’s Claude models for their performance in programming-related tasks,” the team said.
 
 Their adoption journey included two key inflection points that drove broader adoption and deeper usage across the development team.
 
 The release of Claude Sonnet 3.7 significantly improved instruction handling and reasoning capabilities. However, the launch of Claude Sonnet 4.0 delivered the performance CRED needed.
 
-"With Claude Sonnet 4.0's enhanced ability to follow instructions and act with precision, we've seen both broader adoption and deeper usage," they shared. Sonnet 4's ability to break down complex problems into actionable steps proved essential for their workflows.
+“With Claude Sonnet 4.0’s enhanced ability to follow instructions and act with precision, we’ve seen both broader adoption and deeper usage,” they shared. Sonnet 4’s ability to break down complex problems into actionable steps proved essential for their workflows.
 
 It also outperformed other models in iterative development workflows, particularly the Build-Test-Fix loop. This ensured greater accuracy and reliability, critical factors for a fintech platform handling sensitive financial data.
 
 ## Accelerating delivery while improving code quality
 
-After seeing success with the API to help automate parts of their design automation suite, the team underwent testing to implement Claude Code with powerful results. Claude Code is Anthropic's command line tool that enables developers to delegate coding tasks directly from their terminal. CRED used Claude Code to enhance their development process across multiple dimensions:
+After seeing success with the API to help automate parts of their design automation suite, the team underwent testing to implement Claude Code with powerful results. Claude Code is Anthropic’s command line tool that enables developers to delegate coding tasks directly from their terminal. CRED used Claude Code to enhance their development process across multiple dimensions:
 
 - **End-to-end development lifecycle**: Developers rely on Claude Code for identifying incremental solutions to writing, testing, and committing code across both new and existing projects
 - **Complex task breakdown**: Claude Code breaks down complex problems into manageable steps while maintaining structured context management through features like [Claude.md](http://claude.md)
@@ -73,21 +73,21 @@ After seeing success with the API to help automate parts of their design automat
 
 These capabilities translated into immediate productivity gains that transformed CRED’s development approach. The tool enabled a fundamental shift toward agentic coding, solution discovery, and documentation.
 
-"Our execution speed has improved by 2x, allowing us to deliver features and fixes faster," the team reported.
+“Our execution speed has improved by 2x, allowing us to deliver features and fixes faster,” the team reported.
 
-This acceleration didn't compromise quality; with Claude Code powered by Sonnet 4.0, they achieved a 10% increase in test coverage across existing codebases, leading to more robust and reliable software. The streamlined workflow also resulted in more reliable commits through better solution documentation.
+This acceleration didn’t compromise quality; with Claude Code powered by Sonnet 4.0, they achieved a 10% increase in test coverage across existing codebases, leading to more robust and reliable software. The streamlined workflow also resulted in more reliable commits through better solution documentation.
 
 Perhaps most significantly, Claude Code empowered team members to independently drive projects end-to-end.
 
-"Claude Code has empowered team members to independently drive projects end-to-end,” they explained. “As a result, initiatives that were previously lower on the priority list are now being taken up and completed faster, helping us accelerate delivery on work that might have remained on hold."
+“Claude Code has empowered team members to independently drive projects end-to-end,” they explained. “As a result, initiatives that were previously lower on the priority list are now being taken up and completed faster, helping us accelerate delivery on work that might have remained on hold.”
 
 ## Building toward agentic development workflows
 
 CRED envisions a future where AI transforms not just individual coding tasks but entire development methodologies.
 
-”Next, our goal is to move toward agentic execution, where developers primarily focus on reviewing pull requests while Claude Code takes on the bulk of coding and testing," the team said.
+“Next, our goal is to move toward agentic execution, where developers primarily focus on reviewing pull requests while Claude Code takes on the bulk of coding and testing,” the team said.
 
-Their roadmap includes implementing repository-level knowledge indexing, enabling the system to deeply understand and leverage the context of complex, multi-repository environments. The ultimate vision involves training Claude Code to make coordinated changes across multiple repositories using different programming languages, allowing developers to work end-to-end with greater efficiency and deliver larger impact across CRED's platform. CRED's transformative results underscore why Anthropic is growing it's investments in India this year, enabling deeper partnerships with the country's most innovative enterprises.
+Their roadmap includes implementing repository-level knowledge indexing, enabling the system to deeply understand and leverage the context of complex, multi-repository environments. The ultimate vision involves training Claude Code to make coordinated changes across multiple repositories using different programming languages, allowing developers to work end-to-end with greater efficiency and deliver larger impact across CRED’s platform. CRED’s transformative results underscore why Anthropic is growing it’s investments in India this year, enabling deeper partnerships with the country’s most innovative enterprises.
 
 ## Related stories
 
@@ -112,7 +112,8 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -130,12 +131,12 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -168,7 +169,7 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -186,6 +187,7 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -201,7 +203,7 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
@@ -236,7 +238,8 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 - [Claude](../15-Claude-AI-Features/product-overview.md)
 - [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
+- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
+- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
 - [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
 - [Download app](https://www.claude.com/download)
@@ -254,12 +257,12 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 ## Extensions
 
 - [Claude in Chrome](https://www.claude.com/claude-in-chrome)
+- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
 - [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
 
 ## Models
 
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
+- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
 - [Opus](../15-Claude-AI-Features/claude-opus.md)
 - [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
 - [Haiku](../15-Claude-AI-Features/claude-haiku.md)
@@ -292,7 +295,7 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 
 - [Campus](../15-Claude-AI-Features/programs-campus.md)
 - [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md)
+- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
 - [Startups](../15-Claude-AI-Features/programs-startups.md)
 
 ## Developers
@@ -310,6 +313,7 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 - [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
 - [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
 - [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
+- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
 
 ## Resources
 
@@ -325,7 +329,7 @@ Their roadmap includes implementing repository-level knowledge indexing, enablin
 
 ## Help and security
 
-- [Availability](https://www.anthropic.com/supported-countries)
+- [Availability](https://www.anthropic.com/legal/supported-regions)
 - [Check files](https://www.claude.com/check-files)
 - [Regional compliance](https://www.claude.com/regional-compliance)
 - [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

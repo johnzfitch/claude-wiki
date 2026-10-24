@@ -12,7 +12,7 @@ Monitor and debug your sessions using the Console timeline and raw event views.
 
 ---
 
-Claude Managed Agents provides observability tools in the [Claude Console](usage-limits.md) to help you monitor, debug, and understand your agent sessions.
+Claude Managed Agents provides observability tools in the [Claude Console](playground.md) to help you monitor, debug, and understand your agent sessions.
 
 ## Console observability
 

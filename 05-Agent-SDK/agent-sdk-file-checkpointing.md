@@ -2,7 +2,7 @@
 title: "Rewind file changes with checkpointing - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/file-checkpointing"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-30T06:30:40Z"
+fetched_at: "2026-10-23T06:28:37Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -35,7 +35,7 @@ Copy pageCopy page
 
 File checkpointing tracks file modifications made through the [Write](../02-Claude-Code-CLI/tools-reference.md#write-tool-behavior), [Edit](../02-Claude-Code-CLI/tools-reference.md#edit-tool-behavior), and [NotebookEdit](../02-Claude-Code-CLI/tools-reference.md#notebookedit-tool-behavior) tools during an agent session, allowing you to rewind files to any previous state. To watch a rewind restore a file, jump to the [interactive example](#try-it-out).
 
-Only changes made through the Write, Edit, and NotebookEdit tools are tracked. Changes made through Bash commands (like `echo > file.txt` or `sed -i`) are not captured by the checkpoint system, and neither are edits a [subagent](agent-sdk-subagents.md) applies, except a [skill with `context: fork`](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent) that runs in the foreground.
+`rewindFiles()` doesn’t undo what `sed -i` or another Bash command did to a file, unless a tool such as Write or Edit had modified that file in the main conversation. [Subagent](agent-sdk-subagents.md) edits aren’t tracked, while edits from a [skill with `context: fork`](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent) running in the foreground are.
 
 
 [​](#how-checkpointing-works)
@@ -659,13 +659,13 @@ Limitations
 
 File checkpointing has the following limitations:
 
-| Limitation                         | Description                                                                                                                                                                           |
-|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Write/Edit/NotebookEdit tools only | Changes made through Bash commands are not tracked                                                                                                                                    |
-| Subagent edits                     | Edits a [subagent](agent-sdk-subagents.md) applies aren’t tracked or restored, except a skill with `context: fork` running in the foreground; use git to revert untracked edits |
-| Same session                       | Checkpoints are tied to the session that created them                                                                                                                                 |
-| File content only                  | Creating, moving, or deleting directories is not undone by rewinding                                                                                                                  |
-| Local files                        | Remote or network files are not tracked                                                                                                                                               |
+| Limitation           | Description                                                                                                                                                                                                                                      |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Bash command changes | Rewinding doesn’t undo changes a Bash command made, except in files the main conversation had already edited with a tool such as Write or Edit                                                                                                   |
+| Subagent edits       | Edits a [subagent](agent-sdk-subagents.md) applies aren’t tracked, except a skill with `context: fork` running in the foreground. A rewind reverts them only in files the main conversation had already edited; use git to revert the rest |
+| Same session         | Checkpoints are tied to the session that created them                                                                                                                                                                                            |
+| File content only    | Creating, moving, or deleting directories is not undone by rewinding                                                                                                                                                                             |
+| Local files          | Remote or network files are not tracked                                                                                                                                                                                                          |
 
 
 [​](#troubleshooting)

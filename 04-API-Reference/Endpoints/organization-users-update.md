@@ -2,7 +2,7 @@
 title: "Update User - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/users/update"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-09T06:27:40Z"
+fetched_at: "2026-10-17T06:26:21Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fupdate)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fusers%2Fupdate)
 
 
 
@@ -132,7 +132,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -142,9 +142,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -215,13 +217,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
 Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -229,9 +233,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -249,6 +253,12 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 # Update User
 
+Copy page
+
+
+
+cURL
+
 POST/v1/organizations/users/{user_id}
 
 Update a member's organization role.
@@ -261,6 +271,18 @@ user_id: string
 
 ID of the User.
 
+##### Headers
+
+
+
+"anthropic-version": optional string
+
+
+
+The version of the Claude API you want to use.
+
+Read more about versioning and our version history [here](versioning.md).
+
 ##### Body
 
 
@@ -271,7 +293,7 @@ role: "billing" or "claude_code_user" or "developer" or 2 more
 
 New role for the User.
 
-The accepted values depend on the organization type. Console and API organizations accept `user`, `developer`, `billing`, and `claude_code_user`; `admin` cannot be assigned through the API. Claude Enterprise organizations accept `user` and `managed`.
+The accepted values depend on the organization type. Console and API organizations accept `user`, `developer`, `billing`, and `claude_code_user`; `admin` cannot be assigned through the API. Claude Enterprise organizations accept `user` and `managed`; changing a User's role to `managed` requires the `write:rbac_groups` scope in addition to `write:members`.
 
 One of the following:
 

@@ -2,7 +2,7 @@
 title: "Get started with Claude Managed Agents - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/quickstart"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-04T08:34:13Z"
+fetched_at: "2026-10-20T06:39:38Z"
 tags: ["agents", "api", "cli", "sdk"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["agents", "api", "cli", "sdk"]
 
 
 
-[Console](usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fquickstart)
+[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fquickstart)
 
 
 
@@ -36,17 +36,17 @@ First steps
 
 Define your agent
 
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
+[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
 
 Configure agent environment
 
-[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
+[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
 Delegate work to your agent
 
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
+[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
 
 Manage agent context
 
@@ -56,7 +56,11 @@ Build persistent memory
 
 Advanced orchestration
 
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
+
+Security
+
+[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
 
 Reference
 
@@ -82,9 +86,17 @@ Claude on cloud platforms
 
 [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 
-[Console](usage-limits.md)
+[Console](playground.md)
 
 [Managed Agents](managed-agents-overview.md)First steps
+
+[Managed Agents](managed-agents-overview.md)
+
+[Beta](../Guides/build-with-claude-overview.md#feature-availability)
+
+[Beta header](../Endpoints/beta-headers.md)
+
+managed-agents-2026-04-01
 
 # Get started with Claude Managed Agents
 
@@ -98,19 +110,21 @@ Create your first autonomous agent.
 
 
 
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
-
 This guide walks you through creating an agent, setting up an environment, starting a session, and streaming agent responses.
 
 
 
-**Prefer an interactive walkthrough?** Run `/claude-api managed-agents-onboard` in the latest version of [Claude Code](../../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) for a guided setup and interactive question-answering.
+**Prefer an interactive walkthrough?** The latest version of [Claude Code](../../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) can guide you through the setup and answer your questions:
+
+Claude Code
+
+Let Claude Code set up your agent for you
+
+Run in
+
+`❯``/claude-api`` managed-agents-onboard`
+
+
 
 ## Core concepts
 
@@ -123,8 +137,8 @@ This guide walks you through creating an agent, setting up an environment, start
 
 ## Prerequisites
 
-- A [Claude Console account](usage-limits.md)
-- An [API key](playground.md)
+- A [Claude Console account](playground.md)
+- An [API key](playground.md) from the Console
 
 ## Install the CLI
 
@@ -134,8 +148,47 @@ curl (Linux/WSL)
 
 Go
 
+Homebrew (macOS)
+
 ```python
 brew install anthropics/tap/ant
+```
+
+
+
+curl (Linux/WSL)
+
+For Linux environments, download the release binary directly.
+
+```python
+VERSION=1.42.0
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+case $(uname -m) in
+  x86_64) ARCH=amd64 ;;
+  aarch64) ARCH=arm64 ;;
+esac
+curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${VERSION}/ant_${VERSION}_${OS}_${ARCH}.tar.gz" \
+  | sudo tar -xz -C /usr/local/bin ant
+```
+
+
+
+You can find all releases on the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases).
+
+Go
+
+You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+
+```python
+go install github.com/anthropics/anthropic-cli/cmd/ant@latest
+```
+
+
+
+The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn't already:
+
+```python
+export PATH="$PATH:$(go env GOPATH)/bin"
 ```
 
 
@@ -163,6 +216,8 @@ C#
 Ruby
 
 PHP
+
+Python
 
 ```python
 pip install anthropic
@@ -196,6 +251,8 @@ export ANTHROPIC_API_KEY="your-api-key-here"
     PHP
     Ruby
 
+    CLI
+
     
 
     ``` shiki
@@ -225,7 +282,7 @@ export ANTHROPIC_API_KEY="your-api-key-here"
 
     ### Create an environment
 
-    An environment defines the sandbox where your agent runs. This one uses `limited` [networking](managed-agents-environments.md#networking) with package managers allowed, so code running in the sandbox can reach public [package registries and code hosts](managed-agents-environments.md#package-manager-hosts) and no other sites. Web search and web fetch run outside the sandbox and are not affected.
+    An environment defines the sandbox where your agent runs. This one uses `limited` [networking](managed-agents-environments.md#networking) with package managers allowed, so code running in the sandbox can reach public [package registries and code hosts](managed-agents-environments.md#package-manager-hosts). Web search and web fetch run outside the sandbox, and this quickstart does not need them. With `limited` networking, the [`allowed_hosts` list](managed-agents-environments.md#networking) applies to them too. They return no pages or search results in this environment, because it lists no hosts. For your own agent, list the hosts it needs in `allowed_hosts`.
 
     cURL
     CLI
@@ -236,6 +293,8 @@ export ANTHROPIC_API_KEY="your-api-key-here"
     Java
     PHP
     Ruby
+
+    CLI
 
     
 
@@ -260,7 +319,7 @@ export ANTHROPIC_API_KEY="your-api-key-here"
     [`ant apply`](cli-sdks-libraries-cli-apply.md) records the environment's ID in `claude-lock.json` too. To create the agent and the environment with one command, pass both files: `ant apply coding-assistant.md environment.yaml`.
 
     
-    To run the sandbox on your own infrastructure instead of a cloud sandbox, see [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md).
+    This quickstart uses a cloud environment. To decide whether to run tools on your own infrastructure with a [self-hosted sandbox](managed-agents-self-hosted-sandboxes.md) instead, see [Choosing an agent environment](managed-agents-choosing-an-environment.md).
 
 3.  3
 
@@ -277,6 +336,8 @@ export ANTHROPIC_API_KEY="your-api-key-here"
     Java
     PHP
     Ruby
+
+    Python
 
     
 
@@ -305,6 +366,8 @@ export ANTHROPIC_API_KEY="your-api-key-here"
     Java
     PHP
     Ruby
+
+    Python
 
     
 

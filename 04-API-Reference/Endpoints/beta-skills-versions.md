@@ -2,7 +2,7 @@
 title: "Versions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/skills/versions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-04T08:32:39Z"
+fetched_at: "2026-10-20T06:37:25Z"
 tags: ["api"]
 ---
 
@@ -22,7 +22,7 @@ tags: ["api"]
 
 
 
-[Console](../Other/usage-limits.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fskills%2Fversions)
+[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fskills%2Fversions)
 
 
 
@@ -120,7 +120,7 @@ Usage Report
 
 Cost Report
 
-MCP Tunnels
+MCP Tunnels
 
 Analytics
 
@@ -130,9 +130,11 @@ RBAC Groups
 
 RBAC Roles
 
-Plugins
+Plugins
 
-Plugin Marketplaces
+Plugin Marketplaces
+
+Telemetry Destinations
 
 
 Skills
@@ -218,13 +220,15 @@ Groups
 
 Apps
 
-Code
-
 
 Completions
 
 
-Create a Text Completion
+Create a Text Completion Deprecated
+
+OpenTelemetry
+
+[Spans](opentelemetry-spans.md)
 
 Support & configuration
 
@@ -232,9 +236,9 @@ Support & configuration
 
 Claude Code
 
-[Trigger a routine](claude-code-routines-fire.md)
+[Trigger a routine](claude-code-routines-fire.md)
 
-[Console](../Other/usage-limits.md)
+[Console](../Other/playground.md)
 
 Copy page
 
@@ -243,10 +247,16 @@ Claude Code
 cURL
 
 1.  [API reference](http.md)
-2.  [Beta](http-beta.md)
-3.  [Skills](http-beta-skills.md)
+2.  [Beta](platform-claude-com-http-beta.md)
+3.  [Skills](platform-claude-com-http-beta-skills.md)
 
 # Versions
+
+Copy page
+
+
+
+cURL
 
 ##### [Create Skill Version](https://platform.claude.com/docs/en/api/http/beta/skills/versions/create)
 

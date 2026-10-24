@@ -2,13 +2,11 @@
 title: "Find and join a Console organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14793921-find-and-join-a-console-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-10T06:28:18Z"
+fetched_at: "2026-10-23T06:29:28Z"
 tags: ["enterprise"]
 ---
 
 # Find and join a Console organization
-
-April 29, 2026
 
 
 Organization discovery lets you find and join your company’s existing Console organization when you start the sign-up flow with a business email address. Instead of creating a personal account, you can request to join—or be added automatically—depending on your organization’s configuration.
@@ -25,7 +23,7 @@ Admins can manage organization discovery from identity and access settings.
 
 1.  Log in as an Admin.
 
-2.  Navigate to **[Organization settings \> Identity and access](http://platform.claude.com/settings/identity)**.
+2.  Go to the **Identity and access** page (platform.claude.com/settings/identity).
 
 3.  Your organization’s domains are listed at the top of the page.
 
@@ -65,7 +63,7 @@ In addition to organization discovery, there are a few other ways to join a Cons
 
 - **Email invitation:** An Admin or existing member of the organization may send you an email invitation to join.
 
-- **Admin invitation:** An Admin can add you directly from **[Organization settings \> Members](../04-API-Reference/Other/playground.md)**.
+- **Admin invitation:** An Admin can add you directly from the **Members** page (platform.claude.com/settings/members).
 
 ------------------------------------------------------------------------
 
